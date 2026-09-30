@@ -1,0 +1,130 @@
+{
+ "results": [
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "verdict": "unresolved",
+   "summary": "The pins correctly put the climb on the peak's north side, but the 'Base of north slopes' pin sits high on the slope itself rather than at its foot, and no published position for that unsigned turnoff was found to move it to.",
+   "evidence": "The flagged claim (route climbs the north side; pins lie north of the summit) is correct and needs no pin change. Checked each pin: [0] Stuart Lake Trailhead agrees with ~30 other routes' pins for the same lot. [1] Colchuck Lake agrees with neighbours; ground 5,560 ft. [2] Aasgard Pass is ~150 m from the mapped saddle (47.48078,-120.82245); ground 7,810 ft - fine. [3] Core Enchantments camp is ~170 m from the mapped Brisingamen Lakelets (47.47753,-120.80886); ground 7,570 ft - fine. [5] Summit matches the mapped Little Annapurna summit (47.46808,-120.81458) within ~30 m. [4] 'Base of north slopes' (47.47,-120.815) is only ~200 m north of the summit and the USGS ground there is ~8,280 ft, not the stored 7,700 ft; its own directions describe a turnoff near the far end of the meadows, which lie further north-east around 47.475-47.478,-120.806 to -120.809. No source publishes a coordinate for that unsigned climbers' path junction, so it cannot be placed within 300 m from two sources; left for the owner.",
+   "sources": [
+    "https://overpass-api.de/api/interpreter (OSM features Aasgard Pass, Little Annapurna)",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Brisingamen%20Lakelets",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.815&y=47.47&units=Feet&wkid=4326"
+   ],
+   "pin_ops": [],
+   "ops": []
+  },
+  {
+   "id": "wa_the_direct_north_ridge_w_gendarme",
+   "verdict": "unresolved",
+   "summary": "The trailhead pin is correct and clearly labelled as the Icicle-side start, but the 'Base of North Ridge' pin appears to sit east of the Ice Cliff Glacier, on the wrong side of it, and no published coordinate for the toe of the ridge was found to move it to.",
+   "evidence": "[0] Stuart Lake Trailhead (47.52779,-120.82082) matches the pins other routes use for the same lot; its directions correctly call it the Icicle-side start and name the Teanaway alternative, so the flagged 'contradiction' is two labelled approaches, not an error. [2] Summit matches the mapped Mount Stuart summit (47.47515,-120.90199) within ~100 m. [1] 'Base of North Ridge (glacier moat)' (47.47854,-120.88416): USGS ground there is ~6,340 ft vs stored 6,600. Mapped glacier centres: Stuart Glacier 47.47915,-120.90234, Ice Cliff Glacier 47.47609,-120.89569, Sherpa Glacier 47.47487,-120.88971. Route descriptions say that from the Mountaineer Creek valley you climb to the toe of the ridge keeping the Ice Cliff Glacier on your left (so the toe is west of it), and put the toe at about 6,600 ft. The pin is ~900 m east of the Ice Cliff Glacier's centre, beside the Sherpa Glacier - closer to the hanging-valley bivy than to the ridge toe. No source gives coordinates for the toe, so it cannot be placed from two sources; not moved.",
+   "sources": [
+    "https://overpass-api.de/api/interpreter (OSM glaciers and summits around Mount Stuart)",
+    "https://www.summitpost.org/north-ridge/155700",
+    "https://stephabegg.com/trip-reports/washington/stuart-north-ridge/",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.88416&y=47.47854&units=Feet&wkid=4326"
+   ],
+   "pin_ops": [],
+   "ops": []
+  },
+  {
+   "id": "wa_navaho_peak_south_slopes",
+   "verdict": "confirmed",
+   "summary": "Navaho Pass, the Standup Creek Trail junction and the meadow camp were all pinned 1-2 km east of the trail; they are moved onto the Stafford Creek Trail where it actually meets the Standup Trail, passes the upper camps, and ends at the pass west of the peak.",
+   "evidence": "Pass [4]: the Forest Service trail record for Stafford Creek Trail #1359 is 5.63 mi long and ends at the junction with the Cascade Creek/Old County Line trail at Navaho Pass, 47.42064,-120.81899; the mapped saddle named Navaho Pass (ele 1844 m) is at 47.42066,-120.81887; the hike description says to head east out of the pass and it is about a mile to the summit, which puts the pass west of the summit (47.4231,-120.8037). The stored pin (47.414557,-120.795687) is 1.8 km east-southeast, south-east of the summit, on ground ~6,550 ft; USGS ground at the new point is ~6,050 ft, matching the row's '~6,000 ft' and the mapped 1844 m. Junction [2]: the Forest Service geometries of #1359 and Standup Trail #1369 meet at 47.40969,-120.81634 (the #1369 record ends at 47.40963,-120.81630), and the mapped trails share a node at 47.40962,-120.81631; that point is 3.93 mi along #1359, matching the row's 3.8 mi. The stored pin was ~1.1 km east, off the trail on ground ~5,330 ft; ground at the junction is ~5,030 ft, which also replaces the implausible 5,450 ft flagged. Camp [3]: a mapped backcountry camp sits at 47.41610,-120.81940, 55 m from the #1359 geometry at mile 5.1, about half a mile below the pass - matching the row's own camp description (camps at about five miles, pass another half mile up, ~5,600 ft). The stored pin was ~1.6 km east on a slope. Ground at the camp ~5,670 ft. The camp note's pipeline remark about interpolation is replaced with a plain position. Left alone: [0] trailhead (matches the mapped trailhead and the trail's start), [6] summit (matches the mapped summit), [5] scramble path (sits on a mapped summit bootpath off the Old County Line trail; which of the two mapped bootpaths the text means - the one ~0.4 mi east of the pass or the one ~1 mi east - is not settled by two sources, though the stored distMi gaps and 'a short way' lean to the nearer one), [1] creek crossing (on the trail geometry at ~2.7 mi; its stored 3.5 mi / 4,800 ft may be off, but no source places the crossing).",
+   "sources": [
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%271359%27&outSR=4326&f=json",
+    "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%271369%27&outSR=4326&f=json",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-120.84,47.365,-120.79,47.425",
+    "https://www.wta.org/go-hiking/hikes/navaho-peak",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.81899&y=47.42064&units=Feet&wkid=4326"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_navaho_peak_south_slopes",
+     "index": 2,
+     "expect": {
+      "name": "Standup Creek Trail junction",
+      "lat": 47.409686,
+      "lng": -120.802068
+     },
+     "lat": 47.40963,
+     "lng": -120.81631,
+     "elev": 5030,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%271369%27&outSR=4326&f=json",
+      "https://api.openstreetmap.org/api/0.6/map.json?bbox=-120.84,47.365,-120.79,47.425"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_navaho_peak_south_slopes",
+     "index": 4,
+     "expect": {
+      "name": "Navaho Pass",
+      "lat": 47.414557,
+      "lng": -120.795687
+     },
+     "lat": 47.42065,
+     "lng": -120.81893,
+     "elev": 6050,
+     "sources": [
+      "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%271359%27&outSR=4326&f=json",
+      "https://api.openstreetmap.org/api/0.6/map.json?bbox=-120.84,47.365,-120.79,47.425",
+      "https://www.wta.org/go-hiking/hikes/navaho-peak"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_navaho_peak_south_slopes",
+     "column": "waypoints",
+     "path": [
+      3,
+      "note"
+     ],
+     "find": " (elev/dist interpolated between the 4,800 ft creek crossing and the pass)",
+     "replace": ", about half a mile below the pass"
+    }
+   ]
+  },
+  {
+   "id": "wa_red_mountain_snoqualmie_standard",
+   "verdict": "confirmed",
+   "summary": "The Red Pass pin is removed: the scramble leaves the trail at a cairn before Red Pond, below the pass, so the route never goes to Red Pass.",
+   "evidence": "[1] 'Red Pass' (47.4592466,-121.3954014) is exactly the mapped Red Pass saddle, so the pin is a correct position for the pass - but the row's approach, climbing_route and itinerary all have the party leave the Commonwealth Creek trail at a cairn a few hundred yards before the small pond below Red Mountain's west slope, and the mapped Red Pond (47.4561786,-121.3949012) lies ~350 m south of (below) the pass, so the pass is beyond the turnoff and off-route. No published coordinate exists for the cairn, so there is no correct counterpart to move the pin to; removed. [0] trailhead and [2] summit (matches the mapped Red Mountain summit 47.4562164,-121.3891216) are fine. Note for owner: the shared bivy entry's sentence that the scramble 'leaves from near the pass' is loose against the rest of the row, but it is shared camp prose and was not edited here.",
+   "sources": [
+    "https://nominatim.openstreetmap.org/search?format=json&q=Red%20Pass%2C%20King%20County%2C%20Washington",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Red%20Pond%2C%20King%20County%2C%20Washington",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Red%20Mountain%2C%20King%20County%2C%20Washington"
+   ],
+   "pin_ops": [
+    {
+     "op": "remove_pin",
+     "id": "wa_red_mountain_snoqualmie_standard",
+     "index": 1,
+     "expect": {
+      "name": "Red Pass",
+      "lat": 47.4592466,
+      "lng": -121.3954014
+     }
+    }
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_drilling_me_softly",
+   "verdict": "unresolved",
+   "summary": "The trailhead pin sits on the crag rather than at the road-end turnaround, but only one map places the turnaround and it shows two possible spur ends, so it was not moved.",
+   "evidence": "[0] 'FS Road 9070 Turnaround at Silver Basin' and [1] 'Sofa King Buttress base' share one coordinate (47.36741,-121.45564), which is the crag area's own listed position (area page gives 47.36794,-121.4551, elevation 4,585 ft - the origin of the trailhead's 4585). The approach is 20-30 min from the road-end turnaround, so the trailhead pin is misplaced. The only mapped road network shows the left fork of FS 9070 (9070-310) running west from 47.37473,-121.44817 and two dead-end spurs below the basin, ending at 47.37310,-121.45793 and 47.37239,-121.45690; no second source (road page, trailhead record, or stated coordinates) identifies which is the turnaround. The only trailhead cannot be removed, so it is left for the owner. [1] the crag pin is right.",
+   "sources": [
+    "https://www.mountainproject.com/area/120477448/the-citidel",
+    "https://api.openstreetmap.org/api/0.6/map.json?bbox=-121.47,47.36,-121.44,47.38"
+   ],
+   "pin_ops": [],
+   "ops": []
+  }
+ ]
+}

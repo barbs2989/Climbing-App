@@ -1,0 +1,19 @@
+[
+ {
+  "op": "move_pin",
+  "id": "wa_navaho_peak_south_slopes",
+  "index": 3,
+  "expect": {
+   "name": "Upper meadow camp",
+   "lat": 47.409284,
+   "lng": -120.799768
+  },
+  "lat": 47.4161,
+  "lng": -120.8194,
+  "elev": 5670,
+  "sources": [
+   "https://api.openstreetmap.org/api/0.6/map.json?bbox=-120.84,47.365,-120.79,47.425",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%271359%27&outSR=4326&f=json"
+  ]
+ }
+]

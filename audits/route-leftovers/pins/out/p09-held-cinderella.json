@@ -1,0 +1,39 @@
+[
+ {
+  "op": "move_pin",
+  "id": "wa_cinderella_peak_scramble",
+  "index": 2,
+  "expect": {
+   "name": "Twin Sisters Viewpoint / Green Creek climbers' trail split",
+   "lat": 48.705110924528306,
+   "lng": -121.92848443396227
+  },
+  "lat": 48.72193,
+  "lng": -121.93431,
+  "elev": 2720,
+  "sources": [
+   "https://www.openstreetmap.org/way/183512681",
+   "https://apps.fs.usda.gov/arcx/rest/services/EDW/EDW_TrailNFSPublish_01/MapServer/0/query?where=TRAIL_NO%3D%27697%27",
+   "https://climberkyle.com/2021/08/19/green-creek-circuit/",
+   "http://www.willhiteweb.com/north_cascades/sister_divide/elbow_lake_trail_211.htm"
+  ]
+ },
+ {
+  "op": "move_pin",
+  "id": "wa_cinderella_peak_scramble",
+  "index": 5,
+  "expect": {
+   "name": "West ridge scramble section",
+   "lat": 48.69240659245283,
+   "lng": -121.96704994339622
+  },
+  "lat": 48.69128,
+  "lng": -121.97274,
+  "elev": 6180,
+  "sources": [
+   "https://www.openstreetmap.org/node/4271111544",
+   "https://listsofjohn.com/peak/211985",
+   "https://epqs.nationalmap.gov/v1/json"
+  ]
+ }
+]

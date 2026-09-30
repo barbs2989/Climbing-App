@@ -1,0 +1,316 @@
+{
+ "results": [
+  {
+   "id": "wa_whistler_mountain_scramble",
+   "verdict": "leave",
+   "summary": "The trailhead pin correctly marks the Rainy Pass lot used by the route's main approach, and the highway-turnout start has no published position, so no pin was moved.",
+   "evidence": "Pin 4 (48.5181,-120.7331) coincides with the mapped PCT North parking lot on the north side of Rainy Pass (OSM parking way 184346447 at 48.51804,-120.73312); the approach names this lot as Option A, the primary variant, and approach_logistics uses it, so it is not wrong. The itinerary's start, an unmarked turnout ~3.1 mi east of Rainy Pass, has no published coordinate, and no add-pin operation exists. Pins 0-3 are evenly spaced synthetic points (constant lat/lng steps) whose ground heights (5,307 / 5,518 / 6,099 / 6,767 ft) are 300-630 ft below their stated 5,600 / 6,180 / 6,800 / 7,400 ft; no source places the meadow traverse, ridge gain point or gully split precisely enough to move them, and they belong to this route, so they are left and flagged for the owner. Summit pin agrees with the mapped peak (48.51540,-120.70823) within 30 m.",
+   "sources": [
+    "https://www.openstreetmap.org/way/184346447",
+    "https://www.openstreetmap.org/node/348973866"
+   ],
+   "pin_ops": [],
+   "ops": []
+  },
+  {
+   "id": "wa_iceman",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin sat at the Blue Lake trailhead 2 km west; it now sits at the SR-20 hairpin pullout the crag is actually approached from, and the base pin is typed as a base with its wrong 1.8-mile distance cleared.",
+   "evidence": "Pin 0 'Blue Lake Trailhead' (48.5192,-120.6743) is the Blue Lake lot, but the crag's own approach starts at the apex of the SR-20 hairpin and follows the Spire Gully trail, then a dry creek bed and slabs. The hairpin pullout is published at 48.5143,-120.6425 (hiking-trail database) and the mapped highway apex lies at 48.5143,-120.6434 (OSM), ~70 m apart; ground 5,175 ft -> 5,180. Pin 1 (crag base, 48.51344,-120.64594) matches the crag's published coordinate exactly and sits ~250 m from the hairpin, so its stored distMi 1.8 (a Blue Lake figure) is clearly wrong; no source gives the walking distance, so it is nulled. Its type 'Topout' is changed to 'Base'. Position left unchanged. Note: the route's approach prose still names the neighbouring Alpenkuhl side of Spire Gully as the crag; that is text, not a pin, and is left for the owner.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.wta.org/go-hiking/hikes/kangaroo-temple",
+    "https://www.openstreetmap.org/way/6095754"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_iceman",
+     "index": 0,
+     "expect": {
+      "name": "Blue Lake Trailhead",
+      "lat": 48.5192,
+      "lng": -120.6743
+     },
+     "lat": 48.5143,
+     "lng": -120.6425,
+     "elev": 5180,
+     "sources": [
+      "https://www.wta.org/go-hiking/hikes/kangaroo-temple",
+      "https://www.openstreetmap.org/way/6095754"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead",
+     "value": "Washington Pass Hairpin Turnout (SR-20)"
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "value": "Large pullout on the outside of the SR-20 hairpin east of Washington Pass. Follow the climbers' trail toward Spire Gully, cut right into a dry creek bed and go up smooth slabs (the upper one has a fixed line) to the Ice Box."
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "waypoints",
+     "path": [
+      1,
+      "type"
+     ],
+     "expect": "Topout",
+     "value": "Base"
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 1.8,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_route_c",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin sat at the Blue Lake trailhead 2 km west; it now sits at the SR-20 hairpin pullout the crag is actually approached from, and the base pin is typed as a base with its wrong 1.8-mile distance cleared.",
+   "evidence": "Pin 0 'Blue Lake Trailhead' (48.5192,-120.6743) is the Blue Lake lot, but the crag's own approach starts at the apex of the SR-20 hairpin and follows the Spire Gully trail, then a dry creek bed and slabs. The hairpin pullout is published at 48.5143,-120.6425 (hiking-trail database) and the mapped highway apex lies at 48.5143,-120.6434 (OSM), ~70 m apart; ground 5,175 ft -> 5,180. Pin 1 (crag base, 48.51344,-120.64594) matches the crag's published coordinate exactly and sits ~250 m from the hairpin, so its stored distMi 1.8 (a Blue Lake figure) is clearly wrong; no source gives the walking distance, so it is nulled. Its type 'Topout' is changed to 'Base'. Position left unchanged. Note: the route's approach prose still names the neighbouring Alpenkuhl side of Spire Gully as the crag; that is text, not a pin, and is left for the owner.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.wta.org/go-hiking/hikes/kangaroo-temple",
+    "https://www.openstreetmap.org/way/6095754"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_route_c",
+     "index": 0,
+     "expect": {
+      "name": "Blue Lake Trailhead",
+      "lat": 48.5192,
+      "lng": -120.6743
+     },
+     "lat": 48.5143,
+     "lng": -120.6425,
+     "elev": 5180,
+     "sources": [
+      "https://www.wta.org/go-hiking/hikes/kangaroo-temple",
+      "https://www.openstreetmap.org/way/6095754"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_route_c",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead",
+     "value": "Washington Pass Hairpin Turnout (SR-20)"
+    },
+    {
+     "op": "set",
+     "id": "wa_route_c",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "value": "Large pullout on the outside of the SR-20 hairpin east of Washington Pass. Follow the climbers' trail toward Spire Gully, cut right into a dry creek bed and go up smooth slabs (the upper one has a fixed line) to the Ice Box."
+    },
+    {
+     "op": "set",
+     "id": "wa_route_c",
+     "column": "waypoints",
+     "path": [
+      1,
+      "type"
+     ],
+     "expect": "Topout",
+     "value": "Base"
+    },
+    {
+     "op": "set",
+     "id": "wa_route_c",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 1.8,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_route_d",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin sat at the Blue Lake trailhead 2 km west; it now sits at the SR-20 hairpin pullout the crag is actually approached from, and the base pin is typed as a base with its wrong 1.8-mile distance cleared.",
+   "evidence": "Pin 0 'Blue Lake Trailhead' (48.5192,-120.6743) is the Blue Lake lot, but the crag's own approach starts at the apex of the SR-20 hairpin and follows the Spire Gully trail, then a dry creek bed and slabs. The hairpin pullout is published at 48.5143,-120.6425 (hiking-trail database) and the mapped highway apex lies at 48.5143,-120.6434 (OSM), ~70 m apart; ground 5,175 ft -> 5,180. Pin 1 (crag base, 48.51344,-120.64594) matches the crag's published coordinate exactly and sits ~250 m from the hairpin, so its stored distMi 1.8 (a Blue Lake figure) is clearly wrong; no source gives the walking distance, so it is nulled. Its type 'Topout' is changed to 'Base'. Position left unchanged. Note: the route's approach prose still names the neighbouring Alpenkuhl side of Spire Gully as the crag; that is text, not a pin, and is left for the owner.",
+   "sources": [
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.wta.org/go-hiking/hikes/kangaroo-temple",
+    "https://www.openstreetmap.org/way/6095754"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_route_d",
+     "index": 0,
+     "expect": {
+      "name": "Blue Lake Trailhead",
+      "lat": 48.5192,
+      "lng": -120.6743
+     },
+     "lat": 48.5143,
+     "lng": -120.6425,
+     "elev": 5180,
+     "sources": [
+      "https://www.wta.org/go-hiking/hikes/kangaroo-temple",
+      "https://www.openstreetmap.org/way/6095754"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_route_d",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Blue Lake Trailhead",
+     "value": "Washington Pass Hairpin Turnout (SR-20)"
+    },
+    {
+     "op": "set",
+     "id": "wa_route_d",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same trailhead used for the Concord/Lexington cluster; from the climber's path, cut right into a dry creek bed and ascend fixed-line slabs to the Ice Box.",
+     "value": "Large pullout on the outside of the SR-20 hairpin east of Washington Pass. Follow the climbers' trail toward Spire Gully, cut right into a dry creek bed and go up smooth slabs (the upper one has a fixed line) to the Ice Box."
+    },
+    {
+     "op": "set",
+     "id": "wa_route_d",
+     "column": "waypoints",
+     "path": [
+      1,
+      "type"
+     ],
+     "expect": "Topout",
+     "value": "Base"
+    },
+    {
+     "op": "set",
+     "id": "wa_route_d",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 1.8,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_bearpaw_mountain_scramble",
+   "verdict": "confirmed",
+   "summary": "Two pins that sat on the west side of Church Lake now sit on the east-side rim and ridge the route actually climbs, and two sentences that said 'west' now say 'east'.",
+   "evidence": "Church Lake (mapped outline 48.9485-48.9507 N, 121.8478-121.8508 W) lies northeast of the summit; the mapped climbers' path leaves the lake's east shore and runs south up the east rim to the ridge crest at ~48.9421,-121.8468, and the mapped ridge then runs west to the 6,066 ft knoll (pin 5, ground 6,066 ft, correct). A trip description independently says the route keeps to the left of the lake and climbs the rim on the left (east, for a party arriving from the north) side of the basin to Point 6066. Pin 3 'Left Rim' (48.95109,-121.85467, ground 5,175 ft) was ~450 m WNW of the lake; moved to where the path leaves the lake's southeast end (48.94797,-121.84828, ground 5,266 -> 5,270 ft). Pin 4 'Steep Heather/Meadow Ridge Below Point 6066' (48.94867,-121.85424, ground 5,309 ft vs stated 5,800) was also west of the lake; moved onto the mapped ridge crest between the path top and the knoll (48.94098,-121.85009, ground 5,819 -> 5,820 ft, matching its stated height). Pins 0,1,2,6,7 checked: trailhead within ~130 m of the mapped road end, lake pin inside the lake, summit within 20 m of the mapped summit. approach_variants[0] notes and baseFinding said 'Keep left — west'; corrected to east to agree with the pin directions and the approach.",
+   "sources": [
+    "https://www.openstreetmap.org/way/182130773",
+    "https://www.openstreetmap.org/way/970189428",
+    "https://www.openstreetmap.org/way/970189421",
+    "https://bivouac.com/TripPg.asp?TripId=8906"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_bearpaw_mountain_scramble",
+     "index": 3,
+     "expect": {
+      "name": "Left Rim of Church Lake Basin",
+      "lat": 48.951086751999995,
+      "lng": -121.854669344
+     },
+     "lat": 48.94797,
+     "lng": -121.84828,
+     "elev": 5270,
+     "sources": [
+      "https://www.openstreetmap.org/way/970189428",
+      "https://bivouac.com/TripPg.asp?TripId=8906"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_bearpaw_mountain_scramble",
+     "index": 4,
+     "expect": {
+      "name": "Steep Heather/Meadow Ridge Below Point 6066",
+      "lat": 48.948673504,
+      "lng": -121.854238688
+     },
+     "lat": 48.94098,
+     "lng": -121.85009,
+     "elev": 5820,
+     "sources": [
+      "https://www.openstreetmap.org/way/970189421",
+      "https://bivouac.com/TripPg.asp?TripId=8906"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_bearpaw_mountain_scramble",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "Keep LEFT — west — up the basin rim",
+     "replace": "Keep LEFT — east — up the basin rim"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_bearpaw_mountain_scramble",
+     "column": "approach_variants",
+     "path": [
+      0,
+      "baseFinding"
+     ],
+     "find": "Keep left — west — up the basin rim",
+     "replace": "Keep left — east — up the basin rim"
+    }
+   ]
+  }
+ ]
+}

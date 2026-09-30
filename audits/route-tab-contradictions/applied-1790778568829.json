@@ -1,0 +1,48 @@
+{
+ "applied": [
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Approach/trailhead used for this route"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "column": "permit",
+   "path": [],
+   "fact": "Wilderness permit requirement"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_southeast_mox_peak_se_rib",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "Very high - multi-day, largely off-trail approach via the Chilliwack River/Perry Creek or Redoubt Creek area to a high camp over rugged and likely bushwhacky terrain",
+      "packWeight": "Heavy - multi-day camping gear plus a full alpine rock rack must be carried in and over the approach"
+     },
+     "approachTime": "Multi-day (2+ days) approach to a high camp before the climb itself",
+     "requiredSkills": [
+      "Confident 5.6 trad/alpine leading on loose rock",
+      "Route-finding and navigation off-trail in remote, unmarked terrain",
+      "Multi-day backcountry travel and camp management",
+      "Rappelling and downclimbing for the 'complex descent'",
+      "Self-sufficiency/self-rescue judgment given the very remote, committing position"
+     ],
+     "experienceLevel": "Advanced alpine climbers only - prior experience leading loose alpine rock and completing multi-day, off-trail North Cascades objectives is expected; not suitable for a first alpine leader"
+    }
+   }
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "before": {
+    "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads."
+   }
+  }
+ ]
+}

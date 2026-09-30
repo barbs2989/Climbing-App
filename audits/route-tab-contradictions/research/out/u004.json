@@ -1,0 +1,130 @@
+{
+ "file": "u004",
+ "results": [
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real in the live row: approach/climbing_route/itinerary start the ridge at the ~8,000 ft col above the 7,100 ft camp, while the 'Base of west ridge' pin reads 6,800 ft at 5.2 mi (before the 6.5 mi camp). A 2018 party left the trail near a meadow at ~6,900 ft and reached the saddle at 8,000 ft, which matches neither the pin's name nor its figures cleanly. The USGS ground height at the pin's own coordinate is ~7,308 ft, so the stored 6,800 matches neither the leave-trail point (~6,850-6,900) nor the col (~8,000) nor the ground under the pin. Whether the pin is meant as the leave-trail point or the col is a pin-identity question (position out of scope); no patch.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-03.6703657543",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.842&y=47.5575&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Recommended start time from high camp — 5:00 AM vs ~6:00 AM",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: timing.recommendedStart and itinerary day 2 say 5:00 AM from camp, partner_requirements.approachTime says ~06:00. Trip reports found describe leisurely starts (one party rose after 8 AM from a Lake Caroline camp) or single-day pushes; none states a recommended camp departure time, and this is a planning recommendation rather than a researchable fact.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-07-03.6703657543"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+   "fact": "Crux grade vs headline grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: grade/rock_grade/overview say 5.9 while pitch_detail P5 and beta give a 5.9+ crack, and pitch_detail labels P3 (5.7/5.8) as the crux although P5 is harder. The only description of this 2003 variation found is the one route listing, which itself gives 5.9 PG13 overall and a 5.9+ crack; searches for a second account (forum trip reports, other databases) turned up only the neighbouring Northeast Buttress. No second source, so no patch.",
+   "sources": [
+    "https://www.mountainproject.com/area/121160200/cathedral-rock",
+    "https://www.cascadeclimber.com/cathedral_rock.htm"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_sisu",
+   "fact": "Total route length vs sum of pitch lengths",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: length_m 244 (800 ft) against pitch_detail lengths 40+18+15+25+10+30+35 m. Every listing found (the route page and search summaries of it) repeats 7 pitches / 800 ft with the same pitch lengths; no independent topo or second description of the route was found, so which figure is wrong cannot be settled.",
+   "sources": [
+    "https://www.mountainproject.com/route/115362195/sisu",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/12575251"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chalangin_peak_southwest_face",
+   "fact": "Climbing season: May-Jun header vs a season description running through September",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: season May-Jun vs best_season/climate describing a working window through September and a summer dry scramble. New sources: an August 2023 attempt via the White River trail failed on the overgrown trail, and an October 2023 ascent was made by a different route (from Luahna via Little Giant Pass). No dated summer ascent of this southwest-face line was found, so neither window is confirmed by two sources.",
+   "sources": [
+    "https://onehikeaweek.com/2023/10/08/chalangin-peak/",
+    "https://www.peakbagger.com/peak.aspx?pid=1976"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Total elevation gain/loss for the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: gain_ft/loss_ft 6000 and the overview/totalNote (6,000 ft) against itinerary days summing to 4,930 ft. An added trip report (Aug 2019) gives per-leg gains that do not sum to either figure reliably. Sources remain split (6,000 vs ~4,900 ft) and the itinerary figure is net elevation difference, so no two sources settle the car-to-car total.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-chimney-rock-east-face-route",
+    "https://trailcatjim.com/chimney-rock-main-peak-via-east-face/",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Hardest grade of the summit pitches",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: rock_grade/pitch_detail 5.3 vs climbing_route[3] \"hardest moves around 5.4 to 5.6\". A further route page (East Face, right side) rates its line 5.4 with pitches from class 3 to 5.4, adding a third number rather than agreeing with either. Not settled.",
+   "sources": [
+    "https://www.summitpost.org/east-face-right-side/165490",
+    "https://www.mountainproject.com/route/112042082/east-face",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "fact": "Overall commitment/alpine grade of the route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: commitment/alpine_grade IV vs climbing_route[3] \"Grade II overall\". The route pages found still disagree (IV on one listing, II for the Direct, II/III in a trip report); the one other route page that might settle it could not be retrieved. Not settled.",
+   "sources": [
+    "https://www.mountainproject.com/route/112042082/east-face",
+    "https://www.mountaineers.org/activities/routes-places/chimney-rock-east-face-direct"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "fact": "Hardest technical rock grade on the route",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row has been rewritten as \"South Peak via East Gully\" with grade, rock_grade, pitch_detail, climbing_route and pro_needs all stating Class 4; no 5.6 remains.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "fact": "Route identity: pitch, rappel and descent details describe a different peak (Chimney Rock, Idaho Selkirks)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row no longer mentions the Rappel Chimney, the rocking block, the northwest-shoulder rap or a second rope; rappels, rappel_count_note, descent_text, pro_needs, rack and gear all describe single-rope rappels from self-built anchors on the Washington South Peak line.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_chimney_rock_west_face",
+   "fact": "Summit-day gain 3,080 ft reaches the 7,727 ft central summit, not the 7,440 ft South Peak this row climbs",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Found while re-reading: itinerary day 2 gains/loses 3,080 ft from the ~4,650 ft Sunrise Knob camp, the same figure as the East Face row to the 7,727 ft main summit, while this row tops out on the 7,440 ft South Peak (high_point_ft, overview, schedule). Correcting it would need a computed figure; no source states the camp-to-South-Peak gain.",
+   "sources": [],
+   "patches": [],
+   "discovered": true
+  }
+ ]
+}

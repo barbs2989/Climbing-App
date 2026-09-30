@@ -1,0 +1,176 @@
+{
+ "file": "u016",
+ "results": [
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "fact": "Round-trip distance (dist_km vs. stated mileage)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried with new sources. A hiking-club page for the Lichtenwasser-side scramble repeats 7 mi / 2,100 ft, while a 2024 party gives about 10 mi / 3,000 ft round trip and another club outing 10 mi / 2,700 ft, both of which appear to start at or beyond the Smithbrook trailhead rather than the first switchback. A regional outdoors page describes the peak from the Valhalla side at about 5 mi round trip, a different approach. No two independent sources agree on one round-trip or one-way figure for this line, and the stored 3.2 km cannot be confirmed or replaced without computing it, so nothing is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-03.160039722094",
+    "https://www.mountaineers.org/activities/activities/alpine-scramble-lichtenberg-mountain-43",
+    "https://wenatcheeoutdoors.org/2016/06/23/lichtenberg-mountain/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "fact": "Waypoint list includes a landmark from a different trail/approach",
+   "verdict": "unresolved",
+   "correct_value": "The Lichtenberg Boulders pin (waypoints[2]) belongs to the Valhalla-side approach and should be removed from this route's waypoint list.",
+   "evidence": "Still confirmed from the row itself: the boulder pin carries distMi 2.5, the Valhalla/McCausland-trail mileage, while this route follows the Lichtenwasser Lake fishing trail and none of its prose mentions the boulders. The remedy is removing a pin, which is outside the text/number patch scope, so it is left flagged for a structural edit.",
+   "sources": [
+    "https://www.mountainproject.com/area/125441968/lichtenberg-boulders"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lichtenberg_mountain_se_route",
+   "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint",
+   "verdict": "fixed",
+   "correct_value": "~4,000 ft",
+   "evidence": "The Forest Service trailhead page gives 4,000 ft and places the trailhead at 47.802498, -121.076645, the same point as this row's trailhead pin. The USGS 1 m elevation service at exactly that coordinate returns 3,981 ft, independently confirming ~4,000 ft rather than 3,800 ft. The 3,800 ft figure on hiking-guide pages is the outlier, so the three prose copies are changed to ~4,000 ft to match the waypoint.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/smithbrook-trailhead",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.076645&y=47.802498&units=Feet&wkid=4326"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "Park at the Smithbrook Trailhead (elev. ~3,800 ft)",
+     "replace": "Park at the Smithbrook Trailhead (elev. ~4,000 ft)",
+     "id": "wa_lichtenberg_mountain_se_route",
+     "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "to the Smithbrook Trailhead at about 3,800 ft.",
+     "replace": "to the Smithbrook Trailhead at about 4,000 ft.",
+     "id": "wa_lichtenberg_mountain_se_route",
+     "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "Park at the Smithbrook Trailhead (elev. ~3,800 ft)",
+     "replace": "Park at the Smithbrook Trailhead (elev. ~4,000 ft)",
+     "id": "wa_lichtenberg_mountain_se_route",
+     "fact": "Smithbrook Trailhead elevation: ~3,800 ft in approach/driveNote vs 4,000 ft on the trailhead waypoint"
+    }
+   ]
+  },
+  {
+   "id": "wa_little_annapurna_south_slopes",
+   "fact": "Distance and gain to a Core Enchantments camp (partner_requirements 8-9 mi / ~6,200 ft vs waypoints ~6.5 mi and pass at 7,841 ft from a 3,500 ft trailhead)",
+   "verdict": "fixed",
+   "correct_value": "The top of Aasgard Pass, where the Core begins, is roughly 6 mi and ~4,400 ft of gain from the Stuart Lake trailhead",
+   "evidence": "A trail-database page gives the Aasgard Pass hike from the Lake Stuart trailhead as 12.2 mi round trip with 4,400 ft of gain to a 7,800 ft high point (about 6.1 mi one way). An independent outdoors listing gives 11.15 mi round trip and 4,560 ft of gain (about 5.6 mi one way). Both agree with the row's own waypoints (pass at 5.5 mi, 3,500 ft trailhead) and approach_variants gainFt 4300, and both contradict the 8-9 mi / ~6,200 ft in partner_requirements.approachTime, which is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/aasgard-pass",
+    "https://www.theoutbound.com/washington/hiking/hike-to-aasgard-pass"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "(itself roughly 8-9 mi and ~6,200 ft gain via Aasgard Pass from the Stuart Lake trailhead)",
+     "replace": "(the top of Aasgard Pass, where the Core begins, is roughly 6 mi and ~4,400 ft of gain from the Stuart Lake trailhead)",
+     "id": "wa_little_annapurna_south_slopes",
+     "fact": "Distance and gain to a Core Enchantments camp (partner_requirements 8-9 mi / ~6,200 ft vs waypoints ~6.5 mi and pass at 7,841 ft from a 3,500 ft trailhead)"
+    }
+   ]
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Waypoint distance chain splices two unconnected trailheads",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent in the text: the live row renamed waypoints[0] to 'Cascade Pass Trailhead', and its elev (3,600), note (end of the Cascade River Road) and the next leg (3.7 mi, ~1,800 ft to Cascade Pass) now all describe the same trailhead the approach and itinerary use. The pin's stored coordinate (48.2591, -121.2244) still sits in the Suiattle valley rather than at the Cascade River road end; coordinates are out of scope, so that is left for a pin repair.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Outing shape: out-and-back from Downey Creek vs one-way traverse from Cascade Pass",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row now describes a single outing throughout. approach, descent, descent_text, outing_shape 'outback', the 7-day itinerary (in and back out via Cascade Pass), timing.sectionBreakdown and the waypoints all describe an out-and-back from the Cascade Pass Trailhead to a White Rock Lakes camp; the Downey Creek line is presented only as a closed alternative.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Route between Itswoot Ridge and Lizard/White Rock Lakes named as the South Cascade Glacier",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: Itswoot Ridge no longer appears anywhere on the row. Every field now crosses the South Cascade Glacier between the Le Conte Glacier/Sentinel Peak and the col above White Rock Lakes, on the north side of the lakes, which is where published traverse descriptions put it; the southern Spire Col / Dana Glacier ground is mentioned only for the closed Downey Creek exit.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-n-to-s/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_and_say",
+   "fact": "Route grade vs crux pitch grade",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried; the only published descriptions of this climb remain the route database page (overall 5.11 with P2 5.11b and P4/P5 5.11+) and one detailed trip-report index entry (overall 5.11b with the same 5.11+ pitches). A broader search found no third description, topo or guide listing with an overall grade. The two sources themselves disagree on the headline letter and neither gives 5.11+ overall, so there is no two-source value to adopt; the row's 5.11b headline with 5.11+ pitches is left as is.",
+   "sources": [
+    "https://www.mountainproject.com/route/110383269/and-say",
+    "https://www.mountainproject.com/area/106457320/lookout-point"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Total round-trip distance",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried with trip reports from other years. A 2005 party gives only leg figures (4 mi to the Boulder Pass trail junction at 2,470 ft, a further ~4 mi to Boulder Basin at 5,000 ft) and a different descent; a 2026 party gives no total; a search summary of one route page quoted about 11.5 mi one way but the page itself could not be read to confirm. No two independent sources state the same one-way or round-trip figure for this line, so dist_km (37.82 km, equal to the itinerary's 23.5 mi round trip) is left unchanged.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2005072325",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-14.202832307969",
+    "https://www.summitpost.org/luahna-peak/833751"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "fact": "Header gain_ft/loss_ft 6,150 vs itinerary day totals 6,520 ft (and totalNote ~6,500 ft)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retried. Trip reports for Luahna alone give leg elevations (2,300 ft trailhead, 5,000 ft Boulder Basin, roughly 900 ft lost on the sheepherder traverse) but no stated total gain; the only totals found are for Clark plus Luahna together. Replacing 6,150 with the itinerary sum would be a computed figure, which is not allowed, so neither value is changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2005072325",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-14.202832307969"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Approach mileage: itinerary days 1-3 (7.5 + 5.5 + 3 = 16 mi to White Rock Lakes) vs waypoints (Kool-Aid Lake 6.7 mi, White Rock Lakes 13.5 mi)",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Found while re-reading the row: day 1 gives 7.5 mi to Kool-Aid Lake where the Kool-Aid waypoint says 6.7 mi, and the first three days total 16 mi to White Rock Lakes where the waypoint chain says 13.5 mi. Published traverse descriptions give 3.7 mi of trail to Cascade Pass but describe the cross-country legs by time, not distance (the same gap left the Magic Mountain row's trailhead-to-Kool-Aid distance open), so no sourced figure is available and nothing is changed.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/06/05/ptarmigan-traverse/",
+    "https://www.alpineascents.com/climbs/ptarmigan-traverse/itinerary/"
+   ],
+   "patches": []
+  }
+ ]
+}

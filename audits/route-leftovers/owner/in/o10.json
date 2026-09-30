@@ -1,0 +1,3430 @@
+[
+ {
+  "id": "wa_mount_stone_lake_of_angels",
+  "name": "South Route via Lake of the Angels",
+  "area": {
+   "id": "wa_mount_stone",
+   "name": "Mount Stone",
+   "parent_id": "wa_eastern_olympics",
+   "elevation_ft": 6612,
+   "lat": 47.60632,
+   "lng": -123.266607
+  },
+  "prior_findings": "approach and climbing_route[3] name a guidebook as their source (no-sources rule).",
+  "earlier_research": [
+   {
+    "file": "r561.json",
+    "fact": "Line climbed above Lake of the Angels",
+    "status": "fixed",
+    "correct_value": "Cliff-base traverse short of St. Peter's Gate to a notch in the west ridge, then the west ridge to the summit",
+    "evidence": "The standard route description has parties traverse along the base of the cliff to the west ridge and climb the ridge to the summit; another account reaches a notch in the west ridge and scrambles Class 3 to the top. No source sends the route up a gully. The itinerary note, its schedule label and the timing note are reworded; the face field is left as the route's name.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+     "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Summit-block difficulty (Class 3 throughout vs Class 4 moves)",
+    "status": "fixed",
+    "correct_value": "Class 3, with a few summit-block moves some parties rate Class 4",
+    "evidence": "One route description notes class 4 scrambling moves on the summit block, while two trip accounts call the finish Class 3 / Class 2-3. Sources agree the route is Class 3 below the summit block and disagree only about the top moves, so 'Class 3 throughout' is softened to match rock_grade, pitch_detail, beta and watch_out.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+     "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm",
+     "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Commitment grade",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "No accessible external source gives a I/II commitment grade for this route; the Grade I figure is quoted only from the row's own prose. Nothing patched.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+     "https://en.wikipedia.org/wiki/Mount_Stone"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Round-trip distance",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "External round-trip figures disagree: about 10 mi, 11 mi, 9 mi, 8 mi and c.14 mi across five sources; the lake alone is 7-7.5 mi round trip. No two independent sources agree on a figure, so neither 9.3 nor 11 is adopted.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+     "https://en.wikipedia.org/wiki/Mount_Stone",
+     "https://fastestknowntime.com/route/mt-stone-wa",
+     "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/",
+     "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Parking pass at the Putvin trailhead",
+    "status": "fixed",
+    "correct_value": "No parking pass or fee is needed at the Putvin Trailhead",
+    "evidence": "The Forest Service's Putvin Trailhead page says no fees are required for the site, and WTA lists no parking pass or entry fee for the Lake of the Angels hike (one older blog still says a NW Forest Pass). access.passRequired pointed at a different trailhead and access.parking_pass listed a park entrance fee; both now match the camp card.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/olympic/recreation/putvin-trailhead",
+     "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+     "https://www.hikingwithmybrother.com/lake-of-the-angels-via-putvin-trail-813.html"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Trail number",
+    "status": "fixed",
+    "correct_value": "The Putvin Trail is Forest Service trail #813",
+    "evidence": "The Forest Service trail page is titled 'Putvin Trail #813', and WTA and other guides also list it as #813. The approach and the trailhead waypoint's directions wrongly said it has no official number.",
+    "sources": [
+     "https://www.fs.usda.gov/r06/olympic/recreation/trails/putvin-trail-813",
+     "https://www.wta.org/go-hiking/hikes/lake-of-the-angels",
+     "https://www.hikingwithmybrother.com/lake-of-the-angels-via-putvin-trail-813.html"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Wilderness permit booking note describes another camp",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Permit note without the Upper Lena Lake sentence",
+    "evidence": "Every other field camps at Lake of the Angels, and WTA confirms camping there needs an Olympic National Park wilderness permit; the Upper Lena Lake quota sentence was copied from a different route and is removed.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/lake-of-the-angels"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Glacier features vs no glacier travel",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "No glacier; a small lingering snowfield near the summit",
+    "evidence": "Route descriptions mention only a small permanent snowfield below the summit block and snow patches, no glacier; the row's seasonal_hazards (no glacier travel), avalanche note (non-glaciated) and pitch_detail[4] (small lingering snowfield) agree. 'bergschrund' is replaced with a moat at the snowfield edge.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+     "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+    ]
+   },
+   {
+    "file": "r561.json",
+    "fact": "Aspect of the snow-holding basin",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Route descriptions have parties go north from the lake toward St. Peter's Gate, which suggests the slopes above the lake face roughly south, but no source states the basin's aspect or calls it north-facing, so the variant's 'north-facing' is left for review.",
+    "sources": [
+     "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+     "http://www.ericsbasecamp.net/trips/MtStone/MtStone.htm"
+    ]
+   },
+   {
+    "file": "s054.json",
+    "fact": "Commitment grade",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Route pages and trip reports rate the standard route only as Class 3 (Class 2 for the north summit) and give no I/II commitment grade; the Grade I figure comes only from the row's own prose. Nothing is patched. Note that the approach and climbing_route[3] sentences also name a guidebook as their source, which is a separate no-sources clean-up. The guidebook's own route entry would settle it.",
+    "sources": [
+     "https://mazamas.org/activity/instance/8395/detail/",
+     "https://chossclimbers.com/testing/us/washington/olympics/mount-stone/",
+     "https://en.wikipedia.org/wiki/Mount_Stone"
+    ]
+   },
+   {
+    "file": "s054.json",
+    "fact": "Round-trip distance",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "New figures add to the spread: 12 mi / 5,300 ft on one club route page, about 12 mi on a club trip report, 9-10 mi on a trail aggregator, and 11 mi on the encyclopedia and route pages that copy each other. None agrees with 9.3 or 9.6 mi, and no two independent sources agree on any one figure. A GPS-logged car-to-car figure from two parties would settle it.",
+    "sources": [
+     "https://mazamas.org/activity/instance/8395/detail/",
+     "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-mount-stone-south-couloir-1",
+     "https://www.alltrails.com/trail/us/washington/mount-stone",
+     "https://en.wikipedia.org/wiki/Mount_Stone"
+    ]
+   },
+   {
+    "file": "s054.json",
+    "fact": "Aspect of the snow-holding basin",
+    "status": "fixed",
+    "correct_value": "The slopes above Lake of the Angels toward St. Peter's Gate and Mt Stone face south; the basin should not be called north-facing.",
+    "evidence": "USGS point elevations climb steadily north of the lake (about 4,945 ft at the lake, 5,150, 5,830 and 6,170 ft at points about 300, 600 and 900 m to the NNE), so the ground above the lake on this route faces south/southwest. A traverse report describes descending the SOUTH side of St. Peter's Gate to Lake of the Angels. Another says the north-facing snow couloir is at the Gate on the Upper Lena side, not above the lake. The wrong adjective is removed instead of adding a new aspect claim.",
+    "sources": [
+     "https://epqs.nationalmap.gov/v1/json?x=-123.2705&y=47.6015&units=Feet&wkid=4326",
+     "https://explorerron.com/2023/09/04/mount-bretherton-and-putvin-traverse-loop-via-st-peters-gate-and-lake-of-angels/",
+     "https://explorerron.com/2024/09/04/the-putvin-traverse/"
+    ]
+   },
+   {
+    "file": "t282.json",
+    "fact": "Entrance fee",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "The two lines describe different charges: access.parking_pass says no trailhead parking pass/fee at the Putvin Trailhead (a Forest Service trailhead), while access.notes refers to the Olympic National Park entrance pass, which the park states all visitors 16+ need, including those entering on foot ($15/person). Both statements are true together.",
+    "sources": [
+     "https://www.nps.gov/olym/planyourvisit/fees.htm"
+    ]
+   },
+   {
+    "file": "t282.json",
+    "fact": "Line above Lake of the Angels (beta rock rib vs cliff-base traverse)",
+    "status": "fixed",
+    "correct_value": "Traverse along the base of the cliffs short of St. Peter's Gate to the west-ridge notch.",
+    "evidence": "This row's approach, climbing_route and pitch_detail all describe turning left short of St. Peter's Gate and traversing the cliff base to the west-ridge notch; beta alone says 'north of a rock rib'. The standard-route description and a route summary both give the cliff-base traverse; the rib line is one party's deviation.",
+    "sources": [
+     "https://www.summitpost.org/mount-stone/151845",
+     "https://www.mountaineers.org/activities/routes-places/mt-stone-6-616",
+     "https://trailcatjim.com/mt-stone-via-southwest-slope-west-ridge-2010/"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_lena_lake_to_mt_stone_traverse",
+    "name": "Lena Lake to Mt Stone traverse",
+    "grade": "Class 3-4"
+   },
+   {
+    "id": "wa_mount_stone_putvin",
+    "name": "Putvin Trail / Lake of the Angels Scramble",
+    "grade": "Class 3-4"
+   }
+  ],
+  "row": {
+   "id": "wa_mount_stone_lake_of_angels",
+   "area_id": "wa_mount_stone",
+   "name": "South Route via Lake of the Angels",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": 433,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Ice axe (recommended into July for the St. Peter's Gate saddle and headwall snow)",
+    "Helmet (loose rock in the gully/headwall and near the summit block)",
+    "Sturdy boots for the steep, root/rock Putvin Trail",
+    "Trekking poles for the steep descent"
+   ],
+   "hazards": [
+    "Trail-less, route-finding-dependent terrain above Lake of the Angels",
+    "Near-vertical, root/rock steps on the lower Putvin Trail",
+    "Loose rock on the headwall and summit block (rockfall risk to parties below)",
+    "Ambiguous class 3/4 crux near the summit"
+   ],
+   "verif": null,
+   "overview": "Mount Stone is a high-prominence, triple-summited peak (South/main summit 6,612 ft, plus Middle ~6,600 ft and North ~6,400 ft summits) above Lake of the Angels in the southeastern Olympic Mountains. It is the highest point in Mason County. The lower approach lies in the Mount Skokomish Wilderness (Olympic National Forest); the upper basin, lake, and summit sit just inside the Olympic National Park boundary. On a clear day the summit gives views of The Brothers, Mount Washington, Mount Anderson, Mount Constance, Mount Deception, and Mount Olympus.",
+   "beta": "From Hamma Hamma River Road, hike the steep Putvin Trail (FST 813) through Olympic National Forest gaining nearly 3,000 feet in less than 4 miles. Emerge in an alpine basin at Lake of the Angels (~4,900 feet), then traverse along the base of the cliffs short of St. Peter's Gate to a notch in the West Ridge, then scramble Class 3 up the ridge with some exposed class 4 moves to reach the South Peak summit.",
+   "turnaround": "Manage afternoon weather; the scramble itself has no fixed crux to gate, but loose rock warrants care.",
+   "auto_generated": true,
+   "alpine_grade": "Grade II",
+   "rock_grade": "Class 3 (short 4th-class crux)",
+   "ice_grade": null,
+   "gain_ft": 5000,
+   "loss_ft": 5000,
+   "dist_km": 8.9,
+   "max_angle": 35,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "South Couloir / Southwest Slope–West Ridge",
+   "permit": null,
+   "comms": "Cell phone coverage is unreliable or absent in the alpine basin and summit area; do not depend on cellular service. A satellite messenger (Garmin InReach, SPOT) is strongly recommended for emergency communication. Alert someone of your plan and expected return time before starting the hike.",
+   "descent": "Reverse the south slopes back to Lake of the Angels.",
+   "obj_haz": [
+    "Loose, crumbly volcanic rock (rockfall)",
+    "Steep snow/ice on approach slopes into early summer",
+    "Moat at the edge of the lingering snowfield near the summit",
+    "Exposed unprotected class 4 summit block",
+    "Route-finding in fog above Lake of the Angels"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5835,
+     "lng": -123.234,
+     "elev": 1600,
+     "name": "Putvin Trailhead (Trail #813)",
+     "note": "Same trailhead as the Putvin Trail route; unmarked pullout on Hamma Hamma River Rd (FR 25).",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Park at the unmarked pullout on Hamma Hamma River Road (Forest Service Road 25), about 1,600 feet, roughly 4.5 miles past the Lena Lake trailhead. A slide near road mile 10.5 has at times closed the last 1.2 miles of the road; check current Forest Service status, since a closure would add a road walk to reach the pullout. The Putvin Trail itself (#813) is a steep, primitive path, unmaintained in its upper reaches, and it starts climbing steeply right from the road."
+    },
+    {
+     "lat": 47.5965636,
+     "lng": -123.2736027,
+     "elev": 4900,
+     "name": "Lake of the Angels",
+     "type": "Campsite",
+     "distMi": 3.4,
+     "elevFt": 4900
+    },
+    {
+     "lat": 47.60632,
+     "lng": -123.266607,
+     "elev": 6612,
+     "name": "Mount Stone Summit (South)",
+     "type": "Summit",
+     "distMi": 4.8,
+     "elevFt": 6612
+    }
+   ],
+   "elev_pts": [
+    1720,
+    1720,
+    1724,
+    1728,
+    1735,
+    1744,
+    1754,
+    1762,
+    1771,
+    1780,
+    1788,
+    1795,
+    1802,
+    1810,
+    1817,
+    1824,
+    1831,
+    1840,
+    1848,
+    1857,
+    1866,
+    1875,
+    1885,
+    1894,
+    1903,
+    1911,
+    1920,
+    1927,
+    1936,
+    1945,
+    1952,
+    1958,
+    1963,
+    1968,
+    1971,
+    1975,
+    1983,
+    1991,
+    2001,
+    2011,
+    2021,
+    2032,
+    2042,
+    2052,
+    2063,
+    2076,
+    2087,
+    2096,
+    2105,
+    2111,
+    2115,
+    2120,
+    2125,
+    2130,
+    2135,
+    2141,
+    2147,
+    2154,
+    2163,
+    2170,
+    2178,
+    2185,
+    2189,
+    2190,
+    2190,
+    2193,
+    2195,
+    2201,
+    2211,
+    2224,
+    2236,
+    2249,
+    2262,
+    2273,
+    2282,
+    2291,
+    2301,
+    2310,
+    2320,
+    2330,
+    2341,
+    2350,
+    2357,
+    2361,
+    2362,
+    2360,
+    2353,
+    2347,
+    2343,
+    2341,
+    2342,
+    2347,
+    2351,
+    2355,
+    2360,
+    2363,
+    2366,
+    2370,
+    2375,
+    2380,
+    2387,
+    2393,
+    2398,
+    2402,
+    2404,
+    2404,
+    2404,
+    2405,
+    2403,
+    2404,
+    2405,
+    2409,
+    2414,
+    2420,
+    2427,
+    2433,
+    2440,
+    2449,
+    2460,
+    2473,
+    2486,
+    2499,
+    2510,
+    2517,
+    2523,
+    2525,
+    2523,
+    2522,
+    2524,
+    2530,
+    2541,
+    2555,
+    2572,
+    2589,
+    2604,
+    2621,
+    2637,
+    2652,
+    2667,
+    2681,
+    2693,
+    2704,
+    2714,
+    2722,
+    2729,
+    2735,
+    2742,
+    2749,
+    2757,
+    2765,
+    2772,
+    2778,
+    2784,
+    2790,
+    2795,
+    2800,
+    2805,
+    2809,
+    2815,
+    2822,
+    2831,
+    2843,
+    2857,
+    2869,
+    2881,
+    2893,
+    2909,
+    2926,
+    2947,
+    2969,
+    2990,
+    3011,
+    3032,
+    3050,
+    3066,
+    3083,
+    3101,
+    3116,
+    3132,
+    3148,
+    3163,
+    3176,
+    3189,
+    3204,
+    3220,
+    3236,
+    3254,
+    3271,
+    3288,
+    3308,
+    3327,
+    3345,
+    3364,
+    3381,
+    3396,
+    3409,
+    3420,
+    3430,
+    3442,
+    3454,
+    3468,
+    3486,
+    3506,
+    3525,
+    3542,
+    3557,
+    3570,
+    3582,
+    3593,
+    3605,
+    3616,
+    3625,
+    3635,
+    3645,
+    3656,
+    3668,
+    3682,
+    3695,
+    3707,
+    3716,
+    3723,
+    3729,
+    3732,
+    3736,
+    3742,
+    3751,
+    3759,
+    3769,
+    3781,
+    3793,
+    3807,
+    3821,
+    3837,
+    3853,
+    3871,
+    3885,
+    3903,
+    3923,
+    3941,
+    3961,
+    3987,
+    4011,
+    4034,
+    4056,
+    4086,
+    4114,
+    4139,
+    4164,
+    4193,
+    4215,
+    4236,
+    4257,
+    4280,
+    4299,
+    4316,
+    4332,
+    4347,
+    4359,
+    4369,
+    4378,
+    4386,
+    4393,
+    4400,
+    4405,
+    4409,
+    4413,
+    4414,
+    4411,
+    4409,
+    4411,
+    4414,
+    4421,
+    4436,
+    4450,
+    4462,
+    4473,
+    4481,
+    4488,
+    4496,
+    4504,
+    4514,
+    4527,
+    4539,
+    4549,
+    4559,
+    4566,
+    4568,
+    4570,
+    4571,
+    4570,
+    4570,
+    4571,
+    4573,
+    4578,
+    4584,
+    4592,
+    4601,
+    4609,
+    4614,
+    4618,
+    4619,
+    4618,
+    4617,
+    4617,
+    4618,
+    4618,
+    4619,
+    4618,
+    4618,
+    4617,
+    4616,
+    4614,
+    4613,
+    4612,
+    4614,
+    4621,
+    4630,
+    4639,
+    4646,
+    4647,
+    4642,
+    4635,
+    4628,
+    4622,
+    4620,
+    4621,
+    4621,
+    4622,
+    4623,
+    4625,
+    4628,
+    4634,
+    4643,
+    4653,
+    4667,
+    4682,
+    4699,
+    4719,
+    4741,
+    4765,
+    4791,
+    4816,
+    4839,
+    4861,
+    4878,
+    4890,
+    4900,
+    4907,
+    4913,
+    4919,
+    4925,
+    4931,
+    4935,
+    4938,
+    4938,
+    4937,
+    4935,
+    4935,
+    4937,
+    4941,
+    4947,
+    4951,
+    4954,
+    4955,
+    4957,
+    4961,
+    4968,
+    4982,
+    4999,
+    5019,
+    5041,
+    5062,
+    5079,
+    5095,
+    5109,
+    5122,
+    5131,
+    5139,
+    5147,
+    5158,
+    5172,
+    5190,
+    5210,
+    5228,
+    5244,
+    5256,
+    5267,
+    5277,
+    5285,
+    5294,
+    5303,
+    5312,
+    5321,
+    5329,
+    5335,
+    5340,
+    5343,
+    5345,
+    5347,
+    5351,
+    5358,
+    5368,
+    5382,
+    5398,
+    5417,
+    5435,
+    5453,
+    5469,
+    5482,
+    5491,
+    5499,
+    5505,
+    5511,
+    5517,
+    5524,
+    5533,
+    5544,
+    5557,
+    5571,
+    5586,
+    5602,
+    5620,
+    5635,
+    5647,
+    5657,
+    5666,
+    5672,
+    5679,
+    5689,
+    5702,
+    5715,
+    5730,
+    5748,
+    5765,
+    5784,
+    5804,
+    5827,
+    5850,
+    5873,
+    5895,
+    5917,
+    5935,
+    5949,
+    5962,
+    5974,
+    5987,
+    6000,
+    6017,
+    6037,
+    6056,
+    6073,
+    6096,
+    6118,
+    6137,
+    6153,
+    6173,
+    6186,
+    6200,
+    6220,
+    6245,
+    6266,
+    6282,
+    6295,
+    6298,
+    6295,
+    6289,
+    6284,
+    6281,
+    6281,
+    6280,
+    6282,
+    6290,
+    6300,
+    6312,
+    6326,
+    6339,
+    6351,
+    6357,
+    6361
+   ],
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 13,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 4,
+    "recommendedStart": "6:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4,
+      "note": "The Putvin Trail is short but brutally steep, with root/rock scrambling in the headwall section, so most parties carrying overnight gear treat this as its own half-day rather than …",
+      "fromTo": "Backpack in to Lake of the Angels",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Break camp, climb the cliff-base traverse and west ridge to the summit, then descend past Lake of the Angels and all the way back down the Putvin Trail to the car — a big second day, but it avoid…",
+      "fromTo": "Summit day and hike all the way out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Helmets are essential due to loose Olympic basalt and rockfall hazard. Ice axes recommended for travel June-July when snow and ice patches are common. Microspikes useful for frozen snow. Trekking poles recommended for steep descent on Putvin Trail.",
+   "what_to_bring": [
+    "10 essentials (map, compass, sunscreen, first aid, knife, fire starter, shelter, extra clothes, extra food, extra water)",
+    "3+ liters water capacity",
+    "High-calorie snacks and lunch",
+    "Warm insulating layers (fleece/down)",
+    "Weatherproof shell jacket and pants",
+    "Sun protection (hat, sunglasses, sunscreen)",
+    "Headlamp with extra batteries",
+    "Insect repellent",
+    "Backpack (20-25L for day hike, 40L+ for overnight)"
+   ],
+   "pro_tips": [
+    "Camp at Lake of the Angels (~4,900 ft) to split the long day and enjoy the alpine basin",
+    "Carry an ice axe before late July — the St. Peter's Gate saddle holds snow/ice well into summer",
+    "Pace the Putvin Trail conservatively; it gains nearly 3,000 ft in under 4 miles"
+   ],
+   "watch_out": [
+    "Some parties rate the summit-block moves class 4, not class 3 — be prepared to downclimb the same terrain",
+    "Loose rock above Lake of the Angels; helmet recommended and keep parties tight through the gully"
+   ],
+   "pro_needs": "Rock scrambling experience, comfortable with exposure, navigation skills (map, compass, GPS). Helmets recommended due to rockfall hazard and loose rock common to Olympic basalt.",
+   "best_season": "Late July through September is most reliable; the headwall gully and St. Peter's Gate saddle can hold snow/ice into July, and the Hood Canal convergence zone can bring afternoon cloud or showers even in midsummer.",
+   "high_point_ft": 6612,
+   "aid_grade": null,
+   "approach": "From the Putvin Trailhead on Hamma Hamma River Road (FS 25, ~1,600 ft), the Putvin Trail (#813) is a steep, primitive trail, unmaintained in its upper reaches, that climbs steeply and directly from the start — expect root-staircase steps and a boot-track tread through forest for the first mile. About halfway up, the trail meets a rock headwall that requires hand-over-hand climbing; a large tree root serves as the key handhold, and on at least one especially steep pitch a fixed handline rope has historically been in place to assist. Above the headwall the trail eases into subalpine forest and heather meadows, passing near Whitehorse Basin and the Pond of the False Prophet before reaching Lake of the Angels (~4,850 ft) in a dramatic cirque below Mt. Stone's south face and the St. Peter's Gate notch — about 3 miles and roughly 3,000 ft of gain from the road. There is little to no reliable water on the lower trail; carry enough to reach the lake, and expect the trail to be slick when wet and to hold snow on shaded steps into early summer. From the lake, contour/climb toward St. Peter's Gate; just before the gate, turn sharply left (south) and traverse along the base of the cliffs to a notch in Mt. Stone's west ridge. Turn right at the notch and climb directly toward it, arriving at a first sub-summit rock; climb a short, low-Class-3 chimney to its top, cross a brief, somewhat exposed ridge to the base of the true summit spire, then follow a groove in the rock on the left side that bends right, where a faint climbers' path leads the last steps to the summit. The route is Class 3, with a few moves on the summit block that some parties rate Class 4 (rated Grade I in the Olympic Mountains climbing guide); from Lake of the Angels camp, figure roughly 2.5 hours up to the summit.",
+   "descent_text": "Descend by reversing the same west-ridge/south-face scramble line back through the summit groove, exposed ridge, and chimney to the notch, then retrace the cliff-base traverse back to Lake of the Angels — allow roughly 1.5 hours summit-to-camp per the Olympic Mountains climbing guide. From Lake of the Angels, descend the Putvin Trail the way you came: the rock headwall (tree-root handhold, sometimes a fixed handline) and the trail's many steep, loose, root-braided sections are noticeably harder on tired legs headed downhill — face-in downclimbing at the headwall and trekking poles on the lower switchbacks are both recommended. This is a walk-off/scramble descent on the standard route; no rappelling is required anywhere on the climb or the trail, and no fixed rappel anchors exist on this line.",
+   "bail": "Retreat to Lake of the Angels is straightforward from the slopes.",
+   "pitch_detail": [
+    {
+     "grade": "Steep trail",
+     "notes": "An unmaintained, very steep climbers' trail from Hamma Hamma River Road that climbs roughly 3,000 ft in about 3 miles to Lake of the Angels. Carry water: the lower trail is largely dry, and roots and steps are slick when wet.",
+     "pitch": "Putvin Trail approach"
+    },
+    {
+     "grade": "Class 2–3, hands on",
+     "notes": "Midway up, the trail meets a rock headwall climbed hand over hand on roots, sometimes with a fixed handline. Above it a climbers' path leads to a small meadow near 4,400 ft. Downclimb it facing in on the way out.",
+     "pitch": "Headwall to meadow"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Continue north from the meadow and the lake toward St. Peter's Gate, the notch in the ridge above the basin. This ground can stay snow-covered into summer.",
+     "pitch": "Meadow to St. Peter's Gate"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Just before the Gate, turn sharply left (south) and traverse along the base of the cliffs to a notch in the west ridge. Parties who lose the faint path here are drawn up into steeper Class 3–4 gullies on the south face; stay with the cliff base.",
+     "pitch": "Traverse to west-ridge notch"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Turn right at the notch and scramble a couple of hundred feet to a first sub-summit, finishing up a short low-Class-3 chimney. Beyond it, a shallow hanging basin with a small lingering snowfield leads across toward the summit block.",
+     "pitch": "West ridge to hanging basin"
+    },
+    {
+     "grade": "Class 3, Class 4 moves",
+     "notes": "A short, somewhat exposed ridge reaches the base of the summit spire. Climb the groove on its left side, which bends right, then a faint path to the top; the rock is solid pillow basalt, with a few Class 4 moves reported. Reverse the same line to descend.",
+     "pitch": "Summit block"
+    }
+   ],
+   "itinerary": {
+    "cal": "Overnight camping at Lake of the Angels is inside Olympic National Park (a wilderness permit is required), but it's a heavily used, fragile alpine basin — camp on durable/established sites only.",
+    "days": [
+     {
+      "n": 1,
+      "note": "The Putvin Trail is short but brutally steep, with root/rock scrambling in the headwall section, so most parties carrying overnight gear treat this as its own half-day rather than rushing straight up to a summit push.",
+      "hours": 4,
+      "miles": 3.5,
+      "title": "Backpack in to Lake of the Angels",
+      "gainFt": 3300,
+      "lossFt": 150,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Establish camp at Lake of the Angels"
+     },
+     {
+      "n": 2,
+      "note": "Break camp, climb the cliff-base traverse and west ridge to the summit, then descend past Lake of the Angels and all the way back down the Putvin Trail to the car — a big second day, but it avoids a third day in camp.",
+      "hours": 9,
+      "miles": 5.8,
+      "title": "Summit day and hike all the way out",
+      "gainFt": 1800,
+      "lossFt": 5100,
+      "packLb": 30,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Break camp, start toward the west-ridge notch",
+        "detail": ""
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Summit Mount Stone (6,612 ft)",
+        "detail": "Short Class 3-4 near the top."
+       },
+       {
+        "time": "10:00 AM",
+        "label": "Back at camp, pack up fully",
+        "detail": ""
+       },
+       {
+        "time": "3:00-4:00 PM",
+        "label": "Reach Putvin trailhead",
+        "detail": "Steep, knee-jarring descent — many report it's harder than the climb."
+       }
+      ],
+      "objective": "Climb Mount Stone from camp, then break camp and exit to the trailhead"
+     }
+    ],
+    "totalNote": "A relaxed 2-day version of the same mountain: one night at Lake of the Angels, then summit and hike all the way back out on day 2 (~9.3 mi / 5,100 ft total)."
+   },
+   "access": {
+    "fees": "Overnight wilderness permit: $6 non-refundable reservation fee plus $8/person/night (ages 15 and under free).",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Standard Mount Skokomish Wilderness / Olympic NP backcountry rules above Lake of the Angels: no campfires, camp on durable or existing sites, store food securely.",
+    "permit": "No permit needed for a day scramble. Overnight camping at Lake of the Angels requires an Olympic National Park wilderness permit (reserved via recreation.gov, issued by the park's Wilderness Information Center).",
+    "group_limit": 12,
+    "landManager": "Olympic National Forest (Hood Canal Ranger District) for the Putvin Trail approach; Olympic National Park for the upper basin, Lake of the Angels, and summit.",
+    "land_manager": "Olympic National Forest (Hood Canal Ranger District) for the Putvin Trail approach; Olympic National Park for the upper basin, Lake of the Angels, and summit.",
+    "parking_pass": "No parking pass or fee is needed at the Putvin Trailhead.",
+    "passRequired": "None — no parking pass or fee is needed at the Putvin Trailhead.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness camping permit",
+     "where": "Get it in advance on Recreation.gov, by phone, or in person at a park Wilderness Information Center."
+    }
+   },
+   "road": {
+    "name": "Hamma Hamma River Road (Forest Road 25)",
+    "status": "Paved for about 7.5 miles to the Lena Lake Trailhead, then roughly 4.5 miles of gravel (occasional potholes) to the Putvin Trail pullout near mile marker 12.",
+    "driveNote": "From Hoodsport, drive north on US-101 about 14 miles to milepost 318, then turn west onto Hamma Hamma River Road.",
+    "seasonalGate": "Not formally gated but not maintained in winter; the road has a history of washouts on the gravel section — check current Olympic National Forest road conditions before driving."
+   },
+   "climate": {
+    "typical": "Wet, mild maritime climate typical of the southeastern Olympics/Hood Canal; north-facing snow lingers into July.",
+    "bySeason": {
+     "fall": "Good conditions can persist into September/early October before fall rains return.",
+     "spring": "Upper mountain typically still snow-covered into June.",
+     "summer": "July–September is the driest window, though Hood Canal convergence-zone clouds/showers can still occur.",
+     "winter": "Heavy snow; road often impassable and the upper gullies become avalanche terrain."
+    },
+    "forecastZone": "NWAC Olympics zone"
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable in the Hamma Hamma valley and Lake of the Angels basin; the most reliable signal is usually back on US-101.",
+    "county": "Mason County, WA",
+    "rangerStation": "Hood Canal Ranger District, Olympic National Forest — (360) 765-2200",
+    "nearestHospital": "Mason General Hospital (Mason Health), 901 Mountain View Dr, Shelton, WA — Level IV trauma/critical access hospital, roughly 30 miles from the Hamma Hamma trailhead via US-101.",
+    "sheriffDispatch": "Mason County Sheriff's Office; Mason County Search & Rescue handles Olympic NF callouts in this area."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "weekends July-August, especially around wildflower bloom",
+    "solitudeRating": 3,
+    "estimatePerSeason": "Moderate - roughly 15-30 parties/hikers per weekend at Lake of the Angels itself in peak summer, but only a fraction continue up the Class 3 scramble to the true summit; likely under 10-15 summit parties per weekend"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Fit enough for ~11 miles round trip with roughly 5,000 ft of gain on a steep, unmaintained trail before the scramble even starts",
+     "packWeight": "Light overnight or day pack (15-30 lb) - most parties camp at Lake of the Angels (~4,900 ft) and go light for the summit push"
+    },
+    "approachTime": "Half day to Lake of the Angels via the steep Putvin Trail (~3-4 miles, ~3,300 ft gain), then a further push to the saddle/ridge below the summit",
+    "requiredSkills": [
+     "Class 3 scrambling",
+     "route-finding off-trail",
+     "basic self-arrest/steep-snow judgment for early season",
+     "comfort on exposed grass/rock benches"
+    ],
+    "experienceLevel": "Comfortable with sustained Class 3 scrambling and route-finding on grass/rock benches without a marked path; prior scrambling above Lake of the Angels or similar Olympics terrain is a plus"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Trail and gullies likely clearing of snow but lingering early-season snow patches can still complicate the approach and lower slopes",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Most reliably snow-free conditions on the south-facing slopes and gullies, best rock/grass scrambling",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Stable dry conditions continue but days shorten and early fall weather systems can bring rain or first snow late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime Olympics weather - can shift quickly from clear to socked-in cloud/rain even in summer",
+     "probability": "Afternoon convective buildups possible in July-August; watch for fast-moving weather off the Pacific"
+    },
+    "exposure": "Class 3 exposure near the summit block and on the south slope gullies/benches; a slip on wet rock or lingering snow could result in a serious fall - consistent with the exposed scramble moves near the summit",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "Primary route pages (Mountaineers.org, SummitPost) returned 403 errors on direct fetch; details are drawn from search-snippet excerpts and secondary trip reports.",
+     "Exact round-trip mileage/gain vary by source and line taken (9–11 mi, 5,000–5,200 ft cited across sources).",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.60632,
+    "peakLng": -123.266607,
+    "trailhead": "Putvin Trailhead (Trail #813)",
+    "trailheadLat": 47.5835,
+    "trailheadLng": -123.234
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none (unroped)",
+   "rope_length_m": null,
+   "rope_note": "Predominantly Class 3 with brief Class 4 moves on the summit block; ~5,000 ft gain, 11 mi RT via Putvin Trail. Typically climbed unroped by scramblers comfortable with exposure.",
+   "ascender": null,
+   "corrections": "None — consistent across sources.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Putvin Trail from Hamma Hamma Road to Lake of the Angels",
+     "notes": "From the Putvin Trailhead on Hamma Hamma River Road (FS 25) at about 1,565-1,600 ft — an unmarked roadside pullout, roughly 4.5 miles past the Lena Lake Trailhead — the Putvin Trail is an unmaintained, primitive user trail that climbs steeply and directly from the first steps. Expect root-staircase steps and boot-track tread through forest for the first mile. In recent years a slide near road mile 10.5 has at times blocked the last 1.2 miles of road, adding a road-walk; check Forest Service status.\n\nAbout halfway up the trail meets a rock headwall requiring hand-over-hand climbing, with a large tree root as the key handhold and, historically, a fixed handline on the steepest pitch. Above it the trail eases into subalpine forest and heather meadows, passing near Whitehorse Basin and the Pond of the False Prophet, and reaches Lake of the Angels at roughly 4,850-4,920 ft in a cirque below Mount Stone's south face — about 3 to 3.5 miles and 3,000 ft of gain. Little to no reliable water on the lower trail; carry enough to reach the lake.",
+     "season": "Roughly Jun-Sep. Snow lingers in the basin above the lake well into summer",
+     "hazards": [
+      "Trail-less, route-finding-dependent terrain above Lake of the Angels",
+      "Near-vertical root and rock steps on the lower Putvin Trail, genuinely exposed when wet, and worse descending on tired legs",
+      "Loose rock on the headwall and summit block with rockfall onto parties below",
+      "An ambiguous Class 3/4 crux near the summit",
+      "Fog is common here and multiple parties have lost the route on the upper mountain"
+     ],
+     "primary": true,
+     "baseFinding": "THE BASE OF THE CLIMB IS A NOTCH IN MOUNT STONE'S WEST RIDGE, AND THE TEST FOR IT IS A TURN YOU MAKE BEFORE A GATE. From Lake of the Angels contour and climb toward ST. PETER'S GATE — the obvious notch above the basin. JUST BEFORE THE GATE, TURN SHARPLY LEFT (SOUTH) and traverse along the BASE OF THE CLIFFS to a notch in the west ridge. If you walk through St. Peter's Gate, you have gone too far; the Gate is the marker you turn short of, not the one you pass through. That works in cloud because the cliff base is a tactile handrail: once you have made the turn, you keep rock on one side of you the whole traverse. Lose contact with the cliff and you have drifted downhill. SECOND TEST, at the notch: turn RIGHT and climb toward a first sub-summit rock, then up a short LOW CLASS 3 CHIMNEY to its top. A chimney is a shape you can feel with both hands. If the first difficulty above the notch is a face or a slab rather than a chimney you can bridge, you are not on the line. THIRD TEST, on the summit spire: from the sub-summit cross a brief, somewhat exposed ridge to the base of the true summit spire, then follow a GROOVE on the LEFT side that BENDS RIGHT, where a faint climbers' path leads the last steps to the top. Left then right — a groove that runs straight up is not it. WHAT THE ROUTE'S OWN TIMING SAYS: about 2.5 hours up from the Lake of the Angels camp and about 1.5 hours back down. If you have been on the ground above the lake far longer than that without finding the notch, you have most likely missed the turn short of the Gate. FOG WARNING SPECIFIC TO THIS MOUNTAIN: Mount Stone has more than one summit, and parties have confused the true south summit with the Middle and North summits in cloud. Count your ridges."
+    },
+    {
+     "name": "Lena Lake and Upper Lena Lake, the St. Peter's traverse from the east",
+     "notes": "The other side of the same notch. From the Lena Lake Trailhead on FS 25 at roughly 600-750 ft, take the well-graded Lena Lake Trail #810 about 3 miles to Lena Lake at about 1,800 ft, then the steep primitive tread up the West Fork Lena Creek drainage roughly 3.5 more miles to Upper Lena Lake at about 4,550 ft, some 6.5 miles and 4,000 ft from the trailhead. Upper Lena Lake is the last maintained-trail camp and the last reliable water before the traverse goes cross-country; wilderness permit and bear canister required.\n\nFrom Upper Lena Lake, leave the trail and head west on the Scout Lake way-trail across meadows and heather past Lena Tarn to Scout Pass at about 5,200 ft, down slightly to Upper Scout Lake, round it into Scout Basin, and up to Ullin's Pass at about 5,000 ft above the tarns known as Ullin's Bathtubs. From there a rising traverse above the small lakes leads to a snow ramp across a steep hillside below Mount Stone that ends at a loose moraine, and then exposed dirt-and-mud slopes to St. Peter's Gate at about 5,950 ft.\n\nThis is a two- or three-day trip and it is chosen for the country it crosses, not because it is quicker.",
+     "season": "Roughly Jul-Sep, once the off-trail benches and passes are largely clear",
+     "hazards": [
+      "Extensive off-trail way-trail route-finding over multiple passes and basins with faint tread",
+      "Loose glacial moraine of all sizes near St. Peter's Gate and exposed dirt-and-mud slopes on the final ramp",
+      "Fog on the upper mountain — multiple parties have lost the route here and ended up in harder terrain",
+      "No dependable water between Upper Lena Lake and the tarns near Ullin's Pass",
+      "A very long approach with limited bail options partway through"
+     ],
+     "baseFinding": "COMING FROM THE EAST YOU ARRIVE AT ST. PETER'S GATE ITSELF, WHICH IS THE HIGH POINT OF THE TRAVERSE AT ABOUT 5,950 FT AND AN OBVIOUS ROCKY NOTCH IN MOUNT STONE'S SOUTHEAST RIDGE. That is the arrival test and it is unmistakable in any weather: the ground stops rising, the notch pinches, and the Lake of the Angels basin opens on the far side. FROM THE GATE THERE ARE TWO WAYS ONTO THE PEAK AND THEY ARE DIFFERENT CLIMBS. The one this route describes is the west-ridge notch: go THROUGH the Gate and drop toward the Lake of the Angels basin, then work back up and turn the corner onto the cliff-base traverse to the notch in the WEST ridge — the same notch the Putvin parties reach by turning sharply left just short of the Gate. The other is the south-face gully, which starts by descending about 300 ft from the Gate to the base of a basalt cliff; that is the Lena Lake traverse route's line, not this one. SO THE FOG TEST FOR THIS VARIANT IS WHICH SIDE OF THE GATE YOU END UP ON: this route goes over to the Lake of the Angels side and approaches the west ridge from the south-west, keeping the cliff base at your shoulder. ABOVE THE NOTCH THE TESTS ARE IDENTICAL to the Putvin variant: turn right, low Class 3 CHIMNEY to a sub-summit, a brief exposed ridge, then a GROOVE on the LEFT that BENDS RIGHT to the true south summit."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "Class 3",
+     "label": "Traverse to the west-ridge notch",
+     "notes": "From Lake of the Angels contour/climb toward St. Peter's Gate; just before the gate, turn sharply left (south) and traverse along the base of the cliffs to a notch in Mt. Stone's west ridge."
+    },
+    {
+     "n": 2,
+     "class": "low Class 3",
+     "label": "Chimney to the first sub-summit",
+     "notes": "Turn right at the notch and climb directly toward it, arriving at a first sub-summit rock; climb a short, low-Class-3 chimney to its top."
+    },
+    {
+     "n": 3,
+     "class": "Class 3",
+     "label": "Exposed ridge to the summit spire",
+     "notes": "Cross a brief, somewhat exposed ridge to the base of the true summit spire."
+    },
+    {
+     "n": 4,
+     "class": "Class 3",
+     "label": "Groove on the left side to the summit",
+     "notes": "Follow a groove in the rock on the left side that bends right, where a faint climbers' path leads the last steps to the summit. The route is Class 3, with a few moves on the summit block that some parties rate Class 4 (rated Grade I in the Olympic Mountains climbing guide); figure roughly 2.5 hours up from Lake of the Angels camp."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4900,
+     "name": "Lake of the Angels",
+     "role": "main",
+     "type": "camp",
+     "notes": "The base for Mount Skokomish and for the south side of Mount Stone, and one of the best-placed camps in the Olympics for a climber. About 3.5 miles and 3,400 ft from the Putvin trailhead, which understates it badly — the trail is notoriously steep, with hand-over-hand sections on rock and root where a slip has real consequence, and it is slow going with an overnight pack. From the basin the east slopes of Mount Skokomish are a straightforward scramble, and Mount Stone is gained by working north toward St. Peter's Gate, so a fit party can take both peaks in one day from these tents. The four sites and the meadow are the constraint: this is a fragile alpine basin that has been loved hard, so camp only on the designated ground and expect company. Best from mid-July, once the steep upper trail is clear of snow, through September. Early season the last pitch to the basin holds snow and the trail is genuinely hazardous when wet.",
+     "water": "The lake, but READ THIS ONE CAREFULLY. It is a shallow basin lake fed by snowmelt with no significant inlet, so it draws down through the summer and by a dry late season it can be low, warm and unappealing, and the meadow seeps around it disappear entirely. There is a good spring roughly two miles up the Putvin trail that is often the last dependable water on a dry year. Late-season parties should plan to carry water up from lower on the trail rather than count on finding it in the basin",
+     "permit": "OLYMPIC NATIONAL PARK WILDERNESS PERMIT REQUIRED — the trail crosses the park boundary shortly before the final climb into the basin, having already passed through the Mount Skokomish Wilderness on Forest Service ground below. Book through Recreation.gov or obtain the permit from a park wilderness information office; per-person nightly fees apply. An animal-resistant food container is required. NO CAMPFIRES — the basin is far above the 3,500 ft fire limit and this is stove-only ground. No dogs. No Northwest Forest Pass or other parking pass is needed at the Putvin trailhead itself, which is unusual for this road and worth knowing",
+     "capacity": "Four designated sites in the upper basin. Four. It is a small hanging meadow and there is no overflow ground that is acceptable to camp on"
+    },
+    {
+     "elev": 700,
+     "name": "Hamma Hamma River road campgrounds — Lena Creek and Hamma Hamma",
+     "role": "route",
+     "type": "camp",
+     "notes": "The drive-in staging option for everything on the Hamma Hamma side: Lena Lake and The Brothers, the Putvin trail to Lake of the Angels for Mount Skokomish and Mount Stone, and the Jefferson Creek spur for Mount Pershing. Lena Creek is the more useful of the two because it sits essentially at the Lena Lake trailhead, so a party arriving late can sleep at the car and start walking at first light instead of driving the gravel in the dark. This is a CONTINGENCY AND STAGING SITE RATHER THAN THE NORMAL PLAN for anyone climbing here — the objectives are all hours above it — but it is the right answer for a party that arrives after dark, gets weathered off, or comes out late and does not want to drive home tired. Being at 700 ft it is usable long before the high camps melt out, which makes it the practical base for an early-season Brothers attempt.",
+     "water": "NO POTABLE WATER AT EITHER CAMPGROUND — this catches people out. The Hamma Hamma River runs alongside both and can be filtered, but bring drinking water from Hoodsport",
+     "permit": "Modest per-night Forest Service fee with an extra vehicle charge, paid at the fee machine, which is cashless. No reservation system and no wilderness permit — this is developed Forest Service camping. Fire rings and picnic tables at each site, vault toilets, no hookups. Typically open from mid-May into late October and gated the rest of the year",
+     "capacity": "Lena Creek has around thirteen well-spaced sites at the Lena Lake trailhead junction; Hamma Hamma has around fifteen a couple of miles further down the river. Both first come, first served, no reservations"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_mount_seattle_south",
+  "name": "South Slopes (Standard)",
+  "area": {
+   "id": "wa_mount_seattle",
+   "name": "Mount Seattle",
+   "parent_id": "wa_central_olympics",
+   "elevation_ft": 6246,
+   "lat": 47.730995,
+   "lng": -123.577965
+  },
+  "prior_findings": "Mount Seattle Elwha itinerary omits the Madison Falls road walk (check which Mount Seattle row carries the Elwha itinerary).",
+  "earlier_research": [
+   {
+    "file": "r522.json",
+    "fact": "Trailhead / approach side",
+    "status": "unresolved",
+    "correct_value": "The standard approach is from the North Fork Quinault trailhead (16 mi to Low Divide by the river trail); the Elwha from Whiskey Bend is a much longer alternative (about 28 mi to Low Divide plus a ~7 mi closed-road walk).",
+    "evidence": "NPS's North Fork Quinault page gives 16 mi from the trailhead (519 ft) to Low Divide (3,602 ft); the Mazamas route listing describes Mount Seattle as a ~19 mi approach along the North Fork Quinault. The row's trailhead card, waypoints, beta and route breakdown use the Quinault side, but the entire itinerary (6 days, per-day miles/gain/loss), timing.sectionBreakdown, road card, pro_tips, partner_requirements and descent are a coherent Elwha plan. Making them agree means rebuilding the itinerary and timing for the Quinault side with per-day gain/loss figures no source states, so no patch is written; needs a rebuild of the itinerary/timing/road for the North Fork Quinault approach.",
+    "sources": [
+     "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+     "https://mazamas.org/activity/286/",
+     "https://trailsnw.com/trails/olympics/skyline"
+    ]
+   },
+   {
+    "file": "r522.json",
+    "fact": "Season window",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Jul-Sep",
+    "evidence": "best_season, seasonal_guidance (Jul/Aug/Sep only), climate.summer, climate.bySeason.summer and approach_variants[0].season all put the window in July-September; season Jun-Aug is the outlier. NPS's North Fork Quinault page says the upper trail is usually snow-covered through late June, supporting a July start. The June-August line in climate.typical is a generic regional-weather statement that contradicts the same sentence's mid-July-September window, so it is removed (along with its source attribution).",
+    "sources": [
+     "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+     "https://en.wikipedia.org/wiki/Mount_Seattle_(Washington)"
+    ]
+   },
+   {
+    "file": "r522.json",
+    "fact": "Order of Promise Creek Bench vs Low Divide",
+    "status": "fixed",
+    "correct_value": "Promise Creek Bench/Pass lies on the Skyline trail between Kimta Peak and Lake Beauty, well before Low Divide; it is not crossed between Low Divide and Seattle Meadows.",
+    "evidence": "NPS's Skyline Ridge Primitive Trail page places Promise Creek Pass between Kimta Peak and the Lake Beauty junction, with Low Divide 7.6 mi further on at the trail's end. An Oregon Hikers trip report likewise puts the rough trail above Promise Creek on the Kimta-Lake Beauty stretch. The row's own waypoints (Promise Creek Bench at 19 mi, Low Divide at 27) agree; Low Divide (3,602 ft) to Seattle Meadows (4,550 ft) is a climb, so 'down to camp' is also corrected to 'up'.",
+    "sources": [
+     "https://home.nps.gov/olym/planyourvisit/skyline-ridge-primitive-trail.htm",
+     "https://www.oregonhikers.org/forum/viewtopic.php?t=26205"
+    ]
+   },
+   {
+    "file": "r522.json",
+    "fact": "Low Divide mileage",
+    "status": "unresolved",
+    "correct_value": "16 mi by the North Fork Quinault River trail (pitch_detail[0] is correct); roughly 29-31 mi by the Skyline Ridge line the waypoints follow, so waypoints[5].distMi 27 and the approach's '16-20 miles depending on the line chosen' both understate the Skyline option.",
+    "evidence": "NPS gives 16 mi trailhead-to-Low Divide on the North Fork Quinault trail (trailsnw also calls the North Fork leg 16 miles). NPS gives ~22.8 mi from Three Lakes to Low Divide on the Skyline, and full Skyline-North Fork loop totals of 45 mi (WTA, trailsnw) and 47 mi (seekingultra) imply ~29-31 mi on the Skyline side, not 27. The 16 vs 27 difference is two different lines, not an error in pitch_detail; but the Skyline pin distances (Low Divide 27, Seattle Meadows 28.5, summit 30.5) are all keyed off the understated figure and the trailhead-to-Three Lakes leg is not firmly sourced, so no patch is written.",
+    "sources": [
+     "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+     "https://home.nps.gov/olym/planyourvisit/skyline-ridge-primitive-trail.htm",
+     "https://www.wta.org/go-hiking/hikes/skyline-primitive-quinault",
+     "http://seekingultra.blogspot.com/2015/06/skyline-north-fork-quinault-loop.html",
+     "https://trailsnw.com/trails/olympics/skyline"
+    ]
+   },
+   {
+    "file": "r522.json",
+    "fact": "Summit line description",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "Both fields describe the same line: scree up the west side, over the south ridge (via the southwest couloir) onto the east side, then a Class 2-3 finish on the east ridge of the summit, which is the slightly higher south peak. A trip report of this exact route gives that sequence, and the Mazamas/Wikipedia descriptions confirm the south peak is the slightly higher one.",
+    "sources": [
+     "https://trailcatjim.com/skyline-trail-loop-three-lakes-low-divide-mt-seattle/",
+     "https://mazamas.org/activity/286/"
+    ]
+   },
+   {
+    "file": "s050.json",
+    "fact": "Trailhead / approach side",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "Both approaches are real and the approach prose already presents them as two options (North Fork Quinault ~16 mi to Low Divide per the park; Elwha from Whiskey Bend, whose road is closed to vehicles at Madison Falls). The contradiction is structural: the trailhead card, waypoints, beta and route breakdown are a Quinault plan, while the whole itinerary, timing breakdown, road card, descent, pro_tips and partner_requirements are an Elwha plan. No source supplies per-day gain/loss/hours for either side, so no patch; settling it needs an owner decision on which approach the page plans, then a rebuild of the other side's fields.",
+    "sources": [
+     "https://home.nps.gov/olym/planyourvisit/north-for-quinault.htm",
+     "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide",
+     "https://home.nps.gov/olym/planyourvisit/current-road-conditions.htm"
+    ]
+   },
+   {
+    "file": "s050.json",
+    "fact": "Elwha itinerary starts at Whiskey Bend although the road to it is closed",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "access.closures, road.status and the approach prose all say vehicles stop at Madison Falls, adding roughly 6-7 miles each way to Whiskey Bend; park road-conditions information confirms Whiskey Bend Road is closed to vehicles because of the Olympic Hot Springs Road washout. Yet itinerary day 1 and timing.sectionBreakdown[0] start 'From Whiskey Bend Trailhead' with 11 mi and 6.5 h, omitting the road walk. Fixing this means re-planning day miles/hours, which depends on the unresolved choice of approach side above.",
+    "sources": [
+     "https://home.nps.gov/olym/planyourvisit/current-road-conditions.htm",
+     "https://www.wta.org/go-hiking/hikes/whiskey-bend-to-low-divide"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_mount_seattle_noyes_basin",
+    "name": "Noyes Basin Route",
+    "grade": "Class 3"
+   },
+   {
+    "id": "wa_mount_seattle_seattle_creek",
+    "name": "Seattle Creek Basin Route",
+    "grade": "Class 3"
+   }
+  ],
+  "row": {
+   "id": "wa_mount_seattle_south",
+   "area_id": "wa_mount_seattle",
+   "name": "South Slopes (Standard)",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Sturdy boots for scree/talus",
+    "Ice axe (useful for lingering snow patches into early summer)",
+    "Approved hard-sided bear canister (required for overnight stays)",
+    "Map, compass, and altimeter — NPS stresses constant position-tracking given the lack of any marked route",
+    "Gaiters (brush on the Seattle Creek/Noyes Basin bushwhack approaches)",
+    "Helmet recommended on the looser scree/talus sections"
+   ],
+   "hazards": [
+    "Steep, brushy bushwhacking where the Seattle Creek drainage becomes too steep to climb directly",
+    "Loose scree and talus on both the west and east flanks, with rockfall risk onto parties below",
+    "Unbridged river/creek fords on the Elwha and North Fork Quinault approaches that can become dangerous after rain or during snowmelt",
+    "Extreme remoteness — multi-day approach from the nearest trailhead in either direction, with the NPS explicitly noting that emergency help is far away and frequently impossible to contact"
+   ],
+   "verif": null,
+   "overview": "Mount Seattle (6,246 ft) rises deep in the Olympic interior, about 7.5 miles southeast of Mount Olympus, within the Daniel J. Evans Wilderness of Olympic National Park. Its northeast aspect drops over 3,800 ft to the Elwha valley in only about 1.5 miles, but the standard scramble routes stay on the gentler south/west scree and talus slopes. The peak was named April 29, 1890 by James Halbold Christie and topographer Charles Adams Barnes of the Seattle Press Expedition, in honor of the city that sponsored their winter crossing of the range; it was first climbed in 1907 by Asahel Curtis, Grant Humes, and Lorenz Nelson while reconnoitering for a climbing club's first attempt on Mount Olympus. Reaching the base of the peak requires a long, committing wilderness approach from either the Elwha or North Fork Quinault drainages — there is no easy day-trip line to this summit.",
+   "beta": "Most parties base-camp at Seattle Meadows (~4,550 ft), reached via a multi-day approach up the North Fork Quinault River to Low Divide and then west into Seattle Creek Basin. From camp, climb scree slopes on the mountain's western side, cross over a ridge, and continue up scree and talus on the eastern side, finishing with a class 2-3 scramble on the east ridge/side to the craggy summit. Two other approach variants exist (via Noyes Basin, and a more direct line up Seattle Creek Basin itself), converging on the same upper-mountain scramble.",
+   "turnaround": "Because the upper mountain is loose scree/talus with real rockfall and slip potential, and the approach is long and entirely off-trail through remote wilderness, set a firm turnaround time before starting the summit push and commit to it — visibility loss (fog/cloud) on the unmarked upper slopes is the biggest threat to a safe descent, and there is no faster way down than the way up.",
+   "auto_generated": true,
+   "alpine_grade": "Grade I",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 7500,
+   "loss_ft": null,
+   "dist_km": 98.17,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "I",
+   "face": "West Slope - Southwest Couloir - South Ridge",
+   "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+   "comms": null,
+   "descent": "Reverse the south slopes back toward the Elwha Basin approach.",
+   "obj_haz": [
+    "loose/friable rock in places",
+    "off-trail routefinding",
+    "lingering snow into early summer",
+    "remote terrain with slow rescue response"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5759,
+     "lng": -123.648,
+     "elev": 500,
+     "name": "North Fork Quinault Trailhead (North Shore Road)",
+     "note": "Road's end on North Shore Road above Lake Quinault; Wilderness Information Center permit required, start of the Three Lakes / Skyline Ridge Primitive Trail.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.60059,
+     "lng": -123.72375,
+     "elev": 3175,
+     "name": "Three Lakes",
+     "note": "Established camp beside the largest of the Three Lakes (moss-covered shoreline); water from the outlet stream just north of the sites is the last dependable source before a dry 5.2-mile stretch toward Kimta Peak.",
+     "type": "Campsite",
+     "distMi": 6.9
+    },
+    {
+     "lat": 47.6975,
+     "lng": -123.6889,
+     "elev": 4700,
+     "name": "Kimta Peak",
+     "note": "Skyline Ridge Primitive Trail sidehills Kimta Peak's south flank; parties camp on a gravel flat in Kimta Basin here after the waterless stretch from Three Lakes.",
+     "type": "Junction",
+     "distMi": 16.5
+    },
+    {
+     "lat": 47.70395204761905,
+     "lng": -123.6568627857143,
+     "elev": 5340,
+     "name": "Promise Creek Bench",
+     "note": "High point of the Skyline Trail; NPS describes 'lunar-esque' loose rocky terrain here that demands careful routefinding, especially in fog.",
+     "type": "Hazard",
+     "distMi": 19
+    },
+    {
+     "lat": 47.7162655,
+     "lng": -123.6396276,
+     "elev": 5080,
+     "name": "Beauty (Lake Beauty) Pass",
+     "note": "Ridge crossing marked by cairns and marker ducks; a 0.3-mile spur drops to Lake Beauty camp with a view of Mount Olympus's south face.",
+     "type": "Junction",
+     "distMi": 22
+    },
+    {
+     "lat": 47.72481,
+     "lng": -123.55462,
+     "elev": 3602,
+     "name": "Low Divide",
+     "note": "Saddle between Mount Seattle and Mount Christie and the terminus of the Skyline Ridge Primitive Trail, near the historic Low Divide Ranger Station site.",
+     "type": "Junction",
+     "distMi": 27
+    },
+    {
+     "lat": 47.727303057142855,
+     "lng": -123.56447954285714,
+     "elev": 4550,
+     "name": "Seattle Meadows",
+     "note": "High camp in Upper Seattle Basin reached via a ~1,000 ft climb from Seattle Creek; standard launch point for the summit scramble, per route beta.",
+     "type": "Campsite",
+     "distMi": 28.5
+    },
+    {
+     "lat": 47.730995,
+     "lng": -123.577965,
+     "elev": 6246,
+     "name": "Mount Seattle",
+     "note": "True summit gained by a Class 2-3 scramble up the east ridge, crossing scree and talus slopes on the peak's eastern side above Upper Seattle Basin.",
+     "type": "Summit",
+     "distMi": 30.5
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 39.5,
+    "summitTimeHrs": 5,
+    "descentTimeHrs": 15.5,
+    "approachTimeHrs": 19,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "From Whiskey Bend Trailhead the trail rolls gently up the forested Elwha valley on old roadbed and single-track. Full packs, easy grade — this is mileage-banking, not climbing.",
+      "fromTo": "Approach up the Elwha River Trail",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6,
+      "note": "Continue upriver through old-growth rainforest and past historic homestead sites toward Chicago Camp, staging for the climb over Low Divide the next day.",
+      "fromTo": "Deeper into the Elwha valley",
+      "section": "Approach"
+     },
+     {
+      "hrs": 6.5,
+      "note": "Climb over 3,602 ft Low Divide, the pass between the Elwha and Quinault drainages, then continue into the upper Seattle Creek basin to a meadow camp at roughly 4,500 ft, directly b…",
+      "fromTo": "Over Low Divide to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5,
+      "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse…",
+      "fromTo": "Summit day",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "Drop back over Low Divide and retrace the Elwha River Trail as far as reasonable in a day — mostly downhill or flat, but long with a full pack after a summit day.",
+      "fromTo": "Start the long walk out",
+      "section": "Descent"
+     },
+     {
+      "hrs": 7.5,
+      "note": "Finish the descent down the Elwha valley to the cars. A long but easy-grade final day.",
+      "fromTo": "Hike out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "map and compass/GPS",
+    "extra layers",
+    "sun protection",
+    "ample water"
+   ],
+   "pro_tips": [
+    "Plan a multi-day trip — the Elwha approach is long",
+    "Combine with neighboring Olympic-interior summits to justify the approach"
+   ],
+   "watch_out": [
+    "long remote approach",
+    "early-season snow",
+    "river fords",
+    "loose rock"
+   ],
+   "pro_needs": "No technical protection is documented for this route — it is an unroped Class 3 scramble with no glacier travel per the published route description.",
+   "best_season": "Mid-July through September",
+   "high_point_ft": 6246,
+   "aid_grade": null,
+   "approach": "Two realistic approach corridors exist, both multi-day: (1) North Fork Quinault side — from the North Fork Quinault Trailhead at the end of the North Shore Road (not the South Shore Road, which leads to Graves Creek and the East Fork instead), follow the North Fork Quinault River Trail or the higher, rougher Skyline Ridge Primitive Trail (via Three Lakes and Kimta Peak) to Low Divide, roughly 16-20 miles one-way depending on the line chosen, then cross-country/climbers'-path to Seattle Meadows below the peak's south side. (2) Elwha side — from the Whiskey Bend trailhead (the road to it has been closed to vehicles at Madison Falls since November 2017 flood damage, adding about seven miles each way on foot or bike), follow the Elwha River Trail up the Elwha valley toward Elwha Basin/Low Divide (on the order of 20+ miles one-way), then leave trail to climb into Seattle Creek Basin or Noyes Basin on the peak's northeast side. Either way, plan on a multi-day backpack just to reach a base camp, with several thousand feet of trail gain before any scrambling begins. The Seattle Creek Basin approach (Elwha side) follows the creek's waterfalls until the drainage steepens, forcing a steep, brushy bushwhack up onto the Mt. Noyes-Mt. Seattle ridge — expect slow going in heavy brush low down.",
+   "descent_text": "Descend the ascent line in reverse: downclimb the east ridge scramble back to the scree/talus on the east side, cross back over the connecting ridge, and descend the west-side scree to Seattle Meadows camp. The scree and talus are loose and unconsolidated in places, so downclimb carefully rather than trying to glissade or boot-ski except where lingering early-season snow makes it safe; rockfall onto parties below is a real concern on the looser sections.",
+   "bail": "Reverse the scramble; no fixed anchors required.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, ~16 mi",
+     "notes": "North Fork Quinault River Trail through old-growth rainforest; gains roughly 3,100 ft to Low Divide camp (~3,600 ft).",
+     "pitch": "Trailhead to Low Divide"
+    },
+    {
+     "grade": "Primitive trail/off-trail, ~3 mi",
+     "notes": "Via the Skyline Trail system into Seattle Creek Basin, climbing to camp near 4,550 ft below the peak's west slopes.",
+     "pitch": "Low Divide to Seattle Meadows basecamp"
+    },
+    {
+     "grade": "Class 2-3 scramble",
+     "notes": "Ascend scree on the west slope, cross to the southwest couloir, then scramble loose talus on the south ridge/east side to the (slightly higher) south summit; roughly 2-2.5 hrs from camp, under 2 hrs to descend.",
+     "pitch": "Seattle Meadows to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Olympic National Park wilderness permits (quota-based in summer) are required for all backcountry camps along this route; check current NPS conditions reports for Elwha River Trail bridge/washout status before committing to the approach.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From Whiskey Bend Trailhead the trail rolls gently up the forested Elwha valley on old roadbed and single-track. Full packs, easy grade — this is mileage-banking, not climbing.",
+      "hours": 6.5,
+      "miles": 11,
+      "title": "Approach up the Elwha River Trail",
+      "gainFt": 1300,
+      "lossFt": 200,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach Elkhorn camp"
+     },
+     {
+      "n": 2,
+      "note": "Continue upriver through old-growth rainforest and past historic homestead sites toward Chicago Camp, staging for the climb over Low Divide the next day.",
+      "hours": 6,
+      "miles": 9.5,
+      "title": "Deeper into the Elwha valley",
+      "gainFt": 1300,
+      "lossFt": 300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach Chicago Camp / lower Elwha Basin"
+     },
+     {
+      "n": 3,
+      "note": "Climb over 3,602 ft Low Divide, the pass between the Elwha and Quinault drainages, then continue into the upper Seattle Creek basin to a meadow camp at roughly 4,500 ft, directly below Mount Seattle's south side.",
+      "hours": 6.5,
+      "miles": 8,
+      "title": "Over Low Divide to high camp",
+      "gainFt": 2600,
+      "lossFt": 200,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach a high camp near Seattle Meadows"
+     },
+     {
+      "n": 4,
+      "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+      "hours": 5,
+      "miles": 4,
+      "title": "Summit day",
+      "gainFt": 1700,
+      "lossFt": 1700,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave high camp",
+        "detail": "Light daypack; rope/overnight gear left at camp."
+       },
+       {
+        "time": "~7:00 AM",
+        "label": "Gain the south/east ridge",
+        "detail": "Talus and scree slopes above Seattle Meadows basin."
+       },
+       {
+        "time": "~7:50 AM (about 2.3 hr from camp)",
+        "label": "Summit",
+        "detail": "Class 2-3 scramble; views across the Bailey Range and Elwha headwaters."
+       },
+       {
+        "time": "8:20 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the south-side scree/talus line."
+       },
+       {
+        "time": "~10:15 AM (about 1.9 hr from summit)",
+        "label": "Back at high camp",
+        "detail": "Rest of the day free to recover before the long walk out begins."
+       }
+      ],
+      "objective": "Climb Mount Seattle via the south-side talus/scree slopes"
+     },
+     {
+      "n": 5,
+      "note": "Drop back over Low Divide and retrace the Elwha River Trail as far as reasonable in a day — mostly downhill or flat, but long with a full pack after a summit day.",
+      "hours": 8,
+      "miles": 16,
+      "title": "Start the long walk out",
+      "gainFt": 400,
+      "lossFt": 4300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Descend to the lower Elwha valley near Elkhorn"
+     },
+     {
+      "n": 6,
+      "note": "Finish the descent down the Elwha valley to the cars. A long but easy-grade final day.",
+      "hours": 7.5,
+      "miles": 14.5,
+      "title": "Hike out to the trailhead",
+      "gainFt": 200,
+      "lossFt": 2400,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to Whiskey Bend Trailhead"
+     }
+    ],
+    "totalNote": "A long ~61-mile round-trip wilderness backpack (about 6 days / 5 nights) up the Elwha River Trail and over Low Divide to a high camp near Seattle Meadows, with a half-day scramble to the 6,246 ft summit and the same distance to hike back out."
+   },
+   "access": {
+    "fees": "Olympic NP wilderness permit reservation: $6 reservation fee plus $8 per person per night for climbers/backpackers age 16+ (15 and under free), as of 2026.",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Hard-sided, approved bear-resistant food canisters are required for all overnight stays throughout most of Olympic Wilderness, including the Elwha and Quinault interior zones; bear wires/hangs are not accepted. There is no separate climbing registration — rangers do not certify competency or refuse a permit for lack of gear/experience, so self-sufficiency and route knowledge are entirely on the party.",
+    "permit": "A backcountry wilderness camping permit is required for any overnight stay and must be reserved through recreation.gov before your trip.",
+    "closures": "Olympic Hot Springs Road beyond Madison Falls has been closed to vehicles since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adding roughly 7 miles each way of walking or biking to reach the Whiskey Bend trailhead on the Elwha approach. On the Quinault side, South Shore Road has a separate washout closure near milepost 8 (use North Shore Road as the detour); North Shore Road itself also had a seasonal construction closure near milepost 10.2 (culvert replacement, closed July 9–Sept 22, 2025). Call the park's Road and Weather Hotline (360-565-3131) or check nps.gov/olym for current status before committing to either approach.",
+    "group_limit": 12,
+    "landManager": "Olympic National Park (NPS) / Daniel J. Evans Wilderness",
+    "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "passRequired": "Olympic NP entrance pass (or interagency \"America the Beautiful\" pass)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+     "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+    }
+   },
+   "road": {
+    "name": "Elwha River area access (Olympic Hot Springs Road)",
+    "status": "Closed to vehicle traffic beyond the Madison Falls parking area since November 2017 flood damage; open to foot, bike, and leashed-dog travel, with no reopening date on Olympic National Park's alerts page updated August 27, 2026.",
+    "driveNote": "Elwha-area road access has been affected by washouts in recent years; verify current status before driving.",
+    "seasonalGate": null
+   },
+   "climate": {
+    "fall": "Increasing rain and shortening daylight narrow the practical window",
+    "spring": "Deep snowpack typically lingers in the upper basins and on the summit slopes into early summer",
+    "summer": "The most reliable window (Jul-Sep) but still unsettled — trip reports document rain and hail squalls even in early September",
+    "winter": "Heavy snow and storms make the multi-day approach and summit slopes impractical for most parties",
+    "typical": "Marine west coast climate: wet, mild winters with heavy snow accumulation in the high interior, and a relatively short, more stable summer window. The standard scramble is typically driest and most snow-free from mid-July through September.",
+    "bySeason": {
+     "summer": "Best window (Jul-Sep) for the scree/talus scramble; expect long daylight but still-frequent Pacific frontal systems and afternoon cloud buildup typical of the Olympics.",
+     "winter": "Heavy snow and frequent storms make the approach trails themselves a serious undertaking; not a realistic season for this route."
+    },
+    "forecastZone": "Olympic Mountains (NWAC forecasts this range in winter)"
+   },
+   "emergency": {
+    "notes": "Call 911. This is a deep-wilderness route with a multi-day approach; expect little to no reliable cell coverage along the trail or near the summit, and plan for a slow, multi-day self-rescue or evacuation timeline.",
+    "county": "Jefferson County (summit); approach trailheads span both Clallam County (Elwha) and Jefferson/Grays Harbor County lines (North Fork Quinault)",
+    "rangerStation": "Wilderness Information Center, Port Angeles — (360) 565-3100 (climbing info, permits, guide list, borrowable bear canisters)",
+    "nearestHospital": "Olympic Medical Center, Port Angeles (typical evacuation point for the Elwha-side approach) or Forks Community Hospital, a Level IV trauma center (western approaches); given the multi-day walk-out from either standard approach, serious injuries are usually evacuated by helicopter (Airlift Northwest) rather than on foot.",
+    "sheriffDispatch": "Peninsula Communications (PenCom), Port Angeles — centralized 911/dispatch for both the Clallam and Jefferson County portions of Olympic National Park, coordinating NPS rangers with county Search and Rescue teams"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; if any, scattered weekend attempts July-August",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - low-traffic; likely single digits to low teens of parties per season based on remote Elwha approach"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Able to sustain long mileage days (the Elwha approach alone is a multi-day backpack) with significant elevation gain on the final push off-trail",
+     "packWeight": "Overnight/multi-day pack weight (camp gear, several days food) plus scrambling gear for the summit day"
+    },
+    "approachTime": "Multi-day approach via the Elwha River trail into Elwha Basin before leaving maintained trail for the summit push; not a single-day car-to-summit route",
+    "requiredSkills": [
+     "off-trail routefinding / navigation with map and compass or GPS",
+     "river/stream fording technique and judgment",
+     "loose rock and talus/scree management",
+     "backcountry camping and Leave No Trace in a national park wilderness",
+     "self-sufficient trip planning given the long remote approach"
+    ],
+    "experienceLevel": "Solid off-trail scrambler comfortable with sustained routefinding on trail-less, brushy Class 2-3 terrain and multi-day backcountry travel; prior Olympics interior or similarly remote alpine experience strongly preferred"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still hold lingering early-season snow; conditions firm up as the month progresses",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Most reliable month: snow largely melted out, trail-less terrain and river fords at their easiest, stable weather window",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still viable and often clear, but shorter days and increasing chance of early fall weather systems in the Olympic interior",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Olympic interior weather is changeable, with the long approach exposing parties to whatever system moves through",
+     "probability": "Afternoon weather noted as a hazard; building cloud/precipitation in the afternoon is a realistic pattern during the Jul-Sep window"
+    },
+    "exposure": "Class 2-3 scrambling on loose rock with trail-less, remote terrain; consequence of a slip is elevated by the difficulty of self-rescue or evacuation given the long, multi-day approach far from road access",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (NWAC's broad 'Olympics' zone covers the range but only issues forecasts during winter avalanche season, outside this route's Jul-Sep climbing window)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No primary guidebook (e.g., a dedicated Olympics climbers' guide) confirmation of exact Class 2 vs Class 3 sections — current grading is based on secondary sources and one detailed trip report.",
+     "No confirmed current-year (2026) firsthand trip report for this specific peak; approach road/trail status should be re-verified with the park's Road and Weather Hotline before a trip.",
+     "Prominence figure (758 ft on file) not independently re-verified — sources found range from 726 ft (Wikipedia) to 768 ft (PeakVisor), so it was left unchanged rather than guessed.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.730995,
+    "peakLng": -123.577965,
+    "trailhead": "North Fork Quinault Trailhead (North Shore Road)",
+    "trailheadLat": 47.5759,
+    "trailheadLng": -123.648,
+    "trailheadDirection": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101)"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none (unroped)",
+   "rope_length_m": null,
+   "rope_note": "Class 2-3 scramble on scree/talus; standard scramble kit, no rope typically carried.",
+   "ascender": null,
+   "corrections": "Route-specific detail limited; South Slopes conflated with general Mt Seattle east-ridge trip notes in search results.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Scenic",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Low Divide and Seattle Meadows",
+     "notes": "Reached up the North Fork Quinault or by the higher, rougher Skyline Ridge primitive route past Three Lakes and Kimta Peak, or from the Elwha side. Two other lines come in through Noyes Basin and directly up Seattle Creek Basin. Whichever you pick, plan on a multi-day backpack just to reach a base camp.",
+     "season": "Late July to mid-September",
+     "hazards": [
+      "Loose scree and talus on both flanks with rockfall onto parties below",
+      "Steep, brushy bushwhacking where the Seattle Creek drainage steepens",
+      "Unbridged fords on the Elwha and North Fork Quinault approaches",
+      "A northeast aspect dropping thousands of feet — stay off that side",
+      "Extreme remoteness with emergency contact frequently impossible"
+     ],
+     "baseFinding": "The staging point is Seattle Meadows, the high camp in upper Seattle Basin about a thousand feet above Seattle Creek. There is no gully mouth to find here: from camp the climb starts on scree on the mountain's western side, and the base is simply where meadow gives way to loose scree and the slope steepens. What identifies the route is the sequence, so hold it in mind — climb the west-side scree, cross over a connecting ridge, then continue up scree and talus on the eastern side, and finish with Class 2 to 3 scrambling on the east ridge to a craggy top. If you are still high on the west side and the ground is cliffing out above you, you have failed to make the crossing and need to traverse. The summit is confirmed by an unusually large plastic tube jammed into a crack holding the register. Coming instead up Seattle Creek Basin, follow the creek's waterfalls until the drainage steepens, then take the steep brushy bushwhack onto the Noyes–Seattle ridge; that brush low down is the crux of that variant, not the scrambling above."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 3600,
+     "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+     "role": "main",
+     "type": "camp",
+     "notes": "Low Divide is the saddle between MOUNT SEATTLE and MOUNT CHRISTIE and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by the south slopes, and the upper meadows above camp are open walking. Mount Christie is usually taken by dropping to Martins Park, a boulder garden about three miles below the Christie Glacier, and climbing the north couloir from there. The honest planning point is which side you walk in from: this is 28.4 miles from Whiskey Bend up the Elwha, and 16 miles from the North Fork Quinault trailhead, so unless you are traversing the range you should be coming from the Quinault. Wasps have been a real problem on the lower forest sections in late summer, and stings there have put people out of action for days.",
+     "water": "Reliable — a stream runs through the camp all season",
+     "permit": "Olympic wilderness permit required, booked in advance. Not itself a quota area, but it is a long way from any road and may not appear in an online search, so telephone the wilderness information centre if the site will not show. Bear canister mandatory. No fires at this elevation.",
+     "capacity": "Around five sites, with a bear hang, a toilet and flat ground; small enough that a large party will fill it"
+    },
+    {
+     "name": "Seattle Meadows",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+     "role": "route",
+     "type": "camp",
+     "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whiskey Bend trailhead about six to seven miles away on foot. The park's own figure is seven. Bicycles are allowed on the closed road and cut that leg to well under an hour each way, and most parties heading deep now ride it and stash a bike. Lillian River is around four and a half miles past Whiskey Bend and Mary's Falls a little further, so either one turns a brutal first day into a civilised one when you are carrying enough food for a week in the interior. Going higher on day one is possible but you gain nothing except a shorter second day; the elevation profile of the Elwha barely rises for the first fifteen miles.",
+     "water": "Reliable at both — the Lillian River at one, the Elwha at the other; treat everything",
+     "permit": "Olympic wilderness permit required, booked in advance on the federal recreation site. These lower Elwha camps are not inside a quota area, so they are usually obtainable late, but no sites anywhere in this park are held back as same-day walk-ups. Bear canister mandatory. Fires are allowed at this elevation but the Elwha and every tributary are closed to fishing.",
+     "capacity": "Lillian River has roughly six roomy riverside sites; Mary's Falls is smaller and set in maple and grass with the river some way off"
+    },
+    {
+     "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+     "role": "route",
+     "type": "camp",
+     "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for MOUNT NORTON: the peak's east side rises roughly 3,200 ft straight out of the Hayes River drainage in under a mile, and the ascent is a steep off-trail slog rather than a climb. It is also the last comfortable place to sleep before the valley narrows, so parties bound for Chicago Camp and the Elwha Basin peaks routinely take it as night two. Going further the same day is a real option in long daylight but the trail past Camp Wilder deteriorates and the camps beyond are rougher. Bugs are heavy in the meadows from late June into July.",
+     "water": "Reliable — the Elwha at Elkhorn, the Hayes River at Hayes; both run all season",
+     "permit": "Olympic wilderness permit required, booked in advance. Not a quota area, so these are among the easier permits in the park to obtain at short notice. Bear canister mandatory.",
+     "capacity": "Both are spacious grassy flats with several sites each, alongside old guard stations that are usually empty; they are the least contested camps in the valley"
+    },
+    {
+     "name": "Chicago Camp — the last established camp in the upper Elwha",
+     "role": "route",
+     "type": "camp",
+     "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for MOUNT BARNES, MOUNT MEANY, MOUNT NOYES, MOUNT QUEETS and MOUNT WILDER, all of which are reached by pushing on into the Elwha Basin above. The ford at the camp can be genuinely hazardous in high water and is the crux of the walk in for many parties. A short way beyond, the upper Elwha has a cave-like recess under an overhanging wall that has served as emergency shelter for generations, but it is a bolthole and not a camp. Camping here rather than in the basin costs you three miles and a couple of thousand feet on summit day; the trade is a sheltered site with running water and a defined trail underfoot, which matters more than it sounds after four days of walking.",
+     "water": "Reliable — the Elwha and Delabarre Creek meet here",
+     "permit": "Olympic wilderness permit required, booked in advance. It is more than fifteen miles from any road, and the booking system does not always surface camps that far in, so ring the wilderness information centre rather than assuming it is unavailable. Bear canister mandatory. No fires above 3,500 ft, which applies once you climb out of here.",
+     "capacity": "Small, and it has been battered by fallen timber — expect only a couple of usable sites near the river"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_big_kangaroo_kearney_thomas",
+  "name": "Kearney-Thomas",
+  "area": {
+   "id": "wa_big_kangaroo",
+   "name": "Big Kangaroo",
+   "parent_id": "wa_kangaroo_ridge",
+   "elevation_ft": 8326,
+   "lat": 48.519416,
+   "lng": -120.617505
+  },
+  "prior_findings": "First-ascent party: beta says 'Jeff and Bill Thomas'; one source says Kearney + Jeff Thomas.",
+  "earlier_research": [
+   {
+    "file": "r140.json",
+    "fact": "First-ascent party",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The only published record of the party found (an unreachable guide page and a forum thread that would not load) could not be read; the AAC report and the route's area page name the line Kearney-Thomas but give no first names or year. No two independent readable sources name Alan Kearney with Jeff and Bill Thomas, so neither field is changed.",
+    "sources": [
+     "http://publications.americanalpineclub.org/articles/13201212207/Big-Kangaroo-south-face-Skinny-Start-Going-Down-Under",
+     "https://www.mountainproject.com/area/114423617/big-kangaroo",
+     "http://www.supertopo.com/rock-climbing/Washington-Pass-Big-Kangaroo-Kearney-Thomas"
+    ]
+   },
+   {
+    "file": "s003.json",
+    "fact": "First-ascent party",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "One detailed route history says the route was first climbed by Alan Kearney and Jeff Thomas in August 1984; Jeff's father Bill Thomas came on the trip but stayed in camp, and the ascent used two short aid sections (graded 5.11b or 5.10b C1). That contradicts the beta's 'with Jeff and Bill Thomas' as well as the fa line's 'unknown'. The route database page gives only 'Kearney, Thomas' with no first names or year, and no second source naming the party/year was found. What would settle it: a second record (guidebook-derived page, AAJ note or forum thread) naming Alan Kearney and Jeff Thomas, 1984.",
+    "sources": [
+     "http://www.supertopo.com/rock-climbing/Washington-Pass-Big-Kangaroo-Kearney-Thomas",
+     "https://www.mountainproject.com/route/201663639/kearney-thomas"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_beckey_tate",
+    "name": "Beckey-Tate",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wa_big_kangaroo_skinny_start",
+    "name": "Skinny Start",
+    "grade": "5.11"
+   },
+   {
+    "id": "wa_big_kangaroo_walkabout",
+    "name": "Walkabout",
+    "grade": "5.11 A2"
+   },
+   {
+    "id": "wa_big_kangaroo_going_down_under",
+    "name": "Going Down Under",
+    "grade": "5.11c"
+   },
+   {
+    "id": "wa_big_kangaroo_west_face",
+    "name": "West Face / West Route",
+    "grade": "Grade II"
+   }
+  ],
+  "row": {
+   "id": "wa_big_kangaroo_kearney_thomas",
+   "area_id": "wa_big_kangaroo",
+   "name": "Kearney-Thomas",
+   "discipline": "alpine",
+   "grade": "5.11a",
+   "grade_system": "yds",
+   "grade_num": 11.25,
+   "pitches": 7,
+   "length_m": 274,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Kearney and Thomas (first names and date unknown)",
+   "lat": null,
+   "lng": null,
+   "aspect": "SE",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Doubles #0.5-#4 cams",
+    "Single #5 cam"
+   ],
+   "hazards": [
+    "Loose approach gully and choss lower on the south face",
+    "Long multi-hour approach with unreliable late-season water"
+   ],
+   "verif": null,
+   "overview": "A longer, harder companion line to Beckey-Tate on the south face's southeast buttress, following crack systems up variable-quality granite to a sustained 5.11a finger-crack crux; one of the more popular technical routes on the peak despite the wall's overall obscurity.",
+   "beta": "First climbed as a six-pitch, Grade III 5.9 route by Alan Kearney with Jeff and Bill Thomas up the southeast buttress, following crack systems on the left side of a large slot high on the face over variable rock quality. The line has since been free-climbed harder and is now graded 5.11a with a well-protected finger-crack crux; it is now listed at 7-8 pitches, reflecting later variation starts (see 'Skinny Start').",
+   "turnaround": "Set a firm turnaround given the sustained difficulty, obscure approach, and loose descent gully — this is not a route to finish in fading light.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.11a",
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "III",
+   "face": "South Face (Southeast Buttress)",
+   "permit": null,
+   "comms": null,
+   "descent": "Scramble to the notch north of the summit, then descend the loose gully back to the Hairpin pullout (as for Beckey-Tate).",
+   "obj_haz": [
+    "loose approach gully",
+    "sustained hard climbing far from easy retreat",
+    "long, obscure approach"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.51928,
+     "lng": -120.61646,
+     "name": "South Face base area (shared with Beckey-Tate)",
+     "type": "base",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.519416,
+     "lng": -120.617505,
+     "elev": 8326,
+     "name": "Big Kangaroo summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 8326
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": 2,
+    "approachTimeHrs": null,
+    "recommendedStart": "Early (pre-dawn) start recommended."
+   },
+   "detailed_rack": "Bring doubles of cams from #0.5 to #4 and a single #5 Camalot.",
+   "what_to_bring": [
+    "Approach shoes for bushwhacking/scrambling",
+    "Extra water (unreliable on approach)",
+    "Helmet",
+    "Route topo"
+   ],
+   "pro_tips": [
+    "Consult a published topo before attempting the route.",
+    "The 'Skinny Start' variation joins this route partway up if you want a harder direct start."
+   ],
+   "watch_out": [
+    "Sustained 5.10-5.11 climbing with limited retreat options once established on the buttress",
+    "Route-finding on the obscure, seldom-visited south face"
+   ],
+   "pro_needs": "Well-protected splitter and finger-crack climbing typical of Washington Pass granite; the crux finger-crack pitch takes small cams well.",
+   "best_season": "Late June through September, with the rock at its best once fully dry in midsummer; snow can linger in the approach gullies into June.",
+   "high_point_ft": 8326,
+   "aid_grade": null,
+   "approach": "Park at the Hairpin pullout on SR-20 (roughly Milepost 163, about 1 mile east of Washington Pass). Follow the Kangaroo Temple/Wallaby Peak climbers' path south along Early Winters Creek for roughly 2 miles, then leave the trail to cross the creek and ascend the prominent gully system to the base of the south face, taking the left fork at the high Y-junction. Expect 2.5 to 5 hours of approach time; water is unreliable late season.",
+   "descent_text": "As with the neighboring Beckey-Tate line, descend by scrambling to the notch just north of the true summit and following the loose scree-and-snow gully back down toward the Hairpin pullout, roughly two hours from the top.",
+   "bail": "Once established above the lower pitches, retreat is difficult on this sustained buttress; carry a small set of gear for building rappel anchors if a bail becomes necessary rather than counting on fixed stations.",
+   "pitch_detail": [
+    {
+     "grade": null,
+     "notes": "Lower southeast-buttress crack/corner pitch.",
+     "pitch": "P1"
+    },
+    {
+     "grade": null,
+     "notes": "Crack system continues up the buttress.",
+     "pitch": "P2"
+    },
+    {
+     "grade": null,
+     "notes": "Variable rock quality per the original FA account.",
+     "pitch": "P3"
+    },
+    {
+     "grade": null,
+     "notes": "Follows crack systems left of a large slot high on the face.",
+     "pitch": "P4"
+    },
+    {
+     "grade": null,
+     "notes": "Continued buttress climbing.",
+     "pitch": "P5"
+    },
+    {
+     "grade": null,
+     "notes": "Upper buttress terrain leading toward the crux.",
+     "pitch": "P6"
+    },
+    {
+     "grade": "5.11a (crux, finger crack)",
+     "notes": "Sustained, well-protected finger crack; the route's technical crux.",
+     "pitch": "P7"
+    }
+   ],
+   "itinerary": "A long alpine day: multi-hour approach, 7-8 pitches of sustained 5.9-5.11 climbing, and a roughly two-hour descent; strong parties may do it car-to-car, others bivy to split the effort.",
+   "access": {
+    "fees": null,
+    "permit": "No specific climbing permit identified; roadside pullout, not a developed fee trailhead.",
+    "closures": "SR-20 closed seasonally, generally December through spring.",
+    "landManager": "Okanogan-Wenatchee National Forest, Methow Valley Ranger District",
+    "passRequired": null
+   },
+   "road": {
+    "name": "State Route 20 (North Cascades Highway)",
+    "status": "Paved highway, seasonally closed",
+    "driveNote": "Park at the Hairpin pullout on SR-20 around Milepost 163, about 1 mile east of Washington Pass; room for roughly 10 vehicles.",
+    "seasonalGate": "Closes for winter typically early-to-mid December between Ross Dam (MP 134) and Silver Star/Early Winters (MP 171/178) gates; reopens in spring."
+   },
+   "climate": {
+    "fall": "Good conditions into September before early snow.",
+    "spring": "Snow lingers in approach gullies into June.",
+    "summer": "Warm and mostly dry; primary season.",
+    "winter": "SR-20 closed; area inaccessible by road.",
+    "typical": "Dry, sunny summers in the east-slope rain shadow; afternoon thunderstorms possible July-August.",
+    "forecastZone": "NWAC East Slopes (WA Cascades) zone"
+   },
+   "emergency": {
+    "notes": "SR-20 access is seasonal; cell coverage through the corridor is unreliable.",
+    "county": "Okanogan County, WA",
+    "rangerStation": "Methow Valley Ranger District, 24 West Chewuch Rd, Winthrop, WA — (509) 996-4000",
+    "nearestHospital": "Mid-Valley Hospital, Omak, WA (~29 mi) or Three Rivers Hospital, Brewster, WA (~31 mi)",
+    "sheriffDispatch": "911 for emergencies; Okanogan County Sheriff non-emergency dispatch (509) 422-7232"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July to mid-September, when the approach gully is melted out and the finger crack is fully dry",
+    "monthBreakdown": {
+     "May": {
+      "reason": "SR 20 has only recently reopened and the long approach gully to the south face is still deep, avalanche-prone snow.",
+      "status": "risky"
+     },
+     "July": {
+      "reason": "Gullies melt out and the south face dries; the rock is at its best from mid-July on.",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Snow lingers in the approach gullies into late June, needing axe and crampons, and cracks may still seep.",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Dry cracks and a snow-free approach, but late-season water along the approach is unreliable and the face is hot.",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Cold, short days and possible early snow in the gullies; SR 20 winter closure can come with an early storm.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "Cooler, stable weather on dry rock; carry water, as the approach streams often run dry by now.",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "The Hairpin pullout, south along Early Winters Creek about 2 miles, then cross and take the LEFT fork at the high Y-junction",
+     "notes": "Park at the Hairpin pullout on SR-20, roughly milepost 163, about a mile east of Washington Pass. Follow the Kangaroo Temple and Wallaby Peak climbers' path south along Early Winters Creek for roughly 2 miles, then leave the trail to cross the creek and ascend the prominent gully system to the base of the south face.\n\nExpect 2.5 to 5 hours of approach time; water is unreliable late season. Seven pitches.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "A Y-junction where the wrong fork puts you on different ground",
+      "2.5 to 5 hours of approach with unreliable water late season",
+      "A loose scree-and-snow descent gully",
+      "Three routes starting within about 30 metres on the same wall"
+     ],
+     "baseFinding": "THE HIGH Y-JUNCTION IN THE APPROACH GULLY IS THE DECISION POINT, AND THIS ROUTE TAKES THE LEFT FORK. That is a countable, binary choice on the ground, and every south-face route on this peak depends on it.\n\nSO THE SEQUENCE IS: roughly TWO MILES south along the creek, then CROSS, then up a prominent gully to a Y, then LEFT. Crossing after half a mile instead of two puts you on the West Face approach, on the other side of the mountain, in a broad shallow gully with a chockstone in it.\n\nARRIVAL AT THE WALL: the base of the SOUTH FACE. The Beckey-Tate's obvious CENTRAL RAMP-AND-LEDGE SYSTEM SPLITTING THE FACE is the reference feature here, because two other routes are measured from this one and from that ramp.\n\nHOW THE SOUTH FACE STARTS SORT OUT, IN ORDER, AND THE ONE MEASUREMENT THAT SEPARATES THEM: SKINNY START IS ABOUT 30 METRES RIGHT OF THE STANDARD KEARNEY-THOMAS START. GOING DOWN UNDER starts from the Beckey-Tate base and traverses RIGHT ACROSS OVERLAPS to its own ledge. THE CENTRAL RAMP IS BECKEY-TATE. SO: IF YOU HAVE WALKED THIRTY METRES RIGHT OF WHERE YOU MEANT TO BE, YOU ARE ON SKINNY START.\n\nWATER IS UNRELIABLE LATE SEASON. Carry it from the creek before crossing, since the crossing is the last of it.\n\nDESCENT: as with the neighbouring Beckey-Tate line, scramble to the notch just north of the true summit and follow the loose scree-and-snow gully back down toward the Hairpin pullout, roughly two hours from the top."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_free_mojo",
+  "name": "Free Mojo",
+  "area": {
+   "id": "wa_south_early_winters_spire",
+   "name": "South Early Winters Spire",
+   "parent_id": "wa_liberty_bell_group",
+   "elevation_ft": 7807,
+   "lat": 48.512275,
+   "lng": -120.655395
+  },
+  "prior_findings": "Two sources give a 2.5 mi one-way approach, but the row's own itinerary says 5.2-5.5 mi round trip; dist_km was left alone. Settle which is right and make the fields agree.",
+  "earlier_research": [
+   {
+    "file": "r221.json",
+    "fact": "Aspect / face",
+    "status": "fixed",
+    "correct_value": "On the shaded northwest side of SEWS, not the south face",
+    "evidence": "The route page places the start beside the chockstone chimney near the Northwest Face/Mojo Rising and says it stays in the shade until about 1 pm; a trip report says it sees almost no sun. A south face would be in sun. The itinerary's 'south face' is corrected; aspect W is left.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Pitch 1 anchor",
+    "status": "fixed",
+    "correct_value": "A two-piece fixed gear anchor (not bolts)",
+    "evidence": "The route page describes a two-piece fixed anchor at the top of P1; a 2016 report found a fixed cam there. No source mentions bolts.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Fixed anchor atop pitch 2",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The route page ends P2 on a ledge with no fixed anchor mentioned; a 2016 report says the north face now has a single-60 m rap route back to the packs but does not say where its stations are. Not changed.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Rope for the descent",
+    "status": "fixed",
+    "correct_value": "A single 60 m rope",
+    "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+    "sources": [
+     "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+     "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Bolts on the route",
+    "status": "fixed",
+    "correct_value": "Trad protection; no bolts documented",
+    "evidence": "The route page's rack is cams and nuts only and its pitch descriptions mention no bolts; a trip report recommends two full sets of trad gear. rope_note's 'mixed bolt/gear protection' is corrected.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Where the route joins another line",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The route page says P2 connects with Mojo Rising and P5 trends right toward the South Arete; a trip report says it joins the Southwest Rib after P3. Sources disagree, so neither field was changed.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Pitch 6 length",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The route page gives P6 as ~25 ft, matching the beta, so pitch_detail's 25 m looks like a unit slip; only one independent source was found. Not changed.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Summit time vs car-to-car total",
+    "status": "fixed",
+    "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+    "evidence": "timing.summitTimeHrs (9) equals totalHrs (9), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+    "sources": []
+   },
+   {
+    "file": "r221.json",
+    "fact": "SR-20 closing month",
+    "status": "fixed",
+    "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+    "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+    "sources": [
+     "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+     "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+     "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+     "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+    "status": "fixed",
+    "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+    "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/blue-lake",
+     "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "Fixed anchor atop pitch 2",
+    "status": "fixed",
+    "correct_value": "Only pitch 1 has a fixed anchor; the pitch 2 belay is gear-built",
+    "evidence": "One route description places a two-piece fixed anchor at the top of pitch 1 and says the party built its pitch 2 belay from gear in a vertical crack on a ledge. A separate trip report found no good anchor where the belay atop pitch 2 is suggested and continued to the top of pitch 3; the first-ascent account describes the pitch 2 belay as a ledge with no fixed gear. The breakdown and bail fields are right; the descent text and base note wrongly assumed fixed anchors atop pitch 2.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/",
+     "http://blakeclimbs.blogspot.com/2013/06/washington-pass-freedom.html"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "Where the route joins another line",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "The two fields describe two different junctions. The first-ascent account says a short 5.10 flare after the two new pitches leads into Mojo Rising at the base of that route's 5th pitch (so 'joins Mojo Rising at its P5' is right), and the route description says Free Mojo's own P5 later trends right to meet the upper arete to the summit; a trip report says it then joins the Southwest Rib higher up. Both statements can hold at once.",
+    "sources": [
+     "http://blakeclimbs.blogspot.com/2013/06/washington-pass-freedom.html",
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "Pitch 6 length",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "One route description says P6 climbs 'about 25 ft' to the summit, matching the beta and implying pitch_detail's 25 m is a unit slip (about 8 m). No second independent source gives the last pitch's length (the trip report and first-ascent account do not). A second pitch-by-pitch topo would settle it.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467/free-mojo",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "One-way approach distance",
+    "status": "unresolved",
+    "correct_value": "dist_km 4.0 (about 2.5 mi one way)",
+    "evidence": "The stored 8.37 km equals this row's own itinerary round-trip mileage (5.2 mi) and sits in the one-way approach slot. A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent Southwest Rib write-up (same basin approach) gives 5 miles round trip; 2.5 mi = 4.0 km. [Held: 4.0 km would contradict this row’s own itinerary round trip.]",
+    "sources": [
+     "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+     "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Aspect of the face",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The route page places it on a large right-facing golden face just right of the giant chockstone chimney and says it stays in shade until about 1 pm; a first-hand trip report calls it the north face and says it sees almost no sun. Shade until early afternoon fits a west or northwest face, the report says north, and the row's own fields say W, north-facing and Northwest Face. No two sources agree on one aspect, so no patch.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467",
+     "https://waynewallace.wordpress.com/2016/08/17/free-mojo-s-early-winter-spire/"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Headline grade vs crux pitch",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "The route page grades it 5.11 with a mid-5.11 second pitch, matching rock_grade and pitch_detail[1]; grade, overview, watch_out and rope_note say 5.11-. Only one source gives an overall grade and the row splits four fields to three, so no patch; a second grade source would settle it.",
+    "sources": [
+     "https://www.mountainproject.com/route/117392467"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Season window",
+    "status": "fixed",
+    "correct_value": "Jun-Sep chip, with the window opening in late June",
+    "evidence": "The Washington Pass area page gives the best season as late June through September, with snow and ice possible early; a regional climbing guide says latish June through latish September. The row's own best_season/optimalWindow already open in (late) June, so the Jul-Sep chip and approach-variant season are the outliers; this matches the precedent set for Southern Man (season Jun-Sep).",
+    "sources": [
+     "https://www.mountainproject.com/area/105792192/washington-pass",
+     "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Time to summit vs car-to-car total",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+    "sources": []
+   },
+   {
+    "file": "t102.json",
+    "fact": "Blue Lake Trailhead distance from Washington Pass",
+    "status": "bivy_zone_list",
+    "correct_value": "About 1 mile west of Washington Pass",
+    "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/blue-lake",
+     "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+     "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+     "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_south_early_winters_spire_nothing",
+    "name": "Nothing",
+    "grade": "5.11d A0"
+   },
+   {
+    "id": "wa_sews_sw_rib",
+    "name": "Southwest Rib",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_south_early_winter_spire_east_buttress",
+    "name": "East Buttress",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_dolphin_chimney",
+    "name": "Dolphin Chimney",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wa_mojo_rising",
+    "name": "Mojo Rising",
+    "grade": "5.11b C1+"
+   },
+   {
+    "id": "wa_south_early_winter_spire_passenger",
+    "name": "Passenger",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wa_the_hitchhiker",
+    "name": "The Hitchhiker",
+    "grade": "5.11-"
+   },
+   {
+    "id": "wa_northwest_face_boving_pollock",
+    "name": "Northwest Face (Boving-Pollock)",
+    "grade": "5.11a"
+   },
+   {
+    "id": "wa_boving_roofs",
+    "name": "Boving Roofs",
+    "grade": "5.10b"
+   },
+   {
+    "id": "wa_south_arete",
+    "name": "South Arete",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_south_early_winter_spire_direct_east_buttress",
+    "name": "Direct East Buttress",
+    "grade": "Grade III+, 5.9 A0 (or 5.11 free), 9 pitches"
+   },
+   {
+    "id": "wa_south_early_winter_spire_southwest_couloir",
+    "name": "Southwest Couloir",
+    "grade": "Grade II, snow to 50°"
+   },
+   {
+    "id": "wa_southern_man",
+    "name": "Southern Man",
+    "grade": "5.11d"
+   }
+  ],
+  "row": {
+   "id": "wa_free_mojo",
+   "area_id": "wa_south_early_winters_spire",
+   "name": "Free Mojo",
+   "discipline": "alpine",
+   "grade": "5.11-",
+   "grade_system": "yds",
+   "grade_num": 11,
+   "pitches": 6,
+   "length_m": 244,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Blake Herrington and Graham Zimmerman",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Triples in small cams up to yellow Aliens",
+    "Doubles to #1 Camalot",
+    "Single #2 and #3 Camalots",
+    "Small wires"
+   ],
+   "hazards": [
+    "Crux pitch (P2) crack can be wet/seeping even in dry weather due to the route's shaded, north-facing aspect",
+    "Lichen and loose rock typical of a rarely-climbed line",
+    "Goat activity reported near the summit"
+   ],
+   "verif": null,
+   "overview": "A free variation eliminating the aid on Mojo Rising, giving a continuously free 5.11- line up this part of the Northwest Face.",
+   "beta": "P1 (10+/11-, ~100 ft) climbs a nondescript crack to a two-piece fixed anchor on a pedestal. P2 (mid-11, ~82 ft) follows obvious double incipient cracks to a sweet final move and a series of ledges. P3 (10-, ~40 ft) is short with a tricky start then easy climbing. P4 (5.9, ~164 ft) climbs a beautiful right-facing corner. P5 and P6 (5.easy, ~262 ft and ~25 ft) trend right to join the South Arete and finish to the summit.",
+   "turnaround": "Turn around for approaching storms; the route stays shaded until roughly 1pm which affects timing on cold mornings.",
+   "auto_generated": false,
+   "alpine_grade": "III",
+   "rock_grade": "5.11",
+   "ice_grade": null,
+   "gain_ft": 2200,
+   "loss_ft": 2200,
+   "dist_km": 8.37,
+   "max_angle": null,
+   "rappels": "3",
+   "commitment": "III",
+   "face": "South Arete / West Face area",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell service at Washington Pass.",
+   "descent": "Finish via the South Arete to the summit, then descend the South Arete.",
+   "obj_haz": [
+    "loose detached block on P5"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5191,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51217,
+     "lng": -120.65536,
+     "elev": 7807,
+     "name": "South Early Winters Spire",
+     "note": "True summit of South Early Winters Spire, between Liberty Bell and Blue Lake Peak.",
+     "type": "Summit",
+     "distMi": 2.3
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "Pre-dawn start",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "The free version of the Mojo Rising line on SEWS's northwest face — 6 pitches of sustained face/crack climbing, approached and descended the same way as the neighboring Passenger/Hitch…",
+      "fromTo": "Car-to-car climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Triples of small cams (through yellow Alien-sized), doubles of cams to #1, a single #2 and #3 Camalot, plus a set of small wires.",
+   "what_to_bring": [
+    "Helmet",
+    "Light layer — route stays shaded until ~1pm"
+   ],
+   "pro_tips": [
+    "Route stays shaded until about 1pm — a good pick for hot days"
+   ],
+   "watch_out": "Sustained 5.11- climbing with exposure on upper pitches\nMixed terrain transitions require careful footwork and commitment\nWeather exposure creates electrical hazard on exposed sections\nRoute-finding near summit can be challenging\nLoose rock on descent creates hazard",
+   "pro_needs": "Good gear throughout the crack pitches; small-to-mid cams see the most use.",
+   "best_season": "Stays in the shade until roughly 1 pm, making it a good choice on hot summer days.",
+   "high_point_ft": 7807,
+   "aid_grade": null,
+   "approach": "Same basin approach as Mojo Rising and the Northwest Face: Blue Lake Trailhead, Blue Lake Trail to the NW-side clearing, climber's path up talus into the basin below the west face. Free Mojo starts roughly 40 ft down and right of the large chockstone-filled chimney between the two spire formations, on a nondescript crack that leads to a two-piece fixed anchor on a pedestal (end of pitch 1); pitch 2 climbs obvious double incipient cracks up to a series of ledges.",
+   "descent_text": "Only pitch 1 ends at a fixed anchor (a two-piece nut-and-cam anchor on a pedestal); the belay atop pitch 2 is built from gear on ledges, so a party retreating from above pitch 1 must leave gear for an anchor to get back down to the pitch 1 anchor, then rappel from it to the ground. For the full route to the summit (6 pitches), finish via the standard South Arete descent: downclimb the arete to the Rabbit Ears, then 3 single-rope rappels (60m) from bolted anchors/chains down the gully to the base.",
+   "bail": "A fixed anchor after pitch 1 allows an easy bail from low on the route; above that, retreat requires building trad gear anchors.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.10+/5.11-",
+     "notes": "Starts on a nondescript crack about 40 ft down and right of the giant chockstone-filled chimney; sustained thin liebacking/stemming leads to a two-piece fixed nut-and-cam anchor on a small ledge with trees.",
+     "pitch": 1,
+     "anchor": "Fixed gear anchor (nut + cam)",
+     "lengthM": 30
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.11",
+     "notes": "Double incipient cracks pull to a stellar final move; flared jams, awkward stances, and fiddly small gear make this the route's redpoint crux.",
+     "pitch": 2,
+     "anchor": "Gear (ledge)",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.10-",
+     "notes": "A short, easy connector pitch -- an awkward opening move off the double seams eases quickly to easier ground.",
+     "pitch": 3,
+     "anchor": "Gear",
+     "lengthM": 10
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.9",
+     "notes": "A balancy opening move leads into fun, moderate climbing through a giant hollow flake and a beautiful right-facing corner to a ledge belay.",
+     "pitch": 4,
+     "anchor": "Gear (ledge)",
+     "lengthM": 50
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Easier climbing trends right toward the South Arete, then rises in a traverse into the notch below the summit; belay mid-pitch to keep rope drag manageable on this long, wandering pitch.",
+     "pitch": 5,
+     "anchor": "Gear (mid-pitch belay)",
+     "lengthM": 80
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "A short final scramble tops out on the summit block -- watch for mountain goats known to frequent the summit.",
+     "pitch": 6,
+     "anchor": "Walk-off (no belay)",
+     "lengthM": 25
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "The free version of the Mojo Rising line on SEWS's northwest face — 6 pitches of sustained face/crack climbing, approached and descended the same way as the neighboring Passenger/Hitchhiker/Southern Man routes.",
+      "hours": 9,
+      "miles": 5.2,
+      "title": "Car-to-car climb",
+      "gainFt": 2200,
+      "lossFt": 2200,
+      "packLb": 0,
+      "schedule": [],
+      "objective": "Climb Free Mojo and return to the Blue Lake trailhead"
+     }
+    ],
+    "totalNote": "A moderate-to-long day: roughly 9 hrs car-to-car for 6 pitches."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass at the Blue Lake Trailhead",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "Standard national forest day-use rules; Leave No Trace.",
+    "permit": "None required for day climbing",
+    "closures": "Highway 20 (North Cascades Highway) over Washington Pass closes seasonally in winter.",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate each winter, typically from mid-November or early December until April or May; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "landManager": "Okanogan-Wenatchee National Forest (Washington Pass / Okanogan NF)",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Blue Lake Trailhead, Highway 20, Washington Pass",
+    "status": "Highway 20 is fully paved to the Blue Lake Trailhead parking area; no rough-road driving required.",
+    "driveNote": "Roughly 3 hours from Seattle via I-5 and Highway 20, or about 45 minutes from Mazama/Winthrop.",
+    "seasonalGate": "Highway 20 over Washington Pass is a seasonal highway, closed by snow each winter (typically between mid-November and early December) with variable spring reopening, historically ranging from mid-April to mid-June."
+   },
+   "climate": {
+    "fall": "Good into September",
+    "spring": "Snow lingers into June",
+    "summer": "Prime season, good for hot days given the shade",
+    "winter": "Highway closed",
+    "typical": "Warm dry summers; route holds shade late into morning",
+    "forecastZone": "Washington Pass / East Slopes Cascades (NWAC)"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies.",
+    "county": "Okanogan",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA; or Mid-Valley Hospital, Omak, WA",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": null,
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low — a firsthand 2016 account (~3 yrs post-FA) estimated only about 5 ascents to date"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "approach": "~1 hr via Blue Lake Trail to base (general SEWS approach beta, not route-specific)"
+    },
+    "approachTime": "~1 hour (Blue Lake Trail, general SEWS approach beta, not confirmed route-specific)",
+    "requiredSkills": [
+     "Crux P2: wet vertical crack requiring gastons/deadpoints",
+     "Tolerance for lichen/loose debris typical of an underused line",
+     "Route joins the existing Mojo Rising line at its P5"
+    ],
+    "experienceLevel": "Solid 5.11 trad leader with thin-finger/seam-crack skill"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late June–September, though the route stays shaded until ~1pm (north-facing) and may run colder/wetter longer into the season than sunnier SEWS lines",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Reliable dry rock season",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Shady, north-facing aspect plus wet-crack conditions noted at the FA make early season less viable",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Reliable dry rock season; shade keeps it comfortable on hot days",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Dry granite continues; shorter days",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North Cascades afternoon-thunderstorm pattern (area-wide); the route's shaded, north-facing aspect can leave cracks seeping/wet longer after precipitation than sunnier lines"
+    },
+    "exposure": "Seeping/wet finger locks reported on the crux pitch; lichen/loose rock from low traffic; goat activity noted near the summit",
+    "avalanche": {
+     "zone": "NWAC — North Cascades (forecast program runs mid-Nov–mid-Apr only; no product exists during the summer rock season)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": {
+     "timing": "N/A",
+     "location": "None — dry granite formation, no glacier travel on any approach or route variant"
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "Crowd and hazard specifics are traceable to a small number of firsthand accounts (primarily one 2016 post-FA trip report) rather than broad independent corroboration; FA itself is HIGH confidence (confirmed by both Mountain Project and the first ascensionist's own blog)."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 5,
+    "technical": 4,
+    "commitment": 4,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.512275,
+    "peakLng": -120.655395,
+    "trailhead": "Blue Lake Trailhead (SR-20)",
+    "trailheadLat": 48.518965,
+    "trailheadLng": -120.67436,
+    "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1 mile west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+   },
+   "sling_rack": {
+    "cams": "set 0.3-3in",
+    "nuts": "small set"
+   },
+   "alpine_draws": 12,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "6-pitch 5.11- testpiece on SEWS; trad protection throughout, with small cams seeing the most use.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of three single-rope rappels down the gully after downclimbing the arete to the Rabbit Ears.",
+     "anchor": "bolted anchor/chains below the Rabbit Ears",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Continues down the gully.",
+     "anchor": "bolted anchor/chains",
+     "lengthM": null
+    },
+    {
+     "n": 3,
+     "notes": "Final rappel reaching the base of the formation.",
+     "anchor": "bolted anchor/chains at the base",
+     "lengthM": null
+    }
+   ],
+   "rappel_count_note": "Shared with the South Arete's standard descent; individual per-rappel lengths aren't given, only the total 3-rappel count and 60m single rope, so ~30m/rappel is estimated from the rope-doubling convention.",
+   "rack": [
+    "Triples of small cams up to yellow Alien-size",
+    "Doubles of cams to #1 Camalot",
+    "Single #2 and #3 Camalot",
+    "Small wire set",
+    "12 alpine quickdraws",
+    "Single 60m rope"
+   ],
+   "features": [
+    "Crack",
+    "Sustained",
+    "Technical",
+    "Exposed"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Blue Lake Trail to the basin below the west face, then 40 ft DOWN AND RIGHT of the chockstone chimney",
+     "notes": "Same basin approach as Mojo Rising and the Northwest Face: Blue Lake Trailhead, Blue Lake Trail to the northwest-side clearing, then the climber's path up talus into the basin below the west face.\n\nSix pitches, 5.11-.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "A start explicitly described as nondescript, confirmed only at the first belay",
+      "Three routes starting within about 60 ft of each other on one wall",
+      "No water in the basin"
+     ],
+     "baseFinding": "THE START IS ROUGHLY 40 FT DOWN AND RIGHT OF THE LARGE CHOCKSTONE-FILLED CHIMNEY BETWEEN THE TWO SPIRE FORMATIONS, ON A NONDESCRIPT CRACK THAT LEADS TO A TWO-PIECE FIXED ANCHOR ON A PEDESTAL.\n\nSO THE CONFIRMATION IS AT THE TOP OF PITCH ONE, NOT AT THE BOTTOM, AND THAT IS THE HONEST WAY TO USE THIS ROUTE: the crack itself is described as NONDESCRIPT, which means you will not identify it by looking at it. What you can identify is where it ends. A ROPE LENGTH UP, THERE IS A TWO-PIECE FIXED ANCHOR ON A PEDESTAL. If you arrive at a stance with no fixed gear, come down and move along the wall.\n\nPITCH TWO GIVES A SECOND CONFIRMATION: OBVIOUS DOUBLE INCIPIENT CRACKS leading up to a series of ledges. Two thin parallel cracks, not one.\n\nTHE DISCRIMINATOR AGAINST THE TWO NEIGHBOURS, AND THE MEASUREMENTS ARE THE POINT: MOJO RISING is ABOUT 20 FT DOWNHILL of the chimney on an OBVIOUS BOLTED FACE. The NORTHWEST FACE, Boving-Pollock, is entered by TRAVERSING INTO A STEEP CORNER. THIS ROUTE IS 40 FT DOWN AND RIGHT ON A PLAIN CRACK. Bolts mean Mojo Rising; a corner means Boving-Pollock; a plain crack forty feet right of the chimney means Free Mojo.\n\nRETREAT FROM LOW ON THE ROUTE IS STRAIGHTFORWARD, WHICH IS WORTH KNOWING WHEN YOU ARE UNSURE OF THE START: a party retreating from the fixed anchor atop pitch 1 rappels to the ground; above it the belays are built from gear, so retreating higher means leaving gear. There is no penalty for starting, finding the ground wrong, and coming back down."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    },
+    {
+     "elev": 3600,
+     "name": "Lone Fir Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season runs roughly from late spring into autumn and is decided by snow rather than by a date.",
+     "water": "Early Winters Creek runs through the campground",
+     "permit": "Standard national forest campground fee",
+     "capacity": "27 sites, first come first served"
+    },
+    {
+     "elev": 2900,
+     "name": "Klipchuck Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quiet and has more plumbing than anything nearer the climbing. The trade is a longer drive to the trailhead each morning. Check current status before relying on it; the highway-corridor campgrounds take periodic maintenance closures.",
+     "water": "Piped water, sinks and flush toilets",
+     "permit": "Standard national forest campground fee",
+     "capacity": "First come first served"
+    },
+    {
+     "name": "Liberty Bell basin dispersed sites",
+     "role": "route",
+     "type": "camp",
+     "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes at first light rather than walking up from the road. Note the separate restriction around Blue Lake itself, where overnight camping is not allowed within a quarter mile of the lake — the basin sites are the ones to aim for, not the lakeshore. Treat it as a basin camp below the spires rather than a fixed spot.",
+     "water": "Snowmelt and seasonal runoff in the basin — unreliable once the snow has gone",
+     "permit": "No permit for dispersed camping; this is national forest, not the national park",
+     "capacity": "Scattered dispersed sites, small parties"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ },
+ {
+  "id": "wa_boving_roofs",
+  "name": "Boving Roofs",
+  "area": {
+   "id": "wa_south_early_winters_spire",
+   "name": "South Early Winters Spire",
+   "parent_id": "wa_liberty_bell_group",
+   "elevation_ft": 7807,
+   "lat": 48.512275,
+   "lng": -120.655395
+  },
+  "prior_findings": "Two sources give a 2.5 mi one-way approach, but the row's own itinerary says 5.2-5.5 mi round trip; dist_km was left alone. Settle which is right and make the fields agree.",
+  "earlier_research": [
+   {
+    "file": "r221.json",
+    "fact": "Standard descent",
+    "status": "fixed",
+    "correct_value": "Continue up the Southwest Rib to the summit and descend the South Arete",
+    "evidence": "The route page says to finish up to the summit with the rest of the Southwest Rib pitches; the Northwest Face page, which shares the roofs, also climbs on to the top. descent, descent_text, bail and baseFinding already say so; the itinerary is corrected.",
+    "sources": [
+     "https://www.mountainproject.com/route/110616122/boving-roofs",
+     "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Total gain",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "With the summit finish the whole-outing gain is closer to the 2,350 ft in gain_ft than the itinerary's 1,800, but no source states a gain figure for this route, so neither was changed.",
+    "sources": [
+     "https://www.mountainproject.com/route/110616122/boving-roofs"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Summit time vs car-to-car total",
+    "status": "fixed",
+    "correct_value": "summitTimeHrs null (the stored value is the car-to-car total, already held in totalHrs)",
+    "evidence": "timing.summitTimeHrs (6.5) equals totalHrs (6.5), the car-to-car figure also held by itinerary hours. Per the catalog's settled repair for this class, the mislabelled copy is nulled rather than replaced with a computed number, so no new fact is asserted.",
+    "sources": []
+   },
+   {
+    "file": "r221.json",
+    "fact": "Pitch numbering of the roof pitch",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Name the pitches by what they are (the loose first pitch, the roof pitch) rather than by the combined-line numbers",
+    "evidence": "The route page numbers the loose 5.2 pitch P4 and the roofs P5 because it counts the three shared Southwest Rib pitches; this row counts only its own three pitches (pitch_detail 1-3, pitches 3). The P4/P5 labels are replaced with the pitch names so both counts read the same.",
+    "sources": [
+     "https://www.mountainproject.com/route/110616122/boving-roofs"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Where the route rejoins the Southwest Rib",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "The route page says the last pitch ends at the top of the Southwest Rib's Bear Hug pitch; 'rejoining the Bear Hug pitch' in the overview names the same place less precisely.",
+    "sources": [
+     "https://www.mountainproject.com/route/110616122/boving-roofs"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Rope for the descent",
+    "status": "fixed",
+    "correct_value": "A single 60 m rope; three single-rope rappels",
+    "evidence": "The standard South Arete descent used by every SEWS route is three single-rope rappels from bolted/chain stations after downclimbing the arete; one description says all rappels are under 30 m, and the 2022 replacement stations were set for good pulls with a 60 m rope. No source calls for double ropes.",
+    "sources": [
+     "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+     "https://www.theoutbound.com/washington/rock-climbing/climb-south-early-winters-spire-south-arete",
+     "https://www.mountaineers.org/blog/new-route-update-south-early-winter-spires-sews"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "SR-20 closing month",
+    "status": "fixed",
+    "correct_value": "Typically closes between mid-November and early December and reopens in April or May (varies by year).",
+    "evidence": "Closures in recent seasons: Nov 12 2020, Nov 9 2021, Nov 18 2024, Dec 4 2025; reopenings Jun 4 2020, May 28 2021, May 10 2022, Apr 19 2024. Neither 'mid-November' nor 'early December' alone covers it, nor does 'mid/late April' or 'late May' alone for the opening; both fields now state the range (same wording as the earlier fix on other Washington Pass rows).",
+    "sources": [
+     "https://wsdot.wa.gov/about/news/2025/sr-20-north-cascades-highway-closes-season-thursday-dec-4-6-pm",
+     "https://www.cascadiadaily.com/2024/nov/18/north-cascades-highway-closes-for-winter-season/",
+     "https://www.king5.com/article/traffic/north-cascades-highway-reopen-may-10-2022/281-af6509bd-e639-404f-842c-7ec89d1742d1",
+     "https://www.fox13seattle.com/news/sr-20-north-cascades-highway-closed-season"
+    ]
+   },
+   {
+    "file": "r221.json",
+    "fact": "Blue Lake Trailhead distance from Washington Pass and elevation",
+    "status": "fixed",
+    "correct_value": "About 1 mile west of Washington Pass, at about 5,400 ft",
+    "evidence": "The trail listing puts the Blue Lake Trailhead a little under a mile west of the Washington Pass Overlook; a trail guide gives 5,400 ft and roughly one mile west of the overlook; the Forest Service gives the trailhead elevation as 5,400 ft. The 1.5-mile and 5,200 ft figures are wrong (same fix already applied on other Washington Pass rows).",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/blue-lake",
+     "https://cascadesfieldguide.com/topics/blue-lake-trail-guide-parking-family-fit-season-and-larch-timing",
+     "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/blue-lake-trailhead"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "Total gain",
+    "status": "unresolved",
+    "correct_value": null,
+    "evidence": "No source states a car-to-car gain for the Boving Roofs itself. A write-up of the Southwest Rib (which this route shares and finishes on) gives 2,520 ft gain for 5 miles round trip, and a trail-map record gives 1,919 ft to the base of the spires only; neither is a figure for THIS route, and the two stored values (2,350 and 1,800) match neither. A published gain figure for the Boving Roofs to the summit would settle it.",
+    "sources": [
+     "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html",
+     "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/"
+    ]
+   },
+   {
+    "file": "s069.json",
+    "fact": "One-way approach distance",
+    "status": "unresolved",
+    "correct_value": "dist_km 4.0 (about 2.5 mi one way)",
+    "evidence": "The stored 8.85 km equals this row's own itinerary round-trip mileage (5.5 mi) and sits in the one-way approach slot. A trail-map record gives 2.5 mi one way from the Blue Lake Trailhead to the Early Winters Spires, and an independent Southwest Rib write-up (same basin approach) gives 5 miles round trip; 2.5 mi = 4.0 km. [Held: 4.0 km would contradict this row’s own itinerary round trip.]",
+    "sources": [
+     "https://www.gaiagps.com/hike/1801/early-winters-spires-via-blue-lake-trail/",
+     "http://cnmtstuartclimbproject.blogspot.com/2018/07/route-l-south-early-winters-spire.html"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Time to summit vs car-to-car total",
+    "status": "not_a_contradiction",
+    "correct_value": null,
+    "evidence": "No approachTimeHrs or descentTimeHrs is published on this row, so summitTimeHrs equal to the car-to-car totalHrs cannot be double-counted by the Planner; by the settled convention it is nulled only when a walk leg is also published.",
+    "sources": []
+   },
+   {
+    "file": "t102.json",
+    "fact": "Cam sizes for the roofs",
+    "status": "fixed_internal_plus_one",
+    "correct_value": "Doubles of 0.5-3 in cams for the roofs",
+    "evidence": "The route page's protection note says to bring the Southwest Rib gear and that the roofs take 0.5-3 in very well, with doubles in those sizes. gear, pro_needs, detailed_rack, rack and pitch_detail[1] all agree; only rope_note's 'extra small cams' disagrees. No second independent route description was found.",
+    "sources": [
+     "https://www.mountainproject.com/route/110616122/boving-roofs"
+    ]
+   },
+   {
+    "file": "t102.json",
+    "fact": "Blue Lake Trailhead distance from Washington Pass",
+    "status": "bivy_zone_list",
+    "correct_value": "About 1 mile west of Washington Pass",
+    "evidence": "Only bivy[0].notes (the shared Washington Pass camp card) says half a mile; the route's own trailhead card says about 1 mile. A hiking guide puts the Blue Lake Trailhead 0.8 mi west of the Washington Pass overlook, a local newspaper says about three quarters of a mile west of the pass, and a regional climbing guide and a geology field guide both say about a mile west. None supports half a mile or 1.5 miles. bivy[] belongs to the camping clean-up, so no patch; the Blue Lake Trailhead entry does serve this route and its half-mile figure is the fact to correct there.",
+    "sources": [
+     "https://www.wta.org/go-hiking/hikes/blue-lake",
+     "https://methowvalleynews.com/2026/04/16/hwy-20-plows-reach-blue-lake-trailhead/",
+     "https://wenatcheeoutdoors.org/2017/01/19/washington-pass-climbing/",
+     "https://nwgeology.wordpress.com/the-fieldtrips/geology-guide-to-the-blue-lake-trail-washington-pass/"
+    ]
+   }
+  ],
+  "siblings": [
+   {
+    "id": "wa_south_early_winters_spire_nothing",
+    "name": "Nothing",
+    "grade": "5.11d A0"
+   },
+   {
+    "id": "wa_sews_sw_rib",
+    "name": "Southwest Rib",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_south_early_winter_spire_east_buttress",
+    "name": "East Buttress",
+    "grade": "5.8"
+   },
+   {
+    "id": "wa_dolphin_chimney",
+    "name": "Dolphin Chimney",
+    "grade": "5.9+"
+   },
+   {
+    "id": "wa_mojo_rising",
+    "name": "Mojo Rising",
+    "grade": "5.11b C1+"
+   },
+   {
+    "id": "wa_south_early_winter_spire_passenger",
+    "name": "Passenger",
+    "grade": "5.11d"
+   },
+   {
+    "id": "wa_the_hitchhiker",
+    "name": "The Hitchhiker",
+    "grade": "5.11-"
+   },
+   {
+    "id": "wa_northwest_face_boving_pollock",
+    "name": "Northwest Face (Boving-Pollock)",
+    "grade": "5.11a"
+   },
+   {
+    "id": "wa_free_mojo",
+    "name": "Free Mojo",
+    "grade": "5.11-"
+   },
+   {
+    "id": "wa_south_arete",
+    "name": "South Arete",
+    "grade": "5.5"
+   },
+   {
+    "id": "wa_south_early_winter_spire_direct_east_buttress",
+    "name": "Direct East Buttress",
+    "grade": "Grade III+, 5.9 A0 (or 5.11 free), 9 pitches"
+   },
+   {
+    "id": "wa_south_early_winter_spire_southwest_couloir",
+    "name": "Southwest Couloir",
+    "grade": "Grade II, snow to 50°"
+   },
+   {
+    "id": "wa_southern_man",
+    "name": "Southern Man",
+    "grade": "5.11d"
+   }
+  ],
+  "row": {
+   "id": "wa_boving_roofs",
+   "area_id": "wa_south_early_winters_spire",
+   "name": "Boving Roofs",
+   "discipline": "alpine",
+   "grade": "5.10b",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 3,
+   "length_m": 67,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Paul Boving and Steve Pollock",
+   "lat": null,
+   "lng": null,
+   "aspect": "W",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Southwest Rib rack",
+    "Doubles of medium-to-large cams (0.5-3 in) for the roofs"
+   ],
+   "hazards": [
+    "Loose rock on the first pitch and a loose block at the start of the roof pitch",
+    "Documented pendulum-fall hazard for the second climber if gear is pulled through the roof"
+   ],
+   "verif": null,
+   "overview": "A well-regarded direct variation to the Southwest Rib, taking a striking double-roof ('money pitch') instead of the standard line before rejoining the Bear Hug pitch.",
+   "beta": "Climb the first three pitches of the Southwest Rib, then go left at a ledge. A short, loose 5.2 pitch leads to a belay below the roofs; the money pitch pulls under and over double roofs at 5.10b with good gear, followed by an easy chimney into 5.9 thin hands to a ledge with great position, joining the upper Southwest Rib/South Arete descent.",
+   "turnaround": "A short variation route - still respect afternoon-storm timing given the alpine setting.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b",
+   "ice_grade": null,
+   "gain_ft": 2350,
+   "loss_ft": null,
+   "dist_km": 8.85,
+   "max_angle": null,
+   "rappels": "3",
+   "commitment": "III",
+   "face": "Southwest face, above the Southwest Rib",
+   "permit": "No climbing or wilderness permit required; Northwest Forest Pass (or day fee) to park at developed trailheads.",
+   "comms": "No cell service at Washington Pass.",
+   "descent": "Continue up remaining Southwest Rib pitches to the summit, then descend the South Arete.",
+   "obj_haz": [
+    "loose rock on P4"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5191,
+     "lng": -120.6742,
+     "elev": 5400,
+     "name": "Blue Lake Trailhead",
+     "note": "Blue Lake Trail #314 trailhead on SR-20; shared approach for Liberty Bell and South Early Winters Spire (NW Forest Pass required).",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.51217,
+     "lng": -120.65536,
+     "elev": 7807,
+     "name": "South Early Winters Spire",
+     "note": "True summit of South Early Winters Spire, between Liberty Bell and Blue Lake Peak.",
+     "type": "Summit",
+     "distMi": 2.3
+    }
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 6.5,
+    "summitTimeHrs": 6.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "Climbs the first three pitches of the Southwest Rib, then breaks left through the classic double roofs (~100 ft of powerful 5.10b jamming). Most parties finish to the summit and descend the South Arete.",
+      "fromTo": "Car-to-car climb",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Rack for the Southwest Rib's initial pitches, plus doubles of 0.5-3\" cams for the roofs.",
+   "what_to_bring": [
+    "Helmet",
+    "Approach shoes for the trail/talus"
+   ],
+   "pro_tips": [
+    "Considered the 'money pitch' of the Southwest Rib area - worth seeking out if you're already climbing on this side of the peak.",
+    "Watch for a loose block at the start of the roof pitch."
+   ],
+   "watch_out": "Roof terrain sections create exposure and technical difficulty\nRoute-finding through roof systems can be challenging\nWeather exposure on sustained climbing sections\nLoose rock on approach and around roof terrain\nDescent route-finding through variable terrain",
+   "pro_needs": "Roofs protect well with medium-to-large cams; watch for a loose block at the very start of the roof pitch.",
+   "best_season": "Late June through September.",
+   "high_point_ft": 7807,
+   "aid_grade": null,
+   "approach": "Same start as the Southwest Rib: Blue Lake Trailhead, Blue Lake Trail ~1.25 miles to the NW clearing, climber's path up into the basin to the Y-shaped larch tree at the base of the Southwest Rib (left of the Southwest Couloir). Climb the first 3 pitches of the Southwest Rib (or approach via the Northwest Face/Boving-Pollock line), then go left at a ledge where the two roofs come into view — this is pitch 5 of the combined line, about 100 ft of sustained 5.10b climbing under and pulling through the double roofs. Watch for a loose block right at the start of the roof pitch.",
+   "descent_text": "Most parties continue up the remaining Southwest Rib pitches to the true summit after the roofs pitch rather than reversing it (rappelling back through an overhanging roof feature is awkward and not the documented practice). From the summit, take the standard South Arete descent: downclimb the arete to the Rabbit Ears, then 3 single-rope rappels (60m rope) from bolted anchors/chains down the gully to the base, returning to the Blue Lake Trail. If bailing below the roofs, natural gear anchors would be needed since no fixed rappel line down the roof pitch itself was documented.",
+   "bail": "Rappel the Southwest Rib pitches below the roof if needed; above the roofs, commit to finishing.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.2",
+     "notes": "A short, loose approach pitch off the shared Southwest Rib start, climbing blocky, sometimes-loose ground up to a belay stance directly beneath the two roofs.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 10
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.10b",
+     "notes": "The 'money pitch': sustained, powerful climbing under and through the striking double roof, protecting well with 0.5-3in cams. Watch for a loose block right at the start.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.9",
+     "notes": "Starts up an easy chimney that steepens into sustained 5.9 thin-hands, then steps right to top out at the head of the Southwest Rib's Bear Hug pitch.",
+     "pitch": 3,
+     "anchor": "Gear (rejoins Southwest Rib)",
+     "lengthM": 25
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Climbs the first three pitches of the Southwest Rib, then breaks left through the classic double roofs (~100 ft of powerful 5.10b jamming). Most parties continue up the remaining Southwest Rib pitches to the summit and descend the South Arete.",
+      "hours": 6.5,
+      "miles": 5.5,
+      "title": "Car-to-car climb",
+      "gainFt": 1800,
+      "lossFt": 1800,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Blue Lake trailhead",
+        "detail": ""
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach base",
+        "detail": "~1.5 hr approach."
+       },
+       {
+        "time": "7:45 AM",
+        "label": "Start climbing",
+        "detail": "Shares the lower 3 Southwest Rib pitches before the roof pitch."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Top of Boving Roofs pitch",
+        "detail": ""
+       },
+       {
+        "time": "11:15 AM",
+        "label": "Finish up the Southwest Rib, descend the South Arete",
+        "detail": ""
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Back at trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Climb Boving Roofs and return to the Blue Lake trailhead"
+     }
+    ],
+    "totalNote": "A shorter day than the full Rib: roughly 6.5-7 hrs car-to-car for 3 pitches, usually finishing up the Southwest Rib to the summit and descending the South Arete."
+   },
+   "access": {
+    "_raw": {
+     "notes": "No trailhead camping; nearest camping in Ross Lake National Recreation Area or beyond Washington Pass",
+     "permit_type": "Northwest Forest Pass required (day use)",
+     "land_manager": "Okanogan-Wenatchee National Forest",
+     "special_hazards": "Camping NOT permitted at Blue Lake Trailhead",
+     "wilderness_zone": "Not in designated wilderness; near Okanogan-Wenatchee boundaries",
+     "group_size_limits": "Not specified",
+     "permit_pickup_hours": "Self-service at trailhead",
+     "altitude_restrictions": "None documented",
+     "parking_pass_required": "Northwest Forest Pass at Blue Lake Trailhead",
+     "permit_cost_structure": "Day use; NW Forest Pass $5 (5-day) or $30 (annual)",
+     "permit_pickup_location": "Online, local retail, or Blue Lake Trailhead",
+     "seasonal_closure_dates": "Summer access typical; check USFS website for 2026 specific dates",
+     "ranger_district_contact": "Methow Valley Ranger District, (509) 996-4000"
+    },
+    "fees": "Day use; NW Forest Pass $5 (day) or $30 (annual)",
+    "notes": "Not inside North Cascades National Park — this corridor is entirely Okanogan-Wenatchee National Forest (Methow Valley Ranger District). No Mount Rainier-style climbing fee applies here.",
+    "rules": "No climbing or wilderness permit required for day climbing. Dispersed camping capped at 10 days; no camping within ¼ mile of Cutthroat Lake; no campfires at dispersed sites; bear-resistant food storage required; dogs on leash ≤6 ft.",
+    "permit": "Northwest Forest Pass required (day use)",
+    "closures": "Summer access typical; check USFS website for 2026 specific dates",
+    "seasonal": "WA-20 (North Cascades Highway) closes gate-to-gate each winter, typically from mid-November or early December until April or May; the entire Washington Pass corridor is car-inaccessible in winter.",
+    "permitZone": "Not in designated wilderness; near Okanogan-Wenatchee boundaries",
+    "landManager": "Okanogan-Wenatchee National Forest",
+    "land_manager": "Okanogan-Wenatchee National Forest (Methow Valley Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Washington Pass Overlook, Blue Lake, and Cutthroat trailheads — $5/day or $30/annual (America the Beautiful pass also honored).",
+    "passRequired": "Northwest Forest Pass at Blue Lake Trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required",
+     "where": "Dispersed camping on National Forest land is free; nearby developed campgrounds charge a site fee and take no reservation."
+    }
+   },
+   "road": {
+    "name": "Blue Lake Trailhead, Highway 20, Washington Pass",
+    "status": "Highway 20 is fully paved to the Blue Lake Trailhead parking area; no rough-road driving required.",
+    "driveNote": "Roughly 3 hours from Seattle via I-5 and Highway 20, or about 45 minutes from Mazama/Winthrop.",
+    "seasonalGate": "Highway 20 over Washington Pass is a seasonal highway, closed by snow each winter (typically between mid-November and early December) with variable spring reopening, historically ranging from mid-April to mid-June."
+   },
+   "climate": {
+    "fall": "Good into September",
+    "spring": "Snow lingers in approach basin into June",
+    "summer": "Prime season",
+    "winter": "Highway closed",
+    "typical": "Warm dry summers; best conditions late June-September",
+    "forecastZone": "Washington Pass / East Slopes Cascades (NWAC)"
+   },
+   "emergency": {
+    "notes": "Call 911 for emergencies.",
+    "county": "Okanogan",
+    "rangerStation": "Methow Valley Ranger District (Winthrop), Okanogan-Wenatchee NF",
+    "nearestHospital": "Three Rivers Hospital, Brewster, WA; or Mid-Valley Hospital, Omak, WA",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "No evidence of a concentrated peak-traffic period",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Low — rarely climbed as a standalone route (usually just the first 3 pitches, shared with Southwest Rib)"
+   },
+   "partner_requirements": {
+    "fitnessSpec": "Grade covers a powerful ~100 ft roof pitch plus loose 5.2 terrain lower on the route",
+    "approachTime": null,
+    "requiredSkills": [
+     "Roof/overhang crack technique on the roof pitch",
+     "Comfort on loose rock on the first pitch and a loose block at the start of the roof",
+     "Strong second recommended — documented pendulum-fall hazard pulling gear through the roof"
+    ],
+    "experienceLevel": "Confident 5.10 trad leader"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "June–September; SR-20 gate applies",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Reliable dry rock season",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Pass open but early-season moisture/snow possible",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Reliable dry rock season",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Dry granite continues; shorter days",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Standard North Cascades convective pattern — afternoon thunderstorms build over the Cascade Crest in summer; standard guidance is an early start and being off exposed terrain by early/mid-afternoon."
+    },
+    "exposure": "Powerful roof pitch with pendulum-fall risk for the second if gear is pulled through the roof; loose block at the roof start",
+    "avalanche": {
+     "zone": "NWAC — North Cascades (forecast program runs mid-Nov–mid-Apr only; no product exists during the summer rock season)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": {
+     "timing": "N/A",
+     "location": "None — dry granite formation, no glacier travel on any approach or route variant"
+    }
+   },
+   "data_quality": {
+    "gaps": [
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI.",
+     "FA and route description corroborated by two independent sources (Mountain Project, a Wayne Wallace blog post); solitude rating is inferred from view counts rather than an explicit statement."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-09"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 4,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.512275,
+    "peakLng": -120.655395,
+    "trailhead": "Blue Lake Trailhead (SR-20)",
+    "trailheadLat": 48.518965,
+    "trailheadLng": -120.67436,
+    "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1 mile west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+   },
+   "sling_rack": {
+    "cams": "single set 0.3-3in, doubles in finger/hand sizes",
+    "nuts": "small-mid set"
+   },
+   "alpine_draws": 6,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "3-pitch trad line on South Early Winters Spire's granite. Standard alpine rack to 3in, doubles of 0.5-3in cams for the roofs. This route's standard descent is via the South Arete (3 single-rope rappels on a 60m rope past the Rabbit Ears).",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": [
+    {
+     "n": 1,
+     "notes": "First of the South Arete's three fixed rappel stations, reached after continuing up to the true summit and downclimbing to the Rabbit Ears. Each rap stays within a single 60 m rope.",
+     "anchor": "bolted chain/bolt station on South Arete descent gully",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Continues down the gully; short easy downclimbing sections connect stations.",
+     "anchor": "bolted chain/bolt station",
+     "lengthM": 30
+    },
+    {
+     "n": 3,
+     "notes": "Final rappel reaches the base of the South Arete descent gully.",
+     "anchor": "bolted chain/bolt station",
+     "lengthM": 30
+    }
+   ],
+   "rappel_count_note": "Most parties continue to the true summit and descend via the South Arete's shared rappel line rather than reversing the Roofs pitch; some reports collapse the South Arete descent to 2 rappels with downclimbing between stations.",
+   "rack": [
+    "Cams 0.3–3in (single set, doubles in finger/hand sizes)",
+    "Doubles of 0.5–3in cams for the roof pitch",
+    "Nuts, small-to-mid set",
+    "6 alpine quickdraws",
+    "Single 60m rope"
+   ],
+   "features": [
+    "Overhanging",
+    "Chimney",
+    "Crack",
+    "Sustained",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Blue Lake Trail to the Y-shaped larch at the base of the Southwest Rib, then three pitches up before this route starts",
+     "notes": "Same start as the Southwest Rib: Blue Lake Trailhead, Blue Lake Trail about 1.25 miles to the northwest clearing, then the climber's path up into the basin.\n\nThree pitches at 5.10b as counted here, but understand what the route is: it is pitch 5 of a combined line, about 100 ft of sustained climbing under and through a pair of roofs.",
+     "season": "Jun-Sep",
+     "hazards": [
+      "No ground start; three pitches of another route must be climbed first",
+      "A loose block right at the start of the roof pitch",
+      "Rappelling back through an overhanging roof is awkward and undocumented, so bailing here means natural gear anchors",
+      "No water in the basin"
+     ],
+     "baseFinding": "THIS ROUTE HAS NO GROUND START, AND THAT IS THE MOST IMPORTANT FACT ABOUT FINDING IT. You reach it by climbing THE FIRST THREE PITCHES OF THE SOUTHWEST RIB, or alternatively by the Northwest Face Boving-Pollock line, and THEN GOING LEFT AT A LEDGE WHERE THE TWO ROOFS COME INTO VIEW.\n\nSO THE BASE OF THE DAY IS THE BASE OF THE SOUTHWEST RIB, AND THAT HAS A LANDMARK YOU CAN STAND UNDER: THE Y-SHAPED LARCH TREE AT THE BASE OF THE SOUTHWEST RIB, LEFT OF THE SOUTHWEST COULOIR. A larch with a forked trunk, at the foot of a rib, with a couloir to its right. That is the aiming point from the basin.\n\nTHE IN-ROUTE TEST IS VISUAL AND BINARY: GO LEFT AT THE LEDGE WHERE THE TWO ROOFS COME INTO VIEW. Two roofs, stacked. If you can see only one overhang, or none, you have not reached the ledge. If you have climbed more than three pitches of the rib you have gone past it.\n\nA HAZARD RIGHT AT THE START OF THE PITCH, RECORDED BECAUSE IT IS EXACTLY WHERE A PARTY IS COMMITTING: THERE IS A LOOSE BLOCK RIGHT AT THE START OF THE ROOF PITCH.\n\nWHAT NOBODY DOES HERE, WHICH ANSWERS THE OBVIOUS QUESTION: parties do not reverse this pitch. Rappelling back through an overhanging roof is awkward and is not the documented practice. Most continue up the remaining Southwest Rib pitches to the true summit and take the standard South Arete descent, downclimbing the arete to the RABBIT EARS then three single-rope 60 m rappels from bolted anchors down the gully."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5400,
+     "name": "Blue Lake trailhead roadside bivy",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The usual answer for a car-to-car day on this group, and the start of every west-side approach, roughly half a mile west of Washington Pass. Parties routinely sleep at the lot or at the highway hairpin rather than walking in, because the approaches are short enough that a high camp buys little. There are no facilities and no water; it is a place to sleep in or beside the car, not a campsite. Highway 20 is closed through the winter, so this is unavailable until the road reopens.",
+     "water": "None at the trailhead. Carry what you need.",
+     "permit": "Northwest Forest Pass required to park",
+     "capacity": "Informal, at the parking area — no prepared sites"
+    },
+    {
+     "elev": 3600,
+     "name": "Lone Fir Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "The closest developed campground, about a ten-minute drive east down the highway from the Blue Lake trailhead, in the trees along Early Winters Creek. No reservations, so it is a gamble on a summer weekend. Its season runs roughly from late spring into autumn and is decided by snow rather than by a date.",
+     "water": "Early Winters Creek runs through the campground",
+     "permit": "Standard national forest campground fee",
+     "capacity": "27 sites, first come first served"
+    },
+    {
+     "elev": 2900,
+     "name": "Klipchuck Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "Further east and lower than Lone Fir, which means it opens earlier in the season when the higher options are still under snow — the practical choice for an early-season trip. It sits far enough off the highway to be quiet and has more plumbing than anything nearer the climbing. The trade is a longer drive to the trailhead each morning. Check current status before relying on it; the highway-corridor campgrounds take periodic maintenance closures.",
+     "water": "Piped water, sinks and flush toilets",
+     "permit": "Standard national forest campground fee",
+     "capacity": "First come first served"
+    },
+    {
+     "name": "Liberty Bell basin dispersed sites",
+     "role": "route",
+     "type": "camp",
+     "notes": "Sites in the basin on the west side of the group, reached by following the Blue Lake trail and then the signed climbers' path that branches off it toward the group. Worth it if you want to be under the west-side routes at first light rather than walking up from the road. Note the separate restriction around Blue Lake itself, where overnight camping is not allowed within a quarter mile of the lake — the basin sites are the ones to aim for, not the lakeshore. Treat it as a basin camp below the spires rather than a fixed spot.",
+     "water": "Snowmelt and seasonal runoff in the basin — unreliable once the snow has gone",
+     "permit": "No permit for dispersed camping; this is national forest, not the national park",
+     "capacity": "Scattered dispersed sites, small parties"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ }
+]

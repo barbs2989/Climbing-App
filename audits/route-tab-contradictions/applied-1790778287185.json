@@ -1,0 +1,186 @@
+{
+ "applied": [
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "trailhead elevation (waypoint elev 4855 vs elevFt 4500 on the same pin)"
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elevFt"
+   ],
+   "fact": "trailhead elevation (waypoint elev 4855 vs elevFt 4500 on the same pin)"
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "column": "waypoints",
+   "path": [
+    0,
+    "elev"
+   ],
+   "fact": "trailhead elevation: waypoint elev 4,500 vs approach '~4,875 ft' for the same Rainy Pass trailhead"
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "column": "seasonal_hazards",
+   "path": [
+    "exposure"
+   ],
+   "fact": "SEASONAL HAZARDS exposure calls the route Class 2-3 terrain 'rather than sheer exposure' vs an exposed Class 3 gully and Class 3-4 boulders everywhere else"
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "column": "partner_requirements",
+   "path": [
+    "fitnessSpec",
+    "hiking"
+   ],
+   "fact": "Round-trip distance: itinerary/approach 10 mi vs partner_requirements 11-13 mi"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5181,
+      "lng": -120.7331,
+      "elev": 4855,
+      "name": "Rainy Pass PCT Trailhead",
+      "type": "Trailhead",
+      "elevFt": 4500
+     },
+     {
+      "lat": 48.4828,
+      "lng": -120.9108,
+      "elev": 9220,
+      "name": "Goode Mountain Summit",
+      "type": "Summit",
+      "elevFt": 9220
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "before": {
+    "waypoints": [
+     {
+      "lat": 48.5181,
+      "lng": -120.7331,
+      "elev": 4500,
+      "name": "Rainy Pass PCT North Trailhead",
+      "note": "SR-20 milepost ~159, ~2 mi east of Rainy Pass; NPS backcountry permit required for overnight camping, $5/day USFS parking fee, no potable water on site.",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "Park at the Rainy Pass PCT North trailhead on SR-20 near milepost 159, about two miles east of Rainy Pass. A $5-per-day USFS parking fee applies here, and there's no potable water on site. An NPS backcountry permit is required for overnight camping in the Goode Glacier/moraine camp zone; reserve it in advance at the Wilderness Information Center in Marblemount."
+     },
+     {
+      "lat": 48.487365,
+      "lng": -120.853537,
+      "elev": 2800,
+      "name": "PCT / North Fork Bridge Creek Trail junction",
+      "note": "Leave the Pacific Crest Trail here and turn onto the North Fork Bridge Creek Trail toward Goode's north side.",
+      "type": "Junction",
+      "distMi": 10
+     },
+     {
+      "lat": 48.494702,
+      "lng": -120.864313,
+      "elev": 3000,
+      "name": "Grizzly Creek crossing",
+      "note": "Usually an easy log crossing but reported as a dangerously high, hard-to-find ford in early season; trail turns brushy/overgrown just beyond it.",
+      "type": "Hazard",
+      "distMi": 10.5
+     },
+     {
+      "lat": 48.482104,
+      "lng": -120.893868,
+      "elev": 6800,
+      "name": "Lateral moraine camp above Goode Glacier",
+      "note": "Established bivy atop the lateral moraine overlooking the Goode Glacier's seracs; standard base camp for the Southwest Couloir attempt.",
+      "type": "Campsite",
+      "distMi": 13
+     },
+     {
+      "lat": 48.481227,
+      "lng": -120.900589,
+      "elev": 7400,
+      "name": "Goode Glacier crossing",
+      "note": "Cross the glacier from the moraine camp to reach the couloir base; route-finding is tricky and late-season snow bridges can be deteriorated.",
+      "type": "Junction",
+      "distMi": 13.5
+     },
+     {
+      "lat": 48.48,
+      "lng": -120.91,
+      "elev": 8900,
+      "name": "Black Tooth Notch",
+      "note": "Foot-wide notch gained by an exposed class 4 traverse (fixed sling marks the crux step); rock here is loose/\"garbage\" — watch for rockfall onto climbers below.",
+      "type": "Hazard",
+      "distMi": 14.2
+     },
+     {
+      "lat": 48.4829,
+      "lng": -120.9109,
+      "elev": 9220,
+      "name": "Goode Mountain summit",
+      "note": "Highest point in North Cascades National Park; summit block above the notch adds exposed class 4-5 moves before the true top.",
+      "type": "Summit",
+      "distMi": 14.5
+     }
+    ]
+   }
+  },
+  {
+   "id": "wa_mount_lyall_south_route",
+   "before": {
+    "seasonal_hazards": {
+     "weather": {
+      "typical": "Drier east-side (rain-shadow) climate than the west Cascades; midsummer is the stable window, spring carries lingering snow/avalanche risk on approach slopes and winter brings full snow cover",
+      "probability": ""
+     },
+     "exposure": "Moderate: loose scree and talus on the south slopes create rockfall and twisted-ankle/fall risk typical of Class 2-3 terrain rather than sheer exposure; the primary hazard is the remoteness of the long, committing approach itself, which raises the consequence of any injury",
+     "avalanche": {
+      "zone": "N/A - non-glaciated summer route",
+      "byMonth": {
+       "July": "N/A",
+       "June": "N/A",
+       "August": "N/A",
+       "September": "N/A"
+      }
+     },
+     "crevasses": "N/A - no glacier travel"
+    }
+   }
+  },
+  {
+   "id": "wa_mount_mastiff_south_route",
+   "before": {
+    "partner_requirements": {
+     "fitnessSpec": {
+      "hiking": "~11-13 miles round trip with roughly 4,900 ft of gain via the Nason Ridge trail and meadows; a long full day on the ridge",
+      "packWeight": "Standard day-scramble pack (~15-20 lb: water, layers, navigation, basic first aid) - no technical rack needed for this route"
+     },
+     "approachTime": "~5 hours to the summit from the Merritt Lake trailhead (per on-the-ground trip reports), longer if combined with Mount Howard",
+     "requiredSkills": [
+      "off-trail routefinding through heather and talus (trail thins above treeline)",
+      "steady footing on loose scree and steep heather slopes",
+      "basic exposure tolerance for narrow ridge sections",
+      "map/GPS navigation - route is not signed or continuously trailed"
+     ],
+     "experienceLevel": "Intermediate scrambler - comfortable with off-trail routefinding, loose talus, and short exposed Class 3 ridge moves; not a beginner hike despite the Class 2-3 grade"
+    }
+   }
+  }
+ ]
+}

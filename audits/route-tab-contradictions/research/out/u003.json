@@ -1,0 +1,185 @@
+{
+ "file": "u003",
+ "results": [
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Total elevation gain (gain_ft/itinerary vs approach prose & approach_variant's own gainFt)",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row now gives 3,600 ft for Bryant alone everywhere it states a total — gain_ft/loss_ft 3600, itinerary day and totalNote 3,600 ft / 9 mi, the approach prose ('about 9 miles with roughly 3,600 ft of gain for Bryant alone; adding Hemlock Peak makes it about 9.5 miles and 3,900 ft') and the primary Denny Creek variant's gainFt 3600.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Which trailhead/approach the route uses (Alpental vs Denny Creek)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Narrower than before: the approach, beta, itinerary, timing, descent_text, partner_requirements and the primary approach variant now all use the Denny Creek trailhead and Hemlock Pass. But the trailhead card (approach_logistics.trailhead / trailheadDirection, with Alpental coordinates) and waypoint 0 still name the Alpental / Snow Lake Trailhead, and waypoints 1-6 trace the Alpental/Source Lake gully line of the secondary variant. Re-pointing the card and pins at Denny Creek would mean moving coordinates, which is out of scope, and relabelling an Alpental pin as Denny Creek would put a wrong name on it; left for a structural edit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/source-lake"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_bryant_peak_southeast_slopes",
+   "fact": "Trailhead waypoint elevation 2,300 ft vs its own Alpental name, coordinate and directions (~3,100-3,120 ft)",
+   "verdict": "fixed",
+   "correct_value": "~3,120 ft",
+   "evidence": "Waypoint 0 is named, placed and described as the Alpental / Snow Lake Trailhead (its directions say 3,100-3,120 ft, as does the Alpental approach variant), but its elev/elevFt is 2,300 ft, the Denny Creek trailhead height. The USGS 1 m elevation service at the pin's own coordinate returns 3,127 ft, and a mapped Snow Lake Trail route from that trailhead gives its lowest point as 950 m (about 3,117 ft). Both agree on ~3,120 ft for the point the pin marks.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-121.42353&y=47.44542&units=Feet&wkid=4326",
+    "https://www.komoot.com/smarttour/e1175751058/snow-lake-trail"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elev"
+     ],
+     "expect": 2300,
+     "value": 3120,
+     "id": "wa_bryant_peak_southeast_slopes",
+     "fact": "Trailhead waypoint elevation 2,300 ft vs its own Alpental name, coordinate and directions (~3,100-3,120 ft)"
+    },
+    {
+     "op": "set",
+     "column": "waypoints",
+     "path": [
+      0,
+      "elevFt"
+     ],
+     "expect": 2300,
+     "value": 3120,
+     "id": "wa_bryant_peak_southeast_slopes",
+     "fact": "Trailhead waypoint elevation 2,300 ft vs its own Alpental name, coordinate and directions (~3,100-3,120 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "fact": "Approach/camp line: King Lake + east-ridge notch vs. Buck Creek Pass + Liberty Cap + Louis Creek Basin",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live row's beta, pitch_detail, all three itinerary days, timing sections, approach, descent_text and primary approach variant now describe one line — Trinity, Buck Creek Pass, the High Pass high route around Liberty Cap and under Mount Berge, a Louis Creek Basin camp, then the south/southwest slopes. King Lake appears only as a named, seldom-used alternative. (Two waypoint pins east of the summit are a pin-position matter, out of scope.)",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_buck_mountain_south_ridge",
+   "fact": "gain_ft/loss_ft 5,700 vs the itinerary's day gains (4,800 + 1,900 + 900) and losses; dist_km 38.62 km (24 mi) vs ~13.5 mi one way / ~30 mi round trip",
+   "discovered": true,
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "The rebuilt itinerary's days sum to far more than gain_ft 5,700, and dist_km (24 mi) matches neither the itinerary's 13.5 mi one way nor its ~30 mi round trip; the Buck Creek Pass and basin waypoints' distMi (9.6 / 11 / summit 12) also disagree with the 13.5 mi approach day. Published totals found vary with the line taken: a club route page gives 20 mi / 6,000 ft for the Little Giant-Napeequa-Louis Creek southwest route, a High Pass report calls the approach about 16 mi, and a multi-day loop logged 40 mi / 11,686 ft. None states the car-to-car gain or one-way distance for the Buck Creek Pass/High Pass line, and summing days is not allowed, so nothing is patched.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/buck-mountain-8-528-southwest-route",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-08-05.7076413738",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2018-10-15.7084670439"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "fact": "Season window: season/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Retry sources add dated evidence but still no stated window for the face itself: a guide-service blog describes a June 26-27, 2007 ascent; search excerpts of club trip reports note abundant snow in June 2018 and the face nearly melted out by late July; the peak page gives July-September as the general optimum after avalanche danger. That supports 'earlier is better' but no two sources state the Late May-early July window (or any face-specific window), so neither season nor best_season/seasonal_guidance is changed.",
+   "sources": [
+    "https://proguiding.com/blog/mount-buckner-north-face/",
+    "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-buckner-north-face-2",
+    "https://www.summitpost.org/buckner-mountain/151083"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_route",
+   "fact": "Distance from the Point 5,841 pass to the summit",
+   "verdict": "fixed_internal_plus_one",
+   "correct_value": "A short class 3-4 ridge scramble and talus (a few tenths of a mile), not 'a little over a mile'",
+   "evidence": "Inside the row, the approach ('a short class 3-4 ridge traverse leads to the summit'), climbing_route pitch 2 ('a short class 3-4 ridge traverse'), the summit waypoint's note and directions ('a short ridge scramble / short class 3-4 ridge step east off the notch'), and the waypoint distances (pass 1.7 mi, summit 2.0 mi; the two pins are about 0.17 mi apart, the summit pin matching the peak's published coordinate 47°30'03\"N 121°19'39\"W) all make the final leg short; only the itinerary day-2 note and one schedule line say about a mile. A 2023 trip report of this route agrees: from about 5,800 ft the party went straight up steep dirt and rock to the summit ridge, and the whole trip from the river ford was about 4.5 mi round trip, which leaves no room for a mile-plus leg beyond the pass. The two itinerary lines are reworded to describe the short scramble without adding a new number.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2023-07-13.8942182927",
+    "https://en.wikipedia.org/wiki/Burnt_Boot_Peak"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "note"
+     ],
+     "find": "From the pass it's a little over a mile of easier snow/talus to the summit;",
+     "replace": "From the pass a short class 3-4 ridge scramble and some talus lead to the summit;",
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Distance from the Point 5,841 pass to the summit"
+    },
+    {
+     "op": "replace_text",
+     "column": "itinerary",
+     "path": [
+      "days",
+      1,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "About a mile of snow/talus travel from the pass to the summit.",
+     "replace": "A short class 3-4 ridge scramble and talus from the pass to the summit.",
+     "id": "wa_burnt_boot_peak_north_route",
+     "fact": "Distance from the Point 5,841 pass to the summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_japanese_gardens",
+   "fact": "Crux-flagged pitch vs actual hardest pitch",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: in the live row the crux flag sits on pitch 4, which is also the only 5.11c pitch (P1 5.11b, P2 5.11b, P3 5.11a), so the flagged pitch and the hardest stated grade agree.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_cannon_mountain_south_slopes",
+   "fact": "Overnight camp location/elevation — 'Basin below Cannon' at 6,200 ft (waypoints) vs Perfection/Inspiration Lake at ~7,500 ft (itinerary/approach)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: the itinerary camps near Perfection/Inspiration Lake at 10.5 mi, while the 'Basin below Cannon' Campsite pin says 6,200 ft at 8 mi. Retry checked the ground: the USGS elevation service returns about 7,638 ft at that pin's own coordinate (north-northeast of the summit, on the far side from this route), so its 6,200 ft matches neither the pin's location nor the camp the itinerary uses, and the Perfection Lake pin's ground height is ~7,562 ft. The fix is a pin relocation or removal, which is out of scope for text/number patches, and renaming or re-elevating the pin would label a point in the wrong place. The bivy list no longer carries a core-basin camp to reconcile. Left for the pin audits.",
+   "sources": [
+    "https://epqs.nationalmap.gov/v1/json?x=-120.795&y=47.512&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.8134206&y=47.4776193&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "fact": "glacier/crevasse hazard on this route",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: obj_haz lists crevasses on glacier remnants, while seasonal_hazards.crevasses says 'N/A - no glacier travel'. New on retry: one descent report of the couloir (July 2014) calls it a 3,500-ft snow couloir that may involve multiple crevasse/bergschrund crossings and describes full-width cracks and a bottomless moat, the snow being the Sill Glacier remnant; a ski report describes serac fall from the Sill Glacier onto the apron. Two other reports of the couloir mention no crevasses, and the 2013 Cascade Peak report would not load. One source for crevasses on the route itself is short of two, so the 'N/A' is not rewritten.",
+   "sources": [
+    "https://drdirtbag.com/2014/07/28/johannesburg-ne-buttress/",
+    "https://turns-all-year.com/trip-reports/cj-couloir-mt-pugh",
+    "https://www.whereiskylemiller.com/highway-20/cj-couloir/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "fact": "distance to the East Ridge/col area",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still real: the approach and waypoints put the couloir base at 0.7 mi and the summit at 1.7 mi, while the itinerary gives 5.7 mi for each day and dist_km is 18.35. Retry reports again describe the couloir approach only by time (about 20 minutes from the road to the apron, then ~3,000-3,500 ft of booting) with no mileage; the 5.7 mi figure more likely belongs to the Cascade Pass / Mixup Arm variant, which also has no published one-way mileage to the col. With no sourced figure, nothing is patched.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/cj-couloir-mt-pugh",
+    "https://drdirtbag.com/2014/07/28/johannesburg-ne-buttress/"
+   ],
+   "patches": []
+  }
+ ]
+}

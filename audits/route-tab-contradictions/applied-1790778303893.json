@@ -1,0 +1,27 @@
+{
+ "applied": [
+  {
+   "id": "wa_west_face_2",
+   "column": "emergency",
+   "path": [
+    "rangerStation"
+   ],
+   "fact": "which ranger district / county administers the route (emergency.rangerStation says Mount Baker Ranger District; access.land_manager says Darrington Ranger District; emergency.county Snohomish)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_west_face_2",
+   "before": {
+    "emergency": {
+     "notes": "Extreme remoteness means rescue response can take 2+ days. Helicopter rescue unlikely due to terrain and weather. Party must be capable of self-rescue and descent with injuries. Satellite messenger (InReach/Garmin) recommended for emergency communication. Cell phone coverage: none in the Gunsight Range area.",
+     "county": "Snohomish County",
+     "rangerStation": "Mount Baker Ranger District (Glacier Peak Wilderness office), approximately 50 miles from peak (very remote)",
+     "nearestHospital": "Skagit Valley Hospital (Sedro-Woolley) or Cascade Medical Center (Cascade), 60+ miles away",
+     "sheriffDispatch": "Snohomish County Sheriff: 911 or (425) 388-3393"
+    }
+   }
+  }
+ ]
+}

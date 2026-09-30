@@ -1,0 +1,110 @@
+{
+ "file": "u008",
+ "results": [
+  {
+   "id": "wa_southwest_buttress",
+   "fact": "trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. New search snippets for the Dorado Needle approach give about 5 miles (6,300 ft) from the Eldorado trailhead and about 6 miles (+5,500 ft) to a high camp at the Inspiration/McAllister saddle; both favour the itinerary day 1 (5.7 mi) over dist_km (6.44 km, 4 mi) and the waypoint camp at 3.2 mi, and the row also carries an approach sentence giving 25.75 km round trip. But the two figures differ, measure to different points (camp vs route), and the pages behind the snippets could not be opened to confirm them (the trail-database page gives only 6,280 ft gain). No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/dorado-needle-southwest-buttress",
+    "https://www.miyaradventures.com/trip/dorado-needle-and-early-morning-spire-2/",
+    "https://www.wta.org/go-hiking/hikes/dorado-needle",
+    "https://gethighonaltitude.com/2022/08/18/dorado-needle-sw-ridge/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r3",
+   "fact": "Steepest angle of the couloir",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. More reports widen the spread rather than narrow it: one puts the top at 30-35 degrees with a 38-40 degree roll, one says as steep as 45, one kicked steps in a 50-degree slope, and one describes a meter or two of 55+ degrees off the notch. With the row saying 40-45 in prose, 40-50 in watch_out and max_angle 50, no maximum is agreed by two sources.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/may-9-2009-circumnavigation-of-dragontail",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-07-05-0168949712",
+    "https://www.danielarndt.com/trips/63-dragontail-peak-climb",
+    "https://stevensong.com/usa/washington/dragontail-peak-and-colchuck-peak/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_der_dihedral",
+   "fact": "Day-2 climb duration",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. The route page gives only length (700 ft), grade (5.9+) and the 2006 first ascent; no trip report with a time for Der Dihedral was found. The Backbone Ridge figures from the first pass remain the only proxy, so neither hours=11 nor the 15.5 h schedule can be confirmed.",
+   "sources": [
+    "https://www.mountainproject.com/route/114288397/der-dihedral"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_this_my_friend",
+   "fact": "dist_km holds the round trip, not the one-way approach",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. dist_km 16.42 km equals the itinerary round trip (10.2 mi). No source states a one-way distance to this route; halving the round trip or adding the Aasgard leg to the lake distance would be a computed figure, which this pass may not write. No patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. gear lists a 60 m rope while rope_length_m is 30 and rope_note describes a ~30 m thin rope. New Triple Couloirs reports again split: one party carried a 30 m rope, others a 6 mm 60 m rope for the descent, and one mentions a 60 m pitch between the second and third couloirs; a guide-service report states no rope length. The row is the entry gully only, and no source addresses rope length for that section, so no patch.",
+   "sources": [
+    "https://turns-all-year.com/trip-reports/january-6-2013-dragontail-triple-couloirs",
+    "https://cascadeclimbers.com/forum/topic/101509-tr-dragontail-peak-triple-couloirs-03312018/",
+    "https://www.alpineinstitute.com/dragontail-peak-triple-couloirs/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "fact": "Rack cam-size upper limit",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "already consistent. gear now lists cams .3-2 and sling_rack.cams now reads .3-#2 (small set); the only remaining .2-1 figure is in corrections, which does not render.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_dragontail_peak_r2",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. gear lists a 60m rope while rope_length_m is 70 and rope_note describes one party with a 70 m rope. Further Gerber-Sink reports mention 60 m ropes (one saying a 60 m works for rappels) alongside the single 70 m account; no two sources state a required or recommended length, so no patch.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/57491-tr-dragontail-gerber-sink-north-face-2172008/",
+    "https://cascadeclimbers.com/forum/topic/97062-tr-dragontail-peak-gerber-sink-442015/",
+    "https://cascadeclimbers.com/forum/topic/96992-tr-dragontail-gerber-sink-variation-3242015/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_eagle_rock_scramble",
+   "fact": "access.fees claims no fee; access.passRequired states an explicit dollar fee",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. access.fees is scoped to a climbing fee and is a standing open product decision, so it is not touched. The remaining tension is passRequired (pass required at the FR6517 pull-off) against parking_pass (pass at developed trailheads); no source found says whether the undeveloped FR6517 road-end requires a Northwest Forest Pass, so no patch.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_project_crack",
+   "fact": "Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still unsettled. Sources again give the crag at about 4,700 ft and a parking lot about 3 mi up FR 4934 with a ~25 min uphill walk, but none states the parking elevation. The row's parking pin sits only about 65 m from the crag pin, so a ground-elevation lookup at that pin would not measure the real lot, and pin positions are out of scope. No patch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/keechelus-ridge-crag",
+    "https://www.mountainproject.com/area/114570429/keechelus-ridge",
+    "https://www.thecrag.com/en/climbing/united-states/central-cascade-mountains/area/4494758211"
+   ],
+   "patches": []
+  }
+ ]
+}

@@ -1,0 +1,134 @@
+{
+ "results": [
+  {
+   "id": "wa_lefty",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Lefty is a bolted sport climb; its discipline is changed from trad to sport, matching every protection field on the page.",
+   "evidence": "The route listing types Lefty as Sport/Alpine, 5.11b, 17 m, needing nothing beyond quickdraws; the crag's route table lists it as Sport. The row's gear (quickdraws), pro_needs (fully bolted) and pitch notes already agree; only discipline said trad.",
+   "sources": [
+    "https://www.mountainproject.com/route/125126360/lefty",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_lefty",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_friction_therapy",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Friction Therapy is a bolted sport climb (6 bolts to a bolted anchor); its discipline is changed from trad to sport.",
+   "evidence": "The route listing types it Sport/Alpine, 5.10c, 15 m, protected by 6 bolts to a bolted anchor with rap rings; the crag's route table lists it as Sport. The row's gear, detailed_rack and pitch notes already say bolts only.",
+   "sources": [
+    "https://www.mountainproject.com/route/124743128/friction-therapy",
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_friction_therapy",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_on_the_prowl",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "On the Prowl is a bolted sport climb (about 7 bolts); its discipline is changed from trad to sport.",
+   "evidence": "The route listing types it Sport/Alpine, 5.10-, 21 m, with about 7 bolts and hooked bolted anchors; the Ice Box right side table lists it as Sport (Route B and Route C there are the trad lines). The row's gear, pro_needs, detailed_rack and bail text already say bolts only.",
+   "sources": [
+    "https://www.mountainproject.com/route/126509881/on-the-prowl-d",
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_on_the_prowl",
+     "column": "discipline",
+     "path": [],
+     "expect": "trad",
+     "value": "sport"
+    }
+   ],
+   "pin_followups": []
+  },
+  {
+   "id": "wa_iceman",
+   "verdict": "confirmed",
+   "resolution": "keep_as_A",
+   "summary": "Iceman is a mixed bolts-and-gear route, so its discipline is changed to trad; its approach and road text, which described a different crag and trailhead, now describe the walk up from the SR-20 hairpin.",
+   "evidence": "The route listing types Iceman as Trad/Alpine, 5.10a/b, 24 m, with 3 bolts and cams from BD .3 to #1, and the Ice Box left side table lists it as the trad line between two sport routes; the row's beta, detailed_rack and pro_needs agree. Both Ice Box area pages (left and right side, written separately) start from the SR-20 hairpin, up the climbers' trail and slabs into the Ice Box, matching the row's own itinerary, face and base-pin note; the approach column instead described the Spire Gully (Alpenkuhl) walk and the road column named the Cutthroat Lake Trailhead. Only the one site describes this crag's approach, so the rewrite rests on it plus the row's own itinerary and pin note; no time or distance was written.",
+   "sources": [
+    "https://www.mountainproject.com/route/117767212/iceman",
+    "https://www.mountainproject.com/area/117767156/ice-box-left-side",
+    "https://www.mountainproject.com/area/117797283/ice-box-right-side"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "discipline",
+     "path": [],
+     "expect": "sport",
+     "value": "trad"
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "approach",
+     "path": [],
+     "expect": "Spire Gully right (Alpenkuhl), part of the Hairpin Crags, is reached from the same large pullout at the hairpin turns on SR-20 near Washington Pass used for Kangaroo Temple. Looking up toward South Early Winter Spire from the pullout, Spire Gully is the obvious gully just below and left; Alpenkuhl is its sunnier, south-facing right side (the left side is known as Tiger Wall). The approach is one of the shortest at Washington Pass — a direct walk/scramble of roughly 10-15 minutes straight up from the highway, snow-covered in early season and a worn boot path later in summer.",
+     "value": "Park at the apex of the hairpin turn on SR-20 below Washington Pass. Follow the climbers' trail up toward Quicksilver Slab and Spire Gully, then cut right into a dry creek bed and climb the slabs above it into the Ice Box. The upper, entrance slab has a fixed line; the lower slab does not. Both are smooth and slippery, and worse when wet."
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "road",
+     "path": [
+      "name"
+     ],
+     "expect": "Cutthroat Lake Trailhead, SR-20, Washington Pass",
+     "value": "SR-20 (North Cascades Highway), hairpin turn below Washington Pass"
+    },
+    {
+     "op": "set",
+     "id": "wa_iceman",
+     "column": "road",
+     "path": [
+      "status"
+     ],
+     "expect": "Paved highway parking at the Cutthroat Lake Trailhead; no unpaved road driving required.",
+     "value": "Paved highway pullout at the apex of the hairpin; no unpaved road driving required."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_iceman",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "to the Cutthroat Lake area near Washington Pass",
+     "replace": "to the hairpin turn below Washington Pass"
+    }
+   ],
+   "pin_followups": [
+    "waypoints[0] is named \"Blue Lake Trailhead\" and sits at the Blue Lake Trailhead (48.5192,-120.6743), 1.8 mi from the crag; it should be the SR-20 hairpin pullout (the sibling On the Prowl row uses 48.51429,-120.64284). Rename and move it and rewrite its note (which calls it the Concord/Lexington trailhead) together with the base pin distMi.",
+    "gain_ft 500 and the base pin distMi 1.8 were measured from the Blue Lake Trailhead; revisit once the trailhead pin moves."
+   ]
+  }
+ ]
+}

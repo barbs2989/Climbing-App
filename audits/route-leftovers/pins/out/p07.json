@@ -1,0 +1,407 @@
+{
+ "results": [
+  {
+   "id": "wa_mount_redoubt_south_face",
+   "verdict": "leave",
+   "summary": "The note on this route is about its total approach distance, not a map pin, and every pin already sits where the route goes.",
+   "evidence": "The only finding concerns dist_km (a distance column), which is not a pin. Checked the pins anyway: Ouzel Lake pin 48.9623,-121.2633 matches the mapped lake (48.96230,-121.26324); the summit pin 48.95782,-121.300744 matches the mapped peak (48.95783,-121.30078). The Depot Creek trailhead, falls and border-monument pins run in order up the Depot Creek valley toward the lake. No pin change needed.",
+   "sources": [
+    "https://nominatim.openstreetmap.org/search?format=json&q=Ouzel+Lake+Washington",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Mount+Redoubt+Whatcom"
+   ],
+   "pin_ops": [],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin sat at Thunder Creek on Highway 20, but this route starts at the Eldorado Creek trailhead on Cascade River Road, so the pin is moved there and the trailhead text and summit note now describe the Eldorado approach.",
+   "evidence": "Pin 0 'Thunder Creek Trailhead' 48.6855,-121.0925 is at Colonial Creek, while the row's approach, itinerary, timing and approach_variants all start at the Eldorado Creek climbers' trailhead at about mile 20 of Cascade River Road. Mapped climbers' parking for the Eldorado Basin path is at 48.49275,-121.12231 and the mapped Eldorado Basin Trail starts at 48.49279,-121.12333; an independent trip report gives its Cascade River log crossing, a short way downstream of the parking, as 48.493061,-121.123988 (about 130 m away). Other catalog routes pin this trailhead at 48.4926,-121.1176 (about 350 m east, on the road). New pin 48.4927,-121.1223, ground 2,160 ft. Summit pin 48.581894,-121.091957 matches the mapped peak (48.58220,-121.09166) and stays; its note described Lucky Pass (the Thunder Creek side) and its distMi 11.5 was measured from Thunder Creek, so the note is rewritten and distMi set to null. approach_logistics carried the Thunder Creek name, coordinate and a direction saying the route is NOT from Eldorado; all three are updated to match. NOT FIXED, for the owner: the stored drawn line (198 points) is a track up Thunder Creek from 48.689,-121.096 to the summit, i.e. the other approach; after this move the map will draw that line from a point 21 km from the trailhead pin. It should be cleared (clear_line) or replaced, which these instructions do not cover.",
+   "sources": [
+    "https://www.openstreetmap.org/way/1110149578",
+    "https://www.openstreetmap.org/way/563981215",
+    "https://rocknropenw.com/2021/11/25/eldorado-nw-couloir/",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Primus+Peak",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_primus_peak_south_ridge",
+     "index": 0,
+     "expect": {
+      "name": "Thunder Creek Trailhead",
+      "lat": 48.6855,
+      "lng": -121.0925
+     },
+     "lat": 48.4927,
+     "lng": -121.1223,
+     "elev": 2160,
+     "sources": [
+      "https://www.openstreetmap.org/way/1110149578",
+      "https://rocknropenw.com/2021/11/25/eldorado-nw-couloir/"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Thunder Creek Trailhead",
+     "value": "Eldorado Creek Trailhead (Cascade River Road)"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "South end of Colonial Creek Campground on Hwy 20; an alternate southern approach via Eldorado Creek and the Eldorado ice cap is also used for this side.",
+     "value": "Climbers' parking at about mile 20 of Cascade River Road, near 2,100 ft. The unsigned path starts by crossing the Cascade River on logs a short way downstream of the parking."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "expect": "South side/McAllister Glacier aspect reached by continuing past Lucky Pass or via the Eldorado ice cap traverse; glacier travel gear required.",
+     "value": "Reached from a camp at Klawatti Col by crossing the North Klawatti Glacier to the south side, then class 2-3 snow and talus to the top; glacier travel gear required."
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 11.5,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Thunder Creek Trailhead",
+     "value": "Eldorado Creek Trailhead (Cascade River Road)"
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLat"
+     ],
+     "expect": 48.6855,
+     "value": 48.4927
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLng"
+     ],
+     "expect": -121.0925,
+     "value": -121.1223
+    },
+    {
+     "op": "set",
+     "id": "wa_primus_peak_south_ridge",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "expect": "Start at the Thunder Creek Trailhead at Colonial Creek Campground on SR 20; this is not the Eldorado Creek trailhead on Cascade River Road, which serves Dorado Needle and is 21.5 km away.",
+     "value": "Start at the Eldorado Creek climbers' trailhead at about mile 20 of Cascade River Road, east of Marblemount; cross the Cascade River on logs just downstream of the parking to reach the climbers' path."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_prophet_east",
+   "verdict": "confirmed",
+   "summary": "The Big Beaver Trail junction pin sat about a mile from Ross Dam instead of at the junction near Big Beaver camp roughly seven miles up the lakeshore, so it is moved there and its wrong distance is cleared.",
+   "evidence": "Pin 1 'Big Beaver Trail junction (via Ross Dam)' 48.742198,-121.074684 lies on the lakeshore trail about 1.5 km north of the dam, but its note and the approach prose put the junction at the end of the ~7-mile shoreline walk, where the Big Beaver Trail leaves the lakeshore trail near Big Beaver camp. The park's trail dataset starts the Big Beaver Trail at 48.77554,-121.0657 (junction with the West Bank trail and the camp access trail); the mapped trail network has the same junction at 48.77566,-121.06562 (15 m apart). New pin 48.7756,-121.0657, ground 1,620 ft. Its stored distMi 2 contradicts the ~7 mi in the prose and no source states the exact trail mileage, so it is set to null. Other pins checked: trailhead 48.7278,-121.0628 matches the mapped Ross Dam trailhead (48.72777,-121.06260); Thirtynine Mile Creek Camp 48.803691,-121.143327 matches the mapped 39 Mile Camp exactly; summit 48.848615,-121.162925 matches the mapped peak (48.84874,-121.16263).",
+   "sources": [
+    "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37",
+    "https://www.openstreetmap.org/way/183937633",
+    "https://www.openstreetmap.org/node/3467093979"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_mount_prophet_east",
+     "index": 1,
+     "expect": {
+      "name": "Big Beaver Trail junction (via Ross Dam)",
+      "lat": 48.742198,
+      "lng": -121.074684
+     },
+     "lat": 48.7756,
+     "lng": -121.0657,
+     "elev": 1620,
+     "sources": [
+      "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37",
+      "https://www.openstreetmap.org/way/183937633"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_prophet_east",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 2,
+     "value": null
+    }
+   ]
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "verdict": "confirmed",
+   "summary": "The trailhead pin sat at Harlequin Campground in the Stehekin valley, but the route's text starts at the Cascade Pass Trailhead, so the pin is moved to the end of Cascade River Road and renamed.",
+   "evidence": "Pin 0 'Harlequin Campground / Stehekin River Trail trailhead' 48.347744,-120.713821 is near Stehekin, about 23 km from the peak and on the wrong side of it, while the approach, itinerary, beta and timing all start at the Cascade Pass Trailhead and go over Cascade Pass to Pelton Basin. The mapped Cascade Pass Trailhead is 48.47549,-121.07516; the park's trail dataset starts the Cascade Pass Trail at 48.47553,-121.07499 (15 m apart). New pin 48.4755,-121.0751, ground 3,650 ft. Pin 1 Trapper Lake 48.43996,-121.00369 matches the mapped lake (48.43989,-121.00346); summit 48.43169,-121.01791 matches the mapped peak (48.43179,-121.01817); the other pins sit between them on the south slopes and stay. approach_logistics carried the Harlequin name and coordinate and is updated to match. The drawn line is a 6-point sketch whose first vertex is the old trailhead pin, so the move carries it.",
+   "sources": [
+    "https://www.openstreetmap.org/node/1420498929",
+    "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37",
+    "https://nominatim.openstreetmap.org/search?format=json&q=Trapper+Lake+Chelan",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_trapper_mountain_south_slopes",
+     "index": 0,
+     "expect": {
+      "name": "Harlequin Campground / Stehekin River Trail trailhead",
+      "lat": 48.347744,
+      "lng": -120.713821
+     },
+     "lat": 48.4755,
+     "lng": -121.0751,
+     "elev": 3650,
+     "sources": [
+      "https://www.openstreetmap.org/node/1420498929",
+      "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37"
+     ]
+    }
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_trapper_mountain_south_slopes",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "Harlequin Campground / Stehekin River Trail trailhead",
+     "value": "Cascade Pass Trailhead"
+    },
+    {
+     "op": "set",
+     "id": "wa_trapper_mountain_south_slopes",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Reached via Lady of the Lake ferry or floatplane from Chelan to Stehekin, then ~4.5 mi up Stehekin Valley Road to Harlequin Bridge, where the Stehekin River Trail begins.",
+     "value": "End of Cascade River Road. Follow the maintained trail over Cascade Pass and down to Pelton Basin, where the faint path toward Trapper Lake leaves the trail."
+    },
+    {
+     "op": "set",
+     "id": "wa_trapper_mountain_south_slopes",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "Harlequin Campground / Stehekin River Trail trailhead",
+     "value": "Cascade Pass Trailhead"
+    },
+    {
+     "op": "set",
+     "id": "wa_trapper_mountain_south_slopes",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLat"
+     ],
+     "expect": 48.347744,
+     "value": 48.4755
+    },
+    {
+     "op": "set",
+     "id": "wa_trapper_mountain_south_slopes",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLng"
+     ],
+     "expect": -120.713821,
+     "value": -121.0751
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "verdict": "confirmed",
+   "summary": "The Hannegan Pass Trailhead pin sat at Ross Dam on Highway 20; it, the Hannegan Pass pin and the Boundary Camp pin are moved to where those places are, and the Whatcom Pass pin is removed because this route goes by Easy Ridge and Perfect Pass instead.",
+   "evidence": "Pin 0 'Hannegan Pass Trailhead' 48.7278,-121.0628 is the Ross Dam trailhead, 28 km from the peak. The Hannegan trailhead is 48.91021,-121.591885 on the trail-association page, 48.9101,-121.5927 on a hiking-guide page, and 48.91021,-121.59171 on the open map; new pin 48.9102,-121.5919, ground 3,110 ft. Pin 1 'Hannegan Pass' 48.8878,-121.5348 sat about 540 m north of the pass on the ridge; the mapped saddle is 48.88292,-121.53428 and the forest-service trail line ends at the pass at 48.88316,-121.53643 (160 m apart); new pin 48.8830,-121.5343, ground 5,080 ft. Pin 2 'Boundary Camp' 48.895,-121.47 at 3,200 ft sat about 4 km down the Chilliwack valley; the mapped camp is 48.88749,-121.52392 and the park trail dataset's Boundary Camp access path runs 48.88778,-121.52392 to 48.88761,-121.5228; new pin 48.8875,-121.5236, ground 4,410 ft; its note tied it to the climb to Whatcom Pass and its distMi 8 does not fit a camp about a mile past the 4.2-mile pass, so the note is rewritten and distMi set to null. Pin 3 'Whatcom Pass' sits correctly on the pass, but the row's approach, itinerary and approach_variants go from the Chilliwack valley up Easy Ridge to Perfect Pass and never visit Whatcom Pass, so it is removed and the Whatcom Pass mentions in the trailhead and Hannegan Pass notes are replaced with Easy Ridge. approach_logistics carried the Ross Dam coordinate under the Hannegan name and is updated. Pins 4 (Challenger Glacier crossing) and 5 (summit) are on unpublished glacier terrain and are left as they are.",
+   "sources": [
+    "https://www.pnt.org/locations/hannegan-trailhead/",
+    "https://www.wta.org/go-hiking/hikes/hannegan-pass-and-peak",
+    "https://www.openstreetmap.org/node/12594541985",
+    "https://www.openstreetmap.org/node/1907973046",
+    "https://www.openstreetmap.org/node/1907973030",
+    "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37",
+    "https://epqs.nationalmap.gov/v1/json"
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_poltergeist_pinnacle",
+     "index": 0,
+     "expect": {
+      "name": "Hannegan Pass Trailhead",
+      "lat": 48.7278,
+      "lng": -121.0628
+     },
+     "lat": 48.9102,
+     "lng": -121.5919,
+     "elev": 3110,
+     "elevFt": 3110,
+     "sources": [
+      "https://www.pnt.org/locations/hannegan-trailhead/",
+      "https://www.wta.org/go-hiking/hikes/hannegan-pass-and-peak"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_poltergeist_pinnacle",
+     "index": 1,
+     "expect": {
+      "name": "Hannegan Pass",
+      "lat": 48.8878,
+      "lng": -121.5348
+     },
+     "lat": 48.883,
+     "lng": -121.5343,
+     "elev": 5080,
+     "sources": [
+      "https://www.openstreetmap.org/node/1907973046",
+      "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37"
+     ]
+    },
+    {
+     "op": "move_pin",
+     "id": "wa_poltergeist_pinnacle",
+     "index": 2,
+     "expect": {
+      "name": "Boundary Camp",
+      "lat": 48.895,
+      "lng": -121.47
+     },
+     "lat": 48.8875,
+     "lng": -121.5236,
+     "elev": 4410,
+     "sources": [
+      "https://www.openstreetmap.org/node/1907973030",
+      "https://carto.nationalmap.gov/arcgis/rest/services/transportation/MapServer/37"
+     ]
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_poltergeist_pinnacle",
+     "index": 3,
+     "expect": {
+      "name": "Whatcom Pass",
+      "lat": 48.8754053,
+      "lng": -121.3645777
+     }
+    }
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_poltergeist_pinnacle",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "find": "the Chilliwack valley, Whatcom Pass and Perfect Pass",
+     "replace": "the Chilliwack valley, Easy Ridge and Perfect Pass"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_poltergeist_pinnacle",
+     "column": "waypoints",
+     "path": [
+      1,
+      "note"
+     ],
+     "find": "continue cross-country toward the Chilliwack drainage and Whatcom Pass.",
+     "replace": "drop east on the trail past Boundary Camp into the Chilliwack River valley toward Easy Ridge."
+    },
+    {
+     "op": "set",
+     "id": "wa_poltergeist_pinnacle",
+     "column": "waypoints",
+     "path": [
+      2,
+      "note"
+     ],
+     "expect": "Camp in the Chilliwack River valley below the climb to Whatcom Pass.",
+     "value": "Camp at the head of the Chilliwack River valley, just east of and below Hannegan Pass."
+    },
+    {
+     "op": "set",
+     "id": "wa_poltergeist_pinnacle",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 8,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_poltergeist_pinnacle",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLat"
+     ],
+     "expect": 48.7278,
+     "value": 48.9102
+    },
+    {
+     "op": "set",
+     "id": "wa_poltergeist_pinnacle",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadLng"
+     ],
+     "expect": -121.0628,
+     "value": -121.5919
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,313 @@
+{
+ "applied": [
+  {
+   "id": "wa_north_ridge_7",
+   "column": "itinerary",
+   "path": [],
+   "fact": "Approach distance to Boston Basin high camp: itinerary ~2.5 mi vs approach prose roughly 3-4 miles one-way"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "approach",
+   "path": [],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "name"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "approach_variants",
+   "path": [
+    0,
+    "baseFinding"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "name"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "note"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "directions"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "elev"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "waypoints",
+   "path": [
+    4,
+    "directions"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "label"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "climbing_route",
+   "path": [
+    0,
+    "notes"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "descent_text",
+   "path": [],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "note"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "label"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "column": "itinerary",
+   "path": [
+    "days",
+    0,
+    "schedule",
+    2,
+    "detail"
+   ],
+   "fact": "Which way to go at the Rampart Ridge junction (Rampart Lakes boulder gully vs the Lila Lake side)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_north_ridge_7",
+   "before": {
+    "itinerary": "Day 1: Drive Cascade River Road to the Boston Basin trailhead (~3,200 ft); hike ~2.5 mi / ~3,000 ft gain to high camp (~6,400 ft). Day 2: Early start from camp, climb to the col and up the North Ridge to the tower and back (a half-day round trip is typical); hike out or stay a second night."
+   }
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "before": {
+    "approach": "From the Rachel Lake Trailhead (2,800 ft, end of FS Rd 4930 off Kachess Lake Rd, Exit 62 from I-90), start on Rachel Lake Trail #1313. The first ~2.75 miles follow Box Canyon Creek on gentle grade, crossing several side streams and cascades (reliable water throughout — no need to carry much from the car). At about mile 2.75 the trail crosses Box/Canyon Creek and hits the notorious 'mile from hell': a heavily rooted, rocky boot-beaten climb that gains roughly 1,300 ft in about a mile, with large step-ups and no switchbacks — this is the crux of the approach fitness-wise, not technically hard but brutal with a full pack. The trail tops out at Rachel Lake (4,700 ft, ~3.5-4 mi from the TH); a use trail/climber's path branches right near the outhouse and skirts the north side of the lake, then switchbacks steeply up rocky tread for about half a mile to the Rampart Ridge crest (~5,100 ft). At the ridge junction, go left (south) for Rampart Lakes or right for Lila Lake/Alta Mountain — for this route, follow the trail south along the ridge/east side of the Rampart Lakes basin. Stay on maintained tread through the lakes basin (it's fragile alpine turf/talus; short-cut social trails are discouraged and often marked closed with sticks/rock piles). At the south end of the lakes, locate the base of a large boulder gully with cliff bands on its left (west) side; ascend this gully on a boot path to a broad saddle at about 5,570 ft on the Rampart Ridge crest. Total to this point is roughly 5.3 miles and ~3,000 ft gain. From the saddle, turn west and follow the increasingly exposed climber's path along the ridge crest toward Alta's summit block, negotiating three false summits, class 2-3 rock steps, and short sections of real exposure (in one section the path skirts a cliff edge — fall consequences are serious here, and the route should not be attempted with snow on the ridge). A helmet is commonly recommended for the final ridge scramble due to loose rock and exposure. Total one-way distance to the 6,274 ft summit is about 9.5-10 km (matches the 19.3 km round trip) with roughly 3,300 ft of total gain.",
+    "approach_variants": [
+     {
+      "name": "Rachel Lake, Rampart Ridge, and the boulder gully to the 5,570 ft saddle",
+      "notes": "From the Rachel Lake trailhead at 2,800 ft, at the end of FS Rd 4930 off Kachess Lake Road from I-90 exit 62, take Rachel Lake Trail #1313. The first 2.75 miles follow Box Canyon Creek at a gentle grade with reliable water throughout.\n\nAt about mile 2.75 the trail crosses the creek and hits the section known locally as the mile from hell: a heavily rooted, rocky climb gaining roughly 1,300 ft in a mile with big step-ups and no switchbacks. It is the fitness crux of the day, not a technical one.\n\nAt Rachel Lake, 4,700 ft, a use trail branches right near the outhouse, skirts the lake's north side, and switchbacks steeply about half a mile to the Rampart Ridge crest at about 5,100 ft. At the ridge junction go LEFT (south) for Rampart Lakes, and follow the ridge and the east side of the lakes basin. Stay on maintained tread through the basin; the alpine turf is fragile and shortcut social trails are often deliberately blocked.\n\nAbout 5.3 miles and 3,000 ft to the saddle.",
+      "gainFt": 3300,
+      "season": "July to October. The route should not be attempted with snow on the ridge",
+      "hazards": [
+       "Sustained exposure along the ridge crest, including a section skirting a cliff edge",
+       "Three false summits and a class 3 downclimb crux near the top",
+       "Loose rock and large step-ups on the initial climbers' path",
+       "Afternoon thunderstorms on a long exposed crest",
+       "Lingering snow in the approach gully in early season"
+      ],
+      "baseFinding": "AT THE SOUTH END OF THE RAMPART LAKES, FIND A LARGE BOULDER GULLY WITH CLIFF BANDS ON ITS LEFT — THAT IS, ITS WEST — SIDE. Boulders in the gully, cliffs bounding it on the west: that pairing is the arrival test for the scramble takeoff, and it does not require seeing Alta.\n\nWHERE IT PUTS YOU: a boot path up that gully reaches a broad saddle at about 5,570 ft on the Rampart Ridge crest. Broad saddle at 5,570 ft is your altimeter confirmation. From there the route turns WEST along the crest toward Alta's summit block.\n\nWHAT THE RIDGE THEN DOES, SO YOU CAN COUNT YOUR WAY ALONG IT: THREE FALSE SUMMITS, class 2-3 rock steps, at least one near-vertical step of 6 to 8 ft with good holds and serious exposure, and a class 3 DOWNCLIMB crux near the top. A party that has crossed one bump and thinks it is at the summit is two bumps early.\n\nAND THE ONE PLACE WHERE THE FINDING IS A WARNING RATHER THAN A DIRECTION: there is a section where the path skirts a cliff edge. Fall consequences there are serious. This route should not be attempted with snow on the ridge, and it is not a place for anyone uneasy with heights or for dogs.\n\nA SECOND, INDEPENDENT DESCRIPTION OF THE SAME TAKEOFF: an unsigned climbers' path marked by a CAIRN leaves the maintained trail near the Rachel Lake / Lila Lake junction and climbs the south ridge. Steep, loose, big steps and no shade at first, then it moderates onto the knife-edge crest."
+     }
+    ],
+    "waypoints": [
+     {
+      "lat": 47.4009,
+      "lng": -121.2836,
+      "elev": 2800,
+      "name": "Rachel Lake Trailhead",
+      "note": "Trail #1313 start off FR 4930; Northwest Forest Pass plus self-issued wilderness permit required (USFS Rachel Lake Trailhead page).",
+      "type": "Trailhead",
+      "distMi": 0,
+      "directions": "From I-90 Exit 62, follow Kachess Lake Road to FS Road 4930 and drive it to the road end at about 2,800 ft. Trail #1313 leaves the parking area; a Northwest Forest Pass plus a self-issued wilderness permit are required at the board."
+     },
+     {
+      "lat": 47.4227,
+      "lng": -121.3292,
+      "elev": 4667,
+      "name": "Rachel Lake",
+      "note": "~4.1 mi from the trailhead, at the top of the steep, rooty 'mile from hell' climb.",
+      "type": "Water",
+      "distMi": 4.1,
+      "directions": "Trail #1313 runs beside Box Canyon Creek on gentle grade for roughly 2.75 miles, crossing several side streams and cascades — water is reliable the whole way, so there is no need to carry much from the car. Past the creek crossing the trail turns into the rooty, rocky boot-beaten climb locals call the 'mile from hell': about 1,300 ft of gain in a mile with large step-ups and no switchbacks. It is a fitness crux, not a technical one, but it is brutal under a full pack."
+     },
+     {
+      "lat": 47.42,
+      "lng": -121.334,
+      "elev": 5100,
+      "name": "Rampart Ridge / Rampart Lakes junction",
+      "note": "Ridge crest above Rachel Lake where the maintained trail splits toward Rampart Lakes and Lila Lake. Coordinate is a trail-guide interpolation (no exact published fix found), cross-checked against a nearby Rampart Lakes basin waypoint at 47.4182,-121.3376.",
+      "type": "Junction",
+      "distMi": 4.6,
+      "directions": "At the lake a use path branches off near the outhouse and skirts the north shore. From there it switchbacks steeply up rocky tread for about half a mile to the crest of Rampart Ridge, where the maintained trail splits toward Rampart Lakes and toward Lila Lake."
+     },
+     {
+      "lat": 47.4285,
+      "lng": -121.3332,
+      "elev": 5570,
+      "name": "Saddle below Alta's south ridge",
+      "note": "Top of the boulder gully on Rampart Ridge; start of the unmarked climbers' path toward the summit. Coordinate is a geometric interpolation (elevation-scaled) between the ridge junction and the summit — estimated, not surveyed.",
+      "type": "Junction",
+      "distMi": 5.3,
+      "directions": "Stay on maintained tread through the Rampart Lakes basin, keeping to the east side of the lakes — the alpine turf here is fragile and short-cut social trails are deliberately blocked with sticks and rock piles. At the far end of the lakes, find the base of a large boulder gully with cliff bands along its left side and follow the boot path up it to the broad saddle on the ridge crest. The gully is loose enough that parties should climb it one at a time."
+     },
+     {
+      "lat": 47.441131,
+      "lng": -121.331964,
+      "elev": 6275,
+      "name": "Alta Mountain summit",
+      "note": "Reached past several false summits along the exposed ridge crest.",
+      "type": "Summit",
+      "distMi": 6,
+      "directions": "From the saddle an unmarked climbers' path leaves the maintained trail at a cairn and follows the ridge crest toward the summit block. It starts steep, loose and shadeless with large steps, then eases onto a narrow crest with sustained exposure: expect several class 2-3 moves, at least one near-vertical step of six to eight feet with good holds, a short class 3 downclimb near the top, and three or more false summits before the real one. Do not attempt this stretch with snow on the crest or on wet rock — the path skirts a cliff edge and the fall consequences are serious. Helmets are worth wearing for the loose rock."
+     }
+    ],
+    "climbing_route": [
+     {
+      "n": 1,
+      "class": "class 2-3 rock steps",
+      "label": "West along the Rampart Ridge crest from the 5,570 ft saddle",
+      "notes": "From the saddle, turn west and follow the increasingly exposed climber's path along the ridge crest toward Alta's summit block, negotiating three false summits, class 2-3 rock steps, and short sections of real exposure. Trip reports flag a section where the path skirts a cliff edge — fall consequences are serious here, and the route should not be attempted with snow on the ridge."
+     },
+     {
+      "n": 2,
+      "label": "Final ridge scramble to the 6,274 ft summit",
+      "notes": "A helmet is commonly recommended for the final ridge scramble due to loose rock and exposure."
+     }
+    ],
+    "descent_text": "This is a scramble, not a technical climb — there is no rappelling on this route (rappels: 0). Descend by reversing the exact ascent line: retrace the ridge crest scramble back over the false summits to the 5,570 ft saddle, downclimb the boulder gully to the Rampart Lakes basin trail, follow the ridge trail back north to the Rachel Lake outlet, drop via the steep half-mile rocky switchbacks to Rachel Lake, then retrace Trail #1313 down through the 'mile from hell' (this section is notably harder on tired knees going down — loose rocky step-downs and roots) and out along Box Canyon Creek to the trailhead. Key descent hazards mirror the approach: the exposed ridge-crest sections near the summit (do not descend this route if the ridge is snow-covered or wet — the exposed traverse becomes significantly more dangerous), loose rock in the gully (rockfall risk onto anyone below — descend it one at a time), and the steep, rooted, ankle-turning tread on the 'mile from hell' switchbacks. No natural or fixed anchors are used anywhere on this route; parties should not carry a rope expecting to need it, though a short handline could be improvised at the gully for less confident scramblers.",
+    "itinerary": {
+     "cal": "Snow can linger on the ridge traverses into July, and the route is not recommended in snow due to cliff-adjacent sections near the summit; best conditions are typically August-September.",
+     "days": [
+      {
+       "n": 1,
+       "note": "Standard trip reports all treat this as a single long day hike/scramble, not a backpack. From the Rachel Lake TH (2,800 ft), hike Box Creek Canyon to Rachel Lake, climb to Rampart Ridge/Rampart Lakes, then follow the unmarked climber's path up Alta's long south ridge past several false summits to the 6,274 ft summit. Reverse the same line to descend.",
+       "hours": 8,
+       "miles": 12,
+       "title": "Car-to-car: Rachel Lake to Rampart Ridge & Alta Mountain",
+       "gainFt": 3300,
+       "lossFt": 3300,
+       "packLb": 15,
+       "schedule": [
+        {
+         "time": "6:00 AM",
+         "label": "Leave Rachel Lake trailhead",
+         "detail": "Elevation ~2,800 ft; first 2.5 mi is easy along Box Canyon Creek."
+        },
+        {
+         "time": "8:15 AM",
+         "label": "Arrive Rachel Lake",
+         "detail": "4.4 mi in, ~4,700 ft; steep rocky/root-filled final push to the lake."
+        },
+        {
+         "time": "9:15 AM",
+         "label": "Reach Rampart Ridge / Rampart Lakes",
+         "detail": "Trail skirts the lake then climbs ~600 ft more to the ridge and lake basin."
+        },
+        {
+         "time": "10:30 AM",
+         "label": "Start Alta's south ridge",
+         "detail": "Leave the maintained trail for the unmarked climber's path; expect several false summits."
+        },
+        {
+         "time": "11:30 AM",
+         "label": "Summit Alta Mountain",
+         "detail": "6,274 ft; views of the Snoqualmie/Keechelus peaks."
+        },
+        {
+         "time": "2:00 PM",
+         "label": "Back at trailhead",
+         "detail": "Reverse the ridge, Rampart Lakes, and Rachel Lake trail to the car."
+        }
+       ],
+       "objective": "Summit Alta Mountain via Rachel Lake and Rampart Ridge"
+      }
+     ],
+     "totalNote": "A single long day hike/scramble car-to-car: roughly 12 miles round trip with about 3,300 ft of gain, typically 7-9 hours including summit time; not an overnight trip for the standard route, though Rampart Lakes can be used as a base camp by those who prefer to split it up."
+    }
+   }
+  }
+ ]
+}

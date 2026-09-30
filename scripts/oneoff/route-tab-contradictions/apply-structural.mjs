@@ -59,6 +59,15 @@ for (const res of results) {
         if (!DRY) { const rr = await fetch(`${SUPABASE_URL}/rest/v1/routes`, { method: "POST", headers: H({ "Content-Type": "application/json", Prefer: "return=representation" }), body: JSON.stringify(nr) }); if (!rr.ok) throw new Error(`insert ${rr.status} ${(await rr.text()).slice(0, 200)}`); }
         await bump(nr.area_id, +1);
         report.created.push({ route: nr.id }); report.applied.push({ id: o.id, op: "split", new: nr.id });
+      } else if (o.op === "area_set") {
+        // one column of an areas row (e.g. elevation_ft), compare-and-set
+        if (!["elevation_ft", "name", "lat", "lng"].includes(o.column)) throw new Error(`area column ${o.column} not writable`);
+        const a = await one("areas", o.area_id);
+        if (!a) throw new Error(`area ${o.area_id} missing`);
+        if (!eq(a[o.column], o.expect)) throw new Error(`area ${o.area_id}.${o.column} is ${JSON.stringify(a[o.column])}, expected ${JSON.stringify(o.expect)}`);
+        report.backups.push({ area: a });
+        if (!DRY) await patchRow("areas", o.area_id, { [o.column]: o.value });
+        report.applied.push({ area_id: o.area_id, op: "area_set", column: o.column, value: o.value });
       }
     } catch (e) { report.rejected.push({ result: res.id, op: o.op, why: e.message }); }
   }

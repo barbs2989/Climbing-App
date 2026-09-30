@@ -1,0 +1,1576 @@
+{
+ "applied": [
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "op": "patch",
+   "columns": [
+    "waypoints"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "area_id": "wa_colchuck_balanced_rock",
+   "name": "Colchuck Balanced Rock Col (East Lake Side Approch)",
+   "discipline": "scrambling",
+   "grade": "3rd",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": 0,
+   "length_m": 762,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Various",
+   "lat": null,
+   "lng": null,
+   "aspect": "E",
+   "season": null,
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Off-trail talus and a short 3rd/4th-class rock step"
+   ],
+   "verif": null,
+   "overview": "A scenic, non-technical approach/scramble route to the col between Colchuck Balanced Rock and Colchuck Peak, used both as an approach for the harder rock routes and as a moderate objective in its own right. The line is rated 3rd class overall (Grade II).",
+   "beta": "A direct, cairned line through open forest and talus from the lake's north-end dam to the col, including one short 3rd/4th-class rock step.",
+   "turnaround": "This is route-finding terrain through open forest with a short 3rd/4th-class step — allow extra time in poor visibility or after dark.",
+   "auto_generated": false,
+   "alpine_grade": "3rd class",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 4600,
+   "loss_ft": null,
+   "dist_km": 17.06,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": "East approach (Colchuck Lake side)",
+   "permit": null,
+   "comms": "No reliable cell coverage between the lake and the col.",
+   "descent": "Reverse the same cairned line back down to Colchuck Lake's north-end dam.",
+   "obj_haz": [
+    "Off-trail route-finding through open forest and talus",
+    "A short 3rd/4th-class rock step"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Northwest Forest Pass required for parking; self-issue overnight wilderness permit at the kiosk if camping June 15-Oct 15.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5580,
+     "name": "Colchuck Lake, east shore",
+     "note": "Take the left fork staying high on the ridge/shoreline north, avoiding the many spurs that drop to the water.",
+     "type": "Water",
+     "distMi": 4
+    },
+    {
+     "lat": 47.4948,
+     "lng": -120.8362,
+     "elev": 5590,
+     "name": "Outlet dam creek crossing",
+     "note": "Cross the outlet creek at or just below the small dam on the lake's north end, then pick up the climbers' path on the far side, south for about 100 yards.",
+     "type": "Junction",
+     "distMi": 4.3
+    },
+    {
+     "lat": 47.493471,
+     "lng": -120.8249,
+     "elev": 6000,
+     "name": "3rd/4th class rock step",
+     "note": "Short step of rock above a talus clearing; pull up on tree roots and branches with the rock face on your left rather than climbing it head-on.",
+     "type": "Hazard",
+     "distMi": 4.5
+    },
+    {
+     "lat": 47.4901,
+     "lng": -120.819413,
+     "elev": 7400,
+     "name": "Boulder camp in the flats",
+     "note": "Low-impact camping on rock and gravel among boulders just below the col; no reliable water at this camp.",
+     "type": "Campsite",
+     "distMi": 5
+    },
+    {
+     "lat": 47.49184,
+     "lng": -120.81797,
+     "elev": 8000,
+     "name": "Colchuck Balanced Rock Col",
+     "note": "Well-cairned path through open forest/hillside (~1 hr from the dam) gains the col; reaching the true summit block from here requires additional 4th/5th-class scrambling.",
+     "type": "Topout",
+     "distMi": 5.3
+    }
+   ],
+   "gpx": [
+    [
+     47.527808,
+     -120.820795
+    ],
+    [
+     47.527809,
+     -120.820815
+    ],
+    [
+     47.527764,
+     -120.820806
+    ],
+    [
+     47.527515,
+     -120.82083
+    ],
+    [
+     47.527422,
+     -120.820867
+    ],
+    [
+     47.527193,
+     -120.821014
+    ],
+    [
+     47.526958,
+     -120.821203
+    ],
+    [
+     47.526663,
+     -120.821497
+    ],
+    [
+     47.526574,
+     -120.821554
+    ],
+    [
+     47.525997,
+     -120.821672
+    ],
+    [
+     47.525693,
+     -120.821823
+    ],
+    [
+     47.525366,
+     -120.821945
+    ],
+    [
+     47.525243,
+     -120.822041
+    ],
+    [
+     47.525054,
+     -120.822241
+    ],
+    [
+     47.524975,
+     -120.822293
+    ],
+    [
+     47.524769,
+     -120.822375
+    ],
+    [
+     47.524579,
+     -120.822512
+    ],
+    [
+     47.524344,
+     -120.822552
+    ],
+    [
+     47.523751,
+     -120.822425
+    ],
+    [
+     47.523669,
+     -120.822457
+    ],
+    [
+     47.523438,
+     -120.822633
+    ],
+    [
+     47.523094,
+     -120.823025
+    ],
+    [
+     47.522796,
+     -120.823254
+    ],
+    [
+     47.52269,
+     -120.82327
+    ],
+    [
+     47.522585,
+     -120.823242
+    ],
+    [
+     47.522384,
+     -120.823102
+    ],
+    [
+     47.522256,
+     -120.82307
+    ],
+    [
+     47.522133,
+     -120.823068
+    ],
+    [
+     47.52173,
+     -120.823217
+    ],
+    [
+     47.521368,
+     -120.823277
+    ],
+    [
+     47.52111,
+     -120.823376
+    ],
+    [
+     47.520958,
+     -120.823378
+    ],
+    [
+     47.520603,
+     -120.823198
+    ],
+    [
+     47.520519,
+     -120.823221
+    ],
+    [
+     47.520339,
+     -120.823343
+    ],
+    [
+     47.519721,
+     -120.823624
+    ],
+    [
+     47.519671,
+     -120.823674
+    ],
+    [
+     47.519428,
+     -120.823984
+    ],
+    [
+     47.51912,
+     -120.82444
+    ],
+    [
+     47.518991,
+     -120.824702
+    ],
+    [
+     47.518835,
+     -120.825169
+    ],
+    [
+     47.518762,
+     -120.82522
+    ],
+    [
+     47.518692,
+     -120.825209
+    ],
+    [
+     47.518573,
+     -120.825151
+    ],
+    [
+     47.51845,
+     -120.825138
+    ],
+    [
+     47.518141,
+     -120.825195
+    ],
+    [
+     47.517965,
+     -120.825193
+    ],
+    [
+     47.517836,
+     -120.825239
+    ],
+    [
+     47.517535,
+     -120.825433
+    ],
+    [
+     47.516997,
+     -120.825679
+    ],
+    [
+     47.516405,
+     -120.826197
+    ],
+    [
+     47.516321,
+     -120.826237
+    ],
+    [
+     47.515996,
+     -120.826309
+    ],
+    [
+     47.515776,
+     -120.826333
+    ],
+    [
+     47.515568,
+     -120.826451
+    ],
+    [
+     47.51543,
+     -120.826494
+    ],
+    [
+     47.51535,
+     -120.826543
+    ],
+    [
+     47.515302,
+     -120.8266
+    ],
+    [
+     47.515107,
+     -120.82694
+    ],
+    [
+     47.515042,
+     -120.827006
+    ],
+    [
+     47.514907,
+     -120.827101
+    ],
+    [
+     47.514749,
+     -120.827157
+    ],
+    [
+     47.51459,
+     -120.827295
+    ],
+    [
+     47.514303,
+     -120.827468
+    ],
+    [
+     47.51393,
+     -120.827632
+    ],
+    [
+     47.513773,
+     -120.827726
+    ],
+    [
+     47.513513,
+     -120.827812
+    ],
+    [
+     47.513389,
+     -120.827824
+    ],
+    [
+     47.513084,
+     -120.827805
+    ],
+    [
+     47.512737,
+     -120.827843
+    ],
+    [
+     47.512645,
+     -120.827832
+    ],
+    [
+     47.512457,
+     -120.828111
+    ],
+    [
+     47.512113,
+     -120.828318
+    ],
+    [
+     47.512023,
+     -120.828424
+    ],
+    [
+     47.511913,
+     -120.828698
+    ],
+    [
+     47.511851,
+     -120.828764
+    ],
+    [
+     47.511578,
+     -120.828871
+    ],
+    [
+     47.511383,
+     -120.8289
+    ],
+    [
+     47.511296,
+     -120.828881
+    ],
+    [
+     47.510995,
+     -120.828737
+    ],
+    [
+     47.510693,
+     -120.828743
+    ],
+    [
+     47.510443,
+     -120.828888
+    ],
+    [
+     47.510139,
+     -120.829202
+    ],
+    [
+     47.509895,
+     -120.829376
+    ],
+    [
+     47.509603,
+     -120.829539
+    ],
+    [
+     47.509349,
+     -120.82999
+    ],
+    [
+     47.50919,
+     -120.83051
+    ],
+    [
+     47.509229,
+     -120.830573
+    ],
+    [
+     47.509236,
+     -120.83078
+    ],
+    [
+     47.509148,
+     -120.831026
+    ],
+    [
+     47.509044,
+     -120.83153
+    ],
+    [
+     47.509027,
+     -120.83168
+    ],
+    [
+     47.509037,
+     -120.831808
+    ],
+    [
+     47.509145,
+     -120.832078
+    ],
+    [
+     47.509165,
+     -120.832172
+    ],
+    [
+     47.509153,
+     -120.832265
+    ],
+    [
+     47.509112,
+     -120.832364
+    ],
+    [
+     47.509066,
+     -120.832422
+    ],
+    [
+     47.508977,
+     -120.832459
+    ],
+    [
+     47.508775,
+     -120.83242
+    ],
+    [
+     47.508682,
+     -120.832448
+    ],
+    [
+     47.508627,
+     -120.832509
+    ],
+    [
+     47.508593,
+     -120.832605
+    ],
+    [
+     47.508587,
+     -120.832754
+    ],
+    [
+     47.508549,
+     -120.832883
+    ],
+    [
+     47.508476,
+     -120.832954
+    ],
+    [
+     47.508173,
+     -120.833167
+    ],
+    [
+     47.50809,
+     -120.83345
+    ],
+    [
+     47.507969,
+     -120.833659
+    ],
+    [
+     47.507834,
+     -120.834037
+    ],
+    [
+     47.50772,
+     -120.834301
+    ],
+    [
+     47.507687,
+     -120.83463
+    ],
+    [
+     47.507644,
+     -120.834853
+    ],
+    [
+     47.507507,
+     -120.835188
+    ],
+    [
+     47.507535,
+     -120.835308
+    ],
+    [
+     47.507628,
+     -120.835428
+    ],
+    [
+     47.507736,
+     -120.835863
+    ],
+    [
+     47.507744,
+     -120.83601
+    ],
+    [
+     47.507724,
+     -120.836465
+    ],
+    [
+     47.507821,
+     -120.836833
+    ],
+    [
+     47.507824,
+     -120.836941
+    ],
+    [
+     47.50773,
+     -120.837323
+    ],
+    [
+     47.507679,
+     -120.837665
+    ],
+    [
+     47.507575,
+     -120.837863
+    ],
+    [
+     47.507308,
+     -120.838534
+    ],
+    [
+     47.507275,
+     -120.838572
+    ],
+    [
+     47.507146,
+     -120.838628
+    ],
+    [
+     47.506807,
+     -120.838931
+    ],
+    [
+     47.506689,
+     -120.83901
+    ],
+    [
+     47.506607,
+     -120.839009
+    ],
+    [
+     47.506452,
+     -120.838895
+    ],
+    [
+     47.506383,
+     -120.838875
+    ],
+    [
+     47.50628,
+     -120.838918
+    ],
+    [
+     47.50599,
+     -120.839188
+    ],
+    [
+     47.505853,
+     -120.839377
+    ],
+    [
+     47.505675,
+     -120.839582
+    ],
+    [
+     47.505602,
+     -120.839757
+    ],
+    [
+     47.505536,
+     -120.839835
+    ],
+    [
+     47.505409,
+     -120.839904
+    ],
+    [
+     47.505324,
+     -120.840013
+    ],
+    [
+     47.50513,
+     -120.840352
+    ],
+    [
+     47.505101,
+     -120.840346
+    ],
+    [
+     47.504941,
+     -120.840314
+    ],
+    [
+     47.504746,
+     -120.840319
+    ],
+    [
+     47.50446,
+     -120.840362
+    ],
+    [
+     47.504301,
+     -120.840328
+    ],
+    [
+     47.5042,
+     -120.840256
+    ],
+    [
+     47.504122,
+     -120.84027
+    ],
+    [
+     47.504089,
+     -120.840243
+    ],
+    [
+     47.504046,
+     -120.840113
+    ],
+    [
+     47.504012,
+     -120.840111
+    ],
+    [
+     47.50399,
+     -120.840127
+    ],
+    [
+     47.50397,
+     -120.840246
+    ],
+    [
+     47.503797,
+     -120.840552
+    ],
+    [
+     47.503511,
+     -120.840872
+    ],
+    [
+     47.503306,
+     -120.84092
+    ],
+    [
+     47.503114,
+     -120.841065
+    ],
+    [
+     47.502981,
+     -120.841204
+    ],
+    [
+     47.502721,
+     -120.841815
+    ],
+    [
+     47.502581,
+     -120.841936
+    ],
+    [
+     47.502451,
+     -120.841955
+    ],
+    [
+     47.502343,
+     -120.841839
+    ],
+    [
+     47.502308,
+     -120.841724
+    ],
+    [
+     47.502314,
+     -120.841368
+    ],
+    [
+     47.502282,
+     -120.841262
+    ],
+    [
+     47.502217,
+     -120.841252
+    ],
+    [
+     47.502087,
+     -120.841306
+    ],
+    [
+     47.501931,
+     -120.841416
+    ],
+    [
+     47.501729,
+     -120.841604
+    ],
+    [
+     47.501622,
+     -120.841791
+    ],
+    [
+     47.501566,
+     -120.842042
+    ],
+    [
+     47.501586,
+     -120.842465
+    ],
+    [
+     47.50157,
+     -120.842643
+    ],
+    [
+     47.501547,
+     -120.842682
+    ],
+    [
+     47.501498,
+     -120.842624
+    ],
+    [
+     47.501469,
+     -120.842518
+    ],
+    [
+     47.501417,
+     -120.84246
+    ],
+    [
+     47.501345,
+     -120.842475
+    ],
+    [
+     47.501228,
+     -120.842561
+    ],
+    [
+     47.500932,
+     -120.843067
+    ],
+    [
+     47.500731,
+     -120.843293
+    ],
+    [
+     47.500614,
+     -120.843654
+    ],
+    [
+     47.500568,
+     -120.84389
+    ],
+    [
+     47.500484,
+     -120.843991
+    ],
+    [
+     47.500376,
+     -120.844005
+    ],
+    [
+     47.500093,
+     -120.844005
+    ],
+    [
+     47.500022,
+     -120.843962
+    ],
+    [
+     47.500006,
+     -120.84387
+    ],
+    [
+     47.500015,
+     -120.843688
+    ],
+    [
+     47.500056,
+     -120.843464
+    ],
+    [
+     47.500171,
+     -120.843264
+    ],
+    [
+     47.500249,
+     -120.842783
+    ],
+    [
+     47.50024,
+     -120.842672
+    ],
+    [
+     47.500191,
+     -120.84261
+    ],
+    [
+     47.500126,
+     -120.842629
+    ],
+    [
+     47.500084,
+     -120.842576
+    ],
+    [
+     47.500087,
+     -120.842465
+    ],
+    [
+     47.500064,
+     -120.842297
+    ],
+    [
+     47.500002,
+     -120.842205
+    ],
+    [
+     47.499934,
+     -120.842157
+    ],
+    [
+     47.49985,
+     -120.842205
+    ],
+    [
+     47.499723,
+     -120.842456
+    ],
+    [
+     47.499667,
+     -120.842523
+    ],
+    [
+     47.499599,
+     -120.842528
+    ],
+    [
+     47.499541,
+     -120.842446
+    ],
+    [
+     47.499505,
+     -120.842249
+    ],
+    [
+     47.499472,
+     -120.841902
+    ],
+    [
+     47.499492,
+     -120.841474
+    ],
+    [
+     47.499541,
+     -120.841142
+    ],
+    [
+     47.499638,
+     -120.840887
+    ],
+    [
+     47.499778,
+     -120.840718
+    ],
+    [
+     47.499902,
+     -120.840516
+    ],
+    [
+     47.499934,
+     -120.840256
+    ],
+    [
+     47.499898,
+     -120.839972
+    ],
+    [
+     47.499817,
+     -120.839698
+    ],
+    [
+     47.499723,
+     -120.839486
+    ],
+    [
+     47.499609,
+     -120.83939
+    ],
+    [
+     47.499479,
+     -120.839365
+    ],
+    [
+     47.499333,
+     -120.83938
+    ],
+    [
+     47.499121,
+     -120.839173
+    ],
+    [
+     47.499033,
+     -120.839144
+    ],
+    [
+     47.498913,
+     -120.839144
+    ],
+    [
+     47.49889,
+     -120.83912
+    ],
+    [
+     47.498894,
+     -120.839091
+    ],
+    [
+     47.498959,
+     -120.839058
+    ],
+    [
+     47.498968,
+     -120.839014
+    ],
+    [
+     47.498942,
+     -120.838981
+    ],
+    [
+     47.498604,
+     -120.838875
+    ],
+    [
+     47.498481,
+     -120.838754
+    ],
+    [
+     47.498468,
+     -120.838673
+    ],
+    [
+     47.498497,
+     -120.838591
+    ],
+    [
+     47.498594,
+     -120.838417
+    ],
+    [
+     47.498773,
+     -120.838235
+    ],
+    [
+     47.498871,
+     -120.83809
+    ],
+    [
+     47.498924,
+     -120.837889
+    ],
+    [
+     47.499063,
+     -120.837777
+    ],
+    [
+     47.499193,
+     -120.837577
+    ],
+    [
+     47.499401,
+     -120.837416
+    ],
+    [
+     47.499719,
+     -120.836829
+    ],
+    [
+     47.499846,
+     -120.836723
+    ],
+    [
+     47.499917,
+     -120.836617
+    ],
+    [
+     47.500015,
+     -120.836401
+    ],
+    [
+     47.500097,
+     -120.836266
+    ],
+    [
+     47.50008,
+     -120.836194
+    ],
+    [
+     47.500038,
+     -120.836151
+    ],
+    [
+     47.500058,
+     -120.835929
+    ],
+    [
+     47.500009,
+     -120.835852
+    ],
+    [
+     47.499962,
+     -120.835856
+    ],
+    [
+     47.499885,
+     -120.836001
+    ],
+    [
+     47.499739,
+     -120.836189
+    ],
+    [
+     47.499546,
+     -120.836366
+    ],
+    [
+     47.499401,
+     -120.836536
+    ],
+    [
+     47.499206,
+     -120.836723
+    ],
+    [
+     47.499063,
+     -120.836906
+    ],
+    [
+     47.498946,
+     -120.836954
+    ],
+    [
+     47.498838,
+     -120.837051
+    ],
+    [
+     47.498754,
+     -120.837205
+    ],
+    [
+     47.498614,
+     -120.837368
+    ],
+    [
+     47.498315,
+     -120.837532
+    ],
+    [
+     47.498188,
+     -120.837556
+    ],
+    [
+     47.4981,
+     -120.837527
+    ],
+    [
+     47.498029,
+     -120.837421
+    ],
+    [
+     47.497876,
+     -120.837286
+    ],
+    [
+     47.497583,
+     -120.837123
+    ],
+    [
+     47.497391,
+     -120.836964
+    ],
+    [
+     47.497238,
+     -120.836805
+    ],
+    [
+     47.497164,
+     -120.836656
+    ],
+    [
+     47.49717,
+     -120.836502
+    ],
+    [
+     47.497206,
+     -120.836435
+    ],
+    [
+     47.497284,
+     -120.836386
+    ],
+    [
+     47.497291,
+     -120.836338
+    ],
+    [
+     47.497209,
+     -120.836237
+    ],
+    [
+     47.497225,
+     -120.836165
+    ],
+    [
+     47.497352,
+     -120.83616
+    ],
+    [
+     47.497414,
+     -120.836208
+    ],
+    [
+     47.497489,
+     -120.836213
+    ],
+    [
+     47.497512,
+     -120.836184
+    ],
+    [
+     47.497505,
+     -120.836136
+    ],
+    [
+     47.497473,
+     -120.836112
+    ],
+    [
+     47.497479,
+     -120.836074
+    ],
+    [
+     47.497547,
+     -120.836069
+    ],
+    [
+     47.497554,
+     -120.836021
+    ],
+    [
+     47.497534,
+     -120.835977
+    ],
+    [
+     47.497544,
+     -120.835939
+    ],
+    [
+     47.497664,
+     -120.835929
+    ],
+    [
+     47.497684,
+     -120.835891
+    ],
+    [
+     47.497606,
+     -120.835746
+    ],
+    [
+     47.497616,
+     -120.835698
+    ],
+    [
+     47.497648,
+     -120.835674
+    ],
+    [
+     47.497655,
+     -120.835636
+    ],
+    [
+     47.497622,
+     -120.835588
+    ],
+    [
+     47.497577,
+     -120.835559
+    ],
+    [
+     47.49756,
+     -120.835477
+    ],
+    [
+     47.497632,
+     -120.835294
+    ],
+    [
+     47.497762,
+     -120.835116
+    ],
+    [
+     47.49783,
+     -120.834899
+    ],
+    [
+     47.497853,
+     -120.834668
+    ],
+    [
+     47.497837,
+     -120.834534
+    ],
+    [
+     47.498822,
+     -120.833047
+    ],
+    [
+     47.498812,
+     -120.832319
+    ],
+    [
+     47.499212,
+     -120.830104
+    ],
+    [
+     47.498013,
+     -120.828921
+    ],
+    [
+     47.496281,
+     -120.827677
+    ],
+    [
+     47.494897,
+     -120.825887
+    ],
+    [
+     47.493534,
+     -120.824946
+    ],
+    [
+     47.492622,
+     -120.824278
+    ],
+    [
+     47.491812,
+     -120.822457
+    ],
+    [
+     47.491658,
+     -120.820697
+    ],
+    [
+     47.491476,
+     -120.818755
+    ],
+    [
+     47.491386,
+     -120.818247
+    ],
+    [
+     47.490835,
+     -120.818406
+    ],
+    [
+     47.490125,
+     -120.819294
+    ],
+    [
+     47.489856,
+     -120.820569
+    ],
+    [
+     47.490669,
+     -120.821221
+    ],
+    [
+     47.491594,
+     -120.820781
+    ],
+    [
+     47.491658,
+     -120.820697
+    ],
+    [
+     47.491476,
+     -120.818755
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "This is the access route rather than a summit climb: stay high on the ridge past the north end of the lake, cross the outlet creek near the dam, then follow the cairned path throug…",
+      "fromTo": "Approach hike to the Colchuck-Balanced Rock col",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "Sturdy approach shoes or light boots",
+    "Trekking poles for the talus",
+    "Map/GPS — the cairned path is easy to lose track of at the lake's north end"
+   ],
+   "pro_tips": [
+    "Once familiar, this line shaves about an hour off the old approach",
+    "There are good low-impact camping spots on rock/gravel just as the path drops into the col"
+   ],
+   "watch_out": [
+    "Easy to miss the correct fork at the trail junction near the lake — many parties follow spurs down to the water's edge by mistake"
+   ],
+   "pro_needs": "Route-finding skill is the main 'protection' here — this is an unroped scramble/approach, not a technical pitch.",
+   "best_season": "July–September; the route is snow-free and the cairned path most followable once the Enchantments overnight permit season is active (May 15–Oct 31) and the access road is open.",
+   "high_point_ft": 8011,
+   "aid_grade": null,
+   "approach": "This is the approach/scramble route to the col above Colchuck Lake's east side, used to access objectives beyond Colchuck Balanced Rock (notably Dragontail Peak). Start at the Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road) and hike the Colchuck Lake Trail (#1599) 4 miles and 2,280 ft to the lake outlet (2.5-3 hours), the last reliable water. At the lake, take the left fork and stay high on the ridge, avoiding spur trails that drop to the water's edge. Continue to a small dam near the lake's north end and cross the outlet creek at or just below it; pick up the trail on the far side and follow it south roughly 100 yards to a slight clearing with boulders and talus on the left. Ascend the talus, angling slightly left into the woods, and negotiate a brief 3rd/4th-class rock step (using roots/branches as holds). From there the path climbs southward through open, cairned forest for about an hour to the col, which overlooks a boulder-strewn camp area with views of Dragontail and Colchuck peaks — about 2,500 ft above the lake, or roughly 4,600 ft of gain from the trailhead.",
+   "descent_text": "This is a hiking/scrambling approach line, not a technical climb, so descent is simply the reverse of the ascent: down through the open, cairned forest, back through the brief 3rd/4th-class rock step, down the talus to the clearing, back across the outlet creek near the small dam, and along the high ridge line back to the lakeshore trail and out to the Stuart Lake Trailhead. No rappelling is involved. The 3rd/4th-class step and the talus above the dam are the main hazards — loose rock and awkward footing, worse if wet or descending in the dark.",
+   "bail": null,
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Day-use only needs a self-issue trailhead permit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "This is the access route rather than a summit climb: stay high on the ridge past the north end of the lake, cross the outlet creek near the dam, then follow the cairned path through talus and open forest up to the col — roughly an hour above the lake.",
+      "hours": 9,
+      "miles": 10.6,
+      "title": "Approach hike to the Colchuck-Balanced Rock col",
+      "gainFt": 4600,
+      "lossFt": 4600,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave trailhead",
+        "detail": ""
+       },
+       {
+        "time": "7:15 AM",
+        "label": "Reach Colchuck Lake, east side",
+        "detail": "Take the left fork, staying high on the ridge, cross the outlet near the dam."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Reach the col",
+        "detail": "Cairned path through talus/open forest, ~1 hr above the lake."
+       },
+       {
+        "time": "9:15 AM",
+        "label": "Begin return",
+        "detail": ""
+       },
+       {
+        "time": "2:30 PM",
+        "label": "Back at car",
+        "detail": ""
+       }
+      ],
+      "objective": "Reach the col via the east side of Colchuck Lake"
+     }
+    ],
+    "totalNote": "A single day, roughly 9 hrs round trip to the col and back — this is the approach used to access CBR's climbing routes, not a summit itself."
+   },
+   "access": {
+    "fees": "Day-use: free. Overnight lottery: $6 non-refundable application fee, then $5/person/night if selected. (Some approaches — e.g. Mount Stuart via Ingalls Creek/Longs Pass — fall entirely outside the Enchantment Permit Area and need only the free self-issue permit even overnight.)",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+    "permit": "Day climbs: free self-issue day-use permit at the trailhead — no lottery needed. Overnight camping inside the Enchantment Permit Area boundary: Enchantments overnight lottery permit (Recreation.gov).",
+    "group_limit": 8,
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/233273",
+     "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+     "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+    }
+   },
+   "road": {
+    "name": "Icicle Creek Road to FR 7601 (Eightmile Road), Stuart Lake Trailhead",
+    "status": "Icicle Creek Road is paved for 8.4 miles from US 2 in Leavenworth; FR 7601 is 3.7 miles of rough, sometimes deeply potholed dirt to the trailhead. Passenger cars manage it driven slowly.",
+    "driveNote": "The Stuart Lake trailhead lot holds only 20-30 vehicles and has a vault toilet. It fills long before dawn on summer weekends because it is also the entry point for Enchantments through-hikers and the Colchuck Lake day-hike crowd — arrive very early or be prepared to park down the road and walk.",
+    "seasonalGate": "FR 7601 is typically closed or unmaintained from November through May, which effectively defines the climbing season."
+   },
+   "climate": null,
+   "emergency": null,
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/031S",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 2,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 2
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Colchuck Lake outlet, east-side talus to the col",
+     "hours": "3-4",
+     "notes": "Stuart Lake Trailhead (FS Road 7601 off Icicle Creek Road). Colchuck Lake Trail #1599 runs 4 miles and 2,280 ft to the lake outlet in about two and a half to three hours; the lake is the last reliable water.\n\nAt the lake take the LEFT fork and stay high on the ridge, avoiding the spur trails that drop to the water's edge. Continue to the small dam near the lake's north end and cross the outlet creek at or just below it. Pick up the trail on the far side and follow it south roughly 100 yards to a slight clearing with boulders and talus on the LEFT.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "Outlet creek crossing at the dam",
+      "Brief 3rd/4th class rock step gained on vegetation",
+      "Loose talus",
+      "No water above the lake"
+     ],
+     "baseFinding": "The clearing with boulders and talus on the left, about 100 yards south of the outlet crossing, is the turn — it is easy to walk past. Ascend the talus angling slightly left into the woods and negotiate a brief 3rd/4th class rock step, using roots and branches as holds; that step is the confirmation you are on the right line and not on a lakeside spur. From there the path climbs southward through open, cairned forest for about an hour to the col, which overlooks a boulder-strewn camp area with views of Dragontail and Colchuck peaks."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+     "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+     "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+     "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+    },
+    {
+     "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+     "role": "main",
+     "type": "camp",
+     "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+     "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+     "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+     "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "colchuck balanced rock col east lake lk side approch",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

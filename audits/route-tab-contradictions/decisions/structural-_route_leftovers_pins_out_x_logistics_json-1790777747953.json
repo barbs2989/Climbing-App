@@ -1,0 +1,2538 @@
+{
+ "applied": [
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "op": "patch",
+   "columns": [
+    "approach_logistics"
+   ]
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "op": "patch",
+   "columns": [
+    "approach_logistics"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "area_id": "wa_buckner_mountain",
+   "name": "North Face",
+   "discipline": "mountaineering",
+   "grade": "Grade II, AI2-3",
+   "grade_system": "yds",
+   "grade_num": 3,
+   "pitches": 12,
+   "length_m": 396,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "N",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "ice axe and second tool",
+    "crampons",
+    "ice screws",
+    "glacier travel and crevasse rescue kit",
+    "pickets"
+   ],
+   "hazards": [
+    "bergschrund crossing",
+    "rockfall on warming",
+    "variable ice",
+    "summit cornices"
+   ],
+   "verif": null,
+   "overview": "Buckner's north face is a classic alpine ice and snow climb, holding a sustained slope of moderate steepness that comes into the best shape in late spring and early summer. It is a coveted line for climbers wanting a north-side adventure on one of the range's high summits, often approached from Horseshoe Basin.",
+   "beta": "The North Face is 1,300 feet of 40-50 degree snow and ice climbed in approximately 8-13 pitches, most belayed. Work left of any bergschrund, back right to center of lower face and straight up. Upper rock cliffs force several pitches leftward in a rising traverse. Within 200 feet of summit go left around a craggy-looking outcrop at the end of upper cliffs, then back rightward to gain the summit. The face is wind-scoured in places requiring careful assessment of stability. Route quality varies significantly by conditions; some ascents report ice-hard wind-scoured snow while others encounter moderate powder.",
+   "turnaround": "Establish hard turnaround times based on daylight and climbing pace. Summit must be reached by mid-afternoon to allow safe descent in daylight. If halfway up face by noon, consider retreat.",
+   "auto_generated": true,
+   "alpine_grade": "AD",
+   "rock_grade": null,
+   "ice_grade": "AI2-3",
+   "gain_ft": 7000,
+   "loss_ft": 6800,
+   "dist_km": 29.93,
+   "max_angle": 50,
+   "rappels": "1",
+   "commitment": "II",
+   "face": "North Face (above the Boston Glacier)",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": "Cell service is absent in Boston Basin and on Boston Glacier. Satellite communicators or personal locator beacons essential for emergency communication. No reliable communication until return to trailhead.",
+   "descent": "Descend the southwest slopes (standard route)",
+   "obj_haz": [
+    "crevassed glacier travel on the Quien Sabe and Boston Glaciers",
+    "bergschrund crossing near the base of the face",
+    "cornices reported near common bivy sites on the ridge above Boston Basin",
+    "wind-loaded slab on the face/adjacent couloirs after storms",
+    "loose, crumbly rock on the Boston Peak shoulder traverse"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.48055,
+     "lng": -121.07979,
+     "elev": 3210,
+     "name": "Boston Basin Trailhead",
+     "note": "Small pullout on Cascade River Road (FR-15) at about 3,200 ft. The unmaintained climbers' path follows an old mining road about a mile, then climbs steeply through old growth into Boston Basin; wilderness permit required for overnight camping, and Boston Basin camping is limited to its two designated camps.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Cascade River Road (FR-15) runs east from Marblemount; the trailhead is a small pullout at about mile 21.7, a couple of miles short of the Cascade Pass road-end loop where the Sahale Arm exit comes out. The upper road is narrow gravel and holds snow into early summer."
+    },
+    {
+     "lat": 48.4683,
+     "lng": -121.06,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "note": "On the Sahale Arm way in or out: leave the Cascade Pass trail here and climb the Sahale Arm climbers' path north toward Sahale Glacier Camp.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "From the Cascade Pass road-end loop, a couple of miles past the Boston Basin pullout, the maintained trail switchbacks up through forest, roughly three dozen short zigzags for about 1,500 ft in the first two miles, then breaks out of the trees and contours east across open slopes to the pass at 3.7 miles. Graded and obvious the whole way."
+    },
+    {
+     "lat": 48.4892,
+     "lng": -121.0465,
+     "elev": 7600,
+     "name": "Sahale Glacier Camp",
+     "note": "High camp used as the base for the north-side approach; permit required, exposed site with no reliable shelter from weather.",
+     "type": "Campsite",
+     "distMi": null,
+     "directions": "Turn north (left) at the pass onto the Sahale Arm path, which switchbacks steeply out of the pass at first. About 0.8 mile up, a signed split sends the right-hand branch down to Doubtful Lake; stay left. Above that the path follows the crest of the arm and steepens near the top, where the tread fades into moraine boulders marked by cairns. Roughly 2.2 miles from the pass."
+    },
+    {
+     "lat": 48.4935,
+     "lng": -121.04,
+     "elev": 8200,
+     "name": "Sahale-Boston col",
+     "note": "Skirt the top of Sahale and cross this saddle (a small 2-person bivy exists here) onto exposed third-class choss en route toward Boston Peak.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Rope up and work up the Sahale Glacier toward the summit pyramid, bearing right onto the gentlest part of the upper slope, then climb over or skirt the summit block and drop down the far side to the saddle. This is where the standard Boston Basin approach joins, having come up the Quien Sabe Glacier from high camp."
+    },
+    {
+     "lat": 48.4951,
+     "lng": -120.9979,
+     "elev": 9114,
+     "name": "Buckner Mountain (southwest summit)",
+     "note": "Face climb tops out on the summit ridge just below the true summit; upper rock cliffs force a rising traverse leftward to finish.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "About 1,300 ft of 40-50 degree snow and ice, typically 8-13 pitches and mostly belayed, though strong parties solo it when the face is in good nick. Climb straight up the centre of the lower face until the upper cliffs cut it off, then take several pitches of rising traverse leftward. Within roughly 200 ft of the top, go left around a craggy outcrop at the end of those cliffs before cutting back right to finish. The face is wind-scoured in places and conditions swing between hard scoured ice and moderate powder, so judge it before committing to climbing unroped."
+    }
+   ],
+   "gpx": [
+    [
+     48.475667,
+     -121.075172
+    ],
+    [
+     48.475781,
+     -121.075215
+    ],
+    [
+     48.475832,
+     -121.075172
+    ],
+    [
+     48.476038,
+     -121.075107
+    ],
+    [
+     48.475868,
+     -121.074506
+    ],
+    [
+     48.475626,
+     -121.074345
+    ],
+    [
+     48.475277,
+     -121.074356
+    ],
+    [
+     48.475057,
+     -121.073959
+    ],
+    [
+     48.475277,
+     -121.074034
+    ],
+    [
+     48.475633,
+     -121.073787
+    ],
+    [
+     48.475789,
+     -121.073809
+    ],
+    [
+     48.475355,
+     -121.073498
+    ],
+    [
+     48.47598,
+     -121.073456
+    ],
+    [
+     48.476236,
+     -121.073284
+    ],
+    [
+     48.477025,
+     -121.073671
+    ],
+    [
+     48.476792,
+     -121.073251
+    ],
+    [
+     48.476493,
+     -121.07323
+    ],
+    [
+     48.476264,
+     -121.073059
+    ],
+    [
+     48.475846,
+     -121.07279
+    ],
+    [
+     48.475711,
+     -121.072682
+    ],
+    [
+     48.4763,
+     -121.072812
+    ],
+    [
+     48.476593,
+     -121.072854
+    ],
+    [
+     48.47697,
+     -121.072951
+    ],
+    [
+     48.477546,
+     -121.073423
+    ],
+    [
+     48.477779,
+     -121.073359
+    ],
+    [
+     48.476451,
+     -121.072082
+    ],
+    [
+     48.477603,
+     -121.072661
+    ],
+    [
+     48.476707,
+     -121.071706
+    ],
+    [
+     48.477326,
+     -121.071985
+    ],
+    [
+     48.476984,
+     -121.071363
+    ],
+    [
+     48.477696,
+     -121.071888
+    ],
+    [
+     48.478079,
+     -121.07147
+    ],
+    [
+     48.478435,
+     -121.071738
+    ],
+    [
+     48.478058,
+     -121.071298
+    ],
+    [
+     48.477432,
+     -121.071191
+    ],
+    [
+     48.477304,
+     -121.070783
+    ],
+    [
+     48.478023,
+     -121.070901
+    ],
+    [
+     48.47867,
+     -121.07117
+    ],
+    [
+     48.477959,
+     -121.070547
+    ],
+    [
+     48.477646,
+     -121.070354
+    ],
+    [
+     48.478172,
+     -121.07029
+    ],
+    [
+     48.477475,
+     -121.06985
+    ],
+    [
+     48.478235,
+     -121.069808
+    ],
+    [
+     48.477724,
+     -121.069228
+    ],
+    [
+     48.479061,
+     -121.069045
+    ],
+    [
+     48.478506,
+     -121.068756
+    ],
+    [
+     48.479104,
+     -121.068648
+    ],
+    [
+     48.478471,
+     -121.068423
+    ],
+    [
+     48.479111,
+     -121.068327
+    ],
+    [
+     48.477973,
+     -121.067972
+    ],
+    [
+     48.478314,
+     -121.067844
+    ],
+    [
+     48.47734,
+     -121.067618
+    ],
+    [
+     48.478115,
+     -121.067425
+    ],
+    [
+     48.477368,
+     -121.067232
+    ],
+    [
+     48.476934,
+     -121.066814
+    ],
+    [
+     48.476792,
+     -121.066524
+    ],
+    [
+     48.477446,
+     -121.066814
+    ],
+    [
+     48.478193,
+     -121.066739
+    ],
+    [
+     48.477553,
+     -121.066524
+    ],
+    [
+     48.477198,
+     -121.066288
+    ],
+    [
+     48.47687,
+     -121.065709
+    ],
+    [
+     48.476308,
+     -121.065258
+    ],
+    [
+     48.476927,
+     -121.065376
+    ],
+    [
+     48.477525,
+     -121.065762
+    ],
+    [
+     48.477952,
+     -121.06573
+    ],
+    [
+     48.477532,
+     -121.065505
+    ],
+    [
+     48.477198,
+     -121.065194
+    ],
+    [
+     48.476949,
+     -121.064947
+    ],
+    [
+     48.476693,
+     -121.064646
+    ],
+    [
+     48.476493,
+     -121.064646
+    ],
+    [
+     48.475697,
+     -121.064131
+    ],
+    [
+     48.47485,
+     -121.063144
+    ],
+    [
+     48.474431,
+     -121.063059
+    ],
+    [
+     48.474168,
+     -121.062544
+    ],
+    [
+     48.473968,
+     -121.062662
+    ],
+    [
+     48.473549,
+     -121.062136
+    ],
+    [
+     48.473456,
+     -121.06205
+    ],
+    [
+     48.473204,
+     -121.062082
+    ],
+    [
+     48.472868,
+     -121.062059
+    ],
+    [
+     48.472206,
+     -121.061998
+    ],
+    [
+     48.471854,
+     -121.061624
+    ],
+    [
+     48.471612,
+     -121.061489
+    ],
+    [
+     48.471516,
+     -121.061177
+    ],
+    [
+     48.471385,
+     -121.061098
+    ],
+    [
+     48.471297,
+     -121.06093
+    ],
+    [
+     48.471169,
+     -121.060631
+    ],
+    [
+     48.471036,
+     -121.060449
+    ],
+    [
+     48.470653,
+     -121.06039
+    ],
+    [
+     48.470405,
+     -121.060333
+    ],
+    [
+     48.470208,
+     -121.060118
+    ],
+    [
+     48.469996,
+     -121.059947
+    ],
+    [
+     48.469258,
+     -121.059501
+    ],
+    [
+     48.469054,
+     -121.059456
+    ],
+    [
+     48.468796,
+     -121.059415
+    ],
+    [
+     48.468554,
+     -121.059128
+    ],
+    [
+     48.468396,
+     -121.059071
+    ],
+    [
+     48.468293,
+     -121.059351
+    ],
+    [
+     48.468133,
+     -121.059549
+    ],
+    [
+     48.467971,
+     -121.059557
+    ],
+    [
+     48.467802,
+     -121.059505
+    ],
+    [
+     48.467679,
+     -121.059361
+    ],
+    [
+     48.467639,
+     -121.059169
+    ],
+    [
+     48.467576,
+     -121.059018
+    ],
+    [
+     48.467533,
+     -121.059084
+    ],
+    [
+     48.46751,
+     -121.059099
+    ],
+    [
+     48.467558,
+     -121.059165
+    ],
+    [
+     48.467533,
+     -121.059084
+    ],
+    [
+     48.467576,
+     -121.059018
+    ],
+    [
+     48.467569,
+     -121.059
+    ],
+    [
+     48.467677,
+     -121.058802
+    ],
+    [
+     48.467733,
+     -121.058697
+    ],
+    [
+     48.467774,
+     -121.05871
+    ],
+    [
+     48.467833,
+     -121.058728
+    ],
+    [
+     48.467921,
+     -121.058677
+    ],
+    [
+     48.467985,
+     -121.058565
+    ],
+    [
+     48.467955,
+     -121.058513
+    ],
+    [
+     48.467946,
+     -121.058442
+    ],
+    [
+     48.468022,
+     -121.058375
+    ],
+    [
+     48.468116,
+     -121.057949
+    ],
+    [
+     48.468,
+     -121.057308
+    ],
+    [
+     48.467997,
+     -121.056811
+    ],
+    [
+     48.468036,
+     -121.056323
+    ],
+    [
+     48.468059,
+     -121.055819
+    ],
+    [
+     48.468089,
+     -121.055615
+    ],
+    [
+     48.468055,
+     -121.054457
+    ],
+    [
+     48.468172,
+     -121.054607
+    ],
+    [
+     48.468341,
+     -121.054847
+    ],
+    [
+     48.468472,
+     -121.055234
+    ],
+    [
+     48.468564,
+     -121.05546
+    ],
+    [
+     48.468665,
+     -121.055574
+    ],
+    [
+     48.468697,
+     -121.055625
+    ],
+    [
+     48.468694,
+     -121.056239
+    ],
+    [
+     48.468747,
+     -121.05638
+    ],
+    [
+     48.468824,
+     -121.056046
+    ],
+    [
+     48.468895,
+     -121.056225
+    ],
+    [
+     48.469,
+     -121.056049
+    ],
+    [
+     48.469195,
+     -121.055597
+    ],
+    [
+     48.46937,
+     -121.056095
+    ],
+    [
+     48.469477,
+     -121.055968
+    ],
+    [
+     48.469711,
+     -121.055323
+    ],
+    [
+     48.469764,
+     -121.055466
+    ],
+    [
+     48.469803,
+     -121.055177
+    ],
+    [
+     48.469762,
+     -121.05482
+    ],
+    [
+     48.469813,
+     -121.054832
+    ],
+    [
+     48.46981,
+     -121.054721
+    ],
+    [
+     48.469838,
+     -121.054694
+    ],
+    [
+     48.469735,
+     -121.054418
+    ],
+    [
+     48.469777,
+     -121.054357
+    ],
+    [
+     48.46981,
+     -121.054185
+    ],
+    [
+     48.469922,
+     -121.05423
+    ],
+    [
+     48.469821,
+     -121.053708
+    ],
+    [
+     48.469745,
+     -121.053096
+    ],
+    [
+     48.469682,
+     -121.052914
+    ],
+    [
+     48.469713,
+     -121.052822
+    ],
+    [
+     48.469728,
+     -121.052734
+    ],
+    [
+     48.469754,
+     -121.052626
+    ],
+    [
+     48.469828,
+     -121.052485
+    ],
+    [
+     48.469866,
+     -121.052304
+    ],
+    [
+     48.469967,
+     -121.052175
+    ],
+    [
+     48.470039,
+     -121.052082
+    ],
+    [
+     48.470452,
+     -121.051699
+    ],
+    [
+     48.470653,
+     -121.05178
+    ],
+    [
+     48.470734,
+     -121.051974
+    ],
+    [
+     48.471087,
+     -121.05195
+    ],
+    [
+     48.471314,
+     -121.052079
+    ],
+    [
+     48.471334,
+     -121.052107
+    ],
+    [
+     48.47151,
+     -121.052391
+    ],
+    [
+     48.473398,
+     -121.055609
+    ],
+    [
+     48.473689,
+     -121.056308
+    ],
+    [
+     48.473862,
+     -121.056275
+    ],
+    [
+     48.473948,
+     -121.056397
+    ],
+    [
+     48.474012,
+     -121.057186
+    ],
+    [
+     48.474136,
+     -121.057227
+    ],
+    [
+     48.474293,
+     -121.057186
+    ],
+    [
+     48.47446,
+     -121.057389
+    ],
+    [
+     48.474514,
+     -121.057357
+    ],
+    [
+     48.474621,
+     -121.057422
+    ],
+    [
+     48.474972,
+     -121.057121
+    ],
+    [
+     48.475058,
+     -121.056934
+    ],
+    [
+     48.475074,
+     -121.056796
+    ],
+    [
+     48.475365,
+     -121.056739
+    ],
+    [
+     48.4757,
+     -121.056747
+    ],
+    [
+     48.475813,
+     -121.056617
+    ],
+    [
+     48.476061,
+     -121.05661
+    ],
+    [
+     48.476169,
+     -121.056716
+    ],
+    [
+     48.476427,
+     -121.056539
+    ],
+    [
+     48.476812,
+     -121.056999
+    ],
+    [
+     48.477023,
+     -121.057176
+    ],
+    [
+     48.477206,
+     -121.057112
+    ],
+    [
+     48.477244,
+     -121.057162
+    ],
+    [
+     48.4773,
+     -121.056829
+    ],
+    [
+     48.477399,
+     -121.05668
+    ],
+    [
+     48.47761,
+     -121.056645
+    ],
+    [
+     48.47776,
+     -121.056213
+    ],
+    [
+     48.47776,
+     -121.055937
+    ],
+    [
+     48.477873,
+     -121.05576
+    ],
+    [
+     48.478229,
+     -121.055859
+    ],
+    [
+     48.479792,
+     -121.054154
+    ],
+    [
+     48.479984,
+     -121.053884
+    ],
+    [
+     48.480059,
+     -121.053495
+    ],
+    [
+     48.480707,
+     -121.052752
+    ],
+    [
+     48.480768,
+     -121.052816
+    ],
+    [
+     48.481458,
+     -121.052596
+    ],
+    [
+     48.481641,
+     -121.052101
+    ],
+    [
+     48.481725,
+     -121.052065
+    ],
+    [
+     48.482152,
+     -121.051386
+    ],
+    [
+     48.482194,
+     -121.051414
+    ],
+    [
+     48.482466,
+     -121.051117
+    ],
+    [
+     48.482466,
+     -121.050968
+    ],
+    [
+     48.482734,
+     -121.050558
+    ],
+    [
+     48.482724,
+     -121.049857
+    ],
+    [
+     48.482795,
+     -121.049715
+    ],
+    [
+     48.483123,
+     -121.048986
+    ],
+    [
+     48.483134,
+     -121.048586
+    ],
+    [
+     48.483149,
+     -121.048608
+    ],
+    [
+     48.483147,
+     -121.048583
+    ],
+    [
+     48.48409,
+     -121.047762
+    ],
+    [
+     48.484343,
+     -121.047266
+    ],
+    [
+     48.484432,
+     -121.046962
+    ],
+    [
+     48.484531,
+     -121.046785
+    ],
+    [
+     48.484845,
+     -121.046707
+    ],
+    [
+     48.484972,
+     -121.046325
+    ],
+    [
+     48.485182,
+     -121.046033
+    ],
+    [
+     48.48642,
+     -121.042643
+    ],
+    [
+     48.487614,
+     -121.041956
+    ],
+    [
+     48.488553,
+     -121.041012
+    ],
+    [
+     48.489748,
+     -121.039424
+    ],
+    [
+     48.490487,
+     -121.038909
+    ],
+    [
+     48.491113,
+     -121.038651
+    ],
+    [
+     48.491191,
+     -121.038566
+    ],
+    [
+     48.49138,
+     -121.038308
+    ],
+    [
+     48.491872,
+     -121.03804
+    ],
+    [
+     48.492163,
+     -121.037632
+    ],
+    [
+     48.49296,
+     -121.036672
+    ],
+    [
+     48.493241,
+     -121.036522
+    ],
+    [
+     48.493463,
+     -121.036527
+    ],
+    [
+     48.493818,
+     -121.036184
+    ],
+    [
+     48.494309,
+     -121.035744
+    ],
+    [
+     48.495397,
+     -121.034832
+    ],
+    [
+     48.495845,
+     -121.032128
+    ],
+    [
+     48.495845,
+     -121.032107
+    ],
+    [
+     48.49587,
+     -121.031742
+    ],
+    [
+     48.495528,
+     -121.028695
+    ],
+    [
+     48.495912,
+     -121.025605
+    ],
+    [
+     48.496438,
+     -121.022708
+    ],
+    [
+     48.496111,
+     -121.020198
+    ],
+    [
+     48.495998,
+     -121.016057
+    ],
+    [
+     48.496225,
+     -121.011443
+    ],
+    [
+     48.496339,
+     -121.007903
+    ],
+    [
+     48.496993,
+     -121.005177
+    ],
+    [
+     48.497633,
+     -121.002946
+    ],
+    [
+     48.497889,
+     -121.001894
+    ],
+    [
+     48.497576,
+     -121.001272
+    ],
+    [
+     48.497291,
+     -121.000929
+    ],
+    [
+     48.496836,
+     -121.000221
+    ],
+    [
+     48.496296,
+     -120.999727
+    ],
+    [
+     48.495912,
+     -120.999255
+    ],
+    [
+     48.495784,
+     -120.998826
+    ],
+    [
+     48.495756,
+     -120.997989
+    ],
+    [
+     48.495656,
+     -120.997646
+    ],
+    [
+     48.495173,
+     -120.997775
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "ice",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 20,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 4,
+    "approachTimeHrs": 6,
+    "recommendedStart": "~3:30-4:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6,
+      "note": "From the Boston Basin trailhead, hike into Boston Basin, ascend the Quien Sabe Glacier to the Boston-Sahale col, then traverse/scramble behind Boston Peak and descend (some steep s…",
+      "fromTo": "Approach to Boston Glacier camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "Rope up and cross the Boston Glacier to the base of the face, then climb 8-13 pitches of moderate 40-50 degree snow/ice to the 9,114 ft summit. Descend the standard SW slopes into …",
+      "fromTo": "Climb the North Face and traverse to a second camp",
+      "section": "Climb"
+     },
+     {
+      "hrs": 4,
+      "note": "Descend Sahale Arm to Cascade Pass and out to the Cascade Pass trailhead — a different trailhead than the Boston Basin start, so this route is a point-to-point traverse requiring a…",
+      "fromTo": "Exit via Cascade Pass",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Ice screws, a few pickets, two tools per climber, and a glacier rescue kit for the approach.",
+   "what_to_bring": [
+    "two ice tools",
+    "crampons",
+    "ice screws",
+    "pickets",
+    "rope and rescue kit",
+    "overnight gear"
+   ],
+   "pro_tips": [
+    "Climb in late spring for the most reliable neve",
+    "Start in the dark to top out before the sun warms the face",
+    "In lean, late-season conditions the face can bare out to ice, with the upper exit requiring short 5.8-5.9 rock moves for some parties — assess current conditions before committing"
+   ],
+   "watch_out": [
+    "warming rockfall",
+    "thin late-season ice",
+    "cornice on summit ridge",
+    "possible low 5th-class (5.8-5.9) rock moves near the summit exit in low-snow/late-season conditions",
+    "full-width bergschrund some seasons, requiring a zig-zag detour around large cracks"
+   ],
+   "pro_needs": "Snow and ice anchors as conditions dictate; protection is sparse on open snow.",
+   "best_season": "Late May through early July",
+   "high_point_ft": 9114,
+   "aid_grade": null,
+   "approach": "Start from the Boston Basin Trailhead (~3,200 ft), about 21.7 miles up Cascade River Road from Marblemount (a separate, shorter-drive trailhead than the Cascade Pass TH used for the SW route). The unmaintained climbers' path follows an old, overgrown mining road for about 1 mile to a former mine site, then becomes a steep boot-path through old-growth forest with roughly four creek/stream crossings, emerging above treeline around 5,300 ft into Boston Basin — about 2.5 miles and 3,100 ft of gain, typically 3-4 hours. Boston Basin has two designated backcountry camps used as base for this route: low camp (~5,300 ft) and high camp (~6,300-6,400 ft); an NPS permit is required and camping is restricted to these established sites. From high camp, follow the Quien Sabe Glacier route, roping up for crevasses, and climb toward Sharkfin Col (rather than the loose class 3-4 scramble around Boston Peak). Many parties gain the ridge just east of Sharkfin Col, where a natural/fixed sling anchor is commonly used to make a short rappel — or, in leaner conditions, a steep no-fall-zone downclimb on crumbly mixed rock — down onto the Boston Glacier; multiple trip reports flag this as the technical crux of the approach, sometimes harder than the climbing above. Once on the Boston Glacier (one of the largest glaciers in the lower 48), rope up and traverse south toward the base of Buckner's north face, zig-zagging around a bergschrund and large crevasses near the toe of the face, with some rock scrambling to bypass the 'schrund. Many parties bivy on the glacier itself (~7,800 ft) to shorten summit day. From the base, the North Face climbs about 1,300 ft of 40-50 degree snow/ice: work left of the bergschrund, then back right to the center of the lower face and straight up until upper rock cliffs force a rising traverse leftward; within about 200 ft of the summit, go left around a craggy rock outcrop, then back right to the top. Competent parties in good nick conditions often solo this face; less experienced or larger parties belay it with pickets/ice screws. Glacier travel, the Sharkfin Col rappel/downclimb, and typical alpine hazards (rockfall, afternoon softening, weather) are the main approach concerns.",
+   "descent_text": "The standard descent does not reverse the North Face — parties continue over the summit and go down Buckner's southwest slopes. From the top, descend gullies, scree, and snow on the fall line to about 7,200 ft, then traverse down and right across Horseshoe Basin on a broad ledge system at 6,200-6,400 ft (passing near the old Davenport Mine) to a snow finger; ascend the snow finger about 100 ft to regain the rounded ridge above the toe of Sahale's south ridge. Scramble roughly 40 ft up short rock steps, then follow paths through heather and rock for about 300 ft along the ridge crest (with the Davenport Glacier in view), before traversing up and left on slabs and snow above the glacier debris to the moraine flats beneath Sahale. From here, parties who arranged a car shuttle can continue over Sahale Arm and out Cascade Pass; most parties who started at Boston Basin instead re-climb Sahale's south ridge back toward Sharkfin Col and reverse the Quien Sabe Glacier approach to Boston Basin and the trailhead — some elect to 'carry over' with full packs and skip returning to a Boston Basin camp entirely. The southwest-slopes portion of the descent itself is a scree/snow walk-off with no rappelling (0 rappels). However, on the return leg back through Sharkfin Col, expect the same technical step encountered on approach: many parties make one short rappel (a single rope length off the natural/fixed sling anchor at the col is sufficient — no multi-pitch rappelling reported) to get back down onto or off the glacier side, while others downclimb it unroped depending on conditions and party comfort; in bad weather/whiteout, at least one party describes rappelling a steep ice gully near a nearby col with pickets as an alternate exit. Treat this Sharkfin Col step, not the summit slopes, as the route's real technical/rappel hazard.",
+   "bail": "Bailing off the face is committing; retreat usually means downclimbing or building snow anchors. Assess conditions before committing above the bergschrund.",
+   "pitch_detail": [
+    {
+     "grade": "40-50 degree snow/ice",
+     "notes": "Continuous or simul-climbed snow-ice face above the Boston Glacier bergschrund; the steepest climbing has been reported near a rock outcrop about halfway up and in the final couloir just below the summit.",
+     "pitch": "1-13 (roped/simul-climbed sections)",
+     "lengthM": 396
+    }
+   ],
+   "itinerary": {
+    "cal": "Best conditions are July-September after avalanche danger passes; since this is a point-to-point route between the Boston Basin and Cascade Pass trailheads, plan a car shuttle or hitch for the exit.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Boston Basin trailhead, hike into Boston Basin, ascend the Quien Sabe Glacier to the Boston-Sahale col, then traverse/scramble behind Boston Peak and descend (some steep snow and low-grade mixed down-climbing near Sharkfin Col) onto the Boston Glacier to camp roughly an hour from the face.",
+      "hours": 6,
+      "miles": 5.5,
+      "title": "Approach to Boston Glacier camp",
+      "gainFt": 4600,
+      "lossFt": 300,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach a camp near the base of the North Face"
+     },
+     {
+      "n": 2,
+      "note": "Rope up and cross the Boston Glacier to the base of the face, then climb 8-13 pitches of moderate 40-50 degree snow/ice to the 9,114 ft summit. Descend the standard SW slopes into Horseshoe Basin and continue to a second camp rather than exiting same-day, carrying full overnight gear over the top.",
+      "hours": 10,
+      "miles": 5,
+      "title": "Climb the North Face and traverse to a second camp",
+      "gainFt": 2200,
+      "lossFt": 2500,
+      "packLb": 35,
+      "schedule": [
+       {
+        "time": "~3:30-4:30 AM",
+        "label": "Alarm at Boston Glacier camp",
+        "detail": ""
+       },
+       {
+        "time": "~5:00-6:00 AM",
+        "label": "Rope up and cross to the face",
+        "detail": "About an hour from camp to the base of the North Face"
+       },
+       {
+        "time": "",
+        "label": "Climb the North Face",
+        "detail": "8-13 pitches of 40-50 degree snow/ice; one fast solo party climbed this section in about an hour on an existing bootpack, but roped teams typically take several hours longer"
+       },
+       {
+        "time": "",
+        "label": "Summit",
+        "detail": "9,114 ft"
+       },
+       {
+        "time": "",
+        "label": "Descend SW into Horseshoe Basin",
+        "detail": "Roughly 2 hours on the standard SW slopes"
+       },
+       {
+        "time": "",
+        "label": "Continue to Horseshoe Basin / Sahale Glacier camp",
+        "detail": "Set up night 2 camp before exiting the next day"
+       }
+      ],
+      "objective": "Summit via the North Face, descend SW to camp in Horseshoe Basin or at Sahale Glacier"
+     },
+     {
+      "n": 3,
+      "note": "Descend Sahale Arm to Cascade Pass and out to the Cascade Pass trailhead — a different trailhead than the Boston Basin start, so this route is a point-to-point traverse requiring a car shuttle or hitch between trailheads.",
+      "hours": 4,
+      "miles": 6,
+      "title": "Exit via Cascade Pass",
+      "gainFt": 0,
+      "lossFt": 4000,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Hike out to the Cascade Pass trailhead"
+     }
+    ],
+    "totalNote": "A 3-day technical traverse (~18-19 mi point-to-point, an estimated ~6,800+ ft of total gain): approach via Boston Basin to a Boston Glacier camp, climb 8-13 pitches of 40-50 degree snow/ice up the North Face, then continue over the summit to a Horseshoe Basin/Sahale camp and exit via Cascade Pass; exceptionally fast parties have linked the whole thing in one very long day, but 3 days with 2 camps is standard."
+   },
+   "access": {
+    "fees": "No fee for day use; overnight backcountry permits cost roughly $10/person per night plus a one-time $6 nonrefundable reservation fee, charged only in the summer season (mid-May-early October) — free the rest of the year.",
+    "rules": "Group size limit is 12 in trail corridors and camps and in the eleven named cross-country zones — Boston Basin, Eldorado, Forbidden, Hidden Lake, Icy, Inspiration, Nooksack, Price, Sulphide Glacier, Torment Basin and Triad — one of which this route is in; 6 in the remaining cross-country zones. Limits include people and stock. Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+    "permit": "Wilderness permit required for overnight stays. Sahale Glacier Camp and Cascade Pass camps are among the most in-demand sites in the park; 60% of permits are reservable in advance via Recreation.gov (Early-Access lottery in Feb-Mar, general on-sale in spring), and 40% are held for walk-up. Permits must be picked up/activated in person at the Marblemount Wilderness Information Center the day of or day before the trip.",
+    "closures": "Cascade River Road (FR-15) is typically snow-gated in winter and spring and may not open to the trailhead until early-mid summer; it has also suffered repeated storm washouts in recent years (e.g., August 2025). Check the NPS road-conditions page before driving.",
+    "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+    "group_limit": 12,
+    "landManager": "North Cascades National Park Service Complex (Stephen Mather Wilderness)",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/4675322",
+     "what": "North Cascades National Park wilderness permit for Boston Basin and Sahale Glacier Camp — quota, reservable, not free",
+     "where": "Both are high-demand cross-country zones; apply to the March early-access lottery for the best odds, or book the general on-sale release in late April on Recreation.gov. Permits reached from Cascade River Road must be picked up in person at the Wilderness Information Center in Marblemount."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road (Forest Road 15)",
+    "status": "Gravel, summer-passable",
+    "driveNote": "Rough, washboarded gravel for the final miles to the Cascade Pass Trailhead, about 22.9-23 miles from Marblemount; has experienced washouts requiring temporary closures in recent years.",
+    "seasonalGate": "Snow closure in winter/spring; opening date varies year to year with snowpack and road damage."
+   },
+   "climate": {
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "county": "Skagit (summit sits on the Chelan-Skagit county line; trailhead access and SAR coordination are on the Skagit County/Marblemount side)",
+    "nearestHospital": "PeaceHealth United General Medical Center, Sedro-Woolley (closest full ED to the Marblemount trailhead area; a 24/7 Level IV emergency department); Skagit Valley Hospital (Skagit Regional Health), Mount Vernon, for higher-level trauma care."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Narrow weather windows in June when snow/ice conditions are most stable",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Low - a handful of parties per season; considered a classic but committing objective, not a high-traffic route"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very strenuous full day (~9.5 hrs route time) on top of a multi-day glaciated approach with significant elevation gain",
+     "packWeight": "Overnight mountaineering pack with technical rack, roughly 35-45 lbs"
+    },
+    "approachTime": "Multi-day approach: hike to Boston Basin, then glacier travel across the Boston Glacier to reach the base of the face; most parties plan 2+ days",
+    "requiredSkills": [
+     "glacier travel and crevasse rescue",
+     "front-pointing/cramponing on 40-50 degree snow and ice (AI2-3)",
+     "ice tool technique",
+     "bergschrund negotiation",
+     "comfort with very early alpine starts"
+    ],
+    "experienceLevel": "Advanced - prior glacier travel and technical snow/ice climbing experience required; not a route for a first alpine ice outing"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late May through early July, with June generally offering the best balance of ice quality and access",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Best ice conditions, but wet, heavy maritime spring snow on the glacier approach raises avalanche concern",
+      "status": "good"
+     },
+     "July": {
+      "reason": "Face 'bares out' as summer progresses, increasing rockfall risk and degrading ice quality; route becomes progressively less in-condition",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Typically the most reliable window - snow/ice generally consolidated on the face while the Boston Glacier approach is still manageable",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Cold, north-facing conditions; the route holds snow/ice longer than surrounding aspects but degrades quickly once temperatures rise",
+     "probability": "Condition window is highly weather- and temperature-dependent; a warm spell can bare out the face and destabilize the approach glacier within days"
+    },
+    "exposure": "Sustained 40-50 degree snow/ice climbing (AI2-3) with rockfall exposure as the face warms, plus fall/crevasse consequence at the bergschrund; rockfall is a recognized hazard here",
+    "avalanche": {
+     "zone": "West Slopes North (NWAC) - approximate coverage; this specific glaciated approach is remote and not precisely zoned by NWAC forecasts",
+     "byMonth": {
+      "May": "Considerable",
+      "July": "Low",
+      "June": "Moderate"
+     }
+    },
+    "crevasses": "Significant - the Boston Glacier approach involves real crevasse hazard, and there is a bergschrund crossing near the top of the face"
+   },
+   "data_quality": {
+    "gaps": [
+     "No NWAC zone precisely covers this remote glaciated route, so avalanche ratings by month are estimated rather than sourced directly from a forecast",
+     "No published party-per-season counts were found",
+     "Year-to-year bergschrund/glacier condition variability was not quantified in available sources",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/CVN1",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.4951282,
+    "peakLng": -120.9978898,
+    "trailhead": "Cascade Pass Trailhead",
+    "trailheadLat": 48.47544,
+    "trailheadLng": -121.07503
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Boston Basin, Sharkfin Col rappel, and south across the Boston Glacier to the schrund",
+     "notes": "Start from the BOSTON BASIN trailhead near 3,200 ft, about 21.7 miles up Cascade River Road — a different and shorter drive than the Cascade Pass trailhead used for the southwest route. The climbers' path follows an old overgrown mining road about a mile to a former mine site, then a steep boot path through old growth with roughly four creek crossings, emerging above treeline near 5,300 ft into Boston Basin: about 2.5 miles and 3,100 ft, typically three to four hours. Camp low at about 5,300 ft or high at 6,300-6,400 ft; NPS permit required and camping restricted to the established sites.\n\nFrom high camp, follow the Quien Sabe Glacier route roped, and climb toward SHARKFIN COL rather than taking the loose class 3-4 scramble around Boston Peak. Many parties gain the ridge just east of the col, where a natural or fixed sling anchor is used for a short rappel — or, in leaner conditions, a steep no-fall-zone downclimb on crumbly mixed rock — onto the BOSTON GLACIER. Multiple trip reports flag this as the technical crux of the approach, sometimes harder than the climbing above.\n\nOnce on the Boston Glacier, rope up and traverse SOUTH toward the base of Buckner's north face, zig-zagging around the schrund and large crevasses near the toe, with some rock scrambling to bypass the gap. Many parties bivy on the glacier itself around 7,800 ft to shorten summit day.\n\nA second way in reaches the same glacier over Sahale and the Boston-Sahale col from Sahale Glacier Camp.",
+     "season": "Late May through early July for the best face conditions",
+     "hazards": [
+      "A short rappel or a steep no-fall-zone downclimb off Sharkfin Col on crumbly mixed rock — the crux of the approach, and it has to be reversed",
+      "A viciously crevassed upper Boston Glacier with cracks scattered randomly across the ice",
+      "A bergschrund at the toe of the face that can run its full width, needing rock scrambling to bypass",
+      "Wind-scoured ice on some ascents and moderate powder on others — the face's character changes completely with conditions",
+      "Cornices on the summit ridge, and rockfall as the day warms"
+     ],
+     "baseFinding": "THE BASE IS THE BERGSCHRUND AT THE TOE OF THE FACE, ON THE BOSTON GLACIER, AND THE POSITION TEST IS DIRECTIONAL: from the col you traverse SOUTH across the glacier. If you turned north you are heading for Forbidden's north side.\n\nTHE ENTRY MOVE IS A ZIG-ZAG AND IT IS THE POSITIVE TEST: WORK CLIMBER'S LEFT OF THE BERGSCHRUND, THEN BACK RIGHT INTO THE CENTRE OF THE LOWER FACE, AND THEN STRAIGHT UP. Left, right, up. A party that crossed the schrund directly and started climbing where it stood has not found the line the face is climbed on.\n\nWHAT YOU ARE CLIMBING CONFIRMS IT: about 1,300 ft of 40-50 degree snow and ice, continuous, with no rock pitches. If you are on rock below the summit ridge, you have drifted off the face.\n\nTHE FINISH IS THE OTHER COUNTABLE POINT, AND GETTING IT WRONG COSTS TIME AT THE WORST MOMENT: continue straight up until UPPER ROCK CLIFFS force a rising traverse to the LEFT. Then, within about 200 ft of the summit, GO LEFT AROUND A CRAGGY ROCK OUTCROP at the end of those cliffs, and only then back right to the top. Both moves are left. A party that goes right at the cliff band has misread the finish.\n\nAND THE APPROACH ITSELF IS THE STRONGEST NEGATIVE TEST AGAINST THIS PEAK'S OTHER ROUTE: the Southwest Face is reached over Cascade Pass, Sahale Arm and Horseshoe Basin, on the opposite side of the mountain, and the two share no ground until the summit ridge. IF YOU WALKED PAST AN OLD MINE IN A BASIN AT 7,000 FT, YOU ARE ON THE SOUTHWEST ROUTE."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Lower north face snow/ice",
+     "notes": "About 1,300 ft of 40-50 degree snow and ice overall. From the base, work left of the bergschrund, then back right into the center of the lower face and straight up. Competent parties in good conditions often solo the face; less experienced or larger parties belay with pickets and ice screws. Rockfall, afternoon softening and weather are the standing hazards."
+    },
+    {
+     "n": 2,
+     "label": "Rising leftward traverse under the upper cliffs",
+     "notes": "Continue straight up until upper rock cliffs force a rising traverse to the left."
+    },
+    {
+     "n": 3,
+     "label": "Summit exit around the rock outcrop",
+     "notes": "Within about 200 ft of the summit, go left around a craggy rock outcrop, then back right to the top."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 6300,
+     "name": "Boston Basin high camp",
+     "role": "main",
+     "notes": "The comfortable planned camp, roughly 6,300 to 6,400 ft on a sandy flat below a permanent snowfield, about three to four hours from the road. Everything on this route beyond it is committing, because the way onto the Boston Glacier goes over Sharkfin Col and that involves a rappel or a steep downclimb on poor rock that many parties describe as harder than the face itself. Coming back to this camp means reversing it. A lower camp at about 5,300 ft with its own composting toilet is the alternative if the upper sites are full.",
+     "water": "Meltwater creeks and the permanent snowfield behind camp, reliable through the season",
+     "permit": "A National Park Service backcountry permit is required. Boston Basin is one of the small number of zones that accepts advance reservations, and composting toilets serve both the upper and lower camp areas.",
+     "capacity": "Hardened sites; the zone allows six parties per night and up to twelve people per party"
+    },
+    {
+     "elev": 7800,
+     "name": "Boston Glacier bivy",
+     "role": "route",
+     "notes": "A planned but fully exposed glacier bivy used to shorten summit day, on one of the largest glaciers in the lower 48. You are camping on a crevassed surface, so probe the platform and its surroundings before dropping the rope, and mark the perimeter. There is no shelter, no running water and no ground: everything is melted, and wind or a change in weather has nowhere to be dodged. The serious point is that it sits past Sharkfin Col — retreat from here means reclimbing that col, so committing to this bivy commits you to the route in a way that camping in Boston Basin does not.",
+     "water": "Melted snow only",
+     "permit": "The glacier is its own cross-country zone on the park permit system, capped at six people per party and six parties per night; human waste on snow and glacier terrain has to be packed out in a blue bag",
+     "capacity": "Whatever platform you cut; the Boston Glacier cross-country zone allows six parties per night, six people per party"
+    },
+    {
+     "name": "Sahale–Boston col bivy",
+     "role": "route",
+     "notes": "A tiny, spectacular perch on the col between Sahale and Boston, used by parties linking this face with other climbs in the basin or descending over Sahale Arm. It is an emergency-sized site, not a camp: there is room for one small tent, and cornices overhang the Davenport side, so probe out from the sleeping platform before settling in and do not wander in the dark. Wind exposure is total.",
+     "water": "Melted snow",
+     "capacity": "One small two-person tent's worth of flat ground"
+    },
+    {
+     "name": "Sahale Glacier Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "north face",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_grotto_mountain_e_route",
+   "area_id": "wa_grotto_mountain",
+   "name": "East Ridge Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": 47.763162,
+   "lng": -121.4206589,
+   "aspect": "N/NE",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe early season",
+    "trekking poles for brush and talus",
+    "sturdy boots or gaiters (brush and loose talus)"
+   ],
+   "hazards": [
+    "steep timber",
+    "loose rock",
+    "brush",
+    "standing dead timber (snags) and debris-flow potential in the 2022 Bolt Creek Fire burn scar on Klinger Ridge and the south side of the peak",
+    "morning valley fog that can obscure route-finding on an unmarked, off-trail line",
+    "slick, mossy rock on downclimbs"
+   ],
+   "verif": null,
+   "overview": "Grotto Mountain (5,618 ft) is a rugged, lightly-visited peak in the Wild Sky Wilderness (Mount Baker-Snoqualmie National Forest), rising east of Baring Mountain above the South Fork Skykomish River near the US-2 communities of Baring and Grotto. There is no maintained trail to the summit. The line described here follows the east ridge through steep timber and heather bands to a craggy, boulder-strewn summit block overlooking US-2 and the Skykomish valley, with views to Baring, Merchant, and Gunn Peaks. Recent (2024-2025) parties have used an alternate approach via Klinger Ridge — the peak's south ridge — reached from Beckler River Road, crossing to a notch just below the summit block; treat this as a variation on the same peak rather than a confirmed identical line. The 2022 Bolt Creek Fire burned the entire south side of Klinger Ridge, leaving standing dead timber, heavier brush regrowth, and altered route-finding that persist years later — expect more sun exposure and less shade than before the fire.",
+   "beta": "There is no trail beyond the Forest Service road-end. Parties describe pushing through huckleberry brush toward talus (a brushy streambed gives easier passage than the surrounding vegetation), then rising traverses across talus and heathered benches past a small basin/tarn around 4,300ft, up toward the ridge crest near 5,400ft. From there the route works up and right along minor ledges to a talus basin below the summit, then a gully to a col between the summit block and a minor knob to its east, finishing with an exposed class 3-4 scramble to the top. Parties note the literal east ridge crest itself does not go as a through-route.",
+   "turnaround": "Set a firm turnaround time given the off-trail nature of the route and the lack of shade on burned terrain — afternoon fog or thunderstorm buildup can make an already unmarked descent much harder.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 2138,
+   "loss_ft": 2138,
+   "dist_km": 3.86,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": "II",
+   "face": null,
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": null,
+   "descent": "Retrace the east ridge down to the approach.",
+   "obj_haz": [
+    "rockfall on loose talus",
+    "dense brush/slide alder",
+    "route-finding in fog (no trail)",
+    "fire-damaged/unstable deadfall"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.76305,
+     "lng": -121.39002,
+     "elev": 3500,
+     "name": "NF-6514-410 road's end",
+     "note": "Park at the end of spur 410 off Eagle Creek Road (FS-6514), which leaves Beckler River Road (FS-65): about five miles in, keep on 410 at the fork and continue past the Eagle Lake trailhead to the road's end; no maintained trail beyond this point.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Roughly 6.5 miles of gravel and dirt Forest Service road from pavement. The drive-in is variable and worth confirming with the Skykomish Ranger District before committing to it."
+    },
+    {
+     "elev": 3700,
+     "name": "Brushy drainage / streambed",
+     "note": "Route starts by climbing a mossy, brush-choked streambed that is slick when wet; poor footing before the terrain opens.",
+     "type": "Hazard",
+     "distMi": 0.3,
+     "directions": "There is no trail from the car; the line goes straight into thick huckleberry toward the talus above. Rather than fighting the brush, drop into the streambed running alongside it, which is much easier going even though the rock underfoot is slick."
+    },
+    {
+     "elev": 4300,
+     "name": "Saddle east of Grotto Lake basin",
+     "note": "Huckleberry-covered saddle where the route angles right off the drainage onto the ridge proper before contouring toward Klinger Ridge.",
+     "type": "Junction",
+     "distMi": 0.8,
+     "directions": "Follow the drainage and the talus beside it up into the rock basin around 4,300 ft. Route-finding is entirely on you here, with no trail and no markers, and morning fog frequently sits in this basin well past sunrise, so carry a track you can navigate to."
+    },
+    {
+     "lat": 47.76511,
+     "lng": -121.41621,
+     "elev": 4705,
+     "name": "Klinger Lake",
+     "note": "Small tarn at the top of the basin below Klinger Ridge; snowmelt-fed and a reliable early-season water source before the final push.",
+     "type": "Water",
+     "distMi": 1.3
+    },
+    {
+     "lat": 47.76475426363636,
+     "lng": -121.41701651818181,
+     "elev": 4600,
+     "name": "Klinger Ridge meadow gain",
+     "note": "Meadowy ridge crest reached via a rising talus traverse; fog commonly lingers here into mid-morning, obscuring the correct line.",
+     "type": "Junction",
+     "distMi": 1.5,
+     "directions": "From the tarn and basin below the ridge, make a rising traverse across talus into a gully, then climb a heathered slope beneath a cliff band, which dodges a slide-alder tangle, to reach the open meadow crest above 4,600 ft. A cairn near here has pulled parties off the direct line; staying in the gully to about 4,800 ft is the more direct way."
+    },
+    {
+     "lat": 47.76369275454545,
+     "lng": -121.41944477272727,
+     "elev": 5300,
+     "name": "Notch below summit tower",
+     "note": "Steep talus leads to a notch west of a prominent rock tower; a short vertical downclimb on the south side is exposed and helmet-recommended.",
+     "type": "Hazard",
+     "distMi": 2.1,
+     "directions": "Follow the meadow and boulder crest upward, but do not try to hold the literal east ridge crest, which cliffs out and does not go as a through-route. From about 4,800 ft, weave up through steep granite blocks and cross a final talus field to reach the notch."
+    },
+    {
+     "lat": 47.76321,
+     "lng": -121.42058,
+     "elev": 5618,
+     "name": "Grotto Mountain summit",
+     "note": "Class 4 scramble up a final gully off the notch gains the summit block; views south into the Bolt Creek Fire-burned drainage and across to Mount Baring.",
+     "type": "Summit",
+     "distMi": 2.4,
+     "directions": "Downclimb the short, steep, near-vertical step on the south side of the notch. This is the most exposed move on the route and the rock is loose in places. Then move a short way west into the gully below the summit block and scramble Class 3-4 to the top."
+    }
+   ],
+   "gpx": [
+    [
+     47.763046,
+     -121.389945
+    ],
+    [
+     47.762879,
+     -121.39031
+    ],
+    [
+     47.762474,
+     -121.39057
+    ],
+    [
+     47.762179,
+     -121.390589
+    ],
+    [
+     47.762314,
+     -121.39113
+    ],
+    [
+     47.76247,
+     -121.391709
+    ],
+    [
+     47.762489,
+     -121.392229
+    ],
+    [
+     47.76277,
+     -121.39268
+    ],
+    [
+     47.76282,
+     -121.393149
+    ],
+    [
+     47.762733,
+     -121.393769
+    ],
+    [
+     47.762855,
+     -121.394229
+    ],
+    [
+     47.762909,
+     -121.3948
+    ],
+    [
+     47.762917,
+     -121.395019
+    ],
+    [
+     47.762719,
+     -121.39557
+    ],
+    [
+     47.762499,
+     -121.395841
+    ],
+    [
+     47.762202,
+     -121.396009
+    ],
+    [
+     47.761929,
+     -121.396439
+    ],
+    [
+     47.762024,
+     -121.396834
+    ],
+    [
+     47.762215,
+     -121.397354
+    ],
+    [
+     47.762244,
+     -121.39783
+    ],
+    [
+     47.76233,
+     -121.398476
+    ],
+    [
+     47.762393,
+     -121.399029
+    ],
+    [
+     47.76231,
+     -121.399649
+    ],
+    [
+     47.761947,
+     -121.400023
+    ],
+    [
+     47.761554,
+     -121.400069
+    ],
+    [
+     47.761344,
+     -121.40081
+    ],
+    [
+     47.76092,
+     -121.40095
+    ],
+    [
+     47.760482,
+     -121.401229
+    ],
+    [
+     47.760119,
+     -121.401565
+    ],
+    [
+     47.759889,
+     -121.401779
+    ],
+    [
+     47.759729,
+     -121.402269
+    ],
+    [
+     47.759734,
+     -121.402755
+    ],
+    [
+     47.759955,
+     -121.403003
+    ],
+    [
+     47.760377,
+     -121.403261
+    ],
+    [
+     47.760549,
+     -121.403559
+    ],
+    [
+     47.760574,
+     -121.404109
+    ],
+    [
+     47.760869,
+     -121.404454
+    ],
+    [
+     47.76126,
+     -121.404739
+    ],
+    [
+     47.76149,
+     -121.405199
+    ],
+    [
+     47.761805,
+     -121.405759
+    ],
+    [
+     47.761943,
+     -121.40642
+    ],
+    [
+     47.7622,
+     -121.40708
+    ],
+    [
+     47.762319,
+     -121.40755
+    ],
+    [
+     47.762627,
+     -121.40797
+    ],
+    [
+     47.762954,
+     -121.408454
+    ],
+    [
+     47.763239,
+     -121.40879
+    ],
+    [
+     47.763644,
+     -121.408549
+    ],
+    [
+     47.76382,
+     -121.40811
+    ],
+    [
+     47.764225,
+     -121.407844
+    ],
+    [
+     47.764587,
+     -121.40807
+    ],
+    [
+     47.764442,
+     -121.408569
+    ],
+    [
+     47.764355,
+     -121.409255
+    ],
+    [
+     47.764316,
+     -121.409829
+    ],
+    [
+     47.76427,
+     -121.410549
+    ],
+    [
+     47.764122,
+     -121.410979
+    ],
+    [
+     47.763957,
+     -121.41158
+    ],
+    [
+     47.764201,
+     -121.411899
+    ],
+    [
+     47.7644,
+     -121.412575
+    ],
+    [
+     47.76428,
+     -121.413024
+    ],
+    [
+     47.764186,
+     -121.41351
+    ],
+    [
+     47.764163,
+     -121.4142
+    ],
+    [
+     47.763884,
+     -121.414489
+    ],
+    [
+     47.76368,
+     -121.414986
+    ],
+    [
+     47.76339,
+     -121.415085
+    ],
+    [
+     47.763229,
+     -121.415474
+    ],
+    [
+     47.762855,
+     -121.415924
+    ],
+    [
+     47.762684,
+     -121.416559
+    ],
+    [
+     47.762607,
+     -121.417239
+    ],
+    [
+     47.76259,
+     -121.417869
+    ],
+    [
+     47.762419,
+     -121.41831
+    ],
+    [
+     47.762543,
+     -121.4189
+    ],
+    [
+     47.762833,
+     -121.419439
+    ],
+    [
+     47.762881,
+     -121.42009
+    ],
+    [
+     47.76313,
+     -121.419655
+    ],
+    [
+     47.762978,
+     -121.42011
+    ],
+    [
+     47.762935,
+     -121.420489
+    ],
+    [
+     47.763275,
+     -121.42064
+    ],
+    [
+     47.763229,
+     -121.42054
+    ],
+    [
+     47.762917,
+     -121.420459
+    ],
+    [
+     47.763079,
+     -121.41992
+    ],
+    [
+     47.76303,
+     -121.419463
+    ],
+    [
+     47.762607,
+     -121.41909
+    ],
+    [
+     47.762497,
+     -121.41844
+    ],
+    [
+     47.762389,
+     -121.41775
+    ],
+    [
+     47.762389,
+     -121.417079
+    ],
+    [
+     47.762215,
+     -121.41647
+    ],
+    [
+     47.762115,
+     -121.41595
+    ],
+    [
+     47.762073,
+     -121.41539
+    ],
+    [
+     47.762061,
+     -121.414924
+    ],
+    [
+     47.762024,
+     -121.414405
+    ],
+    [
+     47.76174,
+     -121.41394
+    ],
+    [
+     47.761665,
+     -121.414374
+    ],
+    [
+     47.761955,
+     -121.41424
+    ],
+    [
+     47.7623,
+     -121.414589
+    ],
+    [
+     47.762657,
+     -121.414849
+    ],
+    [
+     47.762779,
+     -121.414603
+    ],
+    [
+     47.763039,
+     -121.41477
+    ],
+    [
+     47.76326,
+     -121.414559
+    ],
+    [
+     47.763366,
+     -121.415009
+    ],
+    [
+     47.763539,
+     -121.414374
+    ],
+    [
+     47.76372,
+     -121.41451
+    ],
+    [
+     47.763952,
+     -121.41433
+    ],
+    [
+     47.764084,
+     -121.41395
+    ],
+    [
+     47.764168,
+     -121.413399
+    ],
+    [
+     47.76418,
+     -121.412779
+    ],
+    [
+     47.763954,
+     -121.412285
+    ],
+    [
+     47.763668,
+     -121.411769
+    ],
+    [
+     47.76361,
+     -121.410865
+    ],
+    [
+     47.763972,
+     -121.41067
+    ],
+    [
+     47.76411,
+     -121.410179
+    ],
+    [
+     47.764008,
+     -121.409469
+    ],
+    [
+     47.763583,
+     -121.408999
+    ],
+    [
+     47.763109,
+     -121.4087
+    ],
+    [
+     47.762849,
+     -121.408209
+    ],
+    [
+     47.762449,
+     -121.407819
+    ],
+    [
+     47.762115,
+     -121.40731
+    ],
+    [
+     47.76184,
+     -121.406869
+    ],
+    [
+     47.761559,
+     -121.40636
+    ],
+    [
+     47.761276,
+     -121.40581
+    ],
+    [
+     47.760975,
+     -121.40522
+    ],
+    [
+     47.760783,
+     -121.404569
+    ],
+    [
+     47.760653,
+     -121.404179
+    ],
+    [
+     47.760574,
+     -121.4035
+    ],
+    [
+     47.760234,
+     -121.40324
+    ],
+    [
+     47.759872,
+     -121.402929
+    ],
+    [
+     47.759662,
+     -121.402435
+    ],
+    [
+     47.759754,
+     -121.40177
+    ],
+    [
+     47.760059,
+     -121.40141
+    ],
+    [
+     47.760384,
+     -121.40115
+    ],
+    [
+     47.760852,
+     -121.400869
+    ],
+    [
+     47.761184,
+     -121.400629
+    ],
+    [
+     47.761322,
+     -121.39996
+    ],
+    [
+     47.761593,
+     -121.399579
+    ],
+    [
+     47.761707,
+     -121.3992
+    ],
+    [
+     47.762157,
+     -121.39884
+    ],
+    [
+     47.762332,
+     -121.398444
+    ],
+    [
+     47.762049,
+     -121.398069
+    ],
+    [
+     47.762145,
+     -121.397389
+    ],
+    [
+     47.762206,
+     -121.39704
+    ],
+    [
+     47.76185,
+     -121.396736
+    ],
+    [
+     47.762019,
+     -121.396034
+    ],
+    [
+     47.762497,
+     -121.395615
+    ],
+    [
+     47.762725,
+     -121.395249
+    ],
+    [
+     47.762909,
+     -121.394774
+    ],
+    [
+     47.762879,
+     -121.394139
+    ],
+    [
+     47.762733,
+     -121.39363
+    ],
+    [
+     47.762672,
+     -121.393019
+    ],
+    [
+     47.762779,
+     -121.392649
+    ],
+    [
+     47.762756,
+     -121.39188
+    ],
+    [
+     47.762709,
+     -121.391509
+    ],
+    [
+     47.763077,
+     -121.391319
+    ],
+    [
+     47.76292,
+     -121.390879
+    ],
+    [
+     47.763,
+     -121.390259
+    ],
+    [
+     47.76302,
+     -121.38992
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 9,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "7:00 AM from the trailhead (leave Seattle about 5:30 AM)",
+    "sectionBreakdown": [
+     {
+      "hrs": 9,
+      "note": "From the Eagle Creek/Beckler River road-end, climbers push through huckleberry brush to a streambed, cross talus around 4,000 ft, then work up heathered slopes and granite steps to…",
+      "fromTo": "East Ridge scramble, car to car",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "map/compass or GPS track — no trail or signage on route",
+    "10 essentials",
+    "extra water — little reliable water source after early-season snowmelt, and post-fire slopes offer less shade",
+    "bug/insect protection for brushy sections in July"
+   ],
+   "pro_tips": [
+    "Start early to beat summer valley fog and give yourself daylight margin on an unmarked, off-trail scramble.",
+    "Carry more water than a typical shaded Cascades scramble — burned terrain on the south side offers little shade.",
+    "Summit views take in Baring, Merchant, and Gunn Peaks across the Skykomish valley."
+   ],
+   "watch_out": [
+    "No maintained trail — this is off-trail scrambling with real route-finding demands.",
+    "2022 Bolt Creek Fire burned the south side of Klinger Ridge: expect standing dead snags, possible debris flows, and heavier brush regrowth.",
+    "Morning fog in the Skykomish valley can obscure the route until it burns off later in the day."
+   ],
+   "pro_needs": "Most parties scramble this unroped and there is no fixed protection, but the Class 4 moves at the summit have been protected with a short rope, a few slings and a couple of small cams. A helmet is strongly advised for rockfall on the loose talus and in the gully/col below the summit block.",
+   "best_season": "Jul-Sep",
+   "high_point_ft": 5618,
+   "aid_grade": null,
+   "approach": "Grotto Mountain (5,618') sits east of the more famous Baring Mountain, above the South Fork Skykomish River near the Wild Sky Wilderness boundary. The drive-in is variable and should be reconfirmed with the Skykomish Ranger District, but the trailhead itself is the end of FS spur NF-6514-410, off Beckler River Road (FR-65) — roughly 6.5 miles of gravel/dirt FS road from pavement, ending at a small pullout at about 3,480 ft. There is no maintained trail from here; this is an off-trail scramble the entire way (about 2.4 miles/3,900 ft one-way to the 5,618 ft high point). From road's end, the line immediately enters dense huckleberry brush heading toward talus — a brushy, moss-lined streambed just to the side of the huckleberry slope offers noticeably easier (if slick when wet) passage and is the preferred line reported by recent parties. Follow this drainage/talus combination up into a rock basin around 4,300 ft, where the route makes a rising traverse across talus into a gully, then climbs a heathered slope below a cliff band to avoid a slide-alder tangle. This gains Klinger Ridge at roughly 4,600 ft — open meadow and boulder terrain with pikas and clear views back to Baring Mountain. Continue along/near the ridge crest toward the east summit; from about 4,800 ft below the summit, weave through steep granite blocks and a final talus traverse to a notch just west of a prominent rock tower, then downclimb a short, steep/near-vertical step (exposed, loose in places — helmet warranted) to gain the south side and the true summit. Water is generally abundant from snowmelt streams in the lower basin (below ~4,300 ft) but can dry up by late summer; carry what you need for the upper mountain. Key hazards: thick brush and slick moss low down, sustained off-trail route-finding (fog/whiteout is a real risk with no trail to follow), loose rock and a burn-scarred south-facing slope on Klinger Ridge from the 2022 Bolt Creek Fire, and exposed granite/talus near the summit notch.",
+   "descent_text": "This is a walk-off/downclimb — no rappelling is required or commonly used on this route. Descend by reversing the ascent line: downclimb the steep step back through the summit notch, reverse the granite-block and talus traverse back to about 4,800 ft, then follow Klinger Ridge's meadow/boulder terrain back down. Because the true east ridge crest was found to cliff out / not reasonably traverse in recent trip reports, most parties drop off the ridge into the small basin/tarn area below Klinger Ridge rather than trying to hold the crest, then pick up the ascent streambed line back to the 4,300 ft rock basin. From there, reverse the talus-and-streambed line down through the heathered slope and huckleberry brush to road's end at 3,480 ft, favoring the mossy streambed over bashing straight through brush (watch footing on wet moss). No technical rope work has been reported on this route; a short handline could be a reasonable option for less-confident parties at the summit notch step, but it is a downclimb, not a rappel. Primary hazards on the way down are the same as the approach in reverse — brush, slick streambed rock, and route-finding in fog on a trail-less, partly fire-scarred mountainside — plus the general scramble hazard of downclimbing loose granite steps.",
+   "bail": "If you need to bail, retreat via the ridge crest back toward the drainage/road rather than cutting down through the burned, brushy south-facing slopes off-route, where footing is unstable and visibility is poor.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Best attempted July-September once brush has dried out and snow has cleared from the upper talus and summit gully.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Eagle Creek/Beckler River road-end, climbers push through huckleberry brush to a streambed, cross talus around 4,000 ft, then work up heathered slopes and granite steps to a talus basin below the summit block. Since the true east ridge crest is unsuitable for direct travel, most parties detour through the basin and scramble the class 3-4 col from the north ridge to reach the top; morning fog often lingers into mid-morning.",
+      "hours": 9,
+      "miles": 4.8,
+      "title": "East Ridge scramble, car to car",
+      "gainFt": 3400,
+      "lossFt": 3400,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Seattle",
+        "detail": "~1.5-2 hr drive to Baring via US-2, then Beckler River Rd/NF-6514-410 to road's end."
+       },
+       {
+        "time": "7:00 AM",
+        "label": "Start hiking",
+        "detail": "Trailless start; push through huckleberry brush toward a brushy streambed."
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Cross talus at ~4,000 ft",
+        "detail": "Route-find across talus and heathered slopes, avoiding dense slide alder."
+       },
+       {
+        "time": "11:00 AM",
+        "label": "Reach talus basin below summit block",
+        "detail": "Fog can linger here past 10 AM in some seasons; wait out clouds if needed."
+       },
+       {
+        "time": "12:30 PM",
+        "label": "Summit via north ridge col",
+        "detail": "Class 3-4 scramble up the bouldered east summit; helmet recommended for loose rock."
+       },
+       {
+        "time": "3:30-4:30 PM",
+        "label": "Back at road-end",
+        "detail": "Descend by mostly retracing the ascent line, correcting around brushy sections."
+       }
+      ],
+      "objective": "Summit via the north ridge/talus basin col and return same day"
+     }
+    ],
+    "totalNote": "A long single day: about 8-10 hrs car-to-car, roughly 3,400 ft gain over 4.8 miles round trip, done entirely off-trail."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass required to park at Skykomish Ranger District trailheads ($5 day pass / $30 annual, available at the ranger station or REI).",
+    "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+    "rules": "Within Wild Sky Wilderness, Forest Service Pacific Northwest Region wilderness rules apply: groups limited to 12 people and 12 head of stock, and no mechanized or wheeled equipment (including bikes and drones).",
+    "permit": "None required.",
+    "closures": "The approach crosses part of the 2022 Bolt Creek Fire burn scar; fallen timber and debris flows have caused intermittent closures on Skykomish-area FS roads in the years since. Check current road/trail status with the Skykomish Ranger Station before heading out.",
+    "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Wild Sky Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+    "overnight_permit": {
+     "url": null,
+     "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+     "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+    }
+   },
+   "road": {
+    "name": "US-2 / local spur roads",
+    "status": "Closed to vehicles: the Forest Service's Skykomish District road-damage alert of June 30, 2026 lists FR 6514 (Eagle Creek Road), which the NF-6514-410 spur to this trailhead leaves, gated closed at milepost 0 with a blown culvert at MP 1.6, and FR 6510 (Bolt Creek Road) closed at its gate at milepost 1.0; no reopening date is given. Skykomish Ranger District: (360) 677-2414.",
+    "driveNote": "Access varies; private land near the base.",
+    "seasonalGate": null
+   },
+   "climate": {
+    "typical": "Snow lingers on shaded, north-facing terrain into June; the route is generally snow-free and driest July through September, consistent with the current Jul-Sep season window. Morning fog is common in the South Fork Skykomish valley and usually clears by mid-to-late morning. Post-fire, south-facing slopes on Klinger Ridge see more direct sun and faster snowmelt than before the 2022 Bolt Creek Fire."
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable through most of the South Fork Skykomish valley off US-2. Standing dead timber (snags) in the Bolt Creek Fire burn scar and occasional debris flows are an added road/trail hazard when accessing the trailhead.",
+    "rangerStation": "Skykomish Ranger District — Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish, WA 98288 (Wed-Fri, 9am-12pm & 1-4pm, closed for lunch; closed federal holidays; call (360) 677-2414 to confirm)",
+    "nearestHospital": "EvergreenHealth Monroe (formerly Valley General Hospital), Monroe, WA"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "No distinct peak-weekend pattern documented; rarely climbed even in mid-summer",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely well under 20 parties per season; only two trip reports are on record for this route, indicating it sees little traffic compared to nearby popular scrambles"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Steep, brushy ~4.8 mile round trip gaining roughly 2100 ft with no maintained trail for much of the route - moderate-to-strong fitness needed for sustained bushwhack/talus travel",
+     "packWeight": "Light day pack (~15-20 lb); no technical rack required for the Class 3 scrambling"
+    },
+    "approachTime": "Steep wooded/brushy approach before gaining the ridge; plan on 3-4+ hours to the summit given lack of trail and dense vegetation",
+    "requiredSkills": [
+     "off-trail routefinding/bushwhacking",
+     "Class 2-3 scrambling on loose rock",
+     "judgment around rockfall (helmet recommended)",
+     "comfort navigating without a trail through burn-scar and huckleberry brush"
+    ],
+    "experienceLevel": "Intermediate scrambler comfortable with sustained off-trail travel and unmarked routefinding; not a first-scramble outing given the bushwhacking and Class 3 summit block"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Jul-Sep; mid-summer (Aug) is the most reliably passable window",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically cleared from the ridge but brush and any lingering saturated lower slopes can still slow the approach",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Warmest, driest conditions of the season; brush is fully leafed out but the route stays consistently passable",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Drier air and fewer bugs, but shorter daylight and higher chance of an early-season storm cutting the window short",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Warm, humid mid-summer conditions with dense vegetation on approach; the mountain's southern aspect was significantly altered by the 2022 Bolt Creek Fire, changing footing and brush character on that side",
+     "probability": "Afternoon thunderstorms are possible in late summer; the exposed east ridge/summit block offers little shelter, so an early start and weather check are advisable"
+    },
+    "exposure": "Loose rock near the summit combined with steep timbered and brushy slopes below creates real rockfall and slip exposure on the Class 2-3 terrain; a helmet is recommended per available trip reports",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route; the season (Jul-Sep) places climbing entirely outside the region's avalanche season, so no NWAC zone forecast is practically applicable",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No official guidebook (e.g., Beckey's Cascade Alpine Guide) or Mountaineers route page was found that explicitly documents an 'East Ridge' line by that name; current online beta (2024-2025 trip reports) documents a Klinger Ridge/south-side approach instead — confirm current beta before relying on the east-ridge description.",
+     "Area prominence (836 ft) could not be independently corroborated from a second source; left unchanged.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 3,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.76326,
+    "peakLng": -121.42055,
+    "trailhead": "NF-6514-410 spur end (Beckler River road network)",
+    "trailheadLat": 47.776833,
+    "trailheadLng": -121.344633,
+    "trailheadDirection": "From the end of FS spur NF-6514-410 off Beckler River Road (FR-65) — confirm current road status with the Skykomish Ranger District"
+   },
+   "sling_rack": {
+    "cams": "small set to ~2in",
+    "nuts": "small stopper set",
+    "runners": "2-3 shoulder-length slings + webbing for anchors"
+   },
+   "alpine_draws": 2,
+   "rope_type": "single dynamic",
+   "rope_length_m": 30,
+   "rope_note": "Parties describe a Class 4 step near the summit col; parties have carried and used a rope plus webbing/slings for protection or a short rappel.",
+   "ascender": null,
+   "corrections": "Listed grade is Class 3 but multiple trip reports describe a Class 4 scramble step near the summit; flagging discrepancy for review.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Spur road end to Klinger Ridge",
+     "notes": "There is no trail from the car. The line goes straight into thick huckleberry toward the talus above, but the mossy streambed running alongside that brush is far easier travel even though the rock underfoot is slick. Follow the drainage and its talus up into a rock basin around 4,300 ft, then make a rising traverse across talus into a gully and climb a heathered slope beneath a cliff band, which dodges a slide-alder tangle, onto the open meadow crest above 4,600 ft. Fog sits in the lower basin well past sunrise, and there are no markers to steer by.",
+     "season": "July to October",
+     "hazards": [
+      "Slick moss in the lower streambed",
+      "Standing dead timber and heavy regrowth across the burned south side of Klinger Ridge",
+      "Morning valley fog on ground with no trail to follow",
+      "Loose, exposed granite at the summit notch",
+      "A short near-vertical downclimb with loose rock at the notch"
+     ],
+     "baseFinding": "The climbing starts at a notch just WEST of a prominent standing rock tower at about 5,300 ft, and the way to it is not the obvious one. Do not try to hold the literal east ridge crest — it cliffs out and does not go through as a route. From roughly 4,800 ft weave up through steep granite blocks and cross a final talus field to the notch, which is the gap immediately beside the one unmistakable tower on that stretch of crest. There is a decoy lower down: a single cairn near the meadow crest around 4,600 ft pulls parties off the direct line, and staying in the gully to about 4,800 ft is the straighter way. The move that confirms you are at the base is a DOWNclimb rather than a climb — a short, steep, near-vertical step drops off the south side of the notch, loose in places and the most exposed ground on the route, and only once you are through it does the gully below the summit block open up for the final class 3-4 scramble to the top."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Klinger Ridge crest toward the east summit",
+     "notes": "From Klinger Ridge at roughly 4,600 ft - open meadow and boulder terrain - continue along/near the ridge crest toward the east summit. Loose rock and a burn-scarred south-facing slope on Klinger Ridge from the 2022 Bolt Creek Fire; sustained off-trail route-finding, with fog/whiteout a real risk since there is no trail to follow."
+    },
+    {
+     "n": 2,
+     "label": "Granite blocks and talus traverse to the notch",
+     "notes": "From about 4,800 ft below the summit, weave through steep granite blocks and a final talus traverse to a notch just west of a prominent rock tower. Exposed granite/talus near the summit notch."
+    },
+    {
+     "n": 3,
+     "label": "Downclimb the step to the true summit",
+     "notes": "Downclimb a short, steep/near-vertical step - exposed and loose in places, helmet warranted - to gain the south side and the true summit."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 1000,
+     "name": "Beckler River Campground",
+     "role": "main",
+     "type": "camp",
+     "notes": "A mile and a half up the Beckler River road (FR 65) from US 2 just west of milepost 50, at about 1,000 ft. This is the natural base for the eastern end of the zone: the same road, continuing north and then west onto FR 6510 and FR 6514, is what gets you to Eagle Rock, to the road end at roughly 3,500 ft used for Grotto Mountain, and to the gentle back-door approach to Eagle Lake. If the campground is full or closed for the season, the upper Beckler road corridor and its spurs are national forest land where dispersed camping is allowed with no permit — the standing rules are to camp at least 100 ft from water, use an existing pullout rather than making a new clearing, stay a maximum of fourteen days in one spot, and obey whatever fire restriction is current. Those spurs are rough, gated in places, and can be locked without warning, so check the gate on your way in rather than discovering it on your way out. Being a valley campground it says nothing about conditions up high; expect snow on the FR 6514 spurs well into spring.",
+     "water": "Potable water from a solar pump at the campground, and the Beckler River itself.",
+     "permit": "Standard national forest campground fee through the federal reservation system. Day use needs a Northwest Forest Pass, Interagency pass or the day fee. Open roughly May through September, so it is not a winter option. Fourteen-day stay limit, no fireworks, and a food storage order applies — check the current campfire ban.",
+     "capacity": "26 sites, 22 single and four double, all reservable. Picnic tables and vault toilets. No stock or pack animals."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "east ridge rdg scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}
