@@ -66,10 +66,14 @@ function sql(text, tries = 8) {
       // --output-format json is explicit: run from a plain Terminal the CLI answers with a TEXT
       // table by default (the "empty answers" that stopped California from run-all.sh).
       const out = execFileSync("npx", ["supabase", "db", "query", "--linked", "--output-format", "json", text], { encoding: "utf8", maxBuffer: 1024 * 1024 * 1024, stdio: ["ignore", "pipe", "pipe"] });
-      if (!out.includes("{")) throw new Error("empty answer from supabase db query: " + JSON.stringify(out.slice(0, 200)));
-      const j = JSON.parse(out.slice(out.indexOf("{")));
-      if (!Array.isArray(j.rows)) throw new Error("unexpected output: " + out.slice(0, 200));
-      return j.rows;
+      // Two shapes: inside an agent session {"boundary", "rows": [...], "warning"}; from a plain
+      // Terminal a BARE array of rows. Parse from whichever bracket comes first.
+      const at = [out.indexOf("{"), out.indexOf("[")].filter(i => i >= 0);
+      if (!at.length) throw new Error("empty answer from supabase db query: " + JSON.stringify(out.slice(0, 200)));
+      const j = JSON.parse(out.slice(Math.min(...at)));
+      const rows = Array.isArray(j) ? j : j.rows;
+      if (!Array.isArray(rows)) throw new Error("unexpected output: " + out.slice(0, 200));
+      return rows;
     } catch (e) {
       if (i >= tries - 1) { if (e.stderr) e.message += " | stderr: " + String(e.stderr).slice(-400); throw e; }
       execFileSync("sleep", [String(Math.min(60, 5 * 2 ** i))]);
