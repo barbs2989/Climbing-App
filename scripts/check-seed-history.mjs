@@ -166,7 +166,7 @@ export function render(climber, uid) {
     React.createElement(Resume, {
       climber, logs: [], courses: null, extra: null, headline: "",
       onClose: noop, onConnect: noop, onMessage: noop, onAddCourse: noop,
-      onRemoveCourse: noop, onVerifyCourse: noop, onAddExtra: noop,
+      onRemoveCourse: noop, onAddExtra: noop,
       onShare: noop, onExport: noop, onHeadline: noop,
       editable: false, fstate: "none", routeById: () => null,
     }));

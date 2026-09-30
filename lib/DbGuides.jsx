@@ -58,7 +58,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
   const { data: credentials, isLoading: credsLoading, isError: credsError } = useGuideCredentials(guide.id);
-  const { data: reviews, isLoading: revLoading, isError: revError } = useGuideReviews(guide.id);
+  const { data: reviews, isLoading: revLoading, isError: revError, refetch: refetchReviews } = useGuideReviews(guide.id);
   const { data: myInquiries, refetch: refetchMyInquiries } = useMyInquiriesWithGuide(uid, guide.id);
   const verified = isGuideVerified(credentials || []);
 
@@ -66,7 +66,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const [minor, setMinor] = useState(false); const [disclaimerOk, setDisclaimerOk] = useState(false);
   const [sent, setSent] = useState(false); const [sending, setSending] = useState(false); const [sentId, setSentId] = useState(null); const [withdrawing, setWithdrawing] = useState(false);
 
-  const [rating, setRating] = useState(5); const [reviewText, setReviewText] = useState(""); const [reviewSent, setReviewSent] = useState(false);
+  const [rating, setRating] = useState(5); const [reviewText, setReviewText] = useState(""); const [reviewSent, setReviewSent] = useState(false); const [reviewBusy, setReviewBusy] = useState(false);
   const reviewableInquiry = (myInquiries || []).find(i => i.status !== "withdrawn" && (!i.reviews || !i.reviews.length));
   // An inquiry still waiting on the guide can be taken back -- the one just sent, or one from an
   // earlier visit (0224). Nothing could withdraw one before; it just sat in the guide's inbox.
@@ -106,13 +106,19 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   };
 
   const postReview = async () => {
-    if (!reviewableInquiry) return;
+    // A second tap used to post again while the first was in flight, and the new review never
+    // appeared in the list because nothing re-read it.
+    if (!reviewableInquiry || reviewBusy || reviewSent) return;
+    setReviewBusy(true);
     try {
       await submitReview({ inquiry_id: reviewableInquiry.id, guide_id: guide.id, climber_id: uid, rating, text: reviewText });
       setReviewSent(true);
+      refetchReviews && refetchReviews();
       notify && notify("Review posted.");
     } catch (e) {
-      notify && notify("Couldn't post that review.");
+      notify && notify("Couldn't post that review — try again.");
+    } finally {
+      setReviewBusy(false);
     }
   };
 
@@ -170,7 +176,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 6 }}>Leave a review</div>
           <select aria-label="Star rating" value={rating} onChange={e => setRating(Number(e.target.value))} style={inp}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n + " star" + (n === 1 ? "" : "s")}</option>)}</select>
           <textarea aria-label="How did it go?" value={reviewText} onChange={e => setReviewText(e.target.value)} rows={2} placeholder="How did it go?" style={{ ...inp, marginTop: 6, resize: "vertical", fontFamily: "inherit" }} />
-          <button onClick={postReview} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
+          <button onClick={postReview} disabled={reviewBusy} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
         </div> : null}
 
         <div style={label}>Send an inquiry</div>

@@ -321,6 +321,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     to true makes the controls real, so describing them becomes correct, and a guard that still
     fired would forbid the fix.
 - **`check:profile-claims`** asserts that the **Profile tab and the résumé it opens claim only what
+  - **2026-09-30: the self-verify tick was REMOVED, not caveated.** "Verify (demo)" on the résumé and "Mark verified (demo)" on the seed guide dashboard let a climber award their own credential a tick. Under the owner decision that the app reads as the finished product (see `check:preview-claims`), section 2 now asserts that no `onVerifyCourse` handler and no self-verify button exist, and that the real "✓ verified" and "self-reported" chips still render.
   the app can support**. Three invariants, all fixed on 2026-09-03 (#1573, #1579, #1580). Static
   (one esbuild bundle + one SSR render, plus a Babel parse), **~1.5s**, so it sits in `npm run build`.
   - **THE RÉSUMÉ IS A SHARED AND EXPORTED DOCUMENT** — *Share résumé* and *Export PDF* sit on it —

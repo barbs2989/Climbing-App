@@ -1,7 +1,7 @@
 // Real guide application/intake — replaces the old GuideApply's legal-agreement-only
 // screen with an actual application: cert track + docs + mandatory attestations,
 // all persisted to Supabase. Rendered only when USE_DB (see ClimbMatch.jsx's swap).
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { createPortal } from "react-dom";
 import { clickable } from "./clickable";
 import { useSession } from "./auth";
@@ -67,12 +67,18 @@ export default function DbGuideApply({ onClose, notify, C }) {
     agree.every(Boolean) && sig.trim().length > 1;
 
   const today = new Date().toISOString();
+  // Five writes, and the first one FILES the application. A failure after it used to read as
+  // "something went wrong submitting", while the application already sat in the review queue, and a
+  // retry inserted every credential again. Each finished step is remembered, so a retry resumes.
+  const done = useRef({});
+  const STEP = { profile: "your application", cred: "your certification", cc: "an extra credential", coi: "your insurance document", card: "your certification card" };
 
   const submit = async () => {
     if (!ok || submitting) return;
     setSubmitting(true);
+    const d = done.current; let step = "profile";
     try {
-      const profile = await submitGuideApplication({
+      if (!d.profile) { await submitGuideApplication({
         id: uid, status: "submitted",
         title: title.trim(), base_location: baseLocation.trim(), specialty: specialty.trim(), bio: bio.trim(),
         cancellation_policy: cancellationPolicy.trim(),
@@ -86,23 +92,33 @@ export default function DbGuideApply({ onClose, notify, C }) {
         independent_contractor_attested: true, independent_contractor_attested_at: today,
         agreement_signed_name: sig.trim(), agreement_signed_at: today,
         submitted_at: today,
-      });
-      const primaryCred = await addGuideCredential({
+      }); d.profile = true; }
+      step = "cred";
+      if (!d.credId) { const primaryCred = await addGuideCredential({
         guide_id: uid, kind: "primary_track", cert_track: certTrack,
         cert_number: certNumber.trim(), issuing_org: issuingOrg.trim(), status: "pending",
-      });
-      for (const cc of crossCutting) {
+      }); d.credId = primaryCred.id; }
+      step = "cc";
+      d.cc = d.cc || 0;
+      for (const cc of crossCutting.slice(d.cc)) {
         await addGuideCredential({
           guide_id: uid, kind: "cross_cutting", cross_cutting_type: cc.type,
           cert_number: cc.cert_number, status: "pending",
         });
+        d.cc++;
       }
-      await uploadGuideDocument(uid, "insurance_coi", insuranceFile, primaryCred.id);
-      await uploadGuideDocument(uid, "cert_card", certCardFile, primaryCred.id);
+      step = "coi";
+      if (!d.coi) { await uploadGuideDocument(uid, "insurance_coi", insuranceFile, d.credId); d.coi = true; }
+      step = "card";
+      if (!d.card) { await uploadGuideDocument(uid, "cert_card", certCardFile, d.credId); d.card = true; }
+      done.current = {};
       notify && notify("Application submitted — we'll review your credentials and follow up.");
       onClose && onClose();
     } catch (e) {
-      notify && notify("Something went wrong submitting your application: " + (e && e.message || "please try again."));
+      const why = (e && e.message) || "please try again.";
+      notify && notify(d.profile
+        ? "Your application was sent, but " + STEP[step] + " didn't save — " + why + " Tap Submit again to finish."
+        : "Couldn't submit your application — " + why);
     } finally {
       setSubmitting(false);
     }

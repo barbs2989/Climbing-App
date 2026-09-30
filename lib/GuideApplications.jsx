@@ -47,9 +47,19 @@ function DocRow({ doc, notify }) {
   const [busy, setBusy] = useState(false);
   const open = () => {
     setBusy(true);
+    // The tab is opened HERE, inside the tap: a window.open after an await is a pop-up to Safari and
+    // most phone browsers, and with noopener it returns null, so a block was invisible. opener is
+    // cleared by hand instead, which is what noopener did.
+    let w = null;
+    try { w = window.open("", "_blank"); if (w) w.opener = null; } catch (e) { w = null; }
+    const fail = (m) => { try { if (w) w.close(); } catch (e) {} notify && notify(m); };
     getSignedDocUrl(doc.storage_path, 300)
-      .then((url) => { if (url) window.open(url, "_blank", "noopener,noreferrer"); else notify && notify("That document could not be opened."); })
-      .catch((e) => notify && notify("Couldn't open that document — " + ((e && e.message) || "try again")))
+      .then((url) => {
+        if (!url) return fail("That document could not be opened.");
+        if (w) w.location.href = url;
+        else notify && notify("Your browser blocked the document — allow pop-ups for this site and try again.");
+      })
+      .catch((e) => fail("Couldn't open that document — " + ((e && e.message) || "try again")))
       .finally(() => setBusy(false));
   };
   return (
