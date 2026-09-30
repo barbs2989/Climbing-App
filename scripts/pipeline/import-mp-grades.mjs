@@ -42,6 +42,16 @@ function catalogKeys(names) {
   for (let i = 0; i < todo.length; i += 800) for (const x of sql(`select t, catalog_key(t) as k from unnest(array[${todo.slice(i, i + 800).map(q).join(",")}]::text[]) t`)) CK.set(x.t, x.k);
 }
 const ck = s => CK.get(s) ?? areaNorm(s);
+// THE FOLD KEY (migration 0221, the area-consolidation session; owner: "fold into 1 area … i don't
+// want duplicates"). MP files a crag's problems under a parallel "<X> Bouldering" / "<X> Boulders"
+// tree beside "<X>"; 0221 folds each such pair into one area. So when no area matches by name or
+// catalog_key, the name is compared again with bouldering/boulders/mixed/problems ignored ("Hidden
+// Valley Area Bouldering" -> our "Hidden Valley Area"), except that an ICE name and a BOULDERING
+// name are never twins (catalog_key already drops "ice").
+const FOLD_WORDS = /\b(?:bouldering|boulders|mixed|problems)\b/g;
+const fk = s => { const k = ck(s); const f = String(k).replace(FOLD_WORDS, " ").replace(/\s+/g, " ").trim(); return f || k; };
+const foldKind = s => /\bice\b/i.test(s) ? "ice" : /\b(?:bouldering|boulders|problems)\b/i.test(s) ? "boulder" : "";
+const foldTwins = (a, b) => { const x = foldKind(a), y = foldKind(b); return !(x && y && x !== y); };
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
@@ -126,13 +136,19 @@ function resolver(stateId, stateName, planned, splits) {
   // Names compare by the database's catalog_key (see CK): a child "Flintstone, The" IS MP's "The
   // Flintstone", and refuse_duplicate_area would reject the second one anyway.
   const keyOf = x => x.k ?? ck(x.name);
-  const byId = new Map(rows.map(r => [r.id, r])), byName = new Map(), kidsK = new Map();
-  const index = r => { const k = keyOf(r); (byName.get(k) || byName.set(k, []).get(k)).push(r); const kk = r.parent_id + "|" + k; (kidsK.get(kk) || kidsK.set(kk, []).get(kk)).push(r); };
+  const byId = new Map(rows.map(r => [r.id, r])), byName = new Map(), kidsK = new Map(), byFold = new Map(), kidsF = new Map();
+  const index = r => {
+    const k = keyOf(r); (byName.get(k) || byName.set(k, []).get(k)).push(r); const kk = r.parent_id + "|" + k; (kidsK.get(kk) || kidsK.set(kk, []).get(kk)).push(r);
+    const f = fk(r.name); (byFold.get(f) || byFold.set(f, []).get(f)).push(r); const fkk = r.parent_id + "|" + f; (kidsF.get(fkk) || kidsF.set(fkk, []).get(fkk)).push(r);
+  };
   for (const r of rows) index(r);
   const coordOf = id => { for (let x = byId.get(id); x; x = byId.get(x.parent_id)) if (x.lat != null && x.lng != null) return x; return null; };
+  const near5 = (list, geo) => list.filter(r => r.path && r.lat != null && r.lng != null && km(r, geo) <= NEAR_KM);
   const sameNear = (name, geo) => {
     if (!geo || geo.lat == null) return [];
-    return (byName.get(ck(name)) || []).filter(r => r.path && r.lat != null && r.lng != null && km(r, geo) <= NEAR_KM);
+    const exact = near5(byName.get(ck(name)) || [], geo);
+    if (exact.length) return exact;
+    return near5((byFold.get(fk(name)) || []).filter(r => foldTwins(name, r.name)), geo);
   };
   // The same test refuse_duplicate_route runs on insert, against the state's routes (existing, and
   // added earlier in this run): same key in the same area, in a same-named area within 5 km, or in
@@ -154,6 +170,7 @@ function resolver(stateId, stateName, planned, splits) {
     for (let i = 0; i < chain.length; i++) {
       let c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
       if (!c.length) c = kidsK.get(cur + "|" + ck(chain[i])) || [];
+      if (!c.length) c = (kidsF.get(cur + "|" + fk(chain[i])) || []).filter(r => foldTwins(chain[i], r.name));
       if (c.length === 1) { cur = c[0].id; continue; }
       if (c.length > 1) return { why: "two of our areas share this name under one parent", at: chain.slice(0, i + 1).join(" > ") };
       const nxt = i + 1 < chain.length ? (kids.get(cur + "|" + areaNorm(chain[i + 1])) || []) : [];
