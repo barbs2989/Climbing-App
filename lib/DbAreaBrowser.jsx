@@ -1251,25 +1251,33 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
   const { data: children, isLoading, error } = useAreaChildren(area.id, { enabled: isOpen });
   const cur = area.id === currentId;
   const n = area.route_count;
-  const pad = 14 + depth * 22;
+  // Indent TAPERS. It used to be 22px per level with no ceiling, so the spires under
+  // Liberty Bell Group (depth 7: usa > wa > region > hwy 20 > north cascades > pass >
+  // group) spent 168px on indent and the name was ellipsised to a few letters on a 390px
+  // phone. Every level must still step right — a hard cap put the group and its own
+  // spires at one indent, reading as siblings — so past depth 4 each level costs 6px.
+  const pad = 12 + Math.min(depth, 4) * 12 + Math.max(depth - 4, 0) * 6;
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
         <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>{isOpen ? "▾" : "▸"}</button>
-        <button onClick={() => onNavigate(area)} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
-          <div style={{ fontSize: 14.5, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
+        {/* One target opens the area: the name, its count and the chevron. The chevron used
+            to be a separate 16px span and the name was cut to one line, so the only ways in
+            were a sliver of truncated text or an arrow a thumb barely covers. Names wrap. */}
+        <button onClick={() => onNavigate(area)} aria-label={"Open " + area.name + (n > 0 ? ", " + n + " climb" + (n !== 1 ? "s" : "") : "")} style={{ flex: 1, minWidth: 0, minHeight: 38, display: "flex", alignItems: "center", gap: 8, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
+          <div style={{ flex: 1, minWidth: 0, fontSize: 14.5, lineHeight: 1.3, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflowWrap: "anywhere" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px", whiteSpace: "nowrap", display: "inline-block" }}>You are here</span> : null}</div>
+          {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
+          <span aria-hidden="true" style={{ flexShrink: 0, color: C.textMuted, fontSize: 18, padding: "0 2px" }}>{"›"}</span>
         </button>
-        {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
-        <span {...clickable(() => onNavigate(area))} aria-label={"Open " + area.name} style={{ flexShrink: 0, color: C.textMuted, fontSize: 16, cursor: "pointer", padding: "0 2px" }}>{"›"}</span>
       </div>
       {isOpen ? (
         isLoading
-          ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
+          ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
           : children && children.length
             ? pinFirst(children, pinIds).map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
             : error
-              ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
-              : <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
+              ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
+              : <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
       ) : null}
     </div>
   );
