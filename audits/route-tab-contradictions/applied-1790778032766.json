@@ -1,0 +1,132 @@
+{
+ "applied": [
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "column": "itinerary",
+   "path": [
+    "days",
+    1,
+    "title"
+   ],
+   "fact": "summit-day descent line (Sitkum vs Frostbite Ridge/Vista Glacier)"
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "fromTo"
+   ],
+   "fact": "summit-day descent line (Sitkum vs Frostbite Ridge/Vista Glacier)"
+  },
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "column": "timing",
+   "path": [
+    "sectionBreakdown",
+    1,
+    "note"
+   ],
+   "fact": "summit-day descent line (Sitkum vs Frostbite Ridge/Vista Glacier)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_glacier_peak_kennedy_glacier",
+   "before": {
+    "itinerary": {
+     "cal": "The White Chuck River Road (FR 23) has been closed from milepost 3.7 since March 19, 2025, with no end date given on the Forest Service alert updated June 30, 2026, so the approach starts at the North Fork Sauk trailhead instead; the Kennedy Glacier toe (crumbling boulders on ice) is described as the most hazardous section of the route in multiple reports.",
+     "days": [
+      {
+       "n": 1,
+       "note": "From the North Fork Sauk trailhead (the White Chuck trailhead has been cut off since FR 23 closed at milepost 3.7 on March 19, 2025), take the North Fork Sauk Trail to the PCT and follow it north over Red Pass to the Glacier Creek camps, then up to a camp on Kennedy Creek Bench near the toe of the Kennedy Glacier moraine.",
+       "hours": 15.4,
+       "miles": 21,
+       "title": "Approach to Kennedy Creek Bench camp",
+       "gainFt": 7800,
+       "lossFt": 3700,
+       "packLb": 45,
+       "schedule": [],
+       "objective": "Reach camp at ~6,200 ft"
+      },
+      {
+       "n": 2,
+       "note": "A long, full-value day: climb the wide, moderately-crevassed Kennedy Glacier to the summit, then descend via Frostbite Ridge and the Vista Glacier back down to the lower Kennedy Glacier, regaining camp in the evening.",
+       "hours": 13.1,
+       "miles": 9,
+       "title": "Summit via Kennedy Glacier, descend via Sitkum",
+       "gainFt": 4350,
+       "lossFt": 4350,
+       "packLb": 18,
+       "schedule": [
+        {
+         "time": "Early AM",
+         "label": "Leave Kennedy Creek Bench",
+         "detail": "Switch to boots/crampons at the crumbling, boulder-strewn toe of the glacier — a notably hazardous section."
+        },
+        {
+         "time": "+7.6 hr",
+         "label": "Summit",
+         "detail": "Via the wide-open Kennedy Glacier, then a rock-on-ice step and waterfall traverse lower down."
+        },
+        {
+         "time": "Descent",
+         "label": "Down Frostbite Ridge and the Vista Glacier",
+         "detail": "Past the 'Rabbit Ears' rock formation, then down the Vista Glacier to the lower Kennedy Glacier."
+        },
+        {
+         "time": "~7:20 PM",
+         "label": "Back at camp",
+         "detail": "5.5 hr descent from the summit; plan headlamps for a late finish."
+        }
+       ],
+       "objective": "Summit Glacier Peak (10,541 ft) and loop back to camp via a different glacier"
+      },
+      {
+       "n": 3,
+       "note": "Break camp and hike back down to the trailhead.",
+       "hours": 12.5,
+       "miles": 21,
+       "title": "Hike out",
+       "gainFt": 3700,
+       "lossFt": 7800,
+       "packLb": 38,
+       "schedule": [],
+       "objective": "Return to trailhead"
+      }
+     ],
+     "totalNote": "A 3-day trip (~51 miles, roughly 15,900 ft gain) from the North Fork Sauk start, and every day of it is very long; plan a 4th or 5th day to split the walk in and the walk out."
+    },
+    "timing": {
+     "totalHrs": 41,
+     "summitTimeHrs": 13.1,
+     "descentTimeHrs": 5.5,
+     "approachTimeHrs": 15.4,
+     "recommendedStart": "Early AM from camp",
+     "sectionBreakdown": [
+      {
+       "hrs": 15.4,
+       "note": "From the North Fork Sauk trailhead (the White Chuck trailhead has been cut off since FR 23 closed at milepost 3.7 on March 19, 2025), take the North Fork Sauk Trail to the PCT and follow it north over Red Pass to the Glacier Creek camps, then up to a camp on Kennedy Creek Bench near …",
+       "fromTo": "Approach to Kennedy Creek Bench camp",
+       "section": "Approach"
+      },
+      {
+       "hrs": 13.1,
+       "note": "A long, full-value day: climb the wide, moderately-crevassed Kennedy Glacier to the summit, then descend the Sitkum Glacier and Boulder Basin, traversing back over to Sitkum/Kenned…",
+       "fromTo": "Summit via Kennedy Glacier, descend via Sitkum",
+       "section": "Climb"
+      },
+      {
+       "hrs": 12.5,
+       "note": "Break camp and hike back down to the trailhead.",
+       "fromTo": "Hike out",
+       "section": "Descent"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}
