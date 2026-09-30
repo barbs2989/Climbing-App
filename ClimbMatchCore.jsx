@@ -3294,12 +3294,9 @@ function AreaCrags({area,countIn,onOpenArea}){
   return <div style={{marginBottom:10}}><SL>{areaChildNoun(area.id)}</SL>{children.map(ch=>{const n=countIn(ch.id);return <div key={ch.id} {...clickable(()=>onOpenArea(ch))} style={{background:C.card,borderRadius:12,padding:"12px 14px",marginBottom:11,border:`1px solid ${C.borderHi}`,cursor:"pointer"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:ch.blurb?5:0}}><span style={{fontWeight:700,fontSize:15}}>{ch.name}</span><span style={{fontSize:12,color:n>0?C.blue:C.textMuted,fontWeight:600,flexShrink:0,marginLeft:8}}>{n} climb{n!==1?"s":""} →</span></div>{ch.blurb?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5}}>{ch.blurb}</div>:null}</div>;})}</div>;
 }
 function SuggestedClimbs({area,profile,completedIds,wishlist,onOpen}){
-  /* null = the climber has not decided, so the panel decides from its CONTENT (below).
-     It used to be useState(false) — collapsed always — which meant the ranking behind it was
-     invisible unless you happened to tap a disclosure on an area page. Once you toggle it your
-     choice wins for the rest of the session, which is why this is tri-state and not a boolean
-     recomputed on every render. */
-  const [openManual,setOpenManual]=useState(null);
+  /* Collapsed until the climber opens it — the user's call (2026-09-30). It briefly auto-opened
+     on objectives/recents; the rows stay one tap away behind the "Suggested climbs · N" header. */
+  const [open,setOpen]=useState(false);
   const recentIds=useRecentRouteIds();
   if(!area)return null;
   const inScope=ROUTES.filter(r=>inArea(r.mountainId,area.id));
@@ -3324,20 +3321,13 @@ function SuggestedClimbs({area,profile,completedIds,wishlist,onOpen}){
   const bands=slots.map(s=>{const rows=rankSimilarRoutes(pool.filter(r=>!claimed[r.id]),s,{limit:5});rows.forEach(r=>{claimed[r.id]=1;});return {slot:s,rows:rows};}).filter(b=>b.rows.length);
   const popular=(!objectives.length&&!recent.length&&!bands.length)?[...pool].sort((a,b)=>(b.activity||[]).length-(a.activity||[]).length).slice(0,5):[];
   const total=objectives.length+recent.length+bands.reduce((n,b)=>n+b.rows.length,0)+popular.length;
-  /* Open on HIGH-SIGNAL rows only — climbs you put on your own list, or ones you were just
-     looking at. Deliberately NOT on `total`: "More climbs in this area" is the alphabetical
-     fallback, and springing the panel open for that would make it noise on every area page and
-     teach people to collapse it permanently. */
-  const autoOpen=!!(objectives.length||recent.length);
-  const open=openManual===null?autoOpen:openManual;
-  const setOpen=fn=>setOpenManual(typeof fn==="function"?fn(open):fn);
   if(!total)return null;
   const discLabel=d=>(CAT[d]||{}).label||d;
   const bandTitle=s=>s.src==="viewed"?("Because you've been looking at "+discLabel(s.disc)):("Because you've been climbing "+discLabel(s.disc));
   const lbl={fontSize:11.5,fontWeight:700,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.3,margin:"2px 0 7px"};
   const row=r=>{const m=MOUNTAINS.find(x=>x.id===r.mountainId);return <div key={r.id} {...clickable(()=>onOpen(r))} style={{display:"flex",alignItems:"center",gap:10,padding:"11px 12px",marginBottom:8,background:C.card,border:"1px solid "+C.border,borderRadius:11,cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{[m?m.name:null,r.pitches>1?r.pitches+"p":null].filter(Boolean).join(" · ")}</div></div><span style={{fontSize:12,color:C.textMuted,flexShrink:0,fontWeight:700,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{gradeLabel(r)}</span></div>;};
   return <div style={{marginTop:14}}>
-    <button onClick={()=>setOpen(o=>!o)} style={{width:"100%",display:"flex",alignItems:"center",gap:9,background:C.surface,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",cursor:"pointer"}}>
+    <button onClick={()=>setOpen(o=>!o)} aria-expanded={open} style={{width:"100%",display:"flex",alignItems:"center",gap:9,background:C.surface,border:"1px solid "+C.border,borderRadius:12,padding:"11px 13px",cursor:"pointer"}}>
       <span style={{flex:1,textAlign:"left",fontSize:13.5,fontWeight:700,color:C.text}}>{"Suggested climbs · "+total}</span>
       <span style={{color:C.blue,fontSize:13,fontWeight:700}}>{open?"▾":"▸"}</span>
     </button>
