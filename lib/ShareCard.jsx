@@ -18,7 +18,7 @@ export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavai
   const _slLogged=climber.routesLogged||0,_slCaught=(climber.catchLedger&&climber.catchLedger.totalCatches)||0;
   const _slParts=[(climber._real||climber._conn||climber._profile||typeof climber.id==="string")?null:("Trust "+vScore(climber))];if(!logsUnavailable)_slParts.push(_slLogged+" climb"+(_slLogged===1?"":"s")+" logged");if(!catchesUnavailable)_slParts.push(_slCaught+" catch"+(_slCaught===1?"":"es")+" caught");const statLine=_slParts.filter(Boolean).join(" · ");
   const summary=[climber.name+(idLine?" — "+idLine:""),expLine,statLine].filter(Boolean).join("\n")+(hl?"\n\n"+hl:"")+"\n\nMy ClimbMatch profile → https://"+link;
-  const copy=async(text,what)=>{try{await navigator.clipboard.writeText(text);setCopied(what);}catch(e){setCopied("Couldn't copy");}setTimeout(()=>setCopied(""),1600);};
+  const copy=async(text,what)=>{try{await navigator.clipboard.writeText(text);setCopied(what);}catch(e){setCopied("fail:"+what);}setTimeout(()=>setCopied(""),2400);};
   const mailto="mailto:?subject="+encodeURIComponent(climber.name+" — ClimbMatch profile")+"&body="+encodeURIComponent(summary);
   const sms="sms:?&body="+encodeURIComponent(summary);
   const tweet="https://twitter.com/intent/tweet?text="+encodeURIComponent(summary);
@@ -32,7 +32,7 @@ export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavai
           <div style={{display:"flex",gap:7}}>{[["Years",climber.years||"—"],["Logged",logsUnavailable?"—":climber.routesLogged],["Catches",catchesUnavailable?"—":climber.catchLedger.totalCatches]].map(x=><div key={x[0]} style={{flex:1,background:"rgba(255,255,255,0.06)",borderRadius:9,padding:"7px 4px",textAlign:"center"}}><div style={{fontSize:16,fontWeight:700,color:C.blue}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted}}>{x[0]}</div></div>)}</div>
         </div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>PUBLIC LINK</div>
-        <div style={{display:"flex",gap:7,marginBottom:14}}><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:9,padding:"9px 11px",fontSize:13,color:C.blue,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{link}</div><button onClick={()=>copy("https://"+link,"link")} style={{padding:"9px 14px",background:C.blueChip,color:C.blue,border:"none",borderRadius:9,fontSize:13,cursor:"pointer",fontWeight:700,whiteSpace:"nowrap"}}>{copied==="link"?"✓ Copied":"Copy"}</button></div>
+        <div style={{display:"flex",gap:7,marginBottom:14}}><div style={{flex:1,background:C.card,border:`1px solid ${C.border}`,borderRadius:9,padding:"9px 11px",fontSize:13,color:C.blue,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{link}</div><button onClick={()=>copy("https://"+link,"link")} style={{padding:"9px 14px",background:C.blueChip,color:C.blue,border:"none",borderRadius:9,fontSize:13,cursor:"pointer",fontWeight:700,whiteSpace:"nowrap"}}>{copied==="link"?"✓ Copied":copied==="fail:link"?"Couldn’t copy":"Copy"}</button></div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>SHARE VIA</div>
         <div style={{display:"flex",gap:7,marginBottom:14}}>
           <a href={mailto} style={{flex:1,textDecoration:"none",textAlign:"center",padding:"10px 6px",background:C.card,border:`1px solid ${C.border}`,borderRadius:10,fontSize:13,color:C.text}}>Email</a>
@@ -41,7 +41,7 @@ export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavai
         </div>
         <div style={{fontSize:12,color:C.textMuted,fontWeight:700,marginBottom:5,letterSpacing:0.4}}>COPY SUMMARY</div>
         <textarea aria-label="Copy summary" readOnly value={summary} onFocus={e=>e.target.select()} style={{width:"100%",height:124,overscrollBehavior:"contain",background:C.card,border:`1px solid ${C.border}`,borderRadius:9,padding:"9px 11px",fontSize:12,color:C.textSub,boxSizing:"border-box",resize:"none",outline:"none",lineHeight:1.5,fontFamily:"inherit"}}/>
-        <button onClick={()=>copy(summary,"summary")} style={{width:"100%",marginTop:8,padding:11,background:C.blueSolid,color:"white",border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:11,fontSize:14,cursor:"pointer",fontWeight:700}}>{copied==="summary"?"✓ Copied to clipboard":"Copy summary"}</button>
+        <button onClick={()=>copy(summary,"summary")} style={{width:"100%",marginTop:8,padding:11,background:C.blueSolid,color:"white",border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:11,fontSize:14,cursor:"pointer",fontWeight:700}}>{copied==="summary"?"✓ Copied to clipboard":copied==="fail:summary"?"Couldn’t copy — your browser blocked it":"Copy summary"}</button>
         <div style={{fontSize:12,color:C.textMuted,textAlign:"center",marginTop:11,lineHeight:1.5,fontStyle:"italic"}}>The public link doesn’t open a profile page — copy the summary above to share your climbing history.</div>
       </div>
     </div>
