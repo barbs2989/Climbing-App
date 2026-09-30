@@ -47,7 +47,8 @@ const src = fs.readFileSync(path.join(ROOT, FILE), "utf8");
 const CONTROLS = [
   { what: "accepting a group invite",        anchor: 'rm();showToast("Joined "+cl.name' },
   { what: "approving a join request",        anchor: 'rm();showToast("Approved' },
-  { what: "the group invite sheet",          anchor: 'o[cl.id]=cur.indexOf(c.id)>=0?cur:cur.concat([c.id]);return o;});showToast(' },
+  // toggleGroupInvite's preview branch: a preview group no longer seats the friend as a member on invite.
+  { what: "the group invite sheet",          anchor: 'send that invite — try again.");});return;}\n    showToast(' },
   { what: "the event invite sheet",          anchor: 'ne.invited=(e.invited||[]).indexOf(c.id)>=0?e.invited:(e.invited||[]).concat([c.id]);return ne;});return o;});showToast(' },
   { what: "RSVPing to an event",             anchor: 'toggle(true);showToast(' },
   { what: "cancelling an RSVP",              anchor: 'toggle(false);showToast(' },
