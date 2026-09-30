@@ -34,7 +34,9 @@ async function get(url) {
   last = Date.now(); requests++;
   for (let i = 0; i < 3; i++) {
     try {
-      const r = await fetch(url, { headers: { "User-Agent": UA } });
+      // A request with no deadline hung the crawl for three days (Colorado, 2026-09-27): give up
+      // after two minutes and retry.
+      const r = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(120_000) });
       const body = await r.text();
       return { status: r.status, type: r.headers.get("content-type") || "", body };
     } catch (e) {
