@@ -127,7 +127,11 @@ async function openPrMigrations() {
   // declined to look at. A person renumbering it is what fixed that, not this check.
   for (const pr of prs) {
     const files = await api(`/repos/${slug}/pulls/${pr.number}/files?per_page=300`);
-    const migs = files.map((f) => f.filename).filter((f) => /^supabase\/migrations\/\d{4,5}_.*\.sql$/.test(f));
+    // A REMOVED file claims nothing. #2032 renumbered 0043_gear_audit_finalization.sql and edited
+    // it enough that git did not pair the two as a rename, so the API listed the old path with
+    // status "removed" — and it read as the PR ADDING a second 0043.
+    const migs = files.filter((f) => f.status !== "removed").map((f) => f.filename)
+      .filter((f) => /^supabase\/migrations\/\d{4,5}_.*\.sql$/.test(f));
     if (migs.length) out.push({ number: pr.number, title: pr.title, files: migs });
   }
   return out;
