@@ -67,7 +67,7 @@ export function RouteProposalQueue() {
     try {
       const v = r.value || {};
       const newId = await approveNewRoute(id, gradeNumFor(v.grade, v.discipline));
-      setMsg({ kind: "ok", text: "Filed as " + newId });
+      setMsg({ kind: "ok", text: "Approved — " + (v.name || "the climb") + " is now in the catalog (" + newId + ")" });
       refresh();
     } catch (e) {
       // Surfaced verbatim: "area X already holds a route named Y" means a human has to

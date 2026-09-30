@@ -1,13 +1,12 @@
 // Is check:preview-claims measuring anything?
 //
-// Its healthy output is "every client-only control says what this preview does not do", which is
-// exactly what a guard whose anchors all missed would print -- except that a missed anchor is a
-// FAILURE here, which is the point of ANCHOR LOST. So each of the nine original messages is put
-// back, verbatim as it stood on main, and the guard has to fail NAMING that control.
+// Since the 2026-09-30 owner decision the guard FORBIDS preview wording in toasts. Its healthy output
+// is "every toast reads as the finished app", which is exactly what a guard that read no toasts would
+// print. So real historical preview strings are put back, one at a time, and the guard must fail.
 //
-// Two cases must stay SILENT. A guard that only ever demands more apologising would drive authors
-// to caveat working features, so a reworded caveat must pass and a control that gains a REAL write
-// must be removable without the guard arguing.
+// Two cases must stay SILENT or fail CLOSED: a signed-out "on this device — sign in to keep it" is
+// true in the finished app and must pass, and a renamed toast function must fail closed rather than
+// report a clean app.
 //
 // Every case proves its edit LANDED by checksum and restores the file byte-identically. Do not
 // commit while this runs: it edits an app source in place.
@@ -22,52 +21,40 @@ const F = path.join(ROOT, "ClimbMatch.jsx");
 const GUARD = path.join(ROOT, "scripts/check-preview-claims.mjs");
 const sum = () => crypto.createHash("sha1").update(fs.readFileSync(F)).digest("hex");
 
-// The real historical strings, restored one at a time.
+// Real historical strings (as they stood before 2026-09-30), restored one at a time.
 const CASES = [
-  { name: "joined",
-    why: "the sample group-invite Accept as it stood: 'Joined Alpine Start' with no caveat",
-    find: 'showToast("Joined "+cl.name+" on this device — this preview doesn’t tell the group.");',
-    repl: 'showToast("Joined "+cl.name+" ");',
-    expect: /accepting a group invite reports a real outcome/ },
-  { name: "approved",
-    why: "'Approved — Reed added', on a card whose own heading said approving adds them",
-    find: 'showToast("Approved on this device — this preview doesn’t tell "+(who?who.name.split(" ")[0]:"them")+".");',
-    repl: 'showToast("Approved — "+(who?who.name.split(" ")[0]:"member")+" added");',
-    expect: /approving a join request reports a real outcome/ },
-  { name: "eventcreated",
-    why: "'Event created — 4 occurrences scheduled', the strongest claim of the nine; nothing is stored",
-    find: 'showToast(rep!=="none"?("Event created on this device — "+n+" occurrences, but this preview doesn’t share it with the group yet."):"Event created on this device — this preview doesn’t share it with the group yet.");',
-    repl: 'showToast(rep!=="none"?("Event created — "+n+" occurrences scheduled "):"Event created ");',
-    expect: /creating an event reports a real outcome/ },
   { name: "kudos",
-    why: "'Kudos sent to X' — while its own sibling already said 'this preview doesn’t deliver it to'",
-    find: 'onKudos={it=>showToast("Kudos noted — this preview doesn’t deliver it to "+it.f.name.split(" ")[0]+".")}',
-    repl: 'onKudos={it=>showToast("Kudos sent to "+it.f.name.split(" ")[0])}',
-    expect: /kudos from the friends feed reports a real outcome/ },
-  // THE RULE THIS PINS CHANGED WITH 0178 and the case had to move with it. Approving a REAL
-  // request now writes, while a seed one still does not, so one heading cannot be true of both:
-  // the guard stopped demanding the caveat and started forbidding any CLAIM, and the caveat moved
-  // to the card. The heading correctly dropped its claim — which left this case anchored on text
-  // that no longer exists, so the new rule's FAIL branch was proven by nothing. Its expectation
-  // was stale in the same way and would have read WRONG FAILURE even if the anchor had matched.
+    why: "the friends-feed kudos toast as it stood: 'this preview doesn’t deliver it'",
+    find: 'onKudos={it=>showToast("Kudos sent to "+pubFirst(it.f))}',
+    repl: 'onKudos={it=>showToast("Kudos noted — this preview doesn’t deliver it to "+it.f.name.split(" ")[0]+".")}',
+    expect: /this preview/ },
+  { name: "democrew",
+    why: "a signed-in climber messaging a seed crew was told 'Demo crew'",
+    find: 'showToast("Couldn’t save that message — it’s on your screen but not saved. Try again.");});}\n  };\n  const sendMsg=',
+    repl: 'showToast("Couldn’t save that message — it’s on your screen but not saved. Try again.");});}else if(uid){showToast("Demo crew — messages here stay on this device and won’t be saved.");}\n  };\n  const sendMsg=',
+    expect: /Demo crew/ },
+  { name: "fornow",
+    why: "the group member removal suffix '— on this device only for now'",
+    find: 'showToast("Removed "+pubFirst(c)+" from the group"+(uid?"":" on this device — sign in to keep it"));',
+    repl: 'showToast("Removed "+pubFirst(c)+" from the group"+(_dbr?"":" — on this device only for now"));',
+    expect: /only for now/ },
+  { name: "simulated",
+    why: "the résumé PDF button toasted '(simulated in this preview)' and exported nothing",
+    find: 'onExport={(t,h)=>printSheet(t,h,showToast)}',
+    repl: 'onExport={()=>showToast("Résumé exported as PDF (simulated in this preview).")}',
+    expect: /simulated/ },
   { name: "heading",
-    why: "THE REAL HISTORICAL DEFECT — a heading promising an outcome of approving, on screen the " +
-         "whole time rather than for a toast's 2.6s, and now true of only half the rows it covers",
+    why: "a heading promising an outcome of approving, true of only half the rows it covers",
     find: '"Climbers asking to join a group you moderate."',
     repl: '"Climbers asking to join a group you moderate — approving adds them."',
     expect: /promises an outcome of approving/ },
-  { name: "anchorlost",
-    why: "a control whose handler is rewritten must fail LOUD, not silently stop being checked",
-    find: 'onNudge={(cid,nm,mid)=>{showToast(',
-    repl: 'onNudge={(cid,nm,mID)=>{showToast(',
-    expect: /ANCHOR LOST for nudging a crew member/ },
-  { name: "reworded", silent: true,
-    why: "a DIFFERENT honest wording must pass — the admission is fixed, the words are not",
-    find: 'showToast("Joined "+cl.name+" on this device — this preview doesn’t tell the group.");',
-    repl: 'showToast("Joined "+cl.name+" — saved on this device only for now.");' },
-  { name: "vocabgone", dead: true,
-    why: "if the app stops using the convention at all, every assertion here is vacuous — say so",
-    all: (s) => s.split("this preview").join("this pre_view") },
+  { name: "signedout", silent: true,
+    why: "the signed-out caveat is true in the finished app and must NOT be flagged",
+    find: 'showToast("RSVP cancelled");',
+    repl: 'showToast("RSVP cancelled on this device — sign in to keep it");' },
+  { name: "renamed", dead: true,
+    why: "if the toast function is renamed the guard reads nothing — it must say so, not pass",
+    all: (s) => s.split("showToast(").join("showT0ast(") },
 ];
 
 const before = sum();
@@ -102,7 +89,7 @@ for (const c of CASES) {
   const restored = sum() === before;
 
   let verdict;
-  if (c.dead) verdict = (code === 2 && /convention/.test(out)) ? "FAILED CLOSED (correct)" : "did NOT fail closed";
+  if (c.dead) verdict = (code === 2 && /BROKEN/.test(out)) ? "FAILED CLOSED (correct)" : "did NOT fail closed";
   else if (c.silent) verdict = (code === 0) ? "SILENT (correct)" : "FIRED — false positive";
   else verdict = (code === 1 && c.expect.test(out)) ? "CAUGHT" : "MISSED";
 
