@@ -342,6 +342,25 @@ the correction knows the screen is wrong, and they have no way to report it.
     Most are a `hazards` line restated in `watch_out`, but some are two different hazards at one
     place. Do NOT add fuzzy scoring to the merge (the header of `lib/hazards.js` says why), and
     do NOT sweep them by score: read each pair.
+  - **READ AND REPAIRED the same day: 283 lines removed from 225 routes; 468 pairs → 159.**
+    Every pair was read against one rule: drop a line only if its partner states every fact in it
+    (place, pitch, timing, rating, advice). Verdicts: **320 same** (2 of the reviewers' 322 were
+    overruled on a 50-pair spot check — "rockfall" kept only as "loose rock", and water scarcity
+    narrowed to "at camp"), **126 both carry detail, 22 different hazards**. They are recorded in
+    `audits/2026-09-30-hazard-paraphrase-decisions.json`. `scripts/oneoff/fix-hazard-paraphrase-duplicates.mjs`
+    only REMOVES lines, and refuses a route unless the box loses exactly those lines and
+    `routeTerrain`/`routeTags` are byte-identical. **It refused 17, and those refusals are correct:**
+    6 rows store `watch_out` as a string, 6 drops would empty a column, 1 moves a tag, and **4
+    would bring back a line the merge had been absorbing into the one dropped**. Re-measure with
+    `scripts/oneoff/measure-hazard-paraphrase-pairs.mjs`. Rollback:
+    `audits/2026-09-30-hazard-paraphrase-rollback.json`.
+  - **Side findings from reading the boxes, NOT acted on:** about 25 printed lines are not hazards
+    at all — parking, permits, road status, trip length, "study topo before climb" (e.g.
+    `wa_philadelphia_mountain_scramble`, `wa_wing_peak_northwest_ridge`,
+    `wa_storm_king_southwest_scramble`). Their home is the access/logistics prose, which is the
+    `audit:access-prose` question. Separately, `wa_mount_claywood_standard` places the same
+    off-trail route-finding beyond **Cameron Pass** in one line and beyond **Lost Pass** in another,
+    so one of the two is probably wrong.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
