@@ -13,6 +13,8 @@
 //             sibling pin is still where it was recorded. Name, elev and distMi stay.
 //   setDist   distMi replaced by a PUBLISHED trail distance from this route's own trailhead; the
 //             decision carries the url and the verbatim quote.
+//   move      lat/lng replaced by a coordinate a fetched page PUBLISHES (second pass, for a wrong
+//             trailhead no sibling pins right); carries `source` and the verbatim `quote`.
 //   nullDist  distMi -> null, where research showed this value is the wrong one and no source gives
 //             a replacement. The screen already printed "—" for it (check:impossible-leg).
 //
@@ -104,7 +106,7 @@ for (const id of routeIds) {
     // RE-RUNNABLE: the decisions file grows (mechanical clears first, research after), so an edit
     // that is already in place is a no-op rather than a "moved since decided" refusal.
     if (e.op === "clear" && p.lat == null && p.lng == null) continue;
-    if (e.op === "copy" && near(p.lat, e.lat) && near(p.lng, e.lng)) continue;
+    if ((e.op === "copy" || e.op === "move") && near(p.lat, e.lat) && near(p.lng, e.lng)) continue;
     if (e.op === "setDist" && Number(p.distMi) === Number(e.to)) continue;
     if (e.op === "nullDist" && p.distMi == null) continue;
     changed++;
@@ -117,6 +119,11 @@ for (const id of routeIds) {
       if (!src || src.length !== 1 || !near(src[0].lat, e.lat) || !near(src[0].lng, e.lng)) { why = `donor ${e.fromRoute} ${e.fromPin} not as recorded`; break; }
       if (!near(p.lat, e.oldLat) || !near(p.lng, e.oldLng)) { why = `${e.pin} moved since it was decided`; break; }
       moveVertex(p.lat, p.lng, { lat: src[0].lat, lng: src[0].lng }); p.lat = src[0].lat; p.lng = src[0].lng;
+    } else if (e.op === "move") {
+      // A PUBLISHED coordinate (e.source, quoted in e.quote), never a computed one.
+      if (!e.source || !e.quote) { why = `${e.pin} move without a source and quote`; break; }
+      if (!near(p.lat, e.oldLat) || !near(p.lng, e.oldLng)) { why = `${e.pin} moved since it was decided`; break; }
+      moveVertex(p.lat, p.lng, { lat: e.lat, lng: e.lng }); p.lat = e.lat; p.lng = e.lng;
     } else if (e.op === "setDist" || e.op === "nullDist") {
       if (Number(p.distMi) !== Number(e.from)) { why = `${e.pin} distMi is ${p.distMi}, decided against ${e.from}`; break; }
       p.distMi = e.op === "setDist" ? e.to : null;

@@ -1598,16 +1598,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - The sketch line's vertex on a cleared or copied pin is removed or moved with it, and the
       `trackIsJustTheWaypoints` caption state must not change. `audit:stranded-track-vertices`
       reads 22 adrift on 18 routes both before and after, all pre-existing.
-  - **THE 23 LEFT ARE DECIDED-UNRESOLVED, not unread.** Each is recorded `op: "unresolved"` with its
-    reason. Do not re-research them without new evidence.
-    - **Both pins agree with the ground and no source picks the distance:** Clark, Cameron,
-      Mutchler, Colonial, Dot, Queets, and Bonanza (Mary Green and NE Buttress share one "about a
-      mile" from a spread-out village).
-    - **Two approaches in one list:** Hardy, where Upper Snowy Lake is a side camp and the fix is a
-      reorder, which no op allows.
-    - **Displaced groups needing a re-pin:** Degenhardt, Needle Peak's Swamp Creek Camp, and
-      Arrowhead, whose trailhead may be the bad pin.
-    - **A wrong TRAILHEAD:** Garfield is pinned at the Taylor River junction, 2.6 mi short. The gate
-      refuses clearing it.
-    - **Mount Tom:** refused by the gate. Nulling the summit removes nothing while the White/Hubert
-      traverse pin is unresolved.
+  - **PASS 2 (the 23 left after pass 1): 28 pins on 23 routes → 1 pin on 1 route.** Three parallel
+    research passes and 42 more decisions: 24 `clear`, 16 `nullDist`, 1 `copy`, 1 `move`. Pass 1's
+    "do not re-research" was overturned only by NEW evidence, chiefly the route's own `gpx` and a
+    ground transect, which pass 1 had not read.
+    - **`move` is a new op.** It takes a PUBLISHED coordinate, with `source` and a verbatim `quote`
+      re-fetched at review, and never a computed one. There is one: Needle Peak's Swamp Creek Camp,
+      from Backpacker's PCT Section 10 waypoint list (PCT1679). The old pin held the coordinate that
+      list gives Fivemile Camp.
+    - **A published trailhead coordinate was REFUSED as a move.** WTA puts the Holden Lake trailhead
+      0.73 mi west of the shared Bonanza pin. Mary Green's own GPS track starts at the stored pin,
+      so moving it would split one named trailhead across two routes and leave a track behind. Both
+      routes null the junction's "1 mile" instead.
+    - **The apply gate is STRICTER than the audit on legs**: it ignores the 10% allowance for a leg.
+      It refused Ferry until the summit's 16.5 was nulled too, because nulling the Catwalk had
+      unmasked an 8.5 mi leg across 8.9 mi of straight line from Heart Lake (8.0, which two sibling
+      routes back).
+    - **Crooked Thumb's "Boundary Camp" was a FALSE premise.** Its pin is Copper Creek Camp, 0.2 mi
+      from the creek's mapped mouth, and nothing about it is impossible. Only the combined name is
+      off.
+  - **THE ONE LEFT is Garfield's summit, DECIDED-UNRESOLVED.** Its trailhead is pinned at the Taylor
+    River junction, 2.6 mi short of the wash. The only published "Mount Garfield Trailhead"
+    coordinate is the Infinite Bliss approach, and the gate refuses clearing a trailhead. It needs a
+    published coordinate for the wash pullout, applied as a `move`.
