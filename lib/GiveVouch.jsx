@@ -4,7 +4,7 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useRouteSearch } from "./db";
 import { useState } from "react";
-import { ActionIcon, C, DiscBadges, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import { ActionIcon, C, DiscBadges, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 
 /* `suggest` is the climber's OWN logbook, resolved to routes by App: [{route, date, together}], the
@@ -20,6 +20,8 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial}){
   const [skills,setSkills]=useState(initial?(initial.skills||[]).slice():[]);
   const [text,setText]=useState(initial?initial.text||"":"");
   const [again,setAgain]=useState(!!(initial&&initial.wouldClimbAgain));
+  // An older vouch can hold stars for a category the form no longer asks (Punctuality, Gear prep, Belay). Show those rows when editing it, so the voucher can keep, change or clear them -- otherwise they would ride along unseen on every save. Fixed at open, so clearing one does not make its row vanish mid-edit.
+  const [rows]=useState(()=>VOUCH_RATINGS.concat(VOUCH_RATINGS_RETIRED.filter(r=>initial&&initial.ratings&&initial.ratings[r.k]).map(r=>Object.assign({},r,{hint:"No longer asked — left blank, it comes off this vouch"}))));
   const fn=friend.name.split(" ")[0];
   const toggle=k=>setSkills(pp=>pp.indexOf(k)>=0?pp.filter(x=>x!==k):[...pp,k]);
   // Tapping the star that is already the rating clears it, so a category can be put back to unrated.
@@ -54,7 +56,7 @@ export default function GiveVouch({friend,onClose,onSave,suggest,initial}){
 
     {H("How were they?","22px 0 4px")}
     <div style={sub}>Tap a star to rate — tap it again to clear. Leave blank anything you didn’t see.</div>
-    {VOUCH_RATINGS.map(({k,label,hint})=>{const v=ratings[k]||0;return <div key={k} role="radiogroup" aria-label={label} style={{display:"flex",alignItems:"center",gap:8,marginBottom:9}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text}}>{label}</div><div style={{fontSize:11,color:v?C.amber:C.textMuted,marginTop:1,lineHeight:1.35}}>{v?(["","Poor","Fair","Good","Great","Excellent"][v]):hint}</div></div><div style={{display:"flex",gap:1,flexShrink:0}}>{[1,2,3,4,5].map(n=><button key={n} role="radio" aria-checked={v===n} aria-label={label+": "+n+" of 5"} onClick={()=>rate(k,n)} style={{background:"transparent",border:"none",padding:"2px 3px",cursor:"pointer",fontSize:24,lineHeight:1,color:n<=v?C.amber:C.textMuted}}>{n<=v?"★":"☆"}</button>)}</div></div>;})}
+    {rows.map(({k,label,hint})=>{const v=ratings[k]||0;return <div key={k} role="radiogroup" aria-label={label} style={{display:"flex",alignItems:"center",gap:8,marginBottom:9}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text}}>{label}</div><div style={{fontSize:11,color:v?C.amber:C.textMuted,marginTop:1,lineHeight:1.35}}>{v?(["","Poor","Fair","Good","Great","Excellent"][v]):hint}</div></div><div style={{display:"flex",gap:1,flexShrink:0}}>{[1,2,3,4,5].map(n=><button key={n} role="radio" aria-checked={v===n} aria-label={label+": "+n+" of 5"} onClick={()=>rate(k,n)} style={{background:"transparent",border:"none",padding:"2px 3px",cursor:"pointer",fontSize:24,lineHeight:1,color:n<=v?C.amber:C.textMuted}}>{n<=v?"★":"☆"}</button>)}</div></div>;})}
 
     {H("Skills they’re solid on","22px 0 4px")}
     <div style={sub}>Only what you’ve watched {fn} do.</div>
