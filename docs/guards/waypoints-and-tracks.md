@@ -1269,6 +1269,34 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `audits/waypoint-order-batch9/`. **jsonb returns keys in its own order**, so the first
       script's string compare reported 3 writes as NOT APPLIED when all had landed. Compare
       key-sorted. Audit after: trailhead-not-first **0**; detour **1** (Buck Mountain).
+  - **BATCH 10 (2026-10-01): the last unread flags.** These were 5 duplicate-pin routes and 2
+    after-summit pins the descent prose does not name. No earlier batch had read them.
+    - **Removed: three real copies.** Kendall's two "Kendall Katwalk" pins and Western
+      Dihedral's two grassy-saddle pins were each one point (0 m apart); the copy with no height
+      and no note went. Goode NE Buttress ended on "Park Creek Trail to PCT", which was the PCT /
+      North Fork junction's coordinate verbatim. The descent reverses the approach down the
+      North Fork, so it was that junction's return pass under a trail the route never takes.
+    - **Moved: Cruiser NW Face's "Base of Alpha (ridge gain)".** It has no coordinate and is an
+      approach point, while the descent raps the South Corner. It now precedes the summit, as
+      the sibling South Corner row lists Needle Pass.
+    - **Coordinate cleared: Pinnacle's "Cliff Bands Below Trail".** The two records agree. Its
+      5,600 ft falls outside its 183 m ground box (lo 5,673), and it stood 94 m from a
+      ground-verified summit 960 ft higher. The pin keeps its height and its mileage.
+    - **LEFT, measured. Two places share one copied coordinate, and the right one is on no
+      record.** Pinnacle's "Pinnacle Saddle" and "Base of Summit Gully" are 2 m apart, 43 m from
+      the summit, on ~6,530 ft ground. A 60 m 3DEP grid puts the 5,920 ft col ~400 m SW (~5,915
+      ft near 46.7557,-121.7369). Plummer's own "Pinnacle Saddle" pin reads 6,265 ft, so it
+      cannot be copied either. On Prusik, the "North face rappel descent" pin sits on the P5
+      chockstone pin's coordinate, 190 m SW of the summit, while its note says north face. In
+      both cases the box ADMITS the claim (via the north face), so the ground is not a second
+      record, and a coordinate read off a grid would be invented. **Do not re-read these from
+      the duplicate count:** a fix needs an outside coordinate.
+    - **Kept: Chair Peak NE Buttress's "Notch/saddle in main ridge".** Its own note is the descent
+      (downclimb the SE gully from the summit to the notch, then rappel), and the prose walks
+      that gully at ~6,000 ft without using the word "notch".
+    - Script: `scripts/oneoff/fix-waypoint-order-batch10.mjs`; rollback in
+      `audits/waypoint-order-batch10/`. Audit after: duplicates **2** (the two above);
+      unexplained after-summit **1** (Chair, kept).
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**

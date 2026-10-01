@@ -345,7 +345,15 @@ if (outFar.length) {
   outFar.sort((x, y) => y.d - x.d).forEach(o =>
     console.log(` ${Math.round(o.d).toString().padStart(6)} m  ${String(o.type).padEnd(10)} ${o.id}\n           "${o.a}"  +  "${o.b}"`));
 }
-if (outDup.length) { console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`)); }
+// Known residue (batch 10, 2026-10-01): Kendall, Western Dihedral and Goode were real copies and are
+// gone. Pinnacle (saddle + gully base, 2 m) and Prusik (north-face rappel on the P5 chockstone, 0 m)
+// are two DIFFERENT places on one copied coordinate — the duplicate is the symptom, the coordinate the
+// defect. The ground box admits both claims, so neither has the second record a clear needs, and the
+// right coordinate cannot be copied from any row. Left, measured, in docs/guards/waypoints-and-tracks.md.
+if (outDup.length) {
+  console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`));
+  console.log("  (Pinnacle and Prusik were read in batch 10: two places on one copied coordinate, left — see the guard notes.)");
+}
 if (outOrder.length) { console.log("\nreordered:"); outOrder.forEach(o => console.log(` ${o.id} — ${o.name}\n    was: ${o.before}\n    now: ${o.after}`)); }
 if (outSelf.length) {
   console.log("\nTHE ROW CONTRADICTS ITSELF — known distances run backwards in the stored order:");
@@ -370,5 +378,9 @@ if (outAfter.length) {
     console.log(`    unexplained: ${o.pins.join("  |  ")}`);
     if (o.explained.length) console.log(`    (descent prose does name: ${o.explained.join("  |  ")})`);
   });
+  // Read in batch 10: Chair Peak NE Buttress's "Notch/saddle in main ridge" is CORRECT — its own note
+  // is the descent (downclimb from the summit to the notch, then rappel); the prose walks that gully
+  // without the word "notch". Mount Cruiser's "Base of Alpha" was an approach pin and was moved.
+  console.log("  (Chair Peak NE Buttress was read in batch 10: its notch is the descent, correct as stored.)");
 }
 process.exit(0);
