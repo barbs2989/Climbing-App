@@ -86,8 +86,12 @@ async function slice(state, areaId, sub, type, lo, hi, log) {
   let body;
   if (existsSync(f)) body = readFileSync(f, "utf8");
   else {
-    const r = await get(exportUrl(areaId, type, lo, hi));
-    if (r.status !== 200 || !/csv/.test(r.type)) { log.push(`${state} ${type} ${lo}-${hi} area ${areaId}: HTTP ${r.status} ${r.type} — skipped`); return 0; }
+    // A refused export (Maine's whole rock export, 2026-10-01) used to be skipped with a NOTE printed
+    // only after the last state, so the state imported without it. Ask up to 3 times; a skip is
+    // printed AT ONCE, and nothing is cached, so re-running the crawl fetches exactly what is missing.
+    let r;
+    for (let i = 0; i < 3; i++) { r = await get(exportUrl(areaId, type, lo, hi)); if (r.status === 200 && /csv/.test(r.type)) break; }
+    if (r.status !== 200 || !/csv/.test(r.type)) { const m = `${state} ${type} ${lo}-${hi} area ${areaId}: HTTP ${r.status} ${r.type} — SKIPPED, re-run the crawl`; console.log("  NOTE " + m); log.push(m); return 0; }
     body = r.body; writeFileSync(f, body);
   }
   const rows = rowsOf(body);
