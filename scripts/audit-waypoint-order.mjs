@@ -367,6 +367,11 @@ if (outLate.length) {
 if (outDetour.length) {
   console.log("\nONE PIN DRAWS A DETOUR (read the pin's coordinate before its position):");
   outDetour.forEach(o => console.log(` ${o.id} — ${o.name}  ${o.L.toFixed(1)} km -> ${o.l2.toFixed(1)} km\n    move placed pin ${o.from} of ${o.of} ${o.moved} to slot ${o.to}`));
+  // Re-read in batch 12: Buck's own 189-point track passes Buck Creek Pass (vertex 90) before the
+  // summit (vertex 134), and its approach prose tops out at the pass and contours back SW below
+  // Liberty Cap. The detour is the trail, not a pin.
+  if (outDetour.some(o => o.id === "wa_buck_mountain_south_ridge"))
+    console.log("  (Buck Mountain South Ridge was read in batch 12: the trail passes Buck Creek Pass and doubles back, correct as stored.)");
 }
 if (outAfter.length) {
   console.log("\nAFTER THE SUMMIT AND NOT EXPLAINED BY THE DESCENT (read, do not sweep):");
