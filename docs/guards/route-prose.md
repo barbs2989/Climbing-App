@@ -324,6 +324,24 @@ the correction knows the screen is wrong, and they have no way to report it.
     `audit:terrain` (which measures suppression the app performs) and `audit:waypoint-order`
     (whose "0" was true only of the routes it could order). *When an audit reports a number, ask
     what it is the number OF before treating it as work.*
+  - **"None of it reaches a climber twice" was FALSE for 322 lines on 250 routes (2026-09-30).**
+    The box did not call that three-way merge for its bullets. It ran TWO: `mergeHazards(hazards,
+    objHaz)` for the bullets, then the three-way merge minus those bullets for the ⚠ lines. When
+    `watch_out` restated a hazard in MORE words, the three-way merge kept the watch_out line and
+    dropped the hazards one, which the audit counted as removed. But the bullets came from the
+    two-way merge and kept it too, so both printed (*"Exposure on summit ridge"* / *"⚠ Exposure on
+    the summit ridge."*). The 08-20 verification checked that the three columns were *passed*, not
+    that the audit's call was the one that *rendered*. **Fixed:** `knownHazards()` in
+    `lib/hazards.js` merges once and splits the survivors by field. RouteDetail and this audit
+    both call it, and the audit **exits 1** if re-merging the printed lines drops anything. It
+    also now reads routes with `hazards` NULL (23 rows) and parses `watch_out` with the app's
+    `toWarnArr` (moved to `lib/hazards.js`; 91 rows store it as a string).
+  - **What the subset rule cannot see is a WORKLIST, not a bug:** paraphrases that share most of
+    their words without either being a subset. Measured after the fix: **468 printed pairs on 334
+    routes at ≥75% token containment**, saved in `audits/2026-09-30-hazard-paraphrase-pairs.json`.
+    Most are a `hazards` line restated in `watch_out`, but some are two different hazards at one
+    place. Do NOT add fuzzy scoring to the merge (the header of `lib/hazards.js` says why), and
+    do NOT sweep them by score: read each pair.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
