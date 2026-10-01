@@ -201,7 +201,10 @@ try {
   const tap = async (text, i = 0) => {
     const hit = await page.evaluate(({ t, idx }) => {
       const els = [...document.querySelectorAll('button,[role="button"],a,select,summary')]
-        .filter((e) => (e.textContent || "").trim() === t);
+        .filter((e) => (e.textContent || "").trim() === t)
+        // The primary nav is a BOTTOM tab bar, so it is LAST in DOM order. A tab label
+        // ("Partners") also names in-page controls; put the nav first so a tab tap means the tab.
+        .sort((a, b) => Number(!!b.closest('[aria-label="Primary"]')) - Number(!!a.closest('[aria-label="Primary"]')));
       if (!els[idx]) return false;
       els[idx].click();
       return true;
