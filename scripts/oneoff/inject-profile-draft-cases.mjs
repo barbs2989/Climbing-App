@@ -73,9 +73,13 @@ const cases = [
     expect: 'ALIAS declares "showRealName"',
   },
   {
-    name: "SILENT: level and availWeek stay undeclared columns — the rule must not demand them",
-    // A no-op edit that leaves both in place. If the rule ever started firing on a draft key with
-    // no column, the guard would demand a migration for every field the editor collects.
+    name: "level stops being sent (0237 gave it a column; it used to be NOT_A_COLUMN)",
+    edits: [["/* 0237 */level:d.level||null,", "/* 0237 */"]],
+    expect: 'the editor collects "level"',
+  },
+  {
+    name: "SILENT: a whitespace no-op inside the draft literal",
+    // If the rule ever fired on formatting rather than keys it would be noise on every edit.
     edits: [["setEditDraft({availWeek:", "setEditDraft({ availWeek:"]],
     expect: null,
   },

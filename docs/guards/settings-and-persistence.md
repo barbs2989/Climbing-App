@@ -183,6 +183,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     real account does not have). **A stale entry fails in BOTH directions**: a key the editor stops
     collecting, and — the useful one — a key that GAINS a column, where the guard flips from silent
     to demanding it be wired.
+    - **2026-10-01, `level` LEFT the list: 0237 gave it a column**, so `NOT_A_COLUMN` is empty and the
+      guard now demands `level` be sent (it is) — the "gains a column" direction, used as designed.
+      0237 also added `climb_grades`, `belay_devices` and `cert_expiry`, all three collected, sent and
+      read back. Until `scripts/schema-snapshot.json` is refreshed this guard reads the OLD snapshot and
+      reports all four as columnless; that is the snapshot, not the wiring.
   - **`ALIAS` is declared, never derived.** `showRealName` stores as `show_name`, and
     `check:visibility-switches` records getting exactly this wrong: it derived `show_real_name`,
     found no column, and reported a healthy control as broken.
