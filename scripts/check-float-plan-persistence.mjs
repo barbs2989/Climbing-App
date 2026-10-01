@@ -3,7 +3,7 @@
 //
 // FloatPlan holds eleven fields, and BOTH its render sites are conditional branches:
 //
-//   RouteDetail   {tab==="safety"?<div>...<FloatPlan/>...</div>:null}
+//   FloatPlans    {isOpen&&openSt?<FloatPlan/>:null}   (Crews › Float plans; the route page only links here)
 //   SafetyTab     {view==="float"?<FloatPlan/>:<div>...}
 //
 // React discards the state of a branch it leaves, so tapping Plan to check the descent — the
@@ -78,7 +78,7 @@ const fail = (m) => { ran++; console.log("  FAIL  " + m); bad++; };
 /* Every assertion below is "this string IS present" or "this prop IS passed", so a guard that
    stops RUNNING half of them prints a shorter, entirely green list and exits 0. The floor is the
    count today; raise it when you add an assertion, and never lower it to make a run pass. */
-const EXPECTED = 21;
+const EXPECTED = 22;
 
 // ---- 1. The shape is declared in ONE place.
 const init = floatPlanState({ route: "North Ridge" });
@@ -132,34 +132,39 @@ else fail("the uncontrolled path starts already saved");
 // site is silent: FloatPlan falls back, every assertion above still passes, and the form is lost
 // again. Nothing else in the repo can see that.
 //
+// THE FORM MOVED OFF THE ROUTE PAGE to Crews › Float plans (lib/FloatPlans.jsx), so that is the
+// call site asserted here; the route page now only LINKS there (asserted below, so a revert that
+// puts a second, unwired form back on the route's Safety tab is seen).
+//
 // COMMENTS ARE STRIPPED BEFORE THE TAG IS MATCHED, and this was ASYMMETRIC until an injection
 // case caught it: section 8 stripped for the crew site (core carries three comments quoting
 // `<FloatPlan/>` to explain the defect) while this one read RAW source. So a comment mentioning
 // the tag ABOVE the real call site made the guard match the EXPLANATION and report a correctly
 // wired app as broken — a guard failing on its own documentation, the trap check:ci-cancel
-// records. RouteDetail happens to carry no such comment today; the case pins that it may.
+// records.
+const strip = (t) => t.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
 const rdRaw = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-const rd = rdRaw.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^[ \t]*\/\/.*$/gm, " ");
-const site = rd.match(/<FloatPlan\b[^>]*>/);
-if (!site) fail("ANCHOR LOST: RouteDetail no longer renders <FloatPlan …> — nothing above is wired");
+const rd = strip(rdRaw);
+const fpRaw = fs.readFileSync(path.join(ROOT, "lib", "FloatPlans.jsx"), "utf8");
+const fp = strip(fpRaw);
+const site = fp.match(/<FloatPlan\b[^>]*>/);
+if (!site) fail("ANCHOR LOST: lib/FloatPlans.jsx no longer renders <FloatPlan …> — nothing above is wired");
 else {
   const tag = site[0];
-  if (/\bplan=\{/.test(tag) && /\bonPlan=\{/.test(tag)) ok("RouteDetail passes BOTH plan and onPlan");
-  else fail(`RouteDetail's call site does not pass plan/onPlan — the form will be lost again: ${tag}`);
+  if (/\bplan=\{/.test(tag) && /\bonPlan=\{/.test(tag) && /\bscope=\{/.test(tag)) ok("Crews › Float plans passes plan, onPlan AND scope");
+  else fail(`Crews › Float plans' call site does not pass plan/onPlan/scope — the form will be lost again: ${tag}`);
 }
-if (/floatPlanState\(/.test(rd)) ok("RouteDetail seeds it from floatPlanState(), not a second copy of the shape");
-else fail("RouteDetail does not use floatPlanState() — the field list is duplicated and will drift");
+if (/floatPlanState\(/.test(fp)) ok("Crews › Float plans seeds it from floatPlanState(), not a second copy of the shape");
+else fail("lib/FloatPlans.jsx does not use floatPlanState() — the field list is duplicated and will drift");
 
-// ---- 7. And the state must be owned ABOVE the conditional branch, or lifting it changes nothing.
-// COMMENTS ARE STRIPPED FIRST, and that is not caution: the fix's own comment quotes the gate
-// verbatim (`{tab==="safety"?<div>...</div>:null}`) to explain itself, so a raw search finds the
-// EXPLANATION before the code and the probe fails on its own documentation — caught by this
-// assertion going red on a correct tree. Same trap check:ci-cancel records from the other side.
-const bare = rd;   // already comment-stripped above
-const gate = bare.indexOf('tab==="safety"');
-const decl = bare.indexOf("const [floatPlan,setFloatPlan]");
-if (decl >= 0 && gate >= 0 && decl < gate) ok("the state is declared ABOVE the tab===\"safety\" branch");
+// ---- 7. And the state must be owned ABOVE the conditional branch, or lifting it changes nothing:
+// the open plan renders inside `isOpen&&openSt?…`, so the state has to be the hub's, not the row's.
+const gate = fp.indexOf("isOpen&&openSt?");
+const decl = fp.indexOf("[openSt,setOpenSt]=useState(");
+if (decl >= 0 && gate >= 0 && decl < gate) ok("the open plan's state is declared ABOVE the branch that renders it");
 else fail("the float plan state is not declared above the branch that unmounts the form");
+if (!/<FloatPlan\b/.test(rd) && /onFloatPlan\(route\)/.test(rd)) ok("the route page LINKS to Crews › Float plans rather than holding a second form");
+else fail("RouteDetail renders its own <FloatPlan> again, or no longer links to Crews › Float plans");
 
 // ---- 8. THE SECOND CALL SITE. SafetyTab (the crew safety screen) has the same shape and is the
 // WORSE of the two: "Team Alignment" and "Float Plan" are a two-button pair, so the control most

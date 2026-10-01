@@ -51,7 +51,7 @@ const CASES = [
     why: "once a climber can set one, saying the app holds it is CORRECT — report a moved premise, do not go on forbidding it" },
 
   { name: "plan-becomes-rendered", file: "lib/CrewCard.jsx", fires: true,
-    find: "{crew.floatPlan?\"✓ Float plan set\":\"⚠ Set float plan\"}",
+    find: "{crew.floatPlan?\"✓ Float plan\":\"⚠ Set float plan\"}",
     repl: "{crew.floatPlan?\"✓ Back by \"+crew.floatPlan.returnBy:\"⚠ Set float plan\"}",
     expect: "a screen reads the stored crew float plan",
     why: "the day a crew is SHOWN the plan, \"your crew can see it\" becomes true — the other half of the premise, and a different repair from a settable contact" },

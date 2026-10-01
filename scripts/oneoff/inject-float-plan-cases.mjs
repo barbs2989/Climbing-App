@@ -23,13 +23,15 @@ const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("
 
 const RD = path.join(ROOT, "RouteDetail.jsx");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+// The form moved off the route page to Crews › Float plans; the "route" cases now target that call site.
+const HUB = path.join(ROOT, "lib/FloatPlans.jsx");
 
 const CASES = [
   {
-    name: "route-site-drops-plan",
-    file: RD,
-    why: "THE REAL SHAPE: RouteDetail stops passing plan/onPlan. FloatPlan falls back to its own state, every render assertion still passes, and the form is silently lost again on every tab switch.",
-    expect: /RouteDetail's call site does not pass plan\/onPlan/,
+    name: "hub-site-drops-plan",
+    file: HUB,
+    why: "THE REAL SHAPE: Crews › Float plans stops passing plan/onPlan. FloatPlan falls back to its own state, every render assertion still passes, and the form is silently lost again.",
+    expect: /Crews › Float plans' call site does not pass plan\/onPlan\/scope/,
     // TARGET THE TAG THAT CARRIES plan=, not the first <FloatPlan. Core quotes `<FloatPlan/>`
     // twice in comments explaining this very defect, so a first-match edit is a silent no-op —
     // it reported "guard missed it" while moving no byte the guard reads.
@@ -46,29 +48,20 @@ const CASES = [
     edit: (s) => s.replace(/<FloatPlan\b[^>]*\bplan=\{[^>]*>/, "<FloatPlan/>"),
   },
   {
-    name: "route-state-below-the-branch",
-    file: RD,
-    why: "lifting the state changes NOTHING if it is still declared inside the branch that unmounts. The props are passed, so cases 1/2 stay green and only the ordering assertion can see it.",
+    name: "hub-state-below-the-branch",
+    file: HUB,
+    why: "lifting the state changes NOTHING if it is declared inside the branch that unmounts. The props are passed, so cases 1/2 stay green and only the ordering assertion can see it.",
     expect: /not declared above the branch that unmounts the form/,
     edit: (s) => {
-      /* Move the declaration BELOW the gate. The presence assertions must stay green, so the
-         declaration is relocated rather than removed — only the ordering can fail.
-
-         LAST OCCURRENCE, NOT FIRST, and this cost a run: RouteDetail says `tab==="safety"` twice
-         and the FIRST is inside the fix's own explanatory comment. Inserting before that one puts
-         the declaration ahead of the real gate once comments are stripped, so the guard was
-         correct to stay silent and the case read as a miss. */
-      const decl = s.match(/const \[floatPlan,setFloatPlan\]=useState\([^;]*\);/);
-      if (!decl) throw new Error("declaration not found");
-      const without = s.replace(decl[0], "");
-      const NEEDLE = 'tab==="safety"';
+      /* POSITIONAL: the ordering assertion compares source offsets, so the declaration's text is
+         renamed where it stands and re-stated AFTER the gate. Not runnable JSX, and need not be. */
+      const DECL = "[openSt,setOpenSt]=useState(", NEEDLE = "isOpen&&openSt?";
+      if (!s.includes(DECL)) throw new Error("declaration not found");
+      const without = s.replace(DECL, "[openSt0,setOpenSt0]=useState(");
       const g = without.lastIndexOf(NEEDLE);
       if (g < 0) throw new Error("gate not found");
-      // AFTER the gate, not before it — inserting before leaves the declaration above the branch,
-      // which is the state the guard is supposed to accept. This is a POSITIONAL injection: the
-      // ordering assertion compares source offsets, so it does not need to be runnable JSX.
       const at = g + NEEDLE.length;
-      return without.slice(0, at) + decl[0] + without.slice(at);
+      return without.slice(0, at) + DECL + without.slice(at);
     },
   },
   {
@@ -83,15 +76,15 @@ const CASES = [
   // ---- must stay SILENT ---------------------------------------------------------------------
   {
     name: "comment-naming-the-gate",
-    file: RD,
-    why: "MUST PASS. The fix's own comment quotes `tab===\"safety\"` verbatim to explain itself. A raw search finds the EXPLANATION before the code and fails on a correct tree — the guard strips comments first, and this pins that.",
+    file: HUB,
+    why: "MUST PASS. A comment quoting the gate `isOpen&&openSt?` and a bare <FloatPlan/> ABOVE the declaration. A raw search finds the EXPLANATION before the code and fails on a correct tree — the guard strips comments first, and this pins that.",
     silent: true,
-    edit: (s) => s.replace(/(const \[floatPlan,setFloatPlan\]=useState\()/,
-      '/* the branch below is {tab==="safety"?<div><FloatPlan/></div>:null} */\n  $1'),
+    edit: (s) => s.replace(/(const \[open,setOpen\]=useState\()/,
+      '/* the branch below is {isOpen&&openSt?<FloatPlan/>:null} */\n  $1'),
   },
   {
     name: "extra-prop-on-the-call-site",
-    file: RD,
+    file: HUB,
     why: "MUST PASS. Adding an unrelated prop is ordinary work; a wiring assertion that fired on any change to the tag would tell authors to stop editing it.",
     silent: true,
     edit: (s) => s.replace(/<FloatPlan\b/, '<FloatPlan data-x="1"'),
