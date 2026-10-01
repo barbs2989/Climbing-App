@@ -1,0 +1,36 @@
+{
+ "applied": [
+  {
+   "id": "wa_eagle_rock_scramble",
+   "column": "access",
+   "path": [
+    "passRequired"
+   ],
+   "fact": "access.fees claims no fee; access.passRequired states an explicit dollar fee"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_eagle_rock_scramble",
+   "before": {
+    "access": {
+     "fees": "None — no climbing fee (National Forest, not Mount Rainier NP)",
+     "notes": "Many of these peaks (Mount Persis, Gunn Peak, Baring Mountain area) sit outside designated wilderness — administratively unrestricted despite serious technical terrain.",
+     "rules": "Standard national forest regulations",
+     "permit": "None required.",
+     "closures": "Access spur roads (FR6510/FR6514/FR6517) are prone to seasonal washouts, downed trees, and closures; check current Mt. Baker-Snoqualmie NF road-status alerts for the Skykomish District before driving.",
+     "landManager": "Mount Baker-Snoqualmie National Forest, Skykomish Ranger District (Skykomish Ranger Station, 74920 NE Stevens Pass Hwy, Skykomish WA 98288, (360) 677-2414)",
+     "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+     "parking_pass": "Northwest Forest Pass or America the Beautiful pass required at developed trailheads.",
+     "passRequired": "Northwest Forest Pass required at the FR6517 trailhead parking — $5/day or $30/year (also honored: America the Beautiful federal interagency pass)",
+     "overnight_permit": {
+      "url": null,
+      "what": "No overnight permit required; camping is banned within a quarter mile of Lake Serene",
+      "where": "A Northwest Forest Pass is needed to park at the Barclay Lake and Lake Serene trailheads. Drive-in campgrounds are reserved on Recreation.gov."
+     }
+    }
+   }
+  }
+ ]
+}
