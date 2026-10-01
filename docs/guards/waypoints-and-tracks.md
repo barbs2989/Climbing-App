@@ -1207,14 +1207,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `scripts/oneoff/fix-stale-notes-after-batch7.mjs` removed the clause and added nothing in its
     place. It also nulled Smears' 0.2 mi, which was counted from the camp rather than the
     trailhead and was the last row the audit called self-contradicting (5 → 0).
-    **Left for an owner, with research:**
-    - Meany and Devil's Club need a real trailhead coordinate (Whiskey Bend; Depot Creek in
-      Canada).
-    - Pinto Rock's trailhead pin sits 35 m from the summit, and no source gives the pullout's
-      coordinate. Clearing it would remove Directions, since `approach_logistics` holds no
-      fallback, and the pin still routes a driver onto NF-77 beside the rock.
-    - Ballard's "Harts Pass" pin is a separate eastern start, not on the Canyon Creek walk, so its
-      slot is not an ordering question.
+    **Left for an owner at the time, and all since repaired:** Meany in batch 8; Devil's Club,
+    Pinto Rock and Ballard in batch 9 (below). The batch 7 reading of each was wrong in a useful
+    way. Devil's Club did not need a Depot Creek trailhead, because the Depot Creek pins were the
+    foreign ones. Pinto Rock's pullout WAS on file, under the wrong label. And nobody walks over
+    Harts Pass to Ballard.
   - **ONE PIN DRAWS A DETOUR — batch 8 (2026-10-01), and what the flag usually MEANS.** For a
     route the app cannot sort, the stored order IS the drawn line. The audit now asks whether
     moving one non-trailhead pin to its best slot would shorten that line by more than 25% and
@@ -1229,7 +1226,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **Every flag that moved a TRAILHEAD was a winding trail** beating straight-line geometry,
       so trailheads are never the moved pin.
 
-    **Residue: Buck Mountain is real geography; Devil's Club is the owner item below.** A shortest
+    **Residue: Buck Mountain is real geography; Devil's Club was repaired in batch 9.** A shortest
     path is not a walking order, so this decides what to READ, never an edit. Scripts:
     `scripts/oneoff/fix-waypoint-order-batch8.mjs` (clear/move/copy) and
     `scripts/oneoff/reorder-waypoint-order-batch8.mjs` (permutation). Rollbacks are in
@@ -1241,9 +1238,37 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       apart as two genuine approaches.
     - **Devil's Club disagrees with itself in PROSE, not only order.** Its pins walk Depot Creek;
       its trailhead pin and approach paragraph both describe Ross Lake. The pins are 2-decimal
-      estimates, about 5 km off the catalog's shared Depot Creek Falls pin. Left for an owner.
+      estimates, about 5 km off the catalog's shared Depot Creek Falls pin. Batch 9 resolved it.
     - Four sortable routes had a stored order different from the one drawn (Little Tahoma,
       McCausland, Olympus W Ridge, South Twin). The stored order now matches the screen.
+  - **BATCH 9 (2026-10-01): the three owner items, researched against OUTSIDE records.** In each
+    case the pin belonged to a different walk from the one the route describes, and research
+    showed which side of the row was wrong. The row could not settle that by itself.
+    - **Devil's Club: the PINS were foreign, not the trailhead.** Both parties on record came up
+      Perry Creek from Ross Lake: the FA party's own account (NWMJ 2006, "Tamed by the Beast")
+      and the 2008 party (AAJ 2009). Depot Creek Falls, Ouzel Lake and Redoubt Glacier Camp
+      are the Depot Creek approach to the north side of Mox. Ouzel Lake is the exact pin
+      `wa_mount_redoubt_south_face` carries, so it was copied from a Depot route. All three are
+      removed and the trailhead now leads. "Base of East Face Headwall" is KEPT, because its
+      2-dp ground box admits its 6,800 ft (lo 6,610). The prose said the FA spent "14 hours
+      covering under two miles from the lake"; it now uses only figures the account gives. That
+      sentence appeared twice: in `approach` and again in `approach_variants[0].notes`.
+    - **Pinto Rock: the pullout was ON FILE, under the wrong label.** The trailhead pin was the
+      crag's own map pin: 35 m from the summit, with ground 5,109 ft against the summit's 5,113.
+      `approach_logistics.peakLat/Lng` held 46.32448,-121.92476, which is 239 m from the summit
+      and 500 ft lower. It is 13 m from where the mapped 468 m climber's trail leaves NF-77, the
+      "0.3 mi north from the pullout" the approach describes. The two values swapped into place,
+      with no new coordinate. The sibling scan found two more Pinto routes (Bowling Alley,
+      Cobbles 101) whose trailhead sat on the EXACT summit coordinate while claiming 4,700 ft.
+      They took the same pullout, and their route start now precedes the summit.
+    - **Ballard: Harts Pass is driven over, not walked.** The east-ridge alternative starts at
+      the Slate Creek road gate, which is reached by car over Harts Pass. The pin was on none of
+      the route's legs and drew a 7.5 km jump before the summit, so it was removed.
+    - Scripts: `scripts/oneoff/fix-waypoint-order-batch9.mjs` and
+      `scripts/oneoff/fix-waypoint-order-batch9-prose.mjs`. Rollbacks are in
+      `audits/waypoint-order-batch9/`. **jsonb returns keys in its own order**, so the first
+      script's string compare reported 3 writes as NOT APPLIED when all had landed. Compare
+      key-sorted. Audit after: trailhead-not-first **0**; detour **1** (Buck Mountain).
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**
@@ -1344,7 +1369,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `wa_mount_ballard_south` carried "Harts Pass" beside "Canyon Creek Trailhead" 18.3 km apart
     while its approach text names only Canyon Creek and never mentions Harts Pass — wrong, and
     repaired by **retyping rather than deleting** (`Trailhead/pass` normalises to `Trailhead` in
-    `WP_TYPE_MAP`, which is how a real pass got drawn as a start). But
+    `WP_TYPE_MAP`, which is how a real pass got drawn as a start). Batch 9 then removed the
+    retyped pass: research found that no route walks over it, so a pass pin was wrong as well. But
     `wa_remmel_mountain_southeast_slope` carries "Thirtymile" and "Andrews Creek" and its own
     approach describes both in full — *"Via Thirtymile: … Via Andrews Creek: …"* — which is a
     peak with two genuine approaches, the case the `audit:trailhead-agreement` entry already
