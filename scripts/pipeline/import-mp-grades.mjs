@@ -211,7 +211,16 @@ function resolver(stateId, stateName, planned, splits) {
         const s = { id: cur + "_climbs", name: x.name, parent_id: cur, area_type: "crag", region: stateName, lat: x.lat ?? null, lng: x.lng ?? null };
         ids.add(s.id); rows.push(s); byId.set(s.id, s); hasKids.add(cur); direct.delete(cur); direct.add(s.id);
         const k = cur + "|" + areaNorm(s.name); (kids.get(k) || kids.set(k, []).get(k)).push(s);
+        // runState names the child "<X> Routes" / "<X> Bouldering" / "<X> Ice Climbs" (SPLIT_SUFFIX).
+        // MP can file a sub-area of that very name — Massachusetts's "Roadside Crag > Roadside Crag
+        // Routes" (2026-10-01): planned as a second area, the database refused it and the state
+        // failed. So the child is found under the name it will carry, too.
+        const full = x.name + sql(`select ${SPLIT_SUFFIX(cur)} as s`)[0].s;
+        const kf = cur + "|" + areaNorm(full), kfk = cur + "|" + ck(full);
+        if (kf !== k) (kids.get(kf) || kids.set(kf, []).get(kf)).push(s);
+        (kidsK.get(kfk) || kidsK.set(kfk, []).get(kfk)).push(s);
         splits.set(cur, s);
+        if (ck(chain[i]) === ck(full)) { cur = s.id; continue; }
       }
       const leaf = i === chain.length - 1;
       // refuse_duplicate_area: a same-key area within 1.5 km under another parent. An existing one was
