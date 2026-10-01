@@ -29506,3 +29506,93 @@ wa_spinnaker_peak_s_route (Spinnaker Peak). Skipped as out-of-scope (area_type !
 'peak'): wa_southwest_rib_2 (Crystal Lake Tower, crag), wa_spontaneity_arete and
 wa_spontaneous_distraction (Le Petit Cheval, crag), wa_summertime (Summertime Crag,
 crag), wa_the_chalice (Silver Horn, crag), wa_the_exorcism_of_mark_hanna (M&M Wall, crag).
+
+## Batch 369 — 2026-10-01
+
+Routes: wa_southwest_buttress (Dorado Needle), wa_southwest_face (The Tooth),
+wa_soviet_route (Bonanza Peak), wa_spectre_peak_haunted_wall and
+wa_spectre_peak_south_route (Spectre Peak), wa_sperry_peak_east_face and
+wa_sperry_peak_upper_south_ridge (Sperry Peak), wa_spider_mountain_north_face and
+wa_spider_mountain_north_ridge (Spider Mountain), wa_spinnaker_peak_s_route
+(Spinnaker Peak).
+
+- **Fixed:** wa_southwest_buttress's `dist_km` (6.44) was exactly half of the 12.88
+  this row's own `corrections` log already derived back in 2026-08-05 from its own
+  approach/itinerary text — the earlier fix had been silently halved again since
+  then. Restored to 12.88.
+- **Fixed:** wa_spider_mountain_north_face and wa_spider_mountain_north_ridge both
+  had `access.landManager` naming the whole route "North Cascades National Park
+  Service Complex." Spider Mountain sits south of Cache Col in Glacier Peak
+  Wilderness (Okanogan-Wenatchee/Mt. Baker-Snoqualmie NF) — confirmed via Wikipedia
+  and Wikidata (Q49076359) — and each row's own nested `access.overnight_permit`
+  field already said as much; only the top-level field was wrong. Both corrected to
+  name Glacier Peak Wilderness, noting the NP complex covers only the Cascade
+  Pass–Cache Col approach.
+- **Fixed:** wa_spider_mountain_north_ridge's `fa` named "Ralph Clough" in the 1938
+  Ptarmigan Club first-ascent party. Wikipedia's Ptarmigan Traverse article, an
+  American Alpine Institute program page, and a National Academies "Memorial
+  Tributes" biography of the man himself (later a noted UC Berkeley structural
+  engineer) all agree the name is "Ray W. Clough." The other three names and the
+  July 25, 1938 date check out exactly and were left alone.
+- **Fixed:** wa_spinnaker_peak_s_route's own `high_point_ft` and its parent area's
+  `elevation_ft` both already correctly say 5,645 ft (matching SummitPost's 5,645 ft
+  at this route's own stored summit coordinates exactly), but the summit waypoint's
+  `elev` and two `itinerary` text fields (a schedule-step detail and the day-1
+  objective) still said 5,654 ft. All three brought in line with the row's own
+  already-correct figure.
+- **Flagged — wa_southwest_buttress:** `length_m` (305 m / "over 1,000 ft") vs.
+  Mountain Project's 900 ft, and pitch count (9 vs. 12–13 per Mountaineers.org/
+  SummitPost) — already self-disclosed in `data_quality.gaps`, genuinely
+  conflicting secondary sources. The `beta` field's "established around 1985" FA-
+  year claim also could not be confirmed or denied from any source found.
+- **Flagged — wa_spectre_peak_south_route:** the FA climber's own trip-report title
+  (Sam Boyce, via theclimbingguides.com) says "South Ridge of Spectre Peak 2000'
+  **5.8**," while the row stores grade "IV 5.9" and `length_m` 732 (~2400 ft,
+  internally consistent with its own pitched+simul breakdown). A real conflict
+  between the FA party's own account and what appears to be a different AAC
+  Publications figure; neither side could be independently pinned down this pass
+  since mountainproject.com, theclimbingguides.com, and the AAC site were all
+  blocked to direct fetch (only search-snippet corroboration available).
+- **Flagged — wa_spider_mountain_north_face:** the stored 1972 Kloke/Tindall FA may
+  be conflating two distinct lines. Ski-history sources (turns-all-year.com,
+  scottrinck.com) describe a separately named "Arachnophobia" line (1976 FA, first
+  skied by Volken/Avolio on June 17, 2003) that may be the same face under a
+  different name, or may be a genuinely different route. Not resolved this pass.
+- **Flagged — wa_spider_mountain_north_ridge:** structural id/content mismatch. The
+  id says "north_ridge," but the row's own `name` ("Southeast Gully / East Ridge
+  (Spider-Formidable Col)") and `aspect` (SE) both describe Spider Mountain's
+  actual standard route, not a north-ridge line. This is the same half-corrected-
+  row pattern already seen on wa_cascade_peak_east_ridge in batch 4 — needs a human
+  rename/content decision, not a field patch, so left untouched.
+- **Clean:** wa_southwest_face (The Tooth) — grade 5.5/4 pitches/350 ft, FA Beckey/
+  Beckey/Graham 1942 (month unconfirmed but undisputed), 5,606 ft elevation, all
+  match Mountain Project/Wikipedia and the row's own prior corrections.
+  wa_soviet_route (Bonanza Peak West Buttress) — FA party and Sept 10–12, 1975
+  dates confirmed exactly via AAC Publications, stephabegg.com and NWHikers.net
+  independently; Southwest Peak's 9,320 ft high point and the Okanogan-Wenatchee/
+  Glacier Peak Wilderness land manager (already corrected in-row) both confirmed.
+  wa_spectre_peak_haunted_wall — FA Wayne Wallace/Mike Layton confirmed exactly
+  (Aug 14, 2006) via a CascadeClimbers.com trip report; grade/length (IV 5.9+,
+  2,100 ft = 640 m) an excellent match. wa_sperry_peak_east_face and
+  wa_sperry_peak_upper_south_ridge (Sperry Peak) — 6,120 ft elevation, Darrington
+  RD/Verlot land manager and Sunrise Mine Road access confirmed; the Upper South
+  Ridge's route description matches SummitPost's own page almost verbatim.
+
+5 confirmed errors fixed, 4 flagged for human review, 5 clean. SQL:
+`audits/sql/2026-10-01-batch-369.sql`. `check:sql` initially mis-parsed 2 of the 7
+UPDATEs: both `landManager` fixes used a literal "--" inside the jsonb string value,
+which the script's line-based comment stripper (`l.replace(/--.*$/, "")`, documented
+in its own header as not accounting for string literals) truncated mid-statement,
+dropping their `WHERE` clauses. Rewrote both without "--" (parenthetical phrasing
+instead) and `check:sql` then confirmed all 7 targets exist. No `.env`/`.env.local`
+present at run start (fresh clone); read-only queries used the anon key supplied in
+the task prompt directly as shell env vars. Next 10 in-scope (area_type='peak')
+routes after a live id-ordered query, filtered client-side against each candidate's
+area_id: wa_spire_mountain_scramble (Spire Mountain), wa_spire_point_southwest_face
+(Spire Point), wa_stanley_burgner (Prusik Peak), wa_star_peak_sawtooth_nw_ridge
+(Star Peak), wa_storm_king_north_face (Storm King), wa_sw_ridge (Middle Peak),
+wa_swiss_peak_standard_route (Swiss Peak), wa_switchback_mountain_scramble and
+wa_switchback_mountain_west_ridge (Switchback Mountain),
+wa_table_mountain_standard_scramble (Table Mountain). Skipped as out-of-scope
+(area_type != 'peak'): wa_spontaneity_arete and wa_spontaneous_distraction (Le
+Petit Cheval, crag), wa_summertime (Summertime Crag, crag).
