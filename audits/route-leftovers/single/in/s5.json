@@ -1,0 +1,417 @@
+{
+ "items": [
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Total round-trip gain and loss (gain_ft 6,550 vs itinerary 5,600)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v002.json",
+   "prior_evidence": "gain_ft 6,550 is one party's day-1 figure (road over the summit to camp), while the itinerary/totalNote say 5,600 ft round trip, which is barely above the ~5,640 ft net rise measured by the USGS elevation service and ignores the intermediate loss the ascent record describes. A second itinerary (search excerpt only) gives +5,450 ft over 6.5 mi on day 1, disagreeing with 6,550. The forum reports that might settle it are not archived or would not load. No stated round-trip total, so nothing patched."
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Elevation of the high camp above Berdeen Lake",
+   "prior_file": "audits/route-tab-contradictions/research/out/v002.json",
+   "prior_evidence": "Only one account states the camp's height (about 800 ft above the 5,016 ft lake, i.e. ~5,800 ft, matching the waypoint). The 2022 forum report (read via an archive copy) gives no camp elevation; the 2019/2021 reports are not archived. The high-camp pin's coordinate is interpolated, so a ground lookup there measures nothing. No patch."
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "fact": "Day-1 gain to the Berdeen Lake camp stated in the bivy entry",
+   "prior_file": "audits/route-tab-contradictions/research/out/v002.json",
+   "prior_evidence": "The bivy note's 'four thousand feet of gain' is below the net rise from the road end (~783 ft by USGS) to a lake camp at 5,016 ft or above. But the two day-1 figures found disagree (+6,550 ft in one ascent record; +5,450 ft in a second itinerary seen only as a search excerpt), so no replacement is agreed. Rewording to drop the number is possible under rule 4 but the camp it describes (lake benches vs high camp) is itself unsettled, so left."
+  },
+  {
+   "id": "wa_new_york_gully",
+   "fact": "Overview's stated route length (~1,300 ft) is roughly double length_m and the pitch-length total",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Still present (overview ~1,300 ft vs length_m 213 m and four rows of 35-55 m). A club route page and a club trip report (2,000s ascent, base at ~5,700 ft, top of the harder climbing then a rappel into the Slot couloir and ~6,200 ft on the summit ridge) give no route length; two forum trip reports (2016, 2019) give 50-60 m pitches and 6 pitches on a 60 m rope, i.e. longer than 213 m; the route database gives 700 ft and the first-free-ascent note 1,300 ft for the whole line. The figures measure different things and no two sources agree on one length for the page. No patch."
+  },
+  {
+   "id": "wa_new_york_gully",
+   "fact": "ice grade: ice_grade/alpine_grade WI3 vs grade WI4 and pitch 4 WI4",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Still one source per end: the route database gives WI3 (M5-), the first-ascent/first-free-ascent note WI4. Additional reports checked (a club route page, a club trip report, 2016 and 2019 forum reports, a 2014 blog) describe the ice step (takes a 10 cm screw; 'short ice step') without an ice number. Rule 2 needs two sources per end or a source stating the range; neither holds. No patch."
+  },
+  {
+   "id": "wa_new_york_gully",
+   "fact": "pitches 5 vs 4 ROUTE BREAKDOWN rows",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "New detail: a club trip report pitches the route as two simul-climbed snow/mixed pitches to the snag, the 35 m box-gully pitch, a pitch to a short ice step and a boulder-sling anchor, then a separate short 5.8/aid crack pitch that ends the harder climbing, i.e. five pitches, matching the header's 5 and the route database. The four ROUTE BREAKDOWN rows stop at the ice-step anchor and omit the 5.8 crack pitch (its only trace is in pitch 3's notes). But a 2019 party did it in 6 pitches on a 60 m rope and a 2025 party in six, and descent_text says 4 long pitches (70 m); adding a fifth row means writing a new pitch entry, beyond a minimal patch. No patch."
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Round-trip / total hiking distance",
+   "prior_file": "audits/route-tab-contradictions/research/out/v009.json",
+   "prior_evidence": "Third pass; no new independent figure found beyond the two earlier passes' wide set. GPS-tracked reports cluster near 5.4-5.5 mi RT (matching the waypoints' 2.75 mi one way), while the hike-page statistic of 7.5 mi (repeated by a blog and by report pages that display it) matches the itinerary; other guides give 6-7.2 mi. dist_km 4.8 km (3.0 mi) sits between. With no figure independently stated by two sources for the same line, neither the itinerary's 7.5 mi nor the waypoint/dist_km values are changed."
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "fact": "Total elevation gain (gain_ft/loss_ft 4,700 vs itinerary gainFt/lossFt and totalNote 4,900)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v009.json",
+   "prior_evidence": "Third pass. Figures remain scattered: 4,900 ft (hike-page statistic and its copies), 4,700 ft (one two-day report), 4,380 / 4,300 / 4,105 / 4,060 ft and ~3,300 ft from other reports; net rise trailhead 2,300 ft to summit 6,238 ft is about 3,940 ft, with the trail first dropping to the Barclay Creek crossing. No value has two independent sources, so gain_ft 4,700 vs itinerary 4,900 stays open."
+  },
+  {
+   "id": "wa_mile_high_club",
+   "fact": "total elevation gain",
+   "prior_file": "audits/route-tab-contradictions/research/out/v015.json",
+   "prior_evidence": "Third attempt; no new total was found (the other pages found give only the 2.8 mi / 2,700 ft approach to the base). The two stated car-to-car figures remain 3,156 ft (route log) and ~3,020 ft (921 m, GPS trip report); they are close but not the same, both are single-party measurements, and both sit between gain_ft 2,700 (the approach-to-base figure) and the itinerary/totalNote 3,500. Nulling both would be allowed only if each were provably wrong, which two differing party logs do not establish for 3,500, so nothing is changed."
+  },
+  {
+   "id": "wa_mile_high_club",
+   "fact": "Sunrise Mine Trailhead waypoint position",
+   "prior_file": "audits/route-tab-contradictions/research/out/v015.json",
+   "prior_evidence": "STRUCTURAL: the Mile High Club row's only waypoint, 'Sunrise Mine Trailhead' (waypoints[0], elev 2350), sits at 48.02388889, -121.4741444, the same wrong point flagged on the Morning Star and Marvin's Ear approach_logistics; move it to 48.0247261, -121.4778459. OpenStreetMap's trailhead node (48.02473, -121.47786) and the trail guide (48.0251, -121.4779) agree with each other, and the ground at the stored point is about 2,835 ft, not the 2,350 ft the pin states (about 2,320 ft at the mapped trailhead). A pin move is outside the patch format."
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "fact": "Thunder Basin high-camp elevation: 6,400 ft (waypoint) vs. ~5,180 ft (approach text and itinerary schedule)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "Re-read: the approach, beta, itinerary schedule and the day-1/day-2 gains (2,880 and 3,130 ft) are all built on the 5,180 ft upper basin, which one guide states; the waypoint (6,400 ft, 'granite slabs and small tarns') matches a first-hand report that passed the two small lakes at the top of the basin and bivied on platforms at 6,400 ft. A third report on the same site is by the same author as that one (one source). A Pack & Paddle traverse and a 2021 three-day ascent camped in Thunder Basin or at Butterfly Lake but give no elevation. Both camps are real and no second source names either as the standard high camp, so nothing is changed."
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "fact": "Itinerary day-mile sum vs. totalNote's stated round-trip mileage",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "The only stated round trip (26.8 mi including the West Peak) and the 25 mi day-climb figure come from pages by the same author, so they count as one source; the Wenatchee guide gives 6 mi to Thunder Creek plus 0.5 mi to the sheep trail but no total. Other reports found are traverses (32 mi, 31 mi) that do not isolate this route. Nothing states a round trip for the Southeast Route a second time, so neither the 15.5 mi day sum nor the ~13 mi totalNote can be replaced. Note also the camp waypoint's distMi 7.5 vs the approach's 6.5 mi to camp."
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "fact": "dist_km 24 (14.9 mi) shown as the one-way approach",
+   "prior_file": "audits/route-tab-contradictions/research/out/v001.json",
+   "prior_evidence": "dist_km 24 km (~15 mi) renders as 'Approach (one way)', but Easy Pass is 3.4-3.6 mi from the trailhead and the high camp only a few miles beyond; 15 mi matches round-trip figures for partial traverses (one report 14.83 mi RT). No source states a one-way approach distance, and the traverse is not a pure out-and-back, so nothing is halved or patched."
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "fact": "Season window: season/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "Deep retry found dated ascents across the whole year (a May 2019 forum report, a July 4-5 2014 blog ascent described as 'fine early-season shape', a November ascent narrative) and a route database noting only that the bergschrund opens late season and that a second tool and screws are needed in late season/fall; a guide service offers the peak March-October. No source states a best window for the face (neither Jul-Sep nor Late May-early July), so neither season nor best_season/seasonal_guidance is changed."
+  },
+  {
+   "id": "wa_sisu",
+   "fact": "Total route length vs sum of pitch lengths",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "Still real: length_m 244 (800 ft) against pitch_detail lengths summing to 173 m. Deep retry looked for an independent topo: the Upper Town Wall topo on a second crag database lists 13 routes and none is Sisu, and searches surfaced only the one route listing (7 pitches, 800 ft, the same pitch lengths) and summaries of it. Which figure is wrong cannot be settled from a single source that carries both, so nothing is patched."
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "fact": "First ascent of this route/peak",
+   "prior_file": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "Third pass. The AAJ note on the 1963 outing places both of that day's new routes on Crooked Thumb's EAST face from a Challenger Arm base camp; the fa party (Ardussi, Magnusson, Mech, Swanson) took a diagonal class-5 gully and chimney to the first notch north of the summit, then the ridge and ledges. The row's line starts on the WEST side: from the Crooked Thumb Glacier moraine camp beneath the west face, up the northwest couloir to a north-ridge notch, around pinnacles, a headwall and west-face ledges to the south ridge (the 2016 ascent report). So fa names the party of a different start that may share the upper ridge, and beta's 'Beckey-era first ascent' is the peak's 1940 FA with no source for the Beckeys' line. No source names who first climbed the northwest-couloir start; setting fa to null would need the two lines to be shown fully distinct, which the shared upper ridge prevents. Owner decision on route identity."
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "fact": "Permit: 'None required' vs 'self-issue day-use permit'",
+   "prior_file": "audits/route-tab-contradictions/research/out/v006.json",
+   "prior_evidence": "Third pass, with the land manager's own wilderness boundary layer (USFS EDW Wilderness service, point queries): every route waypoint from the Alpental lot up through Edelweiss Bowl, the saddle, the summit-block pin and the row's summit pin lies OUTSIDE the Alpine Lakes Wilderness, but the GNIS summit coordinate and points 10-40 m west/south of the row's summit pin lie INSIDE it, so the route touches the boundary only at the top. An archived club route page lists the land manager as the Alpine Lakes Wilderness, Snoqualmie Ranger District, and requires only a Northwest Forest Pass. Whether a day-use permit is required for a route that reaches the boundary at the summit is not stated by any source, so access.permit ('None required' plus a self-issue permit), access.fees ('stays outside') and the overnight_permit entry are left for a decision."
+  },
+  {
+   "id": "wa_forbidden_peak_west_ridge",
+   "fact": "pitch count",
+   "prior_file": "audits/route-tab-contradictions/research/out/v007.json",
+   "prior_evidence": "Third pass. The route database confirms only 'Trad, Snow, Alpine, 1500 ft (455 m), Grade III' with no pitch count; a club route page calls it a four-pitch 5.6; guide copy says eight; the new trip reports (a 2010s blog with ten rappels on descent, and several club reports) describe simul-climbing with one to three pitched sections and give no fixed count. The count depends on style, no two independent sources give the same pitch-by-pitch division, and the six-row breakdown cannot be rebuilt to either 4 or 8 rows from a source, so pitches=8 vs six rows stays open."
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "fact": "Gain vs loss for an out-and-back route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "Third pass. The archived 2004 two-peak report (Trinity, Buck Creek and Chiwawa River trails, camp below the 7,200 ft Fortress-Chiwawa saddle) gives about 20 mi RT and over 8,000 ft of gain for Fortress plus Chiwawa, agreeing with the combined 7,900 ft / ~20 mi figure already known; searches again turned up only the 22 mi / 6,000 ft figure tied to a different outing description. No source gives a Fortress-only car-to-car gain for this line, so gain_ft 5,884 (summit minus trailhead) and loss_ft 7,900 (the combined-trip figure) cannot be set to one sourced value; loss = gain is not assumed."
+  },
+  {
+   "id": "wa_hozomeen_mountain_northeast_buttress",
+   "fact": "Total elevation gain vs. loss for a car-to-car round trip",
+   "prior_file": "audits/route-tab-contradictions/research/out/v011.json",
+   "prior_evidence": "Third pass. Still no two sources state the same car-to-car gain from Skyline II: 9,600 ft (one report, 24 mi), 9,080 ft (club listing), ~9,200 ft including three extra peaks; a Skyline II trail blog gives only trail figures, and the one WTA report with numbers returned 403 live and has no archived copy. gain_ft 6266 / loss_ft 545 stay flagged."
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "fact": "Total elevation gain/loss vs the itinerary's own day-by-day figures",
+   "prior_file": "audits/route-tab-contradictions/research/out/v012.json",
+   "prior_evidence": "Third pass. An archived 2017 trip report on this exact approach gives only cumulative points (Copper Lake 4.7 mi / 3,900 ft, viewpoint 6.8 mi / 4,900 ft, Big Heart 7.6 mi / 4,575 ft, Angeline viewpoint ~5,000 ft, ridge high point ~5,260 ft) and no total to Iron Cap; other reports give segment gains only, and three more WTA reports on the peak have no archived copy. A car-to-car figure would have to be assembled, so gain_ft/loss_ft 4,707 against the itinerary's 6,400 stay open."
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Approach mileage: itinerary days 1-3 (7.5 + 5.5 + 3 = 16 mi to White Rock Lakes) vs waypoints (Kool-Aid Lake 6.7 mi, White Rock Lakes 13.5 mi)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v013.json",
+   "prior_evidence": "Still real. The park service page gives 3.7 mi of trail to Cascade Pass; one mapped route gives about 5.5 mi one way to Kool-Aid Lake, which agrees with neither the day-1 7.5 mi nor the waypoint's 6.7 mi, and no second source states that leg. Traverse descriptions give the cross-country legs by time or stage, not distance, so no leg figure to Yang Yang or White Rock Lakes can be sourced."
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "fact": "Trailhead to Kool-Aid Lake distance: itinerary day 1 (6.5 mi) vs the Kool-Aid Lake waypoint and dist_km (5.5 mi)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v014.json",
+   "prior_evidence": "Third attempt. One new source, a mapped hike listing for Kool-Aid Lake via Cascade Pass and the Ptarmigan route, gives 5.5 mi one way (agreeing with the waypoint and dist_km). The traverse stage write-up still gives only 4 mi of trail to the pass and about 1 mi from Cache Col to the lake, with the pass-to-col leg unmeasured, and other traverse reports give only totals (about 34 mi round trip) or times. Only one source states the trailhead-to-lake figure, and the row's 5.5 side is two fields (waypoint, dist_km) against day 1 and day 3 at 6.5, so the internal-majority rule is not met; nothing is changed."
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "fact": "recommended/actual start time from high camp",
+   "prior_file": "audits/route-tab-contradictions/research/out/v015.json",
+   "prior_evidence": "Third attempt; further Gunsight/Chikamin Glacier reports were searched. Parties' start times range from pre-dawn single pushes to a 10:00 AM departure on a climbing day, and the detailed 2017 schedule broke the col camp in the morning and summited in the evening; none states a customary start from high camp or recommends either 4-5am or 7:00 AM. Neither the turnaround line nor timing.recommendedStart/the day-3 schedule is changed."
+  },
+  {
+   "id": "wa_marvin_s_ear",
+   "fact": "Sunrise Mine Trailhead location",
+   "prior_file": "audits/route-tab-contradictions/research/out/v015.json",
+   "prior_evidence": "STRUCTURAL: set approach_logistics.trailheadLat/trailheadLng from 48.02388889, -121.4741444 to the Trailhead waypoint's 48.0247261, -121.4778459. OpenStreetMap maps the Sunrise Mine Trailhead node at 48.02473, -121.47786 (USFS-operated, with a 12-car lot beside it at 48.02499, -121.47789), and the trail guide gives 48.0251, -121.4779; both agree with the waypoint. The ground elevation at the approach_logistics point is about 2,835 ft on a slope ~300 m east, versus about 2,320 ft at the mapped trailhead, which matches the ~2,340-2,350 ft the row states. A coordinate change is outside the patch format."
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "fact": "Easy Pass approach length: itinerary day 1 12.5 mi vs beta/access '~10 mi one-way via Easy Pass'",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "Still real. Third pass: one club trip report puts the creek below the ~5,200 ft lake at about 10.5 mi from the Easy Pass trailhead with the lake a climb above; a 2015 single-day report gives 10 mi each way; a Douglas Glacier report says only 'over 10 miles' back to the car. The figures cluster at 10-10.5 but no two state the same one-way number to the camp, so neither the itinerary nor the prose is changed."
+  },
+  {
+   "id": "wa_mount_roosevelt_standard",
+   "fact": "Climbing season window (Jul-Sep chip vs a stated Jul-Oct/May-Oct window elsewhere)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v018.json",
+   "prior_evidence": "Still split in the row (season Jul-Sep and approach_variants 'Late July to September' vs best_season July-October, access.notes June-October, itinerary.cal May-October). No new source states a month window for the Roosevelt gully scramble; the sources found describe only the Snow Lake trail season and the need for a dry, snow-free gully. season is a short window owned elsewhere, so it is not touched."
+  },
+  {
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Avalanche section treats the route as a summer-only scramble while the row calls it a winter/spring snow objective",
+   "prior_file": "audits/route-tab-contradictions/research/out/v020.json",
+   "prior_evidence": "seasonal_hazards.avalanche says the route is a non-glaciated summer/fall scramble not typically climbed in avalanche season (July-October N/A, June Low), while best_season, pro_tips, the itinerary and the sources describe it as mainly a winter-to-spring snow ascent; the archived route page notes one short section with some avalanche danger on the way up. Rewriting the avalanche zone and adding winter months would need a sourced month-by-month rating that no source gives, so it is left open."
+  },
+  {
+   "id": "wa_prusik_peak_taylor_wood_route",
+   "fact": "number of sections/pitches on the route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v021.json",
+   "prior_evidence": "Third pass. A fresh search found no ascent of the 2023 Taylor-Wood Route by anyone other than the first-ascent party: the route database page (8 pitches, 670 ft in its header, a 10-pitch description with P9-P10 added later to reach the true summit) and the new-route write-up are both theirs. With one source that itself gives both counts, neither pitches=8 nor the overview's 'ten-section' can be settled."
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "fact": "Total gain: gain_ft vs itinerary day gains",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Still present: gain_ft/loss_ft 6,800 while the itinerary days now sum to 7,300 ft gain and 6,400 ft loss and totalNote speaks of ~4,700 + ~2,000-2,600 ft. The published totals (6,800 ft from an older start; ~7,100 ft; ~7,300 ft for a 2018 club trip from 1,850 ft; ~8,000 ft GPS from the 1,160 ft washout parking) all depend on where the party parked, and no two agree on one figure for the current parking. A cumulative figure assembled from legs would be computed. No patch."
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "fact": "Summit elevation",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "Still split: 5,645 ft on the peak's route page and a trip write-up (high_point_ft) vs 5,654 ft (summit waypoint, itinerary schedule and objective), close to a DEM-derived 1,723 m (~5,653 ft); the USGS ground surface around the summit tops out near 5,651 ft. The topo-list and peak-database sites that would give a map-derived figure returned bot challenges/403 in this pass too, and a further search surfaced only the 5,645 figure again. No value is settled by two independent sources the ground also supports. No patch."
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "Itinerary day gain/loss built on a ~5,000 ft camp (day 1 loss 700 ft, day 2 gain 2,700 ft) vs a 4,170 ft lake and 7,530 ft summit",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "No source found states per-day or car-to-car gain for the Cascade Pass - Pelton Basin - Trapper Lake approach; published figures cover only the trail to Cascade Pass (3.7 mi, 1,700 ft) and Pelton Basin. Rebuilding the day gains from the 4,170 ft lake and 7,530 ft summit would be a computed figure, so nothing is patched."
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "fact": "Total gain: gain_ft 6862 vs itinerary 7,100 (5000+2000+100)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v027.json",
+   "prior_evidence": "New search found only the known figures (24 mi round trip with range 1,240-8,102 ft; one report 21 mi / 8,300 ft gain) plus a 'Tricouni Peak' blog that turned out to be the British Columbia peak. An archived trip-report page is also the BC peak. No two sources state a car-to-car gain for this route, so gain_ft 6,862 and the 7,100 itinerary sum stay as they are."
+  }
+ ],
+ "fills": [
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 72.4,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json"
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 32.2,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json"
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 23.5,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json"
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "cleared_value": 0,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json"
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "column": "fa",
+   "path": [],
+   "cleared_value": "Wayne Wallace, Colin Haley, and Mark Bunker, July 27, 2003 (Southern Picket Range enchainment)",
+   "cleared_in": "audits/route-leftovers/owner/out/o01.json"
+  },
+  {
+   "id": "wa_mount_ballard_south",
+   "column": "max_angle",
+   "path": [],
+   "cleared_value": 50,
+   "cleared_in": "audits/route-leftovers/owner/out/o04.json"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "ice_grade",
+   "path": [],
+   "cleared_value": "AI1",
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "max_angle",
+   "path": [],
+   "cleared_value": 50,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "pitches",
+   "path": [],
+   "cleared_value": 3,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "column": "length_m",
+   "path": [],
+   "cleared_value": 140,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "cleared_value": 3.8,
+   "cleared_in": "audits/route-leftovers/pins/out/p03-apply.json"
+  },
+  {
+   "id": "wa_vanishing_point",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "cleared_value": 4,
+   "cleared_in": "audits/route-leftovers/pins/out/p03-apply.json"
+  },
+  {
+   "id": "wa_mount_prophet_east",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "cleared_value": 2,
+   "cleared_in": "audits/route-leftovers/pins/out/p07.json"
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "cleared_value": 8,
+   "cleared_in": "audits/route-leftovers/pins/out/p07.json"
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "column": "waypoints",
+   "path": [
+    1,
+    "distMi"
+   ],
+   "cleared_value": 3.7,
+   "cleared_in": "audits/route-leftovers/pins/out/p08.json"
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "column": "waypoints",
+   "path": [
+    2,
+    "distMi"
+   ],
+   "cleared_value": 5.9,
+   "cleared_in": "audits/route-leftovers/pins/out/p08.json"
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "column": "waypoints",
+   "path": [
+    3,
+    "distMi"
+   ],
+   "cleared_value": 7,
+   "cleared_in": "audits/route-leftovers/pins/out/p08.json"
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "column": "waypoints",
+   "path": [
+    6,
+    "distMi"
+   ],
+   "cleared_value": 8.6,
+   "cleared_in": "audits/route-leftovers/pins/out/p08.json"
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "column": "timing",
+   "path": [
+    "totalHrs"
+   ],
+   "cleared_value": 9.27,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r029.json"
+  },
+  {
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "column": "rappel_detail",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "notes": "First of two rappels protecting a short, sometimes-loose 3rd class gully back to the saddle camp; no fixed anchors, back up any existing tat.",
+     "anchor": "Natural anchor (horn/gear/slung block), upper gully",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel finishing the descent to the saddle camp.",
+     "anchor": "Natural anchor, lower gully",
+     "lengthM": null
+    }
+   ],
+   "cleared_in": "audits/route-tab-contradictions/research/out/r067.json"
+  },
+  {
+   "id": "wa_ragged_ridge",
+   "column": "gain_ft",
+   "path": [],
+   "cleared_value": 2900,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v001.json"
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "column": "waypoints",
+   "path": [
+    6,
+    "elev"
+   ],
+   "cleared_value": 7800,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v005.json"
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 35.41,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v024.json"
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "column": "dist_km",
+   "path": [],
+   "cleared_value": 30.58,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v026.json"
+  }
+ ]
+}

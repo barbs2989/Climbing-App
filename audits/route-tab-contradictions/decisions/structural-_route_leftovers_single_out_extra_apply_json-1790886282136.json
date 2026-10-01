@@ -1,0 +1,4354 @@
+{
+ "applied": [
+  {
+   "id": "wa_the_triad_east_peak",
+   "op": "patch",
+   "columns": [
+    "bail"
+   ]
+  },
+  {
+   "id": "wa_mount_fury_east_southeast_glaciers",
+   "op": "patch",
+   "columns": [
+    "descent_text"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_the_triad_east_peak",
+   "area_id": "wa_the_triad",
+   "name": "East Peak (Standard Route)",
+   "discipline": "mountaineering",
+   "grade": "Grade III, Class 4 to 5.4",
+   "grade_system": "yds",
+   "grade_num": 4,
+   "pitches": 2,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "NE",
+   "season": "Jul–Sep (best); possible into June or October in low-snow years",
+   "description": null,
+   "gear": [
+    "Glacier travel kit: rope and crevasse rescue gear",
+    "Crampons and ice axe",
+    "Helmet",
+    "Light rock rack (small cams/nuts) and a few slings for the 5.4 step",
+    "Northwest Forest Pass for trailhead parking"
+   ],
+   "hazards": [
+    "Crevasses on the Triad and Eldorado Glaciers, especially with thin or icy early/late-season cover",
+    "Loose rock and rockfall potential on the class 4-5.4 step near East Triad Col, particularly with other parties above",
+    "Complex terrain among the three closely spaced Triad summits that is easy to misjudge in fog or whiteout",
+    "Steep, brushy off-trail terrain between about 5,400 ft and Sibley Creek Pass",
+    "Heavy, wet Cascade snowpack creates high avalanche danger on the Sibley Creek approach slopes outside summer"
+   ],
+   "verif": null,
+   "overview": "The Triad is a cluster of three rocky summits (west, middle, and east peaks, all within roughly 80 ft of each other in height) on the southwest ridge extension of Eldorado Peak, rising above the remote, glaciated Marble Creek cirque in North Cascades National Park. Composed of granodioritic orthogneiss, the peaks were first climbed in 1949 by Dick Eilertsen, Dick Lowery, Dick Scales, and Don Wilde -- a party of three climbers all named Dick, who first called the massif the 'Three Dicks' before the tamer 'Triad' stuck. It lies about 2 miles southwest of Eldorado Peak (~8,873 ft) and offers views toward Dorado Needle and Early Morning Spire. Despite sitting right next to one of the North Cascades' most popular glacier climbs, the Triad itself is rarely ascended.",
+   "beta": "From the Hidden Lake Trail, leave the maintained tread to gain a heather-covered ridge, cross a small unnamed glacier on the peak's north side, and descend a steep, loose gully nicknamed the 'Drainage of Despair' to reach the base of the East Ridge. Climb ramps and a slabby section up and right to the ridge crest (an old rappel anchor marks easier ground above), then a short, exposed low-5th-class pinnacle pitch with sparse protection gains the true summit. The technical crux is a committing 4th-class move used to gain the ridge itself from a ledge system below.",
+   "turnaround": "On a remote peak with a long approach, set a turnaround that ensures a safe return before dark. Retreat if weather builds, as the exposed towers are no place for a storm.",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "5.0–5.4 (low 5th class); some parties rate the crux stiff 4th class instead",
+   "ice_grade": null,
+   "gain_ft": 3920,
+   "loss_ft": 5410,
+   "dist_km": 7.5,
+   "max_angle": null,
+   "rappels": "Commonly 2 rappels of roughly 30m off anchors near the crux (rope + tagline useful); some parties downclimb instead",
+   "commitment": "III",
+   "face": "East Ridge",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": "No reliable cell service should be expected on the approach or route; North Cascades National Park backcountry generally has little to no coverage, though isolated high ridgelines occasionally catch a weak signal. Do not rely on a phone for emergency communication — a satellite messenger or PLB is strongly recommended.",
+   "descent": "Reverse the route with two 30 m rappels (rope plus tagline) off the east ridge back to the approach.",
+   "obj_haz": [
+    "rockfall",
+    "loose-rock",
+    "glacier-travel",
+    "crevasse",
+    "exposure",
+    "routefinding"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.5141,
+     "lng": -121.2219,
+     "elev": 3600,
+     "name": "Hidden Lake Trailhead (FR-1540 / Sibley Creek Road)",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3600,
+     "directions": "From Marblemount, follow Cascade River Road (FR-15) for about 10.2 paved miles, then turn onto FR-1540, Sibley Creek Road, and grind out 4.5 miles of rough gravel to the small Hidden Lake Trailhead at about 3,600 ft. A Northwest Forest Pass is required to park. Many parties sleep at the trailhead the night before rather than driving in before dawn. No permit is needed for a day climb; only overnight camping inside the national park requires one. Road access and snow on the ridge and glacier edge are the seasonal gate, so plan on roughly July through September."
+    },
+    {
+     "lat": 48.524,
+     "lng": -121.15,
+     "elev": 6500,
+     "name": "Marble Creek / Triad basin",
+     "type": "Campsite",
+     "distMi": 5,
+     "elevFt": 6500
+    },
+    {
+     "lat": 48.5196,
+     "lng": -121.1628,
+     "elev": 7520,
+     "name": "The Triad east peak summit",
+     "type": "Summit",
+     "distMi": 5.8,
+     "elevFt": 7520
+    }
+   ],
+   "gpx": [
+    [
+     48.521053,
+     -121.235762
+    ],
+    [
+     48.522872,
+     -121.233273
+    ],
+    [
+     48.523952,
+     -121.23147
+    ],
+    [
+     48.524265,
+     -121.229925
+    ],
+    [
+     48.524634,
+     -121.228552
+    ],
+    [
+     48.525544,
+     -121.226964
+    ],
+    [
+     48.526084,
+     -121.225548
+    ],
+    [
+     48.526283,
+     -121.224604
+    ],
+    [
+     48.526198,
+     -121.22323
+    ],
+    [
+     48.526311,
+     -121.221685
+    ],
+    [
+     48.526539,
+     -121.220398
+    ],
+    [
+     48.52651,
+     -121.217823
+    ],
+    [
+     48.52634,
+     -121.216106
+    ],
+    [
+     48.526283,
+     -121.214776
+    ],
+    [
+     48.526311,
+     -121.214304
+    ],
+    [
+     48.525942,
+     -121.212759
+    ],
+    [
+     48.526084,
+     -121.210785
+    ],
+    [
+     48.526283,
+     -121.208982
+    ],
+    [
+     48.525885,
+     -121.207781
+    ],
+    [
+     48.525999,
+     -121.206493
+    ],
+    [
+     48.525942,
+     -121.204863
+    ],
+    [
+     48.525942,
+     -121.202974
+    ],
+    [
+     48.526056,
+     -121.201601
+    ],
+    [
+     48.52634,
+     -121.199541
+    ],
+    [
+     48.526908,
+     -121.197567
+    ],
+    [
+     48.526965,
+     -121.19628
+    ],
+    [
+     48.527306,
+     -121.194005
+    ],
+    [
+     48.527136,
+     -121.193104
+    ],
+    [
+     48.526738,
+     -121.191945
+    ],
+    [
+     48.52651,
+     -121.190786
+    ],
+    [
+     48.524777,
+     -121.190014
+    ],
+    [
+     48.524038,
+     -121.18937
+    ],
+    [
+     48.523696,
+     -121.188169
+    ],
+    [
+     48.52381,
+     -121.186452
+    ],
+    [
+     48.523895,
+     -121.184692
+    ],
+    [
+     48.52364,
+     -121.18392
+    ],
+    [
+     48.522162,
+     -121.181688
+    ],
+    [
+     48.521622,
+     -121.181688
+    ],
+    [
+     48.521025,
+     -121.18083
+    ],
+    [
+     48.520485,
+     -121.179414
+    ],
+    [
+     48.520172,
+     -121.178341
+    ],
+    [
+     48.519888,
+     -121.177568
+    ],
+    [
+     48.51966,
+     -121.176624
+    ],
+    [
+     48.519575,
+     -121.174736
+    ],
+    [
+     48.519177,
+     -121.172504
+    ],
+    [
+     48.518608,
+     -121.171775
+    ],
+    [
+     48.518324,
+     -121.170444
+    ],
+    [
+     48.518722,
+     -121.169415
+    ],
+    [
+     48.519063,
+     -121.16817
+    ],
+    [
+     48.519291,
+     -121.167526
+    ],
+    [
+     48.519262,
+     -121.167011
+    ],
+    [
+     48.519234,
+     -121.165981
+    ],
+    [
+     48.519461,
+     -121.165209
+    ],
+    [
+     48.519632,
+     -121.164565
+    ],
+    [
+     48.519689,
+     -121.16375
+    ],
+    [
+     48.519575,
+     -121.16302
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": 10.5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:15 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "This is a long but standard single-day outing, not a backpack trip: parties drive to the Hidden Lake Trailhead (often sleeping at the trailhead the night before) and climb car-to-c…",
+      "fromTo": "Car-to-car climb via Hidden Lake Trailhead",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "A light rack of cams to 2 inches, a set of nuts, several slings for the towers, and a 60m rope for the short step and rappel. Add ice axe and crampons for the approach.",
+   "what_to_bring": [
+    "helmet",
+    "approach shoes",
+    "light rack and slings",
+    "60m rope",
+    "ice axe and crampons",
+    "3 liters of water",
+    "sun protection",
+    "headlamp",
+    "satellite communicator",
+    "bivy/camp gear"
+   ],
+   "pro_tips": [
+    "Combine with Eldorado's Inspiration Glacier or West Arete route via the same Sibley Creek Pass approach to make efficient use of a multi-day glacier camp",
+    "Cross the Triad Glacier early in the day while the snow surface is firm to minimize crevasse-fall risk"
+   ],
+   "watch_out": [
+    "The Triad Glacier has been reported rock-hard under a thin snow layer in some conditions -- bring sharp crampons and be ready to belay short sections",
+    "Off-trail routefinding from about 5,400 ft to Sibley Creek Pass is difficult in poor visibility",
+    "There is no easy bail-out from East Triad Col other than re-crossing the glacier the way you came"
+   ],
+   "pro_needs": "Protection on the short technical step is adequate in cracks and around horns, while the scrambling sections are largely unprotected. Comfort on exposed terrain matters more than a large rack.",
+   "best_season": "Mid-July through September",
+   "high_point_ft": 7520,
+   "aid_grade": null,
+   "approach": "From Marblemount, drive Cascade River Road (FR-15) about 10.2 paved miles, then turn onto FR-1540 (Sibley Creek Road) and follow its rough gravel surface 4.5 miles to the small Hidden Lake Trailhead (~3,600 ft; Northwest Forest Pass required to park). Hike Hidden Lake Trail #745 through forest and wildflower meadows to about 5,400 ft, where the maintained trail begins a long traverse; leave the trail here and climb steep meadow and heather slopes to 6,200-ft Sibley Creek Pass. From the pass, a boot path follows the crest of a grassy ridge before dropping onto the Triad Glacier, which is crossed -- often on rock-hard ice under a thin snow layer -- past all three Triad summits to East Triad Col. This is a full, long approach day (roughly 6+ miles with significant elevation gain and loss) and is typically done as part of a multi-day trip with a high camp near Sibley Creek Pass or on the glacier apron.",
+   "descent_text": "Reverse the route: downclimb and make two 30 m rappels (rope plus tagline) off the East Peak's east ridge back to East Triad Col, then re-cross the Triad Glacier roped up (watch for open crevasses, especially in late season) back to Sibley Creek Pass, and descend the boot path/meadows to Hidden Lake Trail #745 and the trailhead.",
+   "bail": "Retreat is reasonable by reversing the scramble and short rappel, though the long, complex approach must still be reversed regardless of how high you climbed.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "Class 4",
+     "notes": "From East Triad Col, scramble up broken, blocky terrain to a wide ledge that runs toward the peak's east ridge; the ledge has one or two exposed but avoidable moves, then a stiff, committing Class 4 step gains the crest of the ridge proper.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Follow the exposed east ridge to the base of the summit tower and climb a short, tricky 5.4 crack/step onto the highest block; descend by downclimbing and two 30 m rappels (rope plus tagline) off the ridge before reversing to the col.",
+     "pitch": 2,
+     "anchor": "Rappel (gear/sling anchor)",
+     "lengthM": 20
+    }
+   ],
+   "itinerary": {
+    "cal": "No permit is needed for a day climb (only overnight camping in North Cascades NP requires one); Cascade River Road access and snow conditions on the ridge/glacier edge are the main seasonal gate, roughly July-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "This is a long but standard single-day outing, not a backpack trip: parties drive to the Hidden Lake Trailhead (often sleeping at the trailhead the night before) and climb car-to-car via the Hidden Lake climbers' trail onto the ridge, then the East Ridge to the summit. Parties typically take roughly 6 hours up and ~10.5 hours round trip for a fit party, with a 4th-class step near the top and two 30 m rappels on the descent.",
+      "hours": 10.5,
+      "miles": 9.3,
+      "title": "Car-to-car climb via Hidden Lake Trailhead",
+      "gainFt": 5410,
+      "lossFt": 5410,
+      "packLb": 18,
+      "schedule": [
+       {
+        "time": "5:15 AM",
+        "label": "Leave Hidden Lake Trailhead",
+        "detail": "Many parties camp at the trailhead the night before rather than hiking in early."
+       },
+       {
+        "time": "6:15 AM",
+        "label": "Reach climbers'-trail/ridge turnoff",
+        "detail": "About 1 hour of trail hiking before leaving the maintained Hidden Lake tread."
+       },
+       {
+        "time": "9:45 AM",
+        "label": "Reach high saddle, start of East Ridge",
+        "detail": "~4.5 hours from the car via ridge and glacier-edge travel; crampons/axe useful depending on snow."
+       },
+       {
+        "time": "11:15 AM",
+        "label": "Summit East Peak",
+        "detail": "~6 hours car-to-summit; low-5th-class moves gaining the ridge are the technical crux."
+       },
+       {
+        "time": "Early afternoon",
+        "label": "Rappel the crux step, reverse ridge",
+        "detail": "Downclimb exposed ledges and make two 30 m rappels off the ridge crest, then scramble back to the saddle."
+       },
+       {
+        "time": "~3:45 PM",
+        "label": "Back at trailhead",
+        "detail": "Total car-to-car time roughly 10.5 hours for a fit party."
+       }
+      ],
+      "objective": "Summit The Triad's East Peak and return to the trailhead same day"
+     }
+    ],
+    "totalNote": "A long single day, not a backpack trip: ~10.5 hrs car-to-car, 9.3 mi round trip, ~5,400 ft gain, via the Hidden Lake Trailhead and the East Ridge."
+   },
+   "access": {
+    "fees": "$10 per person plus a nonrefundable $6 Recreation.gov reservation fee for the required North Cascades NP backcountry/climbing permit (youth 15 and under free); a separate Northwest Forest Pass ($5/day, or an annual/interagency pass) is required to park at the Hidden Lake Trailhead.",
+    "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+    "rules": "Camping in the Eldorado zone is restricted to designated open-camping areas (e.g., the Roush Creek rib around 5,400 ft and the Inspiration/Eldorado Glacier apron around 7,500 ft), with limits on both the number of parties and people per party; no camping is allowed at the trailhead.",
+    "permit": "An overnight backcountry/climbing permit from North Cascades National Park's Eldorado cross-country zone is required. Reserve in advance on Recreation.gov (watch the mandatory orientation video and email noca_wilderness@nps.gov within 3 days of the trip), or try for one of the roughly 40% of sites held back for in-person, walk-up issuance at the Wilderness Information Center in Marblemount.",
+    "closures": "Cascade River Road is prone to seasonal, flood, and landslide closures -- it has been gated at Eldorado Creek (milepost 20) in past and recent seasons, with foot/bike travel still allowed beyond a vehicle closure. Check the NPS road-conditions page and Skagit County road-closures page before driving.",
+    "seasonal": "Cascade River Road (the access road for these trailheads) has a history of washouts/closures — check current NPS road-conditions page each season.",
+    "group_limit": 12,
+    "landManager": "North Cascades National Park (NPS) for the upper approach and peak; the lowest trail miles from the Hidden Lake Trailhead are in Mt. Baker-Snoqualmie National Forest.",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP wilderness permit, quota, not free",
+     "where": "Reserve on Recreation.gov, or get a walk-up permit in person at the Marblemount Wilderness Information Center up to a day ahead."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road (FR-15) to Sibley Creek Road (FR-1540)",
+    "status": "Paved for roughly the first 10 miles from Marblemount, then gravel; FR-1540 (turnoff at about mile 10.2) is a rough 4.5-mile spur toward the small Hidden Lake Trailhead (~3,600 ft). FR-1540 is closed to vehicles by a washout at milepost 2.6 up the spur (Forest Service alert in effect since July 8, 2026, no end date given), adding several miles of extra road-walking each way to reach the trailhead. Even when clear, low-clearance sedans are not recommended, and the road cannot accommodate RVs or large trailers.",
+    "driveNote": "A Northwest Forest Pass (or valid interagency equivalent) is required to park at the Hidden Lake Trailhead. Call the Mt. Baker Ranger District ((360) 854-2553) or check the NPS road-conditions page for the current FR-1540 washout status before driving.",
+    "seasonalGate": "Typically clear of snow by late June or July and can close again with fall storms; also subject to flood/landslide closures -- verify current status with NPS before driving."
+   },
+   "climate": {
+    "typical": "A marine west-coast mountain climate: heavy, wet winter snowfall builds a deep, avalanche-prone snowpack, followed by a relatively short, drier climbing window in mid- to late summer. A small unnamed glacier feeds the Triad Glacier on the peak's north side.",
+    "bySeason": {
+     "fall": "Shortening days and the risk of early snow; glacier crevasses are typically most open and the glacier surface can be icy and hard.",
+     "spring": "Deep lingering snowpack can bury approach brush and bridge crevasses well, but avalanche danger remains elevated on the Sibley Creek Pass slopes.",
+     "summer": "Best climbing window; the Triad/Eldorado Glacier crossing is usually most stable early in the window, with crevasses opening progressively through August into September.",
+     "winter": "Heavy, wet snow loading creates high avalanche danger on the Sibley Creek approach slopes; not a realistic winter objective."
+    },
+    "forecastZone": "NWAC West Slopes North"
+   },
+   "emergency": {
+    "notes": "Cell coverage is essentially nonexistent in the Marble Creek/Eldorado cirque; carry a satellite communicator or PLB for emergencies.",
+    "county": "Skagit County, WA",
+    "rangerStation": "North Cascades NP Wilderness Information Center, 7280 Ranger Station Rd, Marblemount, WA; (360) 854-7245",
+    "nearestHospital": "Skagit Valley Hospital, 1415 E. Kincaid St, Mount Vernon, WA (roughly 1.5 hrs drive from the trailhead)",
+    "sheriffDispatch": "911 -- Skagit County Sheriff's Office coordinates backcountry search and rescue within North Cascades National Park"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; the vast majority of parties approaching this cirque are bound for Eldorado Peak proper, not The Triad",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - likely very low (single digits to low tens of parties); no dedicated trip-report volume found distinct from Eldorado Peak traffic"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very high - parties describe a long, sustained single-day push from the Hidden Lake Trailhead across brushy, off-trail terrain and a glacier crossing; expect a full mountain day of 10+ hours car-to-car",
+     "packWeight": "Moderate-to-heavy - full glacier travel kit (rope, crevasse-rescue gear), a light rock rack, and a 60m rope; no overnight camping gear is needed for the standard single-day car-to-car push"
+    },
+    "approachTime": "Single day - two documented trip reports both climb it car-to-car from the Hidden Lake Trailhead in roughly 10.5 hours; an approach camp is optional, not required, for the standard route",
+    "requiredSkills": [
+     "glacier travel and crevasse rescue",
+     "roped travel / simul-climbing on 4th class to 5.4 terrain",
+     "remote alpine route-finding",
+     "comfort on loose, exposed rock",
+     "self-arrest and general snow travel"
+    ],
+    "experienceLevel": "Experienced alpine climber/mountaineer with prior roped glacier-travel trips - not a suitable first alpine objective"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-to-late July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Within the season, but early July can still carry lingering snowpack and higher meltwater stream crossings on the approach; conditions generally firm up by mid-month.",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Center of the Mid-July through September window - most consolidated glacier conditions for the approach and driest brush, with the most stable weather window of the season.",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still within the season; shorter days and cooler temps, with rising odds of early-season snow or storms later in the month given the afternoon-thunderstorm hazard.",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Summer alpine weather typical of the North Cascades - generally the driest, most stable conditions of the year within the July-Sept window, consistent with the best-season/climate framing.",
+     "probability": "Afternoon thunderstorms are a hazard here; the exposed granite towers and summit step raise lightning and rockfall-from-storm risk, so early starts and a weather-watch turnaround plan are warranted."
+    },
+    "exposure": "Consequential - loose blocks on the towers and an exposed summit step; a fall or rockfall incident on the summit block or towers would be serious given the remote, complex setting far from rescue access.",
+    "avalanche": {
+     "zone": "N/A - route is climbed July-Sept, outside NWAC's forecast season (NWAC issues zone forecasts roughly mid-November through mid-April only); no avalanche zone forecast applies during the climbing window",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "Real hazard on the approach - 'crevasses and snow on the approach' across the glaciated terrain shared with the Eldorado access; roped glacier travel and crevasse-rescue readiness are required, especially earlier in the July-Sept window when snow bridges are less consolidated."
+   },
+   "data_quality": {
+    "gaps": [
+     "No first-hand recent trip report found that specifically documents the East Peak's class 4-5.4 crux step; route beta is inferred from a documented approach trip report plus general Triad/Eldorado sources",
+     "Precise summit elevation is uncertain -- sources place it in a 7,510-7,560 ft contour band rather than giving an exact spot elevation",
+     "Whether the middle or east peak is the true high point is not definitively resolved in available sources",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/TK1S",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 5,
+    "technical": 1,
+    "commitment": 3,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.5196,
+    "peakLng": -121.1628,
+    "trailhead": "Hidden Lake Trailhead",
+    "trailheadDirection": "From Marblemount, drive Cascade River Road (FR-15) about 10.2 paved miles, then turn onto FR-1540 (Sibley Creek Road) and follow its rough gravel surface 4.5 miles to the small Hidden Lake Trailhead (~3,600 ft; Northwest Forest Pass required to park)."
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Sibley Creek Pass and the north-side glacier",
+     "notes": "From the Hidden Lake Trailhead hike the maintained trail through forest and wildflower meadows to about 5,400 ft, where it begins a long traverse; leave it there and climb steep meadow and heather to Sibley Creek Pass. From the pass a boot path follows a grassy ridge crest before dropping onto the small glacier on the peaks' north side, which is crossed past all three summits — often on rock-hard ice under a thin skin of snow — to the col at the east end. This is a full approach day and is normally done with a high camp near the pass or on the glacier apron.",
+     "season": "Roughly July to September, gated by the gravel road in and by snow on the ridge and glacier edge",
+     "hazards": [
+      "Hard ice under thin snow on the glacier crossing — crampons",
+      "A steep, loose gully of dirt and rock lying on top of steeper rock and heather drops to the base",
+      "Sparse protection on the short exposed pinnacle pitch to the true summit"
+     ],
+     "baseFinding": "Cross the small unnamed glacier on the north side and then find the descent, because the base of this ridge is below you, not above. The way down is a steep, loose gully of dirt and rock sitting on top of even steeper rock and heather — unpleasant enough that parties who have done it have given it a name — and it drops from the glacier edge to the foot of the ridge between the east summit and the main one. From the bottom, the climbing starts on ramps and a slabby section trending up and right toward the ridge crest. The proof you have picked the right line is an old rappel anchor on the crest, which marks where the ground eases above it; the committing fourth-class move used to pull onto the ridge from the ledge system below is the hardest thing on the route and it comes before that anchor, not after. If you are standing on the glacier looking for a way up, or you have not lost height since leaving the ice, you have not reached the base."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Marble Creek / Triad basin",
+     "role": "main",
+     "type": "camp"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "east peak pk standard route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_mount_fury_east_southeast_glaciers",
+   "area_id": "wa_mount_fury_east",
+   "name": "Southeast Glaciers (Standard)",
+   "discipline": "mountaineering",
+   "grade": "Class 4, Glacier",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": 488,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Don Keller, Joan Firey, and Joe Firey, 1960 — first ascent of East Fury via the southeast glacier",
+   "lat": null,
+   "lng": null,
+   "aspect": "SE",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Rope, for roped glacier travel and one short belayed rock step",
+    "Crampons and ice axe",
+    "1-2 medium cams or nuts — protects a short class 5 rock step on the ridge above the glacier; parties do not need a full rack",
+    "2-3 pickets for glacier crevasse protection",
+    "Small crevasse-rescue kit",
+    "Helmet — active icefall reported on the lower 300 ft of glacier"
+   ],
+   "hazards": [
+    "crevasse fall",
+    "rockfall",
+    "navigation in whiteout",
+    "extreme isolation",
+    "moat/bergschrund crossing at the glacier's rock margin (documented fall/rescue site, June 2025)",
+    "dense brush and devil's club on the Access Creek approach",
+    "loose Class 4-5 rock bands on the ridge and glacier margins",
+    "early-season steep snow (up to ~50°) that can persist into July"
+   ],
+   "verif": null,
+   "overview": "Mount Fury's East Peak is the standard-route summit of one of the most remote major peaks in the contiguous US, deep in North Cascades National Park's Northern Pickets. The Southeast Glacier route is technically moderate (Class 3-4 rock with a glaciated snow climb) but is guarded by one of the longest approaches in the Cascades — a full day of boat travel and trail hiking followed by two days of cross-country travel through brush, talus, and heather before the climbing even begins. Elevation surveys for East Fury range from the original 1953 USGS figure of 8,288 ft up to 8,356 ft in a 2022 theodolite survey, so treat any single number as approximate.",
+   "beta": "This is the standard approach to East Fury via Luna Peak traverse. The route is not technical climbing in the traditional sense but requires solid alpine skills, glacier travel proficiency, and exposure management on exposed scrambling. The terrain is predominantly Class 3–4 scrambling with one short Class 5.0 rock step (~25 feet, unroped passage is feasible). The glacier ascent is the crux: moderate 30–40 degree slopes steepen to 50+ degrees near summit with a large bergschrund requiring direct ascent. Route finding is straightforward following the ridge line and glacier, though descent via alternate terrain saves significant time over ascent route. Weather deterioration is the primary hazard—morning fog/clouds common at Luna Pass, clearing by midday.",
+   "turnaround": "Because the summit day mixes glacier travel, exposed rock traverses, and a multi-day remote approach, set a firm turnaround time before starting and commit to it regardless of proximity to the summit — deteriorating weather or fog can make the ridge traverse and glacier descent significantly harder to navigate in the dark.",
+   "auto_generated": true,
+   "alpine_grade": "PD+",
+   "rock_grade": "5.0",
+   "ice_grade": null,
+   "gain_ft": 6200,
+   "loss_ft": 13000,
+   "dist_km": 26.5,
+   "max_angle": 40,
+   "rappels": "1",
+   "commitment": "III",
+   "face": "Southeast Glacier / Southeast Face",
+   "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+   "comms": "No cell phone coverage in the Picket Range; carriers (Verizon, AT&T, T-Mobile) do not reach this remote alpine zone. Recommend satellite communicator (Garmin inReach, SPOT device) or Iridium satellite phone for emergency contact. Consider pre-positioned check-in protocols with friends or family.",
+   "descent": "Reverse the southeast glacier route",
+   "obj_haz": [
+    "icefall/hanging seracs",
+    "glacier crevasses",
+    "loose rock",
+    "route-finding in a remote area"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.7278,
+     "lng": -121.0628,
+     "elev": 2150,
+     "name": "Ross Dam Trailhead",
+     "note": "Trailhead on SR 20 near milepost 134 (~14 mi east of Newhalem); Northwest Forest Pass needed for parking, trail drops steeply toward Ross Lake.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Reach the Ross Dam Trailhead at Happy Flats on SR-20 near milepost 134, about 14 miles east of Newhalem, at roughly 2,150 feet. A Northwest Forest Pass is required to park here."
+    },
+    {
+     "lat": 48.732728,
+     "lng": -121.068851,
+     "elev": 1600,
+     "name": "Ross Lake Put-in (foot of Ross Dam Trail)",
+     "note": "Trail bottoms out at the lakeshore, losing ~500 ft in 1.3 mi; meet the Ross Lake Resort water taxi (reserve in advance) or launch a packraft/canoe here for the crossing to Big Beaver.",
+     "type": "Junction",
+     "distMi": 1.3
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 1602,
+     "name": "Big Beaver Landing",
+     "note": "Water taxi/paddle drop-off roughly 4.6 mi up-lake from Ross Dam, at Ross Lake's full-pool elevation; start of the Big Beaver Creek Trail through ancient redcedar groves.",
+     "type": "Junction",
+     "distMi": 5.9
+    },
+    {
+     "lat": 48.834423,
+     "lng": -121.20174,
+     "elev": 2432,
+     "name": "Luna Camp",
+     "note": "Established NPS backcountry campsite on Big Beaver Creek about 11.5 mi up the trail from the landing; last reliable flowing water and flat tentsites before leaving the maintained trail.",
+     "type": "Campsite",
+     "distMi": 17.4
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 2600,
+     "name": "Access Creek / Big Beaver Creek Ford",
+     "note": "About a mile past Luna Camp an unmaintained, orange-flagged climbers' path forks off and fords Big Beaver Creek through dense devil's club and alder; the crossing is unbridged and can run thigh-deep.",
+     "type": "Hazard",
+     "distMi": 18.4
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 4300,
+     "name": "Access Basin",
+     "note": "Steep, brushy mile-long climbers' path gains roughly 1,500 ft from the creek ford to a talus/heather basin at 4,300 ft, the standard high camp for the Access Creek approach.",
+     "type": "Campsite",
+     "distMi": 19.4
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7200,
+     "name": "Luna Pass (via Access Col)",
+     "note": "A steep scree chute gains Access Col at 6,100 ft, then notoriously steep heather and talus slopes lead to Luna Pass near 7,200 ft, the usual base camp for the summit push.",
+     "type": "Junction",
+     "distMi": null
+    },
+    {
+     "lat": 48.8108,
+     "lng": -121.3122,
+     "elev": 8356,
+     "name": "East Fury Summit",
+     "note": "Gained via a Northeast Ridge rock scramble around a knob (broad ledge traverse), a steep descending ramp to a snow saddle, then the Southeast Glacier (30-40°, steepening near 50° at the top); descend the same glacier's true right side.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     48.823939,
+     -121.276101
+    ],
+    [
+     48.823957,
+     -121.276112
+    ],
+    [
+     48.823962,
+     -121.276145
+    ],
+    [
+     48.823941,
+     -121.276273
+    ],
+    [
+     48.823898,
+     -121.276392
+    ],
+    [
+     48.823777,
+     -121.276347
+    ],
+    [
+     48.823664,
+     -121.276389
+    ],
+    [
+     48.823598,
+     -121.27647
+    ],
+    [
+     48.823487,
+     -121.276523
+    ],
+    [
+     48.823325,
+     -121.276689
+    ],
+    [
+     48.823259,
+     -121.276711
+    ],
+    [
+     48.823196,
+     -121.276693
+    ],
+    [
+     48.823086,
+     -121.276792
+    ],
+    [
+     48.823027,
+     -121.276789
+    ],
+    [
+     48.822963,
+     -121.276826
+    ],
+    [
+     48.822886,
+     -121.276931
+    ],
+    [
+     48.822817,
+     -121.276984
+    ],
+    [
+     48.822756,
+     -121.276995
+    ],
+    [
+     48.822734,
+     -121.277042
+    ],
+    [
+     48.822679,
+     -121.277067
+    ],
+    [
+     48.822579,
+     -121.27716
+    ],
+    [
+     48.822517,
+     -121.277242
+    ],
+    [
+     48.82246,
+     -121.277299
+    ],
+    [
+     48.822399,
+     -121.277398
+    ],
+    [
+     48.822366,
+     -121.277427
+    ],
+    [
+     48.822332,
+     -121.277483
+    ],
+    [
+     48.822234,
+     -121.277591
+    ],
+    [
+     48.822257,
+     -121.277542
+    ],
+    [
+     48.822202,
+     -121.277637
+    ],
+    [
+     48.822199,
+     -121.277698
+    ],
+    [
+     48.822299,
+     -121.277787
+    ],
+    [
+     48.821237,
+     -121.282342
+    ],
+    [
+     48.821159,
+     -121.282014
+    ],
+    [
+     48.82104,
+     -121.281829
+    ],
+    [
+     48.82103,
+     -121.281792
+    ],
+    [
+     48.820998,
+     -121.281786
+    ],
+    [
+     48.820972,
+     -121.281524
+    ],
+    [
+     48.82101,
+     -121.281295
+    ],
+    [
+     48.820968,
+     -121.281345
+    ],
+    [
+     48.820895,
+     -121.281483
+    ],
+    [
+     48.821154,
+     -121.280539
+    ],
+    [
+     48.82132,
+     -121.279976
+    ],
+    [
+     48.822024,
+     -121.278062
+    ],
+    [
+     48.822163,
+     -121.277746
+    ],
+    [
+     48.82222,
+     -121.277692
+    ],
+    [
+     48.822186,
+     -121.277682
+    ],
+    [
+     48.82213,
+     -121.277805
+    ],
+    [
+     48.822103,
+     -121.277829
+    ],
+    [
+     48.82208,
+     -121.277927
+    ],
+    [
+     48.822,
+     -121.278032
+    ],
+    [
+     48.821994,
+     -121.278103
+    ],
+    [
+     48.821929,
+     -121.278218
+    ],
+    [
+     48.821904,
+     -121.278313
+    ],
+    [
+     48.821881,
+     -121.278337
+    ],
+    [
+     48.821826,
+     -121.278309
+    ],
+    [
+     48.821796,
+     -121.27833
+    ],
+    [
+     48.821753,
+     -121.278431
+    ],
+    [
+     48.821664,
+     -121.278515
+    ],
+    [
+     48.821649,
+     -121.27855
+    ],
+    [
+     48.821653,
+     -121.278661
+    ],
+    [
+     48.821581,
+     -121.278781
+    ],
+    [
+     48.821556,
+     -121.278806
+    ],
+    [
+     48.821533,
+     -121.278874
+    ],
+    [
+     48.821489,
+     -121.278957
+    ],
+    [
+     48.821491,
+     -121.279006
+    ],
+    [
+     48.821448,
+     -121.279057
+    ],
+    [
+     48.821348,
+     -121.279098
+    ],
+    [
+     48.821264,
+     -121.279077
+    ],
+    [
+     48.821152,
+     -121.279121
+    ],
+    [
+     48.821066,
+     -121.279228
+    ],
+    [
+     48.821004,
+     -121.279258
+    ],
+    [
+     48.820915,
+     -121.27933
+    ],
+    [
+     48.820879,
+     -121.27928
+    ],
+    [
+     48.820863,
+     -121.27922
+    ],
+    [
+     48.820813,
+     -121.279154
+    ],
+    [
+     48.820775,
+     -121.27913
+    ],
+    [
+     48.820622,
+     -121.279233
+    ],
+    [
+     48.820523,
+     -121.279358
+    ],
+    [
+     48.820441,
+     -121.27943
+    ],
+    [
+     48.820382,
+     -121.279454
+    ],
+    [
+     48.820301,
+     -121.279417
+    ],
+    [
+     48.820278,
+     -121.279471
+    ],
+    [
+     48.820239,
+     -121.279521
+    ],
+    [
+     48.820227,
+     -121.279558
+    ],
+    [
+     48.820199,
+     -121.279541
+    ],
+    [
+     48.820166,
+     -121.279537
+    ],
+    [
+     48.820033,
+     -121.279602
+    ],
+    [
+     48.819968,
+     -121.279583
+    ],
+    [
+     48.819897,
+     -121.279586
+    ],
+    [
+     48.819866,
+     -121.279603
+    ],
+    [
+     48.819838,
+     -121.279645
+    ],
+    [
+     48.819878,
+     -121.279521
+    ],
+    [
+     48.819842,
+     -121.279404
+    ],
+    [
+     48.819784,
+     -121.27948
+    ],
+    [
+     48.819768,
+     -121.279523
+    ],
+    [
+     48.81967,
+     -121.279614
+    ],
+    [
+     48.819622,
+     -121.279692
+    ],
+    [
+     48.819501,
+     -121.279756
+    ],
+    [
+     48.819481,
+     -121.279727
+    ],
+    [
+     48.819411,
+     -121.279745
+    ],
+    [
+     48.819344,
+     -121.279683
+    ],
+    [
+     48.819289,
+     -121.279812
+    ],
+    [
+     48.819259,
+     -121.27982
+    ],
+    [
+     48.81923,
+     -121.279851
+    ],
+    [
+     48.819115,
+     -121.279907
+    ],
+    [
+     48.819046,
+     -121.279986
+    ],
+    [
+     48.819016,
+     -121.280081
+    ],
+    [
+     48.819015,
+     -121.280048
+    ],
+    [
+     48.818951,
+     -121.280087
+    ],
+    [
+     48.818874,
+     -121.280099
+    ],
+    [
+     48.81882,
+     -121.280062
+    ],
+    [
+     48.818767,
+     -121.280008
+    ],
+    [
+     48.818718,
+     -121.280002
+    ],
+    [
+     48.818638,
+     -121.280015
+    ],
+    [
+     48.818552,
+     -121.280142
+    ],
+    [
+     48.818484,
+     -121.280217
+    ],
+    [
+     48.818429,
+     -121.280326
+    ],
+    [
+     48.8184,
+     -121.280337
+    ],
+    [
+     48.818375,
+     -121.280371
+    ],
+    [
+     48.818327,
+     -121.280382
+    ],
+    [
+     48.818285,
+     -121.280433
+    ],
+    [
+     48.818187,
+     -121.280494
+    ],
+    [
+     48.818141,
+     -121.280537
+    ],
+    [
+     48.818007,
+     -121.280613
+    ],
+    [
+     48.817932,
+     -121.280677
+    ],
+    [
+     48.817916,
+     -121.280731
+    ],
+    [
+     48.817863,
+     -121.280772
+    ],
+    [
+     48.817846,
+     -121.28081
+    ],
+    [
+     48.81777,
+     -121.280916
+    ],
+    [
+     48.817711,
+     -121.281039
+    ],
+    [
+     48.817665,
+     -121.281093
+    ],
+    [
+     48.817555,
+     -121.28127
+    ],
+    [
+     48.817535,
+     -121.281383
+    ],
+    [
+     48.817559,
+     -121.281418
+    ],
+    [
+     48.817495,
+     -121.281486
+    ],
+    [
+     48.817522,
+     -121.281533
+    ],
+    [
+     48.81748,
+     -121.281598
+    ],
+    [
+     48.817432,
+     -121.281622
+    ],
+    [
+     48.81733,
+     -121.281801
+    ],
+    [
+     48.817154,
+     -121.281999
+    ],
+    [
+     48.81713,
+     -121.28205
+    ],
+    [
+     48.817098,
+     -121.282087
+    ],
+    [
+     48.817095,
+     -121.282166
+    ],
+    [
+     48.817062,
+     -121.282252
+    ],
+    [
+     48.816924,
+     -121.282257
+    ],
+    [
+     48.816828,
+     -121.282323
+    ],
+    [
+     48.816801,
+     -121.282372
+    ],
+    [
+     48.816811,
+     -121.282404
+    ],
+    [
+     48.81676,
+     -121.282573
+    ],
+    [
+     48.816656,
+     -121.282641
+    ],
+    [
+     48.816621,
+     -121.282768
+    ],
+    [
+     48.816588,
+     -121.282843
+    ],
+    [
+     48.816554,
+     -121.282887
+    ],
+    [
+     48.816546,
+     -121.282975
+    ],
+    [
+     48.816552,
+     -121.283017
+    ],
+    [
+     48.816593,
+     -121.283097
+    ],
+    [
+     48.816622,
+     -121.283129
+    ],
+    [
+     48.816612,
+     -121.283284
+    ],
+    [
+     48.816591,
+     -121.283346
+    ],
+    [
+     48.816547,
+     -121.283411
+    ],
+    [
+     48.816487,
+     -121.283401
+    ],
+    [
+     48.816385,
+     -121.283344
+    ],
+    [
+     48.816362,
+     -121.283314
+    ],
+    [
+     48.816321,
+     -121.283299
+    ],
+    [
+     48.816285,
+     -121.283356
+    ],
+    [
+     48.816228,
+     -121.28351
+    ],
+    [
+     48.816239,
+     -121.283578
+    ],
+    [
+     48.816232,
+     -121.283686
+    ],
+    [
+     48.816171,
+     -121.283846
+    ],
+    [
+     48.816167,
+     -121.283916
+    ],
+    [
+     48.816119,
+     -121.284194
+    ],
+    [
+     48.816095,
+     -121.284253
+    ],
+    [
+     48.816055,
+     -121.284311
+    ],
+    [
+     48.816038,
+     -121.284456
+    ],
+    [
+     48.815968,
+     -121.284581
+    ],
+    [
+     48.815917,
+     -121.284635
+    ],
+    [
+     48.815885,
+     -121.284649
+    ],
+    [
+     48.81584,
+     -121.284711
+    ],
+    [
+     48.815821,
+     -121.284775
+    ],
+    [
+     48.815791,
+     -121.284827
+    ],
+    [
+     48.815763,
+     -121.284962
+    ],
+    [
+     48.81574,
+     -121.285015
+    ],
+    [
+     48.81573,
+     -121.285141
+    ],
+    [
+     48.815712,
+     -121.285165
+    ],
+    [
+     48.815652,
+     -121.285199
+    ],
+    [
+     48.815557,
+     -121.285334
+    ],
+    [
+     48.815512,
+     -121.285331
+    ],
+    [
+     48.81552,
+     -121.285366
+    ],
+    [
+     48.815454,
+     -121.285447
+    ],
+    [
+     48.815403,
+     -121.285541
+    ],
+    [
+     48.815379,
+     -121.285765
+    ],
+    [
+     48.815359,
+     -121.28582
+    ],
+    [
+     48.815298,
+     -121.285903
+    ],
+    [
+     48.815297,
+     -121.285945
+    ],
+    [
+     48.815272,
+     -121.286017
+    ],
+    [
+     48.81527,
+     -121.286061
+    ],
+    [
+     48.815233,
+     -121.286169
+    ],
+    [
+     48.815221,
+     -121.286193
+    ],
+    [
+     48.815181,
+     -121.286216
+    ],
+    [
+     48.815137,
+     -121.286269
+    ],
+    [
+     48.815118,
+     -121.28634
+    ],
+    [
+     48.815114,
+     -121.286404
+    ],
+    [
+     48.815097,
+     -121.286444
+    ],
+    [
+     48.815099,
+     -121.286508
+    ],
+    [
+     48.815082,
+     -121.28654
+    ],
+    [
+     48.815066,
+     -121.286636
+    ],
+    [
+     48.815136,
+     -121.286712
+    ],
+    [
+     48.815167,
+     -121.286784
+    ],
+    [
+     48.815154,
+     -121.286887
+    ],
+    [
+     48.815177,
+     -121.286937
+    ],
+    [
+     48.815161,
+     -121.286996
+    ],
+    [
+     48.81517,
+     -121.287032
+    ],
+    [
+     48.815164,
+     -121.287375
+    ],
+    [
+     48.815171,
+     -121.287464
+    ],
+    [
+     48.815119,
+     -121.287541
+    ],
+    [
+     48.815113,
+     -121.287582
+    ],
+    [
+     48.815125,
+     -121.287625
+    ],
+    [
+     48.815102,
+     -121.287976
+    ],
+    [
+     48.815114,
+     -121.288005
+    ],
+    [
+     48.81512,
+     -121.288079
+    ],
+    [
+     48.815109,
+     -121.288107
+    ],
+    [
+     48.815117,
+     -121.288141
+    ],
+    [
+     48.815099,
+     -121.288215
+    ],
+    [
+     48.815061,
+     -121.288225
+    ],
+    [
+     48.814943,
+     -121.288347
+    ],
+    [
+     48.814934,
+     -121.288463
+    ],
+    [
+     48.814888,
+     -121.288486
+    ],
+    [
+     48.814877,
+     -121.288529
+    ],
+    [
+     48.814893,
+     -121.288561
+    ],
+    [
+     48.814941,
+     -121.288614
+    ],
+    [
+     48.814935,
+     -121.288656
+    ],
+    [
+     48.814949,
+     -121.288697
+    ],
+    [
+     48.814944,
+     -121.288747
+    ],
+    [
+     48.814959,
+     -121.288794
+    ],
+    [
+     48.81496,
+     -121.288835
+    ],
+    [
+     48.815034,
+     -121.288849
+    ],
+    [
+     48.815047,
+     -121.289011
+    ],
+    [
+     48.815072,
+     -121.289078
+    ],
+    [
+     48.815107,
+     -121.289116
+    ],
+    [
+     48.815123,
+     -121.289218
+    ],
+    [
+     48.815109,
+     -121.289291
+    ],
+    [
+     48.815111,
+     -121.289363
+    ],
+    [
+     48.815101,
+     -121.289384
+    ],
+    [
+     48.815149,
+     -121.289477
+    ],
+    [
+     48.815114,
+     -121.289599
+    ],
+    [
+     48.815077,
+     -121.289677
+    ],
+    [
+     48.815044,
+     -121.289602
+    ],
+    [
+     48.814822,
+     -121.289873
+    ],
+    [
+     48.814802,
+     -121.289839
+    ],
+    [
+     48.814759,
+     -121.289855
+    ],
+    [
+     48.814722,
+     -121.289839
+    ],
+    [
+     48.814659,
+     -121.289867
+    ],
+    [
+     48.814604,
+     -121.289943
+    ],
+    [
+     48.814608,
+     -121.290015
+    ],
+    [
+     48.814588,
+     -121.290015
+    ],
+    [
+     48.814579,
+     -121.290089
+    ],
+    [
+     48.814629,
+     -121.290193
+    ],
+    [
+     48.814655,
+     -121.290317
+    ],
+    [
+     48.814685,
+     -121.290378
+    ],
+    [
+     48.814683,
+     -121.290413
+    ],
+    [
+     48.814702,
+     -121.290443
+    ],
+    [
+     48.814726,
+     -121.290553
+    ],
+    [
+     48.81476,
+     -121.290607
+    ],
+    [
+     48.814757,
+     -121.290886
+    ],
+    [
+     48.814791,
+     -121.291044
+    ],
+    [
+     48.814783,
+     -121.291127
+    ],
+    [
+     48.814819,
+     -121.291175
+    ],
+    [
+     48.814802,
+     -121.291264
+    ],
+    [
+     48.814815,
+     -121.291373
+    ],
+    [
+     48.814856,
+     -121.29147
+    ],
+    [
+     48.81486,
+     -121.291517
+    ],
+    [
+     48.814845,
+     -121.291582
+    ],
+    [
+     48.814845,
+     -121.291678
+    ],
+    [
+     48.814811,
+     -121.291991
+    ],
+    [
+     48.814757,
+     -121.292033
+    ],
+    [
+     48.814718,
+     -121.292187
+    ],
+    [
+     48.814674,
+     -121.292278
+    ],
+    [
+     48.814595,
+     -121.292397
+    ],
+    [
+     48.814482,
+     -121.292506
+    ],
+    [
+     48.81447,
+     -121.292572
+    ],
+    [
+     48.814468,
+     -121.292669
+    ],
+    [
+     48.81441,
+     -121.292773
+    ],
+    [
+     48.814415,
+     -121.292812
+    ],
+    [
+     48.81438,
+     -121.292861
+    ],
+    [
+     48.814346,
+     -121.29297
+    ],
+    [
+     48.814279,
+     -121.293001
+    ],
+    [
+     48.814281,
+     -121.293027
+    ],
+    [
+     48.814203,
+     -121.293124
+    ],
+    [
+     48.81417,
+     -121.293131
+    ],
+    [
+     48.814138,
+     -121.293193
+    ],
+    [
+     48.814091,
+     -121.293242
+    ],
+    [
+     48.814072,
+     -121.293281
+    ],
+    [
+     48.813997,
+     -121.29334
+    ],
+    [
+     48.813969,
+     -121.293384
+    ],
+    [
+     48.813907,
+     -121.293434
+    ],
+    [
+     48.813887,
+     -121.293474
+    ],
+    [
+     48.813808,
+     -121.293554
+    ],
+    [
+     48.813749,
+     -121.29367
+    ],
+    [
+     48.813673,
+     -121.293779
+    ],
+    [
+     48.813645,
+     -121.293847
+    ],
+    [
+     48.813624,
+     -121.293869
+    ],
+    [
+     48.813536,
+     -121.294164
+    ],
+    [
+     48.813481,
+     -121.294286
+    ],
+    [
+     48.813464,
+     -121.294372
+    ],
+    [
+     48.813439,
+     -121.2944
+    ],
+    [
+     48.813381,
+     -121.294427
+    ],
+    [
+     48.813337,
+     -121.294505
+    ],
+    [
+     48.813242,
+     -121.294539
+    ],
+    [
+     48.813215,
+     -121.29458
+    ],
+    [
+     48.813102,
+     -121.294613
+    ],
+    [
+     48.813055,
+     -121.294677
+    ],
+    [
+     48.813035,
+     -121.294856
+    ],
+    [
+     48.812988,
+     -121.294904
+    ],
+    [
+     48.812974,
+     -121.294936
+    ],
+    [
+     48.812891,
+     -121.295035
+    ],
+    [
+     48.812829,
+     -121.295144
+    ],
+    [
+     48.81278,
+     -121.295187
+    ],
+    [
+     48.812763,
+     -121.295223
+    ],
+    [
+     48.812754,
+     -121.295296
+    ],
+    [
+     48.812698,
+     -121.295406
+    ],
+    [
+     48.812663,
+     -121.295503
+    ],
+    [
+     48.812616,
+     -121.295578
+    ],
+    [
+     48.812562,
+     -121.295785
+    ],
+    [
+     48.812504,
+     -121.295907
+    ],
+    [
+     48.81241,
+     -121.296053
+    ],
+    [
+     48.81238,
+     -121.296169
+    ],
+    [
+     48.812306,
+     -121.296276
+    ],
+    [
+     48.812256,
+     -121.29637
+    ],
+    [
+     48.812187,
+     -121.296452
+    ],
+    [
+     48.812155,
+     -121.29655
+    ],
+    [
+     48.812048,
+     -121.296748
+    ],
+    [
+     48.812029,
+     -121.296823
+    ],
+    [
+     48.811973,
+     -121.296879
+    ],
+    [
+     48.81194,
+     -121.296926
+    ],
+    [
+     48.811808,
+     -121.297069
+    ],
+    [
+     48.811778,
+     -121.297083
+    ],
+    [
+     48.811759,
+     -121.297115
+    ],
+    [
+     48.811745,
+     -121.297148
+    ],
+    [
+     48.811738,
+     -121.297236
+    ],
+    [
+     48.811713,
+     -121.297257
+    ],
+    [
+     48.811682,
+     -121.297337
+    ],
+    [
+     48.811702,
+     -121.297372
+    ],
+    [
+     48.811704,
+     -121.297432
+    ],
+    [
+     48.811683,
+     -121.297468
+    ],
+    [
+     48.811677,
+     -121.297579
+    ],
+    [
+     48.811642,
+     -121.297642
+    ],
+    [
+     48.811617,
+     -121.297645
+    ],
+    [
+     48.811537,
+     -121.297738
+    ],
+    [
+     48.811506,
+     -121.297915
+    ],
+    [
+     48.811473,
+     -121.297932
+    ],
+    [
+     48.811436,
+     -121.298004
+    ],
+    [
+     48.811379,
+     -121.297981
+    ],
+    [
+     48.811302,
+     -121.297977
+    ],
+    [
+     48.811293,
+     -121.298013
+    ],
+    [
+     48.811244,
+     -121.297935
+    ],
+    [
+     48.811218,
+     -121.29795
+    ],
+    [
+     48.811208,
+     -121.298007
+    ],
+    [
+     48.811171,
+     -121.298054
+    ],
+    [
+     48.81114,
+     -121.29802
+    ],
+    [
+     48.81114,
+     -121.298077
+    ],
+    [
+     48.81116,
+     -121.298125
+    ],
+    [
+     48.811101,
+     -121.298067
+    ],
+    [
+     48.811075,
+     -121.298004
+    ],
+    [
+     48.811033,
+     -121.298089
+    ],
+    [
+     48.811003,
+     -121.29807
+    ],
+    [
+     48.810958,
+     -121.298132
+    ],
+    [
+     48.810959,
+     -121.298219
+    ],
+    [
+     48.81095,
+     -121.298187
+    ],
+    [
+     48.810923,
+     -121.298184
+    ],
+    [
+     48.810917,
+     -121.298139
+    ],
+    [
+     48.810872,
+     -121.298195
+    ],
+    [
+     48.810842,
+     -121.298174
+    ],
+    [
+     48.810787,
+     -121.298193
+    ],
+    [
+     48.810752,
+     -121.298297
+    ],
+    [
+     48.810695,
+     -121.298413
+    ],
+    [
+     48.810656,
+     -121.298427
+    ],
+    [
+     48.810682,
+     -121.298479
+    ],
+    [
+     48.810681,
+     -121.298511
+    ],
+    [
+     48.810564,
+     -121.298643
+    ],
+    [
+     48.810505,
+     -121.298662
+    ],
+    [
+     48.810498,
+     -121.298709
+    ],
+    [
+     48.810472,
+     -121.298734
+    ],
+    [
+     48.810405,
+     -121.298759
+    ],
+    [
+     48.810372,
+     -121.298824
+    ],
+    [
+     48.810354,
+     -121.298817
+    ],
+    [
+     48.810291,
+     -121.298823
+    ],
+    [
+     48.810284,
+     -121.298902
+    ],
+    [
+     48.810274,
+     -121.298868
+    ],
+    [
+     48.810247,
+     -121.298851
+    ],
+    [
+     48.810162,
+     -121.298829
+    ],
+    [
+     48.810114,
+     -121.298719
+    ],
+    [
+     48.810121,
+     -121.298773
+    ],
+    [
+     48.810093,
+     -121.298786
+    ],
+    [
+     48.810069,
+     -121.29882
+    ],
+    [
+     48.810048,
+     -121.298883
+    ],
+    [
+     48.810055,
+     -121.298921
+    ],
+    [
+     48.810032,
+     -121.298949
+    ],
+    [
+     48.809966,
+     -121.29896
+    ],
+    [
+     48.809921,
+     -121.298998
+    ],
+    [
+     48.809901,
+     -121.298966
+    ],
+    [
+     48.80984,
+     -121.299021
+    ],
+    [
+     48.809743,
+     -121.298969
+    ],
+    [
+     48.809684,
+     -121.298974
+    ],
+    [
+     48.809651,
+     -121.299011
+    ],
+    [
+     48.809613,
+     -121.298985
+    ],
+    [
+     48.809641,
+     -121.299026
+    ],
+    [
+     48.809635,
+     -121.29908
+    ],
+    [
+     48.809572,
+     -121.299179
+    ],
+    [
+     48.809569,
+     -121.299226
+    ],
+    [
+     48.809524,
+     -121.299229
+    ],
+    [
+     48.809461,
+     -121.299318
+    ],
+    [
+     48.809434,
+     -121.299337
+    ],
+    [
+     48.809443,
+     -121.299387
+    ],
+    [
+     48.809438,
+     -121.299583
+    ],
+    [
+     48.809401,
+     -121.299592
+    ],
+    [
+     48.809481,
+     -121.299513
+    ],
+    [
+     48.809472,
+     -121.29948
+    ],
+    [
+     48.809489,
+     -121.299449
+    ],
+    [
+     48.809464,
+     -121.299388
+    ],
+    [
+     48.809449,
+     -121.299429
+    ],
+    [
+     48.809493,
+     -121.299455
+    ],
+    [
+     48.80962,
+     -121.299707
+    ],
+    [
+     48.809643,
+     -121.299867
+    ],
+    [
+     48.809666,
+     -121.299907
+    ],
+    [
+     48.80967,
+     -121.29998
+    ],
+    [
+     48.809723,
+     -121.300116
+    ],
+    [
+     48.809738,
+     -121.300189
+    ],
+    [
+     48.809797,
+     -121.300214
+    ],
+    [
+     48.809758,
+     -121.300371
+    ],
+    [
+     48.80972,
+     -121.30043
+    ],
+    [
+     48.809664,
+     -121.300473
+    ],
+    [
+     48.809645,
+     -121.300535
+    ],
+    [
+     48.809709,
+     -121.300953
+    ],
+    [
+     48.8097,
+     -121.301008
+    ],
+    [
+     48.809735,
+     -121.301062
+    ],
+    [
+     48.809716,
+     -121.301254
+    ],
+    [
+     48.809695,
+     -121.301314
+    ],
+    [
+     48.809699,
+     -121.301429
+    ],
+    [
+     48.80972,
+     -121.301491
+    ],
+    [
+     48.809809,
+     -121.301535
+    ],
+    [
+     48.809848,
+     -121.301565
+    ],
+    [
+     48.809896,
+     -121.301572
+    ],
+    [
+     48.809932,
+     -121.301605
+    ],
+    [
+     48.809872,
+     -121.301572
+    ],
+    [
+     48.809902,
+     -121.301556
+    ],
+    [
+     48.809958,
+     -121.301591
+    ],
+    [
+     48.809883,
+     -121.301527
+    ],
+    [
+     48.809861,
+     -121.301469
+    ],
+    [
+     48.809889,
+     -121.301505
+    ],
+    [
+     48.809942,
+     -121.301545
+    ],
+    [
+     48.809974,
+     -121.301555
+    ],
+    [
+     48.810004,
+     -121.301617
+    ],
+    [
+     48.810072,
+     -121.301618
+    ],
+    [
+     48.810073,
+     -121.301575
+    ],
+    [
+     48.810058,
+     -121.301516
+    ],
+    [
+     48.810078,
+     -121.30157
+    ],
+    [
+     48.81009,
+     -121.301508
+    ],
+    [
+     48.810131,
+     -121.301539
+    ],
+    [
+     48.810204,
+     -121.301502
+    ],
+    [
+     48.810313,
+     -121.301494
+    ],
+    [
+     48.810351,
+     -121.301501
+    ],
+    [
+     48.810429,
+     -121.301456
+    ],
+    [
+     48.810464,
+     -121.301458
+    ],
+    [
+     48.810541,
+     -121.301424
+    ],
+    [
+     48.810591,
+     -121.301432
+    ],
+    [
+     48.810662,
+     -121.301398
+    ],
+    [
+     48.810689,
+     -121.301407
+    ],
+    [
+     48.810724,
+     -121.301405
+    ],
+    [
+     48.810772,
+     -121.301422
+    ],
+    [
+     48.810807,
+     -121.301398
+    ],
+    [
+     48.810828,
+     -121.301512
+    ],
+    [
+     48.810805,
+     -121.301557
+    ],
+    [
+     48.810803,
+     -121.301667
+    ],
+    [
+     48.810785,
+     -121.301741
+    ],
+    [
+     48.810811,
+     -121.301828
+    ],
+    [
+     48.810805,
+     -121.301894
+    ],
+    [
+     48.810814,
+     -121.301916
+    ],
+    [
+     48.810801,
+     -121.301978
+    ],
+    [
+     48.810803,
+     -121.302041
+    ],
+    [
+     48.810797,
+     -121.302064
+    ],
+    [
+     48.81077,
+     -121.302096
+    ],
+    [
+     48.810762,
+     -121.302206
+    ],
+    [
+     48.810707,
+     -121.30227
+    ],
+    [
+     48.810682,
+     -121.302319
+    ],
+    [
+     48.810635,
+     -121.302379
+    ],
+    [
+     48.81054,
+     -121.302582
+    ],
+    [
+     48.810459,
+     -121.302671
+    ],
+    [
+     48.810432,
+     -121.302727
+    ],
+    [
+     48.810367,
+     -121.302794
+    ],
+    [
+     48.810462,
+     -121.302864
+    ],
+    [
+     48.810514,
+     -121.302933
+    ],
+    [
+     48.810578,
+     -121.303105
+    ],
+    [
+     48.810667,
+     -121.303233
+    ],
+    [
+     48.810673,
+     -121.303281
+    ],
+    [
+     48.81071,
+     -121.303289
+    ],
+    [
+     48.810844,
+     -121.30362
+    ],
+    [
+     48.81091,
+     -121.303883
+    ],
+    [
+     48.810952,
+     -121.304104
+    ],
+    [
+     48.810978,
+     -121.304174
+    ],
+    [
+     48.811001,
+     -121.304196
+    ],
+    [
+     48.811024,
+     -121.304422
+    ],
+    [
+     48.811063,
+     -121.304501
+    ],
+    [
+     48.811069,
+     -121.30478
+    ],
+    [
+     48.811101,
+     -121.304861
+    ],
+    [
+     48.811166,
+     -121.304856
+    ],
+    [
+     48.811215,
+     -121.304822
+    ],
+    [
+     48.811255,
+     -121.304836
+    ],
+    [
+     48.811325,
+     -121.304819
+    ],
+    [
+     48.811363,
+     -121.304821
+    ],
+    [
+     48.811398,
+     -121.304871
+    ],
+    [
+     48.811419,
+     -121.304875
+    ],
+    [
+     48.811443,
+     -121.30494
+    ],
+    [
+     48.8115,
+     -121.304993
+    ],
+    [
+     48.811559,
+     -121.305216
+    ],
+    [
+     48.811576,
+     -121.305381
+    ],
+    [
+     48.811568,
+     -121.305437
+    ],
+    [
+     48.811589,
+     -121.305565
+    ],
+    [
+     48.811565,
+     -121.305962
+    ],
+    [
+     48.811601,
+     -121.306314
+    ],
+    [
+     48.811644,
+     -121.306469
+    ],
+    [
+     48.8117,
+     -121.306755
+    ],
+    [
+     48.811698,
+     -121.306877
+    ],
+    [
+     48.811719,
+     -121.306963
+    ],
+    [
+     48.811711,
+     -121.307029
+    ],
+    [
+     48.811777,
+     -121.307248
+    ],
+    [
+     48.811782,
+     -121.307306
+    ],
+    [
+     48.811824,
+     -121.307463
+    ],
+    [
+     48.811827,
+     -121.307641
+    ],
+    [
+     48.811821,
+     -121.30775
+    ],
+    [
+     48.81178,
+     -121.307881
+    ],
+    [
+     48.811721,
+     -121.308222
+    ],
+    [
+     48.811697,
+     -121.308256
+    ],
+    [
+     48.811697,
+     -121.30833
+    ],
+    [
+     48.811672,
+     -121.308385
+    ],
+    [
+     48.811666,
+     -121.308425
+    ],
+    [
+     48.811554,
+     -121.308505
+    ],
+    [
+     48.811508,
+     -121.308589
+    ],
+    [
+     48.811331,
+     -121.308805
+    ],
+    [
+     48.811223,
+     -121.308891
+    ],
+    [
+     48.811191,
+     -121.3089
+    ],
+    [
+     48.811164,
+     -121.308921
+    ],
+    [
+     48.81112,
+     -121.308997
+    ],
+    [
+     48.811104,
+     -121.309056
+    ],
+    [
+     48.811049,
+     -121.309118
+    ],
+    [
+     48.810905,
+     -121.309198
+    ],
+    [
+     48.810753,
+     -121.309309
+    ],
+    [
+     48.810675,
+     -121.309331
+    ],
+    [
+     48.810488,
+     -121.309537
+    ],
+    [
+     48.810457,
+     -121.309545
+    ],
+    [
+     48.810442,
+     -121.309584
+    ],
+    [
+     48.810416,
+     -121.30958
+    ],
+    [
+     48.810384,
+     -121.309596
+    ],
+    [
+     48.810296,
+     -121.309683
+    ],
+    [
+     48.810263,
+     -121.309698
+    ],
+    [
+     48.810221,
+     -121.309762
+    ],
+    [
+     48.810207,
+     -121.309807
+    ],
+    [
+     48.810027,
+     -121.310045
+    ],
+    [
+     48.809961,
+     -121.310182
+    ],
+    [
+     48.809941,
+     -121.310261
+    ],
+    [
+     48.809947,
+     -121.310335
+    ],
+    [
+     48.809914,
+     -121.310369
+    ],
+    [
+     48.809938,
+     -121.310425
+    ],
+    [
+     48.810001,
+     -121.310409
+    ],
+    [
+     48.810093,
+     -121.31043
+    ],
+    [
+     48.810177,
+     -121.310398
+    ],
+    [
+     48.810214,
+     -121.310419
+    ],
+    [
+     48.810226,
+     -121.310498
+    ],
+    [
+     48.810213,
+     -121.310604
+    ],
+    [
+     48.810171,
+     -121.310734
+    ],
+    [
+     48.810149,
+     -121.310756
+    ],
+    [
+     48.810205,
+     -121.3108
+    ],
+    [
+     48.810223,
+     -121.310833
+    ],
+    [
+     48.810242,
+     -121.310837
+    ],
+    [
+     48.810271,
+     -121.31091
+    ],
+    [
+     48.810365,
+     -121.311018
+    ],
+    [
+     48.810544,
+     -121.311185
+    ],
+    [
+     48.810564,
+     -121.311234
+    ],
+    [
+     48.810563,
+     -121.311262
+    ],
+    [
+     48.810659,
+     -121.311398
+    ],
+    [
+     48.810733,
+     -121.311538
+    ],
+    [
+     48.810768,
+     -121.311563
+    ],
+    [
+     48.810792,
+     -121.311628
+    ],
+    [
+     48.81082,
+     -121.311651
+    ],
+    [
+     48.810846,
+     -121.311716
+    ],
+    [
+     48.810879,
+     -121.311763
+    ],
+    [
+     48.810872,
+     -121.31185
+    ],
+    [
+     48.810796,
+     -121.311985
+    ],
+    [
+     48.810761,
+     -121.312106
+    ],
+    [
+     48.81076,
+     -121.31214
+    ],
+    [
+     48.810777,
+     -121.311976
+    ],
+    [
+     48.810784,
+     -121.312002
+    ],
+    [
+     48.810832,
+     -121.311874
+    ],
+    [
+     48.810905,
+     -121.311729
+    ],
+    [
+     48.810883,
+     -121.311697
+    ],
+    [
+     48.810856,
+     -121.311626
+    ],
+    [
+     48.810781,
+     -121.311529
+    ],
+    [
+     48.810733,
+     -121.31143
+    ],
+    [
+     48.810704,
+     -121.311394
+    ],
+    [
+     48.810685,
+     -121.311342
+    ],
+    [
+     48.810594,
+     -121.311213
+    ],
+    [
+     48.810586,
+     -121.311182
+    ],
+    [
+     48.810537,
+     -121.311157
+    ],
+    [
+     48.810475,
+     -121.311108
+    ],
+    [
+     48.81043,
+     -121.3111
+    ],
+    [
+     48.810394,
+     -121.311075
+    ],
+    [
+     48.810362,
+     -121.310986
+    ],
+    [
+     48.810305,
+     -121.310937
+    ],
+    [
+     48.810269,
+     -121.310891
+    ],
+    [
+     48.81027,
+     -121.310851
+    ],
+    [
+     48.810189,
+     -121.310681
+    ],
+    [
+     48.810161,
+     -121.310594
+    ],
+    [
+     48.810191,
+     -121.310527
+    ],
+    [
+     48.810204,
+     -121.310461
+    ],
+    [
+     48.810193,
+     -121.310408
+    ],
+    [
+     48.810171,
+     -121.310428
+    ],
+    [
+     48.810198,
+     -121.310396
+    ],
+    [
+     48.810116,
+     -121.310419
+    ],
+    [
+     48.810033,
+     -121.310425
+    ],
+    [
+     48.809964,
+     -121.31039
+    ],
+    [
+     48.80993,
+     -121.310339
+    ],
+    [
+     48.809917,
+     -121.310284
+    ],
+    [
+     48.809929,
+     -121.310199
+    ],
+    [
+     48.809966,
+     -121.310088
+    ],
+    [
+     48.810023,
+     -121.309987
+    ],
+    [
+     48.810138,
+     -121.309802
+    ],
+    [
+     48.810243,
+     -121.309655
+    ],
+    [
+     48.810296,
+     -121.30962
+    ],
+    [
+     48.810321,
+     -121.309584
+    ],
+    [
+     48.810426,
+     -121.30948
+    ],
+    [
+     48.810459,
+     -121.309465
+    ],
+    [
+     48.810766,
+     -121.309189
+    ],
+    [
+     48.811065,
+     -121.30899
+    ],
+    [
+     48.811121,
+     -121.308932
+    ],
+    [
+     48.811179,
+     -121.30884
+    ],
+    [
+     48.811284,
+     -121.308751
+    ],
+    [
+     48.811316,
+     -121.308689
+    ],
+    [
+     48.811396,
+     -121.308589
+    ],
+    [
+     48.811477,
+     -121.308465
+    ],
+    [
+     48.811603,
+     -121.30835
+    ],
+    [
+     48.811647,
+     -121.308284
+    ],
+    [
+     48.811705,
+     -121.307989
+    ],
+    [
+     48.811778,
+     -121.307764
+    ],
+    [
+     48.811788,
+     -121.307663
+    ],
+    [
+     48.811779,
+     -121.307419
+    ],
+    [
+     48.811713,
+     -121.307122
+    ],
+    [
+     48.811666,
+     -121.30704
+    ],
+    [
+     48.811675,
+     -121.306864
+    ],
+    [
+     48.811665,
+     -121.306803
+    ],
+    [
+     48.811669,
+     -121.306723
+    ],
+    [
+     48.811615,
+     -121.306542
+    ],
+    [
+     48.811581,
+     -121.306317
+    ],
+    [
+     48.811526,
+     -121.30611
+    ],
+    [
+     48.811524,
+     -121.305682
+    ],
+    [
+     48.811511,
+     -121.305621
+    ],
+    [
+     48.811507,
+     -121.305437
+    ],
+    [
+     48.811489,
+     -121.305295
+    ],
+    [
+     48.811466,
+     -121.305223
+    ],
+    [
+     48.811472,
+     -121.305103
+    ],
+    [
+     48.811352,
+     -121.304864
+    ],
+    [
+     48.811309,
+     -121.30484
+    ],
+    [
+     48.811208,
+     -121.30487
+    ],
+    [
+     48.811093,
+     -121.304923
+    ],
+    [
+     48.811009,
+     -121.304855
+    ],
+    [
+     48.810981,
+     -121.304783
+    ],
+    [
+     48.810948,
+     -121.304649
+    ],
+    [
+     48.810891,
+     -121.304277
+    ],
+    [
+     48.810827,
+     -121.304003
+    ],
+    [
+     48.810784,
+     -121.30383
+    ],
+    [
+     48.810734,
+     -121.303695
+    ],
+    [
+     48.810773,
+     -121.303767
+    ],
+    [
+     48.810785,
+     -121.303632
+    ],
+    [
+     48.81075,
+     -121.303523
+    ],
+    [
+     48.810698,
+     -121.303406
+    ],
+    [
+     48.810642,
+     -121.303326
+    ],
+    [
+     48.810608,
+     -121.303227
+    ],
+    [
+     48.81054,
+     -121.303088
+    ],
+    [
+     48.810486,
+     -121.303038
+    ],
+    [
+     48.810472,
+     -121.303
+    ],
+    [
+     48.810384,
+     -121.302901
+    ],
+    [
+     48.810355,
+     -121.30288
+    ],
+    [
+     48.810362,
+     -121.302844
+    ],
+    [
+     48.810764,
+     -121.302819
+    ],
+    [
+     48.810591,
+     -121.302815
+    ],
+    [
+     48.810439,
+     -121.302862
+    ],
+    [
+     48.810408,
+     -121.302854
+    ],
+    [
+     48.810345,
+     -121.302814
+    ],
+    [
+     48.810351,
+     -121.302757
+    ],
+    [
+     48.810405,
+     -121.302684
+    ],
+    [
+     48.810412,
+     -121.302631
+    ],
+    [
+     48.810548,
+     -121.302403
+    ],
+    [
+     48.810589,
+     -121.302311
+    ],
+    [
+     48.810634,
+     -121.30215
+    ],
+    [
+     48.810617,
+     -121.302085
+    ],
+    [
+     48.810635,
+     -121.302
+    ],
+    [
+     48.810603,
+     -121.30192
+    ],
+    [
+     48.810606,
+     -121.301802
+    ],
+    [
+     48.810659,
+     -121.301542
+    ],
+    [
+     48.810657,
+     -121.301504
+    ],
+    [
+     48.810643,
+     -121.301466
+    ],
+    [
+     48.810589,
+     -121.301422
+    ],
+    [
+     48.810532,
+     -121.301421
+    ],
+    [
+     48.810463,
+     -121.301446
+    ],
+    [
+     48.810397,
+     -121.301497
+    ],
+    [
+     48.810324,
+     -121.301529
+    ],
+    [
+     48.810269,
+     -121.30158
+    ],
+    [
+     48.810225,
+     -121.301585
+    ],
+    [
+     48.810123,
+     -121.301536
+    ],
+    [
+     48.809973,
+     -121.301495
+    ],
+    [
+     48.809907,
+     -121.301458
+    ],
+    [
+     48.809868,
+     -121.301455
+    ],
+    [
+     48.809805,
+     -121.301424
+    ],
+    [
+     48.809788,
+     -121.301399
+    ],
+    [
+     48.809754,
+     -121.301247
+    ],
+    [
+     48.809763,
+     -121.301188
+    ],
+    [
+     48.809748,
+     -121.301117
+    ],
+    [
+     48.809762,
+     -121.30104
+    ],
+    [
+     48.8097,
+     -121.301043
+    ],
+    [
+     48.809685,
+     -121.300943
+    ],
+    [
+     48.80972,
+     -121.300832
+    ],
+    [
+     48.809695,
+     -121.300688
+    ],
+    [
+     48.809708,
+     -121.300629
+    ],
+    [
+     48.809691,
+     -121.300561
+    ],
+    [
+     48.809686,
+     -121.3004
+    ],
+    [
+     48.809703,
+     -121.300239
+    ],
+    [
+     48.809694,
+     -121.300164
+    ],
+    [
+     48.809703,
+     -121.299992
+    ],
+    [
+     48.809696,
+     -121.299951
+    ],
+    [
+     48.809639,
+     -121.299967
+    ],
+    [
+     48.80965,
+     -121.29993
+    ],
+    [
+     48.809646,
+     -121.299857
+    ],
+    [
+     48.809634,
+     -121.299818
+    ],
+    [
+     48.809649,
+     -121.299691
+    ],
+    [
+     48.809593,
+     -121.2997
+    ],
+    [
+     48.809591,
+     -121.29952
+    ],
+    [
+     48.809569,
+     -121.299447
+    ],
+    [
+     48.809577,
+     -121.29935
+    ],
+    [
+     48.809565,
+     -121.299278
+    ],
+    [
+     48.809541,
+     -121.299248
+    ],
+    [
+     48.809496,
+     -121.299268
+    ],
+    [
+     48.809413,
+     -121.299336
+    ],
+    [
+     48.809398,
+     -121.299316
+    ],
+    [
+     48.809424,
+     -121.299242
+    ],
+    [
+     48.809532,
+     -121.299162
+    ],
+    [
+     48.80955,
+     -121.299087
+    ],
+    [
+     48.809618,
+     -121.299019
+    ],
+    [
+     48.809769,
+     -121.299013
+    ],
+    [
+     48.809882,
+     -121.299031
+    ],
+    [
+     48.809912,
+     -121.299018
+    ],
+    [
+     48.810154,
+     -121.298767
+    ],
+    [
+     48.810134,
+     -121.298734
+    ],
+    [
+     48.810166,
+     -121.298626
+    ],
+    [
+     48.810208,
+     -121.298597
+    ],
+    [
+     48.810248,
+     -121.298552
+    ],
+    [
+     48.81031,
+     -121.298438
+    ],
+    [
+     48.810338,
+     -121.298407
+    ],
+    [
+     48.810351,
+     -121.298431
+    ],
+    [
+     48.810413,
+     -121.298402
+    ],
+    [
+     48.810739,
+     -121.298298
+    ],
+    [
+     48.810725,
+     -121.298251
+    ],
+    [
+     48.810772,
+     -121.298129
+    ],
+    [
+     48.81084,
+     -121.298167
+    ],
+    [
+     48.810963,
+     -121.298203
+    ],
+    [
+     48.810903,
+     -121.298124
+    ],
+    [
+     48.810961,
+     -121.298048
+    ],
+    [
+     48.810957,
+     -121.298026
+    ],
+    [
+     48.810966,
+     -121.297984
+    ],
+    [
+     48.811073,
+     -121.298018
+    ],
+    [
+     48.811098,
+     -121.297978
+    ],
+    [
+     48.811502,
+     -121.298242
+    ],
+    [
+     48.811457,
+     -121.298264
+    ],
+    [
+     48.811431,
+     -121.298293
+    ],
+    [
+     48.81131,
+     -121.298018
+    ],
+    [
+     48.811283,
+     -121.297902
+    ],
+    [
+     48.811304,
+     -121.297972
+    ],
+    [
+     48.811346,
+     -121.297986
+    ],
+    [
+     48.811396,
+     -121.297953
+    ],
+    [
+     48.811429,
+     -121.297947
+    ],
+    [
+     48.811449,
+     -121.297713
+    ],
+    [
+     48.811519,
+     -121.297508
+    ],
+    [
+     48.811525,
+     -121.297462
+    ],
+    [
+     48.811563,
+     -121.297378
+    ],
+    [
+     48.811572,
+     -121.297299
+    ],
+    [
+     48.811676,
+     -121.297151
+    ],
+    [
+     48.811707,
+     -121.297074
+    ],
+    [
+     48.811792,
+     -121.296983
+    ],
+    [
+     48.811823,
+     -121.296919
+    ],
+    [
+     48.811859,
+     -121.296888
+    ],
+    [
+     48.811929,
+     -121.296879
+    ],
+    [
+     48.811935,
+     -121.296866
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "mountaineering",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 38,
+    "summitTimeHrs": 13,
+    "descentTimeHrs": 10,
+    "approachTimeHrs": 15,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 10,
+      "note": "Water taxi across Ross Lake to Big Beaver Landing, then 11-12 miles up the Big Beaver Trail followed by a short bushwhack up Access Creek to a camp at the base of Access Col. Long …",
+      "fromTo": "Boat + hike to Access Basin",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5,
+      "note": "Steep scree and heather slopes up to Access Col (~6,100 ft), then down and across to Luna Pass where most parties pitch high camp for the summit push. Ice axe useful on the col's h…",
+      "fromTo": "Over Access Col to a high camp at Luna Pass",
+      "section": "Approach"
+     },
+     {
+      "hrs": 13,
+      "note": "Long alpine day: traverse below the Luna/East Fury ridge, gain the Southeast Glacier, and scramble/snow-climb to the summit before reversing the whole thing back to camp. Expect a …",
+      "fromTo": "Summit day — East Peak via the Southeast Glacier",
+      "section": "Climb"
+     },
+     {
+      "hrs": 10,
+      "note": "Reverse the whole approach: down to Access Basin, out the Big Beaver Trail, and back to the landing in time for the water taxi. A long, tiring exit day after three hard days.",
+      "fromTo": "Hike out",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Small, selective rock rack: 2–3 nuts (sizes #4–#6 Black Diamond or equivalent), 2–3 cams (sizes #0–#2 for the Class 5.0 crack step). Rock quality is variable (mix of good granodiorite and loose choss); expect poor protection and friable anchors. Primarily a protection rack for the single short technical step; most route management via scrambling and glacier travel.",
+   "what_to_bring": [
+    "full glacier kit",
+    "small rock rack",
+    "navigation",
+    "multi-day provisions"
+   ],
+   "pro_tips": [
+    "Watch for a small arrow carved into a log at the Big Beaver Trail cutoff marking the unmaintained Access Creek climbers' path.",
+    "Expect the Access Creek bushwhack to be genuinely brushy (devil's club, slide alder) — long sleeves help.",
+    "Rope up and move carefully through the moat/bergschrund transition rather than soloing marginal snow there."
+   ],
+   "watch_out": [
+    "The moat/bergschrund crossing near the base of the summit snow slopes — steep (up to ~50°), exposed, and the site of a documented serious fall and helicopter rescue in June 2025."
+   ],
+   "pro_needs": "Minimal rock climbing protection needed. The Class 5.0 rock step can be approached unroped by experienced alpinists. One 25-meter rope can be established for the short rappel descent. Glacier travel relies on snow anchor technology (flukes) rather than rock protection. Confidence on exposed Class 3–4 scrambling and efficient rope management required; this is an expedition-style climb.",
+   "best_season": "Mid-July through early September",
+   "high_point_ft": 8356,
+   "aid_grade": null,
+   "approach": "From the Ross Dam Trailhead at Happy Flats on SR 20 (~milepost 134, 2,150 ft), it's about 1 mile down to the Ross Lake water taxi dock; cross the lake by taxi (or paddle) to Big Beaver Landing. From the landing, follow the Big Beaver Creek Trail 11.5 miles up-valley — a dry, well-maintained, largely flat trail taking roughly 5 hours, passing Luna Camp around the 4.7-hour mark. About 29 minutes beyond Luna Camp, a large (~15-inch-diameter) log crossing of Big Beaver Creek marks the turnoff: leave the trail here and head up the Access Creek drainage. This next mile is a real bushwhack, gaining roughly 1,900 ft (2,400 ft to 4,300 ft): start in valley-bottom devil's club, cross to the creek's north side around 3,800 ft where brush pinches in on both banks, then climb through moderately dense huckleberry brush before the final half-mile of talus into Access Basin — watch for deadfall, thick undercover, and biting insects. From Access Basin, a long, steep, loose scree chute gains ~1,800 ft to 6,100-ft Access Col (2-3 hours; can be brutally hot with no shade in the chute). From the col, traverse 3-4 miles of notoriously steep heather (an axe is worthwhile for security on the short, steep sections) and talus to Luna Pass, where most parties camp near lingering snow patches for water. From Luna Pass, skirt a rock knob that towers ~100 ft over the pass via a broad ledge on its northwest face to reach the surprisingly gentle Northeast Ridge crest, then follow the ridge's many short ups and downs — including a ~25-ft rock step with a climbable vertical crack (Class 3) — toward Fury. Where the ridge crest drops away, descend a steep, narrow heather chute (~500 ft) into a talus basin around 6,500 ft, then contour southwest across talus, heather, and polished slabs to a rocky rib that blocks easy passage; the lower of two ledge options (exposed scrambling on wet, mossy rock and steep heather) is generally preferred to the looser, more exposed upper ledge.",
+   "descent_text": "This is fundamentally a walk-off/downclimb along the ascent line, not a rappel-heavy route, though one short technical step is often rappelled. From the summit, reverse the steep snowfield on a running belay with flukes (take particular care on the upper, firmer section — crampon-balling on wet snow has been reported), then retrace the Southeast Glacier descent, working back around the bergschrund. Regain the Northeast Ridge crest (parties often angle up sooner than the ascent line to save time) and reverse the rocky-rib traverse and heather-chute climb back to the ridge. At the ~25-ft rock step, many parties opt for a short single-pitch rappel rather than downclimbing the crack — a single 30m (or even shorter) rope is plenty, and the anchor is whatever natural gear (cams/nuts/slings on a horn or chockstone) the party builds, as there is no fixed/bolted station reported at this feature. From there, finish the ridge traverse back to Luna Pass. The following day, reverse the full approach: the heather/talus traverse and scree descent back to Access Col, the steep 1,800-ft drop into Access Basin, the Access Creek bushwhack (often taken as a more direct, steeper line straight down the brushy hillside rather than retracing the ascent line) back to the Big Beaver Creek log crossing, then the 11.5-mile Big Beaver Creek Trail out to the water taxi landing and back across Ross Lake to the Ross Dam Trailhead. A published trip report logged roughly 6 hours from the summit back to Luna Pass camp, and the full round trip (camp to camp to trailhead) as a 4-day, ~42-mile, ~13,000 ft trip.",
+   "bail": "Bailing requires reversing committing glacier terrain and a very long exit; plan conservatively.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1–2",
+     "notes": "Well-maintained 11.5-mile trail, pleasant hiking with stream crossings. Elevation gain 950 ft. Typically 4–5 hours.",
+     "pitch": "Approach: Big Beaver Creek Trail (maintained)"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Dense brush, devil's club, and talus. Off-trail navigation. Steep scree above 3,800 ft. Approximately 4–5 hours, 1,500 ft gain.",
+     "pitch": "Access Creek Bushwhack"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Steep heather and talus slopes. Possible crampon use for icy patches. Approximately 4.6 hours, 1,800 ft gain.",
+     "pitch": "Access Col to Luna Pass ridge traverse"
+    },
+    {
+     "grade": "Class 3–4",
+     "notes": "Rocky knob, winding ridge with alternating ups/downs. Narrow ramp descent on left (steep, exposed). Vertical drop-offs present. Approximately 2.5 hours.",
+     "pitch": "Luna Pass to summit ridge approach"
+    },
+    {
+     "grade": "5.0",
+     "notes": "25-foot vertical crack. Unroped passage feasible for experienced scramblers. Can be rope-protected or downclimbed. Rock quality poor (granodiorite with choss). 30–60 minutes.",
+     "pitch": "Class 5.0 rock step"
+    },
+    {
+     "grade": "Class 3–4",
+     "notes": "Steep chute, loose rock, exposure. Approximately 500 ft descent to 6,500 ft. Route-finding required. 1–1.5 hours.",
+     "pitch": "Heather chute descent to talus"
+    },
+    {
+     "grade": "Class 3",
+     "notes": "Exposed ledge traverse (described as 'diciest' section by route documentation). Rotten rock. Approximately 1 hour to glacier base.",
+     "pitch": "Talus and polished slabs to glacier"
+    },
+    {
+     "grade": "II",
+     "notes": "Approximately 300 ft vertical of 30–40 degree slopes, steepening to 50 degrees near summit. Large bergschrund requires direct ascent. S-shaped snowfield with crevasses. Running belay or solo travel depending on party experience. Approximately 1.5–2 hours to summit snowpatch.",
+     "pitch": "Southeast Glacier ascent"
+    },
+    {
+     "grade": "50 degrees",
+     "notes": "40–50 degree slope, approximately 100 ft, poor runout. Narrow snow arête at top with two rocky points. Southwest point is higher, more accessible summit. Rock quality poor. Crampons essential. 30–45 minutes.",
+     "pitch": "Final summit snowpatch"
+    }
+   ],
+   "itinerary": {
+    "cal": "Reaching Big Beaver Landing requires Ross Lake Resort's water taxi, which typically runs late May through mid-October — confirm the current schedule before planning dates.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Water taxi across Ross Lake to Big Beaver Landing, then 11-12 miles up the Big Beaver Trail followed by a short bushwhack up Access Creek to a camp at the base of Access Col. Long day, mostly flat-to-moderate trail.",
+      "hours": 10,
+      "miles": 12,
+      "title": "Boat + hike to Access Basin",
+      "gainFt": 2700,
+      "lossFt": 0,
+      "packLb": 55,
+      "schedule": [
+       {
+        "time": "8:00 AM",
+        "label": "Leave Ross Dam trailhead",
+        "detail": ""
+       },
+       {
+        "time": "~2:00 PM",
+        "label": "Water taxi drops at Big Beaver Landing",
+        "detail": ""
+       },
+       {
+        "time": "7:00 PM",
+        "label": "Reach Access Basin camp",
+        "detail": "~4,300 ft, after bushwhacking up Access Creek"
+       }
+      ],
+      "objective": "Reach camp at Access Basin (~4,300 ft)"
+     },
+     {
+      "n": 2,
+      "note": "Steep scree and heather slopes up to Access Col (~6,100 ft), then down and across to Luna Pass where most parties pitch high camp for the summit push. Ice axe useful on the col's heather in early season.",
+      "hours": 5,
+      "miles": 3,
+      "title": "Over Access Col to a high camp at Luna Pass",
+      "gainFt": 2700,
+      "lossFt": 300,
+      "packLb": 50,
+      "schedule": [],
+      "objective": "Establish high camp near Luna Pass"
+     },
+     {
+      "n": 3,
+      "note": "Long alpine day: traverse below the Luna/East Fury ridge, gain the Southeast Glacier, and scramble/snow-climb to the summit before reversing the whole thing back to camp. Expect a 25-ft rock step and glacier slopes to ~40-50° near the top.",
+      "hours": 13,
+      "miles": 5,
+      "title": "Summit day — East Peak via the Southeast Glacier",
+      "gainFt": 1500,
+      "lossFt": 1500,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Depart high camp",
+        "detail": ""
+       },
+       {
+        "time": "10:00 AM",
+        "label": "Reach the Southeast Glacier",
+        "detail": "~4.5 hr from camp"
+       },
+       {
+        "time": "1:30 PM",
+        "label": "Summit East Peak",
+        "detail": "~8 hr from camp"
+       },
+       {
+        "time": "7:30 PM",
+        "label": "Back at high camp",
+        "detail": "~6 hr descent"
+       }
+      ],
+      "objective": "Climb East Fury's summit and return to camp"
+     },
+     {
+      "n": 4,
+      "note": "Reverse the whole approach: down to Access Basin, out the Big Beaver Trail, and back to the landing in time for the water taxi. A long, tiring exit day after three hard days.",
+      "hours": 10,
+      "miles": 15,
+      "title": "Hike out",
+      "gainFt": 0,
+      "lossFt": 5400,
+      "packLb": 50,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Break camp, descend from Luna Pass",
+        "detail": ""
+       },
+       {
+        "time": "12:00 PM",
+        "label": "Reach Big Beaver Trail",
+        "detail": "~6 hr from camp"
+       },
+       {
+        "time": "5:00 PM",
+        "label": "Arrive Big Beaver Landing",
+        "detail": "catch water taxi back to Ross Dam"
+       }
+      ],
+      "objective": "Return to Ross Lake and the trailhead"
+     }
+    ],
+    "totalNote": "A remote 4-day round trip (~35-40 mi, ~13,000 ft of cumulative gain/loss) built around a big 13-14 hour summit push from a high camp near Luna Pass."
+   },
+   "access": {
+    "fees": "$10 per person per night backcountry camping fee (youth 15 and under free); $6 non-refundable Recreation.gov reservation fee if booking in advance (not charged for walk-up permits, subject to same-day availability).",
+    "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+    "rules": "Camp only at designated or approved cross-country zone sites within the Luna cross-country zone; standard NPS wilderness regulations apply (bear-resistant food storage, pack out waste, no campfires above treeline).",
+    "permit": "A backcountry/wilderness camping permit is required for any overnight stay. Advance reservations are available only for Boston Basin, Eldorado, Sulphide, Price, Triumph and Tapto Lakes; every remaining zone, including Luna, is walk-up only, so this permit is obtained in person at the Wilderness Information Center in Marblemount.",
+    "closures": "Luna Fire closure (as of mid-September 2026): the Big Beaver Trail is closed from Big Beaver Stock Camp to Stillwell Camp, and Luna Camp, Beaver Pass Camp (with its stock and group camps) and 39 Mile Camp (with 39 Mile Stock) are closed; cross-country zone access from closed trails is prohibited. The closure moves - check current park fire closures before a trip. Check the NPS North Cascades current conditions page for Big Beaver Trail washouts, bridge/log-jam creek crossing status, and any temporary Pickets-area restrictions before departing.",
+    "group_limit": 6,
+    "landManager": "North Cascades National Park Service Complex (Stephen Mather Wilderness)",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "passRequired": "No day-use pass needed at the Ross Dam Trailhead; overnight wilderness permit required for camping.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/backcountry-reservations.htm",
+     "what": "North Cascades National Park wilderness permit — quota, paid reservation",
+     "where": "Reserve on Recreation.gov (early-access lottery in March, then general on-sale at least 2 days ahead); about 40% of sites are held for walk-up permits issued in person up to 24 hours before the trip at a Wilderness Information Center."
+    }
+   },
+   "road": {
+    "name": "SR 20 (North Cascades Highway) to Ross Dam Trailhead",
+    "status": "Normally open for the Jul-Sep climbing season",
+    "driveNote": "Trailhead is at Happy Flats, roughly milepost 134 on SR 20.",
+    "seasonalGate": "SR 20 typically closes for winter in early-to-mid December between the Ross Dam Trailhead and the Early Winters/Silver Star Mountain gates due to avalanche hazard, reopening in mid-to-late April; confirm current WSDOT status for early- or late-season trips."
+   },
+   "climate": {
+    "typical": "Warm, relatively dry alpine summer days with a real risk of afternoon thunderstorms; overnight lows near/below freezing at the higher camps and on the glacier.",
+    "bySeason": {
+     "summer": "Late June and early July often still have firm, steep snow on the Southeast Glacier and approach heather slopes (a contributing factor in the June 2025 accident); conditions are typically more consolidated and predictable by August."
+    },
+    "forecastZone": "NWAC West Slopes North (note: NWAC's public avalanche forecasts are a winter/spring product and do not cover summer glacier-travel conditions on Fury)"
+   },
+   "emergency": {
+    "notes": "No cell coverage in the Northern Pickets; carry a satellite communicator/PLB. Given the multi-day approach, any serious injury deep in the Pickets is likely to require helicopter evacuation, as happened in the June 2025 accident near this route.",
+    "county": "Whatcom County",
+    "rangerStation": "North Cascades National Park - Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267, (360) 854-7245",
+    "nearestHospital": "PeaceHealth United General Medical Center, Sedro-Woolley",
+    "sheriffDispatch": "Whatcom County Sheriff's Office (coordinates search and rescue with NPS)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Rare even at its busiest; a handful of parties attempt during stable-weather windows in late July and August",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Extremely low - roughly 5-15 parties per season based on the peak's remoteness and week-long commitment"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very high - multi-day, largely off-trail approach with sustained elevation gain and bushwhacking to reach a high camp in the Luna Cirque/McMillan area before the summit push",
+     "packWeight": "Heavy multi-day expedition load (roughly 40-55+ lbs) carrying glacier travel, camping, and food for a week-long trip"
+    },
+    "approachTime": "Multi-day approach (typically 2+ days each way) through trail-less, remote terrain to reach a high camp before the summit attempt; a full trip is commonly planned around a week",
+    "requiredSkills": [
+     "glacier travel and crevasse rescue",
+     "roped travel on 20-40 degree snow/glacier",
+     "route-finding and navigation in whiteout or poor visibility",
+     "Class 3-5 scrambling/rock competence",
+     "self-sufficiency and decision-making far from help"
+    ],
+    "experienceLevel": "Experienced mountaineer with prior glacier expedition experience; not a suitable first alpine glacier climb given the remoteness and multi-day commitment"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through early September, matching the established best season",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Glaciers begin to open up and stabilize through the month; conditions improve steadily toward the optimal late-July/August window",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Deep snow cover and elevated avalanche/crevasse hazard typically persist",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Most reliable stretch of stable weather and consolidated glacier travel",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Early month can still work but shortening days and increasing storm risk raise the stakes on this remote route",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Short, weather-dependent alpine window; a 'severe remote alpine environment' where storms can trap parties at camp",
+     "probability": "Afternoon convective buildups possible in August; early- or late-season systems bring snow and sharply raise the risk of being weathered in at a remote camp"
+    },
+    "exposure": "Moderate to serious - Class 3-5 sections combine with steep snow/glacier where a fall could mean a crevasse fall or long slide; consequences are magnified by extreme isolation, since evacuation from this area takes days",
+    "avalanche": {
+     "zone": "No NWAC forecast zone specifically covers this remote glaciated summit; nearest general coverage is NWAC's North Cascades-area zones, which do not extend detailed forecasts into the summer climbing season",
+     "byMonth": {
+      "July": "Moderate",
+      "June": "Considerable",
+      "August": "Low",
+      "September": "Low"
+     }
+    },
+    "crevasses": "Significant - the standard route crosses glaciated terrain and may require a bergschrund crossing; conditions shift through the season and demand roped travel and crevasse rescue readiness"
+   },
+   "data_quality": {
+    "gaps": [
+     "No single authoritative source gives exact round-trip mileage/elevation gain for this specific approach; figures vary by trip report and starting camp.",
+     "Exact class rating of individual rock bands (Class 3 vs Class 4/5) varies by source and by seasonal snow coverage.",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/48EJ",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 4,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.8108,
+    "peakLng": -121.3122,
+    "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+    "trailheadLat": 48.7278,
+    "trailheadLng": -121.0628,
+    "trailheadDirection": "From the Ross Dam Trailhead at Happy Flats on SR 20 (~milepost 134, 2,150 ft), it's about 1 mile down to the Ross Lake water taxi dock; cross the lake by taxi (or paddle) to Big Beaver Landing."
+   },
+   "sling_rack": {
+    "slings": "3-4 runners",
+    "rock protection": "light rack of a few cams/nuts for Class 4-5 rock sections",
+    "snow protection": "2 pickets, 2-3 ice screws for bergschrund/crevasse anchors"
+   },
+   "alpine_draws": 2,
+   "rope_type": "glacier rope (team rope)",
+   "rope_length_m": 30,
+   "rope_note": "Standard route descends from Luna Col to the southeast glacier (~6,700ft), ascending its right side then steeper snow with a possible bergschrund crossing; snow/glacier terrain ranges 20-40 degrees, interspersed with Class 3-5 rock sections. A 30m rope per rope-team is typical, plus light rock protection for harder rock steps. Multi-day remote approach (allow ~1 week).",
+   "ascender": "Prusik cords (see rope_note)",
+   "corrections": "Ascender included as standard crevasse-rescue kit for glacier travel, not explicitly itemized but standard practice for this terrain type.",
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "2-3 small nuts (BD #4-6 or equivalent)",
+    "2-3 small cams (#0-2)",
+    "3-4 slings/runners",
+    "2 pickets",
+    "2-3 ice screws (bergschrund/crevasse anchors)",
+    "25m rope for the short rappel descent (or full glacier rope)",
+    "Crevasse rescue kit"
+   ],
+   "features": [
+    "Exposed",
+    "Committing",
+    "Technical",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Ross Lake water taxi, Big Beaver Creek Trail, the Access Creek bushwhack, Access Col and Luna Pass",
+     "notes": "From the Ross Dam Trailhead at Happy Flats on SR-20 near milepost 134 at 2,150 ft, walk about a mile down to the Ross Lake water-taxi dock and cross to Big Beaver Landing. From the landing, 11.5 miles of dry, well-maintained, largely flat trail up-valley takes roughly 5 hours, passing Luna Camp at about the 4.7-hour mark.\n\nAbout 29 minutes beyond Luna Camp a large log crossing of Big Beaver Creek, roughly 15 inches in diameter, marks the turnoff. Leave the trail there and head up Access Creek: a real bushwhack of about a mile gaining 1,900 ft, starting in valley-bottom devil's club, crossing to the creek's north side around 3,800 ft where brush pinches in on both banks, then huckleberry and a final half-mile of talus into Access Basin.\n\nFrom the basin a long, steep, loose scree chute gains about 1,800 ft to Access Col at 6,100 ft, 2-3 hours, and it can be brutally hot with no shade. From the col, 3-4 miles of notoriously steep heather and talus lead to Luna Pass, where most parties camp near lingering snow patches for water.",
+     "season": "Jul-Sep",
+     "hazards": [
+      "A mile of genuine bushwhacking up Access Creek through devil's club, deadfall and huckleberry with biting insects",
+      "A long loose scree chute to Access Col with no shade",
+      "Notoriously steep heather between Access Col and Luna Pass; an axe is worthwhile on the short steep sections",
+      "Crevasses on the Southeast Glacier and a bergschrund near 7,900 ft",
+      "A final snowfield to nearly 50 degrees, with crampon-balling reported on wet snow",
+      "Wet, mossy rock on the lower of the two rib ledges"
+     ],
+     "baseFinding": "The rocky rib is the gate, and the glacier starts on the far side of it. From Luna Pass the day goes along the Northeast Ridge crest, then down a steep, narrow heather chute of about 500 ft into a talus basin around 6,500 ft, then contours southwest across talus, heather and polished slabs until a rocky rib blocks easy passage. That rib is the landmark. It has two ledge options: take the lower one, exposed scrambling on wet mossy rock and steep heather, in preference to the looser and more exposed upper ledge.\n\nArrival: immediately beyond the rib you rope up, because the Southeast Glacier starts there, between roughly 6,500 and 7,000 ft. Snow under your feet on the far side of the rib is the route.\n\nCountable confirmation on the ridge: between Luna Pass and the heather chute the crest throws up one distinct rock step of about 25 ft with a climbable vertical crack, class 3. That step is the only rock climbing before the glacier. If you have done several such steps you are on the ridge crest too long and have missed the point where it drops away.\n\nWhat being on the wrong side looks like: this route climbs the true right, i.e. climber's-right, side of the Southeast Glacier on moderate 20-40 degree snow and works around a bergschrund near 7,900 ft, usually passable on its left. If you are on the left-hand margin of the ice looking for a way onto rock, you are heading for the East Ridge, not this route.\n\nAnd the one feature that is unmistakable even blind: the last of the route steepens from 30-40 degrees to nearly 50 degrees, firm enough to front-point but not always secure for flat-footing, then narrows to a short snow arete before the summit rocks. When the snow narrows to a crest with air on both sides, there is nothing above but the top."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Northeast Ridge crest from Luna Pass",
+     "notes": "Skirt the rock knob that towers ~100 ft over Luna Pass via a broad ledge on its northwest face to reach the surprisingly gentle Northeast Ridge crest, then follow the ridge's many short ups and downs toward Fury — including a ~25-ft rock step with a climbable vertical crack (Class 3)."
+    },
+    {
+     "n": 2,
+     "label": "Heather chute and traverse to the rocky rib",
+     "notes": "Where the ridge crest drops away, descend a steep, narrow heather chute (~500 ft) into a talus basin around 6,500 ft, then contour southwest across talus, heather, and polished slabs to a rocky rib that blocks easy passage. The lower of two ledge options — exposed scrambling on wet, mossy rock and steep heather — is generally preferred to the looser, more exposed upper ledge."
+    },
+    {
+     "n": 3,
+     "label": "Southeast Glacier",
+     "notes": "Beyond the rib, rope up for the crevassed Southeast Glacier (starting ~6,500-7,000 ft): ascend its true right/climber's-right side on moderate 20-40° snow, working around a bergschrund near 7,900 ft, usually passable on its left side."
+    },
+    {
+     "n": 4,
+     "label": "Summit snowfield and arête",
+     "notes": "The final summit snowfield steepens from ~30-40° to nearly 50° near the top — firm enough for front-pointing but not always secure for flat-footing — with snow flukes commonly used for running belays before a short snow arête leads to the summit rocks."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Luna Camp",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "name": "Access Basin",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "elev": 7200,
+     "name": "Luna Col (Luna Pass)",
+     "role": "main",
+     "notes": "The standard high camp and the base for summit day on Fury, reached after a long steep heather-and-talus traverse from Access Col. It is a planned camp but a rough one — glacially polished slabs with very few genuinely flat tent spots, so most parties bivy rather than pitch. Being a saddle it is fully wind-exposed with no shelter in any direction, and the water depends entirely on a snow patch that shrinks all summer, so check it rather than assume it. From here the summit involves several miles of ridge, a steep heather chute and a crevassed glacier, and this is the only sheltered ground you will come back to.",
+     "water": "A small snowfield sitting right at the saddle normally gives running water; by late season it is down to a shallow snowmelt pool, and in a hot low-snow year it may be gone entirely",
+     "permit": "Camping needs a National Park Service backcountry permit; the col lies in the Luna cross-country zone, capped at six people per party and six parties per night",
+     "capacity": "A handful of bivy-sized spots on slabs and gravel; the Luna cross-country zone allows six parties a night, six people per party"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "southeast se glaciers standard",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}
