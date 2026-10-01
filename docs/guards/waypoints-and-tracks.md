@@ -1527,3 +1527,59 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `wa_up_in_arms` moved to `wa_concord_tower` on that gate: all eight siblings on `wa_upper_wall`
     are 0-pitch crag routes and it is 6 pitches — the same non-prose discriminator that settled
     `wa_south_face_direct`. `check:counts` confirms all 47,638 areas still agree afterwards.
+- **`audit:waypoint-distances`** asks whether a pin's stored trail distance (`distMi`, cumulative
+  from the trailhead) is **shorter than the straight line** between the coordinates. That is
+  impossible, and it needs no gpx. Read-only and report-only. A pin is reported when the shortfall
+  is over both 0.25 mi and 10%. The audit skips coarse coordinates (<4 dp), rows whose `distMi[0]`
+  is not 0, `distMi` 0 meaning unrecorded, and out-of-order lists (`audit:waypoint-order` owns
+  those).
+  - **THE CONTRADICTION IS CERTAIN; WHICH RECORD IS WRONG IS NOT.** The coordinate, the distance,
+    or both may be wrong, and the audit cannot tell which. `check:impossible-leg` already prints "—"
+    for such a leg on screen, so "no number" is honest. A computed number (a chord, or a scaled
+    one) is never a trail distance and must not be written.
+  - **BACKLOG PASS (2026-10-01): 177 pins on 103 WA routes → 28 on 23.** The script is
+    `scripts/oneoff/fix-waypoint-distance-backlog.mjs`. Every decision, with its reason, is in
+    `audits/waypoint-distance-backlog/decisions.json`. The before-state of every written row is in
+    `rollback.json` beside it.
+    - **Mechanical, 72 clears on 37 routes.** A coordinate is cleared only when convicted by TWO
+      records:
+      - Geometry: the pin is an endpoint of an impossible distance.
+      - Ground: the `audit:waypoint-elevations --ground` box rule (gap ≥ 500 ft, relief < 800 ft),
+        extended for rough terrain to gap ≥ max(1000, relief).
+      
+      The dominant shape was **fabricated intermediate pins clustered near the trailhead**, thousands
+      of feet off their claimed height, while the summit pins were right. Trailheads are never cleared
+      mechanically, because a cleared origin makes the row unmeasurable rather than fixed.
+    - **Researched, 87 residue routes.** Each pin got a decision of one of these kinds:
+      - `clear`: ground plus the route's own prose.
+      - `copy`: verbatim from a sibling route's pin that matches the ground.
+      - `nullDist`: both pins match the ground, so the distance is the wrong record.
+      - `setDist`: only with a published figure and a fetched quote. There are 3, all from WTA
+        (Sheep Gap's Weden Creek 1.8, Kololo's Mackinaw Shelter 5.5, Hinman's Jade Lake 8), each
+        re-fetched and matched verbatim.
+      
+      Kangaroo Temple's SR-20 hairpin pullout was the right trailhead for 4 rows that pinned it
+      near Washington Pass. Lizard's Cascade Pass Trailhead sat on 1,423 ft ground against its
+      own 3,600.
+  - **THE GATES, and the one that surprised.** A route whose edits are all clears must not GROW its
+    count. Any other edit must remove a contradiction and create none.
+    - **Clearing a pin cannot create a contradiction, only re-attribute one.** By the triangle
+      inequality, the chord across a removed pin exceeds the stored distance only if a leg through
+      that pin already did. The first dry run refused Himmelhorn, Fury East, Mount Tom and Mutchler
+      as "creates a contradiction" until that was understood.
+    - The sketch line's vertex on a cleared or copied pin is removed or moved with it, and the
+      `trackIsJustTheWaypoints` caption state must not change. `audit:stranded-track-vertices`
+      reads 22 adrift on 18 routes both before and after, all pre-existing.
+  - **THE 23 LEFT ARE DECIDED-UNRESOLVED, not unread.** Each is recorded `op: "unresolved"` with its
+    reason. Do not re-research them without new evidence.
+    - **Both pins agree with the ground and no source picks the distance:** Clark, Cameron,
+      Mutchler, Colonial, Dot, Queets, and Bonanza (Mary Green and NE Buttress share one "about a
+      mile" from a spread-out village).
+    - **Two approaches in one list:** Hardy, where Upper Snowy Lake is a side camp and the fix is a
+      reorder, which no op allows.
+    - **Displaced groups needing a re-pin:** Degenhardt, Needle Peak's Swamp Creek Camp, and
+      Arrowhead, whose trailhead may be the bad pin.
+    - **A wrong TRAILHEAD:** Garfield is pinned at the Taylor River junction, 2.6 mi short. The gate
+      refuses clearing it.
+    - **Mount Tom:** refused by the gate. Nulling the summit removes nothing while the White/Hubert
+      traverse pin is unresolved.

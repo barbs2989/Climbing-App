@@ -388,8 +388,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     lists the route for one leg: Lillian Ridge crest at `distMi` 0.7 sits 2.2 mi in a straight line
     from the trailhead. The PIN is right (USGS ground 6,321 ft against a claimed 6,350, and WTA puts
     1.6 level miles along the ridge before the descent), so the `0.7` is the wrong record.
-    `check:impossible-leg` already prints "—" for it on the live page. It belongs to that audit's
-    backlog, not to a hazard fix.
+    `check:impossible-leg` already printed "—" for it on the live page. The `audit:waypoint-distances`
+    backlog pass NULLED that `0.7` (WTA puts the ridge high point near 1.5 mi), so the route is
+    off the audit.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
