@@ -1215,6 +1215,35 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       fallback, and the pin still routes a driver onto NF-77 beside the rock.
     - Ballard's "Harts Pass" pin is a separate eastern start, not on the Canyon Creek walk, so its
       slot is not an ordering question.
+  - **ONE PIN DRAWS A DETOUR — batch 8 (2026-10-01), and what the flag usually MEANS.** For a
+    route the app cannot sort, the stored order IS the drawn line. The audit now asks whether
+    moving one non-trailhead pin to its best slot would shorten that line by more than 25% and
+    more than 1 km. **157 WA routes tested, 13 flagged at first.** Read one by one, the flags
+    rarely meant "wrong order":
+    - **4 were a WRONG COORDINATE** (Claywood's Cameron and Grand Passes, Tailgunner's creek
+      crossing, Colfax Polish's Hogsback junction). Each was cleared, but only on two records:
+      the ground box from `audit:waypoint-elevations --ground`, and a pin farther from the
+      trailhead in a straight line than its own trail distance.
+    - **2 were descent pins** listed before the summit, which their own descent prose names.
+    - **2 were out of walking order** (Boston W Face, Meany).
+    - **Every flag that moved a TRAILHEAD was a winding trail** beating straight-line geometry,
+      so trailheads are never the moved pin.
+
+    **Residue: Buck Mountain is real geography; Devil's Club is the owner item below.** A shortest
+    path is not a walking order, so this decides what to READ, never an edit. Scripts:
+    `scripts/oneoff/fix-waypoint-order-batch8.mjs` (clear/move/copy) and
+    `scripts/oneoff/reorder-waypoint-order-batch8.mjs` (permutation). Rollbacks are in
+    `audits/waypoint-order-batch8/`.
+    - **Meany was repaired WITHOUT inventing a coordinate.** Whiskey Bend was copied verbatim from
+      `wa_mount_wilder_scramble`, which shares Meany's Hayes River pin. North Fork Quinault was
+      kept and moved after the summit as the alternative way in. `approach_logistics` still names
+      Quinault, and `trailheadPoint()` already treats a pin and a logistics record more than 1 km
+      apart as two genuine approaches.
+    - **Devil's Club disagrees with itself in PROSE, not only order.** Its pins walk Depot Creek;
+      its trailhead pin and approach paragraph both describe Ross Lake. The pins are 2-decimal
+      estimates, about 5 km off the catalog's shared Depot Creek Falls pin. Left for an owner.
+    - Four sortable routes had a stored order different from the one drawn (Little Tahoma,
+      McCausland, Olympus W Ridge, South Twin). The stored order now matches the screen.
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**
