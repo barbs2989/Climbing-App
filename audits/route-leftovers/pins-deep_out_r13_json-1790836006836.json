@@ -1,0 +1,106 @@
+{
+ "applied": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "clear_line",
+   "points": 4,
+   "why": "The 4-point line runs High Bridge -> Fivemile Camp -> Swamp Creek Camp -> summit, up the Agnes Creek valley the route no longer uses; no published track for the new line."
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "move_pin",
+   "index": 0,
+   "name": "Cascade Pass Trailhead",
+   "moved_km": 20.35,
+   "gpx_vertices_carried": 0
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "remove_pin",
+   "index": 2,
+   "name": "Swamp Creek Camp",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "remove_pin",
+   "index": 1,
+   "name": "Fivemile Camp",
+   "gpx_vertices_dropped": 0
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "add_pin",
+   "name": "Kool-Aid Lake",
+   "after": "Cascade Pass Trailhead"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "add_pin",
+   "name": "Yang Yang Lakes",
+   "after": "Kool-Aid Lake"
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "waypoints": [
+    {
+     "lat": 48.38025,
+     "lng": -120.83955,
+     "elev": 1600,
+     "name": "Cascade Pass Trailhead",
+     "note": "Large parking lot at the end of the Cascade River Road, about 23 miles from State Route 20 at Marblemount. The Ptarmigan Traverse starts up the Cascade Pass trail from here.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.342907,
+     "lng": -120.901771,
+     "elev": 2200,
+     "name": "Fivemile Camp",
+     "note": "First established dispersed camp along the Agnes Creek Trail with reliable water from Agnes Creek; common first-night stop for the long valley approach.",
+     "type": "Water",
+     "distMi": 5.1
+    },
+    {
+     "lat": 48.30964,
+     "lng": -120.92038,
+     "elev": 2800,
+     "name": "Swamp Creek Camp",
+     "note": "Established camp at the Swamp Creek confluence with year-round water; last reliably maintained camp before the trail begins climbing out of the valley bottom toward the upper basins.",
+     "type": "Campsite",
+     "distMi": 8.1
+    },
+    {
+     "lat": 48.37557,
+     "lng": -120.97826,
+     "elev": 7230,
+     "name": "Rimrock Ridge summit",
+     "note": "True summit of the ridge crest (listed 7,255-7,260 ft); descent reverses the crest, downclimbing rock steps and bypassing gendarme towers on the same side used on ascent.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     48.38025,
+     -120.83955
+    ],
+    [
+     48.342907,
+     -120.901771
+    ],
+    [
+     48.30964,
+     -120.92038
+    ],
+    [
+     48.37557,
+     -120.97826
+    ]
+   ]
+  }
+ ]
+}

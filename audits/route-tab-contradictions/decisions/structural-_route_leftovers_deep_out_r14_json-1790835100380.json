@@ -1,0 +1,2042 @@
+{
+ "applied": [
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "op": "patch",
+   "columns": [
+    "itinerary"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "area_id": "wa_three_fingers",
+   "name": "South Peak via Lookout",
+   "discipline": "mountaineering",
+   "grade": "Grade II",
+   "grade_system": "class",
+   "grade_num": null,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Harry Bedal, Harold Engles & Frank Benesh, c. 1929-1933 (route used to construct the fire lookout)",
+   "lat": null,
+   "lng": null,
+   "aspect": "South",
+   "season": "Jul-Oct",
+   "description": null,
+   "gear": [
+    "Ice axe",
+    "Crampons (recommended before September)",
+    "Helmet for the glacier and scramble sections",
+    "Northwest Forest Pass or America the Beautiful pass for trailhead parking",
+    "Headlamp — many parties start before dawn given the long day"
+   ],
+   "hazards": [
+    "Queest-Alb Glacier crevasses and slick ice, especially before September",
+    "Loose rock on the final scramble above the glacier",
+    "Exposed, cabled ladders with a tight, awkward transition between the 2nd and 3rd ladder",
+    "Fog/whiteout near Tin Can Gap and on the glacier traverse has triggered multiple multi-hour Snohomish County SAR rescues",
+    "The summit block is reached via three fixed wooden ladders (bolted/cabled) -- a permanent, highly exposed fixed feature; the approach crosses the Queest-Alb Glacier and steep snowfields where a slip risks a long slide into rocks, so an ice axe is required year-round"
+   ],
+   "verif": null,
+   "overview": "A long, storied outing to the historic fire lookout perched on the South Peak of Three Fingers, crossing the Queest-Alb Glacier. The L-4 gable lookout was built 1930-1932 by Darrington-area mountaineers Harold Engles and Frank Benesh (with Harry Bedal having assisted in the 1929 feasibility scout), staffed seasonally from 1933 through 1942, later rebuilt by volunteers, and added to the National Register of Historic Places in 1987 — roughly the top 15 feet of the summit block was blasted flat to seat the cabin. It remains one of the most iconic hike-scrambles in the Cascade foothills, thanks largely to the three vertical ladders cabled to the final summit tower.",
+   "beta": "This is the line Harry Bedal, Harold Engles, and Frank Benesh used to reach the South Peak summit to build the fire lookout in the early 1930s, and it remains the standard way up. From the trailhead the route follows trail to Saddle Lake, Goat Flats, and Tin Can Gap, then crosses the edge of the Queest-Alb Glacier before a rock scramble and a set of three fixed ladders (rebar and timber anchored into steep rock) gain the summit block and lookout. It is popular as a long day trip or, more commonly, an overnight from Goat Flats or Tin Can Gap given the approach length.",
+   "turnaround": "Turn around if the glacier is icy/hard or weather closes in below the ladders.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 3-4 scramble (non-technical rock, but exposed)",
+   "ice_grade": null,
+   "gain_ft": 4200,
+   "loss_ft": 4200,
+   "dist_km": null,
+   "max_angle": 30,
+   "rappels": "None typically — parties down-climb the ladders and glacier edge rather than rappel",
+   "commitment": "II",
+   "face": "South Peak",
+   "permit": "Free self-issue Boulder River Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "No reliable cell coverage in the Squire Creek/Goat Flats/Tin Can Gap basin; there have been multi-day, multi-agency SAR operations here (a 32-hour Snohomish County SAR rescue of stranded hikers in June 2023), so a satellite messenger/PLB is worth carrying.",
+   "descent": "Reverse the route past the historic fire lookout.",
+   "obj_haz": [
+    "crevasses",
+    "exposure",
+    "rockfall",
+    "weather",
+    "routefinding"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.1972,
+     "lng": -121.7742,
+     "elev": 2650,
+     "name": "Three Fingers / Goat Flats Trailhead (Tupso Pass Rd)",
+     "note": "FR-41 (Tupso Pass Rd) closed to vehicles past Canyon Creek bridge; hike Goat Flats to Tin Can Gap.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "The trailhead is reached via Forest Road 41 (Tupso Pass Road), which leaves the Mountain Loop Highway east-northeast of milepost 7 and continues onto FS Road 4160 for a combined drive of about 17.5 miles. The Canyon Creek bridge on this road has washed out, and the road has been closed to vehicles beyond that point since 2023, which adds roughly nine miles each way of road walking or biking to reach the actual trailhead - check current Mount Baker-Snoqualmie National Forest road status before you go. Foot and bike traffic are allowed past the closure barrier and biking the road in is the common tactic; there is now a sign marking the old trailhead at the point where the road is barred."
+    },
+    {
+     "lat": 48.165901986729736,
+     "lng": -121.72154510591632,
+     "name": "Goat Flat",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.1683323,
+     "lng": -121.7040539,
+     "name": "Tin Can Gap",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.169895,
+     "lng": -121.687865,
+     "elev": 6854,
+     "name": "Three Fingers South Peak (Lookout)",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 6854
+    }
+   ],
+   "gpx": [
+    [
+     48.193356,
+     -121.771515
+    ],
+    [
+     48.19345,
+     -121.77151
+    ],
+    [
+     48.19344,
+     -121.77114
+    ],
+    [
+     48.19319,
+     -121.77072
+    ],
+    [
+     48.19292,
+     -121.77042
+    ],
+    [
+     48.19262,
+     -121.77002
+    ],
+    [
+     48.19231,
+     -121.76993
+    ],
+    [
+     48.1921,
+     -121.76961
+    ],
+    [
+     48.19195,
+     -121.76955
+    ],
+    [
+     48.1918,
+     -121.76922
+    ],
+    [
+     48.19164,
+     -121.76902
+    ],
+    [
+     48.19139,
+     -121.76894
+    ],
+    [
+     48.19105,
+     -121.76865
+    ],
+    [
+     48.19094,
+     -121.76832
+    ],
+    [
+     48.19048,
+     -121.76801
+    ],
+    [
+     48.19045,
+     -121.76779
+    ],
+    [
+     48.19036,
+     -121.76771
+    ],
+    [
+     48.19023,
+     -121.76772
+    ],
+    [
+     48.19013,
+     -121.76761
+    ],
+    [
+     48.18998,
+     -121.76718
+    ],
+    [
+     48.18996,
+     -121.7669
+    ],
+    [
+     48.19003,
+     -121.76651
+    ],
+    [
+     48.19001,
+     -121.76617
+    ],
+    [
+     48.19014,
+     -121.76548
+    ],
+    [
+     48.19029,
+     -121.76524
+    ],
+    [
+     48.19058,
+     -121.76503
+    ],
+    [
+     48.1913,
+     -121.76488
+    ],
+    [
+     48.19164,
+     -121.76487
+    ],
+    [
+     48.19204,
+     -121.765
+    ],
+    [
+     48.19243,
+     -121.76491
+    ],
+    [
+     48.19263,
+     -121.7648
+    ],
+    [
+     48.19279,
+     -121.76448
+    ],
+    [
+     48.19252,
+     -121.76452
+    ],
+    [
+     48.19239,
+     -121.76446
+    ],
+    [
+     48.19255,
+     -121.76405
+    ],
+    [
+     48.19272,
+     -121.76378
+    ],
+    [
+     48.19279,
+     -121.76358
+    ],
+    [
+     48.1927,
+     -121.76334
+    ],
+    [
+     48.19242,
+     -121.76322
+    ],
+    [
+     48.19221,
+     -121.76336
+    ],
+    [
+     48.19196,
+     -121.76337
+    ],
+    [
+     48.19168,
+     -121.76354
+    ],
+    [
+     48.19148,
+     -121.76349
+    ],
+    [
+     48.19134,
+     -121.76354
+    ],
+    [
+     48.1908,
+     -121.76326
+    ],
+    [
+     48.19049,
+     -121.76333
+    ],
+    [
+     48.19041,
+     -121.76322
+    ],
+    [
+     48.19017,
+     -121.76319
+    ],
+    [
+     48.19011,
+     -121.763
+    ],
+    [
+     48.19009,
+     -121.76275
+    ],
+    [
+     48.18981,
+     -121.76216
+    ],
+    [
+     48.18943,
+     -121.76165
+    ],
+    [
+     48.18939,
+     -121.76173
+    ],
+    [
+     48.1894,
+     -121.76209
+    ],
+    [
+     48.18922,
+     -121.76274
+    ],
+    [
+     48.18909,
+     -121.76291
+    ],
+    [
+     48.18896,
+     -121.76265
+    ],
+    [
+     48.18893,
+     -121.76203
+    ],
+    [
+     48.18909,
+     -121.76113
+    ],
+    [
+     48.18915,
+     -121.76062
+    ],
+    [
+     48.18918,
+     -121.76018
+    ],
+    [
+     48.18906,
+     -121.75985
+    ],
+    [
+     48.18886,
+     -121.75982
+    ],
+    [
+     48.18858,
+     -121.76003
+    ],
+    [
+     48.18843,
+     -121.76031
+    ],
+    [
+     48.18742,
+     -121.76092
+    ],
+    [
+     48.18719,
+     -121.76089
+    ],
+    [
+     48.187,
+     -121.76098
+    ],
+    [
+     48.18677,
+     -121.76099
+    ],
+    [
+     48.18642,
+     -121.76068
+    ],
+    [
+     48.18603,
+     -121.76069
+    ],
+    [
+     48.18588,
+     -121.76056
+    ],
+    [
+     48.1856,
+     -121.76051
+    ],
+    [
+     48.18545,
+     -121.7604
+    ],
+    [
+     48.18537,
+     -121.76027
+    ],
+    [
+     48.18475,
+     -121.75994
+    ],
+    [
+     48.18454,
+     -121.75993
+    ],
+    [
+     48.18439,
+     -121.76
+    ],
+    [
+     48.18424,
+     -121.75998
+    ],
+    [
+     48.18437,
+     -121.75965
+    ],
+    [
+     48.18414,
+     -121.7597
+    ],
+    [
+     48.18394,
+     -121.75982
+    ],
+    [
+     48.1838,
+     -121.75966
+    ],
+    [
+     48.18383,
+     -121.7594
+    ],
+    [
+     48.1838,
+     -121.75892
+    ],
+    [
+     48.18364,
+     -121.75871
+    ],
+    [
+     48.18359,
+     -121.75844
+    ],
+    [
+     48.18335,
+     -121.75829
+    ],
+    [
+     48.18324,
+     -121.75813
+    ],
+    [
+     48.18327,
+     -121.75757
+    ],
+    [
+     48.18315,
+     -121.75755
+    ],
+    [
+     48.18301,
+     -121.75788
+    ],
+    [
+     48.1829,
+     -121.7578
+    ],
+    [
+     48.18295,
+     -121.75755
+    ],
+    [
+     48.18292,
+     -121.75725
+    ],
+    [
+     48.18311,
+     -121.75657
+    ],
+    [
+     48.18307,
+     -121.75604
+    ],
+    [
+     48.18319,
+     -121.75505
+    ],
+    [
+     48.1831,
+     -121.75463
+    ],
+    [
+     48.183,
+     -121.75452
+    ],
+    [
+     48.18275,
+     -121.75461
+    ],
+    [
+     48.18242,
+     -121.75496
+    ],
+    [
+     48.18204,
+     -121.7552
+    ],
+    [
+     48.18158,
+     -121.75521
+    ],
+    [
+     48.18122,
+     -121.75536
+    ],
+    [
+     48.181,
+     -121.75535
+    ],
+    [
+     48.18083,
+     -121.75512
+    ],
+    [
+     48.18074,
+     -121.75509
+    ],
+    [
+     48.18032,
+     -121.75494
+    ],
+    [
+     48.18002,
+     -121.75518
+    ],
+    [
+     48.1799,
+     -121.75515
+    ],
+    [
+     48.17978,
+     -121.75521
+    ],
+    [
+     48.17943,
+     -121.75523
+    ],
+    [
+     48.1793,
+     -121.75511
+    ],
+    [
+     48.17894,
+     -121.75514
+    ],
+    [
+     48.17882,
+     -121.75529
+    ],
+    [
+     48.17869,
+     -121.75539
+    ],
+    [
+     48.17858,
+     -121.7556
+    ],
+    [
+     48.17847,
+     -121.75556
+    ],
+    [
+     48.17837,
+     -121.75524
+    ],
+    [
+     48.17827,
+     -121.7551
+    ],
+    [
+     48.17786,
+     -121.75494
+    ],
+    [
+     48.17776,
+     -121.75472
+    ],
+    [
+     48.17781,
+     -121.75433
+    ],
+    [
+     48.17775,
+     -121.75407
+    ],
+    [
+     48.17756,
+     -121.75393
+    ],
+    [
+     48.17719,
+     -121.75384
+    ],
+    [
+     48.1771,
+     -121.7536
+    ],
+    [
+     48.17691,
+     -121.75348
+    ],
+    [
+     48.17656,
+     -121.75341
+    ],
+    [
+     48.17631,
+     -121.75322
+    ],
+    [
+     48.176,
+     -121.75317
+    ],
+    [
+     48.17574,
+     -121.75299
+    ],
+    [
+     48.17545,
+     -121.75292
+    ],
+    [
+     48.17531,
+     -121.75267
+    ],
+    [
+     48.17517,
+     -121.75257
+    ],
+    [
+     48.17492,
+     -121.75265
+    ],
+    [
+     48.17479,
+     -121.75241
+    ],
+    [
+     48.17456,
+     -121.75247
+    ],
+    [
+     48.17405,
+     -121.75221
+    ],
+    [
+     48.17356,
+     -121.75188
+    ],
+    [
+     48.17328,
+     -121.75183
+    ],
+    [
+     48.17305,
+     -121.75172
+    ],
+    [
+     48.17279,
+     -121.75165
+    ],
+    [
+     48.17227,
+     -121.75132
+    ],
+    [
+     48.17205,
+     -121.75142
+    ],
+    [
+     48.17172,
+     -121.75115
+    ],
+    [
+     48.17138,
+     -121.75082
+    ],
+    [
+     48.17101,
+     -121.7506
+    ],
+    [
+     48.17094,
+     -121.75049
+    ],
+    [
+     48.17087,
+     -121.75038
+    ],
+    [
+     48.17085,
+     -121.75014
+    ],
+    [
+     48.17109,
+     -121.74964
+    ],
+    [
+     48.17109,
+     -121.74923
+    ],
+    [
+     48.17087,
+     -121.74855
+    ],
+    [
+     48.17101,
+     -121.74791
+    ],
+    [
+     48.17109,
+     -121.74772
+    ],
+    [
+     48.17127,
+     -121.74754
+    ],
+    [
+     48.17134,
+     -121.74729
+    ],
+    [
+     48.17129,
+     -121.74697
+    ],
+    [
+     48.1713,
+     -121.74666
+    ],
+    [
+     48.17125,
+     -121.74643
+    ],
+    [
+     48.17103,
+     -121.74611
+    ],
+    [
+     48.17101,
+     -121.7459
+    ],
+    [
+     48.17075,
+     -121.74561
+    ],
+    [
+     48.17071,
+     -121.74506
+    ],
+    [
+     48.17045,
+     -121.74479
+    ],
+    [
+     48.17026,
+     -121.74476
+    ],
+    [
+     48.17019,
+     -121.74468
+    ],
+    [
+     48.17002,
+     -121.74467
+    ],
+    [
+     48.16989,
+     -121.74451
+    ],
+    [
+     48.16961,
+     -121.74439
+    ],
+    [
+     48.16944,
+     -121.74423
+    ],
+    [
+     48.16945,
+     -121.74403
+    ],
+    [
+     48.16952,
+     -121.74389
+    ],
+    [
+     48.16945,
+     -121.74368
+    ],
+    [
+     48.16945,
+     -121.74333
+    ],
+    [
+     48.16952,
+     -121.74301
+    ],
+    [
+     48.16977,
+     -121.74303
+    ],
+    [
+     48.16983,
+     -121.74294
+    ],
+    [
+     48.16976,
+     -121.74275
+    ],
+    [
+     48.16953,
+     -121.74259
+    ],
+    [
+     48.16929,
+     -121.74236
+    ],
+    [
+     48.16923,
+     -121.74196
+    ],
+    [
+     48.16894,
+     -121.74104
+    ],
+    [
+     48.1689,
+     -121.74023
+    ],
+    [
+     48.16919,
+     -121.73967
+    ],
+    [
+     48.16942,
+     -121.73914
+    ],
+    [
+     48.16962,
+     -121.73885
+    ],
+    [
+     48.16992,
+     -121.73927
+    ],
+    [
+     48.17024,
+     -121.73923
+    ],
+    [
+     48.1704,
+     -121.7394
+    ],
+    [
+     48.17064,
+     -121.73889
+    ],
+    [
+     48.17089,
+     -121.73866
+    ],
+    [
+     48.17103,
+     -121.73795
+    ],
+    [
+     48.17101,
+     -121.73729
+    ],
+    [
+     48.17085,
+     -121.73689
+    ],
+    [
+     48.17092,
+     -121.73635
+    ],
+    [
+     48.17102,
+     -121.7359
+    ],
+    [
+     48.17094,
+     -121.73535
+    ],
+    [
+     48.17076,
+     -121.73479
+    ],
+    [
+     48.17081,
+     -121.73423
+    ],
+    [
+     48.17039,
+     -121.73308
+    ],
+    [
+     48.17032,
+     -121.73258
+    ],
+    [
+     48.17015,
+     -121.7323
+    ],
+    [
+     48.16964,
+     -121.7317
+    ],
+    [
+     48.16955,
+     -121.73122
+    ],
+    [
+     48.16962,
+     -121.73092
+    ],
+    [
+     48.16963,
+     -121.73034
+    ],
+    [
+     48.16952,
+     -121.72978
+    ],
+    [
+     48.1695,
+     -121.7296
+    ],
+    [
+     48.16933,
+     -121.72956
+    ],
+    [
+     48.16913,
+     -121.72959
+    ],
+    [
+     48.16885,
+     -121.72946
+    ],
+    [
+     48.16866,
+     -121.72957
+    ],
+    [
+     48.16817,
+     -121.72905
+    ],
+    [
+     48.16791,
+     -121.72869
+    ],
+    [
+     48.16747,
+     -121.72852
+    ],
+    [
+     48.16735,
+     -121.72847
+    ],
+    [
+     48.16717,
+     -121.72815
+    ],
+    [
+     48.16719,
+     -121.72783
+    ],
+    [
+     48.16727,
+     -121.7276
+    ],
+    [
+     48.16726,
+     -121.72736
+    ],
+    [
+     48.16731,
+     -121.72706
+    ],
+    [
+     48.1673,
+     -121.72683
+    ],
+    [
+     48.16733,
+     -121.7266
+    ],
+    [
+     48.16726,
+     -121.72631
+    ],
+    [
+     48.16723,
+     -121.726
+    ],
+    [
+     48.16714,
+     -121.72576
+    ],
+    [
+     48.16705,
+     -121.72567
+    ],
+    [
+     48.16676,
+     -121.7255
+    ],
+    [
+     48.16665,
+     -121.72539
+    ],
+    [
+     48.16612,
+     -121.72429
+    ],
+    [
+     48.16609,
+     -121.72405
+    ],
+    [
+     48.16597,
+     -121.72336
+    ],
+    [
+     48.16592,
+     -121.72248
+    ],
+    [
+     48.16596,
+     -121.72165
+    ],
+    [
+     48.16573,
+     -121.72102
+    ],
+    [
+     48.16584,
+     -121.72038
+    ],
+    [
+     48.16609,
+     -121.71957
+    ],
+    [
+     48.16612,
+     -121.71928
+    ],
+    [
+     48.16609,
+     -121.71774
+    ],
+    [
+     48.16609,
+     -121.7176
+    ],
+    [
+     48.16612,
+     -121.71691
+    ],
+    [
+     48.16609,
+     -121.71664
+    ],
+    [
+     48.16607,
+     -121.71649
+    ],
+    [
+     48.16609,
+     -121.71634
+    ],
+    [
+     48.16612,
+     -121.71608
+    ],
+    [
+     48.16609,
+     -121.71594
+    ],
+    [
+     48.16604,
+     -121.71573
+    ],
+    [
+     48.16605,
+     -121.71525
+    ],
+    [
+     48.16592,
+     -121.71448
+    ],
+    [
+     48.16573,
+     -121.71411
+    ],
+    [
+     48.16538,
+     -121.7138
+    ],
+    [
+     48.16535,
+     -121.71347
+    ],
+    [
+     48.16517,
+     -121.71292
+    ],
+    [
+     48.16512,
+     -121.71185
+    ],
+    [
+     48.16526,
+     -121.71187
+    ],
+    [
+     48.16548,
+     -121.71175
+    ],
+    [
+     48.16609,
+     -121.71168
+    ],
+    [
+     48.16663,
+     -121.71159
+    ],
+    [
+     48.16708,
+     -121.71122
+    ],
+    [
+     48.16723,
+     -121.71123
+    ],
+    [
+     48.16738,
+     -121.71093
+    ],
+    [
+     48.16761,
+     -121.71079
+    ],
+    [
+     48.1678,
+     -121.71043
+    ],
+    [
+     48.16788,
+     -121.71005
+    ],
+    [
+     48.16797,
+     -121.70978
+    ],
+    [
+     48.16799,
+     -121.70955
+    ],
+    [
+     48.16809,
+     -121.70939
+    ],
+    [
+     48.16812,
+     -121.70914
+    ],
+    [
+     48.16805,
+     -121.70898
+    ],
+    [
+     48.16803,
+     -121.70844
+    ],
+    [
+     48.16792,
+     -121.70804
+    ],
+    [
+     48.16796,
+     -121.70777
+    ],
+    [
+     48.16792,
+     -121.70759
+    ],
+    [
+     48.16787,
+     -121.70752
+    ],
+    [
+     48.16786,
+     -121.70739
+    ],
+    [
+     48.16789,
+     -121.7071
+    ],
+    [
+     48.16782,
+     -121.70654
+    ],
+    [
+     48.16781,
+     -121.70623
+    ],
+    [
+     48.16788,
+     -121.70588
+    ],
+    [
+     48.16782,
+     -121.70548
+    ],
+    [
+     48.16772,
+     -121.70524
+    ],
+    [
+     48.1676,
+     -121.70508
+    ],
+    [
+     48.16751,
+     -121.70482
+    ],
+    [
+     48.16714,
+     -121.70408
+    ],
+    [
+     48.16732,
+     -121.70406
+    ],
+    [
+     48.16767,
+     -121.70417
+    ],
+    [
+     48.16796,
+     -121.70433
+    ],
+    [
+     48.16803,
+     -121.70443
+    ],
+    [
+     48.16807,
+     -121.70467
+    ],
+    [
+     48.16815,
+     -121.70442
+    ],
+    [
+     48.16813,
+     -121.7043
+    ],
+    [
+     48.16803,
+     -121.70403
+    ],
+    [
+     48.1682,
+     -121.70411
+    ],
+    [
+     48.16833,
+     -121.70405
+    ],
+    [
+     48.16817,
+     -121.70372
+    ],
+    [
+     48.16798,
+     -121.70357
+    ],
+    [
+     48.16805,
+     -121.70347
+    ],
+    [
+     48.16803,
+     -121.70338
+    ],
+    [
+     48.16792,
+     -121.70322
+    ],
+    [
+     48.16787,
+     -121.70292
+    ],
+    [
+     48.16779,
+     -121.7027
+    ],
+    [
+     48.16778,
+     -121.70257
+    ],
+    [
+     48.16782,
+     -121.70245
+    ],
+    [
+     48.16777,
+     -121.70229
+    ],
+    [
+     48.16778,
+     -121.70207
+    ],
+    [
+     48.16775,
+     -121.70199
+    ],
+    [
+     48.16767,
+     -121.702
+    ],
+    [
+     48.16748,
+     -121.70174
+    ],
+    [
+     48.16727,
+     -121.7017
+    ],
+    [
+     48.16699,
+     -121.70152
+    ],
+    [
+     48.16693,
+     -121.70143
+    ],
+    [
+     48.16686,
+     -121.70123
+    ],
+    [
+     48.16658,
+     -121.70079
+    ],
+    [
+     48.1663,
+     -121.7003
+    ],
+    [
+     48.16621,
+     -121.7
+    ],
+    [
+     48.16627,
+     -121.69972
+    ],
+    [
+     48.16625,
+     -121.69951
+    ],
+    [
+     48.1663,
+     -121.69939
+    ],
+    [
+     48.16629,
+     -121.69926
+    ],
+    [
+     48.16638,
+     -121.69906
+    ],
+    [
+     48.1664,
+     -121.69875
+    ],
+    [
+     48.16648,
+     -121.69846
+    ],
+    [
+     48.16643,
+     -121.69793
+    ],
+    [
+     48.16638,
+     -121.69777
+    ],
+    [
+     48.16627,
+     -121.69765
+    ],
+    [
+     48.1662,
+     -121.69739
+    ],
+    [
+     48.16624,
+     -121.69708
+    ],
+    [
+     48.16626,
+     -121.69683
+    ],
+    [
+     48.16624,
+     -121.69673
+    ],
+    [
+     48.16609,
+     -121.69644
+    ],
+    [
+     48.16606,
+     -121.69639
+    ],
+    [
+     48.16603,
+     -121.69599
+    ],
+    [
+     48.16605,
+     -121.69552
+    ],
+    [
+     48.16593,
+     -121.69483
+    ],
+    [
+     48.1659,
+     -121.69447
+    ],
+    [
+     48.16609,
+     -121.69465
+    ],
+    [
+     48.16638,
+     -121.69512
+    ],
+    [
+     48.1663,
+     -121.69474
+    ],
+    [
+     48.1663,
+     -121.69441
+    ],
+    [
+     48.16625,
+     -121.69396
+    ],
+    [
+     48.16624,
+     -121.69352
+    ],
+    [
+     48.16636,
+     -121.69312
+    ],
+    [
+     48.16641,
+     -121.69281
+    ],
+    [
+     48.16659,
+     -121.69231
+    ],
+    [
+     48.1666,
+     -121.69213
+    ],
+    [
+     48.16656,
+     -121.6919
+    ],
+    [
+     48.16663,
+     -121.69163
+    ],
+    [
+     48.16657,
+     -121.69115
+    ],
+    [
+     48.16663,
+     -121.69095
+    ],
+    [
+     48.16669,
+     -121.6911
+    ],
+    [
+     48.16673,
+     -121.69136
+    ],
+    [
+     48.16681,
+     -121.69113
+    ],
+    [
+     48.16688,
+     -121.69111
+    ],
+    [
+     48.16715,
+     -121.69133
+    ],
+    [
+     48.16733,
+     -121.69124
+    ],
+    [
+     48.16744,
+     -121.69128
+    ],
+    [
+     48.16753,
+     -121.69137
+    ],
+    [
+     48.1676,
+     -121.69133
+    ],
+    [
+     48.16762,
+     -121.69125
+    ],
+    [
+     48.16756,
+     -121.69107
+    ],
+    [
+     48.16738,
+     -121.69088
+    ],
+    [
+     48.16729,
+     -121.69043
+    ],
+    [
+     48.16732,
+     -121.69014
+    ],
+    [
+     48.16726,
+     -121.6898
+    ],
+    [
+     48.16726,
+     -121.68961
+    ],
+    [
+     48.16717,
+     -121.68933
+    ],
+    [
+     48.1672,
+     -121.68911
+    ],
+    [
+     48.16732,
+     -121.68925
+    ],
+    [
+     48.16745,
+     -121.68918
+    ],
+    [
+     48.16757,
+     -121.68945
+    ],
+    [
+     48.16764,
+     -121.68949
+    ],
+    [
+     48.16765,
+     -121.68928
+    ],
+    [
+     48.16775,
+     -121.68932
+    ],
+    [
+     48.16776,
+     -121.68912
+    ],
+    [
+     48.16787,
+     -121.68917
+    ],
+    [
+     48.16786,
+     -121.68893
+    ],
+    [
+     48.16802,
+     -121.68888
+    ],
+    [
+     48.16799,
+     -121.68866
+    ],
+    [
+     48.16848,
+     -121.68856
+    ],
+    [
+     48.16902,
+     -121.68852
+    ],
+    [
+     48.16935,
+     -121.68821
+    ],
+    [
+     48.16963,
+     -121.68815
+    ],
+    [
+     48.169785,
+     -121.68804
+    ],
+    [
+     48.169796,
+     -121.68805
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 13.5,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 4.5,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 4.5,
+      "note": "From the Saddle Lake Trailhead, climb through old-growth forest past Saddle Lake and up into the alpine meadows of Goat Flats, the standard camp for a Three Fingers trip. Bears fre…",
+      "fromTo": "Hike in to Goat Flats camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Leave camp early for the push over Tin Can Gap/Camp Saddle: a steep snow slope (ice axe, crampons advisable even late season) followed by a rock scramble and a short rebarred ladde…",
+      "fromTo": "Summit push and hike out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Glacier travel gear; rope for the glacier and exposed ladder/scramble section.",
+   "what_to_bring": [
+    "ice axe",
+    "crampons",
+    "rope",
+    "helmet",
+    "headlamp"
+   ],
+   "pro_tips": [
+    "Start early — most documented rescues on this route trace back to parties still on the glacier or ladders as fog/darkness set in",
+    "Late in the season, look for the moat entrance along the ridge crest near the top of the glacier to avoid the icy crossing entirely",
+    "Take your pack off before squeezing through the gap between the 2nd and 3rd ladder"
+   ],
+   "watch_out": [
+    "Getting caught by afternoon fog on the glacier traverse or at Tin Can Gap — several stranded-hiker rescues have originated here",
+    "Missing the rock-moat bypass entrance in poor visibility and being forced onto exposed glacier ice"
+   ],
+   "pro_needs": "Minimal; primarily snow/glacier protection.",
+   "best_season": "August through mid-September is the classic window, but ice axe is essentially mandatory all season and crampons/a rope are strongly recommended for any attempt before September, when the Queest-Alb Glacier is icier and the moat bypass isn't yet open.",
+   "high_point_ft": 6854,
+   "aid_grade": null,
+   "approach": "FR 41 is closed to vehicles at the Canyon Creek bridge, so first walk or bike roughly 8-9 miles of road to the trailhead. From the Tupso Pass trailhead, follow Three Fingers Trail #641 through forest to Saddle Lake (~2.5 mi, last easy water — no fires or camping within 200 ft of the lake past this point), then continue up through meadows to Goat Flats (~4.5 mi total), a broad subalpine bench with the best camping on the route and views out to Puget Sound. From Goat Flats the trail climbs roughly 2 more miles to Tin Can Gap (~6.2-7 mi total, most of the day's 4,200 ft gain banked); this is where the maintained trail effectively ends and most casual hikers turn around. Beyond the gap, drop off-trail onto the Queest-Alb (Three Fingers) Glacier — a short but real glacier crossing with a moat between ice and rock that widens through the season (crampons/axe strongly recommended, especially before August); a rope is worth carrying if crevasses are open. On the far side, scramble up rock and snow past the base of the summit block to the historic lookout's ladder system: three fixed wooden ladders bolted/pinned into the rock, stacked in sequence, gaining the final class-5-equivalent rock band to the lookout deck. The transition between the second and third ladder is the trickiest move and is awkward with a full pack; exposure is significant and a slip here would be serious, so this last pitch is why the route is rated a scramble rather than a hike despite no rope typically being used. Some parties fix or find a hand-line/rope on a short exposed rock step just past Tin Can Gap before the glacier — treat it as unverified fixed gear.",
+   "descent_text": "This is a walk-off/downclimb route with no roped rappelling on the standard line. Downclimb the three fixed ladders in reverse (facing in, one at a time, mind the awkward 2nd-to-3rd ladder transition), then reverse the rock/snow scramble back down to and across the Queest-Alb Glacier, watching the moat and any open crevasses. Climb back up to Tin Can Gap and reverse Trail #641 through Goat Flats and Saddle Lake to the trailhead. The main descent hazards are the exposed ladder pitch (a fall here would be very serious despite no technical rappelling), a soft or icy glacier moat later in the day, and lingering steep snow on the south ridge in early season — an ice axe is recommended into mid-summer. No rappel gear is needed for the standard route.",
+   "bail": "Retreat to Tin Can Gap/Goat Flat; no shortcut descent.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1 trail",
+     "notes": "Long forest/subalpine trail; the modern approach adds a closed-road walk/bike before the historic trailhead.",
+     "pitch": "Trailhead to Saddle Lake/Goat Flats"
+    },
+    {
+     "grade": "Class 2",
+     "notes": "Meadow and talus trail to the last camp before the glacier.",
+     "pitch": "Goat Flats to Tin Can Gap"
+    },
+    {
+     "grade": "Snow/glacier travel",
+     "notes": "Ice axe and crampons required; crevasse hazard.",
+     "pitch": "Tin Can Gap across the Queest-Alb Glacier edge"
+    },
+    {
+     "grade": "Class 3-4, exposed",
+     "notes": "Three fixed ladders (rebar/timber anchored) gain the blasted summit block and L-4 lookout cabin at ~6,850 ft.",
+     "pitch": "Summit ladders to lookout"
+    }
+   ],
+   "itinerary": {
+    "cal": "The Canyon Creek bridge on the access road (Tupso Pass Road / FR 41) has been washed out since 2023 and is permanently closed to vehicles beyond that point -- this adds roughly 9 miles each way (about 18 miles round trip) of road walking or biking if you can't drive to the trailhead; check MBS National Forest road status before you go. Late Aug-Oct gives the driest trail and least snow on the summit slope.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Saddle Lake Trailhead, climb through old-growth forest past Saddle Lake and up into the alpine meadows of Goat Flats, the standard camp for a Three Fingers trip. Bears frequent the area, so hang or canister your food.",
+      "hours": 4.5,
+      "miles": 7.3,
+      "title": "Hike in to Goat Flats camp",
+      "gainFt": 3000,
+      "lossFt": 100,
+      "packLb": 32,
+      "schedule": [],
+      "objective": "Reach Goat Flats camp"
+     },
+     {
+      "n": 2,
+      "note": "Leave camp early for the push over Tin Can Gap/Camp Saddle: a steep snow slope (ice axe, crampons advisable even late season) followed by a rock scramble and a short rebarred ladder up to the 1930s fire lookout cabin. After the summit, break camp and hike the full ~7.5 miles back out.",
+      "hours": 9,
+      "miles": 7.7,
+      "title": "Summit push and hike out",
+      "gainFt": 1200,
+      "lossFt": 4200,
+      "packLb": 20,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave Goat Flats camp",
+        "detail": "Light packs for the summit push; leave the rest of camp set up."
+       },
+       {
+        "time": "6:30 AM",
+        "label": "Reach Tin Can Gap / Camp Saddle",
+        "detail": "Start of the steep snow slope; axe and crampons on if icy."
+       },
+       {
+        "time": "8:00 AM",
+        "label": "Ladder pitch to the lookout",
+        "detail": "Exposed final scramble up rebarred ladders; sure footing required."
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Summit",
+        "detail": "1930s lookout cabin, 6,854 ft."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Back at camp, break down tents",
+        "detail": "Full packs on for the hike out."
+       },
+       {
+        "time": "3:00 PM",
+        "label": "Arrive trailhead",
+        "detail": ""
+       }
+      ],
+      "objective": "Tag the South Peak lookout, then pack out to the trailhead"
+     }
+    ],
+    "totalNote": "A 2-day, 1-night trip: ~7.3 mi and 3,000 ft up to Goat Flats camp on day one, then a long summit-and-hike-out day (~7.7 mi) with the final snow slope, rock scramble, and rebarred ladder to the historic lookout."
+   },
+   "access": {
+    "fees": "$5 day-use Northwest Forest Pass (or annual pass) at the trailhead",
+    "notes": "None required for day use; Northwest Forest Pass recommended for parking. Digital Recreation Day Pass available via Recreation.gov for Mount Baker-Snoqualmie National Forest day-use sites. Overnight use requires separate permits; verify current conditions with Verlot Public Service Center (360) 691-7791. Tupso Pass Road (FS 41) is permanently closed to vehicles at the Canyon Creek bridge (~mile 8.5). Hiking and biking allowed. Approximately 9 additional miles to actual trailhead required - bicycle recommended for approach.",
+    "rules": "Boulder River Wilderness: group size limited to 12; no campfires within 1/4 mile of Trail #641 from Saddle Lake or in the Goat Flats area; no camping within 200 ft of Saddle/Bandana Lake shorelines; Leave No Trace",
+    "permit": "None required — free self-issue wilderness permits available at trailheads/ranger stations for day/overnight travel where the peak is inside designated wilderness.",
+    "closures": "Tupso Pass Road (FR 41) closed to vehicles beyond the Canyon Creek bridge (~mile 8.5) since 2023 — check current MBS NF alerts before driving out",
+    "group_limit": 12,
+    "landManager": "Mount Baker-Snoqualmie National Forest, Darrington Ranger District (Boulder River Wilderness)",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+    "passRequired": "Northwest Forest Pass (or America the Beautiful pass) for trailhead parking; free self-issue wilderness permit at the trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Boulder River Wilderness permit",
+     "where": "Fill one out at the trailhead register; a Northwest Forest Pass is needed to park."
+    }
+   },
+   "road": {
+    "name": "Tupso Pass Road (FR 41)",
+    "status": "Permanently closed to vehicle travel beyond the Canyon Creek bridge (~mile 8.5)",
+    "driveNote": "From the vehicle closure gate it's roughly 9 additional miles of road walking or mountain biking to reach the signed Goat Flats trailhead at ~mile 17.5-18",
+    "seasonalGate": "Vehicle gate at Canyon Creek bridge is a standing closure, not seasonal, pending any Forest Service repair"
+   },
+   "climate": {
+    "typical": "Maritime; lookout often in cloud.",
+    "bySeason": {
+     "fall": "early-season window before snow",
+     "spring": "deep snow, not in season",
+     "summer": "glacier softens — best mid/late summer",
+     "winter": "full winter mountaineering, road closed"
+    },
+    "forecastZone": "NOAA West Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "This route has a documented history of multi-hour SAR rescues, typically from parties caught by fog or nightfall between Tin Can Gap and the glacier",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Darrington Ranger District (360-436-1155); Verlot Public Service Center (360-691-7791)",
+    "nearestHospital": "Cascade Valley Hospital (Skagit Regional Health), 330 S Stillaguamish Ave, Arlington, WA — 24-hour ED",
+    "sheriffDispatch": "Snohomish County Sheriff / Snohomish County Volunteer Search & Rescue — call 911"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends in August and early September; also heavy over any sunny summer weekend since the lookout has become a well-known social-media destination",
+    "solitudeRating": 2,
+    "estimatePerSeason": "High for a wilderness scramble — likely hundreds of parties/hikers per season on sunny weekends; Goat Flats camp and the lookout itself (max occupancy 8) are reported to fill up on August-September weekends"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong all-day fitness — long approach (historically ~17+ mi RT from the Mountain Loop Highway trailhead, more if the FS 41 washout forces biking/walking extra road miles) with ~5,000+ ft of gain to Tin Can Gap and the lookout",
+     "packWeight": "Moderate day-trip weight (helmet, layers, possibly light traction/axe in shoulder season); heavier if overnighting at Goat Flats, which many parties do given the length"
+    },
+    "approachTime": "6-9+ hours one-way to the lookout depending on road-washout status and whether the party bikes the extra FS 41 mileage; frequently split into an overnight at Goat Flats",
+    "requiredSkills": [
+     "exposed Class 3 ladder/rung climbing",
+     "basic glacier travel and crevasse awareness on the Queest-Alb Glacier remnant",
+     "route-finding on a climbers' trail above Goat Flats/Tin Can Gap",
+     "composure on summit-block exposure"
+    ],
+    "experienceLevel": "Intermediate scrambler — needs to be solid on exposed, rebar-ladder terrain and comfortable with short glacier/snowfield crossings; not a good first scramble given the ladder exposure and glacier travel."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "August through mid-September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Snow typically still lingering into early-mid July at this elevation; becomes good by late July as the route dries out and matches the best-season start",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Lingering snow on approach slopes and the Queest-Alb Glacier crossing, plus road/trail access to Tin Can Gap is often still snow-covered this early",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Glacier remnant and approach trail are most consolidated/driest; core of the best-season window",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the season window — early-season snow and shortening weather windows make ladder/glacier travel more hazardous",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still within best season through mid-month; early fall storms become more likely later in the month",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Western Cascades wilderness climate — frequently cloudy/wet outside the July-September dry window; the crest and summit block are exposed to wind and fast-moving fronts even in summer",
+     "probability": "Occasional afternoon thunderstorms/showers in August; sudden weather changes can make the ladders and summit block dangerously slick"
+    },
+    "exposure": "High — the exposed rebar ladders below the lookout and the summit block scramble are the primary fall-consequence hazards; a slip on the ladders or summit block, or a crevasse fall on the glacier crossing, could be serious to fatal",
+    "avalanche": {
+     "zone": "West Slopes North (NWAC) — best-fit regional zone for the Mountain Loop Highway/Boulder River Wilderness area; not confirmed as a peak-specific NWAC product",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low",
+      "October": "Moderate",
+      "September": "Low"
+     }
+    },
+    "crevasses": "Minor crevasse hazard on the Queest-Alb Glacier crossing (as already flagged in hazards) — generally a walkable remnant in normal August-September conditions but should be assessed each trip, especially in high-snow years or early season"
+   },
+   "data_quality": {
+    "gaps": [
+     "Exact Forest Service timeline for repairing/reopening Tupso Pass Road beyond the Canyon Creek bridge is not published",
+     "Cited elevations for the South Peak/lookout vary by ~4 ft between USFS/WTA (6,854 ft) and other surveys (6,858 ft)",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/2JCF",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "HIGH",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.16992,
+    "peakLng": -121.68781,
+    "trailhead": "Goat Flats Trailhead (via Tupso Pass Road FS 41/FS 4160)",
+    "trailheadLat": 48.1972,
+    "trailheadLng": -121.7742,
+    "trailheadDirection": "East-northeast from Mountain Loop Highway milepost 7; FS Road 41 then FS 4160 approximately 17.5 miles"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Tupso Pass trailhead, Trail #641 (road drivable)",
+     "notes": "Trail #641 from the Tupso Pass trailhead at the end of FR 41. Forest to Saddle Lake at about two and a half miles — the last easy water, with no fires and no camping within two hundred feet of the shore beyond this point — then up through meadows to Goat Flats at roughly four and a half miles, which has the best camping on the route and views out to Puget Sound.\n\nFrom Goat Flats the trail climbs about two more miles to Tin Can Gap at roughly six miles, banking most of the day's gain. That is the effective end of the maintained trail and where most walkers turn back.\n\nThe trail has been maintained by volunteers in recent years, with large numbers of logs cleared; note that a big fallen log above Saddle Lake has rerouted the tread, and there is a rough connector going straight up and down to the next switchback.",
+     "distMi": 6.2,
+     "season": "Jul-Oct",
+     "hazards": [
+      "moat between glacier and rock that widens through the season and is hard to enter in poor visibility",
+      "crevasses on the Queest-Alb once it opens up",
+      "exposure on the ladders, particularly between the second and third",
+      "unverified fixed hand-line on the rock step past Tin Can Gap"
+     ],
+     "longForm": true,
+     "baseFinding": "Past Tin Can Gap you drop off-trail onto the Queest-Alb Glacier. Late in the season you can avoid the ice entirely by staying in the moat between the top edge of the glacier and the rock — and finding the entrance to that moat is the thing that goes wrong in bad weather. The trail crosses back to the north side of the ridge shortly before it and you meet the top of the glacier there; if you are on the south side of the ridge you have not crossed over yet.\n\nThe start of the actual climbing is not in doubt once you can see it: three wooden ladders, stacked in sequence and pinned into the rock with rebar and steel cable, run up the final rock band to the lookout deck. There is nothing else like them on the mountain. The transition between the second and third ladder is the hardest move and is awkward with a full pack, and the exposure is real.\n\nThe negative marker is which summit you are on. The lookout — and therefore the ladders — is on the south peak. If you have crossed the glacier and are scrambling rock toward a col with no ladders anywhere in view, you are heading for the Middle or North peak instead. Some parties also report a hand-line on a short exposed rock step just past Tin Can Gap before the glacier; treat any fixed rope there as unverified."
+    },
+    {
+     "name": "Road-closure variation — walk or bike FR 41",
+     "notes": "FR 41 has washed out repeatedly and the closure point has moved. Reported blockages have been around five miles up from the Mountain Loop Highway, and at other times past the Canyon Creek bridge, leaving roughly nine miles of road between the closure and the trailhead. Vehicles are barred past the barrier but foot and bike traffic are allowed, and biking the road is the common tactic.\n\nTreat this as a standing possibility rather than a one-off: check with the Darrington Ranger District or the Verlot Public Service Center before committing, because the difference is a day hike versus an overnight. There is now a sign at the road marking the old trailhead.",
+     "season": "whenever the road is closed at the washout",
+     "hazards": [
+      "several miles of road walking or biking each way with the resulting late finish",
+      "all the hazards of the standard variation once on trail"
+     ],
+     "primary": true,
+     "baseFinding": "Once you reach Tupso Pass the route is identical, and the same markers apply: cross to the north side of the ridge past Tin Can Gap to meet the top of the Queest-Alb, find the moat entrance rather than stepping onto open ice, and finish on the three stacked ladders on the south peak."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Short exposed rock step past Tin Can Gap",
+     "notes": "Some parties fix or find a hand-line/rope on a short exposed rock step just past Tin Can Gap, before the glacier — treat it as unverified fixed gear."
+    },
+    {
+     "n": 2,
+     "label": "Queest-Alb (Three Fingers) Glacier crossing",
+     "notes": "Beyond Tin Can Gap, drop off-trail onto the glacier — a short but real crossing with a moat between ice and rock that widens through the season. Crampons and axe strongly recommended, especially before August; a rope is worth carrying if crevasses are open."
+    },
+    {
+     "n": 3,
+     "label": "Rock and snow scramble to the ladders",
+     "notes": "On the far side of the glacier, scramble up rock and snow past the base of the summit block to the historic lookout's ladder system."
+    },
+    {
+     "n": 4,
+     "class": "class-5-equivalent rock band",
+     "label": "Three fixed wooden ladders to the lookout deck",
+     "notes": "Three fixed wooden ladders bolted/pinned into the rock, stacked in sequence, gain the final rock band to the lookout deck. The transition between the second and third ladder is the trickiest move and is awkward with a full pack; exposure is significant and a slip here would be serious, which is why this last pitch makes the route a scramble rather than a hike despite no rope typically being used."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5200,
+     "name": "Goat Flats",
+     "role": "main",
+     "type": "camp",
+     "notes": "The main camp for the peak, an open subalpine meadow on a ridge crest a little over two miles beyond Saddle Lake and roughly two and a half miles short of the lookout, with a view west to Puget Sound. Bears work the area, so bring a canister or another way to secure food.",
+     "water": "Tarns only — there is no running water at the flats, and the tarn water has been described as stale by autumn. The last dependable running water is a stream well below, around the 4,200 ft mark; above the flats the next water is glacier and snow melt beyond Tin Can Gap. Late in a dry season, plan to carry from low down.",
+     "permit": "Mount Baker-Snoqualmie National Forest, Boulder River Wilderness. Campfires are prohibited in the Goat Flats area outright, and also anywhere within a quarter mile of Trail 641 above Saddle Lake. No overnight permit or quota is published. There is a backcountry toilet at the flats; note that it must not be used for packed-out waste bags.",
+     "capacity": "A number of established sites spread across the meadow, and it is regularly crowded on summer and autumn weekends. Camp only on ground that is already bare — the meadow is fragile and the Forest Service asks for existing sites only."
+    },
+    {
+     "elev": 6851,
+     "name": "Three Fingers Lookout",
+     "role": "main",
+     "type": "hut",
+     "notes": "A 1930s fire lookout on the South Peak that climbers sleep in, reached by ladders with serious exposure — decide for yourself whether the final block is safe on the day. The door is never locked, but in winter and spring it can be frozen, swollen or buried, and the summit block itself is hard to climb then; summer is the season for it. Bring a tent as a fallback: it fills on good weekends and visitation is heavy even midweek. accounts disagree on whether there is usable ground to camp outside — some say pitch below the lookout, others say there is nowhere safe on the summit at all — so do not count on it.",
+     "water": "None at the site — there is no potable water at the lookout and nothing to melt but snow.",
+     "permit": "No fee, no reservation and no permit — it is open to whoever reaches it first. There is no toilet: carry a waste bag and pack everything out, and do not put it in the Goat Flats toilet or leave it below the lookout. The volunteers who maintain the building ask that you take crampons off before going in, keep the shutters closed in bad weather and when you leave, leave nothing behind, and not force shutters that are locked.",
+     "capacity": "Maximum occupancy of eight, first come first served. Accounts of the actual floor put it nearer three or four people plus two more on the sleeping platform, so eight is a squeeze rather than a plan. Arrive early or expect to be turned away by whoever got there first."
+    },
+    {
+     "elev": 3785,
+     "name": "Saddle Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "Two and a half miles in from Tupso Pass on a rough, root-bound forest trail — the first water and the first flat ground, but low and far from the mountain. Volunteers built a shelter at the meadow edge here in the early 1970s; no current source confirms it still stands or is usable, so do not plan on sleeping in it.",
+     "water": "The lake — there is no running water here, and in a warm year it has been reported shrinking and buggy by mid-summer.",
+     "permit": "Mount Baker-Snoqualmie National Forest, Boulder River Wilderness. Camping is prohibited within 200 ft slope distance of the shoreline of Saddle Lake and of Bandana Lake, and campfires are prohibited within the same 200 ft of both. No trailhead permit or quota is published for this trail, and the wilderness is closed throughout to pack and saddle stock.",
+     "capacity": "Not published. It is a small four-acre lake and the setback rule below pushes camps back off the water."
+    },
+    {
+     "elev": 5752,
+     "name": "Tin Can Gap",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The last ground before the climbing starts: the Forest Service names it Tin Pan Gap, most climbers say Tin Can Gap, and it is where the route stops being a walk and starts needing equipment and judgement. accounts disagree on the distance in, from roughly six to eight miles, so do not plan a turnaround time off one figure. Useful mainly to parties who want a short summit morning on the glacier.",
+     "water": "Glacier and snow melt only.",
+     "permit": "The campfire closure along Trail 641 above Saddle Lake extends here.",
+     "capacity": "A few spots at the gap and at the foot of the snow slope below it — small, and second choice to Goat Flats."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south peak pk via lookout",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}
