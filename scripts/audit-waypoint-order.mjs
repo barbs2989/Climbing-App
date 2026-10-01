@@ -94,8 +94,9 @@ async function page(after) {
 
 const t = { rows: 0, withWp: 0, wp: 0, reordered: 0, deduped: 0, dupPins: 0,
   allHaveDist: 0, partialDist: 0, dupSummits: 0, dupFar: 0, dupUnplaced: 0,
-  unsortable: 0, afterSummit: 0, afterSummitPins: 0, descentNamed: 0, readingList: 0, selfContradicts: 0 };
-const outOrder = [], outDup = [], outFar = [], outAfter = [], outSelf = [];
+  unsortable: 0, afterSummit: 0, afterSummitPins: 0, descentNamed: 0, readingList: 0, selfContradicts: 0,
+  trailheadLate: 0 };
+const outOrder = [], outDup = [], outFar = [], outAfter = [], outSelf = [], outLate = [];
 
 let after = "";
 for (;;) {
@@ -173,6 +174,20 @@ for (;;) {
             b: `${pair[1].type} "${String(pair[1].name).slice(0, 34)}" @${pair[1].distMi} mi`,
             known: known.length, of: dd.length });
         }
+      }
+
+      // THE START WAS NEVER ASKED ABOUT. Everything below asks what comes AFTER the summit; nothing
+      // asked where the walk BEGINS, and 22 routes listed their trailhead somewhere other than
+      // first — almost all as [...approach pins already in walking order..., Trailhead, Summit],
+      // the two appended to a list whose distMi ascend. Measured 2026-09-30 and repaired in
+      // scripts/oneoff/reorder-waypoint-order-batch7.mjs, except two whose trailhead pin
+      // contradicts the approach its other pins walk (moving a wrong start to the front fixes
+      // nothing). A loop's closing trailhead is not this: only the FIRST trailhead is tested.
+      const ti = dd.findIndex(isTrailheadPin);
+      if (ti > 0) {
+        t.trailheadLate++;
+        if (outLate.length < LIST) outLate.push({ id: r.id, name: r.name, at: ti + 1, of: dd.length,
+          seq: dd.map((w) => (w && w.type) || "?").join(",") });
       }
 
       const si = dd.findIndex(isSummitPin);
@@ -271,6 +286,13 @@ if (!t.unsortable) {
   console.log(`  what is on screen today is an order the app itself would reject. No prose, no research.`);
   console.log(`  These are ADJUDICATED too — reorder-waypoints-by-distance.mjs skips them by name, e.g.`);
   console.log(`  "the array does not start at its nearest point — likely two approaches spliced together".`);
+  console.log(`  ${t.trailheadLate} list their TRAILHEAD somewhere other than first — the walk starts mid-list.`);
+  console.log(`  Not adjudicated by the six batches (they only asked what follows the summit); batch 7`);
+  console.log(`  read all 22 found on 2026-09-30. Read each before moving it: a trailhead pin that`);
+  console.log(`  contradicts the approach its other pins walk is the defect, not its position. The two`);
+  console.log(`  it refused are RESEARCHED: Meany's pins walk the Elwha from Whiskey Bend (its trailhead pin`);
+  console.log(`  is North Fork Quinault); Devil's Club's walk Depot Creek from Canada (its pin is Ross Dam).`);
+  console.log(`  Each needs a real trailhead coordinate, which nobody has supplied — not a reorder.`);
   console.log(`  ${t.afterSummit} list a non-summit pin AFTER the summit (${t.afterSummitPins} pins) — an ADJUDICATED`);
   console.log(`  RESIDUE, not a backlog: this shape was read route by route across six batches and the`);
   console.log(`  keeps carry recorded reasons. Do not re-sweep it on the strength of this count.`);
@@ -293,6 +315,10 @@ if (outSelf.length) {
     console.log(` ${o.worst.toFixed(2).padStart(6)} mi back  ${o.id} — ${o.name}  (${o.known} of ${o.of} pins placed)`);
     console.log(`     ${o.a}\n     then ${o.b}`);
   });
+}
+if (outLate.length) {
+  console.log("\nTHE TRAILHEAD IS NOT THE FIRST PIN:");
+  outLate.forEach(o => console.log(` ${o.id} — ${o.name}  (trailhead is pin ${o.at} of ${o.of})\n    types: ${o.seq}`));
 }
 if (outAfter.length) {
   console.log("\nAFTER THE SUMMIT AND NOT EXPLAINED BY THE DESCENT (read, do not sweep):");

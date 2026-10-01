@@ -107,6 +107,41 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   Bald Eagle pins 2-4 (imprecise, not off-route), Rimrock approach (no published account), Witches Tower E/SE
   (`wa_e_se_face`: two lines, one source each — split into East Face 4th and Southeast Face 5.6).
 
+## 8. Owner: "do deep online research for those" (`deep/out/r4-r6.json`)
+- Applied (r5): Cashmere "Base of west ridge" moved 0.77 km onto the west col (a published saddle point and an
+  independent recorded track agree within 3 m), elev 6,800 -> 8,000. Clark waypoint 5 (Walrus Glacier rope-up)
+  moved 1.96 km onto the 6,700 ft bench on Clark's eastern arm (a published map marker and a recorded track 93 m
+  apart, the height stated by two reports), elev 7,000 -> 6,700. Its directions/note text still describe the
+  approach differently ("east of Boulder Pass") — not edited, owner's read.
+- Still unresolved, no ops (r4, r6): the five Half Moon Crag pass claims (only the land manager's own fee-site list,
+  which omits the pull-off — one author; these rows also contradict themselves, notes say no fee site while
+  `passRequired` says a pass); Three Fingers day 1 (4.5 / 4.75 / 5 mi — no two agree); Switchback day 1 (only
+  segments and round trips published); Bald Eagle pins 2-4 (no coordinate published); Rimrock (no account found —
+  the stored Swamp Creek / Blue Basin approach matches an Agnes Mountain report word for word, so it was carried
+  over from Agnes; owner: drop it or state no known approach); Witches Tower E/SE (still one source per line).
+
+## 9. Owner: "keep going with deep research to find the rest" (`deep/out/r7-r9.json`, no ops)
+- Half Moon Crag (r7): still only the land manager speaks to this pull-off. The crag's guidebook, the county's
+  mile-by-mile highway tour, federal fee notices and climber/hiker forums say nothing about a pass there. A guidebook
+  full-text search returning zero hits is not a statement, so it was not counted. Owner: the fix, if accepted, is
+  `passRequired` -> no pass on these five rows only.
+- Three Fingers day 1 (r8): 7.3 mi is supported from no trailhead. From the old Tupso Pass trailhead, 4.5 / 4.75 / 5
+  mi, one author each; the longer published figures start at the road washout, which this row does not use. Owner
+  option: 4.5 (the row's own approach text already says ~4.5); day 2's 7.7 mi needs the same read.
+- Switchback day 1 (r8): no two sources state one figure to Cooney Lake on the row's Foggy Dew line (segments and
+  loop totals only). 6.2 also appears in day 2's note and underlies day 2's 12.8 mi; the row's own pins put the lake
+  at 8 mi.
+- Bald Eagle pins 2-4 (r9): the trip report that describes the line gives no coordinate or track; no published track
+  found. The three pins' coordinates divide evenly by 11 — interpolated, not measured — but they lie on the east-side
+  line the report describes, so they are not shown off-route.
+- Rimrock (r9): now confirmed in the WRONG valley. A guidebook and an independent club-annual account both put the
+  ridge between Flat Creek and the West Fork of Agnes Creek; the stored Swamp Creek / Blue Basin approach is Agnes
+  Mountain's. Neither source gives a replacement line, so no text was written. Owner: state no published route beyond
+  the two drainages, and drop waypoints 1-2 (Fivemile Camp, Swamp Creek Camp) with that leg.
+- Witches Tower E/SE (r9): the reverse of the condition for the strip ops. The Southeast Face (1 pitch, 5.6, 1986) is
+  now in the guidebook, with a peak page agreeing (possibly copied from it); the 4th-class East Face is still single
+  source. Owner: split the row, or re-point it to the guidebook's Southeast Face 5.6.
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
