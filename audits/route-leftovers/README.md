@@ -282,10 +282,24 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
 - Half Moon x5 `access.passRequired` -> none at the roadside pullout (not a fee site); `access.fees` -> "None." (o16), so
   it no longer points at a fee the route does not list.
 
+## 17. Owner: "do those" (`deep/out/r28, r29.json`) — nothing applied
+- King Kong crux 5.11d-5.12a: SETTLED, no change needed. A newer guidebook (Cascades Rock, 2nd ed.) grades it 5.11+, and an
+  independent 8-pitch repeat voted 5.12a (a third climber 5.12-), so both ends of the stored range have two sources.
+- King Kong IV and `fa`: still one source. The new guidebook prints a first-ascent line under each route; its page 114
+  would be the second source for `fa` if the owner can read it. It prints no commitment numeral, so IV stays open.
+- Witches Tower 5.6: still no second account (trip reports describe the scramble side; full-text book search finds only
+  the one author). The 5.6 is prose only; `grade` is 4th.
+- Three Fingers day 2 7.7 mi, Bald Eagle pin 3 `distMi` 3.2: ~270 more trip reports read; only single legs or whole
+  trips are stated. Unchanged.
+- Switchback day 1 6.2 mi: unchanged (8.5 mi still one author). Every figure found puts Cooney Lake well past 6.2 mi.
+  Also found: the usual Foggy Dew line turns onto Martin Creek #429 near mile 5 and Cooney Lake Trail #434 is only the
+  last 0.2 mi, so day 1's note and pin 2 ("Merchants Basin / Cooney Lake Trail #434 split") mix two lines. A fix must
+  move day 2's 12.8 mi and its "6.2 miles back out" note with it, and stay consistent with `dist_km` 15.8 / ~19 mi RT.
+
 ## Held for the owner (not applied)
 - **Deletes:** done by the owner (section 16).
-- **Single source / one author:** King Kong commitment IV, its `fa` (Wertkin & Johnson, FFA with Gleason) and crux
-  5.11d-5.12a — every source is the first ascensionist (`deep/out/h1.json`, `research/held-v019.json`). East Twin
+- **Single source / one author:** King Kong commitment IV and its `fa` (Wertkin & Johnson, FFA with Gleason) — every
+  source is the first ascensionist; the crux is settled (section 17) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
   Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
 - **Parking-pass claims:** Half Moon x5 and Eagle Rock settled by the owner (section 16). Spire `access.fees` (open product decision,
   `held-v024.json`); Half Moon `access.fees` set to "None." by the owner (`owner/out/o16-halfmoon-fees.json`, section 16).
