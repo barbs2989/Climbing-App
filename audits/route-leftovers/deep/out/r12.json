@@ -1,0 +1,55 @@
+{
+ "results": [
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "verdict": "unresolved",
+   "evidence": "Sixth pass, 2026-09-30. New angles tried: Internet Archive full-text search of Beckey's Cascade Alpine Guide (1987 and 2000 editions, Columbia River to Stevens Pass) finds the Bald Eagle Peak entry (6,259 ft, 'From the deep valley of the Foss ...'), but it is prose with no coordinates. Web search surfaced a WTA trip report (2000) and the onehikeaweek Silver Eagle Peak report (2021) that reaches Silver Eagle over Bald Eagle. The 2021 report says 'GPS Track: available' but, like the 2019 report, exposes no coordinate or track file; the WTA report is unreadable here (403, and the browser extension has no read permission on that domain). The SummitPost 'Bald Eagle Peak (formerly Squaw's Tit)' page and the peak database still return 403 / bot checks (not bypassed). Searches for CalTopo / Gaia / peak-database GPS tracks return only unrelated peaks (Alberta Bald Eagle Peak, Bald Eagle Mountain near the North Fork Skykomish). The route text indexed from SummitPost's North Ridge page (via search snippets) gives heights only (stay on the ridge to 5,400 ft, then traverse ~1,000 ft SE of the ridge to a tree-lined slope; the 5,400 ft rock is not the summit, which lies ~1/2 mi SW). Still no published coordinate for any of pins 2-4, so nothing to move them to. No ops.",
+   "sources": [
+    "Beckey, Cascade Alpine Guide: Columbia River to Stevens Pass (1987, 2000) via Internet Archive full-text search",
+    "onehikeaweek: Silver Eagle Peak by Bald Eagle Peak (2021)",
+    "SummitPost Bald Eagle Peak North Ridge (search-engine snippet only)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "verdict": "resolved",
+   "evidence": "Sixth pass, 2026-09-30. NEW: The Mountaineer annual 1982 (climbing notes for 1981), p.92, read in full from the club's own PDF: 'Eight uncairned summits were noted during seven days spent traversing Rimrock Ridge and Seven Sisters Ridge in August. Connected end-to-end and snaking eastward from Old Guard Peak, the ridges form the divide between Flat Creek and the West Fork of Agnes Creek.' The party made 'a westward hike to the Ptarmigan Traverse', then 'Traversing north of Sentinel then east, the first peak on Rimrock Ridge was climbed on August 25' (Primrose, 7,199 ft, class 2), and 'the high point, Rimrock Peak (7,240 feet), was climbed on August 25 by its narrow north arete, class 4, no cairns found.' p.93 is a sketch map of the two ridges. This is the account r9 cited via Google Books as 'The Mountaineer (1981) p.92'; the PDF shows it is the 1982 volume. Beckey's Cascade Alpine Guide (Stevens Pass to Rainy Pass; r9 snippets) independently places the ridge between Flat and West Fork Agnes Creeks, extending NE from Old Guard, and in its high-routes section says it 'has been used as a hiking exit to the area; it is a moderately difficult alpine and cross-country route' from the Le Conte-Sentinel saddle. So two independent sources now agree on the approach line: no trail; the ridge is reached at its west end from the Ptarmigan Traverse near Sentinel Peak (north of Sentinel / the Le Conte-Sentinel saddle), then followed east along the crest, cross-country. The stored Agnes Creek / Swamp Creek / Blue Basin text matches neither (it is Agnes Mountain's approach, as data_quality.gaps[0] admits). A third source, the Sierra Club Wilderness Handbook (1968), lists an outing that would 'ascend Flat Creek, traverse Rimrock Ridge and descend the West Fork of Agnes Creek' (found via Internet Archive full-text search). That is one publisher's account, so it is not used in the op. One op: replace the approach column. Owner follow-ups (no second source for a replacement, so NOT written): waypoints 0-2 (High Bridge trailhead, Fivemile Camp, Swamp Creek Camp) and the gpx line, approach_logistics.trailhead, and itinerary day 1 still describe the Agnes Creek valley. The 1982 account also gives the high point as class 4 by its north arete, against the row's Class 3. That is a single source, so it is noted and not applied.",
+   "sources": [
+    "The Mountaineer annual 1982 (1981 climbing notes), pp.92-93 — The Mountaineers' digitized annual",
+    "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000 p.259 and p.386; 1987 p.239 and p.365), Google Books search-inside snippets (r9)",
+    "Sierra Club Wilderness Handbook (1968), Internet Archive full-text search (corroborating only)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "approach",
+     "path": [],
+     "expect": "Access to the trailhead is by boat, floatplane, or trail only — no road connects Stehekin to the outside world. Take the Lady of the Lake ferry from Chelan up 50-mile-long Lake Chelan to Stehekin Landing (Lady Express ~2.5 hrs, Lady II ~4 hrs). From there it is 11 miles up-valley on Stehekin Valley Road to High Bridge Guard Station (1,600'), the trailhead for the Agnes Creek Trail (PCT); for the 2026 season the historic High Bridge shuttle bus is not scheduled to run, so plan to walk the road, bike it, or book a private shuttle. From High Bridge, follow the Agnes Creek Trail (PCT) roughly 8-9 miles up-valley (Three-Mile Camp near mile 3, Swamp Creek Camp near mile 8.5), then leave the trail and bushwhack east into the upper Agnes Creek/Blue Basin drainage toward the base of the ridge. Off-trail brush is thick for roughly the first 1,000' of gain and eases above about 4,000'; fording Agnes Creek or Spruce Creek on downed logs is typically required to reach the basin.",
+     "value": "No trail reaches Rimrock Ridge, and no route onto it is published beyond this outline. The ridge is the divide between Flat Creek and the West Fork of Agnes Creek, running east from Old Guard Peak. The parties on record reached it at its west end from the Ptarmigan Traverse, leaving the traverse near Sentinel Peak (north of Sentinel, at the Le Conte–Sentinel saddle), and then followed the crest east. It is a cross-country alpine route, not a trail hike. The Agnes Creek trail (PCT) from High Bridge runs up a different valley and does not lead to it.",
+     "sources": [
+      "The Mountaineer annual 1982 (1981 climbing notes), p.92",
+      "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000) p.259 and p.386"
+     ]
+    }
+   ],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_e_se_face",
+   "verdict": "unresolved",
+   "evidence": "Sixth pass, 2026-09-30. NEW: Beckey's full Witches Tower entry (Cascade Alpine Guide, Columbia River to Stevens Pass, 2000, p.276) was rebuilt from Internet Archive full-text snippets, chained phrase by phrase. Approach via Colchuck Lake and Aasgard Pass: 'Hike S toward the objective, then scramble or ascend snow to the inside (SW) col.' Easiest route: 'climb talus to beneath the summit on its S side, then broken class-3 slabs.' 'A climbing course route from the col takes an obvious sharp ridge in 100 ft, then traverses a few ft right on the S face (class 4). Make a short 5.5 step, then a little face and summit scramble (there is a 4-ft slot jump). One can descend the S face. Time: 3 hours from the pass. The white Southeast Face was climbed by Curt Snyder and Kevin Kurtz on July 3, 1986; one pitch (5.6) ...' So the peak page's 'white rock' wording comes from Beckey too, which confirms that page is derived from it and not independent. Beckey has NO East Face ledge route. Its only class-4 line is the S-face climbing-course route from the SW col. Also checked: the 2008 cascadeclimbers 'Parade Route' trip report, now read in the browser. It climbed a snow gully 'just to the left of the peaklet' (200-300 ft, under 45 degrees) to the base, and descended 'a series of ledges just the opposite side of the snowslope', with no face named and no class given, so it cannot support Line A. Yellowleaf's location page has a photo captioned 'Slab route up east side of Witches Tower', with no class and no ledges. Its trip reports (2006, 2012) describe the south-route scramble, so it does not independently support Line A either. The Mountain Project route page has no user comments. The AAJ 1979 lists only the 1976 Northeast Face route (8-10 pitches). Result is unchanged: Line A (East Face, 4th, zig-zag ledges) has one source; Line B (Southeast Face 5.6, 1 pitch, 1986) has Beckey plus a page derived from Beckey. No ops. Owner options stand: split the row, or re-point it to Beckey's Southeast Face if the guidebook alone is accepted. Note for the owner: Beckey's class-4 S-face 'climbing course route' (sharp ridge, traverse right on the S face, 5.5 step) is a third candidate for what the 4th-class row describes, but no source ties the two together.",
+   "sources": [
+    "Beckey, Cascade Alpine Guide: Columbia River to Stevens Pass (2000) p.276, Internet Archive full-text search",
+    "cascadeclimbers: TR Witch's Tower - Enchantment Lakes - Parade Route (2008)",
+    "yellowleaf.org: Witches Tower location page and 2012 trip report",
+    "Mountain Project: Witches Tower East Face",
+    "American Alpine Journal 1979 (Lower 48 notes)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}
