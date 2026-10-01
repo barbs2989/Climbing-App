@@ -29103,3 +29103,50 @@ shell env vars. `check:sql` ran successfully against the fix file before
 committing (and again after the Taylor-Wood statement was withdrawn): every literal-id write target confirmed to exist live; the
 multi-id IN(...) permit UPDATE isn't checkable by that script but was
 hand-verified against the live NULL values above).
+
+## Batch 362 — 2026-10-01 (pass 6)
+
+Checked: wa_ptarmigan_peak_pasayten_scramble, wa_ragged_edge, wa_rapple_grapple,
+wa_raven_ridge_southeast_ridge_crater_lake, wa_remmel_mountain_nw_ridge,
+wa_remmel_mountain_southeast_slope, wa_ridge_traverse_from_east_fury,
+wa_rikki_tikki_tavi, wa_rock_mountain_northeast_ridge.
+
+Fixed 4 (`audits/sql/2026-10-01-batch-362.sql`): Rapple Grapple's gain_ft/loss_ft
+(2200, top-level and in its one-day itinerary) is less than the net rise from the
+Blue Lake Trailhead (5,160-5,400 ft per this route's and its siblings' waypoints) to
+Liberty Bell's 7,720 ft summit; adopted 2520 from the Beckey Route sibling, which
+shares its trailhead, approach, first pitch and descent. Remmel Mountain SE Slope's
+loss_ft was NULL on an out-and-back, so set it equal to its own gain_ft (5600).
+Remmel SE Slope and Rikki Tikki Tavi had NULL permit columns; filled them with the
+text siblings on the same peak already carry (Pasayten rule; Enchantment rule).
+
+Flagged for human review (4): (a) Ptarmigan Peak's "Berk Creek Trail junction"
+waypoint (48.8649, -120.5323, elev 4,400) sits about 150 m from the 8,614 ft summit,
+which is impossible at that elevation. The route runs Slate Pass → Middle Fork
+Pasayten → Berk Creek → Freds Pass, so the junction belongs south of Freds Pass.
+No source gives its coordinate, so it is left for a human. (b) Remmel NW Ridge:
+gain_ft 5265 is below the net rise from the Thirtymile Trailhead (3,400 ft per its
+sibling) to 8,685 ft, and loss_ft 1200 can't be right for a round trip. Its
+itinerary starts at Remmel Lake, not the trailhead, so the intended basis is
+unclear. Not fixed. (c) Raven Ridge 8,572 ft: SummitPost cites LiDAR saying that
+spot height is wrong; ListsOfJohn gives 8,597 ft. Sources conflict, so not changed.
+(d) 12 more Colchuck Balanced Rock routes have NULL permit, the same gap fixed here
+for Rikki Tikki Tavi. Most were already passed this pass, so they are left for the
+next pass or a human sweep.
+
+Clean / confirmed (externally, via WebSearch snippets; direct fetches are blocked by
+the egress proxy): Ptarmigan 8,614 ft and its Slate Pass approach; Ragged Edge (5.7,
+6 pitches, FA Berdinka/Pires Aug 18 2013, Vesper 6,214 ft); Rapple Grapple (5.8, 4
+pitches, Bryan Burdo, shares P1 with the Beckey Route); Remmel 8,685 ft and its FA
+(Tatum/Louden, July 26 1904); Colchuck Balanced Rock 8,240 ft; Rikki Tikki Tavi 5.11 in
+5 pitches (FA party not verifiable, left as is). Fury traverse high_point 8322 left
+alone: East Fury, the route's high point, is variously given as 8,288, 8,322 and
+8,356 ft (a 2022 theodolite survey), so the value is defensible but unsettled. Rock
+Mountain 6,841 left alone: Wikipedia gives 6,840 ft elevation and a 6,852 ft high
+point.
+
+`last_processed_id` → `wa_rock_mountain_northeast_ridge`. Next: wa_rock_mountain_west_route,
+the three wa_ruby_mountain_* routes, wa_ruth_icy_traverse, wa_ruth_mountain_south_slopes,
+and the two wa_sahale_mountain_* routes (all filed on peaks). `check:sql` passed. It
+parsed 2 of the 4 targets because the permit string contains a `;`; all 4 ids
+were confirmed to exist live.

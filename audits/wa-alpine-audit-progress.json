@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_prusik_peak_west_ridge",
+  "last_processed_id": "wa_rock_mountain_northeast_ridge",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 751,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241. Batch 361 closed out the full wa_prusik_peak_* cluster (8 routes). Scope counts not re-run this batch (last known: 698 in-scope / 751 total, from batch 352). Next up after wa_prusik_peak_west_ridge (confirmed via a live id-ordered query, filtered to area_type='peak', this run): wa_ptarmigan_peak_pasayten_scramble, wa_ragged_edge (vesper_peak), wa_rapple_grapple (liberty_bell), wa_raven_ridge_southeast_ridge_crater_lake, wa_remmel_mountain_nw_ridge, wa_remmel_mountain_southeast_slope, wa_ridge_traverse_from_east_fury, wa_rikki_tikki_tavi (colchuck_balanced_rock), wa_rock_mountain_northeast_ridge -- 9 routes across 8 different peaks/areas, no natural single-peak cluster this time, so a 5-10 route batch should just take them in this id order; wa_rock_mountain_west_route (same peak as the northeast ridge route) would be the first of the batch after. wa_ptarmigan_traverse, wa_ragged_ridge, wa_rampage and wa_roan_wall_* were confirmed filed on crag/traverse-type areas, not peaks, and correctly skipped per scope.",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241. Scope counts not re-run since batch 352 (698 in-scope / 751 total). Next after wa_rock_mountain_northeast_ridge (live id-ordered query, all area_type=peak): wa_rock_mountain_west_route, wa_ruby_mountain_happy_creek, wa_ruby_mountain_northwest_ridge, wa_ruby_mountain_south_ridge, wa_ruth_icy_traverse, wa_ruth_mountain_south_slopes, wa_sahale_mountain_r1, wa_sahale_mountain_sahale_glacier; then wa_scarface_3 onward.",
   "batches": [
     {
       "batch_number": 1,
@@ -7241,6 +7241,26 @@
       "clean": 4,
       "sql_file": "audits/sql/2026-10-01-batch-361.sql",
       "note": "Full wa_prusik_peak_* cluster (8 routes), closing out the cluster batch 360 flagged as next up. 5 of the 8 (alpine_craggers_delight, prayer_for_a_friend, sail_away, solid_gold, taylor_wood_route) had never been audited in any prior pass. Fixed: Solid Gold high_point_ft (8008, the true summit) cleared to NULL -- the row's own beta/itinerary say it tops out on the West Ridge below the summit, matching its two NULL partial-topout siblings. Populated the NULL top-level permit column on alpine_craggers_delight/prayer_for_a_friend/sail_away/taylor_wood_route with the Enchantments permit text the peak's other routes carry. Flagged: (a) those four rows' nested access JSON still describes day-use only; (b) Taylor-Wood overview 'ten-section' vs pitches=8 -- a first-draft fix was withdrawn the same day as unverified (the beta plausibly has ten parts). der_sportsman/south_face_burgner_stanley/west_ridge were read but not externally re-checked this run."
+    },
+    {
+      "batch_number": 362,
+      "date": "2026-10-01",
+      "route_ids": [
+        "wa_ptarmigan_peak_pasayten_scramble",
+        "wa_ragged_edge",
+        "wa_rapple_grapple",
+        "wa_raven_ridge_southeast_ridge_crater_lake",
+        "wa_remmel_mountain_nw_ridge",
+        "wa_remmel_mountain_southeast_slope",
+        "wa_ridge_traverse_from_east_fury",
+        "wa_rikki_tikki_tavi",
+        "wa_rock_mountain_northeast_ridge"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 4,
+      "clean": 5,
+      "sql_file": "audits/sql/2026-10-01-batch-362.sql",
+      "note": "Fixed Rapple Grapple gain/loss below its own net rise (2200->2520 from Beckey Route sibling); Remmel SE Slope loss_ft NULL->5600 and permit NULL->Pasayten text; Rikki Tikki Tavi permit NULL->Enchantment text. Flagged: Ptarmigan Berk Creek junction waypoint placed ~150m from summit at 4400 ft; Remmel NW Ridge gain/loss basis unclear; Raven Ridge elevation sources conflict; 12 other Colchuck Balanced Rock routes still NULL permit."
     }
   ]
 }
