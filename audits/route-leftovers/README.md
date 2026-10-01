@@ -163,6 +163,33 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   route and the 1-pitch 5.6 Southeast Face, but no East Face ledge route; the peak page that agrees copies its
   wording. The 4th-class East Face still rests on one site. Owner options unchanged (split, or re-point).
 
+## 11. Owner: "fix those through deep research" (`deep/out/r13, r13b, r14, r15.json`, applied)
+- Rimrock (r13 + r13b), APPLIED; r12's held op is superseded, do not apply it. The whole row now goes in by the
+  Cascade Pass trailhead and the north end of the Ptarmigan Traverse to the Le Conte–Sentinel col, then east along
+  the crest. Changes:
+  - **Pins:** trailhead moved to Cascade Pass (two sources within ~25 m); Fivemile and Swamp Creek camps removed;
+    Kool-Aid Lake and Yang Yang Lakes camps added; the Agnes Creek line cleared.
+  - **Approach text:** `approach`, `approach_logistics`, `road`, `itinerary` (three sourced days, no figures),
+    `overview` and `beta` rewritten.
+  - **Glacier fields:** gear, hazards, rope, `bivy` and `seasonal_hazards` rewritten for the glaciers.
+  - **Old numbers:** timing, `dist_km`, `gain_ft` and `loss_ft` nulled; no source gives this direction's figures.
+  - **Access, emergency and season (r13b):** access permit, rules, closures, land manager, pass and overnight permit;
+    emergency county, dispatch, ranger station, hospital and notes; `best_season`, `seasonal_guidance`, `climate`
+    and `comms`.
+  - **`access.fees`:** only the ferry/shuttle sentence was removed.
+  - **Still single-source, unchanged:** the north arete's class 4 vs Class 3.
+- Three Fingers (r14), APPLIED: two guidebooks give 4.5 mi from the Tupso Pass trailhead to Goat Flat. Day 1 and
+  the total note changed 7.3 -> 4.5. Day 2's note now says "~4.5 miles back out", restating that same segment; it
+  used to say 7.5 out. Day 2's 7.7 mi is left as is; no source states it.
+- Bald Eagle (r15), APPLIED: pin 3 "Cliff band bypass gully, 5,400 ft" removed. It was an interpolated pin, the ground
+  there is 4,943 ft, and the one written account puts that outcrop ~½ mi NE of the summit; the pin sat ~270 m E. The
+  row has no line to strand. Pins 2 and 4 stay.
+- Half Moon (r14): unchanged. The guidebook's Half Moon text is now readable in fragments and names no pass either way.
+- Switchback day 1 (r14): unchanged. The only figure on the Foggy Dew line (Cooney Lake 8.5) is from one source.
+- Witches Tower E/SE (r15): unchanged. The SE Face 5.6 is still in the guidebook alone. The East Face ledge
+  scramble that three new accounts describe is the sibling `wa_witches_tower_south_face` standard route. Owner
+  options: (A) merge or delete as a duplicate, (B) re-point to the SE Face 5.6, (C) leave.
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
@@ -183,11 +210,11 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   `loss_ft` null (`loss_ft` holds two conventions); Cashmere west-col pin (col only located to 0.7 km); La Bohn Gap
   pin (sources 335 m apart); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
-- **No source found:** Vanishing Point pins (one track; owner: remove pins 1-2 or accept it), Bald Eagle pins,
-  Rimrock Ridge approach, Witches Tower E/SE Face (two lines, one source each — a split candidate).
+- **No source found:** Vanishing Point pins (one track; owner: remove pins 1-2 or accept it), Bald Eagle pins 2 and
+  4, Witches Tower E/SE Face (see section 11). Rimrock was fixed in section 11.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
-  (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 says 7.3 mi
-  to Goat Flats, USFS says 4.8. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Hozomeen summit pin
+  (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
+  in section 11. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Hozomeen summit pin
   7,614 ft ground vs 8,003 stored; Clark waypoint 5 7,000 vs ~8,025 ground; Enchantment summit pin ~330 m off the NE
   summit. Switchback Mountain day 1 6.2 mi vs two guides' ~8 mi one way. Denny Mountain permit wording (pins outside
   the wilderness, summit on its edge).

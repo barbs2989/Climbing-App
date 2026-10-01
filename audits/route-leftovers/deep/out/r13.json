@@ -1,0 +1,734 @@
+{
+ "results": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "verdict": "confirmed",
+   "resolution": "Whole row re-pointed to the Ptarmigan Traverse approach from the Cascade Pass trailhead: approach (supersedes r12), approach_logistics, road, itinerary (3 sourced days, no numbers), overview, beta, hazards, gear, glacier fields, watch_out, data_quality gaps, requiredSkills, bivy; timing/dist_km/gain_ft/loss_ft nulled; pin 0 moved to the trailhead, pins 1-2 removed, Kool-Aid Lake and Yang Yang Lakes added, Agnes Creek line cleared.",
+   "summary": "Rimrock Ridge now goes in the way the record says: up the Ptarmigan Traverse from Cascade Pass to the Le Conte-Sentinel col, not up Agnes Creek.",
+   "evidence": "Seventh pass, 2026-10-01. r12 had a two-source approach op (1982 Mountaineer annual + Beckey: reached from the Ptarmigan Traverse near Sentinel / the Le Conte-Sentinel saddle, then east along the crest) held because the pins, line, trailhead and day 1 still described Agnes Creek. This pass found the replacement content. (1) Re-read the 1982 annual PDF in full (pp.92-93): the party reached the traverse after a first ascent near Bench Lake, climbed German Helmet on Aug 24, then 'Traversing north of Sentinel then east' climbed Primrose and Rimrock Peak (7,240 ft, 'narrow north arete, class 4') on Aug 25. It names no trailhead. (2) Trailhead: the Ptarmigan Traverse's north start is the Cascade Pass trailhead at the end of the Cascade River Road (NPS trail page: the trail is 'a popular starting point for ... the Ptarmigan Traverse'; SummitPost; rocknropenw; Alpine Ascents; marcmicatka). Road: NPS 23.1 mi from SR 20 at Marblemount, paved first third, narrow steep last 3 mi; WTA 23 mi 'to the end', go straight where 20 turns; SummitPost the same (22 mi, 3,660 ft). Coordinate: WTA 48.4754,-121.0751; rocknropenw 48.4753,-121.0754; OSM trailhead node 48.47549,-121.07516. Elevation 3,600: AAI and rocknropenw (SummitPost 3,660). (3) Day plan from Cascade Pass, agreed by Alpine Ascents (day 1 Cascade Pass -> Cache Col -> Kool Aid Lakes; day 2 Red Ledges, Middle Cascade Glacier roped, Spider-Formidable col -> Yang Yang Lakes; day 3 onto the Le Conte Glacier with Le Conte and Sentinel), marcmicatka (same three days, roped on the glacier under Formidable, day 3 back up to the ridge and down snow below Le Conte), rocknropenw (day 1 Kool-Aid Lake ~6 h, day 2 Yang Yang Lakes; 'the Le Conte / Sentinel Col at 7300 ft, at the top of the Le Conte Glacier'), SummitPost (stages Cascade River -> Kool-Aid -> Yang Yang -> White Rock; lakes 'about a day's hike apart'), AAI (same camps in reverse; Kool-Aid 6,120, Yang Yang 5,830, Cascade Pass TH 3,600; Red Ledges class 3, exposed, easy unless snow-covered), Mountain Project (waypoints: Cache Col, Kool-Aid Lake bivouac 1, Red Ledges under Arts Knoll 'very narrow and exposed', Spider-Formidable Col, Yang Yang Lakes bivouac 2, Le Conte Glacier and Sentinel/Old Guard; crevasses and bergschrunds). No miles, gain or hours written (none stated by two sources for this direction; nothing computed). (4) Pins: Kool-Aid Lake GNIS 1521763 48.438716,-121.045848 vs OSM camp node 48.43929,-121.04623 (~70 m); Yang Yang Lakes GNIS 1528348 48.392597,-121.056932 vs OSM camp node 48.39177,-121.05693 (~90 m). Elevations: Kool-Aid 6,120 (AAI) / 6,100 (rocknropenw); Yang Yang 5,830 (AAI) / 5,840 (rocknropenw). Fivemile and Swamp Creek Camps are on Agnes Creek, >5 km from the new line (rule 1 + rule 2: removed with the approach change). Cache Col (GNIS 48.448465,-121.052904 vs OSM 48.44871,-121.05232) has coordinates but only one stated elevation (AAI 6,900), so it is not added; the Le Conte-Sentinel col has no published coordinate. (5) Consistency: the new approach is GLACIATED, so every field saying 'never touches a glacier' / 'no glacier travel' / 'no rope' would contradict it and was rewritten (glacier kit: rocknropenw gear list helmet/ice axe/crampons/harness/prusiks/rope; roped travel: Alpine Ascents, marcmicatka; crevasses: Alpine Ascents, Mountain Project). Agnes/Stehekin-only content (bushwhack and PCT-bear hazards, Hemlock bridge watch-out, Stehekin camps in bivy, timing, the 40.23 km round trip, 4,300 ft gain/loss) was dropped or nulled. The Flat Creek trail from Stehekin (the old bivy main entry, and a 1968 Sierra Club outing) is closed for hazard trees per the row's own entry, so under rule 2 it loses. (6) North arete class: still single source (1982 annual: class 4). listsofjohn (Cloudflare check, not bypassed), Internet Archive (no Stevens-Rainy volume; search-inside unavailable on the 1973 item) and Google Books API (quota exhausted) gave nothing; grade NOT changed. OWNER FOLLOW-UPS (not written, no two sources or conflicting): access.* still describes High Bridge/Stehekin permits, fees, closures (Sisi Fire / Agnes trails, 'This approach cannot be used'), land manager and passRequired; sources disagree on parking (WTA: none; rocknropenw: Northwest Forest Pass) and on camp permits beyond Cache Col (SummitPost 2011 + rocknropenw: none needed outside the park). emergency.* still names the Stehekin ranger station, boat evacuation and Lake Chelan hospital. season/best_season/seasonal_guidance/climate mention Agnes Creek/Stehekin in places; crowds/difficulty/commitment untouched. r12's approach op is SUPERSEDED by this file's (same expect) - apply r13, not r12.",
+   "sources": [
+    "The Mountaineer annual 1982 (1981 climbing notes), p.92",
+    "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000) p.259 and p.386",
+    "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+    "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)",
+    "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+    "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+    "Mountain Project: Ptarmigan Traverse route page",
+    "SummitPost: Ptarmigan Traverse (archived copy)",
+    "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+    "NPS North Cascades: Cascade River Road page",
+    "WTA: Cascade Pass hike page (trailhead 48.4754, -121.0751; directions)",
+    "USGS GNIS via The National Map geonames service (Kool-Aid Lake 1521763, Yang Yang Lakes 1528348)",
+    "OpenStreetMap (Cascade Pass Trailhead node 1420498929; Kool-Aid Lake Camp 12059706150; Yang Yang Lakes Camp 12059706151)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "approach",
+     "path": [],
+     "expect": "Access to the trailhead is by boat, floatplane, or trail only — no road connects Stehekin to the outside world. Take the Lady of the Lake ferry from Chelan up 50-mile-long Lake Chelan to Stehekin Landing (Lady Express ~2.5 hrs, Lady II ~4 hrs). From there it is 11 miles up-valley on Stehekin Valley Road to High Bridge Guard Station (1,600'), the trailhead for the Agnes Creek Trail (PCT); for the 2026 season the historic High Bridge shuttle bus is not scheduled to run, so plan to walk the road, bike it, or book a private shuttle. From High Bridge, follow the Agnes Creek Trail (PCT) roughly 8-9 miles up-valley (Three-Mile Camp near mile 3, Swamp Creek Camp near mile 8.5), then leave the trail and bushwhack east into the upper Agnes Creek/Blue Basin drainage toward the base of the ridge. Off-trail brush is thick for roughly the first 1,000' of gain and eases above about 4,000'; fording Agnes Creek or Spruce Creek on downed logs is typically required to reach the basin.",
+     "value": "No trail reaches Rimrock Ridge. The way in is the north end of the Ptarmigan Traverse. Start at the Cascade Pass trailhead at the end of the Cascade River Road and climb the Cascade Pass trail, then follow the traverse's climbers' path over Cache Col and down to Kool-Aid Lake, the usual first camp. The next day crosses the exposed Red Ledge below Arts Knoll and the crevassed Middle Cascade Glacier (rope up) to the Spider–Formidable col, then drops to Yang Yang Lakes, the usual second camp. On the third day the traverse climbs back to the Le Conte ridge and up the Le Conte Glacier to the col between Le Conte and Sentinel at its head. The parties on record left the traverse here, passed north of Sentinel Peak and followed the ridge east along its crest; the ridge is the divide between Flat Creek and the West Fork of Agnes Creek. Beyond the traverse the line is cross-country alpine ground with no path, and no detailed description of it is published. The Agnes Creek trail (PCT) from High Bridge runs up a different valley and does not lead to the ridge.",
+     "sources": [
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+      "Mountain Project: Ptarmigan Traverse route page",
+      "SummitPost: Ptarmigan Traverse (archived copy)",
+      "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+      "The Mountaineer annual 1982 (1981 climbing notes), p.92",
+      "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000) p.259 and p.386"
+     ],
+     "note": "Supersedes r12's approach op (same expect). Traverse legs: AA + AAI + RNR + MM + MP + SP; Red Ledge under Arts Knoll: MP + AAI; Le Conte-Sentinel col at the head of the Le Conte Glacier: RNR (+ AA/AAI place the glacier and Sentinel on day 3); leaving it north of Sentinel and heading east: 1982 annual + Beckey."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "approach_logistics",
+     "path": [],
+     "expect": {
+      "peakLat": 48.37557,
+      "peakLng": -120.97826,
+      "trailhead": "High Bridge (Stehekin Valley Road)",
+      "trailheadLat": 48.3807,
+      "trailheadLng": -120.8403,
+      "trailheadDirection": "Via the Lady of the Lake ferry to Stehekin and the NPS shuttle to High Bridge, then the Agnes Creek / PCT trails"
+     },
+     "value": {
+      "peakLat": 48.37557,
+      "peakLng": -120.97826,
+      "trailhead": "Cascade Pass trailhead (end of Cascade River Road)",
+      "trailheadLat": 48.4754,
+      "trailheadLng": -121.0751,
+      "trailheadDirection": "From State Route 20 at Marblemount, go straight onto the Cascade River Road where the highway turns, and drive it about 23 miles to its end at the Cascade Pass parking lot. The first third is paved, then gravel; the last few miles are narrow and steep."
+     },
+     "sources": [
+      "WTA: Cascade Pass hike page (trailhead 48.4754, -121.0751; directions)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "OpenStreetMap (Cascade Pass Trailhead node 1420498929; Kool-Aid Lake Camp 12059706150; Yang Yang Lakes Camp 12059706151)",
+      "NPS North Cascades: Cascade River Road page",
+      "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+      "SummitPost: Ptarmigan Traverse (archived copy)"
+     ],
+     "note": "Coordinate: WTA 48.4754,-121.0751; RNR 48.4753,-121.0754; OSM 48.47549,-121.07516 (all within ~25 m). Distance: NPS 23.1 mi, WTA 23 mi; paving/steep end: NPS + SummitPost."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "road",
+     "path": [],
+     "expect": {
+      "name": "Stehekin Valley Road (boat landing to High Bridge)",
+      "status": "Not connected to any outside highway — Stehekin is accessible only by boat, floatplane, or trail. Within the valley, the road is a local shuttle/bike route from the boat landing to High Bridge (~11 mi). North Cascades National Park has closed the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge, and the High Bridge area, for the Sisi Fire (park fire-closure list updated September 14, 2026; no end date given).",
+      "driveNote": "No road connects Stehekin to the outside highway network — access is by the Lady of the Lake ferry from Chelan (Lady Express ~2.5 hrs, Lady II ~4 hrs), by floatplane, or on foot over Cascade Pass; from Stehekin Landing it is roughly 11 miles up Stehekin Valley Road to the High Bridge/Agnes Creek trailhead.",
+      "seasonalGate": "Ferry and shuttle run year-round on a reduced winter schedule; the trail beyond High Bridge is typically snow-free from July into October."
+     },
+     "value": {
+      "name": "Cascade River Road (Marblemount to the Cascade Pass trailhead)",
+      "status": "Leaves State Route 20 at Marblemount and runs about 23 miles to the Cascade Pass trailhead at its end. Paved for roughly the first third, then gravel; the final few miles above the Eldorado parking area are narrow and steep, with few places to pass.",
+      "driveNote": "Drive State Route 20 to Marblemount and continue straight onto the Cascade River Road where the highway turns. Follow it to the large parking lot at the road's end.",
+      "seasonalGate": null
+     },
+     "sources": [
+      "NPS North Cascades: Cascade River Road page",
+      "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+      "WTA: Cascade Pass hike page (trailhead 48.4754, -121.0751; directions)",
+      "SummitPost: Ptarmigan Traverse (archived copy)"
+     ],
+     "note": "seasonalGate nulled: the old value was the Stehekin ferry; the park's 'opens by end of June' is one land-manager source with no row agreement, so not written."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "itinerary",
+     "path": [],
+     "expect": {
+      "cal": "Approach trails in this remote corner of the Stehekin backcountry are typically not reliably snow-free until mid-to-late July, with the best window July through September.",
+      "days": [
+       {
+        "n": 1,
+        "note": "Hike the long trail approach into the Stehekin backcountry, gaining much of the day's elevation on brushy, trailless ground before dropping a bit to a flat, water-adjacent camp spot below the ridge. The last part leaves the trail for thick brush and a creek crossing, so expect slow going with an overnight pack.",
+        "hours": 7,
+        "miles": 13,
+        "title": "Backpack in to high camp",
+        "gainFt": 2600,
+        "lossFt": 200,
+        "packLb": 34,
+        "schedule": [],
+        "objective": "Reach a camp near the base of the summit ridge"
+       },
+       {
+        "n": 2,
+        "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full approach trail back out the same day, making for a long but standard single 'summit + out' day.",
+        "hours": 9,
+        "miles": 12,
+        "title": "Summit push and hike out",
+        "gainFt": 1700,
+        "lossFt": 4100,
+        "packLb": 20,
+        "schedule": [
+         {
+          "time": "4:30 AM",
+          "label": "Leave camp",
+          "detail": "Light day pack, headlamp start to catch cool morning temps on exposed rock."
+         },
+         {
+          "time": "+2.5 hr",
+          "label": "Gain the ridge crest",
+          "detail": "Cross-country travel on scree, slabs, and broken rock — no maintained trail on the ridge itself."
+         },
+         {
+          "time": "+4 hr",
+          "label": "Reach Rimrock Ridge summit",
+          "detail": "Views across the Glacier Peak Wilderness; short break."
+         },
+         {
+          "time": "+5.5 hr",
+          "label": "Back at camp",
+          "detail": "Reverse the ascent line; break camp and shoulder full pack."
+         },
+         {
+          "time": "~6:30 PM",
+          "label": "Back at trailhead",
+          "detail": "Full hike-out on trail after breaking camp."
+         }
+        ],
+        "objective": "Climb Rimrock Ridge and return to the trailhead"
+       }
+      ],
+      "totalNote": "A 2-day, 1-night trip: roughly 25 miles round trip and ~4,300 ft of cumulative gain to a 7,255 ft summit, with the second day combining the summit scramble and the full hike out."
+     },
+     "value": {
+      "days": [
+       {
+        "n": 1,
+        "title": "Cascade Pass trailhead to Kool-Aid Lake",
+        "objective": "Reach Kool-Aid Lake, the usual first camp on the traverse",
+        "note": "Climb the Cascade Pass trail, then follow the traverse's climbers' path up and over Cache Col and down to camp at Kool-Aid Lake.",
+        "hours": null,
+        "miles": null,
+        "gainFt": null,
+        "lossFt": null,
+        "schedule": []
+       },
+       {
+        "n": 2,
+        "title": "Kool-Aid Lake to Yang Yang Lakes",
+        "objective": "Reach Yang Yang Lakes, the usual second camp",
+        "note": "Cross the exposed Red Ledge below Arts Knoll, rope up for the Middle Cascade Glacier, pass through the Spider–Formidable col and descend to camp at Yang Yang Lakes.",
+        "hours": null,
+        "miles": null,
+        "gainFt": null,
+        "lossFt": null,
+        "schedule": []
+       },
+       {
+        "n": 3,
+        "title": "Yang Yang Lakes to the Le Conte–Sentinel col",
+        "objective": "Leave the traverse for the west end of Rimrock Ridge",
+        "note": "Climb back to the Le Conte ridge and up the Le Conte Glacier toward the col at its head beside Sentinel Peak. Leave the traverse here, pass north of Sentinel and head east onto the ridge crest.",
+        "hours": null,
+        "miles": null,
+        "gainFt": null,
+        "lossFt": null,
+        "schedule": []
+       }
+      ],
+      "totalNote": "Three days on the Ptarmigan Traverse reach the col between Le Conte and Sentinel, where the line onto Rimrock Ridge begins. No published account gives a schedule for the ridge itself or for leaving it, so no total length is stated here."
+     },
+     "sources": [
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+      "SummitPost: Ptarmigan Traverse (archived copy)",
+      "Mountain Project: Ptarmigan Traverse route page",
+      "The Mountaineer annual 1982 (1981 climbing notes), p.92",
+      "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000) p.259 and p.386"
+     ],
+     "note": "Days 1-2 camps: AA, RNR, MM, SP (day apart), AAI (reverse). Day 3 Le Conte Glacier: AA, MM, RNR; AAI reverse. No miles/gain/hours written (none stated for this direction by two sources). 'cal' dropped (Stehekin text)."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "timing",
+     "path": [],
+     "expect": {
+      "totalHrs": 16,
+      "summitTimeHrs": 7,
+      "descentTimeHrs": 9,
+      "approachTimeHrs": null,
+      "recommendedStart": "Early start",
+      "sectionBreakdown": [
+       {
+        "hrs": 7,
+        "note": "Hike the long trail approach into the Stehekin backcountry, gaining much of the day's elevation on brushy, trailless ground before dropping a bit to a flat, water-adjacen…",
+        "fromTo": "Backpack in to high camp",
+        "section": "Climb"
+       },
+       {
+        "hrs": 9,
+        "note": "Alpine start from camp with a light pack to tackle the cross-country ridge scramble to the 7,255 ft summit, then reverse the ascent line back to camp. Break camp and hike the full …",
+        "fromTo": "Summit push and hike out",
+        "section": "Descent"
+       }
+      ]
+     },
+     "value": null,
+     "sources": [],
+     "note": "Nulled: both sections describe the Stehekin backpack and the hike out, and no source gives timing for the new line."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "dist_km",
+     "path": [],
+     "expect": 40.23,
+     "value": null,
+     "sources": [],
+     "note": "Nulled: 40.23 km was the Agnes Creek round trip; no source states a distance to Rimrock via the traverse."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 4300,
+     "value": null,
+     "sources": [],
+     "note": "Nulled: Agnes Creek figure; no source states gain for the new line."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "loss_ft",
+     "path": [],
+     "expect": 4300,
+     "value": null,
+     "sources": [],
+     "note": "Nulled with gain_ft."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "overview",
+     "path": [],
+     "expect": "Rimrock Ridge is a minor, infrequently climbed 7,255' crest in the Ptarmigan Mountains subgroup of the Glacier Peak Wilderness, rising above the headwaters of Agnes Creek in Chelan County. It sits near Agnes Mountain (8,115') and Devore Peak, on the dry east side of the Cascade crest above Lake Chelan and the Stehekin valley (USGS Agnes Mountain 7.5' quad). The ridge has essentially no recorded ascents or published trip reports online; most parties visiting this upper-Agnes-Creek basin are headed for the better-documented Agnes Mountain or Gunsight Peak via the same approach.",
+     "value": "Rimrock Ridge is a remote, rarely climbed crest in the Glacier Peak Wilderness, mostly above 6,500 ft, forming the divide between Flat Creek and the West Fork of Agnes Creek and running east and north-east from Old Guard Peak. Its high point lies a little over 3 miles north-east of Sentinel Peak. No trail reaches it: the few parties on record came onto its west end from the Ptarmigan Traverse near Sentinel Peak.",
+     "sources": [
+      "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000) p.259 and p.386",
+      "The Mountaineer annual 1982 (1981 climbing notes), p.92"
+     ],
+     "note": "Divide + runs from Old Guard: both. >6,500 ft and 3.2 mi NE of Sentinel: Beckey; GNIS Rimrock Ridge points sit east of Sentinel. Approach: both."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "beta",
+     "path": [],
+     "expect": "No published or online route beta exists specifically for Rimrock Ridge. It lies about 2.3 miles from Old Guard Peak in the same remote LeConte Glacier / Ptarmigan Traverse massif, so an ascent would likely involve terrain similar to nearby Old Guard and Sentinel Peaks: long, unmaintained approaches from Stehekin (via Agnes Creek or Flat Creek) or a cross-country detour off the Ptarmigan Traverse, followed by off-trail alpine scrambling to the summit.",
+     "value": "No detailed route description exists for Rimrock Ridge. The recorded parties reached its west end from the Ptarmigan Traverse near Sentinel Peak and followed the crest east over its summits on cross-country alpine ground.",
+     "sources": [
+      "The Mountaineer annual 1982 (1981 climbing notes), p.92",
+      "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000) p.259 and p.386"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "hazards",
+     "path": [],
+     "expect": [
+      "Thick, routefinding-heavy off-trail bushwhacking with no established boot path to the ridge",
+      "Loose, blocky rock on the Class 3 steps along the crest",
+      "No reliable water source once on the ridge crest itself",
+      "Aggressive bear activity reported at nearby PCT camps in 2026 (Fireweed, South Fork)",
+      "Afternoon thunderstorms typical of the dry east-Cascades summer",
+      "Remote self-rescue — no cell coverage; nearest help arrives via Chelan County SAR by boat or helicopter"
+     ],
+     "value": [
+      "Crevassed glaciers on the approach (Middle Cascade and Le Conte Glaciers) — rope up",
+      "An exposed ledge traverse (the Red Ledge) below Arts Knoll, harder when snow-covered",
+      "Loose, blocky rock on the Class 3 steps along the crest",
+      "No reliable water source once on the ridge crest itself",
+      "Afternoon thunderstorms typical of the dry east-Cascades summer",
+      "Remote self-rescue — no cell coverage"
+     ],
+     "sources": [
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "Mountain Project: Ptarmigan Traverse route page",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)"
+     ],
+     "note": "Dropped: the bushwhack item and the PCT-camp bear item (Agnes Creek). Kept items 1, 2, 4 verbatim."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "gear",
+     "path": [],
+     "expect": [
+      "helmet",
+      "ice axe (early season)",
+      "sturdy scrambling boots"
+     ],
+     "value": [
+      "helmet",
+      "ice axe",
+      "crampons",
+      "glacier rope, harness and crevasse-rescue kit",
+      "sturdy scrambling boots"
+     ],
+     "sources": [
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+      "Mountain Project: Ptarmigan Traverse route page"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "what_to_bring",
+     "path": [],
+     "expect": [
+      "helmet",
+      "ice axe (early season)",
+      "navigation tools",
+      "satellite communicator"
+     ],
+     "value": [
+      "helmet",
+      "ice axe",
+      "crampons",
+      "glacier rope, harness and crevasse-rescue kit",
+      "navigation tools",
+      "satellite communicator"
+     ],
+     "sources": [
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+      "Mountain Project: Ptarmigan Traverse route page"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "detailed_rack",
+     "path": [],
+     "expect": "No technical rock rack is documented for this ridge; the route is a Class 3 scramble that never touches a glacier, so a helmet and, early in the season, an ice axe are the relevant gear rather than a rack or a glacier kit.",
+     "value": "No rock rack is documented for the ridge. The approach along the traverse crosses crevassed glaciers, so the party needs a basic glacier kit: a rope, harnesses, crampons, ice axes and crevasse-rescue gear, plus helmets.",
+     "sources": [
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+      "Mountain Project: Ptarmigan Traverse route page"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "pro_needs",
+     "path": [],
+     "expect": "No rope or protection is needed for the Class 3 crest in dry conditions; the route stays off the glaciers. Carry a helmet, and an ice axe early in the season for lingering snow.",
+     "value": "No protection is documented for the ridge crest itself, but the approach crosses crevassed glaciers, so carry a glacier rope, harnesses, crampons and ice axes.",
+     "sources": [
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report",
+      "Mountain Project: Ptarmigan Traverse route page"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "rope_type",
+     "path": [],
+     "expect": "none",
+     "value": "Single",
+     "sources": [
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report"
+     ],
+     "note": "A glacier rope; length not written (one source gives 30 m)."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "rope_note",
+     "path": [],
+     "expect": "Class 3 scramble; no rope required in dry conditions.",
+     "value": "A glacier rope for the approach glaciers; none is documented for the ridge crest.",
+     "sources": [
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "seasonal_hazards",
+     "path": [
+      "crevasses"
+     ],
+     "expect": "N/A - no glacier travel; Rimrock Ridge is a non-glaciated ridge scramble",
+     "value": "The approach crosses the Middle Cascade and Le Conte Glaciers, both crevassed; rope up. The ridge itself is not glaciated.",
+     "sources": [
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "Mountain Project: Ptarmigan Traverse route page",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "seasonal_hazards",
+     "path": [
+      "avalanche",
+      "zone"
+     ],
+     "expect": "N/A - non-glaciated summer scramble route; no NWAC zone specifically forecasts for this peak, and the route is only climbed in the snow-free late-July-September window",
+     "value": "N/A - summer-only route; no NWAC zone forecasts for this peak.",
+     "sources": [],
+     "note": "Removed 'non-glaciated' and 'snow-free' claims, which the glacier approach contradicts."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "watch_out",
+     "path": [],
+     "expect": [
+      "No cairned route or published trip reports exist for this specific ridge — expect genuine routefinding on both the bushwhack and the crest",
+      "The Agnes Creek bridge at Hemlock Camp is out of service in 2026 — plan an alternate camp (Cedar Camp or South Fork Agnes Creek)"
+     ],
+     "value": [
+      "No cairned route or published trip reports exist for this specific ridge — expect genuine routefinding along the crest",
+      "The approach crosses crevassed glaciers — travel roped"
+     ],
+     "sources": [
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "Mountain Project: Ptarmigan Traverse route page",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report"
+     ],
+     "note": "Dropped the Hemlock Camp bridge item (Agnes Creek trail)."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "data_quality",
+     "path": [
+      "gaps"
+     ],
+     "expect": [
+      "No dedicated trip reports or route descriptions specific to Rimrock Ridge were found online; the approach/route detail above is inferred from the nearby, better-documented Agnes Mountain approach out of the same Agnes Creek/Blue Basin drainage.",
+      "Elevation for this peak is reported inconsistently across sources (roughly 7,050-7,260 ft depending on source/USGS interpolation); the prominence figure could not be independently verified.",
+      "Exact bushwhack line from the Agnes Creek Trail to the base of the ridge is unconfirmed by any first-hand account.",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "value": [
+      "No dedicated route description for the ridge itself was found. The approach follows the well-documented Ptarmigan Traverse; the line onto the ridge comes from two brief historical accounts.",
+      "Elevation for this peak is reported inconsistently across sources (roughly 7,050-7,260 ft depending on source/USGS interpolation); the prominence figure could not be independently verified.",
+      "The exact line from the traverse onto the west end of the ridge is not described in detail by any account.",
+      "No public GPS track found for this route as of this research pass.",
+      "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+     ],
+     "sources": [
+      "The Mountaineer annual 1982 (1981 climbing notes), p.92",
+      "Beckey, Cascade Alpine Guide: Stevens Pass to Rainy Pass (2000) p.259 and p.386"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "requiredSkills"
+     ],
+     "expect": [
+      "route-finding on an unmaintained approach and along the ridge crest",
+      "exposed Class 3 scrambling, including negotiating rock steps and notches",
+      "sound judgment downclimbing loose rock",
+      "map/compass or GPS navigation in trail-less Glacier Peak Wilderness terrain"
+     ],
+     "value": [
+      "route-finding on an unmaintained approach and along the ridge crest",
+      "exposed Class 3 scrambling, including negotiating rock steps and notches",
+      "sound judgment downclimbing loose rock",
+      "map/compass or GPS navigation in trail-less Glacier Peak Wilderness terrain",
+      "roped glacier travel and crevasse rescue"
+     ],
+     "sources": [
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "bivy",
+     "path": [],
+     "expect": [
+      {
+       "elev": 2275,
+       "name": "Park Creek Camp, at the valley road",
+       "role": "main",
+       "type": "camp",
+       "notes": "This is the camp the park itself points overnight parties to now that Flat Creek is shut, and that closure is the single most important planning fact for this peak. The camp at the Flat Creek trailhead, which would otherwise be the obvious base, has its access trail closed for hazard trees and has dropped out of both the park's camp list and its booking system; no reopening date has been given anywhere. Park Creek sits lower down the same road, so using it lengthens an approach that is already long — you are walking further to the trailhead each morning rather than sleeping at it. Note this is the camp on the valley road where the Park Creek trail leaves it, not the stock camp several miles up that trail toward the pass. The four-person cap is worth checking against your party before you plan around it.",
+       "water": "Park Creek at the camp, reliable all season.",
+       "permit": "National Park Service backcountry permit, arranged by email before you travel as above. A total campfire ban has been in force across the entire Stehekin valley since the end of June, covering anything that produces ash including propane fire pits, with no end date announced — so the ring here is out of use regardless of what the camp table says about fires. Gas and propane stoves are still allowed, with clearance around them and a working shut-off valve. Confirm the ban's status when you get the permit.",
+       "capacity": "Two sites, each capped at four people, so this is a small-party camp only. No stock. It has a fire ring, which is not the same as permission to use it right now."
+      },
+      {
+       "name": "Bivouacs in the upper Flat Creek basin, beyond the end of the trail",
+       "role": "main",
+       "type": "bivy",
+       "notes": "Rimrock Ridge is an obscure summit and should be described as one. It forms the southern rim of the upper Flat Creek valley — everything falling off its far side goes into the West Fork of Agnes Creek instead — and it looks across at the glaciated back of the crest that the classic traverse walks along. Accounts of that traverse do not mention it, because climbers up there are facing the other way, and no ascent account of it was found at all. The approach is the whole difficulty: boat, shuttle, most of a day walking the old road, a gentle valley trail of about four miles that gains only a few hundred feet through old growth and through forest still recovering from a fire early this century, and then trailless ground up the headwaters to whatever line goes. The trail ends well short of the head of the valley and the summit is beyond where it ends. Budget four days minimum for something that would be an afternoon if a road came near it, and build the itinerary around the boat timetable rather than the climbing, because a missed sailing costs a day at each end. Late summer into early autumn is the window; the valley walk is snow-free long before the head of it is.",
+       "water": "Creek and snowmelt throughout the basin, which is at least the easy part — this is a wet valley fed off the glaciers on the crest above it, and running water is not the problem here that it is on a ridge camp.",
+       "permit": "The agency changes on this trail, and it is the thing most likely to be got wrong. The Flat Creek trail leaves the national park about two miles up and passes into the Glacier Peak Wilderness under the national forest, so the ground you actually camp and climb on is Forest Service. Checked against the boundary rather than assumed: the summit itself lies inside that wilderness. It takes a free self-issue permit filled in at the trailhead rather than a park permit, with no reservation and no fee, and a party limit of twelve counting people and pack animals together — larger than the park's limit down in the valley, and a rare case where walking further gets you a looser rule. Groups over twelve must split and stay a mile apart. Your park permit still covers the valley camps you slept in getting there, so a full trip needs both. There is no park cross-country zone for Flat Creek; that is not a gap in the record, the zone system simply does not reach here because the ground is not the park's. Standard wilderness practice otherwise: durable surfaces, well back from the water, pack out what will not bury, and no fires.",
+       "capacity": "No established camping and no site count. There is nothing up here. The trail stops, and a party going on picks whatever flat gravel, slab or old moraine it can find in the head of the valley. Anyone describing a camp here is describing a place they happened to sleep."
+      },
+      {
+       "elev": 1687,
+       "name": "Tumwater Camp, Stehekin valley road",
+       "role": "route",
+       "type": "camp",
+       "notes": "The first camp of consequence above the shuttle's turnaround at High Bridge, and its job on this trip is to absorb the arrival day. The boat gets in around the middle of the day and the last shuttle up the valley goes in the late afternoon, so nobody sensibly starts a twenty-mile approach on day one — you ride to High Bridge, walk a short way up the old road, and sleep in flat riverside forest with no view and no alpine character at all. It has a history of high-water damage and was closed after a bad flood, though it stands in the park's current camp table; confirm it is genuinely open when you arrange the permit rather than assuming, because there are not many camps up here and losing one reshapes the whole itinerary.",
+       "water": "The Stehekin River is right there and runs all season. Treat it — it is a big glacial river carrying silt and everything else off the drainage.",
+       "permit": "National Park Service backcountry permit required, covering Lake Chelan National Recreation Area as well as the park. There is no permit desk in Stehekin — the visitor centre at the landing does not issue them and is closed. For a trip starting in the valley the permit is arranged by email with the park's wilderness office, sent early on the morning before your start date, with a short mandatory video to watch and a signed copy to print and carry. There is no cell service in Stehekin, so all of that has to happen before you get on the boat. Food lockers are provided at these valley camps and no bear canister is required.",
+       "capacity": "Two sites, each taking up to six people, so six is the party ceiling. No stock. Assigned by night on the permit."
+      },
+      {
+       "elev": 1927,
+       "name": "Shady Camp, Stehekin valley road",
+       "role": "route",
+       "type": "camp",
+       "notes": "Further up the old road than Tumwater and the only camp on this stretch that is held back from the booking system entirely, which is exactly why it is worth knowing about. A party whose permit request comes back with a hole in the middle of the itinerary can often fill it here. It is another flat forested river camp with nothing to look at, used purely for position. Note that the road above the washout is closed to bicycles as well as vehicles — the upper section is decommissioned or maintained as a non-motorized, non-mechanized trail, so the obvious idea of riding the old roadbed to save a day is not permitted. It is walking or stock, and that is what makes this approach as long as it is.",
+       "water": "River water beside the camp, dependable through the season and needing treatment.",
+       "permit": "National Park Service backcountry permit required, arranged the same way as the rest of the valley — by email to the wilderness office the morning before you start, since nothing can be issued in Stehekin itself. Because the site is walk-up rather than reservable, it cannot be locked in months ahead; ask for it in that same email.",
+       "capacity": "A single site taking up to eight people. No stock. Walk-up only — this one takes no reservations at all, which makes it the useful fallback when everything else on the road is booked out."
+      },
+      {
+       "name": "Swamp Creek Camp",
+       "role": "hidden"
+      }
+     ],
+     "value": [
+      {
+       "name": "Kool-Aid Lake",
+       "elev": 6120,
+       "role": "route",
+       "type": "camp",
+       "notes": "The usual first camp on the traverse, south of Cache Col.",
+       "water": "The lake and its outlet stream."
+      },
+      {
+       "name": "Yang Yang Lakes",
+       "elev": 5830,
+       "role": "route",
+       "type": "camp",
+       "notes": "The usual second camp, below the Spider–Formidable col; well-established sites by the lakes.",
+       "water": "The lakes."
+      }
+     ],
+     "sources": [
+      "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "SummitPost: Ptarmigan Traverse (archived copy)",
+      "Alpine Ascents International: Ptarmigan Traverse itinerary (2026 page)",
+      "marcmicatka.com: North Cascades - Ptarmigan Loop trip report"
+     ],
+     "note": "Elevations: AAI 6,120 / 5,830; RNR 6,100 / 5,840. Old entries (Park Creek, upper Flat Creek bivouacs, Tumwater, Shady, hidden Swamp Creek) were all Stehekin-side; the Flat Creek trail is closed per the old entry itself (rule 2: a closed trail loses)."
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "waypoints",
+     "path": [
+      0,
+      "name"
+     ],
+     "expect": "High Bridge Guard Station / Agnes Creek (PCT) Trailhead",
+     "value": "Cascade Pass Trailhead",
+     "sources": [
+      "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+      "WTA: Cascade Pass hike page (trailhead 48.4754, -121.0751; directions)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)"
+     ]
+    },
+    {
+     "op": "set",
+     "id": "wa_rimrock_ridge_scramble",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Reached by the Lady of the Lake ferry from Chelan to Stehekin Landing, then ~11 mi up Stehekin Valley Road (shuttle or bike); North Cascades NP backcountry permit required for overnight camping, available in Stehekin.",
+     "value": "Large parking lot at the end of the Cascade River Road, about 23 miles from State Route 20 at Marblemount. The Ptarmigan Traverse starts up the Cascade Pass trail from here.",
+     "sources": [
+      "NPS North Cascades: Cascade Pass / Sahale Arm Trail page",
+      "NPS North Cascades: Cascade River Road page",
+      "WTA: Cascade Pass hike page (trailhead 48.4754, -121.0751; directions)",
+      "SummitPost: Ptarmigan Traverse (archived copy)"
+     ]
+    }
+   ],
+   "pin_ops": [
+    {
+     "op": "move_pin",
+     "id": "wa_rimrock_ridge_scramble",
+     "index": 0,
+     "expect": {
+      "name": "High Bridge Guard Station / Agnes Creek (PCT) Trailhead",
+      "lat": 48.38025,
+      "lng": -120.83955
+     },
+     "lat": 48.4754,
+     "lng": -121.0751,
+     "elev": 3600,
+     "sources": [
+      "WTA: Cascade Pass hike page (trailhead 48.4754, -121.0751; directions)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)",
+      "OpenStreetMap (Cascade Pass Trailhead node 1420498929; Kool-Aid Lake Camp 12059706150; Yang Yang Lakes Camp 12059706151)",
+      "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)"
+     ],
+     "note": "Elevation 3,600: AAI + RNR (SummitPost says 3,660)."
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_rimrock_ridge_scramble",
+     "index": 1,
+     "expect": {
+      "name": "Fivemile Camp",
+      "lat": 48.342907,
+      "lng": -120.901771
+     }
+    },
+    {
+     "op": "remove_pin",
+     "id": "wa_rimrock_ridge_scramble",
+     "index": 2,
+     "expect": {
+      "name": "Swamp Creek Camp",
+      "lat": 48.30964,
+      "lng": -120.92038
+     }
+    },
+    {
+     "op": "add_pin",
+     "id": "wa_rimrock_ridge_scramble",
+     "after_name": "Cascade Pass Trailhead",
+     "pin": {
+      "name": "Kool-Aid Lake",
+      "type": "Campsite",
+      "lat": 48.438716,
+      "lng": -121.045848,
+      "elev": 6120,
+      "distMi": null,
+      "note": "Usual first camp on the traverse, south of Cache Col; the lake and its outlet stream supply water."
+     },
+     "sources": [
+      "USGS GNIS via The National Map geonames service (Kool-Aid Lake 1521763, Yang Yang Lakes 1528348)",
+      "OpenStreetMap (Cascade Pass Trailhead node 1420498929; Kool-Aid Lake Camp 12059706150; Yang Yang Lakes Camp 12059706151)",
+      "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)"
+     ]
+    },
+    {
+     "op": "add_pin",
+     "id": "wa_rimrock_ridge_scramble",
+     "after_name": "Kool-Aid Lake",
+     "pin": {
+      "name": "Yang Yang Lakes",
+      "type": "Campsite",
+      "lat": 48.392597,
+      "lng": -121.056932,
+      "elev": 5830,
+      "distMi": null,
+      "note": "Usual second camp, below the Spider–Formidable col."
+     },
+     "sources": [
+      "USGS GNIS via The National Map geonames service (Kool-Aid Lake 1521763, Yang Yang Lakes 1528348)",
+      "OpenStreetMap (Cascade Pass Trailhead node 1420498929; Kool-Aid Lake Camp 12059706150; Yang Yang Lakes Camp 12059706151)",
+      "American Alpine Institute: Ptarmigan Traverse program itinerary (2025 season notes)",
+      "rocknropenw.com: Ptarmigan Traverse beta (2025)"
+     ]
+    },
+    {
+     "op": "clear_line",
+     "id": "wa_rimrock_ridge_scramble",
+     "why": "The 4-point line runs High Bridge -> Fivemile Camp -> Swamp Creek Camp -> summit, up the Agnes Creek valley the route no longer uses; no published track for the new line.",
+     "expect_gpx": "LIVE"
+    }
+   ]
+  }
+ ]
+}
