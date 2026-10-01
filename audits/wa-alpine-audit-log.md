@@ -8,6 +8,34 @@ scope out of 557 total WA rows tagged alpine/mountaineering.
 
 ---
 
+## 2026-10-01 — Pass 6, Batch 364
+
+Ten routes across 8 peaks (Colchuck Balanced Rock, Mount Washington/Olympics, Sentinel Peak,
+South Early Winters Spire, Sharkfin Tower, Sherman Peak/Baker ×2, Sherpa Balanced Rock ×3):
+Scarface; SE Ridge AKA Shield Wall; Standard Route (Sentinel); Southwest Rib (SEWS); Southeast
+Ridge (Sharkfin); Crater Rim Scramble + Squak Glacier (Sherman); NE Couloir, North Ridge,
+Standard Route (Sherpa Balanced Rock).
+
+**All 10 clean — no confirmed errors.** Independently reconfirmed against external sources:
+elevation + FA for Scarface/Colchuck Balanced Rock (8240 ft), Mount Washington SE Ridge (6260 ft,
+matches Wikipedia), South Early Winters Spire Southwest Rib (7807 ft + 1964 Anderson/Scott FA),
+Sharkfin Tower (8120 ft + 1947 FA; the row's 2005 triple-fatality rappel-anchor-failure account
+matches AAC/news reporting in detail, including the wrong-gully and dislodged-boulder specifics),
+Sherman Peak (10133 ft + 395.4 ft prominence from the row's own cited July 2023 GPS survey,
+including the WA Top 100 removal), and Sherpa Balanced Rock's three routes (8605/8630 ft split
+already self-disclosed in the row's own text as "figures vary"; 1955 Mahre/Prater and 1971
+La Belle/Derr FAs both confirmed).
+
+One near-miss worth recording: Sentinel Peak's stored 8257 ft looked like a possible error against
+Wikipedia/SummitPost/PeakVisor (8261-8266 ft), but Peakbagger's precise 8256.9 ft matches the
+stored value almost exactly — the row is corroborated by the most precise source, not wrong. Not
+flagged.
+
+No new DB writes this batch — see `wa-alpine-audit-progress.json` batch 364 for the full route
+list and next-up queue.
+
+---
+
 ## 2026-07-31 — Pass 1, Batch 33
 
 Five peaks, 10 routes (Mount Stuart 2, Mount Teneriffe 2, Mount Terror 4, Mount Thomson 1,
