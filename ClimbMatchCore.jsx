@@ -3116,6 +3116,8 @@ function sameEditValue(k,a,b){if(k==="waypoints"){if(!Array.isArray(a)||!Array.i
 if(k==="approachVariants"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;
   return a.every(function(v,i){var w=b[i]||{};
     return normEditStr(v.name||"")===normEditStr(w.name||"")
+      &&String(v.viaRouteId||"")===String(w.viaRouteId||"")/* two edits pointing the way in at different routes are not agreeing */
+      &&normEditStr((v.trip&&v.trip.approachLogistics&&v.trip.approachLogistics.trailhead)||"")===normEditStr((w.trip&&w.trip.approachLogistics&&w.trip.approachLogistics.trailhead)||"")/* ...nor are two naming different trailheads */
       &&normEditStr(v.season||"")===normEditStr(w.season||"")
       &&normEditStr(v.notes||"")===normEditStr(w.notes||"")
       &&_agreeSet(Array.isArray(v.hazards)?v.hazards:[])===_agreeSet(Array.isArray(w.hazards)?w.hazards:[])
@@ -3173,7 +3175,7 @@ function itinToText(it,routeName){var lines=[(routeName||"Route")+" — day-by-d
    things a climber actually sends: a readable digest for a text or email, a link that opens the
    climb or the list, and a printable sheet the browser can save as a PDF. */
 function appLink(q){try{var b=(import.meta.env&&import.meta.env.BASE_URL)||"/";return window.location.origin+b+(q?"?"+q:"");}catch(e){return "";}}
-function routeLink(id){return appLink("route="+encodeURIComponent(id));}
+/* `ap` is the way in (lib/approaches.js): a trip plan shared from the Fisher Chimneys pick must open on Fisher Chimneys, not on the default approach whose trailhead it does not use. */function routeLink(id,ap){return appLink("route="+encodeURIComponent(id)+(ap?"&approach="+encodeURIComponent(ap):""));}
 function listLink(id){return appLink("list="+encodeURIComponent(id));}
 /* displayGrade (via gradeLabel), never raw `grade`: see the pill note in renderList. */
 function routeShareBits(r){var b=[gradeLabel(r),DL[catOf(r)]||"",mtnOf(r)];if(typeof r.pitches==="number"&&r.pitches>1)b.push(r.pitches+" pitches");return b.filter(Boolean);}
@@ -3181,7 +3183,7 @@ function routeShareBits(r){var b=[gradeLabel(r),DL[catOf(r)]||"",mtnOf(r)];if(ty
    link to itself (the recipient sees the live list); a private one gets a link per climb, because the
    list link would open "this list is private" for everyone but its owner. */
 function listShareText(l,items,publicLink){var ok=items.filter(function(x){return x.r;});var miss=items.length-ok.length;var lines=[l.name+" — "+items.length+(items.length===1?" climb":" climbs")];if(l.description)lines.push(l.description);lines.push("");ok.forEach(function(x,i){lines.push((i+1)+". "+x.r.name+" — "+routeShareBits(x.r).join(" · "));if(!publicLink)lines.push("   "+routeLink(x.r.id));});if(miss)lines.push((miss===1?"1 more climb":miss+" more climbs")+" couldn’t be loaded to include here.");if(publicLink){lines.push("");lines.push("Open the list: "+listLink(l.id));}return lines.join("\n");}
-function itinShareText(it,r){return itinToText(it,r.name)+"Open the climb: "+routeLink(r.id);}
+function itinShareText(it,r){return itinToText(it,r.name)+"Open the climb: "+routeLink(r.id,r._approach&&r._approach.key);}
 /* The phone's own share sheet (Messages, Mail, WhatsApp…) where there is one; otherwise the clipboard.
    Each outcome is SAID: the old button copied with no confirmation and swallowed a refusal. Cancelling
    the share sheet is a choice, not a failure, so AbortError says nothing. */
