@@ -14,7 +14,7 @@
 //
 // The merge is IMPORTED, never re-implemented. A copy would agree with itself whatever the app
 // does, which is the whole question.
-import { mergeHazards } from "../../lib/hazards.js";
+import { knownHazards, toWarnArr } from "../../lib/hazards.js";
 import { selectAll } from "../lib/supabase-env.mjs";
 
 const MIN = Number(process.env.MIN || 60);
@@ -49,12 +49,12 @@ for (const r of rows) {
   const shared = sharedRun(hz, wo);
   if (!shared) continue;
   considered++;
-  /* Exactly what RouteDetail computes: the box is `_allHaz`, and `_watchOut` is whatever survives
-     the three-way merge and is not already in it. A clause reaches the screen twice only if it is
-     present in BOTH lists after that. */
+  /* Exactly what RouteDetail computes — by calling the same knownHazards, with watch_out parsed by
+     the same toWarnArr. This used to copy RouteDetail's two merges inline, and so faithfully
+     reproduced the bug that printed 322 lines twice (2026-09-30). A clause reaches the screen
+     twice only if it is present in BOTH lists. */
   const objHaz = Array.isArray(r.obj_haz) ? r.obj_haz : (r.obj_haz ? [r.obj_haz] : []);
-  const allHaz = mergeHazards(r.hazards, objHaz).items;
-  const watchOut = mergeHazards(r.hazards, objHaz, r.watch_out).items.filter((t) => allHaz.indexOf(t) < 0);
+  const { hazards: allHaz, watchOut } = knownHazards(r.hazards, objHaz, toWarnArr(r.watch_out));
   const norm = (s) => String(s).replace(/\s+/g, " ");
   const inHaz = allHaz.some((t) => norm(t).includes(shared));
   const inWatch = watchOut.some((t) => norm(t).includes(shared));
