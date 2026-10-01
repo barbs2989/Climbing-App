@@ -23,8 +23,14 @@ insert into m_fold values
   ('co_walls_of_honah_lee_the', 'co_walls_of_honah_lee_boulders');
 
 do $$
+declare n int;
 begin
-  if (select count(*) from areas where id in (select keep from m_fold union select drop_id from m_fold)) <> 6 then
+  -- An EMPTY database (a Supabase preview, check:migration-replay) has no catalog at all: none of
+  -- the six areas exists, and there is nothing to fold. Only a PARTIAL set is the surprise worth
+  -- aborting on (README-numbering: "a migration must replay on an empty database too").
+  select count(*) into n from areas where id in (select keep from m_fold union select drop_id from m_fold);
+  if n = 0 then return; end if;
+  if n <> 6 then
     raise exception '0228: expected 6 areas, found a different number';
   end if;
   if exists (select 1 from areas a join m_fold f on a.parent_id = f.drop_id) then

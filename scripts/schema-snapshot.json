@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-10-01",
   "tables": {
     "areas": [
       "area_type",
@@ -15,6 +15,7 @@
       "lat",
       "lng",
       "name",
+      "name_search",
       "parent_id",
       "parent_peak",
       "path",
@@ -29,6 +30,7 @@
       "created_at",
       "date_occurred",
       "description",
+      "filed_by",
       "id"
     ],
     "blocked_users": [
@@ -37,9 +39,43 @@
       "created_at",
       "id"
     ],
+    "catalog_directory": [
+      "area_id",
+      "area_type",
+      "breadcrumb",
+      "depth",
+      "holds",
+      "key",
+      "lat",
+      "lng",
+      "name",
+      "outline",
+      "parent_id",
+      "path",
+      "route_count",
+      "sort_key",
+      "state"
+    ],
+    "catalog_routes": [
+      "area_breadcrumb",
+      "area_id",
+      "breadcrumb",
+      "discipline",
+      "grade",
+      "key",
+      "name",
+      "route_id",
+      "state"
+    ],
     "cert_track_disciplines": [
       "cert_track",
       "discipline"
+    ],
+    "climb_log_confirmations": [
+      "created_at",
+      "log_id",
+      "partner_id",
+      "verdict"
     ],
     "climb_logs": [
       "anchor_quality",
@@ -70,8 +106,15 @@
       "outcome_reasons",
       "partners",
       "party_size",
+      "photo_hash",
+      "photo_near_route",
+      "photo_taken_on",
       "photos",
       "protection_quality",
+      "rappel_count",
+      "rappel_longest_m",
+      "rappel_rope",
+      "road_note",
       "route_id",
       "seepage",
       "snow_condition",
@@ -165,6 +208,8 @@
     ],
     "crew_members": [
       "crew_id",
+      "gear_claims",
+      "gear_extras",
       "invited_by",
       "joined_at",
       "note",
@@ -356,6 +401,14 @@
       "requested_dates",
       "status"
     ],
+    "kudos": [
+      "climb_log_id",
+      "created_at",
+      "giver",
+      "id",
+      "receiver",
+      "route_name"
+    ],
     "messages": [
       "body",
       "created_at",
@@ -377,6 +430,8 @@
     ],
     "profiles": [
       "account_type",
+      "avail_week",
+      "availability",
       "avatar",
       "bio",
       "boulder_grade",
@@ -384,6 +439,7 @@
       "created_at",
       "disciplines",
       "discoverable",
+      "hiking_speed_ft_hr",
       "id",
       "is_admin",
       "location",
@@ -438,6 +494,7 @@
       "access",
       "access_checked_at",
       "aid_grade",
+      "aid_grade_num",
       "alpine_draws",
       "alpine_grade",
       "approach",
@@ -486,6 +543,7 @@
       "hazards",
       "high_point_ft",
       "ice_grade",
+      "ice_grade_num",
       "id",
       "itinerary",
       "landing",
@@ -495,7 +553,9 @@
       "lng",
       "loss_ft",
       "max_angle",
+      "mixed_grade_num",
       "name",
+      "name_search",
       "obj_haz",
       "outing_shape",
       "overview",
