@@ -29150,3 +29150,63 @@ the three wa_ruby_mountain_* routes, wa_ruth_icy_traverse, wa_ruth_mountain_sout
 and the two wa_sahale_mountain_* routes (all filed on peaks). `check:sql` passed. It
 parsed 2 of the 4 targets because the permit string contains a `;`; all 4 ids
 were confirmed to exist live.
+
+## Batch 363 — 2026-10-01 (pass 6)
+
+Checked: wa_rock_mountain_west_route, wa_ruby_mountain_happy_creek,
+wa_ruby_mountain_northwest_ridge, wa_ruby_mountain_south_ridge, wa_ruth_icy_traverse,
+wa_ruth_mountain_south_slopes, wa_sahale_mountain_r1, wa_sahale_mountain_sahale_glacier.
+
+Fixed 4 (`audits/sql/2026-10-01-batch-363.sql`): Ruby Mountain's three routes disagreed
+with each other on the peak's own elevation. The `areas` row for wa_ruby_mountain
+already stores elevation_ft = 7426 (matching ListsOfJohn's and peakery's precise
+figure), and two of the three routes (Northwest Ridge, South Ridge) already carried
+7426 on their own summit waypoint -- but high_point_ft on all three routes, including
+those two, still read 7408 (the older, widely-repeated SummitPost rounding). Raised
+high_point_ft to 7426 on all three, and also fixed Happy Creek Route's waypoint
+(elev/elevFt), which had never been touched and still read 7408 on both fields.
+Separately, Rock Mountain West Route's gain_ft/loss_ft (4050) sat below the net rise
+its own waypoints require: trailhead 2,675 ft to its own high_point_ft 6,852 ft is
+4,177 ft, and an out-and-back cannot gain less than its net rise. Raised both to 4177
+-- a floor, not a final answer, since the route also crosses a false south summit and
+dips to a saddle before the true summit, which would push real cumulative gain higher
+still; no source gives that saddle's elevation. Also filled permit, NULL on both Ruth
+Mountain routes in this batch: unlike the Pasayten/Enchantment-rule fixes in recent
+batches, no sibling on this peak already carries a filled-in permit to copy, so the
+text instead restates what external sources (NPS, WTA) confirm -- Ruth's summit sits
+inside North Cascades NP and overnight camping there needs a backcountry permit --
+plus what the rows' own access.fees and emergency.rangerStation fields already state
+about the Hannegan Trailhead's Northwest Forest Pass and the Glacier Public Service
+Center.
+
+Flagged for human review (1): Rock Mountain West Route's own summit waypoint (6,856
+ft) disagrees with its own high_point_ft (6,852 ft) by 4 ft. Not picked: this mirrors
+the row's own data_quality note that sources span 6,808-6,860 ft depending on DEM/topo
+(Wikipedia gives 6,840 ft; The Mountaineers gives 6,852 ft, which is what high_point_ft
+already stores) -- a genuine multi-source spread, not a stale value, so left for a
+human to pick one rather than silently resolved here.
+
+Clean / confirmed (via WebSearch; direct fetches are still blocked by the egress
+proxy): Icy Peak's 7,073 ft (WTA, ListsOfJohn) -- lower than Ruth Mountain's own 7,115
+ft, so the Ruth-Icy Traverse's high_point_ft (7,115) is correctly Ruth's elevation,
+the higher of the traverse's two summits, not Icy's; Sahale Mountain's August 1897
+FA by John Charlton and Albert H. Sylvester; Ruth Mountain's summit sitting inside
+North Cascades NP (used above to fill permit, but the row's climbing content itself
+needed no change). Sahale Mountain's two routes (R1/Quien Sabe Glacier and Sahale
+Arm/Sahale Glacier) were otherwise internally consistent and already corrected for
+the camp-elevation mixup found 2026-07-31 -- no further issues found this pass.
+
+No `.env`/`.env.local` present at run start (fresh clone, as every run); read-only
+queries used the anon key supplied in the task prompt directly as shell env vars.
+`check:sql` passed against the fix file (6 write targets across 8 statements; only
+a paste-size advisory, since the file runs ~4.3KB against its ~4KB soft-paste-limit
+heuristic -- split it into ~1.5KB chunks when pasting into the SQL Editor). A live
+id-ordered query confirmed the next 10 in-scope routes after
+wa_sahale_mountain_sahale_glacier, all filed on area_type='peak' areas: wa_scarface_3,
+wa_se_ridge_aka_shield_wall, wa_sentinel_peak_standard, wa_sews_sw_rib,
+wa_sharkfin_tower_southeast_ridge, wa_sherman_peak_baker_route,
+wa_sherman_peak_baker_squak_glacier, wa_sherpa_balanced_rock_ne_couloir,
+wa_sherpa_balanced_rock_north_ridge, wa_sherpa_balanced_rock_standard. The raw
+WA-tagged route count was re-queried this batch (747, down from the 751 last recorded
+at batch 352); the area_type='peak' in-scope subset was not recounted -- a live
+`areas` table scan filtered to area_type='peak' alone timed out.

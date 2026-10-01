@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_rock_mountain_northeast_ridge",
+  "last_processed_id": "wa_sahale_mountain_sahale_glacier",
   "total_in_scope_last_count": 698,
-  "total_wa_alpine_or_mountaineering_tagged": 751,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241. Scope counts not re-run since batch 352 (698 in-scope / 751 total). Next after wa_rock_mountain_northeast_ridge (live id-ordered query, all area_type=peak): wa_rock_mountain_west_route, wa_ruby_mountain_happy_creek, wa_ruby_mountain_northwest_ridge, wa_ruby_mountain_south_ridge, wa_ruth_icy_traverse, wa_ruth_mountain_south_slopes, wa_sahale_mountain_r1, wa_sahale_mountain_sahale_glacier; then wa_scarface_3 onward.",
+  "total_wa_alpine_or_mountaineering_tagged": 747,
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241. Scope counts not re-run since batch 352 beyond the raw tagged-route count above (747, re-queried this batch; area_type='peak' in-scope subset not recounted -- a live areas-table area_type=peak scan timed out this run). Next after wa_sahale_mountain_sahale_glacier (live id-ordered query, all area_type=peak): wa_scarface_3, wa_se_ridge_aka_shield_wall, wa_sentinel_peak_standard, wa_sews_sw_rib, wa_sharkfin_tower_southeast_ridge, wa_sherman_peak_baker_route, wa_sherman_peak_baker_squak_glacier, wa_sherpa_balanced_rock_ne_couloir, wa_sherpa_balanced_rock_north_ridge, wa_sherpa_balanced_rock_standard.",
   "batches": [
     {
       "batch_number": 1,
@@ -7261,6 +7261,25 @@
       "clean": 5,
       "sql_file": "audits/sql/2026-10-01-batch-362.sql",
       "note": "Fixed Rapple Grapple gain/loss below its own net rise (2200->2520 from Beckey Route sibling); Remmel SE Slope loss_ft NULL->5600 and permit NULL->Pasayten text; Rikki Tikki Tavi permit NULL->Enchantment text. Flagged: Ptarmigan Berk Creek junction waypoint placed ~150m from summit at 4400 ft; Remmel NW Ridge gain/loss basis unclear; Raven Ridge elevation sources conflict; 12 other Colchuck Balanced Rock routes still NULL permit."
+    },
+    {
+      "batch_number": 363,
+      "date": "2026-10-01",
+      "route_ids": [
+        "wa_rock_mountain_west_route",
+        "wa_ruby_mountain_happy_creek",
+        "wa_ruby_mountain_northwest_ridge",
+        "wa_ruby_mountain_south_ridge",
+        "wa_ruth_icy_traverse",
+        "wa_ruth_mountain_south_slopes",
+        "wa_sahale_mountain_r1",
+        "wa_sahale_mountain_sahale_glacier"
+      ],
+      "confirmed_errors_fixed": 4,
+      "flagged_for_human_review": 1,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-10-01-batch-363.sql",
+      "note": "Fixed Ruby Mountain's 3-way high_point_ft desync (2 routes' own waypoints already said 7426, matching the peak's own areas row and ListsOfJohn/peakery, but high_point_ft on all three still read the older 7408; Happy Creek's waypoint was fixed too, it had never been touched). Fixed Rock Mountain West Route's gain_ft/loss_ft (4050), below the net rise its own trailhead-to-summit waypoints require (4177) regardless of which disputed summit elevation is used. Filled permit NULL on both Ruth Mountain routes (no filled-in sibling to copy this time; text grounded in NPS/WTA confirmation that Ruth's summit is inside North Cascades NP plus the rows' own access/emergency fields). Flagged: Rock Mountain's own summit waypoint (6856) vs its own high_point_ft (6852) disagree by 4 ft, mirroring the row's own data_quality note that sources span 6,808-6,860 ft -- not picked, left for a human. Clean (confirmed externally): Icy Peak's 7,073 ft (lower than Ruth's 7,115 ft, so the Ruth-Icy Traverse's high_point_ft is correctly Ruth's elevation, not Icy's); Sahale Mountain's 1897 Charlton/Sylvester FA; Rock Mountain's 6,852 ft as one of several cited DEM figures."
     }
   ]
 }
