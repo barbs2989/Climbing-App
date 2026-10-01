@@ -1,0 +1,162 @@
+{
+ "wa_indian_mountain_baker_scramble": {
+  "waypoints": [
+   {
+    "lat": 48.91016,
+    "lng": -121.59414,
+    "elev": 3120,
+    "name": "Hannegan Pass Trailhead",
+    "note": "End of FR 32 (Ruth Creek Road), 5.3 mi off the Mt Baker Hwy; Northwest Forest Pass required to park, self-issue wilderness permit needed past the pass for overnight travel into North Cascades NP.",
+    "type": "Trailhead",
+    "distMi": 0
+   },
+   {
+    "lat": 48.8829219,
+    "lng": -121.5342754,
+    "elev": 5050,
+    "name": "Hannegan Pass",
+    "note": "Broad meadow pass on the Mt Baker Wilderness/park boundary ridge where the trail crests and then switchbacks steeply down into the Chilliwack River drainage.",
+    "type": "Junction",
+    "distMi": 4.2,
+    "directions": "Follow the Hannegan Pass Trail (#674) about 4.2 miles up the Ruth Creek valley, gaining roughly 1,900 ft through forest and avalanche meadows before switchbacks bring you to the pass."
+   },
+   {
+    "lat": 48.8875,
+    "lng": -121.5236,
+    "elev": 3800,
+    "name": "Boundary Camp",
+    "note": "First-night camp just inside the park boundary below the pass with a reliable stream for water; trail forks here toward the Chilliwack River/Copper Ridge.",
+    "type": "Campsite",
+    "distMi": 5.2,
+    "directions": "From the pass the trail switchbacks steeply down the east side into the Chilliwack River drainage, losing about 1,250 ft in a mile to the camp just inside the park boundary. The stream at camp is reliable water."
+   },
+   {
+    "lat": 48.90400514430451,
+    "lng": -121.43728844981081,
+    "elev": 2300,
+    "name": "Chilliwack River crossing",
+    "note": "Ford (or cable/log crossing depending on season and bridge status) of the Chilliwack River; can run high, fast, and cold during snowmelt — check current NPS crossing status before counting on a bridge.",
+    "type": "Hazard",
+    "distMi": 10,
+    "directions": "Continue down-valley on the Chilliwack River Trail, dropping about 1,500 ft over roughly five miles of forest past the Copper Creek and U.S. Cabin camps to the river. Bears have been persistent at camps in this drainage, so use hard-sided food storage anywhere you stop. Bring gloves for the hand-pulled cable car, and check current park crossing status before counting on it."
+   },
+   {
+    "lat": 48.906632,
+    "lng": -121.422031,
+    "elev": 2350,
+    "name": "Brush Creek Trail junction",
+    "note": "Leave the Chilliwack River Trail and turn up the Brush Creek Trail toward Whatcom Pass; junction is easy to miss in overgrown brush.",
+    "type": "Junction",
+    "distMi": 11,
+    "directions": "Cross the river and follow the trail about a mile up-valley past Indian Creek Camp to the signed Brush Creek junction, where the tread toward Whatcom Pass turns off. This stretch carries major blowdown from the 2021-22 fire damage, and the junction itself is easy to walk past when the brush is up."
+   },
+   {
+    "lat": 48.879001,
+    "lng": -121.410786,
+    "elev": 3139,
+    "name": "Graybeal Camp",
+    "note": "Established camp on Brush Creek that's often dry by late summer — fill water at the creek about half a mile before camp rather than counting on a source here.",
+    "type": "Campsite",
+    "distMi": 13.1,
+    "directions": "Turn up the Brush Creek Trail and climb roughly 1,250 ft over about two miles toward Whatcom Pass, through the 2022 burn — expect rockfall off unstable burned switchbacks and falling snags overhead. Graybeal's own water source is often dry by late summer, so fill at the creek about half a mile below camp rather than counting on finding water at the site."
+   },
+   {
+    "lat": 48.888604335630966,
+    "lng": -121.40061859197691,
+    "elev": 4800,
+    "name": "Open slopes above Brush Creek (leave trail)",
+    "note": "Leave the maintained trail on the brushy avalanche-path slopes below Whatcom Pass and angle northwest toward Indian Mountain; no path from here, steep heather/slide-alder terrain with genuine route-finding as noted in route beta.",
+    "type": "Hazard",
+    "distMi": 14.5,
+    "directions": "Stay on the Brush Creek Trail another mile and a half toward Whatcom Pass, then leave the maintained tread where the brushy avalanche paths open up below the pass. There is no path beyond this point, and the slide alder and steep heather make the route-finding genuinely sustained in both directions."
+   },
+   {
+    "lat": 48.89875,
+    "lng": -121.38982,
+    "elev": 7133,
+    "name": "Indian Mountain",
+    "note": "True summit; the peak drops over 4,100 ft to the Brush Creek/Indian Creek valley in roughly a mile, and hikers viewing it from the Whatcom Pass ridge describe an abrupt cliff on its north side above Indian Creek's headwaters — stay well back from that edge.",
+    "type": "Summit",
+    "distMi": 16,
+    "directions": "Climb cross-country up open heather, talus and short loose rock steps, gaining roughly 2,300 ft in about a mile and a half. Nothing here needs a rope, but the peak throws over 4,100 ft down to the valley in about a mile, so the ground stays steep the whole way and there is no quicker line down — the descent reverses this one. Near the top, stay well back from the north edge, which drops abruptly to the head of Indian Creek."
+   }
+  ]
+ },
+ "wa_mount_challenger_challenger_glacier": {
+  "waypoints": [
+   {
+    "lat": 48.9101,
+    "lng": -121.5927,
+    "elev": 3100,
+    "name": "Hannegan Pass Trailhead",
+    "note": "Road-end at Hannegan Campground off Ruth Creek Rd/FR-32; Northwest Forest Pass required, self-issue wilderness permit needed for NOCA camps ahead.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to the road-end at Hannegan Campground, at the end of FS Road 32 (Ruth Creek Road) off WA-542 — this is the Hannegan Pass Trailhead. A Northwest Forest Pass is required to park here, and a self-issue wilderness permit is needed for the North Cascades National Park camps ahead on the route."
+   },
+   {
+    "lat": 48.882183,
+    "lng": -121.540756,
+    "elev": 5100,
+    "name": "Hannegan Pass",
+    "note": "Trail crests the pass then drops roughly 650 ft per mile into North Cascades National Park toward the Chilliwack River, the gateway from Mt. Baker Wilderness into the park backcountry.",
+    "type": "Junction",
+    "distMi": 4
+   },
+   {
+    "lat": 48.88639,
+    "lng": -121.528303,
+    "elev": 2600,
+    "name": "Boundary Camp",
+    "note": "Marks the Mt. Baker National Forest / North Cascades National Park boundary; established campsites with pit toilet at the bottom of the roughly 2,500 ft descent off Hannegan Pass.",
+    "type": "Campsite",
+    "distMi": 5.3
+   },
+   {
+    "lat": 48.884457,
+    "lng": -121.502415,
+    "elev": 2800,
+    "name": "Chilliwack River ford / Easy Ridge climbers' path",
+    "note": "Faint, unsigned climbers' path leaves the valley trail here to gain Easy Ridge; parties commonly lose it near the river crossing, especially in fog.",
+    "type": "Hazard",
+    "distMi": 7
+   },
+   {
+    "lat": 48.8754,
+    "lng": -121.3646,
+    "elev": 5210,
+    "name": "Whatcom Pass",
+    "note": "High alpine pass on the Chilliwack River/Brush Creek trail (USGS Mount Redoubt quad); the Tapto Lakes side trail branches here while the climbing route continues toward Whatcom Peak and Perfect Pass.",
+    "type": "Junction",
+    "distMi": 16
+   },
+   {
+    "lat": 48.84929,
+    "lng": -121.37458,
+    "elev": 6200,
+    "name": "Perfect Pass",
+    "note": "Renowned high bivy site reached by descending roughly 1,000 ft off Easy Ridge around the exposed 'Imperfect Impasse' notch below Whatcom Peak; last reliable camp before the glacier.",
+    "type": "Campsite",
+    "distMi": null
+   },
+   {
+    "lat": 48.839677,
+    "lng": -121.34233,
+    "elev": 7500,
+    "name": "Challenger Glacier crossing",
+    "note": "Crevassed glacier traverse on Challenger's north/northwest slopes from Perfect Pass; crampons recommended even when an existing boot pack is present in season.",
+    "type": "Hazard",
+    "distMi": 19
+   },
+   {
+    "lat": 48.8356,
+    "lng": -121.342,
+    "elev": 8207,
+    "name": "Mount Challenger (East Summit)",
+    "note": "3rd/4th-class scramble off the glacier exits onto a short 5.5-5.7 pitch to the true east summit; descend by downclimbing to the notch and making a single rappel.",
+    "type": "Summit",
+    "distMi": 19.5
+   }
+  ]
+ }
+}
