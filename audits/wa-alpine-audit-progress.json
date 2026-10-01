@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_primus_peak_south_ridge",
+  "last_processed_id": "wa_prusik_peak_west_ridge",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 751,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241. Batch 360 did not re-run the full in-scope COUNT query (spot-checked only this batch's own candidate ids' area_type via a direct areas lookup, same method as prior batches) -- last known counts (698 in-scope / 751 total wa_ alpine/mountaineering-tagged, from batch 352) stand unless a future batch re-counts. Next up after wa_primus_peak_south_ridge (confirmed via a live id-ordered query this run): the wa_prusik_peak_* cluster -- 7 alpine routes (alpine_craggers_delight, der_sportsman, prayer_for_a_friend, sail_away, solid_gold, south_face_burgner_stanley, taylor_wood_route), all filed under area_type=peak wa_prusik_peak -- is a natural next full batch on its own, same pattern as the Mount Olympus/Ottohorn clusters in batch 358.",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241. Batch 361 closed out the full wa_prusik_peak_* cluster (8 routes). Scope counts not re-run this batch (last known: 698 in-scope / 751 total, from batch 352). Next up after wa_prusik_peak_west_ridge (confirmed via a live id-ordered query, filtered to area_type='peak', this run): wa_ptarmigan_peak_pasayten_scramble, wa_ragged_edge (vesper_peak), wa_rapple_grapple (liberty_bell), wa_raven_ridge_southeast_ridge_crater_lake, wa_remmel_mountain_nw_ridge, wa_remmel_mountain_southeast_slope, wa_ridge_traverse_from_east_fury, wa_rikki_tikki_tavi (colchuck_balanced_rock), wa_rock_mountain_northeast_ridge -- 9 routes across 8 different peaks/areas, no natural single-peak cluster this time, so a 5-10 route batch should just take them in this id order; wa_rock_mountain_west_route (same peak as the northeast ridge route) would be the first of the batch after. wa_ptarmigan_traverse, wa_ragged_ridge, wa_rampage and wa_roan_wall_* were confirmed filed on crag/traverse-type areas, not peaks, and correctly skipped per scope.",
   "batches": [
     {
       "batch_number": 1,
@@ -7222,6 +7222,25 @@
       "clean": 2,
       "sql_file": "audits/sql/2026-10-01-batch-360.sql",
       "note": "Fixed 3 (3 UPDATEs, all populating/correcting gain_ft/loss_ft/dist_km from each row's own itinerary day-sum and totalNote, cross-checked externally): wa_point_success_south_side's loss_ft was NULL while gain_ft (11500) already matched its own itinerary.totalNote and this is a round trip back to the same Longmire trailhead -- set loss_ft=11500. wa_poltergeist_pinnacle's top-level gain_ft (7066)/loss_ft (NULL) turned out to be only the first of its own documented 3 itinerary days (hike-in to Perfect Pass camp) -- a CascadeClimbers trip report of this exact 2004 FA independently gives the same ~7,000 ft for that one day, plus another ~1,500 ft of glacier approach beyond camp not counted at all, and the row's own text continues for 2 more days (climb + hike-out) that loss_ft (NULL) didn't capture at all; adopted the already self-consistent full-trip total (gain 11100/loss 10700) already carried by the sibling row for the same FA climb, wa_poltergeist_pinnacle_north_route, whose own 4-day itinerary.days[] independently sums to that exact figure. wa_primus_peak_south_ridge had gain_ft/loss_ft/dist_km all NULL despite its own itinerary.days[] already summing to 8000/7500 and its own totalNote already stating ~8,000 ft gain over ~20 miles (=32.19 km) -- populated all three from the row's own itinerary. Flagged for human review (1): wa_poltergeist_pinnacle_north_route's pitches field (4) undercounts versus the historical FA account -- NWMJ's writeup of this same 2004 climb states '6 pitches' overall, and its sibling row (wa_poltergeist_pinnacle) already stores pitches=6; but this row's own pitch_detail array only lists 4 entries (it treats the ~800ft ridge finish as one pitch rather than the two the NWMJ/AAC accounts describe), so correcting the count would mean inventing a specific pitch split from secondhand search snippets rather than the full FA account -- left for a human with full-text NWMJ/AAC access. Clean (2): wa_plummer_peak_r1 (Plummer Peak, Pinnacle Saddle/North Slopes) -- elevation (6374, matches the area row and external sources), and gain_ft/loss_ft (1500/1500) already match its own single-day itinerary exactly; Mount Rainier NP day-climb/overnight-permit text confirmed. wa_preacher_mountain_scramble -- elevation (5924) confirmed externally; gain_ft/loss_ft (5200/5200) already match its own itinerary day-sum exactly; Middle Fork Snoqualmie Trailhead's $5/vehicle day-use fee (NW Forest Pass honored) confirmed externally. Also externally re-confirmed as still accurate and left untouched: Point Success's $82/person 2026 MRNP climbing registration fee, and its West Side Road closure-at-Dry-Creek description (vehicles still cannot drive past Dry Creek due to the ongoing Tahoma Creek geohazard, matching NPS's current road-status page)."
+    },
+    {
+      "batch_number": 361,
+      "date": "2026-10-01",
+      "route_ids": [
+        "wa_prusik_peak_alpine_craggers_delight",
+        "wa_prusik_peak_der_sportsman",
+        "wa_prusik_peak_prayer_for_a_friend",
+        "wa_prusik_peak_sail_away",
+        "wa_prusik_peak_solid_gold",
+        "wa_prusik_peak_south_face_burgner_stanley",
+        "wa_prusik_peak_taylor_wood_route",
+        "wa_prusik_peak_west_ridge"
+      ],
+      "confirmed_errors_fixed": 3,
+      "flagged_for_human_review": 1,
+      "clean": 4,
+      "sql_file": "audits/sql/2026-10-01-batch-361.sql",
+      "note": "Full wa_prusik_peak_* cluster (8 routes), closing out the cluster batch 360 flagged as next up. 5 of the 8 (alpine_craggers_delight, prayer_for_a_friend, sail_away, solid_gold, taylor_wood_route) had never been audited in any prior pass -- newly added FA-dated routes (2022/2023/2025) not present when earlier passes walked this id range. Fixed: Solid Gold high_point_ft wrongly set to Prusik's true-summit elevation (8008) despite the row's own beta/overview/itinerary all stating it tops out on the West Ridge below the summit -- cleared to NULL to match its two partial-topout siblings. Taylor-Wood Route overview said 'ten-section route' where pitches=8 (confirmed via Mountain Project) and its own watch_out already says '~10 hours climbing time' -- the duration had been miswritten as a section count; corrected to 'eight-pitch'. Alpine Cragger's Delight / Prayer for a Friend / Sail Away / Taylor-Wood Route all had a NULL top-level permit column despite sharing this exact peak and approach with already-audited siblings that correctly state the Core Enchantments overnight-permit rule -- populated from those siblings' identical, already-verified text."
     }
   ]
 }

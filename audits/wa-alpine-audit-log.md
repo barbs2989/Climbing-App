@@ -29021,3 +29021,80 @@ key supplied in the task prompt directly as shell env vars; `npm install` succee
 run (unlike some prior runs) so `check:sql` ran directly against the fix file before
 committing (all 3 write targets confirmed to exist live, each guarded on its pre-fix
 value including the NULL fields).
+
+## Batch 361 — 2026-10-01 (pass 6)
+
+Checked the full wa_prusik_peak_* cluster (8 routes): Alpine Cragger's Delight,
+Der Sportsman, Prayer for a Friend, Sail Away, Solid Gold, South Face
+(Burgner-Stanley), Taylor-Wood Route, West Ridge. Five of these (Alpine
+Cragger's Delight, Prayer for a Friend, Sail Away, Solid Gold, Taylor-Wood
+Route) had never been audited in any prior pass — all are recently-documented
+routes (first ascents/free ascents dated 2022, 2023 x2, and 2025) that entered
+scope after earlier passes had already walked this id range.
+
+Found and fixed 3 (`audits/sql/2026-10-01-batch-361.sql`). Solid Gold's
+high_point_ft was set to Prusik's true-summit elevation (8008 ft), but the
+row's own beta ("topping out on the West Ridge rather than the true summit"),
+overview, descent_text and itinerary schedule (top-out step immediately
+followed by a rappel, no summit step) all agree the climb's own high point is
+below the true summit — cleared to NULL to match its two siblings that also
+don't reach the true summit (Alpine Cragger's Delight, Prayer for a Friend),
+which already correctly carry NULL. Taylor-Wood Route's overview called it a
+"ten-section route," but the row's own pitches=8 (confirmed against Mountain
+Project: 8 pitches, 670 ft) and its own watch_out already states "~10 hours
+climbing time" — the duration looks to have been miswritten as a pitch/section
+count; corrected to "eight-pitch." Alpine Cragger's Delight, Prayer for a
+Friend, Sail Away and Taylor-Wood Route all had a NULL top-level `permit`
+column despite sharing this exact peak and approach (confirmed via each row's
+own prose: "20 ft left of Stanley-Burgner's start," "about 20 yards left of
+Solid Gold," etc.) with already-audited siblings whose `permit` column
+correctly states the Core Enchantments overnight-permit rule (May 15-Oct 31
+quota lottery, or a free day-use permit for a single push) — populated with
+the identical, already-verified text rather than leaving the column empty.
+
+Flagged for human review (1): those same four rows' nested `access.permit`/
+`access.fees` sub-fields still describe only a free day-use permit, with no
+mention of the overnight option now stated in the top-level `permit` column —
+left for a human to decide whether to expand the nested JSON to match, since
+copying the siblings' much larger `access` object (fee schedule, lottery
+dates, group limits, etc.) onto four more rows felt like more than this batch
+should invent on its own say-so.
+
+Clean (4): Der Sportsman, South Face (Burgner-Stanley) and West Ridge — all
+re-confirmed consistent with external sources (Mountain Project, Beckey) on
+FA, grade, pitch count and descent; no changes from their prior-pass audits.
+Alpine Cragger's Delight — FA attribution (Justin Sackett, Sept 10 2022),
+grade (5.10+) and length (80 ft / 24 m) all match Mountain Project exactly.
+
+External corroboration used this batch (search snippets only — Mountain
+Project, SummitPost, climbing.com, Physivantage and most other climbing sites
+are blocked by this environment's egress proxy, so WebFetch could not reach
+them directly; findings rest on WebSearch's own result snippets of those
+pages, used as the methodology's "secondary corroboration," plus the strong
+internal evidence from each row's own fields): Mountain Project route pages
+for Solid Gold, Taylor-Wood Route, Sail Away and Alpine Cragger's Delight;
+climbing.com's and the AAC's coverage of Adrian Vanoni's October 2023 free
+ascent of Prayer for a Friend; SummitPost's first-ascent account of the
+Taylor-Wood Route.
+
+`last_processed_id` advances to `wa_prusik_peak_west_ridge`. Next up (confirmed
+via a live id-ordered query, filtered to area_type='peak'): 9 routes across 8
+different peaks — wa_ptarmigan_peak_pasayten_scramble, wa_ragged_edge,
+wa_rapple_grapple, wa_raven_ridge_southeast_ridge_crater_lake,
+wa_remmel_mountain_nw_ridge, wa_remmel_mountain_southeast_slope,
+wa_ridge_traverse_from_east_fury, wa_rikki_tikki_tavi,
+wa_rock_mountain_northeast_ridge — no single-peak cluster this time.
+wa_ptarmigan_traverse, wa_ragged_ridge, wa_rampage and wa_roan_wall_* were
+confirmed filed on crag/traverse-type areas and correctly skipped per scope.
+Scope counts not re-run this batch (last known: 698 in-scope / 751 total, from
+batch 352). No `.env`/`.env.local` present at run start (fresh clone); this
+branch was also found to be ~141 commits behind `main` (missing the newer
+`docs/guards/*.md` notes, though the `check:` scripts themselves were already
+present) — not merged, since audit commits only touch `audits/` per this
+task's guardrails and a 141-commit merge is out of scope for a routine batch;
+flagging it here in case a human wants to bring the branch current separately.
+Read-only queries used the anon key supplied in the task prompt directly as
+shell env vars. `check:sql` ran successfully against the fix file before
+committing (every literal-id write target confirmed to exist live; the
+multi-id IN(...) permit UPDATE isn't checkable by that script but was
+hand-verified against the live NULL values above).
