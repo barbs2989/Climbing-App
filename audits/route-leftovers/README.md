@@ -233,6 +233,27 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
   first-hand log entries name only scrambles there). The `descent_text` "rappel slings on this line" claim looks
   drawn from slings found on Dragontail's east ridge, not the tower: unsupported, for the owner with options A/B/C.
 
+## 14. Owner: "do research for the rest" (`deep/out/r22, r23, r24.json`)
+- East Twin Needle South Route (r24), APPLIED: a second, independent grading of the Eye Col line turned up (the
+  first ascent: 5.6 with a point of aid), agreeing with the later free 5.7. `data_quality.gaps[0]` and `corrections`
+  no longer say the grade rests on one account. Flag, no op: the overview's "both needles first climbed together in
+  1932" — the first-ascent record gives East Twin to the 1968 party; one lineage, so left for the owner.
+- Prusik West Ridge (r24): II-III now has two independent sources at each end; no op needed.
+- Already fixed by earlier passes, the held lines were stale (r24, live rows re-read): Hozomeen South Peak and
+  Enchantment summit pins (section 7), Cashmere west col (section 8), La Bohn Gap (section 6; ground height at the pin
+  matches the published key-col height), Rock Mountain "south-facing" (now a second written source).
+- Bald Eagle pin 3 `distMi` 3.2 (r24): no source states it; measuring along the track would be computing. Unchanged.
+- Witches Tower E/SE (r23): no new source. The `descent_text` "rappel slings on this line" clause: three sources
+  already read say the tower is left by scrambling down the south side and none mentions a rappel. A ready
+  `replace_text` removing only that parenthetical is in r23's `proposed_ops_held` — owner's call, with options A/B/C.
+- Three Fingers day 2 7.7 mi (r23): no source states a day-2 figure. Unchanged.
+- Half Moon ×5 (r22): pass unchanged. Trailhead pin confirmed wrong (at the pass, ~2 km from the Tye Road pull-off
+  the directions park at) but no source publishes a coordinate for the pull-off, so no move. A rule-1 fallback (null
+  pin 1's `distMi`, rewrite its note as a placeholder) is in r22's `fallback_ops` — owner's call.
+- Switchback day 1 6.2 mi (r22): unchanged; 8.5 mi is still one author. The 6.2 may be the Martin Creek trail's
+  own length. One news report lists Foggy Dew and Merchants Basin trails closed for the Little Giant Fire (Aug 2026);
+  one source, not recorded.
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
@@ -242,24 +263,23 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
     sub-summit names were swapped (westernmost = Honk) and Honk had an earlier ascent.
   - `wa_liberty_bell_east_face`: no such route in two independent route lists; its beta is Lexington Tower's East
     Face, which has its own row.
-- **Single source / one author:** East Twin Needle South Route 5.7 (grade still 5.10a); King Kong commitment IV,
-  its `fa` (Wertkin & Johnson, FFA with Gleason) and crux 5.11d-5.12a — every source is the first ascensionist
-  (`deep/out/h1.json`, `research/held-v019.json`); Prusik West Ridge II-III (both Grade II sources may be one guide,
-  `held-v021.json`).
+- **Single source / one author:** King Kong commitment IV, its `fa` (Wertkin & Johnson, FFA with Gleason) and crux
+  5.11d-5.12a — every source is the first ascensionist (`deep/out/h1.json`, `research/held-v019.json`). East Twin
+  Needle and Prusik West Ridge are settled (section 14).
 - **Parking-pass claims resting on fee law, not a statement about the spot:** Eagle Rock, Half Fast, Astral
   Projection, Astroglide, Asymptotic, Artic Rose (`held-v010/v011.json`); Spire `access.fees` (open product decision,
   `held-v024.json`).
-- **Weak evidence:** Rock Mountain "south-facing" (second source is a slope sample, `held-v021.json`); Berdeen
-  `loss_ft` null (`loss_ft` holds two conventions); Cashmere west-col pin (col only located to 0.7 km); La Bohn Gap
-  pin (sources 335 m apart); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
+- **Weak evidence:** Berdeen `loss_ft` null (`loss_ft` holds two conventions); Bald Eagle pin 3 `distMi` 3.2; Half
+  Moon trailhead pin (wrong, nowhere sourced to move it; `deep/out/r22.json` `fallback_ops`); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
-- **No source found:** Witches Tower E/SE Face (see sections 11 and 13). Rimrock was fixed in section 11; Vanishing
+- **No source found:** Witches Tower E/SE Face (see sections 11, 13 and 14; the rappel-slings removal is ready in
+  `deep/out/r23.json` `proposed_ops_held`). Rimrock was fixed in section 11; Vanishing
   Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
-  in section 11. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Hozomeen summit pin
-  7,614 ft ground vs 8,003 stored; Enchantment summit pin ~330 m off the NE summit. Switchback Mountain day 1 6.2 mi
-  vs one author's 8.5 mi. Clark waypoint 5 and the Denny permit wording were fixed in section 12; Denny's
+  in section 11. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Switchback Mountain day 1 6.2 mi
+  vs one author's 8.5 mi. Three Fingers day 2 7.7 mi (unstated anywhere). Hozomeen, Enchantment, Cashmere and La
+  Bohn pins were already fixed (section 14). Clark waypoint 5 and the Denny permit wording were fixed in section 12; Denny's
   `access.fees` "no wilderness permit needed" clause is the owner's call.
 
 Second deep pass (`d7b`, `d8b`), applied: Esmeralda -> De Roux line (trailhead moved, 5 basin pins removed, last
