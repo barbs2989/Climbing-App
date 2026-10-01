@@ -29424,3 +29424,85 @@ wa_southeast_mox_peak_se_rib, wa_southeast_ridge_se_corner, wa_southern_man. Ski
 out-of-scope (area_type != 'peak'): wa_south_ridge (South Peak, crag), wa_south_ridge_6 (Aiguille
 de l'M, crag), wa_southwest_rib_2 (Crystal Lake Tower, crag), wa_spontaneity_arete and
 wa_spontaneous_distraction (Le Petit Cheval, crag), wa_summertime (Summertime Crag, crag).
+
+## Batch 368 (pass 6) — 2026-10-01
+
+Routes: wa_south_headwall (Mount Stuart), wa_south_rib (Guye Peak), wa_south_ridge_2
+(Luna Peak), wa_south_ridge_4 (Eldorado Peak / Main Peak), wa_south_twin_sister_north_ridge
+(South Twin Sister), wa_south_twin_sister_scramble (South Twin Sister), wa_southeast_face
+(Sharkfin Tower), wa_southeast_mox_peak_se_rib (Southeast Mox Peak), wa_southeast_ridge_se_corner
+(Mount Shuksan), wa_southern_man (South Early Winters Spire).
+
+- **Fixed: wa_south_twin_sister_north_ridge's `grade_system`.** Stored `yds`, but the
+  route's own grade string is "Grade III, Class 4" (a class-system grade) and its
+  discipline (`mountaineering`) maps to `class` via `gradeSystemFor()`. Read the live
+  `routeGradeSystem()`/`passesFilters()` pair in ClimbMatchCore.jsx (lines ~2105 and
+  398): a non-null `grade_system` column wins over string-pattern detection, so this
+  wrong "yds" makes the row wrongly pass a YDS grade-band filter (its grade string never
+  matches a 5.x pattern, so the range check that would normally exclude it gets skipped
+  entirely) while wrongly failing a Class-band filter that should include it. Sibling
+  route wa_south_twin_sister_scramble on the same peak stores no `grade_system` at all
+  and correctly falls through to `class` — confirming this row's non-null `yds` is the
+  outlier. `check:sql` confirmed the target id before writing.
+- **Fixed: wa_southern_man's FA first name.** Stored "free ascent Blake Matthews and
+  Bryan Burdo (2010)". Every independent source naming the free-ascent partner —
+  SuperTopo's own route page/narrative and CascadeClimbers.com trip-report threads,
+  cross-checked against Mountain Project's "B. Matthews" credit — calls him "Bobby
+  Mathews", never "Blake" (a plausible mix-up with Blake Herrington, a different,
+  separately well-known Cascades climber active in the same era). Corrected only the
+  first name; left the "Matthews" surname spelling, the 2008 aid-FA party, and the
+  parenthetical year untouched.
+  **Not auto-fixed: the free-ascent year.** SuperTopo's narrative account places the
+  free ascent in September 2009; Mountain Project's own listing (which the row's
+  stored "2010" already matches) says 2010. Neither source is a primary trip report I
+  could pin down directly, and they conflict, so flagged for human review rather than
+  guessed.
+  Note: this UPDATE's `fa` value itself contains a semicolon ("...2008); free
+  ascent..."), which `check:sql`'s statement splitter (a plain `;`-split, documented in
+  its own header as "good enough" for generated files, not quote-aware) treats as a
+  statement boundary — the same limitation already present in at least one earlier FA
+  fix (2026-07-30-batch-19's Thin Red Line statement uses the identical "aid, A3);
+  FFA..." shape). The tool silently skips the fragment carrying the real `WHERE id =`
+  clause rather than failing loudly, so `check:sql`'s "OK" on this file covers only the
+  grade_system statement; the `fa` statement's target id and current value were instead
+  confirmed directly against this session's own live query of the row before writing.
+- Elevations confirmed exact against external sources: Mount Stuart 9,415 ft (USGS/
+  Wikipedia), Guye Peak 5,168 ft (previously confirmed, re-checked), Luna Peak 8,311 ft
+  (Wikipedia/SummitPost), Sharkfin Tower 8,120 ft (SummitPost/Wikipedia), Southeast Mox
+  Peak 8,504 ft (previously corrected and re-confirmed), Mount Shuksan 9,131 ft (well-
+  established), South Early Winters Spire 7,807 ft (Peakbagger/SummitPost). Eldorado
+  Peak / "Main Peak" 8,872 ft matches Wikipedia's 8,872.9 ft almost exactly (route's own
+  `high_point_ft` 8873 is the same figure rounded up — not flagged). "Main Peak" as a
+  named sub-area under Eldorado Peak is a real, Mountain-Project-documented feature
+  (alongside "Dorado Needle"), not a duplicate-area mistake.
+- **Investigated but NOT flagged: South Twin Sister's 7,004 ft elevation.** Peakbagger's
+  LIDAR-based re-survey gives 6,934.8 ft, a real discrepancy from the stored 7,004 ft —
+  but 7,004 ft is the figure SummitPost and Wikipedia-class sources still cite as the
+  canonical elevation, the same older-USGS-vs-LIDAR split already seen (and left alone)
+  on Pernod Spire in batch 367. Left alone rather than "fixed" into a number most
+  guidebook users won't recognize.
+- FAs confirmed: Mount Stuart South Headwall (Myhre/Sorenson, May 30 1966, AAC — exact
+  date and account), Southeast Mox Peak West Ridge/Beckey Route (Fred & Helmy Beckey,
+  June 21 1941, exact), Luna Peak standard line's own 1938 FA (Cox/Thompson, exact).
+  Eldorado Peak's South Ridge route description ("U-notch", "B-Basin knife riding")
+  matches Mountain Project's own route text almost verbatim — not a fabricated or
+  garbled description.
+- grade_num re-verified against the live `lib/grade.js` parser for all 10 routes; only
+  the one `grade_system` drift above.
+
+2 confirmed errors fixed, 1 flagged for human review, 8 clean (2 of the 8 carried a
+fixed field alongside otherwise-clean facts). SQL: `audits/sql/2026-10-01-batch-368.sql`.
+No `.env`/`.env.local` present at run start (fresh clone); read-only queries used the
+anon key supplied in the task prompt directly as shell env vars; `check:sql` ran with no
+`npm install` needed (`scripts/check-sql-targets.mjs` only imports Node built-ins and
+`scripts/lib/supabase-env.mjs`, which falls back to `process.env` when the dotfiles are
+absent). Next 10 in-scope (area_type='peak') routes after a live id-ordered query,
+filtered client-side against each candidate's area_id: wa_southwest_buttress (Dorado
+Needle), wa_southwest_face (The Tooth), wa_soviet_route (Bonanza Peak),
+wa_spectre_peak_haunted_wall and wa_spectre_peak_south_route (Spectre Peak),
+wa_sperry_peak_east_face and wa_sperry_peak_upper_south_ridge (Sperry Peak),
+wa_spider_mountain_north_face and wa_spider_mountain_north_ridge (Spider Mountain),
+wa_spinnaker_peak_s_route (Spinnaker Peak). Skipped as out-of-scope (area_type !=
+'peak'): wa_southwest_rib_2 (Crystal Lake Tower, crag), wa_spontaneity_arete and
+wa_spontaneous_distraction (Le Petit Cheval, crag), wa_summertime (Summertime Crag,
+crag), wa_the_chalice (Silver Horn, crag), wa_the_exorcism_of_mark_hanna (M&M Wall, crag).
