@@ -274,26 +274,24 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
 - Abernathy (r27): the held line was stale — `loss_ft` was nulled in section 6, so gain and loss are both null and
   nothing contradicts. The row's "~2,600 ft from the meadows" agrees with a published 2,700.
 
+## 16. Owner ran the held ops (`owner/out/o06-merge, o12-retire, o13-o15.json`)
+- Retired (backed up, then deleted): Lexington Tower South Face (into Concord Tower South Face), Ottohorn West Ridge
+  (into Ottohorn Southeast Route), Liberty Bell East Face (into Lexington Tower East Face).
+- Witches Tower SE Face: the unsourced "rappel slings on this line" clause removed from `descent_text`.
+- Eagle Rock `access.passRequired` -> Northwest Forest Pass (the safe side; a club page lists it).
+- Half Moon x5 `access.passRequired` -> none at the roadside pullout (not a fee site).
+
 ## Held for the owner (not applied)
-- **Deletes this session may not run** (the permission classifier blocks route DELETEs):
-  - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
-    `node scripts/oneoff/route-tab-contradictions/apply-structural.mjs ../../route-leftovers/owner/out/o06-merge.json`
-  - `wa_ottohorn_west_ridge`: the 2017 ridge has one account; the row holds the col route its sibling
-    `wa_ottohorn_southeast_route` already has. Do NOT apply `owner/out/o06.json`'s rewrite — the FA thread says the
-    sub-summit names were swapped (westernmost = Honk) and Honk had an earlier ascent.
-  - `wa_liberty_bell_east_face`: no such route in two independent route lists; its beta is Lexington Tower's East
-    Face, which has its own row.
+- **Deletes:** done by the owner (section 16).
 - **Single source / one author:** King Kong commitment IV, its `fa` (Wertkin & Johnson, FFA with Gleason) and crux
   5.11d-5.12a — every source is the first ascensionist (`deep/out/h1.json`, `research/held-v019.json`). East Twin
   Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
-- **Parking-pass claims resting on fee law, not a statement about the spot:** Half Fast, Astral
-  Projection, Astroglide, Asymptotic, Artic Rose (`held-v010/v011.json`; no-pass op ready in `deep/out/r25.json`
-  `proposed_ops_held`); Eagle Rock's hand-applied "no pass" is now contradicted by one source (section 15); Spire `access.fees` (open product decision,
-  `held-v024.json`).
+- **Parking-pass claims:** Half Moon x5 and Eagle Rock settled by the owner (section 16). Spire `access.fees` (open product decision,
+  `held-v024.json`); Half Moon `access.fees` still says "the parking or entrance fee this route already lists" — fix ready
+  in `owner/out/o16-halfmoon-fees.json`.
 - **Weak evidence:** Berdeen `loss_ft` null (`loss_ft` holds two conventions); Bald Eagle pin 3 `distMi` 3.2; Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
-- **No source found:** Witches Tower E/SE Face (see sections 11, 13 and 14; the rappel-slings removal is ready in
-  `deep/out/r23.json` `proposed_ops_held`). Rimrock was fixed in section 11; Vanishing
+- **No source found:** Witches Tower E/SE Face 5.6 (see sections 11, 13, 14; its rappel-slings clause was removed in section 16). Rimrock was fixed in section 11; Vanishing
   Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
