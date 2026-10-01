@@ -29623,3 +29623,30 @@ all checked out against external sources (full citations in the batch's progress
 minor 2 ft Martin Peak elevation cross-page discrepancy and the already-self-disclosed Switchback
 prominence figure dispute (441/461/471 ft) were investigated but left alone as too small/already
 flagged to act on.
+
+## Batch 371 — 2026-10-01 (pass 6)
+
+Checked: wa_tenpeak_mountain_north_couloir + wa_tenpeak_mountain_southeast (Tenpeak Mountain),
+wa_tepeh_towers, wa_the_brothers_south_couloir + wa_the_brothers_traverse (The Brothers),
+wa_the_cave_route (Concord Tower), wa_the_chopping_block_northeast_ridge +
+wa_the_chopping_block_northwest_route + wa_the_chopping_block_south_route (The Chopping Block /
+Pinnacle Peak), wa_the_devils_club (Southeast Mox Peak).
+
+Fixed 4, touching 4 routes + 1 area row (`audits/sql/2026-10-01-batch-371.sql`): wa_the_cave_route's
+high_point_ft (7569) contradicted its own summit waypoint (7560) — the same stray value already
+fixed on a sibling Concord Tower route in batch 35; corrected to 7560. wa_the_devils_club's length_m
+(732 m) didn't match the sum of its own 25-entry pitch_detail array (780 m), which Climbing.com's
+"2,500-foot" reporting on the 2005 FA corroborates over Mountain Project's outlier 2,000 ft figure —
+corrected to 780. **Two reverted fixes re-applied**: wa_the_brothers' area row elevation_ft had
+drifted back to 6868 from the 6866 that batch 106 already researched and set (USDA Forest
+Service/WTA/Mountaineers consensus, re-confirmed this run) — same silent-reversion pattern as
+Dorado Needle's dist_km in batch 369 — re-corrected to 6866, and wa_the_brothers_south_couloir's own
+summit waypoint (still at the reverted 6868) corrected to match its own already-correct
+high_point_ft. wa_the_chopping_block_south_route's pitches had reverted from the 5 that batch 46 set
+back to its pre-fix value of 2, even though that same batch's grade/grade_num/rock_grade changes are
+still live — re-corrected pitches to 5.
+
+Clean (6, confirmed via research): both Tenpeak Mountain routes, Tepeh Towers, The Brothers Traverse,
+and both remaining Chopping Block routes (NE Ridge, NW Route) — grades, FA parties/dates, and
+pitch counts (apparent pitch_detail/pitches mismatches on Tepeh Towers and the Traverse turned out to
+be unnumbered approach/scramble connector entries, not a real count disagreement) all checked out.
