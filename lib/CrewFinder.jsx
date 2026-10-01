@@ -2,7 +2,7 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
-import { useAreaPaths, useMyZip, useRouteSearch } from "./db";
+import { ROUTE_PICK_LIM, useAreaPaths, useMyZip, useRouteSearch } from "./db";
 import { useState } from "react";
 import { ActionIcon, AreaRegionSelect, Av, C, CAT, CLIMBERS, DB_UID, DLOCALE, DiscIcon, FALLBACK_AV, FALLBACK_COVER, ME, MOUNTAINS, OPEN_CREWS, ROUTES, areaPathNames, catOf, climberLine, distMiles, fuzzyMatchAny, haveMyLoc, inArea, onImgErr, rDiscs, seedRoutesOn, tripOf, uDistMi, uDistMiUnitLong, uImp, vScore } from "../ClimbMatchCore.jsx";
 
@@ -29,9 +29,9 @@ export default function CrewFinder({onRequestJoin,requested,onViewProfile,connec
   const within=(d,months)=>{if(!d)return false;const dt=new Date(d+"T12:00:00");const lim=new Date(now);lim.setMonth(lim.getMonth()+months);return dt>=today0&&dt<=lim;};
   const withinDays=(d,days)=>{if(!d)return false;const dt=new Date(d+"T12:00:00");const lim=new Date(now);lim.setDate(lim.getDate()+days);return dt>=today0&&dt<=lim;};
   const seedClimbMatches=climbQ.trim()&&seedRoutesOn()?ROUTES.filter(r=>{return fuzzyMatchAny(climbQ,r.name,(MOUNTAINS.find(m=>m.id===r.mountainId)||{}).name);}).slice(0,8):[];
-  const dbClimbSearch=useRouteSearch(USE_DB?climbQ:"");
+  const dbClimbSearch=useRouteSearch(USE_DB?climbQ:"",ROUTE_PICK_LIM);
   /* By ROUTE, as on Partners: the catalog search also expands a matched region to every route under it, which is By Area's job. Keep a row only when its own name, or its peak or crag, answers. */
-  const climbMatches=[...seedClimbMatches,...(dbClimbSearch.data||[]).filter(d=>!seedClimbMatches.some(r=>r.id===d.id)&&fuzzyMatchAny(climbQ,d.name,((d._dbArea||d.areas)||{}).name))].slice(0,8);
+  const climbMatches=[...seedClimbMatches,...(dbClimbSearch.data||[]).filter(d=>!seedClimbMatches.some(r=>r.id===d.id)&&fuzzyMatchAny(climbQ,d.name,((d._dbArea||d.areas)||{}).name))].slice(0,ROUTE_PICK_LIM);
   const objRoutes=ME.objectiveIds.map(id=>routeById?routeById(id):ROUTES.find(r=>r.id===id)).filter(Boolean);
   const selObj=selRoute?((selObjPick&&selObjPick.id===selRoute)?selObjPick:(routeById?routeById(selRoute):ROUTES.find(r=>r.id===selRoute))):null;
   const openCrewN=rid=>_crewPool.filter(oc=>oc.routeId===rid&&((requested||[]).includes(oc.id)||oc.spots>0)&&!(oc.date&&new Date(oc.date+"T12:00:00")<today0)).length;
