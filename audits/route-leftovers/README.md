@@ -107,6 +107,19 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   Bald Eagle pins 2-4 (imprecise, not off-route), Rimrock approach (no published account), Witches Tower E/SE
   (`wa_e_se_face`: two lines, one source each — split into East Face 4th and Southeast Face 5.6).
 
+## 8. Owner: "do deep online research for those" (`deep/out/r4-r6.json`)
+- Applied (r5): Cashmere "Base of west ridge" moved 0.77 km onto the west col (a published saddle point and an
+  independent recorded track agree within 3 m), elev 6,800 -> 8,000. Clark waypoint 5 (Walrus Glacier rope-up)
+  moved 1.96 km onto the 6,700 ft bench on Clark's eastern arm (a published map marker and a recorded track 93 m
+  apart, the height stated by two reports), elev 7,000 -> 6,700. Its directions/note text still describe the
+  approach differently ("east of Boulder Pass") — not edited, owner's read.
+- Still unresolved, no ops (r4, r6): the five Half Moon Crag pass claims (only the land manager's own fee-site list,
+  which omits the pull-off — one author; these rows also contradict themselves, notes say no fee site while
+  `passRequired` says a pass); Three Fingers day 1 (4.5 / 4.75 / 5 mi — no two agree); Switchback day 1 (only
+  segments and round trips published); Bald Eagle pins 2-4 (no coordinate published); Rimrock (no account found —
+  the stored Swamp Creek / Blue Basin approach matches an Agnes Mountain report word for word, so it was carried
+  over from Agnes; owner: drop it or state no known approach); Witches Tower E/SE (still one source per line).
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
