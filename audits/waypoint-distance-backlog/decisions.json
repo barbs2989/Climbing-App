@@ -2298,5 +2298,375 @@
   "why": "The coordinate is 0.07 mi from the Barlow Pass trailhead pin, but WTA puts the turnoff 0.72 mi down the closed road and the route's own prose 1.5-1.7 mi; its own distMi is 1.0. It is the trailhead, not the split. Once the Weden Creek pin is cleared, this coordinate makes split (1.0) -> 'Rocky water gully' (3.25) impossible: 2.57 mi straight-line vs a 2.25 leg.",
   "source": "https://www.wta.org/go-hiking/hikes/gothic-basin",
   "by": "research-5"
+ },
+ {
+  "route": "wa_arrowhead_mountain_south_route",
+  "op": "clear",
+  "pin": "Water|Nason Creek crossing",
+  "lat": 47.76691,
+  "lng": -120.99424,
+  "why": "The route's own GPS track (routes.gpx, 47 pts, 2.47 mi) starts 0.2 mi from the trailhead pin and does exactly what the prose says: walks WEST ~0.3 mi to 47.7733,-120.9683, turns back east across the creek/rail line, follows the level grade ESE along ~47.772 to -120.954 (~1 mi), then climbs south and west to the summit. So the crossing is ~0.15-0.3 mi from the TH pin, as distMi says, and the trailhead pin is right. This coordinate sits 1.28 mi off that track and 1.39 mi west of the TH, at USGS ground 3,011 ft vs the claimed 2,750 ft. No sibling pins this crossing. The coordinate is the wrong record.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_arrowhead_mountain_south_route",
+  "op": "clear",
+  "pin": "Hazard|BNSF railroad grade crossing",
+  "lat": 47.764771,
+  "lng": -120.990232,
+  "why": "Same evidence as the Nason Creek crossing: the route's own GPS track crosses the rail line ~0.3 mi from the trailhead pin (turnaround at 47.7733,-120.9683), matching distMi 0.3. This coordinate is 1.18 mi off the track, 1.29 mi from the TH, at ground 3,177 ft vs the claimed 2,750 ft (427 ft off). No sibling pin.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_chikamin_peak_southeast_slopes",
+  "op": "clear",
+  "pin": "Hazard|Southeast-slope grass gully",
+  "lat": 47.477655,
+  "lng": -121.325703,
+  "why": "Named the SOUTHEAST-slope gully, but it lies on bearing 283 deg (WNW) from the summit (Wikipedia/NGS 47.47543,-121.311006; OSM peak node agrees) and 0.70 mi away, on the opposite side of the mountain. USGS ground 5,713 ft vs claimed 6,500 ft (787 ft low). After clearing, the summit's previous measured pin is the gully turnoff (13.5): 0.79 mi straight vs 0.70 stored, inside the 0.25 mi tolerance, so no impossible pair remains. NOTE (no op): the 'Park Lakes basin' pin (47.470911,-121.335213, 12.5) is 2.27 mi from the Park Lakes OSM places (47.4490859,-121.2990156), which this route's own GPS track passes through at track mile ~4.3; it is not part of an impossible pair, so it is left for a later pass.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_garfield_mountain_scramble",
+  "op": "clear",
+  "pin": "Water|Dirt Gully Creek Crossing",
+  "lat": 47.5493342,
+  "lng": -121.5282222,
+  "why": "Pins 1-6 lie on one straight line from the misplaced trailhead pin (the FR56/Taylor River junction) to the summit, i.e. interpolated, not surveyed. This one claims 2,100 ft and the prose puts the gully at 'around 2,200 ft'; USGS ground is 1,096 ft (1,004 ft low). It is also 2.6 road-miles short of the gravel wash where the route starts (SummitPost via cnmtstuartclimbproject: 'Continue for 2.6 miles past two switchbacks to the trailhead, which is located at a wide gravel wash'; yellowleaf.org: 'I parked on the Middle Fork Road 2.6 miles from the Taylor River Bridge').",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_garfield_mountain_scramble",
+  "op": "clear",
+  "pin": "Hazard|Dirt Gully",
+  "lat": 47.54947323333333,
+  "lng": -121.5267759,
+  "why": "Same interpolated line from the wrong anchor (computed decimals). Claims 2,200 ft (prose: 'Around 2,200 ft the path enters a loose dirt-and-scree gully'); USGS ground 1,161 ft (1,039 ft low).",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_garfield_mountain_scramble",
+  "op": "clear",
+  "pin": "Junction|Razorback / Tiny Notch",
+  "lat": 47.55030743333333,
+  "lng": -121.5180981,
+  "why": "Same interpolated line. The prose puts the tiny notch and razorback ABOVE the slab base at 2,900 ft; claimed 3,600 ft, USGS ground 2,000 ft (1,600 ft low).",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_garfield_mountain_scramble",
+  "op": "clear",
+  "pin": "Campsite|Glade Saddle Bivy",
+  "lat": 47.5510026,
+  "lng": -121.5108666,
+  "why": "Same interpolated line; endpoint of an impossible TH distance (0.9 stored vs 1.24 straight). Claimed 4,200 ft, USGS ground 3,498 ft (702 ft low).",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_garfield_mountain_scramble",
+  "op": "clear",
+  "pin": "Junction|Y Notch",
+  "lat": 47.55169776666666,
+  "lng": -121.5036351,
+  "why": "Same interpolated line; endpoint of an impossible TH distance (1.15 vs 1.58). Claimed 4,800 ft (prose: ~600 ft of #2 Gully above it to the 5,519 ft summit), USGS ground 4,365 ft (435 ft low).",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_garfield_mountain_scramble",
+  "op": "clear",
+  "pin": "Hazard|#2 Gully Rockfall Zone",
+  "lat": 47.5522539,
+  "lng": -121.4978499,
+  "why": "Same interpolated line; endpoint of an impossible TH distance (1.35 vs 1.85). Claimed 5,200 ft, USGS ground 4,513 ft (687 ft low).",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_mount_cameron_standard",
+  "op": "clear",
+  "pin": "Campsite|Cameron Basin camp",
+  "lat": 47.8412637631579,
+  "lng": -123.33911141052631,
+  "why": "A computed coordinate (16-digit decimals, the same pattern as the meadow pin). USGS ground 6,360 ft, 360 ft above the claimed 6,000 ft and the prose's 'Cameron Basin camps at about 6,000 ft'. It lies 0.8 mi off the route's own GPS track; the track crosses the basin at 47.8392,-123.3581, which is 0.89 mi west, on ground 5,383 ft. It is the start of the impossible camp -> pass leg (1.0 stored vs 1.39 straight). After the clear, the pass's previous measured pin is the meadow crossings (7.8): 1.61 mi straight vs 1.5 stored, inside the tolerance.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_mount_cameron_standard",
+  "op": "nullDist",
+  "pin": "Summit|Mount Cameron - East Peak (true summit)",
+  "from": 9.8,
+  "why": "Both coordinates fit the ground and the route's own GPS track: Cameron Pass 6,491 vs 6,448 (0.03 mi off the track), summit 7,160 vs 7,190 (on the track). The track runs 1.2 mi from the pass to the summit along the ridge, and the straight line is 1.12 mi; the stored leg is 0.5 (9.3 -> 9.8). So the 9.8 is the wrong record. The track under-counts (it puts Grand Pass at 4.6 track miles against the ~6 in the prose), so it cannot supply a replacement. A search snippet attributed to ProTrails ('Cameron Pass ... 11 miles from Obstruction Point') suggests the 9.3 is low too, but protrails.com could not be fetched to quote it. So the 9.3 is left as is, since it no longer forms an impossible pair.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_mount_fury_west_west_ridge",
+  "op": "nullDist",
+  "pin": "Hazard|East Fury (ridge traverse start)",
+  "from": 23,
+  "why": "Both ends fit the ground: Luna Col 7,190 vs 7,200, and East Fury (copied in pass 1 from two agreeing East Fury routes) 8,300 vs 8,322. Luna Col -> East Fury is 1.85 mi straight but stored at 1.0, so the mileage is the wrong record. No fetched source gives Luna Col -> Fury traverse mileage.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_mount_fury_west_west_ridge",
+  "op": "nullDist",
+  "pin": "Summit|West Fury (Mount Fury, West Peak)",
+  "from": 23.3,
+  "why": "Needed together with East Fury's nullDist: without it the summit's previous measured pin becomes Luna Col (22), and 1.3 stored is far below the 2.2 mi straight line. The East -> West leg is impossible on its own as well (0.3 stored vs 0.52). The summit coordinate fits the ground (8,260 vs 8,303). As pass 1 showed, no single value for East Fury can satisfy both legs (it would have to be >= 23.85 and <= 22.78), so the chain after Luna Col is under-counted and is set to unknown rather than guessed.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_mount_tom_scramble",
+  "op": "nullDist",
+  "pin": "Hazard|White/Hubert Glacier traverse to Tom-Olympus col",
+  "from": 21,
+  "why": "The pin can move a little without changing the verdict. Any point on a traverse ending at the Tom-Olympus col is within ~0.5 mi of Mount Tom's summit (ground-confirmed, 7,044 vs 7,076), and that summit is 4.13 mi straight from the moraine top (ground-confirmed, 5,108 vs 5,100). So the col is >= ~3.6 mi beyond 18.4, before counting the described detour east over Snow Dome, yet the stored value is 2.6 mi beyond it (21.0). The mileage shares the under-count pass 1 found for the summit. The coordinate (computed decimals, ground 6,167 vs claimed 6,800) is weak, but no donor or published point exists to replace it, and nulling the distance removes the contradiction either way.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_needle_peak_south_route",
+  "op": "move",
+  "pin": "Campsite|Swamp Creek Camp",
+  "lat": 48.3096351623535,
+  "lng": -120.920379638672,
+  "source": "https://www.backpacker.com/trips/pacific-crest-trail-wa-section-10/",
+  "quote": "PCT1679 Location: 48.3096351623535, -120.920379638672 Pass Swamp Creek Camp",
+  "why": "The page lists each waypoint as 'PCTnnnn Location: <coord> <description>'. The last entry, 'PCT1685 Location: 48.3800010681152, -120.838050842285 Pass High Bridge Ranger Station', has nothing after it, which fixes that order. The published point is 0.08 mi from the mouth of Swamp Creek on Agnes Creek in OSM (the stream's end node is 48.3106513,-120.9211275; Swamp Creek runs north from below Needle Peak). USGS ground is 2,771 ft vs the claimed 2,800 ft and the prose's 'Swamp Creek Camp (about 2,800 ft)'. The stored coordinate 48.3424,-120.9046 is the one that page gives the NEXT entry, 'West Fork Agnes Creek Trail enters on L; pass Five Mile Camp'. It sits at ground 2,293 ft, 0.27 mi NEARER the trailhead than this route's Fivemile pin although it is stored 3.1 mi further on. After the move: Fivemile (5.1) -> camp is 2.30 mi straight vs 3.1 stored, and TH -> camp is 6.13 vs 8.2.",
+  "by": "rest-1",
+  "oldLat": 48.3424,
+  "oldLng": -120.9046
+ },
+ {
+  "route": "wa_needle_peak_south_route",
+  "op": "clear",
+  "pin": "Junction|Boot path departure at 3,200 ft",
+  "lat": 48.335009,
+  "lng": -120.904332,
+  "why": "The prose leaves the Swamp Creek Trail 'around 3,200 ft' after following it up the Swamp Creek drainage from the camp, so the point lies inside that drainage. In OSM the drainage lies entirely between 48.278 and 48.311 N (stream bbox 48.2779609-48.3106513). This pin is at 48.335, 1.7 mi north of the stream mouth, on the slope east of Agnes Creek, at USGS ground 2,917 ft vs claimed 3,200 ft. With Swamp Creek Camp moved to its published spot it would be 1.75 mi from the camp against a stored 0.4 mi leg. After the clear, the summit's previous measured pin is the moved camp (8.2): 2.24 mi straight vs 3.4 stored.",
+  "by": "rest-1"
+ },
+ {
+  "route": "wa_bonanza_peak_mary_green_glacier",
+  "op": "nullDist",
+  "pin": "Junction|Railroad Creek Trail / Holden Lake Trail junction",
+  "from": 1,
+  "why": "Both coordinates fit the ground: the trailhead pin (ground 3212 vs 3262) sits in Holden Village itself, and the junction (ground 3441, 0.00 mi off the route's own GPS track, which reaches it at 1.36 mi). The '1 mile' is measured from the wilderness trailhead at the west end of the road, not from the village. WTA's Holden Lake page puts its start at geo 48.2004,-120.7900, 0.74 mi west of our village pin, and the junction is 0.67 mi beyond that point. Holden Village (holdenvillage.org/program/outdoor-recreation) says: 'From Holden Village begin hiking along the dirt road for 1 mile to reach the Holden camping area'. Wenatchee Outdoors says: 'Walk to the west edge of town and just keep following the road about 0.9 miles to the trail'. So the junction is about 1.4-1.9 mi from the village pin, and no single published cumulative figure exists to set it to. After nulling, Holden Lake (4) against the trailhead is 3.53 mi straight-line, which is possible. Note: wa_bonanza_peak_northeast_buttress stores the identical pins and distMi, so it has the same defect.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_clark_mountain_west_ridge",
+  "op": "nullDist",
+  "pin": "Summit|Clark Mountain summit",
+  "from": 11.5,
+  "why": "The summit's 11.5 belongs to the OTHER route. Wenatchee Outdoors (wenatcheeoutdoors.org/2016/05/20/clark-mountain-walrus-glacier/) gives 'Clark Mountain 11.5 miles one way. Boulder Pass 10.5 miles one way' and derives the 11.5 from the non-glacier south-basin line, which leaves the Boulder Creek Trail 'About  4.5 miles up this trail and at 5,000-foot level' on the sheepherder's trail and never goes to Boulder Pass ('From car to summit is about 11.5  miles (one way)'). This route's own first variant also stores distMi 11.5 for that south-basin line. This route (Walrus Glacier) goes over Boulder Pass (10.5, the same source's '6.5 uphill miles to the pass' after 4 miles), and the pass is 1.81 mi straight-line from the summit. All three upper coordinates fit the ground (pass 6213/6330, rope-up 6617/6700, summit 8582/8602), so the distance is the wrong record. After nulling, rope-up (11) against the pass (10.5) is 0.57 straight vs 0.5 stored, a 0.07 mi gap that is under the threshold.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_clark_mountain_west_ridge",
+  "op": "clear",
+  "pin": "Junction|Boulder Creek Trail #1562 junction",
+  "lat": 47.99536,
+  "lng": -120.94157,
+  "why": "Extra, not the listed pair. The pin claims 2,600 ft, and the route's own prose puts the junction at the end of a flat 4 mi walk along the White River valley floor. Its USGS ground is 5,003 ft, 2,400 ft too high, and 0.86 mi off the route's GPS track. An E-W ground transect at this latitude reads 3,957 (-120.950), 4,565 (-120.945), 5,003 (pin), 5,893 (-120.935), so the pin sits high on the valley's east wall, not at a trail junction on the floor. After clearing, the ford (8.7) against the trailhead is 4.96 mi straight-line, which is possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_dot_mountain_scramble",
+  "op": "nullDist",
+  "pin": "Junction|Lago–Carru Col",
+  "from": 15.5,
+  "why": "Both coordinates fit the ground: the col reads 7611 against its 7600 claim and sits between USGS Mount Lago (48.82916,-120.53722) and 'Mountain Carru' (48.83181,-120.55451); the tarn reads 7437 against 7400. The prose fixes the order of travel as col, then a contour of Lago's north talus to the tarn, then the crest to Point 8165, then Dot. Along that path the col's 15.5 contradicts two later pins, while the tarn's 16 agrees with both. Col to tarn is at least 0.95 mi (0.5 stored), and col to tarn to Pt 8165 is at least 2.15 mi (1.7 stored). Tarn to Pt 8165 is 1.20 straight vs 1.2 stored, and tarn to Dot is 1.28 vs 1.6. So the col's figure is the odd record. No published mileage for either was found (searched WTA, SummitPost (403), countryhighpoints, trailcatjim). After nulling, the tarn (16) against Fred's Pass (13) is 2.20 straight vs 3.0 stored, and Pt 8165 (17.2) against the tarn is 1.20 vs 1.2. Both are possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_la_bohn_peak_southwest_slopes",
+  "op": "copy",
+  "pin": "Campsite|Jade Lake",
+  "fromRoute": "wa_mount_hinman_hinman_glacier",
+  "fromPin": "Campsite|Jade Lake",
+  "lat": 47.5848223,
+  "lng": -121.2578166,
+  "why": "This route's Jade Lake coordinate (47.591124,-121.262033) is 0.5 mi NW of the lake. USGS ground there is 4,186 ft against the 4,650 claim, 464 ft low, which puts it down the valley, not at the lake. USGS GNIS places Jade Lake (King Co.) at 47.58483,-121.25783, and the Hinman sibling's pin 47.5848223,-121.2578166 matches it, with ground 4,602 against its 4,613 claim. After the copy: Jade Lake (7.4) to La Bohn Gap (9.2) is 1.70 straight vs 1.8 stored, which clears the listed pair. The river crossing (5) to Jade Lake is 2.03 vs 2.4, and the trailhead to Jade Lake is 5.78 vs 7.4. All are possible.",
+  "by": "rest-2",
+  "oldLat": 47.591124,
+  "oldLng": -121.262033
+ },
+ {
+  "route": "wa_mount_degenhardt_southwest_route",
+  "op": "clear",
+  "pin": "Junction|South Ridge Crest (in forest)",
+  "lat": 48.74697775,
+  "lng": -121.2873277,
+  "why": "The pin is named for a RIDGE CREST, but it sits in a creek bottom. A W-E USGS ground transect at its latitude reads 3,965 (-121.2783), 3,495 (-121.2830), 3,171 (pin), 3,549 (-121.2920), 4,607 (-121.2970). That makes it a local minimum, the bed of the Terror Creek drainage (GNIS Terror Creek runs 48.7243,-121.3029 to 48.7582,-121.2738). It reads 469 ft below its 3,640 claim. The coordinate is computed (fractional), like pins 1, 2, 5 and 6. Clearing it removes the listed pair. The camp (6.5) against the trailhead is then 5.10 mi straight-line, which is possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_mount_degenhardt_southwest_route",
+  "op": "clear",
+  "pin": "Water|Terror Creek Log Crossing",
+  "lat": 48.72888146052632,
+  "lng": -121.28204019473684,
+  "why": "The prose says 'Cross Terror Creek at about 2,000 ft', about 500 ft upstream of where the path meets the creek. This computed coordinate's USGS ground is 3,414 ft, 1,414 ft above its claim, so it is on a hillside, not at a creek crossing. Cleared together with pins 2 and 3 so that pin 2 does not inherit the impossibility. (Sibling crossing pins disagree with each other: frenzel_spitz/ottohorn 48.724699,-121.289851 g2331. No copy was made, because which crossing they mark is not established.)",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_mount_degenhardt_southwest_route",
+  "op": "clear",
+  "pin": "Junction|Foot of the Climbers' Path Climb",
+  "lat": 48.73146664473684,
+  "lng": -121.28279555263158,
+  "why": "The note says this is just across Terror Creek from the ~2,000 ft log crossing. This computed coordinate's USGS ground is 3,671 ft against its 2,100 claim, 1,571 ft high. It is displaced together with pin 1.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_mount_hardy_snow_scramble",
+  "op": "nullDist",
+  "pin": "Campsite|Upper Snowy Lake basin",
+  "from": 10.3,
+  "why": "This pin is a side trip. The prose says the PCT contours to Snowy Creek Meadow 'with a short side-trail up to Snowy Lakes if you want a higher, more scenic bivy', then 'From the meadow, stay on the PCT northbound ... to Methow Pass'. A cumulative 10.3 on the travel line is therefore impossible: the walked line never goes lake to pass. Both coordinates fit the ground (lake 6842/6900, Methow Pass 6578/6591). After nulling, Methow Pass (10.9) against the Snowy Lakes Trail junction (9.5) is 0.62 straight vs 1.4 stored, which is possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_mount_hardy_snow_scramble",
+  "op": "clear",
+  "pin": "Hazard|Snowfield past Granite Pass",
+  "lat": 48.56110573389831,
+  "lng": -120.70775150169491,
+  "why": "Extra, not the listed pair. The pin claims 6,200 ft, a snowfield 'just past Granite Pass' (the prose puts Granite Pass at ~6,300 ft, below Cutthroat Pass on the PCT). Its computed coordinate is only 0.57 mi from Cutthroat Pass, on ground of 7,365 ft, which is 1,165 ft above the claim and above Cutthroat Pass itself (6,812). After clearing, the Snowy Lakes Trail junction (9.5) against Cutthroat Pass (5) is 2.33 straight vs 4.5 stored, which is possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_mount_worthington_standard",
+  "op": "nullDist",
+  "pin": "Junction|Iron-Worthington col",
+  "from": 7,
+  "why": "All three coordinates fit the ground (col 6431/6420, rock band 6772/6700, summit 6942/6938). The summit's 7.3 is the anchored record: the route's dist_km 23.5 is 14.6 mi round trip, which is 2 x 7.3. The rock band (7.2) agrees with the summit (0.06 mi apart, 0.1 stored). The col sits 0.51 mi straight-line from the summit, so it cannot be at 7.0 if the summit is at 7.3. It is the odd record. No published mileage for the off-trail col exists (WTA covers the trail only; The Wild Outsiders and Mountaineers reports give none). After nulling, the rock band (7.2) against the basin camp (6.3) is 0.55 straight vs 0.9 stored, which is possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_philadelphia_mountain_scramble",
+  "op": "nullDist",
+  "pin": "Water|Lake Serene",
+  "from": 3.6,
+  "why": "This pin is not on the travel line. Its coordinate is the lake's centre (shared with four Mount Index siblings; ground 2525 = lake surface), while 3.6 is the trail mileage to the outlet, where this route turns off ('backtrack a couple hundred feet down the trail'). The leave-trail point (3.7) is at the outlet, 0.39 mi from the centre, so no walked leg connects the two pins. After nulling, the leave-trail point (3.7) against the Bridal Veil junction (1.7) is 1.35 straight vs 2.0 stored, and against the trailhead 1.62 vs 3.7. The summit (5.3) against the leave-trail point is 1.15 vs 1.6. All are possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_philadelphia_mountain_scramble",
+  "op": "clear",
+  "pin": "Junction|Bridal Veil Falls Spur Junction",
+  "lat": 47.80556,
+  "lng": -121.55972,
+  "why": "Extra, not the listed pair. The pin claims 1,174 ft, 1.7 trail mi up the Lake Serene trail. Its USGS ground is 492 ft, 682 ft low and below the 566-ft trailhead itself, and it is 1.46 mi off the route's GPS track. A trail junction 1.7 mi up a climbing trail cannot be lower than the trailhead. The leave-trail point is then checked against the trailhead (1.62 vs 3.7), which is possible.",
+  "by": "rest-2"
+ },
+ {
+  "route": "wa_bonanza_peak_northeast_buttress",
+  "op": "nullDist",
+  "pin": "Junction|Railroad Creek Trail / Holden Lake Trail junction",
+  "from": 1,
+  "why": "Both coordinates fit the ground: the trailhead pin (ground 3212 vs 3262) sits in Holden Village itself, and the junction (ground 3441, 0.00 mi off the route's own GPS track, which reaches it at 1.36 mi). The '1 mile' is measured from the wilderness trailhead at the west end of the road, not from the village. WTA's Holden Lake page puts its start at geo 48.2004,-120.7900, 0.74 mi west of our village pin, and the junction is 0.67 mi beyond that point. Holden Village (holdenvillage.org/program/outdoor-recreation) says: 'From Holden Village begin hiking along the dirt road for 1 mile to reach the Holden camping area'. Wenatchee Outdoors says: 'Walk to the west edge of town and just keep following the road about 0.9 miles to the trail'. So the junction is about 1.4-1.9 mi from the village pin, and no single published cumulative figure exists to set it to. After nulling, Holden Lake (4) against the trailhead is 3.53 mi straight-line, which is possible. Note: wa_bonanza_peak_northeast_buttress stores the identical pins and distMi, so it has the same defect. Same shared pins as wa_bonanza_peak_mary_green_glacier, whose GPS track starts at this trailhead; moving the shared trailhead to WTA's west-end coordinate would separate it from that track and split one named trailhead across two routes, so the distance is nulled on both instead.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_colonial_peak_west_ridge",
+  "op": "nullDist",
+  "pin": "Campsite|Basin camp below Colonial Glacier",
+  "from": 5.6,
+  "why": "The camp coordinate fits the ground (6,084 vs 6,100) and the prose's tarn at the NW toe of the glacier, but its 5.6 mi is too high by every outside record. A WTA trip report from the same trailhead (https://www.wta.org/go-hiking/trip-reports/trip_report.2022-07-18.5804720334) says: 'Pyramid lake trailhead to the campsite on a ridge at the northwest toe of the colonial glacier (above the colonial basin) at 5960ft. 4800ft gain over 5mi in 7h'. The sibling routes pin this camp at 4.4 mi (wa_snowfield_peak_neve_glacier) and 4.6 mi (wa_the_needle_neve_glacier). At 5.6 the camp leaves only 0.7 mi to a summit 0.78 mi away straight-line, with ~1,700 ft of glacier in between. I did not use setDist because the trip report's camp ('on a ridge ... above the colonial basin', 5,960 ft) is not certainly this pin's basin camp. Nulling it removes the camp-to-crevasse pair. Re-check: Pyramid Lake (2.1) to crevasse zone (5.9) is 3.8 stored vs 2.09 straight-line, so no new pair.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_colonial_peak_west_ridge",
+  "op": "clear",
+  "pin": "Junction|Notch below Pyramid Peak",
+  "lat": 48.67913657142857,
+  "lng": -121.12995596825397,
+  "why": "This is a synthetic interpolation (/63 fractions). USGS ground is 4,355 ft against a claimed 5,800 ft, 1,445 ft low. The route's own variant puts the notch on the ridgeline 'under Pyramid Peak at about 5,800 ft', which this point is not. It is not in stillImpossible, but left in place the notch (4.0) and camp would form a borderline pair (1.25 straight-line) if the camp ever regains a mileage near 5.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_east_slope",
+  "op": "clear",
+  "pin": "Campsite|Bivy at toe of Borealis Glacier",
+  "lat": 48.59278,
+  "lng": -121.09444,
+  "why": "This coordinate is the GNIS/Wikipedia point for the Borealis GLACIER itself, not the camp. https://en.wikipedia.org/wiki/Borealis_Glacier reads 'Coordinates 48°35′34″N 121°05′40″W / 48.59278°N 121.09444°W' and gives the terminus as 'Icefall and proglacial lake'. USGS ground there is 6,850 ft against the camp's claimed 6,000 ft, on a slope (6,585-6,918 ft within ~150 m). The route places the camp 'near the northeast corner of the proglacial lake at the toe of the Borealis Glacier around 6,000 ft'. A USGS ground grid finds the only flat ~6,000-6,060 ft bench (the lake) about 1.2 km east, near 48.590-48.593 N, 121.074-121.080 W. That spot is ~1.6 mi from Tricouni Camp, consistent with the stored 1.5 mi leg; the glacier point is 2.27 mi away. No published camp coordinate was found, so clear rather than move. Re-check: Tricouni (8.0) to icefall (10.3) is 2.3 stored vs 2.33 straight-line, a 0.03 shortfall well under the 0.25 threshold.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_luahna_peak_east_slopes",
+  "op": "clear",
+  "pin": "Hazard|Napeequa River ford",
+  "lat": 48.055948,
+  "lng": -120.922085,
+  "why": "The prose puts the ford of the Napeequa 'near 4,700 ft'. The pin is on the Napeequa valley floor at 4,280 ft (USGS), about 1.4 mi DOWNSTREAM of that height. A USGS grid of the valley shows the river at ~4,500-4,800 ft only near 48.068-48.074 N, 120.940-120.945 W. The stored mileages fit a ford there: Boulder Pass to there is 2.12 mi straight-line (stored 2.5), and there to the high basin is 1.72 mi (stored 2.0). The current pin is 0.99 mi from the pass (stored 2.5) and 2.27 mi from the basin (stored 2.0, impossible). The basin coordinate fits its ground (7,019 vs 7,000), so the ford coordinate is the wrong record. Re-check after clearing: Boulder Pass (10.5) to basin (15.0) is 4.5 stored vs 2.07 straight-line, so no new pair.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_mount_ferry_standard",
+  "op": "nullDist",
+  "pin": "Hazard|The Catwalk (Cat Peak-Mt. Carrie arete)",
+  "from": 11,
+  "why": "Heart Lake (8.0) and the Catwalk coordinate both fit the ground (4,784 vs 4,744; 5,910 vs 5,900). Heart Lake's mileage is corroborated (siblings wa_ruth_peak_olympics_scramble and wa_mount_barnes_scramble store 7.85). The Catwalk's 11.0 is 3.0 past Heart Lake, which matches http://cwillett.imathas.com/local/bailey/index.html: 'The off trail portion of the hiking runs from near Cat Peak (about 3 miles from Heart Lake)'. That is the START of the off-trail, before the Catwalk, which 'ends at a slightly flat spot with a stagnant pool of water called Boston Charlie's Camp'. This pin sits at or just east of Boston Charlie's Camp (wa_mount_fairchild_standard pins it at 47.890988,-123.664591), 3.64 mi straight-line from Heart Lake. So 11.0 is the distance to the wrong place. No published Sol Duc to Catwalk mileage was found. Re-check: Heart Lake (8.0) to Ferry Basin (15.0) is 7.0 stored vs 7.49 straight-line (0.49, 6.5%, under the 10% bar), and to the summit 8.5 vs 8.91 (4.6%), so no new pair.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_mount_ferry_standard",
+  "op": "clear",
+  "pin": "Campsite|Ferry Basin",
+  "lat": 47.858302,
+  "lng": -123.592262,
+  "why": "Not in stillImpossible, but the clear test is met. USGS ground is 4,301 ft against a claimed 5,700 ft (1,399 ft low). The approach says 'dropping into Ferry Basin (~5,700 ft)', and cwillett places Ferry Basin 'just above Cream Lake', so a ~4,300 ft point is at lake level, not the basin. Clearing it leaves summit vs Heart Lake at 8.5 stored vs 8.91 straight-line (4.6%), which is fine.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_mount_queets_south",
+  "op": "clear",
+  "pin": "Campsite|Elwha Basin",
+  "lat": 47.7500685,
+  "lng": -123.559914,
+  "why": "USGS ground is 2,559 ft against a claimed 3,400 ft (841 ft low). A USGS grid of the upper Elwha shows this point on the valley floor near Chicago Camp (2,515-2,680 ft). The valley floor reaches ~3,400 ft only about a mile up-valley, near 47.760-47.765 N, 123.572 W (3,241-3,612). The route's own prose has parties leave the trail at Chicago Camp and go 'about 3 miles cross-country up into Elwha Basin and over Dodwell-Rixon Pass'. A basin at 3,400 ft is ~2 mi from the pass, which fits the stored 2 mi leg. The pass coordinate fits its ground (4,762 vs 4,763, and the same value as wa_mount_meany_standard). Re-check after clearing: Whiskey Bend (6.2) to the pass (33) is far above straight-line, so no new pair. wa_mount_meany_standard's Elwha Basin pin (47.75567,-123.56692, ground 2,660 vs 3,100) has the same low-valley error.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_mutchler_peak_scramble",
+  "op": "nullDist",
+  "pin": "Summit|Mutchler Peak",
+  "from": 7.7,
+  "why": "Cyclone Lake Basin and the summit both fit the ground exactly (5,354 and 7,134 vs 7,150) and lie 1.87 mi apart straight-line, but the stored leg is only 1.4. Cyclone Lake's 6.3 is corroborated by the same-place sibling pins (wa_snowking_mountain_standard 6.0, wa_east_ridge_2 6.5). It also fits https://onehikeaweek.com/2023/10/20/snowking-mountain/ 'Access: Road 1570 @ Vee Creek Round Trip: 17.1 miles' to Snowking, a summit nearer Cyclone Lake than Mutchler. So the summit's 7.7 is the record that is wrong. No source gives a car-to-Mutchler figure; the route's own prose says 'no published figure gives the car-to-summit distance for Mutchler itself'. Nulling removes the pair; nothing follows the summit.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_mutchler_peak_scramble",
+  "op": "clear",
+  "pin": "Junction|Overgrown Roadbed / Way-Trail Start",
+  "lat": 48.435304,
+  "lng": -121.238065,
+  "why": "Not in stillImpossible, but the clear test is met. USGS ground is 5,239 ft against a claimed 2,300 ft (2,939 ft high). The prose puts the way-trail start at an old firepit by a creek after 'about 1.5-1.75 miles' of old roadbed from a ~1,150-1,400 ft start, before the 2,500-3,000 ft climb. A 5,239 ft point is up on the ridge. Re-check: the next pin (4.2) is 3.29 mi straight-line from the trailhead, so no new pair.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_the_pleiades_scramble",
+  "op": "nullDist",
+  "pin": "Hazard|Avalanche chute / Low Pass traverse below Winchester",
+  "from": 1.3,
+  "why": "The chute coordinate fits the ground (5,347 vs 5,300), as do the junction and High Pass, so the 1.3 is the wrong record. WTA's High Pass hike from this trailhead (https://www.wta.org/go-hiking/hikes/high-pass-1) puts the chute BEFORE the one-mile mark: 'The trail clings to the valley's edge as you enter an avalanche chute on the northeast side of Winchester Mountain. At about a mile in you will encounter your first set of switchbacks ... Once past the switchbacks, you'll arrive at Low Pass ... At 1.5 miles in, you emerge on to a relatively flat ridge that will take you the final few hundred feet to High Pass'. The pin's 1.3 leaves only 0.7 mi to High Pass, which is 1.07 mi away straight-line. No exact published chute mileage exists, so null rather than set. Re-check: High Pass (2.0) vs the junction (0.5) is 1.5 stored vs 1.35 straight-line, and vs the trailhead 2.0 vs 1.50, so no new pair.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_the_pleiades_scramble",
+  "op": "clear",
+  "pin": "Hazard|Notch between the first and second Pleiades peaks",
+  "lat": 48.97694276315789,
+  "lng": -121.63332221052632,
+  "why": "Not in stillImpossible, but the clear test is met. This is a synthetic interpolation (/19 fractions). USGS ground is 5,753 ft against a claimed 7,000 ft (1,247 ft low), which puts it on the basin floor south of the spires rather than at a notch on Larrabee's east ridge between two Pleiades. Re-check after clearing: the summit (4.0) vs High Pass (2.0) is 2.0 stored vs 1.02 straight-line, so no new pair.",
+  "by": "rest-3"
+ },
+ {
+  "route": "wa_mount_ferry_standard",
+  "op": "nullDist",
+  "pin": "Summit|Mount Ferry",
+  "from": 16.5,
+  "why": "Follows from nulling the Catwalk's 11.0, which was masking this: Heart Lake (8.0, backed by two sibling routes at 7.85) to the summit is 8.9 mi straight-line, but 16.5 - 8.0 stores only 8.5 mi. Both coordinates fit the ground (summit 6122 vs 6195), so the summit's distance is the low record. No published cumulative mileage to the summit by this line was found, so no number replaces it.",
+  "by": "rest-4"
  }
 ]
