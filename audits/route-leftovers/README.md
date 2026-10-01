@@ -213,6 +213,26 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   pin directions describe the scramble; descent, itinerary and rope note describe the roped 5.6). Owner options A/B/C
   as in section 11.
 
+## 13. Owner: "look at other sources that you haven't checked before" (`deep/out/r19, r20, r21.json`)
+Each pass first listed every source tried in earlier r/d/s files and counted only new ones.
+- Bald Eagle pins 2-3 (r21), APPLIED. A published GPS track of the North Ridge (road to summit) turned up in an
+  archived copy, and it agrees with an independent 1965 USGS 1:24,000 spot height (5262, track within 2 m) and the
+  independent written account. "First summit view point" moved 1.38 km onto the ridge's 5,262 ft point (it sat
+  south-east of the summit, past the top); "Regain North Ridge crest" moved 0.25 km to where the track rejoins the
+  crest at 6,100 ft (it sat on the east face). Pins now run trailhead -> 5,262 -> 6,100 -> summit. Pin 3's `distMi`
+  3.2 has no source but fits the 5.3 km route; left for the owner.
+- Three Fingers day 2 7.7 mi (r21): unchanged. Two independent books give trailhead -> lookout 6.7 mi one way (the
+  earlier 7.5 was half a round trip), but no source states a day-2 figure and summing legs is computing.
+  `dist_km` is null, so nothing on screen contradicts it.
+- Vanishing Point pins 1-2 (r21): already removed in section 6; the held line was stale. The summit pin "Dolomite
+  Tower" sits on Baring's main summit; no published tower coordinate, and summit pins are not removed.
+- Half Moon ×5 (r19): unchanged; no new source speaks to the Tye Road pull-off. Side finding: their trailhead pin
+  (47.7457, -121.0885) is in the ski-area lots, not on Tye Road where the directions park.
+- Switchback day 1 (r19): unchanged; 8.5 mi is still one author, other books give only per-trail lengths.
+- Witches Tower E/SE (r20): unchanged; the SE Face 5.6 is still one guidebook (the whole journal archive and 11
+  first-hand log entries name only scrambles there). The `descent_text` "rappel slings on this line" claim looks
+  drawn from slings found on Dragontail's east ridge, not the tower: unsupported, for the owner with options A/B/C.
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
@@ -233,8 +253,8 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   `loss_ft` null (`loss_ft` holds two conventions); Cashmere west-col pin (col only located to 0.7 km); La Bohn Gap
   pin (sources 335 m apart); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
-- **No source found:** Vanishing Point pins (one track; owner: remove pins 1-2 or accept it), Bald Eagle pins 2 and
-  4, Witches Tower E/SE Face (see section 11). Rimrock was fixed in section 11.
+- **No source found:** Witches Tower E/SE Face (see sections 11 and 13). Rimrock was fixed in section 11; Vanishing
+  Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
   in section 11. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Hozomeen summit pin
