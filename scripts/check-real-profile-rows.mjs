@@ -124,7 +124,7 @@ const ALLOW = [
   // name, and the very remedy this guard's own failure message prescribes. Its seed branch is
   // `(c.level||"Climber")+" · "+vScore(c)`, byte-for-byte what the card hand-rolled except that it
   // cannot print undefined. So the site is GATED and needs no exemption.
-  { key: '+c.years+"yr · "', why: "PartnerSearch's example card, fed by ALL_CLIMBERS — seed climbers only; real profiles render through RealClimberRow" },
+  { key: '+c.years+"yr"}', why: "PartnerSearch's example card, fed by ALL_CLIMBERS — seed climbers only; real profiles render through RealClimberRow" },
   { key: '" trust · "+cl.level', why: "GuideDashboard is the SEED dashboard; DbGuideDashboard is the DB-backed one and resolves its own profiles" },
   { key: 'cl.years+" yrs · "+cl.level', why: "the same seed GuideDashboard, its inquiry stat grid — same cl, same seed source" },
   // REMOVED, and the removal is worth the note: this exemption read "OPEN_CREWS is seed data and

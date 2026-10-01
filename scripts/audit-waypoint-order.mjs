@@ -201,8 +201,8 @@ for (;;) {
       // in scripts/oneoff/fix-waypoint-order-batch8.mjs + reorder-waypoint-order-batch8.mjs. A
       // TRAILHEAD is never the moved pin: every flag of that kind was a winding trail beating
       // straight-line geometry, not a defect. Known residue: wa_buck_mountain_south_ridge is real
-      // geography (the trail passes Buck Creek Pass, then doubles back south to the summit), and
-      // wa_the_devils_club is the trailhead-class row above, left for its owner.
+      // geography (the trail passes Buck Creek Pass, then doubles back south to the summit).
+      // wa_the_devils_club was the other, and its Depot Creek pins were foreign (batch 9).
       // A shortest path is not a walking order — this chooses what to READ, never an edit.
       const pts = dd.filter((w) => w && w.lat != null && w.lng != null && Number.isFinite(+w.lat) && Number.isFinite(+w.lng))
         .map((w) => ({ w, lat: +w.lat, lng: +w.lng }));
@@ -327,9 +327,8 @@ if (!t.unsortable) {
   console.log(`  read all 22 found on 2026-09-30. Read each before moving it: a trailhead pin that`);
   console.log(`  contradicts the approach its other pins walk is the defect, not its position. Of the two`);
   console.log(`  it refused, Meany was repaired in batch 8 (Whiskey Bend copied from a sibling route that`);
-  console.log(`  shares its Elwha pins). Devil's Club is RESEARCHED and left: its pins walk Depot Creek from`);
-  console.log(`  Canada while its trailhead pin AND its approach prose describe Ross Lake — the row`);
-  console.log(`  disagrees with itself in prose, not just order, and the pins are 2-decimal estimates.`);
+  console.log(`  shares its Elwha pins). Devil's Club was repaired in batch 9: both parties on record came`);
+  console.log(`  up Perry Creek, so its Depot Creek pins were the foreign ones — not its trailhead.`);
   console.log(`  ${t.detour} of ${t.detourTested} with 4+ placed pins draw a DETOUR one moved pin would remove (>${DETOUR_KM} km,`);
   console.log(`  >${DETOUR_SHARE * 100}% of the line). Read each: most such flags are a WRONG COORDINATE, not a wrong order.`);
   console.log(`  ${t.afterSummit} list a non-summit pin AFTER the summit (${t.afterSummitPins} pins) — an ADJUDICATED`);
@@ -346,7 +345,15 @@ if (outFar.length) {
   outFar.sort((x, y) => y.d - x.d).forEach(o =>
     console.log(` ${Math.round(o.d).toString().padStart(6)} m  ${String(o.type).padEnd(10)} ${o.id}\n           "${o.a}"  +  "${o.b}"`));
 }
-if (outDup.length) { console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`)); }
+// Known residue (batch 10, 2026-10-01): Kendall, Western Dihedral and Goode were real copies and are
+// gone. Pinnacle (saddle + gully base, 2 m) and Prusik (north-face rappel on the P5 chockstone, 0 m)
+// are two DIFFERENT places on one copied coordinate — the duplicate is the symptom, the coordinate the
+// defect. The ground box admits both claims, so neither has the second record a clear needs, and the
+// right coordinate cannot be copied from any row. Left, measured, in docs/guards/waypoints-and-tracks.md.
+if (outDup.length) {
+  console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`));
+  console.log("  (Pinnacle and Prusik were read in batch 10: two places on one copied coordinate, left — see the guard notes.)");
+}
 if (outOrder.length) { console.log("\nreordered:"); outOrder.forEach(o => console.log(` ${o.id} — ${o.name}\n    was: ${o.before}\n    now: ${o.after}`)); }
 if (outSelf.length) {
   console.log("\nTHE ROW CONTRADICTS ITSELF — known distances run backwards in the stored order:");
@@ -371,5 +378,9 @@ if (outAfter.length) {
     console.log(`    unexplained: ${o.pins.join("  |  ")}`);
     if (o.explained.length) console.log(`    (descent prose does name: ${o.explained.join("  |  ")})`);
   });
+  // Read in batch 10: Chair Peak NE Buttress's "Notch/saddle in main ridge" is CORRECT — its own note
+  // is the descent (downclimb from the summit to the notch, then rappel); the prose walks that gully
+  // without the word "notch". Mount Cruiser's "Base of Alpha" was an approach pin and was moved.
+  console.log("  (Chair Peak NE Buttress was read in batch 10: its notch is the descent, correct as stored.)");
 }
 process.exit(0);

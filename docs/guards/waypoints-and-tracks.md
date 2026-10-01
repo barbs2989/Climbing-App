@@ -1207,14 +1207,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `scripts/oneoff/fix-stale-notes-after-batch7.mjs` removed the clause and added nothing in its
     place. It also nulled Smears' 0.2 mi, which was counted from the camp rather than the
     trailhead and was the last row the audit called self-contradicting (5 → 0).
-    **Left for an owner, with research:**
-    - Meany and Devil's Club need a real trailhead coordinate (Whiskey Bend; Depot Creek in
-      Canada).
-    - Pinto Rock's trailhead pin sits 35 m from the summit, and no source gives the pullout's
-      coordinate. Clearing it would remove Directions, since `approach_logistics` holds no
-      fallback, and the pin still routes a driver onto NF-77 beside the rock.
-    - Ballard's "Harts Pass" pin is a separate eastern start, not on the Canyon Creek walk, so its
-      slot is not an ordering question.
+    **Left for an owner at the time, and all since repaired:** Meany in batch 8; Devil's Club,
+    Pinto Rock and Ballard in batch 9 (below). The batch 7 reading of each was wrong in a useful
+    way. Devil's Club did not need a Depot Creek trailhead, because the Depot Creek pins were the
+    foreign ones. Pinto Rock's pullout WAS on file, under the wrong label. And nobody walks over
+    Harts Pass to Ballard.
   - **ONE PIN DRAWS A DETOUR — batch 8 (2026-10-01), and what the flag usually MEANS.** For a
     route the app cannot sort, the stored order IS the drawn line. The audit now asks whether
     moving one non-trailhead pin to its best slot would shorten that line by more than 25% and
@@ -1229,7 +1226,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **Every flag that moved a TRAILHEAD was a winding trail** beating straight-line geometry,
       so trailheads are never the moved pin.
 
-    **Residue: Buck Mountain is real geography; Devil's Club is the owner item below.** A shortest
+    **Residue: Buck Mountain is real geography; Devil's Club was repaired in batch 9.** A shortest
     path is not a walking order, so this decides what to READ, never an edit. Scripts:
     `scripts/oneoff/fix-waypoint-order-batch8.mjs` (clear/move/copy) and
     `scripts/oneoff/reorder-waypoint-order-batch8.mjs` (permutation). Rollbacks are in
@@ -1241,9 +1238,65 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       apart as two genuine approaches.
     - **Devil's Club disagrees with itself in PROSE, not only order.** Its pins walk Depot Creek;
       its trailhead pin and approach paragraph both describe Ross Lake. The pins are 2-decimal
-      estimates, about 5 km off the catalog's shared Depot Creek Falls pin. Left for an owner.
+      estimates, about 5 km off the catalog's shared Depot Creek Falls pin. Batch 9 resolved it.
     - Four sortable routes had a stored order different from the one drawn (Little Tahoma,
       McCausland, Olympus W Ridge, South Twin). The stored order now matches the screen.
+  - **BATCH 9 (2026-10-01): the three owner items, researched against OUTSIDE records.** In each
+    case the pin belonged to a different walk from the one the route describes, and research
+    showed which side of the row was wrong. The row could not settle that by itself.
+    - **Devil's Club: the PINS were foreign, not the trailhead.** Both parties on record came up
+      Perry Creek from Ross Lake: the FA party's own account (NWMJ 2006, "Tamed by the Beast")
+      and the 2008 party (AAJ 2009). Depot Creek Falls, Ouzel Lake and Redoubt Glacier Camp
+      are the Depot Creek approach to the north side of Mox. Ouzel Lake is the exact pin
+      `wa_mount_redoubt_south_face` carries, so it was copied from a Depot route. All three are
+      removed and the trailhead now leads. "Base of East Face Headwall" is KEPT, because its
+      2-dp ground box admits its 6,800 ft (lo 6,610). The prose said the FA spent "14 hours
+      covering under two miles from the lake"; it now uses only figures the account gives. That
+      sentence appeared twice: in `approach` and again in `approach_variants[0].notes`.
+    - **Pinto Rock: the pullout was ON FILE, under the wrong label.** The trailhead pin was the
+      crag's own map pin: 35 m from the summit, with ground 5,109 ft against the summit's 5,113.
+      `approach_logistics.peakLat/Lng` held 46.32448,-121.92476, which is 239 m from the summit
+      and 500 ft lower. It is 13 m from where the mapped 468 m climber's trail leaves NF-77, the
+      "0.3 mi north from the pullout" the approach describes. The two values swapped into place,
+      with no new coordinate. The sibling scan found two more Pinto routes (Bowling Alley,
+      Cobbles 101) whose trailhead sat on the EXACT summit coordinate while claiming 4,700 ft.
+      They took the same pullout, and their route start now precedes the summit.
+    - **Ballard: Harts Pass is driven over, not walked.** The east-ridge alternative starts at
+      the Slate Creek road gate, which is reached by car over Harts Pass. The pin was on none of
+      the route's legs and drew a 7.5 km jump before the summit, so it was removed.
+    - Scripts: `scripts/oneoff/fix-waypoint-order-batch9.mjs` and
+      `scripts/oneoff/fix-waypoint-order-batch9-prose.mjs`. Rollbacks are in
+      `audits/waypoint-order-batch9/`. **jsonb returns keys in its own order**, so the first
+      script's string compare reported 3 writes as NOT APPLIED when all had landed. Compare
+      key-sorted. Audit after: trailhead-not-first **0**; detour **1** (Buck Mountain).
+  - **BATCH 10 (2026-10-01): the last unread flags.** These were 5 duplicate-pin routes and 2
+    after-summit pins the descent prose does not name. No earlier batch had read them.
+    - **Removed: three real copies.** Kendall's two "Kendall Katwalk" pins and Western
+      Dihedral's two grassy-saddle pins were each one point (0 m apart); the copy with no height
+      and no note went. Goode NE Buttress ended on "Park Creek Trail to PCT", which was the PCT /
+      North Fork junction's coordinate verbatim. The descent reverses the approach down the
+      North Fork, so it was that junction's return pass under a trail the route never takes.
+    - **Moved: Cruiser NW Face's "Base of Alpha (ridge gain)".** It has no coordinate and is an
+      approach point, while the descent raps the South Corner. It now precedes the summit, as
+      the sibling South Corner row lists Needle Pass.
+    - **Coordinate cleared: Pinnacle's "Cliff Bands Below Trail".** The two records agree. Its
+      5,600 ft falls outside its 183 m ground box (lo 5,673), and it stood 94 m from a
+      ground-verified summit 960 ft higher. The pin keeps its height and its mileage.
+    - **LEFT, measured. Two places share one copied coordinate, and the right one is on no
+      record.** Pinnacle's "Pinnacle Saddle" and "Base of Summit Gully" are 2 m apart, 43 m from
+      the summit, on ~6,530 ft ground. A 60 m 3DEP grid puts the 5,920 ft col ~400 m SW (~5,915
+      ft near 46.7557,-121.7369). Plummer's own "Pinnacle Saddle" pin reads 6,265 ft, so it
+      cannot be copied either. On Prusik, the "North face rappel descent" pin sits on the P5
+      chockstone pin's coordinate, 190 m SW of the summit, while its note says north face. In
+      both cases the box ADMITS the claim (via the north face), so the ground is not a second
+      record, and a coordinate read off a grid would be invented. **Do not re-read these from
+      the duplicate count:** a fix needs an outside coordinate.
+    - **Kept: Chair Peak NE Buttress's "Notch/saddle in main ridge".** Its own note is the descent
+      (downclimb the SE gully from the summit to the notch, then rappel), and the prose walks
+      that gully at ~6,000 ft without using the word "notch".
+    - Script: `scripts/oneoff/fix-waypoint-order-batch10.mjs`; rollback in
+      `audits/waypoint-order-batch10/`. Audit after: duplicates **2** (the two above);
+      unexplained after-summit **1** (Chair, kept).
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**
@@ -1344,7 +1397,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `wa_mount_ballard_south` carried "Harts Pass" beside "Canyon Creek Trailhead" 18.3 km apart
     while its approach text names only Canyon Creek and never mentions Harts Pass — wrong, and
     repaired by **retyping rather than deleting** (`Trailhead/pass` normalises to `Trailhead` in
-    `WP_TYPE_MAP`, which is how a real pass got drawn as a start). But
+    `WP_TYPE_MAP`, which is how a real pass got drawn as a start). Batch 9 then removed the
+    retyped pass: research found that no route walks over it, so a pass pin was wrong as well. But
     `wa_remmel_mountain_southeast_slope` carries "Thirtymile" and "Andrews Creek" and its own
     approach describes both in full — *"Via Thirtymile: … Via Andrews Creek: …"* — which is a
     peak with two genuine approaches, the case the `audit:trailhead-agreement` entry already
@@ -1501,3 +1555,59 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `wa_up_in_arms` moved to `wa_concord_tower` on that gate: all eight siblings on `wa_upper_wall`
     are 0-pitch crag routes and it is 6 pitches — the same non-prose discriminator that settled
     `wa_south_face_direct`. `check:counts` confirms all 47,638 areas still agree afterwards.
+- **`audit:waypoint-distances`** asks whether a pin's stored trail distance (`distMi`, cumulative
+  from the trailhead) is **shorter than the straight line** between the coordinates. That is
+  impossible, and it needs no gpx. Read-only and report-only. A pin is reported when the shortfall
+  is over both 0.25 mi and 10%. The audit skips coarse coordinates (<4 dp), rows whose `distMi[0]`
+  is not 0, `distMi` 0 meaning unrecorded, and out-of-order lists (`audit:waypoint-order` owns
+  those).
+  - **THE CONTRADICTION IS CERTAIN; WHICH RECORD IS WRONG IS NOT.** The coordinate, the distance,
+    or both may be wrong, and the audit cannot tell which. `check:impossible-leg` already prints "—"
+    for such a leg on screen, so "no number" is honest. A computed number (a chord, or a scaled
+    one) is never a trail distance and must not be written.
+  - **BACKLOG PASS (2026-10-01): 177 pins on 103 WA routes → 28 on 23.** The script is
+    `scripts/oneoff/fix-waypoint-distance-backlog.mjs`. Every decision, with its reason, is in
+    `audits/waypoint-distance-backlog/decisions.json`. The before-state of every written row is in
+    `rollback.json` beside it.
+    - **Mechanical, 72 clears on 37 routes.** A coordinate is cleared only when convicted by TWO
+      records:
+      - Geometry: the pin is an endpoint of an impossible distance.
+      - Ground: the `audit:waypoint-elevations --ground` box rule (gap ≥ 500 ft, relief < 800 ft),
+        extended for rough terrain to gap ≥ max(1000, relief).
+      
+      The dominant shape was **fabricated intermediate pins clustered near the trailhead**, thousands
+      of feet off their claimed height, while the summit pins were right. Trailheads are never cleared
+      mechanically, because a cleared origin makes the row unmeasurable rather than fixed.
+    - **Researched, 87 residue routes.** Each pin got a decision of one of these kinds:
+      - `clear`: ground plus the route's own prose.
+      - `copy`: verbatim from a sibling route's pin that matches the ground.
+      - `nullDist`: both pins match the ground, so the distance is the wrong record.
+      - `setDist`: only with a published figure and a fetched quote. There are 3, all from WTA
+        (Sheep Gap's Weden Creek 1.8, Kololo's Mackinaw Shelter 5.5, Hinman's Jade Lake 8), each
+        re-fetched and matched verbatim.
+      
+      Kangaroo Temple's SR-20 hairpin pullout was the right trailhead for 4 rows that pinned it
+      near Washington Pass. Lizard's Cascade Pass Trailhead sat on 1,423 ft ground against its
+      own 3,600.
+  - **THE GATES, and the one that surprised.** A route whose edits are all clears must not GROW its
+    count. Any other edit must remove a contradiction and create none.
+    - **Clearing a pin cannot create a contradiction, only re-attribute one.** By the triangle
+      inequality, the chord across a removed pin exceeds the stored distance only if a leg through
+      that pin already did. The first dry run refused Himmelhorn, Fury East, Mount Tom and Mutchler
+      as "creates a contradiction" until that was understood.
+    - The sketch line's vertex on a cleared or copied pin is removed or moved with it, and the
+      `trackIsJustTheWaypoints` caption state must not change. `audit:stranded-track-vertices`
+      reads 22 adrift on 18 routes both before and after, all pre-existing.
+  - **THE 23 LEFT ARE DECIDED-UNRESOLVED, not unread.** Each is recorded `op: "unresolved"` with its
+    reason. Do not re-research them without new evidence.
+    - **Both pins agree with the ground and no source picks the distance:** Clark, Cameron,
+      Mutchler, Colonial, Dot, Queets, and Bonanza (Mary Green and NE Buttress share one "about a
+      mile" from a spread-out village).
+    - **Two approaches in one list:** Hardy, where Upper Snowy Lake is a side camp and the fix is a
+      reorder, which no op allows.
+    - **Displaced groups needing a re-pin:** Degenhardt, Needle Peak's Swamp Creek Camp, and
+      Arrowhead, whose trailhead may be the bad pin.
+    - **A wrong TRAILHEAD:** Garfield is pinned at the Taylor River junction, 2.6 mi short. The gate
+      refuses clearing it.
+    - **Mount Tom:** refused by the gate. Nulling the summit removes nothing while the White/Hubert
+      traverse pin is unresolved.

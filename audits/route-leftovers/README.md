@@ -190,6 +190,49 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   scramble that three new accounts describe is the sibling `wa_witches_tower_south_face` standard route. Owner
   options: (A) merge or delete as a duplicate, (B) re-point to the SE Face 5.6, (C) leave.
 
+## 12. Owner: "do research on those" (`deep/out/r16, r17, r18, r18b.json`)
+- Clark waypoint 5 (r18 + r18b), APPLIED. The 7,000 vs ~8,025 ft mismatch was already fixed by r5 (pin on the
+  ~6,700 ft bench, ground 6,617). What was still wrong was the text: two accounts rope up ON the bench, but the
+  waypoint note put the rope-up "east of Boulder Pass" and the directions and `approach` put it at the glacier toe.
+  All three now rope up on the bench, matching the itinerary. Pin name and type unchanged; the owner may prefer
+  "Rope-up bench on Clark's eastern arm".
+- Denny (r18), APPLIED: `access.permit` now says the slopes are outside the Alpine Lakes Wilderness but the boundary
+  runs at the summit, so carry the free self-issue permit (land manager's boundary layer plus its permit rule).
+  `access.fees` still says "no wilderness permit needed". The two now agree on where the route runs and differ only
+  on whether the permit is needed: an owner decision, so fees was not swept.
+- Bald Eagle pins 2 and 4 (now indices 2-3 after r15): unchanged. There is still no published position, the ground
+  agrees with both heights, and both sit on the line the account describes.
+- Three Fingers day 2 7.7 mi: unchanged. No source states a day-2 figure; Goat Flat to the lookout is ~2 / 2.7 /
+  3-3.5 mi, one author each.
+- Half Moon ×5 (r16): unchanged. The land manager is still the only statement about the pull-off. Owner op if
+  accepted: `access.passRequired` -> a no-pass value on those five rows only.
+- Switchback day 1 (r16): unchanged. 8.5 mi to Cooney Lake is still one author (the second book is the same author).
+  The row's own Cooney Lake pin (8 mi) also disagrees with 6.2.
+- Witches Tower E/SE (r17): unchanged. The SE Face 5.6 is still one guidebook. The East Face scramble now has three
+  independent accounts and is the sibling's standard route. The row contradicts itself (beta, pitches, approach and
+  pin directions describe the scramble; descent, itinerary and rope note describe the roped 5.6). Owner options A/B/C
+  as in section 11.
+
+## 13. Owner: "look at other sources that you haven't checked before" (`deep/out/r19, r20, r21.json`)
+Each pass first listed every source tried in earlier r/d/s files and counted only new ones.
+- Bald Eagle pins 2-3 (r21), APPLIED. A published GPS track of the North Ridge (road to summit) turned up in an
+  archived copy, and it agrees with an independent 1965 USGS 1:24,000 spot height (5262, track within 2 m) and the
+  independent written account. "First summit view point" moved 1.38 km onto the ridge's 5,262 ft point (it sat
+  south-east of the summit, past the top); "Regain North Ridge crest" moved 0.25 km to where the track rejoins the
+  crest at 6,100 ft (it sat on the east face). Pins now run trailhead -> 5,262 -> 6,100 -> summit. Pin 3's `distMi`
+  3.2 has no source but fits the 5.3 km route; left for the owner.
+- Three Fingers day 2 7.7 mi (r21): unchanged. Two independent books give trailhead -> lookout 6.7 mi one way (the
+  earlier 7.5 was half a round trip), but no source states a day-2 figure and summing legs is computing.
+  `dist_km` is null, so nothing on screen contradicts it.
+- Vanishing Point pins 1-2 (r21): already removed in section 6; the held line was stale. The summit pin "Dolomite
+  Tower" sits on Baring's main summit; no published tower coordinate, and summit pins are not removed.
+- Half Moon ×5 (r19): unchanged; no new source speaks to the Tye Road pull-off. Side finding: their trailhead pin
+  (47.7457, -121.0885) is in the ski-area lots, not on Tye Road where the directions park.
+- Switchback day 1 (r19): unchanged; 8.5 mi is still one author, other books give only per-trail lengths.
+- Witches Tower E/SE (r20): unchanged; the SE Face 5.6 is still one guidebook (the whole journal archive and 11
+  first-hand log entries name only scrambles there). The `descent_text` "rappel slings on this line" claim looks
+  drawn from slings found on Dragontail's east ridge, not the tower: unsupported, for the owner with options A/B/C.
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
@@ -210,14 +253,14 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   `loss_ft` null (`loss_ft` holds two conventions); Cashmere west-col pin (col only located to 0.7 km); La Bohn Gap
   pin (sources 335 m apart); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
-- **No source found:** Vanishing Point pins (one track; owner: remove pins 1-2 or accept it), Bald Eagle pins 2 and
-  4, Witches Tower E/SE Face (see section 11). Rimrock was fixed in section 11.
+- **No source found:** Witches Tower E/SE Face (see sections 11 and 13). Rimrock was fixed in section 11; Vanishing
+  Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
   in section 11. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Hozomeen summit pin
-  7,614 ft ground vs 8,003 stored; Clark waypoint 5 7,000 vs ~8,025 ground; Enchantment summit pin ~330 m off the NE
-  summit. Switchback Mountain day 1 6.2 mi vs two guides' ~8 mi one way. Denny Mountain permit wording (pins outside
-  the wilderness, summit on its edge).
+  7,614 ft ground vs 8,003 stored; Enchantment summit pin ~330 m off the NE summit. Switchback Mountain day 1 6.2 mi
+  vs one author's 8.5 mi. Clark waypoint 5 and the Denny permit wording were fixed in section 12; Denny's
+  `access.fees` "no wilderness permit needed" clause is the owner's call.
 
 Second deep pass (`d7b`, `d8b`), applied: Esmeralda -> De Roux line (trailhead moved, 5 basin pins removed, last
 switchback added); Iron Cap -> West Fork Foss (trailhead moved, 6 Middle Fork pins removed, Big Heart Lake and

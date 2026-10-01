@@ -370,16 +370,27 @@ the correction knows the screen is wrong, and they have no way to report it.
     `audits/2026-10-01-hazard-logistics-decisions.json`, the fix is
     `scripts/oneoff/fix-hazard-logistics-lines.mjs` (the same gates as the paraphrase fix), and the
     rollback is `audits/2026-10-01-hazard-logistics-rollback.json`. **It refused 5, correctly:** 4
-    string-shaped `watch_out` and 1 that would be emptied. **Kept, and worth a human look:** Hadley
-    Skyline Divide's "2021 washout at milepost 3.1" contradicts its `road.status` (closed at mile
-    0.03 since June 2026), and Noyes's Olympic Hot Springs washout line has no road context for that
-    approach.
+    string-shaped `watch_out` and 1 that would be emptied. **Two lines a reviewer called suspect were
+    researched and are CORRECT — do not re-raise them.** Hadley Skyline Divide's "closed at mile 0.03
+    while the 2021 washout at milepost 3.1 is repaired" is ONE fact, not two disagreeing ones: the
+    Forest Service gated FS 37 at mile 0.03 on 1 June 2026 to repair the milepost-3.1 washout, and
+    the route's own `approach` says exactly that. Noyes's Olympic Hot Springs washout line looked
+    orphaned only because the reviewer was shown the `road` object, which covers the Quinault side;
+    the route's `approach` and `access.closures` describe the Elwha approach, and NPS confirms that
+    road has been closed beyond Madison Falls since the November 2017 flood. **Lesson: a reviewer
+    shown a subset of a row's columns will call a fact unsupported that the row states elsewhere.**
   - **`wa_mount_claywood_standard` named Cameron Pass and Lost Pass for the same off-trail start —
     FIXED to Lost Pass.** The row's approach, beta, climbing_route, pitch_detail, descent_text,
     itinerary and obj_haz all agree on Lost Pass, so the `hazards` line and the `gear` item were
     corrected (`scripts/oneoff/fix-claywood-off-trail-starts-at-lost-pass.mjs`). Its **Cameron Pass
-    PIN** is impossible (about 6.6 mi straight-line from the Grand Pass pin against a listed 1.65 mi
-    leg). That pin was left alone: `audit:waypoint-distances` already lists the route.
+    PIN** was impossible (about 6.6 mi straight-line from the Grand Pass pin against a listed 1.65 mi
+    leg). #2075 (waypoint batch 8) cleared it and the Grand Pass pin. `audit:waypoint-distances` still
+    lists the route for one leg: Lillian Ridge crest at `distMi` 0.7 sits 2.2 mi in a straight line
+    from the trailhead. The PIN is right (USGS ground 6,321 ft against a claimed 6,350, and WTA puts
+    1.6 level miles along the ridge before the descent), so the `0.7` is the wrong record.
+    `check:impossible-leg` already printed "—" for it on the live page. The `audit:waypoint-distances`
+    backlog pass NULLED that `0.7` (WTA puts the ridge high point near 1.5 mi), so the route is
+    off the audit.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a

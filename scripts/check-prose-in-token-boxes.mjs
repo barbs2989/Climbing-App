@@ -182,9 +182,13 @@ let boxes = 0, rendered = 0;
 // unguarded by construction, which is exactly when you most want the reader checked.
 const SENTINEL = "ZZ" + "x".repeat(120) + "ZZ";
 const sentinelRoute = () => {
+  // A column is TEXT if it holds a string in ANY sampled row, not just rows[0]. Keying on rows[0]
+  // alone went blind silently: once the sample's first row had grade null, the sentinel carried no
+  // grade and injection case 5 (raw r.grade in the tick-list pill) could no longer be caught.
   const base = rows[0];
+  const text = new Set(rows.flatMap((r) => Object.keys(r).filter((k) => typeof r[k] === "string")));
   const o = {};
-  for (const [k, v] of Object.entries(base)) o[k] = typeof v === "string" ? SENTINEL : v;
+  for (const [k, v] of Object.entries(base)) o[k] = text.has(k) ? SENTINEL : v;
   return o;
 };
 const ALL = rows.concat([sentinelRoute()]);
