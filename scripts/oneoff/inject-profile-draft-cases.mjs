@@ -49,7 +49,7 @@ const cases = [
   },
   {
     name: "...only skills is dropped, so one field of a pair cannot hide behind the other",
-    edits: [["skills:d.skills||[],", ""]],
+    edits: [["skills:d.skills||[],sport_grade:", "sport_grade:"]],
     expect: 'the editor collects "skills"',
   },
   {
