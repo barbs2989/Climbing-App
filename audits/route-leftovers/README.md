@@ -90,6 +90,22 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   Mountain aspect, Berdeen `loss_ft`, Cashmere base-pin move, Stuart North Ridge pins, Bald Eagle pins, Rimrock,
   Witches Tower E/SE Face, and Clark waypoint 5 (USGS reads ~8,025 ft there, so the coordinate — not the 7,000 ft
   rope-up height — is what is off; rewriting the height would make it claim the wrong thing).
+- Owner then ran the refused items by hand: King Kong + Prusik patches (11 on 2 rows), Eagle Rock (1), and the
+  `itinTotalMi` rule (PR #2045).
+
+## 7. Owner: "do what you recommend based on online research" (`deep/out/r1-r3.json`, applied)
+- Rock Mountain: the two "southeast-facing" notes now say south-facing, matching its own `aspect` (r3).
+- Denny Mountain `access.permit`: a free self-issue Alpine Lakes Wilderness permit, day use included (r1). Its
+  `access.fees` still says the route stays outside the wilderness — left, as `access.fees` is an open decision.
+- Pins moved to coordinates two published records agree on (r2): Hozomeen South Peak summit (139 m), Enchantment
+  Peak summit on both the South Gully and East Ridge rows (~325 m), Mount Stuart summit (125 m) and Longs Pass
+  (590 m). Stuart keeps one adrift vertex, captioned as a sketch.
+- Still unresolved after a further search: the five Half Moon Crag pass claims (no source speaks to that
+  pull-off), Three Fingers day 1 (7.3 mi is wrong; sources give 4.5-5 mi but no two state one figure — and nulling
+  it would make the planner halve day 2 alone), Switchback day 1 (same), Cashmere west col (one published coordinate:
+  47.55891,-120.85206, in r2 `proposed_pin_ops`), Clark waypoint 5 (on the route; the label/height is what is off),
+  Bald Eagle pins 2-4 (imprecise, not off-route), Rimrock approach (no published account), Witches Tower E/SE
+  (`wa_e_se_face`: two lines, one source each — split into East Face 4th and Southeast Face 5.6).
 
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
