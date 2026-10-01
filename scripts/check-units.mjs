@@ -66,13 +66,15 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // the same `ok`. That is the per-file floor lesson check:control-names paid for, where a PARTIAL
 // restyle left the guard checking 1 file of 2 and reporting `ok`.
 //
-// Each sits two below what a clean tree produces (15/22/17/18/15/40/14/10/15 today) -- close enough that a
+// Each sits two below what a clean tree produces (15/22/17/18/15/40/14/10/10 today) -- close enough that a
 // section losing a meaningful part of its work trips, loose enough that a conditional branch
 // taking a `continue` does not. Raise one when you add an assertion; never lower one to make a
 // run pass.
+// `keyed` went 15 -> 10 on 2026-09-30 for a REMOVAL, not a lapse: the contribute form dropped its
+// DIFFICULTY_KEYS editor, and its five unit-invariant axes were five assertions. Its floor follows.
 // `filters` went 30 -> 40 when the LIVE filter (lib/DbAreaBrowser.jsx) gained sections 5 and 6, so
 // its floor rises with it: a floor left at the old count cannot see the new half stop asking.
-const FLOOR = { persist: 13, weather: 37, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 13 };
+const FLOOR = { persist: 13, weather: 37, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 8 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -1457,11 +1459,8 @@ const UNIT_INVARIANT = {
   summitTimeHrs: "hours",
   descentTimeHrs: "hours",
   solitudeRating: "a unitless 1-5 rating scale, not a measurement",
-  physical: "a unitless grade scale",
-  technical: "a unitless grade scale",
-  exposure: "a unitless grade scale",
-  commitment: "a unitless grade scale",
-  routefinding: "a unitless grade scale",
+  // The five difficulty axes were declared here until 2026-09-30, when the contribute form's
+  // DIFFICULTY_KEYS editor was removed with its reader (DIFFICULTY BREAKDOWN is climbers' own reads).
 };
 
 async function runKeyed() {
