@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_the_devils_club",
+  "last_processed_id": "wa_the_monk_west_cracks_left_crack",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 747,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 371. Next after wa_the_devils_club (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_the_direct_north_ridge_w_gendarme, wa_the_fin_northeast_face, wa_the_fin_scramble, wa_the_hitchhiker, wa_the_horn_scramble, wa_the_incisor_scramble, wa_the_monk_le_gibet, wa_the_monk_odine, wa_the_monk_scabo, wa_the_monk_west_cracks_left_crack. (wa_the_exorcism_of_mark_hanna/wa_the_l_h_route_free_variation/wa_the_tiger on crag-type \"M&M Wall aka Supercave Wall\" and wa_the_perfect_crime_with_variations on crag-type \"Cutthroat Wall\" sort nearby but are out of scope -- area_type != 'peak'.)",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 372. Next after wa_the_monk_west_cracks_left_crack (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_the_monk_west_cracks_right_crack, wa_the_needle_neve_glacier, wa_the_pleiades_scramble, wa_the_pyramid_picket_east_ridge, wa_the_pyramid_picket_south_route, wa_the_rake_traverse_route, wa_the_roof, wa_the_scoop_2, wa_the_temple_south_ridge, wa_the_tipping_point. (wa_the_perfect_crime_with_variations on crag-type \"Cutthroat Wall\" and wa_the_tiger on crag-type \"M&M Wall aka Supercave Wall\" sort nearby but are out of scope -- area_type != 'peak'.)",
   "batches": [
     {
       "batch_number": 1,
@@ -7448,6 +7448,27 @@
       "clean": 6,
       "sql_file": "audits/sql/2026-10-01-batch-371.sql",
       "note": "Fixed 4 (touching 4 routes + 1 parent area row): wa_the_cave_route (Concord Tower) high_point_ft 7569->7560, matching this row's own summit waypoint and the same stray value already corrected on a sibling Concord Tower route in batch 35 (external MP/WTA/StephAbegg consensus of 7,560 ft; a *different* Concord Tower route was separately resolved to 7611 in batch 121 via its own waypoint -- the cross-route 7560-vs-7611 external dispute itself is not adjudicated, only each row's own self-contradiction). wa_the_devils_club (Southeast Mox Peak) length_m 732->780, matching the sum of this row's own 25-entry pitch_detail array (not Mountain Project's outlier 2,000 ft figure), corroborated by Climbing.com's independent \"2,500-foot East Face\" reporting on the 2005 Layton/Wolfe FA. areas.elevation_ft for wa_the_brothers (The Brothers) 6868->6866, re-applying a fix batch 106 (2026-08-12) already researched and applied (USDA Forest Service/WTA/Mountaineers consensus) -- the live value had reverted to the pre-fix 6868, the same kind of silent reversion flagged for Dorado Needle's dist_km in batch 369; and wa_the_brothers_south_couloir's own summit waypoint, which still stored the reverted 6868 against this row's own already-correct high_point_ft=6866, corrected to match. wa_the_chopping_block_south_route pitches 2->5, re-applying the pitches half of batch 46's (2026-08-05) researched fix (Mountaineers.org/Beckey's Cascade Alpine Guide) -- that same statement's grade/grade_num/rock_grade changes ('Grade II, 5.5'/5/'5.5') are still live and correct, only pitches had reverted to the pre-fix value. Clean / confirmed via research: wa_tenpeak_mountain_north_couloir (grade 5.4, ~1,200-ft couloir description confirmed via web search); wa_tenpeak_mountain_southeast (8,312 ft summit, pitches=2, FA Anderson/Campbell 1940 all internally consistent, no external contradiction found); wa_tepeh_towers (8,113 ft, pitches=1 vs 3-entry pitch_detail -- the other two entries are glacier-approach/scramble connectors, not numbered pitches, so no mismatch); wa_the_brothers_traverse (6,866 ft already correct and unaffected by the area/sibling-route revert above; pitches=7 vs 9-entry pitch_detail -- same connector-entry pattern as Tepeh Towers, no mismatch; FA history on the sibling south_couloir route (1908 Mt. Arthur/north peak, 1912 Mt. Edward/south peak, same six 1912 names) independently confirmed via web search); wa_the_chopping_block_northeast_ridge (Firey party 1970 FA confirmed), wa_the_chopping_block_northwest_route (Cooper/Denny Sept 9 1961 FA confirmed) -- both via web search."
+    },
+    {
+      "batch_number": 372,
+      "date": "2026-10-01",
+      "route_ids": [
+        "wa_the_direct_north_ridge_w_gendarme",
+        "wa_the_fin_northeast_face",
+        "wa_the_fin_scramble",
+        "wa_the_hitchhiker",
+        "wa_the_horn_scramble",
+        "wa_the_incisor_scramble",
+        "wa_the_monk_le_gibet",
+        "wa_the_monk_odine",
+        "wa_the_monk_scabo",
+        "wa_the_monk_west_cracks_left_crack"
+      ],
+      "clean": 7,
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 2,
+      "sql_file": "audits/sql/2026-10-01-batch-372.sql",
+      "note": "Fixed 1: wa_the_horn's AREA row (not the route) had parent_id 'wa_north_central_olympics', but its own coordinates sit within 150-600m of its Southern-Olympics neighbors The Fin/Mount Cruiser/Mount Lincoln on Sawtooth Ridge (Mount Skokomish Wilderness), ~30km from North-Central Olympics' actual cluster (Deception-Gray Wolf peaks around 47.8N) -- corrected to 'wa_southern_olympics', corroborated by the route's own descent_text (adjacent to \"The Fin's west face\") and Mountaineers.org treating Fin+Horn as one Sawtooth Ridge outing.\nFlagged for human review (2): wa_the_fin_northeast_face (high_point_ft 5500) vs wa_the_fin_scramble (high_point_ft 5599, matching the area row) disagree on The Fin's own summit elevation -- no authoritative external source found giving The Fin's specific elevation to adjudicate which is right, left both as-is. The four Monk routes (wa_the_monk_le_gibet/odine/scabo/west_cracks_left_crack) all store high_point_ft=8606 and gain_ft=6000, identical to parent Cathedral Peak's own summit figures, but Mountain Project describes The Monk as \"a semi-detached feature on the lower right side\" of Cathedral's South Face -- i.e. a subordinate formation below the true summit, not the summit itself -- and none of the four routes' own descent_text (rappelling the NE gully back to their own base) claims they top out on Cathedral Peak proper. No source gives The Monk's own elevation to substitute, so flagged rather than guessed.\nClean / confirmed via research: wa_the_direct_north_ridge_w_gendarme (Mount Stuart Direct North Ridge w/ Gendarme -- Grade IV 5.9, 20 pitches, 2800ft/848m per Mountain Project/StephAbegg/Mountaineers, matching stored grade 5.9+/pitches 20/length_m 853; permit text's Enchantment-vs-Ingalls Creek distinction confirmed accurate); wa_the_hitchhiker (South Early Winters Spire -- 5.11- Grade IV, 9 pitches, 270m, ~20 bolts per thecrag/Mountain Project, matching stored grade/pitches/length_m 274/descent_text's bolt count; high_point_ft 7807 matches area row); wa_the_horn_scramble's own route-level facts (5.5, Flapjack Lakes/Olympic NP permit, elevation 5536 matching area) confirmed correct, independent of the area-row parent_id fix above; wa_the_incisor_scramble (The Needles/Royal Basin, NPS wilderness-permit fee structure, elevation 7440 matching area, all confirmed); wa_the_monk_le_gibet/odine/scabo grades (5.8/5.9/5.9) confirmed exactly via Mountain Project; wa_the_fin_scramble (5.4, Sawtooth Ridge/Flapjack Lakes approach, Basic Alpine, May-Sept season confirmed via Mountaineers.org)."
     }
   ]
 }

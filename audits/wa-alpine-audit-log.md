@@ -29650,3 +29650,40 @@ Clean (6, confirmed via research): both Tenpeak Mountain routes, Tepeh Towers, T
 and both remaining Chopping Block routes (NE Ridge, NW Route) — grades, FA parties/dates, and
 pitch counts (apparent pitch_detail/pitches mismatches on Tepeh Towers and the Traverse turned out to
 be unnumbered approach/scramble connector entries, not a real count disagreement) all checked out.
+
+## Batch 372 — 2026-10-01 (pass 6)
+
+Checked: wa_the_direct_north_ridge_w_gendarme (Mount Stuart), wa_the_fin_northeast_face +
+wa_the_fin_scramble (The Fin), wa_the_hitchhiker (South Early Winters Spire), wa_the_horn_scramble
+(The Horn), wa_the_incisor_scramble (The Incisor / The Needles), wa_the_monk_le_gibet +
+wa_the_monk_odine + wa_the_monk_scabo + wa_the_monk_west_cracks_left_crack (The Monk / Cathedral
+Peak).
+
+Fixed 1, area row only (`audits/sql/2026-10-01-batch-372.sql`): wa_the_horn's area row had
+parent_id = 'wa_north_central_olympics', but its own coordinates sit within 150-600m of its
+Southern Olympics neighbors The Fin/Mount Cruiser/Mount Lincoln on Sawtooth Ridge (Mount Skokomish
+Wilderness), ~30km from North-Central Olympics' actual cluster (Deception-Gray Wolf peaks around
+47.8°N) — corrected to 'wa_southern_olympics', corroborated by the route's own descent_text
+(adjacent to "The Fin's west face") and Mountaineers.org treating Fin+Horn as one Sawtooth Ridge
+outing.
+
+Flagged for human review (2, no SQL — couldn't verify a replacement number): wa_the_fin_northeast_face
+(high_point_ft 5500) vs. wa_the_fin_scramble (high_point_ft 5599, matching the area row) disagree
+on The Fin's own summit elevation and no authoritative external source gives The Fin's specific
+elevation to adjudicate which is right. The four Monk routes all store high_point_ft=8606/
+gain_ft=6000, identical to parent Cathedral Peak's own summit figures, but Mountain Project
+describes The Monk as "a semi-detached feature on the lower right side" of Cathedral's South
+Face — a subordinate formation below the true summit — and none of the routes' own descent_text
+(rappelling the NE gully back to their own base) claims they top out on Cathedral Peak proper; no
+source gives The Monk's own elevation to substitute.
+
+Clean (7, confirmed via research): wa_the_direct_north_ridge_w_gendarme (Grade IV 5.9, 20 pitches,
+2800ft/848m per Mountain Project/StephAbegg/Mountaineers, matching stored values; Enchantment-vs-
+Ingalls Creek permit distinction confirmed accurate), wa_the_hitchhiker (5.11- Grade IV, 9 pitches,
+270m, ~20 bolts per thecrag/Mountain Project, matching stored grade/pitches/length_m/bolt count;
+elevation matches area), wa_the_horn_scramble's own route-level facts (5.5, Flapjack Lakes/Olympic
+NP permit, elevation matching area — independent of the area-row parent_id fix above),
+wa_the_incisor_scramble (The Needles/Royal Basin, NPS permit fee structure, elevation matching
+area), wa_the_monk_le_gibet/odine/scabo grades (5.8/5.9/5.9) confirmed exactly via Mountain
+Project, wa_the_fin_scramble (5.4, Sawtooth Ridge/Flapjack Lakes approach, Basic Alpine, May-Sept
+season confirmed via Mountaineers.org).
