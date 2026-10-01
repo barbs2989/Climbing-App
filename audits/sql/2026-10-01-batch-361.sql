@@ -36,23 +36,6 @@ WHERE id = 'wa_prusik_peak_solid_gold'
   AND high_point_ft = 8008;
 
 -- =========================================================================
--- Taylor-Wood Route (wa_prusik_peak_taylor_wood_route)
--- -- overview calls it a "ten-section route" but the row's own pitches=8 (confirmed
---    against Mountain Project: 8 pitches, 670 ft) and its own watch_out already
---    states "~10 hours climbing time" -- the duration, not a pitch/section count
--- =========================================================================
--- SummitPost's first-ascent account (summitpost.org/new-route-the-taylor-wood-
--- route-on-prusik-peak-wa) gives the climb as roughly 10 hours car-to-car for the
--- route itself; Mountain Project lists it as 8 pitches / 670 ft. This row's own
--- `beta` field, walked section by section, also lists exactly 8 climbing
--- sections ending at the summit. "ten-section" in the overview looks like the
--- 10-hour duration miswritten as a pitch/section count -- corrected to match the
--- row's own, externally-confirmed pitch count instead of inventing a new figure.
-UPDATE routes SET overview = 'A long, 5.9+ eight-pitch route up the south face established by David Wood and Fletcher Taylor in 2023, combining crack, chimney, and short scrambling sections en route to the summit.'
-WHERE id = 'wa_prusik_peak_taylor_wood_route'
-  AND overview = 'A long, 5.9+ ten-section route up the south face established by David Wood and Fletcher Taylor in 2023, combining crack, chimney, and short scrambling sections en route to the summit.';
-
--- =========================================================================
 -- Alpine Cragger's Delight, Prayer for a Friend, Sail Away, Taylor-Wood Route
 -- -- top-level `permit` column is NULL on all four, while this exact peak's
 --    permit rule is already stated (and presumably human-reviewed) on siblings

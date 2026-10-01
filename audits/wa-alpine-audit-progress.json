@@ -7236,11 +7236,11 @@
         "wa_prusik_peak_taylor_wood_route",
         "wa_prusik_peak_west_ridge"
       ],
-      "confirmed_errors_fixed": 3,
-      "flagged_for_human_review": 1,
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 2,
       "clean": 4,
       "sql_file": "audits/sql/2026-10-01-batch-361.sql",
-      "note": "Full wa_prusik_peak_* cluster (8 routes), closing out the cluster batch 360 flagged as next up. 5 of the 8 (alpine_craggers_delight, prayer_for_a_friend, sail_away, solid_gold, taylor_wood_route) had never been audited in any prior pass -- newly added FA-dated routes (2022/2023/2025) not present when earlier passes walked this id range. Fixed: Solid Gold high_point_ft wrongly set to Prusik's true-summit elevation (8008) despite the row's own beta/overview/itinerary all stating it tops out on the West Ridge below the summit -- cleared to NULL to match its two partial-topout siblings. Taylor-Wood Route overview said 'ten-section route' where pitches=8 (confirmed via Mountain Project) and its own watch_out already says '~10 hours climbing time' -- the duration had been miswritten as a section count; corrected to 'eight-pitch'. Alpine Cragger's Delight / Prayer for a Friend / Sail Away / Taylor-Wood Route all had a NULL top-level permit column despite sharing this exact peak and approach with already-audited siblings that correctly state the Core Enchantments overnight-permit rule -- populated from those siblings' identical, already-verified text."
+      "note": "Full wa_prusik_peak_* cluster (8 routes), closing out the cluster batch 360 flagged as next up. 5 of the 8 (alpine_craggers_delight, prayer_for_a_friend, sail_away, solid_gold, taylor_wood_route) had never been audited in any prior pass. Fixed: Solid Gold high_point_ft (8008, the true summit) cleared to NULL -- the row's own beta/itinerary say it tops out on the West Ridge below the summit, matching its two NULL partial-topout siblings. Populated the NULL top-level permit column on alpine_craggers_delight/prayer_for_a_friend/sail_away/taylor_wood_route with the Enchantments permit text the peak's other routes carry. Flagged: (a) those four rows' nested access JSON still describes day-use only; (b) Taylor-Wood overview 'ten-section' vs pitches=8 -- a first-draft fix was withdrawn the same day as unverified (the beta plausibly has ten parts). der_sportsman/south_face_burgner_stanley/west_ridge were read but not externally re-checked this run."
     }
   ]
 }

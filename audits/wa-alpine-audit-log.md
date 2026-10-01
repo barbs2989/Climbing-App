@@ -29032,18 +29032,14 @@ Route) had never been audited in any prior pass — all are recently-documented
 routes (first ascents/free ascents dated 2022, 2023 x2, and 2025) that entered
 scope after earlier passes had already walked this id range.
 
-Found and fixed 3 (`audits/sql/2026-10-01-batch-361.sql`). Solid Gold's
+Found and fixed 2 (`audits/sql/2026-10-01-batch-361.sql`). Solid Gold's
 high_point_ft was set to Prusik's true-summit elevation (8008 ft), but the
 row's own beta ("topping out on the West Ridge rather than the true summit"),
 overview, descent_text and itinerary schedule (top-out step immediately
 followed by a rappel, no summit step) all agree the climb's own high point is
 below the true summit — cleared to NULL to match its two siblings that also
 don't reach the true summit (Alpine Cragger's Delight, Prayer for a Friend),
-which already correctly carry NULL. Taylor-Wood Route's overview called it a
-"ten-section route," but the row's own pitches=8 (confirmed against Mountain
-Project: 8 pitches, 670 ft) and its own watch_out already states "~10 hours
-climbing time" — the duration looks to have been miswritten as a pitch/section
-count; corrected to "eight-pitch." Alpine Cragger's Delight, Prayer for a
+which already correctly carry NULL. Alpine Cragger's Delight, Prayer for a
 Friend, Sail Away and Taylor-Wood Route all had a NULL top-level `permit`
 column despite sharing this exact peak and approach (confirmed via each row's
 own prose: "20 ft left of Stanley-Burgner's start," "about 20 yards left of
@@ -29052,18 +29048,27 @@ correctly states the Core Enchantments overnight-permit rule (May 15-Oct 31
 quota lottery, or a free day-use permit for a single push) — populated with
 the identical, already-verified text rather than leaving the column empty.
 
-Flagged for human review (1): those same four rows' nested `access.permit`/
+Flagged for human review (2): those same four rows' nested `access.permit`/
 `access.fees` sub-fields still describe only a free day-use permit, with no
 mention of the overnight option now stated in the top-level `permit` column —
 left for a human to decide whether to expand the nested JSON to match, since
 copying the siblings' much larger `access` object (fee schedule, lottery
 dates, group limits, etc.) onto four more rows felt like more than this batch
-should invent on its own say-so.
+should invent on its own say-so. (b) Taylor-Wood Route's overview calls it a
+"ten-section route" while pitches=8 (Mountain Project: 8 pitches, 670 ft). A
+first draft of this batch "corrected" it to "eight-pitch" on the theory that
+the FA's ~10-hour duration had been miswritten as a count; withdrawn in a
+follow-up commit the same day, because the row's own beta plausibly breaks the
+climb into ten parts (8 roped pitches plus scramble/traverse sections), so
+"ten-section" may be deliberate. Left as is; a human with the SummitPost FA
+writeup can decide whether it needs rewording.
 
-Clean (4): Der Sportsman, South Face (Burgner-Stanley) and West Ridge — all
-re-confirmed consistent with external sources (Mountain Project, Beckey) on
-FA, grade, pitch count and descent; no changes from their prior-pass audits.
-Alpine Cragger's Delight — FA attribution (Justin Sackett, Sept 10 2022),
+Clean (4): Der Sportsman, South Face (Burgner-Stanley) and West Ridge — read
+this pass, with nothing newly suspicious found; NOT re-checked against an
+external source this run (an earlier draft of this entry said they were; that
+was wrong). Their FA/grade/descent facts were externally checked in passes 1-5
+and are historical facts unlikely to go stale. Summit elevation 8,008 ft was
+re-confirmed this run. Alpine Cragger's Delight — FA attribution (Justin Sackett, Sept 10 2022),
 grade (5.10+) and length (80 ft / 24 m) all match Mountain Project exactly.
 
 External corroboration used this batch (search snippets only — Mountain
@@ -29095,6 +29100,6 @@ task's guardrails and a 141-commit merge is out of scope for a routine batch;
 flagging it here in case a human wants to bring the branch current separately.
 Read-only queries used the anon key supplied in the task prompt directly as
 shell env vars. `check:sql` ran successfully against the fix file before
-committing (every literal-id write target confirmed to exist live; the
+committing (and again after the Taylor-Wood statement was withdrawn): every literal-id write target confirmed to exist live; the
 multi-id IN(...) permit UPDATE isn't checkable by that script but was
 hand-verified against the live NULL values above).
