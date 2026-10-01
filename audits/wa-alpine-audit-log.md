@@ -29238,3 +29238,69 @@ wa_sherpa_balanced_rock_north_ridge, wa_sherpa_balanced_rock_standard. The raw
 WA-tagged route count was re-queried this batch (747, down from the 751 last recorded
 at batch 352); the area_type='peak' in-scope subset was not recounted -- a live
 `areas` table scan filtered to area_type='peak' alone timed out.
+
+## Batch 365 — 2026-10-01 (pass 6)
+
+Checked: wa_sherpa_glacier, wa_sherpa_peak_east_ridge, wa_sherpa_peak_north_ridge,
+wa_sherpa_peak_west_ridge, wa_silver_star_glacier, wa_silver_star_ne_ridge,
+wa_sinister_peak_north_face, wa_sinister_peak_southwest_route,
+wa_skookum_peak_twinsisters_scramble, wa_sky_mountain_s_route.
+
+Fixed 2 (`audits/sql/2026-10-01-batch-365.sql`): wa_sherpa_peak_west_ridge's grade_num
+(5) disagreed with the catalog's own single documented grade parser -- ran
+`lib/grade.js`'s `gradeNumFor` live (via `git show origin/main:lib/grade.js`, node)
+against all ten routes' own stored (grade, discipline) pairs rather than re-deriving
+the rule by hand: nine matched exactly, but `gradeNumFor('Grade II, Class 4 to 5.4',
+'alpine')` returns 4 (the string's only YDS match is "5.4", read as 4 with no letter
+suffix), not the stored 5. Also fixed wa_sherpa_peak_north_ridge's data_quality.gaps,
+which claimed "This entry duplicates wa_north_ridge_9" -- queried live and no such
+row exists in `routes`, and no other route under `wa_sherpa_peak` is named "North
+Ridge" either, so the claimed duplicate isn't in the catalog (likely already merged
+in an earlier pass); removed the stale gap entry, left the row's other two gaps
+alone.
+
+Flagged for human review (1): wa_skookum_peak_twinsisters_scramble's stored peak
+coordinates (48.694338, -121.987035) match, to within rounding, the WA Committee on
+Geographic Names' official location for **Kloke Peak** (48°41'39.616"N
+121°59'13.327"W = 48.69434, -121.98704, name approved 2022) -- a distinct, nearby
+summit in the same southern Twin Sisters ridge cluster (South Twin / Skookum /
+Little Sister / Cinderella / Kloke) -- and the row's own stored FA ("Dallas Kloke and
+Dave Dixon, September 1972") is exactly the ascent the WA DNR naming proposal credits
+to Kloke Peak, not to Skookum Peak. A third independent source (Mountain Project)
+gives yet another nearby coordinate (48.69997, -121.9838) and a third elevation
+(5,962 ft) for "Skookum Peak" itself -- distinct from both the catalog's 6,534 ft and
+Kloke Peak's 6,480 ft. The elevation spread was already flagged unresolved in an
+earlier pass, but not previously connected to a specifically-named neighboring peak;
+this batch adds the coordinate/FA match as a second, independent signal pointing the
+same direction. Not auto-fixed: resolving which of this row's fields (if any)
+actually belong to Kloke Peak rather than Skookum Peak needs a human with a map in
+hand, not a field patch -- `check:sql`'s existence check has nothing to verify here
+since no id or row is being touched, only a judgment call about which summit this
+route's own name/coordinates/FA describe.
+
+Clean / confirmed (via WebSearch; direct fetches still blocked by the egress proxy):
+Silver Star Mountain's east summit 8,876 ft and west summit "just over 8,840 ft"
+(Wikipedia, peakery, SummitPost), matching wa_silver_star_glacier and
+wa_silver_star_ne_ridge's high_point_ft exactly; Sinister Peak 8,444 ft (ListsOfJohn's
+LiDAR-sourced figure, favored over the older 8,440+ rounding still given elsewhere),
+matching both Sinister routes; Sinister Peak North Face's August 1, 1980 first ascent
+by Gordy Skoog, Carl Skoog and Gary Brill, starting from the Blizzard-Gunsight col
+(AAC Publications) -- matches the row's own fa and approach text exactly; Sky
+Mountain's 5,482 ft (SummitPost, exact match, no rounding); Sherpa Peak West Ridge's
+August 13, 1961 first ascent by Fred Dunham, Ray Lilleby and James Wick (Mountain
+Project, SummitPost). Sherpa Peak's three ridge routes agree with each other and the
+area row on high_point_ft = 8,630 ft, the figure a prior pass already chose over a
+competing 8,605 ft trip-report figure -- not re-litigated here.
+
+No `.env`/`.env.local` present at run start (fresh clone, as every run); read-only
+queries used the anon key supplied in the task prompt directly as shell env vars.
+`check:sql` passed against the fix file (2 write targets across 5 statements, both
+confirmed to exist live). A live id-ordered query (joined to `areas` for
+`area_type='peak'`) confirmed the next 10 in-scope routes after
+wa_sky_mountain_s_route: wa_sloan_peak_corkscrew,
+wa_snoqualmie_mountain_boogie_wonderland, wa_snoqualmie_mountain_standard_route,
+wa_snowfield_peak_neve_glacier, wa_snowking_mountain_standard, wa_south_arete, and
+the four wa_south_early_winter_spire_* routes. The raw WA-tagged route count was
+re-queried this batch and holds at 747 (unchanged from batch 363); the
+area_type='peak' in-scope subset was not recounted this batch either (same join
+timeout noted previously).

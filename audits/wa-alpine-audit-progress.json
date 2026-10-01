@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_sherpa_balanced_rock_standard",
+  "last_processed_id": "wa_sky_mountain_s_route",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 747,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 364. Next after wa_sherpa_balanced_rock_standard (live id-ordered query, all area_type=peak): wa_sherpa_glacier, wa_sherpa_peak_east_ridge, wa_sherpa_peak_north_ridge, wa_sherpa_peak_west_ridge, wa_silver_star_glacier, wa_silver_star_ne_ridge, wa_sinister_peak_north_face, wa_sinister_peak_southwest_route, wa_skookum_peak_twinsisters_scramble, wa_sky_mountain_s_route.",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 365. Next after wa_sky_mountain_s_route (live id-ordered query, all area_type=peak): wa_sloan_peak_corkscrew, wa_snoqualmie_mountain_boogie_wonderland, wa_snoqualmie_mountain_standard_route, wa_snowfield_peak_neve_glacier, wa_snowking_mountain_standard, wa_south_arete, wa_south_early_winter_spire_direct_east_buttress, wa_south_early_winter_spire_east_buttress, wa_south_early_winter_spire_passenger, wa_south_early_winter_spire_southwest_couloir.",
   "batches": [
     {
       "batch_number": 1,
@@ -7301,6 +7301,27 @@
       "clean": 10,
       "sql_file": null,
       "note": "No confirmed errors this batch. Clean (elevation/FA/accident-history independently reconfirmed against external sources): Scarface/Colchuck Balanced Rock (8240 ft + FA match MountainProject), Mount Washington SE Ridge/Shield Wall (6260 ft matches Wikipedia), Sentinel Peak Standard (8257 ft matches Peakbagger's precise 8256.9 ft -- resolves a cross-source spread of 8257/8261/8266 in favor of the most precise figure, so the stored value is corroborated, not wrong), South Early Winters Spire Southwest Rib (7807 ft + 1964 Anderson/Scott FA confirmed), Sharkfin Tower SE Ridge (8120 ft + 1947 FA confirmed; the route's own 2005 triple-fatality rappel-anchor-failure account matches AAC/news reporting closely, including the wrong-gully and dislodged-boulder details), Sherman Peak Crater Rim Scramble + Squak Glacier (10133 ft and 395.4 ft prominence from the row's own cited July 2023 GPS survey independently confirmed, including the removal from the WA Top 100 list), Sherpa Balanced Rock's three routes (8605/8630 ft spread already self-disclosed in the row's own overview text as 'figures vary'; Standard Route's 1955 Mahre/Prater FA and North Ridge's 1971 La Belle/Derr FA both confirmed)."
+    },
+    {
+      "batch_number": 365,
+      "date": "2026-10-01",
+      "route_ids": [
+        "wa_sherpa_glacier",
+        "wa_sherpa_peak_east_ridge",
+        "wa_sherpa_peak_north_ridge",
+        "wa_sherpa_peak_west_ridge",
+        "wa_silver_star_glacier",
+        "wa_silver_star_ne_ridge",
+        "wa_sinister_peak_north_face",
+        "wa_sinister_peak_southwest_route",
+        "wa_skookum_peak_twinsisters_scramble",
+        "wa_sky_mountain_s_route"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": "audits/sql/2026-10-01-batch-365.sql",
+      "note": "Fixed 2: wa_sherpa_peak_west_ridge's grade_num (5) disagreed with the catalog's own documented grade parser (lib/grade.js gradeNumFrom, run live against this row's own stored grade 'Grade II, Class 4 to 5.4' + discipline alpine -> yds system -> 4, not 5); wa_sherpa_peak_north_ridge's data_quality.gaps claimed a duplicate row 'wa_north_ridge_9' that a live query confirmed does not exist (and no other North-Ridge-named route sits under wa_sherpa_peak) -- stale note, removed. Flagged for human review (1): wa_skookum_peak_twinsisters_scramble's stored peak coordinates (48.694338, -121.987035) match, to within rounding, the WA Committee on Geographic Names' official location for Kloke Peak (48.69434, -121.98704, approved 2022) -- a DIFFERENT, nearby summit in the same southern Twin Sisters ridge cluster -- and the row's own stored FA ('Dallas Kloke and Dave Dixon, September 1972') is the ascent the naming proposal itself credits to Kloke Peak, not Skookum Peak. A third source (Mountain Project) gives yet another nearby coordinate (48.69997, -121.9838) and elevation (5,962 ft) for 'Skookum Peak' itself, distinct from both the catalog's 6,534 ft and Kloke Peak's 6,480 ft -- already noted as an unresolved elevation spread in a prior pass, but not previously connected to Kloke Peak by name. Not auto-fixed: this cluster of closely-spaced, easily-conflated summits needs a human to determine whether the row's coordinates/FA actually belong to Kloke Peak rather than Skookum Peak, which `check:sql`'s target-existence check cannot verify and no single authoritative source resolves outright. Clean / confirmed (via WebSearch; direct fetches still blocked by the egress proxy): Silver Star Mountain's east (8,876 ft) and west (~8,840 ft) summits (Wikipedia/peakery/SummitPost); Sinister Peak 8,444 ft (ListsOfJohn LiDAR figure, matching the stored value over the older 8,440+ rounding) and its North Face's Aug 1 1980 Skoog/Skoog/Brill FA (AAC Publications); Sky Mountain's 5,482 ft (SummitPost, exact match); Sherpa Peak West Ridge's Aug 13 1961 Dunham/Lilleby/Wick FA (Mountain Project/SummitPost)."
     }
   ]
 }
