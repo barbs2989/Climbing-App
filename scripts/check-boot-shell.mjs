@@ -41,6 +41,11 @@ const navDecl = app.match(/const NAV=\[(.*?)\];/s);
 if (!navDecl) fail("could not find `const NAV=[...]` in ClimbMatch.jsx — update this check if it was renamed.");
 const realLabels = [...navDecl[1].matchAll(/label:"([^"]+)"/g)].map((m) => m[1]);
 if (!realLabels.length) fail("NAV parsed but no label: entries found.");
+// The BAR is NAV minus the entries marked `bar:false` (Profile: a screen reached from the Menu,
+// not a tab). The boot shell draws the bar, so it is compared to barLabels; the Help tour below
+// explains every SCREEN, so it still has to cover all of realLabels.
+const barLabels = [...navDecl[1].matchAll(/\{[^{}]*\}/g)].filter((m) => !/bar:\s*false/.test(m[0])).map((m) => (/label:"([^"]+)"/.exec(m[0]) || [])[1]).filter(Boolean);
+if (!barLabels.length) fail("NAV parsed but every entry is bar:false — the bar would be empty.");
 
 // the shell's labels: the text nodes of <div class="b-nav">'s children
 const shell = html.match(/<div class="b-nav">([\s\S]*?)<\/div>\s*\n/);
@@ -48,10 +53,10 @@ if (!shell) fail('could not find `<div class="b-nav">` in index.html — the boo
 const shellLabels = [...shell[1].matchAll(/<div><b><\/b>([^<]+)<\/div>/g)].map((m) => m[1].trim());
 if (!shellLabels.length) fail("the boot shell nav has no labels.");
 
-const same = realLabels.length === shellLabels.length && realLabels.every((l, i) => l === shellLabels[i]);
+const same = barLabels.length === shellLabels.length && barLabels.every((l, i) => l === shellLabels[i]);
 if (!same) {
   console.error("check:boot FAILED — the boot shell's nav has drifted from the real one.\n");
-  console.error("  ClimbMatch.jsx NAV :", realLabels.join(" | "));
+  console.error("  ClimbMatch.jsx bar :", barLabels.join(" | "));
   console.error("  index.html #cm-boot:", shellLabels.join(" | "));
   console.error("\nUpdate the `b-nav` block in index.html so the placeholder matches what");
   console.error("React renders a moment later — otherwise users see stale tabs, then a jump.");
@@ -92,4 +97,4 @@ if (missing.length) {
   process.exit(1);
 }
 
-console.log(`\ncheck:boot: ok — boot shell nav matches NAV, and the Help tour covers all of it (${realLabels.length} tabs: ${realLabels.join(", ")}; ${tourTitles.length} tour entries).`);
+console.log(`\ncheck:boot: ok — boot shell nav matches the bar (${barLabels.length} tabs: ${barLabels.join(", ")}), and the Help tour covers every screen (${realLabels.length}: ${realLabels.join(", ")}; ${tourTitles.length} tour entries).`);

@@ -49,6 +49,7 @@ import { chromium } from "playwright-core";
 import { settledText } from "./lib/render-settle.mjs";
 import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { overlayStates, NEEDS_EXTRA_STATE } from "./lib/overlay-scaffold.mjs";
+import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=`)); return a ? a.slice(n.length + 3) : d; };
@@ -304,6 +305,8 @@ const clickOne = (c) => page.evaluate(([s, c]) => {
 }, [SCAN, c]);
 
 const tap = async (t) => {
+  // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+  if (MENU_SCREENS[t]) return openFromMenu(page, t);
   const ok = await page.evaluate((t) => {
     const el = [...document.querySelectorAll('button,[role="button"],a,div,span')].find((e) => (e.textContent || "").trim() === t);
     if (!el) return false; el.click(); return true;
