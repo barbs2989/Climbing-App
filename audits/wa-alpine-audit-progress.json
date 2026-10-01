@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_south_early_winter_spire_southwest_couloir",
+  "last_processed_id": "wa_south_gully_south_spur",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 747,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 366. Next after wa_south_early_winter_spire_southwest_couloir (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_south_face_10, wa_south_face_12, wa_south_face_2, wa_south_face_2001_variation, wa_south_face_3, wa_south_face_4, wa_south_face_5, wa_south_face_8, wa_south_face_center, wa_south_gully_south_spur. (wa_south_face on Vasiliki Tower and wa_south_ridge on a crag-type \"South Peak\" sort in between but are out of scope -- area_type='crag'.)",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 367. Next after wa_south_gully_south_spur (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_south_headwall, wa_south_rib, wa_south_ridge_2, wa_south_ridge_4, wa_south_twin_sister_north_ridge, wa_south_twin_sister_scramble, wa_southeast_face, wa_southeast_mox_peak_se_rib, wa_southeast_ridge_se_corner, wa_southern_man. (wa_south_ridge on a crag-type \"South Peak\", wa_south_ridge_6 on crag-type \"Aiguille de l'M\", wa_southwest_rib_2 on crag-type \"Crystal Lake Tower\", wa_spontaneity_arete/wa_spontaneous_distraction on crag-type \"Le Petit Cheval\", and wa_summertime on \"Summertime Crag\" all sort in nearby but are out of scope -- area_type != 'peak'.)",
   "batches": [
     {
       "batch_number": 1,
@@ -7343,6 +7343,27 @@
       "clean": 9,
       "sql_file": null,
       "note": "0 fixes this batch -- no sql file (precedent: batches 51/105/111/127/140 etc). Clean / confirmed (via WebSearch): Sloan Peak 7,835 ft + FA Bedal/Skaar July 30 1921 (Wikipedia, SummitPost); Snoqualmie Mountain peak FA Albert H. Sylvester + USGS survey party, 1897 or 1898 (SummitPost, Sylvester bio); Snowfield Peak FA Degenhardt/Strandberg Aug 1 1931 via Neve Glacier/West Ridge (climberkyle.com citing Mountaineer Annual), elevation 8,351 ft within the row's own already-disclosed 8,347-8,351 ft spread; Snowking Mountain 7,433 ft + coordinates 48.408385,-121.278165 exact (ListsOfJohn, SummitPost, Wikipedia); South Early Winters Spire 7,807 ft exact (SummitPost, Peakbagger); South Arete FA Fred+Helmy Beckey June 1942 (stored 'June 19' not contradicted); Direct East Buttress FA Beckey/Leen 1968 (SummitPost/SuperTopo); Southwest Couloir peak FA Adam/Bedayn/Davis July 20 1937 exact (SummitPost); Passenger FA Burdo/Doorish/White 1991 (SuperTopo; stored 'October' not independently confirmed but not contradicted). East Buttress carries no fa field -- nothing to check. Land manager/ranger-district jurisdiction correct for all 5 peaks (Mt. Baker-Snoqualmie NF Darrington RD for Sloan; Snoqualmie RD for Snoqualmie Mtn; NPS/North Cascades for Snowfield; Mt. Baker RD for Snowking; Okanogan-Wenatchee Methow Valley RD for SEWS). grade_num re-verified for all 10 against the CURRENT gradeNumFor/gradeNumFrom in origin/main's lib/grade.js (this audit branch's own copy is 38 commits behind main and lacks the function entirely -- pulled main's version and ran it directly rather than trust a guess); all 10 matched exactly, including the two range-style Class 2-3/Class 3-4 grades which the current highest-wins parser resolves correctly (an older, superseded first-match copy duplicated across scripts/pipeline/*.mjs would have falsely flagged these two as mismatches -- not used). Flagged for human review (1): wa_snoqualmie_mountain_standard_route's high_point_ft (6,278) disagrees with the wa_snoqualmie_mountain area row's elevation_ft (6,281) by 3 ft -- spot-checking 3 other already-audited peaks this pass shows these two columns normally match exactly, so this is a real internal inconsistency. External sources don't resolve it either: Wikipedia 6,270 ft (and a separate 6,260 ft map figure), WTA/Peakbagger/SummitPost 6,278 ft, ListsOfJohn LiDAR 6,285 ft -- a 25 ft spread with no source matching either stored column exactly, so not auto-fixed."
+    },
+    {
+      "batch_number": 367,
+      "date": "2026-10-01",
+      "route_ids": [
+        "wa_south_face_10",
+        "wa_south_face_12",
+        "wa_south_face_2",
+        "wa_south_face_2001_variation",
+        "wa_south_face_3",
+        "wa_south_face_4",
+        "wa_south_face_5",
+        "wa_south_face_8",
+        "wa_south_face_center",
+        "wa_south_gully_south_spur"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 8,
+      "sql_file": "audits/sql/2026-10-01-batch-367.sql",
+      "note": "Fixed 1: wa_south_gully_south_spur (Guye Peak) grade_num was 2 for stored grade \"Easy 5th\" -- the catalog's own live parser (lib/grade.js gradeNumFor, pulled from origin/main since this audit branch's copy predates the bare-ordinal fix) returns 5 for that exact string, and the SAME string on wa_south_face_8 (Lundin Peak) in this same batch already carried the correct grade_num=5 -- confirming the parser is deterministic and this row alone had drifted. Flagged for human review (1): wa_south_face_2001_variation (Lundin Peak) stores fa \"Mike Preiss and Don Preiss, 2004\", but Mountain Project's route page for this exact route (via WebSearch summary -- direct fetch still blocked by the egress proxy) describes it as \"established in 2001, as reflected in its name\" with FA credited to m.preiss/d.preiss and no explicit year quoted in the snippet retrieved; a route named \"2001 Variation\" with a stored FA year of 2004 is suspicious but I could not get a direct quote of MP's FA date line to confirm 2001 outright, so not auto-fixing. Clean / confirmed (via WebSearch): Cathedral Peak 8,606 ft + FA Beckey/Wagner/Brottem/Leen Sept 1968 (AAC Publications -- the FA account itself gives III 5.8 A1, stored grade \"5.8\" with no aid tag is consistent with a later free ascent, not flagged); Argonaut Peak 8,457 ft, South Face 5.6 (SummitPost/Wikipedia); Concord Tower (area) 7,611 ft matches Peakbagger's 7,610.6 ft and ListsOfJohn's 7,612 ft LiDAR figure almost exactly, and wa_south_face_3's 1965 FA (Cramer/Anderson/Schuler/Stanley) confirmed; note wa_south_face_3 and wa_south_face_center both carry high_point_ft=7569, well below the peak's 7611 ft -- queried every route on Concord Tower live and found 5 of 7 independently-FA'd routes (spanning 1965-2023) agree on exactly 7569 ft, with only the original 1956 Beckey/Parrott North Face (the true-summit line) at 7611 and one variant at 7560 -- this reads as genuine route-specific topping-out points below the true summit, not a data error, so not flagged; Kangaroo Temple 7,572 ft + South Face FA Bill Marts/Steve Marts/Don McPherson summer 1965 (SummitPost, confirmed independent of the North/Northwest Face routes); Inspiration Peak 7,891 ft (SummitPost/Wikipedia); Lundin Peak 6,057 ft + South Face FA Jim Crooks/Ed Kennedy 1941 (SummitPost) both confirmed exactly; Guye Peak 5,168 ft exact (Wikipedia); Pernod Spire's FA (Jewitt/Leight/Waters, July 10 1988) and 8,507 ft elevation not independently located in a direct source but not contradicted (Wine Spires relative-height ordering from SummitPost is consistent with Pernod being the tallest at >8,400 ft). Land manager/permit text for all 8 peaks (Okanogan-Wenatchee NF for Cathedral/Argonaut/Pernod/Concord/Kangaroo, NPS North Cascades for Inspiration, Alpine Lakes Wilderness USFS for Guye/Lundin) consistent with their stored access/permit fields."
     }
   ]
 }

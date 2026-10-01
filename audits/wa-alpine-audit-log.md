@@ -29372,3 +29372,55 @@ wa_south_face_8 (Lundin Peak), wa_south_face_center (Concord Tower), wa_south_gu
 (Guye Peak). Three same-named routes sorting in between (`wa_south_face` on Vasiliki Tower,
 `wa_south_ridge` on a crag-type "South Peak") were skipped as out-of-scope (`area_type` =
 `crag`), per the scope note on crags/walls carrying an alpine-tagged discipline.
+
+## Batch 367 (pass 6) — 2026-10-01
+
+Routes: wa_south_face_10 (Cathedral Peak), wa_south_face_12 (Argonaut Peak), wa_south_face_2
+(Pernod Spire), wa_south_face_2001_variation (Lundin Peak), wa_south_face_3 (Concord Tower),
+wa_south_face_4 (Kangaroo Temple), wa_south_face_5 (Inspiration Peak), wa_south_face_8 (Lundin
+Peak), wa_south_face_center (Concord Tower), wa_south_gully_south_spur (Guye Peak).
+
+- **Fixed: wa_south_gully_south_spur grade_num.** Stored grade `"Easy 5th"` carried grade_num 2.
+  The catalog's own live parser (`gradeNumFor`/`gradeNumFrom` in `lib/grade.js`, pulled from
+  `origin/main` since this audit branch's copy predates the function) returns 5 for that exact
+  string — the bare-ordinal branch added 2026-08-12 names `"Easy 5th"` by name as one of the
+  strings it fixed. The same string appears on `wa_south_face_8` (Lundin Peak) in this same batch
+  with grade_num already correctly 5, confirming the parser is deterministic and this one row had
+  drifted. `check:sql` passed clean before writing `audits/sql/2026-10-01-batch-367.sql`.
+- **Flagged for human review: wa_south_face_2001_variation's FA year.** Stored `fa` is "Mike
+  Preiss and Don Preiss, 2004", but a route named "2001 Variation" is a strong signal it was
+  established in 2001, and Mountain Project's own page for this exact route (via WebSearch
+  summary — direct fetch still blocked by the egress proxy) describes it as "established in 2001,
+  as reflected in its name." Couldn't get a direct quote of MP's FA date line to confirm the year
+  outright, so not auto-fixing — a human with MP access should check.
+- **Investigated but NOT flagged: Concord Tower route high_point_ft.** wa_south_face_3 and
+  wa_south_face_center both store high_point_ft=7569, well below the area's 7611 ft (itself
+  confirmed against Peakbagger's 7610.6 ft and ListsOfJohn's 7612 ft LiDAR figure). Queried every
+  route on Concord Tower live: 5 of 7 independently-FA'd routes spanning 1965–2023 agree on exactly
+  7569 ft, with only the original 1956 Beckey/Parrott North Face (the true-summit line) at 7611 and
+  one named variant at 7560. That pattern reads as genuine route-specific topping-out points below
+  the true summit (common on towers where only one line finishes at the apex), not a data entry
+  error, so left alone rather than "fixed" into a false consistency.
+- Elevations confirmed exact against external sources: Cathedral Peak 8,606 ft, Argonaut Peak
+  8,457 ft, Kangaroo Temple 7,572 ft, Inspiration Peak 7,891 ft, Lundin Peak 6,057 ft, Guye Peak
+  5,168 ft. Pernod Spire's 8,507 ft not independently pinned down to an exact external figure but
+  not contradicted (relative Wine Spires ordering is consistent with Pernod being tallest, >8,400 ft).
+- FAs confirmed: Cathedral Peak South Face (Beckey/Wagner/Brottem/Leen, Sept 1968, AAC —
+  FA account itself grades it III 5.8 A1; stored "5.8" with no aid tag is consistent with a later
+  free ascent and not flagged), Concord Tower South Face (Cramer/Anderson/Schuler/Stanley, 1965),
+  Kangaroo Temple South Face (Bill Marts/Steve Marts/Don McPherson, summer 1965), Lundin Peak South
+  Face (Jim Crooks/Ed Kennedy, 1941). Pernod Spire's FA (Jewitt/Leight/Waters, July 1988) not
+  independently located but not contradicted.
+- grade_num re-verified against the live `lib/grade.js` parser for all 10 routes; only the one
+  drift above (south_gully_south_spur).
+
+1 confirmed error fixed, 1 flagged for human review, 8 clean. SQL:
+`audits/sql/2026-10-01-batch-367.sql`. No `.env`/`.env.local` present at run start (fresh clone);
+read-only queries used the anon key supplied in the task prompt directly as shell env vars. Next
+10 in-scope (area_type='peak') routes after a live id-ordered query, filtered client-side against
+each candidate's area_id: wa_south_headwall, wa_south_rib, wa_south_ridge_2, wa_south_ridge_4,
+wa_south_twin_sister_north_ridge, wa_south_twin_sister_scramble, wa_southeast_face,
+wa_southeast_mox_peak_se_rib, wa_southeast_ridge_se_corner, wa_southern_man. Skipped as
+out-of-scope (area_type != 'peak'): wa_south_ridge (South Peak, crag), wa_south_ridge_6 (Aiguille
+de l'M, crag), wa_southwest_rib_2 (Crystal Lake Tower, crag), wa_spontaneity_arete and
+wa_spontaneous_distraction (Le Petit Cheval, crag), wa_summertime (Summertime Crag, crag).
