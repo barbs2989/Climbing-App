@@ -1655,3 +1655,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     River junction, 2.6 mi short of the wash. The only published "Mount Garfield Trailhead"
     coordinate is the Infinite Bliss approach, and the gate refuses clearing a trailhead. It needs a
     published coordinate for the wash pullout, applied as a `move`.
+  - **SIBLING-PIN LEFTOVERS (after pass 2): 9 pins read, 2 routes changed.** These pins were wrong, or
+    suspect, without making any distance impossible, so the distance script's gates could not carry
+    them. `scripts/oneoff/fix-waypoint-sibling-pins.mjs` reads
+    `audits/waypoint-sibling-pins/decisions.json` and writes ONLY values copied from another route's
+    pin of the same place (`copy`, `copyElev`).
+    - **Written:** Indian Mountain's Boundary Camp 3,800 → 4,410. On Challenger, Hannegan Pass and
+      Boundary Camp each moved onto the coordinate their siblings use; both stored pins sat on the
+      route's own track, short of the place. Challenger's camp also went 2,600 → 4,410. NPS gives
+      +2,000/−620 ft from the 3,100 ft trailhead, and the ground reads 4,406.
+    - **Recorded as no change, with the reason:**
+      - Chikamin's Park Lakes basin: copying the real lakes would make the next leg impossible.
+      - Crooked Thumb's combined camp name.
+      - Meany's Elwha Basin.
+      - Degenhardt's two computed pins.
+      Neither Meany nor Degenhardt is beyond the terrain box (`audit:waypoint-elevations --ground`),
+      so computed is not a conviction.
