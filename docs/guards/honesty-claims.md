@@ -320,6 +320,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     quietly losing a promise. **`flaglive` must stay SILENT** — flipping `PRIVACY_CONTROLS_LIVE`
     to true makes the controls real, so describing them becomes correct, and a guard that still
     fired would forbid the fix.
+  - **SECTIONS 4b AND 5 WERE RE-AIMED ON 2026-10-01, when 0237 made an emergency contact SETTABLE** —
+    owner-only, in its own table `profile_emergency_contacts`, like `profile_zips`. Both sections were
+    written to report a MOVED PREMISE that day, and did.
+    - **4b's settability signals could not see it.** It looked for a `profiles` column or a draft key, and
+      0237 has neither: the table is separate and the editor adds `ec` to the draft only when edited. It
+      now reads the editor's two contact INPUTS plus App's `saveMyEmergencyContact(uid,` call — and fails
+      if one exists without the other. Once settable, the failure TURNS ROUND: copy that still says
+      "there is no emergency contact" is the false claim (the FAQ and the Privacy Policy both did). The
+      "control who can see it in Settings" claim runs in BOTH branches: no such control exists either way.
+    - **5's premise was never "a contact exists" but "a crew's float_plan row can carry one".** That row
+      stores `contact: ME.emergencyContact`, and 0237 deliberately does NOT feed the owner-only contact
+      there — a crew can still never read it. So 5 now keys on whether anything assigns `emergencyContact`
+      a non-empty value; `profile-contact-fed-to-crew` is the injection that proves it.
+    - **"only you can read" / "visible only to you" count as an HONEST mention**, since a contact now
+      exists. Trap met: "(which only you can read)" in the collection list let 5b's `crew…can read`
+      disclosure test pass with the real disclosure DELETED — the clause sits within 140 chars of "crew".
+      Worded "visible only to you" for that reason; `disclosure-deleted` caught it.
 - **`check:profile-claims`** asserts that the **Profile tab and the résumé it opens claim only what
   - **2026-09-30: the self-verify tick was REMOVED, not caveated.** "Verify (demo)" on the résumé and "Mark verified (demo)" on the seed guide dashboard let a climber award their own credential a tick. Under the owner decision that the app reads as the finished product (see `check:preview-claims`), section 2 now asserts that no `onVerifyCourse` handler and no self-verify button exist, and that the real "✓ verified" and "self-reported" chips still render.
   the app can support**. Three invariants, all fixed on 2026-09-03 (#1573, #1579, #1580). Static

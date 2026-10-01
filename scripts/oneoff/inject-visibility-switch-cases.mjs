@@ -66,8 +66,8 @@ const CASES = [
    * it back — and these two cases are what keep it that way. */
   { name: "draft-seed", file: CM, must: "fail",
     why: "openEdit stops seeding the draft — the editor would reset the preference on save",
-    find: "skills:[...(ME.skills||[])],showRealName:showRealName}",
-    repl: "skills:[...(ME.skills||[])],showRealName:false}" },
+    find: "certExpiry:{...(ME.certExpiry||{})},showRealName:showRealName}",
+    repl: "certExpiry:{...(ME.certExpiry||{})},showRealName:false}" },
 
   { name: "draft-pushback", file: CM, must: "fail",
     why: "saveEdit stops pushing it back — Settings and the editor would disagree until reload",

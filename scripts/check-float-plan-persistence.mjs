@@ -55,9 +55,12 @@ const require_ = createRequire(import.meta.url);
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { FloatPlan, floatPlanState } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 export function render(props) {
-  return renderToStaticMarkup(React.createElement(FloatPlan, props || {}));
+  // FloatPlan reads the climber's saved emergency contact (0237) through React Query, which the app
+  // always provides; the harness must too, or the render throws before any assertion runs.
+  return renderToStaticMarkup(React.createElement(QueryClientProvider, { client: new QueryClient() }, React.createElement(FloatPlan, props || {})));
 }
 export { floatPlanState };
 `;
