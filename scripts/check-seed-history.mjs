@@ -225,6 +225,11 @@ if (!demo.includes(MARK)) {
 // real climber vouching for a partner picked from demo climbs, and the pick was written onto a
 // trust record about somebody else.
 //
+// The picker no longer lists anything until you type, except the climber's own LOGBOOK, which App
+// passes in as `suggest`. That is the remaining way a seed climb can reach it under USE_DB: a
+// signed-out visitor's logbook is the seed one. So the control and the assertion both go through
+// `suggest`, fed the same seed routes -- the seed build must list them, the DB build must not.
+//
 // USE_DB is a module constant read from import.meta.env, so it is set here by STUBBING
 // ./lib/supabase rather than standing up a client -- which on node 20 would also need the
 // WebSocket constructor RealtimeClient builds at construction.
@@ -234,12 +239,14 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import GiveVouch from ${JSON.stringify(path.join(ROOT, "lib", "GiveVouch.jsx"))};
+import { ROUTES } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
-export function render(friend) {
+export function render(friend, names) {
+  const suggest = names ? ROUTES.filter((r) => names.includes(r.name)).map((route) => ({ route, date: "", together: false })) : undefined;
   return renderToStaticMarkup(
     React.createElement(QueryClientProvider, { client: qc },
-      React.createElement(GiveVouch, { friend, onClose: noop, onSave: noop })));
+      React.createElement(GiveVouch, { friend, suggest, onClose: noop, onSave: noop })));
 }
 `;
   const stub = (useDb) => ({
@@ -275,8 +282,8 @@ export function render(friend) {
 
   if (seedNames.length < 3) fail(`ANCHOR LOST: only ${seedNames.length} seed route name(s) parsed — the comparison below would be vacuous`);
   else {
-    const dbBody = flat(await (await bundleFor(true))(dbFriend));
-    const seedBody = flat(await (await bundleFor(false))(dbFriend));
+    const dbBody = flat(await (await bundleFor(true))(dbFriend, seedNames));
+    const seedBody = flat(await (await bundleFor(false))(dbFriend, seedNames));
     const hits = (b) => seedNames.filter((n) => b.includes(n));
 
     // CONTROL FIRST. Without it, "no seed route offered" is equally true of a component that
@@ -317,8 +324,10 @@ process.exit(fails ? 1 : 0);
 //   5. re-point MARK at a route with no seed activity       -> ANCHOR LOST, not a silent pass
 //   6. restore one `a.user===ME.name?ME:CLIMBERS.find(…)`   -> the author scan, naming file:line
 //   7. remove seedAuthor from ClimbMatchCore                -> the seedAuthor presence check
-//   8. revert `seedMs=USE_DB?[]:ROUTES.filter(` to ROUTES.filter -> the vouch-picker section,
+//   8. revert `seedMs=USE_DB||!q?[]:ROUTES.filter(` to ROUTES.filter -> the vouch-picker section,
 //      which then names the demo climbs it offers a real climber
+//   9. drop `&&!(USE_DB&&ROUTES.some(` from GiveVouch's suggest loop -> the same section: the
+//      signed-out seed logbook is offered to a real climber (re-tested 2026-10-01)
 //
 // Case 4 is the one that shaped the render half: gating on `!c.id` looks equivalent and
 // silently empties EVERY seed climber, and a fixed length threshold would not have caught it
