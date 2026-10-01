@@ -298,6 +298,31 @@
       "submitted_at",
       "updated_at"
     ],
+    "group_event_invites": [
+      "created_at",
+      "event_id",
+      "invited_by",
+      "invitee"
+    ],
+    "group_event_rsvps": [
+      "created_at",
+      "event_id",
+      "user_id"
+    ],
+    "group_events": [
+      "capacity",
+      "created_at",
+      "descr",
+      "event_date",
+      "event_time",
+      "group_id",
+      "host",
+      "id",
+      "location",
+      "repeat",
+      "series_id",
+      "title"
+    ],
     "group_members": [
       "group_id",
       "id",
@@ -305,6 +330,23 @@
       "role",
       "status",
       "user_id"
+    ],
+    "group_post_reactions": [
+      "post_id",
+      "reaction",
+      "user_id"
+    ],
+    "group_posts": [
+      "author",
+      "body",
+      "created_at",
+      "edited",
+      "group_id",
+      "id",
+      "photo_alts",
+      "photos",
+      "pinned",
+      "pinned_at"
     ],
     "groups": [
       "accent",
