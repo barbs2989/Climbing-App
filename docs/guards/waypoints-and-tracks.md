@@ -186,6 +186,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     pattern, not the guard, was wrong.
 - **`check:waypoint-dedupe`** asserts that `dedupeWaypoints` merges a **SINGLETON** type — two
   "Summit" pins are the same summit whatever they are called — and that **`trailhead` is not one**.
+  - **AND A SUMMIT IS A SINGLETON ONLY WITHIN ONE PEAK (2026-09-30).** The same type-alone merge
+    ate **traverse** summits: `wa_enchantment_enchainment` stores eight and rendered ONE —
+    *"Little Annapurna"* at Mount Stuart's coordinate, 6.7 km off — and `wa_inspiration_traverse`,
+    `wa_painted_traverse`, `or_three_sisters_traverse`, `or_hurwal_divide_traverse` likewise.
+    `audit:waypoint-order`'s *MERGED BUT NOT THE SAME PLACE* section listed 39 such pairs in WA and
+    nobody had acted on it. **Measured over all 1,070 routes carrying waypoints: 43 same-type
+    summit/topout pairs on 5 routes, every one a genuine traverse, closest 984 m — and ZERO that
+    are one summit recorded twice.** Summits now merge only within `SAME_SUMMIT_M` (400 m) or
+    when either pin has no coordinate; the audit's >100 m merged-pair count went to 0.
+  - **The Olympus case this module cites was never two Summit WAYPOINTS** — #789 records it as the
+    track-end *Finish* dot drawn beside the Summit pin, fixed in the map, not here. The guard's old
+    Olympus fixture put its "one summit" 1.35 km apart, a constructed guess farther apart than the
+    closest real pair of different summits; it is now ~210 m. **Do not widen `SAME_SUMMIT_M` past
+    ~900 m** without re-measuring the closest traverse pair.
   It was: the rule read `/^(summit|topout|trailhead)$/i` and merged two trailhead pins on **TYPE
   ALONE**, ignoring both their names and their coordinates. Static, no browser, no DB — it executes
   the real exported function over constructed pins, so it costs a module import.
