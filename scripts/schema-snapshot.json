@@ -77,6 +77,12 @@
       "partner_id",
       "verdict"
     ],
+    "climb_log_partner_names": [
+      "log_id",
+      "names",
+      "updated_at",
+      "user_id"
+    ],
     "climb_logs": [
       "anchor_quality",
       "approach_minutes",
@@ -522,6 +528,15 @@
       "lng",
       "route_id",
       "samples",
+      "updated_at",
+      "user_id"
+    ],
+    "route_difficulty_ratings": [
+      "axis",
+      "created_at",
+      "id",
+      "rating",
+      "route_id",
       "updated_at",
       "user_id"
     ],
