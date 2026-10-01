@@ -349,15 +349,11 @@ const SENTINELS = {
   rock: { base: BASES.crag, patch: { rock: "ZZROCKZZ", rockType: "ZZROCKZZ" } },
   crux: { base: BASES.crag, patch: { crux: "ZZCRUXZZ" } },
   pads: { base: BOULDER, patch: { pads: 7 }, numeric: true },
-  // `difficulty` is the 5-axis profile DiffRadar draws. Every leaf is a NUMBER, so there is no
-  // string to search for and the ordinary probe reports it UNPROVABLE — but its rendering has a
-  // deterministic text anchor, because DiffRadar prints its own axis labels and returns null
-  // without the prop. Judge it on that, not on "did the page change": the weaker test passes on
-  // any incidental difference. (An earlier version of this comment claimed the column was dark
-  // catalog-wide; it was not — see the FIELDS note above. The sentinel is still worth having:
-  // nothing had ever asserted that DiffRadar's `if(!d) return null` reader stays wired.)
-  difficulty: { base: BASES.crag, anchor: "Route-finding",
-    patch: { difficulty: { physical: 4, technical: 5, exposure: 3, commitment: 2, routefinding: 1 } } },
+  // `difficulty` had a sentinel here, anchored on DiffRadar's "Route-finding" label, asserting
+  // the seeded profile stayed wired. The owner reset the breakdown to climbers' reads only
+  // (2026-09-30), so DiffRadar renders on every route and reads no column — the anchor is now
+  // present with or without the field and could only ever report NEVER RENDERS. Removed with the
+  // reader; the column is recorded in KNOWN below.
 };
 
 // Render a sentinel-patched route across every sub-tab and report where it landed. Numeric
@@ -600,6 +596,9 @@ const KNOWN = {
   data_quality: "reader removed on purpose — the DATA QUALITY box duplicated DATA CONFIDENCE "
     + "at the top of Overview and both were replaced by per-section gap notices. Give it a "
     + "home beside the fields it grades if it comes back, not another page-level banner.",
+  difficulty: "reader removed on purpose (owner, 2026-09-30) — DIFFICULTY BREAKDOWN is now the "
+    + "average of climbers' own 1–5 reads, starting unrated, instead of a seeded enrichment "
+    + "profile weighted as six votes. Do not re-wire the column as a base rating without asking.",
 };
 // FAIL CLOSED ON A BROKEN READ, and do it BEFORE any verdict is interpreted. Everything
 // below this line reasons about what rendered; none of it means anything if the rows never
