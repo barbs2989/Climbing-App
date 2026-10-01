@@ -354,13 +354,32 @@ the correction knows the screen is wrong, and they have no way to report it.
     would bring back a line the merge had been absorbing into the one dropped**. Re-measure with
     `scripts/oneoff/measure-hazard-paraphrase-pairs.mjs`. Rollback:
     `audits/2026-09-30-hazard-paraphrase-rollback.json`.
-  - **Side findings from reading the boxes, NOT acted on:** about 25 printed lines are not hazards
-    at all — parking, permits, road status, trip length, "study topo before climb" (e.g.
-    `wa_philadelphia_mountain_scramble`, `wa_wing_peak_northwest_ridge`,
-    `wa_storm_king_southwest_scramble`). Their home is the access/logistics prose, which is the
-    `audit:access-prose` question. Separately, `wa_mount_claywood_standard` places the same
-    off-trail route-finding beyond **Cameron Pass** in one line and beyond **Lost Pass** in another,
-    so one of the two is probably wrong.
+  - **LOGISTICS LINES, read and repaired 2026-10-01: 45 lines removed from 39 routes.** The ~25
+    seen while reading were the visible tip. `scripts/oneoff/measure-logistics-in-hazard-box.mjs`
+    finds **2,651 printed lines with logistics vocabulary on 2,442 routes**, but most are the seven
+    crag-level shared blobs (≥45 routes each, hazard-dominant, and their closure clause feeds the
+    `raptorClosure` tag), so they are out of scope by decision. All **651 remaining lines were read**:
+    **535 hazard, 22 mixed, 94 logistics**. Remoteness, no cell coverage, long or committing days,
+    sparse beta, and **a gate or washout that ADDS DISTANCE are hazards and stay**. That rule was
+    applied after the fact across all four review batches, which had split on it (17 flips to keep).
+    A logistics line was removed only when the route already states the fact in a field that
+    renders (`road.driveNote/status/seasonalGate`, `permit`, `access.closures/rules/permit/notes`,
+    `approach`, `descent_text`), with a verbatim quote that the script re-checks against the live
+    row. **Nothing was moved:** every logistics fact without a home had no EMPTY field that fitted,
+    and nothing is merged into existing prose. The decisions are in
+    `audits/2026-10-01-hazard-logistics-decisions.json`, the fix is
+    `scripts/oneoff/fix-hazard-logistics-lines.mjs` (the same gates as the paraphrase fix), and the
+    rollback is `audits/2026-10-01-hazard-logistics-rollback.json`. **It refused 5, correctly:** 4
+    string-shaped `watch_out` and 1 that would be emptied. **Kept, and worth a human look:** Hadley
+    Skyline Divide's "2021 washout at milepost 3.1" contradicts its `road.status` (closed at mile
+    0.03 since June 2026), and Noyes's Olympic Hot Springs washout line has no road context for that
+    approach.
+  - **`wa_mount_claywood_standard` named Cameron Pass and Lost Pass for the same off-trail start —
+    FIXED to Lost Pass.** The row's approach, beta, climbing_route, pitch_detail, descent_text,
+    itinerary and obj_haz all agree on Lost Pass, so the `hazards` line and the `gear` item were
+    corrected (`scripts/oneoff/fix-claywood-off-trail-starts-at-lost-pass.mjs`). Its **Cameron Pass
+    PIN** is impossible (about 6.6 mi straight-line from the Grand Pass pin against a listed 1.65 mi
+    leg). That pin was left alone: `audit:waypoint-distances` already lists the route.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
