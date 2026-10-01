@@ -29596,3 +29596,30 @@ wa_switchback_mountain_west_ridge (Switchback Mountain),
 wa_table_mountain_standard_scramble (Table Mountain). Skipped as out-of-scope
 (area_type != 'peak'): wa_spontaneity_arete and wa_spontaneous_distraction (Le
 Petit Cheval, crag), wa_summertime (Summertime Crag, crag).
+
+## Batch 370 — 2026-10-01 (pass 6)
+
+Checked: wa_spire_mountain_scramble (Spire Mountain), wa_spire_point_southwest_face (Spire Point),
+wa_stanley_burgner (Prusik Peak), wa_star_peak_sawtooth_nw_ridge (Star Peak), wa_storm_king_north_face
+(Storm King), wa_sw_ridge (Middle Peak/"Middle Gunsight"), wa_swiss_peak_standard_route (Swiss Peak),
+wa_switchback_mountain_scramble + wa_switchback_mountain_west_ridge (Switchback/Cooney Peak),
+wa_table_mountain_standard_scramble (Table Mountain).
+
+Fixed 3 (`audits/sql/2026-10-01-batch-370.sql`): wa_spire_point_southwest_face's grade/grade_num/
+rock_grade were stale lower values ("Class 4"/4/"5.4") contradicting the row's own beta text and
+pitch_detail, both already correctly at 5.6 — corrected to match. wa_star_peak_sawtooth_nw_ridge's
+access.permit wrongly claimed Lake Chelan-Sawtooth Wilderness needs a self-issue wilderness permit;
+it doesn't — only a Northwest Forest Pass for parking, which the row's own fees/passRequired fields
+already said. wa_table_mountain's area row had elevation_ft 5744 vs. its own route's already-correct
+high_point_ft 5742 (matches external sources) — corrected the area row.
+
+Flagged for human review (1): wa_sw_ridge's high_point_ft (8200, also in its own waypoint) vs. its
+area row's elevation_ft (8185) — both are real published elevations for Middle Peak/"Middle Gunsight"
+from different source generations; no LiDAR source found to adjudicate, left as-is.
+
+Clean (6, confirmed via research): Spire Mountain, Prusik Peak/Stanley-Burgner, Storm King, Swiss
+Peak, and both Switchback Mountain routes — elevations, FA parties/dates, grades, and access details
+all checked out against external sources (full citations in the batch's progress-file note). One
+minor 2 ft Martin Peak elevation cross-page discrepancy and the already-self-disclosed Switchback
+prominence figure dispute (441/461/471 ft) were investigated but left alone as too small/already
+flagged to act on.
