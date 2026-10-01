@@ -55,6 +55,8 @@ const foldTwins = (a, b) => { const x = foldKind(a), y = foldKind(b); return !(x
 // The suffix a _climbs split child takes after its area's name, decided in SQL by the routes the
 // area holds: all bouldering -> " Bouldering", all ice/mixed -> " Ice Climbs", else " Routes".
 const SPLIT_SUFFIX = areaId => `(select case when bool_and(discipline = 'bouldering') then ' Bouldering' when bool_and(discipline in ('ice', 'mixed')) then ' Ice Climbs' else ' Routes' end from routes where area_id = ${q(areaId)})`;
+// A state's area id prefix, for a state that has no area yet to read it from.
+const POSTAL = { alabama: "al", alaska: "ak", arizona: "az", arkansas: "ar", california: "ca", colorado: "co", connecticut: "ct", delaware: "de", florida: "fl", georgia: "ga", hawaii: "hi", idaho: "id", illinois: "il", indiana: "in", iowa: "ia", kansas: "ks", kentucky: "ky", louisiana: "la", maine: "me", maryland: "md", massachusetts: "ma", michigan: "mi", minnesota: "mn", mississippi: "ms", missouri: "mo", montana: "mt", nebraska: "ne", nevada: "nv", new_hampshire: "nh", new_jersey: "nj", new_mexico: "nm", new_york: "ny", north_carolina: "nc", north_dakota: "nd", ohio: "oh", oklahoma: "ok", oregon: "or", pennsylvania: "pa", rhode_island: "ri", south_carolina: "sc", south_dakota: "sd", tennessee: "tn", texas: "tx", utah: "ut", vermont: "vt", virginia: "va", washington: "wa", west_virginia: "wv", wisconsin: "wi", wyoming: "wy" };
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
@@ -133,7 +135,9 @@ function resolver(stateId, stateName, planned, splits) {
   const direct = new Set(sql(`select distinct r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(stateId)})`).map(r => r.area_id));
   const kids = new Map(), hasKids = new Set(rows.map(r => r.parent_id)), ids = new Set(rows.map(r => r.id));
   for (const r of rows) { const k = r.parent_id + "|" + areaNorm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
-  const pre = (() => { const c = {}; for (const r of rows) { const p = r.id.split("_")[0]; if (p !== r.id) c[p] = (c[p] || 0) + 1; } return Object.entries(c).sort((a, b) => b[1] - a[1])[0][0]; })();
+  // The id prefix is the one the state's areas already use (its postal code: "mo_", "nh_"). A state
+  // with no area yet (Mississippi, 2026-10-01) has nothing to read it from, so the postal code is used.
+  const pre = (() => { const c = {}; for (const r of rows) { const p = r.id.split("_")[0]; if (p !== r.id) c[p] = (c[p] || 0) + 1; } const top = Object.entries(c).sort((a, b) => b[1] - a[1])[0]; if (top) return top[0]; if (POSTAL[stateId]) return POSTAL[stateId]; throw new Error(`${stateName}: no area id prefix to follow`); })();
   const mint = name => { let id = pre + "_" + slug(name), n = 2; while (ids.has(id)) id = pre + "_" + slug(name) + "_" + n++; ids.add(id); return id; };
   // A level missing from OUR tree (Montana's "Bozeman Area" — its canyons hang straight off the
   // region here) may be skipped, at most twice per route, but only when the NEXT name then matches
