@@ -43,6 +43,7 @@ import { createFixture, sweepOrphans, sessionForStorage, STORAGE_KEY } from "./l
 import { SUPABASE_URL, requireServiceKey, anonKey } from "./lib/supabase-env.mjs";
 import { settledText } from "./lib/render-settle.mjs";
 import { tapByName } from "./lib/tap-by-name.mjs";
+import { openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -259,7 +260,7 @@ try {
   if (await clickText("Set up my profile")) {
     entered = "the sheet already on screen";
   } else {
-    if (!(await clickText("Settings"))) dead("no Settings control on Home");
+    if (!(await tapMenuItem(page, "Settings"))) dead("no Settings row in the Menu (top-left avatar)");
     await settledText(page);
     if (!(await clickText("Edit areas, disciplines & grades"))) {
       const seen = await page.evaluate(() => [...document.querySelectorAll("button,a,[role=button]")]
@@ -333,7 +334,7 @@ try {
   // ON THE PROFILE TAB, not Home. Home does not display your disciplines at all, so the first
   // version of this assertion searched a screen that never shows them and reported a false
   // failure -- against a write that had demonstrably landed one assertion earlier.
-  if (!(await clickText("Profile"))) dead("no Profile tab after the reload");
+  if (!(await openFromMenu(page, "Profile"))) dead("no Profile card in the Menu after the reload");
   await settledText(page);
   const reloaded = await page.evaluate(() => document.body.innerText || "");
   const shown = picked.filter((d) => reloaded.toLowerCase().includes(d.toLowerCase()));

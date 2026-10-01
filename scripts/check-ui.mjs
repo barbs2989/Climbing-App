@@ -38,6 +38,7 @@ import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-set
 import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
 import { tapByName as tapByNameOn } from "./lib/tap-by-name.mjs";
 import { checkScreenCounts } from "./lib/screen-counts.mjs";
+import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -245,6 +246,8 @@ page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 // never opens, and the previous screen gets captured a second time. The
 // identical-screen rule below is what surfaced this; the quoting is the fix.
 const tap = async (text, i = 0) => {
+  // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+  if (MENU_SCREENS[text]) return openFromMenu(page, text);
   // Prefer a real control whose visible label is exactly this text; only then fall
   // back to a text node. Matching text alone can land on a wrapping element that
   // ignores the click -- "Log a climb" looked completely dead that way, while the
