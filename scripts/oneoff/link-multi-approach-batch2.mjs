@@ -15,8 +15,10 @@
 import fs from "node:fs";
 import { selectAll, patchRow, requireServiceKey } from "../lib/supabase-env.mjs";
 
-const PLAN = JSON.parse(fs.readFileSync(new URL("./link-multi-approach-batch2.plan.json", import.meta.url), "utf8"));
-const BEFORE = new URL("./link-multi-approach-batch2.before.json", import.meta.url);
+// `--batch batch3` runs a later plan (./link-multi-approach-batch3.plan.json) through the same rules.
+const BATCH = process.argv.includes("--batch") ? process.argv[process.argv.indexOf("--batch") + 1] : "batch2";
+const PLAN = JSON.parse(fs.readFileSync(new URL(`./link-multi-approach-${BATCH}.plan.json`, import.meta.url), "utf8"));
+const BEFORE = new URL(`./link-multi-approach-${BATCH}.before.json`, import.meta.url);
 const key = requireServiceKey();
 const multi = PLAN.filter((p) => p.verdict === "MULTI");
 const ids = multi.map((p) => p.id);

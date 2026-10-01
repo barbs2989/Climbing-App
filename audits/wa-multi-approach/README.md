@@ -4,13 +4,16 @@ Census: `npm run audit:multi-approach` over all 8,615 WA routes flagged 557; the
 strong signal (or a FINISH signal on an alpine/mountaineering/scrambling route) were each read and
 researched online. The tables below are that first pass; what has since been WRITTEN is next.
 
-## Written (2026-10-01) — 119 WA routes now switch by approach
+## Written (2026-10-01) — 121 WA routes now switch by approach
 | step | rows | script (each keeps a `.before.json`; `--rollback` restores it) |
 |---|---|---|
 | Shuksan Southeast Ridge pilot | 1 | `scripts/oneoff/shuksan-se-ridge-two-approaches.mjs` |
 | batch 1: the 3 FINISH routes + the 46 high-confidence MULTI_TRAILHEAD | 49 | `link-multi-approach-batch1.mjs`, camps per way in `multi-approach-batch1-camps.mjs` |
 | the ROW_CONTRADICTS rows (Liberty Bell was retired into Lexington Tower in #2116) | 9 | `fix-multi-approach-contradictions.mjs` |
 | batch 2: medium/low re-researched, plus routes the first pass never reached | 69 | `link-multi-approach-batch2.mjs` (verdicts in `.plan.json`) |
+| batch 3: the 6 UNSURE re-researched (2 MULTI) | 2 | `link-multi-approach-batch2.mjs --batch batch3` |
+| leftovers: Kyes land manager, Huckleberry pin | 2 | `multi-approach-leftovers.mjs` |
+| leftovers 2: Megalodon, Huckleberry and Jack prose, Windy Peak pins | 5 | `multi-approach-leftovers-2.mjs` (values in `.json`) |
 
 Batch 2 re-researched the 68 medium/low MULTI_TRAILHEAD routes (60 MULTI, 4 SINGLE, 4 UNSURE;
 `wa_stanley_burgner` is not a row — the climb is `wa_prusik_peak_south_face_burgner_stanley`) and
@@ -21,14 +24,28 @@ camp goes with every way in that uses it, and a descent camp (Camp Schurman) wit
 Cockscomb Ridge also had Artist Point's pin stored under the Heliotrope Ridge name; it now carries the
 pin its three Heliotrope Ridge siblings share.
 
-**Still open** — UNSURE, left as they were: `wa_jack_mountain_east_ridge` (mostly a descent),
-`wa_mount_adams_wilson_glacier_headwall` (no working north approach established), `wa_north_ridge_4`,
-`wa_storm_king_north_face` (almost nothing published), `wa_sw_ridge` (Downey Creek side unconfirmed),
-`wa_mount_shuksan_northeast_ridge` (reached only after another Shuksan route). Notes the contradiction
-fixes did NOT touch: Huckleberry West Route's "West Face Talus Basin" waypoint sits ~5 km south of the
-summit; Goode Megalodon Ridge has the same Rainy Pass name/pin the two Goode rows had; Kyes NE Ridge's
-`access.landManager` names the Darrington district though the trailhead is Skykomish's; the Kautz Creek
-crossing on Point Success's second way in should be checked before a party relies on it.
+**The 6 UNSURE, re-researched (batch 3).** MULTI and linked: `wa_sw_ridge` (Middle Gunsight —
+Agnes Creek from High Bridge, or Downey Creek over Cub and Itswoot passes and across the Chickamin
+Glacier) and `wa_mount_shuksan_northeast_ridge` (after the North Face, or via the Sulphide Glacier and
+across the Crystal Glacier). SINGLE: `wa_jack_mountain_east_ridge` (every ascent goes through Jerry
+Lakes; the north side is a descent), `wa_north_ridge_4` (Thunder Creek; the Klawatti side was the
+first ascent only). Still UNSURE: `wa_mount_adams_wilson_glacier_headwall` (no ascent account found; its
+timing stages from Lunch Counter while its camp is Avalanche Valley — needs reconciling) and
+`wa_storm_king_north_face` (one ascent, 1978; the stored Park Creek approach is the Southwest Route's
+side, while the north face looks onto North Fork Bridge Creek — check before adding anything).
+
+**Leftovers fixed.**
+- Kyes NE Ridge now names the Skykomish district.
+- Huckleberry West Route: the off-route "West Face Talus Basin" pin has been removed, and the approach now describes the west way in (PCT to above Joe Lake), not the East Route.
+- Megalodon Ridge starts at Bridge Creek on its card, pin, logistics, waypoint and descent. Its own mileages were already Bridge Creek's.
+- Jack East Ridge's approach now matches its card.
+- Windy Peak: the Windy Creek row's "Cathedral Driveway" pin was Long Swamp's coordinate. That row and the standard row's Cathedral Driveway way in now carry the trailhead's own coordinate.
+- Kautz Creek (Point Success's second way in) was closed early in 2026 but is open with a washout and a log bridge, so it was left as it was.
+
+**Not touched.**
+- The two Goode sibling rows still carry a Rainy Pass trailhead waypoint at 48.5181,-120.7331, and Southwest Couloir's directions say "two miles east of Rainy Pass".
+- Huckleberry: `timing.sectionBreakdown[1].note` still says Huckleberry Flats, and its grade is Class 4 where the one source that grades the West Face says 5.6.
+- Windy Peak has three rows for one walk-up; retiring any of them is an owner decision.
 
 | verdict | routes |
 |---|---|
