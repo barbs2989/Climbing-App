@@ -336,9 +336,13 @@ earlier passes cleared to null for want of a second source (loss_ft and access e
 - **One-source pass (section 19):** Buck Mountain — the one report of this out-and-back gives 40 mi / 11,686 ft round
   trip, contradicting every figure on the row; adopting it means rebuilding the itinerary days (computing). Mount Price
   `dist_km` 10.5 km (6.5 mi one way) still disagrees with the 15.6 mi round trip; no one-way figure is published.
-  Mastiff: the club page now lists Mastiff 10 mi / 3,330 ft and Howard 12 mi / 4,900 ft, so the 4,900 an earlier pass
-  adopted for Mastiff may be Howard's. Project Crack's trailhead pin sits on the cliff. Stickney's 2.25 mi road walk is
+  Mastiff SETTLED as stored (4,900 ft / 10 mi): the club page's 3,330 ft for Mastiff alone is below the 3,050 ft
+  trailhead to 6,747 ft summit rise, so it cannot be this route's gain, and a second page gives ~11 mi / 5,000 ft.
+  Project Crack's trailhead pin sits on the cliff, and Glacier View Temple carries the same pin; no East Face route
+  stores a better one and no source states the parking coordinate, so both stay held. Stickney's 2.25 mi road walk is
   measured from an older gate. New York Gully fifth pitch (above).
+- **Peakbagger is unread:** it answers bots with a security check (curl 403, and the browser stops at "Performing
+  security verification"), so none of the 260 open items was checked there. Archived copies were used where they exist.
 - **Deletes:** done by the owner (section 16).
 - **Single source / one author:** King Kong settled — one source accepted (section 18) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
   Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
