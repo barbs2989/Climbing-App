@@ -28977,3 +28977,47 @@ Scope counts not re-run this batch (last known: 698 in-scope / 751 total, from b
 No `.env`/`.env.local` present at run start (fresh clone); read-only queries used the anon key
 supplied in the task prompt directly as shell env vars. `check:sql` ran successfully against
 the fix file before committing (all 3 write targets confirmed to exist live).
+
+## Batch 360 — 2026-10-01 (pass 6)
+
+Checked: wa_plummer_peak_r1, wa_point_success_south_side, wa_poltergeist_pinnacle,
+wa_poltergeist_pinnacle_north_route, wa_preacher_mountain_scramble,
+wa_primus_peak_south_ridge.
+
+Found and fixed 3 (`audits/sql/2026-10-01-batch-360.sql`), all missing/partial top-level
+gain-loss-distance fields that the row's own itinerary already stated: Point Success
+(Success Cleaver)'s loss_ft was NULL while gain_ft (11500) already matched its own
+itinerary prose for this Longmire-to-Longmire round trip — set loss_ft=11500. Poltergeist
+Pinnacle's top-level gain_ft/loss_ft (7066/NULL) turned out to capture only the first of
+its own 3 documented itinerary days (a CascadeClimbers trip report of this exact 2004 FA
+independently confirms ~7,000 ft for that one day alone, plus another ~1,500 ft of glacier
+approach and two more days not counted) — adopted the full-trip total (11100/10700) its
+sibling row for the same FA climb, wa_poltergeist_pinnacle_north_route, already carries,
+which independently matches that row's own 4-day itinerary sum. Primus Peak (South
+Ridge/McAllister Glacier) had gain_ft/loss_ft/dist_km all NULL despite its own itinerary
+already summing to 8000 ft/7500 ft/20 mi — populated all three (dist_km=32.19) from the
+route's own numbers.
+
+Flagged for human review (1): Poltergeist Pinnacle's North Route sibling row has
+pitches=4, but NWMJ's account of this same 2004 FA states 6 pitches overall and the other
+sibling row already stores pitches=6 — this row's own pitch_detail array only breaks the
+climb into 4 segments, and fixing the count would mean inventing a pitch split from
+secondhand search snippets rather than the full FA writeup, so left for a human with
+NWMJ/AAC full-text access.
+
+Clean (2): Plummer Peak (Pinnacle Saddle/North Slopes) — elevation and gain/loss both
+confirmed and already self-consistent with its own itinerary; Mount Rainier NP permit
+text accurate. Preacher Mountain (Standard Scramble) — elevation and gain/loss confirmed
+and self-consistent; Middle Fork Snoqualmie Trailhead fee confirmed. Also re-confirmed
+accurate and left alone: Point Success's $82/person 2026 MRNP climbing fee, and its West
+Side Road/Dry Creek closure description (still matches the current NPS road-status page).
+
+`last_processed_id` advances to `wa_primus_peak_south_ridge`. The next natural batch is
+the wa_prusik_peak_* cluster — 7 alpine routes all filed on the single peak area
+wa_prusik_peak — same clustering approach as the Olympus/Ottohorn batch (358). Scope
+counts not re-run this batch (last known: 698 in-scope / 751 total, from batch 352).
+No `.env`/`.env.local` present at run start (fresh clone); read-only queries used the anon
+key supplied in the task prompt directly as shell env vars; `npm install` succeeded this
+run (unlike some prior runs) so `check:sql` ran directly against the fix file before
+committing (all 3 write targets confirmed to exist live, each guarded on its pre-fix
+value including the NULL fields).
