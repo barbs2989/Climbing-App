@@ -1297,6 +1297,40 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - Script: `scripts/oneoff/fix-waypoint-order-batch10.mjs`; rollback in
       `audits/waypoint-order-batch10/`. Audit after: duplicates **2** (the two above);
       unexplained after-summit **1** (Chair, kept).
+  - **BATCH 11 (2026-10-01): batch 10's two LEFT pins, re-read against outside sources.** Every
+    coordinate written is COPIED from a source, never taken off a grid.
+    - **Pinnacle Saddle (on BOTH the Pinnacle and Plummer rows)** moved to OSM node 891288375,
+      `name=Pinnacle Saddle`, at 46.7561418,-121.7357068. That node ends the NPS "Pinnacle Peak
+      Trail" way, which is exactly what the pins' notes say the saddle is.
+      - Pinnacle's own recorded track ends 2 m from it, and Plummer's passes 7 m from it.
+      - The ground there is 5,935 ft against the 5,920 ft claim. It sits 18 m from the col
+        batch 10 measured on the DEM but refused to write.
+    - **Prusik "south face base" (4 rows) was Mountain Project's AREA pin, verbatim**
+      (47.48786,-120.78373). It sits 81 m north-east of the summit, the wrong side for a
+      south-face start.
+      - The two Burgner-Stanley rows take MP's published "approx coords of P1" for that route
+        (47.48681,-120.78457). That point is 65 m south of the summit on 7,386 ft ground, which
+        matches the 7,350 ft base the row's own note states.
+      - Der Sportsman and Beckey-Davis start elsewhere on the face, so their base coordinate is
+        cleared and the pin kept.
+      - The same MP coordinate was the SUMMIT pin on 4 rows: Stanley-Burgner, Beckey-Davis,
+        Energizer Bunny and Boving-Christensen. The box refuses 8,008 ft there (hi 7,902), so the
+        sibling rows' summit pin, which reads 8,003 ft, is copied in.
+    - **Prusik "North face rappel descent" coordinate cleared.** It was the P5 chockstone pin's
+      point, 193 m SW of the summit. Its own note and every source put the raps on the NORTH face,
+      from at or just east of the summit: MP Stanley-Burgner, Beckey-Davis and Der Sportsman, plus
+      two trip reports. No source publishes a rappel coordinate.
+    - **LEFT: Pinnacle's "Base of Summit Gully".** It still sits 2 m from the old saddle point. The
+      box admits it, and no source names a gully start. OSM's change of `sac_scale` at
+      46.7563600,-121.7348564 is an inference, not a record.
+    - **Not done, owner decision: `wa_stanley_burgner` duplicates
+      `wa_prusik_peak_south_face_burgner_stanley`.** They have the same 1968 FA, a byte-identical
+      `pitch_detail` and 49 identical columns. Keep the latter, but hand-carry `length_m` 183 and
+      the fuller `rappel_count_note` from the other row. Fill-blank would carry nothing, because the
+      keeper is never blank where the other row is filled. Recount references with the SERVICE key
+      first, because `contributions`/`route_base_checkins` cascade. Follow migration 0220.
+    - Script: `scripts/oneoff/fix-waypoint-pins-batch11.mjs`, with its rollback in
+      `audits/waypoint-pins-batch11/`. Audit after: duplicates **0**.
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**

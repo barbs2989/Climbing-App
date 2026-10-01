@@ -345,14 +345,12 @@ if (outFar.length) {
   outFar.sort((x, y) => y.d - x.d).forEach(o =>
     console.log(` ${Math.round(o.d).toString().padStart(6)} m  ${String(o.type).padEnd(10)} ${o.id}\n           "${o.a}"  +  "${o.b}"`));
 }
-// Known residue (batch 10, 2026-10-01): Kendall, Western Dihedral and Goode were real copies and are
-// gone. Pinnacle (saddle + gully base, 2 m) and Prusik (north-face rappel on the P5 chockstone, 0 m)
-// are two DIFFERENT places on one copied coordinate — the duplicate is the symptom, the coordinate the
-// defect. The ground box admits both claims, so neither has the second record a clear needs, and the
-// right coordinate cannot be copied from any row. Left, measured, in docs/guards/waypoints-and-tracks.md.
+// Known residue: none. Batch 10 removed Kendall, Western Dihedral and Goode (real copies); batch 11
+// (2026-10-01) moved Pinnacle's saddle onto OSM's named node and cleared Prusik's north-face rappel off
+// the P5 chockstone's coordinate — two different places that had shared one copied coordinate. A NEW
+// duplicate here is new data; see docs/guards/waypoints-and-tracks.md (batches 10-11).
 if (outDup.length) {
   console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`));
-  console.log("  (Pinnacle and Prusik were read in batch 10: two places on one copied coordinate, left — see the guard notes.)");
 }
 if (outOrder.length) { console.log("\nreordered:"); outOrder.forEach(o => console.log(` ${o.id} — ${o.name}\n    was: ${o.before}\n    now: ${o.after}`)); }
 if (outSelf.length) {
