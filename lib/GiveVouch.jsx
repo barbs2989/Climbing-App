@@ -11,14 +11,15 @@ import { POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
    climbs logged WITH this partner first. It is what makes the picker usable without typing -- the
    climb you did together is almost always one you logged -- and it is honest under USE_DB, where the
    seed ROUTES are never offered (see the comment on seedMs below). */
-export default function GiveVouch({friend,onClose,onSave,suggest}){
-  const [route,setRoute]=useState(null);
+export default function GiveVouch({friend,onClose,onSave,suggest,initial}){
+  // `initial` is the vouch you already gave this climber: the form opens on YOUR earlier answers, so editing a one-tap vouch adds to it rather than starting over.
+  const [route,setRoute]=useState(initial&&initial.route&&initial.route!=="Climbed together"?{name:initial.route,sub:initial.date?"Vouched "+initial.date:""}:null);
   const [q,setQ]=useState("");
   // EMPTY, not five stars each: a default rating is a rating the voucher never gave, published as theirs.
-  const [ratings,setRatings]=useState({});
-  const [skills,setSkills]=useState([]);
-  const [text,setText]=useState("");
-  const [again,setAgain]=useState(false);
+  const [ratings,setRatings]=useState(initial?Object.assign({},initial.ratings):{});
+  const [skills,setSkills]=useState(initial?(initial.skills||[]).slice():[]);
+  const [text,setText]=useState(initial?initial.text||"":"");
+  const [again,setAgain]=useState(!!(initial&&initial.wouldClimbAgain));
   const fn=friend.name.split(" ")[0];
   const toggle=k=>setSkills(pp=>pp.indexOf(k)>=0?pp.filter(x=>x!==k):[...pp,k]);
   // Tapping the star that is already the rating clears it, so a category can be put back to unrated.
@@ -28,8 +29,8 @@ export default function GiveVouch({friend,onClose,onSave,suggest}){
   const sub={fontSize:12,color:C.textSub,lineHeight:1.45,marginBottom:10};
   const pick=(r)=>{setRoute({name:r.name,sub:r.grade+" · "+mtnOf(r)});setQ("");};
   const row=(r,ix,tag)=><div key={r.id} {...clickable(()=>pick(r))} aria-label={"Choose "+r.name} style={{display:"flex",alignItems:"center",gap:9,padding:"9px 10px",borderTop:ix?"1px solid "+C.borderLight:"none",cursor:"pointer"}}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13,fontWeight:600,color:C.text,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{r.name}</div><div style={{fontSize:11,color:C.textMuted,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis",marginTop:1}}>{tag?<span style={{color:C.blue,fontWeight:700}}>{tag+" · "}</span>:null}{r.grade+" · "+mtnOf(r)}</div></div><DiscBadges route={r} sm/><span style={{flexShrink:0,fontSize:12,fontWeight:700,color:C.blue,border:"1px solid "+C.blueDim,borderRadius:7,padding:"3px 9px"}}>Choose</span></div>;
-  return <div onClick={onClose} role="dialog" aria-label="Vouch for a climber" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:220,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,borderRadius:"16px 16px 0 0",padding:18,maxHeight:"88vh",overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.borderHi,borderBottom:"none",boxShadow:"0 -12px 40px rgba(0,0,0,0.55)",boxSizing:"border-box"}}>
-    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>Vouch for {fn}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
+  return <div onClick={onClose} role="dialog" aria-label={initial?"Edit your vouch":"Vouch for a climber"} aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.6)",zIndex:220,display:"flex",alignItems:"flex-end",justifyContent:"center"}}><div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:440,borderRadius:"16px 16px 0 0",padding:18,maxHeight:"88vh",overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.borderHi,borderBottom:"none",boxShadow:"0 -12px 40px rgba(0,0,0,0.55)",boxSizing:"border-box"}}>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:6}}><div style={{color:C.text,fontSize:17,fontWeight:700,borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{initial?"Edit your vouch for "+fn:"Vouch for "+fn}</div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div>
     <div style={{fontSize:13,color:C.textSub,marginBottom:15,lineHeight:1.5}}>A vouch is a public reference for someone you’ve actually climbed with. Every part is optional — only say what you saw.</div>
 
     {H("Climb you did together")}
@@ -62,6 +63,6 @@ export default function GiveVouch({friend,onClose,onSave,suggest}){
     {H("A few words","18px 0 8px")}
     <textarea aria-label="A few words (optional)" value={text} onChange={e=>setText(e.target.value)} placeholder={"What was it like climbing with "+fn+"?"} style={{width:"100%",minHeight:62,padding:"10px 11px",borderRadius:10,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13,marginBottom:13,boxSizing:"border-box",resize:"vertical",fontFamily:"inherit"}}/>
     <label style={{display:"flex",alignItems:"center",gap:11,marginBottom:16,cursor:"pointer",fontSize:15,fontWeight:700,color:again?C.green:C.text,background:again?C.greenBg:C.surface,border:"1px solid "+(again?C.green:C.border),borderRadius:11,padding:"12px 14px"}}><input type="checkbox" checked={again} onChange={e=>setAgain(e.target.checked)} style={{width:20,height:20,accentColor:C.green,cursor:"pointer",flexShrink:0}}/><span>I&rsquo;d climb with {fn} again</span></label>
-    <button onClick={()=>onSave({_targetId:friend.id,from:ME.name,avatar:ME.avatar,route:(route&&route.name)||"Climbed together",date:"Today",ratings:ratings,skills:skills,text:text||"",wouldClimbAgain:again})} style={{width:"100%",padding:12,background:C.blueSolid,color:"#fff",border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:15,fontWeight:700,cursor:"pointer"}}>Post vouch</button>
+    <button onClick={()=>onSave({_targetId:friend.id,from:ME.name,avatar:ME.avatar,route:(route&&route.name)||"Climbed together",date:initial&&initial.date?initial.date:"Today",ratings:ratings,skills:skills,text:text||"",wouldClimbAgain:again})} style={{width:"100%",padding:12,background:C.blueSolid,color:"#fff",border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:10,fontSize:15,fontWeight:700,cursor:"pointer"}}>{initial?"Save changes":"Post vouch"}</button>
   </div></div>;
 }
