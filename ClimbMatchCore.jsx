@@ -3118,6 +3118,7 @@ if(k==="approachVariants"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b
     return normEditStr(v.name||"")===normEditStr(w.name||"")
       &&String(v.viaRouteId||"")===String(w.viaRouteId||"")/* two edits pointing the way in at different routes are not agreeing */
       &&normEditStr((v.trip&&v.trip.approachLogistics&&v.trip.approachLogistics.trailhead)||"")===normEditStr((w.trip&&w.trip.approachLogistics&&w.trip.approachLogistics.trailhead)||"")/* ...nor are two naming different trailheads */
+      &&(function(){var cs=function(x){return ((x.trip&&Array.isArray(x.trip.bivy)?x.trip.bivy.map(function(c){return c&&c.name;}):Array.isArray(x.camps)?x.camps:[])).map(function(n){return normEditStr(n||"");}).sort().join("|");};return cs(v)===cs(w);})()/* ...nor two giving this way in different camps */
       &&normEditStr(v.season||"")===normEditStr(w.season||"")
       &&normEditStr(v.notes||"")===normEditStr(w.notes||"")
       &&_agreeSet(Array.isArray(v.hazards)?v.hazards:[])===_agreeSet(Array.isArray(w.hazards)?w.hazards:[])
