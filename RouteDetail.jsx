@@ -686,7 +686,8 @@ function rappelNoteText(route){var s=fmtRappels(route&&route.rappels);if(s==null
    late-season parties need "as many as 6-7". Overview and the table header both said "3",
    the prose box beside them said 5, and nothing reconciled them. The documented count stays
    the headline \u2014 it is the one backed by station-by-station data \u2014 but when another field on
-   the same row reports more, the label says so instead of quietly disagreeing. */
+   the same row reports more, the label says so instead of quietly disagreeing. (Forbidden's own
+   row was repaired on 2026-10-01 to 8 stations that every field agrees on.) */
 function rappelLabel(route){var n=(!_rapEdited(route)&&route&&route.rappelDetail&&route.rappelDetail.length)?route.rappelDetail.length:null;
   if(n!=null){var mx=rappelReportedMax(route);return (mx!=null&&mx>n)?(n+"\u2013"+mx+"x"):(n+"x");}
   var r=route&&route.rappels;if(r==null)return null;if(typeof r==="object")return r.count!=null?r.count+"x":null;var t=String(r).trim();if(/^\d+$/.test(t))return t+"x";var m=t.match(/^~?\s*(\d+)\s*[-\u2013]\s*(\d+)/);if(m)return m[1]+"\u2013"+m[2];var n2=rappelCount(route);return n2!=null?"~"+n2+"x":null;}
