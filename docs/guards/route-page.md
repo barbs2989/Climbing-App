@@ -976,3 +976,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     That block reads **raw** source, because the discriminator is a string literal
     (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
     `tab===""` — the first run failed with "gone blind" for precisely that reason.
+
+- **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
+  drives the whole page and nothing from another leaks under its name.
+  - **Mount Shuksan's Southeast Ridge is why.** It is a summit-pyramid FINISH reached by the
+    Sulphide Glacier or the Fisher Chimneys, from two trailheads. The row could hold one: its pins,
+    camps and numbers were the Sulphide's while its own road prose named Lake Ann, and its 6,627 ft /
+    11.3 km were the whole Sulphide trip, not the ~600 ft ridge.
+  - **The model** (`lib/approaches.js`): an `approach_variants` entry may carry `viaRouteId` (a
+    sibling route that IS the way in) or `trip` (its own trailhead, whole-trip numbers, GPX).
+    RouteDetail lays the picked one over the row ONCE (`route = applyApproach(routeRow, …)`) so every
+    panel follows without being rewritten. Unlinked prose cards get no picker — it would change
+    nothing.
+  - **Every owned key is replaced, including the empty ones.** A way in with no camps recorded
+    shows no camps — not the other way in's. That is the half the guard's fixtures pin hardest.
+  - **A via route's own `summitTimeHrs`/`totalHrs` are dropped**: they time ITS finish (the
+    Sulphide's summit gully), which this climb replaces; the planner times the climbing from this
+    route's own pitches instead.
+  - **SuggestFix is handed `routeRow`, never the overlay** — seeding an edit from the overlay would
+    write the Fisher Chimneys pins into the Southeast Ridge's own `waypoints` column. The wiring half
+    of the guard fails on any other `<SuggestFix route={…}>`.
+  - **Cannot see:** whether a variant's linked data is TRUE — that is `audit:multi-approach` and
+    research. Nor a panel that reads a field outside `APPROACH_OWNED_KEYS` that is in fact
+    approach-specific; add the key there, not a special case in the panel.

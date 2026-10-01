@@ -138,6 +138,7 @@ npm run check:field-renders # every enriched route column actually reaches a scr
 npm run check:summit-briefing # a peak page states only what its routes AGREE on — and does not withhold what they do
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
+npm run check:approach-overlay # the PICKED way in drives the page, nothing from another leaks, edits hit the stored row (in build)
 
 # ── Camping and bivy — notes: docs/guards/camping.md ──
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
@@ -198,6 +199,7 @@ npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, 
 npm run audit:shouted-prose # does any rendered string SHOUT in ALL CAPS? (enrich:apply refuses it too)
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
+npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?

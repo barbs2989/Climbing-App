@@ -1113,3 +1113,16 @@ the correction knows the screen is wrong, and they have no way to report it.
     (climber initials, *JB, DN, RG*), `data_quality` (`MEDIUM`/`UI Route` — enums with no reader).
   - Service key, reads ~230k routes + 53k areas (~3 min). After 2026-09-30: **0 on 0 rows.** Not a
     build gate — a property of the DB, not the checkout.
+
+- **`audit:multi-approach`** — which climbs can be reached more than ONE way, and can the page
+  switch between them? Report-only; a signal is a reason to read the row and research the climb.
+  - Signals: `VARIANTS` (≥2 cards, none linked), `PROSE` (names an alternate approach, <2 cards),
+    `OTHER_TH` (prose names a trailhead the stored one does not), `FINISH` (a sibling on the same
+    peak names this route), `NAME` ("via", "Variation", "Finish"), and `DANGLING` — a `viaRouteId`
+    that no longer resolves on the same peak, the one signal that is a DEFECT (exit 1).
+  - **First WA run, 2026-10-01: 8,615 routes, 1 switchable (Shuksan SE Ridge), 557 flagged.** Most
+    `VARIANTS` hits are the same trailhead with a different gully or a seasonal snow line — a card,
+    not a second approach. `FINISH` is the noisiest (283): a sibling naming a route in its descent is
+    not the route being a finish. Research decides; never re-quote these counts, re-run it.
+  - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
+    with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
