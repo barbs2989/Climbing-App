@@ -142,6 +142,27 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   now in the guidebook, with a peak page agreeing (possibly copied from it); the 4th-class East Face is still single
   source. Owner: split the row, or re-point it to the guidebook's Southeast Face 5.6.
 
+## 10. Owner: "do deep research for the rest" (`deep/out/r10-r12.json`, no ops applied)
+- Half Moon Crag (r10): unchanged. The crag and route pages, the climbing club, the access groups and the hiking
+  sites say nothing about a pass at the pull-off; the guidebook scan is lend-only and was not borrowed. Still one
+  author (the land manager). Owner: `passRequired` -> no pass on these five rows only.
+- Three Fingers day 1 (r11): a fourth one-author figure from the old trailhead to Goat Flats (~6 mi) joins 4.5 /
+  4.75 / 5; none is 7.3 and no two agree. No source states a day-2 figure; one would have to be computed. Owner
+  option unchanged: 4.5, and review day 2 by hand.
+- Switchback day 1 (r11): the new reports on the Foggy Dew line give the basin, the junction and the pass, never
+  Cooney Lake. Unchanged.
+- Bald Eagle pins 2-4 (r12): still no published coordinate or track; the one report with a track exposes no file.
+- Rimrock (r12): RESOLVED IN RESEARCH, HELD. A club annual's account and the guidebook agree that the ridge is
+  reached from the Ptarmigan Traverse near Sentinel Peak and followed east along the crest, cross-country. r12
+  carries a ready `approach` op saying so. It was NOT applied: waypoints 0-2, the gpx line,
+  `approach_logistics.trailhead` and itinerary day 1 all still go up Agnes Creek, no second source gives replacement
+  content for them, and the text alone would make the tab contradict itself. Owner: apply r12's op together with
+  dropping the Agnes Creek waypoints and rewriting or nulling that trailhead and day. The annual also calls the north
+  arete class 4 against the row's Class 3 (single source, noted only).
+- Witches Tower E/SE (r12): the guidebook's full entry has a class-3 slab route, a class-4/5.5 south-face course
+  route and the 1-pitch 5.6 Southeast Face, but no East Face ledge route; the peak page that agrees copies its
+  wording. The 4th-class East Face still rests on one site. Owner options unchanged (split, or re-point).
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:

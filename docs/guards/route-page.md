@@ -93,6 +93,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         `FIELDS`, so the guard that exists to catch a column reaching no screen had never asked
         about it; and a rendered measurement (24,236 → 39,027 characters) that is a fact about
         the DATA's value on a route that carries it, not evidence of a defect.
+      - **...and since 2026-09-30 `difficulty` is in `KNOWN`, on purpose.** The owner reset
+        DIFFICULTY BREAKDOWN to climbers' own reads: every route starts unrated and each axis is
+        the plain average of the 1–5 votes, instead of the seeded profile counted as six votes.
+        `DiffRadar` no longer reads the column, so its "Route-finding" sentinel went too (the
+        label now renders with or without the field). Not a hole to close — do not re-wire it
+        as a base rating without asking.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
   - **The `FIELDS` list is hand-maintained, and that was checked rather than assumed —

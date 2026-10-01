@@ -28,11 +28,28 @@ export const MAP_TILE_URLS = {
 // yet": the toggle picks one once the passes load, and until then no tiles are drawn.
 const GIBS = "https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/";
 const SNOW_PRODUCTS = {
-  S30: { layer: "HLS_S30_Nadir_BRDF_Adjusted_Reflectance", tms: "GoogleMapsCompatible_Level12", ext: "png", native: 12, view: 13 },
-  L30: { layer: "HLS_L30_Nadir_BRDF_Adjusted_Reflectance", tms: "GoogleMapsCompatible_Level12", ext: "png", native: 12, view: 13 },
+  // `max` is as far in as the picture is still a picture. It used to be 19 for every pass, and
+  // at 19 a 30 m pixel fills the whole map: one flat brown sheet that read as a broken map.
+  S30: { layer: "HLS_S30_Nadir_BRDF_Adjusted_Reflectance", tms: "GoogleMapsCompatible_Level12", ext: "png", native: 12, view: 13, max: 15 },
+  L30: { layer: "HLS_L30_Nadir_BRDF_Adjusted_Reflectance", tms: "GoogleMapsCompatible_Level12", ext: "png", native: 12, view: 13, max: 15 },
   // Beyond zoom 10 a 375 m pixel is a grey smear that reads as a broken map.
-  VIIRS: { layer: "VIIRS_NOAA20_CorrectedReflectance_TrueColor", tms: "GoogleMapsCompatible_Level9", ext: "jpg", native: 9, view: 10 },
+  VIIRS: { layer: "VIIRS_NOAA20_CorrectedReflectance_TrueColor", tms: "GoogleMapsCompatible_Level9", ext: "jpg", native: 9, view: 10, max: 11 },
 };
+
+// The deepest zoom each ordinary layer has REAL tiles for. Esri imagery has them to 19 over WA
+// trailheads and answers 20 with a "no data" placeholder; OpenTopoMap stops at 17.
+const LAYER_NATIVE_ZOOM = { sat: 19, street: 19, topo: 17 };
+// ...but the map may magnify PAST that, upscaling the deepest tiles, because placing a trailhead
+// exactly means enlarging the ground around its pin. A hard stop at 19 (17 on Topo) read as the
+// map breaking, and switching to Topo at 19 pulled the view back out to 17.
+const DEEPEST_ZOOM = 21;
+// The sharpest zoom a layer draws. A map that FITS itself to its points caps the fit here, or a
+// route with one pin would open magnified past the imagery.
+export function layerSharpZoom(baseLayer) {
+  const s = snowPick(baseLayer);
+  if (s) return s.p ? SNOW_PRODUCTS[s.p].view : 13;
+  return LAYER_NATIVE_ZOOM[baseLayer] || LAYER_NATIVE_ZOOM.sat;
+}
 const SNOW_LOOKBACK_DAYS = 60;
 const SNOW_VIIRS_DAYS = 30;
 // The default pass is the newest one whose scene is at most this cloudy; a fully clouded
@@ -96,9 +113,10 @@ export function baseTileLayer(L, baseLayer) {
   if (s && !s.p) return L.layerGroup();
   if (s) {
     const P = SNOW_PRODUCTS[s.p];
-    return L.tileLayer(GIBS + P.layer + "/default/" + s.date + "/" + P.tms + "/{z}/{y}/{x}." + P.ext, { maxNativeZoom: P.native, maxZoom: 19 });
+    return L.tileLayer(GIBS + P.layer + "/default/" + s.date + "/" + P.tms + "/{z}/{y}/{x}." + P.ext, { maxNativeZoom: P.native, maxZoom: P.max });
   }
-  return L.tileLayer(MAP_TILE_URLS[baseLayer] || MAP_TILE_URLS.sat, { maxZoom: baseLayer === "topo" ? 17 : 19 });
+  const url = MAP_TILE_URLS[baseLayer] ? baseLayer : "sat";
+  return L.tileLayer(MAP_TILE_URLS[url], { maxNativeZoom: LAYER_NATIVE_ZOOM[url], maxZoom: DEEPEST_ZOOM });
 }
 // Choosing a snow picture steps OUT to the zoom its pixels can carry. The climber can still
 // zoom back in; nothing is locked.
@@ -140,7 +158,7 @@ const LEAFLET = {
 };
 
 // PINCHING PAST THE DEEPEST ZOOM BLANKED THE WHOLE MAP. Leaflet's default `bounceAtZoomLimits`
-// lets a pinch carry the map's zoom beyond the tile layer's maxZoom (19 satellite, 17 topo) and
+// lets a pinch carry the map's zoom beyond the tile layer's maxZoom (then 19 satellite, 17 topo) and
 // rubber-band back on release. While it is over, GridLayer._pruneTiles() opens with
 // `if (map.getZoom() > this.options.maxZoom) this._removeAllTiles()` -- and _tileReady schedules
 // that prune on a bare setTimeout(250) that the pinch's own _noPrune guard does not cover. So a
