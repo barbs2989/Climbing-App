@@ -80,7 +80,7 @@ function depth1Keys(src) {
 const written = depth1Keys(payloadLit);
 
 // derived on both sides rather than round-tripped — see #405's rationale.
-// caught_fall is `tickType === "Fell" && !!caughtBy`: both of its inputs ARE hydrated
+// caught_fall is `!!caughtBy` on a Fell, Attempt or Hung tick: both of its inputs ARE hydrated
 // (tick_type and belayed_by), so re-reading the boolean would be reading back a value the
 // app recomputes anyway — and a stored `true` disagreeing with a hydrated tickType is a
 // contradiction the read path would have to arbitrate. It is written for consumers OTHER
