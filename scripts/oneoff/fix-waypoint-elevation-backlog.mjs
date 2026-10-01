@@ -29,7 +29,8 @@ import { groundBox } from "../lib/ground-box.mjs";
 import { trackIsJustTheWaypoints } from "../../lib/track.js";
 
 const APPLY = process.argv.includes("--apply");
-const DIR = new URL("../../audits/waypoint-elevation-backlog/", import.meta.url);
+// --dir=<name> runs a later decisions file (audits/<name>/) through the same gates.
+const DIR = new URL(`../../audits/${(process.argv.find((a) => a.startsWith("--dir=")) || "--dir=waypoint-elevation-backlog").slice(6)}/`, import.meta.url);
 const ROLLBACK = new URL("rollback.json", DIR);
 const KEY = APPLY ? requireServiceKey() : anonKey();
 const EDITS = JSON.parse(readFileSync(new URL("decisions.json", DIR), "utf8")).filter((e) => e.op !== "none");
@@ -98,7 +99,9 @@ for (const id of [...new Set(EDITS.map((e) => e.route))]) {
       moveVertex(p.lat, p.lng, null); p.lat = null; p.lng = null; done++;
     } else if (e.op === "copy" || e.op === "move") {
       if (near(p.lat, e.lat) && near(p.lng, e.lng)) continue;
-      if (!near(p.lat, e.oldLat) || !near(p.lng, e.oldLng)) { why = `${e.pin} moved since it was decided`; break; }
+      // oldLat null: placing a pin that has no coordinate (e.g. one an earlier pass cleared).
+      const unplaced = e.oldLat === null && p.lat == null && p.lng == null;
+      if (!unplaced && (!near(p.lat, e.oldLat) || !near(p.lng, e.oldLng))) { why = `${e.pin} moved since it was decided`; break; }
       if (e.op === "copy") { const d = await donorPin(e); if (!d || !near(d.lat, e.lat) || !near(d.lng, e.lng)) { why = `${e.pin} donor gone or moved`; break; } }
       if (e.op === "move" && (!e.source || !e.quote)) { why = `${e.pin} move without a source and quote`; break; }
       moveVertex(p.lat, p.lng, { lat: e.lat, lng: e.lng }); p.lat = e.lat; p.lng = e.lng; done++; touched.push(p);
