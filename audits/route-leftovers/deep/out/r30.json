@@ -1,0 +1,14 @@
+{
+ "results": [
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "evidence": "The one ascent record gives +6,550 / -1,820 ft for road over the summit to a camp beyond: a day-1 figure, not the round trip. loss_ft 1,820 is cleared (research v002's held op), and the totalNote's 5,600 ft round-trip gain, which that record's +6,550 before camp contradicts, is dropped rather than replaced (no source states a round-trip total).",
+   "ops": [
+    {"op": "set", "id": "wa_berdeen_peak_scramble", "column": "loss_ft", "path": [], "expect": 1820, "value": null},
+    {"op": "replace_text", "id": "wa_berdeen_peak_scramble", "column": "itinerary", "path": ["totalNote"], "find": "~14 miles and 5,600 ft round trip", "replace": "~14 miles round trip"}
+   ]
+  }
+ ]
+}

@@ -296,16 +296,28 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
   last 0.2 mi, so day 1's note and pin 2 ("Merchants Basin / Cooney Lake Trail #434 split") mix two lines. A fix must
   move day 2's 12.8 mi and its "6.2 miles back out" note with it, and stay consistent with `dist_km` 15.8 / ~19 mi RT.
 
+## 18. Owner: "if there's only 1 source, then use it" (`deep/out/r30.json`, applied)
+- Berdeen: `loss_ft` 1,820 cleared, and "5,600 ft" dropped from the itinerary total note. The one ascent record gives
+  +6,550 / -1,820 ft as day 1 only (road over the summit to camp), so neither stood as a round trip; nothing replaces them.
+- King Kong IV, `fa` and crux: the row already holds the one source's values. Kept; settled.
+- Witches Tower: the one guidebook gives 5.6 as a variation above a 4th-class base, which is what `rock_grade` and
+  `rope_note` already say. Kept; settled.
+- Still open, and the one-source rule does not reach them:
+  - Three Fingers day 2 7.7 mi and Bald Eagle pin 3 3.2 mi: no source states either (zero, not one). Both contradict
+    nothing on the tab.
+  - Switchback day 1 6.2 mi: the "8.5 mi" traced back to the whole length of Foggy Dew Trail #417, not trailhead to lake
+    (r22). The route's own Cooney Lake pin says 8. A new day 1 forces a new day 2 (12.8 mi, "6.2 miles back out") that
+    no source states, so writing one would be computing.
+
 ## Held for the owner (not applied)
 - **Deletes:** done by the owner (section 16).
-- **Single source / one author:** King Kong commitment IV and its `fa` (Wertkin & Johnson, FFA with Gleason) — every
-  source is the first ascensionist; the crux is settled (section 17) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
+- **Single source / one author:** King Kong settled — one source accepted (section 18) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
   Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
 - **Parking-pass claims:** Half Moon x5 and Eagle Rock settled by the owner (section 16). Spire `access.fees` (open product decision,
   `held-v024.json`); Half Moon `access.fees` set to "None." by the owner (`owner/out/o16-halfmoon-fees.json`, section 16).
-- **Weak evidence:** Berdeen `loss_ft` null (`loss_ft` holds two conventions); Bald Eagle pin 3 `distMi` 3.2; Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
+- **Weak evidence:** Berdeen done (section 18); Bald Eagle pin 3 `distMi` 3.2; Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
-- **No source found:** Witches Tower E/SE Face 5.6 (see sections 11, 13, 14; its rappel-slings clause was removed in section 16). Rimrock was fixed in section 11; Vanishing
+- **No source found:** Witches Tower E/SE Face 5.6 settled (section 18). Rimrock was fixed in section 11; Vanishing
   Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
