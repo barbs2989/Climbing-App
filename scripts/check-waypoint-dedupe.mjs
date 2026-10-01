@@ -1,4 +1,4 @@
-// A ROUTE HAS ONE SUMMIT. IT DOES NOT HAVE ONE TRAILHEAD.
+// A PEAK HAS ONE SUMMIT. A ROUTE DOES NOT HAVE ONE TRAILHEAD, AND A TRAVERSE HAS SEVERAL SUMMITS.
 //
 // `dedupeWaypoints` in lib/waypoints.js merges a SINGLETON type on TYPE ALONE — two "Summit" pins
 // are the same summit whatever they are called, which is right. `trailhead` was in that list, and
@@ -73,22 +73,46 @@ function check(label, pass, detail) {
 }
 
 // ---------------------------------------------------------------- the singletons that remain
-// The tempting over-correction is to gut SINGLETON. A route really does have one summit, and two
-// summit pins in different places is the Mount Olympus defect the module was written for.
+// The tempting over-correction is to gut SINGLETON. One summit recorded twice under two names, a
+// few hundred metres apart because two research batches placed it differently, is still one top.
+// (This case used to sit 1.35 km apart — a constructed guess, not a measurement, and farther apart
+// than the closest GENUINE pair of summits in the catalog. See the traverse case below.)
 {
   const out = dedupeWaypoints([
-    { type: "Summit", name: "Mount Olympus summit", lat: 47.8, lng: -123.7 },
-    { type: "Summit", name: "West Peak (true summit)", lat: 47.81, lng: -123.71 },
+    { type: "Summit", name: "Mount Olympus summit", lat: 47.8013, lng: -123.7109 },
+    { type: "Summit", name: "West Peak (true summit)", lat: 47.8030, lng: -123.7120 }, // ~210 m
   ]);
-  check("two SUMMIT pins still merge — a route has one summit", out.length === 1,
+  check("one SUMMIT recorded twice near one top still merges", out.length === 1,
     out.length === 1 ? "" : `left ${out.length}`);
 }
 {
   const out = dedupeWaypoints([
     { type: "Topout", name: "Topout", lat: 47.8, lng: -123.7 },
-    { type: "Topout", name: "top of the buttress", lat: 47.9, lng: -123.8 },
+    { type: "Topout", name: "top of the buttress", lat: 47.8004, lng: -123.7003 }, // ~50 m
   ]);
-  check("two TOPOUT pins still merge", out.length === 1, out.length === 1 ? "" : `left ${out.length}`);
+  check("one TOPOUT recorded twice still merges", out.length === 1, out.length === 1 ? "" : `left ${out.length}`);
+}
+{
+  const out = dedupeWaypoints([
+    { type: "Summit", name: "Summit" },
+    { type: "Summit", name: "Forbidden Peak summit", lat: 48.513, lng: -121.057 },
+  ]);
+  check("a SUMMIT with no coordinate still merges into the placed one", out.length === 1,
+    out.length === 1 ? "" : `left ${out.length}`);
+}
+
+// ---------------------------------------------------------------- ...but a TRAVERSE tops out more than once
+// wa_enchantment_enchainment stores eight summits and rendered ONE: "Little Annapurna" at Mount
+// Stuart's coordinate — the Remmel defect again, with summits. Measured across every route carrying
+// waypoints: 43 same-type summit pairs, all genuine traverses, the closest 984 m apart, and ZERO
+// that are one summit recorded twice. These two sit ~1.1 km apart.
+{
+  const out = dedupeWaypoints([
+    { type: "Summit", name: "Mount Stuart", lat: 47.4751, lng: -120.9024 },
+    { type: "Summit", name: "Sherpa Peak", lat: 47.4801, lng: -120.8892 },
+  ]);
+  check("two DIFFERENT summits on a traverse survive", out.length === 2,
+    out.length === 2 ? "" : `merged to ${out.length}: ${out.map((w) => `${w.name} @ ${w.lat},${w.lng}`).join(" | ")}`);
 }
 
 // ---------------------------------------------------------------- a positional word disambiguates
@@ -143,7 +167,7 @@ function check(label, pass, detail) {
 for (const f of fails) console.error(`FAIL - ${f}`);
 if (fails.length) {
   console.error("");
-  console.error("`trailhead` is back in SINGLETON in lib/waypoints.js, or the merge rules moved.");
+  console.error("`trailhead` is back in SINGLETON in lib/waypoints.js, a summit merges on TYPE ALONE again, or the merge rules moved.");
   console.error("A route has one summit; it does not have one trailhead. Two stored trailhead pins");
   console.error("mean two genuine approaches — merging them puts one start's NAME on the other's");
   console.error("COORDINATE, which is the pin the Directions button drives to. And a positional word");
@@ -169,10 +193,10 @@ if (fails.length) {
     process.exit(1);
   }
 }
-if (ok.length < 9) {
+if (ok.length < 11) {
   console.error(`FAIL - only ${ok.length} assertion(s) ran. A short run is a broken guard.`);
   process.exit(1);
 }
 console.log(`ok - waypoint dedupe: ${ok.length} assertions.`);
-console.log("  a route has ONE summit and MORE THAN ONE trailhead, and upper/lower name two places;");
+console.log("  a peak has ONE summit, a traverse several, a route MORE THAN ONE trailhead, and upper/lower name two places;");
 console.log("  two pins for one place still merge, on the spot or on the name.");
