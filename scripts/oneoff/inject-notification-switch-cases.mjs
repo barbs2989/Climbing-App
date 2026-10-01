@@ -59,11 +59,11 @@ const CASES = [
     // key, which is what an author adding a switch properly would do, leaving the module as the
     // only thing out of step.
     edit: (s) => s
-      .replace('["requests","Requests & vouches","Friend / crew requests and vouches"]]',
-               '["requests","Requests & vouches","Friend / crew requests and vouches"],["photos","Photo tags","Someone tagged you in a route photo"]]')
+      .replace('["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"]]',
+               '["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"],["photos","Photo tags","Someone tagged you in a route photo"]]')
       .replace('{id:"nk",icon:"",climberId:1,', '{id:"nk",icon:"",cat:"photos",climberId:1,'),
     expect: /does not store it/,
-    skipIf: (s) => !s.includes('["requests","Requests & vouches","Friend / crew requests and vouches"]]'),
+    skipIf: (s) => !s.includes('["requests","Requests & vouches","Friend / crew requests, vouches and belay catches"]]'),
   },
   {
     name: "default-muted",

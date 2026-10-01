@@ -39,15 +39,23 @@ const REAL = { totalCatches: 7, highFactorCatches: 2, lastCatch: "2026-05-24", p
 // catches yet — log a belay…", so a naive /—/ fires on correct code. It did, on the first run.
 const cases = [
   ["a genuinely empty record", { ledger: EMPTY },
-   [/No verified catches yet/, /0 Total Catches/], [/Couldn.t load/, /— Total Catches/]],
+   [/No catches logged yet/, /0 Total Catches/], [/Couldn.t load/, /— Total Catches/]],
   ["the SAME ledger, but the read failed", { ledger: EMPTY, unavailable: true },
    [/Couldn.t load your catch record/, /— Total Catches/, /— High-Factor/, /— Partners Signed/],
-   [/No verified catches yet/, /0 Total Catches/]],
+   [/No catches logged yet/, /0 Total Catches/]],
   ["a populated record is untouched", { ledger: REAL },
-   [/Last verified catch: 2026-05-24/, /7 Total Catches/, /3 partners confirmed/],
-   [/Couldn.t load/, /No verified catches yet/, /— Total Catches/]],
+   [/Last catch: 2026-05-24/, /7 Total Catches/, /3 partners signed/],
+   [/Couldn.t load/, /No catches logged yet/, /— Total Catches/]],
   ["another climber's ledger (FullProfile passes no flag)", { ledger: REAL, unavailable: undefined },
-   [/Last verified catch/, /7 Total Catches/], [/Couldn.t load/, /— Total Catches/]],
+   [/Last catch/, /7 Total Catches/], [/Couldn.t load/, /— Total Catches/]],
+  // A REAL account's card (the Me tab passes meCatchView): the server's counted number, what waits
+  // on a partner, and falls taken -- never the seed tiles nothing writes for a real account.
+  ["a real account with nothing logged", { ledger: { real: true, counted: 0, awaiting: 0, took: 0, lastCatch: "" } },
+   [/No catches logged yet/, /0 Counted/, /0 Waiting on partner/, /0 Falls you took/], [/High-Factor/, /Partners Signed/, /VERIFIED/]],
+  ["a real account whose counted number has not arrived", { ledger: { real: true, counted: null, awaiting: 1, took: 0, lastCatch: "2026-05-24" } },
+   [/— Counted/, /1 Waiting on partner/, /Last catch: 2026-05-24/], [/0 Counted/]],
+  ["a real account, read failed", { ledger: { real: true, counted: 2, awaiting: 0, took: 0, lastCatch: "" }, unavailable: true },
+   [/Couldn.t load your catch record/, /— Counted/, /— Waiting on partner/], [/2 Counted/, /No catches logged yet/]],
 ];
 
 let bad = 0;
