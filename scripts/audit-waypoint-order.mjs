@@ -95,8 +95,10 @@ async function page(after) {
 const t = { rows: 0, withWp: 0, wp: 0, reordered: 0, deduped: 0, dupPins: 0,
   allHaveDist: 0, partialDist: 0, dupSummits: 0, dupFar: 0, dupUnplaced: 0,
   unsortable: 0, afterSummit: 0, afterSummitPins: 0, descentNamed: 0, readingList: 0, selfContradicts: 0,
-  trailheadLate: 0 };
-const outOrder = [], outDup = [], outFar = [], outAfter = [], outSelf = [], outLate = [];
+  trailheadLate: 0, detour: 0, detourTested: 0 };
+const outOrder = [], outDup = [], outFar = [], outAfter = [], outSelf = [], outLate = [], outDetour = [];
+const DETOUR_KM = 1, DETOUR_SHARE = 0.25;
+const pathKm = (p) => p.slice(1).reduce((s, x, i) => s + metresApart(p[i], x) / 1000, 0);
 
 let after = "";
 for (;;) {
@@ -188,6 +190,40 @@ for (;;) {
         t.trailheadLate++;
         if (outLate.length < LIST) outLate.push({ id: r.id, name: r.name, at: ti + 1, of: dd.length,
           seq: dd.map((w) => (w && w.type) || "?").join(",") });
+      }
+
+      // ONE PIN DRAWS A DETOUR. The stored order IS the drawn line here, so ask the line: would
+      // moving a single pin to its best slot shorten it by more than DETOUR_SHARE and DETOUR_KM?
+      // Measured 2026-10-01 on 157 WA routes: 13 flagged and, read one by one, a flag almost never
+      // meant "wrong order". It meant a WRONG COORDINATE (4 — Claywood x2, Tailgunner, Colfax
+      // Polish), a descent pin listed before the summit (Lichtenberg, Boston SE — their own descent
+      // prose names it), or a pin out of the walking order (Boston W Face, Meany). All were repaired
+      // in scripts/oneoff/fix-waypoint-order-batch8.mjs + reorder-waypoint-order-batch8.mjs. A
+      // TRAILHEAD is never the moved pin: every flag of that kind was a winding trail beating
+      // straight-line geometry, not a defect. Known residue: wa_buck_mountain_south_ridge is real
+      // geography (the trail passes Buck Creek Pass, then doubles back south to the summit), and
+      // wa_the_devils_club is the trailhead-class row above, left for its owner.
+      // A shortest path is not a walking order — this chooses what to READ, never an edit.
+      const pts = dd.filter((w) => w && w.lat != null && w.lng != null && Number.isFinite(+w.lat) && Number.isFinite(+w.lng))
+        .map((w) => ({ w, lat: +w.lat, lng: +w.lng }));
+      if (pts.length >= 4) {
+        t.detourTested++;
+        const L = pathKm(pts);
+        let best = null;
+        pts.forEach((p, i) => {
+          if (isTrailheadPin(p.w)) return;
+          const rest = pts.filter((_, k) => k !== i);
+          for (let j = 0; j <= rest.length; j++) {
+            if (j === i) continue;
+            const l2 = pathKm([...rest.slice(0, j), p, ...rest.slice(j)]);
+            if (!best || l2 < best.l2) best = { i, j, l2 };
+          }
+        });
+        if (best && L - best.l2 > DETOUR_KM && best.l2 / L < 1 - DETOUR_SHARE) {
+          t.detour++;
+          if (outDetour.length < LIST) outDetour.push({ id: r.id, name: r.name, L, l2: best.l2,
+            moved: `${pts[best.i].w.type} "${String(pts[best.i].w.name).slice(0, 40)}"`, from: best.i + 1, to: best.j + 1, of: pts.length });
+        }
       }
 
       const si = dd.findIndex(isSummitPin);
@@ -289,10 +325,13 @@ if (!t.unsortable) {
   console.log(`  ${t.trailheadLate} list their TRAILHEAD somewhere other than first — the walk starts mid-list.`);
   console.log(`  Not adjudicated by the six batches (they only asked what follows the summit); batch 7`);
   console.log(`  read all 22 found on 2026-09-30. Read each before moving it: a trailhead pin that`);
-  console.log(`  contradicts the approach its other pins walk is the defect, not its position. The two`);
-  console.log(`  it refused are RESEARCHED: Meany's pins walk the Elwha from Whiskey Bend (its trailhead pin`);
-  console.log(`  is North Fork Quinault); Devil's Club's walk Depot Creek from Canada (its pin is Ross Dam).`);
-  console.log(`  Each needs a real trailhead coordinate, which nobody has supplied — not a reorder.`);
+  console.log(`  contradicts the approach its other pins walk is the defect, not its position. Of the two`);
+  console.log(`  it refused, Meany was repaired in batch 8 (Whiskey Bend copied from a sibling route that`);
+  console.log(`  shares its Elwha pins). Devil's Club is RESEARCHED and left: its pins walk Depot Creek from`);
+  console.log(`  Canada while its trailhead pin AND its approach prose describe Ross Lake — the row`);
+  console.log(`  disagrees with itself in prose, not just order, and the pins are 2-decimal estimates.`);
+  console.log(`  ${t.detour} of ${t.detourTested} with 4+ placed pins draw a DETOUR one moved pin would remove (>${DETOUR_KM} km,`);
+  console.log(`  >${DETOUR_SHARE * 100}% of the line). Read each: most such flags are a WRONG COORDINATE, not a wrong order.`);
   console.log(`  ${t.afterSummit} list a non-summit pin AFTER the summit (${t.afterSummitPins} pins) — an ADJUDICATED`);
   console.log(`  RESIDUE, not a backlog: this shape was read route by route across six batches and the`);
   console.log(`  keeps carry recorded reasons. Do not re-sweep it on the strength of this count.`);
@@ -319,6 +358,10 @@ if (outSelf.length) {
 if (outLate.length) {
   console.log("\nTHE TRAILHEAD IS NOT THE FIRST PIN:");
   outLate.forEach(o => console.log(` ${o.id} — ${o.name}  (trailhead is pin ${o.at} of ${o.of})\n    types: ${o.seq}`));
+}
+if (outDetour.length) {
+  console.log("\nONE PIN DRAWS A DETOUR (read the pin's coordinate before its position):");
+  outDetour.forEach(o => console.log(` ${o.id} — ${o.name}  ${o.L.toFixed(1)} km -> ${o.l2.toFixed(1)} km\n    move placed pin ${o.from} of ${o.of} ${o.moved} to slot ${o.to}`));
 }
 if (outAfter.length) {
   console.log("\nAFTER THE SUMMIT AND NOT EXPLAINED BY THE DESCENT (read, do not sweep):");
