@@ -23,7 +23,7 @@
 //   OTHER_TH   prose names a trailhead the stored trailhead does not
 //   FINISH     a sibling route on the same peak describes this route as its finish / alternative
 //   NAME       the route's name says it is a combination ("via", "Variation", "Finish", "Direct")
-//   DANGLING   a viaRouteId that does not resolve to a route on the same peak  (a DEFECT, not a lead)
+//   DANGLING   a viaRouteId that does not resolve to any route in the state  (a DEFECT, not a lead)
 import { selectAll } from "./lib/supabase-env.mjs";
 import fs from "fs";
 
@@ -34,9 +34,12 @@ const JSON_OUT = arg("--json", null);
 const ALL = args.includes("--all");
 
 const COLS = "id,name,area_id,discipline,approach,approach_variants,approach_logistics,overview,beta,road,description,pitch_detail,descent_text";
-const rows = await selectAll("routes", COLS, `id=like.${STATE}_*`, { pageSize: 1000 });
+// 300 a page: these are the catalog's widest prose columns, and 1,000 of them per read hit the
+// anon role's 3s statement timeout once the table was busy (57014 on 2026-10-01).
+const rows = await selectAll("routes", COLS, `id=like.${STATE}_*`, { pageSize: 300 });
 if (!rows.length) { console.error(`no routes matched ${STATE}_* — wrong state, or the read failed`); process.exit(1); }
 
+const byId = new Set(rows.map((x) => x.id));
 const txt = (v) => v == null ? "" : typeof v === "string" ? v : JSON.stringify(v);
 const prose = (r) => [r.approach, r.overview, r.beta, r.description, txt(r.road)].map(txt).join("\n");
 const ALT_RE = /\b(?:alternate|alternative|alternatively|another|second|longer|shorter|other)\s+(?:\w+\s+){0,3}approach(?:es)?\b|\bapproach(?:ed|es)?\s+(?:\w+\s+){0,3}(?:via|from)\s+(?:either|both)\b|\b(?:either|both)\s+(?:the\s+)?[\w'’ -]{2,40}?\s+(?:or|and)\s+(?:the\s+)?[\w'’ -]{2,40}?\s+(?:approach|trailhead|route)s?\b|\breached\s+(?:via|by|from)\s+(?:either|the\s+[\w'’ -]{2,40}?\s+or)\b|\btwo\s+(?:common\s+|main\s+|standard\s+)?approaches\b|\b(?:can|may)\s+(?:also\s+)?be\s+approached\s+(?:via|from)\b/i;
@@ -56,8 +59,9 @@ for (const r of rows) {
   const ev = {};
   for (const v of vars) {
     if (!v.viaRouteId) continue;
-    const sib = (byArea.get(r.area_id) || []).find((x) => x.id === v.viaRouteId);
-    if (!sib) { sig.push("DANGLING"); ev.DANGLING = v.viaRouteId; }
+    // A linked route may sit on ANOTHER peak (the Fury ridge traverse starts on East Fury's
+    // summit); RouteDetail reads it by id. Dangling means it exists nowhere in the state.
+    if (!byId.has(v.viaRouteId)) { sig.push("DANGLING"); ev.DANGLING = v.viaRouteId; }
   }
   if (!linked.length) {
     if (vars.length >= 2) { sig.push("VARIANTS"); ev.VARIANTS = vars.map((v) => v.name).join(" | ").slice(0, 160); }

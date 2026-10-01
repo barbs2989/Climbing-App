@@ -2,8 +2,33 @@
 
 Census: `npm run audit:multi-approach` over all 8,615 WA routes flagged 557; the 459 with a
 strong signal (or a FINISH signal on an alpine/mountaineering/scrambling route) were each read and
-researched online. Research only — **nothing here has been written to the database** except the
-Shuksan Southeast Ridge pilot (`scripts/oneoff/shuksan-se-ridge-two-approaches.mjs`).
+researched online. The tables below are that first pass; what has since been WRITTEN is next.
+
+## Written (2026-10-01) — 119 WA routes now switch by approach
+| step | rows | script (each keeps a `.before.json`; `--rollback` restores it) |
+|---|---|---|
+| Shuksan Southeast Ridge pilot | 1 | `scripts/oneoff/shuksan-se-ridge-two-approaches.mjs` |
+| batch 1: the 3 FINISH routes + the 46 high-confidence MULTI_TRAILHEAD | 49 | `link-multi-approach-batch1.mjs`, camps per way in `multi-approach-batch1-camps.mjs` |
+| the ROW_CONTRADICTS rows (Liberty Bell was retired into Lexington Tower in #2116) | 9 | `fix-multi-approach-contradictions.mjs` |
+| batch 2: medium/low re-researched, plus routes the first pass never reached | 69 | `link-multi-approach-batch2.mjs` (verdicts in `.plan.json`) |
+
+Batch 2 re-researched the 68 medium/low MULTI_TRAILHEAD routes (60 MULTI, 4 SINGLE, 4 UNSURE;
+`wa_stanley_burgner` is not a row — the climb is `wa_prusik_peak_south_face_burgner_stanley`) and
+137 routes the first pass never read: flagged-but-unresearched, or on a peak whose own routes start
+from trailheads ≥ 3 km apart (9 MULTI, 126 SINGLE, 2 UNSURE). Same rules: a coordinate only from a
+catalog pin or a page that states it; distance/gain only where a page states the one-way figure; a
+camp goes with every way in that uses it, and a descent camp (Camp Schurman) with all of them.
+Cockscomb Ridge also had Artist Point's pin stored under the Heliotrope Ridge name; it now carries the
+pin its three Heliotrope Ridge siblings share.
+
+**Still open** — UNSURE, left as they were: `wa_jack_mountain_east_ridge` (mostly a descent),
+`wa_mount_adams_wilson_glacier_headwall` (no working north approach established), `wa_north_ridge_4`,
+`wa_storm_king_north_face` (almost nothing published), `wa_sw_ridge` (Downey Creek side unconfirmed),
+`wa_mount_shuksan_northeast_ridge` (reached only after another Shuksan route). Notes the contradiction
+fixes did NOT touch: Huckleberry West Route's "West Face Talus Basin" waypoint sits ~5 km south of the
+summit; Goode Megalodon Ridge has the same Rainy Pass name/pin the two Goode rows had; Kyes NE Ridge's
+`access.landManager` names the Darrington district though the trailhead is Skykomish's; the Kautz Creek
+crossing on Point Success's second way in should be checked before a party relies on it.
 
 | verdict | routes |
 |---|---|
