@@ -1,0 +1,446 @@
+{
+ "takenAt": "2026-10-01T18:36:46.995Z",
+ "rows": [
+  {
+   "id": "wa_direct_southwest_buttress",
+   "waypoints": [
+    {
+     "lat": 48.4926,
+     "lng": -121.1176,
+     "elev": 2100,
+     "name": "Eldorado Creek Trailhead (Cascade River Road)",
+     "note": "Same start as the standard Southwest Buttress; cross the Cascade River on a log downstream of the parking area.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.538,
+     "lng": -121.118,
+     "elev": 7500,
+     "name": "Eldorado/Inspiration Glacier high camp",
+     "note": "Base camp on the Inspiration Glacier shelf shared with the standard Southwest Buttress route.",
+     "type": "Campsite",
+     "distMi": null,
+     "directions": "From the lot, walk about 90 feet back down the road and look for the log or clump of trees spanning the river; cross there, then head roughly 100 feet away from the water to pick up the climbers' path and turn upstream on it. The path climbs steeply through forest and talus into Eldorado Basin and on up to the Inspiration Glacier shelf, about 5,500 ft of gain to camps near 7,400-7,600 ft."
+    },
+    {
+     "lat": 48.54542,
+     "lng": -121.14548976190476,
+     "elev": 8000,
+     "name": "Inspiration–McAllister Glacier col",
+     "note": "Crossing point from Inspiration Glacier onto the McAllister Glacier, shared with the standard buttress approach.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Rope up at camp and cross the Inspiration Glacier northeast to the low point on the divide. The ground is otherwise gentle; crevasses are the only real difficulty."
+    },
+    {
+     "lat": 48.548,
+     "lng": -121.14136190476191,
+     "elev": 7600,
+     "name": "Marble Creek–McAllister pass",
+     "note": "Shared approach point; the Direct variant departs the standard buttress line higher on the wall, not at the base.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "Drop off the col onto the McAllister Glacier and work down and across it, keeping to its skier's right where the ice steepens and breaks up, then traverse toward the pass."
+    },
+    {
+     "lat": 48.54929,
+     "lng": -121.13929797619048,
+     "elev": 8400,
+     "name": "Direct Southwest Buttress topout",
+     "note": "Harder direct start (5.10a) rejoins the standard buttress line before the final corner to the summit ridge.",
+     "type": "Topout",
+     "distMi": null,
+     "directions": "About 700 vertical feet below the pass, start up the prominent gully running to the base of the buttress; it usually holds snow year-round. Rope up before its top, because the moat guarding the base of the rock can open into a deep, exposed gap. From the gully exit do not traverse right onto the standard 1985 line: carry straight on up two direct pitches of 4th and low-5th scrambling to three vertical cracks, take the rightmost at about 5.8 into the strenuous 5.10 crux and mantel onto a large bench, then follow awkward 5.8+ ground toward the large white slabby rock where the original route comes back in."
+    },
+    {
+     "lat": 48.5497,
+     "lng": -121.1386,
+     "elev": 8440,
+     "name": "Dorado Needle summit",
+     "note": "True summit shared with the standard Southwest Buttress finish.",
+     "type": "Summit",
+     "distMi": null,
+     "directions": "From the junction with the 1985 line, blocky mid-5th rock and a final corner lead onto the summit ridge, then a short scramble along it gains the true summit."
+    }
+   ],
+   "gpx": [
+    [
+     48.5136,
+     -121.1964
+    ],
+    [
+     48.538,
+     -121.118
+    ],
+    [
+     48.54542,
+     -121.14548976190476
+    ],
+    [
+     48.548,
+     -121.14136190476191
+    ],
+    [
+     48.54929,
+     -121.13929797619048
+    ],
+    [
+     48.54972,
+     -121.13861
+    ]
+   ]
+  },
+  {
+   "id": "wa_dorado_needle_east_ridge",
+   "waypoints": [
+    {
+     "lat": 48.49261,
+     "lng": -121.11761,
+     "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+     "note": "",
+     "type": "Trailhead",
+     "directions": "Drive Cascade River Road from Marblemount about 20 miles to the Eldorado Creek trailhead, near 2,100 ft. The first ten miles are paved and the remainder is rough gravel, so high clearance is recommended. Park in the roadside lot at mile 20; from there the walking starts by crossing the North Fork Cascade River on logs and picking up the steep climbers' path beside Eldorado Creek."
+    },
+    {
+     "lat": 48.53755,
+     "lng": -121.13436,
+     "name": "Col between Pt. 8386 and Dorado Needle (East Ridge start)",
+     "type": "route start",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.54972,
+     "lng": -121.13861,
+     "elev": 8440,
+     "name": "Dorado Needle summit",
+     "type": "Summit",
+     "elevFt": 8440
+    }
+   ],
+   "gpx": [
+    [
+     48.53755,
+     -121.13436
+    ],
+    [
+     48.5136,
+     -121.1964
+    ],
+    [
+     48.54972,
+     -121.13861
+    ]
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "waypoints": [
+    {
+     "lat": 48.49261,
+     "lng": -121.11761,
+     "elev": 2150,
+     "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+     "note": "End of gravel Cascade River Road (~mile 20 from Marblemount); privy at trailhead, wilderness permit (from the Marblemount Wilderness Information Center) required for overnight camping in North Cascades NP.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Drive Cascade River Road from Marblemount to its end at the large gravel pullout that serves as the Eldorado trailhead, at roughly 2,100 feet. The final stretch of road is gravel, and there's a privy at the trailhead. A wilderness permit, picked up in person at the Marblemount Wilderness Information Center, is required for overnight camping in North Cascades National Park. Best conditions on this route typically run mid-July through early September, once the road is open and the Cascade snowpack has consolidated."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 3650,
+     "name": "Talus/boulder field entry",
+     "note": "After ~1,500 ft of forest gain the trail gives way to a cairned talus slope with cliffs on the left; stay off the climbers' path in fog, it's easy to lose in the boulders.",
+     "type": "Junction",
+     "distMi": 1.3
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 6200,
+     "name": "Roush Creek Basin camps",
+     "note": "Small, level camp spots on the ridge at 6,100-6,400 ft in the basin below Eldorado Glacier; last reliable tent sites before roped glacier travel.",
+     "type": "Campsite",
+     "distMi": 3.3
+    },
+    {
+     "lat": 48.547934,
+     "lng": -121.124876,
+     "elev": 6800,
+     "name": "Eldorado Glacier gain point",
+     "note": "Rope up here; snowfields lead onto the Eldorado Glacier just west (left) of the rocky ridge above Roush Creek Basin.",
+     "type": "Junction",
+     "distMi": 4.2
+    },
+    {
+     "lat": 48.531491,
+     "lng": -121.125156,
+     "elev": 7500,
+     "name": "Eldorado ice-cap / Inspiration Glacier high camp",
+     "note": "Common high camp on the Eldorado-Inspiration ice cap near Klawatti Col, used as the base for the traverse onto the Klawatti Glacier.",
+     "type": "Campsite",
+     "distMi": 5.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7800,
+     "name": "Klawatti Glacier crossing",
+     "note": "Stay roped crossing the crevassed Klawatti Glacier toward the base of the southeast face; open crevasses require route-finding, especially late season.",
+     "type": "Hazard",
+     "distMi": 6.3
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 8100,
+     "name": "Bergschrund below the southeast face",
+     "note": "A short Class 4-5 rock pitch is needed to clear the bergschrund guarding the face; a rap sling has been reported on the right (east) side for the descent moat.",
+     "type": "Hazard",
+     "distMi": 6.8
+    },
+    {
+     "lat": 48.554293,
+     "lng": -121.1042829,
+     "elev": 8485,
+     "name": "Klawatti Peak",
+     "note": "True summit, a rock nunatak ringed by the Klawatti, McAllister, and Inspiration Glaciers; the final few hundred feet above the schrund are 40-55° snow leading to low-5th-class rock.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     48.5136,
+     -121.1964
+    ],
+    [
+     48.547934,
+     -121.124876
+    ],
+    [
+     48.531491,
+     -121.125156
+    ],
+    [
+     48.554293,
+     -121.1042829
+    ]
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "waypoints": [
+    {
+     "lat": 48.49261,
+     "lng": -121.11761,
+     "elev": 2100,
+     "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+     "note": "",
+     "type": "Trailhead",
+     "elevFt": 2100,
+     "directions": "From Seattle, take I-5 north then follow WA-20, the North Cascades Highway, east through Sedro-Woolley, Concrete and Rockport to Marblemount, then follow Cascade River Road south for about 20 miles to the Eldorado parking area near mile 20 — paved for the first 10 miles, gravel and washboard the rest of the way. Any overnight stay in the Eldorado/Klawatti zone requires a North Cascades National Park backcountry permit, available in advance on Recreation.gov or as a limited walk-up allocation from the Marblemount Wilderness Information Center or ranger station."
+    },
+    {
+     "lat": 48.533,
+     "lng": -121.129,
+     "elev": 7600,
+     "name": "Eldorado (East Ridge) camp",
+     "type": "Campsite",
+     "distMi": 5.5
+    },
+    {
+     "lat": 48.5529,
+     "lng": -121.1062,
+     "elev": 7900,
+     "name": "Klawatti camp / col",
+     "note": "Camp south of Klawatti near the col dividing the Klawatti and McAllister Glaciers; SW Buttress start is minutes away.",
+     "type": "Junction",
+     "distMi": 6.9
+    },
+    {
+     "lat": 48.55444,
+     "lng": -121.10444,
+     "elev": 8485,
+     "name": "Klawatti Peak",
+     "type": "Summit",
+     "elevFt": 8485
+    }
+   ],
+   "gpx": [
+    [
+     48.533,
+     -121.129
+    ],
+    [
+     48.5529,
+     -121.1062
+    ],
+    [
+     48.5136,
+     -121.1964
+    ],
+    [
+     48.55444,
+     -121.10444
+    ]
+   ]
+  },
+  {
+   "id": "wa_pinnacle_peak_tatoosh_r1",
+   "waypoints": [
+    {
+     "lat": 46.7683,
+     "lng": -121.7314,
+     "elev": 4870,
+     "name": "Reflection Lakes Trailhead",
+     "note": "South side of Stevens Canyon Road at the Reflection Lakes parking pullouts; Mount Rainier NP entrance fee applies, no water at the lot.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Park at the Reflection Lakes pullouts on Stevens Canyon Road, at about 4,860 ft. It is a small paved pullout lot and it fills early on weekends, so plan an early arrival. A Mount Rainier National Park entrance fee applies, and there is no water at the lot, so fill up before you get here. The trail is signed but unnumbered and starts directly across Stevens Canyon Road from the parking. When the road is snow-gated, winter parties start instead from the Narada Falls pullout."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5350,
+     "name": "Seasonal Stream Crossing",
+     "note": "Small seasonal stream crosses the trail; often dry by late summer so don't rely on it for resupply.",
+     "type": "Water",
+     "distMi": 0.6
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5600,
+     "name": "Cliff Bands Below Trail",
+     "note": "Trail runs directly beneath exposed cliff bands here; watch for rockfall and loose debris, especially if goats or other hikers are above.",
+     "type": "Hazard",
+     "distMi": 0.9
+    },
+    {
+     "lat": 46.7561418,
+     "lng": -121.7357068,
+     "elev": 5920,
+     "name": "Pinnacle Saddle",
+     "note": "Maintained NPS trail ends at this 5,920-ft saddle between Pinnacle and Plummer Peaks; unmarked climber's path to the summit gully begins on the south side.",
+     "type": "Junction",
+     "distMi": 1.3
+    },
+    {
+     "lat": 46.757797,
+     "lng": -121.732683,
+     "elev": 6150,
+     "name": "Base of Summit Gully",
+     "note": "Climber's path traverses goat trails and loose scree around the peak's south side to reach the start of the class 3-4 ascent gully.",
+     "type": "Junction",
+     "distMi": 1.5
+    },
+    {
+     "lat": 46.757517,
+     "lng": -121.733062,
+     "elev": 6400,
+     "name": "Summit Gully Scramble",
+     "note": "NPS warns this is a precipitous scramble on loose, unstable rock; a few class 3 moves carry real exposure, so avoid climbing directly below other parties.",
+     "type": "Hazard",
+     "distMi": 1.7
+    },
+    {
+     "lat": 46.7581647,
+     "lng": -121.7325932,
+     "elev": 6562,
+     "name": "Pinnacle Peak Summit",
+     "note": "True summit, with sweeping views of Rainier, Adams, and St. Helens.",
+     "type": "Summit",
+     "distMi": 1.9
+    }
+   ]
+  },
+  {
+   "id": "wa_prusik_peak_south_face_burgner_stanley",
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "note": "Self-issue day-use wilderness permit at the kiosk; overnight parties need a permit (advance reservation or daily lottery in Leavenworth).",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5570,
+     "name": "Colchuck Lake",
+     "note": "Reliable water and the last established camp before Aasgard Pass; trail reaches the lake's north end after 2,100 ft of gain.",
+     "type": "Water",
+     "distMi": 4.75
+    },
+    {
+     "lat": 47.48028,
+     "lng": -120.82056,
+     "elev": 7841,
+     "name": "Aasgard Pass (Colchuck Pass)",
+     "note": "Steep, loose talus/scree (snow or ice into early summer) gaining roughly 2,200 ft in under a mile; watch for rockfall kicked down from parties above.",
+     "type": "Hazard",
+     "distMi": 6.5
+    },
+    {
+     "lat": 47.482495,
+     "lng": -120.7837684,
+     "elev": 6788,
+     "name": "Lake Viviane",
+     "note": "First lake in the Enchantment core basin after dropping off the pass; climbers report spotted saxifrage blooming along the shore between here and the base of the south face.",
+     "type": "Water",
+     "distMi": 8
+    },
+    {
+     "lat": 47.485953,
+     "lng": -120.7886982,
+     "elev": 7415,
+     "name": "Gnome Tarn",
+     "note": "Leave the main basin trail here and traverse northeast toward Prusik's south face (7,350 ft); classic Prusik-over-tarn photo spot.",
+     "type": "Junction",
+     "distMi": 9.5
+    },
+    {
+     "lat": 47.48681,
+     "lng": -120.78457,
+     "name": "Prusik Peak south face base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 47.48615,
+     "lng": -120.786352,
+     "elev": 7800,
+     "name": "Chockstone squeeze / upper chimney (P5)",
+     "note": "Squirm through a tight hole behind a chockstone (awkward with a pack on) then work right into a slick, sparsely-protected 5.9+ chimney.",
+     "type": "Hazard",
+     "distMi": 9.5
+    },
+    {
+     "lat": 47.487398,
+     "lng": -120.784552,
+     "elev": 8008,
+     "name": "Prusik Peak Summit",
+     "note": "True summit and top of the six-pitch, ~650 ft Burgner-Stanley line; small exposed perch at the west end of The Temple ridge.",
+     "type": "Summit",
+     "distMi": 9.5
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7600,
+     "name": "North face rappel descent",
+     "note": "Five rappels off slung blocks/horns down the north face, roughly an hour back to the base of the south face route where packs are typically stashed.",
+     "type": "Hazard",
+     "distMi": 9.5
+    }
+   ]
+  }
+ ]
+}

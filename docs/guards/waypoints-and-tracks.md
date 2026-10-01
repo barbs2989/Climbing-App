@@ -1331,6 +1331,35 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       first, because `contributions`/`route_base_checkins` cascade. Follow migration 0220.
     - Script: `scripts/oneoff/fix-waypoint-pins-batch11.mjs`, with its rollback in
       `audits/waypoint-pins-batch11/`. Audit after: duplicates **0**.
+  - **BATCH 12 (2026-10-01): batch 11's LEFT pins and the two detour flags.** No source publishes a
+    coordinate for any of the three pins, so each is CLEARED (pin and note kept) on two records.
+    - **Pinnacle "Base of Summit Gully" cleared.** It was a 2 m copy of the saddle point batch 11
+      proved wrong, and it sat CLOSER to the summit than the "Summit Gully Scramble" pin after it.
+      MP's SW Scramble is "200 ft" and two WTA reports put the gully on the south side; none
+      publishes its foot. Its 6,150 ft is unsupported, but NOT changed: no source gives a height.
+    - **Prusik P5 chockstone/chimney cleared** (Burgner-Stanley row). 193 m SW of the summit on
+      7,283 ft ground, 3x farther out than MP's own P1. MP and Wenatchee Outdoors: the route starts
+      "directly below the summit" and P5 is the second-to-last pitch. The point is in fact the END
+      of the shared 189-point approach track (within 30 m of its last vertex on three rows).
+    - **Klawatti SE Face "Eldorado Glacier gain point" cleared** — the `audit:waypoint-order` detour
+      flag. The box refuses 6,800 ft (ground 8,055, lo 7,723), and it lay 1.8 km NORTH of the high
+      camp; MP, The Outbound and skimo.co gain the glacier at ~6,800 ft above Roush Creek Basin,
+      south of camp. Its sketch vertex went with it.
+    - **WTA's Eldorado Peak pin (48.5136,-121.1964) was a vertex on FOUR Eldorado-area sketches** —
+      Klawatti SE Face, Klawatti SW Buttress, Dorado Needle Direct SW Buttress and East Ridge; mid-line
+      on two, so the drawn path dropped 6 km to the Hidden Lake Trail (where OSM places that point)
+      and climbed back. Twelve rows agree on the Eldorado Creek trailhead pin (48.4926,-121.1176);
+      each line now starts at its own row's trailhead pin. Sketch captions unchanged (refused if not).
+    - **Buck Mountain South Ridge's detour is CORRECT.** Its Buck Creek Pass pin is GNIS 1517033 to
+      2 m; its own 189-point track passes the pass (vertex 90) before the summit (vertex 134), and the
+      approach prose tops out there and contours back SW under Liberty Cap. The audit now prints so.
+    - **Stanley-Burgner duplicate: references recounted with full DB access — 0 rows in all 13
+      route-id columns** (climb_logs, contributions, route_base_checkins, crews, crew_listings,
+      objectives, user_lists, user_itineraries, route_difficulty_ratings, hazard_votes,
+      gps_submissions, content_reports, topo_lines). The fold loses nothing; it still waits on the owner.
+    - Script: `scripts/oneoff/fix-waypoint-pins-batch12.mjs`, rollback in
+      `audits/waypoint-pins-batch12/`. 6 rows re-read and match. Audit after: duplicates **0**,
+      detours **1** (Buck, read).
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**
