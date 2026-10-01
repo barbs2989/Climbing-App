@@ -254,6 +254,26 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
   own length. One news report lists Foggy Dew and Merchants Basin trails closed for the Little Giant Fire (Aug 2026);
   one source, not recorded.
 
+## 15. Owner: "do research for rest" (`deep/out/r25, r26, r27.json`)
+- Half Moon ×5 (r25), APPLIED: trailhead pin moved 2.18 km from the ski-area lots to the Tye Road pull-off at the
+  first hairpin, ~1.4 mi down from US 2 (two independent sources put the parking there; the point is a mapped road
+  vertex, ground 3,577 ft, ~1,180 ft below the crag — fits the stated ~1,000 ft approach). Each row's pin note was
+  replaced (four pointed at another route id; Artic Rose's claimed the old coordinate matched). Pass still
+  unresolved: no source states it either way; a no-pass op is in r25's `proposed_ops_held` — owner's call. r22's
+  `fallback_ops` is superseded.
+- East Twin Needle (r26), APPLIED: the 1932 party's own account says they climbed only the western needle, which with
+  the later guide/journal lineage makes two sources. The overview now credits the 1932 party with West Twin and says
+  East Twin's first ascent came later (no year — only one lineage gives 1968).
+- Eagle Rock (r26), flag, no op: a club route page lists a Northwest Forest Pass for the same peak, against the
+  "no pass at the FR6517 pull-off" value applied by hand in section 6. One source each side. Owner's call: a wrong
+  "no pass" costs a climber a ticket, a wrong "pass required" costs nothing.
+- Switchback day 1 6.2 mi (r25): unchanged; 8.5 mi is still one author, and 6.2 matches Martin Creek #429's own
+  one-way length. The Little Giant Fire closure was lifted on Sep 3 (news report + the current forest order, which
+  lists none of these trails), so nothing to record.
+- King Kong, Witches Tower (r26), Three Fingers day 2, Bald Eagle pin 3 (r27): no new source; unchanged.
+- Abernathy (r27): the held line was stale — `loss_ft` was nulled in section 6, so gain and loss are both null and
+  nothing contradicts. The row's "~2,600 ft from the meadows" agrees with a published 2,700.
+
 ## Held for the owner (not applied)
 - **Deletes this session may not run** (the permission classifier blocks route DELETEs):
   - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
@@ -265,19 +285,19 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
     Face, which has its own row.
 - **Single source / one author:** King Kong commitment IV, its `fa` (Wertkin & Johnson, FFA with Gleason) and crux
   5.11d-5.12a — every source is the first ascensionist (`deep/out/h1.json`, `research/held-v019.json`). East Twin
-  Needle and Prusik West Ridge are settled (section 14).
-- **Parking-pass claims resting on fee law, not a statement about the spot:** Eagle Rock, Half Fast, Astral
-  Projection, Astroglide, Asymptotic, Artic Rose (`held-v010/v011.json`); Spire `access.fees` (open product decision,
+  Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
+- **Parking-pass claims resting on fee law, not a statement about the spot:** Half Fast, Astral
+  Projection, Astroglide, Asymptotic, Artic Rose (`held-v010/v011.json`; no-pass op ready in `deep/out/r25.json`
+  `proposed_ops_held`); Eagle Rock's hand-applied "no pass" is now contradicted by one source (section 15); Spire `access.fees` (open product decision,
   `held-v024.json`).
-- **Weak evidence:** Berdeen `loss_ft` null (`loss_ft` holds two conventions); Bald Eagle pin 3 `distMi` 3.2; Half
-  Moon trailhead pin (wrong, nowhere sourced to move it; `deep/out/r22.json` `fallback_ops`); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
+- **Weak evidence:** Berdeen `loss_ft` null (`loss_ft` holds two conventions); Bald Eagle pin 3 `distMi` 3.2; Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
 - **No source found:** Witches Tower E/SE Face (see sections 11, 13 and 14; the rappel-slings removal is ready in
   `deep/out/r23.json` `proposed_ops_held`). Rimrock was fixed in section 11; Vanishing
   Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
-  in section 11. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Switchback Mountain day 1 6.2 mi
+  in section 11. Switchback Mountain day 1 6.2 mi
   vs one author's 8.5 mi. Three Fingers day 2 7.7 mi (unstated anywhere). Hozomeen, Enchantment, Cashmere and La
   Bohn pins were already fixed (section 14). Clark waypoint 5 and the Denny permit wording were fixed in section 12; Denny's
   `access.fees` "no wilderness permit needed" clause is the owner's call.
