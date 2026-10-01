@@ -1,0 +1,31 @@
+{
+ "results": [
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "item": "1 - itinerary day 2 = 7.7 mi (itinerary.days[1].miles)",
+   "verdict": "unresolved",
+   "resolution": "No op. No source states a mileage for a day that runs Goat Flats camp -> lookout -> camp -> trailhead, and no two-day itinerary with per-day miles on this line was found. Every figure is a one-way leg, a camp-to-lookout round trip, or a whole-trip total that includes the washed-out road; writing any day-2 number would mean adding legs.",
+   "summary": "Still no source gives a mileage for the Three Fingers summit-and-hike-out day, so day 2's 7.7 mi stays.",
+   "evidence": "Thirteenth pass, 2026-10-01. Live row re-read: the real path is itinerary.days[1].miles (not distMi) = 7.7; days[0].miles 4.5; totalNote '~7.7 mi'; dist_km null, so nothing on the tab contradicts 7.7. NEW this pass: all 271 WTA trip reports listed under the Three Fingers hike were fetched directly (WTA now answers a plain request) and grepped for day-2 / second-day / next-day mileage and every Goat Flat mileage sentence. Figures found are legs only: trailhead to Goat Flats 4.5 / ~5 / ~6 mi (several authors), Saddle Lake to Goat Flats 2.6 / 2.64 mi, Goat Flats to lookout ~2.5 / ~3 / 3.5 mi, plus whole-trip totals from the road closure (14.35, ~27, 31.6 mi). Two reports describe exactly this itinerary (camp at Goat Flats, lookout, then out) but give no day-2 figure. A Backcountry Sights overnight lists per-day miles (4.0 / 11.8 / 15.8) but its days start at the road washout and camp elsewhere, so it does not describe this row's day. A Climber Kyle 2026 report gives only one-way route totals (16 / 12 / 6 mi) and a 19-mi loop. Internet Archive metadata search for the two place names returns nothing; earlier passes already read the guidebook full texts.",
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "item": "2 - waypoint index 3 ('Regain North Ridge crest', 6,100 ft) distMi 3.2",
+   "verdict": "unresolved",
+   "resolution": "No op. No source states a cumulative distance to the point where the route regains the crest at ~6,100 ft; sources give only the 6.6 mi round trip and heights (1,600 / 2,600 / 4,500-5,200 / 5,400 ft). Measuring along the published track would be computing.",
+   "summary": "No source states how far along the route the 6,100 ft crest point is, so pin 3's 3.2 mi stays.",
+   "evidence": "Live row re-read: waypoints[3] 'Regain North Ridge crest' lat 47.618605 lng -121.272469 elev 6100 distMi 3.2; summit distMi 3.3; itinerary 6.6 mi round trip; dist_km 5.3. Internally consistent (3.2 < 3.3, summit = half of 6.6), so nothing on the tab contradicts it. NEW this pass: web searches on the peak, the East Fork Foss start and the 6,100 ft point returned only sources already read (SummitPost peak and route pages, the onehikeaweek report, the 2000 WTA report, Wikipedia, peakbagger) plus a same-named Alberta peak guide (not this peak). None states a distance to an intermediate point.",
+   "ops": []
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "item": "3 - itinerary day 1 = 6.2 mi, Foggy Dew trailhead to Cooney Lake (itinerary.days[0].miles)",
+   "verdict": "unresolved",
+   "resolution": "No op. No two independent sources state a single trailhead-to-Cooney-Lake figure from the Foggy Dew trailhead. The trail descriptions give only segments; summing them would be computing. Every figure found points ABOVE 6.2 (about 7.5-8+ mi), so 6.2 looks wrong, but there is still only one stated total (the guidebook author's 8.5).",
+   "summary": "Every source puts Cooney Lake well beyond 6.2 mi from the Foggy Dew trailhead, but only in segments, so there is still no second stated total to write.",
+   "evidence": "Live row re-read: days[0].miles 6.2; days[1].miles 12.8 with note 'full 6.2 miles back out'; Cooney Lake waypoint distMi 8; dist_km 15.8; totalNote '~19 miles round trip'. NEW this pass: (1) WTA Cooney Lake hike page, current text: Foggy Dew Creek Trail 4.9 mi, then Martin Creek Trail 2.7 mi to the Cooney Lake Trail, then 0.2 mi to the lake (segments; its 17.6 mi round trip is for the Crater Creek route). (2) WTA Martin Creek hike page: from the 4.9-mi Foggy Dew junction, Martin Creek Trail climbs to the Cooney Lake Trail junction (segments only); it also says Merchants Basin starts after a steep one-mile climb west of that junction. (3) WTA Foggy Dew Creek page: junction at 5 mi, then 2.5 mi to the Cooney Lake Trail junction via Merchants Basin (segments). (4) WTA Foggy Dew Ridge page: segments and a 15.2-mi loop. (5) All ~200 WTA trip reports under Cooney Lake / Foggy Dew Creek / Cooney Peak fetched and grepped: a 2017 report says 'only about 8 miles' and 'around 8 or 9 miles' from 'the trailhead' to Cooney Lake but never names which trailhead; a 2023 report says the Martin Creek trail to Cooney is 'about 8 miles', likely from Crater Creek; a 2018 report gives 4.5 + 3 segments; a 2018 day-hike report gives 5 mi to the junction then segment times. None is a clean second statement for the Foggy Dew line. Side finding for the owner (no op): the usual Foggy Dew line to Cooney Lake turns right onto Martin Creek #429 at the ~5-mi junction; Cooney Lake Trail #434 is only the last 0.2 mi at the lake (or the high route over the pass from Merchants Basin). The row's day-1 note and its waypoint 2 ('Merchants Basin / Cooney Lake Trail #434 split', 7,300 ft, distMi 5.5) mix the two, and 6.2 matches neither (it matches Martin Creek #429's own one-way length, as noted in r25). Any fix to day 1 must also change day 2's 12.8 and its '6.2 miles back out' note, and stay consistent with dist_km 15.8 and the 19-mi totalNote.",
+   "ops": []
+  }
+ ]
+}

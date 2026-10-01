@@ -1,0 +1,51 @@
+{
+ "results": [
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "item": "1a - crux 5.11d-5.12a: independent account",
+   "verdict": "settled",
+   "resolution": "No op needed. The live crux range 5.11d-5.12a now has independent support at both ends. A 2026 guidebook by a different author lists the route at 5.11+. Two other climbers' grade votes on the route database give 5.12a (from a logged 2019 ascent of all 8 pitches) and 5.12-.",
+   "summary": "King Kong's 5.11d-5.12a crux is now backed by sources outside the first ascensionist. A second-author 2026 guidebook gives 5.11+, and a 2019 repeat party and another climber rate it 5.12a and 5.12-.",
+   "evidence": "Live row re-read 2026-10-01: grade and rock_grade '5.11d-5.12a', commitment 'IV', pitches 8, fa 'Sol Wertkin & Tyree Johnson, September 2016 (first free ascent: Sol Wertkin & Jon Gleason, September 9, 2016)'. NEW this pass: (1) Cascades Rock 2nd edition (Blake Herrington, 2026). The author's own book blog posts the alphabetical index as an image. It lists 'King Kong 5.11+ 114' next to 'Gorillas in the Mist 5.11- 114'. Herrington was on the first ascent of Gorillas in the Mist but not on King Kong, so he is independent of the King Kong first ascensionist. The index gives no commitment numeral, and the posted sample pages do not include the Stuart page. (2) The route database's public JSON (ticks, ratings and stars endpoints, read 2026-10-01) holds more than the archived stats page showed. Ticks: 2 in total. One is the FA's own 'Sep 9, 2016 Lead/Redpoint FFA'. The other is an independent party: 'Jul 19, 2019, Lead / Fell/Hung, 8 pitches, swapped leads with Andy. got worked!'. Grade votes: the FA 5.12a, the 2019 repeat climber 5.12a, and a third climber 5.12- (2021, no public tick). Star votes come from five users, the latest in 2024. So the upper end (5.12a) has two independent votes, from the repeat climber and the third climber. The lower end (5.11d, the FA's own first figure) is matched by the independent guidebook's 5.11+. Under decision rule 5, both ends of the live range have at least two sources. Nothing found supports a different grade.",
+   "sources": [
+    "https://cascadesrock.blogspot.com/p/chapters-and-route.html (index image, 2026)",
+    "https://www.mountainproject.com/api/v2/routes/112249646/ticks",
+    "https://www.mountainproject.com/api/v2/routes/112249646/ratings",
+    "https://www.mountainproject.com/api/v2/routes/112249646/stars"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "item": "1b - commitment IV and fa: independent account",
+   "verdict": "unresolved",
+   "resolution": "No op. The first independent ascent record found is a 2019 repeat that climbed all 8 pitches. It carries no commitment numeral and no first-ascent line, and neither does the independent 2026 guidebook index. The IV and the fa line still rest only on the first ascensionist's accounts. Nothing contradicts either.",
+   "summary": "King Kong's commitment IV and its first-ascent line still have no source outside the first ascensionist. A repeat ascent and a second-author guidebook entry now exist, but none of what could be read from them gives either fact.",
+   "evidence": "The route database tick list shows the FFA tick on Sep 9, 2016 by the first ascensionist, the same author as the AAJ note and the blog. The only other tick is a 2019 party, and it names no first ascent and no commitment. The 2026 guidebook (Cascades Rock 2nd ed.) lists the route on page 114. That page is not among the posted sample pages, and the full book is not readable online: there is no Google Books preview, and the books API quota was exhausted. The posted sample pages show that the book prints a YDS grade, length and rack in each route header, with no Roman commitment numeral, so even the full page may not settle IV. The sample pages do print an FA credit line under each route. If the owner can see page 114, its FA line would be the independent second source for fa. Neither the book's blog nor the author's personal blog has a 'King Kong' post.",
+   "sources": [
+    "https://www.mountainproject.com/api/v2/routes/112249646/ticks",
+    "http://cascadesrock.blogspot.com/p/contributors.html (sample pages)",
+    "http://blakeclimbs.blogspot.com/search?q=King+Kong (no post)"
+   ],
+   "ops": [],
+   "pin_ops": []
+  },
+  {
+   "id": "wa_e_se_face",
+   "item": "2 - Southeast Face 5.6 second source",
+   "verdict": "unresolved",
+   "resolution": "No op. Twelfth pass. No source missing from the tried list gives a second account of the one-pitch 5.6 Southeast Face. Note: the live row's grade is '4th' and its rock_grade is '4th class (short 5th-class variation)'. Any 5.6 on this row is only in prose.",
+   "summary": "Still no second source for the Witches Tower Southeast Face 5.6. A 2023 forum trip report, a 2026 hiking report, a new 2026 regional rock guidebook and an archive-wide full-text search add nothing, so the row stays for the owner.",
+   "evidence": "NEW this pass, all negative: (1) A 2023 NWHikers trip report, 'more enchantments: colchuck, dragontail, witches tower, mcclellan 6.14 - 6.17.23', read in full. It was not on the tried list, which held other NWHikers threads. It calls the tower a 'Fun scramble but not worth that amount of effort; it's so short' and captions a photo 'route goes around the right side'. That is the sibling scramble route, not a roped 5.6 face. (2) A WTA Enchantments thru-hike report from 2026-08-14 names the tower only as an optional peak. (3) The Cascades Rock 2nd edition (2026) alphabetical index of peaks and routes, read in full from the author's blog, has no Witches Tower entry. Its Enchantments-area entries are Aasgard Sentinel, Colchuck Balanced Rock, Dragontail and Prusik. (4) Internet Archive full-text search across all scanned texts, for 'Witches Tower' with Dragontail, 'southeast face', 1986, and the FA party names. The only Cascade-guide hits are Beckey's Cascade Alpine Guide: the 1973 edition (scanned twice, once under an unrelated title) and the later editions, all one author. The other hits are Selected Climbs (the tower named in a list only), Trekking Washington (scenery), AAJ 1988 (the North Face Dihedral note, already tried), Summit Jan-Feb 1989 (a photo caption), and Pacific Northwest 1975 and Sunset 1973 (scenery). The FA party names match only unrelated yearbooks and newspapers. (5) A web search for 'Witches Tower' with 'SE face' or 'southeast face', chimney and slabs returns only pages on the tried list: the club's South Face and Southwest Corner pages, the peak page, the 2008 Parade Route report, the Skookum Traveler blog, yellowleaf and peakbagger. The one other hit is peakery, a copy of the peak page.",
+   "sources": [
+    "https://www.nwhikers.net/forums/viewtopic.php?t=8037348",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-08-14.152738844276",
+    "https://cascadesrock.blogspot.com/p/chapters-and-route.html",
+    "https://be-api.us.archive.org/fts/v1/search?q=%22Witches%20Tower%22%20Dragontail"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}
