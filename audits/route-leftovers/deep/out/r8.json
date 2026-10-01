@@ -1,0 +1,27 @@
+{"results":[
+ {"id":"wa_three_fingers_south_peak_lookout","verdict":"unresolved","evidence":"Third pass, still no two independent sources stating one Tupso Pass trailhead -> Goat Flats figure. The row's line starts at the old Tupso Pass / Saddle Lake trailhead at the end of FR 41 (waypoint 0, day-1 note 'From the Saddle Lake Trailhead'); figures quoted from the Canyon Creek bridge closure or the Sevenmile Creek shortcut are different trailheads and do not apply. Stated one-way figures from the Tupso Pass trailhead remain three different numbers, one author each: WTA Goat Flats page 4.5 mi of trail (after the road walk); a 2003 WTA trip report 4.75 mi; Abegg's trip report 5 mi. NEW this pass, none of which gives a matching stated figure: USFS Trail 641 page lists the trail as 5.8 mi with Saddle Lake at 2.5, Goat Flat 2.3 beyond (segments) and Tin Pan Gap at 6.2; Cascade Hiker Podcast '15 to Goat Flats ... one way' is measured from the Canyon Creek bridge (different trailhead, includes ~8 mi of road); The Outbound gives 2.5 + 'two more miles' (segments, same text as WTA's Three Fingers page); a 2021 blog has the lookout '3 miles out' from Goat Flats (not a TH figure); Alpine Wanderlust '15 miles each way' to the lookout from the bridge; a 2024 WTA report and onehikeaweek describe the Sevenmile Creek shortcut (1.25 mi of old road + steep path), a third, shorter line; komoot/AllTrails give only whole-trip totals from the bridge. NWHikers/CascadeClimbers threads are behind a bot check (not bypassed); the Mountaineers route page and Trailforks returned 403. The 7.3 mi in day 1 matches no source for any trailhead. No op under the two-source rule (nulling day 1 alone is not allowed). Owner option unchanged: adopt WTA's 4.5 for days[0].miles and the totalNote '~7.3 mi' (the row's own approach text and approach_variants already say Goat Flats ~4.5 mi), and review day 2 (7.7 mi / '~7.5 miles back out').","sources":[
+  "https://www.wta.org/go-hiking/hikes/goat-flats",
+  "https://www.wta.org/go-hiking/trip-reports/tripreport-2003091903",
+  "https://stephabegg.com/trip-reports/washington/three-fingers-lookout/",
+  "https://www.fs.usda.gov/r06/mbs/recreation/trails/three-fingers-goat-flats-saddle-lake-trail-641",
+  "https://www.fs.usda.gov/r06/mbs/recreation/three-fingers-lookout",
+  "https://cascadehikerpodcast.com/three-fingers-mountain",
+  "https://www.theoutbound.com/washington/hiking/hike-to-three-fingers-lookout",
+  "https://audreysniezek.wordpress.com/2021/08/12/three-fingers-hike-north-cascades/",
+  "https://www.alpinewanderlust.com/years-in-the-making-three-fingers-lookout/",
+  "http://web.archive.org/web/20240711023335/https://www.wta.org/go-hiking/trip-reports/trip_report-2024-07-07.235037023806",
+  "https://onehikeaweek.com/2024/07/05/three-fingers/"
+ ],"ops":[],"pin_ops":[]},
+ {"id":"wa_switchback_mountain_scramble","verdict":"unresolved","evidence":"Third pass, still no published one-way Foggy Dew trailhead -> Cooney Lake figure for the row's line (Foggy Dew #417 up the North Fork into Merchants Basin, then the Cooney Lake trail). Merchants Basin line, segments only: WTA Foggy Dew Creek page and go-washington (USFS-derived text) give Section I 5 mi, then in Section II '2.5 miles from the first junction' / 'At 2.5 miles' the unmaintained Cooney Lake Trail junction; Wenatchee Outdoors 5 mi, then 2.1 to the pass and 0.9 down to the lake; USFS lists Cooney Lake Trail 434 at 1.5 mi. Summing any of these is computing. Loop trip reports via Merchants Basin give only loop totals (Brisbine 16 mi; a 2025 WTA report 'a little over 17 miles'; a 2017 WTA report none). Martin Creek line (NOT the row's line): Hike of the Week (Romano) 'At 7.7 miles ... junction' with the Cooney Lake Trail, 16 mi roundtrip; WTA Cooney Lake 4.9 + 2.7 + 0.2 to the lake, 17.6 RT; Wenatchee Outdoors 16.25 RT; Explore with Alec cites a Gaia figure of 14.5 RT. No two sources state one one-way figure to the lake on either line. No op (nulling day 1 alone is not allowed). Owner note: the row restates 6.2 in two places, days[0].miles and days[1].note ('hike the full 6.2 miles back out'), and day 2 miles 12.8 is built on it; its own waypoints put Cooney Lake at distMi 8 and its approach says ~19 mi RT. If the owner adopts the Martin Creek line instead, Romano's 7.7 (to the Cooney Lake Trail junction) is the nearest stated figure, single-source.","sources":[
+  "https://www.wta.org/go-hiking/hikes/foggy-dew-creek",
+  "https://www.go-washington.com/Foggy-Dew-Trail-Section-2-417A-Washington/",
+  "https://wenatcheeoutdoors.org/2018/07/01/cooney-lake-2/",
+  "https://wenatcheeoutdoors.org/2016/04/02/cooney-lake/",
+  "https://www.hikeoftheweek.com/2025/09/18/cooney-lake/",
+  "https://www.wta.org/go-hiking/hikes/cooney-lake",
+  "http://trailcatjim.com/foggy-dew-loop-cooney-lake-cooney-switchback-peak-chelan-sawtooth-mountains/",
+  "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-10-05.194053968519",
+  "https://www.wta.org/go-hiking/trip-reports/trip_report.2017-10-12.8515503172",
+  "https://explorewithalec.com/backpacking-cooney-lake/"
+ ],"ops":[],"pin_ops":[]}
+]}
