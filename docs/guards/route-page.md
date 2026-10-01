@@ -993,6 +993,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **A via route's own `summitTimeHrs`/`totalHrs` are dropped**: they time ITS finish (the
     Sulphide's summit gully), which this climb replaces; the planner times the climbing from this
     route's own pitches instead.
+  - **Camps follow the pick in both directions** (batch 1, 2026-10-01). The row's `bivy` was
+    written for the whole climb, so it held the other way in's camps (Stuart's North Ridge listed
+    Goat Pass, the south-side camp, under Mountaineer Creek). The way in the row describes carries
+    `camps: [names]`; a `trip` carries its camps whole; a linked route lends only the way in ITS own
+    page opens on. A camp both ways share is named on both.
+  - **`storedRow:true`** names the way in the row's own trailhead and numbers describe when it is
+    not the most-used one (Sloan's Corkscrew stores the Cougar Creek pullout; most parties go up
+    Bedal Creek). Without it the picker labelled Cougar Creek's data "Bedal Creek".
+  - **The raw column spelling leaks.** `dbRouteToCamel` spreads the row, and `lib/outing.js` reads
+    `dist_km` when `distKm` is null — so a way in with no distance showed the other's 4.8 mi. The
+    overlay clears both spellings of every owned key; a fixture pins it.
+  - **A way in can live on another peak** (the Fury ridge traverse starts on East Fury's summit):
+    RouteDetail reads any linked route the peak's own list lacks by id.
   - **SuggestFix is handed `routeRow`, never the overlay** — seeding an edit from the overlay would
     write the Fisher Chimneys pins into the Southeast Ridge's own `waypoints` column. The wiring half
     of the guard fails on any other `<SuggestFix route={…}>`.
