@@ -29304,3 +29304,71 @@ the four wa_south_early_winter_spire_* routes. The raw WA-tagged route count was
 re-queried this batch and holds at 747 (unchanged from batch 363); the
 area_type='peak' in-scope subset was not recounted this batch either (same join
 timeout noted previously).
+
+## Batch 366 — 2026-10-01 (Pass 6)
+
+10 routes across 5 peaks: Sloan Peak (Corkscrew), Snoqualmie Mountain (Boogie Wonderland, Standard
+Route), Snowfield Peak (Neve Glacier), Snowking Mountain (Standard Route), and South Early Winters
+Spire (South Arete, Direct East Buttress, East Buttress, Passenger, Southwest Couloir). Checked
+via WebSearch (direct fetches to Mountain Project/SummitPost/AAC still blocked at the
+proxy/network level, same as recent batches).
+
+- **Sloan Peak Corkscrew** — elevation (7,835 ft) and FA (Harry Bedal & Nels Skaar, July 30, 1921)
+  both confirmed exactly (Wikipedia, SummitPost). Land manager (Mt. Baker-Snoqualmie NF, Darrington
+  RD, Henry M. Jackson Wilderness) is correct for this peak.
+- **Snoqualmie Mountain, both routes** — FA of the peak itself (Albert H. Sylvester and a USGS
+  survey party, 1897 or 1898) confirmed (SummitPost, Wikipedia bios of Sylvester). Boogie
+  Wonderland's grade (5.7) and FA credit (Christian Junkar) not independently turned up in search
+  results but not contradicted either. **Flagged, not fixed:** this route's `high_point_ft` (6,278)
+  and the `wa_snoqualmie_mountain` area row's `elevation_ft` (6,281) disagree with each other by 3
+  ft — spot-checking three other already-audited peaks this pass (Sherpa, Sinister, Sky) shows the
+  area and route figures normally match exactly, so this is a real internal inconsistency, not
+  routine. External sources don't resolve it either: Wikipedia gives 6,270 ft (and a separate
+  6,260 ft "map elevation"), WTA/Peakbagger/SummitPost give 6,278 ft, and ListsOfJohn's LiDAR
+  figure gives 6,285 ft — a 25 ft spread with no single source matching either stored value.
+  Needs a human to pick an authoritative figure (LiDAR is usually preferred in this catalog, but
+  6,285 ft doesn't match either existing column) and reconcile the two columns.
+- **Snowfield Peak Neve Glacier** — FA (William Degenhardt and Herbert Strandberg, August 1, 1931,
+  via this Neve Glacier/West Ridge line) confirmed exactly (climberkyle.com trip account citing the
+  Mountaineer Annual). Stored elevation 8,351 ft falls inside the already-documented 8,347-8,351 ft
+  spread the row's own `data_quality.gaps` already discloses — not re-litigated.
+- **Snowking Mountain Standard Route** — elevation (7,433 ft) and coordinates (48.408385,
+  -121.278165) both confirmed exactly (ListsOfJohn, SummitPost, Wikipedia). Land manager (Mt.
+  Baker-Snoqualmie NF, Mt. Baker RD, Glacier Peak Wilderness) correct.
+- **South Early Winters Spire, all 5 routes** — peak elevation 7,807 ft confirmed exactly
+  (SummitPost, Peakbagger). FAs confirmed: South Arete (Fred and Helmy Beckey, June 1942, matching
+  the row's more specific "June 19, 1942" with no contradiction), Direct East Buttress (Fred Beckey
+  and Doug Leen, 1968 — SummitPost/SuperTopo trip account), Southwest Couloir (peak FA July 20,
+  1937, Kenneth Adam/Rafi Bedayn/W. Kenneth Davis — SummitPost, matches exactly including the
+  minor "Rafi"/"Raffi" spelling variant across sources), and Passenger (Bryan Burdo, Pete Doorish,
+  Greg White, 1991 — SuperTopo; month "October" on file not contradicted, just not independently
+  turned up). East Buttress carries no `fa` on file — nothing to check. Land manager
+  (Okanogan-Wenatchee NF, Methow Valley RD, Winthrop) correct for all five; Washington Pass is
+  squarely in that district.
+- **grade_num, all 10 routes** — re-verified against the *current* `gradeNumFor`/`gradeNumFrom` in
+  `lib/grade.js` on `main` (this stale audit branch's own copy of `lib/grade.js` is 38 commits
+  behind and doesn't have this function at all — pulled `origin/main`'s version and ran it
+  directly, `node --input-type=module`, rather than trust a guess). All 10 stored values matched
+  the live parser exactly, including the two range-style "Class 2-3"/"Class 3-4" grades, which the
+  current parser's `maxOf`/highest-wins logic over `RX_CLS` resolves correctly (3 and 4) — an
+  earlier, superseded copy of the parser (first-match, found duplicated across
+  `scripts/pipeline/*.mjs`) would have scored them 2 and 3 and looked like two more mismatches;
+  that stale copy is NOT the authority per the comments in `main`'s `lib/grade.js` itself, which
+  also documents that a range-grade vs. stored-value disagreement is a known, accepted, by-design
+  spread ("a fifth dialect is the problem, not the fix") and not something this audit should patch
+  even when one is found. No grade_num fixes this batch.
+
+0 confirmed errors, 1 flagged for human review, 9 clean — no SQL file this batch (precedent:
+flagged-only batches with no confirmed fix don't get one, e.g. batches 51/105/111/127/140).
+`check:sql` was not invoked since there is nothing to check. No `.env`/`.env.local` present at run
+start (fresh clone, as every run); read-only queries used the anon key supplied in the task prompt
+directly as shell env vars. A live id-ordered query past `wa_south_early_winter_spire_southwest_couloir`,
+cross-checked route-by-route against each candidate route's own `area_id` (avoiding the join
+timeout noted in earlier batches by filtering client-side instead), confirmed the next 10 in-scope
+(`area_type='peak'`) routes: wa_south_face_10 (Cathedral Peak), wa_south_face_12 (Argonaut Peak),
+wa_south_face_2 (Pernod Spire), wa_south_face_2001_variation (Lundin Peak), wa_south_face_3
+(Concord Tower), wa_south_face_4 (Kangaroo Temple), wa_south_face_5 (Inspiration Peak),
+wa_south_face_8 (Lundin Peak), wa_south_face_center (Concord Tower), wa_south_gully_south_spur
+(Guye Peak). Three same-named routes sorting in between (`wa_south_face` on Vasiliki Tower,
+`wa_south_ridge` on a crag-type "South Peak") were skipped as out-of-scope (`area_type` =
+`crag`), per the scope note on crags/walls carrying an alpine-tagged discipline.

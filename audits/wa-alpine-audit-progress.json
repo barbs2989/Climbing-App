@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_sky_mountain_s_route",
+  "last_processed_id": "wa_south_early_winter_spire_southwest_couloir",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 747,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 365. Next after wa_sky_mountain_s_route (live id-ordered query, all area_type=peak): wa_sloan_peak_corkscrew, wa_snoqualmie_mountain_boogie_wonderland, wa_snoqualmie_mountain_standard_route, wa_snowfield_peak_neve_glacier, wa_snowking_mountain_standard, wa_south_arete, wa_south_early_winter_spire_direct_east_buttress, wa_south_early_winter_spire_east_buttress, wa_south_early_winter_spire_passenger, wa_south_early_winter_spire_southwest_couloir.",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 366. Next after wa_south_early_winter_spire_southwest_couloir (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_south_face_10, wa_south_face_12, wa_south_face_2, wa_south_face_2001_variation, wa_south_face_3, wa_south_face_4, wa_south_face_5, wa_south_face_8, wa_south_face_center, wa_south_gully_south_spur. (wa_south_face on Vasiliki Tower and wa_south_ridge on a crag-type \"South Peak\" sort in between but are out of scope -- area_type='crag'.)",
   "batches": [
     {
       "batch_number": 1,
@@ -7322,6 +7322,27 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-10-01-batch-365.sql",
       "note": "Fixed 2: wa_sherpa_peak_west_ridge's grade_num (5) disagreed with the catalog's own documented grade parser (lib/grade.js gradeNumFrom, run live against this row's own stored grade 'Grade II, Class 4 to 5.4' + discipline alpine -> yds system -> 4, not 5); wa_sherpa_peak_north_ridge's data_quality.gaps claimed a duplicate row 'wa_north_ridge_9' that a live query confirmed does not exist (and no other North-Ridge-named route sits under wa_sherpa_peak) -- stale note, removed. Flagged for human review (1): wa_skookum_peak_twinsisters_scramble's stored peak coordinates (48.694338, -121.987035) match, to within rounding, the WA Committee on Geographic Names' official location for Kloke Peak (48.69434, -121.98704, approved 2022) -- a DIFFERENT, nearby summit in the same southern Twin Sisters ridge cluster -- and the row's own stored FA ('Dallas Kloke and Dave Dixon, September 1972') is the ascent the naming proposal itself credits to Kloke Peak, not Skookum Peak. A third source (Mountain Project) gives yet another nearby coordinate (48.69997, -121.9838) and elevation (5,962 ft) for 'Skookum Peak' itself, distinct from both the catalog's 6,534 ft and Kloke Peak's 6,480 ft -- already noted as an unresolved elevation spread in a prior pass, but not previously connected to Kloke Peak by name. Not auto-fixed: this cluster of closely-spaced, easily-conflated summits needs a human to determine whether the row's coordinates/FA actually belong to Kloke Peak rather than Skookum Peak, which `check:sql`'s target-existence check cannot verify and no single authoritative source resolves outright. Clean / confirmed (via WebSearch; direct fetches still blocked by the egress proxy): Silver Star Mountain's east (8,876 ft) and west (~8,840 ft) summits (Wikipedia/peakery/SummitPost); Sinister Peak 8,444 ft (ListsOfJohn LiDAR figure, matching the stored value over the older 8,440+ rounding) and its North Face's Aug 1 1980 Skoog/Skoog/Brill FA (AAC Publications); Sky Mountain's 5,482 ft (SummitPost, exact match); Sherpa Peak West Ridge's Aug 13 1961 Dunham/Lilleby/Wick FA (Mountain Project/SummitPost)."
+    },
+    {
+      "batch_number": 366,
+      "date": "2026-10-01",
+      "route_ids": [
+        "wa_sloan_peak_corkscrew",
+        "wa_snoqualmie_mountain_boogie_wonderland",
+        "wa_snoqualmie_mountain_standard_route",
+        "wa_snowfield_peak_neve_glacier",
+        "wa_snowking_mountain_standard",
+        "wa_south_arete",
+        "wa_south_early_winter_spire_direct_east_buttress",
+        "wa_south_early_winter_spire_east_buttress",
+        "wa_south_early_winter_spire_passenger",
+        "wa_south_early_winter_spire_southwest_couloir"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 9,
+      "sql_file": null,
+      "note": "0 fixes this batch -- no sql file (precedent: batches 51/105/111/127/140 etc). Clean / confirmed (via WebSearch): Sloan Peak 7,835 ft + FA Bedal/Skaar July 30 1921 (Wikipedia, SummitPost); Snoqualmie Mountain peak FA Albert H. Sylvester + USGS survey party, 1897 or 1898 (SummitPost, Sylvester bio); Snowfield Peak FA Degenhardt/Strandberg Aug 1 1931 via Neve Glacier/West Ridge (climberkyle.com citing Mountaineer Annual), elevation 8,351 ft within the row's own already-disclosed 8,347-8,351 ft spread; Snowking Mountain 7,433 ft + coordinates 48.408385,-121.278165 exact (ListsOfJohn, SummitPost, Wikipedia); South Early Winters Spire 7,807 ft exact (SummitPost, Peakbagger); South Arete FA Fred+Helmy Beckey June 1942 (stored 'June 19' not contradicted); Direct East Buttress FA Beckey/Leen 1968 (SummitPost/SuperTopo); Southwest Couloir peak FA Adam/Bedayn/Davis July 20 1937 exact (SummitPost); Passenger FA Burdo/Doorish/White 1991 (SuperTopo; stored 'October' not independently confirmed but not contradicted). East Buttress carries no fa field -- nothing to check. Land manager/ranger-district jurisdiction correct for all 5 peaks (Mt. Baker-Snoqualmie NF Darrington RD for Sloan; Snoqualmie RD for Snoqualmie Mtn; NPS/North Cascades for Snowfield; Mt. Baker RD for Snowking; Okanogan-Wenatchee Methow Valley RD for SEWS). grade_num re-verified for all 10 against the CURRENT gradeNumFor/gradeNumFrom in origin/main's lib/grade.js (this audit branch's own copy is 38 commits behind main and lacks the function entirely -- pulled main's version and ran it directly rather than trust a guess); all 10 matched exactly, including the two range-style Class 2-3/Class 3-4 grades which the current highest-wins parser resolves correctly (an older, superseded first-match copy duplicated across scripts/pipeline/*.mjs would have falsely flagged these two as mismatches -- not used). Flagged for human review (1): wa_snoqualmie_mountain_standard_route's high_point_ft (6,278) disagrees with the wa_snoqualmie_mountain area row's elevation_ft (6,281) by 3 ft -- spot-checking 3 other already-audited peaks this pass shows these two columns normally match exactly, so this is a real internal inconsistency. External sources don't resolve it either: Wikipedia 6,270 ft (and a separate 6,260 ft map figure), WTA/Peakbagger/SummitPost 6,278 ft, ListsOfJohn LiDAR 6,285 ft -- a 25 ft spread with no source matching either stored column exactly, so not auto-fixed."
     }
   ]
 }
