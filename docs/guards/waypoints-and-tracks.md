@@ -186,6 +186,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     pattern, not the guard, was wrong.
 - **`check:waypoint-dedupe`** asserts that `dedupeWaypoints` merges a **SINGLETON** type — two
   "Summit" pins are the same summit whatever they are called — and that **`trailhead` is not one**.
+  - **AND A SUMMIT IS A SINGLETON ONLY WITHIN ONE PEAK (2026-09-30).** The same type-alone merge
+    ate **traverse** summits: `wa_enchantment_enchainment` stores eight and rendered ONE —
+    *"Little Annapurna"* at Mount Stuart's coordinate, 6.7 km off — and `wa_inspiration_traverse`,
+    `wa_painted_traverse`, `or_three_sisters_traverse`, `or_hurwal_divide_traverse` likewise.
+    `audit:waypoint-order`'s *MERGED BUT NOT THE SAME PLACE* section listed 39 such pairs in WA and
+    nobody had acted on it. **Measured over all 1,070 routes carrying waypoints: 43 same-type
+    summit/topout pairs on 5 routes, every one a genuine traverse, closest 984 m — and ZERO that
+    are one summit recorded twice.** Summits now merge only within `SAME_SUMMIT_M` (400 m) or
+    when either pin has no coordinate; the audit's >100 m merged-pair count went to 0.
+  - **The Olympus case this module cites was never two Summit WAYPOINTS** — #789 records it as the
+    track-end *Finish* dot drawn beside the Summit pin, fixed in the map, not here. The guard's old
+    Olympus fixture put its "one summit" 1.35 km apart, a constructed guess farther apart than the
+    closest real pair of different summits; it is now ~210 m. **Do not widen `SAME_SUMMIT_M` past
+    ~900 m** without re-measuring the closest traverse pair.
   It was: the rule read `/^(summit|topout|trailhead)$/i` and merged two trailhead pins on **TYPE
   ALONE**, ignoring both their names and their coordinates. Static, no browser, no DB — it executes
   the real exported function over constructed pins, so it costs a module import.
@@ -1165,6 +1179,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `wa_smears_jugs_and_rock_roll` outright as *"two approaches spliced together"* rather than a
     scrambled sequence. **Before working any count from this audit, check whether the route is
     already named in that script's skip list.**
+  - **THE AUDIT NEVER ASKED WHERE THE START IS — batch 7 (2026-09-30).** "Anything after the
+    summit" is one end of the list; nothing checked the other. Measured: **22** routes the app
+    cannot sort listed their TRAILHEAD somewhere other than first, nearly all shaped
+    `[approach pins in walking order…, Trailhead, Summit]`, meaning the trailhead and summit were
+    appended to a list that already ran in order. The audit now prints this class
+    (*THE TRAILHEAD IS NOT THE FIRST PIN*). `scripts/oneoff/reorder-waypoint-order-batch7.mjs`
+    repaired it, along with the wall-after-topout crag routes and the after-summit approach pins
+    the route's own approach prose places earlier. **Two were refused**: `wa_mount_meany_standard`
+    and `wa_the_devils_club`, whose trailhead pin names a DIFFERENT approach from the one their
+    other pins walk. Moving a contradicting start to the front would print a wrong start first.
+    **The Smears skip-list diagnosis above was wrong**: the route is one approach with its
+    trailhead stored fifth. Its 0.2 mi "topout" is a pin whose own note says it borrows the
+    campsite coordinate.
+  - **SOME OF THE RESIDUE WAS NEVER AN ORDER QUESTION: the PIN was wrong**, so no permutation
+    could fix it. `scripts/oneoff/fix-waypoint-order-batch7-pins.mjs` cleared, retyped or dropped
+    16 pins on 11 routes, using the USGS 3DEP ground as the deciding record:
+    - The Mole's "topout" sat on Icicle Creek Road (ground 1,355 ft, claimed 6,800).
+    - Le Conte had two Cascade Pass pins and the ground rejected one of them (3,762 vs 5,321).
+    - Pinto Rock's "topout" reused the pullout coordinate.
+    - "Waterfall Basin (base of …)" was typed Topout and duplicated at the identical coordinate.
+
+    This answers the four *"mistyped `Topout` naming the base"* keeps above: they are retyped
+    `Base` now. The rollback snapshot is `audits/waypoint-order-batch7/rollback-before-batch7.json`.
+    **Clearing a borrowed coordinate leaves its NOTE lying.** All four cleared pins still said
+    "this reuses the … coordinate", and that note renders.
+    `scripts/oneoff/fix-stale-notes-after-batch7.mjs` removed the clause and added nothing in its
+    place. It also nulled Smears' 0.2 mi, which was counted from the camp rather than the
+    trailhead and was the last row the audit called self-contradicting (5 → 0).
+    **Left for an owner, with research:**
+    - Meany and Devil's Club need a real trailhead coordinate (Whiskey Bend; Depot Creek in
+      Canada).
+    - Pinto Rock's trailhead pin sits 35 m from the summit, and no source gives the pullout's
+      coordinate. Clearing it would remove Directions, since `approach_logistics` holds no
+      fallback, and the pin still routes a driver onto NF-77 beside the rock.
+    - Ballard's "Harts Pass" pin is a separate eastern start, not on the Canyon Creek walk, so its
+      slot is not an ordering question.
   - **This is the THIRD vacuous-zero found in one day**, after the terrain classifier's blind
     columns and `audit:approach-scope`'s stale advice. **When an audit reports zero, ask what its
     denominator is before believing it.**

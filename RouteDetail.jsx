@@ -34,7 +34,7 @@ import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle
 import { shortGrade, gradeDetail, cruxGrade } from "./lib/grade";
 import { routeTerrain, fitGear, saysNotApplicable } from "./lib/terrain";
 import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from "./lib/rappels";
-import { mergeHazards } from "./lib/hazards";
+import { knownHazards } from "./lib/hazards";
 import { acquireBaseFix, clusterBasePoints, baseCheckinMessage, pendingBaseCheckins, savePendingBaseCheckins } from "./lib/baseCheckin";
 import { sectionProvenance } from "./lib/provenance";
 import { routeTags } from "./lib/routeTags";
@@ -1900,9 +1900,12 @@ const avyRelevant=["ice","mixed","alpine","mountaineering"].includes(cat)&&route
      string equality and compare watchOut against neither, so Southwest Rib on SEWS printed
      "runout slab" twice verbatim and a third time as a full sentence. mergeHazards drops an
      entry only when every significant word in it appears in one that is kept, so the surviving
-     line always says at least as much. */
-  const _mergedHaz=mergeHazards(route.hazards,_objHaz);const _allHaz=_mergedHaz.items;
-  const _watchOut=mergeHazards(route.hazards,_objHaz,route.watchOut).items.filter(function(t){return _allHaz.indexOf(t)<0;});const envHaz=envRelevant?_allHaz.filter(h=>ENV_HAZ_RE.test(h)):[];const physHaz=envRelevant?_allHaz.filter(h=>!ENV_HAZ_RE.test(h)):_allHaz;const _rd=_acts.map(a=>a.date).filter(Boolean).sort();const repN=_acts.length;const lastRepY=_rd.length?new Date(_rd[_rd.length-1]).getFullYear():null;const nowY=new Date().getFullYear();const stale=lastRepY&&(nowY-lastRepY)>=2;const avyCenter=avyCenterFor(mountain);
+     line always says at least as much.
+     It must be ONE merge over all three. Two — hazards+objHaz for the bullets, then all three for
+     the ⚠ lines — printed a hazards line AND the longer watchOut line that restates it, on 250
+     routes. knownHazards merges once and splits the survivors by field. */
+  const _known=knownHazards(route.hazards,_objHaz,route.watchOut);const _allHaz=_known.hazards;
+  const _watchOut=_known.watchOut;const envHaz=envRelevant?_allHaz.filter(h=>ENV_HAZ_RE.test(h)):[];const physHaz=envRelevant?_allHaz.filter(h=>!ENV_HAZ_RE.test(h)):_allHaz;const _rd=_acts.map(a=>a.date).filter(Boolean).sort();const repN=_acts.length;const lastRepY=_rd.length?new Date(_rd[_rd.length-1]).getFullYear():null;const nowY=new Date().getFullYear();const stale=lastRepY&&(nowY-lastRepY)>=2;const avyCenter=avyCenterFor(mountain);
   return <div>
     <CragSafetyNotes route={route} onOpenHazards={onOpenHazards}/>
     {/* watchOut is rendered inside this box but was not part of its condition, so a route
