@@ -1,0 +1,1293 @@
+{
+ "results": [
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "item",
+   "fact": "Which side of the summit block the route climbs (south/west vs east/northeast)",
+   "verdict": "already_fixed",
+   "summary": "The live row now describes only the east-face line: pitch_detail is null and all four climbing_route steps, beta, face, descent and waypoints describe the snow finger and east-face ledges.",
+   "evidence": "Live row re-read: climbing_route = snow finger, round the corner east, east-face ledges, summit block; pitch_detail null; no south-ridge step remains.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "item",
+   "fact": "Approach-day (day 1) duration vs its own schedule",
+   "verdict": "unresolved",
+   "summary": "No source gives a time to the ~6,600 ft benches camp that day 1 ends at, so neither the 9 h figure nor the 5:30 AM-5:30 PM schedule can be set from a stated value.",
+   "evidence": "The club route page gives biking time to the old trailhead and time on to Overcoat Lake (a lower, different camp); the 2024 three-day report gives no clock times; the encyclopedia page gives only road mileages.",
+   "sources": [],
+   "searched": [
+    "peakbagger (403, no archive)",
+    "summitpost",
+    "mountaineers.org",
+    "onehikeaweek blog",
+    "nwhikers"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "item",
+   "fact": "dist_km vs one-way and round-trip distance figures elsewhere",
+   "verdict": "unresolved",
+   "summary": "No source states a one-way trailhead-to-summit distance; the only whole-trip figures are round trips (26 mi on the club page, 40.4 mi for a 2024 loop), which may not be halved.",
+   "evidence": "Club route page: 26.0 mi round trip, 8,000 ft; encyclopedia page: 7 mi of decommissioned road to the old trailhead, then the trail 7 mi to the gap, no figure to the peak.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+    "https://www.summitpost.org/overcoat-peak/259170"
+   ],
+   "searched": [
+    "peakbagger (403, no archive)",
+    "summitpost",
+    "mountaineers.org",
+    "onehikeaweek blog"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "item",
+   "fact": "Waypoint mileages vs the approach text's mileages",
+   "verdict": "unresolved",
+   "summary": "Sources still split on where the ford falls (about 10 mi in on the club page vs Camp Pedro at mile 13 in a 2024 report), and the row holds both, so neither copy is changed.",
+   "evidence": "Club route page: bike/hike 10 mi to about a mile before the old Dutch Miller Gap trail, then ford; 2024 report: Camp Pedro at mile 13 before the ford. The row's Overcoat Lake note says ~10 mi, its distMi 12 and the approach 13-14 mi.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/overcoat-peak",
+    "https://onehikeaweek.com/2024/07/13/overcoat-peak/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "onehikeaweek blog"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared 4 counted the south-ridge line's rows, which the row no longer describes, and no source gives a pitch count for the east-face line.",
+   "evidence": "The cleared value came with the south-ridge pitch_detail (col, south ridge, west-side ledge, summit block); east-face accounts mention only that parties pitched the upper part in two short pitches, not a route pitch count.",
+   "sources": [],
+   "searched": [
+    "summitpost",
+    "mountaineers.org",
+    "onehikeaweek blog",
+    "peakbagger (403)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_overcoat_peak_southeast_route",
+   "kind": "fill",
+   "fact": "pitch_detail",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared rows describe the south-ridge line, which would re-create the contradiction with the east-face climbing_route now on the row.",
+   "evidence": "Cleared rows: camp to col, col to south ridge, west-side ledge traverse, summit block (the 2004 south-ridge report); the live row describes the east face.",
+   "sources": [],
+   "searched": [
+    "summitpost",
+    "mountaineers.org",
+    "onehikeaweek blog"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "kind": "item",
+   "fact": "'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp",
+   "verdict": "unresolved",
+   "summary": "The pin has since been moved and re-elevated to the 8,000 ft saddle, but its distMi is still 5.2, short of the 6.5 mi camp below it, and no source states a mileage to the saddle.",
+   "evidence": "A scramble write-up gives Lake Caroline at 5 mi, leave the Windy Pass trail at 6,700 ft and angle up to the 8,000 ft saddle, with 17 mi round trip; a 2016 report gives 18 mi round trip and reaches the low saddle between Windy Ridge and Cashmere; neither states a distance to the saddle, and a figure would have to be computed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/trip-reports/cashmere-mountain-4",
+    "http://trailcatjim.com/cashmere-mtn-via-west-ridge-2016/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "wta.org",
+    "trailcatjim blog",
+    "peakery"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "kind": "item",
+   "fact": "Recommended start time from high camp — 5:00 AM vs ~6:00 AM",
+   "verdict": "unresolved",
+   "summary": "No source recommends a departure time from the high camp, so neither start time can be confirmed.",
+   "evidence": "Reports give elapsed times only (4.25 h to the summit car-to-car push; 2016 party 4.4 h from Windy Basin camp; a 2018 party rose after 8 AM); none states a recommended start.",
+   "sources": [],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "wta.org",
+    "trailcatjim blog"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cashmere_mountain_west_ridge",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the waypoint list was reworked and no waypoint now lacks a distMi (the ridge-base pin carries 5.2 at index 1, the summit 8.5 at index 2).",
+   "evidence": "Live row: waypoints [0] trailhead 0, [1] Base of west ridge 5.2, [2] summit 8.5.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "kind": "item",
+   "fact": "Pitch count",
+   "verdict": "confirmed",
+   "summary": "The route page shared by a first-ascent party member lists 5 pitches, matching the pitches column, so the four-pitch copies (overview, descent, itinerary, pitch_detail) are brought to five with a P5 row added.",
+   "evidence": "Route page (shared by a first ascensionist): 'Trad, 5 pitches, Grade III'; P5 moves up and left on 4th class steepening to low 5th, ~100 m to the summit block, simul-climbing works well.",
+   "sources": [
+    "https://www.mountainproject.com/route/106864357/leche-la-vaca"
+   ],
+   "searched": [
+    "peakbagger (no route data for crag routes)",
+    "summitpost",
+    "mountainproject.com",
+    "cascadeclimbers.com",
+    "wikipedia",
+    "outdooractive"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_leche_la_vaca",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.8",
+       "notes": "Fun chimney far right on the wall past a small tree onto a knobby slab; a spicy 5.8 move left leads to another knobby slab and a corner belay.",
+       "pitch": 1,
+       "anchor": "Gear (corner)",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9",
+       "notes": "Fun corner up to a flake; move left around the flake (5.9 crux move) into a knob-footed corner to a ledge.",
+       "pitch": 2,
+       "anchor": "Gear (ledge)",
+       "lengthM": 30
+      },
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.10a/b",
+       "notes": "A large, left-leaning 5.10 layback corner — a #4 Camalot eases the run-out feel — continuing to a big belay ledge.",
+       "pitch": 3,
+       "anchor": "Gear (large ledge)",
+       "lengthM": 35
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.10",
+       "notes": "Beautiful knobby white rock to a small roof; a 5.10 move surmounts the roof, then crack and knobs meet the summit ridge and 4th-class scrambling to the top.",
+       "pitch": 4,
+       "anchor": "Walk-off (no belay)",
+       "lengthM": 40
+      }
+     ],
+     "value": [
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.8",
+       "notes": "Fun chimney far right on the wall past a small tree onto a knobby slab; a spicy 5.8 move left leads to another knobby slab and a corner belay.",
+       "pitch": 1,
+       "anchor": "Gear (corner)",
+       "lengthM": 30
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.9",
+       "notes": "Fun corner up to a flake; move left around the flake (5.9 crux move) into a knob-footed corner to a ledge.",
+       "pitch": 2,
+       "anchor": "Gear (ledge)",
+       "lengthM": 30
+      },
+      {
+       "crux": true,
+       "bolts": 0,
+       "grade": "5.10a/b",
+       "notes": "A large, left-leaning 5.10 layback corner — a #4 Camalot eases the run-out feel — continuing to a big belay ledge.",
+       "pitch": 3,
+       "anchor": "Gear (large ledge)",
+       "lengthM": 60
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "5.10",
+       "notes": "Beautiful knobby white rock to a small roof; a 5.10 move surmounts the roof, then crack and knobs lead to a ledge belay.",
+       "pitch": 4,
+       "anchor": "Gear (ledge)",
+       "lengthM": 45
+      },
+      {
+       "crux": false,
+       "bolts": 0,
+       "grade": "4th to low 5th",
+       "notes": "Move up and left on 4th-class ground traversing toward the summit, steepening to low fifth near the end; about 100 m to the summit block, commonly simul-climbed.",
+       "pitch": 5,
+       "anchor": "Summit block",
+       "lengthM": 100
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "overview",
+     "path": [],
+     "find": "A 4-pitch, Grade III",
+     "replace": "A 5-pitch, Grade III"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "descent_text",
+     "path": [],
+     "find": "Leche La Vaca's four pitches finish by joining the summit ridge, and pitch 4 is described as '4th class to summit' — from there",
+     "replace": "Leche La Vaca's fifth pitch, a long 4th-class to low-5th traverse, ends at the summit block — from there"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "A 4-pitch trad route that tops out on the summit ridge;",
+     "replace": "A 5-pitch trad route whose long, easy last pitch reaches the summit block;"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      2,
+      "detail"
+     ],
+     "find": "4 pitches to the summit ridge.",
+     "replace": "5 pitches; the last is often simul-climbed."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_leche_la_vaca",
+     "column": "bail",
+     "path": [],
+     "find": "Each of the first four pitches can be rappelled from natural anchors with a 60 m rope,",
+     "replace": "The first four pitches can be reversed by rappel from natural anchors,"
+    }
+   ]
+  },
+  {
+   "id": "wa_leche_la_vaca",
+   "kind": "item",
+   "fact": "Pitch 3 and 4 lengths: pitch_detail 35 m / 40 m vs beta ~60 m / ~45 m",
+   "verdict": "confirmed",
+   "summary": "The first-ascent party's route page gives ~30, ~30, ~60, ~45 and ~100 m, so pitch_detail now carries 30/30/60/45/100 m (applied in the same pitch_detail set as the pitch-count item) and the retreat line no longer claims every pitch reverses on one 60 m rope.",
+   "evidence": "Route page: P1 ~30m, P2 ~30m, P3 ~60m, P4 ~45m, P5 ~100m to the summit block; beta, pro_tips and length_m 265 already follow it.",
+   "sources": [
+    "https://www.mountainproject.com/route/106864357/leche-la-vaca"
+   ],
+   "searched": [
+    "peakbagger (no route data for crag routes)",
+    "summitpost",
+    "mountainproject.com",
+    "cascadeclimbers.com",
+    "wikipedia",
+    "outdooractive"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "kind": "item",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "summary": "No source states a one-way distance to the West Face Wall; the only mileage on this line is the trail to Lake Ingalls, which stops short of the wall, so dist_km 7.2 is left.",
+   "evidence": "Lake Ingalls hike page gives 4.5 mi one way to the lake; route, first-ascent and forum accounts describe the walk past the lake toward Stuart Pass/Goat Pass in hours, not miles.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/lake-ingalls",
+    "https://www.mountainproject.com/forum/topic/122931727/mt-stuart-gorillas-in-the-mist-options"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wta.org",
+    "AAJ",
+    "blakeclimbs blog",
+    "alpinist.com"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "kind": "item",
+   "fact": "Commitment grade (commitment III vs beta 'Grade: IV')",
+   "verdict": "already_fixed",
+   "summary": "The live row's commitment column is now IV, matching the beta's 'Grade: IV' and the first-ascent journal note.",
+   "evidence": "Live row: commitment 'IV'; beta 'Grade: IV 5.11+'.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared 1,663 ft was provably too low, and no source states a car-to-car gain for the West Face Wall routes.",
+   "evidence": "Sources give the 2,500 ft gain to Lake Ingalls and the 900 ft route length, but nothing states the total for this climb; a sum would be computed.",
+   "sources": [],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wta.org",
+    "AAJ",
+    "blakeclimbs blog"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "kind": "item",
+   "fact": "Total elevation loss for the trip",
+   "verdict": "unresolved",
+   "summary": "loss_ft may not be written in this pass, and no source states a car-to-car gain or loss for the main summit anyway.",
+   "evidence": "Found figures are for other objectives: Gothic Basin 9.2 mi / 2,840 ft, Gothic + Del Campo 11.3 mi / 7,100 ft, North/Middle peaks 13.8 mi, North Peak 3,600 ft.",
+   "sources": [],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "wta.org",
+    "mazamas.org",
+    "stephabegg",
+    "lemkeclimbs"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "kind": "item",
+   "fact": "Round-trip mileage",
+   "verdict": "unresolved",
+   "summary": "No source states a round-trip distance for Sheep Gap's main summit; the 13.8 mi measured outing is to the North and Middle peaks, a different objective.",
+   "evidence": "2024 report: 13.8 mi round trip to the North/Middle peaks via Weden Pass; the club page grades the North Peak at 3,600 ft; Gothic Basin hikes give 9.2-10.5 mi. None is the main summit.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-10-12.191033253272",
+    "https://mazamas.org/activity/323/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "wta.org",
+    "mazamas.org",
+    "stephabegg",
+    "lemkeclimbs",
+    "onehikeaweek"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "kind": "item",
+   "fact": "dist_km (4.5 km) is the camp-to-Austera leg, not the one-way approach",
+   "verdict": "unresolved",
+   "summary": "The only stated Austera distance is the camp-to-summit leg (2.8 mi one way from the 7,600 ft Eldorado camp), which is exactly what dist_km already holds; no source states a trailhead-to-Austera one-way figure.",
+   "evidence": "Route database page: from the Eldorado camp at 7,600 ft, about 4 hrs one-way, 1,280 ft ascent, 592 ft descent, 2.8 miles. Encyclopedia page: from the dome SSE of Eldorado you are still about 3.5 miles from Austera, with no trailhead total. Other figures are multi-peak round trips.",
+   "sources": [
+    "https://www.mountainproject.com/route/117615075/austera-peak",
+    "https://www.summitpost.org/austera-peak/152991"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wta.org",
+    "mountaineers.org",
+    "countryhighpoints",
+    "bcadventureguides"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "kind": "item",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only (dist_km 11.3)",
+   "verdict": "unresolved",
+   "summary": "No source states a one-way trailhead-to-Austera distance; sources give only the trailhead-to-camp approach and the 2.8 mi camp-to-summit leg, which may not be added.",
+   "evidence": "Route database page: 2.8 mi one way from the Eldorado camp; encyclopedia page: about 3.5 mi from the dome SSE of Eldorado; the only whole-trip figures are multi-peak round trips.",
+   "sources": [
+    "https://www.mountainproject.com/route/117615075/austera-peak",
+    "https://www.summitpost.org/austera-peak/152991"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wta.org",
+    "countryhighpoints",
+    "bcadventureguides"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: the one source with 1,280 ft gives it for the camp-to-summit leg only, which is why it was cleared; no source states the car-to-car gain.",
+   "evidence": "Route database page: from the Eldorado camp at 7,600 ft, 1,280 ft ascent, 592 ft descent, 2.8 mi one way.",
+   "sources": [
+    "https://www.mountainproject.com/route/117615075/austera-peak"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wta.org",
+    "countryhighpoints"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Not filled: 4.5 km (2.8 mi) is the stated camp-to-summit leg, not a one-way approach from the trailhead, and no source states the latter.",
+   "evidence": "Route database page: 2.8 miles one way from the Eldorado camp.",
+   "sources": [
+    "https://www.mountainproject.com/route/117615075/austera-peak"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: 6,000 ft is the stated gain to the Eldorado high camp only, and no source states a total gain to Austera.",
+   "evidence": "The row's own approach and the sources give about 6,000 ft to the high camp and 1,280 ft more from camp to the summit; no single figure for the whole climb.",
+   "sources": [
+    "https://www.mountainproject.com/route/117615075/austera-peak"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wta.org",
+    "bcadventureguides"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_clark_mountain_west_ridge",
+   "kind": "item",
+   "fact": "Aspect/face of the documented Walrus Glacier line",
+   "verdict": "already_fixed",
+   "summary": "The row has since been renamed 'Walrus Glacier' with aspect E, face 'Walrus Glacier (east side)' and a glacier climbing_route, so aspect, face, beta and steps now describe one line; the scramble survives only as an approach variant.",
+   "evidence": "Live row: name 'Walrus Glacier', aspect 'E', climbing_route = Boulder Pass bench, Walrus Glacier, summit finish from the col.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_scarface_3",
+   "kind": "item",
+   "fact": "Pitch count",
+   "verdict": "confirmed",
+   "summary": "One crag database lists Scarface at 6 pitches, matching the pitches column, so the itinerary and timing copies that say 5 pitches now say 6 and the last pitch_detail row says it covers pitches 5-6.",
+   "evidence": "Crag database route table: Scarface 5.10c III, 6 pitches, 366 m. The route listing gives P1-P4 and 'P5+: the finishing pitches', consistent with more than five; no source gives 5.",
+   "sources": [
+    "https://www.outdooractive.com/en/climbingspot/crag/colchuck-balanced-rock/226010718/",
+    "https://www.mountainproject.com/route/108157279/scarface"
+   ],
+   "searched": [
+    "peakbagger (no crag routes)",
+    "summitpost",
+    "mountainproject.com",
+    "outdooractive",
+    "cascadeclimbers.com (archived FA report)"
+   ],
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "5 pitches of climbing",
+     "replace": "6 pitches of climbing"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "Climb Scarface (5 pitches)",
+     "replace": "Climb Scarface (6 pitches)"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "timing",
+     "path": [
+      "sectionBreakdown",
+      0,
+      "note"
+     ],
+     "find": "5 pitches of climbing",
+     "replace": "6 pitches of climbing"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_scarface_3",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "notes"
+     ],
+     "find": "Blockier, more solid finishing pitches lead to the summit ridge.",
+     "replace": "Pitches 5 and 6: blockier, more solid finishing pitches lead to the summit ridge."
+    }
+   ]
+  },
+  {
+   "id": "wa_dragontail_peak_r1",
+   "kind": "item",
+   "fact": "Rope length",
+   "verdict": "unresolved",
+   "summary": "No source states a rope length for the Hidden Couloir; accounts only report what individual parties carried on the full Triple Couloirs (a 30 m rope, a 6 mm 60 m rope), so neither the gear list's 60 m nor rope_length_m 30 can be settled.",
+   "evidence": "Encyclopedia route page and the club review describe the couloir and the runnels without a rope length; a 2013 report rappelled on a single 6 mm 60 m rope; a club activity page lists no rope spec.",
+   "sources": [
+    "https://www.summitpost.org/triple-couloirs/282360",
+    "https://turns-all-year.com/trip-reports/january-6-2013-dragontail-triple-couloirs"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "mazamas.org",
+    "turns-all-year",
+    "spokalpine"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "kind": "item",
+   "fact": "Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag",
+   "verdict": "unresolved",
+   "summary": "No source states the parking elevation, so the 4,700 ft trailhead figure can be neither confirmed nor replaced; the club crag page gives a 4,600 ft high point with 200 ft of gain, which supports the crag's ~4,601 ft rather than the trailhead's 4,700 ft.",
+   "evidence": "Club crag page: high point 4,600 ft, elevation gain 200 ft, length 1.0 mi (but its intro also calls it a crag 'at 4,700 ft'); route database area page: 4,632 ft. None gives the lot's height, and deriving it from high point minus gain would be computed.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/keechelus-ridge-crag",
+    "https://www.mountainproject.com/area/114570429/keechelus-ridge"
+   ],
+   "searched": [
+    "peakbagger (n/a for crag)",
+    "summitpost",
+    "mountaineers.org",
+    "mountainproject.com",
+    "thecrag"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_blood_sport",
+   "kind": "item",
+   "fact": "Elevation gain for the route",
+   "verdict": "unresolved",
+   "summary": "No source states the crag's height or the walk's gain; the route page gives only a half-mile, roughly 15-minute walk from the lot and a 50 ft pitch, so 1,200 ft looks high but cannot be replaced with a stated figure.",
+   "evidence": "Route database page: crag isolated near the base of Guye's South Rib, right of and below the west face, visible from the west Summit lots; 50 ft single pitch; no elevation or gain.",
+   "sources": [],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "mountaineers.org",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_astroglide",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "No source states Half Moon Crag's wilderness status or permit rule; the crag listing covers access and rope length only, so the replacement wording for the permit column is still unsourced.",
+   "evidence": "Crag database page: granite crag above Tye Road, faint traces of trail through old-growth, routes 85 ft or less; nothing on permits or wilderness. The earlier boundary measurement places the pin outside any wilderness and far from Wild Sky, but that is a measurement, not a stated rule.",
+   "sources": [
+    "https://www.mountainproject.com/area/117712289/half-moon-crag"
+   ],
+   "searched": [
+    "peakbagger (n/a)",
+    "summitpost",
+    "mountainproject.com",
+    "USFS Mt. Baker-Snoqualmie pages",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_astroglide",
+   "kind": "fill",
+   "fact": "waypoints[0].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the trailhead waypoint already carries distMi 0 on the live row.",
+   "evidence": "Live row: waypoints[0] Tye Road pullout, distMi 0.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "kind": "item",
+   "fact": "First ascent of Klawatti Peak",
+   "verdict": "confirmed",
+   "summary": "One source, the route's database page, credits the SW Buttress to the July 1940 Anderson-Boyer-Gorton party, which is what the row's fa already says, so the stored value stands and nothing is changed.",
+   "evidence": "Route database page for the SW Buttress: 'FA: Lloyd Anderson, Karl Boyer, Tom Gorton, 1940'. The 1940 club annual confirms the party and the July 7, 1940 date for the peak without naming a route.",
+   "sources": [
+    "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress",
+    "http://www.alpental.com/m/1940.pdf"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost (archived)",
+    "mountainproject.com",
+    "club annual 1940"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_la_bohn_peak_southwest_slopes",
+   "kind": "item",
+   "fact": "Which side of the peak the route climbs from the gap (east ridge/face vs southwest slopes 'staying left of the broad west ridge')",
+   "verdict": "already_fixed",
+   "summary": "The row has been renamed 'East Ridge' (aspect E) and its climbing_route, beta and descent now all describe heading west from La Bohn Gap up the east ridge.",
+   "evidence": "Live row: name 'East Ridge', face 'East ridge, climbed west from La Bohn Gap', climbing_route[0] 'East ridge from La Bohn Gap'; no southwest-slopes wording remains.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "kind": "item",
+   "fact": "round-trip distance and gain figures disagree",
+   "verdict": "unresolved",
+   "summary": "Sources still disagree (7.0 mi / 3,500 ft on the hiking guide; 5.3 mi / 3,911 ft, 5.71 mi / 4,122 ft and others in reports), and none states the row's dist_km 5.6 or gain_ft 3,847, so there is no row value a source supports to keep.",
+   "evidence": "Hiking guide: 7.0 mi round trip, 3,500 ft, high point 6,129 ft; a report: 5.3 mi round trip, 3,911 ft to the true summit; a 2025 party: 5.71 mi, 4,122 ft; another: 3,556 ft. All round trips, none one-way, none matching the row.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/mount-baring",
+    "https://hikingwithhadland.com/2021/05/16/baring-mountain-05-14-2021/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "wta.org",
+    "hikingwithhadland",
+    "outdoorproject",
+    "theoutbound"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "kind": "item",
+   "fact": "Distance up the Chiwawa River Trail to the Massie Lake turnoff: approach/itinerary/sectionBreakdown 'about 4 miles' vs the 'M' tree waypoint distMi 2.8 (and lake 4.7)",
+   "verdict": "unresolved",
+   "summary": "Sources disagree (about 3 miles on the high-route page; 1.4 + 3.1 mi legs plus a further 0.5 mi overshoot in an encyclopedia trip report), and moving the 'M' tree pin to 4 would also strand the ford pin at 2.9, which no source places, so nothing is changed.",
+   "evidence": "High-route page: the Massie path splits off the Chiwawa River Trail after about three miles; encyclopedia trip report: a 1.4 mi leg to the 1513/1550 split then a 3.1 mi leg before the unmarked Massie trail, river about 0.1 mi beyond (a total would be computed).",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/31/massie-lake-high-route/",
+    "https://www.summitpost.org/massie-lake/373477"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "wenatcheeoutdoors",
+    "wta.org",
+    "mountaineers.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_despair_east_route",
+   "kind": "item",
+   "fact": "Crux grade shown in TECHNICAL STATS vs actual crux difficulty",
+   "verdict": "unresolved",
+   "summary": "The one source that rates anything puts the 5.0 on a summit-block dihedral its party chose because they saw 'no obvious scramble route', and it says the standard east-ridge line below is Class 3, so it does not settle whether the standard route's crux is Class 4 or 5.0.",
+   "evidence": "2016-era report via the southeast face: led a 'Class 5.0 dihedral' on the right side of the summit block after finding no obvious scramble; descended an easy Class 3 downclimb along the east ridge, 'obviously the standard route that we should have found'.",
+   "sources": [
+    "https://trailcatjim.com/mt-despair-via-southeast-face/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "trailcatjim blog",
+    "wikipedia",
+    "mountaineers.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_goode_northeast_buttress",
+   "kind": "item",
+   "fact": "total elevation gain/loss",
+   "verdict": "confirmed",
+   "summary": "One source, the speed-record route page for the Northeast Buttress loop, states 10,700 ft of vertical gain, which is what gain_ft already holds, so the stored value is kept; the itinerary's per-day gains are left because balancing them would require computing.",
+   "evidence": "Route page: 'Vertical Gain 10,700 ft' for the Bridge Creek approach, Northeast Buttress and Park Creek descent loop (about 33 mi of trail plus the climb).",
+   "sources": [
+    "https://fastestknowntime.com/route/goode-mountain-northeast-buttress"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "fastestknowntime",
+    "wta.org",
+    "billwright blog",
+    "drdirtbag"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_gorillas_direct",
+   "kind": "item",
+   "fact": "Bergschrund/glacier hazard on a rock-route approach that has no glacier",
+   "verdict": "unresolved",
+   "summary": "No source mentions a bergschrund or moat at the base of the West Face Wall, nor rules one out, so the watch_out line is neither removed nor confirmed.",
+   "evidence": "Route pages and the first-ascent account describe the wall rising from snow between Stuart Pass and Goat Pass, reached by trail, moderate bushwhacking and easy snow; no schrund or moat named.",
+   "sources": [
+    "https://www.mountainproject.com/route/106585178/gorillas-in-the-mist",
+    "http://blakeclimbs.blogspot.com/2009/07/gorillas-in-mist.html"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "AAJ",
+    "blakeclimbs blog"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_needle_peak_south_route",
+   "kind": "item",
+   "fact": "Crux/route grade (Class 4, 5.0) vs. the pitch-by-pitch breakdown's max grade (Class 3)",
+   "verdict": "unresolved",
+   "summary": "The only account of the north ridge (blog and WTA report by the same party) describes the 7,300-7,400 ft crux and the summit gully without giving any class, so neither Class 4 (5.0) nor Class 3 can be confirmed.",
+   "evidence": "2023 report: 'tackled the crux between 7300' and 7400' by weaving through the west of the cliff bands', rocks decent with much exposure, a narrow gully below the overhanging crest to the summit; the class 3/class 4 ratings in the same post belong to Mount Lyall and Lyall Ridge on later days.",
+   "sources": [
+    "https://onehikeaweek.com/2023/09/11/needle-peak/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "onehikeaweek blog",
+    "wta.org",
+    "bivouac"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "kind": "item",
+   "fact": "Total round-trip distance for the Standard Route",
+   "verdict": "unresolved",
+   "summary": "No source states a Sentinel-only one-way or round-trip distance; found figures are per-day totals or the 32.6 mi Sentinel plus Old Guard outing.",
+   "evidence": "2024 out-and-back party: per-day totals only; Sentinel + Old Guard: 32.6 mi round trip including road walk and a camp move.",
+   "sources": [
+    "https://onehikeaweek.com/2020/07/05/sentinel-peak/",
+    "https://edwardliphoto.com/trips/2024-07-04-ptarmigan-traverse/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "onehikeaweek blog",
+    "edwardliphoto",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sherpa_peak_west_ridge",
+   "kind": "item",
+   "fact": "Sherpa south basin camp waypoint elev 6200 vs elevFt 6300",
+   "verdict": "unresolved",
+   "summary": "No source gives an elevation for this informal basin camp, so neither 6,200 nor 6,300 ft can be confirmed; the rendered elev (6,200) already agrees with the bivy entry.",
+   "evidence": "Encyclopedia peak page and route write-ups give Longs Pass ~6,200 ft and no figure for the south-basin camp.",
+   "sources": [
+    "https://www.summitpost.org/sherpa-peak/152244"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "kind": "item",
+   "fact": "Where the climbers' path leaves the maintained trail (Park Creek Pass traverse vs the ~4,100 ft washout on the Park Creek trail)",
+   "verdict": "already_fixed",
+   "summary": "The approach now crosses Park Creek Pass, descends the trail and leaves it just past the ~4,100 ft washout, and no copy of the 'traverse west/southwest from the pass' wording remains in the approach, waypoints or descent.",
+   "evidence": "Live row approach: 'Near 4,100 ft the trail crosses a large washout of whitish rock, and the climbers' path leaves the trail a few minutes beyond it'; waypoint list reworked (no rib-camp pin).",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "kind": "item",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "summary": "The only statement found is general: many established trails in the Wild Sky Wilderness need a free trailhead registration; it does not say whether the off-trail Tailgunner line from the Barclay Creek trail (itself outside the wilderness) does, so neither permit text is changed.",
+   "evidence": "Wilderness encyclopedia page: 'Many established trails within Wild Sky Wilderness require a free registration at trailheads.' Trailhead page lists only the day-use fee.",
+   "sources": [
+    "https://www.summitpost.org/wild-sky-wilderness/439890",
+    "https://www.fs.usda.gov/r06/mbs/recreation/barclay-lake-trailhead"
+   ],
+   "searched": [
+    "peakbagger (n/a)",
+    "summitpost",
+    "USFS trailhead and wilderness pages",
+    "wta.org",
+    "seattletimes"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "kind": "item",
+   "fact": "How long consolidated/climbable snow lasts on the route",
+   "verdict": "unresolved",
+   "summary": "No source gives a snow window for the northwest ridge; the known accounts are a June 2020 big-snow ascent and a November 2025 thin-snow ascent.",
+   "evidence": "2020 report met unusually large snowpack in June; 2025 report found thin snow over class 4 rock in November; neither states how long climbable snow lasts.",
+   "sources": [
+    "https://trailcatjim.com/east-gunn-peak-gunn-point-tailgunner-peak-wing-peak/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-11-10.102301319582"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "trailcatjim blog",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the waypoint list was reworked, so the cleared 22.3 and 22.4 mi no longer map to the same pins (index 5 is now the summit, index 6 no longer exists), and no source states a one-way mileage to the summit.",
+   "evidence": "Sources give only round trips (about 40 mi via Thunder Creek to Park Creek Pass; 27.0 mi via the Park Creek route) and leg mileages to Two Mile camp.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/storm-king-southwest-route",
+    "https://www.summitpost.org/storm-king/273954"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the waypoint list was reworked, so the cleared 22.3 and 22.4 mi no longer map to the same pins (index 5 is now the summit, index 6 no longer exists), and no source states a one-way mileage to the summit.",
+   "evidence": "Sources give only round trips (about 40 mi via Thunder Creek to Park Creek Pass; 27.0 mi via the Park Creek route) and leg mileages to Two Mile camp.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/storm-king-southwest-route",
+    "https://www.summitpost.org/storm-king/273954"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "wta.org"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "timing",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared timing described a southwest-slopes scramble, but the row now describes the seven-pitch North Ridge, and no source gives a time for that line.",
+   "evidence": "Cleared sectionBreakdown: 'Car-to-car scramble via Kangaroo Pass approach', 10.5 h; the live row is the North Ridge (5.7, about seven pitches) with no timing.",
+   "sources": [],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wikipedia"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "climbing_route",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared steps (southwest gully, class 4 step) belong to a different line from the North Ridge the row now describes, so restoring them would re-create a contradiction.",
+   "evidence": "Live row: name 'North Ridge', pitch_detail and beta describe seven pitches from the notch north of the peak.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "commitment",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a commitment grade for Half Moon's North Ridge.",
+   "evidence": "Encyclopedia and route listings found give the peak's location and that the easiest route is fifth class; none gives a Grade numeral for the North Ridge.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Half_Moon_(Washington)"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wikipedia"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a one-way distance from the highway to the North Ridge notch, and the cleared 12.87 km (8 mi) does not fit the row's own 'about two miles' to leave the path.",
+   "evidence": "Encyclopedia: Half Moon is about two miles east of the highway at Washington Pass (a location, not an approach distance).",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Half_Moon_(Washington)"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "wikipedia"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a cumulative mileage for the Chiwawa River ford.",
+   "evidence": "Route page: after the 5-mile Red Mountain fork 'the trail takes a winding, indirect path' to the ford, with no mileage.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/chiwawa-mountain-sw-side/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost (403, no archive)",
+    "wenatcheeoutdoors",
+    "armchairmountaineer",
+    "trailcatjim"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a cumulative mileage for leaving the trail in the upper basin.",
+   "evidence": "Sources describe the basin by elevation (5,500 ft basin, 6,300 ft bench), not by distance.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/chiwawa-mountain-sw-side/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost (403)",
+    "wenatcheeoutdoors",
+    "armchairmountaineer"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the summit waypoint already carries distMi 7.3 on the live row.",
+   "evidence": "Live row: waypoints[6] Chiwawa Mountain summit, distMi 7.3.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "confirmed",
+   "summary": "The Red Mountain Trail junction pin gets distMi 5, the cumulative figure one route page states and the row's approach text already uses ('roughly 5 miles').",
+   "evidence": "Route page trip instructions: 'Begin hiking on the Buck Creek Trail. At 1.4 miles, go right... At 5 miles, go left, continuing on the Chiwawa River trail. The right fork climbs to Red Mountain.' (Another page gives 3.7 mi to this junction from the trailhead; the row already holds 5 in its approach, so the supported row value is kept.)",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/20/chiwawa-mountain-sw-side/",
+    "https://armchairmountaineer.com/chiwawa-mountain"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost (403, no archive)",
+    "wenatcheeoutdoors",
+    "armchairmountaineer",
+    "trailcatjim",
+    "lemkeclimbs"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_chiwawa_mountain_southwest",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 5
+    }
+   ]
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the waypoint list has been reduced to three pins (trailhead, thin-crack pitches, summit), so index 4 no longer exists.",
+   "evidence": "Live row waypoints: [0] SR-20 hairpin pullout, [1] sustained thin-crack pitches, [2] Liberty Bell summit.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the waypoint list has been reduced to three pins, so index 5 no longer exists.",
+   "evidence": "Live row waypoints: [0] SR-20 hairpin pullout, [1] sustained thin-crack pitches, [2] Liberty Bell summit.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_true_grit",
+   "kind": "fill",
+   "fact": "timing.approachTimeHrs",
+   "verdict": "confirmed",
+   "summary": "The Postal Wall page states a 15-minute approach, so approachTimeHrs is set to 0.25.",
+   "evidence": "Crag page for Postal Wall: 'Approach is a half a mile, 15 minute hike' from the main parking lot.",
+   "sources": [
+    "https://www.mountainproject.com/area/117270484/postal-wall"
+   ],
+   "searched": [
+    "peakbagger (n/a)",
+    "summitpost",
+    "mountainproject.com",
+    "wenatcheeoutdoors"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_true_grit",
+     "column": "timing",
+     "path": [
+      "approachTimeHrs"
+     ],
+     "expect": null,
+     "value": 0.25
+    }
+   ]
+  },
+  {
+   "id": "wa_true_grit",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "confirmed",
+   "summary": "The Postal Wall page states a half-mile approach, so dist_km is set to 0.8 (0.5 mi converted).",
+   "evidence": "Crag page for Postal Wall: 'Approach is a half a mile, 15 minute hike' from the main parking lot.",
+   "sources": [
+    "https://www.mountainproject.com/area/117270484/postal-wall"
+   ],
+   "searched": [
+    "peakbagger (n/a)",
+    "summitpost",
+    "mountainproject.com",
+    "wenatcheeoutdoors"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_true_grit",
+     "column": "dist_km",
+     "path": [],
+     "expect": null,
+     "value": 0.8
+    }
+   ]
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Not filled: the Planner reads summitTimeHrs as the climbing time from the base, and no source states that alone; the stated figure (6.2 hours up) is car-to-summit, and other reports give only clock times.",
+   "evidence": "Report: '6.2 hours up; 4.9 hours down', summit 6.2 hours from car; another: base at 8:15, climbing 8:45-11:30 to the false summit (a duration would be computed).",
+   "sources": [
+    "https://trailcatjim.com/chair-peak-via-northeast-buttress-southeast-ridge/",
+    "https://rocknropenw.com/2015/09/07/chair-peak-ne-buttress/"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountaineers.org",
+    "trailcatjim",
+    "rocknropenw",
+    "onehikeaweek"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_east_face",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared four 55 m rappels are contradicted by the one first-hand account (two double-rope rappels), and a two-row table would change the page's headline rappel count away from the single-rope figure the rappels text gives; no source gives station lengths.",
+   "evidence": "First-hand report: one double-rope rappel to the notch between Middle and South Gunsight, then one loose, dirty rappel into the moat at the base of the notch; no lengths.",
+   "sources": [
+    "http://chriswinter.blogspot.com/2011/08/reflections-on-gunsight-range.html"
+   ],
+   "searched": [
+    "peakbagger (403)",
+    "summitpost",
+    "mountainproject.com",
+    "chriswinter blog"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "pitches",
+   "verdict": "unresolved",
+   "summary": "Not filled: the cleared 7 pitches belong to the Burdo-Cairns North Face, which was split off into its own row; no source gives a pitch count for the Northeast Face Couloir this row now describes.",
+   "evidence": "Split decision: 4 chimney pitches plus 3 rib pitches are the Burdo-Cairns line; the 2005 couloir account describes a simul-climbed band, a traverse, two belayed crux leads and a long couloir without a total.",
+   "sources": [],
+   "searched": [
+    "AAJ",
+    "NWMJ 2005 note",
+    "summitpost",
+    "peakbagger (403)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "length_m",
+   "verdict": "unresolved",
+   "summary": "Not filled: 930 m came from the Burdo-Cairns figure (about 4,000 ft of climbing), a different line now on its own row; no source gives the couloir's length.",
+   "evidence": "Split decision record: gain_ft 4000 and length_m 930 come from the Burdo climbing figure.",
+   "sources": [],
+   "searched": [
+    "AAJ",
+    "NWMJ 2005 note",
+    "summitpost"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: 4,000 ft is the Burdo-Cairns climbing figure, not a car-to-car gain for the couloir, and no source states the couloir's total gain.",
+   "evidence": "The 2005 couloir account gives a 4,000 ft bivy elevation, the ~6,700 ft ridge and a 6,000 ft descent, but no total gain.",
+   "sources": [],
+   "searched": [
+    "AAJ",
+    "NWMJ 2005 note",
+    "summitpost"
+   ],
+   "ops": []
+  }
+ ]
+}

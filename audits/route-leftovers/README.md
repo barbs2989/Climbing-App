@@ -309,7 +309,36 @@ Each pass first listed every source tried in earlier r/d/s files and counted onl
     (r22). The route's own Cooney Lake pin says 8. A new day 1 forces a new day 2 (12.8 mi, "6.2 miles back out") that
     no source states, so writing one would be computing.
 
+## 19. Owner: one source from peakbagger / summitpost, applied to every leftover (`single/in/s1-s6`, `single/out/`)
+Inputs: the 198 contradictions the deep retries left `unresolved` (`research/out/v001-v028.json`) and 155 fields
+earlier passes cleared to null for want of a second source (loss_ft and access excluded). Rules:
+`scripts/oneoff/route-leftovers/single-source-instructions.md`; apply files built by
+`scripts/oneoff/route-leftovers/build-single-apply.mjs` (confirmed only, minus reviewer holds), then `apply-structural.mjs`.
+- 353 results: 54 confirmed, 260 unresolved, 39 already fixed by later passes. Applied: 52 results, 99 ops, 49 routes,
+  0 rejected (`sN-apply.json`, plus `s4b-apply.json` and `extra-apply.json` below).
+- Highlights: Leche La Vaca 5 pitches (30/30/60/45/100 m, sums to `length_m` 265); Scarface 6 pitches; Mount Logan Easy
+  Pass 10 mi each way (`dist_km` 16.1); Magic Mountain 5.5 mi to Kool-Aid Lake; Spinnaker summit 5,645 ft; Mount
+  Price 15.6 mi round trip (the 10 mi was the snow-season Goat Creek line); Temple South Ridge Jul-Sep; Jack Mountain
+  gain 10,000 (9,069 was an elevation copied into a gain field); Triad two 30 m rappels; Aiguille de l'M descends the
+  North Ridge; Mix-up commitment II; South Gunsight Grade II; Holsten-Hilden Grade IV; Lichtenberg ~7 mi / 2,100 ft
+  round trip (`dist_km` 3.2 cleared: it was 2 mi one way, and halving 7 is computing).
+- Reviewer changes: New York Gully's fifth breakdown row HELD (pitch 3 already describes an originally-aided crux
+  corner; a 5.8 A1-2 row may be that feature twice). Berdeen day-1 gain written as the stated 6,550, not a rounded 6,500.
+- Found along the way and applied: Buck Mountain's Chiwawa footbridge reported gone (2024), log crossing ~20 ft
+  upstream, pin note and approach aligned (`s4b`); Three Queens' Mineral Creek Trail 1331 in the same fire order as
+  Alta, through Oct 31, 2026 (`s4b`); Triad `bail` aligned to two rappels and Mount Fury's descent no longer attributes
+  a timing to "a published trip report" (`extra`).
+- Why the 260 stay open: no source states a value (most fills); only round trips exist and halving is computing; the
+  row holds both disputed values, each with a source; sources split and the row holds neither; or a fix needs
+  per-day figures nobody states. Peakbagger answered 403 throughout; summitpost was read through archived copies.
+
 ## Held for the owner (not applied)
+- **One-source pass (section 19):** Buck Mountain — the one report of this out-and-back gives 40 mi / 11,686 ft round
+  trip, contradicting every figure on the row; adopting it means rebuilding the itinerary days (computing). Mount Price
+  `dist_km` 10.5 km (6.5 mi one way) still disagrees with the 15.6 mi round trip; no one-way figure is published.
+  Mastiff: the club page now lists Mastiff 10 mi / 3,330 ft and Howard 12 mi / 4,900 ft, so the 4,900 an earlier pass
+  adopted for Mastiff may be Howard's. Project Crack's trailhead pin sits on the cliff. Stickney's 2.25 mi road walk is
+  measured from an older gate. New York Gully fifth pitch (above).
 - **Deletes:** done by the owner (section 16).
 - **Single source / one author:** King Kong settled — one source accepted (section 18) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
   Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
