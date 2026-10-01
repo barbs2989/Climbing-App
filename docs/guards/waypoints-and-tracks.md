@@ -1700,3 +1700,30 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       - Degenhardt's two computed pins.
       Neither Meany nor Degenhardt is beyond the terrain box (`audit:waypoint-elevations --ground`),
       so computed is not a conviction.
+  - **`audit:waypoint-elevations --ground` BACKLOG (2026-10-01): 79 live pins read, 70 repaired on
+    58 routes, 9 recorded as undecidable.** The BEYOND list convicts a PAIR — the claimed height
+    and the coordinate cannot both be right — but not a half, so each pin was researched to decide
+    which half is wrong. `scripts/oneoff/fix-waypoint-elevation-backlog.mjs` reads
+    `audits/waypoint-elevation-backlog/decisions.json` and writes only a published value (source
+    and fetched quote), a copy from a sibling pin of the same place, or null: 56 `clear`, 7
+    `nullElev`, 4 `setElev`, 2 `move`, 5 `copy`, plus one `setNote`. Point Success's note described
+    the interpolated coordinate its clear removed. Every write that leaves a height AND a coordinate
+    must sit inside the audit's own margin of the box (max(250 ft, half the relief)).
+    - **A move whose source refuses a re-fetch is a clear, not a move.** ListsOfJohn, Peakbagger,
+      TopoZone and Mindat all answered 403. So both Mount Index Middle Peak pins and Sherpa's Long's
+      Pass were cleared: their heights match the published ones, so the coordinate is the wrong
+      half. The published coordinates are kept in the evidence for a later `move`.
+    - **The distance gate refused two coordinate writes**, Foggy Dew Falls and Sinister's Sixmile
+      Camp. Each would have made a neighbour's stored distance impossible, so the route's own
+      distances do not describe that point. Both were cleared instead. Foggy Dew Falls still took
+      the published 4,235 ft (Northwest Waterfall Survey).
+    - **Left as `none`, each with its reason:**
+      - Both halves wrong, nothing to write: Adams Glacier Base, North Ridge Base, Summit Chief's
+        PCT junction, Lost Peak's river flats, Snowgrass Flats, Emerald's Fern Lake junction.
+        Emerald's copy from Cardinal fails the 100 ft gate.
+      - Azurite Mine: both halves are verbatim from one federal mine record, yet the ground
+        refuses it.
+      - Orsino Creek Basin / Red Talus Slope: one pin names two places.
+      - Peepsight junction: undecidable.
+      - Sulphur Creek crossing's height: nothing published contradicts it.
+      Do not re-research these without new evidence.
