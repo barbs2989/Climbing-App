@@ -1735,3 +1735,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (0.85 mi off). These were written by the same script with `--dir=waypoint-elevation-leftovers`.
       Stuart North Ridge was refused: its stored 3.5 mi cannot reach the real pass. GNIS has no
       Middle Peak of Mount Index, so both Index pins stay cleared.
+    - **THE REST (same day): 35 writes on 19 routes, in `audits/waypoint-pins-rest/`.** A research
+      workflow covered the 9 still-BEYOND pins and the neighbours flagged earlier. A skeptic agent
+      re-fetched each source before the same script applied it (`--dir=waypoint-pins-rest`), and it
+      refused one write. The new evidence:
+      - GNIS for Snowgrass Flat, Overcoat Lake and the Magic Mountain summits.
+      - The WA DNR report on Azurite Mine.
+      - Wikipedia for the Adams Glacier terminus and for Snow Lakes.
+      - WTA and USFS distances.
+
+      The script gained `nullDist`, for a moved pin whose stored distance contradicts its
+      published one. `fix-waypoint-pins-rest-prose.mjs` corrected the 3 prose heights the repairs
+      contradicted (Snowgrass Flat 6,400 → 5,800 ft; Azurite Mine 5,900 → 4,440 ft).
+
+      Recorded as `none`:
+      - Garfield's trailhead, which has no published pullout coordinate.
+      - Index Middle Peak.
+      - Stuart North Ridge, which is a north-trailhead row carrying south-approach pins and needs
+        a variant split, not pin edits.
+      - Three newly found BEYOND pins with no source: Adams High Camp junction, the South Twin
+        dihedral, and Emerald's Pyramid Creek junction.
+
+      Magic Mountain's Kool-Aid Lake distance (5.5 mi, set by #2130) is the owner's decision. The
+      evidence is in that row's `none` reason.
