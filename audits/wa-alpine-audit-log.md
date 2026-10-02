@@ -29920,3 +29920,63 @@ Next batch continues after `wa_vasiliki_ridge_standard` in the id-ordered scope
 `area_type`). Candidate ids sorting next after it have not yet been pulled —
 run the live id-ordered `routes` query (see `scope_definition` in the progress
 file) starting just past `wa_vasiliki_ridge_standard` to get the next batch.
+
+## Batch 377 (2026-10-02, pass 6)
+
+Checked: wa_wallaby_peak_standard; wa_warrior_peak_standard;
+wa_washington_ellinor_traverse_ridge; wa_west_craggy_peak_standard_route;
+wa_west_face_2 (North Gunsight Peak); wa_west_twin_needle_south_route;
+wa_white_mountain_olympics_scramble; wa_whitehorse_mountain_nw_shoulder.
+
+Direct fetches to Mountain Project/SummitPost/Wikipedia/Peakbagger/AAC
+Publications remain blocked at the network/proxy level in this environment;
+every external fact below was corroborated via WebSearch's indexed snippets.
+Live DB reads via REST also hit repeated `57014` statement timeouts on
+`id=in.(...)` / `select=*` batch queries against `routes` — worked around by
+querying one route at a time and projecting specific columns first.
+
+**Fixed 1 (1 statement, `audits/sql/2026-10-02-batch-377.sql`):**
+- `wa_warrior_peak_standard.high_point_ft` 7320 → 7314. This row's own summit
+  waypoint ("Warrior Peak (Southeast Summit)", elev 7314) and the parent area
+  row (`wa_warrior_peak.elevation_ft` = 7314, `prominence_ft` = 804 — matching
+  Peakbagger's precise 7,313.9 ft / 804 ft prominence exactly) already agreed;
+  only the route's own top-level `high_point_ft` was never brought into line.
+  Same drift shape as batch 376's Vasiliki Ridge fix: one field lagging behind
+  the rest of the row's own already-correct data.
+
+**Investigated, left as-is (not a new finding):** `wa_west_craggy_peak_standard_route`
+`high_point_ft` (8372) vs. the parent area row `wa_west_craggy_peak.elevation_ft`
+(8366) look like the same undisclosed-drift shape as the Warrior Peak fix above,
+but aren't — the area row's own `blurb` already states "8,366 ft, also cited as
+8,372 ft ft", i.e. a deliberate prior call on which figure to lead with, with
+both numbers being real, currently-circulating survey values (West Craggy's
+exact elevation is genuinely unsettled: Peakbagger/Wikipedia/PeakVisor give
+8,372 ft, a Bulger-list source gives 8,366 ft). Left untouched per this audit's
+standing practice of not overturning an already-disclosed sub-10 ft spread.
+
+**Clean (7):** `wa_wallaby_peak_standard` — FA (Fred Beckey, Helmy Beckey, Walt
+Varney, June 17 1942) confirmed via SummitPost/WTA/Mountaineers.org; elevation
+(7,995 ft) matches the area row. `wa_washington_ellinor_traverse_ridge` — Mount
+Washington's elevation (6,260 ft) confirmed via Wikipedia/SummitPost, matching
+the area row. `wa_west_face_2` (North Gunsight Peak, West Face) — FA (Jim
+Nelson & Carl Dietrich, 1986, 5.10 A2) and FFA (Max Hasson & Jens Holsten, July
+25 2007, onsight, graded 5.11c in Alpinist's contemporary newswire — the app's
+stored 5.11+ is an equivalent YDS rendering, not a conflict) both confirmed; 6
+pitches / ~600 ft matches StephAbegg's trip report exactly against the stored
+pitches=6 / length_m=183. `wa_west_twin_needle_south_route` — FA of Twin
+Needles (William Degenhardt, James Martin, Herb Strandberg, August 17 1932)
+confirmed via AAC Publications/Alpenglow Ski History; elevation (7,936 ft)
+matches the area row. `wa_white_mountain_olympics_scramble` — elevation
+(6,378 ft) confirmed via Wikipedia exactly. `wa_whitehorse_mountain_nw_shoulder`
+— FA (Nels Bruseth, 1909) confirmed via Wikipedia/SummitPost; route
+`high_point_ft` (6,852) vs. area `elevation_ft` (6,851) is a 1-ft rounding
+difference, not treated as an error.
+
+Next batch continues after `wa_whitehorse_mountain_nw_shoulder` in the
+id-ordered scope. Already identified this run as in-scope (`area_type=peak`)
+but not yet audited, sorting next: `wa_winchester_mountain_south_trail`,
+`wa_windy_peak_iron_gate_trail`, `wa_windy_peak_trail`,
+`wa_windy_peak_windy_creek_trail`, `wa_witches_tower_south_face`,
+`wa_witches_tower_southwest_corner`, `wa_witches_tower_west_buttress`,
+`wa_wolframite_mountain_scramble` — pick these up first before re-running the
+live id-ordered query.
