@@ -1,6 +1,6 @@
 // Three real accounts, filled with example data, for testing the app BY HAND while signed in.
 //
-//   node scripts/manual-test-accounts.mjs create   # make Avery, Blake and Casey + their data
+//   node scripts/manual-test-accounts.mjs create   # make Avery, Blake, Casey and Drew + their data
 //   node scripts/manual-test-accounts.mjs status   # are they still there? (row counts)
 //   node scripts/manual-test-accounts.mjs delete   # remove every row this script made, then the accounts
 //
@@ -23,6 +23,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { SUPABASE_URL, requireServiceKey, anonKey, headers } from "./lib/supabase-env.mjs";
 import { POLICY_VERSION } from "../lib/policy.js";
+import { randomUUID } from "node:crypto";
 
 const DOMAIN = "climbmatch-manual.invalid";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -37,6 +38,18 @@ const R = {
   dc: "wa_mount_rainier_disappointment_cleaver",
   ptarmigan: "wa_ptarmigan_traverse",
   colchuck: "wa_colchuck_peak_colchuck_glacier",
+};
+
+// Photos are the images.unsplash.com URLs ClimbMatchCore's own seed climbers use: external https URLs
+// render as-is (no storage upload), and removing one just drops the URL.
+const IMG = {
+  avery: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+  blake: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+  casey: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=300&h=300&fit=crop&crop=face",
+  drew: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
+  ridge: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=280&fit=crop",
+  glacier: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?w=400&h=280&fit=crop",
+  summit: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=400&h=280&fit=crop",
 };
 
 async function fetchRetry(url, opts, tries = 4) {
@@ -109,12 +122,14 @@ async function create() {
     users.A = await createUser("avery", "Avery Tester");
     users.B = await createUser("blake", "Blake Tester");
     users.C = await createUser("casey", "Casey Tester");
+    users.D = await createUser("drew", "Drew Tester");
     save();
-    const { A, B, C } = users;
+    const { A, B, C, D } = users;
 
     // ── Profiles (rows made by the signup trigger; patched, not inserted) ──
     await patch("profiles", `id=eq.${A.id}`, {
-      username: "averytester", show_name: true, location: "Bellingham, WA", level: "Advanced",
+      username: "averytester", show_name: true, avatar: IMG.avery,
+      photos: [IMG.ridge, IMG.summit], photo_alts: { [IMG.ridge]: "A snowy ridge at sunrise (test photo)", [IMG.summit]: "Summit view over the clouds (test photo)" }, location: "Bellingham, WA", level: "Advanced",
       bio: "TEST ACCOUNT for manual QA — not a real climber. Alpine and trad, mostly the North Cascades.",
       sport_grade: "5.11a", trad_grade: "5.10a", boulder_grade: "V4",
       disciplines: ["alpine", "trad", "sport", "ice"],
@@ -125,21 +140,23 @@ async function create() {
       availability: ["weekends"], avail_week: ["sat_am", "sun_am", "wed_pm"], hiking_speed_ft_hr: 1500,
     });
     await patch("profiles", `id=eq.${B.id}`, {
-      username: "blaketester", show_name: true, location: "Seattle, WA", level: "Intermediate",
+      username: "blaketester", show_name: true, avatar: IMG.blake, location: "Seattle, WA", level: "Intermediate",
       bio: "TEST ACCOUNT for manual QA — not a real climber.", trad_grade: "5.9",
       disciplines: ["alpine", "trad"], skills: ["leadbelay", "glacier"], availability: ["weekends"], hiking_speed_ft_hr: 1300,
     });
     await patch("profiles", `id=eq.${C.id}`, {
-      username: "caseytester", show_name: true, location: "Leavenworth, WA", level: "Expert",
+      username: "caseytester", show_name: true, avatar: IMG.casey, location: "Leavenworth, WA", level: "Expert",
       bio: "TEST ACCOUNT for manual QA — not a real climber.", sport_grade: "5.12a", trad_grade: "5.11a",
       disciplines: ["sport", "trad", "ice"], availability: ["flexible"],
     });
+    await patch("profiles", `id=eq.${D.id}`, { username: "drewtester", show_name: true, avatar: IMG.drew, location: "Tacoma, WA", bio: "TEST ACCOUNT — Avery has blocked this one.", disciplines: ["sport"] });
     await insert("profile_zips", { user_id: A.id, zip: "98225" }, "user_id");
     await insert("profile_zips", { user_id: B.id, zip: "98103" }, "user_id");
     await insert("profile_zips", { user_id: C.id, zip: "98826" }, "user_id");
     await insert("profile_emergency_contacts", { user_id: A.id, name: "Jordan (test contact)", phone: "555-0100" }, "user_id");
     const now = new Date().toISOString();
     for (const u of [A, B]) await insert("verification_records", { user_id: u.id, verification_type: "email", status: "verified", verified_at: now });
+    await insert("verification_records", { user_id: A.id, verification_type: "member_club", status: "verified", verified_at: now });
 
     // ── Friends: A–B and B–C connected; Casey has sent Avery a request ──
     await insert("connections", { requester: A.id, addressee: B.id, status: "accepted", responded_at: now });
@@ -179,7 +196,7 @@ async function create() {
     await insert("group_members", { group_id: g1.id, user_id: B.id, role: "moderator", status: "active" });
     await insert("group_members", { group_id: g1.id, user_id: C.id, role: "member", status: "pending" });
     const p1 = await insert("group_posts", { group_id: g1.id, author: A.id, body: "Welcome! Post trip plans and partner requests here. (TEST DATA)", pinned: true, pinned_at: now });
-    const p2 = await insert("group_posts", { group_id: g1.id, author: B.id, body: "Coleman–Deming was in great shape on 9/14 — bergschrund easy to pass on climber's left." });
+    const p2 = await insert("group_posts", { group_id: g1.id, author: B.id, body: "Coleman–Deming was in great shape on 9/14 — bergschrund easy to pass on climber's left.", photos: [IMG.glacier], photo_alts: { [IMG.glacier]: "Glacier on the Coleman–Deming (test photo)" } });
     await insert("group_post_reactions", { post_id: p2.id, user_id: A.id, reaction: "🔥" }, ["post_id", "user_id"]);
     await insert("comments", { target_id: "gp_" + p2.id, user_id: A.id, text: "Thanks — that's the beta I needed." });
     const ev = await insert("group_events", { group_id: g1.id, host: A.id, title: "Crevasse rescue practice (TEST)", event_date: "2026-10-25", event_time: "9:00 am", location: "Mount Baker — Heliotrope Ridge", descr: "Bring a harness, two prusiks and a pulley.", capacity: 8 });
@@ -196,13 +213,15 @@ async function create() {
     const L = {};
     L.coleman = await insert("climb_logs", { user_id: A.id, route_id: R.coleman, discipline: "alpine", date_climbed: "2026-09-14", tick_type: "Summit", stars: 4, partners: [B.id], trip_report_visibility: "public",
       notes: "Left the TH at 4:30, summit by 11. Bergschrund passable on climber's left. TEST TRIP REPORT.", cond_tags: ["Thin snow bridges"], snow_condition: "Patchy",
-      approach_minutes: 240, climb_minutes: 300, descent_minutes: 210, car_to_car_minutes: 750, party_size: 2 });
+      approach_minutes: 240, climb_minutes: 300, descent_minutes: 210, car_to_car_minutes: 750, party_size: 2,
+      photos: [{ url: IMG.summit, caption: null, alt: "Summit plateau (test photo)" }, { url: IMG.glacier, caption: null, alt: "Roman Wall from below (test photo)" }],
+      itinerary: { days: [{ n: 1, title: "Car to car", objective: "Summit", gainFt: 7080, lossFt: 7080, hours: "12-13", miles: 11.3, packLb: 30, note: "TEST", schedule: [{ time: "04:30", label: "Leave TH", detail: "" }, { time: "11:00", label: "Summit", detail: "" }] }] } });
     L.stuart = await insert("climb_logs", { user_id: A.id, route_id: R.stuart, discipline: "alpine", date_climbed: "2026-08-30", tick_type: "Lead", stars: 5, trip_report_visibility: "public",
       notes: "Long day. Gendarme pitch is the crux. TEST TRIP REPORT.", cond_tags: ["Loose rock"], rappel_count: 2, rappel_longest_m: 30, rappel_rope: "single 60 m" });
     L.colchuck = await insert("climb_logs", { user_id: A.id, route_id: R.colchuck, discipline: "alpine", date_climbed: "2026-08-23", tick_type: "Summit", stars: 3, partners: [B.id], crew_id: crew3.id, trip_report_visibility: "crew", notes: "Glacier mostly bare ice by late August. TEST." });
     L.dc = await insert("climb_logs", { user_id: A.id, route_id: R.dc, discipline: "alpine", date_climbed: "2026-07-19", tick_type: "Attempt", stars: 2, outcome_reasons: ["weather"], outcome_note: "Turned at 12,300 ft — whiteout. TEST.", trip_report_visibility: "private" });
     L.cond = await insert("climb_logs", { user_id: A.id, route_id: R.bakerNR, discipline: "alpine", date_climbed: "2026-09-28", stars: null, trip_report_visibility: "public", cond_tags: ["Thin snow bridges", "Icefall / falling ice"], snow_condition: "Patchy", notes: "Conditions only — scouted from the Coleman. TEST." });
-    L.bColeman = await insert("climb_logs", { user_id: B.id, route_id: R.coleman, discipline: "alpine", date_climbed: "2026-09-14", tick_type: "Summit", stars: 5, partners: [A.id], trip_report_visibility: "public", notes: "Great day with Avery. TEST." });
+    L.bColeman = await insert("climb_logs", { user_id: B.id, route_id: R.coleman, discipline: "alpine", date_climbed: "2026-09-14", tick_type: "Summit", stars: 5, partners: [A.id], trip_report_visibility: "public", notes: "Great day with Avery. Snow bridges getting thin above 8,000 ft. TEST.", cond_tags: ["Thin snow bridges"] });
     L.bPtarmigan = await insert("climb_logs", { user_id: B.id, route_id: R.ptarmigan, discipline: "alpine", date_climbed: "2026-08-10", tick_type: "Summit", stars: 5, trip_report_visibility: "public", notes: "Five days, perfect weather. TEST." });
     await insert("climb_log_confirmations", { log_id: L.coleman.id, partner_id: B.id, verdict: "confirmed" }, ["log_id", "partner_id"]);
     // Blake's Coleman log tags Avery and is left UNANSWERED, so Avery gets the confirm prompt.
@@ -234,8 +253,54 @@ async function create() {
     await insert("route_difficulty_ratings", { route_id: R.coleman, user_id: A.id, axis: "physical", rating: 3 });
     await insert("route_difficulty_ratings", { route_id: R.coleman, user_id: A.id, axis: "technical", rating: 2 });
 
+    // ── Comment reactions (keys from REACTIONS) ──
+    await insert("comment_reactions", { comment_id: cm.id, user_id: A.id, reaction: "helpful" }, ["comment_id", "user_id"]);
+
+    // ── Route contributions. None of their readers filter on status, so pending rows render; the
+    //    service key cannot approve (trg_contribution_status). No `field` corrections: one that applies
+    //    rewrites a REAL route for everyone, and a grade one fires apply_agreed_grade. ──
+    await insert("contributions", { route_id: R.coleman, kind: "sun", value: { vote: "more", note: "Full sun on the Roman Wall by 9 am. TEST." }, contributor: B.id });
+    await insert("contributions", { route_id: R.coleman, kind: "pair", value: { with: R.bakerNR, withName: "North Ridge", note: "Same trailhead; a good next step after Coleman–Deming. TEST." }, contributor: A.id });
+    await insert("contributions", { route_id: R.coleman, kind: "photo", value: { url: IMG.ridge, alt: "Ridge above the Coleman Glacier (test photo)" }, contributor: B.id });
+
+    // ── Hazards: Blake and Casey say the snow bridges are still there (needs >=2 matching reports, above) ──
+    await insert("hazard_votes", { route_id: R.coleman, hazard_label: "Weak snow bridges", user_id: B.id, vote: "still" });
+    await insert("hazard_votes", { route_id: R.coleman, hazard_label: "Weak snow bridges", user_id: C.id, vote: "still" });
+
+    // ── Base of the climb: two on-site check-ins (inside the RPC's own rules). Not Avery, so her
+    //    own real check-in is never refused as impossible travel. ──
+    const ago2 = new Date(Date.now() - 2 * 86400000).toISOString();
+    await insert("route_base_checkins", { route_id: R.coleman, user_id: B.id, lat: 48.7905, lng: -121.8475, accuracy_m: 8, samples: 3, fixed_at: ago2 }, ["route_id", "user_id"]);
+    await insert("route_base_checkins", { route_id: R.coleman, user_id: C.id, lat: 48.7905, lng: -121.8475, accuracy_m: 10, samples: 3, fixed_at: ago2 }, ["route_id", "user_id"]);
+
+    // ── Itineraries: Avery's own plan for North Ridge, and one Blake shared to the crew ──
+    const itin = { days: [
+      { n: 1, title: "Trailhead to Hogsback camp", objective: "Camp at 6,000 ft", gainFt: 2400, lossFt: 0, hours: "4-5", miles: 4, packLb: 45, note: "TEST plan", schedule: [{ time: "07:00", label: "Leave TH", detail: "" }] },
+      { n: 2, title: "Summit and out", objective: "Summit", gainFt: 4700, lossFt: 7100, hours: 12, miles: 9, packLb: 20, note: "", schedule: [] },
+    ] };
+    await insert("user_itineraries", { user_id: A.id, route_id: R.bakerNR, itinerary: itin }, ["user_id", "route_id"]);
+    await patch("crews", `id=eq.${crew1.id}`, { itinerary: itin, itinerary_by: B.id });
+    await insert("crew_email_invites", { crew_id: crew1.id, email: `friend@${DOMAIN}`, invited_by: A.id, note: "Join us if you can make it. TEST." }, ["crew_id", "email"]);
+
+    // ── A weekly repeating event: one row per week, one shared series_id, the host RSVP'd to each ──
+    const series = randomUUID();
+    for (const d of ["2026-10-06", "2026-10-13", "2026-10-20", "2026-10-27"]) {
+      const e = await insert("group_events", { group_id: g1.id, host: A.id, title: "Tuesday gym night (TEST)", event_date: d, event_time: "6:30 pm", location: "Vital Bellingham", descr: "Weekly training session.", capacity: 0, repeat: "weekly", series_id: series });
+      await insert("group_event_rsvps", { event_id: e.id, user_id: A.id }, ["event_id", "user_id"]);
+    }
+
+    // ── Guides: Casey is a verified, listed guide; Avery has an open inquiry; Blake reviewed a trip ──
+    await insert("guide_profiles", { id: C.id, status: "active", title: "Alpine Guide (TEST)", base_location: "Bellingham, WA", specialty: "Glacier & alpine", bio: "TEST guide profile — not a real guide.", cancellation_policy: "Full refund 7+ days out.", lat: 48.7519, lng: -122.4787, day_rate: 450, group_max: 3, response_hrs: 24, regions: ["North Cascades", "Mount Baker"], languages: ["English"], insurance_carrier_name: "Test Mutual", insurance_attested: true, insurance_attested_at: now, permit_attested: true, permit_attested_at: now, waiver_process_attested: true, waiver_process_attested_at: now, independent_contractor_attested: true, independent_contractor_attested_at: now, agreement_signed_name: "Casey Tester", agreement_signed_at: now, submitted_at: now, listed_at: now });
+    await insert("guide_credentials", { guide_id: C.id, kind: "primary_track", cert_track: "AlpineGuide", label: "Alpine Guide (TEST)", issuing_org: "AMGA", cert_number: "TEST-001", status: "verified", verified_at: now, verified_expires_at: new Date(Date.now() + 365 * 86400000).toISOString() });
+    await insert("inquiries", { guide_id: C.id, climber_id: A.id, objective: "Coleman–Deming, first glacier climb (TEST)", requested_dates: "Late June 2027", party_size: 2, message: "Looking for a guided first glacier trip. TEST.", status: "new" });
+    const bq = await insert("inquiries", { guide_id: C.id, climber_id: B.id, objective: "Crevasse rescue refresher (TEST)", requested_dates: "Aug 2026", party_size: 1, message: "TEST.", status: "accepted", guide_responded_at: now });
+    await insert("reviews", { inquiry_id: bq.id, guide_id: C.id, climber_id: B.id, rating: 5, text: "Patient and thorough — the rescue drills finally clicked. (TEST review)", guide_reply: "Thanks Blake! (TEST)", guide_reply_at: now });
+
+    // ── Blocked: Avery has blocked Drew (never connected, so the block has nothing to remove) ──
+    await insert("blocked_users", { blocker: A.id, blocked: D.id });
+
     save();
-    console.log(`Created Avery, Blake and Casey with ${made.length} example rows.`);
+    console.log(`Created Avery, Blake, Casey and Drew with ${made.length} example rows.`);
     console.log(`Sign-in details: ${STATE}`);
   } catch (e) {
     save();
