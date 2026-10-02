@@ -1,0 +1,41 @@
+{
+ "results": [
+  {
+   "id": "wa_argonaut_peak_east_ridge",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-01 guidebooks are the source of truth; owner 'if there's only 1 source, then use it'",
+   "fact": "first ascent of the Southeast Ridge is empty on the row; the guidebook names the party and date",
+   "evidence": "Guidebook (Cascade Alpine Guide vol. 1, p298, read in the final pass lane g1): Southeast Ridge, Grade II 5.6, first ascent Loomis, Parks, Schnell, Seman, May 30, 1977. The row's fa is null; nothing else on the row states a first ascent.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_argonaut_peak_east_ridge",
+     "column": "fa",
+     "path": [],
+     "expect": null,
+     "value": "Loomis, Parks, Schnell and Seman (May 30, 1977)"
+    }
+   ]
+  },
+  {
+   "id": "wa_three_fingers_south_peak_lookout",
+   "verdict": "confirmed",
+   "rule": "land manager current page is the authority for trail distances; one source -> use it",
+   "fact": "Tin Can Gap pin has no distance; the forest trail page states 6.2 mi from the trailhead to Tin Can Gap",
+   "evidence": "Current Forest Service page for Trail 641 gives Saddle Lake 2.5 mi and Tin Pan/Tin Can Gap 6.2 mi. The row already states Saddle Lake at about 2.5 mi and Goat Flats at about 4.5 mi plus about 2 more miles to the gap, so 6.2 adds no contradiction; the trailhead pin is distMi 0.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_three_fingers_south_peak_lookout",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 6.2
+    }
+   ]
+  }
+ ]
+}

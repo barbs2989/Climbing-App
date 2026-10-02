@@ -1,0 +1,42 @@
+{
+ "id": "wa_ellen_pea",
+ "area_id": "wa_m_m_wall_aka_supercave_wall",
+ "stations": 4,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 15,
+    "anchor": "slung tree at the top",
+    "station": "The slung tree at the top of the route.",
+    "notes": "Rappel 1 of 4, about 15 m, trending slightly left to a larger tree."
+   },
+   {
+    "n": 2,
+    "lengthM": 55,
+    "anchor": "larger tree",
+    "station": "The larger tree below and left of the top.",
+    "notes": "Rappel 2 of 4, about 55 m, into the left side of the right-hand cave. Then walk right to the bolted anchor above pitch 2."
+   },
+   {
+    "n": 3,
+    "lengthM": 50,
+    "anchor": "bolted anchor above pitch 2",
+    "station": "The bolted anchor above pitch 2, reached by walking right in the cave.",
+    "notes": "Rappel 3 of 4, about 50 m, down and right.",
+    "hazards": [
+     "Diagonal: you have to steer to stay on line for the next anchor."
+    ]
+   },
+   {
+    "n": 4,
+    "lengthM": 40,
+    "anchor": "bolted anchor",
+    "station": "The next bolted anchor down and right.",
+    "notes": "Rappel 4 of 4, about 40 m, to the narrow ledge at the base."
+   }
+  ],
+  "rappels": "4 rappels on two 60 m ropes back down the route (about 15, 55, 50 and 40 m), mostly from bolted anchors; about an hour",
+  "rappel_count_note": "Four rappels on two 60 m ropes: every rappel needs both ropes. Nearly every anchor is bolted below the top trees, and some rappels are diagonal, so steer to stay on line. About an hour from the top to the base. Instead of rappelling, you can traverse off to a 3rd-class ramp partway down."
+ }
+}

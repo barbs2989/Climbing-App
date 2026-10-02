@@ -1,0 +1,34 @@
+{
+ "id": "wa_south_face_2",
+ "area_id": "wa_pernod_spire",
+ "stations": 3,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "two-piton station equalized with cord (or a slung horn)",
+    "station": "The summit area. The short aid block just below the top has one newer bolt and one old quarter-inch bolt with an aging hanger; do not trust the old bolt alone.",
+    "notes": "Rappel 1 of 3, on two ropes, down the south face to the Pernod-Chablis notch. A single 70 m just barely works; a single 60 m leaves you several metres short.",
+    "hazards": [
+     "Rope-eating cracks sit a few feet below the slung-horn station: build that anchor as high as practical so the rope does not jam on the pull."
+    ]
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "anchor at the top of the Chablis East Face rappel line",
+    "station": "From the notch, a short 4th-class scramble regains the East Face rappel line on Chablis.",
+    "notes": "Rappel 2 of 3, double-rope, down Chablis’s East Face line."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "next station on the Chablis East Face line",
+    "station": "The next station down the Chablis line.",
+    "notes": "Rappel 3 of 3, double-rope, to the base."
+   }
+  ],
+  "rappels": "3 double-rope rappels (two 60 m ropes): one down Pernod’s south face to the Pernod-Chablis notch, then two down the Chablis East Face line to the base"
+ }
+}

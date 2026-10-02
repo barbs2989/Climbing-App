@@ -102,9 +102,17 @@ async function createUser(tag, name) {
   if (status >= 300 || !body?.id) throw new Error(`create ${email} failed (${status}): ${JSON.stringify(body).slice(0, 300)}`);
   return { id: body.id, email, password: pw, name };
 }
+// A FAILED listing must never read as "no accounts": `status` then reported 0 accounts while
+// Avery could still sign in, and `create` would go on to make a second set. Retry, then throw.
 async function existingUsers() {
-  const { body } = await auth("admin/users?per_page=1000");
-  return ((body && body.users) || []).filter((u) => (u.email || "").endsWith("@" + DOMAIN));
+  let last = null;
+  for (let i = 0; i < 4; i++) {
+    const { status, body } = await auth("admin/users?per_page=1000");
+    if (status === 200 && body && Array.isArray(body.users)) return body.users.filter((u) => (u.email || "").endsWith("@" + DOMAIN));
+    last = status;
+    await new Promise((r) => setTimeout(r, 600 * (i + 1)));
+  }
+  throw new Error(`could not list accounts (HTTP ${last}) — try again in a moment.`);
 }
 
 async function create() {
@@ -319,13 +327,23 @@ async function remove() {
   }
   const users = new Map((st.accounts || []).map((a) => [a.id, a.email]));
   for (const u of await existingUsers()) users.set(u.id, u.email);
+  // crews.created_by and crew_members.invited_by have no ON DELETE action, and the test accounts
+  // invite each other, so the account delete 500s until these go (needed when the state file is lost).
+  const ids = [...users.keys()];
+  if (ids.length) {
+    for (const p of [`crew_members?invited_by=in.(${ids.join(",")})`, `crews?created_by=in.(${ids.join(",")})`]) {
+      const { status } = await rest(p, { method: "DELETE" });
+      if (status >= 300) { failed++; console.error(`  could not delete ${p.split("?")[0]} made by the test accounts (${status})`); }
+    }
+  }
   for (const [id, email] of users) {
     const { status } = await auth(`admin/users/${id}`, { method: "DELETE" });
     if (status >= 300 && status !== 404) { failed++; console.error(`  could not delete account ${email} (${status})`); }
   }
   const left = await existingUsers();
-  const ids = [...users.keys()];
-  const prof = ids.length ? (await rest(`profiles?id=in.(${ids.join(",")})&select=id`)).body : [];
+  const pr = ids.length ? await rest(`profiles?id=in.(${ids.join(",")})&select=id`) : { status: 200, body: [] };
+  if (pr.status >= 300 || !Array.isArray(pr.body)) throw new Error(`checking profiles failed (${pr.status}) — run delete again`);
+  const prof = pr.body;
   if (!left.length && !(prof || []).length && !failed) {
     if (existsSync(STATE)) unlinkSync(STATE);
     console.log(`Deleted ${(st.rows || []).length} rows and ${users.size} accounts. Nothing left.`);
@@ -347,7 +365,12 @@ async function status() {
 }
 
 const cmd = process.argv[2];
-if (cmd === "create") await create();
-else if (cmd === "delete") await remove();
-else if (cmd === "status") await status();
-else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | delete"); process.exitCode = 2; }
+try {
+  if (cmd === "create") await create();
+  else if (cmd === "delete") await remove();
+  else if (cmd === "status") await status();
+  else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | delete"); process.exitCode = 2; }
+} catch (e) {
+  console.error(e.message);
+  process.exitCode = 1;
+}

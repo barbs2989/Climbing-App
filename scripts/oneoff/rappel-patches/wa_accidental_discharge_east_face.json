@@ -1,0 +1,31 @@
+{
+ "id": "wa_accidental_discharge_east_face",
+ "area_id": "wa_south_peak",
+ "stations": 2,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": 35,
+    "anchor": "summit anchor (build or back up with cord)",
+    "station": "The summit, shared by every route on the peak.",
+    "notes": "Rappel 1 of 2, about 35 m north, to the notch. A 35 m rappel needs two ropes or a 70 m rope.",
+    "hazards": [
+     "Do not plan on reversing the loose line of ascent."
+    ]
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "anchor at the notch (build or back up with cord)",
+    "station": "The notch north of the summit.",
+    "notes": "Rappel 2 of 2, east onto the Blue Glacier.",
+    "hazards": [
+     "The last rappel can hang free over the moat at the foot of the face. Land beyond the lip."
+    ]
+   }
+  ],
+  "rappels": "2 rappels off the shared summit: about 35 m north to the notch, then east onto the Blue Glacier",
+  "rappel_count_note": "The summit’s shared descent: one rappel of about 35 m north to the notch, then one east onto the Blue Glacier, landing beyond the moat. Carry cord to build or back up anchors rather than relying on fixed gear."
+ }
+}
