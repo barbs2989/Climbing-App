@@ -1642,7 +1642,10 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   // A published summit time that equals the published total, with no separate
   // approach figure, is a car-to-car number: the whole day already. Adding a
   // separate approach estimate to it double-counts the walk in.
-  const publishedIsWholeDay=!!(route.timing&&route.timing.summitTimeHrs!=null&&route.timing.totalHrs!=null&&route.timing.summitTimeHrs===route.timing.totalHrs&&route.timing.approachTimeHrs==null);
+  // So is a published total with NO legs at all: derivedSummitH then equals the whole
+  // total, and the walk in was stacked on top -- 32 rows (Mastiff's 8.5 hr day put the
+  // summit some 13 hr out). Measured 2026-10-01.
+  const publishedIsWholeDay=!!(route.timing&&route.timing.totalHrs!=null&&route.timing.approachTimeHrs==null&&(route.timing.summitTimeHrs!=null?route.timing.summitTimeHrs===route.timing.totalHrs:route.timing.descentTimeHrs==null));
   const hasHikeInputs=(route.distKm!=null&&route.distKm!=="")||(route.gainM!=null&&route.gainM!=="");
   // hasHikeInputs is an OR, so ONE of the three is enough to render a confident total -- while
   // scarfHrs still charges every missing component as 0. Measured on the live catalog: 950
@@ -1764,9 +1767,9 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
      otherwise, so deriving the marker from the same expression means the "N/A" and the ">=" can
      never disagree -- the rule this file already applies to `_hfr`, `_memN` and `dayOf`.
 
-     NO `!publishedIsWholeDay` CLAUSE, deliberately: `publishedIsWholeDay` requires
-     `summitTimeHrs != null`, which is precisely `hasPublishedSummitH`, so it is a SUBSET of
-     climbKnown and the guard could never fire. A redundant condition in a guard reads as
+     NO `!publishedIsWholeDay` CLAUSE, deliberately: `publishedIsWholeDay` requires either
+     `summitTimeHrs != null` (`hasPublishedSummitH`) or a positive total with no legs
+     (`hasDerivedSummitH`), so it is a SUBSET of climbKnown and the guard could never fire. A redundant condition in a guard reads as
      coverage and is not, so it is asserted in probe-climb-leg-lower-bound.mjs instead of
      written here. */
   const climbKnown=hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
