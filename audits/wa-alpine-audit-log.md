@@ -29687,3 +29687,75 @@ wa_the_incisor_scramble (The Needles/Royal Basin, NPS permit fee structure, elev
 area), wa_the_monk_le_gibet/odine/scabo grades (5.8/5.9/5.9) confirmed exactly via Mountain
 Project, wa_the_fin_scramble (5.4, Sawtooth Ridge/Flapjack Lakes approach, Basic Alpine, May-Sept
 season confirmed via Mountaineers.org).
+
+## Batch 373 (2026-10-02, pass 6)
+
+Checked 10 routes continuing after `wa_the_monk_west_cracks_left_crack`: The Monk — West
+Cracks — Right Crack (Cathedral Peak), Neve Glacier Approach/Standard (The Needle),
+Glacier/Scramble Route (The Pleiades), East Ridge and South Route (The Pyramid, Southern
+Pickets), Ridge Traverse Route (The Rake, Southern Pickets), The Roof (Unicorn Peak), The
+Scoop and The Tipping Point (Colchuck Balanced Rock), South Ridge (The Temple).
+
+**An unusual batch: 4 silent reversions.** Four separately-researched fixes from batch 107
+(2026-08-13) and batch 236 (2026-09-08) had reappeared on the live rows reading exactly as
+they did *before* those fixes, with no log entry in between recording anyone changing them
+back — the same drift pattern already on record here for Dorado Needle's `dist_km` and The
+Brothers' `elevation_ft`. Re-applied all four verbatim, re-citing rather than re-deriving
+the original sourcing:
+
+- `wa_the_monk_west_cracks_right_crack.high_point_ft` reverted 8300 → 8606 (back to
+  Cathedral Peak's own summit elevation — the identical summit-collision defect batch 107
+  fixed). This row's own "The Monk (tower top)" waypoint still reads 8300. Corrected back.
+- `wa_the_pleiades_scramble.access.land_manager` reverted to the false claim that some
+  upper routes cross into North Cascades National Park. Mount Larrabee sits west of the
+  NCNP boundary, and this row's own `permit` field and `access.landManager` (camelCase
+  twin) already agree it's entirely Mount Baker Wilderness. Corrected back.
+- `wa_the_rake_traverse_route.high_point_ft` reverted 7840 → 7869, and `dist_km` reverted
+  13.0 → 25.7 (a round-trip figure under the app's doubling convention). This row's own
+  "The Rake" summit waypoint still reads 7840 ft / 8.07 mi one-way. Both corrected back.
+- `wa_the_roof.gain_ft`/`loss_ft` reverted 2571/2571 → 2397/2397 — below this row's own
+  trailhead-to-summit net rise, the same impossible-gain violation batch 236 caught once
+  already. Corrected back.
+
+**Also fixed (not a reversion):** `wa_the_rake` (area row) `elevation_ft` 7869 → 7840 —
+batch 236 only ever corrected the *route's* `high_point_ft` to 7840 (sourced from this same
+route's own waypoint plus Peakbagger/StephAbegg/Wikipedia agreement); the parent area row
+was never brought into agreement and still read 7869. Fixed now for consistency with
+already-cited sourcing.
+
+**Filled 3 NULL `permit` gaps**, same pattern as batch 337's `wa_milk_n_honey` fix (reuse
+the app's own already-established wording for the same peak/zone rather than inventing
+new text): `wa_the_pyramid_picket_east_ridge` (from sibling `wa_the_pyramid_picket_south_route`'s
+NPS/Marblemount text — same peak, same zone); `wa_the_scoop_2` and `wa_the_tipping_point`
+(both Colchuck Balanced Rock, the standard Enchantment Permit Area text). Also filled
+`wa_the_pyramid_picket_east_ridge`'s NULL `high_point_ft` from the shared 7,920 ft Pyramid
+summit figure already on the area row and its sibling route — this route's own overview
+states it topped out as the 5th of 14 summits on the 2003 Southern Pickets Enchainment, so
+it shares the peak's one summit rather than needing a route-specific figure.
+
+**Flagged, not fixed:** `wa_the_monk_west_cracks_right_crack`'s `gain_ft` (6000) is
+identical to Cathedral Peak's own summit gain figure — the same pattern already flagged
+(not fixed) on four sibling Monk routes in batch 372, for the same reason: no source gives
+The Monk's own gain distinct from Cathedral's, so nothing to substitute. Left as-is,
+consistent with batch 372's treatment of its siblings.
+
+**Clean (3):** `wa_the_needle_neve_glacier` and `wa_the_pyramid_picket_south_route`
+re-confirmed against batch 235's (2026-09-07) existing findings — no new issue; South
+Route's own name-vs-west-facing-aspect tension remains correctly flagged-not-fixed from
+that batch rather than resurfacing here. `wa_the_temple_south_ridge` (new to this audit):
+`high_point_ft`/`lat`/`lng` agree with its own area row, the FA (Fred Beckey, 1942) is
+plausible and consistent with his documented Cascades FA history, and its own
+`corrections`/`data_quality.gaps` fields already self-hedge the one open question (whether
+"South Ridge" or The Mountaineers' "West Side" is this line's correct published name) —
+left as documented uncertainty, not a new finding.
+
+`npm run check:sql` could not be run this session — this branch's checkout predates the
+script's addition to main (`scripts/check-sql-targets.mjs` doesn't exist on this branch's
+base), and this fresh clone has no `node_modules`/service key. Every target id and every
+guarded `WHERE`-clause old-value was instead independently re-confirmed via direct REST
+queries against the live DB (using the read-only anon key supplied for this run)
+immediately before drafting each statement, which is the same zero-rows-matched protection
+`check:sql` provides.
+
+Next batch continues after `wa_the_tipping_point` in the id-ordered scope (see progress
+file for the next candidate list).
