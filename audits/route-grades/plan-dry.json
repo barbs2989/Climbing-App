@@ -1,0 +1,985 @@
+{
+ "plan": [
+  {
+   "id": "wa_andersons_thumb_standard",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 4 / low 5th",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Class 4 / low 5th",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "Anderson's Thumb (~6,850 ft subpeak of Mount Anderson) is described only as 'a fun rock climb on good sandstone'; no numeric grade found online. Record says Class 4 / low 5th.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Anderson_(Washington)"
+   ]
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade II, 5.2",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.2",
+    "grade_num": 2
+   },
+   "headline": [
+    "Easy 5th",
+    "5.2"
+   ],
+   "confidence": "low",
+   "evidence": "Beckey calls the SW ridge 3rd class, but glacial recession now leaves a low-5th pitch at its base; summit tower low 5th (chockstone 5.2).",
+   "sources": [
+    "https://www.summitpost.org/austera-peak/152991",
+    "https://www.mountainproject.com/route/117615075/austera-peak"
+   ]
+  },
+  {
+   "id": "wa_bacon_peak_diobsud",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 2-3 (glacier travel)",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3 (glacier travel)"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Record's own difficulty at the top of its range; low-confidence research (Class 2) not adopted.",
+   "sources": []
+  },
+  {
+   "id": "wa_big_four_mountain_tower_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "IV 5.7"
+   },
+   "body": {
+    "grade": "5.7"
+   },
+   "headline": [
+    "5.7",
+    "5.7"
+   ],
+   "confidence": "low",
+   "evidence": "Tower Route on the NE ridge described as a hard rock route; a Direct Tower Route TR lists a 5.7 bolted slab and pitches to 5.8 (direct variant)",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/35689-tr-big-four-direct-tower-route-7302005/",
+    "https://www.summitpost.org/big-four-mountain/152569"
+   ]
+  },
+  {
+   "id": "wa_gully_1",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "3rd"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "3rd",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "The Amphitheater (Cape Disappointment) on Mountain Project lists 4 climbs and describes gullies used as 3rd-class access/descent; the individual route grade was not visible.",
+   "sources": [
+    "https://www.mountainproject.com/area/115163720/the-amphitheater"
+   ]
+  },
+  {
+   "id": "wa_gully_2",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "3rd"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "3rd",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "The Amphitheater (Cape Disappointment) on Mountain Project lists 4 climbs and describes gullies used as 3rd-class access/descent; the individual route grade was not visible.",
+   "sources": [
+    "https://www.mountainproject.com/area/115163720/the-amphitheater"
+   ]
+  },
+  {
+   "id": "wa_booker_mountain_northeast_face",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "5.8 (historic NCCS 'F8' free rating; modern equivalent approximate)",
+    "rock_grade": "5.8 (historic NCCS 'F8' free rating; modern equivalent approximate)"
+   },
+   "body": {
+    "grade": "5.8",
+    "rock_grade": "5.8 (approximate)"
+   },
+   "headline": [
+    "5.8",
+    "5.8"
+   ],
+   "confidence": "low",
+   "evidence": "FA report: NCCS IV, F8; mostly class 4 and 5, plus very steep snow/ice at the notch",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196541002/North-America-United-States-Washington-Cascade-Mountains-Mount-Booker-Northeast-Face"
+   ]
+  },
+  {
+   "id": "wa_buckskin_mountain_southwest_slopes",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "F",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "South-side rib and gully from Entiat Meadows to the east ridge at 7,900 ft, a non-technical scramble on scree and heather; no class rating stated",
+   "sources": [
+    "https://onehikeaweek.com/2018/07/29/buckskin-mountain/",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1191727"
+   ]
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "3rd-4th class",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "West ridge is mostly hiking, then 'fun scrambling' to the true summit (no class given); the record's 4th class finish could not be confirmed or refuted.",
+   "sources": [
+    "https://climberkyle.com/2021/08/19/green-creek-circuit/"
+   ]
+  },
+  {
+   "id": "wa_crooked_thumb_peak_south_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade IV, 5.8+ (or 5.2 A1)"
+   },
+   "body": {
+    "grade": "5.8+"
+   },
+   "headline": [
+    "5.8+",
+    "5.8+"
+   ],
+   "confidence": "low",
+   "evidence": "2016 report: summit headwall crack is 5.8+ free or 5.2/A1; their party aided it.",
+   "sources": [
+    "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/"
+   ]
+  },
+  {
+   "id": "wa_east_mcmillan_spire_west_ridge",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade III, 5.6"
+   },
+   "body": {
+    "grade": "5.6"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "low",
+   "evidence": "Record's own difficulty at the top of its range; low-confidence research (Class 4) not adopted.",
+   "sources": []
+  },
+  {
+   "id": "wa_east_twin_needle_south_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade II, 5.7"
+   },
+   "body": {
+    "grade": "5.7"
+   },
+   "headline": [
+    "5.7",
+    "5.7"
+   ],
+   "confidence": "low",
+   "evidence": "Only online description of the south side is the AAJ descent: downclimb/rap to Eye Col, then fourth-class gullies with raps; no grade found for the summit block above Eye Col, record's 5.7 kept.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216383"
+   ]
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "IV",
+    "grade_system": "yds",
+    "grade_num": 4,
+    "ice_grade_num": null
+   },
+   "body": {
+    "grade": "AI2",
+    "grade_system": "wi",
+    "grade_num": 2,
+    "ice_grade_num": 2
+   },
+   "headline": [
+    "Class 3-4",
+    "AI2"
+   ],
+   "confidence": "low",
+   "evidence": "AAJ FA account: 300 ft of rock, then a 300-ft 50-degree ice patch, then easier upslab rock; no modern grade found.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face"
+   ]
+  },
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade III, 5.6"
+   },
+   "body": {
+    "grade": "5.6"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "low",
+   "evidence": "No route-specific source found online; kept the record's 5.6.",
+   "sources": []
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade III, Class 4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "5th class",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "Easiest route listed as Class 4 (West Face); FA account quoted by the record (easy-moderate fifth class) not found online.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Ghost_Peak"
+   ]
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 4-5",
+    "grade_system": "class",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Class 4-5",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "Beckey: mainly class 4 with one lead of moderate class 5; no number published.",
+   "sources": [
+    "https://www.nwhikers.net/forums/viewtopic.php?t=8025052",
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets"
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 4 / low 5th",
+    "rock_grade": "5.0"
+   },
+   "body": {
+    "grade": "Class 4",
+    "rock_grade": "Class 3-4"
+   },
+   "headline": [
+    "5.0",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "Trip report via the South Gully and East Ridge: a snow defile with moats, then a Class 2-3 scramble to the top; no 5th-class climbing mentioned. The record's own breakdown tops out at Class 3-4.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ]
+  },
+  {
+   "id": "wa_klawatti_peak_southeast_face",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade III, Class 4 / low 5th",
+    "rock_grade": "Class 4 / low 5th"
+   },
+   "body": {
+    "grade": "Class 4",
+    "rock_grade": "Class 4 (slabby rock once the snow melts)"
+   },
+   "headline": [
+    "Class 4 / low 5th",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "South/SE face from Klawatti Col: 45-50° snow through a constriction (icy at times, bergschrund bridges) in early season; later it melts out to slabs with a moat.",
+   "sources": [
+    "https://www.summitpost.org/klawatti-peak/152520",
+    "https://www.countryhighpoints.com/klawatti-peak-and-dorado-needle/"
+   ]
+  },
+  {
+   "id": "wa_lincoln_peak_standard",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "III-IV",
+    "grade_system": "yds",
+    "ice_grade_num": null,
+    "commitment": "VI"
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "ice_grade_num": 3,
+    "commitment": "III"
+   },
+   "headline": [
+    "AI3+",
+    "AI3"
+   ],
+   "confidence": "low",
+   "evidence": "Trip reports: X Couloir is 60+ degree exposed snow/ice with a narrow crux gully near 75 degrees, climbed with tools and screws; no published ice grade.",
+   "sources": [
+    "https://www.countryhighpoints.com/lincoln-peak/",
+    "https://turns-all-year.com/trip-reports/lincoln-peak-x-couloir",
+    "https://www.nwhikers.net/forums/viewtopic.php?t=7962632"
+   ]
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade II-III, 5.4"
+   },
+   "body": {
+    "grade": "5.4"
+   },
+   "headline": [
+    "5.4",
+    "5.4"
+   ],
+   "confidence": "low",
+   "evidence": "Little Mac's south side is described only as low 5th-class; no numbered route grade was found.",
+   "sources": [
+    "https://www.summitpost.org/picket-range/171088",
+    "https://onehikeaweek.com/2016/08/01/west-mcmillan-spire/"
+   ]
+  },
+  {
+   "id": "wa_little_sister_west_face",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Easy 5th",
+    "grade_system": "class",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Easy 5th",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "MP: West Face 'Easy 5th', with no number anywhere.",
+   "sources": [
+    "https://www.mountainproject.com/area/126693811/little-sister"
+   ]
+  },
+  {
+   "id": "wa_luahna_peak_east_slopes",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "F",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Luahna's summit scramble is reported as Class 2-3 (Pilz/Walrus side); one TR found a direct south-side line about 4th class.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/clark-mountain-walrus-luahna-peak",
+    "https://www.lemkeclimbs.com/clark-and-luahna-peaks.html"
+   ]
+  },
+  {
+   "id": "wa_lundin_peak_east_ridge",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Easy 5th",
+    "grade_system": "class",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Easy 5th class",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "MP: East Ridge 'Easy 5th'; no numbered grade found.",
+   "sources": [
+    "https://www.mountainproject.com/area/110175054/lundin-peak",
+    "https://www.mountainwerks.org/cma/2001/lundin.html"
+   ]
+  },
+  {
+   "id": "wa_lundin_peak_west_ridge",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 4-5.0",
+    "grade_system": "class"
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds"
+   },
+   "headline": [
+    "Easy 5th",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "MP: Easy 5th, Grade II; mostly Class 3 with a 'Class 4/5' slabby-depression crux.",
+   "sources": [
+    "https://www.mountainproject.com/route/110175068/west-ridge"
+   ]
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "F",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Peakbagger only notes an ascent via the Massie Lake High Route and summit ridge (3 logged ascents); no class rating found online, so the record's top-of-range Class 3 is kept.",
+   "sources": [
+    "https://www.peakbagger.com/peak.aspx?pid=52034"
+   ]
+  },
+  {
+   "id": "wa_south_face_8",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Easy 5th",
+    "grade_system": "class",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Easy 5th class",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "MP: South Face (Crooks/Kennedy 1941) Easy 5th, Grade II, 4 pitches; several low-5th pitches, a steeper final pitch, no numbers.",
+   "sources": [
+    "https://www.mountainproject.com/route/119738692/south-face"
+   ]
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "IV",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.8",
+    "grade_num": 8
+   },
+   "headline": [
+    "5.8",
+    "5.8"
+   ],
+   "confidence": "low",
+   "evidence": "Only sources: a 1954 ascent of the ice apron and steep slabs of the direct NE face, and a 2011 ascent on 50-55 degree snow/ice and rock; no YDS or ice grade published.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12196735203/North-America-United-States-WashingtonCascade-Mountains-Mount-Goode-East-Buttress",
+    "https://www.cascadecrusades.org/SkiMountaineering/goode/goode2011.htm"
+   ]
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "III-IV",
+    "grade_system": "yds"
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class"
+   },
+   "headline": [
+    "D",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Described as Grade IV, ~55 degree snow/ice in 4-5 pitches up chimneys of the Roosevelt Cliff; extremely dangerous from rock- and icefall. No source gives an ice grade.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Adams_(Washington)",
+    "https://www.summitpost.org/mount-adams/150198"
+   ]
+  },
+  {
+   "id": "wa_mount_baker_park_glacier_headwall",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "IV",
+    "grade_system": "yds",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "AI3",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "SummitPost: Grade III, 45-50 degree snow/ice wall over several pitches and a narrow snow arete; AAJ 1971 line: 60 degree snow/ice face. No source gives an AI grade.",
+   "sources": [
+    "https://www.summitpost.org/park-glacier-headwall/536658",
+    "https://publications.americanalpineclub.org/articles/12197134901"
+   ]
+  },
+  {
+   "id": "wa_mount_chaval_north_ridge",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "5.6-5.7 (2 technical pitches; remainder Class 3-4 scrambling)"
+   },
+   "body": {
+    "grade": "5.7"
+   },
+   "headline": [
+    "5.6-5.7",
+    "5.7"
+   ],
+   "confidence": "low",
+   "evidence": "No online description of a North Ridge route on Chaval was found; the record's own grade (5.6-5.7, two technical pitches) is read at the top of its range.",
+   "sources": []
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Sources list the easiest route only as 'scrambling' (a Mountaineers Olympia scramble peak); no class number found, so the top of the record's range is kept.",
+   "sources": [
+    "https://en.wikipedia.org/wiki/Mount_Dana_(Washington)",
+    "https://www.peakbagger.com/list.aspx?lid=5043"
+   ]
+  },
+  {
+   "id": "wa_mount_degenhardt_southwest_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 4 / low 5th",
+    "grade_system": "class",
+    "grade_num": 4,
+    "rock_grade": "5.6"
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0,
+    "rock_grade": "Low 5th (loose)"
+   },
+   "headline": [
+    "5.6",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "Degenhardt South Route described as low 5th (another report calls it a '4th class summit'); one party off route roped up for ~5.7. No number given for the normal line.",
+   "sources": [
+    "https://stephabegg.com/trip-reports/washington/pickets/southern-pickets-2/",
+    "http://drdirtbag.com/2014/07/28/southern-pickets/"
+   ]
+  },
+  {
+   "id": "wa_olympus_blue_glacier_east_ramps",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade II; Class 4 with a Class 5 step",
+    "grade_system": "class",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Class 4",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "Mountaineers: Class 4 ramps across the E face, then up to the summit with a Class 5 step; no number given.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/mount-olympus-blue-glacier",
+    "https://www.nwhikers.net/forums/viewtopic.php?p=1043128"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_nisqually_icefall",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "III-IV",
+    "grade_system": "yds",
+    "ice_grade_num": null,
+    "alpine_grade": "IV (historical, unrepeated standard)"
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "ice_grade_num": 3,
+    "alpine_grade": "III"
+   },
+   "headline": [
+    "Steep alpine ice",
+    "AI3"
+   ],
+   "confidence": "low",
+   "evidence": "First climbed 1948 (Molenaar, Craig); route listings give Alpine Grade III with ice to ~60 degrees; no published AI grade.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/12194913800/First-Ascent-of-the-Nisqually-Icefall"
+   ]
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "V",
+    "grade_system": "yds",
+    "grade_num": 5,
+    "ice_grade_num": null
+   },
+   "body": {
+    "grade": "AI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "5.5",
+    "AI3"
+   ],
+   "confidence": "low",
+   "evidence": "MP grades the wall M5+ X, Grade V (a mixed grade); other sources say it is not technically hard by modern standards and the danger is the 300 ft serac band.",
+   "sources": [
+    "https://www.mountainproject.com/route/106475331/willis-wall",
+    "https://en.wikipedia.org/wiki/Willis_Wall"
+   ]
+  },
+  {
+   "id": "wa_luna_glacier",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Easy 5th",
+    "grade_num": 2
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_num": 0
+   },
+   "headline": [
+    "Easy 5th class",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "Mountain Project: Luna Glacier 'Easy 5th', Steep Snow, M1c; no numeric rock grade found anywhere.",
+   "sources": [
+    "https://www.mountainproject.com/area/119741589/phantom-peak"
+   ]
+  },
+  {
+   "id": "wa_north_star_mountain_east_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 2-3"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Record's own difficulty at the top of its range; low-confidence research (Class 4) not adopted.",
+   "sources": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade III",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.7",
+    "grade_num": 7
+   },
+   "headline": [
+    "5.5-5.7",
+    "5.7"
+   ],
+   "confidence": "low",
+   "evidence": "1952 FA account: ~500 ft of difficult rock to the Pernod-Chianti notch, two hard leads with pitons, a pendulum and a sling near the summit; no modern free grade found online beyond the record's 5.5-5.7.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12195354100/North-America-United-States-Washington-The-Environs-of-Silver-Star"
+   ]
+  },
+  {
+   "id": "wa_open_book_2",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Easy 5th",
+    "grade_system": "class",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Easy 5th",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "MP: Open Book rated 'Easy 5th' (no number), left-leaning cracks east of The Roof.",
+   "sources": [
+    "https://www.mountainproject.com/area/117385903/unicorn-peak"
+   ]
+  },
+  {
+   "id": "wa_sperry_peak_upper_south_ridge",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "5.4 (YDS)"
+   },
+   "body": {
+    "grade": "5.4"
+   },
+   "headline": [
+    "5.4",
+    "5.4"
+   ],
+   "confidence": "low",
+   "evidence": "Only trip-report mentions found (long day, poor-quality brushy rock); no source contradicts the record's 5.4 crux.",
+   "sources": [
+    "https://www.summitpost.org/sperry-peak/176888"
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade II, 5.5"
+   },
+   "body": {
+    "grade": "5.5"
+   },
+   "headline": [
+    "5.5",
+    "5.5"
+   ],
+   "confidence": "low",
+   "evidence": "Record's own difficulty at the top of its range; low-confidence research (5.0) not adopted.",
+   "sources": []
+  },
+  {
+   "id": "wa_the_pyramid_picket_south_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade III, low 5th class",
+    "grade_system": "class",
+    "grade_num": 5
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "3rd-4th class",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "Trip report: from Degenhardt, 3rd-4th class with a few moves of low 5th to leave the ridge onto Pyramid; no number anywhere.",
+   "sources": [
+    "https://malclimbs.com/2019/08/22/the-picket-range/"
+   ]
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 4 / low fifth"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 4 / low fifth",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "Little route-specific beta; Middle Finger described as the hardest-looking of the three, with class 4 scrambling reported.",
+   "sources": [
+    "https://www.summitpost.org/three-fingers/150549"
+   ]
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 4 / low 5th",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Class 4-5",
+    "5.0"
+   ],
+   "confidence": "low",
+   "evidence": "Record's own difficulty at the top of its range; low-confidence research (5.4) not adopted.",
+   "sources": []
+  },
+  {
+   "id": "wa_whatcom_peak_southwest_route",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Class 3, Glacier",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 3, Glacier"
+   },
+   "headline": [
+    "PD",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "South-side routes from Perfect Pass/Whatcom Glacier: snowfields then 3rd class rock to the summit; no separate grade found for a 'Southwest Route'.",
+   "sources": [
+    "https://www.summitpost.org/whatcom-peak/326232"
+   ]
+  },
+  {
+   "id": "wa_whitehorse_mountain_r1",
+   "batch": "zz-normalize.json",
+   "before": {
+    "grade": "Grade II-III",
+    "grade_num": 3
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_num": 4
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "Same NW Shoulder line; steep snow/ice to ~50-55 degrees and Class 3-4 summit rock (later season); no published ice grade found.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/whitehorse-mountain-northwest-shoulder",
+    "http://ericsbasecamp.net/trips/Whitehorse/Whitehorse.htm"
+   ]
+  }
+ ],
+ "refused": []
+}

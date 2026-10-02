@@ -716,11 +716,13 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 // WI4 are all just numbers on one line — so with "All" selected no range means anything. See
 // DISC_GRADE_SCALES for which scales each discipline offers and why.
 //
-// ALPINE AND MOUNTAINEERING ARE STILL LEFT OUT. gradeNumFrom (lib/grade.js) takes a YDS number
-// wherever the grade string has one and otherwise falls back to Class, a French alpine grade
-// (AD = 3) or a commitment numeral (Grade III = 3), and their grade_system labels were never
-// corrected (0196 relabelled ice/mixed/aid only), so one number means different grades on
-// different rows there.
+// ALPINE, MOUNTAINEERING AND SCRAMBLING filter BY SCALE (2026-10-01). Their grade_num used to mix
+// YDS, Class, French grades and commitment numerals under labels nobody had corrected, so they
+// were left out. Every WA route in them now carries ONE researched final grade — its crux, on Class,
+// 5.x or WI/AI — in `grade`, with grade_system and grade_num to match (audits/route-grades/), and
+// the out-of-state rows were relabelled to the scale their grade text is written on
+// (scripts/oneoff/relabel-mountain-grade-systems.mjs). So a range passes grade_sys and one number
+// means one grade again: Class 4 and 5.4 are both 4, and the label is what keeps them apart.
 //
 // The RPC compares `grade_num >= min_grade`, which is NULL — i.e. excluded — for a route with
 // no readable grade. The sheet says so rather than letting the count drop unexplained. ──
@@ -776,12 +778,15 @@ const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: 
 //     Project's export (scripts/pipeline/import-mp-grades.mjs) — plus 5.x, the free grade most of
 //     these rows store as their primary grade.
 // Re-run the measurements before widening this.
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
-// The disciplines 0196 relabelled, where grade_system now says which scale grade_num is on, so a
-// range there passes it as grade_sys. The others keep #1811's behaviour: their labels were never
-// corrected (scrambling carries 41 "4th" rows labelled 'yds'), and filtering on them would drop
-// routes the range has always returned.
-const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1 };
+//   mountaineering / alpine / scrambling: one final grade per route, on the scale its crux is on —
+//     Class for walk-ups, scrambles and glacier climbs, 5.x for roped rock, WI/AI for an ice crux
+//     (an ice final also fills ice_grade_num, which the WI range reads).
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "yds", "wi"], alpine: ["yds", "class", "wi"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+// The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
+// as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
+// were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
+// needed.
+const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1, mountaineering: 1, alpine: 1, scrambling: 1 };
 const gradeScalesFor = disc => DISC_GRADE_SCALES[disc] || [];
 const gradeScaleFor = (disc, sys) => { const ss = gradeScalesFor(disc); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
 const gradeSysFor = (disc, sys) => { const ss = gradeScalesFor(disc); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };

@@ -188,6 +188,10 @@ const CASES = [
   [{ alpine_grade: "III", grade: "Grade II–III glacier", commitment: "II" }, "III", "MUST NOT MOVE: no column carries a climbing grade"],
   [{ alpine_grade: "II", commitment: "II" }, "II", "MUST NOT MOVE: a commitment grade is all the record has"],
   [{}, "", "no grade at all resolves to nothing, not to a stray"],
+  [{ discipline: "mountaineering", grade_system: "class", grade: "Class 3", rock_grade: "3rd-4th class (loose rock rib)" }, "Class 3", "a mountain route's FINAL grade beats a breakdown column (Disappointment Cleaver)"],
+  [{ discipline: "alpine", gradeSystem: "yds", grade: "5.6", rockGrade: "Class 3-4" }, "5.6", "...camelCase too"],
+  [{ discipline: "mountaineering", grade_system: "yds", grade: "Class 3", rock_grade: "5.4" }, "5.4", "MUST NOT MOVE: a final grade on the WRONG scale is not final"],
+  [{ discipline: "ice", grade_system: "yds", grade: "5.7", ice_grade: "WI4" }, "WI4", "MUST NOT MOVE: an ice route's free grade does not displace its ice headline"],
 ];
 let ran = 0;
 for (const [route, want, why] of CASES) {
