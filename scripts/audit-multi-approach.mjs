@@ -44,7 +44,9 @@ const SHOW_RESEARCHED = args.includes("--researched");
 // Recorded verdicts, oldest first so a later pass overrides an earlier one.
 const verdictOf = new Map();
 const readJson = (u) => { try { return JSON.parse(fs.readFileSync(new URL(u, import.meta.url), "utf8")); } catch (e) { if (e.code === "ENOENT") return null; throw e; } };
-for (const f of [`../audits/${STATE}-multi-approach/2026-10-01-research.json`, "./oneoff/link-multi-approach-batch2.plan.json", "./oneoff/link-multi-approach-batch3.plan.json"]) {
+// Every batch plan, in batch order, so a new batch is read without editing this list.
+const PLANS = fs.readdirSync(new URL("./oneoff/", import.meta.url)).map((f) => /^link-multi-approach-batch(\d+)\.plan\.json$/.exec(f)).filter(Boolean).sort((a, b) => a[1] - b[1]).map((m) => "./oneoff/" + m[0]);
+for (const f of [`../audits/${STATE}-multi-approach/2026-10-01-research.json`, ...PLANS]) {
   const list = readJson(f);
   if (Array.isArray(list)) for (const x of list) if (x && x.id && x.verdict && x.id.startsWith(STATE + "_")) verdictOf.set(x.id, x.verdict);
 }

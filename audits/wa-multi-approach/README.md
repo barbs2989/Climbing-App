@@ -4,7 +4,7 @@ Census: `npm run audit:multi-approach` over all 8,615 WA routes flagged 557; the
 strong signal (or a FINISH signal on an alpine/mountaineering/scrambling route) were each read and
 researched online. The tables below are that first pass; what has since been WRITTEN is next.
 
-## Written (2026-10-01) — 121 WA routes now switch by approach
+## Written (2026-10-01) — 130 WA routes now switch by approach
 | step | rows | script (each keeps a `.before.json`; `--rollback` restores it) |
 |---|---|---|
 | Shuksan Southeast Ridge pilot | 1 | `scripts/oneoff/shuksan-se-ridge-two-approaches.mjs` |
@@ -18,6 +18,7 @@ researched online. The tables below are that first pass; what has since been WRI
 | leftovers 4: Adams Wilson Headwall made consistent, Storm King coordinate type | 2 | `multi-approach-leftovers-2.mjs --set 4` |
 | leftovers 5: Goode Southwest Couloir card elevation and loss | 1 | `multi-approach-leftovers-2.mjs --set 5` |
 | leftovers 6: Windy Peak gains Iron Gate as a third way in | 2 | `multi-approach-leftovers-2.mjs --set 6` |
+| batch 4: routes the audit could not see + medium/low SINGLE re-checked | 9 | `link-multi-approach-batch2.mjs --batch batch4` (links in `2026-10-01-batch4-research.json`) |
 | leftovers 7: Adams day 1, Huckleberry grade text, Goode parking, Storm King approach + FA name | 6 | `multi-approach-leftovers-2.mjs --set 7` |
 
 Batch 2 re-researched the 68 medium/low MULTI_TRAILHEAD routes (60 MULTI, 4 SINGLE, 4 UNSURE;
@@ -52,6 +53,16 @@ side, while the north face looks onto North Fork Bridge Creek — check before a
 - Huckleberry: the timing note now follows the West Route.
 - Adams Wilson Headwall: the approach, card, timing, itinerary, descent and sketch line now all use the east-side approach from Cold Springs to camp in Avalanche Valley, and the glaciers are named in the order you meet them.
 - Storm King North Face: its peak coordinate is now stored as numbers.
+
+**Batch 4: what the audit could not see.** The audit read "0 flagged", but it only flags a row whose own text trips a signal. A cross-check found 69 never-researched routes on peaks whose sibling routes start from different trailheads. It also found 72 routes judged single with only medium or low confidence, and 5 more with no approach data at all. Of those, 143 were researched (some overlapped): 129 SINGLE, 9 MULTI (linked) and 5 UNSURE.
+- **MULTI, now switchable:** Silver Star NE Ridge (Burgundy Col / Silver Star Creek); Emerald Peak SE Ridge (North Fork Entiat / Lucerne and Milham Pass); Lichtenberg SE Route and West Rib (Smith Brook / Stevens Pass); Lincoln Peak standard (Middle Fork Nooksack / Heliotrope Ridge); the Mount Adams circumnavigation (Killen Creek / Cold Springs); Rock Mountain West Route (US-2 / Snowy Creek); Amphitheater Mountain North Ridge (Andrews Creek / Thirtymile); and Little Tahoma East Shoulder (Fryingpan Creek / White River Campground / Paradise; White River is the default while the Fryingpan trailhead is closed for its bridge work).
+- **UNSURE, open:**
+  - `wa_mount_rainier_mowich_face`: the Mowich Lake road has been cut since the Fairfax Bridge closed, and nothing says what parties use instead.
+  - `wa_silver_star_northwest_face`
+  - `wa_mount_crowder_southwest_route`: Goodell Creek or Big Beaver.
+  - `wa_mount_persis_the_hexorcist`
+  - `wa_the_devils_club`: its card says Perry Creek, but its only camp is on the Depot Creek side.
+- **Not written:** several single-approach rows store a trailhead name with no pin, while their own trailhead waypoint has one. Batch 4 only writes the routes judged MULTI.
 
 **Closed in leftovers 6 and 7.**
 - **Storm King N Face:** the first-ascent write-up (1978) has the party camping on the south side below the Goode–Storm King saddle, rappelling onto the north-side glacier and going down it to the rock rib. The stored Park Creek approach was right; it now describes that, and the second climber's name is spelled as he wrote it.
