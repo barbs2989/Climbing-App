@@ -17,6 +17,8 @@ researched online. The tables below are that first pass; what has since been WRI
 | leftovers 3: the other two Goode rows' trailhead waypoint, Huckleberry timing note | 3 | `multi-approach-leftovers-2.mjs --set 3` |
 | leftovers 4: Adams Wilson Headwall made consistent, Storm King coordinate type | 2 | `multi-approach-leftovers-2.mjs --set 4` |
 | leftovers 5: Goode Southwest Couloir card elevation and loss | 1 | `multi-approach-leftovers-2.mjs --set 5` |
+| leftovers 6: Windy Peak gains Iron Gate as a third way in | 2 | `multi-approach-leftovers-2.mjs --set 6` |
+| leftovers 7: Adams day 1, Huckleberry grade text, Goode parking, Storm King approach + FA name | 6 | `multi-approach-leftovers-2.mjs --set 7` |
 
 Batch 2 re-researched the 68 medium/low MULTI_TRAILHEAD routes (60 MULTI, 4 SINGLE, 4 UNSURE;
 `wa_stanley_burgner` is not a row — the climb is `wa_prusik_peak_south_face_burgner_stanley`) and
@@ -51,11 +53,12 @@ side, while the north face looks onto North Fork Bridge Creek — check before a
 - Adams Wilson Headwall: the approach, card, timing, itinerary, descent and sketch line now all use the east-side approach from Cold Springs to camp in Avalanche Valley, and the glaciers are named in the order you meet them.
 - Storm King North Face: its peak coordinate is now stored as numbers.
 
-**Not touched, on purpose.**
-- **Storm King N Face approach:** the north face looks onto North Fork Bridge Creek, but nothing published describes the 1978 line's approach. The stored Park Creek approach stays until something does.
-- **Adams Wilson Headwall day-1 numbers:** 3.5 mi and 4 hr look short for Cold Springs to Avalanche Valley, but no figure is published to replace them. Its two `access` keys also name different land managers.
-- **Huckleberry grade:** Class 4 stays. Only one source grades the West Face, and it says 5.6.
-- **Windy Peak:** three rows, one per trail (Long Swamp, Windy Creek, Iron Gate), are kept. Each is a real different start, and retiring rows needs the owner.
+**Closed in leftovers 6 and 7.**
+- **Storm King N Face:** the first-ascent write-up (1978) has the party camping on the south side below the Goode–Storm King saddle, rappelling onto the north-side glacier and going down it to the rock rib. The stored Park Creek approach was right; it now describes that, and the second climber's name is spelled as he wrote it.
+- **Adams Wilson Headwall:** no page states the miles, hours or gain from Cold Springs to Avalanche Valley, and the old day-1 loss of 0 was wrong. Those four numbers are blank. The `timing` hours are kept for the Planner.
+- **Huckleberry West Route:** the row's grade was already 5.6. Its timing, itinerary, hazards, rope note and summit note now say the same, and no longer mention the East Route's Huckleberry Flats.
+- **Goode parking:** the land manager charges at both Bridge Creek and Rainy Pass. All three Goode rows now say parking at Bridge Creek needs a pass; the Northeast Face row had said it was free.
+- **Windy Peak:** the three rows are kept, one per trail. The standard route now offers all three as ways in: Long Swamp, Cathedral Driveway, and Iron Gate with that row's own pin and Horseshoe Basin camp.
 
 | verdict | routes |
 |---|---|

@@ -993,6 +993,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **A via route's own `summitTimeHrs`/`totalHrs` are dropped**: they time ITS finish (the
     Sulphide's summit gully), which this climb replaces; the planner times the climbing from this
     route's own pitches instead.
+  - **...and a trailhead way in drops the stored way's TIMES, even when it records none** (2026-10-01).
+    Windy Peak's Iron Gate way in showed "Long Swamp Trail to the summit and back, 9.5 hr" under
+    PUBLISHED TIMES, because the overlay only touched `timing` when the trip carried one. Now the
+    stored `approachTimeHrs`, `descentTimeHrs`, `recommendedStart`, `totalHrs` and `sectionBreakdown`
+    go for any `trip` (and `sectionBreakdown` for a via route too); only `summitTimeHrs`, the climb's
+    own time, stays. A fixture pins it.
   - **Camps follow the pick in both directions** (batch 1, 2026-10-01). The row's `bivy` was
     written for the whole climb, so it held the other way in's camps (Stuart's North Ridge listed
     Goat Pass, the south-side camp, under Mountaineer Creek). The way in the row describes carries
