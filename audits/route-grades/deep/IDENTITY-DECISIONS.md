@@ -168,6 +168,8 @@ graded easier. The book still decides name, line, first ascent, descent and rapp
   Ridge from Flapjack Lakes", face and aspect N. The book says class 3; **Class 4 kept**.
 - `wa_the_incisor_scramble`: one route, II 5.4: from a block at the SE corner, across to the low north end,
   then along the knife-edge ridge. Renamed "Knife-Edge Ridge", FA party named (Heathershaw and McKee, 1958),
-  commitment II. The book's elevation (ca. 7,350 ft) is NOT applied over our 7,440 ft.
+  commitment II. The book's elevation (ca. 7,350 ft) is NOT applied over our 7,440 ft. **Settled by the
+  owner (2026-10-02): for elevations, the most recent source is correct.** 7,440 ft comes from a current
+  summit table, newer than the 2006 book, so it stays.
 
 **Checks:** a re-read of all five rows matches what was written.
