@@ -1131,3 +1131,12 @@ the correction knows the screen is wrong, and they have no way to report it.
     not the route being a finish. Research decides; never re-quote these counts, re-run it.
   - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
     with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
+    carried a signal, all already read and judged one way in, so every run buried anything new under
+    them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
+    then `scripts/oneoff/link-multi-approach-batch{2,3}.plan.json`, then `settled.json`, with later
+    files winning). It COUNTS a SINGLE or fixed ROW_CONTRADICTS row on one line instead of listing it;
+    `--researched` lists them. It never hides DANGLING, a row researched as multi-approach that still
+    cannot switch, or a row no file has a verdict for. That last case is the point: the Haystack
+    Scramble began flagging mid-session when its sibling's text started naming it, and it was the only
+    row shown. A new verdict goes in `settled.json`, with a `why`.
