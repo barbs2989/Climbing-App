@@ -106,6 +106,8 @@ const FIELDS = [
   // judged through SENTINELS — every one starts with zero populated rows.
   ["bolts", "bolts"], ["guide_stars", "guideStars"], ["alt_names", "altNames"],
   ["variations", "variations"], ["ffa", "ffa"], ["fwa", "fwa"],
+  // 0242: the route TOP anchor, judged by sentinel like the six above.
+  ["anchor", "anchor"],
 ];
 
 // The route screen is NOT just <RouteDetail/>. ClimbMatch.jsx mounts sibling panels next to
@@ -366,6 +368,7 @@ const SENTINELS = {
   variations: { base: BASES.crag, patch: { variations: ["ZZVARIATIONZZ"] } },
   ffa: { base: BASES.crag, patch: { ffa: "ZZFFAZZ" } },
   fwa: { base: BASES.alpine, patch: { fwa: "ZZFWAZZ" } },
+  anchor: { base: BASES.crag, patch: { anchor: "ZZANCHORZZ" } },
   // `difficulty` had a sentinel here, anchored on DiffRadar's "Route-finding" label, asserting
   // the seeded profile stayed wired. The owner reset the breakdown to climbers' reads only
   // (2026-09-30), so DiffRadar renders on every route and reads no column — the anchor is now

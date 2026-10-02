@@ -152,6 +152,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `anchor` (`Bolts`, `★★★☆`), and a numeric sentinel that has an anchor must now show it as
       well as change the page — "the page changed" alone passes on any side effect of the patch.
       `fwa` is probed on the ALPINE base on purpose: a first winter ascent is mostly an alpine fact.
+      `anchor` (0242, 2026-10-02) is the seventh: the route's TOP anchor as a short value, an
+      ANCHOR row on crag routes other than boulders. `features` was NOT given a row — it already
+      draws as RouteTagRow's chips, and a second reader would print it twice.
   - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
     rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
     "no route has this column populated". Main went red twice on 2026-08-12 with all 46
