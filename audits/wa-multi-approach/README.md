@@ -22,6 +22,7 @@ researched online. The tables below are that first pass; what has since been WRI
 | leftovers 7: Adams day 1, Huckleberry grade text, Goode parking, Storm King approach + FA name | 6 | `multi-approach-leftovers-2.mjs --set 7` |
 | batch 5: the cross-check re-run across every discipline + the 5 UNSURE | 2 | `link-multi-approach-batch2.mjs --batch batch5` (links in `2026-10-01-batch5-research.json`) |
 | leftovers 8: The Devil's Club camp, pin and day-1 drainage | 1 | `multi-approach-leftovers-2.mjs --set 8` |
+| leftovers 9: the same drainage slip in its Time-to-Summit leg, which set 8 missed | 1 | `multi-approach-leftovers-2.mjs --set 9` |
 
 Batch 2 re-researched the 68 medium/low MULTI_TRAILHEAD routes (60 MULTI, 4 SINGLE, 4 UNSURE;
 `wa_stanley_burgner` is not a row — the climb is `wa_prusik_peak_south_face_burgner_stanley`) and
