@@ -97,3 +97,22 @@ wa_mount_index_north_face, wa_mount_index_northeast_buttress | OK, no table | 'm
 Aiguille (north_ridge_7, south_ridge_6) 1x12m; Lundin wa_south_face_8 1x25m; Guye (south_gully_south_spur, south_rib) 1x30m middle-summit tree; Pernod wa_south_face_2 3 (summary had counted only the Chablis 2) | FIXED
 wa_pernod_spire_standard | OK, no table | 'no published count' stated honestly
 wa_south_face_2001_variation | SKIPPED | row no longer exists in DB
+wa_the_chopping_block_northeast_ridge | FIXED | 5 (4 single + 1 double per trip report)
+wa_the_chopping_block_south_route | TEXT FIX | bare '1' -> one rappel reported, location undescribed; no table
+wa_spontaneity_arete | TEXT FIX, no table | 5-6 to base of P3 or ~9 all the way; no station list
+wa_spontaneous_distraction | OK, no table | per-pitch details partial (P3 needs intermediate)
+wa_the_tooth_fairy | FIXED | 6 single (3 double)
+wa_the_tooth_indentured_servant | FIXED | South Face 4-station line (most parties' descent)
+wa_black_peak_northeast_ridge 1 opt; wa_buckner_mountain_north_face 1 at Sharkfin Col (bare '1' explained); wa_bulls_tooth_south_ridge 3; wa_cathedral_rock_standard 1x30m | FIXED
+wa_blue_s_buttress, wa_cascade_peak_nw_chimney | OK, no table | walk-off / no count
+wa_austera_peak_chockstone_route | SKIPPED | row no longer exists
+wa_dome_peak_dome_glacier 1 bergschrund; wa_glacier_peak_frostbite_ridge 1 on-route (descent none); wa_east_ridge_8 1; wa_davis_holland_route 3 per-pitch; wa_flycatcher_buttress -> Chockstone 5; wa_forbidden_peak_north_ridge -> West Ridge 8 | FIXED
+wa_dragontail_peak_serpentine_arete | OK, no table | walk-off
+wa_goode_mountain_southwest_couloir | FIXED | '~5' + text 'no technical rappelling' contradicted the documented 6 (3 to Black Tooth Notch + 3 into couloir) -> shared Goode table, text corrected
+wa_golden_horn 1x12m; wa_kendall 2 ice; wa_huckleberry 2 (East Ridge) | FIXED
+wa_little_annapurna_south_face | TEXT FIX | rappels said 'rappel pitches' but descent is a walk-off
+wa_little_mac_spire_southwest_route | TEXT FIX | bare '3' unsourced -> multi-rappel, no published count
+wa_half_moon_southwest_slopes, wa_little_sister_north_face | OK, no table | no count published
+wa_lone_wolf 2x30m; wa_monte_cristo 1; wa_mount_constance 1 opt 6m; wa_mount_fury_east_direct 1 6m; wa_mount_olympus_west_ridge 1 summit block | FIXED
+wa_mcmillan_spire_west_west_ridge, wa_mount_index_bluebell, wa_mount_triumph_northeast_ridge | OK, no table | downclimbed / count unpublished / '7-10' no station list
+wa_mushroom_tower_standard 1; wa_new_york_gully 1; wa_north_ridge_west_side 3; wa_northwest_face_2 2x30m | FIXED
