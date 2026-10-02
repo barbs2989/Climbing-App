@@ -66,7 +66,9 @@ const bare = (discipline, grade) => ({
   discipline, pitches: 6, mountainId: "probe_area",
   _dbArea: { id: "probe_area", name: "Probe Area", areaType: "crag", region: "Colorado" },
 });
-const CRAG = ["trad", "sport", "bouldering"];
+// TOPROPE and AID are crag routes too (owner decision, 2026-10-01): RouteDetail's CRAG_CATS. Before
+// that they fell into the alpine layout and a bare one printed "Season TBD" under its name.
+const CRAG = ["trad", "sport", "toprope", "aid", "bouldering"];
 const ALPINE = ["alpine", "mountaineering", "ice", "mixed"];
 const TABS = ["overview", "conditions", "photos", "partners", "planner", "safety"];
 const GREEN_BG = "#0f2419"; // C.greenBg — the "you're fine" affirmation
@@ -266,6 +268,60 @@ for (const d of [...CRAG, "alpine"]) {
   if (/ON THIS ROUTE/.test(noRack))
     fail("sport gear: a route with no rack of its own still prints an 'ON THIS ROUTE' list — that can only be the stock kit restated");
   else ok("sport gear: a route with no rack of its own adds no list under the note");
+}
+
+// 6. ROUTE FACTS — one set of guidebook facts on every crag discipline, and NOTHING on a bare one.
+//    Every row is gated on its own value: a bare crag route must not gain a single fact row (a row
+//    of "unknown"s is a placeholder, not a fact), must not print "Season TBD", and a crag route
+//    whose stored breakdown/climate cannot open a Plan tab must still show them — on Overview.
+{
+  const FACT_LABELS = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"];
+  const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
+  for (const d of CRAG) {
+    const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
+    const t = text(html), sg = segs(html);
+    if (!t.includes("ROUTE FACTS")) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ROUTE FACTS — this section checked nothing`);
+    const hit = FACT_LABELS.filter((l) => sg.includes(l));
+    if (hit.length) fail(`bare ${d} route: ROUTE FACTS prints rows it has no value for (${hit.join(", ")})`);
+    else ok(`bare ${d} route: ROUTE FACTS adds no fact rows`);
+    if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
+  }
+  for (const d of ["sport", "trad", "toprope", "aid"]) {
+    const r = { ...bare(d, "5.10a"), pitches: 2, bolts: 9, guideStars: 3, aspect: "SW", season: "Apr-Oct", descent: "Lower from chains.",
+      altNames: ["ZZALTNAMEZZ"], variations: ["ZZVARIATIONZZ 5.11a"], fa: "A. Climber 1970", ffa: "B. Free 1980", fwa: "C. Winter 1990" };
+    const html = render(r, "overview");
+    const t = text(html), sg = segs(html);
+    const want = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"].filter((l) => !sg.includes(l));
+    if (want.length) fail(`enriched ${d} route: ROUTE FACTS is missing ${want.join(", ")}`);
+    else if (!t.includes("★★★☆") || !t.includes("ZZALTNAMEZZ") || !t.includes("ZZVARIATIONZZ 5.11a") || !t.includes("SW-facing") || !t.includes("B. Free 1980") || !t.includes("C. Winter 1990"))
+      fail(`enriched ${d} route: a ROUTE FACTS label rendered without its value`);
+    else ok(`enriched ${d} route: every ROUTE FACTS row renders with its value`);
+    if (!t.includes("Apr-Oct")) fail(`enriched ${d} route: season missing`);
+  }
+  // Season in the header strap for every crag discipline, the way bouldering always had it.
+  for (const d of ["sport", "trad", "toprope", "aid"]) {
+    const html = render({ ...bare(d, "5.9"), season: "ZZSEASONZZ" }, "overview");
+    const strap = (html.match(/WebkitLineClamp|-webkit-line-clamp/g) || []).length;
+    if (!strap) fail("ANCHOR LOST: the header strap's line-clamp style moved — update this guard");
+    if (!/-webkit-line-clamp:2[^>]*>[^<]*ZZSEASONZZ/.test(html)) fail(`${d}: season on file but not in the header strap`);
+    else ok(`${d}: season shows in the header strap`);
+  }
+  // A crag route with a breakdown and a climate box but nothing that opens Plan: both on Overview.
+  {
+    const r = { ...bare("trad", "5.9"), pitches: 2, pitchDetail: [{ n: 1, grade: "5.8", notes: "ZZPITCHONEZZ corner" }, { n: 2, grade: "5.9", notes: "roof" }],
+      climate: { typical: "ZZCLIMATEZZ dry summers." } };
+    const sg = segs(render(r, "overview"));
+    if (sg.includes("Plan")) fail("ANCHOR LOST: pitch_detail/climate now open the Plan tab — this fixture no longer tests the Overview fallback");
+    const t = text(render(r, "overview"));
+    if (!t.includes("ROUTE BREAKDOWN") || !t.includes("ZZPITCHONEZZ")) fail("crag route with no Plan tab: its ROUTE BREAKDOWN is invisible");
+    else ok("crag route with no Plan tab: ROUTE BREAKDOWN renders on Overview");
+    if (!t.includes("ZZCLIMATEZZ")) fail("crag route with no Plan tab: its CLIMATE & SEASON is invisible");
+    else ok("crag route with no Plan tab: CLIMATE & SEASON renders on Overview");
+    // ...and exactly one home: with a Plan tab, Overview does not repeat them.
+    const withPlan = text(render({ ...r, approach: "Walk the trail." }, "overview"));
+    if (withPlan.includes("ZZPITCHONEZZ") || withPlan.includes("ZZCLIMATEZZ")) fail("crag route WITH a Plan tab: breakdown/climate duplicated onto Overview");
+    else ok("crag route with a Plan tab: breakdown and climate stay on Plan only");
+  }
 }
 
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
