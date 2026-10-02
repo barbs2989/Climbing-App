@@ -1,0 +1,97 @@
+{
+ "applied": [
+  {
+   "id": "wa_project_crack",
+   "op": "clear_coord",
+   "index": 0,
+   "name": "Keechelus Ridge parking area (off FR 4934)",
+   "gpx_vertices_dropped": 0,
+   "why": "pin ~60 m from the crag and above its base, against a 25-30 min uphill approach"
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "op": "clear_coord",
+   "index": 0,
+   "name": "Keechelus Ridge parking area (off FR 4934)",
+   "gpx_vertices_dropped": 0,
+   "why": "pin ~60 m from the crag and above its base, against a 25-30 min uphill approach"
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_project_crack",
+   "waypoints": [
+    {
+     "lat": 47.365,
+     "lng": -121.31444,
+     "elev": null,
+     "name": "Keechelus Ridge parking area (off FR 4934)",
+     "note": "Same shared approach as all East Face routes: I-90 Exit 54, FR 4832, FR 4934, ~25-30 min hike to the wall.",
+     "type": "Trailhead",
+     "elevFt": null,
+     "directions": "From Seattle, drive east on I-90 to Snoqualmie Pass and take Exit 54, crossing to the north side of the freeway. Turn onto FR 4832 and follow it onto FR 4934 to the small trailhead pullout. A Northwest Forest Pass is generally expected for parking at national forest trailheads in this corridor."
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4601,
+     "name": "East Face (Keechelus Ridge)",
+     "type": "Crag",
+     "distMi": null,
+     "elevFt": 4601
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4700,
+     "name": "East Face wall top-out, Keechelus Ridge",
+     "note": "Not a mountain summit — single-pitch crag; top-out is directly above the route line.",
+     "type": "Summit",
+     "elevFt": 4700
+    }
+   ],
+   "gpx": null
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "waypoints": [
+    {
+     "lat": 47.365,
+     "lng": -121.31444,
+     "elev": null,
+     "name": "Keechelus Ridge parking area (off FR 4934)",
+     "note": "I-90 Exit 54, north on FR 4832 ~4 mi, left on FR 4934, pass Mount Margaret Trailhead, continue ~3 mi to small parking area on right; ~25-30 min uphill hike/scramble to the East Face wall. Shared by all East Face routes including Project Crack.",
+     "type": "Trailhead",
+     "elevFt": null,
+     "directions": "From Seattle, drive east on I-90 to Snoqualmie Pass and take Exit 54, crossing to the north side of the freeway. Turn onto FR 4832 and follow it about 4 miles, then turn left onto FR 4934, pass the Mount Margaret Trailhead and continue roughly 3 more miles to a small parking area on the right. Allow 45 to 60 minutes on the forest roads from I-90. A Northwest Forest Pass is generally expected for parking at national forest trailheads in this corridor."
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "name": "Glacier View Temple (East Face)",
+     "type": "Junction"
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4601,
+     "name": "East Face (Keechelus Ridge)",
+     "type": "Crag",
+     "distMi": null,
+     "elevFt": 4601
+    },
+    {
+     "lat": 47.3651,
+     "lng": -121.31359,
+     "elev": 4700,
+     "name": "East Face wall top-out, Keechelus Ridge",
+     "note": "Not a mountain summit — single-pitch crag; climbers top out directly above the route at the cliff edge, essentially the same location as the crag itself.",
+     "type": "Summit",
+     "elevFt": 4700
+    }
+   ],
+   "gpx": null
+  }
+ ]
+}

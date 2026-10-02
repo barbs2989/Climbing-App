@@ -369,7 +369,55 @@ rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by
   WA) had the whole day read as the climbing leg AND the walk-in added, so Mastiff's 8.5 hr day put the summit ~13 hr
   out. `publishedIsWholeDay` now covers total-only rows; case added to `probe-climb-leg-lower-bound.mjs`.
 
+## 21. Owner: "do the rest" — final pass (`final/in/g1-g3, l1-l3`, `final/out/`)
+The 247 entries section 20 left `unresolved` (243 after the three held rows below were taken out) went to two
+lanes, built by `scripts/oneoff/route-leftovers/build-final-inputs.mjs` with rules in `final-instructions.md`.
+- **Lane G (route facts):** guidebooks read through archive.org full-text search. **Lane L (access facts):** the land
+  manager's current page (Forest Service, Park Service, DNR) as the authority.
+- **Results:** 243 entries gave 3 confirmed, 16 already fixed (rows folded into duplicates, pins gone, values
+  already corrected) and 224 unresolved.
+- **archive.org throttled every book** about 10 minutes into the run ("Item not available" on every server, for
+  every lane) and never recovered, so most guidebook checks did not happen. Cascade Alpine Guide vols 2 and 3 are not
+  on archive.org at all (`cascadealpinegui0000beck` is vol 1 again).
+- **Applied (`final-apply.json`, 4 ops, 0 rejected):**
+  - Glacier Peak Sitkum `commitment` I-II -> III: the guidebook grades the route III, matching the row's
+    `alpine_grade`.
+  - Mount Crowder `dist_km` 61.15 -> null: 38 mi matches no figure on the row (~32 mi round trip, day legs) or in any
+    source.
+  - Argonaut Southeast Ridge `fa` filled from the guidebook (one source).
+  - Three Fingers lookout, Tin Can Gap pin `distMi` 6.2: the current trail page's figure, consistent with the row's
+    2.5 / 4.5 + ~2 mi.
+- **Refused:** Overcoat `dist_km` 32.5 clearing. 32.5 km is exactly half of a stated 40.4 mi round trip and fits
+  the row's "~40 mi round trip", so it is a one-way figure, not one that matches nothing.
+- **Held items, APPLIED (`held-apply.json`):**
+  - Buck Mountain `dist_km` 38.62 -> null: 24 mi is neither a one-way nor a round-trip figure on the row or the one
+    report.
+  - Project Crack and Glacier View Temple: the shared parking pin keeps its name and drive directions; its
+    coordinate and 4,700 ft height are cleared, because the row proves them impossible (60 m from the crag and above
+    its base, against a 25-30 min uphill walk). It now renders as "No coordinate on file".
+  - New `apply-pins.mjs` op `clear_coord` does this as a compare-and-set, refuses summit pins, and drops a drawn-line
+    vertex on the old point. `apply-structural.mjs` refuses lat/lng by design.
+- **Settled by measurement:**
+  - Mount Seattle South now shows its stored 30.58 km: only 1 of its 5 days states miles, so `itinTotalMi`'s
+    "fewer than half the days" rule falls back to `dist_km`.
+  - Mount Price: the kept row (`wa_mount_price_hester_lake_route`) stores 8 km, which sits with its own "~5-6 mi to
+    the Hester Lake basin"; no contradiction is left on the row.
+- **Still open, owner's call:**
+  - Ingalls South Ridge: the header says 4 pitches, while the breakdown and the guidebook say 3. The whole rappel
+    layout (four stations, "one per pitch", the "top of pitch 3" bolts below the summit) is built on 4, and no book
+    gives a layout to rewrite it from.
+  - Half Fast / Astral Projection: `permit` names Wild Sky while `access.permit` says N/A; no land-manager page
+    places the Tye Road crags.
+  - Sentinel `dist_km` 26.2 (~16.3 mi) vs the row's "roughly 16 miles each way" road walk.
+- **Worth a retry when archive.org answers again:**
+  - Buckner season, Lemah moat, Sherpa camp, Temple rappels, New York Gully WI3/WI4, Spire Point grade, Snowking and
+    Forbidden NE Face seasons, Dragontail Gerber-Sink rope, and Overcoat pitches.
+  - Witches Tower descent, Sherpa E Ridge, Guye W Face, Gorillas Direct, Roosevelt season, Johannesburg NE Buttress,
+    Bear Mtn N Buttress, and Lone Wolf.
+
 ## Held for the owner (not applied)
+- **Section 21 settled:** Buck `dist_km`, the Project Crack / Glacier View parking pin, Mount Price and Mount Seattle
+  (below are the original notes).
 - **One-source pass (section 19):** Buck Mountain — the one report of this out-and-back gives 40 mi / 11,686 ft round
   trip, contradicting every figure on the row; adopting it means rebuilding the itinerary days (computing). Mount Price
   `dist_km` 10.5 km (6.5 mi one way) still disagrees with the 15.6 mi round trip; no one-way figure is published.
@@ -390,7 +438,8 @@ rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by
 - **No source found:** Witches Tower E/SE Face 5.6 settled (section 18). Rimrock was fixed in section 11; Vanishing
   Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
-  (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
+  (miles only on the summit day) showed ~2 mi — RESOLVED: the "fewer than half the days" rule is in `itinTotalMi`
+  and the page reads the stored 30.58 km (section 21). Three Fingers lookout day 1 fixed to 4.5
   in section 11. Switchback Mountain day 1 6.2 mi
   vs one author's 8.5 mi. Three Fingers day 2 7.7 mi (unstated anywhere). Hozomeen, Enchantment, Cashmere and La
   Bohn pins were already fixed (section 14). Clark waypoint 5 and the Denny permit wording were fixed in section 12; Denny's

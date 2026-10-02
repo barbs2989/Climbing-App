@@ -1,0 +1,352 @@
+{
+ "items": [
+  {
+   "kind": "item",
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Approach-day (day 1) duration vs its own schedule",
+   "prior_file": "audits/route-tab-contradictions/research/out/v020.json",
+   "prior_evidence": "No source gives a time to the ~6,600 ft benches camp that day 1 ends at, so neither the 9 h figure nor the 5:30 AM-5:30 PM schedule can be set from a stated value. The club route page gives biking time to the old trailhead and time on to Overcoat Lake (a lower, different camp); the 2024 three-day report gives no clock times; the encyclopedia page gives only road mileages. PEAKBAGGER PASS: Peakbagger ascent reports give no time to the benches camp, so neither the 9 h figure nor the schedule can be set. Peakbagger ascent list (21 ascents); reports read: 2021-08-15 (camp at the tarn below the glacier, no times), 2023-05-20 (low camp in the basin north of the glacier, no times), 2026-07-12 (no times). The only stated stats are one ascent's list fields 5,707 ft / 20.5 mi for the Snow Finger, a whole-trip figure."
+  },
+  {
+   "kind": "item",
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "dist_km vs one-way and round-trip distance figures elsewhere",
+   "prior_file": "audits/route-tab-contradictions/research/out/v020.json",
+   "prior_evidence": "No source states a one-way trailhead-to-summit distance; the only whole-trip figures are round trips (26 mi on the club page, 40.4 mi for a 2024 loop), which may not be halved. Club route page: 26.0 mi round trip, 8,000 ft; encyclopedia page: 7 mi of decommissioned road to the old trailhead, then the trail 7 mi to the gap, no figure to the peak. PEAKBAGGER PASS: Peakbagger has only a whole-trip figure (20.5 mi), no one-way distance, so dist_km cannot be set from a stated one-way value. Peakbagger ascent list: 2022-07-10 Snow Finger ascent lists 5,707 ft gain and 20.5 mi (whole trip, not one-way). Reports 2021, 2023, 2026 state no distances."
+  },
+  {
+   "kind": "item",
+   "id": "wa_overcoat_peak_southeast_route",
+   "fact": "Waypoint mileages vs the approach text's mileages",
+   "prior_file": "audits/route-tab-contradictions/research/out/v020.json",
+   "prior_evidence": "Sources still split on where the ford falls (about 10 mi in on the club page vs Camp Pedro at mile 13 in a 2024 report), and the row holds both, so neither copy is changed. Club route page: bike/hike 10 mi to about a mile before the old Dutch Miller Gap trail, then ford; 2024 report: Camp Pedro at mile 13 before the ford. The row's Overcoat Lake note says ~10 mi, its distMi 12 and the approach 13-14 mi. PEAKBAGGER PASS: No peakbagger report states where the ford or camp falls by mileage, so the split stays. 2023-05-20 report: walked a ways then searched for a place to cross the Middle Fork, no mileage; 2021 and 2026 reports give no mileages."
+  },
+  {
+   "kind": "item",
+   "id": "wa_the_temple_south_ridge",
+   "fact": "number/type of summit rappels",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "Still no single count: the one club route page says only to rappel and downclimb the route, and the accounts that give a number disagree with each other and the row repeats all of them. The Mountaineers West Side page: 'Rappel and downclimb the climbing route' with no count or rope. Earlier first-hand accounts give one double-rope rap, two raps on 2x30 m, and three raps on a single 60 m; the row's rappels (1-2), descent_text (two, sometimes three) and climbing_route[3] (three) each carry one of these, so no single sourced value can be chosen without discarding another sourced one. PEAKBAGGER PASS: Still real; peakbagger adds no rappel count that could pick one of the three already on the row. Peakbagger ascent list for The Temple (~50 entries) shows route names and stats only ('standard', 'North Side', 'From Pogo Col'); no listed ascent states a rappel count, and the earlier accounts (one double-rope rap, two on 2x30 m, three on a single 60 m) each remain on the row."
+  },
+  {
+   "kind": "item",
+   "id": "wa_the_temple_south_ridge",
+   "fact": "one-way / round-trip approach distance",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "The only new figure is a stated 14.0 mi round trip; no source states a one-way distance to the base or summit, and halving is not allowed. The Mountaineers West Side page gives Length 14.0 mi (round trip) and Nada Lake at 5.2 mi; earlier reports give 16-18 mi round trips. The row's one-way figures (approach ~8 mi, waypoint distMi 9.5-10, dist_km 12.9) and the 19-20 mi 3-day total have no stated one-way source. PEAKBAGGER PASS: Still real; peakbagger climbers give only round-trip or whole-trip distances, none one-way. Peakbagger ascent list for The Temple: 20.8 mi (6,731 ft), a 2020 'standard' ascent with 10.5 mi for the peak and 24.0 mi for the trip, 52.8 mi (multi-peak trip), and short legs from camp (4.0, 6.3 mi). No stated one-way figure from the Snow Lakes trailhead."
+  },
+  {
+   "kind": "item",
+   "id": "wa_the_temple_south_ridge",
+   "fact": "Total elevation gain/loss",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "Sources disagree (8,000 ft from one report, 6,892 ft from the club route page) and the row's gain_ft already holds a sourced 8,000, but its itinerary days cannot be brought to that total without computing. The Mountaineers West Side page gives Elevation Gain 6,892 ft, split 5,600 ft trailhead-to-camp and 1,292 ft camp-to-summit; an earlier report gives 8,000 ft. Under the rule the row's sourced 8,000 is kept, but the itinerary days (5,300 + 1,700 + 200) and totalNote (~7,000) would need new computed day figures to agree with it, so nothing is patched. PEAKBAGGER PASS: Still real; peakbagger adds further different totals (6,731 ft; 10,144 ft for a whole trip), and the itinerary days still could not be brought to any total without computing. Peakbagger ascent list: 6,731 ft over 20.8 mi (2019), 10,144 ft trip gain over 24.0 mi (2020 'standard'), 6,949 ft (2025, multi-peak trip). The row's gain_ft 8,000 keeps an earlier source; the itinerary (5,300 + 1,700 + 200) and totalNote (~7,000) would need computed day figures."
+  },
+  {
+   "kind": "item",
+   "id": "wa_trapper_mountain_south_slopes",
+   "fact": "Itinerary day gain/loss built on a ~5,000 ft camp (day 1 loss 700 ft, day 2 gain 2,700 ft) vs a 4,170 ft lake and 7,530 ft summit",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "No source states per-day or car-to-car gain for the Cascade Pass - Pelton Basin - Trapper Lake approach; rebuilding the day gains from the lake and summit heights would be computing. Published figures cover only Cascade Pass (3.7 mi, 1,700 ft) and Pelton Basin. PEAKBAGGER PASS: Still real; no peakbagger ascent of Trapper Mountain states any gain, per day or in total. Peakbagger ascent list (6 entries) has no stated gains; the two reports with text describe camping in a basin below the north face and a west-ridge/southwest-slopes outing without figures."
+  },
+  {
+   "kind": "item",
+   "id": "wa_tenpeak_mountain_southeast",
+   "fact": "Thunder Basin high-camp elevation: 6,400 ft (waypoint) vs. ~5,180 ft (approach text and itinerary schedule)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "Each camp height is backed by its own single source (5,180 ft upper basin in one guide; 6,400 ft platforms in one first-hand report) and the row holds both, so the keep-what-the-row-holds rule cannot choose. Guide: upper Thunder Basin ~5,180 ft. First-hand report: 'Thunder Basin 6400' Camp' past the two small lakes at the top of the basin. A 2021 day-trip report (west ridge, different line) only notes terrain leveling out around 6,400 ft. PEAKBAGGER PASS: Still real; peakbagger's twelve Tenpeak ascents state no camp heights or stats, so the two singly-sourced camp heights the row holds still cannot be chosen between. Peakbagger ascent list for Tenpeak Mountain (12 entries): no gain or distance columns filled; the reports with text are multi-peak trips (marked b/c) and the 2021 west-ridge day trip already considered."
+  },
+  {
+   "kind": "item",
+   "id": "wa_tenpeak_mountain_southeast",
+   "fact": "Itinerary day-mile sum vs. totalNote's stated round-trip mileage",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "No source states a round trip for the Southeast Route: the 26.8 mi figure includes the West Peak and the 25 mi / 7,300 ft day is a West Ridge ascent, so neither the 15.5 mi day sum nor the ~13 mi totalNote can be replaced. One report: 'Round Trip: 26.8 miles' for Tenpeak plus its West Peak. A 2021 report: '25 miles, 7,300ft' but by the west ridge. Wenatchee guide: 6 mi to Thunder Creek, no total. PEAKBAGGER PASS: Still real; peakbagger lists no Southeast Route ascent with a stated round trip. Peakbagger ascent list for Tenpeak Mountain (12 entries) has no distance column filled; the long reports are multi-peak enchainments or the West Ridge, so neither the 15.5 mi day sum nor the ~13 mi totalNote can be replaced."
+  },
+  {
+   "kind": "item",
+   "id": "wa_dragontail_peak_r2",
+   "fact": "Rope length",
+   "prior_file": "audits/route-tab-contradictions/research/out/v006.json",
+   "prior_evidence": "One party states a 70 m rope and other reports mention 60 m ropes; the row holds both (gear 60 m, rope_length_m 70), so neither can be chosen. A 2015 party used a 70 m rope; other accounts mention 60 m in passing; the route listing gives no length. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: One party states a 70 m rope and other reports mention 60 m ropes; the row holds both (gear 60 m, rope_length_m 70), so neither can be chosen. A 2015 party used a 70 m rope; other accounts mention 60 m in passing; the route listing gives no length."
+  },
+  {
+   "kind": "item",
+   "id": "wa_saska_peak_emerald_saska_col",
+   "fact": "Fox Camp elevation (waypoint 6,900 ft) vs approach saying the basin (~7,100 ft) is ~1,000 ft above the junction",
+   "prior_file": "audits/route-tab-contradictions/research/out/v022.json",
+   "prior_evidence": "One peak page puts the North Fork / Pyramid trail junction at 6,600 ft, but adopting it for the Fox Camp pin would leave the approach's '~1,000 ft' climb to the 7,100 ft basin contradicted, and a new climb figure would have to be computed. The SummitPost Emerald Peak page (per its search excerpt) says the North Fork Entiat trail follows the river 7+ miles to 5,800 ft, then turns east to climb about half a mile to the Pyramid Mountain Trail junction at 6,600 ft. No source states an elevation for Fox Camp itself (a quarter mile from the junction) or the junction-to-basin climb, and the row's Fox Camp pin reads ~5,728 ft on the ground, so the pin placement is also in doubt. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: One peak page puts the North Fork / Pyramid trail junction at 6,600 ft, but adopting it for the Fox Camp pin would leave the approach's '~1,000 ft' climb to the 7,100 ft basin contradicted, and a new climb figure would have to be computed. The SummitPost Emerald Peak page (per its search excerpt) says the North Fork Entiat trail follows the river 7+ miles to 5,800 ft, then turns east to climb about half a mile to the Pyramid Mountain Trail junction at 6,600 ft. No source states an elevation for Fox Camp itself (a quarter mile from the junction) or the junction-to-basin climb, and the row's Fox Camp pin reads ~5,728 ft on the ground, so the pin placement is also in doubt."
+  },
+  {
+   "kind": "item",
+   "id": "wa_new_york_gully",
+   "fact": "ice grade: ice_grade/alpine_grade WI3 vs grade WI4 and pitch 4 WI4",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Still one source per side: the route database rates it WI3 M5- A1-2 and the first-ascent/first-free note WI4; the row holds both values, so the keep-what-the-row-holds rule does not pick one. Route database rating line: '5.8 YDS ... WI3 M5- A1-2 Steep Snow'. A 2025 trip report describes the ice as 2-inch blobs and an M5 fourth pitch, with no WI number. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Still one source per side: the route database rates it WI3 M5- A1-2 and the first-ascent/first-free note WI4; the row holds both values, so the keep-what-the-row-holds rule does not pick one. Route database rating line: '5.8 YDS ... WI3 M5- A1-2 Steep Snow'. A 2025 trip report describes the ice as 2-inch blobs and an M5 fourth pitch, with no WI number."
+  },
+  {
+   "kind": "item",
+   "id": "wa_colchuck_balanced_rock_west_face",
+   "fact": "Commitment grade - Grade IV (in `grade`) vs commitment III",
+   "prior_file": "audits/route-tab-contradictions/research/out/v004.json",
+   "prior_evidence": "One source gives III (topo site, III 5.11 C1) and one gives IV (a climber's log, IV 5.11c C1); the row holds both, so the one-source rule cannot choose between them. Topo site 'III 5.11 C1'; a 2017 trip log 'IV 5.11c/5.11a C1, 300m'; route listings and AAJ notes give no numeral. PEAKBAGGER PASS: Peakbagger does not grade technical routes, so it cannot break the III vs IV split; the two sources still disagree and the row holds both. Peakbagger records ascents of summits, not route commitment grades; prior sources: topo site III 5.11 C1, a climber's log IV 5.11c C1."
+  },
+  {
+   "kind": "item",
+   "id": "wa_dragontail_peak_r1",
+   "fact": "Rope length",
+   "prior_file": "audits/route-tab-contradictions/research/out/v006.json",
+   "prior_evidence": "No source states a rope length for the Hidden Couloir; accounts only report what individual parties carried on the full Triple Couloirs (a 30 m rope, a 6 mm 60 m rope), so neither the gear list's 60 m nor rope_length_m 30 can be settled. Encyclopedia route page and the club review describe the couloir and the runnels without a rope length; a 2013 report rappelled on a single 6 mm 60 m rope; a club activity page lists no rope spec. PEAKBAGGER PASS: No peakbagger ascent was found logged on the Hidden Couloir, so no rope length for this line is stated. Search of peakbagger for Dragontail Peak 'Hidden Couloir' returned the peak page and unrelated ascents (standard routes, Serpentine Arete, Pandora's Box); no Hidden Couloir report."
+  },
+  {
+   "kind": "item",
+   "id": "wa_forbidden_peak_northeast_face",
+   "fact": "climbing season window",
+   "prior_file": "audits/route-tab-contradictions/research/out/v007.json",
+   "prior_evidence": "No source gives a season for this face: the long-standing peak page names it only as the loose NE Ledge (a fatal fall in 1975), and its mid-July to late-August advice is for the peak's standard routes, not this line. Archived peak page: 'loose and unsavory (NE Ledge AKA Northeast Face had a fatal fall on traverse in 1975)'; 'When To Climb ... mid-JULY to late AUGUST' written about the author's West Ridge attempts. Nothing route-specific supports either 'Jul-Sep' or the late-spring face-ice window. PEAKBAGGER PASS: Peakbagger's Forbidden Peak ascent list has no ascent logged on the Northeast Face, so no season for this face is stated. Peakbagger full ascent list: routes logged are West Ridge, East Ridge, North Ridge, Northwest and South Face variants; none named Northeast Face or NE Ledge."
+  },
+  {
+   "kind": "item",
+   "id": "wa_and_say",
+   "fact": "Route grade vs crux pitch grade",
+   "prior_file": "audits/route-tab-contradictions/research/out/v013.json",
+   "prior_evidence": "The first-ascent party's listing grades the route 5.11 with P4 and P5 at 11+, while the other description gives 5.11b; the row's 5.11b has a source, so it is kept, and no source gives an overall grade that matches the 5.11+ pitches. Listing by the first-ascent party: '5.11 ... Trad, TR, 300 ft, 5 pitches', 'P1 5.7 ... P2 11b ... P3 10a ... P4 11+ ...'. The 5.11b headline comes from a separate climbing write-up. Neither states 5.11+ overall. PEAKBAGGER PASS: And Say is a crag climb that peakbagger does not list, so it adds no grade data. Peakbagger indexes summits and their ascents; this route is not listed."
+  },
+  {
+   "kind": "item",
+   "id": "wa_spire_point_southwest_face",
+   "fact": "Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "Still real; no source gives a YDS number (5.4 or 5.6) for this line, so there is not even one source to adopt. Sources give only qualitative grades for Spire Point (Class 4 with an optional low-5th summit block, class 4/5, low class 5 on other routes). PEAKBAGGER PASS: Still real; the one peakbagger report that rates Spire Point's summit climbing (about 5.4) is for the east face, a different line, and no source grades the southwest face. Peakbagger 2020 ascent: east-face approach, 'I would rate what we did about 5.4', class 4 for the last 10 ft. Other entries name South Face (1940), East Ridge and E Face without grades."
+  },
+  {
+   "kind": "item",
+   "id": "wa_snowking_mountain_standard",
+   "fact": "Climbing season window",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Sources do agree the snow line is an early-season (May-June) climb, but aligning the row means rewriting best_season, the month-by-month guidance, itinerary.cal, the approach variant's season, climate.summer, the crevasse note and the avalanche block together, and the peak summary also keeps a late-summer west-ridge option on the same approach, so there is no single stated window to write into all of them. Northeast Shoulder listing: a very good early-season climb (May-June). Peak route summary: the Kindy Ridge line uses the Snowking Glacier/snowfield in spring and early summer and the west ridge in late summer and fall. No source gives month-by-month conditions or an avalanche assessment for the early-season approach. PEAKBAGGER PASS: Still real; aligning the row needs month-by-month guidance and an avalanche assessment no source gives, and peakbagger ascent dates are not a stated window. Sources agree the snow line is an early-season (May-June) climb, but the row's many season copies (best_season, monthly guidance, itinerary.cal, approach season, climate, avalanche block) cannot all be rewritten from that one statement."
+  },
+  {
+   "kind": "item",
+   "id": "wa_forbidden_peak_west_ridge",
+   "fact": "pitch count",
+   "prior_file": "audits/route-tab-contradictions/research/out/v007.json",
+   "prior_evidence": "pitches=8 is backed by one source (guide copy) and is kept, but the six ROUTE BREAKDOWN rows are simul-climbing sections that no source divides into eight (or four) pitches, so the rows cannot be rebuilt to match. Guide copy: eight pitches. Club route page: four-pitch 5.6. Route database: 1,500 ft, Grade III, no count. Trip reports: one to three pitched sections, the rest simul-climbed. PEAKBAGGER PASS: Peakbagger's West Ridge reports describe simul-climbing and pitching out only the upper part, with no total pitch count, so the eight-pitch figure stays and the six breakdown rows still cannot be rebuilt from a source. Peakbagger Forbidden ascent list (503 entries, 20+ West Ridge reports). 2020-07-18 West Ridge report (1,692 words): 'started out of the gate simul-climbing ... made our way to the crux pitch. We decided to pitch it out from there and I led the remaining pitches'; no count. No report read divides the ridge into eight (or six) pitches."
+  },
+  {
+   "kind": "item",
+   "id": "wa_mount_pilchuck_standard_route",
+   "fact": "climb/route length",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "No source states a height for the summit scramble or the lookout block: descriptions say only a steep boulder scramble and a ladder to the lookout, so neither length_m's 21 m nor the 20-30 ft in beta/pitch_detail can be confirmed or replaced. A newspaper hike description: 'a steep boulder scramble and final climb up a ladder to the shelter'; a hike guide: 'scramble across a few boulders and climb up the wooden ladder'. No figure in either. Zero sources. PEAKBAGGER PASS: Peakbagger's Pilchuck page gives no height for the summit scramble or the lookout block, so neither 21 m nor 20-30 ft can be confirmed. Peakbagger Mount Pilchuck peak page: lists, photos of the lookout and trail data, no figure for the final boulder scramble or ladder."
+  }
+ ],
+ "fills": [
+  {
+   "kind": "fill",
+   "id": "wa_overcoat_peak_southeast_route",
+   "path": [],
+   "cleared_value": 4,
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: the cleared 4 counted the south-ridge line's rows, which the row no longer describes, and no source gives a pitch count for the east-face line. The cleared value came with the south-ridge pitch_detail (col, south ridge, west-side ledge, summit block); east-face accounts mention only that parties pitched the upper part in two short pitches, not a route pitch count. PEAKBAGGER PASS: No peakbagger report gives a pitch count for the east-face line. 2021-08-15 East Face party: 4th to mid 5th class choose-your-own-adventure, 7 rappels on descent, no pitch count; 2023 party simul-climbed; 2026 party climbed a north-face variant in one long rope length.",
+   "fact": "pitches",
+   "column": "pitches"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_overcoat_peak_southeast_route",
+   "path": [],
+   "cleared_value": [
+    {
+     "grade": "Glacier travel",
+     "notes": "Cross or circle the Overcoat Glacier from high camp to the notch/col between Chimney Rock and Overcoat Peak; rope and crampons typically used.",
+     "pitch": "Camp to col"
+    },
+    {
+     "grade": "Class 3-4 (loose)",
+     "notes": "Shed glacier gear at the col and step directly onto the south ridge; rock is loose for roughly the first 20 feet.",
+     "pitch": "Col to south ridge"
+    },
+    {
+     "grade": "Class 4, exposed",
+     "notes": "A ledge traverses the west side of the south ridge with real exposure; rock is generally sound but looser than elsewhere on the route — test holds carefully.",
+     "pitch": "West-side ledge traverse"
+    },
+    {
+     "grade": "Class 4-5.0",
+     "notes": "Final short scramble/climbing moves to the true summit.",
+     "pitch": "Summit block"
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: the cleared rows describe the south-ridge line, which would re-create the contradiction with the east-face climbing_route now on the row. Cleared rows: camp to col, col to south ridge, west-side ledge traverse, summit block (the 2004 south-ridge report); the live row describes the east face. PEAKBAGGER PASS: The cleared rows describe the south ridge; no peakbagger report gives a pitch-by-pitch breakdown of the east face. Peakbagger East Face report (2021) describes only a gully start, 4th to mid 5th, class 2 to the summit; no per-pitch data.",
+   "fact": "pitch_detail",
+   "column": "pitch_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "path": [],
+   "cleared_value": {
+    "totalHrs": 10.5,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10.5,
+      "note": "A long roadside day, no camp: from the Hwy 20 Hairpin pullout near Washington Pass, follow cairns/boot path through brush staying above Early Winters Creek toward Kangaroo Pass, th…",
+      "fromTo": "Car-to-car scramble via Kangaroo Pass approach",
+      "section": "Climb"
+     }
+    ]
+   },
+   "cleared_in": "audits/route-leftovers/deep/out/d2.json",
+   "prior_evidence": "Not filled: the cleared timing described a southwest-slopes scramble, but the row now describes the seven-pitch North Ridge, and no source gives a time for that line. Cleared sectionBreakdown: 'Car-to-car scramble via Kangaroo Pass approach', 10.5 h; the live row is the North Ridge (5.7, about seven pitches) with no timing. PEAKBAGGER PASS: The one North Ridge report on peakbagger gives pitch lengths and the rappel descent but no times, so there is still no timing for this line. Peakbagger Half Moon ascent list: 5 entries. 2025-09-19 North Face/ridge report: P1 105 ft, P2 205 ft, P3 90 ft, P4 class 3 200 ft, P5 95 ft, scramble 300 ft to the summit; descent by single-rope raps; no start, summit or car-to-car time. 2018 entry: 2,832 ft gain only.",
+   "fact": "timing",
+   "column": "timing"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "class": "2-3",
+     "label": "Lower southwest gully",
+     "notes": "From the base of the gully, class 2-3 talus and loose scree — rockfall is a real concern with any party above you."
+    },
+    {
+     "n": 2,
+     "class": "4",
+     "label": "Narrow class 4 step",
+     "notes": "Roughly midway up, the gully narrows to a steeper class 4 step of cleaner rock."
+    },
+    {
+     "n": 3,
+     "label": "Scramble to the belay ledge",
+     "notes": "Above the step, scrambling leads to a flat belay ledge about 200 ft below the true summit, where the final short technical section begins."
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/d2.json",
+   "prior_evidence": "Not filled: the cleared steps (southwest gully, class 4 step) belong to a different line from the North Ridge the row now describes, so restoring them would re-create a contradiction. Live row: name 'North Ridge', pitch_detail and beta describe seven pitches from the notch north of the peak. PEAKBAGGER PASS: The cleared southwest-gully steps belong to another line; the one North Ridge report breaks the climb into five pitches, which would contradict the row's seven-pitch pitch_detail, so climbing_route is left empty. 2025 North Face/ridge report: five pitches (105, 205, 90, class 3 200, 95 ft) plus a 300 ft scramble; the live row's pitches = 7 and pitch_detail lists seven pitches.",
+   "fact": "climbing_route",
+   "column": "climbing_route"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "path": [],
+   "cleared_value": "II",
+   "cleared_in": "audits/route-leftovers/deep/out/h1-apply.json",
+   "prior_evidence": "Not filled: no source states a commitment grade for Half Moon's North Ridge. Encyclopedia and route listings found give the peak's location and that the easiest route is fifth class; none gives a Grade numeral for the North Ridge. PEAKBAGGER PASS: No peakbagger entry gives a commitment grade for the North Ridge. 2025 North Face/ridge report gives pitch lengths and descent only; no Grade numeral.",
+   "fact": "commitment",
+   "column": "commitment"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_half_moon_southwest_slopes",
+   "path": [],
+   "cleared_value": 12.87,
+   "cleared_in": "audits/route-leftovers/deep/out/h1-apply.json",
+   "prior_evidence": "Not filled: no source states a one-way distance from the highway to the North Ridge notch, and the cleared 12.87 km (8 mi) does not fit the row's own 'about two miles' to leave the path. Encyclopedia: Half Moon is about two miles east of the highway at Washington Pass (a location, not an approach distance). PEAKBAGGER PASS: No peakbagger entry states a one-way distance from the highway to the North Ridge. Peakbagger Half Moon ascent list: no distance values; the 2025 report gives no approach mileage.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_davis_peak_nc_north_face",
+   "path": [],
+   "cleared_value": 7,
+   "cleared_in": "audits/route-tab-contradictions/decisions/confirmations/c2.json",
+   "prior_evidence": "Not filled: the cleared 7 pitches belong to the Burdo-Cairns North Face, which was split off into its own row; no source gives a pitch count for the Northeast Face Couloir this row now describes. Split decision: 4 chimney pitches plus 3 rib pitches are the Burdo-Cairns line; the 2005 couloir account describes a simul-climbed band, a traverse, two belayed crux leads and a long couloir without a total. PEAKBAGGER PASS: Peakbagger has no ascent of Davis Peak's north side, so no pitch count for the Northeast Face Couloir. Davis Peak ascent list: routes logged are South face, South slopes/ridge, S Slopes & Ridge, Ski Route, New standard (south basin); none on the north face or couloir.",
+   "fact": "pitches",
+   "column": "pitches"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_davis_peak_nc_north_face",
+   "path": [],
+   "cleared_value": 930,
+   "cleared_in": "audits/route-tab-contradictions/decisions/confirmations/c2.json",
+   "prior_evidence": "Not filled: 930 m came from the Burdo-Cairns figure (about 4,000 ft of climbing), a different line now on its own row; no source gives the couloir's length. Split decision record: gain_ft 4000 and length_m 930 come from the Burdo climbing figure. PEAKBAGGER PASS: Peakbagger has no ascent of Davis Peak's north side, so no length for the couloir. Davis Peak ascent list: all logged routes are on the south side.",
+   "fact": "length_m",
+   "column": "length_m"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_davis_peak_nc_north_face",
+   "path": [],
+   "cleared_value": 4000,
+   "cleared_in": "audits/route-tab-contradictions/decisions/confirmations/c2.json",
+   "prior_evidence": "Not filled: 4,000 ft is the Burdo-Cairns climbing figure, not a car-to-car gain for the couloir, and no source states the couloir's total gain. The 2005 couloir account gives a 4,000 ft bivy elevation, the ~6,700 ft ridge and a 6,000 ft descent, but no total gain. PEAKBAGGER PASS: Peakbagger has no ascent of Davis Peak's north side, so no gain for the couloir line. Davis Peak ascent list: gains logged belong to south-side routes.",
+   "fact": "gain_ft",
+   "column": "gain_ft"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_plan_9_from_outer_space",
+   "prior_evidence": "No source gives an elevation for this Junction pin, which duplicates the summit pin's coordinate; the cleared 7,337 ft matches nothing on the route, so it stays null. The climb tops out on the 7,840 ft summit (two peak lists, matching high_point_ft and the Summit pin); no source states a height for the buttress base or any junction. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: No source gives an elevation for this Junction pin, which duplicates the summit pin's coordinate; the cleared 7,337 ft matches nothing on the route, so it stays null. The climb tops out on the 7,840 ft summit (two peak lists, matching high_point_ft and the Summit pin); no source states a height for the buttress base or any junction.",
+   "fact": "waypoints[1].elev",
+   "column": "waypoints[1].elev"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_plan_9_from_outer_space",
+   "prior_evidence": "Same pin as the elev fill: no source gives a height for this duplicate Junction pin, so elevFt stays null. See the waypoints[1].elev entry. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Same pin as the elev fill: no source gives a height for this duplicate Junction pin, so elevFt stays null. See the waypoints[1].elev entry.",
+   "fact": "waypoints[1].elevFt",
+   "column": "waypoints[1].elevFt"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_trapper_mountain_south_slopes",
+   "path": [],
+   "cleared_value": 30.58,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "Still null; no source states the one-way distance to Trapper Mountain (only Cascade Pass 3.7 mi and Pelton Basin camp as an 8.82 mi out-and-back). Park service: Cascade Pass 3.7 mi. Trail listing: Pelton Basin camp 8.82 mi round trip. Nothing to the summit. PEAKBAGGER PASS: Still empty: Trapper Mountain has six peakbagger ascents and none states a distance. Peakbagger ascent list (6 entries, no gain or distance columns filled); the 2008 report (camp in the basin below the north face, ramp across the face) and the 2022 report (west ridge, exit by the southwest slopes) give no mileage.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_east_twin_needle_south_route",
+   "path": [],
+   "cleared_value": "Wayne Wallace, Colin Haley, and Mark Bunker, July 27, 2003 (Southern Picket Range enchainment)",
+   "cleared_in": "audits/route-leftovers/owner/out/o01.json",
+   "prior_evidence": "Still null; the cleared credit belongs to the 2003 east arete, and no source names a first-ascent party for the Eye Col line (a 2023 report cites a 1981 ascent of the gully, not a first ascent). 2023 West Twin Needle report and the 2003 enchainment account; no first ascent named for the Eye Col line. PEAKBAGGER PASS: Peakbagger lists three East Twin Needle ascents (1981, 2018) with no reports or route names, so no first ascent of the Eye Col line is named. Peakbagger ascent list for East Twin Needle: 1981-09-08 and two 2018-08-16 entries, no trip reports, no route field.",
+   "fact": "fa",
+   "column": "fa"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_pernod_spire_standard",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "notes": "Rappel from Pernod's true summit down the south face to a notch/ledge near Chablis Spire; a single 70m rope reaches, a 60m leaves you short of the notch.",
+     "anchor": "bolted (new bolt + old original 1/4-inch bolt with hanger, backed by 2 equalized pitons)",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "After a short 4th-class downclimb/scramble to regain Chablis Spire's east-face rap line, first of two double-rope rappels down that route toward its base.",
+     "anchor": "natural/mixed (poor rock, bring tat)",
+     "lengthM": 30
+    },
+    {
+     "n": 3,
+     "notes": "Second double-rope rappel down Chablis Spire's east-face route, reaching the base of that route rather than descending directly into the Silver Star Glacier basin.",
+     "anchor": "natural/mixed (poor rock, bring tat)",
+     "lengthM": 30
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Not refilled: the cleared rows were the South Face's rappels (to the Chablis notch), copied from a sibling route; the row is now Pernod's 1952 northeast-corner line, and no source gives a rappel-by-rappel account of its descent (only rappels to the Pernod-Chianti notch, then long double-rope rappels to the glacier, with no count). First-ascent and later accounts of the 1952 line: rappels to the notch, then long rappels on double ropes to the glacier; no count, lengths or anchors per rappel. The row's rappels, descent_text and rappel_count_note already say this. PEAKBAGGER PASS: Not refilled: no source gives a rappel-by-rappel account of the 1952 northeast-corner descent. Pernod Spire has no peakbagger page found by search; the first-ascent and later accounts give only rappels to the notch and long double-rope rappels to the glacier, with no count, lengths or anchors, which the row already says.",
+   "fact": "rappel_detail",
+   "column": "rappel_detail"
+  }
+ ]
+}
