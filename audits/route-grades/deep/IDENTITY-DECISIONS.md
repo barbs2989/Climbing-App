@@ -124,3 +124,19 @@ Per-row evidence and every source are in `out/i*.json`.
 - **Pinnacle Saddle / South Gully:** a `beta` paragraph on which chute to take.
 
 **Restore:** `rollback-folds-1790916078041.json`. **Checks:** a re-read matches, and `check:counts` passes. Only Fortress (low confidence) remains unmerged.
+
+## Applied 2026-10-01: follow-ups the research supports
+
+`scripts/oneoff/route-identity-followups.mjs` (rollback `rollback-followups-1790917640715.json`):
+- `wa_tupshin_peak_east_face`: grade 5.6 → **5.4**, with rock_grade "Class 4 with a short 5.4 crux". The deep grade pass found 5.4 at high confidence in four reports, but recorded it on `wa_tupshin_peak_scramble`, the row merged into this one.
+- `wa_sherpa_balanced_rock_ne_couloir`: moved from the Balanced Rock spire to **Sherpa Peak**. Area only; the id is unchanged.
+- `wa_johannesburg_mountain_northeast_buttress`: the FA now names the 1957 Western Rib start. The 1951 left rib has its own row.
+
+**Left alone:**
+- `wa_south_gully_south_spur` already reads 5.0.
+- `wa_west_face_2` is already under the Gunsight Range.
+- Low-confidence items, kept for an owner or a guidebook:
+  - Fortress NE face (duplicate).
+  - Mount Lincoln and The Incisor (renames).
+  - Jack Mountain NE Glacier (needs a real description).
+  - Chopping Block South Route (not found).
