@@ -22,6 +22,10 @@ const key = requireServiceKey();
 // `--set 4`: Adams Wilson Glacier Headwall stops staging from Lunch Counter and descending to Killen Creek (its
 // approach, card, camp and car are all on the east side from Cold Springs); Storm King N Face's peak coordinate
 // was stored as strings. `--set 5`: Goode Southwest Couloir's way-in card still put that trailhead at 4,875 ft.
+// `--set 6`: Windy Peak's standard route gains Iron Gate as its third way in, from the Iron Gate row's own pin and camp.
+// `--set 7`: Adams day-1 numbers nobody states are blanked; Huckleberry West Route's text matches its own 5.6 grade;
+// Goode's three rows say Bridge Creek parking needs a pass (one said free); Storm King N Face's approach is the
+// first ascent's (Park Creek, over the Goode-Storm King saddle) and the second climber's name is spelled right.
 const SET = process.argv.includes("--set") ? process.argv[process.argv.indexOf("--set") + 1] : "2";
 const NEXT = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.json`, import.meta.url), "utf8"));
 const BEFORE = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.before.json`, import.meta.url), "utf8"));

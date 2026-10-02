@@ -1,0 +1,242 @@
+{
+ "wa_mount_adams_wilson_glacier_headwall": {
+  "itinerary": {
+   "cal": "",
+   "days": [
+    {
+     "n": 1,
+     "note": "The Round the Mountain Trail east from the South Climb trail, then the long, mostly off-trail traverse north round the eastern flank, across the Klickitat Glacier and Big Muddy Creek, to camp in Avalanche Valley below the Rusk and Wilson glaciers.",
+     "hours": null,
+     "miles": null,
+     "title": "Cold Springs to Avalanche Valley",
+     "gainFt": null,
+     "lossFt": null,
+     "packLb": 40,
+     "schedule": [],
+     "objective": "Establish camp in Avalanche Valley (~6,600 ft)"
+    },
+    {
+     "n": 2,
+     "note": "An early alpine start from Avalanche Valley, up the Wilson Glacier to the headwall below Roosevelt Cliff (starts around 10,800 ft) — a steep, avalanche/icefall-fed line considered one of Adams' most serious routes. Top out and descend the South Climb to Cold Springs.",
+     "hours": 13,
+     "miles": 8.9,
+     "title": "Climb the headwall, descend to the trailhead",
+     "gainFt": 3400,
+     "lossFt": 6700,
+     "packLb": 22,
+     "schedule": [
+      {
+       "time": "2:00-3:00 AM",
+       "label": "Leave Avalanche Valley",
+       "detail": "Early start for firm snow and to minimize icefall exposure below Roosevelt Cliffs."
+      },
+      {
+       "time": "Midday",
+       "label": "Summit",
+       "detail": ""
+      },
+      {
+       "time": "Afternoon-evening",
+       "label": "Descend to the car",
+       "detail": "South Climb to Cold Springs."
+      }
+     ],
+     "objective": "Summit via the Wilson Glacier Headwall and descend fully to the car"
+    }
+   ],
+   "totalNote": "A 2-day trip: a long approach round the east side to Avalanche Valley, then a serious, early alpine-start headwall climb (~13 hr) and a descent of the South Climb to the car."
+  }
+ },
+ "wa_huckleberry_mountain_west_route": {
+  "timing": {
+   "totalHrs": 18,
+   "summitTimeHrs": 13,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 5,
+   "recommendedStart": "5:00 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 5,
+     "note": "From the PCT trailhead at Snoqualmie Pass, hike north over Kendall Katwalk past Ridge Lake to the meadow camp most parties use to break up Huckleberry's unusually long approach bef…",
+     "fromTo": "Approach to high camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 13,
+     "note": "Leave camp light and early, follow the PCT to above Joe Lake, leave it at the meadow northeast of the lake and climb talus into the basin below the west face, then climb the West Face (5.6) to the top. Rappel in…",
+     "fromTo": "Summit push and full hike out",
+     "section": "Climb"
+    }
+   ]
+  },
+  "itinerary": {
+   "cal": "Best July-September once the Ridge/Gravel Lake camps and the west basin are snow-free; only a self-issue wilderness permit is needed.",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the PCT trailhead at Snoqualmie Pass, hike north over Kendall Katwalk past Ridge Lake to the meadow camp most parties use to break up Huckleberry's unusually long approach before tackling the West Route.",
+     "hours": 5,
+     "miles": 7,
+     "title": "Approach to high camp",
+     "gainFt": 2700,
+     "lossFt": 100,
+     "packLb": 35,
+     "schedule": [],
+     "objective": "Reach the Ridge/Gravel Lake meadow camp"
+    },
+    {
+     "n": 2,
+     "note": "Leave camp light and early, follow the PCT to above Joe Lake, leave it at the meadow northeast of the lake and climb talus into the basin below the west face, then climb the West Face (5.6) to the top. Rappel into the notch on a 60m rope, reverse the gully/ridge, and continue the long hike back out on the PCT — a very long second day.",
+     "hours": 13,
+     "miles": 15,
+     "title": "Summit push and full hike out",
+     "gainFt": 3620,
+     "lossFt": 6220,
+     "packLb": 18,
+     "schedule": [
+      {
+       "time": "5:00 AM",
+       "label": "Break camp",
+       "detail": "Leave overnight gear cached, carry a light alpine kit"
+      },
+      {
+       "time": "7:30 AM",
+       "label": "Reach the west basin",
+       "detail": "Reach the base of the West Face below the summit block"
+      },
+      {
+       "time": "11:30 AM",
+       "label": "Reach the notch",
+       "detail": "5.6 climbing below the final summit block"
+      },
+      {
+       "time": "12:30 PM",
+       "label": "Summit",
+       "detail": ""
+      },
+      {
+       "time": "1:00 PM",
+       "label": "Rappel the summit block",
+       "detail": "60m rope to the notch, then reverse the gully/ridge"
+      },
+      {
+       "time": "~7:00 PM",
+       "label": "Back at trailhead",
+       "detail": "Full descent back down the PCT; many parties finish near dusk"
+      }
+     ],
+     "objective": "Climb the West Route to the summit block, rappel, and hike all the way back to the car"
+    }
+   ],
+   "totalNote": "A 2-day trip for most parties (~22 miles RT, ~6,300 ft gain) broken by a camp at Ridge or Gravel Lake; very fit scramblers occasionally push the whole thing car-to-car in one ~15-hour day."
+  },
+  "hazards": [
+   "loose, shattered andesite and rockfall danger in the summit gully — this west line has fallen out of favor versus the East Ridge for this reason",
+   "exposed 5.6 climbing on the west face and the summit block",
+   "brushy, sometimes indistinct route-finding through tree bands on the lower approach",
+   "residual snow in the gully into July on some years"
+  ],
+  "waypoints": [
+   {
+    "lat": 47.4278,
+    "lng": -121.4135,
+    "elev": 3000,
+    "name": "PCT Trailhead, Snoqualmie Pass (Exit 52, Alpental Rd)",
+    "note": "PCT northbound from I-90 exit 52.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Leave I-90 at Exit 52 for Snoqualmie Pass and park in the large PCT North Trailhead lot off SR 906 / Alpental Road, at about 3,000 ft. A Northwest Forest Pass or America the Beautiful pass is required to park. Beyond that, the only permit you need is a self-issue wilderness permit. The trail leaves the lot northbound on the Pacific Crest Trail."
+   },
+   {
+    "lat": 47.46778,
+    "lng": -121.3375,
+    "elev": 4629,
+    "name": "Joe Lake",
+    "note": "PCT rounds Alaska Mountain's east ridge and drops to the west end of Joe Lake.",
+    "type": "Junction",
+    "distMi": 9
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 5500,
+    "name": "West Face Talus Basin",
+    "note": "Flowery meadow northeast of Joe Lake; head up talus into the basin below the west face.",
+    "type": "Junction",
+    "distMi": 9.7
+   },
+   {
+    "lat": 47.473889,
+    "lng": -121.333889,
+    "elev": 6320,
+    "name": "Huckleberry Mountain",
+    "note": "West Face route (5.6), first climbed September 2001.",
+    "type": "Summit",
+    "distMi": 10.5
+   }
+  ],
+  "rope_note": "The West Face goes at 5.6; bring a 60m rope to rappel the summit block."
+ },
+ "wa_goode_mountain_northeast_face": {
+  "access": {
+   "fees": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free.",
+   "notes": "Backcountry permit required ($10/person + $6 reservation fee) through Recreation.gov and noca_wilderness@nps.gov. Wilderness Info Center operates mid-May to mid-October. Parking at the Bridge Creek trailhead needs a Northwest Forest Pass, an America the Beautiful pass or a day pass. No park entrance fee.",
+   "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+   "permit": "Backcountry/climbing permit required for any overnight stay; $10 per person camping fee plus a non-refundable $6 reservation fee, booked via Recreation.gov and activated in person at the Wilderness Information Center in Marblemount before setting out.",
+   "closures": "SR-20 (North Cascades Highway) closes for winter, typically early December to mid/late April, at gates near Ross Dam (MP134) and Silver Star (MP171); in 2026 spring damage and emergency repairs pushed the full reopening to June 14 — check WSDOT's SR-20 pass report before an early- or late-season trip.",
+   "seasonal": "",
+   "group_limit": 6,
+   "landManager": "North Cascades National Park (NPS)",
+   "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+   "passRequired": "No park entrance fee; parking at the Bridge Creek trailhead requires a Northwest Forest Pass or America the Beautiful pass.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades NP wilderness permit, fee per person",
+    "where": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center."
+   }
+  }
+ },
+ "wa_goode_mountain_southwest_couloir": {
+  "access": {
+   "fees": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free.",
+   "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+   "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+   "permit": "Backcountry/climbing permit required for overnight stays; $10 per person plus a non-refundable $6 reservation fee via Recreation.gov, activated in person at the Wilderness Information Center in Marblemount.",
+   "closures": "SR-20 (North Cascades Highway) closes for winter, typically early December to mid/late April, near Ross Dam (MP134)/Silver Star (MP171); in 2026 spring repair work delayed the full reopening to June 14 — check WSDOT's SR-20 pass report before an early- or late-season trip.",
+   "seasonal": "",
+   "group_limit": 6,
+   "landManager": "North Cascades National Park (NPS)",
+   "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+   "passRequired": "A Northwest Forest Pass or America the Beautiful pass is required for parking at the Bridge Creek trailhead.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades NP wilderness permit, fee per person",
+    "where": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center."
+   }
+  }
+ },
+ "wa_goode_mountain_megalodon_ridge": {
+  "access": {
+   "fees": "$10/person/night + a flat $6 nonrefundable reservation fee (charged mid-May–early Oct only; free the rest of the year). No separate climbing fee — North Cascades NP entrance itself is free.",
+   "notes": "60% of sites (Boston Basin/Eldorado/Sulphide Glacier/etc.) are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+   "rules": "Group size capped at 6 in off-trail cross-country zones (12 in on-trail corridors). Boston Basin camping restricted to two designated sites (Low Camp ~5,300 ft, High Camp ~6,400 ft). Bear canisters required in some zones — free loaners at permit offices.",
+   "permit": "Backcountry/climbing permit required for overnight stays; $10 per person plus a non-refundable $6 reservation fee via Recreation.gov, activated in person at the Wilderness Information Center in Marblemount.",
+   "closures": "SR-20 (North Cascades Highway) closes for winter, typically early December to mid/late April, near Ross Dam (MP134)/Silver Star (MP171); in 2026 the highway didn't fully reopen until June 14 due to spring repairs — check WSDOT's SR-20 pass report before planning.",
+   "seasonal": "",
+   "group_limit": 6,
+   "landManager": "North Cascades National Park (NPS)",
+   "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+   "passRequired": "No park entrance fee; parking at the Bridge Creek trailhead requires a Northwest Forest Pass or America the Beautiful pass.",
+   "overnight_permit": {
+    "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+    "what": "North Cascades NP wilderness permit, fee per person",
+    "where": "Reserve on Recreation.gov, or pick up a walk-up permit in person at the Marblemount Wilderness Information Center."
+   }
+  }
+ },
+ "wa_storm_king_north_face": {
+  "approach": "From High Bridge, take the Park Creek trail up the Park Creek valley and climb to the snow line on the south side of the saddle between Goode and Storm King; the first party camped there. Gain the saddle, make one rappel onto the glacier on the north side, and descend it through crevasses and beneath an ice cliff to the foot of the roughly 3,000 ft rock rib that leads straight to the main (east) summit. Expect a bivy at the base of the rib.",
+  "fa": "Dick Emerson and Walter Gove, 1978",
+  "overview": "A rarely repeated technical line up Storm King's north face, first climbed in 1978 by Dick Emerson and Walter Gove. Unlike the walk-up-style Southwest Route, this is a genuine technical alpine rock climb, but little is known about its grade, pitch count, and exact line."
+ }
+}
