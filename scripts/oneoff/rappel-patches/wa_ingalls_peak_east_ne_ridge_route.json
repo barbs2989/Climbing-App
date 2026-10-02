@@ -1,0 +1,38 @@
+{
+ "id": "wa_ingalls_peak_east_ne_ridge_route",
+ "area_id": "wa_ingalls_peak_east",
+ "stations": 3,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "pull": null,
+    "notes": "A single rope reaches the next station.",
+    "anchor": "sling around chockstone/horn",
+    "hazards": null,
+    "lengthM": null,
+    "station": "You do not rappel from the summit block. It sits above the highest anchor, and parties protect the short scramble back down to that anchor with a handline, so the first rappel proper starts one station below the summit."
+   },
+   {
+    "n": 2,
+    "pull": null,
+    "notes": "Also a single-rope rappel. Nothing published describes where this anchor sits or how to find it.",
+    "anchor": "sling around chockstone/horn",
+    "hazards": null,
+    "lengthM": null,
+    "station": null
+   },
+   {
+    "n": 3,
+    "pull": null,
+    "notes": null,
+    "anchor": "sling around chockstone/horn near the notch",
+    "hazards": "A party carrying only one rope cannot complete this rappel — it is a full double-rope length, unlike the two single-rope rappels above it.",
+    "lengthM": null,
+    "station": "The last rappel is the long one: it takes two 70 m ropes joined, and it lands on a scramble ledge rather than on the ground. From that ledge, scramble back across to the rappel station in the approach gully to regain packs."
+   }
+  ],
+  "rappels": "Rappel the Southwest Face route back to the North-East Peak notch: three rappels off natural anchors (slings on chockstones and horns).",
+  "rappel_count_note": "Three rappels down the line, plus a handline from the summit block down to the top station and a further rappel station in the approach gully at the bottom. The first two are single-rope; the last is a full double-rope rappel needing two 70 m ropes — a single 60 m rope will not complete this descent. No per-station distance is published."
+ }
+}

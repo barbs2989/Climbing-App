@@ -30,3 +30,39 @@ wa_mount_terror_north_face | TEXT FIX | rappels field now states ~4 (3-5) like i
 wa_nooksack_tower_beckey_route | FIXED | stations 3-9 were filler ('continues down the ridge', alternating anchors, 30m vs 60m text) -> 10 couloir double-rope raps w/ documented anchor detail; unsourced '12' removed
 wa_one_piece_at_a_time | TEXT FIX | 3 two-rope 60m raps confirmed (FA tagged 2nd 60m); removed speculative 'six on a single rope'
 wa_ultramega_ok | TEXT FIX | 5 two-rope N Face line kept (header shows two ropes); note no longer denies the lengths the table/text give; rappels field states rope setup
+wa_argonaut_peak_northeast_couloir | TEXT FIX | table = route's documented SE-ledge line (3, sometimes 4); prose/descent field led with the slab-line alternative (2) — now consistent
+wa_chockstone_route | TEXT FIX | 5 (tree + 4 bolted) confirmed consistent; removed estimated 30m length
+wa_concord_tower_north_face | OK, no change | 3 single-rope raps (2 on two ropes), consistent everywhere
+wa_kangaroo_temple_north_face | OK, no change | 3 single-60 raps; 2-3 = downclimbing the last, consistent
+wa_prusik_peak_west_ridge | FIXED | header said 5 vs rappels field 4; optional 5th station folded into S4 notes -> table 4 (most report 4), text consistent
+wa_j_tnar | TEXT FIX | 16 per-pitch raps kept; invented uniform 35m removed; stock notes -> 'from top of pitch N'; note de-pipelined
+wa_mount_index_north_norwegian_buttress | TEXT FIX | DUPLICATE of wa_j_tnar (both 'Jötnar', 2 areas) — not merged (owner decision); same fixed 16-station table
+wa_beckey_davis | FIXED | 6 (incl. 2 optional stations) -> 4 + optional, matching Prusik W Ridge and the 2018 station-relocation account
+wa_prusik_peak_der_sportsman | FIXED | 6 (5+balanced-rock) -> shared Prusik summit descent 4+optional; balanced-rock rap noted avoidable
+wa_prusik_peak_south_face_burgner_stanley | FIXED | 5 (5th optional) -> 4+optional, same shared descent
+wa_marvin_s_ear | OK, no change | 4 raps on 70m (R1-R4 from party beta), 35m = 70m doubled
+wa_roan_wall_center_stage | TEXT FIX | 8 per-belay raps kept (no published tally, note says so); invented 40/30m removed; stock notes -> 'top of pitch N'
+wa_roan_wall_stage_right | TEXT FIX | 8 per-belay raps kept (no published tally, note says so); invented 40/30m removed; stock notes -> 'top of pitch N'
+SEWS cluster (wa_south_arete, wa_the_hitchhiker, wa_sews_sw_rib, wa_south_early_winter_spire_passenger, wa_southern_man, wa_south_early_winter_spire_direct_east_buttress, wa_northwest_face_boving_pollock, wa_free_mojo, wa_boving_roofs) | FIXED | count 3 confirmed (3 bolted chain raps <30m, climber's right of gully); filler 30/30/30 tables -> South Arete's researched stations; 'A Mountaineers trip report' source citation removed; Southern Man boilerplate descent + SW Rib 'several' fixed
+wa_mojo_rising | OK, no change | its table is its own 3-rap bail line
+wa_tooth_and_claw | FIXED | most parties WALK OFF; rappel option count unpublished — removed 6-station table (4 filler); rappels text leads with walk-off, keeps documented 70m-rope facts
+wa_cascade_peak_east_ridge | FIXED | '3 (or more)' was a guess, no published count — removed guessed 3x30m table; prose states what is known
+wa_east_ridge_4 (Inspiration E Ridge) | FIXED | same 14 count; filler 30m/stock notes -> shared Inspiration 14-station table
+wa_goode_mountain_megalodon_ridge | OK, no change | 6 (3 to Black Tooth Notch + 3 SW Couloir), researched stations; 30m = 60m rope barely
+wa_mount_goode_northeast_buttress | OK, no change | same 6-rap descent, consistent
+wa_mount_fury_east_mongo_ridge | TEXT FIX | 12 on-route tower raps kept (FA: at least a dozen); stock notes 5-11 now say no individual description is published
+wa_the_devils_club | FIXED | 13-station 'scaled estimate' with invented 55m removed; prose: ~dozen+ natural-anchor raps, no station list published
+wa_the_west_face (NEWS) | TEXT FIX | 6 bolted confirmed; lengths from its own pull notes (31/32/28/28), note explains Chockstone Route's 5 joins lower
+wa_chockstone_route | OK (re-checked) | tree + 4 bolted confirmed: joins the West Face line partway
+wa_the_monk_scabo | TEXT FIX | 3x75ft: lengths 25->23 m
+wa_the_tooth_south_face | OK, no change | 4 single-60 raps, researched to 2024
+Monk cluster (le_gibet, odine, west_cracks_left/right) | FIXED | no table -> Scabo's 3x23m NE gully table
+wa_ingalls_peak_friends_in_high_places | FIXED | no table -> South Ridge 4-station line
+wa_ingalls_peak_east_ne_ridge_route | FIXED | no table -> East Peak SW Face 3-station line it descends
+wa_prusik_peak_solid_gold, wa_prusik_peak_sail_away, wa_energizer_bunny | FIXED (no table) | back-side descent from Solid Gold anchors: sources conflict 1 vs 2 raps, no stations described -> consistent prose, no invented table
+wa_prusik_peak_taylor_wood_route | FIXED | no table -> Prusik summit 4+optional; couloir alt in words
+wa_boving_christensen | OK, no table | 2 raps off tat, no station detail published; prose consistent
+Colchuck Balanced Rock (accendo_lunae, full_tilt, leche_la_vaca, let_it_burn, milk_n_honey, rikki_tikki_tavi, the_scoop_2, the_tempest, the_tipping_point) | FIXED | no table -> CBR West Face 1-station horn rappel; Full Tilt speculation + Scoop derived '6-7' removed; Tipping Point 'a 60m suffices' for 40m raps corrected
+wa_scarface_3 | FIXED | no table -> CBR horn rappel
+wa_up_in_arms | FIXED | no table -> Concord south face 2x30m (bolted mid-face station)
+wa_liberty_traverse | FIXED | no table -> 15 stations assembled from each summit's verified descent (LB 2, Concord 2, Lexington 1-2 + 1 short, NEWS West Face 6, SEWS 3)
