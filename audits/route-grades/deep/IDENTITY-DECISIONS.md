@@ -140,3 +140,34 @@ Per-row evidence and every source are in `out/i*.json`.
   - Mount Lincoln and The Incisor (renames).
   - Jack Mountain NE Glacier (needs a real description).
   - Chopping Block South Route (not found).
+
+## Applied 2026-10-02: the five low-confidence items, settled against the guidebooks
+
+`scripts/oneoff/route-guidebook-five.mjs` (rollback `rollback-guidebook-five-1790924763499.json`). The
+books were read on Google Books: Beckey's Cascade Alpine Guide vol 2 (Fortress) and vol 3 (Jack, the
+Chopping Block), and the Olympic Mountains climbing guide (Lincoln, the Incisor). archive.org holds only
+Beckey vol 1, and its Olympic guide is withdrawn.
+
+**Grade rule (owner, 2026-10-02):** keep the HIGHER of our grade and the book's, because older guides
+graded easier. The book still decides name, line, first ascent, descent and rappels.
+
+- `wa_fortress_mountain_northeast_face`: **not a duplicate.** The book lists a separate Northeast Face
+  (Grade II, 5.6) from the Fortress–Chiwawa col: a slabby rock band, a chimney, a steepening snow slope to
+  the Southeast Ridge, then the ridge. Renamed from "Northeast Ridge"; Class 4 → **5.6**, commitment II.
+  `wa_fortress_mountain_east_ridge` is the book's Southeast Route (wide gully to the east ridge, loose
+  final ridge) and is unchanged.
+- `wa_the_chopping_block_south_route`: the 1932 first-ascent line is the **Southeast Face**: a hidden
+  gully on the SE side, a 200-ft chimney, then a slabby face, descended by about seven low-angle rappels.
+  Renamed, aspect S → SE, line, pitches and descent rewritten. The book rates it class 3-4; **5.5 kept**.
+- `wa_jack_mountain_northeast_glacier`: described from the book (FA 1978). Cross the serrated col east of
+  the Southeast Ridge, drop about 250 ft onto a chaotic glacier, use the right-hand buttress where the ice
+  is too broken, then finish on the North Ridge. Class 3 → **Class 4** (the North Ridge's grade). The
+  Nohokomeen route's hazards, camps and May Creek descent were removed.
+- `wa_mount_lincoln_standard`: this row is the book's route 2, the north ridge from Flapjack Lakes,
+  mislabelled South Ridge and credited with the class-2 line from lower in the valley. Renamed "North
+  Ridge from Flapjack Lakes", face and aspect N. The book says class 3; **Class 4 kept**.
+- `wa_the_incisor_scramble`: one route, II 5.4: from a block at the SE corner, across to the low north end,
+  then along the knife-edge ridge. Renamed "Knife-Edge Ridge", FA party named (Heathershaw and McKee, 1958),
+  commitment II. The book's elevation (ca. 7,350 ft) is NOT applied over our 7,440 ft.
+
+**Checks:** a re-read of all five rows matches what was written.
