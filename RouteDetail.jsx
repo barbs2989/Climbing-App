@@ -1478,38 +1478,52 @@ function CampSite({b,i}){
      the accessibility tree, where CSS margins do not exist. An authored name cannot glue. */
   const fromTh=campFromTrailhead(b);
   const label=nm+(b&&b.elev!=null?", "+uElev(b.elev):"")+(b&&b.kind?", "+b.kind:"")+(fromTh?", "+fromTh:"");
-  return <div style={{border:"1px solid "+C.border,borderRadius:10,marginBottom:8,overflow:"hidden"}}>
-    <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{padding:"9px 11px",cursor:more?"pointer":"default"}}>
-      <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start",gap:9,marginBottom:(b.kind||b.onTrack||more||fromTh)?5:0}}>
-        <div style={{fontSize:13,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word"}}><span style={{marginRight:6}}>{"☾"}</span>{nm}</div>
-        {b.elev!=null?<span style={{flexShrink:0,fontSize:11.5,fontWeight:700,color:C.purple,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
+  /* Each kind gets its own accent so a scan down the list tells a camp from a bivy from a hut
+     before reading a word; the three detail fields get theirs so WATER is findable at a glance in
+     an open card — it is the field a party most needs and the longest one to wade through. */
+  const tone=(b&&{Camp:C.purple,Bivy:C.teal,Hut:C.amber}[b.kind])||C.purple;
+  const DTONE={Capacity:tone,Water:C.blue,Permit:C.amber};
+  const chip=function(c,bd){return {fontSize:11,fontWeight:700,color:c,background:C.surface,border:"1px solid "+bd,borderRadius:20,padding:"2px 9px"};};
+  return <div style={{background:C.card,border:"1px solid "+(open?tone+"66":C.border),borderLeft:"3px solid "+tone,borderRadius:12,marginBottom:8,overflow:"hidden"}}>
+    <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{padding:"11px 13px",cursor:more?"pointer":"default"}}>
+      <div style={{display:"flex",alignItems:"flex-start",gap:10}}>
+        <div aria-hidden="true" style={{width:30,height:30,borderRadius:8,background:tone+"22",color:tone,display:"flex",alignItems:"center",justifyContent:"center",fontSize:15,flexShrink:0}}>{"☾"}</div>
+        <div style={{flex:1,minWidth:0}}>
+          <div style={{display:"flex",justifyContent:"space-between",alignItems:"baseline",gap:9}}>
+            <div style={{fontSize:14,fontWeight:700,color:C.text,minWidth:0,wordBreak:"break-word",lineHeight:1.3}}>{nm}</div>
+            {b.elev!=null?<span style={{flexShrink:0,fontSize:12.5,fontWeight:800,color:tone,whiteSpace:"nowrap"}}>{uElev(b.elev)}</span>:null}
+          </div>
+          {fromTh?<div style={{fontSize:11.5,color:C.textSub,lineHeight:1.4,marginTop:2}}>{fromTh}</div>:null}
+          {(b.kind||b.onTrack||more)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6,marginTop:7}}>
+            {b.kind?<span style={chip(tone,tone+"55")}>{b.kind}</span>:null}
+            {b.onTrack?<span style={chip(C.textMuted,C.border)}>{"Marked on the track"}</span>:null}
+            {more?<span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"▾ Less":"▸ More"}</span>:null}
+          </div>:null}
+        </div>
       </div>
-      {(b.kind||b.onTrack||more||fromTh)?<div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:6}}>
-        {fromTh?<span style={{fontSize:11,fontWeight:700,color:C.textSub,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{fromTh}</span>:null}
-        {b.kind?<span style={{fontSize:11,fontWeight:700,color:C.purple,background:C.card,border:"1px solid "+C.purple+"55",borderRadius:20,padding:"2px 9px"}}>{b.kind}</span>:null}
-        {b.onTrack?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{"Marked on the track"}</span>:null}
-        {more?<span style={{fontSize:11.5,fontWeight:700,color:C.blue,marginLeft:"auto",whiteSpace:"nowrap"}}>{open?"▾ Less":"▸ More"}</span>:null}
-      </div>:null}
     </div>
-    {open&&more?<div style={{borderTop:"1px solid "+C.borderLight,padding:"10px 11px"}}>
-      {detail.map(function(r,ri){return <div key={ri} style={{marginBottom:9}}><div style={{fontSize:10.5,fontWeight:700,color:C.textMuted,letterSpacing:0.5,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{r[1]}</div></div>;})}
-      {b.notes?<div style={{fontSize:12,color:C.textSub,lineHeight:1.55}}>{b.notes}</div>:null}
+    {open&&more?<div style={{borderTop:"1px solid "+C.borderLight,background:C.surface,padding:"12px 13px 3px"}}>
+      {detail.concat(b.notes?[["Notes",b.notes]]:[]).map(function(r,ri){return <div key={ri} style={{display:"flex",gap:10,marginBottom:11}}><span aria-hidden="true" style={{width:3,borderRadius:2,background:DTONE[r[0]]||C.borderHi,flexShrink:0}}/><div style={{minWidth:0}}><div style={{fontSize:10.5,fontWeight:800,color:DTONE[r[0]]||C.textMuted,letterSpacing:0.6,marginBottom:3}}>{r[0].toUpperCase()}</div><div style={{fontSize:12.5,color:C.text,lineHeight:1.6,opacity:0.88}}>{r[1]}</div></div></div>;})}
     </div>:null}
   </div>;
 }
 function CampingPanel({route,onEdit}){
   const sites=campSites(route);
   if(!sites.length)return null;
-  return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`,marginBottom:13}}>
-    <div style={SZ4}><CardHead tone={C.purple}>{"CAMPING & BIVY · "+sites.length}</CardHead>{onEdit?<EditIconButton onClick={onEdit} title="Edit camping and bivy sites"/>:null}</div>
+  /* A SECTION heading (SL), not a card heading: this is a planner section in its own right, the
+     peer of ROUTE TRACK and RAPPELS beside it, and SL's top margin is what separates it from the
+     climate block above — inside a card it sat flush against it and read as part of it. Each site
+     is its own card, so the section is not wrapped in one: a card of cards just nests borders. */
+  return <div style={{marginBottom:14}}>
+    <SL action={onEdit?<EditIconButton onClick={onEdit} title="Edit camping and bivy sites"/>:null}>{"CAMPING & BIVY · "+sites.length}</SL>
     {/* The "also a pin on the route track" sentence is CONDITIONAL, because it is only true of
         waypoint-derived sites. Most researched bivy rows carry no coordinate at all — measured:
         4 of 175 catalog-wide — so stating it unconditionally tells a climber to look for pins
         that are not there. Claim it only when at least one site actually is on the track. */}
-    <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginBottom:10}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")}</div>
+    <div style={{fontSize:12,color:C.textMuted,lineHeight:1.5,marginBottom:12}}>{"Where you can sleep on this route — camps, approach bivies and high camps. Worth reading even if you plan to go car-to-car, for the day that runs long or the weather that turns."+(sites.some(s=>s.onTrack)?" Anything marked on the track is also a pin under ROUTE TRACK.":"")}</div>
     <OvernightPermit route={route}/>
-    {campGroups(sites).map(function(g){return <div key={g.key} style={{marginTop:g.title?4:0}}>
-      {g.title?<div style={{marginBottom:7}}><div style={{fontSize:11,fontWeight:700,color:C.text,letterSpacing:0.5}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
+    {campGroups(sites).map(function(g,gi){return <div key={g.key} style={{marginTop:g.title&&gi?16:0}}>
+      {g.title?<div style={{marginBottom:9}}><div style={{fontSize:11.5,fontWeight:800,color:C.purple,letterSpacing:0.6}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
       {g.sites.map(function(s){return <CampSite key={s.i} b={s.b} i={s.i}/>;})}
     </div>;})}
   </div>;
