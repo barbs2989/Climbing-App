@@ -402,13 +402,17 @@ lanes, built by `scripts/oneoff/route-leftovers/build-final-inputs.mjs` with rul
     "fewer than half the days" rule falls back to `dist_km`.
   - Mount Price: the kept row (`wa_mount_price_hester_lake_route`) stores 8 km, which sits with its own "~5-6 mi to
     the Hester Lake basin"; no contradiction is left on the row.
-- **Still open, owner's call:**
-  - Ingalls South Ridge: the header says 4 pitches, while the breakdown and the guidebook say 3. The whole rappel
-    layout (four stations, "one per pitch", the "top of pitch 3" bolts below the summit) is built on 4, and no book
-    gives a layout to rewrite it from.
-  - Half Fast / Astral Projection: `permit` names Wild Sky while `access.permit` says N/A; no land-manager page
-    places the Tye Road crags.
-  - Sentinel `dist_km` 26.2 (~16.3 mi) vs the row's "roughly 16 miles each way" road walk.
+- **Owner "do what you recommend" (`recommend-apply.json`, APPLIED, 7 ops, 0 rejected):**
+  - Ingalls South Ridge `pitches` 4 -> 3: the guidebook, the breakdown, both route pins, the day plan, the timing
+    and the hazard text all say 3. The rappel count stays (4 on one 60 m rope, 3 on two); only the three "one per
+    pitch" clauses were cut. The rappel stations still use a 4-pitch numbering ("top of pitch 3" below the summit).
+    No book gives a station layout, so that labelling was not rewritten.
+  - All 5 Half Moon Crag routes (Half Fast, Astral Projection, Asymptotic, Artic Rose, Astroglide): `permit` no
+    longer claims a Wild Sky Wilderness permit. It now matches the rows' own access ("no permit at the roadside
+    pullout"); the forest publishes a self-issue rule for Alpine Lakes only. Spire Mountain and Tailgunner are peaks
+    and keep theirs.
+  - Sentinel `dist_km` 26.2 -> null. The road-walk sentence that 16.3 mi once matched is gone from the row; it fits
+    neither the 14 mi summit pin nor the ~34 mi round trip.
 - **Worth a retry when archive.org answers again:**
   - Buckner season, Lemah moat, Sherpa camp, Temple rappels, New York Gully WI3/WI4, Spire Point grade, Snowking and
     Forbidden NE Face seasons, Dragontail Gerber-Sink rope, and Overcoat pitches.
