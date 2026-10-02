@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_the_tipping_point",
+  "last_processed_id": "wa_three_fingers_r2",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 747,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 373. Next after wa_the_tipping_point (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_the_tooth_fairy, wa_the_tooth_indentured_servant, wa_the_tooth_r1, wa_the_tooth_south_face, wa_the_triad_east_peak, wa_the_triad_traverse, wa_the_west_face, wa_this_my_friend, wa_three_fingers_r1, wa_three_fingers_r2, wa_three_fingers_south_peak_lookout, wa_three_queens_middle_peak, wa_three_queens_west_peak, wa_tooth_and_claw, wa_tooth_chair_traverse, wa_tower_mountain_southwest_route, wa_trapper_mountain_north_couloir, wa_traverse_of_mount_index. (wa_thunder_mountain_north_face on crag-type \"Thunder Mountain and Slippery Slab Tower\" and wa_tower_arete on crag-type \"North Face Tiffany Mountain\" sort nearby but are out of scope -- area_type != 'peak'.)",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 374. Next after wa_three_fingers_r2 (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_three_fingers_south_peak_lookout, wa_three_queens_middle_peak, wa_three_queens_west_peak, wa_tooth_and_claw, wa_tooth_chair_traverse, wa_tower_mountain_southwest_route, wa_trapper_mountain_north_couloir, wa_traverse_of_mount_index. (wa_thunder_mountain_north_face on crag-type \"Thunder Mountain and Slippery Slab Tower\" and wa_tower_arete on crag-type \"North Face Tiffany Mountain\" sort nearby but are out of scope -- area_type != 'peak'.)",
   "batches": [
     {
       "batch_number": 1,
@@ -7490,6 +7490,27 @@
       "clean": 3,
       "sql_file": "audits/sql/2026-10-02-batch-373.sql",
       "note": "Unusual batch: found 4 SILENT REVERSIONS of previously-researched, previously-applied fixes from batch 107 (2026-08-13) and batch 236 (2026-09-08), re-applied verbatim with their original sourcing re-cited rather than re-derived -- same drift pattern already documented elsewhere in this log (Dorado Needle dist_km, The Brothers elevation_ft); worth a human checking whether something is restoring routes/areas from a stale snapshot. Fixed (7 routes + 1 area row, 10 statements): wa_the_monk_west_cracks_right_crack high_point_ft reverted 8300->8606 (Cathedral Peak's own elevation, the same summit-collision defect batch 107 fixed -- this route's own 'Monk tower top' waypoint still reads 8300); wa_the_pleiades_scramble access.land_manager reverted to the false claim that upper routes cross into North Cascades NP (Mount Larrabee sits west of the NCNP boundary; this row's own permit field and its landManager camelCase twin already agree); wa_the_rake_traverse_route high_point_ft reverted 7840->7869 and dist_km reverted 13.0->25.7 (round-trip value; this row's own summit waypoint still reads 7840/8.07mi one-way) -- both batch-236 fixes; wa_the_rake (area) elevation_ft 7869->7840, newly brought into agreement with its own route and the Peakbagger/StephAbegg/Wikipedia sourcing batch 236 already cited (the area row itself was never previously touched); wa_the_roof gain_ft/loss_ft reverted 2571/2571->2397/2397 (below this row's own trailhead-to-summit net rise -- an impossible-gain violation batch 236 already caught once). Also filled 3 NULL-permit gaps with the app's own already-established wording for the same peak/zone (same pattern as batch 337's wa_milk_n_honey fix): wa_the_pyramid_picket_east_ridge (from sibling wa_the_pyramid_picket_south_route's text; also filled this route's NULL high_point_ft from the shared 7920 ft Pyramid summit elevation, since its own overview says it topped out as the 5th of 14 Southern Pickets Enchainment summits), wa_the_scoop_2 and wa_the_tipping_point (both Colchuck Balanced Rock, standard Enchantment Permit Area text). Clean (3): wa_the_needle_neve_glacier and wa_the_pyramid_picket_south_route re-confirmed against batch 235's (2026-09-07) existing findings -- no change, no new issue (South Route's own name-vs-west-facing-aspect tension remains correctly flagged-not-fixed from that batch, not resurfaced here as new). wa_the_temple_south_ridge: new to this audit; high_point_ft/lat/lng agree with its own area row, FA (Fred Beckey, 1942) is plausible and consistent with the peak's known climbing history, and its own corrections/data_quality fields already self-hedge the one open question (whether 'South Ridge' is the route's correct published name vs. The Mountaineers' 'West Side') -- left as documented uncertainty, not a new finding. `npm run check:sql` could not be run this session (this branch's checkout predates the script's addition to main, and no node_modules/service key in this fresh clone); every target id and guarded WHERE-clause old-value was instead independently re-confirmed via direct REST queries against the live DB immediately before drafting each statement."
+    },
+    {
+      "batch_number": 374,
+      "date": "2026-10-02",
+      "route_ids": [
+        "wa_the_tooth_fairy",
+        "wa_the_tooth_indentured_servant",
+        "wa_the_tooth_r1",
+        "wa_the_tooth_south_face",
+        "wa_the_triad_east_peak",
+        "wa_the_triad_traverse",
+        "wa_the_west_face",
+        "wa_this_my_friend",
+        "wa_three_fingers_r1",
+        "wa_three_fingers_r2"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 0,
+      "clean": 8,
+      "sql_file": "audits/sql/2026-10-02-batch-374.sql",
+      "note": "Fixed 2 (3 statements): wa_three_fingers_r1 (North Peak) high_point_ft 6870->6832, matching this row's own summit waypoint (also corrected 6870->6832) -- two independent sources (Peakbagger/USGS Whitehorse Mountain quad at 6832 ft, listsofjohn.com LiDAR at 6833 ft) converge within 1 ft of each other and well clear of the stored 6870; the main/South Peak lookout summit (areas.elevation_ft=6865 on wa_three_fingers) was separately re-confirmed correct against Peakbagger's 6865.4 ft and left untouched. wa_the_west_face (North Early Winters Spire) fa misspelled first-ascensionist 'Beckstad' -> 'Beckstead', confirmed by three independent sources (SummitPost, TheCrag, SuperTopo) for the June 17, 1965 Beckey ascent; FFA credit (Risse/Tower, 1985) unchanged and already correct. Clean (8): The Tooth's four routes (Tooth Fairy, Indentured Servant, Northeast Slabs, South Face) all had their stored elevation (5606 ft), FAs (Nelson/Whitelaw 2019; Nelson/Stevenson 1982; Anderson/Wunderling 1928) and grades independently corroborated via Mountain Project/SummitPost/Wikipedia with no discrepancy. The Triad's two routes (East Peak, Traverse) store high_point_ft 7520, matching Wikipedia's 'East Peak 7,520+ ft' contour figure (the Middle Peak is the true highest point at the same 7,520+ contour per a corroborating trip-report title, but this audit's two routes are East-Peak-specific and not mis-attributed to Middle). wa_this_my_friend (Dragontail Peak) FA (Andy Wyatt & Chris Potts, Aug 2020, ground-up onsight car-to-car) and grade (5.10a) matched Mountain Project exactly. wa_three_fingers_r2 (Middle Peak) high_point_ft 6800 vs. the authoritative 6796-6796.5 ft (Peakbagger/listsofjohn) is within ordinary rounding tolerance and not treated as an error. `npm run check:sql` ran clean against this batch's file (all 3 write targets exist, no destructive DELETE)."
     }
   ]
 }

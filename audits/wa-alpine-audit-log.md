@@ -29759,3 +29759,37 @@ immediately before drafting each statement, which is the same zero-rows-matched 
 
 Next batch continues after `wa_the_tipping_point` in the id-ordered scope (see progress
 file for the next candidate list).
+
+## Batch 374 (2026-10-02, pass 6)
+
+Checked: wa_the_tooth_fairy, wa_the_tooth_indentured_servant, wa_the_tooth_r1 (Northeast
+Slabs), wa_the_tooth_south_face (The Tooth); wa_the_triad_east_peak, wa_the_triad_traverse
+(The Triad); wa_the_west_face (North Early Winters Spire); wa_this_my_friend (Dragontail
+Peak); wa_three_fingers_r1 (North Peak), wa_three_fingers_r2 (Middle Peak).
+
+Fixed 2 (3 statements, `audits/sql/2026-10-02-batch-374.sql`): wa_three_fingers_r1 (North
+Peak) `high_point_ft` 6870 → 6832, also correcting this row's own summit waypoint —
+Peakbagger/USGS (Whitehorse Mountain quad, 6832 ft) and listsofjohn.com (LiDAR, 6833 ft)
+converge within 1 ft of each other, well clear of the stored 6870; the separate main/South
+Peak lookout summit (`areas.elevation_ft`=6865 on `wa_three_fingers`) was re-confirmed
+correct against Peakbagger's 6865.4 ft and left untouched. wa_the_west_face (North Early
+Winters Spire) `fa` misspelled "Beckstad" → "Beckstead" (Dave Beckstead, Beckey's partner
+on the June 17, 1965 FA), confirmed by three independent sources (SummitPost, TheCrag,
+SuperTopo); the FFA credit (Risse/Tower, 1985) was already correct and untouched.
+
+Clean (8): The Tooth's four routes — elevation (5606 ft), FAs (Nelson/Whitelaw 2019 on
+Tooth Fairy; Nelson/Stevenson 1982 on Northeast Slabs; Anderson/Wunderling 1928 on South
+Face) and grades all corroborated exactly via Mountain Project/SummitPost/Wikipedia.
+The Triad's two routes store `high_point_ft` 7520, matching Wikipedia's "East Peak 7,520+
+ft" contour figure (Middle Peak is the true highpoint at the same 7,520+ contour per a
+corroborating trip-report title, but these two routes are East-Peak-specific, not
+misattributed). wa_this_my_friend's FA (Andy Wyatt & Chris Potts, Aug 2020, ground-up
+onsight car-to-car) and grade (5.10a) matched Mountain Project exactly. wa_three_fingers_r2
+(Middle Peak) `high_point_ft` 6800 vs. the authoritative 6796-6796.5 ft (Peakbagger/
+listsofjohn) is within ordinary rounding tolerance, not treated as an error.
+
+`npm run check:sql` ran clean against this batch's file (all 3 write targets exist, no
+destructive DELETE).
+
+Next batch continues after `wa_three_fingers_r2` in the id-ordered scope (see progress
+file for the next candidate list).
