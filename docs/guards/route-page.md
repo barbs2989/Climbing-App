@@ -155,6 +155,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `anchor` (0242, 2026-10-02) is the seventh: the route's TOP anchor as a short value, an
       ANCHOR row on crag routes other than boulders. `features` was NOT given a row — it already
       draws as RouteTagRow's chips, and a second reader would print it twice.
+      `location` (0243) is the eighth: where the line starts on its wall, the FIRST fact row on a
+      crag route, capped at 160 characters by both the column and the reader.
   - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
     rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
     "no route has this column populated". Main went red twice on 2026-08-12 with all 46

@@ -886,6 +886,9 @@ function TechStats({route,onEdit}){
        anchor — a pitch's own anchor stays on its ROUTE BREAKDOWN row. Style is NOT here: `features`
        already draws as the tag chips (RouteTagRow), and a row would print it twice. */
     const _anc=String(route.anchor||"").trim();if(disc!=="bouldering"&&_anc&&_anc.length<=80)facts.push(["Anchor",_anc]);
+    /* LOCATION is `location` (0243): where the line starts on its wall, which is how a climber finds it
+       at the base. First among the facts, because it is the first thing needed at the crag. */
+    const _loc=String(route.location||"").trim();if(_loc&&_loc.length<=160)facts.unshift(["Location",_loc]);
     const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140)facts.push(["Descent",_dsc]);
     const _asp=String(route.aspect||"").trim();if(_asp){const _sr=sunReadout(_asp,disc);facts.push(["Aspect",(/^[NSEW]{1,3}([\/ -][NSEW]{1,3})*$/i.test(_asp)?_asp+"-facing.":_asp.replace(/\.?$/,"."))+(_sr&&_sr.line?" "+_sr.line:"")]);}
     const _sea=String(route.season||"").trim();if(_sea)facts.push(["Season",_sea]);

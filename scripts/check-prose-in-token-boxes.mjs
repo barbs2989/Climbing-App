@@ -201,7 +201,7 @@ const sentinelRoute = () => {
 const cragSentinel = () => Object.assign(sentinelRoute(), {
   discipline: "trad", __crag: true, alt_names: [SENTINEL], variations: [SENTINEL], ffa: SENTINEL, fwa: SENTINEL,
   guide_stars: 3, bolts: 9, aspect: SENTINEL, season: SENTINEL, descent: SENTINEL.slice(0, 130),
-  anchor: SENTINEL.slice(0, 80),
+  anchor: SENTINEL.slice(0, 80), location: SENTINEL.slice(0, 160),
 });
 const ALL = rows.concat([sentinelRoute(), cragSentinel()]);
 for (const r of ALL) {
