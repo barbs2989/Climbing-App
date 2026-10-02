@@ -1,0 +1,95 @@
+{
+ "id": "wa_the_rake_traverse_route",
+ "name": "Ridge Traverse Route",
+ "waypoints": [
+  {
+   "lat": 48.68664,
+   "lng": -121.27121,
+   "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+   "note": "Standard cross-country-zone access for Southern Pickets objectives (Terror Basin/Crescent Creek Basin);",
+   "type": "Trailhead",
+   "distMi": 0.29,
+   "distFrom": "track",
+   "directions": "Drive SR-20 east to Newhalem. Just after crossing Goodell Creek, take the first left onto a small road and turn immediately left at the T, then take the right branch uphill to the Upper Goodell Creek Group Camp; the climbers' path starts just back down the road from the camp. An overnight North Cascades wilderness permit, walk-up only from the Marblemount Wilderness Information Center, is required to camp in Terror or Crescent Creek basins."
+  },
+  {
+   "lat": 48.701193,
+   "lng": -121.279748,
+   "elev": 1000,
+   "name": "Goodell Creek Branch Crossings",
+   "note": "Climbers' path fords two branches of Goodell Creek on the old roadbed; can run high and fast during snowmelt.",
+   "type": "Water",
+   "distMi": 1.5,
+   "directions": "Follow the unmaintained climbers' path up the old roadbed along Goodell Creek; about 1.5 miles in it fords two branches of the creek, which can run high and fast during snowmelt."
+  },
+  {
+   "lat": 48.73396,
+   "lng": -121.291813,
+   "elev": 1700,
+   "name": "Terror Creek Basin Cairn Turnoff",
+   "note": "A stone cairn marks where the boot path leaves the old roadbed and begins climbing steeply into the Terror Creek drainage.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Continue up the old roadbed along Goodell Creek to roughly 4 miles, where a stone cairn marks the boot path leaving the roadbed to climb steeply into the Terror Creek drainage."
+  },
+  {
+   "lat": 48.756757,
+   "lng": -121.298772,
+   "elev": 5800,
+   "name": "Terror Creek Basin Camp",
+   "note": "Established campsite about 400 ft below a 6,200-ft saddle, with views of The Barrier, Degenhardt, Pyramid and the McMillan Spires.",
+   "type": "Campsite",
+   "distMi": 6.5,
+   "directions": "Climb the steep boot path up the Terror Creek drainage on faint tread through dense brush, including a Class 3 root-pull section at a cliff band, then break out onto heather and talus to the camp at treeline in Terror Basin."
+  },
+  {
+   "lat": 48.759952,
+   "lng": -121.301201,
+   "elev": 6200,
+   "name": "The Barrier",
+   "note": "Steep, loose grassy ledge near 6,100 ft leading to serious class-3 scrambling on rotten rock to gain the crest around 6,400 ft.",
+   "type": "Hazard",
+   "distMi": 7,
+   "directions": "From camp, climb west toward the Barrier, the steep headwall of the basin: a loose, grassy ledge near 6,100 ft leads to class 3 scrambling on rotten rock up to the crossing notch."
+  },
+  {
+   "lat": 48.766899,
+   "lng": -121.301569,
+   "elev": 6200,
+   "name": "Crescent Creek Basin High Camp",
+   "note": "High camp on the south side of Mount Terror, reached via an easy snow-ramp descent off the Barrier notch; also where enchainment parties arrive via the Otto-Himmel col.",
+   "type": "Campsite",
+   "distMi": 7.5,
+   "directions": "Cross the notch and descend the easy snow ramp on the far side into Crescent Creek Basin, then contour north to the high camp on the south side of Mount Terror."
+  },
+  {
+   "lat": 48.77272,
+   "lng": -121.306207,
+   "elev": 7400,
+   "name": "Rubble Gully to the Terror-Rake Col",
+   "note": "Loose, rubble-choked gully leads to the notch between Mount Terror and The Rake; stay right on slightly harder class-3 rock to dodge the worst debris.",
+   "type": "Hazard",
+   "distMi": 8,
+   "directions": "From camp, head north up to the deep, rubble-choked gully that leads to the notch between Mount Terror and The Rake, and climb it staying right on slightly harder but far more solid class 3 rock rather than in the debris of its bed."
+  },
+  {
+   "lat": 48.7755,
+   "lng": -121.3067,
+   "elev": 7840,
+   "name": "The Rake",
+   "type": "Summit",
+   "distMi": 8.07,
+   "elevFt": 7840,
+   "distFrom": "track",
+   "directions": "Finish the gully to the Terror-Rake notch. The ridge starts immediately above on very steep rock with old fixed pins; follow roughly half a mile of serrated crest, mixed 4th and 5th class up to 5.9, to the summit."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.768,
+  "peakLng": -121.288,
+  "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+  "trailheadLat": 48.68664,
+  "trailheadLng": -121.27121,
+  "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+ }
+}

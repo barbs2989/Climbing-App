@@ -1,0 +1,86 @@
+{
+ "id": "wa_the_incisor_scramble",
+ "name": "Knife-Edge Ridge",
+ "waypoints": [
+  {
+   "lat": 47.877572,
+   "lng": -123.136927,
+   "elev": 2500,
+   "name": "Upper Dungeness Trailhead",
+   "note": "Large parking lot with vault toilet just past the Dungeness River bridge; Northwest Forest Pass required and a backcountry camping permit is needed once you cross into the national park.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 near Sequim, follow Palo Alto Road onto Forest Road 2880 and continue to Dungeness Forks Campground, then take FR 2870 about 8.7 miles to the Upper Dungeness Trailhead at roughly 2,500 feet. The lot sits just past the Dungeness River bridge and is large, with a vault toilet. A Northwest Forest Pass is required to park, and you will also need a backcountry camping permit once the route crosses into the national park."
+  },
+  {
+   "lat": 47.876487,
+   "lng": -123.140901,
+   "elev": 2200,
+   "name": "Royal Creek / Royal Basin Trail #832 junction",
+   "note": "Fork off Upper Dungeness Trail #833; bear right onto Royal Creek/Royal Basin Trail #832 toward Royal Basin.",
+   "type": "Junction",
+   "distMi": 1,
+   "directions": "Follow the Upper Dungeness Trail #833 upstream about 1 mile; a few steps before the footlog over Royal Creek, bear right onto Royal Basin Trail #832."
+  },
+  {
+   "lat": 47.8743679,
+   "lng": -123.1469029,
+   "elev": 3000,
+   "name": "Maynard Burn Trail junction / park boundary",
+   "note": "Stay left at the Maynard Burn intersection; the trail crosses from Olympic National Forest into Olympic National Park here, so backcountry permit rules apply beyond this point.",
+   "type": "Junction",
+   "distMi": 2.5,
+   "directions": "About 0.2 mile up Trail #832, stay left at the Maynard Burn Trail junction. The trail enters Olympic National Park shortly beyond."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4200,
+   "name": "Talus slopes and creek crossings below Royal Basin",
+   "note": "Trail breaks into open talus with several small stream crossings and waterfall views; braided and slick where hikers have cut across the heather.",
+   "type": "Water",
+   "distMi": 4.5,
+   "directions": "Continue up the Royal Creek valley through forest, crossing the creek several times, until the trail breaks out into open, talus-strewn stretches with small stream crossings."
+  },
+  {
+   "lat": 47.83201,
+   "lng": -123.21073,
+   "elev": 5100,
+   "name": "Royal Lake",
+   "note": "Established, permit-only campsites at the outlet; standard base camp with views west across the lake to the jagged Needles ridge.",
+   "type": "Campsite",
+   "distMi": 7.2,
+   "directions": "Past the talus the trail returns to the creek near some campsites, then climbs open slopes in long traverses and steep switchbacks to Royal Lake at about 5,100 ft, 7.2 miles from the trailhead."
+  },
+  {
+   "lat": 47.829892,
+   "lng": -123.219388,
+   "elev": 5700,
+   "name": "Upper Royal Basin",
+   "note": "Meadow-and-tarn basin roughly three-quarters of a mile above Royal Lake; leave the maintained trail here and pick a talus/heather-bench line west toward the Needles ridge crest.",
+   "type": "Junction",
+   "distMi": 8,
+   "directions": "Continue past the lake and the big overhang of Shelter Rock, cross a short footlog and climb to Arrowhead Meadow, then cross an unbridged stream and climb into Upper Royal Basin at about 5,700 ft, under a mile beyond the lake."
+  },
+  {
+   "lat": 47.828873,
+   "lng": -123.229604,
+   "elev": 6800,
+   "name": "Talus and heather-bench scramble to ridge crest",
+   "note": "Loose Class 2-3 talus and steep heather benches gaining the ridge crest; footing is unstable and route-finding is easy to lose in cloud or low light.",
+   "type": "Hazard",
+   "distMi": 9.3,
+   "directions": "Leave the trail and pick a line west up loose talus and steep heather benches (Class 2-3) toward the Needles ridge crest."
+  },
+  {
+   "lat": 47.828325,
+   "lng": -123.235105,
+   "elev": 7440,
+   "name": "The Incisor",
+   "note": "7,440 ft summit spire in The Needles range, 40 ft of prominence, first climbed 1958; final moves are exposed Class 3-4 scrambling along the ridge crest.",
+   "type": "Summit",
+   "distMi": 10,
+   "directions": "From the crest, finish with exposed Class 3-4 scrambling along the ridge to the summit spire of The Incisor."
+  }
+ ]
+}

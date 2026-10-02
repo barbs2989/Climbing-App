@@ -1,0 +1,75 @@
+{
+ "id": "wa_this_my_friend",
+ "name": "This, My Friend",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Self-issue day-use wilderness permit and NW Forest Pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 2 at the west end of Leavenworth, turn onto Icicle Road and follow it about 8.5 miles to the Bridge Creek Campground turnoff. Turn left onto FS Road 7601 and drive about 4 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass or the day-use fee and a self-issued Enchantments day-use permit are required; FS Road 7601 is closed in winter, usually November to May."
+  },
+  {
+   "lat": 47.49196,
+   "lng": -120.83358,
+   "elev": 5570,
+   "name": "Colchuck Lake",
+   "note": "Reliable water and camps; head up the south side of the lake toward Aasgard Pass.",
+   "type": "Campsite",
+   "distMi": 4,
+   "directions": "Follow Stuart Lake Trail #1599 up the Mountaineer Creek valley, crossing the creek on a log bridge at about 1.5 miles. At the signed junction at about 2.5 miles fork left onto Colchuck Lake Trail #1599A, then switchback up a boulder moraine to Colchuck Lake at about 4 miles and 5,570 ft."
+  },
+  {
+   "lat": 47.487883,
+   "lng": -120.834261,
+   "elev": 5800,
+   "name": "Aasgard Pass trail (south shore)",
+   "note": "Boot path on the south side of Colchuck Lake climbing steeply toward the pass.",
+   "type": "Junction",
+   "distMi": 4.2,
+   "directions": "Follow the trail along the west shore of the lake toward its south end, where the climbers' path toward Aasgard Pass leaves the shoreline and starts to climb."
+  },
+  {
+   "lat": 47.48251485560538,
+   "lng": -120.82537565919282,
+   "elev": 7250,
+   "name": "Aasgard's largest river braid crossing",
+   "note": "Main Aasgard Pass trail crosses this braided meltwater channel; last reliable water before leaving the trail.",
+   "type": "Water",
+   "distMi": 4.7,
+   "directions": "Climb the cairned Aasgard Pass path steeply up talus and boulders, keeping to climber's left at the larch grove and again at the cliff band with the waterfall near 6,400 ft; do not follow side paths toward the waterfall. At about 7,250 ft the path crosses the largest braid of the creek draining the pass, the last water."
+  },
+  {
+   "lat": 47.48220026367713,
+   "lng": -120.82484444843048,
+   "elev": 7350,
+   "name": "Scree break-off point",
+   "note": "Leave the trail at roughly 7,300-7,400 ft and cross loose, unstable scree up and right toward the route base.",
+   "type": "Hazard",
+   "distMi": 4.8,
+   "directions": "Continue up the path five to ten minutes past the crossing to between 7,300 and 7,400 ft, where the route leaves the trail."
+  },
+  {
+   "lat": 47.4789,
+   "lng": -120.83318,
+   "elev": 8250,
+   "name": "Route top (East Face, NE Towers)",
+   "note": "Top of the 900+ ft East Face route; the descent is a 3rd/4th-class scramble to the Aasgard Pass trail, not a rappel.",
+   "type": "Topout",
+   "distMi": 5.1,
+   "directions": "Make a rising traverse right across loose, unstable scree to the base, about 300 ft below where the top of Aasgard Pass meets the toe of Dragontail; the route starts below the right side of the right-hand of two bushes on the first belay ledge. Climb the five pitches to the top of the East Face."
+  },
+  {
+   "lat": 47.48028,
+   "lng": -120.82056,
+   "elev": 7841,
+   "name": "Aasgard Pass",
+   "type": "Junction",
+   "elevFt": 7841,
+   "directions": "The route is not set up for rappel. Work south and west across broken 3rd/4th-class ground, descend a clean gully to a large ledge, then scramble southwest to walkable ground and join the standard Dragontail descent, following cairned, braided paths to the top of Aasgard Pass."
+  }
+ ]
+}

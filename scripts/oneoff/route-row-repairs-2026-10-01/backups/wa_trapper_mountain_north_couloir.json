@@ -1,0 +1,42 @@
+{
+ "id": "wa_trapper_mountain_north_couloir",
+ "name": "North Couloir",
+ "waypoints": [
+  {
+   "lat": 48.475497,
+   "lng": -121.075031,
+   "name": "Cascade Pass Trailhead (Cascade River Road)",
+   "type": "Trailhead",
+   "directions": "From Marblemount, follow Cascade River Road east about 23.1 miles to where it ends at the Cascade Pass Trailhead, roughly 3,660 feet. Park in the lot at the road end; everything on this route starts there, heading up toward Cascade Pass or the nearby Alliteration Col."
+  },
+  {
+   "lat": 48.4684,
+   "lng": -121.06,
+   "elev": 5392,
+   "name": "Cascade Pass",
+   "type": "pass",
+   "distMi": 3.7,
+   "elevFt": 5392,
+   "directions": "Follow the Cascade Pass Trail as it switchbacks up through forest and then traverses open slopes to the pass, about 3.7 miles and 1,700 ft above the lot."
+  },
+  {
+   "lat": 48.44,
+   "lng": -121.0036,
+   "elev": 4170,
+   "name": "Trapper Lake",
+   "type": "Water",
+   "distMi": null,
+   "elevFt": 4170,
+   "directions": "From the pass descend east into Pelton Basin. Beyond the basin there is no trail: cross Pelton Creek, work southeast up the shoulder of Pelton Peak to the saddle above Trapper Lake, then descend very steeply to the lake at about 4,170 ft. The peak and its north couloir stand directly across the water to the southwest."
+  },
+  {
+   "lat": 48.4318,
+   "lng": -121.0184,
+   "elev": 7530,
+   "name": "Trapper Mountain (summit)",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 7530
+  }
+ ]
+}

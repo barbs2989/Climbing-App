@@ -1,0 +1,59 @@
+{
+ "id": "wa_whistler_mountain_scramble",
+ "name": "South Ridge / Southwest Slope",
+ "waypoints": [
+  {
+   "lat": 48.5181,
+   "lng": -120.7331,
+   "elev": 4855,
+   "name": "Rainy Pass Trailhead (PCT North parking lot, SR-20)",
+   "note": "",
+   "type": "Trailhead",
+   "elevFt": 4855
+  },
+  {
+   "lat": 48.517663,
+   "lng": -120.691157,
+   "elev": 5600,
+   "name": "Meadow rising traverse",
+   "note": "Boot path climbs through an open meadow then angles into a rising traverse aiming for the crest of Whistler's south ridge; faint tread, easy to lose in fog.",
+   "type": "Junction",
+   "distMi": 0.5
+  },
+  {
+   "lat": 48.517073,
+   "lng": -120.695613,
+   "elev": 6180,
+   "name": "South ridge gain point",
+   "note": "Boot path tops out on the level section of Whistler's south ridge here; from this point the route follows the ridge and connecting gullies toward the summit.",
+   "type": "Junction",
+   "distMi": 0.9
+  },
+  {
+   "lat": 48.516483,
+   "lng": -120.70007,
+   "elev": 6800,
+   "name": "6,800 ft ridge/gully split",
+   "note": "Ridge steepens; here parties can cut left across gullies onto the gentler southwest slope as an easier alternative to staying directly on the ridge crest.",
+   "type": "Junction",
+   "distMi": 1.3
+  },
+  {
+   "lat": 48.515893,
+   "lng": -120.704526,
+   "elev": 7400,
+   "name": "Summit ridge scramble band",
+   "note": "Class 2-3 terrain mixes downsloping slabs and loose gravel on ledges just below the summit ridge; a helmet is worth carrying for rockfall and slip potential here.",
+   "type": "Hazard",
+   "distMi": 1.7
+  },
+  {
+   "lat": 48.5154506,
+   "lng": -120.7078688,
+   "elev": 7790,
+   "name": "Whistler Mountain summit",
+   "type": "Summit",
+   "elevFt": 7790
+  }
+ ]
+}
