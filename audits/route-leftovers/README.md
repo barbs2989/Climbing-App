@@ -357,6 +357,12 @@ rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by
   standing rules: Mastiff's 3.5 h would need the schedule retimed (+3.5 hr is already the step BEFORE the summit);
   Three Queens' 4 mi one way contradicts the single day's 10 mi, which may not be nulled or recomputed; Dorado
   Needle's stated 12 mi round trip contradicts day miles 5.7 + 4 + 5.7 on the same footing.
+- Owner "do all for what you recommend" (`owner-recommend-apply.json`, APPLIED): Mastiff `timing.summitTimeHrs` 5 —
+  the row's own ~5 h to the summit and +5 hr schedule step, copied, not the one fast party's 3.5 h; Three Queens
+  `dist_km` 8.85 CLEARED (5.5 mi one way matched nothing: pin 5.0, day 10 mi round trip, the one stated one-way 4 mi);
+  Dorado Needle SW Buttress: the approach's "about 25.75 km" round-trip sentence and the totalNote's "~16 mi round
+  trip" REMOVED (two sources give 12 mi round trip); day miles untouched. Noticed, not changed: Three Queens
+  `summitTimeHrs` 9.5 vs its own "about 5 hrs up" (the car-to-car-in-summit-time class).
 
 ## Held for the owner (not applied)
 - **One-source pass (section 19):** Buck Mountain — the one report of this out-and-back gives 40 mi / 11,686 ft round
@@ -367,10 +373,8 @@ rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by
   Project Crack's trailhead pin sits on the cliff, and Glacier View Temple carries the same pin; no East Face route
   stores a better one and no source states the parking coordinate, so both stay held. New York Gully fifth pitch
   (above). (Stickney's road walk: settled in section 20.)
-- **Peakbagger pass (section 20):** Mastiff `summitTimeHrs` 3.5 (one ascent's stated time) HELD — the row's own
-  schedule reaches the summit at +5 hr and `partner_requirements.approachTime` says ~5 hours. Three Queens: one ascent
-  states 4 mi one way by the south slopes, which would put the summit before the row's 4.5 and 4.8 mi pins. Fortress:
-  peakbagger supports `gain_ft` 5,884; the open contradiction is in `loss_ft`, which no pass writes.
+- **Peakbagger pass (section 20):** Mastiff and Three Queens settled by the owner's "do all for what you recommend"
+  (above). Fortress: peakbagger supports `gain_ft` 5,884; the open contradiction is in `loss_ft`, which no pass writes.
 - **Deletes:** done by the owner (section 16).
 - **Single source / one author:** King Kong settled — one source accepted (section 18) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
   Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
