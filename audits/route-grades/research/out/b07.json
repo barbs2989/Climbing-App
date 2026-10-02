@@ -1,0 +1,459 @@
+[
+ {
+  "id": "wa_cutthroat_peak_cauthorn_wilson_couloir",
+  "final_grade": "WI4",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/109740367/cauthorn-wilson"
+  ],
+  "evidence": "MP: III WI4, 7 pitches; WI3-3+ then sustained WI4 crux; upper mixed pitches 'go at 5.4 in the summer'.",
+  "fix": {
+   "rock_grade": "5.4"
+  },
+  "note": "Rock above the ice is ~5.4 (summer); the record's 5.8 rock_grade is not supported."
+ },
+ {
+  "id": "wa_cutthroat_peak_northeast_face",
+  "final_grade": "5.10",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Cutthroat_Peak"
+  ],
+  "evidence": "East Face, Grade III 5.10, 6 pitches with two 5.10 pitches near center ending on false summit (Bard/Chouinard/Cunningham 1976).",
+  "note": "Mountain Project 'East Face' 106325768 is a different peak (Middle Peak, Gunsight Range) - do not link it."
+ },
+ {
+  "id": "wa_cutthroat_peak_southeast_buttress",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress"
+  ],
+  "evidence": "Mountaineers route page (via search): Cutthroat Peak/Southeast Buttress, Grade III 5.8; twin gullies to notch, 'Tarzan Jump', mixed 3rd-5th class to summit.",
+  "fix": {
+   "rock_grade": "5.8"
+  },
+  "identity": "The Mountaineers' 'Southeast Buttress' description (Tarzan Jump, III 5.8) matches the South Buttress route, so this row likely duplicates wa_cutthroat_south_buttress."
+ },
+ {
+  "id": "wa_cutthroat_south_buttress",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/109326651/south-buttress"
+  ],
+  "evidence": "MP: 5.8, Grade III, 12 pitches; wandering easy rock with steeper sections up to 5.8 (Beckey/Gordon 1958)."
+ },
+ {
+  "id": "wa_cutthroat_the_swarm",
+  "final_grade": "5.11c",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/124537013/the-swarm",
+   "https://publications.americanalpineclub.org/articles/13201216751"
+  ],
+  "evidence": "MP: 5.11b/c, 8 pitches, 850 ft, four 5.10-5.11 headwall pitches (Willis/Perz 2023); top of range 5.11c."
+ },
+ {
+  "id": "wa_cutthroat_west_ridge",
+  "final_grade": "5.6",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/110174839/west-ridge",
+   "https://www.summitpost.org/west-ridge/164274"
+  ],
+  "evidence": "MP: 5.6, Grade II, 3 pitches; Beckey: Grade II Class 5, direct variations 5.5-5.7."
+ },
+ {
+  "id": "wa_north_ridge_3",
+  "final_grade": "5.7",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/114788795/north-ridge"
+  ],
+  "evidence": "MP: 5.7 Grade III, 8 pitches 600 ft; loose runout 5.7 PG13 pitch to the notch, 5.4 summit pitch (Beckey/Crooks/Kenney 1940)."
+ },
+ {
+  "id": "wa_easy_getaway",
+  "final_grade": "5.10-",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/115311402/easy-getaway",
+   "https://cascadeclimbers.com/forum/topic/53760-tr-cutthroat-wall-easy-getaway-fa-iii-510-8292007/"
+  ],
+  "evidence": "MP and FA report: III 5.10-, 8 pitches, 800 ft (Hilden/Herrington 2007)."
+ },
+ {
+  "id": "wa_one_piece_at_a_time",
+  "final_grade": "5.10d",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/120102674/one-piece-at-a-time",
+   "https://cascadeclimbers.com/forum/topic/103679-tr-cutthroat-wall-one-piece-at-a-time-510d-09202020/"
+  ],
+  "evidence": "MP: 5.10d, 6 pitches, 700 ft (Johnson/Foster 2020); P4 money pitch."
+ },
+ {
+  "id": "wa_the_perfect_crime_with_variations",
+  "final_grade": "5.9",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://cascadeclimbers.com/forum/topic/53734-tr-cutthroat-wall-the-perfect-crime-fa-59-iii-8102007/",
+   "https://www.mountainproject.com/area/113436052/cutthroat-wall"
+  ],
+  "evidence": "FA TR and MP: The Perfect Crime 5.9 III, 5 long pitches, last pitch 5.9 fists/hands."
+ },
+ {
+  "id": "wa_dark_peak_dark_glacier_route",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/dark-peak-dark-glacier",
+   "https://onehikeaweek.com/2015/06/07/dark-peak/"
+  ],
+  "evidence": "Basic glacier climb on crevassed Dark Glacier, then exposed loose Class 2-3 scramble to summit; Class 2-3 forested slopes below.",
+  "fix": {
+   "rock_grade": "Class 2-3 (exposed, loose summit scramble)"
+  },
+  "note": "Record has no headline grade; Class 3 from the summit scramble (top of Class 2-3)."
+ },
+ {
+  "id": "wa_dark_side_2_dingleberries_of_eden",
+  "final_grade": "M6",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: 5.11b M6 C1.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_i_am_worthy",
+  "final_grade": "M6",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: 5.10b M6 PG13.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_it_s_a_trap",
+  "final_grade": "M7+",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: M7+.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_jiji_s_chimney",
+  "final_grade": "M5",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: M5.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_log_ride",
+  "final_grade": "M7-",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: 5.10c M7-.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_pina_coladas_with_palpatine",
+  "final_grade": "M7",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: 5.10 M7.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_republican_jesus",
+  "final_grade": "M7",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: 5.10c M7.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_swanson_pyramid_of_greatness",
+  "final_grade": "M1+",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: 3rd V0- M1+ C1.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_vader_built_my_hotrod",
+  "final_grade": "M7",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: M7 C1.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dark_side_2_we_re_not_worthy",
+  "final_grade": "M6",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/118307806/dark-side"
+  ],
+  "evidence": "MP: M6.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face",
+  "final_grade": "5.6",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Davis_Peak_(Washington)",
+   "http://publications.americanalpineclub.org/articles/12198813004/North-America-United-States-Washington-Cascade-Mountains-Davis-Peak-North-Face-Southern-Pickets"
+  ],
+  "evidence": "Sources confirm the North Face Couloir in the NE face (Kloke/Simon 1972) but give no online grade; record's 5.6 kept.",
+  "note": "Burdo's 1988 AAJ report says his IV 5.10 central chimney was 'probably the melted-out version of the 1974 Kloke-Simon route', so this couloir and wa_davis_peak_nc_north_face_burdo_cairns may share a line."
+ },
+ {
+  "id": "wa_davis_peak_nc_north_face_burdo_cairns",
+  "final_grade": "5.10",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12198813004/North-America-United-States-Washington-Cascade-Mountains-Davis-Peak-North-Face-Southern-Pickets"
+  ],
+  "evidence": "AAJ 1988 (Burdo): 4 pitches up central chimney, 3 on exposed rib, chockstone gully; IV 5.10."
+ },
+ {
+  "id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://trailcatjim.com/davis-peak-via-gorge-creek-south-buttress-south-ridge/",
+   "https://onehikeaweek.com/2016/06/04/davis-peak-north-cascades/"
+  ],
+  "evidence": "Gorge Creek south buttress/ridge reports: 'reasonable Class 2-3 scrambling, except for some slime-coated rock slabs near the top'; rope carried but not used; run by Mountaineers as an alpine scramble.",
+  "fix": {
+   "rock_grade": "Class 2-3 (slabby rock near top)"
+  },
+  "identity": "Same Gorge Creek south-side route as wa_davis_peak_nc_southwest; the two rows likely describe one route."
+ },
+ {
+  "id": "wa_davis_peak_nc_southwest",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://trailcatjim.com/davis-peak-via-gorge-creek-south-buttress-south-ridge/",
+   "https://www.mountaineers.org/activities/activities/alpine-scramble-davis-peak-1"
+  ],
+  "evidence": "South-side Gorge Creek route reported as Class 2-3 scrambling with slick slabs near top; offered as a Mountaineers alpine scramble.",
+  "identity": "Likely the same south-side Gorge Creek route as wa_davis_peak_nc_south_slope_and_ridge."
+ },
+ {
+  "id": "wa_del_campo_peak_standard",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Del_Campo_Peak",
+   "https://www.wta.org/go-hiking/hikes/del-campo-peak",
+   "https://www.summitpost.org/del-campo-peak/climbers-log/150640"
+  ],
+  "evidence": "Wikipedia: easiest route class 3; SummitPost log entries: nothing beyond class 3 on the right line, class 4 if off-route; WTA 'Class 3 or 4'.",
+  "fix": {
+   "rock_grade": "Class 3 (Class 4 if off-route)"
+  },
+  "note": "Class 4 only off the easiest line, so the standard route's crux is Class 3."
+ },
+ {
+  "id": "wa_demilitarized_zone_2_ak47",
+  "final_grade": "M7",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/107012581/demilitarized-zone"
+  ],
+  "evidence": "MP area: AK47 (S M7).",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_demilitarized_zone_2_razor_wire",
+  "final_grade": "M6+",
+  "scale": "m",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/107012581/demilitarized-zone"
+  ],
+  "evidence": "MP area: Razor Wire (S M6+).",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_denny_mountain_north_slopes",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.summitpost.org/denny-mountain/climbers-log/150958",
+   "https://www.mountaineers.org/activities/activities/winter-scramble-denny-mountain"
+  ],
+  "evidence": "Summit block steep with exposure and a few class 3 moves; chimney gained by straightforward class 3 moves."
+ },
+ {
+  "id": "wa_devils_punch_bowl_area_2_devils_punch_bowl",
+  "final_grade": "WI3",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/112433289/devils-punch-bowl"
+  ],
+  "evidence": "MP: WI2-3; top of range WI3."
+ },
+ {
+  "id": "wa_devils_punch_bowl_area_2_phase_transition",
+  "final_grade": "WI4",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/112433268/devils-punch-bowl-area"
+  ],
+  "evidence": "MP: Phase Transition WI4."
+ },
+ {
+  "id": "wa_devils_punch_bowl_area_2_trotsky_s_folly",
+  "final_grade": "WI4-",
+  "scale": "wi",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/area/112433268/devils-punch-bowl-area"
+  ],
+  "evidence": "Listed in MP Devils Punch Bowl Area; record WI4- not contradicted by anything found."
+ },
+ {
+  "id": "wa_devils_punch_bowl_area_2_wolfheart",
+  "final_grade": "WI5+",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/112433268/devils-punch-bowl-area"
+  ],
+  "evidence": "MP: WI5+ M4 R.",
+  "note": "Also has M4 mixed and R protection."
+ },
+ {
+  "id": "wa_devore_peak_west_ridge",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/devore-peak/154223",
+   "https://trailcatjim.com/tupshin-peak-white-goat-peak-devore-peak/"
+  ],
+  "evidence": "SummitPost: from the ~7,500 ft col on the SE ridge scramble to summit (Class 3-4); both main routes are Class 4. One trip report belayed a short 'Class 5.0' first pitch of the summit block.",
+  "fix": {
+   "rock_grade": "Class 4 (exposed summit block; some parties belay a short low-5th step)"
+  },
+  "note": "Only one trip report calls a step 5.0; the route-specific source says Class 4. Record headline 'Class 2-3' understates it."
+ },
+ {
+  "id": "wa_dog_park_boulders_chicken_dance",
+  "final_grade": "M3",
+  "scale": "m",
+  "confidence": "low",
+  "sources": [],
+  "evidence": "Route/area not found online; record's M3 kept.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dog_park_boulders_heel_deal",
+  "final_grade": "M6",
+  "scale": "m",
+  "confidence": "low",
+  "sources": [],
+  "evidence": "Route/area not found online; record's M6 kept.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dog_park_boulders_juggernaut",
+  "final_grade": "M1",
+  "scale": "m",
+  "confidence": "low",
+  "sources": [],
+  "evidence": "Route/area not found online; record's M1 kept.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_dog_park_boulders_pulp_fixion",
+  "final_grade": "M7",
+  "scale": "m",
+  "confidence": "low",
+  "sources": [],
+  "evidence": "Route/area not found online; record's M7 kept.",
+  "note": "Drytool/mixed crag route with no ice or roped-rock crux; the brief's three scales do not fit, so the M grade is kept (record grade_system is 'm'/mixed). Any 5.x on Mountain Project is its secondary rock-grade field, not the crux scale."
+ },
+ {
+  "id": "wa_vanishing_point",
+  "final_grade": "5.12b",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/119221029/vanishing-point",
+   "http://blakeclimbs.blogspot.com/2012/09/mt-baring-vanishing-point.html"
+  ],
+  "evidence": "VI 5.12b, ~18 pitches up the overhanging Dolomite Tower prow (Burdo 1999)."
+ },
+ {
+  "id": "wa_dome_peak_dome_glacier",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://stephabegg.com/trip-reports/washington/ptarmigan-traverse-s-to-n/",
+   "https://www.summitpost.org/dome-peak/150357",
+   "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier"
+  ],
+  "evidence": "Abegg: Dome Glacier route '3rd Class'; SummitPost: 35-degree glacier and a few third class moves; Mountaineers: Basic Glacier Climb, Technical 2, exposed summit rock arete some parties belay.",
+  "fix": {
+   "rock_grade": "Class 3 (exposed summit rock arete)",
+   "ice_grade": null
+  },
+  "note": "One Mountaineers trip report mentions class 4/5 moves on the true summit; route-specific sources say Class 3. ice_grade currently holds a sentence, not a grade. Headline 'Class 4, Glacier, 5.5' is not supported."
+ }
+]

@@ -1,0 +1,120 @@
+[
+  {
+    "id": "wa_south_face_2001_variation",
+    "name": "South Face (2001 Variation)",
+    "mixed": [
+      {
+        "sibling": "wa_lundin_peak_south_face_left",
+        "sentence": "Also cataloged as 'South Face Left', the FA is Mike Preiss & Don Preiss in 2004.",
+        "why": "Says this page IS the sibling South Face Left and gives that route's 2004 first ascent, which contradicts this page's own '2001' name.",
+        "column_guess": "overview",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "The page names itself the 2001 Variation but claims to be the separately catalogued 'South Face Left' (FA 2004); either one page is a duplicate or the FA belongs to the sibling."
+  },
+  {
+    "id": "wa_mount_shuksan_sulphide_glacier",
+    "name": "Sulphide Glacier",
+    "mixed": [
+      {
+        "sibling": "wa_southeast_ridge_se_corner",
+        "sentence": "Standard route involves 3rd-4th class gullies to the summit, though the alternate Southeast Ridge is mostly 3rd/4th class with low-5th steps of about 5.3 when route-finding is selective; holding strictly to the crest adds two steps of 5.6 and 5.7 -- a roped climb, not a simple scramble finish.",
+        "why": "Gives the separately catalogued Southeast Ridge's grade and crest steps as beta on the Sulphide page.",
+        "column_guess": "beta",
+        "fix": "The finish climbs the 3rd-4th class central gully up the south face of the summit pyramid."
+      },
+      {
+        "sibling": "wa_southeast_ridge_se_corner",
+        "sentence": "Instead of the gully, the ridge on its right (southeast) edge gives a roped alternative: a half-dozen or more short pitches, mostly 4th class with low-5th-class steps and big exposure. It suits a dry pyramid when the gully snow is rotten; plan to descend the central gully regardless, and carry a small rock rack and slings. [pitch: 'Southeast Ridge (alternative)']",
+        "why": "A ROUTE BREAKDOWN row that is the sibling Southeast Ridge route, so the breakdown reads as two finishes / two routes.",
+        "column_guess": "pitch_detail",
+        "fix": "DELETE"
+      }
+    ]
+  },
+  {
+    "id": "wa_north_twin_sister_scramble",
+    "name": "North Twin Sister Olivine Scramble",
+    "mixed": [
+      {
+        "sibling": "wa_north_twin_sister_west_ridge",
+        "sentence": "This line follows the mountain's standard west ridge on solid, high-friction olivine to the north summit - the same route as the separate West Ridge entry, described here as the unroped scramble most parties make.",
+        "why": "The page declares itself to be the sibling West Ridge route.",
+        "column_guess": "overview",
+        "fix": "This line follows the mountain's west ridge on solid, high-friction olivine to the north summit as an unroped scramble."
+      },
+      {
+        "sibling": "wa_north_twin_sister_west_ridge",
+        "sentence": "There is no independently named 'Olivine Scramble' route; North Twin Sister has a single standard line — the class 3-4 west ridge on the mountain's famously grippy, orange-weathered dunite.",
+        "why": "Identity confusion: tells the reader this page's route does not exist and is really the West Ridge.",
+        "column_guess": "beta",
+        "fix": "DELETE"
+      },
+      {
+        "sibling": "wa_north_twin_sister_west_ridge",
+        "sentence": "This is the general scrambling description of that same route (the walk-up-oriented, unroped experience most parties actually have), while the separate 'West Ridge' route carries the more technical framing (mixed variation, roped sections).",
+        "why": "Catalog talk about the sibling page; reads as two descriptions of one route.",
+        "column_guess": "beta",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "Self-declared duplicate of wa_north_twin_sister_west_ridge (same line, same summit). It needs a merge or a decision, not only prose edits."
+  },
+  {
+    "id": "wa_south_early_winter_spire_east_buttress",
+    "name": "East Buttress",
+    "mixed": [
+      {
+        "sibling": "wa_south_early_winter_spire_direct_east_buttress",
+        "sentence": "This route designation appears in the database but is not clearly distinguished from the Direct East Buttress (5.11a, 9 pitch variant).",
+        "why": "Pipeline voice, and it tells the reader this page may be the sibling Direct East Buttress, giving that route's grade and pitch count.",
+        "column_guess": "beta",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "Beta says this page is not distinguished from the Direct East Buttress, but the overview and pitches describe the moderate 5.8 East Buttress. Only the beta is wrong."
+  },
+  {
+    "id": "wa_the_chopping_block_south_route",
+    "name": "South Route",
+    "mixed": [
+      {
+        "sibling": "wa_the_chopping_block_northwest_route",
+        "sentence": "Note: the peak's standard lines are most often described as a 'Northwest Route' (Class 4, traversing ledges on the north face between the NE and NW ridges) and a distinct 'Northeast Ridge' (5.5, 4 pitches) — both broadly consistent in character and difficulty with the historic South Route described here, but the label 'South Route' is not attached to any specific established line, so treat route-specific pitch/rappel counts with caution.",
+        "why": "Describes the line and grade of two sibling routes (Northwest Route, Northeast Ridge) on this page and says this route may not exist as a line.",
+        "column_guess": "beta",
+        "fix": "DELETE"
+      }
+    ],
+    "identity_problem": "Beta says 'South Route' is not attached to any established line and points at the Northwest Route and Northeast Ridge pages instead."
+  },
+  {
+    "id": "wa_ragged_edge",
+    "name": "Ragged Edge",
+    "mixed": [
+      {
+        "sibling": "wa_vesper_peak_north_face_ragged_edge",
+        "sentence": "Ragged Edge climbs the right side of Vesper's clean north face via shallow corners, flakes and slabs, established by Darin Berdinka and Gene Pires on August 18, 2013.",
+        "why": "The sentence is accurate, but this page is the same climb as the sibling 'North Face (Ragged Edge)': same grade (5.7), the same six pitches with matching bolts and lengths, and the same 2013 FA. Two pages describe one route.",
+        "column_guess": "overview",
+        "fix": "Ragged Edge climbs the right side of Vesper's clean north face via shallow corners, flakes and slabs, established by Darin Berdinka and Gene Pires on August 18, 2013."
+      }
+    ],
+    "identity_problem": "Duplicate catalog entry of wa_vesper_peak_north_face_ragged_edge. Merge the two pages; the prose itself is fine, so the fix keeps the sentence unchanged."
+  },
+  {
+    "id": "wa_vesper_peak_north_face_ragged_edge",
+    "name": "North Face (Ragged Edge)",
+    "mixed": [
+      {
+        "sibling": "wa_ragged_edge",
+        "sentence": "Ragged Edge climbs the right (east) side of Vesper's north face on solid granite/quartz diorite, mixing crack, slab, and face climbing across 6 pitches (5.5-5.7).",
+        "why": "This page and wa_ragged_edge describe the same 6-pitch 5.7 route, matching pitch by pitch. (The input matched this page against True Grit and the standard route; the duplicate was found by reading both pages.)",
+        "column_guess": "beta",
+        "fix": "Ragged Edge climbs the right (east) side of Vesper's north face on solid granite/quartz diorite, mixing crack, slab, and face climbing across 6 pitches (5.5-5.7)."
+      }
+    ],
+    "identity_problem": "Duplicate of wa_ragged_edge (see that entry)."
+  }
+]
