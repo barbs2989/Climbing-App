@@ -102,9 +102,17 @@ async function createUser(tag, name) {
   if (status >= 300 || !body?.id) throw new Error(`create ${email} failed (${status}): ${JSON.stringify(body).slice(0, 300)}`);
   return { id: body.id, email, password: pw, name };
 }
+// A FAILED listing must never read as "no accounts": `status` then reported 0 accounts while
+// Avery could still sign in, and `create` would go on to make a second set. Retry, then throw.
 async function existingUsers() {
-  const { body } = await auth("admin/users?per_page=1000");
-  return ((body && body.users) || []).filter((u) => (u.email || "").endsWith("@" + DOMAIN));
+  let last = null;
+  for (let i = 0; i < 4; i++) {
+    const { status, body } = await auth("admin/users?per_page=1000");
+    if (status === 200 && body && Array.isArray(body.users)) return body.users.filter((u) => (u.email || "").endsWith("@" + DOMAIN));
+    last = status;
+    await new Promise((r) => setTimeout(r, 600 * (i + 1)));
+  }
+  throw new Error(`could not list accounts (HTTP ${last}) — try again in a moment.`);
 }
 
 async function create() {
@@ -347,7 +355,12 @@ async function status() {
 }
 
 const cmd = process.argv[2];
-if (cmd === "create") await create();
-else if (cmd === "delete") await remove();
-else if (cmd === "status") await status();
-else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | delete"); process.exitCode = 2; }
+try {
+  if (cmd === "create") await create();
+  else if (cmd === "delete") await remove();
+  else if (cmd === "status") await status();
+  else { console.log("usage: node scripts/manual-test-accounts.mjs create | status | delete"); process.exitCode = 2; }
+} catch (e) {
+  console.error(e.message);
+  process.exitCode = 1;
+}
