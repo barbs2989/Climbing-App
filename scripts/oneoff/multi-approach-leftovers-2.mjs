@@ -31,6 +31,13 @@ const key = requireServiceKey();
 // no longer names Access Creek. `--set 9`: the same Access Creek slip in its Time-to-Summit leg (`timing`), a
 // truncated copy of that day-1 note that set 8 missed. `--set 10`: SEWS "Nothing" was an empty row; it gets The
 // Hitchhiker's Blue Lake approach and stored pin (it starts 150 ft right of it) and the South Arete descent.
+// `--set 11`: Mount Crowder's Southwest Route described a Goodell Creek / Terror Basin / Access Creek traverse to
+// "Wild Pass" that the peak's guidebook entry never gives. Its way in is from the north down the west side of the
+// Pickets (Hannegan Pass, Easy Ridge, Perfect Pass, west of Phantom to the Phantom-Crowder col), with the Baker
+// River Trail and Pioneer Ridge as a second, switchable way in. Pins are the Challenger and Blum rows' stored ones;
+// the old Terror Basin track, timing, itinerary and the distance/gain it was measured on are cleared, not replaced.
+// `--set 12`: Crowder's Northeast Ridge (reached only over the Southwest Route) loses the same Wild Lake start and
+// camp and the SR-20 road, and takes set 11's Hannegan road. The peak's area blurb is ./crowder-area-blurb.mjs.
 const SET = process.argv.includes("--set") ? process.argv[process.argv.indexOf("--set") + 1] : "2";
 const NEXT = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.json`, import.meta.url), "utf8"));
 const BEFORE = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.before.json`, import.meta.url), "utf8"));

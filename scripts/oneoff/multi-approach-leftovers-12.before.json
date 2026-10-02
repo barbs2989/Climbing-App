@@ -1,0 +1,36 @@
+{
+ "wa_mount_crowder_northeast_ridge": {
+  "approach": "Reached only by first climbing Mount Crowder (typically via the Southwest Route/SW Flank from Wild Lake) and continuing down the far side; there is no separate trailhead approach to this ridge on its own.",
+  "approach_logistics": {
+   "peakLat": 48.7976266,
+   "peakLng": -121.352631,
+   "trailhead": "No separate trailhead — over Mount Crowder (Southwest Route, Wild Lake)"
+  },
+  "road": {
+   "name": "North Cascades Highway (SR 20) to unpaved USFS access roads",
+   "status": "SR 20 stays open essentially year-round on this western section; connecting USFS spur roads are seasonal.",
+   "driveNote": "No road comes anywhere near this ridge; it is reached only after days of off-trail travel.",
+   "seasonalGate": "USFS access roads typically aren't clear until after spring snowmelt, roughly June."
+  },
+  "bivy": [
+   {
+    "name": "Pickell Pass",
+    "role": "main",
+    "type": "bivy",
+    "notes": "Open camp at the pass at the foot of the ridge, used by traverse parties who climb Crowder from Wild Lake and descend this ridge to the pass.",
+    "water": "Snowmelt",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents"
+   },
+   {
+    "name": "Wild Lake",
+    "role": "route",
+    "type": "camp",
+    "notes": "Remote lake below the southwest flank of Crowder, the start of the normal line up the peak before continuing down this ridge.",
+    "water": "Lake",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents"
+   }
+  ]
+ }
+}

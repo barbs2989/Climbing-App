@@ -1,0 +1,305 @@
+{
+ "wa_mount_crowder_southwest_route": {
+  "approach": "Mount Crowder has no trailhead and no maintained trail — every ascent is layered onto a multi-day, off-trail traverse through the heart of the Picket Range, and Crowder is almost never climbed as a standalone objective. Parties reach it via one of two corridors. From the south: the Goodell Creek climbers' path (turn off WA-20 opposite Newhalem into Goodell Creek Campground; the boot path starts behind a large boulder at the campground) climbs steeply and brushily through slide alder and old-growth timber, gaining roughly 2,500 ft in about a mile to reach the basins below McMillan Spire/Inspiration Peak in the Southern Pickets; from there it's a rugged, unmarked cross-country traverse north over intervening cols (Crescent Creek Basin, the shoulder east of Mount Terror, and bypasses around the McMillan Cirque \"Barrier\") toward the range's central saddle area. From the north/east: the Big Beaver Trail out of the Ross Dam trailhead on Ross Lake (often shortened with the Ross Lake Resort water taxi to Big Beaver/Beaver Pass Camp), leaving trail to climb Access Creek — staying on its north-flank benches through semi-open forest to about 3,700 ft, where brush thickens and a faint, cairned climbers' path crosses to the south bank and continues to the open basin at the creek's headwaters (reliable water, good camping). From either entry, Crowder itself is gained by traversing the connecting ridge past Pioneer Peak and Phantom Peak to Wild Pass, a heather-and-talus notch overlooking the small tarn of Wild Lake just below; from the pass, cross open slopes to the col between Phantom Peak and Crowder, then climb the broad SW Flank southwest from the col, up easy 2nd/3rd-class scree, heather ramps, and low-angle rock to the summit. There is no reliable water above Wild Lake, and the connecting terrain between passes is exposed talus and heather with genuine routefinding difficulty in poor visibility; expect several full days of off-trail travel carrying multi-day loads to even reach Wild Pass.",
+  "approach_logistics": {
+   "peakLat": 48.7976266,
+   "peakLng": -121.352631,
+   "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+   "trailheadLat": 48.68664,
+   "trailheadLng": -121.27121,
+   "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+  },
+  "approach_variants": null,
+  "road": {
+   "name": "SR-20 (North Cascades Highway) to the Ross Lake / Goodell Creek trailheads",
+   "status": "Trailhead access only in season; there is no road anywhere near Crowder itself — the entire approach is on foot/cross-country over multiple days.",
+   "driveNote": "Reach the Goodell Creek trailhead (Southern Pickets approach) or the Ross Lake trailheads for the Big Beaver/East Bank Trail (Northern Pickets approach) via SR-20; both require the highway to be open.",
+   "seasonalGate": "SR-20 closes seasonally at the Ross Lake/Silver-Star gates, typically mid/late November through mid-to-late April, due to avalanche hazard near Washington/Rainy Pass."
+  },
+  "waypoints": [
+   {
+    "lat": 48.77531722880583,
+    "lng": -121.33581448647827,
+    "elev": 5800,
+    "name": "Terror Basin Camp",
+    "note": "Flat gravel basin below a 6,200' notch with reliable meltwater; standard base camp for Southern Pickets objectives after ~6,000' of gain from the trailhead.",
+    "type": "Campsite",
+    "distMi": 4.5
+   },
+   {
+    "name": "The Barrier (Terror Basin west wall)",
+    "note": "Steep mixed rock/snow crossing out of Terror Basin toward Crescent Creek Basin/McMillan Cirque; a moat at its base has turned back many parties and often requires two ice tools.",
+    "type": "Hazard"
+   },
+   {
+    "name": "McMillan Cirque glacier traverse",
+    "note": "Traverse beneath the north faces of the Southern Pickets on the McMillan Creek glaciers; active crevasses and overhanging icefall — move fast between safe zones.",
+    "type": "Hazard"
+   },
+   {
+    "name": "Wild Pass / Wild Lake",
+    "note": "High basin and often-frozen tarn used as the staging point below Phantom Peak and Crowder before dropping to the SW col; landmark shared with the Mystery Ridge–Pioneer Ridge enchainment route.",
+    "type": "Junction"
+   },
+   {
+    "lat": 48.805899,
+    "lng": -121.341814,
+    "name": "Col between Phantom Peak and Crowder",
+    "note": "Gain this col to start the SW Flank route; from here grass and talus ramps trend up and left toward Crowder's summit block.",
+    "type": "Junction"
+   },
+   {
+    "name": "NE Ridge chasm (avoid)",
+    "note": "A deep, several-hundred-foot-long chasm splits Crowder's lower NE Ridge; stay on the SW Flank grass/talus line rather than straying onto the NE Ridge, which has stranded descending parties.",
+    "type": "Hazard"
+   },
+   {
+    "lat": 48.7977056,
+    "lng": -121.3519083,
+    "elev": 7082,
+    "name": "Mount Crowder",
+    "type": "Summit",
+    "elevFt": 7082
+   }
+  ],
+  "gpx": [
+   [
+    48.77531722880583,
+    -121.33581448647827
+   ],
+   [
+    48.808297800000005,
+    -121.34720415000001
+   ],
+   [
+    48.7977056,
+    -121.3519083
+   ]
+  ],
+  "timing": {
+   "totalHrs": 41.5,
+   "summitTimeHrs": 9,
+   "descentTimeHrs": 12.5,
+   "approachTimeHrs": 20,
+   "recommendedStart": "5:30 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 7.5,
+     "note": "From the Goodell Creek trailhead, follow the Goodell Creek climbers' trail then grind up a steep, brushy climbers' path gaining about 5,000 ft to Terror Basin. This is the standard…",
+     "fromTo": "Approach to Terror Basin",
+     "section": "Approach"
+    },
+    {
+     "hrs": 6,
+     "note": "Traverse Terror Basin at around 6,000 ft and cross the Barrier (~6,100 ft) into the heart of the Southern Pickets. Talus, snow, and some glacier travel; rope up for the col crossin…",
+     "fromTo": "Cross the Barrier into the range interior",
+     "section": "Approach"
+    },
+    {
+     "hrs": 6.5,
+     "note": "Move camp along the ridge system toward Wild Pass, the jumping-off point for Crowder. Mixed 2nd-4th class ridge travel and route-finding around gendarmes; most parties treat this a…",
+     "fromTo": "Traverse to Wild Pass",
+     "section": "Approach"
+    },
+    {
+     "hrs": 9,
+     "note": "Drop from camp past frozen Wild Lake, cross Wild Pass, and ramble up Crowder's easy SW Flank (class 2-3). The NE Ridge descent toward Pickell Pass is the technical crux of the day:…",
+     "fromTo": "Climb Crowder, descend to Pickell Pass",
+     "section": "Climb"
+    },
+    {
+     "hrs": 7,
+     "note": "Reverse the ridge traverse back over Wild Pass and down toward the Barrier/Terror Basin area, largely retracing days 2-3 in reverse.",
+     "fromTo": "Retrace toward the Barrier",
+     "section": "Descent"
+    },
+    {
+     "hrs": 5.5,
+     "note": "Drop the roughly 5,000 ft climbers' path back to the Goodell Creek trailhead. Steep, tedious, and hard on the knees after five days out.",
+     "fromTo": "Exit to the trailhead",
+     "section": "Descent"
+    }
+   ]
+  },
+  "itinerary": {
+   "cal": "Requires an NPS North Cascades backcountry permit for each camp; the route is only reasonable mid-July through early September once Terror Basin/Wild Pass snow has consolidated and stream crossings have dropped.",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the Goodell Creek trailhead, follow the Goodell Creek climbers' trail then grind up a steep, brushy climbers' path gaining about 5,000 ft to Terror Basin. This is the standard, well-established entry into the Southern Pickets and is the crux of the logistics for reaching Crowder.",
+     "hours": 7.5,
+     "miles": 7,
+     "title": "Approach to Terror Basin",
+     "gainFt": 5000,
+     "lossFt": 0,
+     "packLb": 50,
+     "schedule": [],
+     "objective": "Reach the standard Southern Pickets base camp below the Barrier"
+    },
+    {
+     "n": 2,
+     "note": "Traverse Terror Basin at around 6,000 ft and cross the Barrier (~6,100 ft) into the heart of the Southern Pickets. Talus, snow, and some glacier travel; rope up for the col crossing if icy.",
+     "hours": 6,
+     "miles": 3,
+     "title": "Cross the Barrier into the range interior",
+     "gainFt": 1200,
+     "lossFt": 800,
+     "packLb": 45,
+     "schedule": [],
+     "objective": "Establish a camp near the Mystery/Despair basin"
+    },
+    {
+     "n": 3,
+     "note": "Move camp along the ridge system toward Wild Pass, the jumping-off point for Crowder. Mixed 2nd-4th class ridge travel and route-finding around gendarmes; most parties treat this as a short, deliberate camp-shift day to stage for the summit push.",
+     "hours": 6.5,
+     "miles": 3.5,
+     "title": "Traverse to Wild Pass",
+     "gainFt": 1800,
+     "lossFt": 1200,
+     "packLb": 42,
+     "schedule": [],
+     "objective": "Position camp near Wild Pass / Pioneer Ridge for the Crowder push"
+    },
+    {
+     "n": 4,
+     "note": "Drop from camp past frozen Wild Lake, cross Wild Pass, and ramble up Crowder's easy SW Flank (class 2-3). The NE Ridge descent toward Pickell Pass is the technical crux of the day: convoluted grassy 3rd-class ledges broken by occasional 4th- and one or two 5th-class downclimbs, with a rappel typically needed past a cliff band and a chasm that splits the lower ridge.",
+     "hours": 9,
+     "miles": 5.8,
+     "title": "Climb Crowder, descend to Pickell Pass",
+     "gainFt": 4480,
+     "lossFt": 4050,
+     "packLb": 38,
+     "schedule": [
+      {
+       "time": "5:30 AM",
+       "label": "Leave Wild Pass camp",
+       "detail": "Descend past the frozen Wild Lake basin toward Crowder's SW Flank."
+      },
+      {
+       "time": "7:00 AM",
+       "label": "Start the SW Flank",
+       "detail": "Easy class 2-3 slopes lead up Crowder's south side."
+      },
+      {
+       "time": "9:30 AM",
+       "label": "Summit",
+       "detail": "Top out on the 7,082 ft summit."
+      },
+      {
+       "time": "10:30 AM",
+       "label": "Begin NE Ridge descent",
+       "detail": "Weave grassy 3rd-class ledges, with occasional 4th- and 5th-class moves."
+      },
+      {
+       "time": "~1:00 PM",
+       "label": "Rappel the cliff band",
+       "detail": "A short rappel bypasses an unexpectedly cliffy step and a chasm in the lower ridge."
+      },
+      {
+       "time": "3:30 PM",
+       "label": "Reach Pickell Pass camp",
+       "detail": "Camp on a heather bench with views to Spectre, Swiss, and West Fury."
+      }
+     ],
+     "objective": "Tag the 7,082 ft summit via the SW Flank, descend the NE Ridge to Pickell Pass"
+    },
+    {
+     "n": 5,
+     "note": "Reverse the ridge traverse back over Wild Pass and down toward the Barrier/Terror Basin area, largely retracing days 2-3 in reverse.",
+     "hours": 7,
+     "miles": 6,
+     "title": "Retrace toward the Barrier",
+     "gainFt": 1500,
+     "lossFt": 2500,
+     "packLb": 40,
+     "schedule": [],
+     "objective": "Return over Wild Pass to a camp near Terror Basin"
+    },
+    {
+     "n": 6,
+     "note": "Drop the roughly 5,000 ft climbers' path back to the Goodell Creek trailhead. Steep, tedious, and hard on the knees after five days out.",
+     "hours": 5.5,
+     "miles": 7,
+     "title": "Exit to the trailhead",
+     "gainFt": 0,
+     "lossFt": 5000,
+     "packLb": 45,
+     "schedule": [],
+     "objective": "Descend the Goodell Creek climbers' trail to the cars"
+    }
+   ],
+   "totalNote": "A roughly 6-day, ~32-mile round trip through the Southern Pickets with on the order of 14,000+ ft of cumulative gain; Crowder itself is climbed as a single technical day (easy SW Flank up, exposed 3rd-5th class NE Ridge down) between a Wild Pass camp and a Pickell Pass camp, not as a stand-alone outing — most parties take Crowder in as one summit within a longer Picket Range trip."
+  },
+  "dist_km": null,
+  "gain_ft": 6582,
+  "bivy": [
+   {
+    "name": "Wild Lake",
+    "role": "main",
+    "type": "camp",
+    "notes": "Remote lake at the foot of the southwest flank, where the normal line up the peak begins. Reached only on multi-day traverses of the range.",
+    "water": "Lake",
+    "permit": "North Cascades NP backcountry permit (cross-country zone)",
+    "capacity": "A few tents"
+   },
+   {
+    "elev": 6300,
+    "name": "Perfect Pass, Perfect Pass cross-country zone",
+    "role": "route",
+    "type": "bivy",
+    "notes": "The classic high camp for Mount Challenger and for Whatcom Peak, on benches at the western edge of the Challenger Glacier. It is reached either over Whatcom Pass from the Brush Creek side or along Easy Ridge, the latter demanding a substantial descent and reclimb to get around the gap short of the pass. Reported elevations vary between roughly 6,000 and 6,300 ft depending on the account, and there are no facilities of any kind.",
+    "water": "Snowmelt streams and tarns; dependable while snow lingers, marginal to absent late season",
+    "permit": "Wilderness permit for the Perfect Pass cross-country zone. Walk-up only and capped at a single party per night. It cannot be booked ahead, so the permit is won or lost at the counter — this quota is usually the binding constraint on a Challenger trip, not the terrain.",
+    "capacity": "Party limit 6, and only ONE party per night in the whole zone — the tightest quota in this part of the park"
+   }
+  ],
+  "descent_text": "Descend by reversing the SW Flank exactly as climbed: down the easy 2nd/3rd-class scree and heather ramps to the Phantom–Crowder col, then back over to Wild Pass above Wild Lake. This is a walk-off/downclimb on the standard route — no rappels are required. Do not be tempted to shortcut east off the NE Ridge toward Pickell Pass: a first-hand account found this alternative deceptively difficult — in practice descending it means weaving a convoluted line of grassy 3rd-class ledges broken by short, exposed 4th-class and even a couple of 5th-class downclimbing moves, past a major chasm/fault splitting the lower ridge, with an unprotectable vertical drop near the base that forced one climber in that party to rig an improvised rappel off natural gear (there is no fixed hardware anywhere on this peak) rather than downclimb it. On the standard SW Flank descent, plan on 0 rappels; a rope is not needed for the reversal, just careful 3rd-class scrambling technique and, ideally, a GPS track of your ascent line given the routefinding-heavy terrain.",
+  "pitch_detail": [
+   {
+    "grade": "Class 2-3",
+    "notes": "Multi-day off-trail traverse through the Pickets to Wild Pass above Wild Lake, then across open slopes to the col between Phantom Peak and Crowder; mostly off-trail ridge travel",
+    "pitch": "Approach ridge"
+   },
+   {
+    "grade": "Class 3-4",
+    "notes": "Final scramble on open slopes/ledges to the summit",
+    "pitch": "Southwest Flank"
+   }
+  ],
+  "overview": "Mount Crowder (7,082 ft) is a remote outlying summit on the eastern crest of the Picket Range, North Cascades National Park, sitting near the divide between the Goodell Creek and Picket Creek (Baker River) drainages roughly 1.6 mi southwest of Mount Fury and just south of its parent peak, Phantom Peak. It has 1,042 ft of prominence and 1.53 mi of isolation. First climbed in 1962 by Cal Magnusson, Jack Ardussi, Don Mech, and Don Schmechel when it was still known informally as 'Old Brownie,' the peak was officially renamed in 1970 by the U.S. Board on Geographic Names to honor Dr. Dwight F. Crowder (1929-1970), a USGS geologist, mountaineer, and North Cascades conservationist credited with several first ascents in the range, including South Spectacle Butte and Sitkum Spire. Crowder sits deep in the trailless heart of the Pickets and is almost never climbed as a standalone objective — nearly all recorded ascents are one summit within a multi-day Picket Range ridge enchainment.",
+  "watch_out": [
+   "The NE Ridge descent toward Pickell Pass looks like a reasonable alternate way down but hides a several-hundred-foot chasm and a cliff band that has forced parties to rappel — don't commit to it without a rope and rappel gear.",
+   "Big Beaver Creek must be forded on the northern approach; it can be difficult or dangerous to cross during snowmelt.",
+   "This is multi-day, no-cell-coverage terrain — carry a satellite communicator and file a detailed itinerary."
+  ],
+  "climate": {
+   "fall": "Weather deteriorates and snow returns by roughly early October, matching the point at which NPS backcountry camping fees stop being charged for the season.",
+   "spring": "Approach passes typically remain heavily snow-covered into June/July, easing brush travel but adding steep-snow and avalanche exposure.",
+   "summer": "July and the first weeks of August are the most reliably dry and stable; by mid-to-late August nearby glaciers and moats open up and can complicate approach terrain, though the SW Flank itself is non-glaciated.",
+   "winter": "Effectively inaccessible for climbing; deep snowpack and avalanche hazard affect all approaches.",
+   "typical": "Marine west-coast alpine climate typical of the North Cascades crest — heavy winter snowpack, a wet, slow-to-clear spring, and a comparatively drier but still unsettled summer. An unnamed glacier occupies Crowder's north cirque.",
+   "bySeason": {
+    "fall": "Early snow and rime can arrive by late September, adding difficulty to the already-loose SW Flank and the NE Ridge's exposed sections.",
+    "spring": "Approach creek fords (Big Beaver, Access Creek) run high and cold with snowmelt; upper gullies typically still hold snow.",
+    "summer": "July through September is the historically favorable window for a snow-free SW Flank; the best-documented ascent was made August 12.",
+    "winter": "Deep snowpack and avalanche exposure make the peak essentially inaccessible."
+   },
+   "forecastZone": "NWS Seattle / NWAC North Cascades — Whatcom/Skagit backcountry zone forecast"
+  },
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strong multi-day fitness for sustained brushy, trail-less approach from Ross Lake / Big Beaver / Luna Creek with significant elevation gain and bushwhacking",
+    "packWeight": "Multi-day overnight/expedition pack (camping, food, navigation gear) given the remote, multi-day nature of the approach"
+   },
+   "approachTime": "Expect at least 1-2 days of approach via Ross Lake / Big Beaver / Luna Creek before the summit push",
+   "requiredSkills": [
+    "off-trail/bushwhack route-finding and navigation",
+    "loose rock and Class 4 scrambling competence",
+    "wilderness backcountry camping and permit logistics (North Cascades NP)",
+    "self-arrest / basic glacier-adjacent travel awareness for the surrounding Picket terrain",
+    "sound judgment on remote, rescue-far-away terrain"
+   ],
+   "experienceLevel": "Experienced alpine scrambler/mountaineer with prior North Cascades cross-country travel; comfortable being unroped on Class 4 terrain with loose rock and exposure, and self-sufficient on multi-day off-trail approaches"
+  }
+ }
+}
