@@ -1,0 +1,111 @@
+[
+ {
+  "id": "wa_south_early_winters_spire_nothing",
+  "verdict": "SINGLE",
+  "confidence": "medium",
+  "reason": "Nothing is a 12-pitch bolted slab line that starts 150 ft right of The Hitchhiker on the southeast face, and it descends by the South Arete. Its sibling The Hitchhiker is approached from the Blue Lake Trailhead to the South Arete base, then by traversing along the wall, so this route shares that one way in. The hairpin pullout serves the East Buttress side, and no page describes using it for this face. The row is empty, so it needs a Blue Lake approach (as for The Hitchhiker) before anything else."
+ },
+ {
+  "id": "wa_bread_loaf",
+  "verdict": "MULTI",
+  "confidence": "medium",
+  "reason": "The boulder is on the Silver Falls Trail. In a normal year it is walked to from the Ohanapecosh Campground end. In 2026 that trailhead and the campground are closed for reconstruction through November, so the falls can only be reached from the Grove of the Patriarchs lot by the Eastside Trail (or from the Cowlitz Divide Trail). These are two different trailheads, and which one works depends on the year. The existing card names the Grove start only as an aside. Primary stays e0 because the campground end is the long-term start, but while the closure lasts n0 is the only way in. NPS gives no coordinate for the Grove lot, so n0 is left without one.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Eastside Trail from the Grove of the Patriarchs lot",
+    "notes": "Park at the Grove of the Patriarchs lot on the Stevens Canyon Road, cross the road to the Eastside Trail and follow it about half a mile to the Silver Falls Trail, then continue south toward the falls; the boulder is a few feet off the trail. This is the way in whenever the campground end of the loop is closed, and during that closure the loop cannot be walked through, so come back the way you went. The Grove itself stays closed behind its damaged bridge, but the lot and the Eastside Trail are open in season.",
+    "trailhead": {
+     "name": "Grove of the Patriarchs parking lot (Stevens Canyon Road)"
+    }
+   }
+  ],
+  "fillStored": null
+ },
+ {
+  "id": "wa_castle_in_the_sky",
+  "verdict": "SINGLE",
+  "confidence": "medium",
+  "reason": "The base of the south buttress sits at Perfect Pass. The row approaches it from Hannegan over Easy Ridge, and the alternative, Whatcom Pass and then across the Whatcom Glacier, also starts at Hannegan. That makes it a same-trailhead corridor choice, which matches the earlier SINGLE verdict for South Spur. A Ross Lake start by Little Beaver to Whatcom Pass is rare, and in 2026 it is closed by the Luna Fire."
+ },
+ {
+  "id": "wa_whatcom_peak_southwest_route",
+  "verdict": "MULTI",
+  "confidence": "medium",
+  "reason": "This route starts at Whatcom Pass, the same place as the Whatcom North Ridge (wa_north_ridge_2). That route already has a second card: a water taxi from Ross Lake to the Little Beaver landing, then up the Little Beaver Trail to the pass, about the same mileage as the Hannegan start. The same choice applies here. The Ross Dam Trailhead pin is copied from that sibling's card. Primary stays Hannegan. Little Beaver from Ross Lake to Whatcom Pass is closed by the 2026 Luna Fire, and the Brush Creek trail camps (Graybeal, Whatcom Camp) are also closed after fire damage, so both ways are restricted right now.",
+  "stored": "e0",
+  "primary": "e0",
+  "ways": [
+   {
+    "ref": "e0"
+   },
+   {
+    "ref": "n0",
+    "name": "Ross Lake water taxi to Little Beaver, then up-valley to Whatcom Pass",
+    "notes": "Walk down from the Ross Dam Trailhead to the resort and take a reserved water taxi up the lake to the Little Beaver landing, then follow the Little Beaver Trail west up the valley past Perry Creek and Twin Rocks camps and the Big Beaver junction, finishing with a steep switchback climb through big fir to Whatcom Pass. From the pass the route is the same as from the west: onto the Whatcom Glacier toward Perfect Pass. Your car is then on the far side of the range, so a party crossing the summit has to come back around to Whatcom Pass. The valley was closed by fire in 2026, so check closures before booking the boat.",
+    "trailhead": {
+     "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "lat": 48.7278,
+     "lng": -121.0628
+    }
+   }
+  ],
+  "camps": {
+   "Whatcom Camp, Brush Creek below Whatcom Pass": [
+    "e0"
+   ],
+   "Perfect Pass, Perfect Pass cross-country zone": [
+    "e0",
+    "n0"
+   ]
+  },
+  "fillStored": null
+ },
+ {
+  "id": "wa_cutthroat_peak_a_virtuous_circle",
+  "verdict": "SINGLE",
+  "confidence": "low",
+  "reason": "The row is empty and no page found describes this 5.10+ C1 line or names its face. Every other Cutthroat route, on the south, east and north sides, starts from the same SR-20 pullout west of Washington Pass, and the sibling pins differ by only a few hundred meters. So whichever face it climbs, it has one trailhead. Before an approach is written, someone needs to find which face the route is on."
+ },
+ {
+  "id": "wa_don_t_climb_that_she_said",
+  "verdict": "SINGLE",
+  "confidence": "high",
+  "reason": "The boulder is near the old White Chuck Glacier basin, and parties reach it on Glacier Peak's standard North Fork Sauk to White Pass approach. The White Chuck road and trail, the only other near approach, have been washed out for years. A few parties still go up Glacier Peak by the old White Chuck valley, mostly as a winter outing on a washed-out road, but that is not a way to a summer boulder problem. Any other start is a multi-day PCT walk."
+ },
+ {
+  "id": "wa_mount_rainier_mowich_face",
+  "verdict": "UNSURE",
+  "confidence": "low",
+  "reason": "This was looked into again. The Fairfax Bridge closure is permanent, and there is no public detour to either Mowich Lake or the Carbon River entrance. Ways to walk to Mowich Lake: about 23 mi from Sunrise, about 28 mi from the Westside Road (partly bikeable), or 22.4 mi from Carbonado on a muddy dirt-bike route under the failing bridge and then the closed Carbon River road. That last one is legally uncertain. NPS climbing rangers moved the neighboring Ptarmigan Ridge to its White River start (St Elmo Pass, Winthrop Glacier, Curtis Ridge, Carbon Glacier), but they said nothing about the Mowich Face. No ascent of the face since April 2025 was found. The only 2025 activity on this side was a party that skied the Edmunds Headwall from the top, after going up the Disappointment Cleaver from Paradise and leaving a car on the Westside Road. That is not an ascent approach. MULTI needs one thing that is missing: a page showing a party reaching the base of the North Mowich from any start other than Mowich Lake. The White River line ends on Ptarmigan Ridge, and no page describes dropping from there to the North Mowich."
+ },
+ {
+  "id": "wa_silver_star_northwest_face",
+  "verdict": "SINGLE",
+  "confidence": "high",
+  "reason": "The first-ascent party (October 2019) went in by the Burgundy Col trail and traversed southwest to the base. They came out from the west summit down the Silver Star Glacier, around the west half of the mountain and back over Burgundy Col. Nothing connects this face to the Silver Star Creek approach. The row's single way in is right."
+ },
+ {
+  "id": "wa_mount_crowder_southwest_route",
+  "verdict": "UNSURE",
+  "confidence": "low",
+  "reason": "This was looked into again. Crowder has no standalone approach, and each ascent found is one summit in a longer traverse. The one ascent that documents this line (the Mystery Ridge enchainment, August 2012) started at the end of the Bacon Creek road. It went over Porkbelly, Mystery and Pioneer ridges to Jasper Pass and Wild Pass, down to Wild Lake and up the SW Flank, then left north over Pickell Pass and out at Hannegan. Neither of the row's two corridors (Goodell Creek, or Big Beaver and Access Creek) appears in any ascent account found. Picket traverses from Ross Lake pass below the peak's west side or over Pickell Pass without climbing it. A card per traverse start would describe traverses, not ways to this route. What is missing is any account of a party reaching Wild Lake from Goodell Creek or Access Creek, which the row's approach text says is normal. That text should be checked against the ground before it is left as is."
+ },
+ {
+  "id": "wa_mount_persis_the_hexorcist",
+  "verdict": "UNSURE",
+  "confidence": "low",
+  "reason": "This was looked into again. Online, the only mention is that the north face holds a hard Burdo alpine rock climb called the Hexorcist. No first-ascent report, topo, approach or second ascent was found. The general advice for Persis is to drive as high as the logging roads allow and then bushwhack. A trail-less Anderson Creek approach to the summit exists, up the dry creek bed to a debris meadow near 2,600 ft, and the north face rises above Anderson Creek. That suggests the face may be approached from the Anderson Creek side rather than from the West Ridge road end. Even so, no page ties either start to this route. What is missing is any description of how the first-ascent party reached the base."
+ },
+ {
+  "id": "wa_the_devils_club",
+  "verdict": "SINGLE",
+  "confidence": "high",
+  "reason": "The approach is settled: Perry Creek, from Ross Lake. The first-ascent party spent two rainy days walking in to the Mox basin, waded the river back to their tent and walked out the same day to catch the ferry, so they came by the Ross Lake water taxi. The 2008 Lemolo Peak party, on the next formation east of this face, also came in from the Little Beaver landing up Perry Creek, camped in Perry Creek Basin and circled back to it. No account reaches the base of the east face from Depot Creek or the Redoubt Glacier; those serve the West Ridge from the Col of the Wild on the other side of the peak. Two items on the row come from the Depot Creek side: the bivy 'Redoubt Glacier Camp', and the 'Base of East Face Headwall' pin. The pin sits at the Col of the Wild, west of the summit, and its distMi 9.5 matches that col's on the West Ridge row. The face is east of the summit. Separately, Little Beaver from Ross Lake is closed in 2026 by the Luna Fire."
+ }
+]

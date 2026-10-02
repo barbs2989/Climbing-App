@@ -1145,4 +1145,10 @@ the correction knows the screen is wrong, and they have no way to report it.
     siblings start from different trailheads, plus 72 single verdicts given with only medium or low
     confidence. Researching them found 9 more multi-approach routes. Before calling this list done
     again, re-run that cross-check (siblings on one peak naming 2+ trailheads, minus every row with a
-    verdict).
+    verdict). Run it over EVERY discipline, not just alpine: batch 5 found 6 more rows that way (rock,
+    boulder), 2 of them multi-approach.
+  - **...and the "already switchable" count can FALL with nothing wrong** (batch 5). The route-identity
+    work (#2167) deleted 34 duplicate rows, 5 of which had been linked here; WA went from 132 linked to
+    128. Before treating a drop as a lost switch, diff the ids every `*multi-approach*.before.json`
+    touched against the live table, read each missing id's KEPT row in that work's merge plan, and
+    compare its ways in with the deleted row's (the rollback file holds the deleted row in full).

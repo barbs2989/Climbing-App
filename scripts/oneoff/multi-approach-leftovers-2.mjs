@@ -26,6 +26,11 @@ const key = requireServiceKey();
 // `--set 7`: Adams day-1 numbers nobody states are blanked; Huckleberry West Route's text matches its own 5.6 grade;
 // Goode's three rows say Bridge Creek parking needs a pass (one said free); Storm King N Face's approach is the
 // first ascent's (Park Creek, over the Goode-Storm King saddle) and the second climber's name is spelled right.
+// `--set 8`: The Devil's Club (Southeast Mox East Face) is reached by Perry Creek only, so its camp is the Perry
+// Creek basin (not the Redoubt Glacier), its Col-of-the-Wild pin from the West Ridge side is gone, and day 1
+// no longer names Access Creek. `--set 9`: the same Access Creek slip in its Time-to-Summit leg (`timing`), a
+// truncated copy of that day-1 note that set 8 missed. `--set 10`: SEWS "Nothing" was an empty row; it gets The
+// Hitchhiker's Blue Lake approach and stored pin (it starts 150 ft right of it) and the South Arete descent.
 const SET = process.argv.includes("--set") ? process.argv[process.argv.indexOf("--set") + 1] : "2";
 const NEXT = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.json`, import.meta.url), "utf8"));
 const BEFORE = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.before.json`, import.meta.url), "utf8"));
