@@ -332,6 +332,26 @@ earlier passes cleared to null for want of a second source (loss_ft and access e
   row holds both disputed values, each with a source; sources split and the row holds neither; or a fix needs
   per-day figures nobody states. Peakbagger answered 403 throughout; summitpost was read through archived copies.
 
+## 20. Owner: peakbagger read in Chrome for every leftover (`pb/in/p1-p4`, `pb/out/`)
+The owner cleared peakbagger's security check in the browser; the 260 entries section 19 left `unresolved` were
+re-read there (peak pages and climbers' ascent reports, whose filled-in "Distance" / "Gain on way in" / "Time" fields
+count as that climber stating the figure). Inputs built by `scripts/oneoff/route-leftovers/build-pb-inputs.mjs`;
+rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by `build-pb-apply.mjs`.
+- 260 results: 8 confirmed, 5 already fixed (fills whose waypoint index no longer exists), 247 unresolved.
+  Applied: 7 results, 17 ops, 6 routes, 0 rejected (`pb-apply.json`).
+- Applied: Stickney road walk 4.8 mi from the current Sultan Basin Road gate (every copy, incl. the approach variant's
+  "a little over two miles" the agent missed; One Acre Lake's 3 mi pin cleared because it now precedes the road's end;
+  `dist_km` 10.5 from the stated 6.5 mi one way); Glacier Peak Gerdine/Cool summit pin 18.1 mi, `dist_km` 29.1;
+  Dorado Needle SW Buttress `dist_km` 9.7 (6 mi to the summit stated; the prose's 16 mi round trip vs the stated
+  12 mi stays open — the itinerary days would need recomputing); Jack Mountain Nohokomeen Headwall `dist_km` 24.14
+  (15 mi in, 30 mi round trip as the overview says); Abernathy North Ridge `dist_km` 20.28 (12.6 mi in) and `gain_ft`
+  5,600 (stated "gain on way in"); Del Campo `descentTimeHrs` 3.75, matching its own 10:45 → 2:30 schedule.
+- Why 247 stay open: peakbagger figures disagree among climbers and match neither row value (Gunn, Star, Mile High
+  Club, Morning Star, Baring, Temple, Hozomeen); starts below the row's trailhead or multi-peak totals (Three Fingers
+  N, Hurry-up, Luahna, Spickard, Primus/Austera); round trips only; or the fact is not one peakbagger records (pitch
+  counts, ice grades, rope lengths, permits, pin heights, crags it does not list). Leads, not changes: Gunn Peak's
+  2026 round trips cluster at 7–8 mi, favouring the itinerary's 7.5 mi over the 2.75 mi one-way waypoint chain.
+
 ## Held for the owner (not applied)
 - **One-source pass (section 19):** Buck Mountain — the one report of this out-and-back gives 40 mi / 11,686 ft round
   trip, contradicting every figure on the row; adopting it means rebuilding the itinerary days (computing). Mount Price
@@ -339,10 +359,12 @@ earlier passes cleared to null for want of a second source (loss_ft and access e
   Mastiff SETTLED as stored (4,900 ft / 10 mi): the club page's 3,330 ft for Mastiff alone is below the 3,050 ft
   trailhead to 6,747 ft summit rise, so it cannot be this route's gain, and a second page gives ~11 mi / 5,000 ft.
   Project Crack's trailhead pin sits on the cliff, and Glacier View Temple carries the same pin; no East Face route
-  stores a better one and no source states the parking coordinate, so both stay held. Stickney's 2.25 mi road walk is
-  measured from an older gate. New York Gully fifth pitch (above).
-- **Peakbagger is unread:** it answers bots with a security check (curl 403, and the browser stops at "Performing
-  security verification"), so none of the 260 open items was checked there. Archived copies were used where they exist.
+  stores a better one and no source states the parking coordinate, so both stay held. New York Gully fifth pitch
+  (above). (Stickney's road walk: settled in section 20.)
+- **Peakbagger pass (section 20):** Mastiff `summitTimeHrs` 3.5 (one ascent's stated time) HELD — the row's own
+  schedule reaches the summit at +5 hr and `partner_requirements.approachTime` says ~5 hours. Three Queens: one ascent
+  states 4 mi one way by the south slopes, which would put the summit before the row's 4.5 and 4.8 mi pins. Fortress:
+  peakbagger supports `gain_ft` 5,884; the open contradiction is in `loss_ft`, which no pass writes.
 - **Deletes:** done by the owner (section 16).
 - **Single source / one author:** King Kong settled — one source accepted (section 18) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
   Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
