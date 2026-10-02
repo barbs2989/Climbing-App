@@ -26,6 +26,9 @@ Planner). It means *how to reach waypoint i from waypoint i-1*; index 0 on a Tra
   blank those slots (the writer never overwrote existing text, so every non-empty slot here was
   empty before).
 - `BRIEF.md` — the rules each agent worked to.
+- `defects.json` — the same defects extracted into 1,481 records on 690 routes
+  (`{id, route, area, sev 1-3, cat, field, issue, fix, blocks}`), severity 1 = text on screen that
+  would send a climber the wrong way. `blocks: true` marks the 271 that left legs unwritten.
 - `defects-by-batch.md` — every agent's per-route report: **the defects found in the rows**
   (misplaced pins, wrong turns in on-file prose, stale closures, source names on screen). Not
   fixed in this pass; it is a worklist.
