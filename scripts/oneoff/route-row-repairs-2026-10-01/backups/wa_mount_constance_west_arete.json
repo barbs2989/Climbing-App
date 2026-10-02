@@ -1,0 +1,53 @@
+{
+ "id": "wa_mount_constance_west_arete",
+ "name": "West Arête",
+ "approach": "Same trailhead and grueling approach as the standard route: a road-walk/bike of roughly 5 miles up the closed, washed-out Dosewallips River Road to the unsigned Lake Constance climbers' trail (~1,450 ft), then a steep, unmaintained boot path gaining roughly 3,300-3,400 ft in under 2.2 miles — no switchbacks, hand-over-hand in places — to Lake Constance (4,800 ft); figure 2.5-3.5 hours. Camp at the established sites on the lake's north end. From there, instead of cutting into the South Chute, continue up into Avalanche Canyon past the 'Thumb' rock feature and stay toward the climber's-right side of the canyon passing below the 'Cat Ears' landmark, following a rough path through scree and talus that fades out below the South Chute turnoff. The canyon is roughly 1.5 miles of steady uphill slog to Crystal Pass at its head; this terrain is loose, poorly consolidated talus/scree when snow-free and considerably faster and safer when covered in firm early-season snow (carry an ice axe June into July). The final few hundred feet to Crystal Pass steepen and often hold softening snow by mid-morning, so an early start pays off. Plan roughly 3-4 hours from the lake to the pass.",
+ "approach_variants": [
+  {
+   "name": "Lake Constance and Avalanche Canyon to Crystal Pass",
+   "hours": "3-4 from the lake to the pass",
+   "notes": "Same start as the standard route: the closed Dosewallips roadbed for roughly 5 miles, then the unsigned Lake Constance climbers' trail, which gains about 3,300-3,400 ft in under 2.2 miles with no switchbacks and hand-over-hand pulling in places. Figure 2.5-3.5 hours on that section. Camp at the established sites at the north end of the lake; a wilderness permit is required and the site is reservable for the May 15-October 15 summer season.\n\nFrom the lake, take the boot path around its eastern shore, come out onto a large scree cone, traverse north across the cone and into Avalanche Canyon. Do NOT turn off into the South Chute — that is the standard route. Instead keep going north up the canyon, past the Thumb, roughly 1.5 miles of steady uphill to Crystal Pass at the canyon's head.\n\nThe canyon is loose, poorly consolidated talus and scree when snow-free and much faster on firm early-season snow; carry an axe June into July. The final few hundred feet to the pass steepen, there is often a remnant of ice below the scree fan leading up to it, and softening snow by mid-morning is a good argument for an early start.",
+   "season": "Jul-Sep, once Crystal Pass and the lower arete have shed snow; firm early-season snow in the canyon is faster and safer than bare talus",
+   "hazards": [
+    "loose, poorly consolidated talus and scree the length of Avalanche Canyon when snow-free",
+    "steepening snow and an ice remnant below the scree fan at Crystal Pass",
+    "softening snow by mid-morning on the final slope to the pass",
+    "exposed rock ledges on the Lake Constance approach trail",
+    "cold wind at Crystal Pass",
+    "long committing approach with no water above the lake late season"
+   ],
+   "baseFinding": "There is no ambiguity at the top: the West Arete is the prominent ridge rising directly out of Crystal Pass at the head of Avalanche Canyon, and it runs straight up to Constance's summit ridge crest. If you are standing in a windy col with the canyon behind you and a ridge going up on your right toward the summit, you are at the start.\n\nThe negative marker is a turn made much lower down. If you found yourself climbing a scree chute out of the east side of the canyon with the Cat Ears above you, you are on the standard South Chute route and will end up in the upper maze and the traverses, not on the arete. The arete approach never leaves the canyon floor until the canyon itself ends.\n\nOn the arete, the climbing stays close to the crest on broken class 2 and 3 with the odd class 4 or low fifth step, so easy ground at the start is correct here and is not a sign you are off route."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 47.7403,
+   "lng": -123.0658,
+   "elev": 550,
+   "name": "Dosewallips Road washout parking",
+   "note": "Same Dosewallips Road / Lake Constance approach as the other Constance routes, diverging higher up at Crystal Pass.",
+   "type": "Trailhead",
+   "elevFt": 550,
+   "directions": "From US 101 at Brinnon, turn west onto Dosewallips Road (FR 2610) at milepost 306, just north of Dosewallips State Park, and drive about 8.5 miles to where the road is closed to vehicles at the washout; park along the roadside. A Northwest Forest Pass or America the Beautiful pass is required to park."
+  },
+  {
+   "lat": 47.75073,
+   "lng": -123.14226,
+   "elev": 4750,
+   "name": "Lake Constance",
+   "type": "Campsite",
+   "distMi": null,
+   "elevFt": 4750,
+   "directions": "Walk or bike the closed Dosewallips roadbed about 5 miles up the valley to the Lake Constance climbers' path at about 1,400 ft. The steep, unmaintained path gains about 3,300 ft in roughly 2 miles, past Half Acre Rock at 0.8 mile and over exposed rock ledges and short cliff bands above 1.3 miles, to the lake; camps are at its north end."
+  },
+  {
+   "lat": 47.772826,
+   "lng": -123.127336,
+   "elev": 7756,
+   "name": "Mount Constance (true/main summit)",
+   "type": "Summit",
+   "elevFt": 7756,
+   "directions": "From camp, go north up Avalanche Canyon past the Thumb, staying in the canyon past the South Chute turnoff, for about 1.5 miles of loose talus or firm snow to Crystal Pass at its head. From the pass, climb the West Arete, starting around a small tower and up a crack with fixed webbing, for about five pitches of mostly class 3-4 rock with a few low-fifth steps to the summit ridge, then scramble to the true summit."
+  }
+ ]
+}

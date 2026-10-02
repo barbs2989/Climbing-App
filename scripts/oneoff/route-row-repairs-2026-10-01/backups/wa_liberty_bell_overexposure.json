@@ -1,0 +1,85 @@
+{
+ "id": "wa_liberty_bell_overexposure",
+ "name": "Overexposure",
+ "waypoints": [
+  {
+   "lat": 48.5191,
+   "lng": -120.6742,
+   "elev": 5380,
+   "name": "Blue Lake Trailhead",
+   "note": "Signed pullout on SR-20 about 1.5 mi west of Washington Pass; Northwest Forest Pass required, privy at the lot.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Winthrop, drive SR-20 west about 31 miles; the Blue Lake Trailhead is on the left a little under a mile past the Washington Pass Overlook (from the west, about 42 miles from Newhalem, on the right before the overlook). A Northwest Forest Pass or interagency pass is required, there is a privy at the lot, and SR-20 is closed over the pass in winter."
+  },
+  {
+   "lat": 48.51298,
+   "lng": -120.658866,
+   "elev": 5750,
+   "name": "Stream crossing near meadow",
+   "note": "Small stream just before the climbers' path splits off the Blue Lake Trail — last reliable water before the dry talus approach.",
+   "type": "Water",
+   "distMi": 1.5,
+   "directions": "Follow the maintained Blue Lake Trail (#314) out of the lot; it climbs steadily through forest for about a mile and a half before opening into heather meadow with Liberty Bell and the Early Winters Spires ahead. Navigation is trivial on this stretch — the trail is signed and obvious, and the real route-finding only starts past here."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5800,
+   "name": "Climbers' path junction",
+   "note": "Leave the maintained Blue Lake Trail here onto the unsigned climbers' path through slabs, talus, and meadow toward the Liberty Bell-Concord notch.",
+   "type": "Junction",
+   "distMi": 1.6,
+   "directions": "A short way past the stream the boot path breaks off up and to the left, roughly east-northeast, toward the towers; it is unsigned and easy to walk straight past. The maintained trail carries on to Blue Lake, so arriving at the lake means you have overshot and should backtrack."
+  },
+  {
+   "lat": 48.514639,
+   "lng": -120.659478,
+   "elev": 7100,
+   "name": "Approach gully rockfall zone",
+   "note": "Gully below the notch holds snow into late June and sheds rock heavily once it melts out; stay on the boot path that breaks off before the loose gully proper.",
+   "type": "Hazard",
+   "distMi": 2.2,
+   "directions": "The climbers' path climbs hard from here, gaining roughly 1,300 ft through meadow and then onto slabs and talus. Keep right of the large boulder field but left of the big slabs as the ground steepens toward the notch. Get helmets on before you are in the talus and avoid stacking directly beneath another party."
+  },
+  {
+   "lat": 48.514666,
+   "lng": -120.658696,
+   "elev": 7300,
+   "name": "Liberty Bell-Concord Tower notch",
+   "note": "Overexposure starts right at this notch and doubles as the standard rappel line for every Liberty Bell route, so expect rope teams stacking up here by midday.",
+   "type": "Junction",
+   "distMi": 2.4,
+   "directions": "At the fork below the notch stay left and follow the boot path up to the notch itself at about 7,300 ft. The last stretch is coarse scree and talus with little fine material to hold anything in place, so a dislodged rock runs a long way — move one at a time if there is anyone below you."
+  },
+  {
+   "lat": 48.514677,
+   "lng": -120.658591,
+   "elev": 7350,
+   "name": "Exposed opening moves off the notch",
+   "note": "Tricky, exposed 5.8 moves right off the notch belay before easier ground above — a fall here hangs you right over the notch.",
+   "type": "Hazard",
+   "distMi": 2.5,
+   "directions": "The route does not begin at the notch floor: scramble up the ramp at the top of the notch to reach the first belay, and allow extra time and care for it, because the ground is already exposed. Rope up here — this is 5.8 from the opening moves, not a scramble. Two starts share the same anchor: the original line up the ramp, or a left-hand variation that runs about 30 ft on poor protection at 5.8R."
+  },
+  {
+   "lat": 48.515435,
+   "lng": -120.658365,
+   "elev": 7720,
+   "name": "Liberty Bell summit",
+   "note": "A few hundred feet of 4th- and low-5th-class scrambling above the initial 5.8 pitches reaches the true summit; the same bolted rap line is then used to descend back to the notch.",
+   "type": "Summit",
+   "distMi": 2.7,
+   "directions": "Two sustained 30 m pitches of finger cracks and liebacking on clean granite lead up from the notch, and the first of them is the hardest climbing on the route. Pitch two finishes at the two-bolt station that also begins the standard Liberty Bell rappel line, so this is the decision point — continue up the easier ground to the true summit, or start rappelling from here."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.515435,
+  "peakLng": -120.658365,
+  "trailhead": "Blue Lake Trailhead (SR-20)",
+  "trailheadLat": 48.518965,
+  "trailheadLng": -120.67436,
+  "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+ },
+ "approach": "Overexposure starts right at the top of the notch between Liberty Bell and Concord Tower, so the trailhead-to-base approach is identical to the Beckey Route: Blue Lake Trailhead (FS Trail #314) → 1.5 miles of maintained trail to the small meadow/stream crossing → climbers' boot path through slabs, talus, and meadow to the fork below the notch → stay left to the notch itself at ~7,300 ft (about 2 miles, ~2,100 ft gain, 1.5-2.5 hours). Because the route begins above the notch rather than at it, budget a little extra time and care scrambling up into the initial belay compared to Beckey Route parties, and expect the same early-season snow in the approach gully requiring an axe."
+}

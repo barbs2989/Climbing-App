@@ -1,0 +1,199 @@
+{
+ "id": "wa_luna_glacier",
+ "name": "Luna Glacier",
+ "approach": "Reaching Luna Cirque is the crux of the trip. The historical approach follows the Big Beaver Trail from Ross Lake (a $35 water taxi from Ross Lake Resort cuts about 6 miles off the hike) up to Luna Camp, then climbs steeply beside Luna Creek into the cirque — the bushwhack is a notoriously miserable fight through flies, devil's club, willows, and alder. Most contemporary parties instead approach via Access Creek, which branches off that same Big Beaver Trail rather than a separate trailhead — parties continue on the maintained trail roughly a mile past Luna Camp to the unmarked Access Creek/Big Beaver Creek confluence, then leave the trail there to follow the Access Creek drainage (with an occasional bootpath) up into the cirque — a longer but far less brutal line than Luna Creek.",
+ "road": {
+  "name": "North Cascades Highway (SR-20) to the Ross Dam trailhead and Ross Lake (water taxi or trail to the Big Beaver Trail)",
+  "status": "SR-20 is paved and generally open in summer climbing season",
+  "driveNote": "The Ross Lake Resort water taxi (about $35 one-way, cash, reservation recommended) cuts roughly 6 miles off the Big Beaver Trail approach; the Access Creek approach leaves the same Big Beaver Trail about a mile past Luna Camp.",
+  "seasonalGate": "SR-20 closes seasonally between Ross Lake and Mazama, typically mid-November through April/May depending on snowpack — check the WSDOT pass report before a shoulder-season trip"
+ },
+ "approach_variants": [
+  {
+   "name": "Big Beaver Trail and Access Creek into Luna Cirque, rather than the Luna Creek bushwhack",
+   "notes": "Reaching Luna Cirque is the crux of the trip. The historical line follows the Big Beaver Trail from Ross Lake, with a water taxi from Ross Lake Resort cutting about 6 miles off the hike, up to Luna Camp, then climbs steeply beside Luna Creek into the cirque. That bushwhack was described by the first-ascent party as the worst imaginable struggle with flies, devil's club, willows and alder.\n\nMost contemporary parties instead approach via Access Creek, which branches off the same Big Beaver Trail rather than a separate trailhead. Continue on maintained trail past Luna Camp to the unmarked Access Creek and Big Beaver Creek confluence, then leave the trail and follow the Access Creek drainage, with an occasional bootpath, up into the cirque. Longer, and far less brutal.",
+   "season": "Jun to early Aug. The hanging glacier is the crux of the route and can be impassable in late season, which is why the window is early",
+   "hazards": [
+    "A hanging glacier that is the route's crux and can be impassable in late season",
+    "The Luna Creek approach, if chosen, is among the worst brush in the Cascades",
+    "Sparse protection on the slab pitches",
+    "Recrossing the glacier on the descent, on the same conditions that decided the ascent"
+   ],
+   "baseFinding": "The route is the glacier immediately south of the peak, and the test is that it narrows. From the floor of Luna Cirque, get onto the hanging glacier that lies directly south of Phantom and follow it up to where it narrows and steepens as it flows down from higher on the mountain. That constriction is the route; there is nothing subtle about walking into a narrowing throat of ice with rock on both sides.\n\nArrival at the rock, which is the actual base of the climbing: where the narrows end, turn north and climb over a rock step to reach the highest snowfield on the peak. That turn is the transition from snow to rock and the point at which the party commits to the upper route. The whole climb above the cirque is only about 400 ft in four pitches, so if you have been climbing rock for more than a few rope lengths without reaching a summit block you are not on this line.\n\nCountable confirmation: one rock step, two to three pitches of easy slab to the ridge, then a summit block of about 25 ft. Four pitches, 4th class with a move of easy 5th. Parties carry runners and a few pieces rather than a full rack, because placements on the slab are where the features allow rather than where you want them.\n\nThe turnaround test, which is the most useful thing about this route: the hanging glacier has to be recrossed to get home. A party that finds it in poor condition on the way up should treat that as the turnaround decision rather than pressing on. Timing is the main decision this route asks of a party, and the answer is taken at the base, not at the top."
+  }
+ ],
+ "pro_tips": [
+  "Favor the Access Creek approach over the classic Luna Creek bushwhack Beckey described",
+  "Water-taxi across Ross Lake if approaching via Big Beaver to save roughly a day",
+  "Scope the glacier's condition from Luna Peak or Luna Col before committing to the route"
+ ],
+ "pitch_detail": [
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "Steep Snow/Ice",
+   "notes": "Roped ascent of the hanging pocket glacier on Phantom's southeast side above Luna Cirque, climbing where it narrows before angling north over a rock step. Per published route beta this glacier crossing is the route's condition-dependent crux: it can be broken up or nearly impassable late in the season, so parties should confirm it is 'in' before committing.",
+   "pitch": 1,
+   "anchor": "Snow/ice anchor (pickets & flukes)",
+   "lengthM": 45
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "Class 4",
+   "notes": "Short rock step above the glacier gains the highest snowfield below the summit ridge; solid Pickets gneiss with moderate 4th-class moves and minimal protection.",
+   "pitch": 2,
+   "anchor": "Gear",
+   "lengthM": 20
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "Low 5th (5.2-5.4)",
+   "notes": "First of the route's two-to-three easy slab leads gaining the summit ridge, described in route beta as 'easy slab climbing' on sound rock with sparse but adequate gear placements.",
+   "pitch": 3,
+   "anchor": "Gear",
+   "lengthM": 30
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "Easy 5th (5.4)",
+   "notes": "Final slab leads traverse the ridge avoiding towers to the south before climbing the exposed 25-foot summit block, the technical high point of the route. Descend by rappelling where possible or downclimbing back to the snowfield to reverse the route.",
+   "pitch": 4,
+   "anchor": "Rock horn/sling",
+   "lengthM": 25
+  }
+ ],
+ "itinerary": {
+  "cal": "Parties reach Luna Cirque from late June, when Big Beaver Creek fords can run waist-deep and snow still covers the upper basin; a North Cascades NPS backcountry permit is required for all camps.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Water-taxi across Ross Lake to the Big Beaver trailhead, then an easy but long trail day up Big Beaver Creek to Luna Camp, carrying 5-6 days of food.",
+    "hours": 6,
+    "miles": 11,
+    "title": "Ross Lake to Luna Camp",
+    "gainFt": 1800,
+    "lossFt": 0,
+    "packLb": 48,
+    "schedule": [],
+    "objective": "Reach Luna Camp on the Big Beaver Trail"
+   },
+   {
+    "n": 2,
+    "note": "Leave the trail and climb steep timber and brush onto Wiley Ridge, then traverse cross-country into Luna Basin below the Luna Glacier. Slow, route-finding-heavy travel through slide alder and boulder fields.",
+    "hours": 9,
+    "miles": 6,
+    "title": "Wiley Ridge to Luna Basin high camp",
+    "gainFt": 3500,
+    "lossFt": 300,
+    "packLb": 45,
+    "schedule": [],
+    "objective": "Establish high camp near the Luna Glacier"
+   },
+   {
+    "n": 3,
+    "note": "A short technical day gaining the moraine and glacier margin, roping up for crevassed terrain to place an advance camp within striking distance of the route.",
+    "hours": 3,
+    "miles": 2,
+    "title": "Move to advanced glacier camp",
+    "gainFt": 1000,
+    "lossFt": 0,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Position below the Luna Glacier icefall"
+   },
+   {
+    "n": 4,
+    "note": "Alpine start onto the glacier, crossing crevasses and a bergschrund to the base of the route, then four pitches of moderate alpine rock/ice to the summit ridge before reversing the entire route back to advance camp.",
+    "hours": 10,
+    "miles": 2,
+    "title": "Summit via the Luna Glacier",
+    "gainFt": 1200,
+    "lossFt": 1200,
+    "packLb": 20,
+    "schedule": [
+     {
+      "time": "4:00 AM",
+      "label": "Leave advance camp",
+      "detail": "Rope up immediately for crevassed glacier travel."
+     },
+     {
+      "time": "6:00 AM",
+      "label": "Reach the bergschrund",
+      "detail": "Base of the technical climbing."
+     },
+     {
+      "time": "6:30 AM – 10:00 AM",
+      "label": "Climb the 4 pitches",
+      "detail": "Moderate alpine rock/ice to the summit ridge."
+     },
+     {
+      "time": "10:30 AM",
+      "label": "Summit",
+      "detail": ""
+     },
+     {
+      "time": "11:00 AM",
+      "label": "Begin descent",
+      "detail": "Reverse pitches and re-cross the glacier."
+     },
+     {
+      "time": "2:00 PM",
+      "label": "Back at advance camp",
+      "detail": ""
+     }
+    ],
+    "objective": "Climb Phantom Peak's Luna Glacier route (4 pitches)"
+   },
+   {
+    "n": 5,
+    "note": "Break camp and reverse the Wiley Ridge / Luna Basin cross-country descent back to the Big Beaver Trail at Luna Camp.",
+    "hours": 8,
+    "miles": 8,
+    "title": "Descend to Luna Camp",
+    "gainFt": 300,
+    "lossFt": 4500,
+    "packLb": 42,
+    "schedule": [],
+    "objective": ""
+   },
+   {
+    "n": 6,
+    "note": "Easy trail miles back down Big Beaver Creek to Ross Lake and the water taxi/trailhead.",
+    "hours": 5,
+    "miles": 11,
+    "title": "Hike out to trailhead",
+    "gainFt": 0,
+    "lossFt": 1800,
+    "packLb": 30,
+    "schedule": [],
+    "objective": ""
+   }
+  ],
+  "totalNote": "A remote 6-day expedition, roughly 38-40 miles round trip with one 4-pitch technical summit day via the Luna Glacier; most parties spend two nights in Luna Basin plus a lighter advance camp for the push."
+ },
+ "waypoints": [
+  {
+   "lat": 48.7277,
+   "lng": -121.0626,
+   "elev": 2150,
+   "name": "Ross Dam / Big Beaver Trailhead (Hwy 20)",
+   "note": "Car trailhead on Hwy 20 (Big Beaver Trail start); approach to Luna Cirque/Phantom Peak via Ross Lake, Big Beaver Trail, Access Creek, Luna Pass.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From SR 20 at Marblemount, drive east about 28 miles, past Newhalem and Diablo Lake, to the Ross Dam Trailhead parking near milepost 134."
+  },
+  {
+   "lat": 48.8190158,
+   "lng": -121.342631,
+   "elev": 8016,
+   "name": "Phantom Peak summit",
+   "note": "Phantom Peak's own summit, elev 8016 ft. Luna Glacier is an approach to Phantom Peak itself, not to Luna Peak — a different, nearby peak.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Drop 0.8 mile to the service road, cross Ross Dam and follow the trail about 6 miles north along Ross Lake to Big Beaver Creek (or take the water taxi to Big Beaver landing), then the Big Beaver Trail to Luna Camp. Go cross-country into Luna Cirque, climb the hanging glacier directly south of Phantom to where it narrows, turn north over a rock step to the top snowfield, and follow slabs to the ridge and the summit block."
+  }
+ ]
+}

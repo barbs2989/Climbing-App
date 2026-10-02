@@ -1,0 +1,81 @@
+{
+ "id": "wa_mount_pershing_standard",
+ "name": "Standard Scramble (Jefferson Creek / Hamma Hamma approach)",
+ "waypoints": [
+  {
+   "lat": 47.545078,
+   "lng": -123.228973,
+   "elev": 2440,
+   "name": "Jefferson Creek Crossing (FR 2401)",
+   "note": "Faint climbers' path begins on the north side of the creek where FSR 2401 fords Jefferson Creek; park in the turnout just after the crossing (no formal trailhead sign and no parking fee).",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Hoodsport, drive about 14 miles north on US 101 to the Hamma Hamma River Road (FR 25) and follow it roughly 6.5 miles to FR 2480. Take FR 2480 about 3 miles to FR 2401, then FR 2401 another 7 to 7.5 miles to where it crosses Jefferson Creek, in the Jefferson Lake trailhead area at about 2,440 feet. Park in the turnout just after the crossing — there is no formal trailhead sign, and no parking fee is charged. Confirm current road status with Olympic National Forest before you drive: FR 2480 and FR 2401 have a history of washouts and were briefly closed during the 2025 Hamma Fire, though that closure has since been rescinded."
+  },
+  {
+   "lat": 47.545606525,
+   "lng": -123.230998,
+   "elev": 2600,
+   "name": "Jefferson Creek (last reliable water)",
+   "note": "Path follows the north bank through old-growth forest, boulders, and windfall — fill up here, as the route goes dry once it climbs into the gully and basins above.",
+   "type": "Water",
+   "distMi": 0.3,
+   "directions": "Pick up the faint, flagged path on the north side of the creek where the road fords it and follow the north bank through old growth, boulders and windfall. Fill water here; the route is dry above."
+  },
+  {
+   "lat": 47.5486015,
+   "lng": -123.24247299999999,
+   "elev": 4300,
+   "name": "Rocky gully to 4,300' basin",
+   "note": "After several hundred feet of forest/brush the path makes a rising traverse into a rocky gully; climb the gully to a small basin at roughly 4,300 ft — this is also the point to aim for on the descent before dropping back to the creek.",
+   "type": "Junction",
+   "distMi": 2,
+   "directions": "As the brush thickens, the path makes a rising traverse into a rocky gully. Climb the gully, talus and sometimes snow, to a small basin at about 4,300 ft. Fix it in mind: on the way down it is the aiming point before dropping back to the creek."
+  },
+  {
+   "lat": 47.5507156,
+   "lng": -123.250573,
+   "elev": 5400,
+   "name": "Upper basin (cut left below summit)",
+   "note": "From the 4,300' basin continue straight up then cut left up a second gully into the basin east of the summit at about 5,400 ft, staged at the base of the final snow/rock gully.",
+   "type": "Junction",
+   "distMi": 3.2,
+   "directions": "From the 4,300 ft basin continue straight up, then cut left up a second gully into the basin east of the summit at about 5,400 ft, the base of the climb proper."
+  },
+  {
+   "lat": 47.5514203,
+   "lng": -123.253273,
+   "elev": 5800,
+   "name": "Snow gully + Class 4 rock step",
+   "note": "45–50 degree snow leads to a short pitch of loose, brushy Class 4 rock gaining the summit ridge; carry an ice axe/crampons — this step has caught unprepared parties.",
+   "type": "Hazard",
+   "distMi": 3.6,
+   "directions": "Two gullies leave the upper basin for the south ridge. Take the left-hand one up 45 to 50 degree snow to a short, loose and brushy Class 4 rock step; reaching that step confirms you are in the right gully."
+  },
+  {
+   "lat": 47.551948825,
+   "lng": -123.255298,
+   "elev": 6000,
+   "name": "Knife-edge ridge traverse",
+   "note": "Ridge crest is mostly Class 2–3 but narrows to a genuinely knife-edge section with one or two exposed Class 3/4 moves just before the summit block.",
+   "type": "Hazard",
+   "distMi": 3.9,
+   "directions": "Climb the step to gain the summit ridge and follow the crest, mostly Class 2 to 3, to where it narrows into a knife edge."
+  },
+  {
+   "lat": 47.55194,
+   "lng": -123.25596,
+   "elev": 6154,
+   "name": "Mount Pershing, South Peak",
+   "note": "True (south) summit of the Pershing massif's three tops, 1.3 mi NNW of Mount Washington; allow a full day, historically about 11 hours car-to-car.",
+   "type": "Summit",
+   "distMi": 4,
+   "directions": "Cross the knife edge, with one or two exposed Class 3 to 4 moves, to the south summit, the highest of Pershing's three tops."
+  }
+ ],
+ "approach": "From Hoodsport, drive about 14 miles north on US 101 to Hamma Hamma River Road (FR 25); follow it roughly 6.5 miles to FR 2480, then FR 2480 about 3 miles to FR 2401, then FR 2401 roughly 7–7.5 miles to the Jefferson Creek crossing / Jefferson Lake Trailhead area (~2,440 ft). A faint boot path on the north side of the creek leads through forest and brush into the basins below Pershing's east side, then up gullies to the summit ridge. Confirm current road status with Olympic National Forest before driving — FR 2480/2401 have a history of washouts and were briefly closed in the 2025 Hamma Fire (closure since rescinded). From the boot path, the route rises via a rocky gully to a small basin around 4,300 ft, then continues into a basin east of the summit near 5,400 ft before the final snow/rock gully to the ridge.",
+ "road": {
+  "name": "Hamma Hamma River Road (FR 25) → FR 2480 → FR 2401, Jefferson Creek crossing",
+  "driveNote": "From Hoodsport: Hamma Hamma River Road (FR 25) ~6.5 miles to FR 2480, then FR 2480 ~3 miles to FR 2401, then FR 2401 ~7–7.5 miles to the Jefferson Creek crossing. Gravel forest roads with a history of washouts and occasional fire-related closures (e.g., a July–August 2025 closure during the Hamma Fire, since rescinded); confirm current conditions with Olympic National Forest (Hood Canal Ranger District) before driving, especially after storms."
+ }
+}

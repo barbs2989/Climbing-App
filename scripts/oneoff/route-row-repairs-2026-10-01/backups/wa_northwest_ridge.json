@@ -1,0 +1,76 @@
+{
+ "id": "wa_northwest_ridge",
+ "name": "Northwest Ridge",
+ "waypoints": [
+  {
+   "lat": 48.4926,
+   "lng": -121.1176,
+   "elev": 2100,
+   "name": "Eldorado Creek Trailhead (Cascade River Road)",
+   "note": "Standard Eldorado Peak approach start; cross the Cascade River on a log downstream of the parking area.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Cascade River Road about 20 miles from Marblemount to the large Eldorado Creek trailhead parking area at road mile 20, around 2,100 ft. From the lot, backtrack a short distance downstream to find a log or ford crossing of the Cascade River and pick up the climbers' path heading east and upstream on the far bank. This is the shared Eldorado Peak approach, the same start the other Dorado Needle routes use."
+  },
+  {
+   "lat": 48.5308,
+   "lng": -121.16888095238095,
+   "elev": 5650,
+   "name": "Eldorado Creek Basin camp",
+   "note": "Open-basin camp after the first two talus fields, en route to the higher glacier camps.",
+   "type": "Campsite",
+   "distMi": null
+  },
+  {
+   "lat": 48.531491,
+   "lng": -121.125156,
+   "elev": 7500,
+   "name": "Eldorado/Inspiration Glacier high camp",
+   "note": "High camp on the Inspiration Glacier shelf used for all Eldorado-area and Dorado Needle objectives.",
+   "type": "Campsite",
+   "distMi": null
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 8000,
+   "name": "Inspiration–McAllister Glacier col",
+   "note": "Cross north from Inspiration Glacier over this col onto the McAllister Glacier.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 48.548,
+   "lng": -121.14136190476191,
+   "elev": 8150,
+   "name": "McAllister Glacier below the gendarmes",
+   "note": "Ascend the McAllister Glacier to just below Dorado Needle's line of gendarmes; this is the start of the NW Ridge, the easiest (1940 first-ascent) line at 5.4.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 48.5497,
+   "lng": -121.1386,
+   "elev": 8440,
+   "name": "Dorado Needle summit",
+   "note": "Three pitches of class 5.4 rock past the gendarmes gain the true summit.",
+   "type": "Summit",
+   "distMi": null
+  },
+  {
+   "lat": 48.5508,
+   "lng": -121.1394,
+   "name": "Northwest Ridge approach point (NW of Dorado Needle)",
+   "type": "Base",
+   "elevFt": null
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.5497,
+  "peakLng": -121.1386,
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadLat": 48.49261,
+  "trailheadLng": -121.11761,
+  "trailheadDirection": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+ }
+}

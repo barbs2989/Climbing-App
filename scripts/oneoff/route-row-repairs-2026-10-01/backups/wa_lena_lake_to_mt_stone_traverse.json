@@ -1,0 +1,70 @@
+{
+ "id": "wa_lena_lake_to_mt_stone_traverse",
+ "name": "Lena Lake to Mt Stone traverse",
+ "waypoints": [
+  {
+   "lat": 47.5998,
+   "lng": -123.1508,
+   "elev": 750,
+   "name": "Lena Lake Trailhead",
+   "note": "FS Road 25 trailhead on the Hamma Hamma River; well-graded Lena Lake Trail #810 starts here, Northwest Forest Pass required to park.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Hoodsport, drive north on US 101 about 14 miles and turn left onto Hamma Hamma River Road (FS Road 25) near milepost 318. Follow it about 7.5 paved miles to the Lena Lake Trailhead, a lot for about 30 cars. A Northwest Forest Pass or Interagency pass is required to park."
+  },
+  {
+   "lat": 47.6235,
+   "lng": -123.1572,
+   "elev": 1800,
+   "name": "Lena Lake",
+   "note": "55-acre lake with an established Forest Service campground on the west shore; last reliable, easy-access water before the climb steepens toward the upper basin.",
+   "type": "Water",
+   "distMi": 3
+  },
+  {
+   "lat": 47.634404,
+   "lng": -123.205331,
+   "elev": 4550,
+   "name": "Upper Lena Lake",
+   "note": "Backcountry camp basin just inside Olympic National Park; wilderness permit and bear canister required, and the maintained tread effectively ends here as the Scout Lake way-trail continues off-trail.",
+   "type": "Campsite",
+   "distMi": 6.5
+  },
+  {
+   "lat": 47.624834,
+   "lng": -123.228267,
+   "elev": 5200,
+   "name": "Scout Pass",
+   "note": "Primitive way-trail crosses this pass through huckleberry-heather meadows past Lena Tarn and Scout Lake; tread is faint and easy to lose in fog or fresh snow.",
+   "type": "Junction",
+   "distMi": 8.5
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5950,
+   "name": "St. Peter's Gate",
+   "note": "Rocky notch in Mt. Stone's southeast ridge and the traverse's high point, reached via a steep snow/dirt ramp over loose glacial moraine above Ullin's Bathtubs; gap opens onto the Lake of the Angels basin beyond.",
+   "type": "Junction",
+   "distMi": 10.3
+  },
+  {
+   "lat": 47.6063,
+   "lng": -123.2666,
+   "elev": 6612,
+   "name": "Mount Stone (South Summit)",
+   "note": "Class 3 scramble on solid pillow basalt from St. Peter's Gate; in fog it's easy to confuse the true south summit with the nearby Middle and North summits, and the final gully narrows to Class 3-4.",
+   "type": "Summit",
+   "distMi": 10.8
+  },
+  {
+   "lat": 47.593144,
+   "lng": -123.239673,
+   "elev": 3200,
+   "name": "Putvin Trail cliff/handline section",
+   "note": "Steep, eroded cliff band on the descent below Whitehorse Basin and the Pond of the False Prophet, rigged with a fixed handline and an exposed root system used as a ladder; greasy and dangerous when wet.",
+   "type": "Hazard",
+   "distMi": 13.3
+  }
+ ]
+}

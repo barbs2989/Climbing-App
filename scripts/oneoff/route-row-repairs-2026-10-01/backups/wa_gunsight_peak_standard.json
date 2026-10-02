@@ -1,0 +1,95 @@
+{
+ "id": "wa_gunsight_peak_standard",
+ "name": "Standard Route",
+ "approach": "From the Downey Creek Trailhead (1,400', end of the drivable Suiattle River Road/FR-26 — note the road itself is gated by a washout at milepost 4, roughly 16 miles short of the actual trailhead, under a closure order in effect April 2, 2026 through January 1, 2028, adding that road-walking/biking mileage to the hike), follow Downey Creek Trail #768. The maintained tread climbs gently along Downey Creek, crossing five tributary creeks (one draining Downey/Pilot Lakes can be a difficult ford in spring high water) and passing informal camps at roughly 1.6, 3, 3.5, and 4 miles before reaching the Bachelor Creek crossing at 6.6 miles/2,400'. Expect old-growth blowdown across the tread in places and a brushy avalanche-chute crossing opposite Green Mountain. At Bachelor Creek, leave the maintained trail and pick up the unmaintained Bachelor Creek climbers'/boot path, which follows the north side of the creek (parties report an improved use-trail here that avoids older brushy sections) up to Bachelor Flats and Bachelor Meadows — the common first-night camp, roughly 10-12 miles and most parties' Day 1 stop. From Bachelor Meadows continue up steepening open slopes to Cub Pass, then drop about 700' to Cub Lake and cross the meadows beyond it to gain Itswoot Ridge/Itswoot Pass. From Itswoot Pass, step onto the Dome Glacier and rope up for crevasse-hazard glacier travel, traversing to the broad Chikamin-Dome col (~8,500'), a well-established, wind-sheltered camp used as a high camp by most parties (roughly 17 miles and 7,000'+ gain from the trailhead to this point). From the col, a further descending traverse (roughly 90 minutes) drops onto the Chikamin Glacier to a snow bench/rock outcrop around 7,000-7,500' directly below Gunsight's west face — many parties move camp here or simply day-climb from the col. Route-finding on the unmaintained Bachelor Creek path and Cub Pass/Itswoot Ridge sections, plus crevasse hazard on the Dome and Chikamin Glaciers, are the main approach-specific concerns; carry a rope, crevasse rescue gear, and be comfortable with off-trail alpine travel.",
+ "waypoints": [
+  {
+   "lat": 48.2595,
+   "lng": -121.2229,
+   "elev": 1400,
+   "name": "Downey Creek Trailhead",
+   "note": "Trail #768 into Glacier Peak Wilderness off Suiattle River Road; self-issue wilderness permit and Northwest Forest Pass/day-use fee at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Darrington, drive SR-530 north about 8 miles and turn east onto the Suiattle River Road (FS Road 26). Follow it about 20 miles to the Downey Creek bridge; the trail starts just past the bridge on the north side, with parking on the south side at about 1,450 ft. A Northwest Forest Pass or day fee and a free self-issue wilderness permit are required. Washouts have closed this road short of the trailhead for long periods, so check its status first."
+  },
+  {
+   "lat": 48.321787,
+   "lng": -121.144501,
+   "elev": 2800,
+   "name": "Bachelor Creek crossing",
+   "note": "Downey Creek Trail ends here on a sturdy log bridge over Bachelor Creek; the steep, unmaintained Bachelor Creek climbers' path continues uphill from the far bank.",
+   "type": "Junction",
+   "distMi": 6.8,
+   "directions": "Follow Downey Creek Trail #768 up the valley on maintained tread that climbs only gently for most of its length. You cross five tributary creeks along the way, and the one draining Downey and Pilot Lakes can be a difficult ford in spring runoff. Expect old-growth blowdown across the tread in places and a brushy avalanche-chute crossing opposite Green Mountain; informal camps appear at roughly 1.6, 3, 3.5 and 4 miles if you need to break the day."
+  },
+  {
+   "lat": 48.304704,
+   "lng": -121.122869,
+   "elev": 4500,
+   "name": "Bachelor Flats / Bachelor Meadows",
+   "note": "Informal, well-used forest camp in a flat basin; standard Day 1 stop before the alpine terrain above.",
+   "type": "Campsite",
+   "distMi": 8.5,
+   "directions": "From the far bank the climbers' path follows the north side of Bachelor Creek. Parties report an improved use-trail through here that bypasses the older, brushier line lower down, and it is worth finding because this is the slowest ground of the day. It climbs steadily to the flat basin above."
+  },
+  {
+   "lat": 48.306123,
+   "lng": -121.088611,
+   "elev": 5900,
+   "name": "Cub Pass (above Cub Lake)",
+   "note": "Steep snow slopes lead to this pass overlooking often still-frozen Cub Lake; can hold near-full snow coverage into midsummer, so watch for glissade/postholing hazard.",
+   "type": "Junction",
+   "distMi": 11,
+   "directions": "Continue up steepening open slopes above the meadows to the pass. There is no maintained tread from here on, and route-finding through this section and on up to Itswoot Ridge is one of the approach's real difficulties in cloud or flat light."
+  },
+  {
+   "lat": 48.308537,
+   "lng": -121.061628,
+   "elev": 6400,
+   "name": "Itswoot Ridge camp",
+   "note": "Flat meadow camp on the ridge with a stream fed from Spire Col; open views across to the Dome Glacier and Dome Peak, common Day 2 camp.",
+   "type": "Campsite",
+   "distMi": 12.5,
+   "directions": "Drop roughly 700 ft off the far side of the pass to Cub Lake, then cross the meadows beyond it and climb back up to gain Itswoot Ridge and Itswoot Pass. That descent is the one substantial loss of height on the approach, and it has to be re-climbed on the way out."
+  },
+  {
+   "lat": 48.304486,
+   "lng": -121.033736,
+   "elev": 7500,
+   "name": "Dome Glacier crossing",
+   "note": "Roped glacier travel below Dome Peak on the way to the Chikamin-Dome col; crevasses are usually narrow enough to step across in-season but require glacier travel skills.",
+   "type": "Hazard",
+   "distMi": 14,
+   "directions": "From Itswoot Pass the route steps straight off rock and snow onto the ice, so rope up at the edge rather than partway across. The line traverses east below Dome Peak toward the col rather than climbing the glacier directly."
+  },
+  {
+   "lat": 48.304332,
+   "lng": -121.018012,
+   "elev": 8500,
+   "name": "Chikamin-Dome Col",
+   "note": "Well-established high camp/col at the base of the technical climbing between Chikamin and Dome Peaks; watch for a bergschrund near the col.",
+   "type": "Junction",
+   "distMi": 15,
+   "directions": "Keep traversing east across the glacier and climb the final slope to the col at about 8,500 ft. The bergschrund below it is the one obstacle worth scouting before you commit to a line. Reaching this point is over 7,000 ft of cumulative gain from the road."
+  },
+  {
+   "lat": 48.306555,
+   "lng": -120.994285,
+   "elev": 8198,
+   "name": "Gunsight Peak summit",
+   "note": "Tiny horn-shaped summit block, barely the size of a bar stool, reached via a Class 5.6 dihedral crux and short chimneys/cracks up to Class 5.5 along the exposed ridge crest.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "From the col the route drops before it climbs: a descending traverse of roughly 90 minutes reaches a snow bench and rock outcrop on the Chikamin Glacier around 7,000-7,500 ft directly under Gunsight's west face, and some parties move camp there rather than crossing the glacier twice. Above the bench, cross the bergschrund and take a short Class 3-4 wall to a broad ledge, then move left into the black basaltic dihedral whose uppermost 15 ft is the exposed 5.6 crux. Scramble the reddish-black dike above it, downclimb about 20 ft at the Main-North notch and traverse right across steep broken rock, then follow short chimneys and cracks to the ridge crest beside a large horn thickly slung with rappel webbing. The dike and upper gully hold loose rock and the gendarmed ridge is easy to misread in cloud, so fix that horn in mind — it confirms you are on line in both directions."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.306555,
+  "peakLng": -120.994285,
+  "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+  "trailheadLat": 48.2591,
+  "trailheadLng": -121.2244,
+  "trailheadDirection": "From the Downey Creek Trailhead (~1,450 ft) on the Suiattle River Road, via the Downey Creek / Bachelor Creek approach"
+ }
+}

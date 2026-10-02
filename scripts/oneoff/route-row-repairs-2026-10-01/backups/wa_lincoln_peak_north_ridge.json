@@ -1,0 +1,149 @@
+{
+ "id": "wa_lincoln_peak_north_ridge",
+ "name": "Wilkes-Booth (Northwest Face)",
+ "approach_variants": [
+  {
+   "name": "Heliotrope Ridge to the Kulshan Cabin site, then high and right on the Coleman beneath the icefall",
+   "notes": "Start at the Heliotrope Ridge Trailhead on FS Road 39, Trail #677, near Glacier. Follow the trail roughly 2 miles through old growth and several avalanche-chute creek crossings to the flat former Kulshan Cabin site around 4,700 ft, which is the usual camp and staging area. From there climb the Hogsback moraine to the toe of the Coleman Glacier and rope up. Where the party heading for the southwest side of the mountain would cut away toward the Thunder Glacier cirque, this route stays higher and further climber's right — east — on the Coleman, traversing beneath the Coleman icefall to reach the north-facing cirque wedged between Colfax Peak and Lincoln Peak. That traverse is longer and more exposed than the south-side approach: for a stretch you are directly beneath active serac bands on the upper icefall, so serac collapse is a real objective hazard and an early, cold start matters more here than it does on the other side of the mountain.",
+   "season": "Winter to early spring. The only documented ascent was mid-March, in a lean cold winter — this is an ice objective and it needs the ice to exist",
+   "hazards": [
+    "Traversing directly beneath active serac bands on the Coleman icefall",
+    "Crevasses on a long, exposed, high traverse of the Coleman",
+    "Roughly 2,000 ft of ice and mixed ground with conditions that vary enormously year to year",
+    "Loose rock reported on the face, which matters because the descent means building anchors on it",
+    "No documented independent descent — parties either reverse the face or traverse to the southwest gully"
+   ],
+   "baseFinding": "The base is a cirque with a peak on each side of it, and that is the test. Lincoln's north face sits in a north-facing cirque wedged between Colfax Peak and Lincoln Peak. You have arrived when the ground you are standing on is enclosed on two sides by rock rising to two separate summits, with the Coleman behind you. One peak above you is not enough; you need the cirque.\n\nThe handrail is the icefall, and it is overhead rather than underfoot. From the Coleman's toe, stay high and go right, traversing beneath the icefall. Icefall above you on your left is the confirmation you are on the correct traverse; it is also the reason to be there before the sun. If you find yourself descending toward a cirque with no icefall above you, you have cut left toward the Thunder Glacier side and are heading for the southwest face.\n\nThe face itself is about 2,000 ft and it is ice. If the wall in front of you is a snow slope you could walk, it is not this route. The line is graded WI4/AI4+; rime, verglas and bare ice vary hugely by year, so what you find may be harder or easier than the grade but it will not be a scramble.\n\nGo early in the season for two reasons at once: the ice is better, and the crevasses on the traverse are better bridged. Those two arguments point the same way, which is unusual and worth using.\n\nWhat being on the wrong side looks like: open snow basin, sun on your back, trees below you at 6,100 ft. That is the X Couloir approach from Rankin Creek and it is reached from a different road entirely."
+  }
+ ],
+ "itinerary": {
+  "cal": "This line has only been climbed once, in mid-March, under a rare thin-ice weather window — the ice/mixed conditions it needs are inconsistent year to year and may simply not form in many seasons.",
+  "days": [
+   {
+    "n": 1,
+    "note": "This is treated as a one-day car-to-car outing, matching how the only recorded ascent was actually done: a pre-midnight alpine start, glacier approach to the base of the face by first light, roughly four pitches of steep ice/mixed climbing plus 70° snowfields and a rime-covered ridge to the summit, then a downclimb of the SW face back to the trailhead.",
+    "hours": 18.5,
+    "miles": 14,
+    "title": "Single push: trailhead to summit and back",
+    "gainFt": 6400,
+    "lossFt": 6400,
+    "packLb": 28,
+    "schedule": [
+     {
+      "time": "~12:00-1:00 AM",
+      "label": "Leave Heliotrope Ridge trailhead",
+      "detail": "Alpine start to bank time for an 18+ hour day."
+     },
+     {
+      "time": "First light",
+      "label": "Reach base of the face",
+      "detail": "Cross the Coleman Glacier approach into the amphitheater between Lincoln Peak and Assassin Spire."
+     },
+     {
+      "time": "Morning",
+      "label": "Climb the technical face",
+      "detail": "~4 roped pitches of steep ice (WI4) interspersed with 70° snowfields."
+     },
+     {
+      "time": "Midday",
+      "label": "Rime ridge to summit",
+      "detail": "Finish up rime-covered ridge climbing to the 9,085 ft top."
+     },
+     {
+      "time": "Afternoon",
+      "label": "Descend the SW face",
+      "detail": "Downclimb sections of 60-65° snow/ice back toward the basin."
+     },
+     {
+      "time": "~6:30 PM (T+18.5 hr)",
+      "label": "Back at trailhead",
+      "detail": "Headlamp finish is common; plan for a full-value alpine day."
+     }
+    ],
+    "objective": "Climb the technical NW face/ridge line to the 9,085 ft summit and return to the Heliotrope Ridge trailhead in one continuous push"
+   }
+  ],
+  "totalNote": "A single very long day: roughly 18.5 hours car-to-car from the Heliotrope Ridge trailhead, not a multi-day trip from high camp."
+ },
+ "waypoints": [
+  {
+   "lat": 48.802181,
+   "lng": -121.894725,
+   "elev": 3700,
+   "name": "Heliotrope Ridge Trailhead",
+   "note": "FS Trail 677 off Glacier Creek Rd (FS-39); Northwest Forest Pass or digital day-use pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Glacier on the Mount Baker Highway (SR-542), drive about 1 mile east and turn right onto Glacier Creek Road (FS Road 39). Follow it about 8 miles to the Heliotrope Ridge Trailhead parking on the left side of the road. A Northwest Forest Pass is required."
+  },
+  {
+   "lat": 48.790503692307695,
+   "lng": -121.88274915384616,
+   "elev": 4600,
+   "name": "Heliotrope Creek crossing",
+   "note": "Fast, rock-hopped crossing that worsens with afternoon snowmelt; real injuries have happened here — cross early in the day.",
+   "type": "Water",
+   "distMi": 1.8,
+   "directions": "Trail #677 leaves the lot and climbs steadily through old growth, the lower creeks bridged and no junctions to think about for the first couple of miles. The grade is relentless but it is plain walking; on the pre-dawn start this route needs, it is the stretch you cover in the dark."
+  },
+  {
+   "lat": 48.789200769230774,
+   "lng": -121.88132461538461,
+   "elev": 4700,
+   "name": "Kulshan Cabin site",
+   "note": "Established camp at the old 1925 Kulshan Cabin site, just before the signed Climbers' Trail junction.",
+   "type": "Campsite",
+   "distMi": 2,
+   "directions": "A short, steepening 0.2 mi carries on through thinning forest to the flat bench where the cabin stood, with a backcountry toilet as the obvious landmark. That toilet and the one at Harrison Camp are the only ones on this side — everything above here is pack-it-out."
+  },
+  {
+   "lat": 48.7893,
+   "lng": -121.867771,
+   "elev": 6000,
+   "name": "Hogsback moraine camp",
+   "note": "Climbers' Trail switchbacks up the Hogsback moraine crest to a common high camp just below the Coleman Glacier toe.",
+   "type": "Junction",
+   "distMi": 3,
+   "directions": "Just past the cabin site the trail reaches a well-signed fork: take the right branch, the Climbers' Trail. The left branch is the hikers' continuation toward the Heliotrope Ridge viewpoint and is the common wrong turn here. The right fork gains roughly 1,000 ft in about a mile, steep and direct up the moraine crest."
+  },
+  {
+   "lat": 48.77942884615385,
+   "lng": -121.87064057692308,
+   "elev": 7000,
+   "name": "Coleman Glacier toe / rope-up point",
+   "note": "Rope up here for glacier travel; crevasse hazard increases traversing beneath the Black Buttes cirque toward Lincoln Peak.",
+   "type": "Junction",
+   "distMi": 3.5,
+   "directions": "Stay on the moraine crest above camp as it narrows and runs out at the glacier's edge, another ~1,000 ft over about half a mile. Footing is loose rock and sand on the crest, and the ground turns to ice and rubble where the moraine meets the toe."
+  },
+  {
+   "lat": 48.778849,
+   "lng": -121.860647,
+   "elev": 7200,
+   "name": "Black Buttes basin camp",
+   "note": "High camp used for Black Buttes objectives, tucked below the Buttes off the standard Coleman Glacier line.",
+   "type": "Campsite",
+   "distMi": 4,
+   "directions": "From the toe the travel is roped glacier across to the 7,200 ft bench beneath the Black Buttes. The line passes under serac bands on the Coleman's icefall, so it is a stretch to keep moving through rather than rest in, and it wants crossing early while the glacier is still frozen — timing matters more on this side than on the peak's southwest approach."
+  },
+  {
+   "lat": 48.77291423076923,
+   "lng": -121.86351788461538,
+   "elev": 7800,
+   "name": "NW Face start / hanging glacier icefall",
+   "note": "Same start as Assassin Spire's Shooting Gallery route: a 60m WI4 pitch right of a prominent hanging glacier — icefall and rockfall exposure.",
+   "type": "Hazard",
+   "distMi": 4.5
+  },
+  {
+   "lat": 48.76814,
+   "lng": -121.85868,
+   "elev": 9085,
+   "name": "Lincoln Peak summit",
+   "note": "Rime-covered summit ridge gains the top; descend via the SW face (snow/ice to 65°) rather than reversing the NW Face.",
+   "type": "Summit",
+   "distMi": 5.2,
+   "directions": "The ground above the base is roped ice and mixed climbing, not a snow slog: a 60 m WI4 pitch immediately right of the hanging glacier is the technical crux, after which parties simul-climb across the upper amphitheater basin. Above that expect roughly four more roped pitches on steeper ice separated by snowfields up to 70 degrees, finishing on rime-plastered ridge and an icy chimney. The rock off the ice is rotten volcanic choss with no fixed gear, so anchors come off slung horns and blocks and every one of them should be treated as suspect."
+  }
+ ]
+}

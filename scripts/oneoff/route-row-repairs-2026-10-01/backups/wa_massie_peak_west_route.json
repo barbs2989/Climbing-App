@@ -1,0 +1,73 @@
+{
+ "id": "wa_massie_peak_west_route",
+ "name": "West Route",
+ "approach_logistics": {
+  "peakLat": 48.1224,
+  "peakLng": -120.8823,
+  "trailhead": "Trinity Trailhead (end of Chiwawa River Road)",
+  "trailheadLat": 48.071966,
+  "trailheadLng": -120.84999,
+  "trailheadDirection": "From the Trinity Trailhead (~2,800 ft) at the end of Chiwawa Valley Road 6200"
+ },
+ "waypoints": [
+  {
+   "lat": 48.071966,
+   "lng": -120.84999,
+   "elev": 2800,
+   "name": "Trinity Trailhead",
+   "note": "Free self-issue wilderness permit required at the kiosk; starts the Chiwawa River Trail #1550 (Phelps Creek Trailhead, ~2 mi up Chiwawa River Road, is the alternate/nearby start named in the beta).",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Trinity Trailhead is at the end of the Chiwawa River Road, Forest Road 6200, reached via Coles Corner and Highway 207 up the Chiwawa valley. Park at the road end at about 2,800 ft; the Chiwawa River Trail #1550 starts here. This is Glacier Peak Wilderness, so fill out the free self-issue permit at the kiosk before you walk away from the car. The high country beyond is typically not fully snow-free until mid-to-late July."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3300,
+   "name": "Massie Lake junction ('M' tree marker)",
+   "note": "An 'M' with an arrow etched into a trailside tree on the left flags the unmarked, unmaintained climbers' path leaving the Chiwawa River Trail for Massie Lake.",
+   "type": "Junction",
+   "distMi": 2.8,
+   "directions": "Walk the Chiwawa River Trail #1550 upstream through forest to the unsigned junction: a large boulder jutting into the trail on the east side, opposite an 'M' with an arrow carved into a tree on the west side. A false set of markers has existed about a mile short of the real one, so do not turn off on arrows alone."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3320,
+   "name": "Chiwawa River ford",
+   "note": "Unbridged crossing of the Chiwawa River right at the junction; can run thigh-deep and swift during early-season snowmelt, best done early morning when flows are lowest.",
+   "type": "Hazard",
+   "distMi": 2.9,
+   "directions": "The river is forded immediately below the junction, with piled driftwood the only help across. It can run thigh-deep and swift with early-season snowmelt, so cross in the morning when flows are lowest, and fill water here."
+  },
+  {
+   "lat": 48.131485,
+   "lng": -120.927636,
+   "elev": 5930,
+   "name": "Massie Lake",
+   "note": "Two established fire-ring campsites on the lakeshore with good fishing and reliable water, reached via a steep, poorly-marked boot path of about 2 miles from the river ford.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "Across the river, pick up the old sheep-drive path, which climbs steeply for about 2 miles on axe and burn blazes and intermittent boot track to Massie Lake at about 5,900 ft. The blazes thin out with height and there is no reliable water on the way."
+  },
+  {
+   "lat": 48.129893,
+   "lng": -120.917946,
+   "elev": 6300,
+   "name": "Ridge gain off the Massie Lake High Route",
+   "note": "Leave the Massie Lake High Route (which traverses east below the ridgecrest toward Buck Pass) and climb heather benches and talus onto Massie's west ridge.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 48.1363,
+   "lng": -120.9123,
+   "elev": 7534,
+   "name": "Massie Peak summit",
+   "note": "Broad rocky high point (7,534 ft on the USGS Suiattle Pass quad, listed as 'Massie Ridge' by ListsOfJohn) above Massie Lake and Buck Creek Pass; Class 2-3 scrambling along the final ridge.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Follow the broad ridge crest to the summit over talus and heather, generally Class 2 with a few short Class 3 steps near the summit block. Shaded sections can hold snow and ice into midsummer."
+  }
+ ]
+}

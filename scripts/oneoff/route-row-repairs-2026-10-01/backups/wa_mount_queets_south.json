@@ -1,0 +1,199 @@
+{
+ "id": "wa_mount_queets_south",
+ "name": "South Slopes",
+ "approach": "There is no direct trailhead-to-summit trail. Vehicle access to the Elwha Valley has been closed since a May 2021 washout on Olympic Hot Springs Road; you now walk or bike an extra ~6-7 miles from the Madison Falls parking area (past the washout, then up Whiskey Bend Road) just to reach the Whiskey Bend trailhead. From Whiskey Bend, follow the Elwha River Trail to Chicago Camp, where it fords the Elwha short of Low Divide, then leave the trail and continue about 3 miles cross-country up into Elwha Basin and over Dodwell-Rixon Pass (4,763 ft) to reach the SE ridge/south side of Mount Queets. Most parties treat this as a multi-day (4+ day round trip) wilderness objective, commonly combined with the Bailey Range Traverse via Queets Basin to the west. The lower third of the SE ridge is mostly 2nd-class scrambling on crumbly rock and heather; where it becomes impassable, drop a few hundred feet to traverse steep, firm scree around 5,300 ft on the east side to bypass a cliff band, then regain the ridge for an easy 2nd-class scramble around its west side before a moderately steep snow slope on the east side leads to the summit. Microspikes and an axe have been used here even in late August.",
+ "approach_variants": [
+  {
+   "name": "Elwha Basin and Dodwell-Rixon Pass to the southeast ridge",
+   "notes": "A long valley walk with a ford of the Elwha at Chicago Camp, then cross-country into Elwha Basin and over the pass. Commonly combined with time in Queets Basin or a wider traverse. The historic snow ramp near the pass is unreliable now and should not be counted on as a way through.",
+   "season": "Late July to mid-September",
+   "hazards": [
+    "Crumbly rock and steep heather on the lower ridge",
+    "Steep, firm scree on the bypass traverse below the cliff band",
+    "A moderately steep snow slope below the summit even in late summer",
+    "Waterfalls and cliff bands making any direct descent toward Elwha Basin dangerous",
+    "Trail-less cross-country route-finding with bear activity in both basins"
+   ],
+   "baseFinding": "Dodwell-Rixon Pass is the divide between the Elwha and Queets drainages, with a small tarn just below it and Mount Olympus in view to the west. The southeast ridge is gained directly from the pass, so the base is the pass itself and the lower third of the ridge is straightforward Class 2 on crumbly rock and steep heather with brushy patches. The identification that matters is where to leave the crest. About a third of the way along, the ridge ahead becomes impassable; the move is to drop a couple of hundred feet off the east side onto steep, firm scree and traverse. Hold that traverse until you have passed below a steep cliff roughly halfway along the east side of the ridge, then climb back up talus, steep heather and crumbly slabs to regain the crest for the final third. From there it is easy Class 2 around the west side of the ridge, then a moderately steep snow slope on the east side to the top — snow that has needed an axe here even in late August. If you are still on the crest and the rock ahead of you is vertical, you have missed the drop-off point and should go back for it."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.04229,
+   "lng": -123.5887,
+   "elev": 400,
+   "name": "Madison Falls Trailhead",
+   "note": "Actual current start point: Olympic Hot Springs Road is washed out beyond here, closed to vehicles, so climbers walk or bike ~6.2 mi of closed road to reach the old Whiskey Bend trailhead.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Port Angeles, drive about 8 miles west on US 101 and turn left onto Olympic Hot Springs Road just past the Elwha River bridge. Follow it about 2 miles to the Madison Falls parking area at the park boundary, where the road is closed to vehicles. An overnight wilderness permit is required."
+  },
+  {
+   "lat": 47.9643,
+   "lng": -123.5844,
+   "elev": 1200,
+   "name": "Whiskey Bend Trailhead",
+   "note": "Former vehicle trailhead (road-washout detour ends here); the signed Elwha River Trail proper begins, running 28.4 mi south to Low Divide.",
+   "type": "Junction",
+   "distMi": 6.2,
+   "directions": "Walk or bike the closed Olympic Hot Springs Road past the washout, then follow Whiskey Bend Road up to the old Whiskey Bend trailhead, about 6 to 7 miles in all. Bikes are allowed on both roads."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3400,
+   "name": "Elwha Basin",
+   "note": "Sprawling headwaters basin and last established camp before the off-trail push to Dodwell-Rixon Pass; trail becomes faint/nonexistent through here and the Elwha must be forded repeatedly.",
+   "type": "Campsite",
+   "distMi": 31,
+   "directions": "Follow the Elwha River Trail south up the valley past Lillian River, Elkhorn and Hayes River to Chicago Camp, about 25 miles, where the trail fords the Elwha; the ford can be hazardous in high water. Leave the trail there and continue about 3 miles cross-country up the brushy upper valley into Elwha Basin, fording the river repeatedly."
+  },
+  {
+   "lat": 47.7845325,
+   "lng": -123.5926839,
+   "elev": 4763,
+   "name": "Dodwell-Rixon Pass",
+   "note": "Off-trail pass dividing the Elwha and Queets drainages; leave the pass and gain the SE ridge of Queets here, with views west to Mt. Olympus from a small tarn just below.",
+   "type": "Junction",
+   "distMi": 33,
+   "directions": "Climb cross-country out of the head of Elwha Basin to Dodwell-Rixon Pass at about 4,750 ft, the divide between the Elwha and Queets drainages, with a small tarn just below it. Do not count on the old snow ramp near the pass."
+  },
+  {
+   "lat": 47.7756535,
+   "lng": -123.59367274,
+   "elev": 5300,
+   "name": "SE ridge crumbly-rock / scree traverse",
+   "note": "Lower third of the ridge is 2nd-class on crumbly rock and steep heather; where the ridge crest cliffs out, most parties drop off and cross steep, firm scree on a climbers' traverse instead of staying on the crest.",
+   "type": "Hazard",
+   "distMi": 34,
+   "directions": "Leave the pass up the ridge toward Queets, Class 2 on crumbly rock, steep heather and some brush. About a third of the way along, where the crest ahead becomes impassable, drop a couple of hundred feet off the east side onto steep, firm scree and traverse at about 5,300 ft."
+  },
+  {
+   "lat": 47.762335,
+   "lng": -123.595156,
+   "elev": 6476,
+   "name": "Mount Queets",
+   "note": "Broad summit at the head of the Queets/Elwha divide; final pitch below the top is often a moderately steep snow/scree slope worth carrying an ice axe for even in July-Sep.",
+   "type": "Summit",
+   "distMi": 35.5,
+   "directions": "Hold the scree traverse until you have passed below the steep cliff about halfway along the east side, then climb talus, heather and crumbly slabs back to the crest. Scramble easy Class 2 around the west side of the ridge, then take the moderately steep snow slope on the east side to the summit; carry an axe."
+  }
+ ],
+ "climbing_route": [
+  {
+   "n": 1,
+   "class": "2nd class",
+   "label": "Lower third of the SE ridge",
+   "notes": "The lower third of the SE ridge is mostly 2nd-class scrambling on crumbly rock and heather, until it becomes impassable."
+  },
+  {
+   "n": 2,
+   "label": "Scree traverse around the cliff band",
+   "notes": "Where the ridge becomes impassable, drop a few hundred feet to traverse steep, firm scree around 5,300 ft on the east side to bypass a cliff band."
+  },
+  {
+   "n": 3,
+   "class": "2nd class",
+   "label": "Upper ridge and summit snow slope",
+   "notes": "Regain the ridge for an easy 2nd-class scramble around its west side, then a moderately steep snow slope on the east side leads to the summit. Microspikes and an axe have been used here even in late August."
+  }
+ ],
+ "descent_text": "Descend the south slopes, retracing the route to the Elwha Basin camp.",
+ "itinerary": {
+  "cal": "As of the last available report (Sept 2024) the Olympic Hot Springs/Whiskey Bend Road was closed indefinitely to vehicles beyond Madison Falls due to Elwha flood/washout damage, adding roughly 6-7 miles of extra biking/walking each way to reach the Whiskey Bend trailhead — check current NPS road-conditions page before planning.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Start at Whiskey Bend trailhead (or Madison Falls if the road is still washed out) and follow the Elwha River Trail south through old-growth forest and historic homestead sites. This is a long but gentle-grade trail day to bank miles before the terrain gets rougher.",
+    "hours": 6.5,
+    "miles": 12,
+    "title": "Approach up the Elwha River Trail",
+    "gainFt": 1500,
+    "lossFt": 300,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Reach a mid-trail camp (Elkhorn/Stony Point area)"
+   },
+   {
+    "n": 2,
+    "note": "Continue up the Elwha River Trail past Elkhorn, Hayes River, and Camp Wilder to Chicago Camp, then leave the maintained trail and work up into upper Elwha Basin (the brushy, route-finding terrain locals call \"the maze\"). Camp gives a shorter summit push the next day.",
+    "hours": 8,
+    "miles": 14,
+    "title": "Push to a high camp in upper Elwha Basin",
+    "gainFt": 1800,
+    "lossFt": 200,
+    "packLb": 36,
+    "schedule": [],
+    "objective": "Establish high camp near Elwha Basin / Dodwell-Rixon Pass approach"
+   },
+   {
+    "n": 3,
+    "note": "Drop the overnight gear at camp and go light. Climb cross-country up to Dodwell-Rixon Pass, then follow the ridge from the pass to the summit, bypassing a cliff band on a scree traverse, before reversing the entire route back to camp. Mostly Class 2 walking/scrambling with route-finding through brush and moraine.",
+    "hours": 11,
+    "miles": 10,
+    "title": "Summit push via Dodwell-Rixon Pass",
+    "gainFt": 3200,
+    "lossFt": 3200,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "4:30 AM",
+      "label": "Leave high camp",
+      "detail": "Light daypack; aim to be over Dodwell-Rixon Pass by mid-morning."
+     },
+     {
+      "time": "6:30 AM",
+      "label": "Top of Dodwell-Rixon Pass (~4,760 ft)",
+      "detail": "Views open into Queets Basin; leave the pass and start up the ridge toward the summit."
+     },
+     {
+      "time": "8:00 AM",
+      "label": "Scree traverse below the cliff band",
+      "detail": "Where the ridge cliffs out, drop onto steep, firm scree on the east side and traverse before regaining the crest."
+     },
+     {
+      "time": "11:30 AM",
+      "label": "Summit (6,476 ft)",
+      "detail": "Class 2 slopes to the top; short weather/photo window."
+     },
+     {
+      "time": "2:00 PM",
+      "label": "Back at Dodwell-Rixon Pass",
+      "detail": "Begin the long descent back toward the Elwha Basin camp."
+     },
+     {
+      "time": "4:30 PM",
+      "label": "Return to high camp",
+      "detail": "Long day — budget extra time for brush and route-finding fatigue."
+     }
+    ],
+    "objective": "Climb the South Slopes to the 6,476 ft summit and return to high camp"
+   },
+   {
+    "n": 4,
+    "note": "Break camp and descend out of Elwha Basin back to the maintained Elwha River Trail, retracing the route past Camp Wilder and Hayes River toward the Elkhorn area.",
+    "hours": 7,
+    "miles": 14,
+    "title": "Hike back down the Elwha",
+    "gainFt": 200,
+    "lossFt": 1800,
+    "packLb": 34,
+    "schedule": [],
+    "objective": "Retrace the approach toward the trailhead"
+   },
+   {
+    "n": 5,
+    "note": "Finish the descent of the Elwha River Trail back to the trailhead (plus the extra road walk/bike-out if Whiskey Bend Road is still closed to vehicles).",
+    "hours": 6,
+    "miles": 12,
+    "title": "Exit to the trailhead",
+    "gainFt": 300,
+    "lossFt": 1500,
+    "packLb": 30,
+    "schedule": [],
+    "objective": "Return to Whiskey Bend"
+   }
+  ],
+  "totalNote": "A serious 5-day, ~70-mile round-trip wilderness expedition to one of the most remote summits in Washington: two long days of trail approach up the Elwha River to a high camp in upper Elwha Basin, a long cross-country summit push to Dodwell-Rixon Pass and up the ridge from the pass, then two days back out."
+ }
+}

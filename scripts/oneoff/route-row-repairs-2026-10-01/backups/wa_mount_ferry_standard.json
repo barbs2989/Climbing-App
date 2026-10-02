@@ -1,0 +1,85 @@
+{
+ "id": "wa_mount_ferry_standard",
+ "name": "South Slopes (Bailey Range)",
+ "waypoints": [
+  {
+   "lat": 47.955249,
+   "lng": -123.835839,
+   "elev": 1900,
+   "name": "Sol Duc Trailhead (Olympic NP)",
+   "note": "Olympic National Park entrance pass required for parking; wilderness permits (recreation.gov) needed for overnight camps on the Sol Duc/High Divide corridor.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Port Angeles drive US-101 west about 28 miles; just past Lake Crescent turn left on Sol Duc Hot Springs Road at the park sign, pay at the entrance station, and drive about 12 miles past the resort to the trailhead at the road end. An Olympic National Park entrance pass is required to park, and overnight camps need a wilderness permit."
+  },
+  {
+   "lat": 47.95144,
+   "lng": -123.81905,
+   "elev": 1927,
+   "name": "Sol Duc Falls",
+   "note": "Boardwalk viewpoint over the falls and junction with the Lover's Lane Trail; stay on the Deer Lake/High Divide Trail.",
+   "type": "Junction",
+   "distMi": 0.8,
+   "directions": "Follow the Sol Duc Falls Trail about 0.8 mile through old-growth forest to the bridge overlooking Sol Duc Falls."
+  },
+  {
+   "lat": 47.9277,
+   "lng": -123.824,
+   "elev": 3550,
+   "name": "Deer Lake",
+   "note": "Established backcountry camp with bear wires; last easy water and flat tent sites before the steep climb to High Divide.",
+   "type": "Campsite",
+   "distMi": 3.4,
+   "directions": "Cross the bridge and bear right, pass the Lover's Lane Trail junction, and climb the Deer Lake Trail about 3 miles alongside Canyon Creek and its waterfalls to Deer Lake."
+  },
+  {
+   "lat": 47.90981,
+   "lng": -123.73438,
+   "elev": 4744,
+   "name": "Heart Lake",
+   "note": "Last reliable water before the dry, exposed Cat Peak-Mt. Carrie ridge section - top off here.",
+   "type": "Water",
+   "distMi": 8,
+   "directions": "From Deer Lake continue south on the High Divide Trail, climbing through subalpine meadow onto the divide, then follow it east past Bogachiel Peak to the junction with the Sol Duc River Trail and drop a short way north to Heart Lake."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4900,
+   "name": "High Divide - Cat Basin Trail Junction",
+   "note": "Maintained trail ends near here; the unmarked Bailey Range 'primitive route' splits off High Divide toward Cat Peak and off-trail routefinding begins.",
+   "type": "Junction",
+   "distMi": 9.5,
+   "directions": "Climb back to the High Divide junction above the lake and continue east on the Cat Basin primitive trail to Cat Basin, where maintained tread ends."
+  },
+  {
+   "lat": 47.89104,
+   "lng": -123.661054,
+   "elev": 5900,
+   "name": "The Catwalk (Cat Peak-Mt. Carrie arete)",
+   "note": "Narrow, exposed ridge traverse on loose rock linking Cat Peak and Mount Carrie; a slip on the steep side-hill sections could mean a long uncontrolled fall.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Leave the maintained trail on the faint primitive route east, traversing the slopes of Cat Peak to the start of the Catwalk, the narrow exposed ridge linking Cat Peak to Mount Carrie."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5700,
+   "name": "Ferry Basin",
+   "note": "Open meadow basin below Mount Ferry's south slopes with glacial tarns for camping/swimming, reached via a col just south of Stephen Peak (~5,900 ft).",
+   "type": "Campsite",
+   "distMi": 15
+  },
+  {
+   "lat": 47.842435,
+   "lng": -123.570535,
+   "elev": 6195,
+   "name": "Mount Ferry",
+   "note": "Class 2-3 scramble off the main Bailey Range traverse near the Ferry-Pulitzer col; broad summit with views across Queets Basin to Mount Olympus.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "From camp in Ferry Basin, climb to the broad bench east of the true summit, then up the slope of loose, sharp, shifting scree to the summit. It is sustained class 2-3 scrambling with no technical climbing; watch for the elk trails in the basin, which contour convincingly but do not lead to the summit."
+  }
+ ]
+}
