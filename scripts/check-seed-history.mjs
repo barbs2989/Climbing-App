@@ -158,18 +158,28 @@ if (nameVsUser.length) {
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import ReactDOM from "react-dom";
+// Resume ends in createPortal(..., document.body), which the server renderer refuses: portals are
+// PLACEMENT, and check:overlays owns that. Flattened and \`document.body\` stubbed for THIS call only,
+// the same scoped patch check:units uses for FullProfile, so nothing else in the bundle moves.
+function flat(fn) {
+  const orig = ReactDOM.createPortal, hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
+}
 import { Resume, ME, __set_DB_UID } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const noop = () => {};
 export function render(climber, uid) {
   __set_DB_UID(uid);
-  return renderToStaticMarkup(
+  return flat(() => renderToStaticMarkup(
     React.createElement(Resume, {
       climber, logs: [], courses: null, extra: null, headline: "",
       onClose: noop, onConnect: noop, onMessage: noop, onAddCourse: noop,
       onRemoveCourse: noop, onAddExtra: noop,
       onShare: noop, onExport: noop, onHeadline: noop,
       editable: false, fstate: "none", routeById: () => null,
-    }));
+    })));
 }
 export { ME };
 `;
