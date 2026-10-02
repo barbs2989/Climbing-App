@@ -1,0 +1,76 @@
+{
+ "id": "wa_colfax_peak_polish_route",
+ "name": "Polish Route",
+ "waypoints": [
+  {
+   "lat": 48.80223,
+   "lng": -121.895575,
+   "elev": 3700,
+   "name": "Heliotrope Ridge Trailhead",
+   "note": "End of Glacier Creek Road (FR 39), 8 mi from Hwy 542; Northwest Forest Pass required for parking, self-issue Mt. Baker Wilderness permit at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From the Mount Baker Highway (SR 542), drive about 1 mile east of the Glacier Public Service Center and turn right onto Glacier Creek Road (FS Road 39). Follow it about 8 miles to the Heliotrope Ridge Trailhead at roughly 3,700 ft. A Northwest Forest Pass or the daily fee is required to park, and a free Mount Baker Wilderness permit is self-issued at the trailhead."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4700,
+   "name": "Climbers' Trail / Hogsback Ridge junction",
+   "note": "Fork just past the old Kulshan Cabin site; take the climbers' path right, up the Hogsback, toward the Coleman Glacier.",
+   "type": "Junction",
+   "distMi": 2
+  },
+  {
+   "lat": 48.7893,
+   "lng": -121.867771,
+   "elev": 6000,
+   "name": "Hogsback Camp",
+   "note": "Standard moraine-crest bivy at 6,000-6,200 ft used for both Coleman Glacier and Colfax north-face objectives.",
+   "type": "Campsite",
+   "distMi": 3
+  },
+  {
+   "lat": 48.757209,
+   "lng": -121.840635,
+   "elev": 7200,
+   "name": "Coleman Glacier toward Colfax's north face",
+   "note": "Roped glacier travel across the Coleman toward the base of the face; watch for crevasses and serac fall from the icefall above.",
+   "type": "Hazard"
+  },
+  {
+   "lat": 48.751414,
+   "lng": -121.839301,
+   "elev": null,
+   "name": "Bergschrund / mixed traverse",
+   "note": "Cross the bergschrund via a mixed rock-and-ice traverse to gain the base of the ice line, per route beta.",
+   "type": "Hazard"
+  },
+  {
+   "lat": 48.755922,
+   "lng": -121.840338,
+   "elev": null,
+   "name": "Sustained AI4+ ice pitch",
+   "note": "A full ropelength of sustained steep ice leads up the line before the crux band.",
+   "type": "Hazard"
+  },
+  {
+   "lat": 48.759141,
+   "lng": -121.841079,
+   "elev": null,
+   "name": "WI6 hanging ice curtain crux",
+   "note": "Free-hanging ice dagger/curtain -- the route's defining pitch; only climbable when the dagger has fully formed, which it does not do every season.",
+   "type": "Hazard"
+  },
+  {
+   "lat": 48.77148,
+   "lng": -121.84396,
+   "elev": 9440,
+   "name": "Colfax Peak",
+   "note": "~1,000 ft, 4-pitch line tops out near the true summit; walk off around the south side of the lower eastern summit to the Colfax-Baker saddle.",
+   "type": "Summit",
+   "distMi": 4.5
+  }
+ ],
+ "descent_text": "No first-hand account describes a rappel descent from this route. Parties who top out continue on foot to the Colfax-Baker saddle and descend the Coleman Glacier, the same walk-off used from the neighbouring lines on this face — at least one party recorded needing no downclimbing at all.\n\nRetreating from partway up is a different matter. A V-thread in the ice is the normal way off if you bail on or below the dagger pitch, so carry screws and cord for building fresh threads rather than trusting anything left behind; ice quality and thickness change through the season.\n\nGoing down, watch for the same crevasse hazards on the Coleman Glacier as on the approach, and budget enough daylight — the glacier descent in the dark is unpleasant and hazardous."
+}

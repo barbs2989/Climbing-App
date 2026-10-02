@@ -1,0 +1,70 @@
+{
+ "id": "wa_dragontail_peak_r2",
+ "name": "Gerber-Sink",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Self-issue day-use wilderness permit and NW Forest Pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 2 at the west edge of Leavenworth, turn onto Icicle Road and drive 8.4 miles, then turn left onto FS Road 7601 and follow the rough dirt road 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass and a self-issued Enchantment day-use permit are required. In winter the road is usually gated well below the trailhead, adding miles on foot or ski."
+  },
+  {
+   "lat": 47.4878,
+   "lng": -120.8343,
+   "elev": 5570,
+   "name": "Colchuck Lake",
+   "note": "Reliable water and camps; skirt the shore toward the north face.",
+   "type": "Campsite",
+   "distMi": 4
+  },
+  {
+   "lat": 47.4922,
+   "lng": -120.8331,
+   "elev": 5561,
+   "name": "Colchuck Lake",
+   "type": "Water",
+   "distMi": 4.3,
+   "elevFt": 5561
+  },
+  {
+   "lat": 47.483265,
+   "lng": -120.833861,
+   "elev": 6400,
+   "name": "Lateral moraine crest",
+   "note": "Gain the Colchuck Glacier's moraine crest to reach the base of the north face.",
+   "type": "Junction",
+   "distMi": 5
+  },
+  {
+   "lat": 47.482358,
+   "lng": -120.833773,
+   "elev": 6700,
+   "name": "Face low point / route start",
+   "note": "Snow ramps just right of the low point of the north face mark the start; graded WI3+ M4 in winter/spring mixed conditions.",
+   "type": "Hazard",
+   "distMi": 5.2
+  },
+  {
+   "lat": 47.48009,
+   "lng": -120.833553,
+   "elev": 8000,
+   "name": "Dark rock band runnels",
+   "note": "Route follows ice runnels splitting the band of dark rock two-thirds up the face — the technical crux, quality ice-dependent.",
+   "type": "Hazard",
+   "distMi": 5.7
+  },
+  {
+   "lat": 47.47887,
+   "lng": -120.83311,
+   "elev": 8840,
+   "name": "Dragontail Peak summit",
+   "note": "Descend the standard Aasgard Pass scramble route.",
+   "type": "Summit",
+   "distMi": 6
+  }
+ ]
+}

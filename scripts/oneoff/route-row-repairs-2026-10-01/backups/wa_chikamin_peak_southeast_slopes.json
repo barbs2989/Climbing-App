@@ -1,0 +1,224 @@
+{
+ "id": "wa_chikamin_peak_southeast_slopes",
+ "name": "Southeast Slopes",
+ "waypoints": [
+  {
+   "lat": 47.4278,
+   "lng": -121.4135,
+   "elev": 2400,
+   "name": "PCT North Trailhead",
+   "note": "Large paved lot off I-90 Exit 52; $5/day Recreation Pass and a free self-issue Alpine Lakes Wilderness permit are required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From I-90 Exit 52 (Snoqualmie Pass West), head north under the freeway onto Alpental Road and take the first right after about 0.1 mile, signed for a parking pass; the main Pacific Crest Trail North trailhead lot is to the right where the road splits. A Northwest Forest Pass or interagency pass is required to park, and a free self-issued Alpine Lakes Wilderness permit is filled out at the kiosk."
+  },
+  {
+   "lat": 47.451796,
+   "lng": -121.378716,
+   "elev": 5440,
+   "name": "Kendall Katwalk",
+   "note": "150-yard ledge blasted into a cliff face on Kendall Peak's north ridge; exposed drop below the trail, use caution if icy or snow-covered.",
+   "type": "Hazard",
+   "distMi": 6.6,
+   "directions": "Head north on the PCT (Trail #2000). The trail switchbacks up through timber and old avalanche paths, then contours in beneath Kendall Peak's cliffs to the cut. This is the only sustained climbing on the approach, and there is no dependable water on it late in the season, so carry what you need from the car."
+  },
+  {
+   "lat": 47.456471,
+   "lng": -121.37233,
+   "elev": 5300,
+   "name": "Ridge Lake / Gravel Lake saddle camps",
+   "note": "Established campsites on the saddle just past the Katwalk; camp only at existing sites (avoid heather) — last reliable camp before the long, mostly waterless traverse under Four Brothers.",
+   "type": "Campsite",
+   "distMi": 7.9,
+   "directions": "A little over a mile beyond the Katwalk, with the trail dropping slightly onto the saddle. Take water here whether or not you stop: from this point the PCT contours for miles beneath Alaska and Huckleberry Mountains with nothing reliable until Park Lakes."
+  },
+  {
+   "lat": 47.470911,
+   "lng": -121.335213,
+   "elev": 4700,
+   "name": "Park Lakes basin",
+   "note": "PCT dips past Upper Park Lake in a basin below Chikamin Ridge; reliable water source after a long dry stretch from Ridge Lake, near the Mineral Creek Park Trail junction.",
+   "type": "Water",
+   "distMi": 12.5,
+   "directions": "Roughly four and a half miles of rolling, rocky trail past the Alaska Lake and Joe Lake junctions and over the Huckleberry-Chikamin saddle, then a descent into the basin. The trail loses elevation to get down here, which you pay back on the climb to the gully turnoff."
+  },
+  {
+   "lat": 47.475147,
+   "lng": -121.327969,
+   "elev": 5900,
+   "name": "Gully turnoff, ~1/3 mi before Chikamin Pass",
+   "note": "Leave the PCT here (this stretch of trail tops out around 5,900 ft) and climb steep grassy slopes into a broad gully on the peak's southeast/southwest flank; the correct gully is easy to miss in poor visibility.",
+   "type": "Junction",
+   "distMi": 13.5,
+   "directions": "Climb back north out of the basin; the trail tops out about a third of a mile short of Chikamin Pass. That third of a mile is the whole point — carry on to the pass itself before turning uphill and you end up under the Four Brothers, a line of cliffy towers that force technical ground."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6500,
+   "name": "Southeast-slope grass gully",
+   "note": "Steep, slippery grass with little for footing, worse on the descent; stay climber's-left of the cliffy Four Brothers formation to avoid getting cliffed out.",
+   "type": "Hazard",
+   "distMi": 14,
+   "directions": "Leave the trail and climb steep grass and heather benches, sandstone slabs and blocky rock into the broadening gully system that leads onto the crest of Chikamin Ridge. It is Class 2 low down, stepping up to sustained Class 3 as the gully narrows, and the upper slots are loose scree and dirt — keep the party tight and move one at a time wherever rockfall could reach somebody below."
+  },
+  {
+   "lat": 47.47543,
+   "lng": -121.311006,
+   "elev": 6994,
+   "name": "Chikamin Peak",
+   "note": "True summit gained via a short Class 3 scramble up the final summit horn; broad 360-degree views over the Alpine Lakes Wilderness.",
+   "type": "Summit",
+   "distMi": 14.2,
+   "directions": "Follow the gully and ridge to the summit horn. The finish is a short chimney of about 10 ft, well protected at Class 3 with a low-Class-4 move on some lines, then roughly 75 ft of easy scrambling to the top. Reverse exactly what you climbed — improvised descents off the east ridge or toward Chikamin Lake lead into loose, unprotected Class 4 downclimbing."
+  }
+ ],
+ "itinerary": {
+  "cal": "Self-issue Alpine Lakes Wilderness permits are required at the trailhead; snow lingers into July on the upper slopes and mosquitoes are heavy at the lake camps into midsummer.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Start from the Pacific Crest Trailhead at Snoqualmie Pass and follow the PCT north over Kendall Katwalk, then drop slightly to camp near Ridge Lake / Alaska Lake basin. This section is well-graded trail through forest and open granite slabs; the only real climbing is the switchbacked grind up to the Katwalk.",
+    "hours": 5.5,
+    "miles": 9.5,
+    "title": "Trailhead to Ridge Lake camp",
+    "gainFt": 2700,
+    "lossFt": 700,
+    "packLb": 34,
+    "schedule": [],
+    "objective": "Establish camp along the PCT below Chikamin Ridge"
+   },
+   {
+    "n": 2,
+    "note": "Leave camp with a light daypack and continue north on the PCT past Joe Lake and Park Lakes to Chikamin Pass, then leave the trail and climb the broad southeast gully toward the summit ridge. A short, exposed Class 3 step gains the true summit; the whole gully is loose underfoot on both the way up and the reverse descent, so parties move carefully and kick off rockfall for anyone below.",
+    "hours": 8,
+    "miles": 8,
+    "title": "Summit push via the Southeast Slopes gully",
+    "gainFt": 2000,
+    "lossFt": 2000,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave camp",
+      "detail": "Light daypack; PCT north past Joe Lake and Park Lakes."
+     },
+     {
+      "time": "7:15 AM",
+      "label": "Leave the PCT at Chikamin Pass",
+      "detail": "Head up-slope toward the base of the southeast gully."
+     },
+     {
+      "time": "8:15 AM",
+      "label": "Reach base of summit gully",
+      "detail": "Class 2-3 scrambling begins in earnest here."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Class 3 summit step",
+      "detail": "Short, exposed finishing move onto the summit block."
+     },
+     {
+      "time": "9:45 AM",
+      "label": "Summit",
+      "detail": "Views over Lemah, Chimney Rock and the Snoqualmie \"Alps.\""
+     },
+     {
+      "time": "1:30 PM",
+      "label": "Back at camp",
+      "detail": "Reverse the gully and PCT miles; loose rock the whole way down."
+     }
+    ],
+    "objective": "Climb Chikamin Peak and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and retrace the PCT south over Kendall Katwalk back down to the trailhead. Mostly descending, with one final climb back over the Katwalk before the long downhill to the cars.",
+    "hours": 4.5,
+    "miles": 6.5,
+    "title": "Hike out",
+    "gainFt": 700,
+    "lossFt": 2700,
+    "packLb": 28,
+    "schedule": [],
+    "objective": "Return to Snoqualmie Pass trailhead"
+   }
+  ],
+  "totalNote": "A 3-day, ~24-mile round trip with roughly 5,400 ft of cumulative gain, camping one or two nights near Ridge Lake on the PCT; the summit day itself covers the loose southeast gully both up and down."
+ },
+ "approach": "Two established approaches reach the southeast-side gullies, and both are worth knowing since parties come at this route from either direction. (1) PCT from Snoqualmie Pass: From the PCT North Trailhead (Trail #2000) off Exit 52, the trail switchbacks up through timber and avalanche paths, crosses beneath Kendall Peak, and hits the exposed rock-cut traverse of Kendall Katwalk around mile 5 (~5,400 ft) — a good checkpoint, though don't count on water here late season. Continue north past Ridge Lake (~mile 6.5, reliable camping and water) and the Alaska Lake/Joe Lake junctions, then along the rolling, rocky PCT beneath Alaska and Huckleberry Mountains to the Huckleberry–Chikamin saddle around mile 10.25. The trail then contours below the Four Brothers and Chikamin's south face; note the Park Lakes Trail junction here, which ties in the Mineral Creek approach below. At roughly mile 13.5 — about a half-mile short of Chikamin Pass, near an established pack camp at ~5,200 ft — leave the PCT and climb steep grassy/heather slopes into the gully systems on the south/southeast face. Do not continue on to Chikamin Pass itself before cutting uphill: doing so puts you in the middle of the Four Brothers, a band of cliffy towers that force technical terrain. One-way distance from the trailhead to the base of the gullies is about 13.5 miles with roughly 4,600 ft of gain, so most parties camp along the PCT (Ridge Lake or the 5,200 ft pack camp) and treat this as a 2–3 day trip rather than a car-to-car push. (2) Mineral Creek/Park Lakes approach: From the Mineral Creek Trailhead (Trail #1331) at the end of FR-46/Cooper Pass Road (~2,400 ft), the trail is brushy lower down but well-trodden; it climbs steadily beside Mineral Creek to Park Lakes (~4.3–5.4 mi, ~2,570 ft gain) and ties into the PCT. From the PCT/Park Lakes junction, head north toward the Spectacle Point saddle overlooking Spectacle Lake, then drop about a mile to Glacier Lake, a common camp, before climbing the southeast-slope gullies above the lake — parties describe brooks, waterfalls, tarns, heather benches, sandstone slabs and blocky breccia low down, with some exposure near the final ridge crest. This is the shortest line in (day-trip feasible for strong parties, roughly 14–16.5 mi round trip) but involves rougher tread and creek crossings lower on the trail. Either way, once above treeline the gully system itself is loose scree and dirt-and-heather slots in its upper sections — expect Class 2 hiking low, stepping up to sustained Class 3 (with a short, well-protected Class 4 chimney/slot right below the summit block on some lines) as you gain Chikamin Ridge and approach the summit horn.",
+ "approach_variants": [
+  {
+   "name": "PCT from Snoqualmie Pass, leaving the trail half a mile short of Chikamin Pass",
+   "camps": [
+    "Ridge Lake and Gravel Lake, PCT beyond Kendall Katwalk",
+    "Ridge Lake / Gravel Lake saddle camps"
+   ],
+   "notes": "From the PCT North trailhead, Trail #2000, off I-90 exit 52, the trail switchbacks through timber and avalanche paths, crosses beneath Kendall Peak, and reaches the Kendall Katwalk around mile 5 at about 5,400 ft — a good checkpoint, though not reliable water late in the season.\n\nContinue north past Ridge Lake at about mile 6.5, which has reliable camping and water, and the Alaska Lake and Joe Lake junctions, then along the rolling rocky PCT beneath Alaska and Huckleberry Mountains to the Huckleberry-Chikamin saddle around mile 10.25. The trail then contours below the Four Brothers and Chikamin's south face, passing the Park Lakes Trail junction.\n\nAbout 13.5 miles one way to the base of the gullies with roughly 4,600 ft of gain, so most parties camp at Ridge Lake or the 5,200 ft pack camp and make it a two or three day trip.",
+   "gainFt": 5400,
+   "season": "July to September",
+   "hazards": [
+    "An unmarked gully turnoff near Chikamin Pass — overshooting puts you in the cliffy Four Brothers",
+    "Loose scree and rockfall in the upper gully system",
+    "A steep, snow-filled and rubble-choked gully in early season",
+    "Short but exposed class 3 moves on the summit horn",
+    "A long trail approach with camps well short of the peak"
+   ],
+   "storedRow": true,
+   "baseFinding": "The test is to leave the trail before you reach the pass, and that is counter-intuitive enough that it is the whole finding. At roughly mile 13.5 — about half a mile short of Chikamin Pass, near an established pack camp at about 5,200 ft — leave the PCT and climb steep grassy and heather slopes into the gully systems on the south and southeast face.\n\nThe negative is explicit and expensive: do not continue to Chikamin Pass before cutting uphill. Doing so puts you in the middle of the Four Brothers, a band of cliffy towers that force technical terrain on a route that is otherwise a scramble. If you are standing at Chikamin Pass, you have overshot the turn.\n\nSo use the pack camp as the marker: an established camp at about 5,200 ft on the trail, with the peak's south face above and the pass still ahead of you. Turn uphill there.\n\nWhat the ground should do, in order: class 2 hiking low on grass and heather, then loose scree and dirt-and-heather slots in the upper gully, sustained class 3 as you gain Chikamin Ridge with some exposure near the crest, and finally a short, well-protected class 3-4 chimney or slot of about 10 ft right below the summit block, with roughly 75 more feet of easy scrambling above it to the top. A 10 ft chimney immediately below the summit horn is the confirming feature.\n\nSnow changes the character of the gully entirely: early in the season it is a steep, rubble-choked chute and an axe is needed."
+  },
+  {
+   "name": "Mineral Creek and Park Lakes, then the gullies above Glacier Lake",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 4700,
+      "name": "Park Lakes basin",
+      "role": "main",
+      "type": "camp",
+      "notes": "The standard camp for Chikamin Peak's southeast slopes, and the reason Chikamin is the peak in this group least honestly described as a Snoqualmie Pass objective. Most parties reach it from Mineral Creek on the far eastern side, walking up from a trailhead at around 2,375 ft — an approach that begins nowhere near I-90 exit 52. From the pass it is reachable instead by the PCT north over Chikamin Pass, which is a long day in itself. Upper Park Lake sits at about 4,700 ft in open meadow and rolling ground with roomy sites, and a short side trail drops around 550 ft to Glacier Lake where there are more sites on the north shore among boulders and heather. From the basin the southeast slopes rise directly toward the summit. Note the campfire ban is specific to this basin rather than an elevation rule, and it is enforced — the meadows are fragile and the ground here recovers slowly.",
+      "water": "The lakes and the basin outlets run all season. Treat it.",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit at whichever trailhead you start from. Campfires are prohibited in the Park Lakes basin outright, and above 5,000 ft generally on this side of the crest. Party size capped at 12. Northwest Forest Pass or interagency pass to park. The eastern approaches were inside the 2026 wildfire closure area; confirm before driving out.",
+      "capacity": "Large established sites among trees and meadow at Upper Park Lake, comfortable for a group; more sites at Glacier Lake below"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Mineral Creek Trailhead (Trail #1331, end of FR-46)",
+     "trailheadLat": 47.4176,
+     "trailheadLng": -121.2373
+    }
+   },
+   "notes": "From the Mineral Creek trailhead, Trail #1331, at the end of FR-46 / Cooper Pass Road at about 2,400 ft, the trail is brushy low down but well trodden. It climbs steadily beside Mineral Creek to Park Lakes at 4.3 to 5.4 miles and about 2,570 ft of gain, and ties into the PCT.\n\nFrom the PCT / Park Lakes junction, head north toward the Spectacle Point saddle overlooking Spectacle Lake, then drop about a mile to Glacier Lake, a common camp, before climbing the southeast-slope gullies above it.\n\nThis is the shortest line in — day-trip feasible for a strong party at roughly 14 to 16.5 miles round trip — but the tread is rougher and there are creek crossings low down.",
+   "season": "July to September",
+   "hazards": [
+    "Brushy lower trail and creek crossings on the Mineral Creek approach",
+    "Loose scree and rockfall in the upper gullies",
+    "Exposure near the final ridge crest",
+    "Snow-filled gullies in early season"
+   ],
+   "primary": true,
+   "baseFinding": "From this side the arrival is a lake, not a trail junction: you climb the gullies directly above Glacier Lake. Standing at the lake with the southeast slopes rising in front of you is the arrival, and the lake is a hard landmark that cloud does not remove.\n\nWhat the ground below the gullies looks like, as confirmation: brooks, waterfalls, tarns, heather benches, sandstone slabs and blocky breccia low down. Running water and heather benches are right for this side; if you are on bare scree from the lake upward, you have started too high.\n\nThe two approaches meet on the same upper mountain, so the finding from there is identical: loose scree and dirt-and-heather slots in the upper gully, sustained class 3 to the crest of Chikamin Ridge, and a short well-protected 10 ft class 3-4 chimney below the summit block with about 75 ft of easy scrambling above it.\n\nAnd the same negative applies once you are on the PCT: do not wander south toward Chikamin Pass looking for a way up. The Four Brothers sit between the pass and the route."
+  }
+ ],
+ "climbing_route": [
+  {
+   "n": 1,
+   "class": "Class 2 hiking low",
+   "label": "Steep grassy/heather slopes into the south/southeast gullies",
+   "notes": "Leave the PCT about a half-mile short of Chikamin Pass, near the ~5,200 ft pack camp, and climb steep grassy/heather slopes into the gully systems on the south/southeast face. Do not continue on to Chikamin Pass itself before cutting uphill — that puts you in the middle of the Four Brothers, a band of cliffy towers that force technical terrain. From the Glacier Lake side the same gullies are gained above the lake, with brooks, waterfalls, tarns, heather benches, sandstone slabs and blocky breccia low down."
+  },
+  {
+   "n": 2,
+   "class": "sustained Class 3",
+   "label": "Upper gully system to Chikamin Ridge",
+   "notes": "Above treeline the gully system is loose scree and dirt-and-heather slots in its upper sections; some exposure near the final ridge crest as you gain Chikamin Ridge."
+  },
+  {
+   "n": 3,
+   "class": "short Class 4",
+   "label": "Chimney/slot below the summit block",
+   "notes": "A short, well-protected chimney/slot sits right below the summit block on some lines, before the summit horn."
+  }
+ ],
+ "descent_text": "This is a walk-off/downclimb route — no rappelling on the standard line. From the summit, reverse the ascent gully: downclimb the short crux chimney/slot below the summit block (Class 3, with one low-Class-4 move reported on some lines), then work back down the heather benches and slabs to the broad gully on the south side of Chikamin Ridge. Descend the gully itself carefully — it is loose scree and dirt underfoot, with real rockfall potential onto anyone below, so keep the group tight and go one at a time through the narrower sections — back down to the grassy slopes above the PCT. Rejoin the trail either near the ~5,200 ft pack camp (if you came up via Snoqualmie Pass/PCT) or continue down past Glacier Lake toward the Park Lakes/Mineral Creek trail (if using that approach), matching whichever line you climbed. Some parties have improvised alternate descents off the east ridge or down toward Chikamin Lake to the northeast; at least one party describes that variation as loose, unprotected Class 4 downclimbing requiring a hand-line/'panic rope' for security through a 6,600 ft notch — that is an exploratory off-route line, not the standard descent, and shouldn't be treated as such. No fixed anchors, bolts, or rappel stations are reported anywhere on this route. A short hand-line for the summit-block chimney is a reasonable optional safety margin for less confident scramblers, but it is not a technical rappel, and 0 rappels are needed on the standard route."
+}

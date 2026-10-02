@@ -1,0 +1,53 @@
+{
+ "id": "wa_chimney_peak_the_chimney",
+ "name": "The Chimney",
+ "approach": "From US 101 about 36 miles north of Hoquiam (one mile south of Amanda Park), turn east on the Lake Quinault South Shore Road and follow it toward the head of the valley; the first ~10 miles are paved and the remainder is gravel, ending after roughly 20 miles at the Graves Creek Trailhead (47.57255, -123.56997, 550 ft). Note the current detour: Olympic National Park lists South Shore Road closed at mile 8 for a washout, with Graves Creek Road reachable via the North Shore Road instead — check park road conditions or the road hotline at 360-565-3131 before you drive, and note that RVs and trailers are prohibited on Graves Creek Road. From the trailhead, follow the East Fork Quinault River (Enchanted Valley) Trail up the rainforest valley. It is 27.8 miles round trip and about 3,700 ft of gain to Enchanted Valley, so roughly 13.9 miles and a high point near 2,035 ft one way; the Enchanted Valley Chalet (47.67528, -123.38917) sits at about 2,000 ft directly beneath the peak's south wall. Chimney Peak's south side above the valley is a 4,800 ft wall of cliffs and waterfalls and is not the way up — the climbing approach leaves the trail and works around to the peak's southwest side to gain the Southwest Ridge, then traverses to the base of The Chimney on the west aspect. The off-trail line is nowhere published in detail. The gain figure is the sum of two figures (~3,700 ft of trail gain plus ~4,900 ft from the 2,000 ft valley floor to the 6,917 ft summit) rather than a measured track.",
+ "waypoints": [
+  {
+   "lat": 47.57255,
+   "lng": -123.56997,
+   "elev": 550,
+   "name": "Graves Creek Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 550,
+   "directions": "From US 101 about 36 miles north of Hoquiam, one mile south of Amanda Park, turn east onto the Lake Quinault South Shore Road and follow it toward the head of the valley. The first 10 miles or so are paved and the rest is gravel, ending after roughly 20 miles at the Graves Creek Trailhead at 550 ft; allow about an hour for that final 20 miles. South Shore Road is currently closed at mile 8 for a washout, with Graves Creek Road reachable via the North Shore Road instead, so check park road conditions or the road hotline at 360-565-3131 before you drive. RVs and trailers are prohibited on Graves Creek Road."
+  },
+  {
+   "lat": 47.67528,
+   "lng": -123.38917,
+   "elev": 2000,
+   "name": "Enchanted Valley Chalet (emergency shelter and camp area beneath the peak)",
+   "type": "Campsite",
+   "distMi": 13.9,
+   "elevFt": 2000,
+   "directions": "Follow the East Fork Quinault River Trail from Graves Creek, along an old roadbed for the first 2 miles and then down to cross the river on Pony Bridge at about 2.5 miles. Continue up the rainforest valley on a gentle grade past O'Neil Creek, No Name Creek and Pyrites Creek camps, then cross the river again on a high bridge to reach the meadows of Enchanted Valley and the chalet at about 2,000 ft, nearly 14 miles from the trailhead."
+  },
+  {
+   "lat": 47.68937,
+   "lng": -123.402534,
+   "elev": 6917,
+   "name": "Chimney Peak summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 6917
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "5.3",
+   "notes": "The Chimney itself — a 100 ft chimney-like tower on the peak's west aspect, first climbed at 5.3 in 1970. This is the entire roped portion of the documented route; no source publishes a pitch breakdown beyond the tower's height, so the length here is the sourced 100 ft converted to metres.",
+   "pitch": "1",
+   "lengthM": 30
+  }
+ ],
+ "pro_tips": [
+  "Get the Olympic Mountain Rescue 'Climber's Guide to the Olympic Mountains' before you go — there is effectively no usable online topo.",
+  "Do not confuse this peak with Chimney Peak in the Selway Crags, Idaho (7,681 ft) — search engines mix the two constantly and the Idaho route beta is useless here.",
+  "East Fork Quinault River is a permit quota zone: reservations for the summer season (May 15-Oct 15) release on April 15 at 7:00 am Pacific on recreation.gov and the good dates go immediately.",
+  "Bear canisters are mandatory at Enchanted Valley and can be rented in summer at the South Shore Lake Quinault Ranger Station on the drive in.",
+  "Check the road first. South Shore Road is closed at mile 8 by a washout (Olympic National Park conditions page updated August 27, 2026), so Graves Creek Road is reached via the North Shore Road — call 360-565-3131 rather than trusting an old map.",
+  "Almost no ascent records exist for this peak; treat any beta you do find as a single data point and plan for exploratory route-finding.",
+  "The 100 ft of 5.3 is the easy part — the trip is won or lost on the approach, the permit and the weather window."
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "id": "wa_bulls_tooth_standard",
+ "name": "Standard Scramble",
+ "approach": "Start at the Stevens Pass PCT-South trailhead (large lot on the south side of US 2, ~4,060 ft, just east of the ski area buildings). Follow the Pacific Crest Trail south; the trail climbs gradually through forest and past Lake Susan Jane, staying high above Nason Creek before working into the Icicle Creek drainage. At roughly 4.5-5 miles from the trailhead, watch for the signed junction with the Icicle Creek Trail (leave the PCT here). Descend the Icicle Creek Trail about 2.6 miles, losing roughly 900 ft as it drops toward the head of the valley near Josephine Lake, to the junction with Chain Lakes Trail #1569. Turn onto Chain Lakes Trail and climb steeply — about 2.5 miles and 1,800-2,000 ft of gain through forest, brush, and talus benches — to the Middle/Upper Chain Lakes basin (~5,700 ft), the last reliable water and the standard base camp for the peak; tank up here, as there is no dependable water above the lakes. From camp, leave the maintained trail and go cross-country around the north/west shore of Upper Chain Lake, then ascend a talus- and scree-filled, northwest-facing couloir to Bullseye Pass (~6,200 ft), a broad notch on the ridge that serves as the staging area/gear cache for the final scramble — footing is loose here and rockfall onto parties below is a real hazard, so group up in the gully. From Bullseye Pass, contour and climb cross-country to the southeast on steep heather benches and white talus, gaining roughly 500-650 ft over about a mile below the tooth's northwest ridge to reach the base of the summit block. The final pitch to the top is Class 2-3 scrambling on solid granite; the easiest line works around the right (east/south) side of the summit block rather than the left, finishing with an exposed but short Class 3 step and mantle onto the summit. Beyond Chain Lakes the route is entirely unmarked cross-country travel, so route-finding competence, a map/GPX track, and comfort on loose talus and heather slopes are required; the upper mountain is fully exposed to afternoon thunderstorms with no bail-out shelter.",
+ "descent_text": "Reverse the ascent line exactly. Downclimb the summit block using the same Class 2-3 moves in reverse — staying on the right (east/south) side is easier and less exposed than the left — then retrace the heather-and-talus traverse back to Bullseye Pass. From the pass, descend the loose scree/talus couloir back down to Chain Lakes camp (watch footing and any parties below you — this gully sheds rock easily), then follow Chain Lakes Trail #1569 downhill, pick up the Icicle Creek Trail, climb back up to the PCT junction, and follow the PCT north back to the Stevens Pass trailhead. This is a walk-off/downclimb descent with no rappelling on the standard route: 0 rappels. Note that a separate, harder line on the same peak — the technical South Ridge route used by parties doing the full Bullseye Traverse, which ropes up for Class 4-5.8 climbing to reach the true summit gap between Bull's Tooth and the adjacent 'Bullfinch' pinnacle — does use two to three short (~20-30 ft) rappels off horns, trees, and slung blocks to get back down that exposed ridge crest; that gear/anchor style does not apply to the standard scramble described here, which avoids the technical ridge entirely via the couloir and a downclimb.",
+ "itinerary": {
+  "cal": "Best done mid-July through September once Bullseye Pass and the scramble route are snow-free; a free self-issue wilderness permit is required at the trailhead.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the PCT-Southbound trailhead at Stevens Pass, follow the PCT past Lake Susan Jane and Josephine Lake, drop to the Icicle Creek/Chain Lakes Trail junction (~8 mi), then grind up the steep, ~2,000 ft climb into the Chain Lakes basin. Camp at Middle Chain Lake, which has numerous established sites.",
+    "hours": 6.5,
+    "miles": 11,
+    "title": "Approach to Chain Lakes",
+    "gainFt": 3600,
+    "lossFt": 2000,
+    "packLb": 32,
+    "schedule": [],
+    "objective": "Reach camp at (Middle) Chain Lake"
+   },
+   {
+    "n": 2,
+    "note": "Day-hike from Chain Lakes camp up to Bullseye Pass, drop packs, then cross-country up steep heather and white talus to the base of the summit block. The standard line reaches a notch between two points on the crest and finishes with a short Class 2-3 scramble to the higher, right-hand (southern) point; the technical south-ridge (Class 4-5) line climbs a different, lower tower and is not the standard way up. Return to camp the same way, or shift camp toward Doelle Lakes if continuing the loop.",
+    "hours": 7.5,
+    "miles": 6,
+    "title": "Bullseye Pass and the Bulls Tooth scramble",
+    "gainFt": 2200,
+    "lossFt": 2200,
+    "packLb": 10,
+    "schedule": [
+     {
+      "time": "7:30 AM",
+      "label": "Leave Chain Lakes camp",
+      "detail": "Light day-pack; leave overnight gear at camp."
+     },
+     {
+      "time": "8:15 AM",
+      "label": "Reach Bullseye Pass (~6,200 ft)",
+      "detail": "Short, well-graded trail climb from camp."
+     },
+     {
+      "time": "9:00 AM",
+      "label": "Begin cross-country scramble",
+      "detail": "Steep heather and talus toward the base of the summit block."
+     },
+     {
+      "time": "10:45 AM",
+      "label": "Class 2-3 summit scramble",
+      "detail": "From the notch, work up the right-hand (southern) point on solid granite."
+     },
+     {
+      "time": "11:15 AM",
+      "label": "Summit (6,849 ft)",
+      "detail": "360-degree views of the Stuart Range, Chiwaukums, and Glacier Peak Wilderness."
+     },
+     {
+      "time": "1:30 PM",
+      "label": "Back at camp",
+      "detail": "Reverse the scramble and trail back down to Chain Lakes."
+     }
+    ],
+    "objective": "Tag the summit of Bulls Tooth and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and retrace the Chain Lakes Trail down to the Icicle Creek junction, then follow the PCT back over the ridge to the Stevens Pass trailhead.",
+    "hours": 5.5,
+    "miles": 11,
+    "title": "Hike out to Stevens Pass",
+    "gainFt": 2000,
+    "lossFt": 3600,
+    "packLb": 30,
+    "schedule": [],
+    "objective": "Return to trailhead"
+   }
+  ],
+  "totalNote": "A 3-day, ~28-mile round trip backpack with a scramble day out of a Chain Lakes base camp; roughly 7,800 ft total gain, matching the ~2-3 day pattern most parties use rather than a car-to-car push."
+ },
+ "waypoints": [
+  {
+   "lat": 47.7454,
+   "lng": -121.0888,
+   "elev": 4061,
+   "name": "PCT Trailhead at Stevens Pass (Hwy 2)",
+   "note": "Standard approach for Bulls Tooth: hike south on the PCT from Stevens Pass, then leave the trail near Lake Josephine to drop into Icicle Creek and climb ~1,800 ft into the Chain Lakes basin, then around Upper Chain Lake and up the talus couloir above it to a notch, finishing with a short Class 3 scramble to the higher, right-hand point.",
+   "type": "Trailhead",
+   "elevFt": 4061,
+   "directions": "Drive US 2 to Stevens Pass and park in the large lot signed for the Pacific Crest Trail on the south side of the highway, just east of the ski area buildings, at about 4,060 ft. Fill out the free self-issued Alpine Lakes Wilderness permit before starting."
+  },
+  {
+   "lat": 47.7189,
+   "lng": -121.0572,
+   "elev": 4685,
+   "name": "Josephine Lake",
+   "type": "Waypoint",
+   "distMi": null,
+   "elevFt": 4685,
+   "directions": "Follow the Pacific Crest Trail south up through the ski area to a 5,150 ft ridge in about 2 miles, switchback down the far side, cross a service road and power lines, and continue past Lake Susan Jane. At just under 5 miles, turn off at the junction with the Icicle Creek Trail, which leads along the shore of Josephine Lake."
+  },
+  {
+   "lat": 47.6927348,
+   "lng": -121.006647,
+   "elev": 5775,
+   "name": "Doelle Lakes",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": 5775,
+   "directions": "Follow the Icicle Creek Trail around the lake, down steeply to its outlet and on past the Whitepine Creek Trail junction. At just over 8 miles from the pass, turn onto the Chain Lakes Trail and climb steeply, about 2,000 ft in 2 miles, into the Chain Lakes basin. Continue past the lakes, climb talus to the gap between the basins, and drop steeply to Upper Doelle Lake."
+  },
+  {
+   "lat": 47.682633,
+   "lng": -121.003887,
+   "elev": 6840,
+   "name": "Bulls Tooth Summit",
+   "type": "Summit",
+   "elevFt": 6840
+  }
+ ]
+}

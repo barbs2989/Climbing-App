@@ -1,0 +1,93 @@
+{
+ "id": "wa_cathedral_rock_standard",
+ "name": "Standard Route (Southwest Face)",
+ "approach": "Park at the Cathedral Rock Trailhead (elev. ~3,350 ft) at the end of FR-4330 past Salmon La Sac, and start on the signed Cathedral Pass Trail (#1345, Okanogan-Wenatchee NF / Alpine Lakes Wilderness). The trail crosses the Cle Elum River on a footbridge near the start and enters the Alpine Lakes Wilderness boundary at about 0.5 mile. At roughly 2 miles, stay straight (west) at the Trail Creek Trail (#1332) junction. Squaw Lake, at 2.5 miles, is the last reliable water source and has established campsites if you're splitting the day. Beyond the lake the trail climbs through a subalpine meadow (~3.25 mi) then switchbacks up steeper, rockier tread to Cathedral Pass and the Pacific Crest Trail junction at about 4 miles (5,550 ft) — the end of maintained, signed trail. From the pass, leave the PCT and angle south/southwest on climbers' boot-paths, either directly up Cathedral Rock's south ridge or via the Peggy's Pond climbers' trail, crossing talus and heather benches to reach the base of the rock's main buttress/gully. Total elevation gain from the trailhead to the base of the technical climbing is roughly 2,700-3,000 ft over 4+ miles of trail, followed by a final few hundred feet of unmaintained, rocky scramble approach. Hazards: loose talus and scree on the off-trail approach, lingering seasonal snow in the entry gully into early summer (can obscure rockfall and require an axe/traction), braided undefined boot-paths near the meadows (stay on durable surfaces — this is Alpine Lakes Wilderness), and rockfall exposure from parties above once you're in the gully/buttress terrain. Stay left of the prominent South Buttress when ascending the scramble gully on the spur.",
+ "pro_tips": [
+  "The crux is a short, awkward step below the ridge crest — many parties bring a light rack just for this one move",
+  "Approach via Cathedral Pass Trail #1345 to Squaw Lake (2.5 mi) then Cathedral Pass (~4 mi, 5,550 ft) before leaving the trail for the scramble gully",
+  "Pairs naturally with a Squaw Lake or Peggys Pond overnight to split up the ~8-mile, 3,400-ft round trip",
+  "Helmet is not optional — rockfall in the gully is the most commonly cited hazard in trip reports",
+  "Northwest Forest Pass required at the trailhead; wilderness permit is free and self-issued on site",
+  "Most parties angle directly south from Cathedral Pass toward the rounded spur rather than dropping to Peggys Pond first — it's the more direct, commonly used line."
+ ],
+ "itinerary": {
+  "cal": "Best July-October; the summit gully can hold snow into early summer, so check recent trip reports before a June attempt.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Nearly all parties do this as a single long day from the Tucquala Meadows trailhead: trail to Cathedral Pass, a boot path past Peggy's Pond to the base of the formation, then a scramble gully and southwest face to the ridge crest (most parties rope up briefly for one awkward, exposed move gaining the ridge) and a short final scramble to the summit. The rock is notably loose in spots, so parties bunch up or move one at a time through the gully to manage rockfall.",
+    "hours": 10.5,
+    "miles": 8,
+    "title": "Car-to-car scramble day",
+    "gainFt": 3400,
+    "lossFt": 3400,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave Tucquala Meadows trailhead",
+      "detail": "3,300 ft; early start to beat afternoon thunderstorms and heat on the exposed scramble."
+     },
+     {
+      "time": "+2.5 hr",
+      "label": "Reach Cathedral Pass",
+      "detail": "~4 mi via Squaw Lake junction; 5,550 ft."
+     },
+     {
+      "time": "+3 hr",
+      "label": "Base of the scramble gully near Peggy's Pond",
+      "detail": "Sketchy boot path traverses about a mile along the base of the formation."
+     },
+     {
+      "time": "+4.5 hr",
+      "label": "Rope up for the awkward move at the ridge crest",
+      "detail": "Short pitch at an awkward angle; many parties carry a rope/rack just for this move."
+     },
+     {
+      "time": "+5.5 hr",
+      "label": "Summit (6,724 ft)",
+      "detail": "Reverse the entire route for the descent."
+     },
+     {
+      "time": "~3:30-4:30 PM",
+      "label": "Back at trailhead",
+      "detail": "Descent is slower than a straight hike-out due to loose rock and downclimbing."
+     }
+    ],
+    "objective": "Summit Cathedral Rock (6,724 ft) via Cathedral Pass and the SE/SW scramble route"
+   }
+  ],
+  "totalNote": "A long single day: roughly 10-12 hrs car-to-car, ~8 miles round trip and 3,400 ft gain, with one short rope-up move near the ridge crest."
+ },
+ "waypoints": [
+  {
+   "lat": 47.5435,
+   "lng": -121.097,
+   "elev": 3350,
+   "name": "Cathedral Rock Trailhead (Trail No. 1345)",
+   "note": "End of FR-4330 near Salmon La Sac, ~100 yds before Deception Pass TH road-end.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive the Cle Elum River Road (SR 903) to Salmon La Sac, then bear right just past the ranger station onto Forest Road 4330 - a rough road - and follow it about twelve miles to its end at roughly 3,350 feet. Two trailheads sit within a few yards of each other here, so it's easy to start wrong: the Hyas Lake and Deception Pass trail heads north, while the Cathedral Rock trail, #1345, heads west and may be signed slightly before the road actually ends. Vehicle break-ins have been a recurring problem at this trailhead, so don't leave valuables in the car."
+  },
+  {
+   "lat": 47.550692,
+   "lng": -121.1307174,
+   "name": "Cathedral Pass",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null,
+   "directions": "Take Trail #1345 west, crossing the Cle Elum River on a footbridge and entering the Alpine Lakes Wilderness at about half a mile. Continue straight at the Trail Creek Trail #1332 junction at about 2 miles and pass Squaw Lake (Nosh Nosh Wahtum), the last reliable water, at 2.5 miles. Beyond the meadows the trail switchbacks up rockier tread to Cathedral Pass and the Pacific Crest Trail at about 5,550 ft."
+  },
+  {
+   "lat": 47.555165,
+   "lng": -121.135565,
+   "elev": 6721.8,
+   "name": "Cathedral Rock Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 6721.8,
+   "directions": "Follow the PCT less than half a mile to the Trail #1375 (Peggy's Pond) junction, where two climbers' paths head for the peak; the left one looks wrong from a distance but avoids a scree slope. Scramble the gully on the right side of the rounded spur to the summit rock near 6,400 ft, climb the gully left of the South Buttress, then one or two Class 4 pitches up the southwest face to the ridge crest and scramble to the summit."
+  }
+ ]
+}

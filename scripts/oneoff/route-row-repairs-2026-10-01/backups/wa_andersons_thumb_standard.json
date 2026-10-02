@@ -1,0 +1,202 @@
+{
+ "id": "wa_andersons_thumb_standard",
+ "name": "Standard Route",
+ "approach": "From the Dosewallips Ranger Station (the road-walk/bike-in described separately covers reaching this point, since the Dosewallips River Road washout has closed vehicle access since 2002), pick up the Dosewallips River Trail and go about 1.4 miles to the signed junction with the West Fork Dosewallips Trail. Turn up the West Fork Trail and follow the river valley through old-growth forest roughly 8 miles to Honeymoon Meadows (3,527 ft) — this is the last reliable flat camping and dependable water before the climb, though the West Fork ford here (and a second crossing near Diamond Meadow lower down) can run thigh-deep and swift in early season or after rain, and the trail has substantial blowdown because NPS maintenance has lagged since the road closure. From Honeymoon Meadows continue up switchbacks about 1.2 more miles to Anderson Pass (4,464 ft), the Dosewallips/Quinault divide and junction with the Enchanted Valley trail — roughly 16 miles and the end of maintained tread. At the pass, leave the trail and follow a climbers' boot path north over talus and heather benches about a mile and 700+ ft of gain to the Anderson Glacier moraine (~5,200 ft), passing a small tarn; this is the customary high camp. From the moraine, ascend along the glacier margin/moraine crest toward Flypaper Pass (6,600 ft), the notch between Mount Anderson to the east and 7,033-ft Echo Rock to the west — historically a steep snow finger, now increasingly bare scree and, late season, exposed ice as the finger has receded, making an ice axe/crampons and careful footing important; this section is best done in spring or early summer before it melts out. Anderson's Thumb is the prominent sandstone pinnacle in this Flypaper Pass/Echo Rock vicinity (visible from the Anderson Glacier basin around 5,250 ft); from the pass area, scramble talus and ledges a short distance to its base. No water is reliably available above the Anderson Glacier moraine besides snowmelt, so fill up at camp.",
+ "waypoints": [
+  {
+   "lat": 47.740259,
+   "lng": -123.065764,
+   "elev": 530,
+   "name": "Dosewallips Road washout parking (FR-2610)",
+   "type": "Trailhead",
+   "elevFt": 530,
+   "directions": "There is no drive to the trailhead proper — the Dosewallips River Road (FR-2610), off Hwy 101 near Brinnon, has been closed to vehicles at a washout since 2002, and the washout parking is where your car stops. From here it is roughly 5.5 miles of old roadbed up to the former ranger station and trailhead, which nearly every party bikes rather than walks; that stretch works out to about 11 miles over the round trip, so plan for it before you leave home. Sort out an Olympic National Park wilderness permit for the Anderson Pass / Camp Siberia zone in advance, since there is nothing to arrange at this parking spot."
+  },
+  {
+   "lat": 47.703671,
+   "lng": -123.314173,
+   "elev": 3527,
+   "name": "Honeymoon Meadows",
+   "note": "Forested backcountry camp with reliable creek water; the West Fork ford here can run high and hazardous in spring or after heavy rain, and mosquitoes are thick in summer.",
+   "type": "Water",
+   "distMi": 14.15,
+   "directions": "Ride or walk the closed Dosewallips Road to the old ranger station, then follow the Dosewallips River Trail to Dose Forks and turn onto the West Fork Dosewallips Trail. It climbs the valley through old-growth forest past Big Timber and Diamond Meadows camps to Honeymoon Meadows, about 15 miles from the washout. The West Fork crossing at Honeymoon Meadows can be hazardous in spring or after heavy rain."
+  },
+  {
+   "lat": 47.69592,
+   "lng": -123.32628,
+   "elev": 4464,
+   "name": "Anderson Pass",
+   "note": "Trail junction where the West Fork Dosewallips and East Fork Quinault routes cross; the Anderson Pass Shelter (Camp Siberia) sits just below at roughly 4,180 ft.",
+   "type": "Junction",
+   "distMi": 16,
+   "directions": "Continue up the West Fork Dosewallips Trail past the La Crosse Pass junction and Camp Siberia, switchbacking to Anderson Pass at 4,464 ft, the Dosewallips-Quinault divide, where the trail meets the one descending to Enchanted Valley. This is the end of maintained tread."
+  },
+  {
+   "lat": 47.701764,
+   "lng": -123.330884,
+   "elev": 5100,
+   "name": "Anderson Tarn high camp",
+   "note": "Small tarn camp reached via a steep mile of wildflower slopes above the pass; last reliable camp before committing to the glacier.",
+   "type": "Campsite",
+   "distMi": 17,
+   "directions": "At the pass leave the main trail and follow the climbers' boot path north over talus and heather benches, about a mile and 700 ft of gain, to the small tarn camp on the old Anderson Glacier moraine near 5,100 ft. Fill water here; above the moraine there is only snowmelt."
+  },
+  {
+   "lat": 47.710261,
+   "lng": -123.337461,
+   "elev": 6500,
+   "name": "Flypaper Pass",
+   "note": "Gain point onto the Eel Glacier via a snow finger, named for the dark rocks scattered across the ice below; the finger typically melts out by late summer, so climb it early season.",
+   "type": "Junction",
+   "distMi": 18.5
+  },
+  {
+   "lat": 47.713093,
+   "lng": -123.339653,
+   "elev": 6650,
+   "name": "Eel Glacier bergschrund / headwall",
+   "note": "Downward traverse around a rock buttress onto the upper Eel Glacier; the bergschrund opens wide late-season and glacier recession has steepened this slope to 40+ degrees in spots.",
+   "type": "Hazard",
+   "distMi": 19
+  },
+  {
+   "lat": 47.7211,
+   "lng": -123.3317,
+   "elev": 7330,
+   "name": "Mount Anderson summit",
+   "type": "Summit",
+   "elevFt": 7330
+  }
+ ],
+ "itinerary": {
+  "cal": "Best climbed July-September when the Eel Glacier's snow bridges are consolidated but not yet fully melted out; an Olympic NP wilderness permit (recreation.gov) is required for the Anderson Pass/Camp Siberia zone.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Since the 2002 washout, the Dosewallips Road is closed roughly 5.5 miles before the old trailhead, so most parties bike (or walk) that stretch first. From the ranger station it's a long, mostly gentle valley hike up the West Fork Dosewallips through Honeymoon Meadows (with a knee-to-thigh-deep river ford) to Anderson Pass, then a final push up onto the Anderson massif to a flat, snowy campsite near the Eel Glacier/Anderson Pass moraine.",
+    "hours": 9.5,
+    "miles": 17,
+    "title": "Washout approach to high camp",
+    "gainFt": 4600,
+    "lossFt": 150,
+    "packLb": 40,
+    "schedule": [
+     {
+      "time": "6:00 AM",
+      "label": "Bike/walk the washed-out road",
+      "detail": "~5.5 mi to the old ranger station/trailhead."
+     },
+     {
+      "time": "9:00 AM",
+      "label": "Start West Fork Dosewallips Trail",
+      "detail": "Gentle valley trail through old growth."
+     },
+     {
+      "time": "1:00 PM",
+      "label": "Ford the river near Honeymoon Meadows",
+      "detail": "Can be thigh-deep in early season."
+     },
+     {
+      "time": "3:30 PM",
+      "label": "Anderson Pass",
+      "detail": "Turn off the main trail toward the Anderson Glacier moraine."
+     },
+     {
+      "time": "5:30 PM",
+      "label": "Make camp",
+      "detail": "Flat spot on the snowy moraine saddle near Eel Glacier."
+     }
+    ],
+    "objective": "Reach high camp near Anderson Pass / Eel Glacier moraine"
+   },
+   {
+    "n": 2,
+    "note": "A technical day-trip from camp: traverse above Anderson Lake to Flypaper Pass, drop onto the Eel Glacier and cross to the base of the spire, then climb the short but exposed sandstone pitch to the summit block and rappel back off. Afternoon convective weather is common, so an early start and a firm turnaround time matter.",
+    "hours": 7,
+    "miles": 4,
+    "title": "Flypaper Pass, Eel Glacier, and the Thumb",
+    "gainFt": 1650,
+    "lossFt": 1650,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave high camp",
+      "detail": "Light rack, rope, and glacier gear only."
+     },
+     {
+      "time": "7:15 AM",
+      "label": "Flypaper Pass",
+      "detail": "Traverse above frozen Anderson Lake to gain the pass."
+     },
+     {
+      "time": "8:00 AM",
+      "label": "Cross the Eel Glacier",
+      "detail": "Roped travel to the base of the Thumb; watch for open crevasses in late season."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Climb the spire",
+      "detail": "Short pitch of solid sandstone to the summit block."
+     },
+     {
+      "time": "10:15 AM",
+      "label": "Rappel from the summit",
+      "detail": "Single- or double-rope rappel off fixed anchor/bollard back to the glacier."
+     },
+     {
+      "time": "12:30 PM",
+      "label": "Back in camp",
+      "detail": "Reverse the glacier and pass before afternoon weather builds."
+     }
+    ],
+    "objective": "Climb Anderson's Thumb and return to high camp"
+   },
+   {
+    "n": 3,
+    "note": "A long reversal of Day 1: break camp, drop back through Anderson Pass and Honeymoon Meadows to the ranger station, then bike the washed-out road back to the car. Most parties treat this as a full day given the distance.",
+    "hours": 9,
+    "miles": 17,
+    "title": "Hike and bike out",
+    "gainFt": 150,
+    "lossFt": 4600,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Return to the trailhead/vehicle"
+   }
+  ],
+  "totalNote": "A 3-day, roughly 38-mile round trip (including the ~11 miles of washed-out road) with about 6,200 ft of net gain/loss; a long valley approach bookends one technical day climbing the spire via Flypaper Pass and the Eel Glacier."
+ },
+ "descent_text": "Descend Anderson's Thumb by reversing the ascent line: a single rappel from the summit block back down to the notch/col it rises from. The pinnacle is short (an enjoyable climb on solid sandstone, essentially a one-pitch spire), so a single-strand rappel on a 30m rope or a doubled 60m rope is enough to reach the col; because this is an obscure, lightly-visited objective with no documented fixed hardware, expect a natural anchor — a sling around a horn, block, or chockstone — rather than bolts or chains, so carry cordage/rap rings and be prepared to leave gear or build your own anchor. From the col, downclimb/scramble back to Flypaper Pass and recross the upper Eel Glacier (rope up for crevasse hazard — parties have noted a bergschrund cutting across this descent line in recent seasons), then reverse the snow/scree slope down to the Anderson Glacier moraine camp. From there it's a full reversal of the approach: drop to Anderson Pass, follow the West Fork Dosewallips Trail back through Honeymoon Meadows to the Dosewallips Ranger Station, then the road-walk/bike-out. Given the ~38-mile round-trip distance and remote setting, most parties treat this as a multi-day trip and descend only to high camp the day of the climb, hiking out the following day rather than going car-to-car.",
+ "overview": "Anderson's Thumb is a sharp rock spire on the Mount Anderson massif in the central Olympics, near Echo Rock and Flypaper Pass. Reaching it requires a long approach and glacier travel on the Eel Glacier - the Anderson Glacier on the south side of the massif disappeared by roughly 2011 and is now bare rock/moraine rather than crevassed ice. The spire itself is exposed Class 4 to low-5th-class climbing on good Olympic sandstone - a small but committing technical summit.",
+ "watch_out": [
+  "exposed technical spire climbing",
+  "crevasse hazard on the Eel Glacier (Anderson Glacier itself is gone as of ~2011)",
+  "loose rock and rockfall",
+  "extreme remoteness",
+  "fast-moving weather - at least one trip report records a summit bid aborted by sudden rain"
+ ],
+ "pro_tips": [
+  "Bring a rope and small rack for the spire - it is genuinely technical",
+  "Eel Glacier travel skills required for the approach (Anderson Glacier itself is gone; that basin is now snowfield/moraine)",
+  "Often climbed in combination with Mount Anderson's main summit",
+  "Not documented online - a printed climbing guide is the best source for a confirmed technical grade",
+  "Weather turns fast here - bring a rain shell and be ready to bail"
+ ],
+ "approach_variants": [
+  {
+   "name": "West Fork Dosewallips to Anderson Pass and the moraine",
+   "notes": "A long valley walk with the road ridden or walked first, then the West Fork through Honeymoon Meadows to Anderson Pass. From the pass a climbers' boot path runs north over talus and heather benches about a mile to the tarn camp on the old Anderson Glacier moraine near 5,100 ft. The Thumb is climbed off that camp, almost always as an add-on to a day on the Anderson massif rather than as the reason for the trip.",
+   "season": "Late June to September",
+   "hazards": [
+    "Bare scree and exposed ice in the Flypaper Pass chute once the snow finger melts out",
+    "Crevasses and a widening bergschrund on the upper Eel Glacier",
+    "No fixed anchors on the spire — carry cord and rings and expect to leave gear",
+    "Very remote central-Olympics setting with a long, committing walk out",
+    "No dependable water above the moraine camp besides snowmelt"
+   ],
+   "baseFinding": "Stand at the tarn camp on the moraine near 5,100 ft and look up the basin toward the notch of Flypaper Pass. Echo Rock is the broad seven-thousand-foot mass forming the west side of that notch. The Thumb is the single slender sandstone tooth standing clear on the crest between them — the only pinnacle in the cirque with sky on both sides of it, blunt-topped, narrow, and plainly lower than the rock behind it. It looks like a thumb rather than a summit, which is the whole of the identification. Work up the moraine crest and the glacier margin toward the pass; where talus and ledges under the tooth level out into a short col, that col is the base and the climbing starts straight off it on clean grey-brown sandstone that is notably more solid than the rubble elsewhere on this massif. Two decoys: the broken buttresses on Echo Rock's east flank look climbable from the basin and are not the Thumb, and if you are standing in the notch of Flypaper Pass itself with the Eel Glacier falling away east, you have walked past it and need to come back down and west."
+  }
+ ]
+}

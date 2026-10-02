@@ -101,6 +101,11 @@ for (const entry of batch) {
       } else if ("set" in o) {
         const isWp = parts[0] === "waypoints" && parts.length === 3;
         if (!(leaf in parent) && !(isWp && WP_ADDABLE.has(leaf))) throw new Error(`${o.path}: field does not exist`);
+        // Never change a field's SHAPE: the readers are shape-specific (itinerary is {cal, days:[…]} and
+        // RouteDetail draws its day panel only from .days) — a string written over an object hides the panel.
+        const kind = (v) => (v == null ? "null" : Array.isArray(v) ? "array" : typeof v);
+        const numericTextToNumber = ["lat", "lng", "elev", "distMi"].includes(leaf) && typeof parent[leaf] === "string" && !isNaN(Number(parent[leaf])) && typeof o.set === "number";
+        if (parent[leaf] != null && o.set != null && kind(parent[leaf]) !== kind(o.set) && !numericTextToNumber) throw new Error(`${o.path}: would change ${kind(parent[leaf])} to ${kind(o.set)} — write the same shape`);
         if (typeof o.set === "string") { const l = lint(o.set); if (l.length) throw new Error(`${o.path}: value fails lint (${l.join("; ")})`); }
         if (["lat", "lng", "elev", "distMi"].includes(leaf) && o.set !== null && typeof o.set !== "number") throw new Error(`${o.path}: must be a number`);
         log.push(`  ${o.path}: ${JSON.stringify(parent[leaf])} -> ${JSON.stringify(o.set)}`);

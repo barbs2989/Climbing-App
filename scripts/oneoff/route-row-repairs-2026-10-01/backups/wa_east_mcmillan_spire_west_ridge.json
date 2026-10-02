@@ -1,0 +1,164 @@
+{
+ "id": "wa_east_mcmillan_spire_west_ridge",
+ "name": "West Ridge / Southwest Face",
+ "waypoints": [
+  {
+   "lat": 48.6828,
+   "lng": -121.2693,
+   "elev": 600,
+   "name": "Goodell Creek Trail Trailhead (climbers' access near Upper Group Campground)",
+   "note": "",
+   "type": "Trailhead",
+   "elevFt": 600,
+   "directions": "Park at the Goodell Creek Group Campground on SR-20 near Newhalem, at about 600 feet. The climbers' path begins behind a large boulder at the back of the Upper Group Campground. If you'll be camping in Terror Basin, North Cascades National Park requires a backcountry camping permit — pick it up in person at the Marblemount Wilderness Information Center (walk-up only, no advance reservations for this zone)."
+  },
+  {
+   "lat": 48.727375,
+   "lng": -121.291312,
+   "elev": 1700,
+   "name": "Cairn / Terror Basin Route split",
+   "note": "Cairn marks where the climbers' path leaves the old logging roadbed and angles south of Terror Creek, climbing steeply toward treeline.",
+   "type": "Junction",
+   "distMi": 3.5
+  },
+  {
+   "lat": 48.764392,
+   "lng": -121.28099,
+   "elev": 5800,
+   "name": "Terror Basin Camp",
+   "note": "Gravelly, wildflower-covered basin with established tent sites and running snowmelt streams — the standard high camp shared by parties climbing any of the McMillan Spires.",
+   "type": "Campsite",
+   "distMi": 7.4
+  },
+  {
+   "lat": 48.767245,
+   "lng": -121.281724,
+   "elev": 6200,
+   "name": "Basin notch above camp",
+   "note": "Notch just above camp gives a view down to Lake Azure and the glaciated cliffs below; from here the route crosses basin slabs and snow benches toward the East-West McMillan col.",
+   "type": "Junction",
+   "distMi": 7.6
+  },
+  {
+   "lat": 48.770178,
+   "lng": -121.282271,
+   "elev": 7400,
+   "name": "Snow gully below East-West McMillan col",
+   "note": "Steep snow/scree gully estimated in the 40-degree range on the approach to the col — crampons and axe essential; this is also the descent line, so watch for rockfall and parties below.",
+   "type": "Hazard",
+   "distMi": 7.8
+  },
+  {
+   "lat": 48.772084,
+   "lng": -121.280199,
+   "elev": 7750,
+   "name": "East-West McMillan Col",
+   "note": "Crux decision point where the steep snow gully and the 4th-class rock ledge variant both top out before the final scramble to the East summit block.",
+   "type": "Junction",
+   "distMi": 8
+  },
+  {
+   "lat": 48.774076,
+   "lng": -121.2761191,
+   "elev": 7992,
+   "name": "East McMillan Spire Summit",
+   "type": "Summit",
+   "elevFt": 7992
+  }
+ ],
+ "itinerary": {
+  "cal": "Best conditions are July-September; North Cascades National Park requires a backcountry camping permit for Terror Basin (walk-up only, issued in person at Marblemount), and early-season parties should expect more glacier/snow travel and possibly a rope for crevasse hazard on the Terror Glacier approach.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Trailless approach from the Upper Goodell Creek trailhead: flat brushy trail for ~4 miles, then a steep, unmaintained climber's path gains ~4,000 ft up a forested ridge to heather benches, then descends slightly into Terror Basin. No water or reliable trail markers on the upper section — cairns and flagging only.",
+    "hours": 6.5,
+    "miles": 7,
+    "title": "Approach to Terror Basin high camp",
+    "gainFt": 5700,
+    "lossFt": 200,
+    "packLb": 38,
+    "schedule": [
+     {
+      "time": "6:00 AM",
+      "label": "Leave Goodell Creek trailhead",
+      "detail": "~600 ft elevation, flat trail for first 4 miles"
+     },
+     {
+      "time": "7:00 AM",
+      "label": "Start steep climber's path",
+      "detail": "Gains ~4,000 ft up a forested ridge to ~3,200-4,000 ft benches"
+     },
+     {
+      "time": "~9:30 AM",
+      "label": "Reach heather benches / rocky viewpoint",
+      "detail": "~2.5-3 hrs from car"
+     },
+     {
+      "time": "12:00-1:00 PM",
+      "label": "Arrive Terror Basin camp",
+      "detail": "Gravelly flat basin at ~5,800 ft with running water and flowers"
+     }
+    ],
+    "objective": "Establish camp in Terror Basin (~5,800 ft)"
+   },
+   {
+    "n": 2,
+    "note": "From camp, cross benches to the outlet of the glacial lake, then climb snow/slabs and the Terror Glacier to West McMillan Spire's west ridge and summit (~8,000 ft). From there, downclimb and traverse the low-5th-class connecting ridge east to East McMillan Spire (7,992 ft), including a short rappel, then reverse the whole traverse back to West McMillan and down to camp. This is the long day of the trip — expect 10-14 hours camp to camp when both summits are combined.",
+    "hours": 12,
+    "miles": 4,
+    "title": "West McMillan Spire, then traverse to East McMillan Spire",
+    "gainFt": 2600,
+    "lossFt": 2600,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "4:30-5:00 AM",
+      "label": "Leave high camp",
+      "detail": "Alpine start for glacier/snow travel while firm"
+     },
+     {
+      "time": "+1.5 hr",
+      "label": "Reach glacial lake outlet (~5,550 ft)",
+      "detail": "Traverse benches, then rock and snow toward Terror Glacier"
+     },
+     {
+      "time": "+4 hr",
+      "label": "Summit West McMillan Spire (~8,000 ft)",
+      "detail": "Via west ridge slabs above the glacier"
+     },
+     {
+      "time": "+5-6 hr",
+      "label": "Traverse connecting ridge to East McMillan Spire",
+      "detail": "Low 5th-class climbing with a short rappel; tag the 7,992 ft summit"
+     },
+     {
+      "time": "+9-10 hr",
+      "label": "Back at West McMillan / descending",
+      "detail": "Reverse the ridge traverse and downclimb to the glacier"
+     },
+     {
+      "time": "Evening",
+      "label": "Return to Terror Basin camp",
+      "detail": "Full round trip typically 10-14 hrs from camp"
+     }
+    ],
+    "objective": "Tag both McMillan summits via the connecting ridge"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and reverse the Day 1 approach: climb back out of Terror Basin to the heather benches, then descend the steep forested ridge and flat trail to the trailhead.",
+    "hours": 5.5,
+    "miles": 7,
+    "title": "Hike out",
+    "gainFt": 200,
+    "lossFt": 5700,
+    "packLb": 32,
+    "schedule": [],
+    "objective": "Return to Goodell Creek trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip: ~7 mi and 5,700+ ft to a Terror Basin high camp, a long 10-14 hr summit day tagging both West and East McMillan Spire via the connecting ridge (with a short rappel), and a 7-mile hike out."
+ },
+ "beta": "Most parties climb East McMillan Spire as an add-on to West McMillan Spire via the shared Terror Basin/West Ridge approach, then traverse east along the connecting ridge crest (roughly 5.6) to tag the lower, eastern summit."
+}
