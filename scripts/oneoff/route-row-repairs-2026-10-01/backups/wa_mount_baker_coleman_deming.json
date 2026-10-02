@@ -1,0 +1,68 @@
+{
+ "id": "wa_mount_baker_coleman_deming",
+ "name": "Coleman–Deming Glacier",
+ "approach_logistics": {
+  "parking": "Limited; fills weekends. $5/day or $30 annual pass",
+  "peakLat": 48.776797,
+  "peakLng": -121.814467,
+  "permits": "No climbing or wilderness permit; voluntary climbing register",
+  "supplies": "Glacier, WA (12 mi); Maple Falls (20 mi) for fuel",
+  "trailhead": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+  "access_road": "Mount Baker Hwy (SR 542) to Glacier Creek Road (FS 39)",
+  "trailheadLat": 48.80218056,
+  "trailheadLng": -121.894725,
+  "seasonalNotes": "Open May-Sep; FS 39 closed to vehicles through Oct 2026 (washouts); pedestrians OK",
+  "trailhead_gps": "48.8022, -121.8956",
+  "trailhead_name": "Heliotrope Ridge Trailhead",
+  "trailheadDirection": "From the Heliotrope Ridge Trailhead on Glacier Creek Road FR-39 (~3,700 ft), via Trail #677",
+  "trailhead_elevation_ft": 3650
+ },
+ "waypoints": [
+  {
+   "lat": 48.80218056,
+   "lng": -121.894725,
+   "elev": 3700,
+   "name": "Heliotrope Ridge Trailhead (Trail #677, FR-39)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3700,
+   "directions": "From the Mount Baker Highway (SR 542), turn onto Glacier Creek Road (FS 39) and follow it to the Heliotrope Ridge trailhead for Trail #677, at roughly 3,700 ft. Check the road first: FS 39 is closed to vehicles through October 2026 after washouts, though it stays open to pedestrians, and parties have had to add several miles of road on foot or bike to reach the sign-in kiosk. When it is drivable, parking is limited and fills at weekends, and costs $5 a day or $30 for an annual pass. No climbing or wilderness permit is needed; the climbing register is voluntary. Glacier is the nearest supplies at 12 miles, with fuel in Maple Falls at 20 miles."
+  },
+  {
+   "lat": 48.788,
+   "lng": -121.85,
+   "elev": 6000,
+   "name": "Hogsback Camp",
+   "type": "Campsite",
+   "distMi": 3,
+   "elevFt": 6000,
+   "directions": "Follow Trail 677 as it switchbacks through old growth and avalanche chutes, crossing Grouse, Kulshan and Heliotrope Creeks (cross early, before afternoon melt). At the signed fork at about 2 miles go right on the climbers' path up the crest of the Hogsback moraine to the camps near 6,000 ft."
+  },
+  {
+   "lat": 48.783,
+   "lng": -121.83,
+   "elev": 9200,
+   "name": "Black Buttes Saddle",
+   "type": "Junction",
+   "distMi": 4,
+   "elevFt": 9200,
+   "directions": "Rope up where the moraine meets the Coleman Glacier and climb south, then southeast toward the Black Buttes, weaving through crevasses. Higher, the track swings east beneath Colfax Peak; cross under its icefall without stopping, keeping off the avalanche-prone Colfax flank, to the broad saddle between Colfax and the summit cone at about 9,000 ft."
+  },
+  {
+   "lat": 48.776797,
+   "lng": -121.814467,
+   "elev": 10781,
+   "name": "Mt. Baker summit (Grant Peak)",
+   "type": "Summit",
+   "distMi": 5.5,
+   "elevFt": 10781,
+   "directions": "From the saddle turn east and climb about 300 ft up the pumice ridge on a boot path, then the steep snow of the Roman Wall to the right of its rock, roughly 9,300 to 10,400 ft. Where it eases onto the flat summit plateau, walk about ten minutes to Grant Peak; wand the top of the wall for the way back."
+  }
+ ],
+ "road": {
+  "name": "Glacier Creek Road (FR 39) to Heliotrope Ridge Trailhead",
+  "status": "Closed to vehicles at the Glacier Creek bridge (roughly MP 3.0, about 5 miles below the trailhead) since the December 2025 flood (repeat of a 2021 washout), for scheduled repair work through the end of October 2026; pedestrian/bike access continues at Forest Service discretion.",
+  "driveNote": "Beyond the washout the road is walkable/bikeable only, adding about 9 miles and 2,000 ft round trip to this already-popular route.",
+  "seasonalGate": "When intact, typically drivable late May through October."
+ }
+}

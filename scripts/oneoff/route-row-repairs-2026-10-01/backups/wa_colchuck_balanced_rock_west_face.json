@@ -1,0 +1,76 @@
+{
+ "id": "wa_colchuck_balanced_rock_west_face",
+ "name": "West Face",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Northwest Forest Pass required for parking; self-issue overnight wilderness permit at the kiosk if camping June 15-Oct 15.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 2 at the west edge of Leavenworth, turn south onto Icicle Road and drive 8.4 miles, then turn left onto FS Road 7601 and follow this rough dirt road 3.7 miles to its end at the Stuart Lake Trailhead, about 3,400 ft. A Northwest Forest Pass is required to park, and day trips need the free self-issued permit at the trailhead."
+  },
+  {
+   "lat": 47.503907,
+   "lng": -120.840358,
+   "elev": 4300,
+   "name": "Colchuck Lake / Stuart Lake Trail split",
+   "note": "Signed junction where trail flattens briefly; bear left (south) onto Colchuck Lake Trail #1599A, Stuart Lake Trail continues straight.",
+   "type": "Junction",
+   "distMi": 2.25,
+   "directions": "Follow the Stuart Lake Trail about 2.25 miles through forest along Mountaineer Creek, crossing it on a log bridge near the 1.5-mile mark, to the signed junction where the Colchuck Lake Trail splits left."
+  },
+  {
+   "lat": 47.4919578,
+   "lng": -120.8335801,
+   "elev": 5580,
+   "name": "Colchuck Lake",
+   "note": "Trail tops out on a broad granite slab over the lake; last reliable, easy-access water before the brushy traverse to the route.",
+   "type": "Water",
+   "distMi": 4,
+   "directions": "Turn left onto the Colchuck Lake Trail, cross Mountaineer Creek again on a second log bridge, and climb increasingly steep, rocky switchbacks about 1.75 miles to a broad granite slab overlooking the lake."
+  },
+  {
+   "lat": 47.49179,
+   "lng": -120.822206,
+   "elev": 5980,
+   "name": "Brush traverse to base gully",
+   "note": "Leave the Aasgard Pass climbers' path roughly 400 ft above the lake and traverse left (north) through dense brush/slide alder toward the base gully; cairns are sparse and easy to lose.",
+   "type": "Junction",
+   "distMi": 4.6,
+   "directions": "Follow the lakeshore climbers' path around the lake toward the slopes below Aasgard Pass. About 400 ft above the lake, leave that path and traverse left (north) through dense slide alder toward the foot of the leftmost gully; cairns are sparse and easy to lose."
+  },
+  {
+   "lat": 47.4917,
+   "lng": -120.8207,
+   "elev": 7170,
+   "name": "Talus cirque below the West Face",
+   "note": "Boulder-hop the cirque basin below the wall; loose talus and route-finding through the cairned climbers' path to the obvious crack system.",
+   "type": "Hazard",
+   "distMi": 5.1,
+   "directions": "Climb the leftmost gully about 1,000 ft to its top, then contour east on easy ground into the talus cirque below the West Face. Snow can linger in the gully into early summer."
+  },
+  {
+   "lat": 47.491451,
+   "lng": -120.818789,
+   "elev": 8240,
+   "name": "Colchuck Balanced Rock summit",
+   "note": "Final moves are an exposed V1 boulder problem to mantel onto the nesting summit block.",
+   "type": "Summit",
+   "distMi": 5.2,
+   "directions": "Boulder-hop the cirque to a left-facing, lightly vegetated corner at the foot of the wall and scramble up to a ledge where the first pitch starts; if you are under black streaks or a large pale rock scar you are too far right. Climb nine pitches of sustained cracks and corners, finishing with an exposed boulder move to mantel onto the summit block."
+  },
+  {
+   "lat": 47.491476,
+   "lng": -120.818755,
+   "elev": 8200,
+   "name": "Summit rappel station",
+   "note": "Single ~30m rappel off a slung horn near the summit; rope can hang up in the sling if pulled from the wrong angle, then downclimb scree clockwise around the peak.",
+   "type": "Hazard",
+   "distMi": 5.2,
+   "directions": "From the summit block, scramble to the webbing-slung horn on its east side for the single 30 m rappel."
+  }
+ ]
+}
