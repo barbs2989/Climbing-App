@@ -351,6 +351,12 @@ rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by
   N, Hurry-up, Luahna, Spickard, Primus/Austera); round trips only; or the fact is not one peakbagger records (pitch
   counts, ice grades, rope lengths, permits, pin heights, crags it does not list). Leads, not changes: Gunn Peak's
   2026 round trips cluster at 7–8 mi, favouring the itinerary's 7.5 mi over the 2.75 mi one-way waypoint chain.
+- Owner "do all of those" (the held items): Gunn Peak APPLIED (`owner-gunn-apply.json`) — eleven parties' 6.8–8.0 mi
+  round trips agree with the itinerary's 7.5 mi, so the summit pin's 2.75 mi and `dist_km` 4.8 (3 mi one way) are
+  CLEARED; no source states a one-way figure and halving is computing. The other three cannot be done under the
+  standing rules: Mastiff's 3.5 h would need the schedule retimed (+3.5 hr is already the step BEFORE the summit);
+  Three Queens' 4 mi one way contradicts the single day's 10 mi, which may not be nulled or recomputed; Dorado
+  Needle's stated 12 mi round trip contradicts day miles 5.7 + 4 + 5.7 on the same footing.
 
 ## Held for the owner (not applied)
 - **One-source pass (section 19):** Buck Mountain — the one report of this out-and-back gives 40 mi / 11,686 ft round
