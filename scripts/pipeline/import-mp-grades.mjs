@@ -137,7 +137,7 @@ function resolver(stateId, stateName, planned, splits) {
   for (const r of rows) { const k = r.parent_id + "|" + areaNorm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
   // The id prefix is the one the state's areas already use (its postal code: "mo_", "nh_"). A state
   // with no area yet (Mississippi, 2026-10-01) has nothing to read it from, so the postal code is used.
-  const pre = (() => { const c = {}; for (const r of rows) { const p = r.id.split("_")[0]; if (p !== r.id) c[p] = (c[p] || 0) + 1; } const top = Object.entries(c).sort((a, b) => b[1] - a[1])[0]; if (top) return top[0]; if (POSTAL[stateId]) return POSTAL[stateId]; throw new Error(`${stateName}: no area id prefix to follow`); })();
+  const pre = (() => { const c = {}; for (const r of rows) { const p = r.id.split("_")[0]; if (p !== r.id) c[p] = (c[p] || 0) + 1; } const top = Object.entries(c).sort((a, b) => b[1] - a[1])[0]; if (top) return top[0]; if (POSTAL[stateId]) return POSTAL[stateId]; if (/^[a-z]{2}$/.test(stateId)) return stateId; /* a Canadian province id IS its postal code */ throw new Error(`${stateName}: no area id prefix to follow`); })();
   const mint = name => { let id = pre + "_" + slug(name), n = 2; while (ids.has(id)) id = pre + "_" + slug(name) + "_" + n++; ids.add(id); return id; };
   // A level missing from OUR tree (Montana's "Bozeman Area" — its canyons hang straight off the
   // region here) may be skipped, at most twice per route, but only when the NEXT name then matches
@@ -271,6 +271,12 @@ function disciplineOf(type, tk) {
 const PRIMARY = { ice: () => "wi", mixed: tk => tk.yds ? "yds" : "m", aid: tk => tk.yds ? "yds" : "aid", trad: () => "yds", sport: () => "yds", toprope: () => "yds", bouldering: () => "v" };
 const TYPE_DISC = { trad: "trad", sport: "sport", tr: "toprope", boulder: "bouldering", ice: "ice", mixed: "mixed", aid: "aid", alpine: "alpine" };
 
+// A Canadian location path ends "... > Alberta > Canada > North America > International": MP files
+// Canada under its International tree. Dropped, so the chain starts at the province as a US one
+// starts at its state.
+const ABOVE_PROVINCE = new Set(["international", "north america", "canada"]);
+function provinceChain(chain) { let i = 0; while (i < chain.length - 1 && ABOVE_PROVINCE.has(norm(chain[i]))) i++; return chain.slice(i); }
+
 async function runState(st) {
   const files = readdirSync(DIR).filter(f => f.startsWith(st.id + "_") && f.endsWith(".csv"));
   if (!files.length) { console.log(`${st.name}: no export cached — run fetch-mp-ice-mixed-aid.mjs first`); return {}; }
@@ -302,7 +308,7 @@ async function runState(st) {
   const cand = [];
   // Existing-area placements first, so an area CREATED for one route is never planned as a leaf
   // that an existing-area placement later needs to descend through.
-  const rowsIn = [...byUrl.values()].map(r => ({ r, tk: tokens(r.Rating), chain: String(r.Location || "").split(" > ").map(s => s.trim()).reverse() }));
+  const rowsIn = [...byUrl.values()].map(r => ({ r, tk: tokens(r.Rating), chain: provinceChain(String(r.Location || "").split(" > ").map(s => s.trim()).reverse()) }));
   const deferred = [];
   for (const { r, tk, chain } of rowsIn) {
     if (!tk.wi && !tk.m && !tk.aid && !tk.yds && !tk.v) { refused["no grade we can read"] = (refused["no grade we can read"] || 0) + 1; continue; }
@@ -575,7 +581,8 @@ async function runState(st) {
   return { exported: byUrl.size, matched: matched.length, patched: patches.length, added: inserts.length, areas: newAreas.length, refused: nRef };
 }
 
-const states = sql(`select id, name from areas where parent_id = 'usa' and area_type = 'state' order by name`);
+// Canada's provinces are filed as states under 'canada', their ids the postal code (ab, bc).
+const states = sql(`select id, name from areas where parent_id in ('usa', 'canada') and area_type = 'state' order by name`);
 const pick = ALL ? states : states.filter(s => args.includes(s.id));
 if (!pick.length) { console.error("Name a state id or pass --all"); process.exit(1); }
 if (!existsSync(DIR)) { console.error("no " + DIR + " — run fetch-mp-ice-mixed-aid.mjs first"); process.exit(1); }

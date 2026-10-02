@@ -42,7 +42,7 @@ const CASES = [
   },
   {
     name: "5. collapse the NAME away too (a row reduced to a chevron)",
-    edit: s => s.replace('<span style={{marginRight:6}}>{"☾"}</span>{nm}', '<span style={{marginRight:6}}>{"☾"}</span>'),
+    edit: s => s.replace('lineHeight:1.3}}>{nm}</div>', 'lineHeight:1.3}}></div>'),
     want: /the site name is missing from the collapsed row/,
     wantLabel: "the site name survives the collapse",
   },

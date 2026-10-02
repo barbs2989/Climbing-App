@@ -34,7 +34,7 @@ const CASES = [
     name: "collect",
     why: "§1 goes back to promising the same absent enablement — the half a §4-only fix would have missed. Re-anchored when section 5 took 'optional emergency contacts' out of the collection list: the phrase was only this case's ANCHOR, never its subject, and check:injection-anchors is what caught the rot.",
     file: "lib/LegalView.jsx",
-    find: "climbing logs, float plans you file against a crew, the home area you type in, your zip code if you add one, and the basic technical data",
+    find: "climbing logs, float plans you file against a crew, the home area you type in, your zip code if you add one, an emergency contact if you save one (visible only to you), and the basic technical data",
     repl: "climbing logs, float plans you file against a crew, approximate or precise location when you enable it, and the basic technical data",
     expect: /location when you enable it/,
   },

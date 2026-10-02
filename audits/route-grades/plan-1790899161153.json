@@ -1,0 +1,967 @@
+{
+ "plan": [
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Class 3, Glacier"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: easiest route on Sinister is Class 3; the traditional southwest route goes from the Chickamin Glacier around the ridge to a prominent gully.",
+   "sources": [
+    "https://www.summitpost.org/sinister-peak/749245",
+    "https://wenatcheeoutdoors.org/2020/09/23/gunsight-peak-sinister-peak/"
+   ]
+  },
+  {
+   "id": "wa_skookum_peak_twinsisters_scramble",
+   "batch": "b25.json",
+   "before": {
+    "grade": "5.4",
+    "grade_num": 4,
+    "rock_grade": "5.4"
+   },
+   "body": {
+    "grade": "5.6",
+    "grade_num": 6,
+    "rock_grade": "5.6"
+   },
+   "headline": [
+    "5.4",
+    "5.6"
+   ],
+   "confidence": "high",
+   "evidence": "MP 'Jaw's Tooth and Northwest Ridge': 5.6, Grade II, 6 pitches; sustained 5.6 layback corner on Jaw's Tooth, then solid low 5th along the ridge to Skookum.",
+   "sources": [
+    "https://www.mountainproject.com/route/126694581/jaws-tooth-and-northwest-ridge"
+   ]
+  },
+  {
+   "id": "wa_borrowed_time",
+   "batch": "b25.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "WI5",
+    "grade_system": "wi",
+    "grade_num": 5
+   },
+   "headline": [
+    "WI5 M7 R",
+    "WI5 M7 R"
+   ],
+   "confidence": "high",
+   "evidence": "MP/AAJ: WI5 M7 R, 1,900 ft, 6 pitches, FA Jan 2025 (Sackett-Telstad); ice to WI5 on poor sun-affected ice.",
+   "sources": [
+    "https://www.mountainproject.com/route/200656568/borrowed-time",
+    "http://publications.americanalpineclub.org/articles/13201216960"
+   ]
+  },
+  {
+   "id": "wa_northwest_buttress",
+   "batch": "b25.json",
+   "before": {
+    "grade": "IV 5.9+"
+   },
+   "body": {
+    "grade": "5.9+"
+   },
+   "headline": [
+    "5.9+",
+    "5.9+"
+   ],
+   "confidence": "high",
+   "evidence": "MP: Northwest Buttress 5.9+.",
+   "sources": [
+    "https://www.mountainproject.com/area/117523878/sloan-peak"
+   ]
+  },
+  {
+   "id": "wa_sloan_peak_corkscrew",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Grade II",
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_num": 3
+   },
+   "headline": [
+    "3rd class",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "MP Corkscrew Route: 3rd class, 1- ice, Easy Snow; finishes with an exposed Class 3 scramble.",
+   "sources": [
+    "https://www.mountainproject.com/area/117523878/sloan-peak",
+    "https://www.summitpost.org/sloan-peak/150937"
+   ]
+  },
+  {
+   "id": "wa_superalpine",
+   "batch": "b25.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null,
+    "ice_grade_num": null
+   },
+   "body": {
+    "grade": "WI4",
+    "grade_system": "wi",
+    "grade_num": 4,
+    "ice_grade_num": 4
+   },
+   "headline": [
+    "WI3-4",
+    "WI3-4"
+   ],
+   "confidence": "high",
+   "evidence": "FA and repeat TRs: Superalpine WI3-4, 1,000 ft, West Face of Sloan; top of range WI4.",
+   "sources": [
+    "https://climberkyle.com/2020/02/28/fa-sloan-peak-superalpine-wi3-4-1000/",
+    "https://cascadeclimbers.com/forum/topic/104401-tr-north-cascades-sloan-peak-superalpine-wi3-4-1000-04172022/"
+   ]
+  },
+  {
+   "id": "wa_snoqualmie_mountain_standard_route",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "F",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Popular south-side scramble described as moderate class 2 and 3 with exposure near the top.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-07-28.3850401055",
+    "https://www.mountaineers.org/activities/trip-reports/snoqualmie-guye-cave-ridge-scramble-loop"
+   ]
+  },
+  {
+   "id": "wa_snoqualmie_mountain_the_snostril",
+   "batch": "b25.json",
+   "before": {
+    "grade": "WI4+ M5+",
+    "grade_system": null,
+    "ice_grade_num": null,
+    "ice_grade": "WI4+"
+   },
+   "body": {
+    "grade": "WI4",
+    "grade_system": "wi",
+    "ice_grade_num": 4,
+    "ice_grade": "WI4"
+   },
+   "headline": [
+    "WI4+",
+    "WI4"
+   ],
+   "confidence": "high",
+   "evidence": "AAJ: The Snostril (250m, WI4 M5); crux 15m of WI4 M5 exiting the cave; the Post Nasal Drip finish is also WI4 M5.",
+   "sources": [
+    "https://publications.americanalpineclub.org/articles/13201215904",
+    "https://cascadeclimbers.com/forum/topic/103864-tr-snoqualmie-mountain-fa-the-snostril-and-post-nasal-drip-01292021/"
+   ]
+  },
+  {
+   "id": "wa_neve_glacier_west_ridge",
+   "batch": "b25.json",
+   "before": {
+    "grade": "4th"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Neve Glacier then ~400 ft of 3rd/4th class scrambling; a couple of 4th-class moves at the notch below the summit.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/snowfield-peak-neve-glacier",
+    "https://onehikeaweek.com/2015/06/13/snowfield-peak/"
+   ]
+  },
+  {
+   "id": "wa_snowfield_peak_neve_glacier",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Moderate glacier finishing with ~400 ft of 3rd/4th class rock; a couple of 4th-class moves at the notch.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/snowfield-peak-neve-glacier",
+    "https://onehikeaweek.com/2015/06/13/snowfield-peak/"
+   ]
+  },
+  {
+   "id": "wa_east_ridge_2",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Class 2-3"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: from Cyclone Lake follow heather and easy slabs up the east ridge, finishing on the south side; the southeast ridge is class 3.",
+   "sources": [
+    "https://www.summitpost.org/snowking-mountain/152058"
+   ]
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Class 2-3 + glacier"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: Kindy Ridge/glacier route is the least technical; summit reached from the SSE; main summit not hard (class 3 at most).",
+   "sources": [
+    "https://www.summitpost.org/snowking-mountain/152058",
+    "http://www.willhiteweb.com/washington_climbing/cascade_river/snowking_mountain_047.htm"
+   ]
+  },
+  {
+   "id": "wa_source_lake_ice_source_lake_line",
+   "batch": "b25.json",
+   "before": {
+    "grade": "WI4-5"
+   },
+   "body": {
+    "grade": "WI5"
+   },
+   "headline": [
+    "WI4-5",
+    "WI4-5"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Source Lake Line WI4-5; top of range WI5.",
+   "sources": [
+    "https://www.mountainproject.com/area/120246561/source-lake-ice"
+   ]
+  },
+  {
+   "id": "wa_free_mojo",
+   "batch": "b25.json",
+   "before": {
+    "grade": "5.11-"
+   },
+   "body": {
+    "grade": "5.11"
+   },
+   "headline": [
+    "5.11-",
+    "5.11"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Free Mojo 5.11 (no letter).",
+   "sources": [
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+   ]
+  },
+  {
+   "id": "wa_mojo_rising",
+   "batch": "b25.json",
+   "before": {
+    "grade": "5.11b C1+"
+   },
+   "body": {
+    "grade": "5.11b"
+   },
+   "headline": [
+    "5.11b",
+    "5.11b"
+   ],
+   "confidence": "high",
+   "evidence": "MP: Mojo Rising 5.11b C1+.",
+   "sources": [
+    "https://www.mountainproject.com/area/106257377/south-early-winters-spire"
+   ]
+  },
+  {
+   "id": "wa_northwest_face_boving_pollock",
+   "batch": "b25.json",
+   "before": {
+    "grade": "5.11a",
+    "grade_num": 11.25,
+    "rock_grade": "5.11a"
+   },
+   "body": {
+    "grade": "5.11b",
+    "grade_num": 11.5,
+    "rock_grade": "5.11b"
+   },
+   "headline": [
+    "5.11a",
+    "5.11b"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: 5.11b, Grade III, 6 pitches; double Boving Roof on pitch 5 is the crux.",
+   "sources": [
+    "https://www.mountainproject.com/route/107288315/northwest-face-boving-pollock"
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_direct_east_buttress",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Grade III+, 5.9 A0 (or 5.11 free), 9 pitches",
+    "grade_num": 11
+   },
+   "body": {
+    "grade": "5.11a",
+    "grade_num": 11.25
+   },
+   "headline": [
+    "5.11a",
+    "5.11a"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 5.11a A0, III+, 9 pitches; mostly 5.8-5.9 with two 5.11 cruxes, commonly climbed 5.9 A0.",
+   "sources": [
+    "https://www.mountainproject.com/route/106883451/direct-east-buttress",
+    "https://www.summitpost.org/direct-east-buttress/236786"
+   ]
+  },
+  {
+   "id": "wa_south_early_winter_spire_southwest_couloir",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Grade II, snow to 50°",
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Grade II",
+    "5.0"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Mod. Snow, 25-30 deg then 40-50 deg; 'a low 5th class move will get you to the summit'.",
+   "sources": [
+    "https://www.mountainproject.com/route/108102127/southwest-couloir"
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_north_ridge",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Grade III, Class 4",
+    "grade_system": "yds"
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "South Twin routes range Class 2-4 up to low 5th; the ridges are 3rd-4th class rock with occasional 5th-class moves that can be bypassed.",
+   "sources": [
+    "https://www.summitpost.org/south-twin/679815",
+    "https://guidedexposure.com/products/south-sister"
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "batch": "b25.json",
+   "before": {
+    "grade": "Class 2-3",
+    "grade_system": null,
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: South Twin routes from Class 2-4; the west-ridge approach with the south-side gully bypass avoids the 5th-class crest and is Class 3.",
+   "sources": [
+    "https://www.summitpost.org/south-twin/679815"
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_west_ridge",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Grade II-III, Class 4 / low 5th",
+    "grade_system": "yds"
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class"
+   },
+   "headline": [
+    "4th class",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: West Ridge is the standard route, doable unroped; lots of class 3 and occasional class 4 moves with much exposure; the crest-direct finish has 5th-class moves usually bypassed by south-side gullies.",
+   "sources": [
+    "https://www.summitpost.org/south-twin/679815",
+    "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-south-twin-sister-west-ridge"
+   ]
+  },
+  {
+   "id": "wa_the_devils_club",
+   "batch": "b26.json",
+   "before": {
+    "rock_grade": "5.11-",
+    "alpine_grade": "V+"
+   },
+   "body": {
+    "rock_grade": "5.11",
+    "alpine_grade": null
+   },
+   "headline": [
+    "5.11",
+    "5.11"
+   ],
+   "confidence": "high",
+   "evidence": "MP: The Devil's Club 5.11, Grade V, 25 pitches, East Face of SE Mox (Layton-Wolfe 2005).",
+   "sources": [
+    "https://www.mountainproject.com/route/106363896/the-devils-club"
+   ]
+  },
+  {
+   "id": "wa_spectre_peak_south_route",
+   "batch": "b26.json",
+   "before": {
+    "grade": "IV 5.9",
+    "alpine_grade": "D+"
+   },
+   "body": {
+    "grade": "5.9",
+    "alpine_grade": null
+   },
+   "headline": [
+    "5.9R",
+    "5.9"
+   ],
+   "confidence": "high",
+   "evidence": "AAJ and FA TR: Spirited Away IV 5.9, ~2,000 ft, 10 pitches; crux short overhanging 5.9 on pitch 2.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/13201216382",
+    "https://cascadeclimbers.com/forum/topic/108156-tr-spectre-peak-spirited-away-iv-59-~2000-ft-10-pitches-07072025/"
+   ]
+  },
+  {
+   "id": "wa_sperry_peak_standard",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": "Class 2-3"
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "WTA: semi-technical scramble with some exposure; scramble reports: most of the climb is class 3 with steep snow, a few class 4 moves reported on some lines.",
+   "sources": [
+    "https://www.wta.org/go-hiking/hikes/sperry-peak",
+    "https://www.mountaineers.org/activities/activities/alpine-scramble-sperry-peak-8"
+   ]
+  },
+  {
+   "id": "wa_spider_mountain_north_face",
+   "batch": "b26.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "North face is a narrow snow couloir, about 45+ deg at its steepest; no ice grade found (now mainly a ski descent).",
+   "sources": [
+    "https://scottrinck.com/blogs/news/freshies-spider-mountain-deep-in-the-north-cascades",
+    "https://www.backtrackmaps.com/route/us/washington/spider-mountain-north-face-arachnophobia"
+   ]
+  },
+  {
+   "id": "wa_spider_mountain_north_ridge",
+   "batch": "b26.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Easiest route: glacier travel to Spider-Formidable col, then southeast gully and east ridge; climbing near the summit is Class 3 with exposure.",
+   "sources": [
+    "https://www.summitpost.org/spider-mountain/154649",
+    "https://trailcatjim.com/spider-mtn-via-cache-col-sf-col-southeast-gully/"
+   ]
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Class 3-4",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0
+   },
+   "headline": [
+    "Class 4-5",
+    "5.0"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: Beckey calls the summit ridge class 3, but two short sections are decidedly class 4 and 5; a rope may be desired.",
+   "sources": [
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789"
+   ]
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Class 4"
+   },
+   "body": {
+    "grade": "5.4"
+   },
+   "headline": [
+    "5.4",
+    "5.4"
+   ],
+   "confidence": "medium",
+   "evidence": "East-face summit route reported as 4th-low 5th; one report gives 5.4; class 4 chimney then a final 50 ft crux on a slab/small crack.",
+   "sources": [
+    "https://www.summitpost.org/spire-point/811968",
+    "https://onehikeaweek.com/2019/06/30/spire-point/",
+    "https://en.wikipedia.org/wiki/Spire_Point"
+   ]
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Class 2-3",
+    "rock_grade": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Up the bowl south of Star Lake to a pass, then the SW ridge: scree, talus and some easy scrambling with hands and feet; west side from Star Pass is Class 1-2.",
+   "sources": [
+    "https://www.summitpost.org/star-peak/151520",
+    "https://www.wta.org/go-hiking/hikes/star-peak"
+   ]
+  },
+  {
+   "id": "wa_stellar_falls_butter_chicken_party",
+   "batch": "b26.json",
+   "before": {
+    "grade": "WI3-4"
+   },
+   "body": {
+    "grade": "WI4"
+   },
+   "headline": [
+    "WI3-4",
+    "WI3-4"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: WI3-4, 30 ft toprope; top of range WI4.",
+   "sources": [
+    "https://www.mountainproject.com/route/125645538/butter-chicken-party"
+   ]
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Grade II, Class 4",
+    "grade_system": "yds"
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class"
+   },
+   "headline": [
+    "Class 4",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Mountaineers: exposed notch with a couple of Class 4 moves and a 15-ft crack rated Class 4 to low 5th; SummitPost: loose, spicy 4th class.",
+   "sources": [
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/storm-king-southwest-route",
+    "https://www.summitpost.org/storm-king/273954"
+   ]
+  },
+  {
+   "id": "wa_summertime",
+   "batch": "b26.json",
+   "before": {
+    "alpine_grade": "Grade II"
+   },
+   "body": {
+    "alpine_grade": null
+   },
+   "headline": [
+    "5.11c",
+    "5.11c"
+   ],
+   "confidence": "high",
+   "evidence": "MP: Summertime 5.11c, toprope/bolted face, ~70 ft, 1-2 pitches.",
+   "sources": [
+    "https://www.mountainproject.com/area/110728644/summertime-crag"
+   ]
+  },
+  {
+   "id": "wa_summit_chief_north_face",
+   "batch": "b26.json",
+   "before": {
+    "grade": "WI3 Steep Snow"
+   },
+   "body": {
+    "grade": "WI3"
+   },
+   "headline": [
+    "WI3",
+    "WI3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: WI3 Steep Snow, Grade III, 2,000 ft, 12 pitches; WI2-3 ramp pitches, one WI3 pitch, AI2 exit.",
+   "sources": [
+    "https://www.mountainproject.com/route/120326622/north-face",
+    "http://www.alpinedave.com/summit_chief/north_face.htm"
+   ]
+  },
+  {
+   "id": "wa_summit_chief_mountain_north_face",
+   "batch": "b26.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null,
+    "ice_grade_num": null
+   },
+   "body": {
+    "grade": "WI3",
+    "grade_system": "wi",
+    "grade_num": 3,
+    "ice_grade_num": 3
+   },
+   "headline": [
+    "WI2-3",
+    "WI2-3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: WI3 Steep Snow, Grade III, 2,000 ft, 12 pitches; WI2-3 ramp pitches, one WI3 pitch, AI2 exit.",
+   "sources": [
+    "https://www.mountainproject.com/route/120326622/north-face",
+    "http://www.alpinedave.com/summit_chief/north_face.htm"
+   ]
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 4"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 4"
+   ],
+   "confidence": "medium",
+   "evidence": "Reports: a short exposed 15-ft section of class 3-4 rock near the summit, airy moves on loose rock over an exposed slab.",
+   "sources": [
+    "https://onehikeaweek.com/2023/08/13/summit-chief-mountain/",
+    "https://www.wta.org/go-hiking/trip-reports/tripreport-2006071538"
+   ]
+  },
+  {
+   "id": "wa_swiss_peak_standard_route",
+   "batch": "b26.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 3",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Climbed from the snowfield on its southwest side up pleasantly solid rock on the SW face; no class rating found beyond the record's 3rd class.",
+   "sources": [
+    "https://www.summitpost.org/picket-range/171088"
+   ]
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Class 2-3",
+    "grade_num": 3,
+    "rock_grade": "Class 2-3"
+   },
+   "body": {
+    "grade": "Class 2",
+    "grade_num": 2,
+    "rock_grade": "Class 2"
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 2"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost: the way up Switchback is like following a trail; only scrambling is the last 300 ft over very simple large boulders.",
+   "sources": [
+    "https://www.summitpost.org/switchback-peak/525385",
+    "https://climberkyle.com/2016/09/03/switchback-martin-cheops-bigelow-traverse/"
+   ]
+  },
+  {
+   "id": "wa_switchback_mountain_west_ridge",
+   "batch": "b26.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_system": "class",
+    "grade_num": 3
+   },
+   "headline": [
+    "Class 2-3",
+    "Class 3"
+   ],
+   "confidence": "low",
+   "evidence": "Approach via Boiling Lake; summit from the west by easy terrain; record gives class 2-3 for the west ridge and no source rates it higher or lower.",
+   "sources": [
+    "https://www.summitpost.org/switchback-peak/525385"
+   ]
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Class 4 + glacier",
+    "grade_system": "class",
+    "grade_num": 4,
+    "rock_grade": "5.0-5.4 (low 5th class)"
+   },
+   "body": {
+    "grade": "5.0",
+    "grade_system": "yds",
+    "grade_num": 0,
+    "rock_grade": "Low 5th class (5.0)"
+   },
+   "headline": [
+    "5.0-5.4",
+    "5.0"
+   ],
+   "confidence": "medium",
+   "evidence": "The summit pyramid options, southeast face or west ridge, are each 'a pitch or so of low 5th class climbing'; no number given.",
+   "sources": [
+    "https://www.countryhighpoints.com/tenpeak-mountain/",
+    "https://stephabegg.com/trip-reports/washington/glacier-peak-circuit/"
+   ]
+  },
+  {
+   "id": "wa_the_brothers_south_couloir",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Grade II"
+   },
+   "body": {
+    "grade": "Class 3"
+   },
+   "headline": [
+    "Class 3-4",
+    "Class 3"
+   ],
+   "confidence": "high",
+   "evidence": "MP: 3rd class, 1- ice, Easy Snow; snow to 40-45 deg and short 3rd-class scrambling, some class 4 variations off route.",
+   "sources": [
+    "https://www.mountainproject.com/route/106150761/south-couloir",
+    "https://www.mountainproject.com/area/106150756/the-brothers-south-peak"
+   ]
+  },
+  {
+   "id": "wa_the_brothers_traverse",
+   "batch": "b26.json",
+   "before": {
+    "grade": "Easy 5th",
+    "grade_num": 2,
+    "rock_grade": "Easy 5th class"
+   },
+   "body": {
+    "grade": "5.4",
+    "grade_num": 4,
+    "rock_grade": "Easy 5th class (5.4)"
+   },
+   "headline": [
+    "Easy 5th class",
+    "5.4"
+   ],
+   "confidence": "medium",
+   "evidence": "MP: Easy 5th, 1+ ice, Moderate Snow; Mountaineers: Grade III, 5.4, AI2, snow to 70 deg.",
+   "sources": [
+    "https://www.mountainproject.com/area/106150756/the-brothers-south-peak",
+    "https://www.mountaineers.org/activities/routes-places/the-brothers-brothers-traverse"
+   ]
+  },
+  {
+   "id": "wa_the_chopping_block_northwest_route",
+   "batch": "b26.json",
+   "before": {
+    "grade": null,
+    "grade_system": null,
+    "grade_num": null
+   },
+   "body": {
+    "grade": "Class 4",
+    "grade_system": "class",
+    "grade_num": 4
+   },
+   "headline": [
+    "Class 4",
+    "Class 4"
+   ],
+   "confidence": "low",
+   "evidence": "No route-specific source found for the 1961 Cooper-Denny north/northwest line; record gives exposed Class 4.",
+   "sources": []
+  }
+ ],
+ "refused": [
+  {
+   "id": "wa_new_york_gully",
+   "batch": "b25.json",
+   "why": "discipline ice is out of scope",
+   "final_grade": "5.8"
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "batch": "b25.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.8"
+  },
+  {
+   "id": "wa_sperry_peak_upper_south_ridge",
+   "batch": "b26.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.4"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "batch": "b26.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_storm_king_north_face",
+   "batch": "b26.json",
+   "why": "\"\" is not a yds grade",
+   "final_grade": null
+  },
+  {
+   "id": "wa_table_mountain_ice_east_face",
+   "batch": "b26.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "WI2"
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "batch": "b26.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  }
+ ]
+}

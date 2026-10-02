@@ -1,0 +1,4325 @@
+{
+ "applied": [
+  {
+   "id": "wa_spraying_mantis",
+   "op": "patch",
+   "columns": [
+    "season"
+   ]
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "op": "patch",
+   "columns": [
+    "access"
+   ]
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "op": "patch",
+   "columns": [
+    "alpine_grade"
+   ]
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "op": "patch",
+   "columns": [
+    "itinerary",
+    "dist_km"
+   ]
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "op": "patch",
+   "columns": [
+    "overview"
+   ]
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "op": "patch",
+   "columns": [
+    "detailed_rack"
+   ]
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "op": "patch",
+   "columns": [
+    "gain_ft"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_spraying_mantis",
+   "area_id": "wa_sofa_king_buttress",
+   "name": "Spraying Mantis",
+   "discipline": "sport",
+   "grade": "5.10b/c",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 1,
+   "length_m": 30,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Wylie Moreshead, 2020",
+   "lat": null,
+   "lng": null,
+   "aspect": "NW",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": null,
+   "hazards": [
+    "Loose and sharp rock is a known issue at this recently-developed alpine sport crag.",
+    "The approach and crag sit in a remote basin with no cell coverage, so any injury means a long self-evacuation or SAR response."
+   ],
+   "verif": {
+    "status": "unverified"
+   },
+   "overview": "Alpine sport climb at Sofa King Buttress in The Citidel area.",
+   "beta": "Fully bolted 100 ft (30 m) sport pitch rated 5.10b/c. The FA party (Wylie Moreshead) recommends starting left of the bolt line and straddling the low nose feature cheval-style rather than pulling straight onto it, keeping the rope managed on the inside leg to avoid an awkward twist. 12 bolts lead to chains at the top.",
+   "turnaround": "Not a big-mountain turnaround-time objective — the practical time constraint is the 20-30 minute approach through Silver Basin plus weather: the approach and base of the buttress are exposed, so turn back on the approach if lightning or fast-moving weather is closing in before you're committed to the rock.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b/c (6b, VII, E2 5b)",
+   "ice_grade": null,
+   "gain_ft": 750,
+   "loss_ft": null,
+   "dist_km": 0.5,
+   "max_angle": null,
+   "rappels": "Single lower-off from chain anchors at the top; a 60 m rope is sufficient for this ~30 m route.",
+   "commitment": null,
+   "face": "Sofa King Buttress, The Citidel",
+   "permit": null,
+   "comms": "No documented cell coverage in this remote, forested Silver Basin approach off NF-9070; treat the area as a dead zone and carry a satellite messenger for emergencies.",
+   "descent": "Lower off the chain anchor at the top of the route.",
+   "obj_haz": [
+    "loose rock",
+    "rockfall"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.373,
+     "lng": -121.45787,
+     "elev": 4254,
+     "name": "FS Road 9070 Turnaround at Silver Basin",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 4254
+    },
+    {
+     "lat": 47.36741,
+     "lng": -121.45564,
+     "elev": 4650,
+     "name": "Sofa King Buttress base",
+     "type": "Campsite",
+     "distMi": null,
+     "elevFt": 4650
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 0.5,
+    "recommendedStart": "Early morning"
+   },
+   "detailed_rack": "Fully bolted: 12 bolts to a two-bolt chain anchor. No trad gear needed. A 60 m rope is enough to lower off the full ~30 m pitch.",
+   "what_to_bring": [
+    "Helmet — rock at this new crag is still loose/sharp in places",
+    "Sturdy approach shoes for the talus/brush walk-in",
+    "Extra layer — Silver Basin can be cool and windy even in summer"
+   ],
+   "pro_tips": [
+    "Start left of the bolt line and straddle the low nose feature cheval-style rather than muscling straight over it, per the first-ascent party's own beta.",
+    "Keep the rope run on your inside leg through the straddle move to avoid getting twisted up."
+   ],
+   "watch_out": [
+    "This is a newly-developed, \"raw\" crag — expect some loose or sharp holds and wear a helmet."
+   ],
+   "pro_needs": "Sport rack only — 12 quickdraws (plus 1-2 extra for the anchor). No natural/trad protection required or possible.",
+   "best_season": "June through October when FS Road 9070 is open and snow is minimal",
+   "high_point_ft": 4650,
+   "aid_grade": null,
+   "approach": "From I-90 Exit 54 (Hyak), follow Hyak Drive onto Forest Service Road NF-9070, continuing past where the pavement ends to the junction at Ollallie Meadow where the Pacific Crest Trail crosses the road. Take the left fork of NF-9070 and follow it until the road terminates in a large turnaround just below Silver Basin. From that turnaround, it's roughly a 20-30 minute approach on foot up into Silver Basin to reach the base of The Citadel's walls, including Sofa King Buttress on the NW side of the basin's east wall. The road is not plowed and is generally only clear of snow from around July through November.",
+   "descent_text": "This is a single-pitch, fully bolted sport route with a chain lower-off anchor at its top; there is no walk-off. Thread/clip the chains and lower the full length of the route (a 60 m rope gives ample margin on this ~30 m line) back to the base.",
+   "bail": "The route is single-pitch and fully bolted, so retreat simply means lowering from the last bolt clipped (leaving a biner/draw if you don't have a way to clean while lowering) rather than a true multi-pitch bail.",
+   "pitch_detail": [
+    {
+     "grade": "5.10b/c",
+     "notes": "100 ft (30 m) bolted face pitch; starts with a cheval straddle over a small nose feature low down, 12 bolts to chain anchor.",
+     "pitch": "P1"
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "fees": null,
+    "permit": null,
+    "closures": "FS Road 9070 seasonally closed winter months",
+    "landManager": "USDA Forest Service, Snoqualmie Pass area",
+    "passRequired": null
+   },
+   "road": {
+    "name": "Hyak Drive / FS Road 9070, Snoqualmie Pass (I-90 Exit 54), for The Citadel",
+    "status": "Pavement ends on Hyak Drive and the road continues as gravel FS Road 9070 to the PCT crossing at Olallie Meadow; the left fork beyond it to the turnaround below Silver Basin is rough, with sharp rocks and deep water bars, so a high-clearance vehicle is recommended. Not plowed in winter.",
+    "driveNote": "Roughly 45 min-1 hour from Seattle via I-90 to Exit 54, then a slow gravel drive up FS Road 9070."
+   },
+   "climate": {
+    "fall": "Generally stable, good conditions through October",
+    "spring": "Snowmelt, road may still be closed",
+    "summer": "Best season for climbing, temperatures moderate",
+    "winter": "Road typically closed, heavy snow",
+    "typical": "Alpine climate, weather can change rapidly",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "Remote alpine area, cell reception unreliable",
+    "county": "King County",
+    "rangerStation": "Snoqualmie Pass Ranger Station area",
+    "nearestHospital": "Snoqualmie Valley Hospital (Snoqualmie, ~20 miles)",
+    "sheriffDispatch": "206-296-3311"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": 12,
+   "rope_type": "single",
+   "rope_length_m": 60,
+   "rope_note": "Single-pitch bolted sport route of about 30 m; a single 60 m rope lowers off the chain anchor.",
+   "ascender": null,
+   "corrections": "Area not found on Mountain Project; see wa_drilling_me_softly note.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Face",
+    "Technical"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "spraying mantis",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_alta_mountain_scramble",
+   "area_id": "wa_alta_mountain",
+   "name": "Rampart Ridge Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 2",
+   "grade_system": "class",
+   "grade_num": 2,
+   "pitches": null,
+   "length_m": 2736,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Oct",
+   "description": null,
+   "gear": [
+    "sturdy scrambling/hiking boots (mountaineering boots if any snow lingers)",
+    "trekking poles",
+    "helmet (situational, precautionary -- carried by some parties for rockfall/loose rock, not technically required)",
+    "ice axe (early-season/lingering-snow on the approach gully only; not needed on dry summer rock)"
+   ],
+   "hazards": [
+    "afternoon thunderstorms"
+   ],
+   "verif": null,
+   "overview": "Alta Mountain is a popular scramble on the long Rampart Ridge above Rachel Lake near Snoqualmie Pass. From the Rachel Lake trail and Rampart Lakes, an enjoyable Class 2 ridge walk and scramble leads along the crest to the summit with excellent views over the Alpine Lakes country.",
+   "beta": "From the Rachel Lake / Lila Lake trail junction, an unsigned 'climber's path' marked by a cairn leaves the maintained trail and climbs Alta Mountain's south ridge. The initial section is steep with loose rock and large steps and no shade; the grade then moderates onto a knife-edge ridge with sustained exposure. There are several class 2-3 moves, at least one 6-8 ft near-vertical step with good holds but serious exposure, a class 3 downclimb crux near the top, and multiple false summits before the true summit is reached. The route is non-technical (no rope typically used) but is exposed enough to be unsuitable for anyone uneasy with heights or for dogs.",
+   "turnaround": "Turn back if snow or ice is present on the ridge, if any party member is not comfortable with the class 3 downclimb crux or the sustained exposure, or if thunderstorms are building given the fully exposed ridge walk with no bail-out shelter.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 3300,
+   "loss_ft": 3300,
+   "dist_km": 9.7,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "South Ridge",
+   "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead; no quota or fee. Northwest Forest Pass to park at most trailheads.",
+   "comms": null,
+   "descent": "Reverse the ridge back toward Rachel Lake.",
+   "obj_haz": [
+    "loose rock/scree on the climber's path",
+    "sustained fall exposure along the knife-edge ridge",
+    "a class 3 downclimb crux near the summit",
+    "no shade or water above Lila Lake",
+    "becomes hazardous when snow-covered"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.4009,
+     "lng": -121.2836,
+     "elev": 2800,
+     "name": "Rachel Lake Trailhead",
+     "note": "Trail #1313 start off FR 4930; Northwest Forest Pass plus self-issued wilderness permit required (USFS Rachel Lake Trailhead page).",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From I-90 Exit 62, follow Kachess Lake Road to FS Road 4930 and drive it to the road end at about 2,800 ft. Trail #1313 leaves the parking area; a Northwest Forest Pass plus a self-issued wilderness permit are required at the board."
+    },
+    {
+     "lat": 47.4227,
+     "lng": -121.3292,
+     "elev": 4667,
+     "name": "Rachel Lake",
+     "note": "~4.1 mi from the trailhead, at the top of the steep, rooty 'mile from hell' climb.",
+     "type": "Water",
+     "distMi": 4.1,
+     "directions": "Trail #1313 runs beside Box Canyon Creek on gentle grade for roughly 2.75 miles, crossing several side streams and cascades — water is reliable the whole way, so there is no need to carry much from the car. Past the creek crossing the trail turns into the rooty, rocky boot-beaten climb locals call the 'mile from hell': about 1,300 ft of gain in a mile with large step-ups and no switchbacks. It is a fitness crux, not a technical one, but it is brutal under a full pack."
+    },
+    {
+     "lat": 47.42417,
+     "lng": -121.33388,
+     "elev": 5100,
+     "name": "Rampart Ridge / Rampart Lakes junction",
+     "note": "Ridge crest above Rachel Lake where the maintained trail splits toward Rampart Lakes and Lila Lake.",
+     "type": "Junction",
+     "distMi": 4.6,
+     "directions": "At the lake a use path branches off near the outhouse and skirts the north shore. From there it switchbacks steeply up rocky tread for about half a mile to the crest of Rampart Ridge, where the maintained trail splits toward Rampart Lakes and toward Lila Lake."
+    },
+    {
+     "lat": 47.42786,
+     "lng": -121.33165,
+     "elev": 5237,
+     "name": "Alta climbers' path turnoff (cairn)",
+     "note": "Cairned fork on the Lila Lake trail about 0.3 mi past the Rampart Ridge junction, where the unmarked climbers' path up Alta's south ridge leaves on the left.",
+     "type": "Junction",
+     "distMi": null,
+     "directions": "At the ridge-top junction above Rachel Lake, go right toward Lila Lake (the left branch leads to Rampart Lakes). The tread is brushy in places but always clear; after about 0.3 mile a cairn marks the fork where the Lila Lake trail carries straight on and the climbers' path to Alta leaves on the left."
+    },
+    {
+     "lat": 47.441131,
+     "lng": -121.331964,
+     "elev": 6275,
+     "name": "Alta Mountain summit",
+     "note": "Reached past several false summits along the exposed ridge crest.",
+     "type": "Summit",
+     "distMi": 6,
+     "directions": "At the cairned fork on the Lila Lake trail an unmarked climbers' path leaves the maintained trail and follows the ridge crest toward the summit block. It starts steep, loose and shadeless with large steps, then eases onto a narrow crest with sustained exposure: expect several class 2-3 moves, at least one near-vertical step of six to eight feet with good holds, a short class 3 downclimb near the top, and three or more false summits before the real one. Do not attempt this stretch with snow on the crest or on wet rock — the path skirts a cliff edge and the fall consequences are serious. Helmets are worth wearing for the loose rock."
+    }
+   ],
+   "gpx": [
+    [
+     47.400856,
+     -121.283593
+    ],
+    [
+     47.400867,
+     -121.283585
+    ],
+    [
+     47.400962,
+     -121.283593
+    ],
+    [
+     47.401054,
+     -121.283616
+    ],
+    [
+     47.401103,
+     -121.283562
+    ],
+    [
+     47.401309,
+     -121.283249
+    ],
+    [
+     47.401412,
+     -121.283173
+    ],
+    [
+     47.401512,
+     -121.282982
+    ],
+    [
+     47.401493,
+     -121.282631
+    ],
+    [
+     47.401504,
+     -121.282418
+    ],
+    [
+     47.401687,
+     -121.282723
+    ],
+    [
+     47.401889,
+     -121.282837
+    ],
+    [
+     47.402065,
+     -121.283211
+    ],
+    [
+     47.402431,
+     -121.283692
+    ],
+    [
+     47.40269,
+     -121.28386
+    ],
+    [
+     47.402862,
+     -121.284127
+    ],
+    [
+     47.403079,
+     -121.284554
+    ],
+    [
+     47.40319,
+     -121.284836
+    ],
+    [
+     47.403518,
+     -121.285149
+    ],
+    [
+     47.403739,
+     -121.285599
+    ],
+    [
+     47.403934,
+     -121.285691
+    ],
+    [
+     47.403999,
+     -121.285828
+    ],
+    [
+     47.404159,
+     -121.285859
+    ],
+    [
+     47.40438,
+     -121.286034
+    ],
+    [
+     47.404548,
+     -121.286408
+    ],
+    [
+     47.404628,
+     -121.286538
+    ],
+    [
+     47.404731,
+     -121.286614
+    ],
+    [
+     47.404796,
+     -121.286469
+    ],
+    [
+     47.404869,
+     -121.286446
+    ],
+    [
+     47.404945,
+     -121.286515
+    ],
+    [
+     47.405078,
+     -121.286492
+    ],
+    [
+     47.405319,
+     -121.286515
+    ],
+    [
+     47.405532,
+     -121.286614
+    ],
+    [
+     47.405933,
+     -121.286644
+    ],
+    [
+     47.406604,
+     -121.286545
+    ],
+    [
+     47.407115,
+     -121.286728
+    ],
+    [
+     47.407447,
+     -121.287056
+    ],
+    [
+     47.407825,
+     -121.287209
+    ],
+    [
+     47.408115,
+     -121.287354
+    ],
+    [
+     47.408279,
+     -121.287797
+    ],
+    [
+     47.408767,
+     -121.288224
+    ],
+    [
+     47.409133,
+     -121.288521
+    ],
+    [
+     47.409191,
+     -121.288758
+    ],
+    [
+     47.409706,
+     -121.2892
+    ],
+    [
+     47.410018,
+     -121.289528
+    ],
+    [
+     47.410198,
+     -121.289826
+    ],
+    [
+     47.410354,
+     -121.290062
+    ],
+    [
+     47.410411,
+     -121.290299
+    ],
+    [
+     47.410285,
+     -121.29052
+    ],
+    [
+     47.410137,
+     -121.290734
+    ],
+    [
+     47.410099,
+     -121.290841
+    ],
+    [
+     47.410137,
+     -121.29097
+    ],
+    [
+     47.410346,
+     -121.291153
+    ],
+    [
+     47.410655,
+     -121.291382
+    ],
+    [
+     47.410934,
+     -121.291466
+    ],
+    [
+     47.410976,
+     -121.291543
+    ],
+    [
+     47.410945,
+     -121.291756
+    ],
+    [
+     47.411083,
+     -121.291863
+    ],
+    [
+     47.411243,
+     -121.292069
+    ],
+    [
+     47.411296,
+     -121.292222
+    ],
+    [
+     47.411304,
+     -121.292374
+    ],
+    [
+     47.411453,
+     -121.292687
+    ],
+    [
+     47.411582,
+     -121.292855
+    ],
+    [
+     47.411701,
+     -121.292916
+    ],
+    [
+     47.412414,
+     -121.293412
+    ],
+    [
+     47.412765,
+     -121.293549
+    ],
+    [
+     47.412845,
+     -121.293831
+    ],
+    [
+     47.41296,
+     -121.294129
+    ],
+    [
+     47.412971,
+     -121.294426
+    ],
+    [
+     47.412998,
+     -121.294594
+    ],
+    [
+     47.41296,
+     -121.294953
+    ],
+    [
+     47.413055,
+     -121.29522
+    ],
+    [
+     47.413276,
+     -121.29554
+    ],
+    [
+     47.413372,
+     -121.295777
+    ],
+    [
+     47.413497,
+     -121.295914
+    ],
+    [
+     47.413661,
+     -121.296303
+    ],
+    [
+     47.414028,
+     -121.296814
+    ],
+    [
+     47.414215,
+     -121.297196
+    ],
+    [
+     47.414402,
+     -121.297547
+    ],
+    [
+     47.414524,
+     -121.297661
+    ],
+    [
+     47.414695,
+     -121.297989
+    ],
+    [
+     47.41476,
+     -121.298241
+    ],
+    [
+     47.414836,
+     -121.298295
+    ],
+    [
+     47.414943,
+     -121.298317
+    ],
+    [
+     47.415107,
+     -121.298569
+    ],
+    [
+     47.415206,
+     -121.299035
+    ],
+    [
+     47.415355,
+     -121.299157
+    ],
+    [
+     47.415485,
+     -121.299454
+    ],
+    [
+     47.415618,
+     -121.299592
+    ],
+    [
+     47.41566,
+     -121.29982
+    ],
+    [
+     47.415748,
+     -121.300126
+    ],
+    [
+     47.415786,
+     -121.300599
+    ],
+    [
+     47.415927,
+     -121.300911
+    ],
+    [
+     47.41592,
+     -121.301117
+    ],
+    [
+     47.415885,
+     -121.3014
+    ],
+    [
+     47.415874,
+     -121.301621
+    ],
+    [
+     47.415863,
+     -121.301735
+    ],
+    [
+     47.416049,
+     -121.302147
+    ],
+    [
+     47.416084,
+     -121.302483
+    ],
+    [
+     47.416053,
+     -121.302697
+    ],
+    [
+     47.416095,
+     -121.302834
+    ],
+    [
+     47.416347,
+     -121.303124
+    ],
+    [
+     47.416488,
+     -121.303505
+    ],
+    [
+     47.416713,
+     -121.303818
+    ],
+    [
+     47.416797,
+     -121.304108
+    ],
+    [
+     47.416862,
+     -121.304299
+    ],
+    [
+     47.416873,
+     -121.304413
+    ],
+    [
+     47.416851,
+     -121.304482
+    ],
+    [
+     47.4169,
+     -121.304551
+    ],
+    [
+     47.416919,
+     -121.304635
+    ],
+    [
+     47.416923,
+     -121.304711
+    ],
+    [
+     47.417011,
+     -121.304757
+    ],
+    [
+     47.417121,
+     -121.30481
+    ],
+    [
+     47.417198,
+     -121.304871
+    ],
+    [
+     47.41732,
+     -121.304917
+    ],
+    [
+     47.417362,
+     -121.30497
+    ],
+    [
+     47.417556,
+     -121.305527
+    ],
+    [
+     47.417549,
+     -121.305993
+    ],
+    [
+     47.417602,
+     -121.306397
+    ],
+    [
+     47.417648,
+     -121.306679
+    ],
+    [
+     47.417884,
+     -121.307023
+    ],
+    [
+     47.418098,
+     -121.307816
+    ],
+    [
+     47.418151,
+     -121.3079
+    ],
+    [
+     47.418342,
+     -121.307953
+    ],
+    [
+     47.418464,
+     -121.308022
+    ],
+    [
+     47.418544,
+     -121.308167
+    ],
+    [
+     47.418624,
+     -121.308213
+    ],
+    [
+     47.418766,
+     -121.30819
+    ],
+    [
+     47.418846,
+     -121.30835
+    ],
+    [
+     47.418807,
+     -121.308503
+    ],
+    [
+     47.418842,
+     -121.308556
+    ],
+    [
+     47.418994,
+     -121.30861
+    ],
+    [
+     47.419055,
+     -121.308693
+    ],
+    [
+     47.419132,
+     -121.30877
+    ],
+    [
+     47.419162,
+     -121.308945
+    ],
+    [
+     47.419258,
+     -121.309105
+    ],
+    [
+     47.419307,
+     -121.309121
+    ],
+    [
+     47.419319,
+     -121.309304
+    ],
+    [
+     47.419364,
+     -121.309426
+    ],
+    [
+     47.419307,
+     -121.309632
+    ],
+    [
+     47.41938,
+     -121.30983
+    ],
+    [
+     47.419517,
+     -121.310105
+    ],
+    [
+     47.419582,
+     -121.310494
+    ],
+    [
+     47.419769,
+     -121.310875
+    ],
+    [
+     47.419784,
+     -121.311142
+    ],
+    [
+     47.420295,
+     -121.311699
+    ],
+    [
+     47.420463,
+     -121.312226
+    ],
+    [
+     47.420639,
+     -121.312783
+    ],
+    [
+     47.42078,
+     -121.312951
+    ],
+    [
+     47.421039,
+     -121.313042
+    ],
+    [
+     47.421173,
+     -121.313386
+    ],
+    [
+     47.421302,
+     -121.313561
+    ],
+    [
+     47.421527,
+     -121.313706
+    ],
+    [
+     47.421722,
+     -121.313874
+    ],
+    [
+     47.421787,
+     -121.31408
+    ],
+    [
+     47.422004,
+     -121.314248
+    ],
+    [
+     47.422187,
+     -121.314728
+    ],
+    [
+     47.422233,
+     -121.315346
+    ],
+    [
+     47.42242,
+     -121.315941
+    ],
+    [
+     47.422447,
+     -121.316506
+    ],
+    [
+     47.422576,
+     -121.316918
+    ],
+    [
+     47.422569,
+     -121.317284
+    ],
+    [
+     47.422473,
+     -121.31762
+    ],
+    [
+     47.422603,
+     -121.317574
+    ],
+    [
+     47.422729,
+     -121.317658
+    ],
+    [
+     47.422676,
+     -121.317902
+    ],
+    [
+     47.422756,
+     -121.318215
+    ],
+    [
+     47.422676,
+     -121.318406
+    ],
+    [
+     47.422786,
+     -121.318573
+    ],
+    [
+     47.422725,
+     -121.318833
+    ],
+    [
+     47.42284,
+     -121.318947
+    ],
+    [
+     47.422676,
+     -121.319199
+    ],
+    [
+     47.422672,
+     -121.319336
+    ],
+    [
+     47.422786,
+     -121.319413
+    ],
+    [
+     47.422916,
+     -121.319428
+    ],
+    [
+     47.423,
+     -121.319497
+    ],
+    [
+     47.423015,
+     -121.319703
+    ],
+    [
+     47.422885,
+     -121.319825
+    ],
+    [
+     47.422874,
+     -121.319909
+    ],
+    [
+     47.422958,
+     -121.320031
+    ],
+    [
+     47.423065,
+     -121.320076
+    ],
+    [
+     47.423065,
+     -121.320176
+    ],
+    [
+     47.422916,
+     -121.320298
+    ],
+    [
+     47.422904,
+     -121.320405
+    ],
+    [
+     47.423,
+     -121.320443
+    ],
+    [
+     47.423042,
+     -121.320519
+    ],
+    [
+     47.422966,
+     -121.320595
+    ],
+    [
+     47.422676,
+     -121.320694
+    ],
+    [
+     47.422672,
+     -121.320908
+    ],
+    [
+     47.422523,
+     -121.32103
+    ],
+    [
+     47.422454,
+     -121.321229
+    ],
+    [
+     47.422515,
+     -121.32148
+    ],
+    [
+     47.422637,
+     -121.321602
+    ],
+    [
+     47.422592,
+     -121.321755
+    ],
+    [
+     47.422462,
+     -121.3219
+    ],
+    [
+     47.422225,
+     -121.322236
+    ],
+    [
+     47.421974,
+     -121.322335
+    ],
+    [
+     47.421852,
+     -121.322472
+    ],
+    [
+     47.421623,
+     -121.322526
+    ],
+    [
+     47.421394,
+     -121.322686
+    ],
+    [
+     47.42126,
+     -121.322869
+    ],
+    [
+     47.421062,
+     -121.32293
+    ],
+    [
+     47.420997,
+     -121.32306
+    ],
+    [
+     47.420906,
+     -121.32306
+    ],
+    [
+     47.420845,
+     -121.323136
+    ],
+    [
+     47.420722,
+     -121.323159
+    ],
+    [
+     47.420669,
+     -121.323304
+    ],
+    [
+     47.420631,
+     -121.323426
+    ],
+    [
+     47.420753,
+     -121.32351
+    ],
+    [
+     47.420967,
+     -121.323456
+    ],
+    [
+     47.421112,
+     -121.323388
+    ],
+    [
+     47.421268,
+     -121.323502
+    ],
+    [
+     47.42131,
+     -121.323761
+    ],
+    [
+     47.421302,
+     -121.323868
+    ],
+    [
+     47.421257,
+     -121.324013
+    ],
+    [
+     47.421249,
+     -121.32425
+    ],
+    [
+     47.421291,
+     -121.324387
+    ],
+    [
+     47.421352,
+     -121.324402
+    ],
+    [
+     47.421401,
+     -121.324334
+    ],
+    [
+     47.42144,
+     -121.324364
+    ],
+    [
+     47.421524,
+     -121.324639
+    ],
+    [
+     47.421611,
+     -121.324791
+    ],
+    [
+     47.421749,
+     -121.324814
+    ],
+    [
+     47.421901,
+     -121.324723
+    ],
+    [
+     47.421993,
+     -121.324677
+    ],
+    [
+     47.422096,
+     -121.324547
+    ],
+    [
+     47.422172,
+     -121.324502
+    ],
+    [
+     47.42226,
+     -121.324593
+    ],
+    [
+     47.422317,
+     -121.324921
+    ],
+    [
+     47.422386,
+     -121.325196
+    ],
+    [
+     47.42255,
+     -121.325554
+    ],
+    [
+     47.422618,
+     -121.325776
+    ],
+    [
+     47.422733,
+     -121.325814
+    ],
+    [
+     47.42295,
+     -121.325615
+    ],
+    [
+     47.423107,
+     -121.325638
+    ],
+    [
+     47.423183,
+     -121.325753
+    ],
+    [
+     47.423191,
+     -121.325875
+    ],
+    [
+     47.423133,
+     -121.326035
+    ],
+    [
+     47.423164,
+     -121.326195
+    ],
+    [
+     47.42324,
+     -121.326378
+    ],
+    [
+     47.423198,
+     -121.326638
+    ],
+    [
+     47.42313,
+     -121.326859
+    ],
+    [
+     47.423027,
+     -121.327034
+    ],
+    [
+     47.423095,
+     -121.327187
+    ],
+    [
+     47.422973,
+     -121.327332
+    ],
+    [
+     47.42295,
+     -121.327591
+    ],
+    [
+     47.422992,
+     -121.32779
+    ],
+    [
+     47.423099,
+     -121.328042
+    ],
+    [
+     47.422988,
+     -121.328431
+    ],
+    [
+     47.422901,
+     -121.328644
+    ],
+    [
+     47.422851,
+     -121.328873
+    ],
+    [
+     47.422809,
+     -121.329125
+    ],
+    [
+     47.422977,
+     -121.329194
+    ],
+    [
+     47.423107,
+     -121.329171
+    ],
+    [
+     47.423267,
+     -121.329255
+    ],
+    [
+     47.423374,
+     -121.329354
+    ],
+    [
+     47.423446,
+     -121.3294
+    ],
+    [
+     47.423522,
+     -121.329415
+    ],
+    [
+     47.423622,
+     -121.329407
+    ],
+    [
+     47.42369,
+     -121.329499
+    ],
+    [
+     47.423736,
+     -121.32972
+    ],
+    [
+     47.423774,
+     -121.329964
+    ],
+    [
+     47.423881,
+     -121.330269
+    ],
+    [
+     47.4239,
+     -121.330445
+    ],
+    [
+     47.423877,
+     -121.330758
+    ],
+    [
+     47.423843,
+     -121.331055
+    ],
+    [
+     47.423847,
+     -121.331246
+    ],
+    [
+     47.423896,
+     -121.331444
+    ],
+    [
+     47.423858,
+     -121.331597
+    ],
+    [
+     47.423976,
+     -121.331749
+    ],
+    [
+     47.423908,
+     -121.33181
+    ],
+    [
+     47.4239,
+     -121.331872
+    ],
+    [
+     47.423973,
+     -121.331917
+    ],
+    [
+     47.423919,
+     -121.332032
+    ],
+    [
+     47.423816,
+     -121.332032
+    ],
+    [
+     47.423778,
+     -121.332116
+    ],
+    [
+     47.423851,
+     -121.3322
+    ],
+    [
+     47.423873,
+     -121.332299
+    ],
+    [
+     47.423835,
+     -121.332383
+    ],
+    [
+     47.423694,
+     -121.332482
+    ],
+    [
+     47.423679,
+     -121.332558
+    ],
+    [
+     47.42382,
+     -121.332604
+    ],
+    [
+     47.423709,
+     -121.332764
+    ],
+    [
+     47.423797,
+     -121.332787
+    ],
+    [
+     47.423679,
+     -121.332886
+    ],
+    [
+     47.423652,
+     -121.332963
+    ],
+    [
+     47.423698,
+     -121.333069
+    ],
+    [
+     47.423774,
+     -121.333077
+    ],
+    [
+     47.423889,
+     -121.333062
+    ],
+    [
+     47.423866,
+     -121.333161
+    ],
+    [
+     47.423938,
+     -121.333199
+    ],
+    [
+     47.42398,
+     -121.333367
+    ],
+    [
+     47.423995,
+     -121.33368
+    ],
+    [
+     47.424057,
+     -121.333817
+    ],
+    [
+     47.424102,
+     -121.333855
+    ],
+    [
+     47.424163,
+     -121.333878
+    ],
+    [
+     47.42435,
+     -121.333649
+    ],
+    [
+     47.424571,
+     -121.333443
+    ],
+    [
+     47.424648,
+     -121.333405
+    ],
+    [
+     47.424942,
+     -121.333382
+    ],
+    [
+     47.425094,
+     -121.333313
+    ],
+    [
+     47.425178,
+     -121.333199
+    ],
+    [
+     47.425254,
+     -121.333031
+    ],
+    [
+     47.425441,
+     -121.332711
+    ],
+    [
+     47.425552,
+     -121.332589
+    ],
+    [
+     47.425865,
+     -121.332421
+    ],
+    [
+     47.426372,
+     -121.332261
+    ],
+    [
+     47.426471,
+     -121.332192
+    ],
+    [
+     47.426807,
+     -121.331841
+    ],
+    [
+     47.426898,
+     -121.331788
+    ],
+    [
+     47.427604,
+     -121.331597
+    ],
+    [
+     47.42786,
+     -121.33165
+    ],
+    [
+     47.427879,
+     -121.331803
+    ],
+    [
+     47.427841,
+     -121.331933
+    ],
+    [
+     47.427898,
+     -121.332093
+    ],
+    [
+     47.427989,
+     -121.332078
+    ],
+    [
+     47.428043,
+     -121.332016
+    ],
+    [
+     47.428119,
+     -121.332032
+    ],
+    [
+     47.428203,
+     -121.332032
+    ],
+    [
+     47.428272,
+     -121.331955
+    ],
+    [
+     47.428363,
+     -121.331963
+    ],
+    [
+     47.428462,
+     -121.332032
+    ],
+    [
+     47.428569,
+     -121.332078
+    ],
+    [
+     47.428752,
+     -121.332131
+    ],
+    [
+     47.428913,
+     -121.331994
+    ],
+    [
+     47.429008,
+     -121.33194
+    ],
+    [
+     47.429088,
+     -121.331818
+    ],
+    [
+     47.429153,
+     -121.331704
+    ],
+    [
+     47.429256,
+     -121.331688
+    ],
+    [
+     47.429363,
+     -121.331635
+    ],
+    [
+     47.429485,
+     -121.331658
+    ],
+    [
+     47.429584,
+     -121.331566
+    ],
+    [
+     47.429725,
+     -121.331536
+    ],
+    [
+     47.429893,
+     -121.331551
+    ],
+    [
+     47.430042,
+     -121.33162
+    ],
+    [
+     47.430133,
+     -121.331589
+    ],
+    [
+     47.430213,
+     -121.331612
+    ],
+    [
+     47.430351,
+     -121.331605
+    ],
+    [
+     47.43048,
+     -121.331536
+    ],
+    [
+     47.430553,
+     -121.331566
+    ],
+    [
+     47.430648,
+     -121.331566
+    ],
+    [
+     47.430797,
+     -121.331452
+    ],
+    [
+     47.430938,
+     -121.331444
+    ],
+    [
+     47.43114,
+     -121.331322
+    ],
+    [
+     47.431201,
+     -121.331154
+    ],
+    [
+     47.431297,
+     -121.331101
+    ],
+    [
+     47.431297,
+     -121.331162
+    ],
+    [
+     47.431392,
+     -121.331139
+    ],
+    [
+     47.431533,
+     -121.331078
+    ],
+    [
+     47.431789,
+     -121.331009
+    ],
+    [
+     47.43198,
+     -121.330971
+    ],
+    [
+     47.432079,
+     -121.330956
+    ],
+    [
+     47.432189,
+     -121.330941
+    ],
+    [
+     47.432331,
+     -121.330933
+    ],
+    [
+     47.432399,
+     -121.330903
+    ],
+    [
+     47.432552,
+     -121.330842
+    ],
+    [
+     47.432804,
+     -121.330689
+    ],
+    [
+     47.432987,
+     -121.330575
+    ],
+    [
+     47.433109,
+     -121.330483
+    ],
+    [
+     47.433223,
+     -121.33043
+    ],
+    [
+     47.433361,
+     -121.330391
+    ],
+    [
+     47.433509,
+     -121.330468
+    ],
+    [
+     47.433597,
+     -121.330605
+    ],
+    [
+     47.433673,
+     -121.330628
+    ],
+    [
+     47.433712,
+     -121.330651
+    ],
+    [
+     47.433731,
+     -121.330689
+    ],
+    [
+     47.433685,
+     -121.330742
+    ],
+    [
+     47.433712,
+     -121.330773
+    ],
+    [
+     47.433792,
+     -121.330781
+    ],
+    [
+     47.433856,
+     -121.330811
+    ],
+    [
+     47.433956,
+     -121.330887
+    ],
+    [
+     47.434097,
+     -121.330872
+    ],
+    [
+     47.434246,
+     -121.330971
+    ],
+    [
+     47.434417,
+     -121.330971
+    ],
+    [
+     47.434566,
+     -121.331063
+    ],
+    [
+     47.434638,
+     -121.331063
+    ],
+    [
+     47.434684,
+     -121.331101
+    ],
+    [
+     47.434703,
+     -121.331154
+    ],
+    [
+     47.434707,
+     -121.3312
+    ],
+    [
+     47.434783,
+     -121.331238
+    ],
+    [
+     47.434814,
+     -121.331315
+    ],
+    [
+     47.434879,
+     -121.331345
+    ],
+    [
+     47.434955,
+     -121.331437
+    ],
+    [
+     47.435054,
+     -121.331452
+    ],
+    [
+     47.435131,
+     -121.331399
+    ],
+    [
+     47.435199,
+     -121.331368
+    ],
+    [
+     47.435245,
+     -121.331406
+    ],
+    [
+     47.435443,
+     -121.331376
+    ],
+    [
+     47.435684,
+     -121.331337
+    ],
+    [
+     47.435817,
+     -121.331345
+    ],
+    [
+     47.435974,
+     -121.331315
+    ],
+    [
+     47.436225,
+     -121.331337
+    ],
+    [
+     47.436309,
+     -121.331383
+    ],
+    [
+     47.436347,
+     -121.331406
+    ],
+    [
+     47.436492,
+     -121.33136
+    ],
+    [
+     47.436622,
+     -121.33136
+    ],
+    [
+     47.436679,
+     -121.331322
+    ],
+    [
+     47.436702,
+     -121.331269
+    ],
+    [
+     47.436798,
+     -121.331238
+    ],
+    [
+     47.436916,
+     -121.331193
+    ],
+    [
+     47.437057,
+     -121.331162
+    ],
+    [
+     47.43729,
+     -121.331032
+    ],
+    [
+     47.437397,
+     -121.331048
+    ],
+    [
+     47.437568,
+     -121.331025
+    ],
+    [
+     47.43769,
+     -121.33104
+    ],
+    [
+     47.437774,
+     -121.331032
+    ],
+    [
+     47.437843,
+     -121.33104
+    ],
+    [
+     47.437908,
+     -121.331017
+    ],
+    [
+     47.43798,
+     -121.331009
+    ],
+    [
+     47.438018,
+     -121.331055
+    ],
+    [
+     47.438068,
+     -121.331063
+    ],
+    [
+     47.438148,
+     -121.331002
+    ],
+    [
+     47.438217,
+     -121.331017
+    ],
+    [
+     47.438251,
+     -121.331109
+    ],
+    [
+     47.438308,
+     -121.331177
+    ],
+    [
+     47.438407,
+     -121.3312
+    ],
+    [
+     47.438594,
+     -121.331177
+    ],
+    [
+     47.438758,
+     -121.33117
+    ],
+    [
+     47.438892,
+     -121.331131
+    ],
+    [
+     47.438987,
+     -121.33117
+    ],
+    [
+     47.439083,
+     -121.331254
+    ],
+    [
+     47.439174,
+     -121.331261
+    ],
+    [
+     47.439258,
+     -121.331376
+    ],
+    [
+     47.439338,
+     -121.331429
+    ],
+    [
+     47.43943,
+     -121.331429
+    ],
+    [
+     47.439479,
+     -121.331505
+    ],
+    [
+     47.439643,
+     -121.33162
+    ],
+    [
+     47.439788,
+     -121.33165
+    ],
+    [
+     47.439899,
+     -121.331627
+    ],
+    [
+     47.440067,
+     -121.331749
+    ],
+    [
+     47.440166,
+     -121.331841
+    ],
+    [
+     47.440235,
+     -121.331833
+    ],
+    [
+     47.440288,
+     -121.331856
+    ],
+    [
+     47.440399,
+     -121.331955
+    ],
+    [
+     47.440448,
+     -121.331955
+    ],
+    [
+     47.440464,
+     -121.33191
+    ],
+    [
+     47.440479,
+     -121.331833
+    ],
+    [
+     47.44054,
+     -121.331788
+    ],
+    [
+     47.440612,
+     -121.331788
+    ],
+    [
+     47.440696,
+     -121.331841
+    ],
+    [
+     47.440834,
+     -121.331826
+    ],
+    [
+     47.440914,
+     -121.331833
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 8,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "6:00 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 8,
+      "note": "Parties consistently treat this as a single long day hike/scramble, not a backpack. From the Rachel Lake TH (2,800 …",
+      "fromTo": "Car-to-car: Rachel Lake to Rampart Ridge & Alta Mountain",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No rock rack is used or needed -- this is an unroped Class 2 hands-on-rock scramble, not a roped rock climb. Parties do not carry cams, nuts, hexes, or a rack of any kind on the standard South Ridge/Rampart Ridge route.",
+   "what_to_bring": [
+    "bug net and repellent (mosquitoes reported swarming heavily at rest stops on the approach)",
+    "sun protection -- little to no shade on the final push and ridge",
+    "map/GPS/route beta for false-summit routefinding (3-5 false summits reported before the true summit)",
+    "wind layer for the exposed open ridge",
+    "turn-around discipline / willingness to bail if snow is encountered on the ridge or gully"
+   ],
+   "pro_tips": [
+    "A great early-summer scramble once Rampart Ridge melts out",
+    "Spectacular larch and lake views; popular and family-friendly for strong scramblers"
+   ],
+   "watch_out": [
+    "loose rock",
+    "thunderstorms",
+    "lingering snow/cornices on the ridge early"
+   ],
+   "pro_needs": "None -- no technical protection is placed on this route. It is a Class 2 scramble: loose rock and large steps on the initial push, then a narrow, exposed but non-technical ridge crest with several false summits to the true summit. Rock quality on the ridge itself is solid enough for hands-and-feet scrambling; the main hazard is loose talus/scree on the lower approach slope rather than anything requiring gear placement.",
+   "best_season": "Mid-July through October (larch color in fall)",
+   "high_point_ft": 6275,
+   "aid_grade": null,
+   "approach": "From the Rachel Lake Trailhead (2,800 ft, end of FS Rd 4930 off Kachess Lake Rd, Exit 62 from I-90), start on Rachel Lake Trail #1313. The first ~2.75 miles follow Box Canyon Creek on gentle grade, crossing several side streams and cascades (reliable water throughout — no need to carry much from the car). At about mile 2.75 the trail crosses Box/Canyon Creek and hits the notorious 'mile from hell': a heavily rooted, rocky boot-beaten climb that gains roughly 1,300 ft in about a mile, with large step-ups and no switchbacks — this is the crux of the approach fitness-wise, not technically hard but brutal with a full pack. The trail tops out at Rachel Lake (4,700 ft, ~3.5-4 mi from the TH); a use trail/climber's path branches right near the outhouse and skirts the north side of the lake, then switchbacks steeply up rocky tread for about half a mile to the Rampart Ridge crest (~5,100 ft). At the ridge junction, go left (south) for Rampart Lakes or right for Lila Lake/Alta Mountain — for this route, go right toward Lila Lake. The tread is brushy in places but easy to follow; after about 0.3 mile a cairn marks a fork where the Lila Lake trail continues straight and the unsigned climber's path to Alta branches left. Take the left fork, which starts steep and loose with big steps and no shade, and follow the increasingly exposed climber's path along the ridge crest toward Alta's summit block, negotiating three false summits, class 2-3 rock steps, and short sections of real exposure (in one section the path skirts a cliff edge — fall consequences are serious here, and the route should not be attempted with snow on the ridge). A helmet is commonly recommended for the final ridge scramble due to loose rock and exposure. Total one-way distance to the 6,274 ft summit is about 9.5-10 km (matches the 19.3 km round trip) with roughly 3,300 ft of total gain.",
+   "descent_text": "This is a scramble, not a technical climb — there is no rappelling on this route (rappels: 0). Descend by reversing the exact ascent line: retrace the ridge crest scramble back over the false summits and down the steep, loose lower ridge to the cairned fork, follow the Lila Lake trail back to the Rampart Ridge junction, drop via the steep half-mile rocky switchbacks to Rachel Lake, then retrace Trail #1313 down through the 'mile from hell' (this section is notably harder on tired knees going down — loose rocky step-downs and roots) and out along Box Canyon Creek to the trailhead. Key descent hazards mirror the approach: the exposed ridge-crest sections near the summit (do not descend this route if the ridge is snow-covered or wet — the exposed traverse becomes significantly more dangerous), loose rock on the steep lower ridge (rockfall risk onto anyone below — descend it one at a time), and the steep, rooted, ankle-turning tread on the 'mile from hell' switchbacks. No natural or fixed anchors are used anywhere on this route; parties should not carry a rope expecting to need it, though a short handline could be improvised on the steep lower ridge for less confident scramblers.",
+   "bail": "Descend off the ridge toward Rampart Lakes and the trail.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Snow can linger on the ridge traverses into July, and the route is not recommended in snow due to cliff-adjacent sections near the summit; best conditions are typically August-September.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Standard trip reports all treat this as a single long day hike/scramble, not a backpack. From the Rachel Lake TH (2,800 ft), hike Box Creek Canyon to Rachel Lake, climb to Rampart Ridge and turn right toward Lila Lake, then follow the unmarked climber's path up Alta's long south ridge past several false summits to the 6,274 ft summit. Reverse the same line to descend.",
+      "hours": 8,
+      "miles": 12,
+      "title": "Car-to-car: Rachel Lake to Rampart Ridge & Alta Mountain",
+      "gainFt": 3300,
+      "lossFt": 3300,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave Rachel Lake trailhead",
+        "detail": "Elevation ~2,800 ft; first 2.5 mi is easy along Box Canyon Creek."
+       },
+       {
+        "time": "8:15 AM",
+        "label": "Arrive Rachel Lake",
+        "detail": "4.4 mi in, ~4,700 ft; steep rocky/root-filled final push to the lake."
+       },
+       {
+        "time": "9:15 AM",
+        "label": "Reach the Rampart Ridge junction",
+        "detail": "Trail skirts the lake then climbs ~600 ft more to the ridge; go right toward Lila Lake."
+       },
+       {
+        "time": "10:30 AM",
+        "label": "Start Alta's south ridge",
+        "detail": "Leave the maintained trail for the unmarked climber's path; expect several false summits."
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Summit Alta Mountain",
+        "detail": "6,274 ft; views of the Snoqualmie/Keechelus peaks."
+       },
+       {
+        "time": "2:00 PM",
+        "label": "Back at trailhead",
+        "detail": "Reverse the ridge, Rampart Lakes, and Rachel Lake trail to the car."
+       }
+      ],
+      "objective": "Summit Alta Mountain via Rachel Lake and Rampart Ridge"
+     }
+    ],
+    "totalNote": "A single long day hike/scramble car-to-car: roughly 12 miles round trip with about 3,300 ft of gain, typically 7-9 hours including summit time; not an overnight trip for the standard route, though Rampart Lakes can be used as a base camp by those who prefer to split it up."
+   },
+   "access": {
+    "fees": "$5/day or $30/year Northwest Forest Pass (Northwest Forest Pass, America the Beautiful, or Recreation.gov digital day-pass all accepted); Alpine Lakes Wilderness entry itself requires only a free, self-issued permit at the trailhead.",
+    "notes": "Climbable roughly June–October; heavy winter snowfall and frequent avalanche control closures on I-90 affect access the rest of the year.",
+    "rules": "Alpine Lakes Wilderness regulations apply",
+    "permit": "Self-issued wilderness permit at the trailhead",
+    "closures": null,
+    "group_limit": 12,
+    "landManager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "land_manager": "Okanogan-Wenatchee National Forest (Cle Elum Ranger District)",
+    "parking_pass": "Northwest Forest Pass ($30/yr) or America the Beautiful pass, or a $5/day pass at developed trailheads.",
+    "passRequired": "Northwest Forest Pass at Rachel Lake trailhead",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk and carry it with you."
+    }
+   },
+   "road": {
+    "name": "Kachess Lake Road / Box Canyon Road (FR 4930) to Rachel Lake trailhead",
+    "status": "Typically accessible June through October per USFS",
+    "driveNote": "Paved then gravel forest roads; rough near the trailhead",
+    "seasonalGate": "No formal gate found in official sources, but FR 4930 and the trail can hold snow into early summer; check Okanogan-Wenatchee NF alerts/notices for storm-damage closures before driving."
+   },
+   "climate": {
+    "typical": "Transitional Cascade-crest climate; snowier than the east slope",
+    "bySeason": {
+     "fall": "Excellent; larch color, cool and clear",
+     "spring": "Snow on the ridge well into early summer",
+     "summer": "Prime window; dry, watch for storms",
+     "winter": "Snowbound; not a standard scramble objective"
+    },
+    "forecastZone": "NOAA West Slopes Central Cascades / Snoqualmie Pass"
+   },
+   "emergency": {
+    "county": "Kittitas County, WA",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest — (509) 852-1100",
+    "nearestHospital": "Kittitas Valley Healthcare, Ellensburg, WA — nearest full-service ER (roughly 1 hr drive from the Kachess Lake/Rachel Lake trailhead)",
+    "sheriffDispatch": "911 for emergencies; Kittitas County Sheriff non-emergency line (509) 962-7525"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Weekends July through September; Mountaineers-club scramble courses regularly run this as a group outing, adding organized parties on top of casual traffic",
+    "solitudeRating": 2,
+    "estimatePerSeason": "Rachel Lake trailhead (50-car lot) is one of the busier Alpine Lakes Wilderness access points and regularly fills on summer weekends; traffic thins sharply past Rampart Lakes onto the ridge toward the true summit. Rough estimate: 50-150+ parties/season reach Rampart Ridge, with a smaller subset (perhaps 30-80) continuing to Alta's summit block, including organized Mountaineers scramble outings."
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "8-12 mile round trip with roughly 3,300+ ft of gain, including a steep final 1.4 miles into Rachel Lake and sustained off-trail ridge travel beyond Rampart Lakes",
+     "packWeight": "Day-pack weight, roughly 15-25 lb including layers, water, and the 10 essentials"
+    },
+    "approachTime": "~3-4 hours to Rachel Lake and up onto Rampart Ridge (4.4 mi, steep last 1.4 mi), plus another 1-2 hours of ridge travel to the summit",
+    "requiredSkills": [
+     "Basic Class 2 scrambling and off-trail route-finding",
+     "Comfort with exposure along the ridge crest and loose rock",
+     "Navigation past the easy-to-miss Lila Lake / Alta junction",
+     "Snow travel/self-arrest awareness if attempting in early July while snow or cornices linger on the ridge"
+    ],
+    "experienceLevel": "Good first alpine scramble for a partner with some off-trail hiking experience; suitable as an intro scramble when paired with someone who has done Class 2 terrain before, given the well-traveled boot path and moderate exposure"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through October, with the best combination of dry ridge conditions and larch color in late September into early October",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July can still have lingering snow and cornices on the ridge crest; conditions firm up and become straightforward by mid-to-late month",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Prime dry window with the most reliable access to the full ridge and summit block; watch for typical afternoon thunderstorms",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Peak larch color early in the month draws heavy traffic, but days shorten and early-season storms/snow become more likely as the month progresses",
+      "status": "good"
+     },
+     "September": {
+      "reason": "Excellent stable weather window; larch color begins to appear late in the month",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Transitional Cascade-crest climate that is snowier than the east slope; summer window is generally dry and clear once seasonal snow clears",
+     "probability": "Afternoon thunderstorms are a recognized hazard on this route; storm frequency increases again in October as fall systems arrive"
+    },
+    "exposure": "Sustained exposure along the ridge crest with loose rock underfoot; the terrain is mostly moderate Class 2 walking, but a slip on exposed sections or on lingering early-season snow/cornices could have serious consequences",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer/fall scramble route; nearest NWAC forecast zone is Snoqualmie Pass, relevant mainly for shoulder-season snow, not during the normal July-October climbing window",
+     "byMonth": {
+      "July": "Moderate",
+      "August": "N/A",
+      "October": "Low",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No official NWAC forecast zone specifically covers this ridge; Snoqualmie Pass zone used as the closest regional proxy",
+     "No precise season-long party-count data was found; crowd estimate is inferred from trailhead parking capacity (~50 cars) and frequency of trip reports/reviews",
+     "Could not confirm the split between casual/independent parties and organized Mountaineers scramble-course groups",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/N6N9",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 3,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.441005,
+    "peakLng": -121.331945,
+    "trailhead": "Rachel Lake Trailhead",
+    "trailheadLat": 47.4012,
+    "trailheadLng": -121.2848,
+    "trailheadDirection": "From the Rachel Lake Trailhead (2,800 ft, end of FS Rd 4930 off Kachess Lake Rd, Exit 62 from I-90), start on Rachel Lake Trail #1313."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none",
+   "rope_length_m": null,
+   "rope_note": "Class 2 scramble along Rampart Ridge from Rachel Lake with one or two easy 2nd-class spots; no rope or rack needed.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Scenic"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Rachel Lake, Rampart Ridge, and the cairned Alta turnoff on the Lila Lake trail",
+     "notes": "From the Rachel Lake trailhead at 2,800 ft, at the end of FS Rd 4930 off Kachess Lake Road from I-90 exit 62, take Rachel Lake Trail #1313. The first 2.75 miles follow Box Canyon Creek at a gentle grade with reliable water throughout.\n\nAt about mile 2.75 the trail crosses the creek and hits the section known locally as the mile from hell: a heavily rooted, rocky climb gaining roughly 1,300 ft in a mile with big step-ups and no switchbacks. It is the fitness crux of the day, not a technical one.\n\nAt Rachel Lake, 4,700 ft, a use trail branches right near the outhouse, skirts the lake's north side, and switchbacks steeply about half a mile to the Rampart Ridge crest at about 5,100 ft. At the ridge junction go right toward Lila Lake; the left branch leads to Rampart Lakes and is not this route. After about 0.3 mile a cairn marks a fork: Lila Lake is straight ahead, and the climbers' path up Alta's south ridge is the left branch.",
+     "gainFt": 3300,
+     "season": "July to October. The route should not be attempted with snow on the ridge",
+     "hazards": [
+      "Sustained exposure along the ridge crest, including a section skirting a cliff edge",
+      "Three false summits and a class 3 downclimb crux near the top",
+      "Loose rock and large step-ups on the initial climbers' path",
+      "Afternoon thunderstorms on a long exposed crest",
+      "Lingering snow in the approach gully in early season"
+     ],
+     "baseFinding": "The takeoff is a cairn on the Lila Lake Trail, not anything in the Rampart Lakes basin. At the ridge-top junction above Rachel Lake turn right (left goes to Rampart Lakes); about 0.3 mile along, a cairn marks a fork where Lila Lake is straight on and the unsigned climbers' path to Alta goes left. If you find yourself among the Rampart tarns, you took the wrong branch at the ridge.\n\nWhere it puts you: the climbers' path climbs Alta's south ridge, steep, loose and shadeless at first, before easing onto the narrow crest that leads to the summit block.\n\nWhat the ridge then does, so you can count your way along it: three false summits, class 2-3 rock steps, at least one near-vertical step of 6 to 8 ft with good holds and serious exposure, and a class 3 downclimb crux near the top. A party that has crossed one bump and thinks it is at the summit is two bumps early.\n\nAnd the one place where the finding is a warning rather than a direction: there is a section where the path skirts a cliff edge. Fall consequences there are serious. This route should not be attempted with snow on the ridge, and it is not a place for anyone uneasy with heights or for dogs.\n\nA second, independent description of the same takeoff: an unsigned climbers' path marked by a cairn leaves the maintained trail near the Rachel Lake / Lila Lake junction and climbs the south ridge. Steep, loose, big steps and no shade at first, then it moderates onto the knife-edge crest."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "class 2-3 rock steps",
+     "label": "Up Alta's south ridge from the cairned turnoff",
+     "notes": "From the cairned turnoff, follow the increasingly exposed climber's path along the ridge crest toward Alta's summit block, negotiating three false summits, class 2-3 rock steps, and short sections of real exposure. Trip reports flag a section where the path skirts a cliff edge — fall consequences are serious here, and the route should not be attempted with snow on the ridge."
+    },
+    {
+     "n": 2,
+     "label": "Final ridge scramble to the 6,274 ft summit",
+     "notes": "A helmet is commonly recommended for the final ridge scramble due to loose rock and exposure."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 4700,
+     "name": "Rachel Lake designated sites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the base for Alta Mountain and for Hibox Mountain, and it belongs to a completely different approach than the Alpental peaks — I-90 exit 62 to Kachess Lake, then Box Canyon Road up to the trailhead at about 2,800 ft. The trail runs an easy few miles up Box Canyon Creek and then climbs hard and rootily to the lake at four and a bit miles. Alta is reached by continuing over the ridge crest above the lake; Hibox leaves the trail lower down, at around 3,300 ft, on a steep boot path onto Box Ridge. Both are day scrambles from the car for a fit party, so a night here is about a civilised start or a plan that ran long. The honest caveat is the state of the basin: it is one of the most hammered lake basins in the wilderness, the parking lot fills by mid-morning in summer, and the designated sites exist because dispersed camping wrecked the shoreline. Snow-free window is roughly July into October.",
+     "water": "The lake and Box Canyon Creek are reliable all season. Treat it.",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the Rachel Lake trailhead, filled out at the box and carried for the trip. Camping is restricted to designated sites within half a mile of Rachel Lake and Rampart Lakes. Campfires are banned outright within half a mile of Rachel Lake and everywhere above 5,000 ft on this side of the crest, so plan on stoves regardless of where you end up. Party size capped at 12. Northwest Forest Pass or interagency pass for the trailhead, or a small daily fee. No drones. As of August 2026 the Box Canyon road and this trailhead were inside a wildfire closure order affecting a large part of the eastern Alpine Lakes; confirm the trailhead is actually open before driving to it.",
+     "capacity": "Multiple established sites around the lake, but the basin is visibly damaged from decades of overuse and the hardened sites are what is left"
+    },
+    {
+     "elev": 5082,
+     "name": "Rampart Lakes basin",
+     "role": "main",
+     "type": "camp",
+     "notes": "A shelf of small lakes on the south side of Alta Mountain, reached by climbing north out of the Rachel Lake basin to the ridge crest at about 5,100 ft and then contouring west for most of a mile. Roughly six miles and 2,500 ft from the trailhead. For Alta Mountain's Rampart Ridge scramble this is better placed than Rachel Lake itself, since the ridge walk to the summit starts from the crest junction just above the basin rather than from the lake below it. Camping high also means camping exposed: the shelf is open, weather arrives with no warning, and there is nothing to shelter behind. Late July through September is the realistic season, and the basin is a well-known destination in its own right, so expect to share it.",
+     "water": "The tarns hold water through the season. Treat it. They are shallow and warm late in summer, so draw from the inlets where you can.",
+     "permit": "Same free self-issue Alpine Lakes Wilderness permit as Rachel Lake, from the Rachel Lake trailhead box. Designated sites only within half a mile of the lakes. No campfires anywhere above 5,000 ft on this side, and the whole basin sits above that line — stoves only, without exception. Party size capped at 12. Northwest Forest Pass or interagency pass to park. Subject to the same 2026 wildfire closure of the Box Canyon approach; check before committing.",
+     "capacity": "Numerous established sites spread across the shelf between the tarns; more room than Rachel Lake but correspondingly busier on weekends"
+    },
+    {
+     "elev": 2275,
+     "name": "Kachess Campground, I-90 exit 62",
+     "role": "route",
+     "type": "camp",
+     "notes": "The drive-in answer for the eastern half of this zone, and the one you pass on the way to Box Canyon Road, so it is the sensible place to sleep the night before an Alta Mountain or Hibox Mountain day rather than driving over the pass at four in the morning. It is a lakeside family campground rather than anything resembling a climbers' camp, and it fills on summer weekends, so book rather than arrive hopeful. It sits low, on the shore of Kachess Lake, well below the trailhead. If it is full there is unreserved dispersed camping along the logging road toward the Rachel Lake trailhead, which is rough and unimproved but free and closer to the walk-in.",
+     "water": "Drinking water is provided during the operating season.",
+     "permit": "Standard campground fee, most sites reservable in advance and the remainder first-come. No wilderness permit required to sleep here and no trailhead pass needed for the campground itself. Seasonal operation only — it closes outside the summer months, so it is not a winter option. As of August 2026 this campground was among those closed by the wildfire order covering the north end of Kachess Lake; check it is open before relying on it.",
+     "capacity": "Large developed Forest Service campground of roughly 150 tent and RV sites plus a group site; a mix of reservable and first-come, and very busy in summer"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "rampart ridge rdg scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_colchuck_peak_holsten_hilden",
+   "area_id": "wa_colchuck_peak",
+   "name": "Holsten-Hilden",
+   "discipline": "alpine",
+   "grade": "Grade IV, M6, AI3+",
+   "grade_system": null,
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": 488,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Jens Holsten and Dan Hilden, January 2011",
+   "lat": null,
+   "lng": null,
+   "aspect": "NE",
+   "season": "Dec-Mar",
+   "description": null,
+   "gear": [
+    "Two ice tools",
+    "Crampons",
+    "Ice screws for the two AI3+ ice pitches and the 50-60° snow/ice sections",
+    "Knifeblade and other thin pitons — the M6 mixed chimney pitches are often too shallow/flared for cams",
+    "A wide cam (#3-4 range) for the M6 finish, which tops out through an off-width crack — generic 'light rock rack' undersells this",
+    "Light rack of smaller cams and nuts for the mixed rock bands",
+    "1-2 pickets for the Colchuck Glacier approach",
+    "V-thread/anchor-building kit for the descent"
+   ],
+   "hazards": [
+    "Avalanche hazard on the winter approach across and above the Colchuck Lake basin.",
+    "Unconsolidated snow over rock in the mid-route section.",
+    "Cold, committing winter conditions with limited daylight."
+   ],
+   "verif": null,
+   "overview": "A mixed ice-and-rock winter line up Colchuck Peak's northeast face, right of the Northeast Couloir, combining two sustained AI3 ice pitches with technical M6 mixed climbing through a chimney system to the summit ridge.",
+   "beta": "The route starts with two 60m pitches of AI3 ice below a hidden couloir, then continues up and left on a few hundred feet of 50-60° snow. Two pitches of unconsolidated snow over moderate rock lead to a 30 ft leftward traverse into an M6 chimney (two pitches), followed by more steep snow and a final rock band to the summit area. A linkup variation ascends the Hidden Couloir and North Buttress to the northwest face.",
+   "turnaround": "As with any winter mixed route, turn around if ice quality is poor, avalanche danger is elevated, or the team can't reasonably top out with enough daylight/margin to descend the Colchuck Glacier.",
+   "auto_generated": true,
+   "alpine_grade": "Grade III (Alpine); FA account graded Grade IV",
+   "rock_grade": null,
+   "ice_grade": "AI3",
+   "gain_ft": 5300,
+   "loss_ft": null,
+   "dist_km": 8,
+   "max_angle": 60,
+   "rappels": "No rappels specified — descend via the East Route down Colchuck Glacier",
+   "commitment": "IV",
+   "face": "Northeast Face, between the North Buttress Couloir and the Northeast Couloir",
+   "permit": "Enchantment permit area: overnight stays May 15-Oct 31 require a quota permit (Recreation.gov advance lottery); day trips need the free self-issued day-use permit at the trailhead.",
+   "comms": null,
+   "descent": "Descend the East Route (standard route) down the Colchuck Glacier.",
+   "obj_haz": [
+    "Technical M6 mixed climbing with sparse/thin protection",
+    "AI3 ice quality is conditions-dependent",
+    "Unconsolidated snow over rock on the upper route",
+    "Winter climbing means very limited daylight"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5278,
+     "lng": -120.8205,
+     "elev": 3400,
+     "name": "Stuart Lake Trailhead",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 3400
+    },
+    {
+     "lat": 47.4919578,
+     "lng": -120.8335801,
+     "elev": 5574,
+     "name": "Colchuck Lake",
+     "type": "Junction",
+     "distMi": 4.1,
+     "elevFt": 5574
+    },
+    {
+     "lat": 47.478348,
+     "lng": -120.846468,
+     "elev": 8705,
+     "name": "Colchuck Peak summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 8705
+    }
+   ],
+   "gpx": [
+    [
+     47.5278,
+     -120.8205
+    ],
+    [
+     47.4919578,
+     -120.8335801
+    ],
+    [
+     47.478348,
+     -120.846468
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "A light rack for M6 mixed climbing (small-to-mid cams and stoppers) plus 8 ice screws (2 stubbies, 6 x 10cm), 3 knifeblade pitons, and one picket for the upper snow.",
+   "what_to_bring": [
+    "helmet",
+    "belay parka",
+    "approach skis or snowshoes (winter approach)"
+   ],
+   "pro_tips": [
+    "Best in condition in winter/early spring when the Hidden Couloir's ice pitches are fully formed."
+   ],
+   "watch_out": [
+    "Mixed climbing crux — M6 chimney pitches with unconsolidated snow over moderate rock, plus a tricky M6 wide crack near the summit",
+    "Technical ice sections requiring solid mixed/ice climbing skills"
+   ],
+   "pro_needs": "2 stubby ice screws, 6x 10cm ice screws, 3 knifeblade pitons, 1 picket",
+   "best_season": "A winter/early-spring ice-and-mixed route, climbed roughly December through March when the Hidden Couloir's ice pitches are well formed; the first ascent was done in late January.",
+   "high_point_ft": 8705,
+   "aid_grade": null,
+   "approach": "Hike the Stuart Lake Trail to Colchuck Lake, then continue to the base of the Colchuck Glacier/moraine below Colchuck's northeast face. The route starts right of the Northeast Couloir: two 60m pitches of AI3 ice gain the initial couloir, followed by several hundred feet of 50-60 degree snow trending up-left, then unconsolidated snow over rock, a short traverse left into an M6 chimney, and a final steep snow/rock band to the notch on the north ridge crest.",
+   "descent_text": "From the top of the route, join the standard East Route line and descend the Colchuck Glacier back toward Colchuck Col and Colchuck Lake, then follow the approach trail out.",
+   "bail": "Retreat by rappelling established ice/rock anchors back down the route, or downclimb easier snow via the adjacent Northeast Couloir if conditions allow.",
+   "pitch_detail": [
+    {
+     "grade": "AI3+",
+     "notes": "Start right of the Northeast Couloir, at the foot of the Hidden Couloir. Two rope-stretching pitches of ice lead into the couloir. They take screws well when formed, and grades given range from AI3 to AI3+. This is the most reliable ice on the route; the ground above depends on winter snow conditions.",
+     "pitch": "1-2",
+     "lengthM": 120
+    },
+    {
+     "grade": "50–60° snow",
+     "notes": "Leave the Hidden Couloir and climb a few hundred feet of 50–60° snow up and left toward a steep rock band. Protection is sparse, so carry a picket, and the slope loads with wind-drifted snow.",
+     "pitch": "3"
+    },
+    {
+     "grade": "Snow over rock",
+     "notes": "Two pitches of unconsolidated snow over moderate rock. Clear the snow to find placements for rock gear and pins, and move carefully: the snow gives little hold for tools, and a slip here runs down the slope below.",
+     "pitch": "4-5"
+    },
+    {
+     "crux": true,
+     "grade": "M6",
+     "notes": "Traverse about 30 ft left into a chimney and climb two pitches of M6 mixed ground up it. Stubby screws, pitons and small cams protect it. This is the sustained technical heart of the route.",
+     "pitch": "6-7"
+    },
+    {
+     "grade": "Steep snow, rock band",
+     "notes": "More steep snow leads to a final rock band. Climb through it to a notch on the north ridge crest.",
+     "pitch": "8+"
+    },
+    {
+     "grade": "M6",
+     "notes": "Out of the north-ridge notch, a tricky wide crack at M6 is the last hard move. From its top, traverse around to the west into the final couloir of the North Buttress Couloir route.",
+     "pitch": "Notch crack"
+    },
+    {
+     "grade": "Short steep mixed step",
+     "notes": "Up the final couloir of the North Buttress Couloir line, one more short but steep mixed pitch reaches the summit, which is often rimed and windswept in winter. Descend by the Colchuck Glacier.",
+     "pitch": "Summit pitch"
+    }
+   ],
+   "itinerary": "Typically climbed car-to-car in a single long winter day: approach via Colchuck Lake and the glacier basin (skis/snowshoes likely needed given the seasonal road closure), climb the AI3/M6 line to the summit ridge, then descend the standard East Route down the Colchuck Glacier.",
+   "access": {
+    "fees": "Day-use: free. Overnight lottery: $6 non-refundable application fee, then $5/person/night if selected. (Some approaches — e.g. Mount Stuart via Ingalls Creek/Longs Pass — fall entirely outside the Enchantment Permit Area and need only the free self-issue permit even overnight.)",
+    "notes": "2026 lottery application window Feb 15–Mar 1 (results after Mar 17, accept/pay by Mar 31). ~25% of overnight slots also released as a walk-up daily lottery the day before entry. Season requiring the overnight permit: May 15–Oct 31. A single-day ascent with no camp inside the boundary never needs the lottery.",
+    "rules": "Overnight groups inside the permit boundary capped at 8 people, must camp together at one previously-impacted site, max 14 consecutive days, no re-entry same trip, permits non-transferable. Bear-resistant food storage mandatory forest-wide.",
+    "permit": "Day climbs: free self-issue day-use permit at the trailhead — no lottery needed. Overnight camping inside the Enchantment Permit Area boundary: Enchantments overnight lottery permit (Recreation.gov).",
+    "closures": "FR 7601 access road closed to vehicles all winter",
+    "group_limit": 8,
+    "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District — Alpine Lakes Wilderness",
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Northwest Forest Pass required at Stuart Lake, Eightmile, and Snow Lakes trailheads — $5/day or $30/annual (overnight permit holders get a covering parking pass instead).",
+    "passRequired": "Trailhead day-use fee/Interagency pass equivalent (when road is open)",
+    "overnight_permit": {
+     "url": "https://www.recreation.gov/permits/233273",
+     "what": "Enchantment Permit Area overnight permit (lottery, not free) May 15 to Oct 31; self-issue at the trailhead the rest of the year",
+     "where": "Apply in the February advance lottery or the daily lottery on Recreation.gov. The permit names one zone (Core, Colchuck, Snow Lakes, Stuart, Eightmile/Caroline) and you camp only there, except a Core permit, which covers every zone."
+    }
+   },
+   "road": {
+    "name": "Icicle Road to Eightmile Road/FR 7601",
+    "status": "Gravel; unplowed in winter",
+    "driveNote": "Winter approach starts from the Icicle Road winter closure point near the Eightmile Road junction, well below the summer trailhead",
+    "seasonalGate": "FR 7601 closes to vehicles every winter"
+   },
+   "climate": {
+    "fall": null,
+    "spring": "Ice conditions can still be in shape into March; increasing avalanche hazard as freeze-thaw cycles begin.",
+    "summer": null,
+    "winter": "Cold, short days, avalanche-prone approach; the route's defining ice typically forms this season.",
+    "typical": "Heavy Cascade winter snowfall; the northeast face holds ice/snow through winter and early spring.",
+    "forecastZone": null
+   },
+   "emergency": {
+    "notes": "Winter rescues in this basin are especially slow given the gated access road and avalanche terrain; cell coverage in the basin is unreliable.",
+    "county": "Chelan County, WA",
+    "rangerStation": "Wenatchee River Ranger District, Leavenworth: (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, Leavenworth (24/7 ED, ~20 mi from trailhead); Central Washington Hospital, Wenatchee, for higher-level trauma (~30 mi)",
+    "sheriffDispatch": "911 for emergencies (dispatched via RiverCom 911); Chelan County Sheriff non-emergency (509) 667-6851"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "January to February, during a stable high-pressure spell when the hidden couloir's ice is formed and the snow above has settled",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Spring melt strips the ice pitches and sheds rock down the face, and the overnight Enchantment permit season begins May 15.",
+      "status": "risky"
+     },
+     "April": {
+      "reason": "The ice start can still be climbable early in the month, but sun and warming rot the ice and raise avalanche and rockfall hazard.",
+      "status": "marginal"
+     },
+     "March": {
+      "reason": "Longer days help, but warm spells start to soften the snow slopes and load the Colchuck Lake basin with wet slide hazard.",
+      "status": "good"
+     },
+     "January": {
+      "reason": "The first ascent came in late January during a long high-pressure spell, which freezes the ice pitches and settles the snow above.",
+      "status": "optimal"
+     },
+     "December": {
+      "reason": "Ice can form in the entry couloir, but short days and the unplowed road to the Stuart Lake trailhead make for a very long approach.",
+      "status": "good"
+     },
+     "February": {
+      "reason": "Mid-winter cold keeps the AI3 and M6 chimney in shape; wait for a stable spell after storms to limit avalanche hazard in the basin.",
+      "status": "optimal"
+     },
+     "November": {
+      "reason": "The AI3 start is usually not yet formed and early-season snow sits unconsolidated on the rock of the northeast face.",
+      "status": "risky"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": {
+    "peakLat": 47.478348,
+    "peakLng": -120.846468,
+    "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+    "trailheadLat": 47.5282,
+    "trailheadLng": -120.82036,
+    "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,400 ft), via the Colchuck Lake Trail"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": "Grade/commitment conflicts between sources: Mountain Project currently lists WI3 M6, Grade III; the original 2011 AAC first-ascent account (American Alpine Journal, via publications.americanalpineclub.org) graded it IV M6 AI3+. Kept Mountain Project's III/WI3 as the primary listed value since it reflects current guidebook consensus, with the AAC account's IV/AI3+ noted here as the FA party's own grading.",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Colchuck Lake and the glacier to the ice below the Hidden Couloir",
+     "notes": "As for the other north-side lines: Stuart Lake trailhead, Stuart Lake Trail to the signed fork, right for Colchuck Lake and up the switchbacks to the lake at 5,570 ft, then the east-shore path to the inlet and up the basin to the Colchuck Glacier and moraine below the peak's northeast face.\n\nIn the season this route is in, expect the road to be gated well below the trailhead and the approach to be a longer day than the summer figures suggest. No trailhead-to-base time is given here because the known times are winter ones and vary too much to average.\n\nAbove the base the route runs two 60 m pitches of ice, several hundred feet of 50-60 degree snow trending up and left, then unconsolidated snow over rock, a short leftward traverse into a chimney at about M6, and a final steep band to a notch on the north ridge crest.\n\nA variation climbs the ice start and then continues up the Hidden Couloir itself and across the North Buttress — a more sustained moderate line and a genuinely different day.",
+     "season": "Winter and early spring, when the two ice pitches at the base are formed; the first ascent was in January",
+     "hazards": [
+      "A winter approach with the road gated, in avalanche terrain above Colchuck Lake",
+      "Two rope-lengths of AI3 ice off the deck with committing ground above",
+      "Unconsolidated snow over rock above the ice — poor protection",
+      "An M6 chimney reached by a short traverse, with retreat from it difficult",
+      "Short winter daylight on a Grade IV route",
+      "Topping out on the north ridge crest, still a long way from the ordinary descent"
+     ],
+     "baseFinding": "The Hidden Couloir is the marker and the route starts underneath it. This is the cleanest base identification on the whole face: find the Hidden Couloir, and the start is immediately below it — two 60 m pitches of good ice leading up to its base.\n\nPosition on the glacier, which is how you find the couloir in the first place: this line sits between the North Buttress Couloir and the Northeast Couloir. So walking up the glacier you pass the North Buttress Couloir first; the next thing is this. If you have already passed a second deep slot you have gone too high and are under the Northeast Couloir.\n\nThe positive test is the ice itself. This is the only line on the face that begins with two full rope-lengths of continuous ice off the deck. If the ground in front of you is snow, or mixed, or rock, it is not the start — whatever else it might be.\n\nAnd the divergence above, because it is decided a couple of pitches up and not at the bottom: from the top of the ice this route goes up and left from the base of the Hidden Couloir onto difficult mixed ground. The variation instead climbs into the Hidden Couloir. Both start on the same ice. One is M6; the other is sustained moderate. Know which you have come for before you leave the second belay.\n\nIf you cannot find a couloir above your ice, you are not below the Hidden Couloir and should not assume the ice is the right ice."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "AI3",
+     "label": "Initial couloir ice",
+     "notes": "From the base of the Colchuck Glacier/moraine below Colchuck's northeast face, the route starts right of the Northeast Couloir: two 60m pitches of AI3 ice gain the initial couloir."
+    },
+    {
+     "n": 2,
+     "label": "Snow trending up-left",
+     "notes": "Several hundred feet of 50-60 degree snow trending up-left, then unconsolidated snow over rock."
+    },
+    {
+     "n": 3,
+     "class": "M6",
+     "label": "Chimney",
+     "notes": "A short traverse left into an M6 chimney."
+    },
+    {
+     "n": 4,
+     "label": "Final snow/rock band to the north ridge notch",
+     "notes": "A final steep snow/rock band gains the notch on the north ridge crest."
+    }
+   ],
+   "bivy": [
+    {
+     "elev": 5570,
+     "name": "Colchuck Lake designated campsites",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is the working basecamp for Backbone Ridge, Serpentine Arete and Colchuck Balanced Rock, and it cuts an hour or more off the pre-dawn walk-in. Access is the Stuart Lake trailhead at the end of FR 7601, off Icicle Creek Road out of Leavenworth; the last few miles are rough dirt, washboarded by late summer, and the road is gated through winter and into spring. Parking is small for the demand, so a party arriving the night before should expect to be squeezed. Campfires are banned here, so plan on stoves only.",
+     "water": "Reliable — the lake itself, plus inlet streams on the south shore through most of the season. Treat it; the shoreline is heavily used.",
+     "permit": "Colchuck Lake zone of the Enchantment Permit Area. An overnight permit is required May 15–Oct 31 and comes either from the advance lottery on recreation.gov (applications open in February, success rates in the single digits) or the daily lottery run through the recreation.gov app inside a geofence around the Wenatchee River Ranger Station in Leavenworth. Day climbing needs no overnight permit, only the free self-issue Alpine Lakes Wilderness day slip at the trailhead and a parking pass.",
+     "capacity": "Roughly a dozen scattered hardened sites around the east and north shores and up the west side; each permit covers one party, and group size in this zone is capped at 8"
+    },
+    {
+     "name": "Bridge Creek and Eightmile campgrounds, Icicle Creek Road",
+     "role": "main",
+     "type": "camp",
+     "notes": "Given how unlikely a Colchuck or Core permit is on any given weekend, most parties on Backbone Ridge, Serpentine Arete or Colchuck Balanced Rock end up sleeping down on Icicle Creek Road and starting for the trailhead in the small hours. Both campgrounds sit on the drive in, before the FR 7601 turnoff, so the extra driving in the morning is only a few miles of dirt. Expect a very long day from here — car to base of route commonly runs three to four hours, and finishing after dark is normal.",
+     "water": "Icicle Creek runs alongside both; check current potable-water status at the site, as it varies by year and season",
+     "permit": "No wilderness permit at all — both are ordinary Forest Service campgrounds outside the Enchantment Permit Area, paid per night. This is what a party climbs from when it has no zone permit and is doing the route car-to-car, which is entirely legal: day use in the permit area needs only the free self-issue wilderness slip at the trailhead.",
+     "capacity": "Bridge Creek is small and rustic; Eightmile is much larger with roughly forty family sites. Both take a mix of reservations and first-come nights depending on the season."
+    },
+    {
+     "name": "Talus and boulder bivies below Dragontail's north side",
+     "role": "route",
+     "type": "bivy",
+     "notes": "Parties wanting to shorten the approach to Backbone Ridge or Serpentine Arete sometimes move above the lake into the boulders and moraine beneath the north face rather than staying at the shoreline camps. It buys perhaps half an hour and a clearer look at the route, at the cost of a colder, windier and rockier night. Whether that is worth it is genuinely contested: the time saved is small against a full day on either route, and the ground is poor. Because these are informal spots, camp on bare rock or gravel and leave no trace of a platform.",
+     "water": "Snowmelt runnels and pools early in the season; unreliable by late summer once the snowfields shrink, so many parties carry water up from the lake",
+     "permit": "Still inside the Colchuck Lake zone, so an overnight permit is required exactly as it is at the lake — sleeping on rock rather than in a designated site does not exempt a party. The zone boundary with the Core Enchantment zone lies up toward Aasgard Pass, and a Core permit is valid in every zone, so a party unsure which side of the line it will sleep on is safest holding Core.",
+     "capacity": "Two to four people on flat granite blocks and sand patches; nothing established, and the good spots are scattered rather than clustered"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "holsten hilden",
+   "ice_grade_num": 3,
+   "mixed_grade_num": 6,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_lichtenberg_mountain_southeast_ridge",
+   "area_id": "wa_lichtenberg_mountain",
+   "name": "Southeast Ridge (from Lichtenwasser Lake)",
+   "discipline": "mountaineering",
+   "grade": null,
+   "grade_system": null,
+   "grade_num": null,
+   "pitches": null,
+   "length_m": 346,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "SE",
+   "season": "Dec-Apr",
+   "description": null,
+   "gear": [
+    "Trekking poles (summer)",
+    "Skis with skins or snowshoes (winter)",
+    "Avalanche transceiver, probe and shovel (winter)",
+    "Ice axe for firm spring snow",
+    "Map, compass and GPS with the bearings loaded — 177 degrees true to Lichtenwasser Lake, 248 degrees to the 5,640 ft saddle",
+    "Helmet (optional, for the loose ridge rock in summer)"
+   ],
+   "hazards": [
+    "Avalanche hazard on both the north and south flanks of the peak, with documented slide cycles on the north slopes below 5,000 ft and a history of large releases on the south side.",
+    "Cornice development along the summit ridge in winter and spring.",
+    "Steep timbered slopes and tree wells on the approach from the road to Lichtenwasser Lake.",
+    "Loose rock on the ridge crest above the saddle in summer conditions.",
+    "Whiteout navigation risk in the featureless forest between the road and the lake.",
+    "No cell coverage, no fixed anchors, and a 31-mile drive to the nearest 24-hour emergency department."
+   ],
+   "verif": null,
+   "overview": "The short, direct line on Lichtenberg's northeast side and the peak's most-travelled route: a fishing trail to Lichtenwasser Lake at 4,708 ft, then open slopes southwest to a 5,640-foot saddle and an easy rocky ridge to the 5,844-foot summit. It is a rock scramble in summer and the classic Stevens Pass ski and snowshoe tour in winter.",
+   "beta": "This is the line described as a ridge that 'just screams skin me in winter'. In summer it is a 7-mile, 2,100-foot scramble starting from the first switchback on Smith Brook Road / FR 6700 and following the Lichtenwasser Lake fishing trail to a saddle on the southeast ridge. Jim Brisbine's party climbed it as a rock scramble over 20-21 September 1975, camping at Lichtenwasser Lake and continuing over the true summit to The Lichtenhorn before descending the west ridge. The winter version has you leave the road at the first major hairpin, head southwest up wooded and steep but always snowshoeable hillside, traverse toward Lichtenwasser Lake at about 4,600 ft (crossing the lake if it is frozen), then take easy slopes to the ridge crest and follow the summit ridge to the top. A winter north-side version is given with compass bearings: ski 2.6 miles up Smithbrook Road, leave it before the major switchback near 3,970 ft, follow a true bearing of 177 degrees to Lichtenwasser Lake, then 248 degrees from the lake's south end to a 5,640-foot saddle, and ascend the southeast ridge to the summit — about 5.2-plus miles, rated 2 to 2+ in skill and 2-minus in fitness, and included among the classic backcountry ski and snowboard routes in Washington. Avalanche hazard is the defining concern; both sides of the mountain present it.",
+   "turnaround": "Make the call on snow stability and visibility rather than the clock. Turn around if the slopes between Lichtenwasser Lake and the 5,640-foot saddle show any of the classic instability signs, if the NWAC Stevens Pass forecast is elevated and you would be travelling on or under steep open terrain, or if cloud drops low enough that you cannot hold your bearings between the lake and the saddle — this is compass-and-GPS country in a whiteout, with no landmarks in the trees. In summer, allow enough daylight to find the fishing trail again; missing it means a slow forested descent to the road.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "Class 2-3 rock scramble on the ridge above the 5,640 ft saddle; class 1-2 on the slopes below",
+   "ice_grade": null,
+   "gain_ft": 2100,
+   "loss_ft": 2100,
+   "dist_km": 3.2,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "I",
+   "face": "Southeast Ridge / northeast side above Lichtenwasser Lake",
+   "permit": null,
+   "comms": "No cell service on Smith Brook Road above US 2, at Lichtenwasser Lake, or on the summit. Download offline maps and load your bearings or track before leaving the highway. Carry a satellite messenger; in winter this matters more than in summer, since a burial or injury here is time-critical and there is no way to call for help from the basin.",
+   "descent": "Reverse the southeast ridge to the 5,640 ft saddle and descend northeast to Lichtenwasser Lake and the road; skiers descend the same north-side slopes.",
+   "obj_haz": [
+    "avalanche",
+    "cornices on the summit ridge",
+    "loose rock",
+    "route-finding in forest and whiteout",
+    "no trail above the lake"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.8025,
+     "lng": -121.0765,
+     "elev": 4000,
+     "name": "Smith Brook Road (FR 6700) — first major switchback, start of the Lichtenwasser Lake approach",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": 4000,
+     "directions": "In summer, drive US 2 to the Smith Brook Road turnoff, Forest Road 6700, roughly 3.5 to 4 miles east of Stevens Pass around mileposts 68.7 to 68.9. Follow the unpaved road up toward the Smithbrook Trailhead and park at or near the first major switchback, where the Lichtenwasser Lake fishing trail leads off toward the lake. In winter FR 6700 is unplowed, so park on the shoulder of US 2 at or just before the Smith Brook Road turnoff and skin or snowshoe 2 to 2.6 miles up the snow-covered road, which is usually well packed by other parties. Start early on a winter trip so the road approach is behind you before the snow softens."
+    },
+    {
+     "lat": 47.7923562,
+     "lng": -121.076815,
+     "elev": 4708,
+     "name": "Lichtenwasser Lake — camp and the launching point for the 248-degree bearing to the saddle",
+     "type": "Junction",
+     "distMi": null,
+     "elevFt": 4708
+    },
+    {
+     "lat": 47.7882093,
+     "lng": -121.0912723,
+     "elev": 5844,
+     "name": "Lichtenberg Mountain summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 5844
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 5,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 2,
+    "approachTimeHrs": 1.5,
+    "recommendedStart": "Summer: a mid-morning start is ample for this short day. Winter: start at first light — the 2 to 2.6 miles of road eat time on the way in, and an early start lets you be on and off the open slopes below the saddle before the day warms them."
+   },
+   "detailed_rack": "No rock gear. Summer: trekking poles and boots with decent tread are the whole kit. Winter: skis with skins or snowshoes, plus the standard avalanche kit — transceiver, probe and shovel, worn and practised with, not carried as decoration. An ice axe is worth having in spring or after a freeze-thaw cycle for the firm slopes below the saddle; ski crampons help on the road and lower slopes when the track is icy in the morning.",
+   "what_to_bring": [
+    "Offline topo maps and a downloaded GPX track",
+    "NWAC Stevens Pass avalanche forecast checked the morning of the trip",
+    "Satellite messenger",
+    "2 litres of water plus a filter (Lichtenwasser Lake in summer)",
+    "Insect repellent in July and August",
+    "Insulation and shell adequate for a windy summit ridge",
+    "Headlamp",
+    "Goggles and warm gloves in winter",
+    "Northwest Forest Pass for the dashboard"
+   ],
+   "pro_tips": [
+    "The road walk is the crux of the winter day, not the mountain. It is usually packed hard by other parties, so boots often work as well as snowshoes for the first 2 miles.",
+    "Load the compass bearings, not just a track: 177 degrees true from the road to Lichtenwasser Lake and 248 degrees from the lake's south end to the 5,640-foot saddle. The forested lower section is featureless in flat light.",
+    "Cross Lichtenwasser Lake directly if it is solidly frozen — it saves a slow traverse around the shore. Verify the ice first.",
+    "The north side generally holds better snow quality through the winter than the south, which is the main reason to prefer this line over the Yodelin approach.",
+    "In summer, camping at Lichtenwasser Lake makes this a relaxed overnight and lets you tag The Lichtenhorn as well as the main summit, which is what the 1975 party did.",
+    "If you want a circuit, climbing this side and descending south toward Yodelin works — but the south exit crosses private ground near the lodge, so ask permission before you leave a car there.",
+    "This route reaches the true 5,844-foot summit; the west peak (The Lichtenhorn, ~5,800 ft) is a separate top requiring a further scramble west along the ridge."
+   ],
+   "watch_out": [
+    "Both flanks of the mountain present avalanche hazard, and the south side has been observed to release massive slides. Do not treat the moderate skill rating as a statement about stability.",
+    "The open bowl between Lichtenwasser Lake and the 5,640-foot saddle is the committing terrain — evaluate it before you enter it, not from partway up.",
+    "Cornices can form along the summit ridge; stay well back from the west and north edges in winter.",
+    "The lower forested slopes are steep enough in places to slide and hold tree wells; keep partners in sight.",
+    "Flat light in the trees makes the bearings essential; there are no reliable landmarks below the lake.",
+    "No cell service anywhere above US 2."
+   ],
+   "pro_needs": "None. There is no protectable rock climbing on this route and no fixed anchors anywhere on the mountain.",
+   "best_season": "This route has two seasons and both are good. Winter, roughly December through April, is the peak's main season and what this line is best known for — snow cover buries the brush and turns the whole thing into a straightforward skin and ski, and the north side holds the better snow quality through most of the winter. Summer and early autumn, July through October, give a short and pleasant rock and heather scramble; September is ideal, with the 1975 first documented ascent of the line falling on 20-21 September. Avoid late spring, when the snowpack is wet and heavy, avalanche hazard lingers on both flanks, and the ground below is still buried but no longer supportive.",
+   "high_point_ft": 5844,
+   "aid_grade": null,
+   "approach": "Summer: drive US 2 to the Smith Brook Road / FR 6700 turnoff 3.5 miles east of Stevens Pass and follow the unpaved road up toward the Smithbrook Trailhead. Park at or near the first major switchback and find the Lichtenwasser Lake fishing trail, which leads roughly southeast then south through forest to the lake at 4,708 ft (47.7924, -121.0768). From the south end of the lake leave any semblance of path and climb southwest up open and lightly wooded slopes to the broad 5,640-foot saddle on the mountain's southeast ridge; turn right (northwest) and follow the ridge to the summit. Winter: FR 6700 is unplowed, so park on the shoulder of US 2 at or just before the Smith Brook Road turnoff, around mileposts 68.7-68.9 and 4 miles east of Stevens Pass, and skin or snowshoe 2 to 2.6 miles up the snow-covered road — it is usually well packed by other parties. Leave the road at the first major hairpin (near 3,970 ft), head southwest and then follow a bearing of 177 degrees true to Lichtenwasser Lake, crossing it when frozen, and continue on 248 degrees to the 5,640-foot saddle before finishing up the ridge.",
+   "descent_text": "The normal descent is a straight reversal: back down the summit ridge southeast to the 5,640-foot saddle, then northeast down the open slopes to Lichtenwasser Lake, and out on the fishing trail to Smith Brook Road. In winter this is the ski descent as well, and it is the reason the route is popular — the north side generally holds better snow through the season than the south. Two variants are known. Brisbine's 1975 party continued west over the true summit to The Lichtenhorn and descended the west ridge, which makes a traverse of the whole massif but commits you to trailless ground on the far side. There is also a circuit going up one side of the mountain and down the other, exiting south toward the Yodelin area near milepost 66.25, 1.3 miles east of Stevens Pass — that exit crosses private land near the lodge and homes, so ask permission before parking there. Whichever you choose, assess snow stability continuously before dropping into any steep slope: both flanks present avalanche hazard, and the south side in particular sheds massive slides from time to time.",
+   "bail": "Retreat is easy at every stage. From the summit ridge you can reverse to the 5,640-foot saddle in minutes, and from the saddle the fall line drops you back to Lichtenwasser Lake. The road approach means there is never more than a couple of miles of easy ground between you and the car. The real bail decision on this route is an avalanche decision rather than a terrain one: if stability is questionable on the slopes between the lake and the saddle, turn around at the lake — it is a fine destination in its own right — rather than committing to the open bowl above it. In winter, the packed road makes the return trivially fast even in bad weather.",
+   "pitch_detail": [
+    {
+     "grade": "Class 1-2 (snow slopes in winter)",
+     "notes": "From the lake's south end, climb southwest on a bearing of roughly 248 degrees true up open and lightly wooded slopes to the broad saddle on the southeast ridge. This is the avalanche terrain on the route and the section to assess carefully in winter; in summer it is easy walking on heather and scattered boulders.",
+     "pitch": "Section 1 - Lichtenwasser Lake (4,708 ft) to the 5,640 ft saddle",
+     "lengthM": 284
+    },
+    {
+     "grade": "Class 2-3 rock scramble (easy snow ridge in winter)",
+     "notes": "Turn northwest at the saddle and follow the ridge crest to the 5,844-foot top. Short and easy, with a little hands-on scrambling on blocky rock when snow-free. Watch for cornices along the crest in winter.",
+     "pitch": "Section 2 - southeast ridge from the 5,640 ft saddle to the summit",
+     "lengthM": 62
+    }
+   ],
+   "itinerary": "Summer: a single easy day, roughly 4 to 7 miles round trip depending on where you leave the road, with about 2,100 to 2,600 ft of gain. Brisbine's party made an overnight of it in September, camping at Lichtenwasser Lake and taking in both the true summit and The Lichtenhorn the following day — a pleasant way to do it if you want an unhurried trip. Winter: a full but moderate day tour, about 5.2 to 8 miles and 2,100 to 2,700 ft of gain from US 2, with the road approach taking a good chunk of the time. Start early in winter to have the road walk behind you before the snow softens and to keep your options open on stability.",
+   "access": {
+    "fees": "The Forest Service lists no fee for the Smithbrook Trailhead site, and no permit is required for the north-side winter start on the US 2 shoulder. A Northwest Forest Pass is nonetheless reportedly expected at the trailhead — carry one if you park on the forest road.",
+    "permit": "No permit or quota for day or overnight use in the Henry M. Jackson Wilderness here. Standard wilderness regulations apply; no mechanized travel.",
+    "closures": "FR 6700 is unplowed and effectively closed in winter. The southern Yodelin start uses private parking and requires the owners' permission. Campfires are prohibited at Lake Valhalla and discouraged throughout the wilderness.",
+    "landManager": "Okanogan-Wenatchee National Forest, Wenatchee River Ranger District, Leavenworth — (509) 548-2550. Lichtenwasser Lake and the summit lie within the Henry M. Jackson Wilderness.",
+    "passRequired": "Northwest Forest Pass or America the Beautiful recommended for the FR 6700 trailhead; no pass needed for the winter US 2 shoulder parking."
+   },
+   "road": {
+    "name": "Smith Brook Road / Forest Road 6700",
+    "status": "Unpaved and passable to passenger cars in summer, roughly 2.5-3 miles from US 2 to the Smithbrook Trailhead at about 4,000 ft; this route leaves it earlier, at the first major switchback near 3,970 ft. Not recommended for stock trucks or trailers.",
+    "driveNote": "From Stevens Pass drive 3.5 miles east on US 2 and turn left (north) at the FR 6700 sign; from Leavenworth drive 31 miles west and turn right. In winter, watch for the large pullout on the highway shoulder about a quarter mile before the Smithbrook sign. The alternative south-side start near Yodelin (milepost 66.25, 1.3 miles east of Stevens Pass) uses private parking and requires permission from the lodge or homeowners.",
+    "seasonalGate": "Unplowed and impassable to vehicles once snow arrives. Winter parties park on the US 2 shoulder at the Smith Brook Road turnoff, roughly milepost 68.7-68.9 and 4.2 miles east of Stevens Pass, and travel 2 to 2.6 miles of snow-covered road on foot, snowshoes or skis; it is usually packed by prior traffic."
+   },
+   "climate": {
+    "fall": "Excellent. Cool, dry, bug-free and with firm footing; the 1975 documented ascent was on 20-21 September. The window closes with the first substantial snowfall, usually late October or November.",
+    "spring": "Wet, heavy maritime snowpack and continuing avalanche hazard on both flanks. The road melts out ahead of the mountain, giving a long dry approach to a still-snowbound peak — an awkward combination and the least attractive season on this route.",
+    "summer": "Snow-free from about early July. The fishing trail to Lichtenwasser Lake is straightforward, the upper slopes are heather and boulder walking, and the ridge is a short easy scramble. Bugs are heavy at the lake in July and August.",
+    "winter": "The route's headline season and a listed classic backcountry ski tour. Snowfall makes the ridge easy to skin, and the north-facing approach generally holds the better snow. Avalanche hazard is present on both sides of the mountain throughout; consult the NWAC Stevens Pass forecast and reassess continuously in the field.",
+    "typical": "Marine west-coast climate with heavy Pacific precipitation, predominantly winter snowfall. Just east of the crest, so snow here is typically a little drier and colder than on the west-side slopes, and the north-side approach used by this route holds better quality snow than the sun-exposed south flank.",
+    "forecastZone": "NWAC Stevens Pass avalanche and mountain-weather zone; Okanogan-Wenatchee National Forest, Chelan County"
+   },
+   "emergency": {
+    "notes": "No cell coverage above US 2, so an avalanche or injury response depends on a satellite messenger or on someone travelling back to the highway. Stevens Pass, 4 road miles west, is the nearest developed point. In winter the route is popular enough that other parties are often on the road, but the slopes above Lichtenwasser Lake can be empty — never rely on being found.",
+    "county": "Chelan County, Washington",
+    "rangerStation": "Wenatchee River Ranger District, 600 Sherbourne St, Leavenworth WA 98826 — (509) 548-2550",
+    "nearestHospital": "Cascade Medical Center, 817 Commercial St, Leavenworth WA — (509) 548-5815; 24-hour emergency department and ambulance service, about 31 road miles east on US 2.",
+    "sheriffDispatch": "911 for emergencies. Chelan County Sheriff's Office non-emergency: (509) 667-6851. Backcountry rescue in Chelan County is coordinated through the Sheriff's Office."
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": {
+    "optimalWindow": "January and February, when deep snow buries the brush and the north side holds its best snow for the skin up",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Late spring brings rotten, unsupportive snow over buried ground and lingering wet-avalanche hazard on both flanks.",
+      "status": "risky"
+     },
+     "April": {
+      "reason": "The snowpack turns wet and heavy, the lake ice becomes unsafe, and brush starts to reappear low on the approach.",
+      "status": "marginal"
+     },
+     "March": {
+      "reason": "Longer days and still-deep snow, but warming raises wet-slide and cornice hazard, especially on the south side.",
+      "status": "good"
+     },
+     "January": {
+      "reason": "Deep cover buries brush and talus, the lake is usually frozen to cross, and the north slopes hold good snow; watch for cornices on the ridge.",
+      "status": "optimal"
+     },
+     "December": {
+      "reason": "The unplowed Smith Brook Road is usually packed for skinning and snow is filling in the forest, but early-winter slide cycles are common.",
+      "status": "good"
+     },
+     "February": {
+      "reason": "Deepest snowpack and good north-side snow make the classic skin to the 5,640 ft saddle; check avalanche danger on both flanks.",
+      "status": "optimal"
+     },
+     "November": {
+      "reason": "Early snow may not yet cover the brush and timber between FR 6700 and Lichtenwasser Lake, and the lake is not reliably frozen.",
+      "status": "marginal"
+     },
+     "September": {
+      "reason": "A pleasant snow-free rock and heather scramble via the fishing trail, but a different outing from the ski line this route is known for.",
+      "status": "marginal"
+     }
+    }
+   },
+   "seasonal_hazards": null,
+   "data_quality": null,
+   "difficulty": null,
+   "approach_logistics": null,
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": "outback",
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "southeast se ridge rdg from lichtenwasser lake lk",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_moss_out_for_harambe",
+   "area_id": "wa_mossy_loaf",
+   "name": "Moss Out For Harambe",
+   "discipline": "trad",
+   "grade": "5.7",
+   "grade_system": "yds",
+   "grade_num": 7,
+   "pitches": 1,
+   "length_m": 14,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Josh Glantz & Amber Michaelis, September 5, 2020",
+   "lat": null,
+   "lng": null,
+   "aspect": null,
+   "season": "May-Oct",
+   "description": null,
+   "gear": [
+    "Rack to 5 inches (single set)",
+    "BD #4 cam (optional, for upper slab)"
+   ],
+   "hazards": [
+    "Loose or friable ('choss') rock typical of the broader Monte Cristo climbing area.",
+    "Wet or moss-covered holds in the open-book and roof sections after rain."
+   ],
+   "verif": null,
+   "overview": "A one-pitch 5.7 trad line up Mossy Loaf's lower tier, climbing an open-book past a distinctive 'monkey face' rock feature to a roof, then a steep lieback flake crux before easing off on slab.",
+   "beta": "Follows an open book formation through moss and ferns. Climbers pull a feature nicknamed 'Harambe's nose' to reach a block above and right of a monkey-face visible in the rock, then proceed under a roof overhang (placing gear), traverse left into an 'awesome lieback flake' — the 5.7 crux — and finish up easier slab. The route is named for the monkey-face feature in the wall.",
+   "turnaround": "Not an alpine turnaround-time situation given the roadside single-pitch length, but the wall is shaded and moss/fern-covered — if holds are wet or slick after rain, back off before committing to the lieback crux rather than pushing through greasy rock.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.7",
+   "ice_grade": null,
+   "gain_ft": 500,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": null,
+   "face": "Upper tier",
+   "permit": "Free self-issue Henry M. Jackson Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": null,
+   "descent": "Walk off along the base of the tiers back to the roadside; no fixed rappel anchor is documented for this single-pitch line.",
+   "obj_haz": [
+    "loose/chossy rock",
+    "moss and lichen on holds",
+    "wet rock"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.0264,
+     "lng": -121.4443,
+     "name": "Barlow Pass trailhead (Mountain Loop Highway)",
+     "note": "Same trailhead as Gothic Basin/Monte Cristo townsite trail; gated end of pavement, ~31 mi east of Granite Falls.",
+     "type": "Trailhead"
+    },
+    {
+     "lat": 48.03015,
+     "lng": -121.44552,
+     "elev": 2301,
+     "name": "Mossy Loaf wall",
+     "type": "Junction",
+     "elevFt": 2301
+    },
+    {
+     "lat": 48.03015,
+     "lng": -121.44552,
+     "elev": 2301,
+     "name": "Mossy Loaf",
+     "type": "Crag",
+     "elevFt": 2301
+    },
+    {
+     "lat": 48.03015,
+     "lng": -121.44552,
+     "elev": 2400,
+     "name": "Mossy Loaf (crag top-out)",
+     "type": "Summit",
+     "elevFt": 2400
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": null,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": null
+   },
+   "detailed_rack": "Standard trad rack to 5 inches; a single Black Diamond #4 cam is useful near the top and could allow running out the final easier ground.",
+   "what_to_bring": [
+    "A stiff brush for lingering moss on holds",
+    "Helmet — Monte Cristo-area rock is generally chossy"
+   ],
+   "pro_tips": [
+    "The route's name comes from a monkey-face feature in the rock passed partway up, near the 'Harambe's nose' hold.",
+    "Route developers cleaned the line but note it remains naturally mossy — expect some residual moss/lichen off the main hold line."
+   ],
+   "watch_out": [
+    "Holds can be damp or moss-covered after rain given the shaded, fern-covered character of the wall.",
+    "General Monte Cristo-area rock is described as chossy/friable — test holds before committing."
+   ],
+   "pro_needs": "Gear to 5 inches; solid finger-to-hand-size placements protect the lieback-flake crux and the roof traverse best.",
+   "best_season": "Developers describe the wall as naturally mossy even after cleaning; drier summer-into-early-fall conditions (once accumulated winter/spring moisture has had time to dry out) will generally offer the cleanest holds, though no specific climbing-season window is published for this crag.",
+   "high_point_ft": 2301,
+   "aid_grade": null,
+   "approach": "From the Barlow Pass gate, walk the closed road (old railroad grade) approximately 4 miles to the Monte Cristo townsite; a backcountry campground sits at that mark. Mossy Loaf's coordinates place it essentially at/immediately adjacent to the townsite itself, so once at the flat of Monte Cristo the formation is only a short distance further off the main townsite path. The exact final spur to the specific wall is not well established, so on-site scouting is recommended for the last stretch.",
+   "descent_text": "From the top of the route, downclimb the easy slab above the crux or scramble off along the wall's edge back to road level. The standard walk-off between tiers involves some bushwhacking, which is one reason the neighboring route You Moss Be Joking exists as a lower-impact link.",
+   "bail": "Single pitch, only 45 ft: retreat by downclimbing the easier slab above the lieback crux, or build a gear anchor and lower/rappel on trad protection — no fixed hardware is documented on this route.",
+   "pitch_detail": [
+    {
+     "grade": "5.7",
+     "notes": "Open book past the 'monkey face' feature to a block, then left onto the lieback flake (crux), finishing on mossy slab.",
+     "pitch": "1",
+     "lengthM": 14
+    }
+   ],
+   "itinerary": null,
+   "access": {
+    "fees": "None beyond the parking or entrance fee this route already lists.",
+    "rules": "Group size capped at 12 (people + stock combined) inside Glacier Peak Wilderness; larger groups must split with 1-mile separation. Campfires prohibited above 3,500 ft in wilderness.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "group_limit": 12,
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "Northwest Forest Pass required at Mountain Loop Highway trailheads — $5/day or $30/year.",
+    "passRequired": "N/A"
+   },
+   "road": {
+    "name": "Barlow Pass Trailhead, then the gated Monte Cristo Road (foot/bike only)",
+    "status": "Mountain Loop Highway is paved to Barlow Pass; from there the Monte Cristo Road is gated to vehicles and must be walked or mountain-biked (~4 miles, flat) due to washouts.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2/SR-92/Mountain Loop Highway to Barlow Pass; add hike/bike time on the closed road to Monte Cristo. A Northwest Forest Pass is required at Barlow Pass Trailhead.",
+    "seasonalGate": "Mountain Loop Highway itself is generally open beyond winter, but the Monte Cristo Road has been vehicle-closed long-term due to washout damage."
+   },
+   "climate": {
+    "fall": null,
+    "spring": null,
+    "summer": null,
+    "winter": "Road to Barlow Pass typically closed by snow; area not accessible",
+    "typical": "Low-elevation (~2,300-2,360 ft), forested, shaded valley-bottom setting on the west slope of the Cascades near Barlow Pass — consistent with the persistent moss and fern growth on the wall noted by the route developers.",
+    "forecastZone": "NWS zone covering the Cascades of Snohomish County (near WAZ302 'Cascades of Snohomish and Northern King Counties')"
+   },
+   "emergency": {
+    "notes": "Mossy Loaf sits directly off a paved, drive-to highway near Barlow Pass, so evacuation/access logistics are far simpler here than for the backcountry alpine routes elsewhere in the Monte Cristo area.",
+    "county": "Snohomish County, WA",
+    "rangerStation": "Verlot Public Service Center, Darrington Ranger District, (360) 691-7791, 33515 Mountain Loop Hwy, Granite Falls, WA",
+    "nearestHospital": "Cascade Valley Hospital (Skagit Regional Health), Arlington, WA — nearest full-service ER to the Mountain Loop Highway corridor",
+    "sheriffDispatch": "911 for emergencies; Snohomish County Sheriff non-emergency (425) 407-3999 (or (425) 775-3000 in southwest county)"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.03015,
+    "peakLng": -121.44552,
+    "trailhead": "Barlow Pass Trailhead (Mountain Loop Highway)",
+    "trailheadLat": 48.02639,
+    "trailheadLng": -121.44389,
+    "trailheadDirection": "From Barlow Pass on the Mountain Loop Highway (~2,360 ft), via the gated Monte Cristo road"
+   },
+   "sling_rack": {
+    "cams": "0.4-2.5in single set",
+    "nuts": "small-mid set",
+    "slings": "3-4 shoulder-length"
+   },
+   "alpine_draws": 3,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "No route-specific beta could be found for 'Mossy Loaf' or this route under any name. Gear inferred from the 5.7 alpine grade and the crag's 'mossy' naming convention, comparable to other low-to-mid 5th class, lichen/moss-covered Cascades alpine rock.",
+   "ascender": null,
+   "corrections": "Could not locate this route or the 'Mossy Loaf' area by name in any climbing database searched; entire gear list is grade-based inference, not confirmed beta. Flag for expert/local review.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Cams 0.4-2.5in, single set (rack to 5 inches)",
+    "Small-mid nut set",
+    "3-4 shoulder-length slings",
+    "Optional BD #4 for the upper slab"
+   ],
+   "features": [
+    "Dihedral",
+    "Overhanging",
+    "Crack",
+    "Slab"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "moss out for harambe",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_tupshin_peak_scramble",
+   "area_id": "wa_tupshin_peak",
+   "name": "South Ridge",
+   "discipline": "alpine",
+   "grade": "Class 4 / low 5th",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": 5,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Everett and Ida Darr, 1940 (first ascent of the peak)",
+   "lat": 48.29701,
+   "lng": -120.750681,
+   "aspect": "SE",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Helmet (loose rock/rockfall is a real hazard on the summit pyramid)",
+    "30 m rope for rappelling the crux and upper pyramid",
+    "Light rack (a few small cams/nuts) for optional protection on the crux",
+    "Sturdy brush pants/long sleeves and gaiters for the Bird Creek bushwhack"
+   ],
+   "hazards": [
+    "Loose, rockfall-prone gneiss on the summit pyramid — spontaneous rockfall has been reported even without climber contact",
+    "Brutal, largely trailless bushwhack (slide alder, blowdown) between the Devore Creek Trail and Bird Creek camp",
+    "Remote, multi-day approach far from help; no cell service in the Stehekin backcountry",
+    "Exposed class 4/low-5th climbing on a route most parties do without fixed protection"
+   ],
+   "verif": null,
+   "overview": "Tupshin Peak (8,347 ft) is one of the 'Stehekin Seven,' a knot of rarely visited summits above the Stehekin valley in the Glacier Peak Wilderness. The mountain is built of several rock turrets running south, east, and northwest from a central high point roughly 200 ft above its neighbors. First climbed in 1940 by Everett and Ida Darr, it's approached entirely by boat and trail (no road reaches the peak). The standard line climbs the broad south ridge/upper east face to a short, exposed, and notably loose class 4-to-low-5th crux through old gneiss just below the summit.",
+   "beta": "From Bird Creek Camp, climb NNE up open sub-alpine slope to a broad shoulder (~7,000 ft) on Tupshin's lower South Ridge, then traverse/descend slightly around cliff bands into the upper east basin (~7,500 ft) below the face — about one mile from Bird Creek to the base of the climbing. The basin is a talus fan, often snow-covered early season. From there, rambly Class 2-4 terrain and a short crux (5.2-5.4, on a flake/crack) lead through the face to Class 3-4 summit-pyramid scrambling and the top. Multiple parties describe this same basic line with minor route-finding variations near the crux.",
+   "turnaround": "Given the long, remote approach and a descent that is itself technical and routefinding-heavy, set a firm turnaround time from camp that leaves ample daylight to complete both the summit climb and the rappel/downclimb descent — at least one recorded ascent summited in the evening and did not finish descending until after midnight by headlamp.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": "Class 4-5 (low 5th class scrambling; no specific YDS number grade attested)",
+   "ice_grade": null,
+   "gain_ft": 8300,
+   "loss_ft": 8300,
+   "dist_km": 36.21,
+   "max_angle": null,
+   "rappels": "One short rappel reported near the summit (~30 m rope sufficient) off an old webbing anchor; back it up before weighting",
+   "commitment": null,
+   "face": "Southeast shoulder/face (standard route)",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": "No reliable cell coverage in the Devore Creek/Bird Creek drainage or on Tupshin's upper mountain. A satellite messenger (e.g., Garmin inReach) is strongly recommended — regional Chelan County SAR operations in this area have relied on inReach activations to trigger helicopter response.",
+   "descent": "Reverse the route: downclimb and rappel the loose summit pyramid and crux back to the south-ridge shoulder and Bird Creek basin.",
+   "obj_haz": [
+    "loose rock/talus",
+    "exposed scrambling",
+    "weathered fixed anchors",
+    "remoteness/no rescue access",
+    "wildfire smoke/closures (historical)"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.3491,
+     "lng": -120.7224,
+     "elev": 1200,
+     "name": "Stehekin River Trail TH (Harlequin Bridge / airstrip)",
+     "note": "Reached via Lady of the Lake ferry to Stehekin Landing then shuttle ~4.4 mi to Harlequin Bridge; trail starts at the south end of the Stehekin State Airstrip and drops into forest immediately.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.315963,
+     "lng": -120.681809,
+     "elev": 1150,
+     "name": "Devore Creek Trail junction",
+     "note": "Devore Creek Trail splits off the Stehekin River Trail about a half-mile before Weaver Point Campground and switchbacks steeply up into the Glacier Peak Wilderness toward Bird Creek.",
+     "type": "Junction",
+     "distMi": 3
+    },
+    {
+     "lat": 48.306231,
+     "lng": -120.716765,
+     "elev": 4250,
+     "name": "Bird Creek Camp",
+     "note": "Forested camp alongside Devore Creek Trail with creek water nearby; the trail is well-maintained to here but grows overgrown with blowdowns above.",
+     "type": "Campsite",
+     "distMi": 7
+    },
+    {
+     "lat": 48.301247,
+     "lng": -120.735098,
+     "elev": 5600,
+     "name": "Bird Creek basin high camp",
+     "note": "Open subalpine basin (reported anywhere from ~5,400 to ~5,800 ft) reached by bushwhacking blueberry brush and slide alder off-trail; used as the launch point for the summit push.",
+     "type": "Campsite",
+     "distMi": 9
+    },
+    {
+     "lat": 48.298755,
+     "lng": -120.744265,
+     "elev": 7100,
+     "name": "South ridge shoulder / skyline ridge",
+     "note": "Meadow slopes north out of the basin crest here on Tupshin's lower south ridge, giving the first clear view of the summit pyramid and east face.",
+     "type": "Junction",
+     "distMi": 10
+    },
+    {
+     "lat": 48.298007,
+     "lng": -120.747014,
+     "elev": 7600,
+     "name": "Talus basin and snow finger below the east face",
+     "note": "Loose talus basin with a persistent snow finger at the base of the cliff; early-season parties need an ice axe/crampons here and the rock underfoot is notoriously loose and prone to spontaneous rockfall.",
+     "type": "Hazard",
+     "distMi": 10.3
+    },
+    {
+     "lat": 48.297508,
+     "lng": -120.748848,
+     "elev": 8100,
+     "name": "Summit pyramid chimney pitch",
+     "note": "Low-5th-class (5.2-5.4) chimney/flake pitch past a small chockstone gains the loose, exposed summit block; wear a helmet and rappel single-strand on the descent due to rockfall risk.",
+     "type": "Hazard",
+     "distMi": 10.5
+    },
+    {
+     "lat": 48.2969,
+     "lng": -120.75071,
+     "elev": 8348,
+     "name": "Tupshin Peak summit",
+     "note": "Tight, exposed true summit reached through a notch in the final rock band; recent LIDAR puts the elevation at 8,343-8,348 ft.",
+     "type": "Summit",
+     "distMi": 10.7
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 20.5,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": 5,
+    "approachTimeHrs": 5.5,
+    "recommendedStart": "6:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 5.5,
+      "note": "Take the Lake Chelan boat (Lady Express/Lady of the Lake) from Fields Point Landing to Stehekin Landing, then a shuttle/bus to the Harlequin Bridge trailhead. Hike the Stehekin Riv…",
+      "fromTo": "Ferry in, approach to the Bird Creek basin camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "A long scramble day: leave camp near sunrise, cross brush and larch basins to the talus below the east face, then a loose ramp and a short exposed/technical pitch to the summit pyr…",
+      "fromTo": "Summit push via the South Ridge / East Face",
+      "section": "Climb"
+     },
+     {
+      "hrs": 5,
+      "note": "Reverse the approach: Devore Creek Trail down to the Stehekin River Trail and back to the road, then catch the shuttle and afternoon/midday ferry out of Stehekin. Build in a buffer…",
+      "fromTo": "Hike out and ferry home",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "A light rock rack is sufficient for the crux and any protected pitches: a set of small-to-mid cams, a few nuts, and several slings/draws, plus a 60m rope for the crux pitch and descent rappels. Some parties have soloed sections in rock shoes; others have pitched out the crux and upper face with a full rack.",
+   "what_to_bring": [
+    "helmet",
+    "rope",
+    "small alpine rack",
+    "sturdy boots",
+    "navigation"
+   ],
+   "pro_tips": [
+    "Bring a rope even if confident — the crux exposure justifies it",
+    "Budget extra time for the remote Stehekin approach and brush"
+   ],
+   "watch_out": [
+    "Ropes snag easily in the loose rock on rappel — a single-strand rappel is usually preferable to a doubled rope",
+    "Devore Creek Trail blowdown can turn the approach into a multi-hour bushwhack in bad years; check current trail conditions with the Chelan Ranger District first"
+   ],
+   "pro_needs": "A short rope and a light rack are advisable for the exposed class 4 / low-5th crux; many parties belay the steepest step.",
+   "best_season": "Snow typically lingers in the Bird Creek basin and on the upper route into July, so mid-July through September is the reliable window; early-season parties should carry an ice axe for lingering snowfields, while late-season parties get drier but no less loose rock. Check regional Cascades snowpack/NWAC data before an early trip.",
+   "high_point_ft": 8348,
+   "aid_grade": null,
+   "approach": "No road reaches the mountain. Take the Lady of the Lake or Lady Express passenger ferry from Fields Point Landing up Lake Chelan to Stehekin Landing, then ride the Stehekin shuttle bus (or walk) roughly 4.4 miles up-valley to Harlequin Bridge, cross it, and continue about 3 more miles on the Stehekin River Trail toward Weaver Point to the signed Devore Creek Trail junction (about a half mile before Weaver Point). Follow the Devore Creek Trail as it switchbacks up into the Glacier Peak Wilderness (Okanogan-Wenatchee National Forest); it is brushy but generally passable toward Tenmile Pass, though blowdown has been significant in some years — check current trail conditions with the Chelan Ranger District before you go. Leave the maintained trail and work up the ridge north of Bird Creek through steep brush, slide alder, and blowdown (about 1,000 ft of gain with little real open forest) to a good camp with running water in the lower Bird Creek basin, roughly 5,400-5,800 ft. The boat-landing-to-camp day is reportedly around 10 miles and 5,000 ft of elevation gain.",
+   "descent_text": "Reverse the climb: rappel (single-strand preferred over doubled rope to avoid snagging in the loose rock) and downclimb the crux and upper pyramid back to the 7,000-ft shoulder, then descend through the talus and brush back to the Bird Creek basin camp. From camp, reverse the bushwhack to the Devore Creek Trail, then the Stehekin River Trail to Harlequin Bridge and Stehekin Landing for the return ferry — plan the trip around the ferry schedule, since missing the last boat means an extra night in Stehekin.",
+   "bail": "Retreat down the ascent route; rappel the crux.",
+   "pitch_detail": [
+    {
+     "grade": "Class 2-3",
+     "notes": "Bird Creek Camp NNE up open sub-alpine slope to the broad shoulder (~7,000 ft) on the lower South Ridge, then a slightly descending traverse around cliff bands into the upper east basin (~7,500 ft).",
+     "pitch": "Approach basin"
+    },
+    {
+     "grade": "Class 2 (snow)",
+     "notes": "~1 mile across a talus fan, often snow-covered in early season, to the base of the technical climbing.",
+     "pitch": "Basin to base of face"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Rambly, somewhat loose rock; a short (~20 ft) Class 4 step is a common first obstacle en route to the upper face.",
+     "pitch": "Lower face/gully"
+    },
+    {
+     "grade": "5.2-5.4",
+     "notes": "Short crux section on a flake/crack system gaining the upper face; protection is sparse and 'dubious.'",
+     "pitch": "Crux"
+    },
+    {
+     "grade": "Class 4",
+     "notes": "Class 3-4 gully/scrambling for the final distance to the true summit.",
+     "pitch": "Summit block"
+    }
+   ],
+   "itinerary": {
+    "cal": "Best conditions mid-July through September, once the approach and upper basin have largely melted out; verify current Lake Chelan boat schedule (Lady Express/Lady of the Lake) since your itinerary is built around its Fields Point <-> Stehekin timing.",
+    "days": [
+     {
+      "n": 1,
+      "note": "Take the Lake Chelan boat (Lady Express/Lady of the Lake) from Fields Point Landing to Stehekin Landing, then a shuttle/bus to the Harlequin Bridge trailhead. Hike the Stehekin River Trail then the Devore Creek Trail past Bird Creek Camp, then leave the trail and push up through steep brush to a camp with running water in the lower Bird Creek basin.",
+      "hours": 5.5,
+      "miles": 10,
+      "title": "Ferry in, approach to the Bird Creek basin camp",
+      "gainFt": 5000,
+      "lossFt": 0,
+      "packLb": 35,
+      "schedule": [
+       {
+        "time": "~12:00 PM",
+        "label": "Ferry arrives Stehekin Landing",
+        "detail": "Boat from Fields Point; confirm return-ferry time for exit day."
+       },
+       {
+        "time": "~1:00 PM",
+        "label": "Shuttle to Harlequin Bridge trailhead",
+        "detail": ""
+       },
+       {
+        "time": "~1:30 PM",
+        "label": "Start hiking",
+        "detail": "Stehekin River Trail, then Devore Creek Trail."
+       },
+       {
+        "time": "Evening",
+        "label": "Reach the lower Bird Creek basin camp (~5,400 ft)",
+        "detail": "Basin camp beside running water; fill water, sleep early for a pre-dawn start."
+       }
+      ],
+      "objective": "Reach the lower Bird Creek basin camp (~5,400 ft) via Stehekin"
+     },
+     {
+      "n": 2,
+      "note": "A long scramble day: leave camp near sunrise, cross brush and larch basins to the talus below the east face, then a loose ramp and a short exposed/technical pitch to the summit pyramid. Descend the same way with rappels through the crux.",
+      "hours": 10,
+      "miles": 5,
+      "title": "Summit push via the South Ridge / East Face",
+      "gainFt": 3300,
+      "lossFt": 3300,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave camp",
+        "detail": "Head north through blueberry brush and wildflower fields toward the talus basin."
+       },
+       {
+        "time": "+2 hr",
+        "label": "Breakfast break ~800 ft above camp",
+        "detail": "Below the mellow ridge that drops into the talus fields."
+       },
+       {
+        "time": "+3-4 hr",
+        "label": "Snow finger to the ramp",
+        "detail": "Traverse the talus basin under the east face, kick up the snow finger to the obvious ramp system."
+       },
+       {
+        "time": "~9:30 AM",
+        "label": "Crux pitch",
+        "detail": "Short belayed chimney/flake move below the summit; helmet essential for rockfall."
+       },
+       {
+        "time": "~10:00 AM",
+        "label": "Summit",
+        "detail": "~4 hrs camp-to-summit."
+       },
+       {
+        "time": "~4:00 PM",
+        "label": "Back at camp",
+        "detail": "Descent via rappels and a loose downclimb back to the south-ridge shoulder."
+       }
+      ],
+      "objective": "Climb Tupshin Peak (8,348 ft) and return to camp"
+     },
+     {
+      "n": 3,
+      "note": "Reverse the approach: Devore Creek Trail down to the Stehekin River Trail and back to the road, then catch the shuttle and afternoon/midday ferry out of Stehekin. Build in a buffer since missing the boat means an extra night.",
+      "hours": 5,
+      "miles": 10,
+      "title": "Hike out and ferry home",
+      "gainFt": 0,
+      "lossFt": 5000,
+      "packLb": 30,
+      "schedule": [],
+      "objective": "Return to Stehekin Landing for the ferry"
+     }
+    ],
+    "totalNote": "A 3-day car-to-car trip built around the Stehekin ferry: ~1 day hiking in, 1 long summit day (~10 hrs, 3,300 ft round trip from camp), 1 day hiking out — roughly 22-25 miles and 8,000+ ft total, matching the recorded 36 km round-trip distance once camp shuffling is counted."
+   },
+   "access": {
+    "fees": "Round-trip Lady of the Lake/Lady Express passenger ferry fare from Fields Point Landing to Stehekin (check current rates at ladyofthelake.com); the in-valley Stehekin shuttle bus runs about $10/adult one-way (2026 rate, Stehekin Valley Adventures) if you don't walk from the Landing to Harlequin Bridge. The wilderness permit itself is free.",
+    "permit": "Once past the NPS boundary, a free, self-issued Glacier Peak Wilderness permit (available at the trailhead, no reservation or fee) covers the climb and Bird Creek camp. If you camp overnight anywhere within the Lake Chelan NRA/Stehekin corridor before reaching the wilderness boundary, an NPS backcountry permit is required (reservable via recreation.gov or in person at the Golden West Visitor Center in Stehekin).",
+    "closures": "Stehekin suffered major flooding and landslides in December 2025 — a levee failure sent the Stehekin River into Company Creek Road near Harlequin Bridge — with a further damaging flood event in March 2026; recovery work was still ongoing into summer 2026. As of June 2026 the Stehekin Valley Road was reported open from the Landing to Stehekin Valley Ranch, but check the NPS 'Stehekin Flood Response Update' page and the Chelan Ranger District before a trip, since the Harlequin Bridge/Devore Creek approach corridor was directly affected by the flood. Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes Devore Creek Trail 1244 from where it enters the national forest to Hilgard Pass, the 4th of July Basin Trail 1244.1 and Company Creek Trail 1243. This approach cannot be used while the order stands. Chelan Ranger District: (509) 682-4900.",
+    "landManager": "The lower approach (Stehekin River Trail near Harlequin Bridge and the Devore Creek trailhead) lies within the North Cascades National Park Service Complex — Lake Chelan National Recreation Area (NPS). The Devore Creek Trail then crosses into the Glacier Peak Wilderness on the Okanogan-Wenatchee National Forest (Chelan Ranger District) for the climb itself.",
+    "passRequired": "No Northwest Forest Pass needed at this boat-in trailhead; wilderness permits (above) are the operative requirement.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "Free self-issue Glacier Peak Wilderness permit; an NPS backcountry permit for any night inside Lake Chelan NRA",
+     "where": "Bird Creek camps are in the Glacier Peak Wilderness: fill out the self-issue permit at the trail register. Nights in the Stehekin valley or at Weaver Point need an NPS permit, reserved on Recreation.gov or picked up in Stehekin."
+    }
+   },
+   "road": {
+    "name": "Stehekin Valley Road (Stehekin Landing to High Bridge) — no public road reaches the peak itself",
+    "status": "Reported open from Stehekin Landing to Stehekin Valley Ranch as of June 2026 following Dec 2025 flood damage; check the NPS Stehekin Flood Response Update before a trip",
+    "driveNote": "There is no public road into Stehekin — access is only by passenger ferry (Lady of the Lake/Lady Express), chartered floatplane, or on foot over Cascade Pass. The Devore Creek trailhead is reached from Stehekin Landing by shuttle/walk plus trail, not by car.",
+    "seasonalGate": "Ferry (Lady of the Lake/Lady Express) and floatplane service run a reduced or altered schedule outside the May-October main season"
+   },
+   "climate": {
+    "fall": "Often the most stable weather window (September), but with shorter daylight for the long summit day.",
+    "spring": "Significant snowpack persists on the approach and upper basin well into early summer; trail and off-trail travel can involve substantial snow into June.",
+    "summer": "Primary climbing season; hot at lake level in Stehekin, but snow/ice can still linger at the base of the face into July.",
+    "winter": "Effectively inaccessible for this route; ferry/floatplane service is reduced and the approach is snowbound.",
+    "typical": "Drier east-side Cascades climate; afternoon storms possible.",
+    "bySeason": {
+     "fall": "Stable but short days; boat schedule reduces.",
+     "spring": "Snow on upper peak; brushy wet approach.",
+     "summer": "Prime window; hot in the valley, cooler up high.",
+     "winter": "Full winter conditions; very limited access."
+    },
+    "forecastZone": "Central Cascades / Lake Chelan"
+   },
+   "emergency": {
+    "notes": "There is essentially no cell coverage in Stehekin's backcountry (Bird Creek basin included); carry a satellite communicator. Medical evacuation from the Stehekin area typically requires a helicopter, historically staged out of Brewster, WA (roughly 30 minutes response time).",
+    "county": "Chelan County, WA",
+    "rangerStation": "Chelan Ranger District, Okanogan-Wenatchee National Forest — 428 W. Woodin Ave, Chelan, WA 98816, (509) 682-4900",
+    "nearestHospital": "Lake Chelan Health Hospital, Chelan, WA — 24-hour ER, (509) 682-2531",
+    "sheriffDispatch": "RiverCom 911 (Chelan/Douglas County dispatch): 911 for emergencies, (509) 667-6851 non-emergency; search and rescue is coordinated by the Chelan County Sheriff's Office"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "If any, clustered in the mid-July through August optimal window, tied to Stehekin boat/floatplane schedules and good-weather windows; effectively no shoulder-season traffic",
+    "solitudeRating": 5,
+    "estimatePerSeason": "Very low - likely single digits to ~15 parties per season based on the near-total absence of dedicated trip reports specific to this route (only a handful of general Tupshin ascent reports exist)"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong/advanced backcountry fitness - long brushy, off-trail valley approach from Stehekin followed by a steep basin-to-summit push; expect a multi-day carry",
+     "packWeight": "Overnight/multi-day pack (roughly 30-40 lb) for the approach and camp, dropping to a light summit pack for the scramble day"
+    },
+    "approachTime": "Multi-day: boat or floatplane access to Stehekin, then a long valley/brushy off-trail approach to a basin camp before a full summit day - not a single-day car-to-summit route",
+    "requiredSkills": [
+     "Class 4 / low 5th unroped or lightly-roped scrambling",
+     "loose rock and rockfall management",
+     "off-trail navigation and bushwhacking through brush",
+     "wilderness/remote self-rescue judgment",
+     "basic rope/belay skills recommended for the crux in case a party member wants protection"
+    ],
+    "experienceLevel": "Experienced scramblers only - must be comfortable soloing or lightly protecting exposed Class 4 to low-5th terrain on loose rock, with solid off-trail routefinding judgment and wilderness self-sufficiency given the remote, rescue-unfriendly setting"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "May": {
+      "reason": "Lingering snowpack on approach slopes and high, dangerous creek crossings in the Stehekin valley; not the intended window",
+      "status": "risky"
+     },
+     "July": {
+      "reason": "In the season window; brush has typically leafed out but approach is passable and rock is dry",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Snow patches likely still linger on upper approach and summit block; creek levels from snowmelt can still be elevated",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak dry-rock conditions for the Class 4/low-5th crux; most reliable creek crossings and driest approach brush",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the best-season window; early snow and storms increasingly likely, and Stehekin seasonal access/services wind down",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still within best-season window; stable weather common but shorter daylight and possible early-season snow late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "East-Cascades rain-shadow character - warmer and drier than the west-side Cascades, with the main risk being sudden mountain weather changes on an exposed ridge far from any bailout",
+     "probability": "Afternoon thunderstorms/lightning are a plausible summer hazard on the exposed upper ridge and crux, as is typical for North Cascades summer alpine objectives"
+    },
+    "exposure": "Sustained exposure through the Class 4/low-5th crux on loose rock; a slip or rockfall incident here is high-consequence given the long, brushy, remote approach from Stehekin and correspondingly slow/difficult rescue access",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer scramble route climbed well after snowmelt; this peak falls outside NWAC's standard published forecast zones for the Stehekin/Lake Chelan-Sawtooth area",
+     "byMonth": {
+      "July": "N/A",
+      "June": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel on this route"
+   },
+   "data_quality": {
+    "gaps": [
+     "No confirmed NCCS/alpine grade beyond the YDS class 4-5 rating",
+     "No verified GPS track or summit coordinates",
+     "Exact current ferry fare and Weaver Point water-taxi cost not confirmed — check ladyofthelake.com and local operators directly",
+     "Approach mileage/elevation-gain figures are drawn from individual trip reports, not an official/standard measurement",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 3,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.29701,
+    "peakLng": -120.750681,
+    "trailhead": "Stehekin — Harlequin Bridge (Stehekin Valley Road)",
+    "trailheadLat": 48.3491,
+    "trailheadLng": -120.7224,
+    "trailheadDirection": "Via the Lady of the Lake ferry (or floatplane) from Chelan to Stehekin Landing, then the shuttle ~4.4 miles to Harlequin Bridge and the Stehekin River Trail"
+   },
+   "sling_rack": {
+    "cams": "light rack, small-medium",
+    "nuts": "small set",
+    "slings": "3-4 shoulder-length runners"
+   },
+   "alpine_draws": 2,
+   "rope_type": "single dynamic",
+   "rope_length_m": 30,
+   "rope_note": "South Ridge line bears NNE up sub-alpine slope to the ~7,000ft shoulder. Route is Class 4/low-5th with exposed scrambling; Tupshin reportedly has no easy route to the top.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "Light rack, small-to-medium cams",
+    "Nuts, small set",
+    "3-4 shoulder-length runners",
+    "30m rope for rappelling the crux"
+   ],
+   "features": [
+    "Exposed",
+    "Adventurous",
+    "Committing"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Stehekin, Devore Creek and the Bird Creek basin",
+     "notes": "No road reaches this mountain. A passenger ferry up Lake Chelan to the landing, then a shuttle or a walk up-valley to the bridge, then the river trail to the signed Devore Creek junction about half a mile short of the campground. The Devore Creek trail switchbacks up into the wilderness and is brushy but passable, though blowdown has made it a multi-hour fight in bad years, so check the current state before committing. Leave the maintained trail and work up the ridge north of Bird Creek through steep brush, slide alder and downed timber — roughly a thousand feet of gain with very little open forest — to a camp with running water in the lower basin somewhere between about 5,400 and 5,800 ft. Plan the whole trip around the boat schedule; missing the last one costs a night.",
+     "season": "Mid-July to September; axe early",
+     "hazards": [
+      "Loose, rockfall-prone gneiss on the summit pyramid, which releases spontaneously as well as under a boot",
+      "A brutal, largely trailless bushwhack between the maintained trail and the basin camp",
+      "A snow finger at the foot of the cliff that lingers unexpectedly late — carry an axe and consider crampons",
+      "Exposed class 4 and low-fifth climbing that most parties do with minimal protection",
+      "Ropes snag badly in the loose rock on rappel, so a single-strand rappel is usually preferable",
+      "Remote and multi-day with no cell service in the valley"
+     ],
+     "baseFinding": "From the basin camp climb north-northeast up open subalpine slope to the skyline shoulder at roughly 7,000 to 7,200 ft, where the summit pyramid comes fully into view for the first time — that view is the checkpoint, and if you cannot see a distinct pyramid you are not yet on the shoulder. From there traverse and drop slightly around the cliff bands into the upper basin on the east side, at about 7,500 to 7,600 ft. The base is the talus fan at the foot of a continuous cliff band that runs unbroken to the top, and it is marked by a snow finger that sits at the very bottom of the wall and survives most summers. Start the climbing from that fan. The common error here is drifting too far east across the basin and starting up loose ground well right of the line; if the rock is uniformly rotten and you are hugging the skyline on your right, work back left toward the east ridge to regain the route."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Bird Creek basin high camp",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "elev": 4200,
+     "name": "Bird Creek Camp, Devore Creek trail",
+     "role": "route",
+     "type": "camp",
+     "notes": "This is the camp for Devore Peak and Tupshin Peak, and it is worth being clear that these two are not a Sawtooth trip. They stand west of Lake Chelan on the long ridge dividing Company Creek and Hilgard Creek from Devore Creek, and everything about them - the wilderness, the permit system, the transport - is different from the Twisp River peaks. The usual way in is a ferry to the Stehekin landing, then the Company Creek road, with the Devore Creek trail reached from Weaver Point on the far side of the head of the lake; Bird Creek Camp sits about four miles up that trail at around 4,200 ft. From here Tupshin's South Ridge and Devore's Southeast Ridge are both reachable, and parties commonly climb both from the same base, either from this camp or from a higher bivouac around 5,800 ft in the Bird Creek basin. Both are steep, brushy and loose by reputation and neither is a walk-up. The season is roughly late July into early October; the approach is low, hot and overgrown early, and the upper slopes hold snow. This is the least forgiving logistics in the zone - a party that misses a boat or a bus loses a day at each end - so build slack into the itinerary and carry more food than the schedule strictly needs.",
+     "water": "Bird Creek is immediately past the camp; the site sits about a hundred feet short of the crossing. Below here, Devore Creek is the last dependable water on the climb, so fill there if you are unsure. Parties going higher can camp near 5,800 ft in the Bird Creek drainage, where there is water in early and mid-season but which can dry out late.",
+     "permit": "This is inside the Lake Chelan National Recreation Area, so a North Cascades backcountry permit is required year-round for the overnight, tied to a specific camp and itinerary. Peak-season demand is high enough that an early-access lottery governs the best dates and the odds are poor; plan around it rather than hoping. Open fires are banned at several camps in this unit and restricted to established pits elsewhere, and a total ban is normal by late summer. The ferry and the Stehekin shuttle are the other half of the planning: the boat must be booked, the shuttle up the valley runs a limited seasonal schedule, and the Company Creek road trailhead is several miles from the landing, so missing a bus costs you a half day on foot.",
+     "capacity": "Three small tent openings and a fire ring - room for perhaps four small tents. Very small, and there is no overflow."
+    },
+    {
+     "name": "Bird Creek Camp",
+     "role": "hidden"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south ridge rdg",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  },
+  {
+   "id": "wa_mount_seattle_south",
+   "area_id": "wa_mount_seattle",
+   "name": "South Slopes (Standard)",
+   "discipline": "scrambling",
+   "grade": "Class 2-3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "Sturdy boots for scree/talus",
+    "Ice axe (useful for lingering snow patches into early summer)",
+    "Approved hard-sided bear canister (required for overnight stays)",
+    "Map, compass, and altimeter — NPS stresses constant position-tracking given the lack of any marked route",
+    "Gaiters (brush on the Seattle Creek/Noyes Basin bushwhack approaches)",
+    "Helmet recommended on the looser scree/talus sections"
+   ],
+   "hazards": [
+    "Steep, brushy bushwhacking where the Seattle Creek drainage becomes too steep to climb directly",
+    "Loose scree and talus on both the west and east flanks, with rockfall risk onto parties below",
+    "Unbridged river/creek fords on the Elwha and North Fork Quinault approaches that can become dangerous after rain or during snowmelt",
+    "Extreme remoteness — multi-day approach from the nearest trailhead in either direction, with the NPS explicitly noting that emergency help is far away and frequently impossible to contact"
+   ],
+   "verif": null,
+   "overview": "Mount Seattle (6,246 ft) rises deep in the Olympic interior, about 7.5 miles southeast of Mount Olympus, within the Daniel J. Evans Wilderness of Olympic National Park. Its northeast aspect drops over 3,800 ft to the Elwha valley in only about 1.5 miles, but the standard scramble routes stay on the gentler south/west scree and talus slopes. The peak was named April 29, 1890 by James Halbold Christie and topographer Charles Adams Barnes of the Seattle Press Expedition, in honor of the city that sponsored their winter crossing of the range; it was first climbed in 1907 by Asahel Curtis, Grant Humes, and Lorenz Nelson while reconnoitering for a climbing club's first attempt on Mount Olympus. Reaching the base of the peak requires a long, committing wilderness approach from either the Elwha or North Fork Quinault drainages — there is no easy day-trip line to this summit.",
+   "beta": "Most parties base-camp at Seattle Meadows (~4,550 ft), reached via a multi-day approach up the North Fork Quinault River to Low Divide and then west into Seattle Creek Basin. From camp, climb scree slopes on the mountain's western side, cross over a ridge, and continue up scree and talus on the eastern side, finishing with a class 2-3 scramble on the east ridge/side to the craggy summit. Two other approach variants exist (via Noyes Basin, and a more direct line up Seattle Creek Basin itself), converging on the same upper-mountain scramble.",
+   "turnaround": "Because the upper mountain is loose scree/talus with real rockfall and slip potential, and the approach is long and entirely off-trail through remote wilderness, set a firm turnaround time before starting the summit push and commit to it — visibility loss (fog/cloud) on the unmarked upper slopes is the biggest threat to a safe descent, and there is no faster way down than the way up.",
+   "auto_generated": true,
+   "alpine_grade": "Grade I",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": 30.58,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "I",
+   "face": "West Slope - Southwest Couloir - South Ridge",
+   "permit": "Olympic National Park: no permit for day climbs; all overnight wilderness stays require a wilderness camping permit via Recreation.gov.",
+   "comms": null,
+   "descent": "Reverse the south slopes to Seattle Meadows, then descend to Low Divide and the North Fork Quinault trail.",
+   "obj_haz": [
+    "loose/friable rock in places",
+    "off-trail routefinding",
+    "lingering snow into early summer",
+    "remote terrain with slow rescue response"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.5759,
+     "lng": -123.648,
+     "elev": 500,
+     "name": "North Fork Quinault Trailhead (North Shore Road)",
+     "note": "Road's end on North Shore Road above Lake Quinault; Wilderness Information Center permit required, start of the North Fork Quinault River Trail; the Three Lakes trail up to the Skyline Ridge Primitive Trail also leaves from here.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.72481,
+     "lng": -123.55462,
+     "elev": 3602,
+     "name": "Low Divide",
+     "note": "Saddle between Mount Seattle and Mount Christie and the terminus of the Skyline Ridge Primitive Trail, near the historic Low Divide Ranger Station site.",
+     "type": "Junction",
+     "distMi": 16
+    },
+    {
+     "lat": 47.727303057142855,
+     "lng": -123.56447954285714,
+     "elev": 4550,
+     "name": "Seattle Meadows",
+     "note": "High camp in Upper Seattle Basin reached via a ~1,000 ft climb from Seattle Creek; standard launch point for the summit scramble, per route beta.",
+     "type": "Campsite",
+     "distMi": null
+    },
+    {
+     "lat": 47.730995,
+     "lng": -123.577965,
+     "elev": 6246,
+     "name": "Mount Seattle",
+     "note": "True summit gained by a Class 2-3 scramble up the east ridge, crossing scree and talus slopes on the peak's eastern side above Upper Seattle Basin.",
+     "type": "Summit",
+     "distMi": 19
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": null,
+    "summitTimeHrs": 5,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": null,
+      "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing.",
+      "fromTo": "Up the North Fork Quinault River Trail",
+      "section": "Approach"
+     },
+     {
+      "hrs": null,
+      "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Seattle Meadows, below the peak's west slopes.",
+      "fromTo": "Over the Sixteen Mile ford to Low Divide and high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 5,
+      "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+      "fromTo": "Summit day",
+      "section": "Climb"
+     },
+     {
+      "hrs": null,
+      "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day.",
+      "fromTo": "Back down to the North Fork",
+      "section": "Descent"
+     },
+     {
+      "hrs": null,
+      "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day.",
+      "fromTo": "Hike out to the trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": null,
+   "what_to_bring": [
+    "map and compass/GPS",
+    "extra layers",
+    "sun protection",
+    "ample water"
+   ],
+   "pro_tips": [
+    "Plan a multi-day trip — the North Fork Quinault approach is long",
+    "Combine with neighboring Olympic-interior summits to justify the approach"
+   ],
+   "watch_out": [
+    "long remote approach",
+    "early-season snow",
+    "river fords",
+    "loose rock"
+   ],
+   "pro_needs": "No technical protection is documented for this route — it is an unroped Class 3 scramble with no glacier travel per the published route description.",
+   "best_season": "Mid-July through September",
+   "high_point_ft": 6246,
+   "aid_grade": null,
+   "approach": "Two realistic approach corridors exist, both multi-day: (1) North Fork Quinault side — from the North Fork Quinault Trailhead at the end of the North Shore Road (not the South Shore Road, which leads to Graves Creek and the East Fork instead), follow the North Fork Quinault River Trail or the higher, rougher Skyline Ridge Primitive Trail (via Three Lakes and Kimta Peak) to Low Divide, 16 miles one-way by the river trail and much farther by the ridge, then cross-country/climbers'-path to Seattle Meadows below the peak's south side. (2) Elwha side — from the Whiskey Bend trailhead (the road to it has been closed to vehicles at Madison Falls since November 2017 flood damage, adding about seven miles each way on foot or bike), follow the Elwha River Trail up the Elwha valley toward Elwha Basin/Low Divide (on the order of 20+ miles one-way), then leave trail to climb into Seattle Creek Basin or Noyes Basin on the peak's northeast side. Either way, plan on a multi-day backpack just to reach a base camp, with several thousand feet of trail gain before any scrambling begins. The Seattle Creek Basin approach (Elwha side) follows the creek's waterfalls until the drainage steepens, forcing a steep, brushy bushwhack up onto the Mt. Noyes-Mt. Seattle ridge — expect slow going in heavy brush low down.",
+   "descent_text": "Descend the ascent line in reverse: downclimb the east ridge scramble back to the scree/talus on the east side, cross back over the connecting ridge, and descend the west-side scree to Seattle Meadows camp. The scree and talus are loose and unconsolidated in places, so downclimb carefully rather than trying to glissade or boot-ski except where lingering early-season snow makes it safe; rockfall onto parties below is a real concern on the looser sections.",
+   "bail": "Reverse the scramble; no fixed anchors required.",
+   "pitch_detail": [
+    {
+     "grade": "Trail, ~16 mi",
+     "notes": "North Fork Quinault River Trail through old-growth rainforest; gains roughly 3,100 ft to Low Divide camp (~3,600 ft).",
+     "pitch": "Trailhead to Low Divide"
+    },
+    {
+     "grade": "Primitive trail/off-trail",
+     "notes": "Via the Skyline Trail system into Seattle Creek Basin, climbing to camp near 4,550 ft below the peak's west slopes.",
+     "pitch": "Low Divide to Seattle Meadows basecamp"
+    },
+    {
+     "grade": "Class 2-3 scramble",
+     "notes": "Ascend scree on the west slope, cross to the southwest couloir, then scramble loose talus on the south ridge/east side to the (slightly higher) south summit; roughly 2-2.5 hrs from camp, under 2 hrs to descend.",
+     "pitch": "Seattle Meadows to summit"
+    }
+   ],
+   "itinerary": {
+    "cal": "Olympic National Park wilderness permits (quota-based in summer) are required for all backcountry camps along this route; check current park conditions for the North Fork Quinault fords, especially the Sixteen Mile crossing, before committing to the approach.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the North Fork Quinault trailhead at road's end, the trail follows the valley floor through old-growth forest past Wolf Bar and Halfway House. Wild Rose Creek and Elip Creek are fords that can run fast in heavy rain or peak snowmelt. Full packs, modest grade — this is mileage-banking, not climbing.",
+      "hours": null,
+      "miles": null,
+      "title": "Up the North Fork Quinault River Trail",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Reach a river camp such as Elip Creek or Sixteen Mile"
+     },
+     {
+      "n": 2,
+      "note": "Ford the North Fork at Sixteen Mile (normally knee- to thigh-deep and swift, and hazardous or impassable in heavy rain or snowmelt), then make the steep, loose climb to Low Divide (3,602 ft), the pass between the Quinault and Elwha drainages. Continue into Seattle Creek Basin and up to a meadow camp near 4,550 ft at Seattle Meadows, below the peak's west slopes.",
+      "hours": null,
+      "miles": null,
+      "title": "Over the Sixteen Mile ford to Low Divide and high camp",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach a high camp at Seattle Meadows"
+     },
+     {
+      "n": 3,
+      "note": "Leave the tent at camp and go light. Ascend talus on the peak's eastern side to gain the upper south/east ridge, then Class 2-3 scree and scrambling to the 6,246 ft summit; reverse the same line back to camp.",
+      "hours": 5,
+      "miles": 4,
+      "title": "Summit day",
+      "gainFt": 1700,
+      "lossFt": 1700,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave high camp",
+        "detail": "Light daypack; rope/overnight gear left at camp."
+       },
+       {
+        "time": "~7:00 AM",
+        "label": "Gain the south/east ridge",
+        "detail": "Talus and scree slopes above Seattle Meadows basin."
+       },
+       {
+        "time": "~7:50 AM (about 2.3 hr from camp)",
+        "label": "Summit",
+        "detail": "Class 2-3 scramble; views across the Bailey Range and Elwha headwaters."
+       },
+       {
+        "time": "8:20 AM",
+        "label": "Begin descent",
+        "detail": "Reverse the south-side scree/talus line."
+       },
+       {
+        "time": "~10:15 AM (about 1.9 hr from summit)",
+        "label": "Back at high camp",
+        "detail": "Rest of the day free to recover before the long walk out begins."
+       }
+      ],
+      "objective": "Climb Mount Seattle via the south-side talus/scree slopes"
+     },
+     {
+      "n": 4,
+      "note": "Drop back to Low Divide, descend the steep trail to the Sixteen Mile ford and continue down the North Fork valley as far as is reasonable with a full pack after a summit day.",
+      "hours": null,
+      "miles": null,
+      "title": "Back down to the North Fork",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Return to a river camp below Low Divide"
+     },
+     {
+      "n": 5,
+      "note": "Finish down the North Fork Quinault valley to the cars, re-crossing the Elip Creek and Wild Rose Creek fords. A long but easy-grade final day.",
+      "hours": null,
+      "miles": null,
+      "title": "Hike out to the trailhead",
+      "gainFt": null,
+      "lossFt": null,
+      "packLb": 35,
+      "schedule": [],
+      "objective": "Return to the North Fork Quinault trailhead"
+     }
+    ],
+    "totalNote": "A multi-day wilderness backpack (about 5 days / 4 nights) up the North Fork Quinault River, 16 trail miles to Low Divide, then on to a high camp at Seattle Meadows, with a half-day scramble to the 6,246 ft summit and the same trail back out."
+   },
+   "access": {
+    "fees": "Olympic NP wilderness permit reservation: $6 reservation fee plus $8 per person per night for climbers/backpackers age 16+ (15 and under free), as of 2026.",
+    "notes": "No separate climbing cost-recovery fee like Mount Rainier’s $82 — only the standard entrance fee and wilderness camping permit apply.",
+    "rules": "Hard-sided, approved bear-resistant food canisters are required for all overnight stays throughout most of Olympic Wilderness, including the Elwha and Quinault interior zones; bear wires/hangs are not accepted. There is no separate climbing registration — rangers do not certify competency or refuse a permit for lack of gear/experience, so self-sufficiency and route knowledge are entirely on the party.",
+    "permit": "A backcountry wilderness camping permit is required for any overnight stay and must be reserved through recreation.gov before your trip.",
+    "closures": "Olympic Hot Springs Road beyond Madison Falls has been closed to vehicles since November 2017 flood damage, with no reopening date on Olympic National Park's alerts page updated August 27, 2026, adding roughly 7 miles each way of walking or biking to reach the Whiskey Bend trailhead on the Elwha approach. On the Quinault side, South Shore Road has a separate washout closure near milepost 8 (use North Shore Road as the detour); North Shore Road itself also had a seasonal construction closure near milepost 10.2 (culvert replacement, closed July 9–Sept 22, 2025). Call the park's Road and Weather Hotline (360-565-3131) or check nps.gov/olym for current status before committing to either approach.",
+    "group_limit": 12,
+    "landManager": "Olympic National Park (NPS) / Daniel J. Evans Wilderness",
+    "land_manager": "National Park Service — Olympic National Park (Olympic Wilderness)",
+    "parking_pass": "Olympic NP entrance fee: $30/vehicle (7-day), $55 annual Olympic NP pass, or $80 America the Beautiful interagency annual pass.",
+    "passRequired": "Olympic NP entrance pass (or interagency \"America the Beautiful\" pass)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/olym/planyourvisit/wilderness-reservations.htm",
+     "what": "Olympic National Park wilderness camping permit, reserved in advance with a nightly per-person fee",
+     "where": "Reserve on Recreation.gov or by phone with the Wilderness Information Center, and print it from your account; no same-day walk-up sites are held, and Sol Duc/Seven Lakes Basin and the East Fork Quinault are quota areas."
+    }
+   },
+   "road": {
+    "name": "North Fork Quinault Road (via North Shore Road)",
+    "status": "Open to vehicles to the North Fork Quinault trailhead at road's end; reach it from North Shore Road only, since South Shore Road is closed by a washout. The North Fork road is not recommended for RVs or trailers and may be closed in winter.",
+    "driveNote": "Paved and gravel sections; verify current park road status before driving.",
+    "seasonalGate": null
+   },
+   "climate": {
+    "fall": "Increasing rain and shortening daylight narrow the practical window",
+    "spring": "Deep snowpack typically lingers in the upper basins and on the summit slopes into early summer",
+    "summer": "The most reliable window (Jul-Sep) but still unsettled — trip reports document rain and hail squalls even in early September",
+    "winter": "Heavy snow and storms make the multi-day approach and summit slopes impractical for most parties",
+    "typical": "Marine west coast climate: wet, mild winters with heavy snow accumulation in the high interior, and a relatively short, more stable summer window. The standard scramble is typically driest and most snow-free from mid-July through September.",
+    "bySeason": {
+     "summer": "Best window (Jul-Sep) for the scree/talus scramble; expect long daylight but still-frequent Pacific frontal systems and afternoon cloud buildup typical of the Olympics.",
+     "winter": "Heavy snow and frequent storms make the approach trails themselves a serious undertaking; not a realistic season for this route."
+    },
+    "forecastZone": "Olympic Mountains (NWAC forecasts this range in winter)"
+   },
+   "emergency": {
+    "notes": "Call 911. This is a deep-wilderness route with a multi-day approach; expect little to no reliable cell coverage along the trail or near the summit, and plan for a slow, multi-day self-rescue or evacuation timeline.",
+    "county": "Jefferson County (summit); approach trailheads span both Clallam County (Elwha) and Jefferson/Grays Harbor County lines (North Fork Quinault)",
+    "rangerStation": "Wilderness Information Center, Port Angeles — (360) 565-3100 (climbing info, permits, guide list, borrowable bear canisters)",
+    "nearestHospital": "Olympic Medical Center, Port Angeles (typical evacuation point for the Elwha-side approach) or Forks Community Hospital, a Level IV trauma center (western approaches); given the multi-day walk-out from either standard approach, serious injuries are usually evacuated by helicopter (Airlift Northwest) rather than on foot.",
+    "sheriffDispatch": "Peninsula Communications (PenCom), Port Angeles — centralized 911/dispatch for both the Clallam and Jefferson County portions of Olympic National Park, coordinating NPS rangers with county Search and Rescue teams"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed; if any, scattered weekend attempts July-August",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - low-traffic; likely single digits to low teens of parties per season given the long, remote approach"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Able to sustain long mileage days (the North Fork Quinault approach alone is a multi-day backpack) with significant elevation gain on the final push off-trail",
+     "packWeight": "Overnight/multi-day pack weight (camp gear, several days food) plus scrambling gear for the summit day"
+    },
+    "approachTime": "Multi-day approach up the North Fork Quinault River trail to Low Divide before leaving maintained trail for Seattle Meadows and the summit push; not a single-day car-to-summit route",
+    "requiredSkills": [
+     "off-trail routefinding / navigation with map and compass or GPS",
+     "river/stream fording technique and judgment",
+     "loose rock and talus/scree management",
+     "backcountry camping and Leave No Trace in a national park wilderness",
+     "self-sufficient trip planning given the long remote approach"
+    ],
+    "experienceLevel": "Solid off-trail scrambler comfortable with sustained routefinding on trail-less, brushy Class 2-3 terrain and multi-day backcountry travel; prior Olympics interior or similarly remote alpine experience strongly preferred"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still hold lingering early-season snow; conditions firm up as the month progresses",
+      "status": "good"
+     },
+     "August": {
+      "reason": "Most reliable month: snow largely melted out, trail-less terrain and river fords at their easiest, stable weather window",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Still viable and often clear, but shorter days and increasing chance of early fall weather systems in the Olympic interior",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Olympic interior weather is changeable, with the long approach exposing parties to whatever system moves through",
+     "probability": "Afternoon weather noted as a hazard; building cloud/precipitation in the afternoon is a realistic pattern during the Jul-Sep window"
+    },
+    "exposure": "Class 2-3 scrambling on loose rock with trail-less, remote terrain; consequence of a slip is elevated by the difficulty of self-rescue or evacuation given the long, multi-day approach far from road access",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer route (NWAC's broad 'Olympics' zone covers the range but only issues forecasts during winter avalanche season, outside this route's Jul-Sep climbing window)",
+     "byMonth": {
+      "July": "N/A",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel"
+   },
+   "data_quality": {
+    "gaps": [
+     "No primary guidebook (e.g., a dedicated Olympics climbers' guide) confirmation of exact Class 2 vs Class 3 sections — current grading is based on secondary sources and one detailed trip report.",
+     "No confirmed current-year (2026) firsthand trip report for this specific peak; approach road/trail status should be re-verified with the park's Road and Weather Hotline before a trip.",
+     "Prominence figure (758 ft on file) not independently re-verified — sources found range from 726 ft (Wikipedia) to 768 ft (PeakVisor), so it was left unchanged rather than guessed.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.730995,
+    "peakLng": -123.577965,
+    "trailhead": "North Fork Quinault Trailhead (North Shore Road)",
+    "trailheadLat": 47.5759,
+    "trailheadLng": -123.648,
+    "trailheadDirection": "From the North Fork Quinault Trailhead (525 ft, end of North Shore Road off US-101)"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "none (unroped)",
+   "rope_length_m": null,
+   "rope_note": "Class 2-3 scramble on scree/talus; standard scramble kit, no rope typically carried.",
+   "ascender": null,
+   "corrections": "Route-specific detail limited; South Slopes conflated with general Mt Seattle east-ridge trip notes in search results.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Scenic",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Low Divide and Seattle Meadows",
+     "camps": [
+      "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+      "Seattle Meadows"
+     ],
+     "notes": "Reached up the North Fork Quinault or by the higher, rougher Skyline Ridge primitive route past Three Lakes and Kimta Peak, or from the Elwha side. Two other lines come in through Noyes Basin and directly up Seattle Creek Basin. Whichever you pick, plan on a multi-day backpack just to reach a base camp.",
+     "season": "Late July to mid-September",
+     "hazards": [
+      "Loose scree and talus on both flanks with rockfall onto parties below",
+      "Steep, brushy bushwhacking where the Seattle Creek drainage steepens",
+      "Unbridged fords on the Elwha and North Fork Quinault approaches",
+      "A northeast aspect dropping thousands of feet — stay off that side",
+      "Extreme remoteness with emergency contact frequently impossible"
+     ],
+     "primary": true,
+     "baseFinding": "The staging point is Seattle Meadows, the high camp in upper Seattle Basin about a thousand feet above Seattle Creek. There is no gully mouth to find here: from camp the climb starts on scree on the mountain's western side, and the base is simply where meadow gives way to loose scree and the slope steepens. What identifies the route is the sequence, so hold it in mind — climb the west-side scree, cross over a connecting ridge, then continue up scree and talus on the eastern side, and finish with Class 2 to 3 scrambling on the east ridge to a craggy top. If you are still high on the west side and the ground is cliffing out above you, you have failed to make the crossing and need to traverse. The summit is confirmed by an unusually large plastic tube jammed into a crack holding the register. Coming instead up Seattle Creek Basin, follow the creek's waterfalls until the drainage steepens, then take the steep brushy bushwhack onto the Noyes–Seattle ridge; that brush low down is the crux of that variant, not the scrambling above."
+    },
+    {
+     "name": "Up the Elwha to Low Divide",
+     "trip": {
+      "bivy": [
+       {
+        "elev": 3600,
+        "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+        "role": "main",
+        "type": "camp",
+        "notes": "Low Divide is the saddle between Mount Seattle and Mount Christie and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by the south slopes, and the upper meadows above camp are open walking. Mount Christie is usually taken by dropping to Martins Park, a boulder garden about three miles below the Christie Glacier, and climbing the north couloir from there. The honest planning point is which side you walk in from: this is 28.4 miles from Whiskey Bend up the Elwha, and 16 miles from the North Fork Quinault trailhead, so unless you are traversing the range you should be coming from the Quinault. Wasps have been a real problem on the lower forest sections in late summer, and stings there have put people out of action for days.",
+        "water": "Reliable — a stream runs through the camp all season",
+        "permit": "Olympic wilderness permit required, booked in advance. Not itself a quota area, but it is a long way from any road and may not appear in an online search, so telephone the wilderness information centre if the site will not show. Bear canister mandatory. No fires at this elevation.",
+        "capacity": "Around five sites, with a bear hang, a toilet and flat ground; small enough that a large party will fill it"
+       },
+       {
+        "name": "Seattle Meadows",
+        "role": "main",
+        "type": "camp"
+       },
+       {
+        "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+        "role": "route",
+        "type": "camp",
+        "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whiskey Bend trailhead about six to seven miles away on foot. The park's own figure is seven. Bicycles are allowed on the closed road and cut that leg to well under an hour each way, and most parties heading deep now ride it and stash a bike. Lillian River is around four and a half miles past Whiskey Bend and Mary's Falls a little further, so either one turns a brutal first day into a civilised one when you are carrying enough food for a week in the interior. Going higher on day one is possible but you gain nothing except a shorter second day; the elevation profile of the Elwha barely rises for the first fifteen miles.",
+        "water": "Reliable at both — the Lillian River at one, the Elwha at the other; treat everything",
+        "permit": "Olympic wilderness permit required, booked in advance on the federal recreation site. These lower Elwha camps are not inside a quota area, so they are usually obtainable late, but no sites anywhere in this park are held back as same-day walk-ups. Bear canister mandatory. Fires are allowed at this elevation but the Elwha and every tributary are closed to fishing.",
+        "capacity": "Lillian River has roughly six roomy riverside sites; Mary's Falls is smaller and set in maple and grass with the river some way off"
+       },
+       {
+        "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+        "role": "route",
+        "type": "camp",
+        "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 ft straight out of the Hayes River drainage in under a mile, and the ascent is a steep off-trail slog rather than a climb. It is also the last comfortable place to sleep before the valley narrows, so parties bound for Chicago Camp and the Elwha Basin peaks routinely take it as night two. Going further the same day is a real option in long daylight but the trail past Camp Wilder deteriorates and the camps beyond are rougher. Bugs are heavy in the meadows from late June into July.",
+        "water": "Reliable — the Elwha at Elkhorn, the Hayes River at Hayes; both run all season",
+        "permit": "Olympic wilderness permit required, booked in advance. Not a quota area, so these are among the easier permits in the park to obtain at short notice. Bear canister mandatory.",
+        "capacity": "Both are spacious grassy flats with several sites each, alongside old guard stations that are usually empty; they are the least contested camps in the valley"
+       },
+       {
+        "name": "Chicago Camp — the last established camp in the upper Elwha",
+        "role": "route",
+        "type": "camp",
+        "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing on into the Elwha Basin above. The ford at the camp can be genuinely hazardous in high water and is the crux of the walk in for many parties. A short way beyond, the upper Elwha has a cave-like recess under an overhanging wall that has served as emergency shelter for generations, but it is a bolthole and not a camp. Camping here rather than in the basin costs you three miles and a couple of thousand feet on summit day; the trade is a sheltered site with running water and a defined trail underfoot, which matters more than it sounds after four days of walking.",
+        "water": "Reliable — the Elwha and Delabarre Creek meet here",
+        "permit": "Olympic wilderness permit required, booked in advance. It is more than fifteen miles from any road, and the booking system does not always surface camps that far in, so ring the wilderness information centre rather than assuming it is unavailable. Bear canister mandatory. No fires above 3,500 ft, which applies once you climb out of here.",
+        "capacity": "Small, and it has been battered by fallen timber — expect only a couple of usable sites near the river"
+       }
+      ],
+      "approachLogistics": {
+       "trailhead": "Whiskey Bend Trailhead (Elwha)",
+       "trailheadLat": 47.968,
+       "trailheadLng": -123.583
+      }
+     },
+     "notes": "The long northern way: follow the Elwha River trail up the whole valley past Hayes River and Chicago Camp, then climb to Low Divide. It takes several days, and a road walk or bike ride may be needed to reach the trailhead."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 3600,
+     "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+     "role": "main",
+     "type": "camp",
+     "notes": "Low Divide is the saddle between Mount Seattle and Mount Christie and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by the south slopes, and the upper meadows above camp are open walking. Mount Christie is usually taken by dropping to Martins Park, a boulder garden about three miles below the Christie Glacier, and climbing the north couloir from there. The honest planning point is which side you walk in from: this is 28.4 miles from Whiskey Bend up the Elwha, and 16 miles from the North Fork Quinault trailhead, so unless you are traversing the range you should be coming from the Quinault. Wasps have been a real problem on the lower forest sections in late summer, and stings there have put people out of action for days.",
+     "water": "Reliable — a stream runs through the camp all season",
+     "permit": "Olympic wilderness permit required, booked in advance. Not itself a quota area, but it is a long way from any road and may not appear in an online search, so telephone the wilderness information centre if the site will not show. Bear canister mandatory. No fires at this elevation.",
+     "capacity": "Around five sites, with a bear hang, a toilet and flat ground; small enough that a large party will fill it"
+    },
+    {
+     "name": "Seattle Meadows",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "name": "Lillian River and Mary's Falls — the first night out of Whiskey Bend",
+     "role": "route",
+     "type": "camp",
+     "notes": "The whole Elwha approach now begins with a road walk, and it is the single biggest change to planning in this valley. Vehicles stop at the Madison Falls parking area; the Olympic Hot Springs Road and then the Whiskey Bend Road are closed by a washout that has stood for years with no repair date, which puts the old Whiskey Bend trailhead about six to seven miles away on foot. The park's own figure is seven. Bicycles are allowed on the closed road and cut that leg to well under an hour each way, and most parties heading deep now ride it and stash a bike. Lillian River is around four and a half miles past Whiskey Bend and Mary's Falls a little further, so either one turns a brutal first day into a civilised one when you are carrying enough food for a week in the interior. Going higher on day one is possible but you gain nothing except a shorter second day; the elevation profile of the Elwha barely rises for the first fifteen miles.",
+     "water": "Reliable at both — the Lillian River at one, the Elwha at the other; treat everything",
+     "permit": "Olympic wilderness permit required, booked in advance on the federal recreation site. These lower Elwha camps are not inside a quota area, so they are usually obtainable late, but no sites anywhere in this park are held back as same-day walk-ups. Bear canister mandatory. Fires are allowed at this elevation but the Elwha and every tributary are closed to fishing.",
+     "capacity": "Lillian River has roughly six roomy riverside sites; Mary's Falls is smaller and set in maple and grass with the river some way off"
+    },
+    {
+     "name": "Hayes River and Elkhorn — the mid-valley camps, and the base for Mount Norton",
+     "role": "route",
+     "type": "camp",
+     "notes": "Elkhorn sits about eleven miles up the Elwha from Whiskey Bend and Hayes River about sixteen, both on level ground and both far more pleasant than Canyon Camp between them, which has been badly hit by treefall and is worth walking past. Hayes River is the camp for Mount Norton: the peak's east side rises roughly 3,200 ft straight out of the Hayes River drainage in under a mile, and the ascent is a steep off-trail slog rather than a climb. It is also the last comfortable place to sleep before the valley narrows, so parties bound for Chicago Camp and the Elwha Basin peaks routinely take it as night two. Going further the same day is a real option in long daylight but the trail past Camp Wilder deteriorates and the camps beyond are rougher. Bugs are heavy in the meadows from late June into July.",
+     "water": "Reliable — the Elwha at Elkhorn, the Hayes River at Hayes; both run all season",
+     "permit": "Olympic wilderness permit required, booked in advance. Not a quota area, so these are among the easier permits in the park to obtain at short notice. Bear canister mandatory.",
+     "capacity": "Both are spacious grassy flats with several sites each, alongside old guard stations that are usually empty; they are the least contested camps in the valley"
+    },
+    {
+     "name": "Chicago Camp — the last established camp in the upper Elwha",
+     "role": "route",
+     "type": "camp",
+     "notes": "Chicago Camp is where the trail effectively ends and the cross-country begins, roughly twenty-five miles from Whiskey Bend at the confluence of the Elwha and Delabarre Creek. It is the standard last-trail-camp for Mount Barnes, Mount Meany, Mount Noyes, Mount Queets and Mount Wilder, all of which are reached by pushing on into the Elwha Basin above. The ford at the camp can be genuinely hazardous in high water and is the crux of the walk in for many parties. A short way beyond, the upper Elwha has a cave-like recess under an overhanging wall that has served as emergency shelter for generations, but it is a bolthole and not a camp. Camping here rather than in the basin costs you three miles and a couple of thousand feet on summit day; the trade is a sheltered site with running water and a defined trail underfoot, which matters more than it sounds after four days of walking.",
+     "water": "Reliable — the Elwha and Delabarre Creek meet here",
+     "permit": "Olympic wilderness permit required, booked in advance. It is more than fifteen miles from any road, and the booking system does not always surface camps that far in, so ring the wilderness information centre rather than assuming it is unavailable. Bear canister mandatory. No fires above 3,500 ft, which applies once you climb out of here.",
+     "capacity": "Small, and it has been battered by fallen timber — expect only a couple of usable sites near the river"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south slopes standard",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

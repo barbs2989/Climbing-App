@@ -345,7 +345,13 @@ if (outFar.length) {
   outFar.sort((x, y) => y.d - x.d).forEach(o =>
     console.log(` ${Math.round(o.d).toString().padStart(6)} m  ${String(o.type).padEnd(10)} ${o.id}\n           "${o.a}"  +  "${o.b}"`));
 }
-if (outDup.length) { console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`)); }
+// Known residue: none. Batch 10 removed Kendall, Western Dihedral and Goode (real copies); batch 11
+// (2026-10-01) moved Pinnacle's saddle onto OSM's named node and cleared Prusik's north-face rappel off
+// the P5 chockstone's coordinate — two different places that had shared one copied coordinate. A NEW
+// duplicate here is new data; see docs/guards/waypoints-and-tracks.md (batches 10-11).
+if (outDup.length) {
+  console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`));
+}
 if (outOrder.length) { console.log("\nreordered:"); outOrder.forEach(o => console.log(` ${o.id} — ${o.name}\n    was: ${o.before}\n    now: ${o.after}`)); }
 if (outSelf.length) {
   console.log("\nTHE ROW CONTRADICTS ITSELF — known distances run backwards in the stored order:");
@@ -361,6 +367,11 @@ if (outLate.length) {
 if (outDetour.length) {
   console.log("\nONE PIN DRAWS A DETOUR (read the pin's coordinate before its position):");
   outDetour.forEach(o => console.log(` ${o.id} — ${o.name}  ${o.L.toFixed(1)} km -> ${o.l2.toFixed(1)} km\n    move placed pin ${o.from} of ${o.of} ${o.moved} to slot ${o.to}`));
+  // Re-read in batch 12: Buck's own 189-point track passes Buck Creek Pass (vertex 90) before the
+  // summit (vertex 134), and its approach prose tops out at the pass and contours back SW below
+  // Liberty Cap. The detour is the trail, not a pin.
+  if (outDetour.some(o => o.id === "wa_buck_mountain_south_ridge"))
+    console.log("  (Buck Mountain South Ridge was read in batch 12: the trail passes Buck Creek Pass and doubles back, correct as stored.)");
 }
 if (outAfter.length) {
   console.log("\nAFTER THE SUMMIT AND NOT EXPLAINED BY THE DESCENT (read, do not sweep):");
@@ -370,5 +381,9 @@ if (outAfter.length) {
     console.log(`    unexplained: ${o.pins.join("  |  ")}`);
     if (o.explained.length) console.log(`    (descent prose does name: ${o.explained.join("  |  ")})`);
   });
+  // Read in batch 10: Chair Peak NE Buttress's "Notch/saddle in main ridge" is CORRECT — its own note
+  // is the descent (downclimb from the summit to the notch, then rappel); the prose walks that gully
+  // without the word "notch". Mount Cruiser's "Base of Alpha" was an approach pin and was moved.
+  console.log("  (Chair Peak NE Buttress was read in batch 10: its notch is the descent, correct as stored.)");
 }
 process.exit(0);

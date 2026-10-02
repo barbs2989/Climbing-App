@@ -388,8 +388,9 @@ the correction knows the screen is wrong, and they have no way to report it.
     lists the route for one leg: Lillian Ridge crest at `distMi` 0.7 sits 2.2 mi in a straight line
     from the trailhead. The PIN is right (USGS ground 6,321 ft against a claimed 6,350, and WTA puts
     1.6 level miles along the ridge before the descent), so the `0.7` is the wrong record.
-    `check:impossible-leg` already prints "—" for it on the live page. It belongs to that audit's
-    backlog, not to a hazard fix.
+    `check:impossible-leg` already printed "—" for it on the live page. The `audit:waypoint-distances`
+    backlog pass NULLED that `0.7` (WTA puts the ridge high point near 1.5 mi), so the route is
+    off the audit.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
@@ -601,6 +602,11 @@ the correction knows the screen is wrong, and they have no way to report it.
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
   because these citations are free prose inside jsonb columns — every identifier is bound, the
   column is populated, the section renders. Only reading the value finds them.
+  - **`waypoints[].directions` is scanned too, since 2026-10-01** — the "Getting here —" line in
+    the same card as the note, and the one waypoint string the audit never read. Added when a
+    web-researched pass filled 1,642 of them (663 routes; record and brief in
+    `scripts/oneoff/waypoint-directions-research-2026-10-01/`), which is exactly when a "per WTA"
+    is likeliest to slip in. It reported **0 of 2,913** WA directions after that pass.
   - The class had been measured once for `waypoints[].note` and **nobody had ever looked at
     `road.*` / `access.*`** — the same defect in different columns, which is the shape this repo
     keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
@@ -1112,3 +1118,31 @@ the correction knows the screen is wrong, and they have no way to report it.
     (climber initials, *JB, DN, RG*), `data_quality` (`MEDIUM`/`UI Route` — enums with no reader).
   - Service key, reads ~230k routes + 53k areas (~3 min). After 2026-09-30: **0 on 0 rows.** Not a
     build gate — a property of the DB, not the checkout.
+
+- **`audit:multi-approach`** — which climbs can be reached more than ONE way, and can the page
+  switch between them? Report-only; a signal is a reason to read the row and research the climb.
+  - Signals: `VARIANTS` (≥2 cards, none linked), `PROSE` (names an alternate approach, <2 cards),
+    `OTHER_TH` (prose names a trailhead the stored one does not), `FINISH` (a sibling on the same
+    peak names this route), `NAME` ("via", "Variation", "Finish"), and `DANGLING` — a `viaRouteId`
+    that no longer resolves on the same peak, the one signal that is a DEFECT (exit 1).
+  - **First WA run, 2026-10-01: 8,615 routes, 1 switchable (Shuksan SE Ridge), 557 flagged.** Most
+    `VARIANTS` hits are the same trailhead with a different gully or a seasonal snow line — a card,
+    not a second approach. `FINISH` is the noisiest (283): a sibling naming a route in its descent is
+    not the route being a finish. Research decides; never re-quote these counts, re-run it.
+  - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
+    with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
+    carried a signal, all already read and judged one way in, so every run buried anything new under
+    them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
+    then every `scripts/oneoff/link-multi-approach-batch<N>.plan.json` in batch order, then
+    `settled.json`, with later files winning). It COUNTS a SINGLE or fixed ROW_CONTRADICTS row on one line instead of listing it;
+    `--researched` lists them. It never hides DANGLING, a row researched as multi-approach that still
+    cannot switch, or a row no file has a verdict for. That last case is the point: the Haystack
+    Scramble began flagging mid-session when its sibling's text started naming it, and it was the only
+    row shown. A new verdict goes in `settled.json`, with a `why`.
+  - **...and "0 to read" is only as good as the signals** (batch 4, 2026-10-01). A row whose own text
+    trips nothing is never listed, so the WA zero hid 69 never-researched routes on peaks whose
+    siblings start from different trailheads, plus 72 single verdicts given with only medium or low
+    confidence. Researching them found 9 more multi-approach routes. Before calling this list done
+    again, re-run that cross-check (siblings on one peak naming 2+ trailheads, minus every row with a
+    verdict).

@@ -48,7 +48,9 @@ function childNoun(children) {
   const types = [...new Set((children || []).map(c => c.area_type))];
   return (types.length === 1 && CHILD_NOUN[types[0]]) || "Areas";
 }
-const SL = ({ children, C }) => <div style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 18, marginBottom: 9 }}><span style={{ width: 3, height: 14, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{children}</span></div>;
+const SL = ({ children, C }) => <div style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 18, marginBottom: 9 }}><span style={{ width: 3, height: 14, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span role="heading" aria-level={2} style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{children}</span></div>;
+/* = core's CardHead (this module does not import core). Keep the two in step. */
+const CardHead = ({ children, C, style }) => <div role="heading" aria-level={3} style={Object.assign({ display: "flex", alignItems: "center", gap: 7, minWidth: 0, fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.5, textTransform: "uppercase" }, style)}><span aria-hidden="true" style={{ width: 3, height: 12, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span style={{ minWidth: 0 }}>{children}</span></div>;
 const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color, padding: sm ? "2px 7px" : "3px 10px", borderRadius: 20, fontSize: sm ? 11 : 12, fontWeight: 600, whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 4 }}>{label}</span>;
 // Title only. It used to carry its own "← Back" too, directly under the sticky "Back to …" bar
 // that already sits above every panel — two Back buttons on one screen, doing the same thing.
@@ -462,7 +464,7 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
   const lbl = { fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5 };
   return (
     <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 15px", marginBottom: 14 }}>
-      <div style={{ fontSize: 12, fontWeight: 800, color: C.blue, marginBottom: 10, letterSpacing: 0.4 }}>ACROSS EVERY ROUTE HERE</div>
+      <CardHead C={C} style={{ marginBottom: 10 }}>ACROSS EVERY ROUTE HERE</CardHead>
       {rows.map(([label, value, note]) => (
         <div key={label} style={{ marginBottom: 10 }}>
           <div style={lbl}>{label}</div>
@@ -716,11 +718,13 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 // WI4 are all just numbers on one line — so with "All" selected no range means anything. See
 // DISC_GRADE_SCALES for which scales each discipline offers and why.
 //
-// ALPINE AND MOUNTAINEERING ARE STILL LEFT OUT. gradeNumFrom (lib/grade.js) takes a YDS number
-// wherever the grade string has one and otherwise falls back to Class, a French alpine grade
-// (AD = 3) or a commitment numeral (Grade III = 3), and their grade_system labels were never
-// corrected (0196 relabelled ice/mixed/aid only), so one number means different grades on
-// different rows there.
+// ALPINE, MOUNTAINEERING AND SCRAMBLING filter BY SCALE (2026-10-01). Their grade_num used to mix
+// YDS, Class, French grades and commitment numerals under labels nobody had corrected, so they
+// were left out. Every WA route in them now carries ONE researched final grade — its crux, on Class,
+// 5.x or WI/AI — in `grade`, with grade_system and grade_num to match (audits/route-grades/), and
+// the out-of-state rows were relabelled to the scale their grade text is written on
+// (scripts/oneoff/relabel-mountain-grade-systems.mjs). So a range passes grade_sys and one number
+// means one grade again: Class 4 and 5.4 are both 4, and the label is what keeps them apart.
 //
 // The RPC compares `grade_num >= min_grade`, which is NULL — i.e. excluded — for a route with
 // no readable grade. The sheet says so rather than letting the count drop unexplained. ──
@@ -776,12 +780,15 @@ const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: 
 //     Project's export (scripts/pipeline/import-mp-grades.mjs) — plus 5.x, the free grade most of
 //     these rows store as their primary grade.
 // Re-run the measurements before widening this.
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
-// The disciplines 0196 relabelled, where grade_system now says which scale grade_num is on, so a
-// range there passes it as grade_sys. The others keep #1811's behaviour: their labels were never
-// corrected (scrambling carries 41 "4th" rows labelled 'yds'), and filtering on them would drop
-// routes the range has always returned.
-const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1 };
+//   mountaineering / alpine / scrambling: one final grade per route, on the scale its crux is on —
+//     Class for walk-ups, scrambles and glacier climbs, 5.x for roped rock, WI/AI for an ice crux
+//     (an ice final also fills ice_grade_num, which the WI range reads).
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "yds", "wi"], alpine: ["yds", "class", "wi"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+// The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
+// as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
+// were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
+// needed.
+const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1, mountaineering: 1, alpine: 1, scrambling: 1 };
 const gradeScalesFor = disc => DISC_GRADE_SCALES[disc] || [];
 const gradeScaleFor = (disc, sys) => { const ss = gradeScalesFor(disc); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
 const gradeSysFor = (disc, sys) => { const ss = gradeScalesFor(disc); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
@@ -846,7 +853,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
 
   const rowBtn = on => ({ flex: 1, padding: 13, borderRadius: 10, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.text, fontSize: 14, fontWeight: 800, cursor: "pointer" });
   const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
-  const lab = s => <div style={{ fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, margin: "20px 0 8px", borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{s}</div>;
+  const lab = s => <SL C={C}>{s}</SL>;
 
   return (
     <div>

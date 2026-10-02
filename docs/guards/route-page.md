@@ -976,3 +976,45 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     That block reads **raw** source, because the discriminator is a string literal
     (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
     `tab===""` — the first run failed with "gone blind" for precisely that reason.
+
+- **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
+  drives the whole page and nothing from another leaks under its name.
+  - **Mount Shuksan's Southeast Ridge is why.** It is a summit-pyramid FINISH reached by the
+    Sulphide Glacier or the Fisher Chimneys, from two trailheads. The row could hold one: its pins,
+    camps and numbers were the Sulphide's while its own road prose named Lake Ann, and its 6,627 ft /
+    11.3 km were the whole Sulphide trip, not the ~600 ft ridge.
+  - **The model** (`lib/approaches.js`): an `approach_variants` entry may carry `viaRouteId` (a
+    sibling route that IS the way in) or `trip` (its own trailhead, whole-trip numbers, GPX).
+    RouteDetail lays the picked one over the row ONCE (`route = applyApproach(routeRow, …)`) so every
+    panel follows without being rewritten. Unlinked prose cards get no picker — it would change
+    nothing.
+  - **Every owned key is replaced, including the empty ones.** A way in with no camps recorded
+    shows no camps — not the other way in's. That is the half the guard's fixtures pin hardest.
+  - **A via route's own `summitTimeHrs`/`totalHrs` are dropped**: they time ITS finish (the
+    Sulphide's summit gully), which this climb replaces; the planner times the climbing from this
+    route's own pitches instead.
+  - **...and a trailhead way in drops the stored way's TIMES, even when it records none** (2026-10-01).
+    Windy Peak's Iron Gate way in showed "Long Swamp Trail to the summit and back, 9.5 hr" under
+    PUBLISHED TIMES, because the overlay only touched `timing` when the trip carried one. Now the
+    stored `approachTimeHrs`, `descentTimeHrs`, `recommendedStart`, `totalHrs` and `sectionBreakdown`
+    go for any `trip` (and `sectionBreakdown` for a via route too); only `summitTimeHrs`, the climb's
+    own time, stays. A fixture pins it.
+  - **Camps follow the pick in both directions** (batch 1, 2026-10-01). The row's `bivy` was
+    written for the whole climb, so it held the other way in's camps (Stuart's North Ridge listed
+    Goat Pass, the south-side camp, under Mountaineer Creek). The way in the row describes carries
+    `camps: [names]`; a `trip` carries its camps whole; a linked route lends only the way in ITS own
+    page opens on. A camp both ways share is named on both.
+  - **`storedRow:true`** names the way in the row's own trailhead and numbers describe when it is
+    not the most-used one (Sloan's Corkscrew stores the Cougar Creek pullout; most parties go up
+    Bedal Creek). Without it the picker labelled Cougar Creek's data "Bedal Creek".
+  - **The raw column spelling leaks.** `dbRouteToCamel` spreads the row, and `lib/outing.js` reads
+    `dist_km` when `distKm` is null — so a way in with no distance showed the other's 4.8 mi. The
+    overlay clears both spellings of every owned key; a fixture pins it.
+  - **A way in can live on another peak** (the Fury ridge traverse starts on East Fury's summit):
+    RouteDetail reads any linked route the peak's own list lacks by id.
+  - **SuggestFix is handed `routeRow`, never the overlay** — seeding an edit from the overlay would
+    write the Fisher Chimneys pins into the Southeast Ridge's own `waypoints` column. The wiring half
+    of the guard fails on any other `<SuggestFix route={…}>`.
+  - **Cannot see:** whether a variant's linked data is TRUE — that is `audit:multi-approach` and
+    research. Nor a panel that reads a field outside `APPROACH_OWNED_KEYS` that is in fact
+    approach-specific; add the key there, not a special case in the panel.

@@ -1049,7 +1049,12 @@ async function runVariants() {
   // from the fix refuses every change instead of judging it.
   if (!/\.map\(/.test(seedExpr) || !/distMi:/.test(seedExpr) || !/gainFt:/.test(seedExpr))
     dead("the seed is not the map-over-approachVariants shape this section reads");
-  const seed = new Function("route", "itinDraftVal", "blankVar", "return " + seedExpr + ";");
+  // `tripDraft` seeds the WHERE-IT-STARTS boxes (lib/approaches.js) beside these two. It is passed a
+  // stub: this section measures the distMi/gainFt boundary, and a variant with no `trip` seeds no
+  // trip boxes. The trip boxes keep the same lossless rule by carrying their seeded strings in
+  // `_tSeed`, and are submitted only in "own trailhead" mode, which this fixture never enters.
+  const seed0 = new Function("route", "itinDraftVal", "blankVar", "tripDraft", "return " + seedExpr + ";");
+  const seed = (route, idv, bv) => seed0(route, idv, bv, () => ({}));
 
   const storeKey = 'if(f.type==="variants")return (vals.approachVariants||[])';
   const storeAt = src.indexOf(storeKey);
@@ -1058,7 +1063,8 @@ async function runVariants() {
   if (storeEnd < 0) dead("could not bound the variants submit branch");
   const storeExpr = src.slice(storeAt + 'if(f.type==="variants")return '.length, storeEnd).replace(/;\s*$/, "");
   if (!/\.map\(/.test(storeExpr) || !/\.filter\(/.test(storeExpr)) dead("the variants branch is not the map/filter shape this section reads");
-  const store = new Function("vals", "itinStoreVal", "return " + storeExpr + ";");
+  const store0 = new Function("vals", "itinStoreVal", "uImp", "return " + storeExpr + ";");
+  const store = (vals, isv) => store0(vals, isv, () => M.uImp ? M.uImp() : true);
 
   const blankVar = () => ({ name: "", season: "", distMi: "", gainFt: "", hours: "", notes: "", hazards: "" });
   // THE TWO NUMBERS ARE CHOSEN TO BE LOSSY, and the first version of this probe chose two that were

@@ -24,16 +24,16 @@ const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("
 
 const CASES = [
   { name: "faq-settings-control", file: "lib/Help.jsx", fires: true,
-    find: '"Is my emergency contact private?","There is no emergency-contact field on your profile.',
+    find: '"Is my emergency contact private?","Yes. The emergency contact you save in Edit profile is stored with your account where only you can read it',
     repl: '"Is my emergency contact private?","Yes. You control who can see it in Settings — keep it private, share with your crew only, or show it to partners.","XX',
     expect: "claims a Settings control over an emergency contact",
     why: "the real historical FAQ answer, restored verbatim" },
 
-  { name: "toast-profile-field", file: "ClimbMatch.jsx", fires: true,
+  { name: "toast-profile-field", file: "ClimbMatch.jsx",
     find: "\"Float plan saved. ClimbMatch can't alert anyone for you — fill in the Float Plan form with your emergency contact, and send it to them yourself.\"",
     repl: "\"Float plan saved. Add an emergency contact in your profile, and send them the plan yourself — ClimbMatch can't alert anyone for you.\"",
-    expect: "points a climber at a place to set or control an emergency contact",
-    why: "the real historical toast, restored verbatim — the branch that fires for every real account" },
+    fires: false,
+    why: "the real historical toast — false while nothing could set a contact, TRUE since 0237 added one to Edit profile, so the rule stands down by itself (its own design: a hardcoded ban would forbid the fix)" },
 
   { name: "settings-privacy-section", file: "lib/PartnerSearch.jsx", fires: true,
     find: "under Settings → Privacy & safety.",
@@ -41,11 +41,11 @@ const CASES = [
     expect: 'Settings renders no such section or control',
     why: "the real historical path — a section called Privacy does not exist" },
 
-  { name: "contact-becomes-settable", file: "ClimbMatch.jsx", fires: true,
-    find: "setEditDraft({availWeek:",
-    repl: "setEditDraft({emergencyContact:ME.emergencyContact||\"\",availWeek:",
-    expect: "section 4b's premise has moved",
-    why: "if the field becomes settable the rule must report a MOVED PREMISE, not keep forbidding a claim that would then be true" },
+  { name: "contact-denied-again", file: "lib/Help.jsx", fires: true,
+    find: '"Yes. The emergency contact you save in Edit profile',
+    repl: '"There is no emergency-contact field on your profile. The emergency contact you save in Edit profile',
+    expect: "still denies the emergency contact",
+    why: "the real pre-0237 FAQ sentence: once a contact CAN be saved, saying there is none is the false claim (4b, re-aimed)" },
 
   { name: "faq-answer-deleted", file: "lib/Help.jsx", fires: true,
     find: '"Is my emergency contact private?"',
@@ -64,8 +64,8 @@ const CASES = [
     why: "a path may name a CONTROL Settings renders, not only a section" },
 
   { name: "SILENT-answer-reworded", file: "lib/Help.jsx", fires: false,
-    find: '"There is no emergency-contact field on your profile. You write one into a float plan',
-    repl: '"ClimbMatch keeps no emergency contact for you. Put one in a float plan',
+    find: '"Yes. The emergency contact you save in Edit profile is stored with your account where only you can read it',
+    repl: '"Yes — only you can read the emergency contact saved in Edit profile; it is kept with your account',
     why: "a guard pinned to one phrasing forbids improving it — the rule is that the answer still names where a contact goes" },
 ];
 

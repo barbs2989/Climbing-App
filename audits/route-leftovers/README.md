@@ -190,34 +190,206 @@ Structural items (`deep/in-structural.json` -> `deep/out/s1-s3.json`, applied vi
   scramble that three new accounts describe is the sibling `wa_witches_tower_south_face` standard route. Owner
   options: (A) merge or delete as a duplicate, (B) re-point to the SE Face 5.6, (C) leave.
 
+## 12. Owner: "do research on those" (`deep/out/r16, r17, r18, r18b.json`)
+- Clark waypoint 5 (r18 + r18b), APPLIED. The 7,000 vs ~8,025 ft mismatch was already fixed by r5 (pin on the
+  ~6,700 ft bench, ground 6,617). What was still wrong was the text: two accounts rope up ON the bench, but the
+  waypoint note put the rope-up "east of Boulder Pass" and the directions and `approach` put it at the glacier toe.
+  All three now rope up on the bench, matching the itinerary. Pin name and type unchanged; the owner may prefer
+  "Rope-up bench on Clark's eastern arm".
+- Denny (r18), APPLIED: `access.permit` now says the slopes are outside the Alpine Lakes Wilderness but the boundary
+  runs at the summit, so carry the free self-issue permit (land manager's boundary layer plus its permit rule).
+  `access.fees` still says "no wilderness permit needed". The two now agree on where the route runs and differ only
+  on whether the permit is needed: an owner decision, so fees was not swept.
+- Bald Eagle pins 2 and 4 (now indices 2-3 after r15): unchanged. There is still no published position, the ground
+  agrees with both heights, and both sit on the line the account describes.
+- Three Fingers day 2 7.7 mi: unchanged. No source states a day-2 figure; Goat Flat to the lookout is ~2 / 2.7 /
+  3-3.5 mi, one author each.
+- Half Moon ×5 (r16): unchanged. The land manager is still the only statement about the pull-off. Owner op if
+  accepted: `access.passRequired` -> a no-pass value on those five rows only.
+- Switchback day 1 (r16): unchanged. 8.5 mi to Cooney Lake is still one author (the second book is the same author).
+  The row's own Cooney Lake pin (8 mi) also disagrees with 6.2.
+- Witches Tower E/SE (r17): unchanged. The SE Face 5.6 is still one guidebook. The East Face scramble now has three
+  independent accounts and is the sibling's standard route. The row contradicts itself (beta, pitches, approach and
+  pin directions describe the scramble; descent, itinerary and rope note describe the roped 5.6). Owner options A/B/C
+  as in section 11.
+
+## 13. Owner: "look at other sources that you haven't checked before" (`deep/out/r19, r20, r21.json`)
+Each pass first listed every source tried in earlier r/d/s files and counted only new ones.
+- Bald Eagle pins 2-3 (r21), APPLIED. A published GPS track of the North Ridge (road to summit) turned up in an
+  archived copy, and it agrees with an independent 1965 USGS 1:24,000 spot height (5262, track within 2 m) and the
+  independent written account. "First summit view point" moved 1.38 km onto the ridge's 5,262 ft point (it sat
+  south-east of the summit, past the top); "Regain North Ridge crest" moved 0.25 km to where the track rejoins the
+  crest at 6,100 ft (it sat on the east face). Pins now run trailhead -> 5,262 -> 6,100 -> summit. Pin 3's `distMi`
+  3.2 has no source but fits the 5.3 km route; left for the owner.
+- Three Fingers day 2 7.7 mi (r21): unchanged. Two independent books give trailhead -> lookout 6.7 mi one way (the
+  earlier 7.5 was half a round trip), but no source states a day-2 figure and summing legs is computing.
+  `dist_km` is null, so nothing on screen contradicts it.
+- Vanishing Point pins 1-2 (r21): already removed in section 6; the held line was stale. The summit pin "Dolomite
+  Tower" sits on Baring's main summit; no published tower coordinate, and summit pins are not removed.
+- Half Moon ×5 (r19): unchanged; no new source speaks to the Tye Road pull-off. Side finding: their trailhead pin
+  (47.7457, -121.0885) is in the ski-area lots, not on Tye Road where the directions park.
+- Switchback day 1 (r19): unchanged; 8.5 mi is still one author, other books give only per-trail lengths.
+- Witches Tower E/SE (r20): unchanged; the SE Face 5.6 is still one guidebook (the whole journal archive and 11
+  first-hand log entries name only scrambles there). The `descent_text` "rappel slings on this line" claim looks
+  drawn from slings found on Dragontail's east ridge, not the tower: unsupported, for the owner with options A/B/C.
+
+## 14. Owner: "do research for the rest" (`deep/out/r22, r23, r24.json`)
+- East Twin Needle South Route (r24), APPLIED: a second, independent grading of the Eye Col line turned up (the
+  first ascent: 5.6 with a point of aid), agreeing with the later free 5.7. `data_quality.gaps[0]` and `corrections`
+  no longer say the grade rests on one account. Flag, no op: the overview's "both needles first climbed together in
+  1932" — the first-ascent record gives East Twin to the 1968 party; one lineage, so left for the owner.
+- Prusik West Ridge (r24): II-III now has two independent sources at each end; no op needed.
+- Already fixed by earlier passes, the held lines were stale (r24, live rows re-read): Hozomeen South Peak and
+  Enchantment summit pins (section 7), Cashmere west col (section 8), La Bohn Gap (section 6; ground height at the pin
+  matches the published key-col height), Rock Mountain "south-facing" (now a second written source).
+- Bald Eagle pin 3 `distMi` 3.2 (r24): no source states it; measuring along the track would be computing. Unchanged.
+- Witches Tower E/SE (r23): no new source. The `descent_text` "rappel slings on this line" clause: three sources
+  already read say the tower is left by scrambling down the south side and none mentions a rappel. A ready
+  `replace_text` removing only that parenthetical is in r23's `proposed_ops_held` — owner's call, with options A/B/C.
+- Three Fingers day 2 7.7 mi (r23): no source states a day-2 figure. Unchanged.
+- Half Moon ×5 (r22): pass unchanged. Trailhead pin confirmed wrong (at the pass, ~2 km from the Tye Road pull-off
+  the directions park at) but no source publishes a coordinate for the pull-off, so no move. A rule-1 fallback (null
+  pin 1's `distMi`, rewrite its note as a placeholder) is in r22's `fallback_ops` — owner's call.
+- Switchback day 1 6.2 mi (r22): unchanged; 8.5 mi is still one author. The 6.2 may be the Martin Creek trail's
+  own length. One news report lists Foggy Dew and Merchants Basin trails closed for the Little Giant Fire (Aug 2026);
+  one source, not recorded.
+
+## 15. Owner: "do research for rest" (`deep/out/r25, r26, r27.json`)
+- Half Moon ×5 (r25), APPLIED: trailhead pin moved 2.18 km from the ski-area lots to the Tye Road pull-off at the
+  first hairpin, ~1.4 mi down from US 2 (two independent sources put the parking there; the point is a mapped road
+  vertex, ground 3,577 ft, ~1,180 ft below the crag — fits the stated ~1,000 ft approach). Each row's pin note was
+  replaced (four pointed at another route id; Artic Rose's claimed the old coordinate matched). Pass still
+  unresolved: no source states it either way; a no-pass op is in r25's `proposed_ops_held` — owner's call. r22's
+  `fallback_ops` is superseded.
+- East Twin Needle (r26), APPLIED: the 1932 party's own account says they climbed only the western needle, which with
+  the later guide/journal lineage makes two sources. The overview now credits the 1932 party with West Twin and says
+  East Twin's first ascent came later (no year — only one lineage gives 1968).
+- Eagle Rock (r26), flag, no op: a club route page lists a Northwest Forest Pass for the same peak, against the
+  "no pass at the FR6517 pull-off" value applied by hand in section 6. One source each side. Owner's call: a wrong
+  "no pass" costs a climber a ticket, a wrong "pass required" costs nothing.
+- Switchback day 1 6.2 mi (r25): unchanged; 8.5 mi is still one author, and 6.2 matches Martin Creek #429's own
+  one-way length. The Little Giant Fire closure was lifted on Sep 3 (news report + the current forest order, which
+  lists none of these trails), so nothing to record.
+- King Kong, Witches Tower (r26), Three Fingers day 2, Bald Eagle pin 3 (r27): no new source; unchanged.
+- Abernathy (r27): the held line was stale — `loss_ft` was nulled in section 6, so gain and loss are both null and
+  nothing contradicts. The row's "~2,600 ft from the meadows" agrees with a published 2,700.
+
+## 16. Owner ran the held ops (`owner/out/o06-merge, o12-retire, o13-o15.json`)
+- Retired (backed up, then deleted): Lexington Tower South Face (into Concord Tower South Face), Ottohorn West Ridge
+  (into Ottohorn Southeast Route), Liberty Bell East Face (into Lexington Tower East Face).
+- Witches Tower SE Face: the unsourced "rappel slings on this line" clause removed from `descent_text`.
+- Eagle Rock `access.passRequired` -> Northwest Forest Pass (the safe side; a club page lists it).
+- Half Moon x5 `access.passRequired` -> none at the roadside pullout (not a fee site); `access.fees` -> "None." (o16), so
+  it no longer points at a fee the route does not list.
+
+## 17. Owner: "do those" (`deep/out/r28, r29.json`) — nothing applied
+- King Kong crux 5.11d-5.12a: SETTLED, no change needed. A newer guidebook (Cascades Rock, 2nd ed.) grades it 5.11+, and an
+  independent 8-pitch repeat voted 5.12a (a third climber 5.12-), so both ends of the stored range have two sources.
+- King Kong IV and `fa`: still one source. The new guidebook prints a first-ascent line under each route; its page 114
+  would be the second source for `fa` if the owner can read it. It prints no commitment numeral, so IV stays open.
+- Witches Tower 5.6: still no second account (trip reports describe the scramble side; full-text book search finds only
+  the one author). The 5.6 is prose only; `grade` is 4th.
+- Three Fingers day 2 7.7 mi, Bald Eagle pin 3 `distMi` 3.2: ~270 more trip reports read; only single legs or whole
+  trips are stated. Unchanged.
+- Switchback day 1 6.2 mi: unchanged (8.5 mi still one author). Every figure found puts Cooney Lake well past 6.2 mi.
+  Also found: the usual Foggy Dew line turns onto Martin Creek #429 near mile 5 and Cooney Lake Trail #434 is only the
+  last 0.2 mi, so day 1's note and pin 2 ("Merchants Basin / Cooney Lake Trail #434 split") mix two lines. A fix must
+  move day 2's 12.8 mi and its "6.2 miles back out" note with it, and stay consistent with `dist_km` 15.8 / ~19 mi RT.
+
+## 18. Owner: "if there's only 1 source, then use it" (`deep/out/r30.json`, applied)
+- Berdeen: `loss_ft` 1,820 cleared, and "5,600 ft" dropped from the itinerary total note. The one ascent record gives
+  +6,550 / -1,820 ft as day 1 only (road over the summit to camp), so neither stood as a round trip; nothing replaces them.
+- King Kong IV, `fa` and crux: the row already holds the one source's values. Kept; settled.
+- Witches Tower: the one guidebook gives 5.6 as a variation above a 4th-class base, which is what `rock_grade` and
+  `rope_note` already say. Kept; settled.
+- Still open, and the one-source rule does not reach them:
+  - Three Fingers day 2 7.7 mi and Bald Eagle pin 3 3.2 mi: no source states either (zero, not one). Both contradict
+    nothing on the tab.
+  - Switchback day 1 6.2 mi: the "8.5 mi" traced back to the whole length of Foggy Dew Trail #417, not trailhead to lake
+    (r22). The route's own Cooney Lake pin says 8. A new day 1 forces a new day 2 (12.8 mi, "6.2 miles back out") that
+    no source states, so writing one would be computing.
+
+## 19. Owner: one source from peakbagger / summitpost, applied to every leftover (`single/in/s1-s6`, `single/out/`)
+Inputs: the 198 contradictions the deep retries left `unresolved` (`research/out/v001-v028.json`) and 155 fields
+earlier passes cleared to null for want of a second source (loss_ft and access excluded). Rules:
+`scripts/oneoff/route-leftovers/single-source-instructions.md`; apply files built by
+`scripts/oneoff/route-leftovers/build-single-apply.mjs` (confirmed only, minus reviewer holds), then `apply-structural.mjs`.
+- 353 results: 54 confirmed, 260 unresolved, 39 already fixed by later passes. Applied: 52 results, 99 ops, 49 routes,
+  0 rejected (`sN-apply.json`, plus `s4b-apply.json` and `extra-apply.json` below).
+- Highlights: Leche La Vaca 5 pitches (30/30/60/45/100 m, sums to `length_m` 265); Scarface 6 pitches; Mount Logan Easy
+  Pass 10 mi each way (`dist_km` 16.1); Magic Mountain 5.5 mi to Kool-Aid Lake; Spinnaker summit 5,645 ft; Mount
+  Price 15.6 mi round trip (the 10 mi was the snow-season Goat Creek line); Temple South Ridge Jul-Sep; Jack Mountain
+  gain 10,000 (9,069 was an elevation copied into a gain field); Triad two 30 m rappels; Aiguille de l'M descends the
+  North Ridge; Mix-up commitment II; South Gunsight Grade II; Holsten-Hilden Grade IV; Lichtenberg ~7 mi / 2,100 ft
+  round trip (`dist_km` 3.2 cleared: it was 2 mi one way, and halving 7 is computing).
+- Reviewer changes: New York Gully's fifth breakdown row HELD (pitch 3 already describes an originally-aided crux
+  corner; a 5.8 A1-2 row may be that feature twice). Berdeen day-1 gain written as the stated 6,550, not a rounded 6,500.
+- Found along the way and applied: Buck Mountain's Chiwawa footbridge reported gone (2024), log crossing ~20 ft
+  upstream, pin note and approach aligned (`s4b`); Three Queens' Mineral Creek Trail 1331 in the same fire order as
+  Alta, through Oct 31, 2026 (`s4b`); Triad `bail` aligned to two rappels and Mount Fury's descent no longer attributes
+  a timing to "a published trip report" (`extra`).
+- Why the 260 stay open: no source states a value (most fills); only round trips exist and halving is computing; the
+  row holds both disputed values, each with a source; sources split and the row holds neither; or a fix needs
+  per-day figures nobody states. Peakbagger answered 403 throughout; summitpost was read through archived copies.
+
+## 20. Owner: peakbagger read in Chrome for every leftover (`pb/in/p1-p4`, `pb/out/`)
+The owner cleared peakbagger's security check in the browser; the 260 entries section 19 left `unresolved` were
+re-read there (peak pages and climbers' ascent reports, whose filled-in "Distance" / "Gain on way in" / "Time" fields
+count as that climber stating the figure). Inputs built by `scripts/oneoff/route-leftovers/build-pb-inputs.mjs`;
+rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by `build-pb-apply.mjs`.
+- 260 results: 8 confirmed, 5 already fixed (fills whose waypoint index no longer exists), 247 unresolved.
+  Applied: 7 results, 17 ops, 6 routes, 0 rejected (`pb-apply.json`).
+- Applied: Stickney road walk 4.8 mi from the current Sultan Basin Road gate (every copy, incl. the approach variant's
+  "a little over two miles" the agent missed; One Acre Lake's 3 mi pin cleared because it now precedes the road's end;
+  `dist_km` 10.5 from the stated 6.5 mi one way); Glacier Peak Gerdine/Cool summit pin 18.1 mi, `dist_km` 29.1;
+  Dorado Needle SW Buttress `dist_km` 9.7 (6 mi to the summit stated; the prose's 16 mi round trip vs the stated
+  12 mi stays open — the itinerary days would need recomputing); Jack Mountain Nohokomeen Headwall `dist_km` 24.14
+  (15 mi in, 30 mi round trip as the overview says); Abernathy North Ridge `dist_km` 20.28 (12.6 mi in) and `gain_ft`
+  5,600 (stated "gain on way in"); Del Campo `descentTimeHrs` 3.75, matching its own 10:45 → 2:30 schedule.
+- Why 247 stay open: peakbagger figures disagree among climbers and match neither row value (Gunn, Star, Mile High
+  Club, Morning Star, Baring, Temple, Hozomeen); starts below the row's trailhead or multi-peak totals (Three Fingers
+  N, Hurry-up, Luahna, Spickard, Primus/Austera); round trips only; or the fact is not one peakbagger records (pitch
+  counts, ice grades, rope lengths, permits, pin heights, crags it does not list). Leads, not changes: Gunn Peak's
+  2026 round trips cluster at 7–8 mi, favouring the itinerary's 7.5 mi over the 2.75 mi one-way waypoint chain.
+- Owner "do all of those" (the held items): Gunn Peak APPLIED (`owner-gunn-apply.json`) — eleven parties' 6.8–8.0 mi
+  round trips agree with the itinerary's 7.5 mi, so the summit pin's 2.75 mi and `dist_km` 4.8 (3 mi one way) are
+  CLEARED; no source states a one-way figure and halving is computing. The other three cannot be done under the
+  standing rules: Mastiff's 3.5 h would need the schedule retimed (+3.5 hr is already the step BEFORE the summit);
+  Three Queens' 4 mi one way contradicts the single day's 10 mi, which may not be nulled or recomputed; Dorado
+  Needle's stated 12 mi round trip contradicts day miles 5.7 + 4 + 5.7 on the same footing.
+- Owner "do all for what you recommend" (`owner-recommend-apply.json`, APPLIED): Mastiff `timing.summitTimeHrs` 5 —
+  the row's own ~5 h to the summit and +5 hr schedule step, copied, not the one fast party's 3.5 h; Three Queens
+  `dist_km` 8.85 CLEARED (5.5 mi one way matched nothing: pin 5.0, day 10 mi round trip, the one stated one-way 4 mi);
+  Dorado Needle SW Buttress: the approach's "about 25.75 km" round-trip sentence and the totalNote's "~16 mi round
+  trip" REMOVED (two sources give 12 mi round trip); day miles untouched. Noticed, not changed: Three Queens
+  `summitTimeHrs` 9.5 vs its own "about 5 hrs up" (the car-to-car-in-summit-time class).
+
 ## Held for the owner (not applied)
-- **Deletes this session may not run** (the permission classifier blocks route DELETEs):
-  - Lexington Tower "South Face" = Concord Tower's South Face (`wa_south_face_3` has it). Merge:
-    `node scripts/oneoff/route-tab-contradictions/apply-structural.mjs ../../route-leftovers/owner/out/o06-merge.json`
-  - `wa_ottohorn_west_ridge`: the 2017 ridge has one account; the row holds the col route its sibling
-    `wa_ottohorn_southeast_route` already has. Do NOT apply `owner/out/o06.json`'s rewrite — the FA thread says the
-    sub-summit names were swapped (westernmost = Honk) and Honk had an earlier ascent.
-  - `wa_liberty_bell_east_face`: no such route in two independent route lists; its beta is Lexington Tower's East
-    Face, which has its own row.
-- **Single source / one author:** East Twin Needle South Route 5.7 (grade still 5.10a); King Kong commitment IV,
-  its `fa` (Wertkin & Johnson, FFA with Gleason) and crux 5.11d-5.12a — every source is the first ascensionist
-  (`deep/out/h1.json`, `research/held-v019.json`); Prusik West Ridge II-III (both Grade II sources may be one guide,
-  `held-v021.json`).
-- **Parking-pass claims resting on fee law, not a statement about the spot:** Eagle Rock, Half Fast, Astral
-  Projection, Astroglide, Asymptotic, Artic Rose (`held-v010/v011.json`); Spire `access.fees` (open product decision,
-  `held-v024.json`).
-- **Weak evidence:** Rock Mountain "south-facing" (second source is a slope sample, `held-v021.json`); Berdeen
-  `loss_ft` null (`loss_ft` holds two conventions); Cashmere west-col pin (col only located to 0.7 km); La Bohn Gap
-  pin (sources 335 m apart); Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
+- **One-source pass (section 19):** Buck Mountain — the one report of this out-and-back gives 40 mi / 11,686 ft round
+  trip, contradicting every figure on the row; adopting it means rebuilding the itinerary days (computing). Mount Price
+  `dist_km` 10.5 km (6.5 mi one way) still disagrees with the 15.6 mi round trip; no one-way figure is published.
+  Mastiff SETTLED as stored (4,900 ft / 10 mi): the club page's 3,330 ft for Mastiff alone is below the 3,050 ft
+  trailhead to 6,747 ft summit rise, so it cannot be this route's gain, and a second page gives ~11 mi / 5,000 ft.
+  Project Crack's trailhead pin sits on the cliff, and Glacier View Temple carries the same pin; no East Face route
+  stores a better one and no source states the parking coordinate, so both stay held. New York Gully fifth pitch
+  (above). (Stickney's road walk: settled in section 20.)
+- **Peakbagger pass (section 20):** Mastiff and Three Queens settled by the owner's "do all for what you recommend"
+  (above). Fortress: peakbagger supports `gain_ft` 5,884; the open contradiction is in `loss_ft`, which no pass writes.
+- **Deletes:** done by the owner (section 16).
+- **Single source / one author:** King Kong settled — one source accepted (section 18) (`deep/out/h1.json`, `research/held-v019.json`). East Twin
+  Needle (grade and first ascent) and Prusik West Ridge are settled (sections 14, 15).
+- **Parking-pass claims:** Half Moon x5 and Eagle Rock settled by the owner (section 16). Spire `access.fees` (open product decision,
+  `held-v024.json`); Half Moon `access.fees` set to "None." by the owner (`owner/out/o16-halfmoon-fees.json`, section 16).
+- **Weak evidence:** Berdeen done (section 18); Bald Eagle pin 3 `distMi` 3.2; Mount Stuart North Ridge — the built ops removed on-route pins (Stuart Glacier crossing,
   ridge base) and the Longs/Goat Pass pins are the standard south approach, so NOT applied (`deep/out/s3.json`).
-- **No source found:** Vanishing Point pins (one track; owner: remove pins 1-2 or accept it), Bald Eagle pins 2 and
-  4, Witches Tower E/SE Face (see section 11). Rimrock was fixed in section 11.
+- **No source found:** Witches Tower E/SE Face 5.6 settled (section 18). Rimrock was fixed in section 11; Vanishing
+  Point pins were removed in section 6 and Bald Eagle's pins moved in section 13.
 - **Found, not fixed:** `lib/outing.js` `effDistKm` prefers a day plan's miles over `dist_km`, so Mount Seattle
   (miles only on the summit day) shows ~2 mi (app behaviour — owner's call). Three Fingers lookout day 1 fixed to 4.5
-  in section 11. Abernathy `loss_ft` 4,660 now stands beside a nulled gain. Hozomeen summit pin
-  7,614 ft ground vs 8,003 stored; Clark waypoint 5 7,000 vs ~8,025 ground; Enchantment summit pin ~330 m off the NE
-  summit. Switchback Mountain day 1 6.2 mi vs two guides' ~8 mi one way. Denny Mountain permit wording (pins outside
-  the wilderness, summit on its edge).
+  in section 11. Switchback Mountain day 1 6.2 mi
+  vs one author's 8.5 mi. Three Fingers day 2 7.7 mi (unstated anywhere). Hozomeen, Enchantment, Cashmere and La
+  Bohn pins were already fixed (section 14). Clark waypoint 5 and the Denny permit wording were fixed in section 12; Denny's
+  `access.fees` "no wilderness permit needed" clause is the owner's call.
 
 Second deep pass (`d7b`, `d8b`), applied: Esmeralda -> De Roux line (trailhead moved, 5 basin pins removed, last
 switchback added); Iron Cap -> West Fork Foss (trailhead moved, 6 Middle Fork pins removed, Big Heart Lake and

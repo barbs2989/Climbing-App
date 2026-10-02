@@ -1,0 +1,414 @@
+{
+ "results": [
+  {
+   "id": "wa_east_face_6",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Hardest grade of the summit pitches",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_east_face_6",
+     "column": "climbing_route",
+     "path": [
+      3,
+      "notes"
+     ],
+     "find": "with the hardest moves around 5.4 to 5.6 — Grade II overall.",
+     "replace": "with the hardest moves around 5.3."
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "ROUTE BREAKDOWN 'Crowder Bypass' row and beta treat a traverse bypass as part of the SW Flank climb",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_crowder_southwest_route",
+     "column": "pitch_detail",
+     "path": [],
+     "expect": [
+      {
+       "grade": "Class 2-3",
+       "notes": "Multi-day off-trail traverse through the Pickets to Wild Pass above Wild Lake, then across open slopes to the col between Phantom Peak and Crowder; mostly off-trail ridge travel",
+       "pitch": "Approach ridge"
+      },
+      {
+       "grade": "Steep snow / Class 3-4",
+       "notes": "West-side traverse of steep snow, trees, and gullies; no real alternative, much worse when wet",
+       "pitch": "Crowder Bypass"
+      },
+      {
+       "grade": "Class 3-4",
+       "notes": "Final scramble on open slopes/ledges to the summit",
+       "pitch": "Southwest Flank"
+      }
+     ],
+     "value": [
+      {
+       "grade": "Class 2-3",
+       "notes": "Multi-day off-trail traverse through the Pickets to Wild Pass above Wild Lake, then across open slopes to the col between Phantom Peak and Crowder; mostly off-trail ridge travel",
+       "pitch": "Approach ridge"
+      },
+      {
+       "grade": "Class 3-4",
+       "notes": "Final scramble on open slopes/ledges to the summit",
+       "pitch": "Southwest Flank"
+      }
+     ]
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_crowder_southwest_route",
+     "column": "beta",
+     "path": [],
+     "find": "Once through the approach and the infamous 'Crowder Bypass,' the SW Flank",
+     "replace": "Once through the approach, the SW Flank"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_crowder_southwest_route",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "for the steep snow sections of the Crowder Bypass and approach ridge.",
+     "replace": "for the steep snow sections of the approach ridge."
+    }
+   ]
+  },
+  {
+   "id": "wa_half_fast",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Rappel distance vs route length",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_half_fast",
+     "column": "descent_text",
+     "path": [],
+     "find": "Rappel 85 feet from anchors to ground.",
+     "replace": "Rappel 50 feet from anchors to ground."
+    }
+   ]
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "total gain figure vs overview's stated gain",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_jack_mountain_nohokomeen_headwall",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 9069,
+     "value": 10000
+    }
+   ]
+  },
+  {
+   "id": "wa_the_triad_east_peak",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Number and length of the summit rappel",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_the_triad_east_peak",
+     "column": "descent",
+     "path": [],
+     "find": "Reverse the route with a short rappel off the summit tower back to the approach.",
+     "replace": "Reverse the route with two 30 m rappels (rope plus tagline) off the east ridge back to the approach."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_triad_east_peak",
+     "column": "pitch_detail",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "descend from the same rap station with a single-rope rappel back to the ridge before reversing to the col.",
+     "replace": "descend by downclimbing and two 30 m rappels (rope plus tagline) off the ridge before reversing to the col."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_triad_east_peak",
+     "column": "descent_text",
+     "path": [],
+     "find": "downclimb the class 4-5.4 step from the East Peak back to East Triad Col",
+     "replace": "downclimb and make two 30 m rappels (rope plus tagline) off the East Peak's east ridge back to East Triad Col"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_triad_east_peak",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "note"
+     ],
+     "find": "with one short rappel/4th-class step near the top.",
+     "replace": "with a 4th-class step near the top and two 30 m rappels on the descent."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_the_triad_east_peak",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      4,
+      "detail"
+     ],
+     "find": "One short rappel off the summit tower, then downclimb/scramble back to the saddle.",
+     "replace": "Downclimb exposed ledges and make two 30 m rappels off the ridge crest, then scramble back to the saddle."
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge_6",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Descent method: rappels/itinerary say descend via the North Ridge (1 rappel), but descent/descent_text/bail describe reversing the South Ridge itself",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_south_ridge_6",
+     "column": "descent",
+     "path": [],
+     "find": "Descend via same ridge or similar route depending on descent planning. Likely requires belayed sections and possible rappels.",
+     "replace": "Descend the North Ridge: one short rappel from fixed slings, then reverse that ridge."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_south_ridge_6",
+     "column": "descent_text",
+     "path": [],
+     "find": "Descend exposed ridge via Class 4 scrambling and short 5.6 downclimbing. Depending on party confidence, rappel may be used for crux section. Reverse route-finding back to camp.",
+     "replace": "Descend the North Ridge: make one rappel of about 40 ft from fixed slings, then downclimb the rest of that ridge and return to camp."
+    }
+   ]
+  },
+  {
+   "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Crux grade vs headline grade",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+     "column": "pitch_detail",
+     "path": [
+      2,
+      "pitch"
+     ],
+     "find": "P3 — crux",
+     "replace": "P3"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+     "column": "pitch_detail",
+     "path": [
+      4,
+      "pitch"
+     ],
+     "find": "P5",
+     "replace": "P5 — crux"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_cathedral_rock_northeast_ridge_2003_variation",
+     "column": "beta",
+     "path": [],
+     "find": "The crux third pitch follows that crack",
+     "replace": "The third pitch follows that crack"
+    }
+   ]
+  },
+  {
+   "id": "wa_davis_peak_nc_southwest",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Climbing season",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_southwest",
+     "column": "best_season",
+     "path": [],
+     "expect": "Late July through mid-September gives the most reliable snow-free scrambling on the upper mountain and summit ridge; snow, moats, and cornices can linger into July on the shadier saddle and upper gullies. Some parties instead climb it in late May-June as a steep snow route while the approach brush is still snow-covered, and it has been climbed in winter during stable high-pressure windows by strong, experienced parties.",
+     "value": "Late spring is the easiest time: snow still covers much of the brush and snowmelt gives water on the way up. The route faces south almost the whole way, so mid-summer is very hot, and by late summer and fall the lack of water makes it an ordeal. It has also been climbed in winter during stable spells by strong, experienced parties."
+    },
+    {
+     "op": "set",
+     "id": "wa_davis_peak_nc_southwest",
+     "column": "seasonal_guidance",
+     "path": [],
+     "expect": {
+      "optimalWindow": "Mid-July through September, once approach snow has melted out;",
+      "monthBreakdown": {
+       "July": {
+        "reason": "Approach snow is often still lingering in shaded gullies and on the upper mountain early in the month; brushy lower approach can still be wet",
+        "status": "good"
+       },
+       "August": {
+        "reason": "Most reliable window - approach typically fully melted out, driest rock, most stable access along the highway corridor",
+        "status": "optimal"
+       },
+       "September": {
+        "reason": "Stable early in the month with continued dry rock; increasing chance of early-season snow and shortening daylight later in the month",
+        "status": "good"
+       }
+      }
+     },
+     "value": {
+      "optimalWindow": "Late spring, while snow still covers the brush and snowmelt provides water",
+      "monthBreakdown": {
+       "May": {
+        "reason": "Snow still suppresses the brush and snowmelt gives water on the south-facing slopes",
+        "status": "optimal"
+       },
+       "July": {
+        "reason": "Mid-summer heat on an almost entirely south-facing route, with the brush fully exposed",
+        "status": "marginal"
+       },
+       "August": {
+        "reason": "Hot and increasingly short of water on the way up",
+        "status": "marginal"
+       },
+       "September": {
+        "reason": "Late-season lack of water can make the long climb an ordeal",
+        "status": "marginal"
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "id": "wa_mix_up_peak_east_face",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "commitment grade of the route",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mix_up_peak_east_face",
+     "column": "commitment",
+     "path": [],
+     "expect": "I",
+     "value": "II"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_price_north_route",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Round-trip distance",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_price_north_route",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 10,
+     "value": 15.6
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_price_north_route",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 10 miles round trip with 4,100 ft",
+     "replace": "roughly 15.6 miles round trip with 4,100 ft"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_price_north_route",
+     "column": "turnaround",
+     "path": [],
+     "find": "the ~10 mile round trip",
+     "replace": "the ~15.6 mile round trip"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_price_north_route",
+     "column": "partner_requirements",
+     "path": [
+      "fitnessSpec",
+      "hiking"
+     ],
+     "find": "(~10 mi round trip,",
+     "replace": "(~15.6 mi round trip,"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "commitment grade (alpine_grade III vs commitment II)",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_south_ridge",
+     "column": "alpine_grade",
+     "path": [],
+     "expect": "III",
+     "value": "II"
+    }
+   ]
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "waypoints[2].distMi",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_northeast_ridge_1963_route",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 0.25
+    }
+   ]
+  },
+  {
+   "id": "wa_don_t_climb_that_she_said",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "dist_km",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_don_t_climb_that_she_said",
+     "column": "dist_km",
+     "path": [],
+     "expect": null,
+     "value": 12.87
+    }
+   ]
+  }
+ ],
+ "held": []
+}

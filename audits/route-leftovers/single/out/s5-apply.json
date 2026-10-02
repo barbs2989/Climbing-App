@@ -1,0 +1,259 @@
+{
+ "results": [
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Elevation of the high camp above Berdeen Lake",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_berdeen_peak_scramble",
+     "column": "pro_tips",
+     "path": [
+      2
+     ],
+     "find": "camp ~800 ft below the summit",
+     "replace": "camp ~800 ft above the lake"
+    }
+   ]
+  },
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Day-1 gain to the Berdeen Lake camp stated in the bivy entry",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_berdeen_peak_scramble",
+     "column": "bivy",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "a very big first day with four thousand feet of gain",
+     "replace": "a very big first day with about 6,550 ft of gain"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_berdeen_peak_scramble",
+     "column": "approach",
+     "path": [],
+     "find": " down to a camp above Berdeen Lake, which lines up with this route's recorded ~5,600 ft/23 km round-trip scale.",
+     "replace": " down to a camp above Berdeen Lake."
+    }
+   ]
+  },
+  {
+   "id": "wa_new_york_gully",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Overview's stated route length (~1,300 ft) is roughly double length_m and the pitch-length total",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_new_york_gully",
+     "column": "overview",
+     "path": [],
+     "find": "it's a roughly 1,300-ft alpine route",
+     "replace": "it's a roughly 700-ft alpine route"
+    }
+   ]
+  },
+  {
+   "id": "wa_magic_mountain_south_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Trailhead to Kool-Aid Lake distance: itinerary day 1 (6.5 mi) vs the Kool-Aid Lake waypoint and dist_km (5.5 mi)",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_magic_mountain_south_ridge",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 6.5,
+     "value": 5.5
+    },
+    {
+     "op": "set",
+     "id": "wa_magic_mountain_south_ridge",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 6.5,
+     "value": 5.5
+    },
+    {
+     "op": "set",
+     "id": "wa_magic_mountain_south_ridge",
+     "column": "waypoints",
+     "path": [
+      4,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 5.5
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_magic_mountain_south_ridge",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "then hike out — roughly 16-17 miles and 5,000+ ft of gain/loss total.",
+     "replace": "then hike out — 5,000+ ft of gain/loss total."
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_magic_mountain_south_ridge",
+     "column": "approach",
+     "path": [],
+     "find": "given the ~19-20 mile round trip and off-trail navigation.",
+     "replace": "given the off-trail navigation."
+    }
+   ]
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Summit elevation",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_spinnaker_peak_s_route",
+     "column": "waypoints",
+     "path": [
+      6,
+      "elev"
+     ],
+     "expect": 5654,
+     "value": 5645
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_spinnaker_peak_s_route",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      3,
+      "detail"
+     ],
+     "find": "5,654 ft summit",
+     "replace": "5,645 ft summit"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_spinnaker_peak_s_route",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "objective"
+     ],
+     "find": "(5,654 ft)",
+     "replace": "(5,645 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_logan_r1",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Easy Pass approach length: itinerary day 1 12.5 mi vs beta/access '~10 mi one-way via Easy Pass'",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_logan_r1",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "miles"
+     ],
+     "expect": 12.5,
+     "value": 10
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_logan_r1",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "miles"
+     ],
+     "expect": 12.5,
+     "value": 10
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_logan_r1",
+     "column": "dist_km",
+     "path": [],
+     "expect": 19.3,
+     "value": 16.1
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_prophet_east",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "waypoints[1].distMi",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_prophet_east",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 7.1
+    }
+   ]
+  },
+  {
+   "id": "wa_poltergeist_pinnacle",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "waypoints[2].distMi",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_poltergeist_pinnacle",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 5.1
+    }
+   ]
+  }
+ ],
+ "held": [
+  {
+   "id": "wa_new_york_gully",
+   "column": "pitch_detail",
+   "path": [
+    4
+   ],
+   "why": "pitch 3 already describes an originally-aided crux corner; a fifth aided-corner row may be that same feature twice"
+  }
+ ]
+}

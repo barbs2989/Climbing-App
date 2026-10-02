@@ -41,9 +41,8 @@ const ALIAS = { showRealName: "show_name" };
 
 // A draft key that is deliberately not a `profiles` column at all. Declared with a reason so the
 // day one gains a column, this guard starts demanding it rather than staying quiet.
-const NOT_A_COLUMN = {
-  level: "a real profile carries no level; check:real-profile-rows exists because rendering one invents a value the account does not have",
-};
+// `level` sat here until 0237 gave it a column; it is collected, stored and read back now.
+const NOT_A_COLUMN = {};
 
 // ---- 1. LIFT THE DRAFT. Balanced from setEditDraft's own object literal.
 const oi = app.indexOf("openEdit=");

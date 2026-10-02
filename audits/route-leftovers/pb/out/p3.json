@@ -1,0 +1,1091 @@
+{
+ "results": [
+  {
+   "id": "wa_morning_star_peak_standard",
+   "kind": "item",
+   "fact": "total elevation gain: gain_ft 3,670 vs loss_ft 3,800 / itinerary 3,800 on an out-and-back",
+   "verdict": "unresolved",
+   "summary": "Still real (gain_ft 3,670 vs itinerary 3,800); peakbagger climbers' stated gains add more different figures and none states 3,670 or 3,800.",
+   "evidence": "Peakbagger ascent list for Morning Star Peak: climber-entered gains of 3,819, 3,879, 3,659 (NW route variant), 3,712 (6.7 mi), 3,719 (6.5 mi) and 3,919 ft; none equals either stored value, and earlier sources gave 4,200, 3,850 and 3,700 ft.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1806"
+   ],
+   "searched": [
+    "peakbagger (ascent list, 60+ ascents with stated gains read; no figure matches the row)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "kind": "item",
+   "fact": "round-trip distance and gain figures disagree",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger climbers give yet more round-trip figures, none matching the row's 3,847 ft or a one-way 5.6 km.",
+   "evidence": "Peakbagger ascent list for Baring Mountain (2026 season): 3,846 ft / 6.3 mi, 3,841 ft / 6.3 mi (Baring Mountain Trail), 3,815 ft / 6.9 mi, 3,593 ft, 4,427 ft / 6.0 mi, 5,802 ft / 11.0 mi; all round trips, none states 3,847 ft or a one-way distance, so neither dist_km 5.6 nor the prose figures can be settled.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1999"
+   ],
+   "searched": [
+    "peakbagger (ascent list, current year: 9 stated gains/distances, all round trip)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Not filled: the one stated ascent time on this trail (3 h 12 min, a fast spring snow ascent) would contradict the row's own schedule, which reaches the summit 4.5 hours after a 5 AM start.",
+   "evidence": "Peakbagger ascent 2026-04-25 by the Rock Mountain Trail: ascent-stat fields 'Distance: 3.5 mi', 'Time: 3 Hours 12 Minutes', gain on way in 4,176 ft; the row's schedule puts the summit at ~9:30 AM from a 5:00 AM start. Writing 3.2 h would create a new contradiction with that schedule, which no source restates.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3177446",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3176720"
+   ],
+   "searched": [
+    "peakbagger (ascent list current year; 2 ascent reports read: one states an up time, one defers stats to another peak)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Not filled: two North Ridge parties state ascent times of 5 h and 4 h 45 min, but either would contradict the row's schedule, which puts the summit at 10:30-11:00 AM from a 5:00 AM start (5.5-6 h).",
+   "evidence": "Peakbagger North Ridge ascents: 2012 solo party 'Ascent Statistics Time: 0 Days 5 Hours 0 Minutes', descent 4 h 55 min, 5.5 mi RT, 5,176 ft; 2018 solo party 'Time to summit: 4 h 45 min', summit to car 3 h 50 min, 7.2 mi RT. The row's schedule (base of summit block +5-6 h, summit ~10:30-11:00 AM) would have to be rewritten with times no source states.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=275448",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1045463",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2125&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 North Ridge ascent reports read, both with up times)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Not filled: no North Face ascent on peakbagger states a time to the summit.",
+   "evidence": "Peakbagger ascent list for Chair Peak (all years): eight North Face entries, all with 3-18 word reports or none except a 1999 account, which describes the climb and descent but gives no times or stats.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2103&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=52394"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 1 North Face ascent report read, no times)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "kind": "fill",
+   "fact": "waypoints[7].distMi",
+   "verdict": "confirmed",
+   "summary": "A climber's stated ascent distance for this exact line (North Fork Sauk trailhead to the summit by the Gerdine and Cool glaciers) is 18.1 mi one way, so the summit pin takes 18.1 and dist_km is moved to the same stated figure (29.1 km) so the two do not disagree.",
+   "evidence": "Peakbagger ascent 2016-07-02, Ascent Statistics: 'Distance: 18.1 mi / 29.1 km', Route: Gerdine, Cool Glacier, Start Trailhead: N Fork Sauk River TH 2100 ft; descent by the same route to the same trailhead. The row's dist_km 27.4 (17.0 mi) has no prose copy elsewhere on the row; the itinerary (15 mi to Glacier Gap, 7 mi summit-day round trip) is consistent with 18.1.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=673364",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1972&y=9999"
+   ],
+   "searched": [
+    "peakbagger (ascent list filtered to Gerdine/Cool routes; 1 ascent report read with stated one-way ascent distance)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "column": "waypoints",
+     "path": [
+      7,
+      "distMi"
+     ],
+     "expect": null,
+     "value": 18.1
+    },
+    {
+     "op": "set",
+     "id": "wa_glacier_peak_cool_glacier_gerdine",
+     "column": "dist_km",
+     "path": [],
+     "expect": 27.4,
+     "value": 29.1
+    }
+   ]
+  },
+  {
+   "id": "wa_glacier_peak_cool_glacier_gerdine",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states the distance from the trailhead to the Gerdine-Cool col; the one stated one-way figure is to the summit.",
+   "evidence": "Peakbagger ascent 2016-07-02 gives only the whole ascent distance (18.1 mi trailhead to summit); earlier sources give Glacier Gap at 15 mi and the summit-day round trip. Placing the col would require splitting a stated leg.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=673364"
+   ],
+   "searched": [
+    "peakbagger (ascent list filtered to Gerdine/Cool routes; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still no stated one-way distance from Holden Village to Martin Peak's summit by the West Ridge.",
+   "evidence": "Peakbagger ascents: a 2023 West Ridge party's ascent stats start at Holden Pass (1.7 mi up, 2,427 ft) with a 21.6 mi round trip; a 2024 party put 24.4 mi in the way-in field from a 3,217 ft start, which is the whole-trip GPS figure (the row's own day-1 leg to Holden Pass is 7 mi), not a one-way statement; other entries give round trips of 19.2-24.7 mi.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1908&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2236409",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2565399"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states the distance from the road to this north-ridge point.",
+   "evidence": "Peakbagger North Ridge ascents give only round trips (5.5, 7.0, 7.2 mi) and up/down times; nothing places intermediate points by distance.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=275448",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1045463"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 North Ridge ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states the distance from the road to the first summit view point.",
+   "evidence": "Peakbagger North Ridge ascents give only round trips (5.5, 7.0, 7.2 mi) and elevations of features (rock rib at 5,400 ft), not distances to them.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=275448",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1045463"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 North Ridge ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the route now has five waypoints (indices 0-4), so index 5 no longer exists.",
+   "evidence": "Live row waypoints: 0 trailhead pullout, 1 leave road, 2 first summit view point, 3 regain ridge crest (3.2 mi), 4 summit (3.3 mi).",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "item",
+   "fact": "Season window: season/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July",
+   "verdict": "unresolved",
+   "summary": "Still real; no peakbagger North Face ascent states a season window, so there is still no source for either side.",
+   "evidence": "Peakbagger ascent list for Mount Buckner shows about ten North Face entries (dated July, e.g. 2011-07-25 and 2020-07-19); the reports read carry only route names and gear, with no statement of when the face is in condition. Dates of individual ascents are not a stated window.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1852&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=187627",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1670694"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 North Face ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source gives Cascade Pass's distance from the Boston Basin trailhead on this traverse.",
+   "evidence": "Peakbagger North Face ascents read give no distances (one starts its stats at the Boston Glacier camp, 7,200 ft); the only stated Cascade Pass figure (3.7 mi) is from the Cascade Pass road end.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=187627",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1670694"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 North Face ascent reports read, no distances)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source gives Sahale Glacier Camp's distance from the Boston Basin trailhead.",
+   "evidence": "Peakbagger North Face ascents read state no distances; the 5-6 mi figure found earlier is from the Cascade Pass road end.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=187627"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 North Face ascent reports read, no distances)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source gives the Sahale-Boston col's distance from the Boston Basin trailhead.",
+   "evidence": "Peakbagger North Face ascents read state no distances; route pages give only times to the col.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=187627"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 North Face ascent reports read, no distances)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_buckner_mountain_north_face",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the live row has five waypoints (0-4), so index 6 no longer exists; no source states the summit's distance from the Boston Basin trailhead either.",
+   "evidence": "Live waypoints: 0 Boston Basin Trailhead, 1 Cascade Pass, 2 Sahale Glacier Camp, 3 Sahale-Boston col, 4 summit. Peakbagger North Face ascents read give no trailhead-to-summit distance.",
+   "sources": [],
+   "searched": [
+    "live row",
+    "peakbagger (2 North Face ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the waypoint list has three pins, so index 4 no longer exists.",
+   "evidence": "Live row waypoints: [0] SR-20 hairpin pullout, [1] sustained thin-crack pitches, [2] Liberty Bell summit.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_thin_red_line",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the waypoint list has three pins, so index 5 no longer exists.",
+   "evidence": "Live row waypoints: [0] SR-20 hairpin pullout, [1] sustained thin-crack pitches, [2] Liberty Bell summit.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "kind": "fill",
+   "fact": "waypoints[7].distMi",
+   "verdict": "already_fixed",
+   "summary": "Nothing to fill: the page now has four waypoints (trailhead, Glacier Meadows, Glacier Pass, summit), so index 7 no longer exists.",
+   "evidence": "Live row waypoints 0-3; the summit is index 3 with distMi null.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Still empty: every peakbagger Mathias ascent with stats is part of a multi-peak trip, so no gain for this route alone is stated.",
+   "evidence": "Peakbagger ascent list for Mount Mathias (11 entries): a 2025 party's 6,602 ft / 49.6 mi is the second peak of a trip; a 2020 entry gives 2,990 ft / 9.2 mi (a summit-day figure from camp); 2024 and 2026 reports climb Mathias together with Mercury and state no stats.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=949&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3274784",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2611455"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 ascent reports read, no stated stats)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still empty: no source states a one-way distance from the Hoh trailhead to Mathias.",
+   "evidence": "Peakbagger Mathias ascents give only whole-trip or summit-day distances (49.6 mi multi-peak trip, 9.2 mi from camp); the reports read state no way-in distance. The 45 mi club figure is a round trip for Mathias and Mercury.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=949&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3274784",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2611455"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 2 ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still empty: no West Ridge ascent on peakbagger states a one-way distance from the Esmeralda trailhead.",
+   "evidence": "Peakbagger 2025 ascent list for Mount Stuart: the West Ridge entries (4) carry no stats; the one Esmeralda-side entry with stats (5,144 ft, 12.2 mi, 10 h 7 min) names no route and its 12.2 mi is the whole-trip GPS figure entered in the way-in field, not a stated one-way approach.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2182&y=2025",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2960757"
+   ],
+   "searched": [
+    "peakbagger (ascent list 2025 plus a filtered pass over all years; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still empty: Trapper Mountain has six peakbagger ascents and none states a distance.",
+   "evidence": "Peakbagger ascent list (6 entries, no gain or distance columns filled); the 2008 report (camp in the basin below the north face, ramp across the face) and the 2022 report (west ridge, exit by the southwest slopes) give no mileage.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1871&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=145193",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2026504"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 6 ascents; 2 ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_trapper_mountain_south_slopes",
+   "kind": "item",
+   "fact": "Itinerary day gain/loss built on a ~5,000 ft camp (day 1 loss 700 ft, day 2 gain 2,700 ft) vs a 4,170 ft lake and 7,530 ft summit",
+   "verdict": "unresolved",
+   "summary": "Still real; no peakbagger ascent of Trapper Mountain states any gain, per day or in total.",
+   "evidence": "Peakbagger ascent list (6 entries) has no stated gains; the two reports with text describe camping in a basin below the north face and a west-ridge/southwest-slopes outing without figures.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1871&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=145193",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=2026504"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 6 ascents; 2 ascent reports read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still empty: Bear Mountain's peakbagger ascents include no Direct North Buttress entry and no stated distance.",
+   "evidence": "Peakbagger ascent list for Bear Mountain (7 entries, 1941-2023): routes named only 'South Face'; two gains (5,889 and 6,059 ft) and no distances; none states a one-way figure from Hannegan Pass trailhead.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1617&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 7 ascents; no report on this line)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_direct_north_buttress",
+   "kind": "fill",
+   "fact": "ice_grade",
+   "verdict": "unresolved",
+   "summary": "Not refilled: no source gives this rock route an ice grade, and peakbagger lists no ascent of it.",
+   "evidence": "Peakbagger ascent list for Bear Mountain has no Direct North Buttress ascent; the route page gives Grade V 5.10- trad with only steep neve on the approach.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1617&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 7 ascents; no report on this line)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "kind": "item",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only (dist_km 11.3)",
+   "verdict": "unresolved",
+   "summary": "Still real; no peakbagger Austera ascent states a one-way trailhead-to-summit distance or a total gain for this line.",
+   "evidence": "Peakbagger ascent list for Austera Peak (~150 entries): stated figures are camp-to-summit legs (537-1,621 ft, 1.7-7.5 mi) or multi-peak trips; one 2022 entry's 6,537 ft 'total gain' equals the summit minus its 1,834 ft trailhead exactly and names no route, so it is a computed net rise, not a stated total.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1843&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1998185"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Not filled: no source states a total gain from the trailhead to Austera on this line.",
+   "evidence": "Peakbagger Austera ascents give camp-to-summit gains (537-1,621 ft) or multi-peak trip totals; the one 6,537 ft entry is the bare summit-minus-trailhead difference with no route named.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1843&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1998185"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "number/type of summit rappels",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger adds no rappel count that could pick one of the three already on the row.",
+   "evidence": "Peakbagger ascent list for The Temple (~50 entries) shows route names and stats only ('standard', 'North Side', 'From Pogo Col'); no listed ascent states a rappel count, and the earlier accounts (one double-rope rap, two on 2x30 m, three on a single 60 m) each remain on the row.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2175&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list read; no report states a rap count)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "one-way / round-trip approach distance",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger climbers give only round-trip or whole-trip distances, none one-way.",
+   "evidence": "Peakbagger ascent list for The Temple: 20.8 mi (6,731 ft), a 2020 'standard' ascent with 10.5 mi for the peak and 24.0 mi for the trip, 52.8 mi (multi-peak trip), and short legs from camp (4.0, 6.3 mi). No stated one-way figure from the Snow Lakes trailhead.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2175&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_temple_south_ridge",
+   "kind": "item",
+   "fact": "Total elevation gain/loss",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger adds further different totals (6,731 ft; 10,144 ft for a whole trip), and the itinerary days still could not be brought to any total without computing.",
+   "evidence": "Peakbagger ascent list: 6,731 ft over 20.8 mi (2019), 10,144 ft trip gain over 24.0 mi (2020 'standard'), 6,949 ft (2025, multi-peak trip). The row's gain_ft 8,000 keeps an earlier source; the itinerary (5,300 + 1,700 + 200) and totalNote (~7,000) would need computed day figures.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2175&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "kind": "item",
+   "fact": "total elevation gain",
+   "verdict": "unresolved",
+   "summary": "Still real; the only Northeast Face entry on peakbagger is the 1954 first ascent, with an 8-word note and no stats.",
+   "evidence": "Peakbagger ascent list for Goode Mountain (~230 entries): one 'Northeast Face' row (1954, TR-8, no gain or distance); every other north-side entry is the Northeast Buttress or NE Ridge, different lines.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1836&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list filtered for north/northeast routes; the one Northeast Face entry has no stats)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "kind": "item",
+   "fact": "commitment grade: grade 'IV' vs commitment 'III' vs alpine_grade 'Grade III'",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger has no grade for the direct Northeast Face (its only entry is the 1954 first ascent with no grade).",
+   "evidence": "Peakbagger ascent list for Goode Mountain: one 'Northeast Face' row (1954) with no grade; all graded north-side ascents are the Northeast Buttress.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1836&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list filtered for north/northeast routes)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "kind": "item",
+   "fact": "Thunder Basin high-camp elevation: 6,400 ft (waypoint) vs. ~5,180 ft (approach text and itinerary schedule)",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger's twelve Tenpeak ascents state no camp heights or stats, so the two singly-sourced camp heights the row holds still cannot be chosen between.",
+   "evidence": "Peakbagger ascent list for Tenpeak Mountain (12 entries): no gain or distance columns filled; the reports with text are multi-peak trips (marked b/c) and the 2021 west-ridge day trip already considered.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1975&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 12 ascents; no stated camp height or stats)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tenpeak_mountain_southeast",
+   "kind": "item",
+   "fact": "Itinerary day-mile sum vs. totalNote's stated round-trip mileage",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger lists no Southeast Route ascent with a stated round trip.",
+   "evidence": "Peakbagger ascent list for Tenpeak Mountain (12 entries) has no distance column filled; the long reports are multi-peak enchainments or the West Ridge, so neither the 15.5 mi day sum nor the ~13 mi totalNote can be replaced.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1975&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 12 ascents; no stated distances)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "kind": "item",
+   "fact": "Total elevation gain",
+   "verdict": "unresolved",
+   "summary": "Still real; Mount Crowder has five peakbagger ascents and none states a gain.",
+   "evidence": "Peakbagger ascent list for Mount Crowder (1980-2023, 5 entries): no gain, distance or route columns filled and no trip reports beyond one external link.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=24782&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 5 ascents, no stats)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_crowder_southwest_route",
+   "kind": "item",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "summary": "Still real; no peakbagger ascent of Mount Crowder states a distance.",
+   "evidence": "Peakbagger ascent list for Mount Crowder (5 entries) carries no distances; dist_km 61.15 can be neither replaced nor confirmed.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=24782&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 5 ascents, no stats)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_hozomeen_mountain_northeast_buttress",
+   "kind": "item",
+   "fact": "Total elevation gain vs. loss for a car-to-car round trip",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger climbers add more Skyline-trail totals (8,821-9,472 ft), none equal to the row's 6,266 ft, so no held value is supported.",
+   "evidence": "Peakbagger ascent list for Hozomeen Mountain: Skyline Trail parties 8,856 ft / 26.8 mi and 8,821 ft / 27.1 mi (2024), 9,472 ft / 26.0 mi (2018); a north-face entry 7,222 ft / 10.0 mi; the only Northeast Buttress entry (1984) has no stats.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1678&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stickney_scramble",
+   "kind": "item",
+   "fact": "road-walk and One Acre Lake distances from the current gate",
+   "verdict": "confirmed",
+   "summary": "A 2026 party starting at the current gate (Sultan Basin Road junction, 1,685 ft) states the closed-road walk to the 3,700 ft leaving point is 4.8 miles one way and the summit 6.5 miles one way, so every copy of the 2.25 mi road walk and the five-to-six mile figure is set to 4.8, the now-impossible 3 mi path-fade pin is cleared, and dist_km takes the stated one-way 10.5 km; One Acre Lake still has no stated distance.",
+   "evidence": "Peakbagger ascent 2026-03-28, 'Standard route up the old Olney Creek Road starting from Sultan Basin Road': '4.8 miles one way on this trail/road', 'At 3700' was the fairly obvious spot to leave the road'; Ascent Statistics 'Distance: 6.5 mi / 10.5 km', Start Trailhead: Sultan Basin Road 1685 ft; round trip 12.9 mi. The row's gate is the same point (Olney Creek Road gate at Sultan Basin Road, ~1,680 ft) and its summit pin already reads 6.5 mi.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3151118",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1799&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 1 ascent report read with a stated one-way road walk and ascent distance)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_mount_stickney_scramble",
+     "column": "waypoints",
+     "path": [
+      1,
+      "distMi"
+     ],
+     "expect": 2.25,
+     "value": 4.8
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "waypoints",
+     "path": [
+      1,
+      "directions"
+     ],
+     "find": "uphill about 2.25 miles",
+     "replace": "uphill about 4.8 miles"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_stickney_scramble",
+     "column": "waypoints",
+     "path": [
+      2,
+      "distMi"
+     ],
+     "expect": 3,
+     "value": null
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "approach",
+     "path": [],
+     "find": "for about 2.25 miles",
+     "replace": "for about 4.8 miles"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "schedule",
+      1,
+      "detail"
+     ],
+     "find": "roughly 2-2.5 miles",
+     "replace": "roughly 4.8 miles"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "partner_requirements",
+     "path": [
+      "approachTime"
+     ],
+     "find": "~2.25 miles of closed-road walking",
+     "replace": "~4.8 miles of closed-road walking"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "bivy",
+     "path": [
+      0,
+      "notes"
+     ],
+     "find": "five to six miles",
+     "replace": "nearly five miles"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_mount_stickney_scramble",
+     "column": "bivy",
+     "path": [
+      1,
+      "notes"
+     ],
+     "find": "five-to-six mile approach march",
+     "replace": "nearly five-mile approach march"
+    },
+    {
+     "op": "set",
+     "id": "wa_mount_stickney_scramble",
+     "column": "dist_km",
+     "path": [],
+     "expect": 9.7,
+     "value": 10.5
+    }
+   ]
+  },
+  {
+   "id": "wa_southwest_buttress",
+   "kind": "item",
+   "fact": "trailhead-to-high-camp distance (dist_km 4 mi vs itinerary day 1 5.7 mi vs camp waypoint distMi 3.2)",
+   "verdict": "confirmed",
+   "summary": "A Southwest Buttress party states 6 mi (9.7 km) one way from the Eldorado trailhead to the summit, so dist_km goes from 6.44 to 9.7; that now sits consistently above the itinerary's 5.7 mi day to the col camp. The separate round-trip figure (prose 16 mi / 25.75 km vs a stated 12 mi) stays open because the itinerary days would have to be recomputed.",
+   "evidence": "Peakbagger ascent 2015-07-18, Route: Southwest Buttress, Start Trailhead 2,100 ft: Ascent Statistics 'Distance: 6 mi / 9.7 km', gain on way in 6,371 ft; descent by the Northwest Ridge 6 mi; round trip 12 mi / 19.3 km (the club route page also gives 12.0 mi round trip). The camp pin's distMi is already null.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=548912",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1845&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list filtered to SW Buttress, 5 entries; 1 ascent report read with stated one-way distance)"
+   ],
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_southwest_buttress",
+     "column": "dist_km",
+     "path": [],
+     "expect": 6.44,
+     "value": 9.7
+    }
+   ]
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "kind": "item",
+   "fact": "distance to the East Ridge/col area",
+   "verdict": "unresolved",
+   "summary": "Still real; Cascade Peak has five peakbagger ascents and none is by the couloir/East Ridge or states a distance.",
+   "evidence": "Peakbagger ascent list for Cascade Peak (1981-2025, 5 entries): the only route named is 'SW gully/dike' (2025), with no distance; nothing for the CJ couloir approach.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1864&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 5 ascents, none on this line)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "kind": "item",
+   "fact": "Total round-trip distance for the Standard Route",
+   "verdict": "unresolved",
+   "summary": "Still real; the one peakbagger Sentinel ascent with a distance is day 3 of a Ptarmigan Traverse (15 mi on the way in, no round trip), so there is still no Sentinel-only round trip.",
+   "evidence": "Peakbagger ascent 2025-08-12: 'Day 3 of ptarmigan traverse, standard route', ascent stats 8,000 ft and 15 mi on the way in (start-trailhead elevation entered as 257 ft), no descent figures. Other entries are traverse days or summit-only legs (1.3 mi).",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1879&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3057267"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 34 ascents; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "kind": "item",
+   "fact": "distance to camp: itinerary day 1 6.2 mi vs Cooney Lake waypoint at 8 mi",
+   "verdict": "unresolved",
+   "summary": "Still real; the one Foggy Dew ascent on peakbagger states no distance to Cooney Lake.",
+   "evidence": "Peakbagger ascent list for Switchback Mountain (~390 entries): one route named 'Foggy Dew TH' (2021, list shows 4,819 ft / 14.9 mi round trip); its report is one sentence with no leg distances. No stated one-way figure to Cooney Lake on this line.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1967&y=9999",
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1968619"
+   ],
+   "searched": [
+    "peakbagger (full ascent list filtered for Foggy Dew; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_horseshoe_peak_scramble",
+   "kind": "item",
+   "fact": "Day-2 (summit push and exit) duration",
+   "verdict": "unresolved",
+   "summary": "Still real; a peakbagger party from the Sahale Glacier camp gives only camp-to-summit times (07:30 to about 12:00), not a day-2 total, so days[1].hours cannot be set without adding legs.",
+   "evidence": "Peakbagger ascent 2022-07-17, Horseshoe Basin/SE Face: 'Camped at Sahale Glacier, departed camp the next day at around 0730, summit around 1200'; no exit time. Other entries give only gains/distances.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1968247",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1853&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "kind": "item",
+   "fact": "Car-to-car total time vs its own schedule",
+   "verdict": "unresolved",
+   "summary": "Still real; peakbagger's 2025 West Ridge entries state no times, and nothing supports rewriting the 3:30 AM schedule or the 11 h total.",
+   "evidence": "Peakbagger 2025 ascent list for Mount Thomson (~38 entries): West Ridge rows without stats; the entries with figures give only gain/distance (4,200 ft / 15.1 mi; 16.8 mi), no car-to-car time.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2096&y=2025"
+   ],
+   "searched": [
+    "peakbagger (2025 ascent list read; no times stated)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "kind": "item",
+   "fact": "Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux",
+   "verdict": "unresolved",
+   "summary": "Still real; the one peakbagger report that rates Spire Point's summit climbing (about 5.4) is for the east face, a different line, and no source grades the southwest face.",
+   "evidence": "Peakbagger 2020 ascent: east-face approach, 'I would rate what we did about 5.4', class 4 for the last 10 ft. Other entries name South Face (1940), East Ridge and E Face without grades.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=1440669",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=1883&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 38 ascents; 1 ascent report read, other line)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bears_breast_mountain_southwest_face",
+   "kind": "fill",
+   "fact": "timing.approachTimeHrs",
+   "verdict": "unresolved",
+   "summary": "Not filled: the recent peakbagger reports from the current Dingford trailhead are bike-assisted and give no time from the trailhead to Dutch Miller Gap.",
+   "evidence": "Peakbagger 2026-08-07 ascent: biked from the Dingford Creek trailhead to the Dutch Miller horse camp, then hiked to the gap; on the way out camp 08:45 to bikes 11:40 and car about 12:30, but no inbound time to the gap and the bike leg is not this route's walking approach. List shows one 2024 trip figure (5,763 ft / 42.7 mi) only.",
+   "sources": [
+    "https://www.peakbagger.com/climber/ascent.aspx?aid=3300540",
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=2138&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list, 25 ascents; 1 ascent report read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_wing_peak_northwest_ridge",
+   "kind": "item",
+   "fact": "How long consolidated/climbable snow lasts on the route",
+   "verdict": "unresolved",
+   "summary": "Still real; Wing Peak's peakbagger ascents give dates and stats but no statement of how long climbable snow lasts.",
+   "evidence": "Peakbagger ascent list for Wing Peak (~100 entries, 2006-2026): ascents run from May to November with gains/distances only (e.g. NW slope 443 ft / 3.3 mi from the Gunn col side); no report text read states a snow window, and ascent dates are not a stated window.",
+   "sources": [
+    "https://www.peakbagger.com/climber/PeakAscents.aspx?pid=60930&y=9999"
+   ],
+   "searched": [
+    "peakbagger (full ascent list read)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "item",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "summary": "Still split; peakbagger ascent records carry no permit rules, so there is still no source stating the Wild Sky permit rule.",
+   "evidence": "Peakbagger was not a source for land-management rules on this pass; the forest pages already read name the self-issue permit only for the Alpine Lakes Wilderness and say nothing either way for Wild Sky.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not applicable: ascent records state no permit rules)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "fill",
+   "fact": "approach_logistics.trailheadLat",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a coordinate for the FR-63 pullout, and reading one off a GPS track would be measuring.",
+   "evidence": "Peak pages give only the summit coordinate; a peakbagger GPS track's start point is a measured, not stated, coordinate.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not used: only GPS tracks, which may not be measured)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "fill",
+   "fact": "approach_logistics.trailheadLng",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states a coordinate for the FR-63 pullout, and reading one off a GPS track would be measuring.",
+   "evidence": "Peak pages give only the summit coordinate; a peakbagger GPS track's start point is a measured, not stated, coordinate.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not used: only GPS tracks, which may not be measured)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_nw_ridge_2",
+   "kind": "item",
+   "fact": "Is the balanced summit block usually climbed? descent_text says most parties do not attempt it; beta/pro_tips/pro_needs say most parties protect/belay it",
+   "verdict": "unresolved",
+   "summary": "Still real; single-party accounts cannot say what most parties do, and peakbagger ascent records are single-party accounts too.",
+   "evidence": "The question needs a source that generalises over parties; ascent reports (peakbagger or elsewhere) each describe one party only, as the prior pass found.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not decisive: ascent reports describe single parties)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_glacier_view_temple",
+   "kind": "item",
+   "fact": "Trailhead waypoint (4,700 ft) sits higher than the crag base (4,601 ft) although the approach hikes uphill to the crag",
+   "verdict": "unresolved",
+   "summary": "Still real; the crag is not a peakbagger peak and no source states the parking elevation.",
+   "evidence": "Peakbagger lists peaks, not crags; the club crag page (high point 4,600 ft, 200 ft gain) and area page (4,632 ft) remain the only figures, neither stating the lot's height.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not listed: crag)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_south_face_12",
+   "kind": "item",
+   "fact": "Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass",
+   "verdict": "unresolved",
+   "summary": "Still real; even with the stated 7,400 ft total, the itinerary days would need computed figures and loss_ft is out of bounds, so no peakbagger figure could close it.",
+   "evidence": "The blocker is structural (rewriting day gains needs computation; loss_ft may not be written), not a missing source.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not decisive: any stated total would still require computed day figures)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_der_dihedral",
+   "kind": "item",
+   "fact": "Day-2 climb duration",
+   "verdict": "unresolved",
+   "summary": "Still no ascent account of Der Dihedral with a time; peakbagger records peaks, and no Der Dihedral route report was found there.",
+   "evidence": "Peakbagger ascents are logged by peak and route name; no entry naming Der Dihedral was found, and the only times remain proxies from neighbouring lines.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not listed: no ascent naming this route)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_lemah_mountain_east_route",
+   "kind": "item",
+   "fact": "Elevation of the glacier-exit / moat transition below the col",
+   "verdict": "unresolved",
+   "summary": "Still no source states an elevation for the moat or glacier exit.",
+   "evidence": "Earlier route pages and reports give none; the Lemah ascent list was not read on this pass, and ascent stats there record summit-level gain and distance rather than intermediate feature heights.",
+   "sources": [],
+   "searched": [
+    "peakbagger (Lemah ascent list not read on this pass)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_eldorado_peak_northeast_face",
+   "kind": "item",
+   "fact": "Summit-day duration vs. its own timestamped schedule",
+   "verdict": "unresolved",
+   "summary": "Still real; no source gives times for the Northeast Face itself, and this pass did not find one.",
+   "evidence": "The prior pass found only East Ridge times (3-5 h camp to summit); the Eldorado ascent list was not read on this pass, so nothing new supports either the 9 h or the 2:30 AM-2:30 PM clock times.",
+   "sources": [],
+   "searched": [
+    "peakbagger (Eldorado ascent list not read on this pass; time budget spent on entries a stated figure could close)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "kind": "item",
+   "fact": "Permit: 'None required' vs 'self-issue day-use permit'",
+   "verdict": "unresolved",
+   "summary": "Still no source says whether the day-use wilderness permit applies to this line.",
+   "evidence": "Peakbagger ascent records carry no permit rules; the club page names only a Northwest Forest Pass for parking.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not applicable: ascent records state no permit rules)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_prusik_peak_taylor_wood_route",
+   "kind": "item",
+   "fact": "number of sections/pitches on the route",
+   "verdict": "unresolved",
+   "summary": "Still real; the only source gives both 8 and 10 pitches, and one source stating both counts cannot settle which the page should use.",
+   "evidence": "First-ascent party's route listing: header 8 pitches, description P1-P10. The Prusik Peak ascent list was not read on this pass.",
+   "sources": [],
+   "searched": [
+    "peakbagger (Prusik Peak ascent list not read on this pass)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_fast",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "Still zero sources on the crag's wilderness status or permit rule.",
+   "evidence": "Peakbagger lists peaks, not crags, and carries no permit rules; the crag listings say nothing on permits.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not listed: crag)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_monte_cristo_peak_scramble",
+   "kind": "item",
+   "fact": "Total elevation gain (gain_ft/loss_ft 5200 vs itinerary 4,800)",
+   "verdict": "unresolved",
+   "summary": "Still real; the sourced 5,200 ft is kept, but the itinerary's two day gains have no source to correct, so the totalNote cannot be reworded without making it disagree with the TOTAL row.",
+   "evidence": "The blocker is structural (per-day gains would have to be computed); a further peakbagger total would not supply per-day figures.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not decisive: no per-day gains in ascent stats)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_snowking_mountain_standard",
+   "kind": "item",
+   "fact": "Climbing season window",
+   "verdict": "unresolved",
+   "summary": "Still real; aligning the row needs month-by-month guidance and an avalanche assessment no source gives, and peakbagger ascent dates are not a stated window.",
+   "evidence": "Sources agree the snow line is an early-season (May-June) climb, but the row's many season copies (best_season, monthly guidance, itinerary.cal, approach season, climate, avalanche block) cannot all be rewritten from that one statement.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not decisive: ascent dates are not a stated season)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_iceman",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Not filled: the approach to Ice Box Left Side is published by landmarks only, with no distance.",
+   "evidence": "Peakbagger lists peaks, not ice crags; the route database gives the approach by landmarks only.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not listed: crag)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_roofer_madness",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Left null: no source states the approach gain to Waterfall Basin.",
+   "evidence": "Peakbagger lists peaks, not this crag; the basin area page gives only its elevation and approach time.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not listed: crag)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "kind": "fill",
+   "fact": "rappel_detail",
+   "verdict": "unresolved",
+   "summary": "Not refilled: no source gives a rappel-by-rappel account of the 1952 northeast-corner descent.",
+   "evidence": "Pernod Spire has no peakbagger page found by search; the first-ascent and later accounts give only rappels to the notch and long double-rope rappels to the glacier, with no count, lengths or anchors, which the row already says.",
+   "sources": [],
+   "searched": [
+    "peakbagger (not listed: no Pernod Spire page found)"
+   ],
+   "ops": []
+  }
+ ]
+}

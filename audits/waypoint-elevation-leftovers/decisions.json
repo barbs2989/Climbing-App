@@ -1,0 +1,80 @@
+[
+ {
+  "op": "move",
+  "route": "wa_sherpa_peak_east_ridge",
+  "pin": "Junction|Long's Pass",
+  "oldLat": null,
+  "oldLng": null,
+  "lat": 47.4492902,
+  "lng": -120.9251031,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1528411&outFields=gaz_id%2Cgaz_name%2Cgaz_featureclass%2Ccounty_name&returnGeometry=true&outSR=4326&f=json",
+  "quote": "\"gaz_id\":1528411,\"gaz_name\":\"Longs Pass\",\"gaz_featureclass\":\"Gap\",\"county_name\":\"Chelan\"},\"geometry\":{\"points\":[[-120.92510312500812,47.4492901612129]]}",
+  "evidence": "USGS GNIS feature 1528411 (Longs Pass, Gap, Chelan County) is at 47.4492902, -120.9251031; USGS ground there reads 6,223 ft. Cleared in #2129 because the only published coordinate then in hand (ListsOfJohn/TopoZone) refused a re-fetch; GNIS is the same point, fetched."
+ },
+ {
+  "op": "move",
+  "route": "wa_sherpa_peak_west_ridge",
+  "pin": "Junction|Long's Pass",
+  "oldLat": null,
+  "oldLng": null,
+  "lat": 47.4492902,
+  "lng": -120.9251031,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1528411&outFields=gaz_id%2Cgaz_name%2Cgaz_featureclass%2Ccounty_name&returnGeometry=true&outSR=4326&f=json",
+  "quote": "\"gaz_id\":1528411,\"gaz_name\":\"Longs Pass\",\"gaz_featureclass\":\"Gap\",\"county_name\":\"Chelan\"},\"geometry\":{\"points\":[[-120.92510312500812,47.4492901612129]]}",
+  "evidence": "USGS GNIS feature 1528411 (Longs Pass, Gap, Chelan County) is at 47.4492902, -120.9251031; USGS ground there reads 6,223 ft. The pin had no coordinate; its 6,250 ft claim matches the pass."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_stuart_north_ridge",
+  "pin": "Pass|Longs Pass",
+  "reason": "Placing the GNIS point here makes this pin's stored 3.5 mi impossible from the route's own trailhead, so the apply gate refused it. Left with no coordinate; its distance needs a source before the pass can be placed."
+ },
+ {
+  "op": "move",
+  "route": "wa_mount_stuart_cascadian_couloir",
+  "pin": "Pass|Longs Pass",
+  "oldLat": 47.444,
+  "oldLng": -120.924,
+  "lat": 47.4492902,
+  "lng": -120.9251031,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1528411&outFields=gaz_id%2Cgaz_name%2Cgaz_featureclass%2Ccounty_name&returnGeometry=true&outSR=4326&f=json",
+  "quote": "\"gaz_id\":1528411,\"gaz_name\":\"Longs Pass\",\"gaz_featureclass\":\"Gap\",\"county_name\":\"Chelan\"},\"geometry\":{\"points\":[[-120.92510312500812,47.4492901612129]]}",
+  "evidence": "USGS GNIS feature 1528411 (Longs Pass, Gap, Chelan County) is at 47.4492902, -120.9251031; USGS ground there reads 6,223 ft. The stored 47.444,-120.924 is a 3-decimal rounding 0.37 mi south of the pass."
+ },
+ {
+  "op": "move",
+  "route": "wa_mount_stuart_west_ridge",
+  "pin": "Pass|Longs Pass",
+  "oldLat": 47.444,
+  "oldLng": -120.924,
+  "lat": 47.4492902,
+  "lng": -120.9251031,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1528411&outFields=gaz_id%2Cgaz_name%2Cgaz_featureclass%2Ccounty_name&returnGeometry=true&outSR=4326&f=json",
+  "quote": "\"gaz_id\":1528411,\"gaz_name\":\"Longs Pass\",\"gaz_featureclass\":\"Gap\",\"county_name\":\"Chelan\"},\"geometry\":{\"points\":[[-120.92510312500812,47.4492901612129]]}",
+  "evidence": "USGS GNIS feature 1528411 (Longs Pass, Gap, Chelan County) is at 47.4492902, -120.9251031; USGS ground there reads 6,223 ft. The stored 47.444,-120.924 is a 3-decimal rounding 0.37 mi south of the pass."
+ },
+ {
+  "op": "move",
+  "route": "wa_south_headwall",
+  "pin": "Junction|Longs Pass",
+  "oldLat": 47.459562,
+  "oldLng": -120.935089,
+  "lat": 47.4492902,
+  "lng": -120.9251031,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1528411&outFields=gaz_id%2Cgaz_name%2Cgaz_featureclass%2Ccounty_name&returnGeometry=true&outSR=4326&f=json",
+  "quote": "\"gaz_id\":1528411,\"gaz_name\":\"Longs Pass\",\"gaz_featureclass\":\"Gap\",\"county_name\":\"Chelan\"},\"geometry\":{\"points\":[[-120.92510312500812,47.4492901612129]]}",
+  "evidence": "USGS GNIS feature 1528411 (Longs Pass, Gap, Chelan County) is at 47.4492902, -120.9251031; USGS ground there reads 6,223 ft. The stored coordinate is 0.85 mi NW of the pass on 6,471 ft ground, against the pin's own 6,200 ft claim."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_index_bluebell",
+  "pin": "Summit|Mount Index Middle Peak",
+  "reason": "Still cleared: GNIS names only Mount Index (1521160), not Middle Peak, and ListsOfJohn/Peakbagger refuse fetches. Their coordinate (47.77971,-121.58178) stays in the #2129 evidence."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_index_north_norwegian_buttress",
+  "pin": "Summit|Mount Index Middle Peak",
+  "reason": "As Bluebell: no fetchable published coordinate for Middle Peak."
+ }
+]

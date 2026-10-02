@@ -1,0 +1,274 @@
+{
+ "wa_sherpa_peak_east_ridge": {
+  "waypoints": [
+   {
+    "lat": 47.4366,
+    "lng": -120.937,
+    "elev": 4243,
+    "name": "Esmeralda Basin / Ingalls Way Trailhead (North Fork Teanaway Rd, FR-9737) via Longs Pass",
+    "note": "Shared trailhead for Longs Pass Trail and Esmeralda Basin/Ingalls Way Trail; route drops from Longs Pass into Ingalls Creek drainage before climbing to Sherpa's east basin.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 4243,
+    "directions": "Drive the North Fork Teanaway Road (FR-9737) to its end at the Esmeralda Basin / Ingalls Way trailhead. This is the shared lot for the Longs Pass Trail and the Esmeralda Basin / Ingalls Way Trail, and it is the same trailhead the West Ridge uses; for the East Ridge you want the Longs Pass Trail (FST 1391), which goes over Longs Pass at about 6,200 ft and down to Ingalls Creek. Plan on late June through September, once that Longs Pass and Ingalls Creek approach is snow-free."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6250,
+    "name": "Long's Pass",
+    "type": "Junction",
+    "distMi": 2.5,
+    "elevFt": 6250
+   },
+   {
+    "lat": 47.465,
+    "lng": -120.895,
+    "elev": 6300,
+    "name": "Stuart basin bivy",
+    "type": "Campsite",
+    "distMi": 4.5,
+    "elevFt": 6300
+   },
+   {
+    "lat": 47.4718,
+    "lng": -120.8855,
+    "elev": 7800,
+    "name": "East end of ridge",
+    "type": "Junction",
+    "distMi": 5.6,
+    "elevFt": 7800
+   },
+   {
+    "lat": 47.471845,
+    "lng": -120.888871,
+    "elev": 8630,
+    "name": "Sherpa Peak summit",
+    "type": "Summit",
+    "elevFt": 8630
+   }
+  ]
+ },
+ "wa_sherpa_peak_west_ridge": {
+  "waypoints": [
+   {
+    "lat": 47.4367,
+    "lng": -120.9372,
+    "elev": 4243,
+    "name": "Esmeralda Basin / Ingalls Lake Trailhead (N Fork Teanaway River Rd)",
+    "type": "Trailhead",
+    "distMi": 0,
+    "elevFt": 4243,
+    "directions": "Drive the North Fork Teanaway River Road (FS-9737) to its end at the Esmeralda Basin / Longs Pass trailhead, about 4,300 ft. The road is usually open to the trailhead by early June, but the route itself wants late June through September, once the Longs Pass approach and the rock are snow-free. From the lot take the Longs Pass Trail (FST 1391), which climbs roughly 2.3 miles and 2,300 ft to Longs Pass."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6250,
+    "name": "Long's Pass",
+    "type": "Junction",
+    "distMi": 2.5,
+    "elevFt": 6250
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6200,
+    "name": "Sherpa south basin camp",
+    "type": "Campsite",
+    "distMi": 4.5,
+    "elevFt": 6300
+   },
+   {
+    "lat": 47.4715,
+    "lng": -120.892,
+    "elev": 7700,
+    "name": "Base of west ridge",
+    "type": "Junction",
+    "distMi": 5.4,
+    "elevFt": 7700
+   },
+   {
+    "lat": 47.4718,
+    "lng": -120.8889,
+    "elev": 8630,
+    "name": "Sherpa Peak summit",
+    "type": "Summit",
+    "distMi": 5.7,
+    "elevFt": 8630
+   }
+  ]
+ },
+ "wa_mount_stuart_cascadian_couloir": {
+  "waypoints": [
+   {
+    "lat": 47.43656,
+    "lng": -120.93697,
+    "elev": 4243,
+    "name": "Esmeralda Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to the Esmeralda Basin trailhead at the end of the North Fork Teanaway River Road, Forest Road 9737: from I-90 take exit 85 near Cle Elum onto SR 970 heading northeast, then follow the Teanaway River Road roughly 23 miles to the road-end parking at about 4,243 feet. The road is gravel and is not maintained through winter, typically staying snowed in until late June in a heavy year, so check conditions before an early-season trip."
+   },
+   {
+    "lat": 47.43,
+    "lng": -120.9,
+    "elev": 3500,
+    "name": "Ingalls Way Trail Junction",
+    "type": "Junction",
+    "distMi": 0.3
+   },
+   {
+    "lat": 47.444,
+    "lng": -120.924,
+    "elev": 6300,
+    "name": "Longs Pass",
+    "type": "Pass",
+    "distMi": 3.5
+   },
+   {
+    "lat": 47.453,
+    "lng": -120.917,
+    "elev": null,
+    "name": "Long's Pass Trail Junction",
+    "type": "Junction",
+    "distMi": 4.5
+   },
+   {
+    "lat": 47.459,
+    "lng": -120.911,
+    "elev": null,
+    "name": "Cascadian Couloir Base",
+    "type": "Junction",
+    "distMi": 5
+   },
+   {
+    "lat": 47.472,
+    "lng": -120.905,
+    "elev": 9200,
+    "name": "False Summit Notch",
+    "type": "Junction",
+    "distMi": 5.8
+   },
+   {
+    "lat": 47.475,
+    "lng": -120.904,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": 6
+   }
+  ]
+ },
+ "wa_mount_stuart_west_ridge": {
+  "waypoints": [
+   {
+    "lat": 47.43656,
+    "lng": -120.93697,
+    "elev": 4243,
+    "name": "Esmeralda Basin Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive the North Fork Teanaway Road (FR-9737) to its end at the Esmeralda trailhead, about 4,243 ft, and start on the Ingalls Way Trail. Roughly half a mile in, stay right at the Longs Pass junction rather than carrying on toward Ingalls Basin. There is a longer northern approach to this ridge from the Stuart Lake Trailhead over Stuart Pass, but it adds significant mileage and is not the standard line, so Esmeralda is the lot you want."
+   },
+   {
+    "lat": 47.444,
+    "lng": -120.924,
+    "elev": 6300,
+    "name": "Longs Pass",
+    "type": "Pass",
+    "distMi": 3.5
+   },
+   {
+    "lat": 47.458,
+    "lng": -120.92,
+    "elev": 6800,
+    "name": "Talus Approach to West Ridge",
+    "type": "Junction",
+    "distMi": 4.5
+   },
+   {
+    "lat": 47.468,
+    "lng": -120.912,
+    "elev": 7200,
+    "name": "West Ridge Crest",
+    "type": "Junction",
+    "distMi": 5
+   },
+   {
+    "lat": 47.475,
+    "lng": -120.904,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": 6
+   }
+  ],
+  "gpx": [
+   [
+    47.43656,
+    -120.93697
+   ],
+   [
+    47.444,
+    -120.924
+   ],
+   [
+    47.458,
+    -120.92
+   ],
+   [
+    47.468,
+    -120.912
+   ],
+   [
+    47.475,
+    -120.904
+   ]
+  ]
+ },
+ "wa_south_headwall": {
+  "waypoints": [
+   {
+    "lat": 47.43656,
+    "lng": -120.93697,
+    "elev": 4269,
+    "name": "Esmeralda Basin Trailhead (North Fork Teanaway Rd)",
+    "note": "Ingalls Way trail approach to the south side of the mountain.",
+    "type": "Trailhead",
+    "distMi": 0
+   },
+   {
+    "lat": 47.459562,
+    "lng": -120.935089,
+    "elev": 6200,
+    "name": "Longs Pass",
+    "type": "Junction",
+    "distMi": 2.5
+   },
+   {
+    "lat": 47.4751179,
+    "lng": -120.9031444,
+    "elev": 9415,
+    "name": "Mount Stuart summit area",
+    "note": "4-5 pitches of low 5th/4th class up the steep headwall below the summit; tops out very near and just SW of the true summit.",
+    "type": "Summit",
+    "distMi": 7.5
+   }
+  ],
+  "gpx": [
+   [
+    47.43656,
+    -120.93697
+   ],
+   [
+    47.459562,
+    -120.935089
+   ],
+   [
+    47.4751179,
+    -120.9031444
+   ]
+  ]
+ }
+}

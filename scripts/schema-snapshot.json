@@ -471,6 +471,12 @@
       "route_id",
       "user_id"
     ],
+    "profile_emergency_contacts": [
+      "name",
+      "phone",
+      "updated_at",
+      "user_id"
+    ],
     "profile_zips": [
       "updated_at",
       "user_id",
@@ -481,15 +487,20 @@
       "avail_week",
       "availability",
       "avatar",
+      "belay_devices",
       "bio",
       "boulder_grade",
+      "cert_expiry",
       "certifications",
+      "climb_grades",
       "created_at",
       "disciplines",
       "discoverable",
+      "free_until",
       "hiking_speed_ft_hr",
       "id",
       "is_admin",
+      "level",
       "location",
       "mutuals_visible",
       "name",
