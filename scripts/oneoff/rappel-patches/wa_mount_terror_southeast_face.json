@@ -1,0 +1,45 @@
+{
+ "id": "wa_mount_terror_southeast_face",
+ "area_id": "wa_mount_terror",
+ "stations": 4,
+ "allowRange": true,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "notes": "First rappel off the ridge crest working down toward the notch by the large chockstone that marks the top of the descent gully.",
+    "anchor": "Slung horn/chockstone near West Ridge crest",
+    "lengthM": null
+   },
+   {
+    "n": 2,
+    "notes": "Second rappel finishing the ridge-crest section; some parties do only one here and downclimb/simul-downclimb the rest.",
+    "anchor": "Fixed piton-and-nut or slung horn",
+    "lengthM": null
+   },
+   {
+    "n": 3,
+    "notes": "First rappel down the loose, rockfall-prone gully into Crescent Creek Basin; a single 50-60m rope is sufficient for every reported station.",
+    "anchor": "Natural chockstone/horn anchor in the descent gully",
+    "lengthM": null
+   },
+   {
+    "n": 4,
+    "notes": "Final gully rappel; the last ~100 ft below this is loose and marginal and is downclimbed.",
+    "anchor": "Natural chockstone/horn anchor, lower gully",
+    "lengthM": null
+   }
+  ],
+  "rappels": "About 4 rappels on a single 60 m rope down the West Ridge descent: one or two near the ridge crest above the notch, then two or three in the loose gully to Crescent Creek Basin. Parties report 3-5 rappels depending on snow and how much they downclimb.",
+  "descent": "Descend the West Ridge to the notch above the descent gully, then rappel and downclimb the gully into Crescent Creek Basin.",
+  "gear": [
+   "Single set of cams from roughly 0.3 to 3 inches, doubled in the 1-2 inch range for the crux",
+   "About six stoppers/nuts",
+   "A few alpine quickdraws/extendable slings",
+   "A 60 m rope for the rappel descent; one is enough for every reported station",
+   "Ice axe and crampons if snow/ice cover the approach gully or ridge, common in early season",
+   "Helmet — the rock here is notably loose",
+   "Extra slings and lockers for tat or fixed rappel anchors"
+  ]
+ }
+}
