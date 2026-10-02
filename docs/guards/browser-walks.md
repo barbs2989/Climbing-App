@@ -204,6 +204,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `--route` still takes the renamed-or-deleted branch, so the ordering did not regress.
       The still-loading branch is **not** injection-proven — forcing it needs a genuinely
       degraded database, and that is recorded rather than claimed.
+    - **A sixth branch, 2026-10-02: a database READ failed and the app said so.** Two app
+      texts, both from `lib/DbAreaBrowser.jsx`: `Couldn't load this area — …` when the state's
+      area read errors (and then there is **no search box**, so it used to read as "check the
+      route list rendered before this step"), and `Couldn't search routes…` when the
+      `routes_in_subtree` RPC errors (neither rows, an empty state nor a spinner, so it fell
+      through to "the route list or the search box" — the database probe even read 363ms,
+      because a trivial read is cheap while a state-wide one is not). Both runs that day were
+      the same cause: the anon role's ~3s `statement_timeout`. The search touched every
+      Washington area (2,592 `routes_area_idx` loops, ~17k buffers): 25ms warm, 8.3s cold,
+      61s with the project CPU-starved by bulk imports. The branch reads the app's own error
+      text, as the empty-state branch does, and is tested **before** the missing-search-box
+      branch, because a failed area read is what removes the box. Seen firing only by
+      capturing the page text of a live failing run, not injection-proven.
   - **The Crew sub-views were unreachable until #740/#755 named their buttons**, and that is
     four screens of a six-tab app no render guard had ever opened. `tap()` matches control
     text exactly, and these buttons carry the badge *inside* the control, so `textContent` is
