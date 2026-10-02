@@ -17,6 +17,7 @@
 //   node scripts/oneoff/apply-route-grades.mjs --dry            # report only
 //   node scripts/oneoff/apply-route-grades.mjs                  # write, with a rollback
 //   node scripts/oneoff/apply-route-grades.mjs --only=b01,b02   # restrict to some batches
+//   node scripts/oneoff/apply-route-grades.mjs --dir=audits/route-grades/deep/out   # the deep pass
 import fs from "fs";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
 import { gradeNumFrom, displayGrade } from "../../lib/grade.js";
@@ -24,7 +25,8 @@ import { gradeNumFrom, displayGrade } from "../../lib/grade.js";
 const DRY = process.argv.includes("--dry");
 const ONLY = (process.argv.find(a => a.startsWith("--only=")) || "").slice(7).split(",").filter(Boolean);
 const key = requireServiceKey();
-const DIR = "audits/route-grades/research/out";
+// --dir=audits/route-grades/deep/out applies the deep pass (g*.json) through the same checks.
+const DIR = (process.argv.find(a => a.startsWith("--dir=")) || "--dir=audits/route-grades/research/out").slice(6);
 const SCALE = {
   class: /^Class [1-4]$/,
   yds: /^5\.(?:\d|1[0-5])(?:[a-d](?:\/[a-d])?|[+-])?$/,
@@ -34,7 +36,7 @@ const FIX_COLS = ["rock_grade", "alpine_grade", "ice_grade", "commitment"];
 const SOURCE_NAMES = /mountain ?project|summitpost|beckey|mountaineers|peakbagger|nwhikers|cascadeclimbers|wikipedia|caltopo|\bnps\b|usfs|route brief|according to|guidebook/i;
 const ROMAN = /^(?:Grade\s+)?([IVX]+[+-]?(?:\s*[-–/]\s*[IVX]+[+-]?)?)\b[\s,;:–—-]*/i;
 
-const files = fs.readdirSync(DIR).filter(f => /^(?:b\d+|zz-[a-z-]+)\.json$/.test(f) && (!ONLY.length || ONLY.includes(f.replace(".json", "")))).sort();
+const files = fs.readdirSync(DIR).filter(f => /^(?:b\d+|g\d+|zz-[a-z-]+)\.json$/.test(f) && (!ONLY.length || ONLY.includes(f.replace(".json", "")))).sort();
 const results = files.flatMap(f => JSON.parse(fs.readFileSync(`${DIR}/${f}`, "utf8")).map(r => ({ ...r, _batch: f })));
 const ids = [...new Set(results.map(r => r.id))];
 const COLS = "id,discipline,grade,grade_num,grade_system,rock_grade,alpine_grade,ice_grade,commitment,ice_grade_num";
