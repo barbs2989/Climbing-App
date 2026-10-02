@@ -1,0 +1,353 @@
+{
+ "items": [
+  {
+   "kind": "item",
+   "id": "wa_spire_mountain_scramble",
+   "fact": "Whether a wilderness permit is needed",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "Still split, and no source states the Wild Sky Wilderness permit rule outright either way. The forest's wilderness-regulations page names the free self-issue permit only for the Alpine Lakes Wilderness, and its Wild Sky page says only that wilderness regulations apply and some trailheads need a recreation pass; the peak page says only that passes are not required at either parking spot. None says a permit is or is not required in Wild Sky. PEAKBAGGER PASS: Still split; peakbagger ascent records carry no permit rules, so there is still no source stating the Wild Sky permit rule. Peakbagger was not a source for land-management rules on this pass; the forest pages already read name the self-issue permit only for the Alpine Lakes Wilderness and say nothing either way for Wild Sky."
+  },
+  {
+   "kind": "item",
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Total elevation loss for the trip",
+   "prior_file": "audits/route-tab-contradictions/research/out/v022.json",
+   "prior_evidence": "loss_ft may not be written in this pass, and no source states a car-to-car gain or loss for the main summit anyway. Found figures are for other objectives: Gothic Basin 9.2 mi / 2,840 ft, Gothic + Del Campo 11.3 mi / 7,100 ft, North/Middle peaks 13.8 mi, North Peak 3,600 ft. PEAKBAGGER PASS: loss_ft may not be written in this pass, and peakbagger's eight main-summit ascents carry no gain, loss or distance figures anyway. Peakbagger ascent list for Sheep Gap Mountain (main peak): eight entries 1999-2025, no stats columns; 2025-08-30 report describes the traverse to Weden Pass and a 4th-class ridge section with no figures."
+  },
+  {
+   "kind": "item",
+   "id": "wa_sheep_gap_mountain_scramble",
+   "fact": "Round-trip mileage",
+   "prior_file": "audits/route-tab-contradictions/research/out/v022.json",
+   "prior_evidence": "No source states a round-trip distance for Sheep Gap's main summit; the 13.8 mi measured outing is to the North and Middle peaks, a different objective. 2024 report: 13.8 mi round trip to the North/Middle peaks via Weden Pass; the club page grades the North Peak at 3,600 ft; Gothic Basin hikes give 9.2-10.5 mi. None is the main summit. PEAKBAGGER PASS: No peakbagger ascent of Sheep Gap's main summit states a round-trip distance. Peakbagger ascent list (main peak): no distance fields; 2025-08-30 report gives no mileage."
+  },
+  {
+   "kind": "item",
+   "id": "wa_austera_peak_chockstone_route",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only (dist_km 11.3)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v002.json",
+   "prior_evidence": "No source states a one-way trailhead-to-Austera distance; sources give only the trailhead-to-camp approach and the 2.8 mi camp-to-summit leg, which may not be added. Route database page: 2.8 mi one way from the Eldorado camp; encyclopedia page: about 3.5 mi from the dome SSE of Eldorado; the only whole-trip figures are multi-peak round trips. PEAKBAGGER PASS: Still real; no peakbagger Austera ascent states a one-way trailhead-to-summit distance or a total gain for this line. Peakbagger ascent list for Austera Peak (~150 entries): stated figures are camp-to-summit legs (537-1,621 ft, 1.7-7.5 mi) or multi-peak trips; one 2022 entry's 6,537 ft 'total gain' equals the summit minus its 1,834 ft trailhead exactly and names no route, so it is a computed net rise, not a stated total."
+  },
+  {
+   "kind": "item",
+   "id": "wa_artic_rose",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "prior_file": "audits/route-tab-contradictions/research/out/v011.json",
+   "prior_evidence": "Still no source states the crag's wilderness status or permit rule, so the replacement text cannot be sourced. The crag's route-database page gives the elevation (4,761 ft), the Tye Road pullout and the approach, with nothing on wilderness or permits; the peak encyclopedia covers the 7,960 ft Half Moon, a different summit. The Wild Sky name remains wrong by geography (more than 4 km away), but the correct wording (no permit vs a Henry M. Jackson self-issue permit) is not stated anywhere found. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Still no source states the crag's wilderness status or permit rule, so the replacement text cannot be sourced. The crag's route-database page gives the elevation (4,761 ft), the Tye Road pullout and the approach, with nothing on wilderness or permits; the peak encyclopedia covers the 7,960 ft Half Moon, a different summit. The Wild Sky name remains wrong by geography (more than 4 km away), but the correct wording (no permit vs a Henry M. Jackson self-issue permit) is not stated anywhere found."
+  },
+  {
+   "kind": "item",
+   "id": "wa_star_peak_sawtooth_scramble",
+   "fact": "total gain: gain_ft/loss_ft 5,200 vs itinerary/approach/totalNote 4,730",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "The one stated 5,200 ft belongs to a 22 mi listing that does not match this row's 18.6 mi Star Lake line, and aligning the itinerary days (3,500 + 1,230) to any total would mean computing new day figures. A route listing gives 8.7 mi to Fish Creek Pass, 22 mi round trip and 5,200 ft; a regional hike page gives 7.5 mi and 3,500 ft to Star Lake and no summit figure. No source states the 4,730 ft or the row's 18.6 mi trip total. PEAKBAGGER PASS: Peakbagger ascents from West Fork Buttermilk give scattered gains (5,166, 5,090, 5,323, 4,742 ft) and none states 5,200 or 4,730 for the 18.6 mi Star Lake line, so the split stays. Peakbagger Star Peak ascent list (2026): 'West Buttermilk to Star Lake bowl' 5,166 ft summit gain / 13.6 mi (24.2 mi trip); 'N Bowl to SW Ridge' 5,090 ft / 10.4 mi; 5,323 ft / 10 mi; 4,742 ft / 19.9 mi. Values disagree with each other and with both row figures; aligning itinerary days would still need computed day figures."
+  },
+  {
+   "kind": "item",
+   "id": "wa_gunsight_peak_standard",
+   "fact": "recommended/actual start time from high camp",
+   "prior_file": "audits/route-tab-contradictions/research/out/v015.json",
+   "prior_evidence": "No source states a customary or recommended start from high camp; parties' reported starts range from pre-dawn to 10 AM, so neither the 4-5am turnaround line nor the ~7:00 AM schedule is changed. Trip reports give individual departure times only (pre-dawn single pushes, a 10:00 AM climbing-day start, a 2017 schedule breaking the col camp in the morning and summiting in the evening). PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: No source states a customary or recommended start from high camp; parties' reported starts range from pre-dawn to 10 AM, so neither the 4-5am turnaround line nor the ~7:00 AM schedule is changed. Trip reports give individual departure times only (pre-dawn single pushes, a 10:00 AM climbing-day start, a 2017 schedule breaking the col camp in the morning and summiting in the evening)."
+  },
+  {
+   "kind": "item",
+   "id": "wa_forbidden_peak_northwest_face",
+   "fact": "trip length (days)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v007.json",
+   "prior_evidence": "Guide services agree the Northwest Face is a 3-day trip, but the itinerary has only two days and no hike-out leg; adding the third day needs miles, gain/loss and hours that no source states, and changing totalNote alone would leave the TOTAL row describing two days. Two guide services run it as 3 days / 2 nights (as the approach text says); no source states figures for a hike-out day from Boston Basin on this trip, and copying the approach day in reverse would be computed. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Guide services agree the Northwest Face is a 3-day trip, but the itinerary has only two days and no hike-out leg; adding the third day needs miles, gain/loss and hours that no source states, and changing totalNote alone would leave the TOTAL row describing two days. Two guide services run it as 3 days / 2 nights (as the approach text says); no source states figures for a hike-out day from Boston Basin on this trip, and copying the approach day in reverse would be computed."
+  },
+  {
+   "kind": "item",
+   "id": "wa_summit_chief_mountain_south_route",
+   "fact": "Approach distance from Pete Lake Trailhead to Vista Lakes camp",
+   "prior_file": "audits/route-tab-contradictions/research/out/v024.json",
+   "prior_evidence": "No source states a single trailhead-to-Vista-Lakes figure; reports give only round-trip totals (26, 29-30, 33.4 mi for different itineraries) and leg pieces, so approach (~9 mi), approach_variants (~10 mi) and day 1 / waypoint (13 mi) stay as they are. One Vista Pass report: 26 mi, 5,000 ft round trip, camp at Vista Meadows (5,400 ft), no leg figure. A solo report: 33.4 mi on a different loop. The variant's legs (5 + 0.6 + 4.5 mi) are legs, not a stated total. PEAKBAGGER PASS: Peakbagger's Summit Chief ascents give round trips (26-37 mi) and a camp-to-summit leg (about 2 mi, 2,000 ft), but no stated distance from the Pete Lake Trailhead to the Vista Lakes camp. Peakbagger 2021-07-18 report: Pete Lake trailhead, Waptus Pass trail shortcut saving about 4 mi versus the PCT switchbacks, camp at Vista Lakes, then 'the summit is only 2 miles and 2000' of elevation' from camp; no trailhead-to-camp figure. Ascent list: standard-route entries 4,597-4,966 ft with 26-27.4 mi round trips."
+  },
+  {
+   "kind": "item",
+   "id": "wa_massie_peak_west_route",
+   "fact": "Distance up the Chiwawa River Trail to the Massie Lake turnoff: approach/itinerary/sectionBreakdown 'about 4 miles' vs the 'M' tree waypoint distMi 2.8 (and lake 4.7)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v014.json",
+   "prior_evidence": "Sources disagree (about 3 miles on the high-route page; 1.4 + 3.1 mi legs plus a further 0.5 mi overshoot in an encyclopedia trip report), and moving the 'M' tree pin to 4 would also strand the ford pin at 2.9, which no source places, so nothing is changed. High-route page: the Massie path splits off the Chiwawa River Trail after about three miles; encyclopedia trip report: a 1.4 mi leg to the 1513/1550 split then a 3.1 mi leg before the unmarked Massie trail, river about 0.1 mi beyond (a total would be computed). PEAKBAGGER PASS: Peakbagger's three Massie Peak ascents give no trail mileage to the Massie Lake turnoff, so the split stays. Peakbagger ascent list: 2012 (west ridge/Massie High Route traverse), 2024, 2025. The 2012 report says only that the party went up the Massie Lake High Route trail and the summit ridge; no distances."
+  },
+  {
+   "kind": "item",
+   "id": "wa_mount_hinman_hinman_glacier",
+   "fact": "Elevation gain for the approach leg (trailhead to La Bohn Gap/Lakes camp)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "Still real (approach_variants[0].gainFt 6,100 equals the whole-trip gain_ft while its own notes say 'over 5,000 ft' to the gap), and no source states the gain to La Bohn Gap or the lakes. The Necklace Valley trail page gives 18.0 mi / 3,400 ft round trip to the valley, not the gap; a Hinman day-trip report gives about 24 mi and 7,000 ft for the whole summit trip; the La Bohn Gap hike page carries no stats. A search snippet claiming '15.0 mi one-way, 5,061 ft' to La Bohn Gap comes from a mapping app route via the Mt Hinman west ridge whose page could not be read and does not match this 10-11 mi line. PEAKBAGGER PASS: Peakbagger's Hinman reports from Necklace Valley give camps and route notes but no stated gain from the trailhead to La Bohn Gap or the lakes, so the variant's 6,100 ft cannot be replaced. Peakbagger 2021-07-04 report: two nights via Necklace Valley, camp at Emerald Lake, up the valley beside La Bohn Lakes, no gain figures. 2024-07-27 report: Jade Lake/Dip Top Gap loop over Hinman to La Bohn Gap and Tank Lakes, no gain figures."
+  },
+  {
+   "kind": "item",
+   "id": "wa_sinister_peak_southwest_route",
+   "fact": "Total elevation gain and loss for the Southwest Route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v023.json",
+   "prior_evidence": "Still real; the only stated totals for Sinister are for the North Face (32 mi, 7,000 ft) and Northwest Face (35 mi, 11,400 ft), not the Southwest Route. The club pages for the North Face and Northwest Face give those totals plus the shared approach legs (+3,900, +3,450, -1,600/+1,300); none states a car-to-car total for the Southwest Route, and summing legs would be computed. PEAKBAGGER PASS: Peakbagger's Sinister ascents are nearly all combined with Dome Peak or use other lines, and none states a car-to-car total for the Southwest Route from Downey Creek. Peakbagger full ascent list: the one 'South Route, West Ridge' entry (2020) has no report or stats; 'Downey Cr' 2024 lists 8,744 ft / 28.4 mi with no route or report; 2012 NW face 7,644 ft / 16 mi; 2017 7,054 ft / 31.4 mi with no route. The 2025 West Ridge report from Downey Creek climbed Dome first and gives no totals."
+  },
+  {
+   "kind": "item",
+   "id": "wa_cascade_peak_east_ridge",
+   "fact": "distance to the East Ridge/col area",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "No source states a distance for the couloir approach to the C-J col; accounts describe it only as a quarter-mile road walk, a creek crossing and about 15 minutes of brush to the couloir, then about 3,000-3,400 ft of couloir, so dist_km and the itinerary's 5.7 mi cannot be replaced or confirmed. 2013 CJ Couloir/East Ridge/NW Chimney report: 1/4 mile down the road, down 30 ft at the hairpin, cross the stream, bushwhack 15 minutes to the base of the couloir, a 3,000 ft chute. The only stated mileages (10.8-14.5 mi round trip) are for Johannesburg's East Ridge via Cascade Pass, a different line and peak. PEAKBAGGER PASS: Still real; Cascade Peak has five peakbagger ascents and none is by the couloir/East Ridge or states a distance. Peakbagger ascent list for Cascade Peak (1981-2025, 5 entries): the only route named is 'SW gully/dike' (2025), with no distance; nothing for the CJ couloir approach."
+  },
+  {
+   "kind": "item",
+   "id": "wa_sentinel_peak_standard",
+   "fact": "Total round-trip distance for the Standard Route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v022.json",
+   "prior_evidence": "No source states a Sentinel-only one-way or round-trip distance; found figures are per-day totals or the 32.6 mi Sentinel plus Old Guard outing. 2024 out-and-back party: per-day totals only; Sentinel + Old Guard: 32.6 mi round trip including road walk and a camp move. PEAKBAGGER PASS: Still real; the one peakbagger Sentinel ascent with a distance is day 3 of a Ptarmigan Traverse (15 mi on the way in, no round trip), so there is still no Sentinel-only round trip. Peakbagger ascent 2025-08-12: 'Day 3 of ptarmigan traverse, standard route', ascent stats 8,000 ft and 15 mi on the way in (start-trailhead elevation entered as 257 ft), no descent figures. Other entries are traverse days or summit-only legs (1.3 mi)."
+  },
+  {
+   "kind": "item",
+   "id": "wa_south_face_12",
+   "fact": "Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass",
+   "prior_file": "audits/route-tab-contradictions/research/out/v001.json",
+   "prior_evidence": "The only stated car-to-car total (7,400 ft) cannot be adopted without computing new day figures for the itinerary, and loss_ft may not be written. Earlier sources give 7,400 ft for the trip and the approach legs (about 1,800 ft up to Fourth Creek Pass, ~1,200 ft down to Ingalls Creek); a single-day ascent gives only the net 4,853 ft rise. Setting gain_ft to 7,400 would contradict the itinerary days (2,000 + 4,257) unless their figures were recomputed, and loss_ft is out of bounds, so nothing is changed. PEAKBAGGER PASS: Still real; even with the stated 7,400 ft total, the itinerary days would need computed figures and loss_ft is out of bounds, so no peakbagger figure could close it. The blocker is structural (rewriting day gains needs computation; loss_ft may not be written), not a missing source."
+  },
+  {
+   "kind": "item",
+   "id": "wa_der_dihedral",
+   "fact": "Day-2 climb duration",
+   "prior_file": "audits/route-tab-contradictions/research/out/v006.json",
+   "prior_evidence": "No ascent account of Der Dihedral with any time was found, so neither the 11 h nor the 10-12 h nor the 15.5 h schedule can be sourced. Searches for the route name, its area and trip reports return only unrelated 'Dihedral' routes; the only times remain proxies from neighbouring Backbone Ridge / NE Arete lines. PEAKBAGGER PASS: Still no ascent account of Der Dihedral with a time; peakbagger records peaks, and no Der Dihedral route report was found there. Peakbagger ascents are logged by peak and route name; no entry naming Der Dihedral was found, and the only times remain proxies from neighbouring lines."
+  },
+  {
+   "kind": "item",
+   "id": "wa_astroglide",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "prior_file": "audits/route-tab-contradictions/research/out/v010.json",
+   "prior_evidence": "No source states Half Moon Crag's wilderness status or permit rule; the crag listing covers access and rope length only, so the replacement wording for the permit column is still unsourced. Crag database page: granite crag above Tye Road, faint traces of trail through old-growth, routes 85 ft or less; nothing on permits or wilderness. The earlier boundary measurement places the pin outside any wilderness and far from Wild Sky, but that is a measurement, not a stated rule. PEAKBAGGER PASS: Half Moon Crag has no peakbagger page, so nothing there states its wilderness status or permit rule. Peakbagger site search for Half Moon Crag returned no peak page (only unrelated Ice Box peaks)."
+  },
+  {
+   "kind": "item",
+   "id": "wa_tailgunner_peak_w_route",
+   "fact": "Whether a wilderness permit is needed",
+   "prior_file": "audits/route-tab-contradictions/research/out/v025.json",
+   "prior_evidence": "The only statement found is general: many established trails in the Wild Sky Wilderness need a free trailhead registration; it does not say whether the off-trail Tailgunner line from the Barclay Creek trail (itself outside the wilderness) does, so neither permit text is changed. Wilderness encyclopedia page: 'Many established trails within Wild Sky Wilderness require a free registration at trailheads.' Trailhead page lists only the day-use fee. PEAKBAGGER PASS: Peakbagger's Tailgunner page and the longest reports say nothing about a wilderness permit or trailhead registration, so whether one is needed for this line is still unsourced. Peakbagger Tailgunner peak page (Wild Sky Wilderness listed as the area) and ascent list (182 entries); the two longest reports (2024, 288 words; 2026, 290 words) describe the Gunn Peak trail, river crossing and scramble with no mention of a permit or registration."
+  },
+  {
+   "kind": "item",
+   "id": "wa_three_queens_standard",
+   "fact": "One-way approach distance (dist_km 8.85 km = 5.5 mi) vs summit waypoint distMi 5.0 and itinerary 10 mi RT",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "Still real; the one figure for this East-summit line is a round trip (7.7 mi), which cannot be turned into the one-way dist_km or the summit pin's mileage without halving, and changing only the round trip would contradict both. One report gives 7.7 mi round trip (2,360-6,687 ft) for the East summit by the southeast shoulder from the Mineral Creek trailhead; the row's 10 mi / 4,600 ft belongs to a Middle Peak ascent by the south face. No one-way figure is published. Separately, Mineral Creek Trail 1331 is listed closed under the current Three Queens Fire order through October 31, 2026. PEAKBAGGER PASS: Peakbagger has one stated one-way figure for the Mineral Creek south-slopes line (4 mi, 4,331 ft, 5 h up), but adopting it would put the summit before the row's 4.5 and 4.8 mi pins and leave the 10 mi round trip and 4,600 ft gain needing computed changes, so nothing is patched. 2010 Three Queens ascent: Ascent Statistics 'Distance: 4 mi / 6.4 km', 'Gain on way in: 4331 ft', 'Route: South slopes/S gully/E ridge', 'Start Trailhead: Mineral Creek TH 2360 ft', 'Time: 5 Hours'; descent by NE ridge/N slope to S slope. Owner option: adopt 4 mi one way (dist_km 6.44, summit pin 4.0) and re-place the shoulder and ridge pins and the round-trip/gain figures by hand. Other peakbagger entries: 4,491, 3,891 (6.0 mi), 3,971 (North Ridge) and 4,495 ft gains."
+  },
+  {
+   "kind": "item",
+   "id": "wa_lizard_mountain_south_route",
+   "fact": "Approach mileage: itinerary days 1-3 (7.5 + 5.5 + 3 = 16 mi to White Rock Lakes) vs waypoints (Kool-Aid Lake 6.7 mi, White Rock Lakes 13.5 mi)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v013.json",
+   "prior_evidence": "The one stated leg (trailhead to Kool-Aid Lake 5.5 mi one way) matches neither the day-1 7.5 mi nor the 6.7 mi pin, and it would put the lake before the row's 5.7 mi Cache Col pin, while no source states the Kool-Aid to Yang Yang or White Rock Lakes legs; any change leaves the cumulative pins unsourced. Mapped hike listing 'Kool-Aid Lake via Cascade Pass Trail and Ptarmigan Traverse': 5.5 mi, one way, 3,307 ft gain. Park service: 3.7 mi to Cascade Pass. PEAKBAGGER PASS: Peakbagger's Lizard Mountain page has a single entry with figures (2,002 ft, 51.9 mi for a whole trip) and no leg mileages, so the day-by-day miles and the cumulative pins still have no stated source. Peakbagger Lizard Mountain ascent list (all years): one 2023 entry with 2,002 ft gain and 51.9 mi and no trip report; no other entry carries a report or figures for the Kool-Aid Lake, Yang Yang Lakes or White Rock Lakes legs."
+  }
+ ],
+ "fills": [
+  {
+   "kind": "fill",
+   "id": "wa_primus_peak_south_ridge",
+   "path": [],
+   "cleared_value": 15.3,
+   "cleared_in": "audits/route-leftovers/deep/out/d3.json",
+   "prior_evidence": "Not filled: the row was rebuilt around the Eldorado Creek / ice-cap approach, and no source states a one-way distance for that line; the 19 mi / 7,300 ft figures belong to the Colonial Creek side. The hiking database's Primus Peak page (19.0 mi round trip, 7,300 ft) starts at Colonial Creek Campground on SR-20, not Eldorado Creek; Eldorado-side reports (2003, 2016, 2024) give no mileage. PEAKBAGGER PASS: Peakbagger Primus ascents from the Eldorado side are multi-peak or camp legs; none states a one-way distance for this line. Primus Peak ascent list: Eldorado/ice-cap entries give legs (2,797 ft/4.4 mi, 2,701, 1,301 ft) or traverse totals (15,374 ft/37.2 mi North Klawatti); the 8,993 ft/10 mi (17.5 mi trip) entry is Thunder Creek, the other approach.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_primus_peak_south_ridge",
+   "path": [],
+   "cleared_value": 7300,
+   "cleared_in": "audits/route-leftovers/deep/out/d3.json",
+   "prior_evidence": "Not filled: the cleared 7,300 ft is the Colonial Creek (Thunder Creek) figure, and no source states a total gain for the Eldorado ice-cap line the row now describes. Only the Colonial Creek hike page states a gain (7,300 ft); the Eldorado-side reports give none. PEAKBAGGER PASS: No peakbagger ascent states a total gain for Primus by the Eldorado ice-cap line. Primus Peak ascent list: Eldorado-side gains are camp legs or multi-peak trip totals; the full-day figures (8,993 ft, 8,000 ft/24 mi, 7,901 ft/25.9 mi) are Thunder Creek / Borealis starts.",
+   "fact": "gain_ft",
+   "column": "gain_ft"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_primus_peak_south_ridge",
+   "prior_evidence": "Not filled: no source states the distance from the Eldorado Creek trailhead to Primus's summit. Eldorado ice-cap accounts describe the line by glaciers and cols without mileage; the cleared 11.5 came from the other approach. PEAKBAGGER PASS: No peakbagger ascent states the Eldorado Creek trailhead-to-Primus mileage. Primus Peak ascent list: no Eldorado-start ascent gives a trailhead-to-summit distance.",
+   "fact": "waypoints[1].distMi",
+   "column": "waypoints[1].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_spire_mountain_scramble",
+   "prior_evidence": "trailheadLat left null: the cleared value was the wrong trailhead (North Fork Skykomish), and no source gives a coordinate for the FR-63 pullout east of Galena. The peak page gives only the summit coordinate (47.86568, -121.40586) and road directions to the pullout; no source states the pullout coordinate. PEAKBAGGER PASS: Left null: no source states a coordinate for the FR-63 pullout, and reading one off a GPS track would be measuring. Peak pages give only the summit coordinate; a peakbagger GPS track's start point is a measured, not stated, coordinate.",
+   "fact": "approach_logistics.trailheadLat",
+   "column": "approach_logistics.trailheadLat"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_spire_mountain_scramble",
+   "prior_evidence": "trailheadLng left null: the cleared value was the wrong trailhead (North Fork Skykomish), and no source gives a coordinate for the FR-63 pullout east of Galena. The peak page gives only the summit coordinate (47.86568, -121.40586) and road directions to the pullout; no source states the pullout coordinate. PEAKBAGGER PASS: Left null: no source states a coordinate for the FR-63 pullout, and reading one off a GPS track would be measuring. Peak pages give only the summit coordinate; a peakbagger GPS track's start point is a measured, not stated, coordinate.",
+   "fact": "approach_logistics.trailheadLng",
+   "column": "approach_logistics.trailheadLng"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "prior_evidence": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 9.5 mi belonged to the old Hogsback-line position). The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points. PEAKBAGGER PASS: Peakbagger has a single Cockscomb Ridge entry among 3,320 Baker ascents, a 2023 attempt with no distance, so there is still no trailhead mileage for the ridge pins. Peakbagger Mount Baker ascent list (all years): one Cockscomb Ridge entry (2023-05-12), an attempt turned back at 8,600 ft; no distance or other stats.",
+   "fact": "waypoints[2].distMi",
+   "column": "waypoints[2].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "prior_evidence": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 11 mi belonged to the old Hogsback-line position). The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points. PEAKBAGGER PASS: No stated mileage to Cockscomb Tower on peakbagger. Only Cockscomb Ridge entry on peakbagger (2023 attempt) gives no distance.",
+   "fact": "waypoints[3].distMi",
+   "column": "waypoints[3].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "prior_evidence": "Left null: the pin was moved onto the Cockscomb Ridge itself, and no source states a trailhead mileage for it (the cleared 12.5 mi belonged to the old Hogsback-line position). The first-ascent account and route pages give elevations (foot of the ridge about 7,800 ft, Cockscomb Tower, summit plateau) and times, but no cumulative mileage from the Heliotrope Ridge trailhead to these points. PEAKBAGGER PASS: No stated trailhead-to-summit mileage for the Cockscomb line on peakbagger. Only Cockscomb Ridge entry on peakbagger (2023 attempt) gives no distance.",
+   "fact": "waypoints[4].distMi",
+   "column": "waypoints[4].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_vanishing_point",
+   "prior_evidence": "The live row now has only two pins (trailhead and Dolomite Tower), so there is no pin 2 to fill, and no source gives a mileage to the tower's base. Live waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: The live row now has only two pins (trailhead and Dolomite Tower), so there is no pin 2 to fill, and no source gives a mileage to the tower's base. Live waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower.",
+   "fact": "waypoints[2].distMi",
+   "column": "waypoints[2].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_vanishing_point",
+   "prior_evidence": "There is no pin 3 on the live row and no source gives a mileage to the top-out. Live waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: There is no pin 3 on the live row and no source gives a mileage to the top-out. Live waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower.",
+   "fact": "waypoints[3].distMi",
+   "column": "waypoints[3].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_saul_se_route",
+   "prior_evidence": "Not filled: the pin is an unnamed snow-line point on the Airplane Creek bushwhack, and no source gives a distance to it. The 2021 ascent gives trailhead to turnoff 4.5 mi, turnoff to lake 1.5 mi, lake to summit 1.5 mi; nothing places the snow line, and summing legs is not allowed. PEAKBAGGER PASS: Peakbagger's Saul reports give only leg distances (trailhead to turnoff 4.5 mi, turnoff to lake 1.5 mi, lake to summit 1.5 mi); none places the snow line, and summing legs is not allowed. Peakbagger 2021-09-12 report: '* Trailhead to turnoff, easy trail: 4.5 mi, 1200ft * Turnoff to Lake ... 1.5 mi, 2200ft * Lake to Summit ... 1.5 mi, 2000ft'; no snow-line position. Ascent list: other entries list only whole-trip gain/mileage (2024: 5,022 ft / 21.1 mi; 2025: 5,318 ft / 17 mi).",
+   "fact": "waypoints[3].distMi",
+   "column": "waypoints[3].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_saul_se_route",
+   "prior_evidence": "Not filled: no source gives a distance to the base of the upper east face. Sources give the lake-to-summit leg as 1.5 mi with no intermediate point; the cleared 5.2 was not sourced. PEAKBAGGER PASS: No peakbagger report gives a distance to the base of the upper east face; the 2021 report goes lake-to-summit in one 1.5 mi leg by the north-side ridge. Peakbagger 2021-09-12 report: lake to summit 1.5 mi, 2,000 ft via the ridge north of the lake, no intermediate point.",
+   "fact": "waypoints[5].distMi",
+   "column": "waypoints[5].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_austera_peak_chockstone_route",
+   "path": [],
+   "cleared_value": 6000,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v002.json",
+   "prior_evidence": "Not filled: 6,000 ft is the stated gain to the Eldorado high camp only, and no source states a total gain to Austera. The row's own approach and the sources give about 6,000 ft to the high camp and 1,280 ft more from camp to the summit; no single figure for the whole climb. PEAKBAGGER PASS: Not filled: no source states a total gain from the trailhead to Austera on this line. Peakbagger Austera ascents give camp-to-summit gains (537-1,621 ft) or multi-peak trip totals; the one 6,537 ft entry is the bare summit-minus-trailhead difference with no route named.",
+   "fact": "gain_ft",
+   "column": "gain_ft"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_storm_king_southwest_scramble",
+   "prior_evidence": "Not filled: the waypoint list was reworked, so the cleared 22.3 and 22.4 mi no longer map to the same pins (index 5 is now the summit, index 6 no longer exists), and no source states a one-way mileage to the summit. Sources give only round trips (about 40 mi via Thunder Creek to Park Creek Pass; 27.0 mi via the Park Creek route) and leg mileages to Two Mile camp. PEAKBAGGER PASS: Peakbagger's Storm King entries give round trips (40, 42, 42.3 mi) or segment figures, and the one 'way in' distance (42.3 mi over 2 days 19 h) is plainly a whole-trip figure, so there is still no stated one-way mileage to the summit. Peakbagger Storm King ascent list: round trips 40.0 mi (2019), 42 mi / 11,545 ft (2022), 42.3 mi / 6,980 ft entered as 'way in' with a 2 d 19 h time (2025), 15.7 mi SW Gully segment (2013), 21.0 and 9.2 mi entries without a route. None states a trailhead-to-summit distance.",
+   "fact": "waypoints[5].distMi",
+   "column": "waypoints[5].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_storm_king_southwest_scramble",
+   "prior_evidence": "Not filled: the waypoint list was reworked, so the cleared 22.3 and 22.4 mi no longer map to the same pins (index 5 is now the summit, index 6 no longer exists), and no source states a one-way mileage to the summit. Sources give only round trips (about 40 mi via Thunder Creek to Park Creek Pass; 27.0 mi via the Park Creek route) and leg mileages to Two Mile camp. PEAKBAGGER PASS: Index 6 no longer exists on the waypoint list, and peakbagger gives no one-way summit mileage in any case. Live row has waypoints 0-5 (5 is the summit); peakbagger Storm King entries give only round-trip or whole-trip distances.",
+   "fact": "waypoints[6].distMi",
+   "column": "waypoints[6].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_northeast_ridge_1963_route",
+   "prior_evidence": "This pin is the Base of C-J Couloir (now index 2); sources give only time from the road (15-20 minutes of brush past the crossing), not a distance, so it stays null. 'bushwhack 15 minutes and you're at the base of the C-J Couloir'; another report: 'walked up the road for less than a mile ... within 20 minutes our crampons were on'. No mileage to the couloir foot. PEAKBAGGER PASS: No peakbagger Johannesburg report states a distance from the road to the base of the C-J Couloir. Johannesburg reports read (2013, 2025 x2) give times and features at the C-J col, no mileage to the couloir foot.",
+   "fact": "waypoints[3].distMi",
+   "column": "waypoints[3].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_northeast_ridge_1963_route",
+   "prior_evidence": "This pin is the Hanging Glacier Traverse (now index 3); no source states a distance to it, so it stays null. Accounts of the NE Ridge give heights and times on the face, not mileage. PEAKBAGGER PASS: No peakbagger Johannesburg report states a distance to the hanging-glacier traverse. Johannesburg reports read give heights, times and features, no mileage on the face.",
+   "fact": "waypoints[4].distMi",
+   "column": "waypoints[4].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_cinderella_peak_scramble",
+   "prior_evidence": "No source states the trail distance from the Elbow Lake trailhead to the Green Creek climbers' trail turnoff; accounts say only that it leaves at a switchback near Hildebrand Creek (about 2,600 ft), and the row's own 'about 1.5 miles' is measured from the river crossing, not the car. Green Creek trip reports: 'a blazed climber's trail branching off of Elbow Lake trail at a switchback near Hildebrand creek'; 'The turnoff for the Green Creek Climber's Trail at the switchback was easy to find'. No mileage to the turnoff; measuring the published GPS track would be computed. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: No source states the trail distance from the Elbow Lake trailhead to the Green Creek climbers' trail turnoff; accounts say only that it leaves at a switchback near Hildebrand Creek (about 2,600 ft), and the row's own 'about 1.5 miles' is measured from the river crossing, not the car. Green Creek trip reports: 'a blazed climber's trail branching off of Elbow Lake trail at a switchback near Hildebrand creek'; 'The turnoff for the Green Creek Climber's Trail at the switchback was easy to find'. No mileage to the turnoff; measuring the published GPS track would be computed.",
+   "fact": "waypoints[1].distMi",
+   "column": "waypoints[1].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "path": [],
+   "cleared_value": 17.06,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "No source states a one-way distance from the Stuart Lake trailhead to the col; sources give the trail to Colchuck Lake (4 mi) and then about an hour of cairned path above the dam, with no mileage. Approach listing: 2,500 ft from the lake, about an hour from the dam to the col, no distance; trail pages give 4 mi to Colchuck Lake. The cleared 17.06 km was the round trip. PEAKBAGGER PASS: Peakbagger has no page for the col and Colchuck Balanced Rock search hits only Colchuck Peak ascents; no one-way distance to the col is stated. Web search of peakbagger for Colchuck Balanced Rock returned only Colchuck Peak ascent pages (different objective); no stated one-way trailhead-to-col distance.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_chair_peak_northeast_buttress",
+   "prior_evidence": "Not filled: the Planner reads summitTimeHrs as the climbing time from the base, and no source states that alone; the stated figure (6.2 hours up) is car-to-summit, and other reports give only clock times. Report: '6.2 hours up; 4.9 hours down', summit 6.2 hours from car; another: base at 8:15, climbing 8:45-11:30 to the false summit (a duration would be computed). PEAKBAGGER PASS: Peakbagger NE Buttress reports give car-to-summit and summit-to-car times, not the climbing time from the base, so summitTimeHrs stays null. 2019-08-08 NE Buttress ascent: ascent-statistics Time 7 h (car to summit), descent Time 5 h, 3,040 ft, 8 mi round trip; no base-to-summit time. 2018-08-05 NE Buttress report: long narrative, no times. About 20 NE Buttress ascents are listed.",
+   "fact": "timing.summitTimeHrs",
+   "column": "timing.summitTimeHrs"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_this_my_friend",
+   "path": [],
+   "cleared_value": 16.42,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v006.json",
+   "prior_evidence": "Not filled: no source states a one-way distance to this route's base below Aasgard Pass; the cleared 16.42 km was the round trip. Trail guides give the trail along Colchuck Lake (leaving it at mile 4.6) and an 11.15 mi out-and-back to Aasgard Pass; neither states the one-way distance to the route base. PEAKBAGGER PASS: This, My Friend is a rock route on Dragontail's flank below Aasgard Pass, not a summit ascent peakbagger logs, so no one-way distance to its base is stated there. Peakbagger logs summit ascents of Dragontail; the base of this route below Aasgard Pass is not a logged point.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_rock_mountain_west_route",
+   "prior_evidence": "No source states a trailhead-to-summit time for Rock Mountain by Trail #1587; sources give only round-trip times (about 6.75-7.5 h), and the cleared 8.5 h was the car-to-car total. Trail listings give the full out-and-back time; trip reports checked give no ascent time. PEAKBAGGER PASS: Not filled: the one stated ascent time on this trail (3 h 12 min, a fast spring snow ascent) would contradict the row's own schedule, which reaches the summit 4.5 hours after a 5 AM start. Peakbagger ascent 2026-04-25 by the Rock Mountain Trail: ascent-stat fields 'Distance: 3.5 mi', 'Time: 3 Hours 12 Minutes', gain on way in 4,176 ft; the row's schedule puts the summit at ~9:30 AM from a 5:00 AM start. Writing 3.2 h would create a new contradiction with that schedule, which no source restates.",
+   "fact": "timing.summitTimeHrs",
+   "column": "timing.summitTimeHrs"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_chair_peak_north_face",
+   "prior_evidence": "No source states a time to the summit; the report gives clock times for leaving the lot, the lake and returning (about 8 h 20 min car to car) but not the summit, so a value would be computed. Report: skinned out just after 4:00, lake 4:45, gear stash just after 6:00, left the base area 10:40, at the car 11:20; no summit time. PEAKBAGGER PASS: Not filled: no North Face ascent on peakbagger states a time to the summit. Peakbagger ascent list for Chair Peak (all years): eight North Face entries, all with 3-18 word reports or none except a 1999 account, which describes the climb and descent but gives no times or stats.",
+   "fact": "timing.summitTimeHrs",
+   "column": "timing.summitTimeHrs"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_iceman",
+   "prior_evidence": "Not filled: the crag's approach is published only as directions from the hairpin apex (trail to Spire Gully, dry creek bed, fixed-line slabs) with no distance. The route database's Ice Box Left Side page gives the approach by landmarks only; the cleared 1.8 mi was a Blue Lake figure. PEAKBAGGER PASS: Not filled: the approach to Ice Box Left Side is published by landmarks only, with no distance. Peakbagger lists peaks, not ice crags; the route database gives the approach by landmarks only.",
+   "fact": "waypoints[1].distMi",
+   "column": "waypoints[1].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_roofer_madness",
+   "path": [],
+   "cleared_value": 4200,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r049.json",
+   "prior_evidence": "Left null: no source states the approach gain to Waterfall Basin; the cleared 4,200 ft was shown to be far too high. The basin area page gives the basin at 2,659 ft and about 2 hours from parking; trail pages give gain only for the whole Squire Creek trail to the pass (2,566 ft over 8.5 mi round trip), which is not this approach. PEAKBAGGER PASS: Left null: no source states the approach gain to Waterfall Basin. Peakbagger lists peaks, not this crag; the basin area page gives only its elevation and approach time.",
+   "fact": "gain_ft",
+   "column": "gain_ft"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_bonanza_peak_north_ridge",
+   "prior_evidence": "Not refilled: the timing block now describes the camp-to-camp summit day (total 8.5 h), and putting the 5 h hike-in back would make the tiles add to 13 h again, recreating the contradiction it was cleared for. Parties left Holden Pass or Holden Lake camp and summited 4-4.5 h later; no source states a whole-trip total that would let the approach tile sit beside them. PEAKBAGGER PASS: Peakbagger lists no Bonanza ascent by the North Ridge among 244 entries, so there is still no stated hike-in time or whole-trip total that would let the approach tile return beside the 8.5 h camp-to-camp total. Peakbagger Bonanza Peak ascent list (all years, 244 entries): the only route field containing 'North' is 'PCT North/Lyman Lake' (a 75 mi through-trip); no North Ridge ascent with stated times.",
+   "fact": "timing.approachTimeHrs",
+   "column": "timing.approachTimeHrs"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_route_d",
+   "prior_evidence": "Not filled: the same Ice Box Left Side approach has no published distance from the hairpin. The route database's Ice Box Left Side page gives the approach by landmarks only; the cleared 1.8 mi was a Blue Lake figure. PEAKBAGGER PASS: Same Ice Box Left Side approach; no peakbagger page and no stated distance. Peakbagger search: 'Ice Box' pid 2018 is an Entiat Mountains summit, not the Washington Pass crag.",
+   "fact": "waypoints[1].distMi",
+   "column": "waypoints[1].distMi"
+  }
+ ]
+}

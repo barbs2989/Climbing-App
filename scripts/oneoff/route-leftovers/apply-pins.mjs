@@ -39,9 +39,19 @@ for (const [id, ops] of Object.entries(byRow)) {
     else if (o.op === "move_pin" && !(Number.isFinite(o.lat) && Number.isFinite(o.lng))) why = "move needs numeric lat/lng";
     else if (o.op === "move_pin" && summit && km(o.lat, o.lng, summit.lat, summit.lng) > 60) why = "new coordinate is >60 km from the route's summit";
     else if (o.op === "move_pin" && (!Array.isArray(o.sources) || o.sources.length < 2)) why = "a move needs 2 sources";
-    else if (!["move_pin", "remove_pin"].includes(o.op)) why = `unknown op ${o.op}`;
+    else if (o.op === "clear_coord" && /summit/i.test(w.type || "")) why = "a summit pin is moved, never cleared";
+    else if (!["move_pin", "remove_pin", "clear_coord"].includes(o.op)) why = `unknown op ${o.op}`;
     if (why) { report.rejected.push({ id, op: o.op, index: o.index, why }); continue; }
     if (o.op === "remove_pin") { removals.push(o.index); continue; }
+    // clear_coord: the row itself proves the coordinate impossible and no source gives the right one. The pin keeps
+    // its name and directions and renders as "No coordinate on file"; a line vertex on the old point goes with it.
+    if (o.op === "clear_coord") {
+      let dropped = 0;
+      if (Array.isArray(gpx)) { const n = gpx.length; gpx = gpx.filter(p => !(Array.isArray(p) && same(p[0], w.lat) && same(p[1], w.lng))); dropped = n - gpx.length; }
+      wps[o.index] = { ...w, lat: null, lng: null }; changed = true;
+      report.applied.push({ id, op: "clear_coord", index: o.index, name: w.name, gpx_vertices_dropped: dropped, why: o.why });
+      continue;
+    }
     const nw = { ...w, lat: o.lat, lng: o.lng };
     for (const k of ["elev", "elevFt"]) if (o[k] != null) nw[k] = o[k];
     let carried = 0;

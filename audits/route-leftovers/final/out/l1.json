@@ -1,0 +1,641 @@
+{
+ "results": [
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "kind": "item",
+   "fact": "Round-trip / total hiking distance",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Sources still disagree (7.5 mi RT on the hike page, ~5.5 mi RT on GPS reports, ~9 mi on another) and the row holds both camps (itinerary 7.5 mi vs waypoints 2.75 mi one way), so the keep-what-the-row-holds rule cannot pick one. Hike page: 7.5 mi RT / 4,900 ft. Other reports: ~5.5 mi RT, ~9 mi RT with 5,000+ ft. Each row value is backed by a differe",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_gunn_peak_southeast_route",
+   "kind": "item",
+   "fact": "Total elevation gain (gain_ft/loss_ft 4,700 vs itinerary gainFt/lossFt and totalNote 4,900)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: gain_ft 4,700 is backed by one two-day report and the itinerary's 4,900 ft by the hike page; the row holds both sourced values, so neither is changed. Hike page 4,900 ft; one report 4,700 ft; others 4,380 / 4,300 / ~3,940 / 5,000+ ft. PEAKBAGGER PASS: Peakbagger 2026 gains for Gunn scatter from about 3,950 to 5,525 ft, so neither 4,700 nor 4,900 is",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "kind": "item",
+   "fact": "Gain vs loss for an out-and-back route",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source gives a Fortress-only car-to-car gain or loss: the stated figures (about 20 mi / 8,000 ft; 22 mi / 6,000 ft) are for Fortress plus Chiwawa or a different outing. Archived 2004 two-peak report: ~20 mi RT, over 8,000 ft for Fortress plus Chiwawa. No Fortress-only figure found. PEAKBAGGER PASS: Peakbagger supports the stored gain_ft (an East",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "kind": "item",
+   "fact": "Round-trip distance",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a one-way distance to the West Face Wall; the only mileage on this line is the trail to Lake Ingalls, which stops short of the wall, so dist_km 7.2 is left. Lake Ingalls hike page gives 4.5 mi one way to the lake; route, first-ascent and forum accounts describe the walk past the lake toward Stuart Pass/Goat Pass in hours, not miles",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_southwest_ridge",
+   "kind": "item",
+   "fact": "dist_km (4.5 km) is the camp-to-Austera leg, not the one-way approach",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: The only stated Austera distance is the camp-to-summit leg (2.8 mi one way from the 7,600 ft Eldorado camp), which is exactly what dist_km already holds; no source states a trailhead-to-Austera one-way figure. Route database page: from the Eldorado camp at 7,600 ft, about 4 hrs one-way, 1,280 ft ascent, 592 ft descent, 2.8 miles. Encyclopedia page:",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stuart_north_ridge",
+   "kind": "item",
+   "fact": "Trailhead pin vs the approach the waypoints and itinerary describe",
+   "verdict": "already_fixed",
+   "summary": "The south-side Longs Pass and Goat Pass pins are gone; the live waypoints now run Stuart Lake Trailhead, North Ridge Base, Great Gendarme, summit, matching the north-side approach.",
+   "evidence": "Live row re-read 2026-10-02: waypoints = Stuart Lake Trailhead (0), North Ridge Base, Great Gendarme, Mount Stuart Summit; no Longs Pass or Goat Pass pin remains.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_spickard_southwest",
+   "kind": "item",
+   "fact": "Total one-way/round-trip distance",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Still real, and the one new figure found does not share the row's start point. An August 2026 report gives '7 miles back' from Ouzel Lake to the cars, but that party started at the Depot Creek trail 50 ft from the border, while the row starts at the Depot Creek Road washout (~2,600 ft) below it; other reports give only the 5.5 mi from the border ob",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_painted_mountain_scramble",
+   "kind": "item",
+   "fact": "Expected car-to-car time",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a car-to-car time for Painted Mountain, so the 6-9 h commitment and the 10 h timing stay as they are. The club route page and the peak page give 8 mi and 4,875 ft round trip without a time; the only summit timing found is about five hours up from one report, which is not a car-to-car figure. PEAKBAGGER PASS: No peakbagger report st",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_astral_projection",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "The land manager's Wild Sky page states only that the wilderness lies north of US 2 around Skykomish and borders the Henry M. Jackson Wilderness; it says nothing about this Tye Road crag or a permit rule for it, so the permit text stays.",
+   "evidence": "USFS Wild Sky Wilderness page: 'borders Henry M. Jackson Wilderness to the north and east. Access points are in the Skykomish, Washington area north of US Highway 2'; 'Some trailheads require a valid recreation pass'. No wilderness-permit rule, no mention of Tye Road or the crag. Deciding from the boundary map would be measuring. Live row unchanged: permit names Wild Sky while access.permit is 'N/A' and climbing_permit_required false.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness"
+   ],
+   "searched": [
+    "live row",
+    "USFS MBS Wild Sky Wilderness page",
+    "fs.usda.gov search: Wild Sky permit boundary"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_baring_mountain_south_route",
+   "kind": "item",
+   "fact": "round-trip distance: dist_km vs itinerary/approach_variants",
+   "verdict": "already_fixed",
+   "summary": "The route row no longer exists; it was deleted as a researched duplicate, so there is nothing left to reconcile.",
+   "evidence": "row.mjs returns 'no row wa_baring_mountain_south_route'; the id appears in the duplicate-deletion work merged as #2167.",
+   "sources": [],
+   "searched": [
+    "live row",
+    "git log"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "kind": "item",
+   "fact": "Total trip time vs its own approach/summit/descent legs",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Sources give days, not hours (two to three days with packs, or one long day light), and the timed reports disagree on legs, so neither the 36 h total nor the 5/3/4 h legs can be replaced. The peak's route page gives two to three days from Diablo with heavy packs or one long day travelling light, with no hours; other reports give about 10 h ridge ca",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "kind": "item",
+   "fact": "Mileage along the PCT to the stump/boot-path turnoff (4.6-5 mi vs 5.5-6 mi vs mile 5.75)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states the stump turnoff's mileage along the PCT; the row still carries 4.6-5 mi, 5.5-6 mi and mile 5.75 for it.",
+   "evidence": "Live row re-read: beta '4.6-5 miles', approach '~5.5-6 mi', approach_variants step 'Around mile 5.75'. Land-manager pages give PCT mileages to the Katwalk, not to this boot-path stump, so they cannot decide it.",
+   "sources": [],
+   "searched": [
+    "live row",
+    "prior evidence"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "kind": "item",
+   "fact": "Total elevation gain/loss vs the itinerary's own day-by-day figures",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a car-to-car gain to Iron Cap on this approach; the only figures are cumulative points along the way, and summing them would be computing. Archived 2017 report: Copper Lake 4.7 mi / 3,900 ft, viewpoint 6.8 mi / 4,900 ft, Big Heart 7.6 mi / 4,575 ft, ridge high point ~5,260 ft; no total to Iron Cap. PEAKBAGGER PASS: Peakbagger gives",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_east_face_6",
+   "kind": "item",
+   "fact": "Total elevation gain/loss for the route",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: One trip report for this exact line states 6,000 ft gained and lost over 19 miles, which supports the stored gain_ft/loss_ft, overview and totalNote, so they are kept; but the itinerary's day gains (1,850 + 3,080 = the TOTAL row's 4,930) have no per-day source to replace them, so the tab still disagrees with itself. A first-hand East Face trip repo",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_morning_star_peak_standard",
+   "kind": "item",
+   "fact": "total elevation gain: gain_ft 3,670 vs loss_ft 3,800 / itinerary 3,800 on an out-and-back",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Sources state 4,200, 3,850 and 3,700 ft for the drainage line; none states 3,670 or 3,800, so no stored value is supported and the disagreement cannot be settled. Club route page 4,200 ft; a club party's GPS 3,850 ft over 5.5 mi; a 2015 report 3,700 ft over 5.4 mi (from the prior pass). The archived summitpost pages found are photo pages with no st",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_horseshoe_peak_scramble",
+   "kind": "item",
+   "fact": "Day-2 (summit push and exit) duration",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: The one source gives day-2 legs (camp to summit 4-6 h, summit to trailhead 7-9 h) but no day-2 total, so days[1].hours and summitTimeHrs (10 h) cannot be set without adding legs. The club route page's trip profile lists camp to summit 4-6 h and summit to trailhead 7-9 h; the row's schedule (summit 9 AM from a 4 AM start, out by early evening) fits ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_thomson_west_ridge",
+   "kind": "item",
+   "fact": "Car-to-car total time vs its own schedule",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: One source's 11 h 15 min day supports totalHrs 11, but it started at 7:30 AM; making the 3:30 AM schedule end by 2:30-3 PM, or moving every row to that party's clock, would mean computing times the source does not state (the Katwalk and Bumblebee Pass times). A party left the car about 7:30 AM, reached the notch 4 h / 8.5 mi in, summited about 2 PM",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_denny_mountain_north_slopes",
+   "kind": "item",
+   "fact": "Permit: 'None required' vs 'self-issue day-use permit'",
+   "verdict": "unresolved",
+   "summary": "The land manager states the Alpine Lakes rule (free self-issue permit for day and overnight entry, May 15 to Oct 31) but not whether this ski-slope route enters the wilderness; and the other copy of the fact sits in access.fees, which may not be written, so nothing is changed.",
+   "evidence": "USFS MBS Alpine Lakes Wilderness pages: day-use and overnight visitors to the Alpine Lakes Wilderness fill out a free self-issue permit at trailheads, May 15 - Oct 31. No statement on Denny Mountain or the Alpental slopes. Live row: access.fees says no wilderness permit is needed because the route stays outside; access.permit says to fill out the permit because the boundary runs at the summit. Rewriting either side would need access.fees (forbidden) or a boundary judgement no page states.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/alpine-lakes-wilderness-mt-baker-snoqualmie",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations"
+   ],
+   "searched": [
+    "live row",
+    "fs.usda.gov search: Alpine Lakes self-issue permit Snoqualmie RD Denny"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_half_fast",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "The land manager's Wild Sky page states only that the wilderness lies north of US 2 around Skykomish and borders the Henry M. Jackson Wilderness; it says nothing about this Tye Road crag or a permit rule for it, so the permit text stays.",
+   "evidence": "USFS Wild Sky Wilderness page: 'borders Henry M. Jackson Wilderness to the north and east. Access points are in the Skykomish, Washington area north of US Highway 2'; 'Some trailheads require a valid recreation pass'. No wilderness-permit rule, no mention of Tye Road or Half Moon Crag. Live row unchanged: permit names Wild Sky while access.permit is 'N/A' and climbing_permit_required false.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness"
+   ],
+   "searched": [
+    "live row",
+    "USFS MBS Wild Sky Wilderness page",
+    "fs.usda.gov search: Wild Sky permit boundary"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_fury_east_southeast_glaciers",
+   "kind": "item",
+   "fact": "total elevation loss vs. gain and vs. the itinerary's own days",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a cumulative gain for East Fury alone; the totals found belong to longer itineraries (Luna-inclusive or survey trips), so neither gain_ft 6,200 nor the 13,000 ft figures can be settled. Whole-trip figures only: 40 mi with an elevation range, 54 mi with 10,000 or 15,000 ft, ~42 mi / 13,000 ft on a trip that also climbed Luna. descen",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_goode_mountain_megalodon_ridge",
+   "kind": "item",
+   "fact": "gain_ft 7,500 vs loss_ft 8,700 on a trip that returns to the same car; itinerary hike-out day shows 0 gain",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source gives a car-to-car gain or loss for the Megalodon Ridge loop, so neither figure can be set without computing from the days. The 2023 repeat report gives only segment distances (7 mi to the North Fork split, 2.5 mi more, 13 mi out); the route database and the first-ascent note give length and grade only. PEAKBAGGER PASS: Peakbagger lists n",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_berge_southwest_route",
+   "kind": "item",
+   "fact": "Waypoint distance jump at the summit",
+   "verdict": "already_fixed",
+   "summary": "The summit pin no longer jumps: the waypoint chain now runs 0 to 11.6 mi at the gully and 12 mi at the summit, which agrees with dist_km 19.31 (12 mi).",
+   "evidence": "Live row re-read 2026-10-02: waypoints Trailhead 0, ford 0.1, spring 4.4, Little Giant Pass 4.9, Napeequa junction 8.2, saddle 11.3, gully 11.6, Mount Berge 12. The old 7.5 -> 16.92 jump is gone. The land-manager trail page (Little Giant Trail #1518) states no distances, so nothing further was checked against it.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/little-giant-trail"
+   ],
+   "searched": [
+    "live row",
+    "USFS Okanogan-Wenatchee Little Giant Trail #1518 page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_goode_mountain_southwest_couloir",
+   "kind": "item",
+   "fact": "total elevation gain/loss",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a total gain for the Southwest Couloir by the Bridge Creek / North Fork approach; the totals found belong to other lines or exits. The reports surfaced give 9,200 ft for a Northeast Buttress ascent with a Park Creek / Stehekin exit (38.7 mi) and a 3,800 ft first day to a high camp; the 8,400 ft in gain_ft is also a Northeast Buttre",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tricouni_peak_southwest_slopes",
+   "kind": "item",
+   "fact": "Total gain: gain_ft 6862 vs itinerary 7,100 (5000+2000+100)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: The one detailed report gives 24 mi round trip and an elevation range (1,240-8,102 ft) but no gain; another gives 21 mi / 8,300 ft, which the row holds neither of; the summit-site trip report is the British Columbia peak. 2019 trip report: 'Round Trip: 24 miles, Elevation Range: 1240-8102'. One other report: 21 mi / 8,300 ft gain. PEAKBAGGER PASS: ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_the_triad_east_peak",
+   "kind": "item",
+   "fact": "Total gain figure",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: the disagreement is still there. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a cumulative gain for this line: the 2024 report gives only 9.3 mi round trip and an elevation range of 3,600-7,520 ft, and the 2022 East Ridge report gives time only. Hidden Lake trailhead report: 'Round Trip: 9.3 miles, Elevation Range: 3600-7520'. A 2022 East Ridge ascent gives 9-10 h round trip and no gain. A net difference wou",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "timing",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Left null: the cleared a 16-hour two-day timing block described the old Agnes Creek approach, and no source states a figure for the Ptarmigan Traverse line the row now describes. Rimrock Ridge has no published route description beyond the parties on record leaving the traverse at the Le Conte-Sentinel col and following the ridge east; no distance, ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Left null: the cleared 40.23 km described the old Agnes Creek approach, and no source states a figure for the Ptarmigan Traverse line the row now describes. Rimrock Ridge has no published route description beyond the parties on record leaving the traverse at the Le Conte-Sentinel col and following the ridge east; no distance, gain or time to its su",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Left null: the cleared 4,300 ft described the old Agnes Creek approach, and no source states a figure for the Ptarmigan Traverse line the row now describes. Rimrock Ridge has no published route description beyond the parties on record leaving the traverse at the Le Conte-Sentinel col and following the ridge east; no distance, gain or time to its su",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a time to the summit; the report says only that the descent took less than half the ascent time, so a value would have to be computed from the schedule. Trip report: 6.6 mi round trip, 1,280-6,259 ft, no times; peak page: no time. PEAKBAGGER PASS: Not filled: two North Ridge parties state ascent times of 5 h and 4 h 45 min, but eit",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states the distance from the road to this north-ridge point; the cleared value belonged to the old, misplaced pin. The one detailed report gives 6.6 mi round trip and an elevation range, and the peak page gives only the drive; neither states distances to points on the ridge. PEAKBAGGER PASS: Not filled: no source states the distance from ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bald_eagle_peak_scramble",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states the distance from the road to this north-ridge point; the cleared value belonged to the old, misplaced pin. The one detailed report gives 6.6 mi round trip and an elevation range, and the peak page gives only the drive; neither states distances to points on the ridge. PEAKBAGGER PASS: Not filled: no source states the distance from ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "The land manager's Chiwawa River Trail page gives only where the trail starts (1.5 mi up the Buck Creek Trail) and ends; no mileage for the river ford, so the pin stays empty.",
+   "evidence": "USFS Chiwawa River Trail #1550 page: 'The trail begins 1-1/2 miles up the Buck Creek Trail #1513 and ends at Red Mountain'; 'not maintained beyond the cut off to Chiwawa Basin'. No ford distance. Live waypoints[3] Chiwawa River ford distMi still null.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/chiwawa-river-trail"
+   ],
+   "searched": [
+    "live row",
+    "USFS Chiwawa River Trail #1550 page",
+    "USFS Trinity Trailhead search"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chiwawa_mountain_southwest",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "The land manager's Chiwawa River Trail page gives no mileage to the point where the route leaves the trail in the upper basin, so the pin stays empty.",
+   "evidence": "USFS Chiwawa River Trail #1550 page states only its start (1.5 mi up Buck Creek Trail #1513), end (Red Mountain) and that it is unmaintained beyond the Chiwawa Basin cutoff. Live waypoints[4] distMi still null.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/chiwawa-river-trail"
+   ],
+   "searched": [
+    "live row",
+    "USFS Chiwawa River Trail #1550 page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Still empty and nothing states it; note the pin has moved to waypoints[1] (the mid-wall hazard point), and the input's waypoints[4] index no longer exists on the live row.",
+   "evidence": "Live row: waypoints = hairpin pullout (0), Committing mid-wall position (distMi null), Liberty Bell summit (distMi null). No land-manager page states a distance from the hairpin to a point on the wall.",
+   "sources": [],
+   "searched": [
+    "live row",
+    "prior evidence"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_liberty_bell_independence_route",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Still empty and nothing states it; note the summit pin is now waypoints[2], and the input's waypoints[5] index no longer exists on the live row.",
+   "evidence": "Live row: Liberty Bell summit is waypoints[2], distMi null. No land-manager page states a hairpin-to-summit distance by the East Face line.",
+   "sources": [],
+   "searched": [
+    "live row",
+    "prior evidence"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_fortress_mountain_east_ridge",
+   "kind": "fill",
+   "fact": "timing.totalHrs",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Still null; the only stated time (9 h 16 min) is one runner's 25+ mile Fortress-Chiwawa speed traverse, and no source gives a typical car-to-car time for this route. Other sources describe it as a 2-day trip without an hour total. PEAKBAGGER PASS: The one peakbagger East Ridge ascent with stats gives only the time in (6 h 54 min) before continuing ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: The only stated gain (7,000 ft) is for the combined Mathias and Mercury climb, not this route alone, so gain_ft stays empty. The club's Mathias & Mercury route: 45 mi round trip, 7,000 ft, Hoh Ranger Station 17.2 mi to Glacier Meadows; it climbs both peaks. PEAKBAGGER PASS: Still empty: every peakbagger Mathias ascent with stats is part of a multi-",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_mathias_scramble",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a one-way distance to Mathias; the one total (45 mi) is a round trip for Mathias and Mercury together and may not be halved. Club Mathias & Mercury listing: 45 mi round trip. PEAKBAGGER PASS: Still empty: no source states a one-way distance from the Hoh trailhead to Mathias. Peakbagger Mathias ascents give only whole-trip or summit",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_king_kong_gorillas_direct_direct",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Not filled: the cleared 1,663 ft was provably too low, and no source states a car-to-car gain for the West Face Wall routes. Sources give the 2,500 ft gain to Lake Ingalls and the 900 ft route length, but nothing states the total for this climb; a sum would be computed. PEAKBAGGER PASS: No peakbagger entry covers the West Face Wall routes, so there",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Still null; no source gives a one-way distance to Three Fingers' Middle Peak. Sources give Goat Flats (4.5 mi of trail), the 16 mi lookout round trip, and road-walk additions, none for Middle Peak. PEAKBAGGER PASS: Peakbagger's Middle Peak page lists five ascents with no trip report, distance or gain, so there is still no one-way figure for Middle ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_fingers_r2",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Still null; no source states the trail mileage to the Middle Peak summit pin. No published distance to Middle Peak, one way or round trip. PEAKBAGGER PASS: No stated mileage to the Middle Peak summit on peakbagger either. Peakbagger Three Fingers - Middle Peak ascent list: five entries, no trip report, distance or gain stated.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_le_conte_mountain_northern_aspect",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a car-to-car gain for Le Conte; the only totals are for the whole Ptarmigan Traverse, and the cleared 1,500 ft is below the net rise. The traverse is quoted at about 11,000 ft over ~30 mi; the Cascade Pass trail alone is 1,700 ft in 3.7 mi. Nothing for Le Conte from Yang Yang Lakes and back out. PEAKBAGGER PASS: Peakbagger Le Conte",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_traverse_of_mount_index",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Not filled: no source states a total gain for the North-Middle-Main traverse; the stated totals are for the Main Peak alone or the Persis-Index traverse. Main Peak from Lake Serene: 5,500 ft (club route page); a Persis-Index trip: 6,391 ft. The traverse reports and the route database page give no total. PEAKBAGGER PASS: Peakbagger lists Persis-Inde",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cathedral_rock_standard",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: The club route page gives 'Trailhead to Summit 5-6' hours, a range rather than a single figure; picking a number inside it would be computed, so summitTimeHrs stays null (the row's schedule already shows the summit at +5.5 h, inside that range). Club route page for the Southwest Face: 'Times: 5-6 hr trailhead to summit'; trip profile 'Trailhead to ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states a one-way distance from Holden Village to Holden Pass or the summit, so dist_km stays empty; the one total found (14 mi) is a round trip and may not be halved. The club route page gives 14 mi round trip and only partial legs (Railroad Creek trail about 1 mi to the Holden Lake trail, then 4 mi to Holden Lake, then on to Holden Pass ",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_stuart_west_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: Still null; the route is a loop and no source states a one-way distance from the Esmeralda trailhead to the base of the West Ridge. Published figures are the 15-18 mi loop and Longs Pass / Ingalls Creek leg mileages; the West Ridge trip pages give times and camps but no one-way figure. PEAKBAGGER PASS: Still empty: no West Ridge ascent on peakbagge",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_rainier_liberty_ridge",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a figure or rule for this line; left as it is.",
+   "evidence": "Live row re-read 2026-10-02: field still null. This is a climbing-route total, leg or time that no land-manager page states for this line; earlier passes: No source states the distance from the White River trailhead to St. Elmo Pass; the park's route brief gives 3.5 mi to Glacier Basin camp and about 8 mi to Thumb Rock, and its key-waypoint table gives coordinates only. The cleared 0.5 belonged to a misplaced Mowich Lake pin. Park route description: 'follows the Glacier Basin Trail (3.5 miles) to the",
+   "sources": [],
+   "searched": [
+    "prior evidence only (not an access fact a land manager states)"
+   ],
+   "ops": []
+  }
+ ]
+}
