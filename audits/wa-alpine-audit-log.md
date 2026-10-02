@@ -29793,3 +29793,61 @@ destructive DELETE).
 
 Next batch continues after `wa_three_fingers_r2` in the id-ordered scope (see progress
 file for the next candidate list).
+
+## Batch 375 (2026-10-02, pass 6)
+
+Checked: wa_three_fingers_south_peak_lookout; wa_three_queens_middle_peak,
+wa_three_queens_west_peak (Three Queens); wa_tooth_and_claw (Lexington Tower);
+wa_tooth_chair_traverse (The Tooth → Chair Peak); wa_tower_mountain_southwest_route;
+wa_trapper_mountain_north_couloir; wa_traverse_of_mount_index. Direct fetches to Mountain
+Project/SummitPost/Wikipedia/Peakbagger are still blocked at the network/proxy level in
+this environment (org policy, not a tool restriction — confirmed via a raw `curl` to two
+of them), so every fact below was corroborated via WebSearch's indexed snippets of those
+same sites rather than a direct page read.
+
+Fixed 0. Flagged for human review (1): wa_tooth_and_claw's `pitches` (7) and `length_m`
+(244, i.e. ~800 ft) are internally inconsistent with each other against the two source
+camps that exist for this climb — the original 1990 AAC Publications report (closest to
+the 1989 Risse/Tower FA) calls it a seven-pitch route, while Mountain Project's current
+listing gives 8 pitches and 800 ft. Our stored `length_m` (800 ft) matches the *8-pitch*
+source, while our stored `pitches` (7) matches the *other* source — i.e. the row combines
+one figure from each side of a real disagreement rather than being self-consistent with
+either. No third source adjudicates which pitch count is current, so left both fields
+as-is rather than pick one arbitrarily.
+
+Clean (7): wa_three_fingers_south_peak_lookout — FA names (Harry Bedal, Harold Engles,
+Frank Benesh) confirmed close to verbatim against multiple sources including the Archives
+West "Harold Engles" collection title; the ~4 ft high_point_ft elevation spread this row's
+own `data_quality.gaps` already discloses (USFS/WTA 6,854 vs. other-survey 6,858) is a
+real, still-unresolved split, not newly found. wa_three_queens_middle_peak — 6,600 ft
+summit, Class 4 crux chimney, and "two 60-ft rappels" descent all matched a dedicated
+trip report (trailcatjim.com) for this exact route essentially verbatim. wa_three_queens_
+west_peak — 6,400 ft summit confirmed; gain_ft/loss_ft (5,300/5,300) and dist_km (12.8,
+i.e. ~8 mi one-way / ~16 mi round trip in this app's one-way convention) both matched the
+same source's trip-report figures exactly; the route's own "Spectacle Point" camp
+mentioned in its descent_text/overview is a real, different, higher place than the single
+"Spectacle Lake" (4,265 ft, confirmed via Wikipedia) waypoint actually stored — a waypoint
+coverage gap, not a wrong fact, so not treated as an error. wa_tooth_chair_traverse —
+Chair Peak's own high_point_ft (6,238 ft) confirmed exactly; the mandatory rappel "off
+Bryant" this row's own `corrections` field already resolved (Bryant Peak, a named
+subsidiary summit between The Tooth and Chair) remains correct and unchallenged by any
+new source. wa_tower_mountain_southwest_route — Wikipedia confirms an unnamed-surveyors
+1913 FA of the peak, matching this row's FA text; the 8,444-vs-8,445 ft spread is already
+self-disclosed in `data_quality.gaps`, not a new finding. wa_trapper_mountain_north_
+couloir — both the route's own FA (John Roper/Don Avreitt/Stu Ferguson, climbed 1970s)
+and the 2012 Stewart/Spoonde first ski descent credit confirmed verbatim; 7,530 ft summit
+confirmed (distinct from the peak's unrelated 1949 overall-FA party, which this row
+correctly doesn't claim). wa_traverse_of_mount_index — Main Peak's high_point_ft (5,991
+ft) matches Wikipedia exactly (Peakbagger's independent 6,002 ft is a real but smaller,
+already-familiar survey-vs-LiDAR-class spread, not adjudicated); North Peak's stored
+waypoint elevation (5,338 ft) is within 1 ft of Peakbagger's 5,337 ft; the FA (Beckey &
+Schoening, August 1950, two nights, done in sneakers) confirmed near-verbatim via AAC
+Publications and a CascadeClimbers thread.
+
+Next batch continues after `wa_traverse_of_mount_index` in the id-ordered scope (live
+id-ordered query, filtered client-side against each candidate's own `area_type`): next
+are wa_tricouni_peak_southwest_slopes, wa_true_grit_2 (Vesper Peak), wa_tupshin_peak_east_
+face, wa_tye_peak_e_route, wa_ultramega_ok (Burgundy Spire), wa_union_peak_se_route,
+wa_up_in_arms (Concord Tower), wa_upper_north_ridge_w_great_gendarme (Mount Stuart),
+wa_vasiliki_ridge_standard. (wa_vanishing_point sorts in between but is on crag-type
+`wa_dolomite_tower`, so out of scope.)

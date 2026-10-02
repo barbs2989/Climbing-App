@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 6,
-  "last_processed_id": "wa_three_fingers_r2",
+  "last_processed_id": "wa_traverse_of_mount_index",
   "total_in_scope_last_count": 698,
   "total_wa_alpine_or_mountaineering_tagged": 747,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 374. Next after wa_three_fingers_r2 (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_three_fingers_south_peak_lookout, wa_three_queens_middle_peak, wa_three_queens_west_peak, wa_tooth_and_claw, wa_tooth_chair_traverse, wa_tower_mountain_southwest_route, wa_trapper_mountain_north_couloir, wa_traverse_of_mount_index. (wa_thunder_mountain_north_face on crag-type \"Thunder Mountain and Slippery Slab Tower\" and wa_tower_arete on crag-type \"North Face Tiffany Mountain\" sort nearby but are out of scope -- area_type != 'peak'.)",
+  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 375. Next after wa_traverse_of_mount_index (live id-ordered query, filtered client-side against each candidate's area_id to avoid the area_type join timeout): wa_tricouni_peak_southwest_slopes, wa_true_grit_2 (Vesper Peak), wa_tupshin_peak_east_face, wa_tye_peak_e_route, wa_ultramega_ok (Burgundy Spire), wa_union_peak_se_route, wa_up_in_arms (Concord Tower), wa_upper_north_ridge_w_great_gendarme (Mount Stuart), wa_vasiliki_ridge_standard. (wa_vanishing_point sorts nearby but is on crag-type 'wa_dolomite_tower', out of scope.)",
   "batches": [
     {
       "batch_number": 1,
@@ -7511,6 +7511,25 @@
       "clean": 8,
       "sql_file": "audits/sql/2026-10-02-batch-374.sql",
       "note": "Fixed 2 (3 statements): wa_three_fingers_r1 (North Peak) high_point_ft 6870->6832, matching this row's own summit waypoint (also corrected 6870->6832) -- two independent sources (Peakbagger/USGS Whitehorse Mountain quad at 6832 ft, listsofjohn.com LiDAR at 6833 ft) converge within 1 ft of each other and well clear of the stored 6870; the main/South Peak lookout summit (areas.elevation_ft=6865 on wa_three_fingers) was separately re-confirmed correct against Peakbagger's 6865.4 ft and left untouched. wa_the_west_face (North Early Winters Spire) fa misspelled first-ascensionist 'Beckstad' -> 'Beckstead', confirmed by three independent sources (SummitPost, TheCrag, SuperTopo) for the June 17, 1965 Beckey ascent; FFA credit (Risse/Tower, 1985) unchanged and already correct. Clean (8): The Tooth's four routes (Tooth Fairy, Indentured Servant, Northeast Slabs, South Face) all had their stored elevation (5606 ft), FAs (Nelson/Whitelaw 2019; Nelson/Stevenson 1982; Anderson/Wunderling 1928) and grades independently corroborated via Mountain Project/SummitPost/Wikipedia with no discrepancy. The Triad's two routes (East Peak, Traverse) store high_point_ft 7520, matching Wikipedia's 'East Peak 7,520+ ft' contour figure (the Middle Peak is the true highest point at the same 7,520+ contour per a corroborating trip-report title, but this audit's two routes are East-Peak-specific and not mis-attributed to Middle). wa_this_my_friend (Dragontail Peak) FA (Andy Wyatt & Chris Potts, Aug 2020, ground-up onsight car-to-car) and grade (5.10a) matched Mountain Project exactly. wa_three_fingers_r2 (Middle Peak) high_point_ft 6800 vs. the authoritative 6796-6796.5 ft (Peakbagger/listsofjohn) is within ordinary rounding tolerance and not treated as an error. `npm run check:sql` ran clean against this batch's file (all 3 write targets exist, no destructive DELETE)."
+    },
+    {
+      "batch_number": 375,
+      "date": "2026-10-02",
+      "route_ids": [
+        "wa_three_fingers_south_peak_lookout",
+        "wa_three_queens_middle_peak",
+        "wa_three_queens_west_peak",
+        "wa_tooth_and_claw",
+        "wa_tooth_chair_traverse",
+        "wa_tower_mountain_southwest_route",
+        "wa_trapper_mountain_north_couloir",
+        "wa_traverse_of_mount_index"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 1,
+      "clean": 7,
+      "sql_file": null,
+      "note": "Flagged (1, not fixed): wa_tooth_and_claw's pitches (7) and length_m (244, ~800ft) each match a DIFFERENT side of a real source conflict -- the original 1990 AAC Publications report calls it 7 pitches, Mountain Project's current listing gives 8 pitches/800ft -- so the stored row is internally self-inconsistent with either single source; no third source adjudicates, left both as-is. Clean (7): wa_three_fingers_south_peak_lookout (FA names Bedal/Engles/Benesh confirmed verbatim incl. via the Archives West 'Harold Engles' collection title; its own data_quality.gaps already discloses the 6854-vs-6858ft high_point_ft spread, not new); wa_three_queens_middle_peak (6600ft summit, Class 4 chimney, two 60-ft rappels all matched a dedicated trailcatjim.com trip report for this exact route); wa_three_queens_west_peak (6400ft summit confirmed; gain_ft/loss_ft 5300/5300 and dist_km 12.8 matched the same trip report exactly; its 'Spectacle Point' camp mentioned in descent_text/overview is a real place distinct from the single stored 'Spectacle Lake' 4265ft waypoint -- a waypoint-coverage gap, not a wrong fact); wa_tooth_chair_traverse (Chair Peak high_point_ft 6238ft confirmed exactly; the Bryant Peak rappel this row's own corrections field already resolved remains correct); wa_tower_mountain_southwest_route (1913 unnamed-surveyors FA confirmed via Wikipedia; 8444-vs-8445ft spread already self-disclosed in data_quality.gaps); wa_trapper_mountain_north_couloir (route FA Roper/Avreitt/Ferguson 1970s + 2012 Stewart/Spoonde first ski descent both confirmed verbatim; 7530ft summit confirmed); wa_traverse_of_mount_index (Main Peak high_point_ft 5991ft matches Wikipedia exactly; North Peak waypoint 5338ft within 1ft of Peakbagger's 5337ft; FA Beckey/Schoening Aug 1950, two nights, in sneakers, confirmed near-verbatim via AAC Publications/CascadeClimbers). Direct fetches to Mountain Project/SummitPost/Wikipedia/Peakbagger are still blocked at the network/proxy level in this environment (confirmed via raw curl, not just the WebFetch tool), so every fact was corroborated via WebSearch's indexed snippets rather than a direct page read."
     }
   ]
 }
