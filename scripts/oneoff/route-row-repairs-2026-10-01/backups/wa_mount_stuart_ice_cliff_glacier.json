@@ -1,0 +1,52 @@
+{
+ "id": "wa_mount_stuart_ice_cliff_glacier",
+ "name": "Ice Cliff Glacier",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3400,
+   "directions": "The trailhead sits at the end of Eightmile Road (FR 7601), reached off Icicle Creek Road (FR 7600), at about 3,400 feet. In early season the road is sometimes snowed over or gated below the trailhead, which adds roughly two and a half miles of road walking or skinning before the trail itself begins."
+  },
+  {
+   "lat": 47.49742,
+   "lng": -120.86218,
+   "name": "Climbers' trail junction (east of Mountaineers Ridge)",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null,
+   "directions": "Follow the Stuart Lake Trail about 2.5 miles to the Colchuck Lake junction and stay right for Stuart Lake. About a mile to a mile and a half farther, the trail turns uphill and begins switchbacking away from Mountaineer Creek; that turn is where you leave it and stay low in the valley bottom on the climbers' path."
+  },
+  {
+   "lat": 47.483,
+   "lng": -120.895,
+   "elev": 7000,
+   "name": "Ice Cliff Glacier base bivy",
+   "type": "Campsite",
+   "distMi": null,
+   "elevFt": 7000
+  },
+  {
+   "lat": 47.475118,
+   "lng": -120.903144,
+   "elev": 9415,
+   "name": "Mount Stuart Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 9415,
+   "directions": "Gain the moraine and follow it to the toe of the North Ridge at about 6,600 ft, then cut hard left and traverse beneath the ice cliff without stopping. Pass the icefall on whichever flank is in condition, cross the cirque and the bergschrund to the couloir, and climb about 1,000 ft of it, taking the right fork, to the cornice exit near 8,600 ft. Traverse south of the false summit and follow the ridge to the top."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 47.475118,
+  "peakLng": -120.903144,
+  "trailhead": "Stuart Lake Trailhead (Trail #1599)",
+  "trailheadLat": 47.5282,
+  "trailheadLng": -120.82036,
+  "trailheadDirection": "From the Stuart Lake Trailhead (end of FR-7601 off Icicle Creek Road, ~3,540 ft), via the Mountaineer Creek drainage"
+ }
+}

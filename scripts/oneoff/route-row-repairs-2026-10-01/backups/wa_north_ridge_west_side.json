@@ -1,0 +1,50 @@
+{
+ "id": "wa_north_ridge_west_side",
+ "name": "North Ridge - West Side",
+ "approach_variants": [
+  {
+   "name": "Rainy Pass, the PCT north and the ridge above Porcupine Creek",
+   "camps": [],
+   "notes": "Follow the PCT north from Rainy Pass about a mile and a half, to just before the Porcupine Creek bridge, then climb the ridge northeast for about two miles to the base. The shorter way, with the cleaner gully to the base.",
+   "primary": true,
+   "storedRow": true
+  },
+  {
+   "name": "Cutthroat Lake and Cutthroat Pass",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 4500,
+      "name": "Cutthroat Creek trailhead",
+      "role": "main",
+      "type": "camp",
+      "notes": "The lot sits a mile up the forest road from SR 20 and has a vault toilet but no water. It is the start for Cutthroat Wall and for the Cutthroat Lake trail toward Cutthroat Pass, and some parties sleep here or in a pullout on the road in before a pre-dawn start, though the lot itself is signed for day use and how strictly that is read varies; dispersed camping in the trees along the forest road below is the uncontroversial option. Access is entirely gated by the SR 20 winter closure, and the road has been shut for construction windows in recent seasons, so confirm before driving out.",
+      "water": "None — no potable water at the trailhead. Cutthroat Creek runs below the lot and needs filtering.",
+      "permit": "No camping permit and no quota. Northwest Forest Pass, Interagency pass or a day pass covers parking. This is Okanogan-Wenatchee National Forest, NOT the national park, so there is no backcountry permit system here at all.",
+      "capacity": "Large gravel lot, roughly 20-30 vehicles; fills on summer weekends with larch-season hikers"
+     },
+     {
+      "elev": 4945,
+      "name": "Cutthroat Lake basin, outside the quarter-mile closure",
+      "role": "route",
+      "type": "camp",
+      "notes": "The lake sits about 1.8 miles in with roughly 500 ft of gain, in the basin under the peak's north and east sides. It is a pleasant place to stage, but the quarter-mile closure exists because the shoreline was being loved to death and it is enforced rather than advisory. It does not serve Cutthroat Peak's south-side routes or the usual North Ridge approach: those start from a different trailhead, a long pullout on SR 20 about 1.5 miles west of Washington Pass, and cross State Creek into the basin south of the peak, so for them treat this as a rest-day or bad-weather option rather than a staging camp.",
+      "water": "The lake and its inlet stream are dependable all season. Treat or filter.",
+      "permit": "No permit needed, but a hard rule applies: NO overnight camping within a quarter mile of Cutthroat Lake. Camp outside that radius and you are legal with no paperwork.",
+      "capacity": "Limited and regulated — the usable ground is set back from the water, so realistically a handful of small parties"
+     }
+    ],
+    "gainM": 701,
+    "distKm": 10.46,
+    "gainFt": 2300,
+    "outingShape": "outback",
+    "approachLogistics": {
+     "trailhead": "Cutthroat Lake Trailhead (FR-400, SR-20)",
+     "trailheadLat": 48.55635,
+     "trailheadLng": -120.65475
+    }
+   },
+   "notes": "The eastern way: on trail most of the way, to Cutthroat Lake and up to Cutthroat Pass, then south along the crest for about a mile."
+  }
+ ]
+}

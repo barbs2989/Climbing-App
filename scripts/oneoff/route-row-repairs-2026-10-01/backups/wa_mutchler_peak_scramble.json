@@ -1,0 +1,134 @@
+{
+ "id": "wa_mutchler_peak_scramble",
+ "name": "Mutchler Peak Scramble",
+ "waypoints": [
+  {
+   "lat": 48.466746,
+   "lng": -121.216722,
+   "elev": 1250,
+   "name": "FR-1570 Washout Parking (Cascade River crossing)",
+   "note": "Small pullout for 4-5 cars just past a washed-out culvert, 0.4 mi beyond the Cascade River bridge and 1.9 mi off Cascade River Road (FR-15) at mile 14.2 from Marblemount; FR-1570 is impassable to vehicles beyond here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Cascade River Road roughly 14.2 miles from Marblemount and turn onto FR-1570, signed for Kindy Ridge and Found Lake, crossing the Cascade River. Park at the washout just past the washed-out culvert — a small pullout with room for four or five cars at about 1,250 ft. FR-1570 is impassable to vehicles beyond this point and the old spur is permanently closed, so the hike starts on the abandoned roadbed near Vee Creek. Cascade River Road access is seasonal and typically gated in winter, and mid-July through September is when the lower slopes are clear enough to be worth the drive."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2300,
+   "name": "Overgrown Roadbed / Way-Trail Start",
+   "note": "The abandoned FR-1570 roadbed (brushy, several windfalls to step over) ends at the edge of an old clearcut where a steep, unmarked way-trail breaks off uphill toward Kindy Ridge.",
+   "type": "Junction",
+   "distMi": 3
+  },
+  {
+   "lat": 48.423474,
+   "lng": -121.246519,
+   "elev": 5116,
+   "name": "Way-Trail Knoll / Kindy Ridge Gain",
+   "note": "The steep boot path tops out on a knoll where the route gains the Kindy Ridge crest; footing is loose and the path is easy to lose in fog or low visibility.",
+   "type": "Junction",
+   "distMi": 4.2
+  },
+  {
+   "lat": 48.415587,
+   "lng": -121.252155,
+   "elev": 6100,
+   "name": "Kindy Ridge Climbers' Boot Path",
+   "note": "Point on the shared Kindy Ridge climbers' route used by Snowking/Buckindy parties; Mutchler's approach breaks off the ridge here toward Cyclone Lake basin rather than continuing toward Found Peak.",
+   "type": "Junction",
+   "distMi": 5
+  },
+  {
+   "lat": 48.4154578,
+   "lng": -121.2587309,
+   "elev": 5354,
+   "name": "Cyclone Lake Basin",
+   "note": "Largest and highest of the alpine lakes on Snowking's flanks; established rough campsites on the benches above the lake serve as the usual base camp for Mutchler's summit push, with reliable water from the lake and inlet tarns.",
+   "type": "Campsite",
+   "distMi": 6.3
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6800,
+   "name": "Heather/Rock Flank Below Summit Block",
+   "note": "Loose, exposed heather-and-rock slope gaining Mutchler's upper flanks — the Class 3 crux referenced in the route grade; can be slick when wet and is the same terrain used on descent.",
+   "type": "Hazard",
+   "distMi": 7.2
+  },
+  {
+   "lat": 48.38931,
+   "lng": -121.24848,
+   "elev": 7150,
+   "name": "Mutchler Peak",
+   "note": "True summit at 7,150 ft; open views west to Snowking Mountain's glaciers and south/east across the Buckindy group peaks (Sonny Boy, Bruseth, Misch, Buckindy).",
+   "type": "Summit",
+   "distMi": null
+  }
+ ],
+ "approach": "Park at the Cascade River Road washout roughly 14.2 miles from Marblemount, about 100 yards past the Cascade River crossing near the FR 1570 junction (signed for Kindy Ridge/Found Lake). The old FR 1570 spur is now permanently closed to vehicles, so the hike starts on the abandoned roadbed near Vee Creek at roughly 1,150-1,400 ft — parties note the washed-out culvert and downed timber (one log up to 4 ft across) blocking the road about 0.8 mile in. Follow the old road/boot path about 1.5-1.75 miles, crossing several windfalls, to an old firepit near a reliable creek (last easy water before the ridge). From the firepit the unmaintained climbers' path turns steep immediately, threading old-growth forest on exposed roots with occasional spur tracks around blowdown; expect the tread to fade into debris in places — this stretch to the Found Peak area (roughly 2.5 miles, gaining ~2,500-3,000 ft) is the main route-finding crux of the approach. The path dips to a broad saddle near 4,800 ft where the boot path is easy to lose; parties often end up scrambling 300-400 ft above the pass before relocating the trail, then follow it up through grass and boulders (~600 ft) into a meadow with Found Lake below (pools here are not reliably potable). From there the route climbs over Point 5695 and drops to a second saddle before joining Kindy Ridge proper: a broad, mostly open granite ridge combining faint tread and easy slab-hopping, steep but non-technical, with constant views toward Snowking Mountain, Mutchler Peak, and the Cyclone Lake basin. Camps are commonly made near 6,200 ft on the ridge or down at Cyclone Lake (a strikingly turquoise tarn-fed lake); a small stream south of the ridge camp and a tarn just above Cyclone Lake are the best water sources up high. From the ridge/Cyclone Lake basin, Mutchler Peak's summit block is reached by heather and blocky rock slopes rising out of the basin — moderate Class 2-3 scrambling with some loose rock near the top; no published figure gives the car-to-summit distance for Mutchler itself, but Snowking, reached by the same approach over Kindy Ridge, is roughly 16-18 miles round trip. Because the approach is entirely unmaintained (no official trail, no numbered Forest Service trail), competent off-trail navigation is required, and this is a long, full-day-plus approach — most parties treat it as an overnight rather than a single push.",
+ "itinerary": {
+  "cal": "Off-trail approach is brushy and best done once most snow has melted off the lower slopes, roughly mid-July through September; the Cascade River Road access is seasonal (typically gated/closed in winter).",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Kindy Ridge trailhead at the end of the South Fork Cascade River Road (#1570), follow the blocked/overgrown road then a steep, unmaintained way-trail up Kindy Ridge, staying east of the 5,116' knoll and continuing along Kindy-Found Ridge to a basin camp near Cyclone Pond (~5,450') or the Found Lakes. This is entirely off-trail route-finding through brush and steep timber for the upper portion.",
+    "hours": 7,
+    "miles": 7,
+    "title": "Approach to high camp",
+    "gainFt": 4300,
+    "lossFt": 200,
+    "packLb": 38,
+    "schedule": [],
+    "objective": "Reach a basecamp in the Found Lake / Cyclone Pond basin below the Snowking–Mutchler ridge"
+   },
+   {
+    "n": 2,
+    "note": "From camp, traverse south along the connecting ridge/basin terrain toward Mutchler Peak, the alpine high point of Snowking's long southeast ridge. Expect class 2-3 scrambling on the final summit block with route-finding over talus and possible snow patches through early summer; return to the same camp by the same line.",
+    "hours": 6.5,
+    "miles": 3.5,
+    "title": "Summit push to Mutchler Peak",
+    "gainFt": 2000,
+    "lossFt": 2000,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave high camp",
+      "detail": "Alpine start to have good snow/rock conditions and margin for route-finding."
+     },
+     {
+      "time": "+2.5 hr",
+      "label": "Gain the connecting ridge",
+      "detail": "Traverse basin and ridge terrain toward Mutchler's summit block."
+     },
+     {
+      "time": "+4 hr",
+      "label": "Summit Mutchler Peak (7,150')",
+      "detail": "Final scramble is class 2-3; watch for loose rock."
+     },
+     {
+      "time": "+6.5 hr",
+      "label": "Back at high camp",
+      "detail": "Reverse the ridge traverse and descent to camp."
+     }
+    ],
+    "objective": "Climb Mutchler Peak (7,150') and return to high camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and reverse the day 1 route back down Kindy-Found Ridge and the way-trail to the road end. Mostly downhill but still slow, brushy off-trail travel with a full pack.",
+    "hours": 5.5,
+    "miles": 7,
+    "title": "Hike out",
+    "gainFt": 200,
+    "lossFt": 4300,
+    "packLb": 32,
+    "schedule": [],
+    "objective": "Return to the Kindy Ridge trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip for most parties (in / summit / out): roughly 15-18 miles round trip with about 6,500 ft of cumulative gain, nearly all of it off-trail; strong, experienced parties familiar with the terrain sometimes compress this to 2 days."
+ }
+}

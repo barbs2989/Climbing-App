@@ -1,0 +1,132 @@
+{
+ "id": "wa_mount_sefrit_southwest_ridge",
+ "name": "Southwest Ridge",
+ "waypoints": [
+  {
+   "lat": 48.89401,
+   "lng": -121.65259,
+   "elev": 2140,
+   "name": "Nooksack Cirque Trailhead",
+   "note": "End of FR 34 (via Mt Baker Hwy SR 542, Hannegan Pass Rd FR 32, then FR 34); ford Ruth Creek immediately at the trailhead — no bridge, wade it or cross a downed log if present.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Glacier, drive Mt. Baker Highway (SR-542) east about 12.5 miles, then turn left onto Hannegan Pass Road (FR-32). Continue just over a mile to the junction with Nooksack Cirque Road (FR-34) and follow FR-34 one mile to its end at the Nooksack Cirque Trailhead, which is a different trailhead from the Hannegan Pass Trailhead further up FR-32. Ford Ruth Creek right at the trailhead — there's no bridge, so wade it or cross a downed log if one is present, and note that early-summer high water can make the crossing difficult or unsafe."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2700,
+   "name": "Leave Trail #750 roadbed",
+   "note": "About 50 minutes up the old logging roadbed (Trail #750), leave the trail and begin an ascending traverse up through forest toward Sefrit's west/southwest ridge — no path, route-finding required.",
+   "type": "Junction",
+   "distMi": 1.7,
+   "directions": "Ford Ruth Creek right at the trailhead (there is no bridge; wade it or use a downed log if one is present), then follow the old logging roadbed of Trail #750 up the North Fork Nooksack valley for about 50 minutes to around 2,700 ft, where you leave the trail."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3800,
+   "name": "Brushy ascending traverse",
+   "note": "Steep forest with slide alder and old avalanche debris on the traverse toward the ridge crest — slick brush and rotten downed timber slow travel on this south-facing approach.",
+   "type": "Hazard",
+   "distMi": 2,
+   "directions": "Leave the roadbed and start an unmarked ascending traverse up steep forest toward Sefrit's southwest ridge, through slide alder, old avalanche debris and rotten downed timber. There is no path, and route-finding is the main time sink of the day."
+  },
+  {
+   "lat": 48.8928628137931,
+   "lng": -121.60454046896551,
+   "elev": 5800,
+   "name": "5800' meadows on ridge crest",
+   "note": "Brush opens into subalpine meadows around 5800 ft on the ridge, giving easy open travel across to the summit gully — the same feature crossed by the parallel south-side route off this trailhead.",
+   "type": "Junction",
+   "distMi": 2.4,
+   "directions": "Keep traversing upward, passing through or around the cliff band, until the brush gives way to subalpine meadows on the ridge near 5,800 ft."
+  },
+  {
+   "lat": 48.89272066551724,
+   "lng": -121.5987330275862,
+   "elev": 6900,
+   "name": "Class 4 summit gully",
+   "note": "Loose, blocky Class 4 gully breaches the final rock band to the summit ridge; this is the gully down-climbed on the reverse descent.",
+   "type": "Hazard",
+   "distMi": 2.7,
+   "directions": "Cross the meadows east to the summit gully system above the cliff band. Where it forks, take the leftmost fork, the rock fork just west of a snow couloir on its right; the rock is solid low and loosens higher up."
+  },
+  {
+   "lat": 48.892,
+   "lng": -121.5942,
+   "elev": 7191,
+   "name": "Mount Sefrit summit",
+   "note": "Broad rocky summit block 4 miles north of Mount Shuksan, overlooking the Nooksack Cirque and North Fork Nooksack headwaters.",
+   "type": "Summit",
+   "distMi": 2.9,
+   "directions": "Climb the loose, blocky Class 4 gully through the final rock band onto the summit ridge and follow it a short way east to the broad, rocky summit."
+  }
+ ],
+ "itinerary": {
+  "cal": "Climbed June-September when Ruth Creek is fordable; snow may linger in the gully early season (axe/crampons useful), while late season favors a low, easy creek crossing but thicker brush.",
+  "days": [
+   {
+    "n": 1,
+    "note": "A long single-day outing: ford Ruth Creek, follow the old logging roadbed, then leave the trail for a brushy ascending traverse onto Sefrit's southwest ridge past a cliff band. Climb Class 4 rock into the upper gully system, taking the easiest (leftmost) fork to the summit ridge, then reverse the whole route to descend. Routefinding and brush in the approach/traverse are the main time sink, not the climbing itself.",
+    "hours": 12,
+    "miles": 5.8,
+    "title": "Car-to-car climb",
+    "gainFt": 5000,
+    "lossFt": 5000,
+    "packLb": 0,
+    "schedule": [
+     {
+      "time": "4:30 AM",
+      "label": "Leave trailhead",
+      "detail": "Ford Ruth Creek at the end of FR 34 (log crossing possible in low water); most parties start pre-dawn given the length of the day."
+     },
+     {
+      "time": "+50 min",
+      "label": "Reach end of old roadbed",
+      "detail": "Old logging roadbed gives easy walking before the trail runs out."
+     },
+     {
+      "time": "+2-3 hr",
+      "label": "Ascending traverse to the ridge",
+      "detail": "Leave the trail, thrash through brush/slide alder past a cliff band onto the west/southwest ridge proper - the slowest, most routefinding-dependent stretch of the day."
+     },
+     {
+      "time": "Midday",
+      "label": "Class 4 gully system",
+      "detail": "Enter the gully and take the easiest upper fork (leftmost, west of the snow couloir); one steep-but-clean Class 4 step is the technical crux."
+     },
+     {
+      "time": "~1-2 PM",
+      "label": "Summit (7,191 ft)",
+      "detail": "Cairned summit; views of Mt. Shuksan's north face and the Nooksack Cirque."
+     },
+     {
+      "time": "6-8:30 PM",
+      "label": "Back at trailhead",
+      "detail": "Descend by reversing the ascent; some parties rappel the Class 4 step from a large block on the SW side rather than downclimbing it."
+     }
+    ],
+    "objective": "Summit via the SW ridge/gully system and return to the trailhead"
+   }
+  ],
+  "totalNote": "A long single day car-to-car: roughly 10-14 hours, ~5,000 ft gain, ~5.8 mi round trip - no camp, done entirely in a day like the other standard routes on this peak."
+ },
+ "pitch_detail": [
+  {
+   "grade": "Class 2",
+   "notes": "Steep forest with dense brush and multiple stream crossings; requires careful navigation and 1.5+ hours",
+   "pitch": "Lower approach (2,950-4,500 ft)"
+  },
+  {
+   "grade": "Class 2-3",
+   "notes": "Open alpine terrain with mixed rock and scree; occasional steep snow couloirs in spring",
+   "pitch": "Mid-elevation alpine (4,500-6,000 ft)"
+  },
+  {
+   "grade": "Class 3-4",
+   "notes": "Final 100-150 feet of exposed Class 3 traversing, mixed rock and snow; cornice hazard near summit requiring careful negotiation",
+   "pitch": "Southwest Ridge to summit (6,000-7,191 ft)"
+  }
+ ]
+}

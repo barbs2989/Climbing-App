@@ -1,0 +1,46 @@
+{
+ "id": "wa_mount_shuksan_hanging_glacier",
+ "name": "Hanging Glacier",
+ "waypoints": [
+  {
+   "lat": 48.8595,
+   "lng": -121.648,
+   "name": "White Salmon Road (hairpin) TH",
+   "note": "Hairpin turn onto NF-3075 off SR542 near mile 51-52, just before the White Salmon Day Lodge.",
+   "type": "Trailhead",
+   "directions": "Drive the Mount Baker Highway (SR-542) to the town of Glacier and stop at the Glacier Public Service Center for the backcountry permit — it's required, not optional. Continue up SR-542 to around mile 51-52 and take the hairpin turn onto NF-3075 (White Salmon Road), just before the White Salmon Day Lodge, to the small pull-off at the old White Salmon Lodge site."
+  },
+  {
+   "lat": 48.8353,
+   "lng": -121.6019,
+   "name": "Hanging Glacier",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": 48.8353,
+   "lng": -121.6019,
+   "name": "Hanging Glacier",
+   "type": "Feature",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": 48.831095,
+   "lng": -121.602955,
+   "elev": 9127,
+   "name": "Mount Shuksan summit pyramid",
+   "type": "Summit",
+   "elevFt": 9127
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.8315,
+  "peakLng": -121.6032,
+  "trailhead": "White Salmon Day-Lodge Area (FR-3075, Mt. Baker Ski Area)",
+  "trailheadLat": 48.8595,
+  "trailheadLng": -121.648,
+  "trailheadDirection": "From the White Salmon day-lodge area on SR-542 (White Salmon Road, FR-3075), via the old roadbed into the White Salmon Creek drainage"
+ }
+}

@@ -1,0 +1,33 @@
+{
+ "id": "wa_mount_triumph_northeast_ridge",
+ "name": "Northeast Ridge",
+ "waypoints": [
+  {
+   "lat": 48.6537,
+   "lng": -121.3242,
+   "elev": 2700,
+   "name": "Thornton Lakes Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 2700,
+   "directions": "From Marblemount, drive SR-20 east about 11 miles and turn left onto Thornton Lakes Road between mileposts 117 and 118, just west of Newhalem. Follow this rough gravel road about 5 miles to the trailhead at road's end, around 2,700 ft; high clearance is recommended."
+  },
+  {
+   "lat": 48.70616,
+   "lng": -121.35567,
+   "elev": 7270,
+   "name": "Mount Triumph Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 7270,
+   "directions": "Hike the Thornton Lakes Trail to the ridge above the lakes and drop to the lake outlet. Follow the climbers' path past the middle lake, then climb a long, loose scree and talus gully northwest to the bivy col at about 5,800 ft. From the col, cross the glacier remnant on the east flank to the low notch in the Northeast Ridge, gain it by the ramp on its right, and follow the ridge to the summit."
+  }
+ ],
+ "approach": "From Marblemount, drive SR-20 east to the Thornton Lakes Road spur (near milepost 117, just west of Newhalem) and follow the rough, unpaved, high-clearance road about 5 miles to the Thornton Lakes Trailhead (~2,700 ft). Hike the Thornton Lakes Trail — an old logging-road grade for the first ~2 miles, then steeper trail up to the ridge/pass (~4,900 ft) above the lakes — then descend to the lake outlet (~4,400-4,486 ft). Traverse the brushy, sometimes-faint climbers' path around the east/south side of middle Thornton Lake, then climb a long, loose scree/talus gully (roughly 1,200 ft of gain) to a col around 5,750-5,840 ft that serves as the standard bivy site.",
+ "road": {
+  "name": "Thornton Lake Road (spur off SR-20)",
+  "status": "Rough, unpaved, unmaintained-for-winter forest road with loose gravel and deep washboard on switchbacks; high-clearance/4WD recommended, occasionally blocked by tree-fall",
+  "driveNote": "About 3.5 hours from Seattle via I-5 and SR-20 to Newhalem, then ~5 miles up Thornton Lake Road to the trailhead (~2,700 ft)",
+  "seasonalGate": "The trailhead sits west of Newhalem, before the North Cascades Highway's high-elevation closure gates, so it typically remains reachable even when SR-20 closes for winter over Rainy/Washington Pass (roughly early December to mid/late April)"
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "id": "wa_mount_blum_south_ridge",
+ "name": "South Ridge / Southeast Slopes",
+ "waypoints": [
+  {
+   "lat": 48.7507,
+   "lng": -121.556,
+   "elev": 800,
+   "name": "Baker River Trailhead",
+   "note": "End of Baker Lake Road (FR 11); Northwest Forest Pass or day-use fee required, trail 606 begins here.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Baker Lake Road (Forest Road 11) north from Highway 20 at milepost 82, near the town of Concrete, for about 25.5 miles to its end at the Baker River Trailhead. A Northwest Forest Pass or day-use fee is required, and there's a vault toilet on site. The Baker River Trail begins right there, at roughly 774 feet."
+  },
+  {
+   "lat": 48.755696,
+   "lng": -121.547686,
+   "elev": 850,
+   "name": "Baker River suspension bridge",
+   "note": "240-ft cable suspension bridge over the Baker River, about 10 minutes up the trail; cross here before leaving the maintained trail.",
+   "type": "Junction",
+   "distMi": 0.5,
+   "directions": "Hike the Baker River Trail #606 about half a mile, roughly ten minutes, to the suspension bridge over the Baker River."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 850,
+   "name": "Climbers' path departure",
+   "note": "Unmarked path leaves the trail ~175 yd downstream of the suspension bridge and ~25 yd upstream of the Blum Creek stringer bridge; easy to walk past.",
+   "type": "Junction",
+   "distMi": 0.6,
+   "directions": "Cross the suspension bridge and follow the trail downstream along the far bank about 175 yards. The unmarked climbers' path leaves the trail about 25 yards before the stringer bridge over Blum Creek and heads up the creek's north bank."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3300,
+   "name": "Blum Creek Ridge climb",
+   "note": "Relentlessly steep, brushy unmaintained shoulder through old-growth and huckleberry; faint tread, easy to lose especially in fog.",
+   "type": "Hazard",
+   "distMi": 2.5,
+   "directions": "Follow the faint path up Blum Creek's north bank through dense forest and devil's club; if you lose it, angle southeast to regain it near the creek. It then veers away from the creek and climbs the steep shoulder of Blum Creek Ridge to a narrow rock rib near 3,300 ft."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4900,
+   "name": "Ascending traverse north of Blum Lakes",
+   "note": "Ascending traverse along the south side of the ridge crests around here before dropping easily into the Blum Lakes basin.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Keep climbing the steep, brushy crest of Blum Creek Ridge on faint tread through old growth and huckleberry until the path begins an ascending traverse along the south side of the ridge crests."
+  },
+  {
+   "lat": 48.75001,
+   "lng": -121.49569,
+   "elev": 5003,
+   "name": "Blum Lakes (Middle Blum Lake)",
+   "note": "Established backcountry camp at the outlet of the middle of the ~6 Blum Lakes cirque lakes; last reliable water before the summit push.",
+   "type": "Campsite",
+   "distMi": 4.5,
+   "directions": "Continue the traverse along the ridge's south side through huckleberry brush and talus, then drop easily into the Blum Lakes basin. The usual camp is at the outlet of the middle lake."
+  },
+  {
+   "lat": 48.7516568,
+   "lng": -121.4903172,
+   "elev": 5720,
+   "name": "Snow couloir below south ridge saddle",
+   "note": "Class 3 gully from the lakes gains a 5,720-ft snow cirque lake, then a snow couloir climbs toward the ridge crest — carry an axe, can be firm early season.",
+   "type": "Hazard",
+   "distMi": 5.5,
+   "directions": "Climb the class 3 sandy gully above the lakes to the upper lake at about 5,700 ft, work around the lake, and head into the snow couloir that climbs toward the bowl below the south ridge. Carry an ice axe; the snow can be firm early in the season."
+  },
+  {
+   "lat": 48.754265,
+   "lng": -121.481835,
+   "elev": 7685,
+   "name": "Mount Blum summit",
+   "note": "True summit has a large cairn with a register dating back to 1945; final approach is blocky Class 3 scrambling along the east/south ridge.",
+   "type": "Summit",
+   "distMi": 7,
+   "directions": "Climb the couloir and granite slabs to gain the south ridge, then follow blocky class 3 scrambling along the south and southeast ridge to the broad summit plateau and the large cairn on the true summit. A grassy ledge right of the upper snowfield gives an easier finish."
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "wa_poltergeist_pinnacle",
+ "name": "Poltergeist Pinnacle",
+ "waypoints": [
+  {
+   "lat": 48.9102,
+   "lng": -121.5919,
+   "elev": 3110,
+   "name": "Hannegan Pass Trailhead",
+   "note": "From the end of the Hannegan Pass Road the route continues via Hannegan Pass, the Chilliwack valley, Easy Ridge and Perfect Pass (~6300 ft) before a multi-mile crossing of the Challenger Glacier to reach the pinnacle.",
+   "type": "Trailhead",
+   "elevFt": 3110,
+   "directions": "Drive the Mount Baker Highway (SR 542) east from Glacier about 12.5 miles, turn left onto the Hannegan Pass Road (FR 32) and follow it about 5 miles to the trailhead at its end, where a Northwest Forest Pass is required to park. That is the end of the driving. Come prepared for a genuine multi-day trip rather than a long day, since this is one of the most remote and weather-exposed corners of the North Cascades with essentially no bailout options once you are committed."
+  },
+  {
+   "lat": 48.883,
+   "lng": -121.5343,
+   "elev": 5080,
+   "name": "Hannegan Pass",
+   "note": "Trail crests here; drop east on the trail past Boundary Camp into the Chilliwack River valley toward Easy Ridge.",
+   "type": "Junction",
+   "distMi": 4.2,
+   "directions": "Hike the Hannegan Pass Trail about 4 miles up the Ruth Creek valley, climbing steadily through forest and then open slopes to Hannegan Pass, where the trail crests."
+  },
+  {
+   "lat": 48.8875,
+   "lng": -121.5236,
+   "elev": 4410,
+   "name": "Boundary Camp",
+   "note": "Camp at the head of the Chilliwack River valley, just east of and below Hannegan Pass.",
+   "type": "Campsite",
+   "distMi": 5.1,
+   "directions": "Drop east from the pass on the trail a little under a mile to Boundary Camp at the head of the Chilliwack River valley."
+  },
+  {
+   "lat": 48.84,
+   "lng": -121.345,
+   "elev": 6800,
+   "name": "Challenger Glacier Crossing",
+   "note": "Roped glacier travel across Challenger Glacier; crevasse hazard.",
+   "type": "Hazard",
+   "distMi": 14.5,
+   "directions": "Continue down into the Chilliwack valley, cross the river, and climb onto Easy Ridge, following its long, partly brushy climbers' path east. Cross the Imperfect Impasse, a moat-and-cliff notch that often needs a short low fifth-class downclimb, climb snowfields to camp at Perfect Pass, then rope up and traverse east around the Challenger Arm onto the Challenger Glacier."
+  },
+  {
+   "lat": 48.82361,
+   "lng": -121.34139,
+   "elev": 8200,
+   "name": "Poltergeist Pinnacle",
+   "type": "Summit",
+   "elevFt": 8200,
+   "directions": "Continue roped across the upper glacier toward the cirque below the subsidiary summits, picking out the tower by the huge dark shield streaked with pale dikes at its base. The climb starts in a clean dihedral just left of the shield, about 20 ft above the bergschrund, and the East Face pitches lead to the top."
+  }
+ ]
+}

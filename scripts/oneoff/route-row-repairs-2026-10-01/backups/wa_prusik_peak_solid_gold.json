@@ -1,0 +1,89 @@
+{
+ "id": "wa_prusik_peak_solid_gold",
+ "name": "Solid Gold",
+ "waypoints": [
+  {
+   "lat": 47.5282,
+   "lng": -120.82036,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 3400,
+   "directions": "The Stuart Lake Trailhead sits at the end of FS Road 7601, at about 3,400 feet."
+  },
+  {
+   "lat": 47.4803,
+   "lng": -120.8206,
+   "elev": 7841,
+   "name": "Aasgard Pass",
+   "type": "Junction",
+   "distMi": 5.5,
+   "elevFt": 7841,
+   "directions": "Hike the Stuart Lake Trail about 2.5 miles to the signed Colchuck Lake Trail junction, turn right, cross Mountaineer Creek and switchback 1.6 miles to Colchuck Lake at 5,570 ft. Boulder-hop the east shore to the boulder field at the south end, then climb Aasgard Pass, about 2,000 ft in 1.25 miles of loose scree and dirt, staying climber's left of the cliff bands, to the 7,841-ft pass."
+  },
+  {
+   "lat": 47.483,
+   "lng": -120.795,
+   "elev": 7000,
+   "name": "Core Enchantments",
+   "type": "Campsite",
+   "distMi": 7,
+   "elevFt": 7000,
+   "directions": "From the pass, drop gently east into the upper Core past Tranquil and Isolation Lakes and follow the cairned path down through the chain of lakes to the camps in the central basin."
+  },
+  {
+   "lat": 47.487,
+   "lng": -120.7848,
+   "elev": 7600,
+   "name": "Base of south face",
+   "type": "Junction",
+   "distMi": 7.6,
+   "elevFt": 7600,
+   "directions": "Leave the main basin path and scramble north over granite slabs on a faint path toward Prusik Pass and Gnome Tarn, then traverse to the left end of the south face. Solid Gold starts just right of the outside corner where the face turns onto the west side, on a right-leaning crack system leading to a stembox."
+  },
+  {
+   "lat": 47.4874,
+   "lng": -120.7846,
+   "elev": 8008,
+   "name": "Prusik Peak summit",
+   "type": "Summit",
+   "distMi": 7.7,
+   "elevFt": 8008,
+   "directions": "Climb five pitches, about 450 ft: right-leaning cracks to a roof, a hand crack, slab and a chimney with some loose rock, then a finishing corner crack. The route tops out on the West Ridge below the true summit, not on the summit itself."
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Aasgard Pass and the Core to the left flank of the south face",
+   "notes": "As for the rest of the face: Stuart Lake trailhead at about 3,600 ft, Stuart Lake Trail two and a half miles to the signed Colchuck Lake Trail junction, right and across Mountaineer Creek — a rock-hop or log crossing, and the last easy water for a while — then 1.6 miles of switchbacks to Colchuck Lake at 5,570 ft.\n\nBoulder-hop the east shore to the boulder field at the south end, then Aasgard Pass: 2,000 ft in 1.25 miles of steep loose dirt and scree, cairned when snow-free. In early season, and often into July, snow bridges a hidden creek and moat on the left side of the gully; people have been badly hurt and killed there postholing or glissading into it.\n\nFrom the pass at 7,841 ft, drop into the upper Core past Isolation and Tranquil Lake and continue cross-country a mile or so north over slabs and heather benches toward Prusik Pass and Gnome Tarn. The start is fifteen to twenty minutes from a Gnome Tarn camp.",
+   "distMi": 7.5,
+   "gainFt": 4600,
+   "season": "Roughly Jul-Sep",
+   "hazards": [
+    "Aasgard Pass: loose steep scree, and a hidden creek and moat under snow into early July with a fatal history",
+    "Avalanche on the pass in shoulder season",
+    "Loose rock past the chimney at mid-height",
+    "Natural, non-bolted rappel anchors on the north side shared with several routes; inspect and back up old tat",
+    "Cross-country navigation over slabs with no tread for the last mile",
+    "Core Zone camping requires a permit that most parties do not have"
+   ],
+   "primary": true,
+   "baseFinding": "Go to the outside corner and start just right of it. The left flank of the south face ends in an outside corner — the arête where the south face turns the corner onto the west side — and this route begins just to the right of it, on a right-leaning crack system leading to a stembox.\n\nThat corner is the anchor for the whole left end of the face, and the three routes here are placed off it:\n  - Left of the corner, on the west face proper: a line with a large roof at its base, sometimes called the Elephant Ear.\n  - Just right of the corner: this route.\n  - About 100 ft further right: another four-pitch line to the West Ridge.\nSo if you are under a roof, you have gone one route too far left; if you have walked a hundred feet right of the corner, one too far right.\n\nThe honest warning about where this route ends, because it is the best single check that you are on the left flank at all: this line and its immediate neighbours top out on the west ridge, not on the summit. Only the classic line at the middle of the face reaches the true summit. If you have come for the summit and started here, you have an extra scramble at the top and you started on the wrong route.\n\nSequence check: right-leaning cracks to a stembox, then a roof and hand-crack pitch, then slabby and wide ground past a chimney with loose rock, then a final splitter corner. Five pitches, about 450 ft. A seven-pitch line with two big V-features low down is Beckey-Davis, well to your right."
+  },
+  {
+   "name": "Snow Lakes and the lower Enchantments",
+   "trip": {
+    "distKm": 16.09,
+    "outingShape": "outback",
+    "approachLogistics": {
+     "trailhead": "Snow Lakes Trailhead",
+     "trailheadLat": 47.5441,
+     "trailheadLng": -120.7095
+    }
+   },
+   "notes": "The longer, more gradual way in from Icicle Creek Road: the Snow Lakes trail climbs past Nada and Snow lakes to Lake Vivianne, about ten miles with well over 5,000 ft of gain, looking straight at Prusik's south face. From Vivianne continue past the upper lakes to the base of the south face. It avoids the loose grind of Aasgard Pass at the cost of roughly two more miles and a thousand more feet."
+  }
+ ],
+ "approach": "From the Stuart Lake Trailhead (3,400 ft) at the end of FS Road 7601, follow the Stuart Lake Trail about 2.5 miles to the signed Colchuck Lake Trail (#1599A) junction. Turn right, cross Mountaineer Creek (a rock-hop/log crossing and the last reliable, easy water source for a while), and switchback up 1.6 miles through forest to Colchuck Lake (5,570 ft) — roughly 4.1 miles and 2,000 ft from the car. Boulder-hop along the lake's east shore to the boulder field at its south end (about 5.5 miles in, 2,500 ft gained), then pick up the climbers' trail/talus leading to the base of Aasgard Pass. Aasgard Pass itself gains about 2,000 ft in only 1.25 miles of steep, loose dirt and scree — physically the crux of the approach. It's cairned when snow-free, but in early season (often into July) snow can bridge a hidden creek/moat on the left side of the gully that has caused serious injuries and at least one fatality when climbers post-holed or glissaded into it; the slope is also avalanche-prone with a spring/early-summer snowpack. From the top of the pass (7,841 ft) descend gently into the upper Core basin past Isolation/Tranquil Lake, then continue cross-country roughly 1–1.5 miles north over granite slabs and heather benches toward Prusik Pass and Gnome Tarn (~7,400 ft); Prusik's south face and the Solid Gold start are about 15–20 minutes from a Gnome Tarn camp. Total is roughly 7.5–8 miles and 4,600 ft one-way from the trailhead. Overnight camping in the Core Zone requires an Enchantments lottery/walk-up permit, so many parties either link the whole climb car-to-car in a long day or secure a permit to camp at Gnome Tarn. When the Stuart Lake/Colchuck approach or Aasgard Pass is closed (wildfire, avalanche danger), the Snow Lakes Trail is a much longer (9+ miles one-way) but lower-angle alternative that eventually requires cross-country travel past Lake Viviane to reach the same south-face base."
+}

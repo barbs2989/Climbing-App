@@ -24,7 +24,12 @@
 //     a leg describing a junction the climber no longer passes is worse than an empty one;
 //   * the original columns are backed up before the first write and never overwritten after;
 //   * every PATCH goes through patchRow (exactly one row) and the row is re-read and compared —
-//     a 200 is not evidence the data changed.
+//     a 200 is not evidence the data changed;
+//   * an entry is applied at most ONCE: a ledger records each entry before and after its PATCH. A
+//     reorder that inserts or deletes is not idempotent — re-running a batch that crashed half-way
+//     inserted Painted Traverse's new pins a second time and deleted Black Mountain. A pending
+//     record (the PATCH may or may not have committed) is settled by comparing the live row.
+import crypto from "crypto";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -33,10 +38,21 @@ import { selectAll, patchRow } from "../lib/supabase-env.mjs";
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const file = process.argv[2];
 const APPLY = process.argv.includes("--apply");
+// --settle: for a batch that crashed part-way BEFORE the ledger existed. Plans each entry against its
+// backup (the row as it was before this entry's first write) and compares the live row: live == planned
+// result → records it done; live == backup → leaves it to apply; anything else → reports it for a human.
+const SETTLE = process.argv.includes("--settle");
 if (!file) { console.error("usage: apply-route-row-repairs.mjs <batch.json> [--apply]"); process.exit(1); }
 const batch = JSON.parse(fs.readFileSync(file, "utf8"));
 const BACKUP = path.join(HERE, "route-row-repairs-2026-10-01", "backups");
 fs.mkdirSync(BACKUP, { recursive: true });
+// jsonb re-sorts object keys, so compare canonically — a raw stringify reports a mismatch on
+// every jsonb column the write touched even when every value landed.
+const canon = (v) => JSON.stringify(v, (k, x) => (x && typeof x === "object" && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map((kk) => [kk, x[kk]])) : x));
+const LEDGER = path.join(BACKUP, "..", "applied.jsonl");
+const ledger = fs.existsSync(LEDGER) ? fs.readFileSync(LEDGER, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)) : [];
+const keyOf = (e) => crypto.createHash("sha1").update(e.id + "\n" + canon(e.ops || [])).digest("hex");
+const record = (r) => fs.appendFileSync(LEDGER, JSON.stringify({ ...r, at: new Date().toISOString() }) + "\n");
 
 // ── lint needles, lifted from the audits so there is one list ──────────────────────────
 const cit = fs.readFileSync(path.join(HERE, "..", "audit-prose-citations.mjs"), "utf8");
@@ -80,8 +96,16 @@ for (const entry of batch) {
     if (!/^[a-z][a-z0-9_]+$/.test(id)) throw new Error("bad id");
     const cols = [...new Set(ops.filter((o) => o.path).map((o) => parsePath(o.path)[0]).concat(ops.some((o) => o.op) ? ["waypoints"] : []))];
     for (const c of cols) if (!ALLOWED_COLS.has(c)) throw new Error(`column ${c} is not on the repair allowlist`);
-    const [row] = await selectAll("routes", "id,name," + cols.join(","), `id=eq.${id}`, { pageSize: 5 });
-    if (!row) throw new Error("no such route");
+    const [live] = await selectAll("routes", "id,name," + cols.join(","), `id=eq.${id}`, { pageSize: 5 });
+    if (!live) throw new Error("no such route");
+    let row = live;
+    if (SETTLE) {
+      const bf = path.join(BACKUP, id + ".json");
+      if (!fs.existsSync(bf)) { console.log(`SETTLE ${id}: no backup — never written`); continue; }
+      const b = JSON.parse(fs.readFileSync(bf, "utf8"));
+      if (cols.some((c) => !(c in b))) { console.log(`SETTLE ${id}: backup lacks a column this entry touches — never written by it`); continue; }
+      row = { ...live, ...Object.fromEntries(cols.map((c) => [c, b[c]])) };
+    }
     const orig = JSON.parse(JSON.stringify(row));
     const next = JSON.parse(JSON.stringify(row));
     const log = [];
@@ -145,10 +169,27 @@ for (const entry of batch) {
       log.push(`  reorder waypoints ${JSON.stringify(order)}${dropped.length ? `; DELETES ${dropped.map((i) => '"' + wps[i].name + '"').join(", ")}` : ""}`);
       next.waypoints = out;
     }
+    const key = keyOf(entry);
+    const seen = ledger.filter((r) => r.key === key);
+    if (seen.some((r) => r.state === "done")) throw new Error("already applied (ledger) — this exact entry landed in an earlier run");
+    const pend = seen.filter((r) => r.state === "pending").pop();
+    if (pend) {
+      const live = canon(Object.fromEntries(pend.touched.map((c) => [c, row[c]])));
+      if (live === pend.next) { if (APPLY) record({ key, id, state: "done", touched: pend.touched, next: pend.next, settled: true }); throw new Error("already applied — an earlier run crashed after its PATCH committed (ledger settled)"); }
+      if (live !== pend.orig) throw new Error("an earlier run crashed mid-write and the row now matches neither its before nor its after — inspect by hand");
+    }
     const touched = cols.filter((c) => JSON.stringify(orig[c]) !== JSON.stringify(next[c]));
     if (!touched.length) throw new Error("no effective change");
+    if (SETTLE) {
+      const snap = (o) => canon(Object.fromEntries(touched.map((c) => [c, o[c]])));
+      const L = snap(live);
+      if (L === snap(next)) { record({ key, id, state: "done", touched, next: snap(next), settled: true }); console.log(`SETTLE ${id}: LANDED — recorded done`); }
+      else if (L === snap(orig)) console.log(`SETTLE ${id}: NOT LANDED — safe to apply`);
+      else console.log(`SETTLE ${id}: MATCHES NEITHER — inspect by hand (${touched.join(",")})`);
+      continue;
+    }
     console.log(`${id} (${row.name}) — ${why}\n${log.join("\n")}\n`);
-    plans.push({ id, orig, next, touched });
+    plans.push({ id, key, orig, next, touched });
     ok++; changes += log.length;
   } catch (e) {
     refused++; console.log(`REFUSED ${id}: ${e.message}\n`);
@@ -162,13 +203,13 @@ for (const p of plans) {
   const bf = path.join(BACKUP, p.id + ".json");
   if (!fs.existsSync(bf)) fs.writeFileSync(bf, JSON.stringify(p.orig, null, 1));
   const body = Object.fromEntries(p.touched.map((c) => [c, p.next[c]]));
+  const snap = (o) => canon(Object.fromEntries(p.touched.map((c) => [c, o[c]])));
+  record({ key: p.key, id: p.id, state: "pending", touched: p.touched, orig: snap(p.orig), next: snap(p.next) });
   await patchRow("routes", p.id, body);
   const [back] = await selectAll("routes", "id," + p.touched.join(","), `id=eq.${p.id}`, { pageSize: 5 });
-  // jsonb re-sorts object keys, so compare canonically — a raw stringify reports a mismatch on
-  // every jsonb column the write touched even when every value landed.
-  const canon = (v) => JSON.stringify(v, (k, x) => (x && typeof x === "object" && !Array.isArray(x) ? Object.fromEntries(Object.keys(x).sort().map((kk) => [kk, x[kk]])) : x));
   const diff = p.touched.filter((c) => canon(back[c]) !== canon(p.next[c]));
   if (diff.length) { bad++; console.log(`MISMATCH ${p.id}: ${diff.join(",")} did not land`); }
+  else record({ key: p.key, id: p.id, state: "done", touched: p.touched, next: snap(p.next) });
 }
 console.log(`applied ${plans.length - bad} route(s), ${bad} mismatched. Backups in ${path.relative(process.cwd(), BACKUP)}`);
 process.exit(bad ? 1 : 0);

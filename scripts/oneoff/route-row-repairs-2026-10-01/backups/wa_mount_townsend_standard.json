@@ -1,0 +1,67 @@
+{
+ "id": "wa_mount_townsend_standard",
+ "name": "Mount Townsend Trail (standard)",
+ "approach": "Start at the Mt. Townsend Upper Trailhead (elev. ~3,300 ft), reached via Forest Road 27 off Penny Creek Road out of Quilcene — the trailhead has a small gravel lot and a Buckhorn Wilderness boundary sign where Trail #839 begins. From the lot, the trail climbs immediately into dense, heavily wooded old-growth forest via the first of three switchback sets; this opening stretch is the steepest sustained grade on the route (roughly 20% grade for the first ~3 miles) and stays shaded most of the way. After the initial switchbacks the trail eases through forest before a second switchback section, then a third set of steep, fully sun-exposed switchbacks that break out onto the crest of a ridge — this exposed stretch is the hottest, most water-demanding part of the hike in summer, so carry all the water you need (there is no reliable creek crossing directly on-trail; the small streams crossed in the first mile or so are often dry by late summer, so shallow Windy Lake by Camp Windy is the last water). At about 5,300 ft, roughly 2.3 miles in, an unmarked spur trail branches off to Windy Lake/Camp Windy, a common rest stop and the last reliable flat ground before the alpine section. Continuing on the main trail, at about 5,500 ft you reach the junction with the Silver Lakes Trail #842 — stay right (straight/uphill) to continue to the summit; the left fork toward Silver Lakes involves loose, unmaintained scrambling and is not the standard route. From this junction the forest opens into subalpine meadow and the trail's grade eases considerably for the final ~1 mile to the broad, flat summit ridge (6,282 ft), passing through increasingly open wildflower meadows with the last quarter-mile crossing mostly open, low-angle grassy/rocky tundra. No technical terrain or exposure is encountered on the standard route; the main hazards are heat/sun exposure on the third switchback set, lingering snow patches on the upper meadows into early summer (which can obscure the tread and create a slip hazard on a steep sidehill), and occasional route-finding uncertainty at the Silver Lakes junction if signage is missing.",
+ "waypoints": [
+  {
+   "lat": 47.8561,
+   "lng": -123.035621,
+   "elev": 3300,
+   "name": "Mount Townsend Upper Trailhead",
+   "note": "Small gravel lot at the end of FR 27/FR 190 in the Buckhorn Wilderness; no restrooms or potable water, limited turnaround for trailers.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 about 0.9 mile south of the Quilcene Ranger Station, bear right onto Penny Creek Road. In about 1.5 miles take the left fork onto Forest Road 27 and follow it about 10 miles to a junction; turn right for the upper trailhead, a small gravel lot at about 3,300 ft. No parking pass is required."
+  },
+  {
+   "lat": 47.85635817307692,
+   "lng": -123.03989592307693,
+   "elev": 3600,
+   "name": "Townsend Creek crossing",
+   "note": "Trail parallels Townsend Creek through old-growth with a thick rhododendron understory; last easy flowing water before the climb to Camp Windy.",
+   "type": "Water",
+   "distMi": 0.5,
+   "directions": "Start up Trail #839 at the Buckhorn Wilderness sign and climb the first switchbacks through old-growth forest with a thick rhododendron understory, alongside Townsend Creek, to the small creek crossing about half a mile up. It can be dry by late summer."
+  },
+  {
+   "lat": 47.857442,
+   "lng": -123.057851,
+   "elev": 5300,
+   "name": "Camp Windy",
+   "note": "Established camp reached after switchbacking through three ravines and an open meadow; an unmarked spur leads to Windy Lake for water.",
+   "type": "Campsite",
+   "distMi": 2.6,
+   "directions": "Continue on #839 through forest and a second set of switchbacks, then a steep, sun-exposed third set that breaks onto a ridge crest and open meadow. At about 5,300 ft an unmarked spur leads off to Camp Windy and Windy Lake, the last water."
+  },
+  {
+   "lat": 47.859129,
+   "lng": -123.058678,
+   "elev": 5500,
+   "name": "Silver Lake Trail junction",
+   "note": "Signed fork above Camp Windy; Silver Lake Trail splits left, stay right (uphill) for the Mount Townsend summit.",
+   "type": "Junction",
+   "distMi": 3,
+   "directions": "Back on the main trail, climb a short way above Camp Windy to the signed junction with the Silver Lakes Trail #842 at about 5,500 ft."
+  },
+  {
+   "lat": 47.86429428571429,
+   "lng": -123.05911088571428,
+   "elev": 6000,
+   "name": "Summit ridge headwall",
+   "note": "Steep open slope gaining the south summit ridge can hold consolidated snow into early summer and has been described as avalanche-steep in spring; carry an ice axe if snow lingers.",
+   "type": "Hazard",
+   "distMi": 3.6,
+   "directions": "Stay right and uphill on #839, leaving the Silver Lakes Trail to the left. The forest opens into subalpine meadow and the trail climbs to the open slope below the south summit ridge, which can hold snow into early summer."
+  },
+  {
+   "lat": 47.867445,
+   "lng": -123.059505,
+   "elev": 6280,
+   "name": "Mount Townsend South Summit",
+   "note": "True summit (higher than the north summit at 6,212 ft) on an open rocky ridge with panoramic Olympic and Puget Sound views; rock outcrops offer some wind shelter.",
+   "type": "Summit",
+   "distMi": 4,
+   "directions": "Climb the open slope onto the broad summit ridge and follow it north over grassy, rocky ground to the south summit, the true high point."
+  }
+ ]
+}

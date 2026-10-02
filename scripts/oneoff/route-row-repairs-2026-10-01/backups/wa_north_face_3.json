@@ -1,0 +1,94 @@
+{
+ "id": "wa_north_face_3",
+ "name": "North Face",
+ "approach_variants": [
+  {
+   "name": "Blue Lake Trail and the Concord-Lexington gully",
+   "hours": "1.5-2",
+   "notes": "Start at the Blue Lake Trailhead (~5,400 ft) on SR-20 just under a mile west of Washington Pass. Follow the maintained Blue Lake Trail until the terrain opens up — around a mile and a half to two miles — and pick up the well-established climbers' path branching left at a large cairn.\n\nFrom there, trend left of the line most parties take toward the Liberty Bell-Concord notch, and work up into the gully that separates Lexington Tower from Concord Tower. As you gain height in that gully a decent boot path shows up along its left side; use it. It brings you to the Concord-Lexington col.\n\nCarry water from the trailhead. Snowmelt trickles low in the basin dry up by mid-summer.",
+   "season": "Jul-Sep",
+   "hazards": [
+    "loose rock in the Concord-Lexington gully",
+    "lingering firm snow or névé in the upper gully into early summer — axe or traction useful",
+    "the descent uses slung horns rather than fixed anchors, so carry spare webbing"
+   ],
+   "primary": true,
+   "baseFinding": "The route does not start from the high point of the col. From the crest, move slightly west and drop a couple of feet: the first pitch begins at an obvious slanting, right-leaning crack in the Lexington side of the notch, and the 5.7 crux is the very first thing you climb — awkward moves straight off the ground. Follow the leaning crack for about 15 to 20 feet and it eases into stemming up a chimney at around 5.6. If your first moves are easy you are probably on the Concord wall opposite, which is the South Face of Concord and starts by walking gravelly ledges rather than pulling on a crack. A hard start on a right-leaning crack, just below and west of the col, is the confirmation."
+  },
+  {
+   "name": "Early-season snow to the Concord-Lexington col",
+   "hours": "1.5-2",
+   "notes": "Same approach, but the upper gully to the col commonly holds firm snow into early summer, which buries the boot path along its left side and turns the last stretch into a snow climb. Carry an axe, and crampons if it is refrozen.\n\nSR-20 is gated across Washington Pass through the winter — typically closing in late November or early December and reopening between mid-April and early May — so there is no drive-up access until the highway reopens.",
+   "season": "Highway opening through late Jun",
+   "hazards": [
+    "firm snow in the gully below the col",
+    "moat where snow meets the Lexington wall",
+    "SR-20 closed in winter — no vehicle access until reopening"
+   ],
+   "baseFinding": "With snow in the col the slanting crack that starts the route can be partly buried, and the couple of feet of drop west from the high point may instead be a step down into a moat. The feature to hold onto is that the start is on the Lexington side, slightly west of and just below the crest, at a right-leaning crack, and the hardest climbing of the first pitch is immediately off the deck. If snow has filled the crack's base, expect to start higher up it than the summer start and to be dealing with wet rock for the first body length."
+  }
+ ],
+ "approach": "Start at the Blue Lake Trailhead, a small pullout on SR-20 just west of Washington Pass. Follow the main, well-graded Blue Lake Trail through forest for about 1.5 miles. Watch for a cairned, well-worn climbers' boot path splitting off uphill to the left toward the Liberty Bell group cirque — this junction is easy to miss if you're not watching for it. From the split, the climbers' path steepens considerably, switchbacking up talus and heather benches beneath Concord and Lexington Towers. Budget roughly 1.5-2 hours and about 1,900-2,000 ft of gain from the trailhead to reach the Concord-Lexington col (the notch between the two towers), which is the start of the North Face route. Snowmelt trickles low in the basin can provide water in early season but are unreliable by mid-to-late summer — carry water from the trailhead. Lingering snow/firm névé in the upper gully approaching the col is common into early summer and may warrant an axe or traction.",
+ "waypoints": [
+  {
+   "lat": 48.518965,
+   "lng": -120.67436,
+   "elev": 5400,
+   "name": "Blue Lake Trailhead",
+   "note": "Signed USFS trailhead on SR-20 just under a mile west of Washington Pass; NW Forest Pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Park at the signed Blue Lake Trailhead on SR-20, a small lot just under a mile west of Washington Pass at roughly 5,400 feet. A Northwest Forest Pass is required at the trailhead kiosk. SR-20 is gated over Washington Pass each winter, typically closing in late November or early December and reopening between mid-April and early May, so there is no vehicle access until the highway reopens."
+  },
+  {
+   "lat": 48.515661,
+   "lng": -120.662634,
+   "elev": 6000,
+   "name": "Climber's path split (large cairn)",
+   "note": "About 2 mi up the maintained Blue Lake Trail the terrain opens up; leave the trail here on the well-cairned climber's path branching toward Liberty Bowl.",
+   "type": "Junction",
+   "distMi": 2,
+   "directions": "Follow the maintained Blue Lake Trail through forest about 1.5 to 2 miles, until the terrain opens up, to where a well-worn climbers' path branches off uphill to the left at a large cairn. The junction is easy to miss."
+  },
+  {
+   "lat": 48.514991,
+   "lng": -120.660321,
+   "elev": 6800,
+   "name": "Liberty Bowl scree/talus gully",
+   "note": "Climber's path climbs through heather and larch into loose scree and talus below Concord and Lexington Towers; watch for rockfall from parties higher in the gully.",
+   "type": "Hazard",
+   "distMi": 2.4,
+   "directions": "Take the climbers' path as it steepens, switchbacking through heather and larch onto talus below Concord and Lexington Towers, and aim for the gully that separates those two towers rather than the Liberty Bell-Concord gully."
+  },
+  {
+   "lat": 48.514489,
+   "lng": -120.658587,
+   "elev": 7350,
+   "name": "Concord-Lexington Col",
+   "note": "Broad notch between the two towers gained by zig-zagging the couloir; roughly 2.2 hrs and 1,950 ft above the trailhead, and the usual roping-up/rack-up spot.",
+   "type": "Junction",
+   "distMi": 2.7,
+   "directions": "Zig-zag up the loose scree and talus of the gully to the broad notch between Concord and Lexington Towers. The upper gully often holds firm snow into early summer, when an axe or traction is useful."
+  },
+  {
+   "lat": 48.514321,
+   "lng": -120.658008,
+   "elev": 7500,
+   "name": "Notch below summit ridge",
+   "note": "Top of pitch 2, a small nook right below the summit ridge where the route meets the base of the exposed 'Stegosaur' crest for pitch 3.",
+   "type": "Junction",
+   "distMi": 2.8,
+   "directions": "From the col, move slightly west and drop a couple of feet to a right-leaning crack on the Lexington side. Pitch 1 starts with the awkward 5.7 crux and eases into 5.6 chimney stemming to a large belay block; pitch 2 wanders right over blocky, mossy ground to the notch between the true and west summits."
+  },
+  {
+   "lat": 48.514154,
+   "lng": -120.65743,
+   "elev": 7560,
+   "name": "Lexington Tower summit",
+   "note": "True summit atop the knife-edge 'Stegosaur' ridge pitch; descend by downclimbing back to the notch then two single-rope rappels off slung horns to the col.",
+   "type": "Summit",
+   "distMi": 2.9,
+   "directions": "Scramble or lead the exposed, knobby 'Stegosaur' ridge crest from the notch to the true summit; many parties unrope here."
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "id": "wa_sky_mountain_s_route",
+ "name": "South Slopes Scramble",
+ "approach_logistics": {
+  "peakLat": 47.7461,
+  "peakLng": -121.0892,
+  "trailhead": "Skyline Lake Trailhead",
+  "trailheadDirection": "From the Stevens Pass Ski Area's north (uphill) lot, walk to the far east end of the parking area near the small gray electrical substation/WSDOT building — this is the unsigned Skyline Lake trailhead."
+ },
+ "waypoints": [
+  {
+   "lat": 47.7473,
+   "lng": -121.0885,
+   "elev": 4061,
+   "name": "Stevens Pass North Lot Trailhead",
+   "note": "Park in the large lot on the north side of US-2 at Stevens Pass; start near the small gray/red building and follow the gravel service road to its left - no parking fee or permit required.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive US 2 to Stevens Pass, about 65 miles east of Everett, and park in the large ski area lot on the north side of the highway. Walk to the small utility building near the east end of the lot, where the unsigned path begins. No parking pass is required."
+  },
+  {
+   "lat": 47.75459392727273,
+   "lng": -121.0955281090909,
+   "elev": 5050,
+   "name": "Service Road Y-Junction (5,050 ft)",
+   "note": "Service road flattens and forks here; leave the road and cut northwest on the climbers' path toward Skyline Lake rather than continuing straight.",
+   "type": "Junction",
+   "distMi": 0.85,
+   "directions": "Take the gravel service road on the left side of the utility building, passing beneath the powerlines (a steeper boot path across from the building cuts off the switchbacks). Stay left, then bear right, pass the vehicle gate about a quarter mile up, and keep climbing the road to where it flattens and forks at about 5,050 ft."
+  },
+  {
+   "lat": 47.75684,
+   "lng": -121.09786,
+   "elev": 5100,
+   "name": "Skyline Lake",
+   "note": "Trail skirts the lake's south shore; reliable water source and a popular winter camp for scout groups, but freezes over and can be walked across in snow season.",
+   "type": "Water",
+   "distMi": 1.1,
+   "directions": "Leave the service road at the fork and follow the faint, cairned climbers' path northwest through heather and huckleberry for about a quarter mile to the lake. Fill up here; there is no water beyond it."
+  },
+  {
+   "lat": 47.757175,
+   "lng": -121.099855,
+   "elev": 5200,
+   "name": "Ridge Gap NW of Skyline Lake",
+   "note": "Gain the gap on the Skyline/Heather Ridge crest just northwest of the lake - about 100 ft of extra climbing opens the first views north; this is where the route leaves the lake basin for the ridge. Coordinate is a geometric interpolation along the ridge bearing between Skyline Lake and the summit, estimated and not independently verified.",
+   "type": "Junction",
+   "distMi": 1.35,
+   "directions": "Follow the path along the lake's south shore, then climb about 100 ft to the gap in the ridge crest just northwest of the lake, where the views open to the north."
+  },
+  {
+   "lat": 47.758308,
+   "lng": -121.10573,
+   "elev": 5350,
+   "name": "Rocky Sub-Summit Traverse",
+   "note": "Route traverses below several loose, rocky high points on the undulating ridge crest; a few of the slopes here can slide in winter/spring snow, and most casual hikers turn back at the lower rocky sub-summit. Coordinate is a geometric interpolation along the ridge bearing between Skyline Lake and the summit, estimated and not independently verified.",
+   "type": "Hazard",
+   "distMi": 2,
+   "directions": "Follow the undulating ridge west, regaining height several times, and traverse beneath the band of loose, rocky high points on the crest."
+  },
+  {
+   "lat": 47.75918,
+   "lng": -121.11025,
+   "elev": 5482,
+   "name": "Sky Mountain Summit",
+   "note": "True summit at the end of the Skyline/Heather Ridge crest; only a faint climbers' path reaches it, with views to Tye Peak, Cowboy Mountain, and the Stevens Pass basin.",
+   "type": "Summit",
+   "distMi": 2.5,
+   "directions": "Beyond the rocky points, pass the lower sub-summit that most parties mistake for the top: make the steep traverse across its south side, then a short final climb to the true summit at the end of the ridge."
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Skyline Lake and the boulder garden",
+   "notes": "The start is unsigned: walk to the far east end of the Stevens Pass north lot, beside the small grey utility building, and take the gravel service road on its left beneath the powerlines. A steeper, faster boot path splits off directly across from that building and skips the road switchbacks. Stay left, then bear right shortly after; a vehicle gate blocks the road about a quarter mile up. Roughly 1.2 miles of steady climbing through forest and talus reaches Skyline Lake, which is the last water — carry what you need from there.",
+   "season": "July to October",
+   "hazards": [
+    "Loose, blocky talus in the boulder garden and along the ridge crest",
+    "Faint boot path beyond the lake, easy to lose in fog or at dusk",
+    "Steep heather and talus traverse below the true summit with real runout on a slip",
+    "Known avalanche terrain on the exposed south-facing slopes in winter",
+    "Little shade and no water past the lake"
+   ],
+   "baseFinding": "Pass Skyline Lake on its south side and keep going until the ground steepens; immediately before the first rocky scrambling you run into a garden of car- to house-sized blocks. That boulder field is the marker for the start of the climb and the main route-finding wrinkle on the whole approach — angle southwest through and around it to regain forest on the far side rather than committing to a line straight up the middle, and expect it to be slow and ankle-twisting when wet or snow-covered. Beyond it, gain the gap in the crest just northwest of the lake and follow the undulating ridge west, traversing beneath a band of rocky outcrops with the ridge repeatedly regaining elevation. The decoy sits at the far end rather than the near one: the ridge tops out at a lower, rockier sub-summit that most day-hikers take for the summit and turn around on. The true high point needs a steep traverse across the south side of that outcrop and a short final climb beyond it."
+  }
+ ]
+}
