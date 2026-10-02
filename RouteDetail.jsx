@@ -1484,7 +1484,7 @@ function CampSite({b,i}){
   const tone=(b&&{Camp:C.purple,Bivy:C.teal,Hut:C.amber}[b.kind])||C.purple;
   const DTONE={Capacity:tone,Water:C.blue,Permit:C.amber};
   const chip=function(c,bd){return {fontSize:11,fontWeight:700,color:c,background:C.surface,border:"1px solid "+bd,borderRadius:20,padding:"2px 9px"};};
-  return <div style={{background:C.card,border:"1px solid "+(open?tone+"66":C.border),borderLeft:"3px solid "+tone,borderRadius:12,marginBottom:10,overflow:"hidden"}}>
+  return <div style={{background:C.card,border:"1px solid "+(open?tone+"66":C.border),borderLeft:"3px solid "+tone,borderRadius:12,marginBottom:8,overflow:"hidden"}}>
     <div {...(more?clickable(function(){setOpen(!open);}):{})} aria-expanded={more?open:undefined} aria-label={more?((open?"Hide":"Show")+" camping detail for "+label):undefined} style={{padding:"11px 13px",cursor:more?"pointer":"default"}}>
       <div style={{display:"flex",alignItems:"flex-start",gap:10}}>
         <div aria-hidden="true" style={{width:30,height:30,borderRadius:8,background:tone+"22",color:tone,display:"flex",alignItems:"center",justifyContent:"center",fontSize:15,flexShrink:0}}>{"☾"}</div>
