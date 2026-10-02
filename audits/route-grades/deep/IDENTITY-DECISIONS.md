@@ -92,3 +92,23 @@ Per-row evidence and every source are in `out/i*.json`.
 - `wa_summertime` (DISTINCT, high): The flag is wrong. Mountain Project's route page for Summertime is a 5-pitch, 400-ft Grade II trad/alpine route, the crag's original line by JMK: P1 bolts at 5.10, a P2 corner, a P4 crux of 5.11c through a roof, then a slab finish. It is 4th from left, sharing its first bolts with routes 2 and 3. That matches this row, which is not merged with another route. The area list's 'Toprope 1-2 pitches' summary is what misled the flag.
 - `wa_johannesburg_mountain_northeast_buttress` (DISTINCT, medium): The 'NE Buttress' (V, 5.8, AI2: brushy lower buttress, rock band to a ~7,100 ft bivy, snow arete, an ice pitch) is the full modern line up the NE rib system. It follows the more prominent right-hand 1957 (Western Rib) start, while the 1951 route takes the left rib and is a separate line, so that sibling stays. Fix this row's fa so it no longer claims the 1951 history: it should name the 1957 Western Rib first ascent (party not found online).
 - `wa_the_chopping_block_south_route` (NOT_FOUND, low): Searched Mountain Project (Chopping Block lists only the Northeast Ridge, 5.5), the 1962 AAJ Southern Pickets article (1932 Degenhardt/Strandberg FA with no line described; 1961 Cooper/Denny route via the NW face), the Mountaineers route page, Wikipedia and Abegg's Southern Pickets reports (Northwest Route). No source names a 'South Route' or a 5.4 south-face line; the side the 1932 party climbed is not recorded online. If Beckey's guide confirms the 1932 line, keep it under his name; otherwise the 1932 FA could move to the peak's description and this row could be retired.
+
+## Applied 2026-10-01: duplicate merges and fold-ins
+
+`scripts/oneoff/route-identity-merge.mjs` deleted **34** duplicate / part-of rows. Before deleting, it checked every live table that holds a route id: climb_logs, content_reports, contributions, crews, gps_submissions, hazard_votes, objectives, route_base_checkins, route_difficulty_ratings, topo_lines, user_itineraries and user_lists. No row in any of them pointed at a dropped id.
+- **Carried to the kept row:** two facts, both onto empty columns.
+  - Summit Chief North Face: `pitches = 12`.
+  - Rahm South Side: the 1955 Hutton/Mason first ascent.
+- **Not carried:** peak first ascents and other faces' tags on the dropped rows. The research says they do not belong to the kept line.
+- **Restore:** `rollback-merges-1790914600836.json` holds every deleted row in full.
+- **Checks:** `check:counts` passes after the deletes.
+
+**Held, not deleted (7):**
+- `wa_fortress_mountain_northeast_face`: low confidence.
+- Six rows whose own beta must first be written into the kept page:
+  - `wa_davis_peak_nc_southwest`: a Southwest Face variation.
+  - `wa_little_tahoma_cowlitz_ingraham_glaciers`: the Paradise approach.
+  - `wa_whatcom_peak_southwest_route`: South Spur approach beta.
+  - `wa_whitehorse_mountain_r1`: conditions beta.
+  - `wa_bears_breast_mountain_se_mega_slab`: slab beta.
+  - `wa_southwest_scramble`: Pinnacle chute beta.
