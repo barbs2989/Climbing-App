@@ -1727,3 +1727,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       - Peepsight junction: undecidable.
       - Sulphur Creek crossing's height: nothing published contradicts it.
       Do not re-research these without new evidence.
+    - **LEFTOVERS (same day): Long's Pass placed from USGS GNIS on 5 routes.** USGS's own
+      place-names service answers where the commercial peak sites refuse fetches:
+      `carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query` with `gaz_id`, `outSR=4326`.
+      Feature 1528411 put the pass on both Sherpa routes (cleared in #2129, or never placed),
+      Cascadian Couloir and West Ridge (a 3-decimal rounding 0.37 mi south), and South Headwall
+      (0.85 mi off). These were written by the same script with `--dir=waypoint-elevation-leftovers`.
+      Stuart North Ridge was refused: its stored 3.5 mi cannot reach the real pass. GNIS has no
+      Middle Peak of Mount Index, so both Index pins stay cleared.

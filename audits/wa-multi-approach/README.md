@@ -14,6 +14,11 @@ researched online. The tables below are that first pass; what has since been WRI
 | batch 3: the 6 UNSURE re-researched (2 MULTI) | 2 | `link-multi-approach-batch2.mjs --batch batch3` |
 | leftovers: Kyes land manager, Huckleberry pin | 2 | `multi-approach-leftovers.mjs` |
 | leftovers 2: Megalodon, Huckleberry and Jack prose, Windy Peak pins | 5 | `multi-approach-leftovers-2.mjs` (values in `.json`) |
+| leftovers 3: the other two Goode rows' trailhead waypoint, Huckleberry timing note | 3 | `multi-approach-leftovers-2.mjs --set 3` |
+| leftovers 4: Adams Wilson Headwall made consistent, Storm King coordinate type | 2 | `multi-approach-leftovers-2.mjs --set 4` |
+| leftovers 5: Goode Southwest Couloir card elevation and loss | 1 | `multi-approach-leftovers-2.mjs --set 5` |
+| leftovers 6: Windy Peak gains Iron Gate as a third way in | 2 | `multi-approach-leftovers-2.mjs --set 6` |
+| leftovers 7: Adams day 1, Huckleberry grade text, Goode parking, Storm King approach + FA name | 6 | `multi-approach-leftovers-2.mjs --set 7` |
 
 Batch 2 re-researched the 68 medium/low MULTI_TRAILHEAD routes (60 MULTI, 4 SINGLE, 4 UNSURE;
 `wa_stanley_burgner` is not a row — the climb is `wa_prusik_peak_south_face_burgner_stanley`) and
@@ -42,10 +47,18 @@ side, while the north face looks onto North Fork Bridge Creek — check before a
 - Windy Peak: the Windy Creek row's "Cathedral Driveway" pin was Long Swamp's coordinate. That row and the standard row's Cathedral Driveway way in now carry the trailhead's own coordinate.
 - Kautz Creek (Point Success's second way in) was closed early in 2026 but is open with a washout and a log bridge, so it was left as it was.
 
-**Not touched.**
-- The two Goode sibling rows still carry a Rainy Pass trailhead waypoint at 48.5181,-120.7331, and Southwest Couloir's directions say "two miles east of Rainy Pass".
-- Huckleberry: `timing.sectionBreakdown[1].note` still says Huckleberry Flats, and its grade is Class 4 where the one source that grades the West Face says 5.6.
-- Windy Peak has three rows for one walk-up; retiring any of them is an owner decision.
+**Leftovers 3 and 4.**
+- Goode Northeast Face and Southwest Couloir: the first waypoint is now the Bridge Creek Trailhead pin, and the Couloir's text and way-in card now give the right distance from Rainy Pass, elevation and loss.
+- Huckleberry: the timing note now follows the West Route.
+- Adams Wilson Headwall: the approach, card, timing, itinerary, descent and sketch line now all use the east-side approach from Cold Springs to camp in Avalanche Valley, and the glaciers are named in the order you meet them.
+- Storm King North Face: its peak coordinate is now stored as numbers.
+
+**Closed in leftovers 6 and 7.**
+- **Storm King N Face:** the first-ascent write-up (1978) has the party camping on the south side below the Goode–Storm King saddle, rappelling onto the north-side glacier and going down it to the rock rib. The stored Park Creek approach was right; it now describes that, and the second climber's name is spelled as he wrote it.
+- **Adams Wilson Headwall:** no page states the miles, hours or gain from Cold Springs to Avalanche Valley, and the old day-1 loss of 0 was wrong. Those four numbers are blank. The `timing` hours are kept for the Planner.
+- **Huckleberry West Route:** the row's grade was already 5.6. Its timing, itinerary, hazards, rope note and summit note now say the same, and no longer mention the East Route's Huckleberry Flats.
+- **Goode parking:** the land manager charges at both Bridge Creek and Rainy Pass. All three Goode rows now say parking at Bridge Creek needs a pass; the Northeast Face row had said it was free.
+- **Windy Peak:** the three rows are kept, one per trail. The standard route now offers all three as ways in: Long Swamp, Cathedral Driveway, and Iron Gate with that row's own pin and Horseshoe Basin camp.
 
 | verdict | routes |
 |---|---|

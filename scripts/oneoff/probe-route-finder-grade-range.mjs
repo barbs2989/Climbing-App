@@ -39,13 +39,14 @@ for (const n of [10, 11, 12, 13]) {
   ok(gn >= at("5." + n + "a")[1] && gn <= at("5." + n + "d")[2], "bare 5." + n + " (" + gn + ") falls inside the 5." + n + "a–5." + n + "d range");
 }
 // Every discipline the finder lists either has a scale or is deliberately refused.
-const want = { sport: "yds", trad: "yds", toprope: "yds", bouldering: "v", scrambling: "class", aid: "aid,yds", mixed: "m,yds", ice: "wi,yds" };
+const want = { sport: "yds", trad: "yds", toprope: "yds", bouldering: "v", scrambling: "class,yds", mountaineering: "class,yds,wi", alpine: "yds,class,wi", aid: "aid,yds", mixed: "m,yds", ice: "wi,yds" };
 for (const [d, s] of Object.entries(want)) ok(gradeScalesFor(d).join(",") === s && Array.isArray(gradeScaleFor(d)), d + ": offers " + s + " (got " + gradeScalesFor(d).join(",") + ")");
 ok(gradeScaleFor("ice", "yds") === GRADE_SCALES.yds && gradeScaleFor("ice", "wi") === GRADE_SCALES.wi && gradeScaleFor("ice", "bogus") === GRADE_SCALES.wi, "ice: the scale toggle picks the option list, defaulting to WI");
-for (const d of ["", "alpine", "mountaineering"]) ok(gradeScaleFor(d) === null, (d || "All") + ": grade range refused (mixed scales / no discipline)");
-// Exactly the disciplines 0196 relabelled send grade_sys; the others must not, or a range drops
-// rows whose labels were never corrected (41 scrambling "4th" rows are labelled 'yds').
-ok(Object.keys(GRADE_SYS_FILTERED).sort().join(",") === "aid,ice,mixed", "grade_sys is sent for aid/ice/mixed only");
+ok(gradeScaleFor("") === null, "All: grade range refused (no discipline, so no one scale)");
+// grade_sys is sent exactly where grade_system is trustworthy: the disciplines 0196 relabelled, and
+// the three mountain disciplines whose labels the 2026-10-01 grade pass corrected
+// (scripts/oneoff/relabel-mountain-grade-systems.mjs). Class 4 and 5.4 share grade_num 4 there.
+ok(Object.keys(GRADE_SYS_FILTERED).sort().join(",") === "aid,alpine,ice,mixed,mountaineering,scrambling", "grade_sys is sent for aid/ice/mixed and the mountain disciplines");
 const mig = fs.readFileSync(path.join(ROOT, "supabase/migrations/0196_route_finder_grade_scale.sql"), "utf8");
 ok(/discipline in \('ice', 'mixed', 'aid'\)/.test(mig), "0196 relabels the same three disciplines the sheet filters on");
 

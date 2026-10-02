@@ -53,6 +53,10 @@ check(bs.dist_km === 25 && bs.gain_ft === 7000, "the raw dist_km/gain_ft spellin
 const bn = applyApproach({ ...route, dist_km: 7.7, approachVariants: [route.approachVariants[0], { name: "B", trip: { approachLogistics: { trailhead: "B" } } }] }, { key: "b", index: 1, variant: { name: "B", trip: { approachLogistics: { trailhead: "B" } } } }, null);
 check(bn.dist_km === null && bn.distKm === null, "a way in with no distance must not show the stored one through dist_km");
 check(b.timing.approachTimeHrs === 7 && b.timing.summitTimeHrs === 9, "approach hours follow B; the climb's own time stays");
+// A way in that times NOTHING must not inherit the stored way's legs (Windy Peak's Iron Gate showed Long Swamp's).
+const rt = { ...route, timing: { approachTimeHrs: 5, summitTimeHrs: 9, totalHrs: 14, recommendedStart: "5 AM", sectionBreakdown: [{ section: "Approach", fromTo: "A TH to camp", hrs: 5 }] } };
+const bt = applyApproach(rt, { key: "b", index: 1, variant: { name: "B", trip: { approachLogistics: { trailhead: "B" } } } }, null);
+check(bt.timing && bt.timing.summitTimeHrs === 9 && bt.timing.approachTimeHrs === undefined && bt.timing.totalHrs === undefined && bt.timing.recommendedStart === undefined && bt.timing.sectionBreakdown === undefined, "a trailhead way in with no times must drop the stored way's approach hours, total, start and legs — and keep the climb's own time");
 check(b.pitches === 3 && b.grade === "5.3", "the climb itself must be untouched");
 for (const k of APPROACH_OWNED_KEYS) check(k in b, `owned key ${k} must be set (to a value or empty) by every linked pick`);
 const rc = { ...route, bivy: [{ name: "A camp" }, { name: "B camp" }, { name: "Shared camp" }], approachVariants: [{ name: "From A", primary: true, camps: ["A camp", "Shared camp"] }, route.approachVariants[1]] };

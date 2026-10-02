@@ -1,0 +1,111 @@
+{
+ "wa_mount_adams_wilson_glacier_headwall": {
+  "approach": "The Wilson Glacier sits on the east side of Mount Adams, descending from around 10,600 ft to a terminus near 7,400 ft — a less-visited, less-documented flank than the standard south or north-side routes. Parties reach it via the Cold Springs/South Climb trailhead (5,600 ft, FS Rd 8040 off FS Rd 80): follow the South Climb Trail #183 about 1 mile up an old road bed to the junction with the Round the Mountain Trail, then instead of continuing north toward Lunch Counter, follow Round the Mountain Trail east below Crescent Glacier onto Yakama Nation land, where a separate tribal permit is required and the trail ends at Hellroaring Canyon; the way on, north around the mountain's eastern flank toward the Wilson/Klickitat glacier basins, is a long off-trail traverse with route-finding, creek crossings, and exposure to rockfall directly below the headwall's cliff bands. Given the route's distance (~27 km) and gain (6,700 ft) roughly match the other long approach routes on this mountain, expect a full day just to reach a camp near the toe of the Wilson Glacier before a summit attempt.",
+  "approach_variants": [
+   {
+    "name": "Cold Springs and the Round the Mountain Trail east around the mountain",
+    "notes": "From the Cold Springs and South Climb trailhead at about 5,600 ft at the end of the forest road north of Trout Lake, follow South Climb Trail #183 about a mile up an old road bed to the junction with the Round the Mountain Trail.\n\nInstead of continuing north toward the Lunch Counter, follow the Round the Mountain Trail east and then north, contouring below the Crescent Glacier and around the mountain's eastern flank toward the Wilson and Klickitat glacier basins. This is a long, mostly off-trail traverse with route-finding, creek crossings, and exposure to rockfall directly below the headwall's cliff bands.\n\nThe Wilson descends from around 10,600 ft to a terminus near 7,400 ft, and it is split by a rock rib. Expect a full day to reach a camp near its toe before any summit attempt.\n\nThis is one of the least-visited and least-documented flanks of the mountain. The descent is not a reversal: parties top out and come down the standard South Climb to Cold Springs.",
+    "season": "Roughly May-Jun for the headwall itself; the surrounding east-side walls are rockfall-prone once warm",
+    "hazards": [
+     "Persistent rockfall from the east-side cliff bands, directly over the contouring approach",
+     "A steep ice and snow headwall with serac hazard",
+     "Crevasse navigation on the Wilson",
+     "A long, mostly off-trail traverse with creek crossings and route-finding, and a full day just to reach camp",
+     "Rarely climbed, so conditions cannot be inferred from recent traffic and rescue would be slow"
+    ],
+    "baseFinding": "The decision happens about a mile from the car and it is a turning, not an arrival. At the junction of the South Climb Trail with the Round the Mountain Trail, the standard South Spur route goes north toward the Lunch Counter; this route goes east. If you are climbing toward the Lunch Counter, you are on the standard South Climb and this route is already behind you.\n\nThat is the one error worth guarding, because it is recoverable only by walking back down. Everything after it is a long contour.\n\nThe positive test at the base is a glacier split by a rock rib. The Wilson runs from about 10,600 ft down to about 7,400 ft and a rock rib divides it. A headwall above a glacier that is bisected by a rib is the confirmation. An unbroken glacier with no rib in it is not the Wilson.\n\nThe second positive is aspect and it is the coarsest but most reliable: you must be on the east side of the mountain. Going around the eastern flank is the whole approach. If the sun is rising behind the mountain rather than in front of you, you have not come far enough round.\n\nThe negative that matters for safety rather than navigation: the contour runs directly beneath cliff bands that shed rock. It is a place to keep moving. Persistent rockfall on these east-side headwalls is among the reasons most of them remain unrepeated, so a rope-length of comfortable ground is not evidence the ground above you is quiet.\n\nWhat being on a neighbouring basin looks like: keep going round and you reach the Klickitat basin. The Wilson is the first of the two you meet coming from the south."
+   }
+  ],
+  "timing": {
+   "totalHrs": 17,
+   "summitTimeHrs": 13,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 4,
+   "recommendedStart": "2:00-3:00 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 4,
+     "note": "Same south-side approach as the South Climb, camping at Lunch Counter to stage for the Wilson Glacier headwall the next morning.",
+     "fromTo": "Cold Springs to Lunch Counter",
+     "section": "Approach"
+    },
+    {
+     "hrs": 13,
+     "note": "An early alpine start from Lunch Counter, traversing toward Roosevelt Cliffs to gain the Wilson Glacier headwall (starts around 10,800 ft) — a steep, avalanche/icefall-fed line con…",
+     "fromTo": "Climb the headwall, descend to the trailhead",
+     "section": "Climb"
+    }
+   ]
+  },
+  "itinerary": {
+   "cal": "",
+   "days": [
+    {
+     "n": 1,
+     "note": "Same south-side approach as the South Climb, camping at Lunch Counter to stage for the Wilson Glacier headwall the next morning.",
+     "hours": 4,
+     "miles": 3.5,
+     "title": "Cold Springs to Lunch Counter",
+     "gainFt": 3300,
+     "lossFt": 0,
+     "packLb": 40,
+     "schedule": [],
+     "objective": "Establish camp at Lunch Counter (~9,250 ft)"
+    },
+    {
+     "n": 2,
+     "note": "An early alpine start from Lunch Counter, traversing toward Roosevelt Cliffs to gain the Wilson Glacier headwall (starts around 10,800 ft) — a steep, avalanche/icefall-fed line considered one of Adams' most serious routes. Descend via the North Ridge (more direct from the NE side) or back down the South Climb.",
+     "hours": 13,
+     "miles": 8.9,
+     "title": "Climb the headwall, descend to the trailhead",
+     "gainFt": 3400,
+     "lossFt": 6700,
+     "packLb": 22,
+     "schedule": [
+      {
+       "time": "2:00-3:00 AM",
+       "label": "Leave Lunch Counter",
+       "detail": "Early start for firm snow and to minimize icefall exposure below Roosevelt Cliffs."
+      },
+      {
+       "time": "Midday",
+       "label": "Summit",
+       "detail": ""
+      },
+      {
+       "time": "Afternoon-evening",
+       "label": "Descend to the car",
+       "detail": "North Ridge (more direct) or South Climb."
+      }
+     ],
+     "objective": "Summit via the Wilson Glacier Headwall and descend fully to the car"
+    }
+   ],
+   "totalNote": "A 2-day trip: easy approach to Lunch Counter, then a serious, early alpine-start headwall climb (~13 hr) with descent via the North Ridge or South Climb."
+  },
+  "descent": "Descend the North Ridge (more direct from the NE side) or South Climb.",
+  "gpx": [
+   [
+    46.2885,
+    -121.5525
+   ],
+   [
+    46.202494,
+    -121.490746
+   ],
+   [
+    46.2125,
+    -121.4667
+   ]
+  ]
+ },
+ "wa_storm_king_north_face": {
+  "approach_logistics": {
+   "peakLat": "48.4913",
+   "peakLng": "-120.9228",
+   "trailhead": "High Bridge Camp",
+   "trailheadLat": 48.3807,
+   "trailheadLng": -120.8403
+  }
+ }
+}
