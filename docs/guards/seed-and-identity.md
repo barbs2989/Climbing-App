@@ -333,6 +333,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   the trip recap said "Member") and **#826** (a past crew card listed no partners, so
   "reconnect" could never suggest whoever you actually climbed with). Each was found by walking
   one more surface; this asks statically, across all of them at once. Gated by `npm run build`.
+  - **It scanned only `ClimbMatch.jsx` and `ClimbMatchCore.jsx` until 2026-10-01**, so
+    `lib/Calendar.jsx` named every real crew member "Climber" on the calendar card unseen (found
+    by a signed-in walk with the manual-test accounts). It now scans every `lib/*.jsx` too:
+    14 lookups across 40 files, no new finding. **Blind spot that remains:** Calendar hid the
+    lookup in a helper keyed on a plain `id` (`nm=id=>CLIMBERS.find(c=>c.id===id)`, called as
+    `nm(m.climberId)`); section 1 only tests a call whose own text names `climberId`, so that
+    shape would still pass.
   - **Why a script and not a comment**, and this is the whole argument: #778 shipped the
     resolver plus three fixes, and #776 then merged from a branch based on **pre-#778 main** —
     its squash silently **reverted all of it**. Clean merge, no conflict, every check green,

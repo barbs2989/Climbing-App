@@ -31,10 +31,17 @@ import { appSources, readAppFile } from "./lib/guard-sources.mjs";
 
 const GUARD = "check:crew-member-readers";
 const ROOT = process.cwd();
-// Only the two files that render crews. appSources() proves the app was actually read.
+// The two app files must be among appSources() (proof the app was read), PLUS every lib/*.jsx
+// screen. It was only the two: lib/Calendar.jsx named every real crew member "Climber" on the
+// calendar card for as long as it existed, invisible here because it was never scanned. Widening
+// MEASURED 14 member-id lookups across 40 files and no new finding -- and note the Calendar site
+// would STILL have passed: it hid the lookup in a helper keyed on a plain `id`
+// (`nm=id=>CLIMBERS.find(c=>c.id===id)`, called as nm(m.climberId)), and section 1 only tests a
+// call whose own text names climberId. That shape stays a blind spot; walking the screen found it.
 const all = appSources(ROOT, GUARD);
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx"];
-for (const f of FILES) {
+const CORE_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx"];
+const FILES = [...CORE_FILES, ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => f.endsWith(".jsx")).sort().map((f) => "lib/" + f)];
+for (const f of CORE_FILES) {
   if (!all.some((p) => path.basename(p) === f)) {
     console.error(`${GUARD} FAILED — ${f} was not among the app sources, so nothing was scanned.`);
     process.exit(1);
