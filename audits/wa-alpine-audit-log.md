@@ -29851,3 +29851,72 @@ face, wa_tye_peak_e_route, wa_ultramega_ok (Burgundy Spire), wa_union_peak_se_ro
 wa_up_in_arms (Concord Tower), wa_upper_north_ridge_w_great_gendarme (Mount Stuart),
 wa_vasiliki_ridge_standard. (wa_vanishing_point sorts in between but is on crag-type
 `wa_dolomite_tower`, so out of scope.)
+
+## Batch 376 (2026-10-02, pass 6)
+
+Checked: wa_tricouni_peak_southwest_slopes; wa_true_grit_2 (Vesper Peak);
+wa_tupshin_peak_east_face; wa_tye_peak_e_route; wa_ultramega_ok (Burgundy Spire);
+wa_union_peak_se_route; wa_up_in_arms (Concord Tower); wa_upper_north_ridge_w_
+great_gendarme (Mount Stuart); wa_vasiliki_ridge_standard.
+
+Direct fetches to Mountain Project/SummitPost/Wikipedia/Peakbagger/AAC Publications
+remain blocked at the network/proxy level in this environment (confirmed again this
+run); every external fact below was corroborated via WebSearch's indexed snippets.
+
+**Fixed 2 (2 statements, `audits/sql/2026-10-02-batch-376.sql`):**
+- `wa_vasiliki_ridge_standard.high_point_ft` 8190 → 8203. This row's own
+  `corrections` field already says "the more precise 8,203 ft figure is used here
+  as highPointFt" — it never was. The row's own summit waypoint (note: "surveyed
+  8,202.8 ft") already reads 8203, and the parent area row (`wa_vasiliki_ridge`)
+  already reads 8203 too. Pure internal-consistency fix, no new research needed.
+- `wa_union_peak_se_route.dist_km` 1.6 → 8.69. This row's own itinerary states the
+  round trip is "about 5.4 miles round trip" (both `itinerary.totalNote` and
+  `itinerary.days[0].miles`), and the route's own waypoints already place the
+  summit 2.7 miles out (one-way `distMi`) — so 1.6 km was roughly a third of even
+  the one-way distance the row already documents. 5.4 mi = 8.69 km.
+
+**Flagged, not fixed (1):** `wa_up_in_arms` (Concord Tower) `high_point_ft` (7,569
+ft) doesn't match any single source cleanly — SummitPost/Mountain Project/WTA give
+an older consensus figure of 7,560 ft, while Peakbagger's newer LiDAR-based figure
+and the app's own parent area row (`wa_concord_tower.elevation_ft`) both give
+7,611 ft. Three different numbers across three source generations, none matching
+the stored route value exactly; left as-is rather than guess which generation of
+survey to trust.
+
+**Investigated and found NOT an error:** the search pass initially flagged
+`wa_upper_north_ridge_w_great_gendarme`'s FA credit for the 1956 North Ridge bypass
+("John Rupley & Don Gordon") as possibly wrong, since several current climbing
+sites (Mountain Project, Alpine Institute) now credit "Don Claunch" instead. A
+direct AAC Publications obituary search resolves it: Don Gordon was born "Don
+Gordon Claunch" and climbed under "Don Gordon" for decades in the Cascades
+(Mowich Face/Rainier 1957, north face Maude 1957, west ridge Prusik 1957, etc.) —
+"Don Gordon" and "Don Claunch" are the same person, just different halves of his
+full name used by different sources. No fix needed; the stored credit is correct.
+Also checked and not touched: `wa_vesper_peak` (area) `elevation_ft` (6,214 ft) —
+the route `wa_true_grit_2`'s own `corrections` field claims "Wikipedia and
+Peakbagger" both give 6,221 ft, but a fresh check finds listsofjohn.com (a
+LiDAR-based source) independently gives 6,214 ft, matching the area row as
+currently stored — this is a genuine, already-tolerated few-foot source spread
+(same category as several other sub-10-ft spreads this audit has left alone
+elsewhere), not a one-sided citation error, so the area row was left as-is.
+
+**Clean (6):** `wa_tricouni_peak_southwest_slopes` — elevation (8,102 ft) and the
+1951 FA party (Elwyn & Jeanne Elerding, Les Carlson) both confirmed via Wikipedia.
+`wa_tupshin_peak_east_face` — elevation (8,348 ft on file vs. 8,347 ft on
+listsofjohn.com) within ordinary 1-ft source variance; Stehekin/Company
+Creek-only, no-road access confirmed. `wa_tye_peak_e_route` — confirmed as an
+unofficial/informal summit name (not on USGS quads, "Point 5476") near Stevens
+Pass Ski Area/Skyline Ridge, elevation 5,476 ft. `wa_ultramega_ok` (Burgundy
+Spire) — FA (Tom Smith & Mark Allen, July 24, 2004, 5.11a, 8 pitches) confirmed
+via Mountain Project/SuperTopo/Wikipedia. `wa_union_peak_se_route` — summit
+elevation (5,696 ft) confirmed via listsofjohn.com, in addition to the dist_km fix
+above. `wa_vasiliki_ridge_standard` — FA of Ares Tower (Fred Beckey & Herb Staley,
+May 31, 1952) confirmed via Wikipedia, in addition to the high_point_ft fix above;
+the already-disclosed 8,190-vs-8,203 ft source spread in this row's own
+`data_quality.gaps` remains accurately described.
+
+Next batch continues after `wa_vasiliki_ridge_standard` in the id-ordered scope
+(live id-ordered query, filtered client-side against each candidate's own
+`area_type`). Candidate ids sorting next after it have not yet been pulled —
+run the live id-ordered `routes` query (see `scope_definition` in the progress
+file) starting just past `wa_vasiliki_ridge_standard` to get the next batch.
