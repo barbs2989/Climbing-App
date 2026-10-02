@@ -23,7 +23,7 @@ async function getJSON(url, init) {
 
 const FIELDS = new Set(["overview", "name", "grade", "rock_grade", "ice_grade", "alpine_grade", "aid_grade", "commitment", "pitches", "length_m", "fa", "aspect", "face", "gain_ft",
   "descent", "gear", "detailed_rack", "stars", "prot_rating", "season", "rock", "start_type", "landing", "pads", "crux", "max_angle", "rope_length_m",
-  "bolts", "guide_stars", "alt_names", "variations", "ffa", "fwa", "anchor", "features"]);
+  "bolts", "guide_stars", "alt_names", "variations", "ffa", "fwa", "anchor", "features", "location"]);
 // A grade proposed with a protection suffix ("5.10a R") is split: the grade keeps the difficulty, prot_rating takes the suffix.
 const PROT = /^(.*\S)\s+(PG-?13|R|X)$/i;
 const [file, flag] = process.argv.slice(2);
