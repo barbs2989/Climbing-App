@@ -22,7 +22,7 @@ const read = async (id) => {
   return rows[0];
 };
 const cam = (r) => ({ ...r, rappelDetail: r.rappel_detail, rappelCountNote: r.rappel_count_note, descentText: r.descent_text });
-const SOURCE = /mountain ?project|summitpost|mountaineers\b|cascade ?climbers|\bwta\b|alpinedave|peakbagger|supertopo|guidebook|beckey(?![- ]+(?:route|variation|chimney|gully))|nelson'?s/i;
+const SOURCE = /mountain ?project|summitpost|mountaineers\b|cascade ?climbers|\bwta\b|alpinedave|peakbagger|supertopo|guidebook|beckey(?![- ]+(?:route|variation|chimney|gully|tate|davis|schmidtke))|nelson'?s/i;
 
 const [cmd, arg] = process.argv.slice(2);
 const DRY = process.argv.includes("--dry");
