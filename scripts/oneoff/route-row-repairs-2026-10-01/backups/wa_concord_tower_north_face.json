@@ -1,0 +1,95 @@
+{
+ "id": "wa_concord_tower_north_face",
+ "name": "North Face",
+ "waypoints": [
+  {
+   "lat": 48.518965,
+   "lng": -120.67436,
+   "elev": 5400,
+   "name": "Blue Lake Trailhead",
+   "note": "Trailhead on SR-20 a half mile past milepost 162; self-issue Northwest Forest Pass required at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR-20 to the Blue Lake Trailhead, about half a mile past milepost 162 and roughly 1 mile west of Washington Pass."
+  },
+  {
+   "lat": 48.51610326086956,
+   "lng": -120.66380760869565,
+   "elev": 6200,
+   "name": "Meadow / climbers' path split",
+   "note": "Leave Blue Lake Trail at a small meadow and cross a small stream; the climbers' path forks left here toward Liberty Bell/Concord Tower.",
+   "type": "Junction",
+   "distMi": 1.5,
+   "directions": "Follow the Blue Lake Trail up through forest and past small tarns and streams as it climbs into the open basin beneath the Liberty Bell group. Shortly after the trail crosses a small stream near a meadow, watch left for the signed, well-trodden climbers' path (Liberty Bell Trail #727). It is easy to walk straight past, and staying on the main trail delivers you to Blue Lake rather than the towers."
+  },
+  {
+   "lat": 48.515304130434785,
+   "lng": -120.66103630434782,
+   "elev": 6900,
+   "name": "Gully below the notch",
+   "note": "Talus/scree gully leading to the notch is usually snow-filled and icy until late June, with high rockfall risk (especially party-induced).",
+   "type": "Hazard",
+   "distMi": 1.9,
+   "directions": "The climbers' path steepens immediately, working up slabs, talus and heather meadow into the upper Liberty Bowl. From the trailhead to the col is on the order of 1,900-2,000 ft of gain; figure 1.5-2.5 hours depending on how much snow is still in the bowl. Put the helmet on before you start up the gully itself."
+  },
+  {
+   "lat": 48.5149,
+   "lng": -120.65843,
+   "elev": 7300,
+   "name": "Liberty Bell–Concord Tower notch",
+   "note": "Notch between the two peaks at roughly 7,300 ft; rope up here, the North Face route starts at the top of the notch.",
+   "type": "Junction",
+   "distMi": 2.1,
+   "directions": "Climb the gully about 400 ft to its top. Early in the season an ice axe, and sometimes crampons, earn their weight here; once it is dry it is loose scree and the rock the snow had been holding together comes down easily."
+  },
+  {
+   "lat": 48.514704782608696,
+   "lng": -120.65895782608695,
+   "elev": 7450,
+   "name": "Pitch 2 crux (5.7 huecos)",
+   "note": "Crux pitch traverses right then climbs straight up on large huecos; most exposed, sustained section of the route.",
+   "type": "Hazard",
+   "distMi": 2.2,
+   "directions": "Belay from the notch. The first pitch follows the obvious crack system up about 80-100 ft of well-protected 5.6 to a big ledge dotted with small trees — it is over quickly and is a fair warm-up. From that ledge the line moves right across easy ground before turning straight up."
+  },
+  {
+   "lat": 48.51453,
+   "lng": -120.65828,
+   "elev": 7611,
+   "name": "Concord Tower summit",
+   "note": "True summit; descend by rappelling the North Face from the summit chains back to the notch.",
+   "type": "Summit",
+   "distMi": 2.3,
+   "directions": "From the crux belay head left up the crack systems (a #3 takes the good placement), cross two low-angle 5.0 slabs, and finish by bear-hugging a flake onto the small summit block. Angling right after the huecos instead of staying left puts you on a neighboring line rather than Concord's top. The mantle onto the block is awkward enough that most leaders put in one more piece before committing to it."
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Blue Lake Trail to the Liberty Bell-Concord notch",
+   "hours": "1.5-2.5",
+   "notes": "Identical to the Beckey Route walk-in, which is why the two are so often climbed on the same day. Blue Lake Trailhead (~5,400 ft) on SR-20 about 1 mile west of Washington Pass; a mile and a half of maintained trail to the signed Liberty Bell Trail #727 climbing-access junction just past a small stream, marked with a large cairn; then the climbers' path up slabs, talus and heather into the bowl below the towers and up the gully to the Liberty Bell-Concord notch at about 7,300 ft.\n\nIn the gully, staying climber's left for the lower two thirds and then crossing to climber's right keeps you on the most stable ground.",
+   "distMi": 2,
+   "gainFt": 2100,
+   "season": "Jul-Sep",
+   "hazards": [
+    "loose, heavily trafficked gully below the notch — helmets, and don't queue underneath another party",
+    "hollow-sounding flakes on the upper pitches send debris to the notch",
+    "no water above the stream at the Trail #727 junction"
+   ],
+   "primary": true,
+   "baseFinding": "The route starts AT the top of the notch, on the Concord (south) side — not below it. Stand on the crest of the Liberty Bell-Concord col and turn to face Concord Tower: the first pitch is the crack system running up that wall to a large ledge holding a few small trees, and that ledge is the pitch-one belay and is visible from the notch. The mistake to avoid is dropping 30 feet down the Liberty Bell side to the tree with the ledge running left into a blocky chimney — that is the Beckey Route on Liberty Bell, the other tower, and parties heading for opposite summits share this saddle all day. If your first pitch tops out on a treed ledge you are on Concord; if it starts by walking a small ledge leftward into a chimney you are on Liberty Bell."
+  },
+  {
+   "name": "Early-season snow to the notch",
+   "hours": "1.5-2.5",
+   "notes": "Same line, but the gully feeding the Liberty Bell-Concord notch holds snow into late June most years and the boot path lower down may still be buried. Ice axe standard, crampons if it has refrozen.\n\nOne upside of the early season here: while the gully is snow-filled the rock in it is locked in place, and rockfall gets noticeably worse once it melts out.\n\nSR-20 is closed across Washington Pass every winter, typically from late November or early December until mid-April to early May, so this window begins whenever the highway reopens.",
+   "season": "Highway opening through late Jun",
+   "hazards": [
+    "firm snow in the gully with a long runout below",
+    "moat between snow and rock at the base",
+    "SR-20 gated in winter — no vehicle access until the highway reopens"
+   ],
+   "baseFinding": "Snow does not move the start — it is still the crack system on the Concord wall rising directly from the crest of the notch to the treed ledge. What snow does is fill the notch, so the col reads as a smooth saddle and the base of the first pitch can sit above a moat. Look up at the tower on the south side of the col for the treed ledge to confirm you are on the right wall before committing."
+  }
+ ]
+}
