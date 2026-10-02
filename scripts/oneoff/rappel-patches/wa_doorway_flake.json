@@ -1,0 +1,46 @@
+{
+ "id": "wa_doorway_flake",
+ "area_id": "wa_south_face",
+ "stations": 5,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+    "station": "The anchor at the top of pitch 5.",
+    "notes": "Rappel 1 of 5 on two 60 m ropes, down pitch 5 to the anchor at the top of pitch 4."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+    "station": "The anchor at the top of pitch 4.",
+    "notes": "Rappel 2 of 5 on two 60 m ropes, down pitch 4 to the anchor at the top of pitch 3."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+    "station": "The anchor at the top of pitch 3.",
+    "notes": "Rappel 3 of 5 on two 60 m ropes, down pitch 3 to the anchor at the top of pitch 2."
+   },
+   {
+    "n": 4,
+    "lengthM": null,
+    "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+    "station": "The anchor at the top of pitch 2.",
+    "notes": "Rappel 4 of 5 on two 60 m ropes, down pitch 2 to the anchor at the top of pitch 1."
+   },
+   {
+    "n": 5,
+    "lengthM": null,
+    "anchor": "two-bolt chain anchor (hand-drilled bolts, Fixe chains)",
+    "station": "The anchor at the top of pitch 1.",
+    "notes": "Rappel 5 of 5 on two 60 m ropes, down pitch 1 to the ground."
+   }
+  ],
+  "rappels": "5 rappels on two 60 m ropes down the line of ascent, one per pitch, from bolted Fixe chain anchors",
+  "rappel_count_note": "One rappel per pitch from the bolted chain belays; two 60 m ropes are recommended. Rappel lengths are not published."
+ }
+}
