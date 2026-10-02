@@ -602,6 +602,11 @@ the correction knows the screen is wrong, and they have no way to report it.
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
   because these citations are free prose inside jsonb columns — every identifier is bound, the
   column is populated, the section renders. Only reading the value finds them.
+  - **`waypoints[].directions` is scanned too, since 2026-10-01** — the "Getting here —" line in
+    the same card as the note, and the one waypoint string the audit never read. Added when a
+    web-researched pass filled 1,642 of them (663 routes; record and brief in
+    `scripts/oneoff/waypoint-directions-research-2026-10-01/`), which is exactly when a "per WTA"
+    is likeliest to slip in. It reported **0 of 2,913** WA directions after that pass.
   - The class had been measured once for `waypoints[].note` and **nobody had ever looked at
     `road.*` / `access.*`** — the same defect in different columns, which is the shape this repo
     keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
