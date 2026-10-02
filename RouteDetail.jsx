@@ -882,6 +882,10 @@ function TechStats({route,onEdit}){
   if(_vars.length)facts.push(["Variations",<>{_vars.map(function(v,i){return <div key={i} style={{marginTop:i?3:0}}>{v}</div>;})}</>]);
   if(crag){
     if(disc!=="bouldering"&&+route.bolts>0)stats.push(["Bolts",String(Math.round(+route.bolts)),C.blue]);
+    /* ANCHOR is `anchor` (0242): a short value ("2-bolt chains", "tree, walk off"), the route's TOP
+       anchor — a pitch's own anchor stays on its ROUTE BREAKDOWN row. Style is NOT here: `features`
+       already draws as the tag chips (RouteTagRow), and a row would print it twice. */
+    const _anc=String(route.anchor||"").trim();if(disc!=="bouldering"&&_anc&&_anc.length<=80)facts.push(["Anchor",_anc]);
     const _dsc=String(route.descent||"").trim();if(_dsc&&_dsc.length<=140)facts.push(["Descent",_dsc]);
     const _asp=String(route.aspect||"").trim();if(_asp){const _sr=sunReadout(_asp,disc);facts.push(["Aspect",(/^[NSEW]{1,3}([\/ -][NSEW]{1,3})*$/i.test(_asp)?_asp+"-facing.":_asp.replace(/\.?$/,"."))+(_sr&&_sr.line?" "+_sr.line:"")]);}
     const _sea=String(route.season||"").trim();if(_sea)facts.push(["Season",_sea]);
