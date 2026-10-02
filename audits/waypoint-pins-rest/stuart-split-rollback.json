@@ -1,0 +1,152 @@
+{
+ "wa_mount_stuart_north_ridge": {
+  "waypoints": [
+   {
+    "lat": 47.5278,
+    "lng": -120.8205,
+    "elev": 3400,
+    "name": "Stuart Lake Trailhead",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive to Leavenworth and head up Icicle Creek Road, then turn onto Forest Road 7601 (signed as Eightmile Road) and follow it to its end, around 3,540 feet, where the Stuart Lake Trailhead and the Stuart/Colchuck Lake Trail begin."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6300,
+    "name": "Longs Pass",
+    "type": "Pass",
+    "distMi": 3.5
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 7600,
+    "name": "Goat Pass",
+    "type": "Junction",
+    "distMi": 5
+   },
+   {
+    "lat": 47.465,
+    "lng": -120.911,
+    "elev": 7400,
+    "name": "Stuart Glacier Crossing",
+    "type": "Hazard",
+    "distMi": 5.3
+   },
+   {
+    "lat": 47.47,
+    "lng": -120.91,
+    "elev": 6600,
+    "name": "North Ridge Base",
+    "type": "Junction",
+    "distMi": 5.5
+   },
+   {
+    "lat": 47.475,
+    "lng": -120.908,
+    "elev": 9000,
+    "name": "Great Gendarme",
+    "type": "Hazard",
+    "distMi": 5.8
+   },
+   {
+    "lat": 47.47514,
+    "lng": -120.90238,
+    "elev": 9415,
+    "name": "Mount Stuart Summit",
+    "type": "Summit",
+    "distMi": 6
+   }
+  ],
+  "approach_variants": [
+   {
+    "name": "North side — Stuart Lake TH via Mountaineer Creek",
+    "camps": [
+     "Mountaineer Creek basin (beneath the Sherpa and Ice Cliff glaciers)",
+     "The 8,200 ft notch on the North Ridge"
+    ],
+    "hours": "4-5",
+    "notes": "Park at the Stuart Lake Trailhead at the end of FR 7601 (Eightmile Road) out of Leavenworth and walk the Stuart Lake Trail up Mountaineer Creek. At the signed split roughly two miles along, ignore the Colchuck Lake branch on the right and carry straight on. A short distance further you leave maintained tread altogether, well before Stuart Lake, ford Mountaineer Creek and follow its south fork upstream cross-country. Late in the season there is a cairned climbers' path through much of this; early in the season there is not, and the creek runs hard.\n\nAbove the streamside travel a steep, unstable talus and boulder slope lifts you into the hanging basin under Sherpa Peak and the Sherpa Glacier. This basin holds the usual bivies. From it you angle up onto the glacier bench beneath the ridge.\n\nThis is the shorter, lower-gain way in and it puts you at the toe with the most in the tank, but it commits you to a car shuttle: the standard descent is the Cascadian Couloir, which spills out on the far side of the range at Ingalls Creek. Parties report the shuttle drive between the two trailheads costing several hours round trip. In June and early July the Sherpa Glacier is a reasonable way back down to this side and removes the shuttle problem — later in the summer it is not.\n\nThere is running snowmelt near the toe of the ridge (reported around 47.48095, -120.89454); above the 8,200 ft notch there is no reliable water once the last snow patch there melts out.",
+    "distMi": 6.5,
+    "gainFt": 3300,
+    "season": "Jun to mid-Jul is the sweet spot; workable through Sep",
+    "hazards": [
+     "Mountaineer Creek and its south fork run high and fast in early-season melt",
+     "Loose talus and boulder slope below the Sherpa Glacier basin — poor footing, rockfall onto parties below",
+     "Serac and icefall exposure if you drift east under the Ice Cliff Glacier",
+     "No reliable water above the 8,200 ft notch once its snow patch is gone",
+     "Committing: standard descent exits on the opposite side of the range, so a shuttle or a very long walk-around is required"
+    ],
+    "primary": true,
+    "baseFinding": "You are climbing the complete North Ridge, which begins at about 6,600 ft — roughly 1,500 ft of roped ground below the point where most people who say 'North Ridge' actually start. The toe is the lowest rock of the rib that separates the two glaciers: Stuart Glacier on its west side, Ice Cliff Glacier on its east. Standing at the base with the Ice Cliff Glacier and its seracs on your left and the Stuart Glacier hidden around the corner to your right, you are in the right place. If you are underneath hanging ice you have drifted too far east onto the Ice Cliff side and need to come back west to the rib's lowest rock.\n\nThe feature to not mistake for the start is the notch at 8,200 ft. That notch is obvious — a saddle in the crest with a scatter of bivy platforms and, usually, a small lingering snowfield for water — and it is where the Upper (original) North Ridge begins. It is reached by a rock gully climbed from the edge of the Stuart Glacier at about 7,700 ft, on the ridge's west flank. If you find yourself scrambling a gully up from snow toward a bivy saddle, you have skipped the lower 1,500 ft and are on the Upper route, not the Complete.\n\nIn cloud, use the glaciers rather than the rock: the toe is where the moraine/snow of the basin runs out against the first continuous rock, and the ice above and left of you belongs to the Ice Cliff Glacier. The 8,200 ft notch is above and right of that, reached only after the ridge has already risen well above the ice."
+   },
+   {
+    "name": "South side — Esmeralda TH over Longs Pass and Goat Pass",
+    "trip": {
+     "bivy": [
+      {
+       "elev": 7600,
+       "name": "Goat Pass",
+       "role": "main",
+       "notes": "The camp for the southern approach over Longs Pass and up Ingalls Creek — a longer, higher-gain walk in, but it sets up a much shorter car-to-car loop because the Cascadian Couloir descent drops back the same way. A planned camp with plenty of flat ground, though water becomes a carry once the snow patches are gone.",
+       "water": "Snowmelt and small tarns early to mid season; Ingalls Creek is the reliable source, below the pass",
+       "capacity": "Numerous good bivy sites on the pass"
+      },
+      {
+       "elev": 8200,
+       "name": "The 8,200 ft notch on the North Ridge",
+       "role": "route",
+       "notes": "The classic place to split the complete ridge, reached by the snow-filled gully (usually climbed on 4th-class rock at its edge) above the Stuart Glacier. This is a planned bivy, not an emergency ledge, but only two spots are actually comfortable and a party of three or more will be spread out. Wind-scoured and fully exposed, with no water above it, so the summit day starts with everything you carried.",
+       "water": "None reliable — seasonal snow patches only, and nothing at all once they melt out",
+       "capacity": "Two genuinely good bivy spots, plus a number of mediocre ones nearby"
+      }
+     ],
+     "gainM": 1463,
+     "distKm": 14.48,
+     "gainFt": 4800,
+     "outingShape": "outback",
+     "approachLogistics": {
+      "trailhead": "Esmeralda Basin Trailhead (FR-9737)",
+      "trailheadLat": 47.43656,
+      "trailheadLng": -120.93697
+     }
+    },
+    "hours": "8",
+    "notes": "From the Esmeralda Basin trailhead at the end of the North Fork Teanaway River Road (FR 9737), take the trail over Longs Pass and up Ingalls Creek to Goat Pass, then traverse east beneath the Stuart Glacier, staying above the large moraine mound, and aim for the toe of the ridge.\n\nAbout 2,000 ft of the day is descent, so the round trip is more work than the raw gain suggests, and parties consistently report it taking longer than planned — budget eight hours and expect route-finding on the traverse rather than tread.\n\nThe reason to accept the longer, higher approach is that it removes the shuttle entirely. The Cascadian Couloir descent drops to Ingalls Creek on this side, so a party that walked in from Esmeralda walks out to its own car. Parties who came in from the north do not.\n\nHow much snow remains on the Goat Pass traverse is the recurring gear question here: sections have been reported at around 40 degrees, and whether you need an axe and traction changes week to week through the summer. Recent photos and current reports are worth more than any fixed answer.",
+    "distMi": 9,
+    "gainFt": 4800,
+    "season": "Jul-Sep, once the traverse under the Stuart Glacier has melted or consolidated",
+    "hazards": [
+     "Snow slopes on the Goat Pass traverse reported near 40 degrees; conditions change through the summer",
+     "~2,000 ft of descent on the way in, all of which must be regained on the way out",
+     "Long day with no bail-out once past Goat Pass",
+     "Approach consistently underestimated; parties arrive at the toe late and tired"
+    ],
+    "baseFinding": "Coming from Goat Pass you arrive at the ridge from below and to the west, which is the opposite side from the northern approach — so the Ice Cliff Glacier is not your handrail here, the Stuart Glacier is. Keep the Stuart Glacier snow on your left as you traverse east and stay above the big moraine mound; the toe of the Complete ridge is the first continuous rock the traverse runs into, at about 6,600 ft.\n\nThe decision point is unmissable once you know to look for it: from the edge of the Stuart Glacier at roughly 7,700 ft a rock gully leads up the ridge's west side to the notch at 8,200 ft. Taking that gully puts you on the Upper North Ridge and skips the lower 1,500 ft. Continuing the traverse past and below it, down to the lowest rock, is what starts the Complete route. In poor visibility: if the snow you are standing on is still rising to your right toward a saddle, you are too high; the toe is below, where the snow ends."
+   }
+  ],
+  "gpx": [
+   [
+    47.427,
+    -120.892
+   ],
+   [
+    47.465,
+    -120.911
+   ],
+   [
+    47.47,
+    -120.91
+   ],
+   [
+    47.475,
+    -120.908
+   ],
+   [
+    47.47514,
+    -120.90238
+   ]
+  ]
+ }
+}
