@@ -112,3 +112,15 @@ Per-row evidence and every source are in `out/i*.json`.
   - `wa_whitehorse_mountain_r1`: conditions beta.
   - `wa_bears_breast_mountain_se_mega_slab`: slab beta.
   - `wa_southwest_scramble`: Pinnacle chute beta.
+
+## Applied 2026-10-01: the six held fold-ins
+
+`scripts/oneoff/route-identity-fold.mjs` moved what only each duplicate said onto the kept page, rewritten with no source named, then deleted the duplicate. Before each delete it checked every route-id table, and none pointed at the duplicate.
+- **Davis South Slope and Ridge:** a southwest-face finish paragraph in `beta`, plus the Point 5872 avalanche warning.
+- **Little Tahoma East Shoulder:** its existing Paradise approach variant got the full notes, season, hazards and route-finding text.
+- **Whatcom South Spur:** its existing low-orbit variant got the Hannegan → Whatcom Pass trail, camps and two hazards.
+- **Whitehorse NW Shoulder:** an early-season snow/ice and ski paragraph in `beta`, plus an avalanche warning.
+- **Bears Breast Infinite Beauty:** the drive from Cle Elum in `approach`, plus a pro tip on slab timing.
+- **Pinnacle Saddle / South Gully:** a `beta` paragraph on which chute to take.
+
+**Restore:** `rollback-folds-1790916078041.json`. **Checks:** a re-read matches, and `check:counts` passes. Only Fortress (low confidence) remains unmerged.
