@@ -1,0 +1,134 @@
+[
+ {
+  "id": "wa_mount_lago_south_slope_south_face",
+  "why": "the primary Slate Pass way in owned no pins, road or approach, so picking it cleared the page to a trailhead and a summit; it now carries its own legs (WTA/USFS trail mileages, USGS 6,868 ft at the trailhead pin), the stored way in is named for Robinson Creek and stops describing the Slate start, and both carry the 2026 Ptarmigan Fire trail closure (USFS order, Buckskin Ridge #498 and Eureka Creek #474 closed)",
+  "ops": [
+   {
+    "path": "approach_variants[1].trip",
+    "set": {
+     "bivy": [
+      {
+       "name": "Shellrock Basin camp area",
+       "role": "main",
+       "type": "camp"
+      },
+      {
+       "elev": 7500,
+       "name": "The high bench southwest of Shellrock Pass",
+       "role": "main",
+       "type": "bivy",
+       "notes": "This is the staging camp that makes Mount Carru and Mount Lago short days instead of enormous ones, and it is deliberately not the same ground as the Shellrock Basin and Eureka Creek meadow camps lower down. It is a bench at around 7,500 ft immediately southwest of the pass, high enough that every summit in the group is within reach from it. For Carru the line runs west along the east fork of Eureka Creek, leaves the trail at a creek crossing and takes a red talus gully east of the Carru-Lago saddle for a few hundred feet — under two hours from camp to the 8,595 ft summit. Lago at 8,745 ft is the highest thing in this part of the wilderness and goes from the same saddle. What you pay for the position is water and weather. There is no tree cover, the pass funnels wind, and a party that has not carried enough will be walking back down for it. Snow holds on the north sides of these passes into late July in an ordinary year and much later after a heavy winter, which is the real constraint on when this is worth doing. Larches turn in the last days of September and the nights at this height are properly cold by then.",
+       "water": "Snowmelt and a small tarn below the pass, both of them seasonal. By late summer there may be nothing at all up here and the passes on either side are reliably dry. Carry water up from the Eureka Creek meadows or the river; this is the single most common mistake made on these summits.",
+       "permit": "Free self-issue Pasayten permit, no quota and no reservation anywhere in this wilderness. Northwest Forest Pass to park. The bench is thin alpine ground that holds a footprint for years, so pitch on gravel or rock and leave the turf alone. Assume no fires — there is nothing to burn at this elevation and the meadows below are fragile.",
+       "capacity": "Roughly half an acre of usable bench, so realistically two or three small parties. No established sites, no facilities and no shelter of any kind."
+      },
+      {
+       "name": "The Berk Creek junction and the Middle Fork Pasayten river camps",
+       "role": "route",
+       "type": "camp",
+       "notes": "This is the hinge of the whole Middle Fork approach and it is where a party bound for Mount Carru, Mount Lago or Lost Peak actually sleeps on the first night. Two roads reach it: the high start from Slate Pass at nearly 6,900 ft with a short connector down to the Middle Fork trail, or the low start from the Robinson Creek trailhead at about 2,560 ft over Robinson Pass at 6,220 ft, which is nine and a half miles before the valley walking even begins. The high start is shorter by a long way and is what most parties use. From the junction the climb to Freds Pass and the crossing of the upper Eureka Creek country puts you in position for the summits; the whole approach from a road is around fifteen miles. Being on the river rather than up at the lakes costs you height on the second day and buys you shelter, running water and a warmer night — a real trade when the high camps are exposed and dry. The forest here is patchy burn in places and blowdown varies. This is remote country by any standard and there is no mobile service anywhere in the valley.",
+       "water": "Reliable — the Middle Fork Pasayten and Berk Creek meet here and both run all season. This is the last easy water before the long climb to the passes, and the country above lives on tarns and snowmelt, so fill completely.",
+       "permit": "Free self-issue wilderness permit from the kiosk at Slate Pass or Robinson Creek, no quota and no reservation. Northwest Forest Pass or interagency pass to park. Weed-free feed for stock and no tying animals to trees overnight. Fires legal in existing rings outside a ban, though the valley is dry and bans are common by August.",
+       "capacity": "A single established site at the junction where the trail up to Freds Lake and Doris Lake leaves the Middle Fork, plus scattered ground along the river flats above and below it. One or two parties each, nothing developed."
+      }
+     ],
+     "approachLogistics": {
+      "trailhead": "Buckskin Ridge Trailhead (Slate Pass)",
+      "trailheadLat": 48.7323,
+      "trailheadLng": -120.6683,
+      "trailheadElevFt": 6900
+     },
+     "road": {
+      "name": "Harts Pass Road (FR 5400) and Slate Peak Road (FR 5400-600)",
+      "status": "Narrow, steep gravel with few turnouts above the end of the pavement; no trailers. The 2026 Ptarmigan Fire burned into the Middle Fork Pasayten, and its closure shut the Buckskin Ridge and Eureka Creek trails this approach uses; check the Methow Valley Ranger District's alerts before you go, and expect burned forest and blowdown in the valley.",
+      "driveNote": "From SR 20 at Mazama, follow Lost River Road to the end of the pavement and continue on the gravel Harts Pass Road (FR 5400) to Harts Pass. At the guard station turn right onto Slate Peak Road (FR 5400-600) and drive about 3.5 miles to the Slate Pass Trailhead at the second switchback beyond the horse loading area.",
+      "seasonalGate": "Usually snow-free and open July to September"
+     },
+     "approach": "From the Slate Pass Trailhead (about 6,900 ft), take Buckskin Ridge Trail #498 a short way north to the Whistler Cutoff and drop to the Middle Fork Pasayten Trail #478 on the valley floor, about 3.1 miles and 5,280 ft. Follow it north about 4.8 miles to the Eureka Creek Trail and climb along Berk Creek to Fred's Lake (6,507 ft), a common camp. From the lake, cross the crest east into the upper Eureka Creek basin on the faint, unmaintained trail, where the creek can be hard to cross in snowmelt, and continue up into Shellrock Basin on the south side of the Lago-Carru ridge.",
+     "itinerary": "A common 3-day plan: Day 1 - hike in from the Robinson Creek or Slate Pass trailhead to Fred's Lake or Shellrock Basin. Day 2 - climb Mount Lago (often combined with Mount Carru via the connecting saddle) from a Shellrock Basin camp, roughly a half-day round trip. Day 3 - hike out. Many parties extend to 4-5 days to add Osceola Peak, Mount Rolo, or a full Pasayten ridge traverse (e.g. via Ptarmigan Peak and Dot Mountain).",
+     "waypoints": [
+      {
+       "lat": 48.7323,
+       "lng": -120.6683,
+       "elev": 6900,
+       "elevFt": 6900,
+       "name": "Slate Pass Trailhead",
+       "type": "Trailhead",
+       "distMi": null,
+       "directions": "From SR 20 at Mazama, follow Lost River Road to the end of the pavement, then the narrow gravel Harts Pass Road (FR 5400) to Harts Pass; trailers are not allowed. At the guard station turn right onto Slate Peak Road (FR 5400-600) and climb about 3.5 miles to the Slate Pass Trailhead at the second switchback beyond the horse loading area, about 6,900 ft. Fill out the free self-issue Pasayten Wilderness permit at the kiosk."
+      },
+      {
+       "lat": 48.7697,
+       "lng": -120.6393,
+       "elev": 5280,
+       "elevFt": 5280,
+       "name": "Middle Fork Pasayten Trail junction",
+       "type": "Junction",
+       "distMi": 3.1,
+       "directions": "Head north on Buckskin Ridge Trail #498 and take the Whistler Cutoff where it splits off, dropping steeply off the ridge to the Middle Fork Pasayten (Robinson Creek) Trail #478 on the valley floor. The slope just below the pass holds snow into summer, and the river here is crossed without a bridge."
+      },
+      {
+       "lat": 48.822876,
+       "lng": -120.598244,
+       "elev": 6507,
+       "name": "Fred's Lake",
+       "type": "Water",
+       "distMi": null,
+       "elevFt": 6507,
+       "directions": "Turn north and follow the Middle Fork trail down the valley past the first Eureka Creek Trail junction. About 4.8 miles from the Whistler Cutoff, turn east on the Eureka Creek Trail and climb along Berk Creek to Fred's Lake."
+      },
+      {
+       "lat": 48.81174,
+       "lng": -120.52823,
+       "name": "Shellrock Basin camp area",
+       "type": "Campsite",
+       "distMi": null,
+       "elevFt": null,
+       "directions": "From Fred's Lake, climb to the pass on the crest above the lake and drop east into the upper Eureka Creek basin on the faint, unmaintained middle section of the Eureka Creek Trail; the crossing of upper Eureka Creek can be difficult in snowmelt. Continue east and up into Shellrock Basin on the south side of the Lago-Carru ridge."
+      },
+      {
+       "lat": 48.82932,
+       "lng": -120.537451,
+       "elev": 8745,
+       "name": "Mount Lago Summit",
+       "type": "Summit",
+       "distMi": null,
+       "elevFt": 8745,
+       "directions": "Climb north up Lago's broad south slope, leaving the heather for continuous scree, talus and loose rock ribs; there is no path and no single line. Gain the summit ridge and follow the faint boot path along the crest to the true high point, staying back from the north side, which drops off in a huge cliff."
+      }
+     ]
+    }
+   },
+   {
+    "path": "approach_variants[0].name",
+    "find": "Shellrock Basin and the Lago-Carru col",
+    "replace": "From Robinson Creek over Robinson Pass"
+   },
+   {
+    "path": "approach_variants[0].notes",
+    "find": "reached over Robinson Pass and up the Middle Fork Pasayten from either the low Robinson Creek trailhead or the high road end at Slate Peak",
+    "replace": "reached along the Middle Fork Pasayten, either over Robinson Pass from the low Robinson Creek trailhead or down the Whistler Cutoff from the high start at Slate Pass"
+   },
+   {
+    "path": "approach",
+    "find": "From the Robinson Creek Trailhead (~2,500 ft, via SR-20 and Lost River Road/Forest Road 5400 west of Winthrop) or the higher Slate Peak Trailhead (~7,170 ft, via the Hart's Pass spur road), follow",
+    "replace": "From the Robinson Creek Trailhead (~2,500 ft, via SR-20 and Lost River Road/Forest Road 5400 west of Winthrop), follow"
+   },
+   {
+    "path": "itinerary",
+    "find": "Robinson Creek or Slate Peak trailhead",
+    "replace": "Robinson Creek or Slate Pass trailhead"
+   },
+   {
+    "path": "road.driveNote",
+    "find": "the higher Slate Peak Trailhead (~7,170 ft)",
+    "replace": "the higher Slate Pass Trailhead (~6,900 ft)"
+   },
+   {
+    "path": "road.status",
+    "find": "Gravel, narrow, and exposed above Hart's Pass; high-clearance recommended; closed to trailers",
+    "replace": "Gravel, narrow, and exposed above Hart's Pass; high-clearance recommended; closed to trailers. The 2026 Ptarmigan Fire burned into the Middle Fork Pasayten, and its closure shut the Eureka Creek Trail to Fred's Lake and parts of the Middle Fork trail; check the Methow Valley Ranger District's alerts before you go."
+   }
+  ]
+ }
+]
