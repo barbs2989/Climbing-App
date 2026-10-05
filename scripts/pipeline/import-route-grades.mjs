@@ -24,6 +24,9 @@ import { gradeNumFrom } from "../../lib/grade.js";
 
 const args = process.argv.slice(2);
 const APPLY = args.includes("--apply"), ALL = args.includes("--all"), SAMPLE = args.includes("--sample"), CREATE = args.includes("--create-areas");
+// --snow: import ONLY the snow-only routes (tagged Snow, no roped type), which no export carries —
+// read from the area tree (fetch-area-tree.mjs) and each route's page (fetch-snow-routes.mjs).
+const SNOW = args.includes("--snow");
 const KEY = requireServiceKey();
 const H = { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
 const DIR = "catalog/_mp";
@@ -119,6 +122,9 @@ const TOK = { wi: /\b(?:WI|AI)\d(?:-\d|[+-])?/, m: /\bM\d+(?:-\d+|[+-])?/, aid: 
 function tokens(rating) {
   const out = {};
   for (const [s, rx] of Object.entries(TOK)) { const m = String(rating || "").trim().match(rx); if (m) { const n = gradeNumFrom(m[0], s); if (n != null) out[s] = { tok: m[0], num: n }; } }
+  // Snow, on MP's three steps — the same ones 0246's snow_grade_step reads (1 / 2 / 3).
+  const sm = String(rating || "").match(/\b(Easy|Mod\.?|Moderate|Steep)\s+Snow\b/i);
+  if (sm) out.snow = { tok: sm[0], num: /^steep/i.test(sm[1]) ? 3 : /^mod/i.test(sm[1]) ? 2 : 1 };
   return out;
 }
 
@@ -266,10 +272,15 @@ function disciplineOf(type, tk) {
   if (tk.yds) { if (/\bTrad\b/.test(t)) return "trad"; if (/\bSport\b/.test(t)) return "sport"; if (/\bTR\b/.test(t)) return "toprope"; }
   if (tk.aid) return "aid";
   if (/\bBoulder\b/.test(t) && tk.v) return "bouldering";
+  // A route MP types Snow with no roped grade is a snow climb: mountaineering, as the owner asked
+  // (2026-10-04), graded by its snow rating, with any Class it already has left alone.
+  if (/\bSnow\b/.test(t) && tk.snow) return "mountaineering";
   return null;
 }
-const PRIMARY = { ice: () => "wi", mixed: tk => tk.yds ? "yds" : "m", aid: tk => tk.yds ? "yds" : "aid", trad: () => "yds", sport: () => "yds", toprope: () => "yds", bouldering: () => "v" };
-const TYPE_DISC = { trad: "trad", sport: "sport", tr: "toprope", boulder: "bouldering", ice: "ice", mixed: "mixed", aid: "aid", alpine: "alpine" };
+const PRIMARY = { ice: () => "wi", mixed: tk => tk.yds ? "yds" : "m", aid: tk => tk.yds ? "yds" : "aid", trad: () => "yds", sport: () => "yds", toprope: () => "yds", bouldering: () => "v", mountaineering: () => "snow" };
+const TYPE_DISC = { trad: "trad", sport: "sport", tr: "toprope", boulder: "bouldering", ice: "ice", mixed: "mixed", aid: "aid", alpine: "alpine", snow: "mountaineering" };
+const ROPED_TAG = new Set(["Rock", "Trad", "Sport", "TR", "Toprope", "Ice", "Mixed", "Aid", "Boulder"]);
+const snowOnly = r => r.tags.includes("Snow") && !r.tags.some(t => ROPED_TAG.has(t));
 
 // A Canadian location path ends "... > Alberta > Canada > North America > International": MP files
 // Canada under its International tree. Dropped, so the chain starts at the province as a US one
@@ -290,10 +301,28 @@ async function runState(st) {
     if (!/_(ice|mixed|aid|rock|boulder)_\d+_\d+(?:_a\d+)?\.csv$/.test(f)) continue;
     for (const r of parseCsv(readFileSync(DIR + "/" + f, "utf8"))) if (r.URL) byUrl.set(r.URL, r);
   }
+  // --snow: the exports are replaced by the state's snow-only routes, each shaped as an export row —
+  // name, area chain and coordinates from the tree, grade from the route page's grade header.
+  if (SNOW) {
+    byUrl.clear();
+    const tf = `${DIR}/_tree/${st.id}.routes.json`;
+    if (!existsSync(tf)) { console.log(`${st.name}: area tree not crawled yet — skipped`); return {}; }
+    let noPage = 0;
+    for (const t of JSON.parse(readFileSync(tf, "utf8")).filter(snowOnly)) {
+      const pf = `${DIR}/_routes/${t.id}.html`;
+      if (!existsSync(pf)) { noPage++; continue; }
+      const h2 = readFileSync(pf, "utf8").match(/<h2 class="inline-block mr-2">([\s\S]*?)<\/h2>/);
+      const rating = h2 ? decode(h2[1].replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim() : "";
+      const url = `https://www.mountainproject.com/route/${t.id}`;
+      byUrl.set(url, { URL: url, Route: t.name, Location: t.chain.join(" > "), Rating: rating, "Route Type": t.tags.join(", "),
+        Pitches: "", Length: "", "Area Latitude": t.lat ?? "", "Area Longitude": t.lng ?? "" });
+    }
+    if (noPage) console.log(`${st.name}: ${noPage} snow-only route page(s) not fetched yet — run fetch-snow-routes.mjs; importing the rest`);
+  }
   // A state whose rock/boulder crawl is unfinished is REFUSED, not half-imported: every file at the
   // 1,000-row cap must have its splits on disk (both grade halves, or at least one sub-area file).
-  const has = new Set(files);
-  for (const f of files) {
+  const has = new Set(SNOW ? [] : files);
+  for (const f of SNOW ? [] : files) {
     const m = f.match(/^(.+)_(rock|boulder)_(\d+)_(\d+)((?:_a\d+)?)\.csv$/);
     if (!m) continue;
     if (readFileSync(DIR + "/" + f, "utf8").split("\n").filter(l => l.trim()).length - 1 < 1000) continue;
@@ -314,7 +343,7 @@ async function runState(st) {
   const rowsIn = [...byUrl.values()].map(r => ({ r, tk: tokens(r.Rating), chain: provinceChain(String(r.Location || "").split(" > ").map(s => s.trim()).reverse()) }));
   const deferred = [];
   for (const { r, tk, chain } of rowsIn) {
-    if (!tk.wi && !tk.m && !tk.aid && !tk.yds && !tk.v) { refused["no grade we can read"] = (refused["no grade we can read"] || 0) + 1; continue; }
+    if (!tk.wi && !tk.m && !tk.aid && !tk.yds && !tk.v && !tk.snow) { refused["no grade we can read"] = (refused["no grade we can read"] || 0) + 1; continue; }
     if (norm(chain[0]) !== norm(st.name)) { refused["location outside the state"] = (refused["location outside the state"] || 0) + 1; continue; }
     const p = place(chain.slice(1), false);
     if (!p.areaId && CREATE && p.why === "area not in our catalog") { deferred.push({ r, tk, chain }); continue; }
@@ -388,7 +417,7 @@ async function runState(st) {
   }
   const areaIds = [...new Set(cand.map(c => c.areaId))];
   const existing = [];
-  for (let i = 0; i < areaIds.length; i += 400) existing.push(...sql(`select id, area_id, name, catalog_key(name) as k, grade, grade_system, ice_grade, aid_grade, ice_grade_num, mixed_grade_num, aid_grade_num from routes where area_id in (${areaIds.slice(i, i + 400).map(q).join(",")})`));
+  for (let i = 0; i < areaIds.length; i += 400) existing.push(...sql(`select id, area_id, name, catalog_key(name) as k, grade, grade_system, ice_grade, aid_grade, ice_grade_num, mixed_grade_num, aid_grade_num, snow_grade_num from routes where area_id in (${areaIds.slice(i, i + 400).map(q).join(",")})`));
   const byKey = new Map(existing.map(e => [e.area_id + "|" + norm(e.name), e]));
   // ...and by catalog_key, so "Drip, The" on the same area is a MATCH, not a refusal.
   const byCk = new Map(); for (const e of existing) { const k = e.area_id + "|" + e.k; byCk.set(k, byCk.has(k) ? null : e); }
@@ -409,6 +438,9 @@ async function runState(st) {
       if (tk.wi && e.ice_grade_num == null) { p.ice_grade_num = tk.wi.num; if (!e.ice_grade) p.ice_grade = tk.wi.tok; }
       if (tk.m && e.mixed_grade_num == null) { p.mixed_grade_num = tk.m.num; if (!e.ice_grade && !p.ice_grade) p.ice_grade = tk.m.tok; }
       if (tk.aid && e.aid_grade_num == null) { p.aid_grade_num = tk.aid.num; if (!e.aid_grade) p.aid_grade = tk.aid.tok; }
+      // A route we already have (often a Class-graded mountaineering one) GAINS the snow rating; its
+      // grade text, and so its Class, is left as it is.
+      if (tk.snow && e.snow_grade_num == null) p.snow_grade_num = tk.snow.num;
       if (Object.keys(p).length) patches.push({ id: e.id, p });
       matched.push(e.id);
       continue;
@@ -429,13 +461,16 @@ async function runState(st) {
     const disc = disciplineOf(r["Route Type"], tk);
     if (!disc) { refused["type and grade do not agree"] = (refused["type and grade do not agree"] || 0) + 1; continue; }
     const primary = PRIMARY[disc](tk);
-    const pnum = tk[primary].num;
+    // A snow climb's rating lives in snow_grade_num; grade_num stays empty rather than put 1-3 on
+    // the Class number line the other mountaineering routes sort by.
+    const pnum = primary === "snow" ? null : tk[primary].num;
     let id = areaId + "_" + slug(name), n = 2; while (taken.has(id)) id = areaId + "_" + slug(name) + "_" + n++; taken.add(id);
     const types = String(r["Route Type"] || "").toLowerCase().split(",").map(s => s.trim());
     inserts.push({
       id, area_id: areaId, name, discipline: disc, grade: String(r.Rating).trim(), grade_system: primary, grade_num: pnum,
       ice_grade: (tk.wi || tk.m) ? (tk.wi || tk.m).tok : null, aid_grade: tk.aid ? tk.aid.tok : null,
       ice_grade_num: tk.wi ? tk.wi.num : null, mixed_grade_num: tk.m ? tk.m.num : null, aid_grade_num: tk.aid ? tk.aid.num : null,
+      snow_grade_num: tk.snow ? tk.snow.num : null,
       pitches: +r.Pitches > 0 ? +r.Pitches : 0, length_m: +r.Length > 0 ? Math.round(+r.Length / 3.28084) : null,
       disciplines: [...new Set([disc, ...types.map(t => TYPE_DISC[t]).filter(Boolean)])], auto_generated: false,
     });
