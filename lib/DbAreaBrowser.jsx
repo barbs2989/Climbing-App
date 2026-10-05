@@ -683,9 +683,9 @@ const GRADE_SCALES = (() => {
   const ints = (pre, a, z) => { const o = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
   // A/C: aid and clean-aid grades share one number (A2 and C2 are both 2), so one option covers both.
   const aid = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
-  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid };
+  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid, snow: [["Easy Snow", 1, 1], ["Mod. Snow", 2, 2], ["Steep Snow", 3, 3]] };
 })();
-const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid" };
+const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid", snow: "Snow" };
 // AN ALLOW-LIST, each entry MEASURED rather than assumed (2026-09-24, all 205,543 routes —
 // scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
 //   sport / trad / toprope / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
@@ -696,8 +696,10 @@ const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: 
 // Re-run the measurements before widening this.
 //   mountaineering / alpine / scrambling: one final grade per route, on the scale its crux is on —
 //     Class for walk-ups, scrambles and glacier climbs, 5.x for roped rock, WI/AI for an ice crux
-//     (an ice final also fills ice_grade_num, which the WI range reads).
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "yds", "wi"], alpine: ["yds", "class", "wi"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+//     (an ice final also fills ice_grade_num, which the WI range reads). Both also offer Snow:
+//     Mountain Project's Easy / Mod. / Steep Snow, read from snow_grade_num (0246), which a route
+//     carries BESIDE its Class or 5.x grade — the owner wanted both (2026-10-04).
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
 // The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
 // as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
 // were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
