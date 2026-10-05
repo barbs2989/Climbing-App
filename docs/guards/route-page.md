@@ -37,6 +37,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     links and the fire panel all render without the route carrying one safety field of its own.
     While Safety was content-gated too, 99.5% of the catalog had nowhere to show a live wildfire.
     `hasSafetyContent()` is gone; `hasPlanContent()` stays.
+  - **ROUTE FACTS, section 6 (2026-10-01).** CRAG is five disciplines now — `toprope` and `aid` are
+    crag routes (RouteDetail's `CRAG_CATS`); before, they fell into the alpine layout and a bare one
+    printed "Season TBD". On every crag discipline a BARE route must gain no fact row and no
+    "Season TBD"; an enriched one must show every row WITH its value (a label alone does not pass);
+    season reaches the header strap; and a crag route whose `pitch_detail`/`climate` cannot open a
+    Plan tab shows them on Overview — and only there, so a route WITH a Plan tab must not repeat them.
+    Injection-tested: removing the Season row, reverting the strap, and reverting `cragOnly` to three
+    disciplines each fail by name.
 - **`check:approach-section`** renders the real `RouteDetail` and pins that the Plan tab has
   **one** APPROACH section. There used to be two: "APPROACHES · N ways in" (`approach_variants`)
   and, under it, a separate APPROACH box holding the `approach` paragraph, which read as a third
@@ -139,6 +147,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `startsWith`, not `===`, or the whole sentinel class could report a defect and still exit
       0. Injection-tested: deleting the `Crux` tile from `RouteDetail` fails naming `crux` and
       printing the injected patch, and restoring it goes green.
+    - **ROUTE FACTS (2026-10-01) added six sentinels**: `bolts` (0240), and `guide_stars`,
+      `alt_names`, `variations`, `ffa`, `fwa`. `bolts` and `guide_stars` are `numeric:true` WITH an
+      `anchor` (`Bolts`, `★★★☆`), and a numeric sentinel that has an anchor must now show it as
+      well as change the page — "the page changed" alone passes on any side effect of the patch.
+      `fwa` is probed on the ALPINE base on purpose: a first winter ascent is mostly an alpine fact.
+      `anchor` (0242, 2026-10-02) is the seventh: the route's TOP anchor as a short value, an
+      ANCHOR row on crag routes other than boulders. `features` was NOT given a row — it already
+      draws as RouteTagRow's chips, and a second reader would print it twice.
+      `location` (0243) is the eighth: where the line starts on its wall, the FIRST fact row on a
+      crag route, capped at 160 characters by both the column and the reader.
   - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
     rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
     "no route has this column populated". Main went red twice on 2026-08-12 with all 46
@@ -354,6 +372,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     is exactly what the row's own caption claims, so neither is a data question. *Read the route
     that carries an outlier before filing it as one.*
 - **`check:token-boxes`** asks whether any element **shaped like a token holds a paragraph**. It is
+  - **A SECOND, CRAG sentinel (2026-10-01).** The sample is enriched alpine rows, so the ROUTE FACTS
+    rows only a crag discipline draws (bolts, descent, aspect, season) were never offered a long
+    value, and `alt_names`/`variations`/`ffa`/`fwa` are empty catalog-wide, so they are not TEXT in
+    any sampled row and the first sentinel cannot reach them. The crag sentinel is filed on a `crag`
+    area — on a `peak` area catOf() turns trad into alpine and the probe would be the alpine one again.
   the enforcement for the rule CLAUDE.md has stated in prose since `season` — *before writing a
   researched string into an existing column, look at where that column renders* — which had been
   broken **three** times by the time it was written, the third by a pass that had **read the rule**.

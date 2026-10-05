@@ -2,7 +2,7 @@
 // components — everything that used to sit above App in ClimbMatch.jsx (see
 // CLAUDE.md). Mechanically extracted; module-level bindings that App reassigns
 // are written through __set_* shims because ESM import bindings are read-only.
-import { useState, useEffect, useRef, useMemo, useCallback, Suspense, lazy, memo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, useLayoutEffect, Suspense, lazy, memo } from "react";
 import { createPortal } from "react-dom";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./lib/discLabels";
 import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS } from "./lib/objKeys";
@@ -499,6 +499,8 @@ const isHazardTag=t=>!NOT_HAZARD_TAGS.has(t)&&(HAZARD_TAGS.has(t)||HAZARD_KEYWOR
    "Trailhead road" verdict keeps working untouched. The "Road: " prefix keeps a vehicle or issue
    tag readable wherever tags are printed raw. Only the free-text note needed a column (road_note). */
 const ROAD_STATUS=[["Road/trailhead open","Open to the trailhead"],["Road/trailhead gated","Gated — walk or bike from the gate"],["Road/trailhead closed","Closed"]];
+/* "Any car" is exclusive; high clearance and 4WD are NOT — a road can need both — so a report may
+   carry either or both, and roadReportOf states them together. */
 const ROAD_VEHICLE=[["Road: any car","Any car"],["Road: high clearance","High clearance"],["Road: 4WD needed","4WD needed"]];
 const ROAD_ISSUES=[["Road: potholes","Potholes"],["Road: washboard","Washboard"],["Road: washout","Washout"],["Road: snow or ice","Snow or ice on the road"],["Road: downed trees","Downed trees"],["Road: construction","Construction"],["Road: parking full","Trailhead parking full"]];
 /* Chips the form offered before this section, which map to no single answer above: the old alpine
@@ -508,7 +510,7 @@ const ROAD_LEGACY=[["4WD/snow to trailhead","4WD or snow to the trailhead"],["Ro
 const ROAD_LABEL=Object.fromEntries(ROAD_STATUS.concat(ROAD_VEHICLE,ROAD_ISSUES,ROAD_LEGACY));
 const isRoadTag=t=>Object.prototype.hasOwnProperty.call(ROAD_LABEL,t);
 /* What one report says about the road, or null when it says nothing. `tone` colours the status. */
-function roadReportOf(a){if(!a)return null;const tags=a.condTags||[];const first=list=>list.find(p=>tags.indexOf(p[0])>=0)||null;const st=first(ROAD_STATUS);const veh=first(ROAD_VEHICLE)||first(ROAD_LEGACY);const issues=ROAD_ISSUES.filter(p=>tags.indexOf(p[0])>=0).map(p=>p[1]);const note=a.roadNote?String(a.roadNote).trim():"";if(!st&&!veh&&!issues.length&&!note)return null;return {status:st?st[1]:null,tone:st?(st[0]===ROAD_STATUS[0][0]?"open":st[0]===ROAD_STATUS[1][0]?"gated":"closed"):null,vehicle:veh?veh[1]:null,issues,note};}
+function roadReportOf(a){if(!a)return null;const tags=a.condTags||[];const first=list=>list.find(p=>tags.indexOf(p[0])>=0)||null;const st=first(ROAD_STATUS);const _vs=ROAD_VEHICLE.filter(p=>tags.indexOf(p[0])>=0);const veh=_vs.length?[ROAD_VEHICLE[0][0],_vs.map(p=>p[1]).join(" and ")]:first(ROAD_LEGACY);const issues=ROAD_ISSUES.filter(p=>tags.indexOf(p[0])>=0).map(p=>p[1]);const note=a.roadNote?String(a.roadNote).trim():"";if(!st&&!veh&&!issues.length&&!note)return null;return {status:st?st[1]:null,tone:st?(st[0]===ROAD_STATUS[0][0]?"open":st[0]===ROAD_STATUS[1][0]?"gated":"closed"):null,vehicle:veh?veh[1]:null,issues,note};}
 
 const RECENT_DAYS=45;
 function ago(d){if(!d)return "";const t=new Date(d).getTime();if(isNaN(t))return "";const days=Math.floor((Date.now()-t)/86400000);if(days<=0)return "today";if(days===1)return "1d ago";if(days<7)return days+"d ago";if(days<30)return Math.floor(days/7)+"w ago";if(days<365)return Math.floor(days/30)+"mo ago";return Math.floor(days/365)+"y ago";}
@@ -587,106 +589,85 @@ function renderMD(text){
     return <p key={b.key} style={{margin:"0 0 8px"}}>{inline(b.text,b.key)}</p>;
   });
 }
-function MDToolbar({taRef,value,onChange}){
-  function applyAndSelect(next,selStart,selEnd){
-    const ta=taRef.current;
-    onChange(next);
-    setTimeout(function(){try{ta.focus();ta.setSelectionRange(selStart,selEnd);}catch(er){}},0);
-  }
-  function toggleWrap(marker){
-    const ta=taRef.current;if(!ta)return;
-    const s=ta.selectionStart,e=ta.selectionEnd,ml=marker.length;
-    const selText=value.slice(s,e);
-    if(selText.length>=ml*2&&selText.slice(0,ml)===marker&&selText.slice(-ml)===marker){
-      const inner=selText.slice(ml,selText.length-ml);
-      applyAndSelect(value.slice(0,s)+inner+value.slice(e),s,s+inner.length);
-      return;
-    }
-    if(value.slice(Math.max(0,s-ml),s)===marker&&value.slice(e,e+ml)===marker){
-      applyAndSelect(value.slice(0,s-ml)+selText+value.slice(e+ml),s-ml,e-ml);
-      return;
-    }
-    // Nothing selected: open the markers and leave the caret BETWEEN them, so you press B
-    // and then type and what you type comes out bold — the way it behaves in any word
-    // processor. It used to insert the literal words "bold text" as a placeholder, so every
-    // use started with deleting sample text that you first had to realise was sample text.
-    if(!selText){applyAndSelect(value.slice(0,s)+marker+marker+value.slice(e),s+ml,s+ml);return;}
-    applyAndSelect(value.slice(0,s)+marker+selText+marker+value.slice(e),s+ml,s+ml+selText.length);
-  }
-  function toggleList(kind){
-    const ta=taRef.current;if(!ta)return;
-    const s=ta.selectionStart,e=ta.selectionEnd;
-    const lineStart=value.lastIndexOf("\n",s-1)+1;
-    const nlAfter=value.indexOf("\n",e);
-    const lineEnd=nlAfter===-1?value.length:nlAfter;
-    const bulletRe=/^\s*[-•]\s+/,numRe=/^\s*\d+[.)]\s+/;
-    const lines=value.slice(lineStart,lineEnd).split("\n");
-    // Clicking a list button on an EMPTY line used to do nothing at all: the mapper below
-    // returns blank lines untouched, so the one case where you are about to start a list —
-    // caret on a fresh line — was the case that produced no marker and no feedback. Start
-    // the list and put the caret after the marker so you can just type.
-    if(lines.length===1&&!lines[0].trim()){
-      const mk=kind==="ol"?"1. ":"- ";
-      applyAndSelect(value.slice(0,lineStart)+mk+value.slice(lineEnd),lineStart+mk.length,lineStart+mk.length);
-      return;
-    }
-    const already=lines.every(function(ln){return !ln.trim()||(kind==="ol"?numRe:bulletRe).test(ln);});
-    let n=1;
-    const next=lines.map(function(ln){
-      if(!ln.trim())return ln;
-      const stripped=ln.replace(bulletRe,"").replace(numRe,"");
-      if(already)return stripped;
-      return kind==="ol"?(n++)+". "+stripped:"- "+stripped;
-    }).join("\n");
-    applyAndSelect(value.slice(0,lineStart)+next+value.slice(lineEnd),lineStart,lineStart+next.length);
-  }
-  useEffect(function(){
-    const ta=taRef.current;if(!ta)return;
-    function onKey(e){
-      // Enter inside a list continues the list, and Enter on an EMPTY list item ends it.
-      // Without this a list is only ever as long as the one line the toolbar wrote: you
-      // press Enter and land on a bare line, and have to reach for the button again for
-      // every single item. This is the behaviour that makes the toolbar feel like a word
-      // processor rather than a way to type punctuation.
-      // This effect deliberately has no dependency array — it re-attaches each render, so
-      // `value` in this closure is always the current one. Do not "optimise" that away.
-      if(e.key==="Enter"&&!e.shiftKey&&!e.metaKey&&!e.ctrlKey&&!e.altKey){
-        const ta=taRef.current;if(!ta)return;
-        const s=ta.selectionStart,selE=ta.selectionEnd;
-        if(s!==selE)return;                       // a real selection — let Enter replace it
-        const lineStart=value.lastIndexOf("\n",s-1)+1;
-        const line=value.slice(lineStart,s);
-        const bm=line.match(/^(\s*)([-•])\s+(.*)$/);
-        const nm=bm?null:line.match(/^(\s*)(\d+)([.)])\s+(.*)$/);
-        if(!bm&&!nm)return;                       // not in a list — ordinary newline
-        const body=bm?bm[3]:nm[4];
-        e.preventDefault();
-        if(!body.trim()){                         // empty item: drop the marker, leave the list
-          applyAndSelect(value.slice(0,lineStart)+value.slice(s),lineStart,lineStart);
-          return;
-        }
-        const ins="\n"+(bm?(bm[1]+bm[2]+" "):(nm[1]+(parseInt(nm[2],10)+1)+nm[3]+" "));
-        applyAndSelect(value.slice(0,s)+ins+value.slice(s),s+ins.length,s+ins.length);
-        return;
-      }
-      if(!(e.metaKey||e.ctrlKey))return;
-      if(e.key==="b"||e.key==="B"){e.preventDefault();toggleWrap("**");}
-      else if(e.key==="i"||e.key==="I"){e.preventDefault();toggleWrap("_");}
-    }
-    ta.addEventListener("keydown",onKey);
-    return function(){ta.removeEventListener("keydown",onKey);};
+/* ── RichEditor: formatting you SEE while you type. ─────────────────────────────────────────
+   The trip-report box used to format by typing markers: press B and "****" appeared with the
+   caret between them, and a list was a literal "- " at the start of the line (the unexplained
+   dash). A textarea cannot draw bold, so markers were the only way to show it. This is a
+   contentEditable box instead: B turns bold ON, what you type next is bold, B again turns it off,
+   and the list buttons draw real bullets. What it STORES is unchanged — the plain-text markdown
+   renderMD reads (**bold**, _italic_, "- " / "1. " lines, [label](url)) — so every row already
+   written renders as before and nothing stored is HTML. The HTML lives only inside this box, is
+   rebuilt from the stored text with every character escaped, and paste is taken as plain text,
+   so no stored string can become markup. renderMD cannot nest, so bold+italic is stored bold. */
+function _mdEsc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function _mdInlineHtml(s){return String(s).split(/(\*\*[^*]+\*\*|_[^_]+_|\[[^\]\n]+\]\([^)\s]+\))/g).filter(Boolean).map(function(p){if(/^\*\*[^*]+\*\*$/.test(p))return "<b>"+_mdEsc(p.slice(2,-2))+"</b>";if(/^_[^_]+_$/.test(p))return "<i>"+_mdEsc(p.slice(1,-1))+"</i>";var lk=/^\[([^\]\n]+)\]\(([^)\s]+)\)$/.exec(p);if(lk&&/^https?:\/\//i.test(lk[2]))return "<a href=\""+_mdEsc(lk[2])+"\">"+_mdEsc(lk[1])+"</a>";return _mdEsc(p);}).join("");}
+function mdToEditorHtml(md){
+  if(!md)return "";
+  var out="",list=null;
+  var close=function(){if(list){out+="</"+list+">";list=null;}};
+  String(md).split("\n").forEach(function(line){
+    var b=/^\s*[-•]\s+(.*)$/.exec(line),n=b?null:/^\s*\d+[.)]\s+(.*)$/.exec(line);
+    if(b||n){var t=b?"ul":"ol";if(list!==t){close();out+="<"+t+">";list=t;}out+="<li>"+(_mdInlineHtml(b?b[1]:n[1])||"<br>")+"</li>";return;}
+    close();out+="<div>"+(_mdInlineHtml(line)||"<br>")+"</div>";
   });
-  const btn={display:"flex",alignItems:"center",justifyContent:"center",width:36,height:32,borderRadius:7,border:"1px solid "+C.border,background:C.surface,color:C.textSub,cursor:"pointer"};
-  return <div style={{display:"flex",alignItems:"center",gap:5,marginBottom:6}}>
-    <button type="button" title="Bold (Ctrl+B)" aria-label="Bold" onClick={function(){toggleWrap("**");}} style={{...btn,fontWeight:800,fontSize:15}}>B</button>
-    <button type="button" title="Italic (Ctrl+I)" aria-label="Italic" onClick={function(){toggleWrap("_");}} style={{...btn,fontStyle:"italic",fontSize:15}}>I</button>
-    <div style={{width:1,alignSelf:"stretch",background:C.border,margin:"2px 1px"}}/>
-    <button type="button" title="Bullet list" aria-label="Bullet list" onClick={function(){toggleList("ul");}} style={btn}>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="4.5" cy="6" r="1.4" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.4" fill="currentColor" stroke="none"/><line x1="9.5" y1="6" x2="21" y2="6"/><line x1="9.5" y1="12" x2="21" y2="12"/><line x1="9.5" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <button type="button" title="Numbered list" aria-label="Numbered list" onClick={function(){toggleList("ol");}} style={btn}>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><text x="1" y="8.5" fontSize="7" fill="currentColor" stroke="none" fontFamily="sans-serif">1</text><text x="1" y="14.5" fontSize="7" fill="currentColor" stroke="none" fontFamily="sans-serif">2</text><text x="1" y="20.5" fontSize="7" fill="currentColor" stroke="none" fontFamily="sans-serif">3</text><line x1="9.5" y1="6" x2="21" y2="6"/><line x1="9.5" y1="12" x2="21" y2="12"/><line x1="9.5" y1="18" x2="21" y2="18"/></svg>
-    </button>
+  close();return out;
+}
+/* The box's DOM back to stored text. Walked as RUNS of text carrying the formatting of their
+   ancestors, then merged, because a browser splits one typed word across several nodes and
+   writes bold as <b>, <strong> or a font-weight span depending on which browser it is. */
+function editorHtmlToMd(root){
+  var lines=[],cur={pre:"",runs:[]},has=false;
+  var flush=function(force){if(has||force||cur.pre){lines.push(cur);}cur={pre:"",runs:[]};has=false;};
+  var BLOCK={DIV:1,P:1,H1:1,H2:1,H3:1,H4:1,BLOCKQUOTE:1,PRE:1};
+  var walk=function(node,f,liNo){
+    if(node.nodeType===3){var parts=node.nodeValue.replace(/ /g," ").replace(/​/g,"").split("\n");parts.forEach(function(t,i){if(i>0)flush(true);if(t){cur.runs.push({t:t,b:f.b,i:f.i,h:f.h});has=true;}});return;}
+    if(node.nodeType!==1)return;
+    var tag=node.tagName,st=node.style||{};
+    if(tag==="BR"){var last=!node.nextSibling&&node.parentNode!==root&&(BLOCK[node.parentNode.tagName]||node.parentNode.tagName==="LI");if(last&&has)return;flush(true);return;}
+    var g={b:f.b||tag==="B"||tag==="STRONG"||/^(bold|bolder|[6-9]00)$/.test(st.fontWeight||""),i:f.i||tag==="I"||tag==="EM"||st.fontStyle==="italic",h:f.h};
+    if(tag==="A"){var hr=node.getAttribute("href")||"";if(/^https?:\/\//i.test(hr))g.h=hr;}
+    if(tag==="UL"||tag==="OL"){if(has)flush();var k=0;Array.prototype.forEach.call(node.childNodes,function(ch){if(ch.nodeType===1&&ch.tagName==="LI"){k++;cur.pre=tag==="OL"?k+". ":"- ";Array.prototype.forEach.call(ch.childNodes,function(c2){walk(c2,g);});flush(true);}else walk(ch,g);});return;}
+    if(BLOCK[tag]){if(has)flush();var before=lines.length;Array.prototype.forEach.call(node.childNodes,function(ch){walk(ch,g);});if(has)flush();else if(lines.length===before)flush(true);return;}
+    Array.prototype.forEach.call(node.childNodes,function(ch){walk(ch,g);});
+  };
+  Array.prototype.forEach.call(root.childNodes,function(ch){walk(ch,{b:false,i:false,h:null});});
+  if(has||cur.pre)flush();
+  var wrap=function(s,m){if(!s.trim())return s;var lead=s.match(/^\s*/)[0],trail=s.match(/\s*$/)[0];return lead+m+s.trim()+m+trail;};
+  var md=lines.map(function(ln){var merged=[];ln.runs.forEach(function(r){var p=merged[merged.length-1];if(p&&p.b===r.b&&p.i===r.i&&p.h===r.h)p.t+=r.t;else merged.push(Object.assign({},r));});return ln.pre+merged.map(function(r){if(r.h)return r.t.trim()?"["+r.t+"]("+r.h+")":r.t;if(r.b)return wrap(r.t,"**");if(r.i)return wrap(r.t,"_");return r.t;}).join("");});
+  while(md.length&&!md[md.length-1].trim())md.pop();
+  return md.join("\n");
+}
+function caretToEnd(el){try{el.focus({preventScroll:true});var r=document.createRange();r.selectNodeContents(el);r.collapse(false);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}}
+function RichEditor({value,onChange,elRef,ariaLabel,placeholder,minHeight,compact}){
+  const ref=useRef(null),last=useRef(null);const [act,setAct]=useState({});
+  const setEl=function(el){ref.current=el;if(elRef)elRef.current=el;};
+  /* The stored text is the source of truth. It is only written INTO the box when it changed from
+     outside (a prompt chip, a mention pick, a reset) — rewriting it on every keystroke would throw
+     the caret back to the start. */
+  useLayoutEffect(function(){var el=ref.current;if(!el)return;var v=value||"";if(v===last.current)return;last.current=v;el.innerHTML=mdToEditorHtml(v);if(document.activeElement===el)caretToEnd(el);},[value]);
+  const refresh=function(){try{setAct({b:document.queryCommandState("bold"),i:document.queryCommandState("italic"),ul:document.queryCommandState("insertUnorderedList"),ol:document.queryCommandState("insertOrderedList")});}catch(e){}};
+  useEffect(function(){var on=function(){if(ref.current&&document.activeElement===ref.current)refresh();};document.addEventListener("selectionchange",on);return function(){document.removeEventListener("selectionchange",on);};},[]);
+  const emit=function(){var el=ref.current;if(!el)return;var md=editorHtmlToMd(el);if(!md.trim()&&el.innerHTML&&!el.querySelector("ul,ol"))el.innerHTML="";last.current=md;onChange(md);};
+  const cmd=function(c){var el=ref.current;if(!el)return;if(document.activeElement!==el)caretToEnd(el);try{document.execCommand("styleWithCSS",false,false);document.execCommand(c,false,null);}catch(e){}emit();refresh();};
+  const btn={display:"flex",alignItems:"center",justifyContent:"center",width:compact?32:36,height:compact?28:32,borderRadius:7,border:"1px solid "+C.border,background:C.surface,color:C.textSub,cursor:"pointer"};
+  const onB=function(on){return on?{background:C.blueBg,border:"1px solid "+C.blueDim,color:C.blue}:{};};
+  const keep=function(e){e.preventDefault();};
+  return <div>
+    <div role="toolbar" aria-label="Text formatting" style={{display:"flex",alignItems:"center",gap:5,marginBottom:6}}>
+      <button type="button" title="Bold (Ctrl+B)" aria-label="Bold" aria-pressed={!!act.b} onMouseDown={keep} onClick={function(){cmd("bold");}} style={Object.assign({},btn,{fontWeight:800,fontSize:15},onB(act.b))}>B</button>
+      <button type="button" title="Italic (Ctrl+I)" aria-label="Italic" aria-pressed={!!act.i} onMouseDown={keep} onClick={function(){cmd("italic");}} style={Object.assign({},btn,{fontStyle:"italic",fontSize:15},onB(act.i))}>I</button>
+      <div style={{width:1,alignSelf:"stretch",background:C.border,margin:"2px 1px"}}/>
+      <button type="button" title="Bullet list" aria-label="Bullet list" aria-pressed={!!act.ul} onMouseDown={keep} onClick={function(){cmd("insertUnorderedList");}} style={Object.assign({},btn,onB(act.ul))}>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="4.5" cy="6" r="1.4" fill="currentColor" stroke="none"/><circle cx="4.5" cy="12" r="1.4" fill="currentColor" stroke="none"/><circle cx="4.5" cy="18" r="1.4" fill="currentColor" stroke="none"/><line x1="9.5" y1="6" x2="21" y2="6"/><line x1="9.5" y1="12" x2="21" y2="12"/><line x1="9.5" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <button type="button" title="Numbered list" aria-label="Numbered list" aria-pressed={!!act.ol} onMouseDown={keep} onClick={function(){cmd("insertOrderedList");}} style={Object.assign({},btn,onB(act.ol))}>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><text x="1" y="8.5" fontSize="7" fill="currentColor" stroke="none" fontFamily="sans-serif">1</text><text x="1" y="14.5" fontSize="7" fill="currentColor" stroke="none" fontFamily="sans-serif">2</text><text x="1" y="20.5" fontSize="7" fill="currentColor" stroke="none" fontFamily="sans-serif">3</text><line x1="9.5" y1="6" x2="21" y2="6"/><line x1="9.5" y1="12" x2="21" y2="12"/><line x1="9.5" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div style={{position:"relative"}}>
+      {!value?<div aria-hidden="true" style={{position:"absolute",top:9,left:11,right:11,color:C.textMuted,fontSize:16,lineHeight:1.5,pointerEvents:"none"}}>{placeholder}</div>:null}
+      <div ref={setEl} role="textbox" aria-multiline="true" aria-label={ariaLabel} aria-placeholder={placeholder} tabIndex={0} contentEditable suppressContentEditableWarning onInput={emit} onKeyUp={refresh} onMouseUp={refresh} onFocus={refresh} onPaste={function(e){var t=e.clipboardData&&e.clipboardData.getData("text/plain");if(t==null)return;e.preventDefault();try{document.execCommand("insertText",false,t);}catch(er){}emit();}} style={{width:"100%",padding:"9px 11px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:16,boxSizing:"border-box",minHeight:minHeight||78,maxHeight:"50vh",overflowY:"auto",overscrollBehavior:"contain",outline:"none",lineHeight:1.5,wordBreak:"break-word",whiteSpace:"pre-wrap"}}/>
+    </div>
   </div>;
 }
 /* THE CAVEAT MUST SURVIVE THE DOWNLOAD. Split out of gpxDownload so the FILE can be asserted on:
@@ -1638,28 +1619,14 @@ export function SectionJumps({rootRef,tabKey}){const [items,setItems]=useState([
 export const SUB_LABEL={fontSize:10,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.6};
 const MeH=SL;
 
-/* ── Text boxes: grow while you type, and format what you write. ─────────────────────────
-   Both behaviours are installed ONCE, globally, by useRichTextareas() rather than added to
-   each of the 35 text boxes by hand. That is not laziness: a per-call-site version covers
-   the boxes that existed the day it was written and silently misses every one added after,
-   which is exactly how "all text boxes" decays into "most of them". Delegation on the
-   document covers textareas inside modals and lazy chunks too, with no registry to keep.
-
-   Formatting is stored as PLAIN TEXT markers (**bold**, *italic*, - bullets, 1. numbered,
-   [label](url)) — never HTML. Nothing in the DB changes shape, every existing row keeps
-   rendering, and there is no markup to sanitise on the way back out. <Rich/> below is the
-   reader for it, and it only ever emits React elements, so a stored string cannot become
-   markup by accident. */
-
-// React installs its own value setter on the input; assigning el.value directly updates the
-// DOM but leaves React's internal tracker holding the previous string, so the change event
-// is treated as a no-op and onChange never fires. Go through the prototype setter instead.
-function _setNativeValue(el,v){
-  const proto=Object.getPrototypeOf(el);
-  const d=Object.getOwnPropertyDescriptor(proto,"value");
-  if(d&&d.set)d.set.call(el,v);else el.value=v;
-  el.dispatchEvent(new Event("input",{bubbles:true}));
-}
+/* ── Text boxes grow while you type. ─────────────────────────────────────────────────────
+   Installed ONCE, globally, by useRichTextareas() rather than added to each text box by hand: a
+   per-call-site version covers the boxes that existed the day it was written and silently misses
+   every one added after. Delegation on the document covers modals and lazy chunks too.
+   This used to pin a floating format bar above EVERY textarea as well. A textarea cannot draw
+   bold, so the bar could only type markers ("**", "_", "- ") — and all but two of those boxes are
+   printed as plain text, so the markers reached the screen as literal asterisks. Formatting now
+   lives only where it renders: RichEditor (above renderMD), used by the trip report and comments. */
 function _autosize(el){
   if(!el||el.dataset.noAutogrow==="1")return;
   const max=Math.max(160,Math.round((window.innerHeight||800)*0.5));
@@ -1668,104 +1635,15 @@ function _autosize(el){
   el.style.height=h+"px";
   el.style.overflowY=el.scrollHeight>max?"auto":"hidden";
 }
-// Wrap the selection, or the word under the caret if there is no selection.
-function _wrapSel(el,mark){
-  const s=el.selectionStart,e=el.selectionEnd,v=el.value;
-  const sel=v.slice(s,e)||"text";
-  const next=v.slice(0,s)+mark+sel+mark+v.slice(e);
-  _setNativeValue(el,next);
-  el.focus();el.setSelectionRange(s+mark.length,s+mark.length+sel.length);
-}
-// Prefix every line the selection touches. `ordered` renumbers from 1 so a list stays a list.
-function _prefixLines(el,ordered){
-  const v=el.value,s=el.selectionStart,e=el.selectionEnd;
-  const from=v.lastIndexOf("\n",s-1)+1;
-  let to=v.indexOf("\n",e);if(to<0)to=v.length;
-  const body=v.slice(from,to)||"";
-  const out=body.split("\n").map(function(ln,i){
-    const bare=ln.replace(/^\s*(?:[-*]\s+|\d+\.\s+)/,"");
-    return (ordered?(i+1)+". ":"- ")+bare;
-  }).join("\n");
-  const next=v.slice(0,from)+out+v.slice(to);
-  _setNativeValue(el,next);
-  el.focus();el.setSelectionRange(from,from+out.length);
-}
-function _linkSel(el){
-  const s=el.selectionStart,e=el.selectionEnd,v=el.value;
-  const label=v.slice(s,e)||"link text";
-  const ins="["+label+"](https://)";
-  _setNativeValue(el,v.slice(0,s)+ins+v.slice(e));
-  el.focus();
-  // Caret inside the (…) so the next thing typed is the URL.
-  el.setSelectionRange(s+label.length+3,s+ins.length-1);
-}
-const _MD_BTNS=[
-  ["B","Bold",function(el){_wrapSel(el,"**");},{fontWeight:900}],
-  // Underscores, not asterisks: renderMD's italic pattern is /_[^_]+_/. A toolbar that emits
-  // syntax its own reader cannot parse would show the markers as literal text.
-  ["I","Italic",function(el){_wrapSel(el,"_");},{fontStyle:"italic",fontWeight:700}],
-  ["•","Bulleted list",function(el){_prefixLines(el,false);},{fontWeight:900}],
-  ["1.","Numbered list",function(el){_prefixLines(el,true);},{fontWeight:800}],
-  ["🔗","Link",function(el){_linkSel(el);},{}]
-];
-/* One floating bar, reused by whichever textarea has focus. It is built with real <button>s
-   (so it has computed accessible names) and pinned above the box, flipping below when the
-   box is near the top of the viewport. mousedown is prevented so pressing a button never
-   blurs the textarea — losing the selection would make every button a no-op. */
 function _installRichTextareas(){
   if(typeof document==="undefined"||document.__cmRichInstalled)return function(){};
   document.__cmRichInstalled=true;
-  let bar=null,cur=null;
-  const build=function(){
-    bar=document.createElement("div");
-    bar.setAttribute("role","toolbar");
-    bar.setAttribute("aria-label","Text formatting");
-    bar.style.cssText="position:fixed;z-index:9600;display:none;gap:4px;padding:4px;border-radius:9px;background:"+C.surface+";border:1px solid "+C.border+";box-shadow:0 6px 20px rgba(0,0,0,0.5)";
-    _MD_BTNS.forEach(function(b){
-      const btn=document.createElement("button");
-      btn.type="button";btn.textContent=b[0];btn.setAttribute("aria-label",b[1]);btn.title=b[1];
-      btn.style.cssText="min-width:30px;height:28px;padding:0 7px;border-radius:7px;border:1px solid "+C.border+";background:"+C.card+";color:"+C.textSub+";font-size:12.5px;cursor:pointer;line-height:1";
-      Object.keys(b[3]).forEach(function(k){btn.style[k]=b[3][k];});
-      btn.addEventListener("mousedown",function(ev){ev.preventDefault();});
-      btn.addEventListener("click",function(ev){ev.preventDefault();if(cur){b[2](cur);_autosize(cur);place();}});
-      bar.appendChild(btn);
-    });
-    bar.addEventListener("mousedown",function(ev){ev.preventDefault();});
-    document.body.appendChild(bar);
-  };
-  const place=function(){
-    if(!bar||!cur)return;
-    const r=cur.getBoundingClientRect();
-    bar.style.display="flex";
-    const bh=bar.offsetHeight||36;
-    const above=r.top-bh-6;
-    bar.style.top=(above>4?above:Math.min(r.bottom+6,(window.innerHeight||800)-bh-4))+"px";
-    bar.style.left=Math.max(6,Math.min(r.left,(window.innerWidth||400)-(bar.offsetWidth||200)-6))+"px";
-  };
-  const hide=function(){if(bar)bar.style.display="none";cur=null;};
-  const onFocus=function(e){
-    const t=e.target;
-    if(!t||t.tagName!=="TEXTAREA"){hide();return;}
-    _autosize(t);
-    if(t.readOnly||t.disabled||t.dataset.noRichtext==="1"){hide();return;}
-    if(!bar)build();
-    cur=t;place();
-  };
-  const onInput=function(e){if(e.target&&e.target.tagName==="TEXTAREA"){_autosize(e.target);if(e.target===cur)place();}};
-  const onBlur=function(e){if(e.target===cur)setTimeout(function(){if(document.activeElement!==cur)hide();},0);};
-  const onScroll=function(){if(cur)place();};
-  document.addEventListener("focusin",onFocus,true);
-  document.addEventListener("input",onInput,true);
-  document.addEventListener("focusout",onBlur,true);
-  window.addEventListener("scroll",onScroll,true);
-  window.addEventListener("resize",onScroll);
+  const grow=function(e){if(e.target&&e.target.tagName==="TEXTAREA")_autosize(e.target);};
+  document.addEventListener("focusin",grow,true);
+  document.addEventListener("input",grow,true);
   return function(){
-    document.removeEventListener("focusin",onFocus,true);
-    document.removeEventListener("input",onInput,true);
-    document.removeEventListener("focusout",onBlur,true);
-    window.removeEventListener("scroll",onScroll,true);
-    window.removeEventListener("resize",onScroll);
-    if(bar&&bar.parentNode)bar.parentNode.removeChild(bar);
+    document.removeEventListener("focusin",grow,true);
+    document.removeEventListener("input",grow,true);
     document.__cmRichInstalled=false;
   };
 }
@@ -3779,7 +3657,10 @@ function DbClimbPicker({onPickRoute,selectedIds,onViewRoute,start,onExit,pickLab
      root (it IS a root), so route search stays off there too and only areas are searched. */
   const routeSearchQ=useSubtreeRoutes(pArea&&!atCountry?pArea.id:null,{q:pq.trim()||undefined,pageSize:40});
   const up=function(){if(pStack.length===1&&onExit){onExit();return;}setPStack(function(s){return s.slice(0,-1);});setPq("");};
-  const kids=(childrenQ.data||[]).filter(function(c){return (c.route_count||0)>0;});
+  /* A country's children are its STATES, and someone logging a past climb is looking for one they
+     already know by name — so they are alphabetical here, not most-climbed first (the order
+     useAreaChildren returns, which the Climbs browser keeps). */
+  const kids=(childrenQ.data||[]).filter(function(c){return (c.route_count||0)>0;}).sort(atCountry?function(a,b){return String(a.name||"").localeCompare(String(b.name||""));}:function(){return 0;});
   const here=routesQ.data||[];
   const rowStyle={display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"11px 12px",borderRadius:10,marginBottom:8,background:C.card,border:"1px solid "+C.border,cursor:"pointer"};
   const climbRow={display:"flex",alignItems:"center",gap:10,padding:"9px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight};
@@ -3826,7 +3707,7 @@ function LogRoutePicker({onClose,onPick}){
   const up=function(){if(!pArea)return;if(pArea.areaType==="state"){setPArea(null);}else{setPArea(parent&&parent.areaType!=="country"&&parent.areaType!=="world"?parent:null);}setPq("");};
   const kids=pArea?MOUNTAINS.filter(function(m){return m.parentId===pArea.id&&ac(m.id)>0;}):[];
   const here=pArea?ROUTES.filter(function(r){return r.mountainId===pArea.id;}):[];
-  const states=MOUNTAINS.filter(function(m){return m.areaType==="state"&&ac(m.id)>0;});
+  const states=MOUNTAINS.filter(function(m){return m.areaType==="state"&&ac(m.id)>0;}).sort(function(a,b){return String(a.name||"").localeCompare(String(b.name||""));});
   const rowStyle={display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"11px 12px",borderRadius:10,marginBottom:8,background:C.card,border:"1px solid "+C.border,cursor:"pointer"};
   const climbRow={display:"flex",alignItems:"center",gap:10,padding:"9px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight};
   return createPortal((<div onClick={onClose} role="dialog" aria-label="Log a climb" aria-modal="true" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.82)",zIndex:1100,display:"flex",alignItems:"flex-start",justifyContent:"center",padding:"24px 12px",overscrollBehavior:"contain"}}>{/* The backdrop used to scroll as well as the list inside it, so on any screen shorter than the dialog the whole card slid up and took its own header with it — the Back button and the close X scrolled away and could not be reached without scrolling back. One scroller only: the card is capped to the viewport, the header never moves, and the list below it is the single thing that scrolls. */}<div onClick={e=>e.stopPropagation()} style={{background:C.bg,width:"100%",maxWidth:480,borderRadius:16,border:"1px solid "+C.border,overflow:"hidden",maxHeight:"calc(100dvh - 48px)",display:"flex",flexDirection:"column"}}><div style={{padding:"14px 16px",borderBottom:"1px solid "+C.border,background:C.surface,flexShrink:0}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-start"}}><div><div style={{fontSize:16,fontWeight:700,color:C.text}}>Log a past climb</div><div style={{fontSize:11.5,color:C.textSub,marginTop:1,lineHeight:1.5}}>Search, or drill into a country and state, to find the route, peak, boulder or hike you did. Includes climbs from before you joined.</div></div><button onClick={onClose} style={POP_CLOSE} aria-label="Close">✕</button></div></div><div style={{padding:16,flex:"1 1 auto",minHeight:0,overflowY:"auto",overscrollBehavior:"contain",WebkitOverflowScrolling:"touch"}}>{USE_DB?<DbClimbPicker onPickRoute={function(r){onPick(r);}}/>:(!pArea?<div><div style={{fontSize:12,color:C.textMuted,marginBottom:9,lineHeight:1.5}}>Pick a state to drill into its crags &amp; climbs.</div>{states.map(function(st){return <div key={st.id} {...clickable(function(){setPArea(st);setPq("");})} style={rowStyle}><span style={{fontSize:13.5,fontWeight:700,color:C.text}}>{st.name}</span><span style={{fontSize:12,color:C.textMuted}}>{ac(st.id)+(ac(st.id)===1?" climb ›":" climbs ›")}</span></div>;})}</div>:<div><div style={{display:"flex",alignItems:"center",gap:8,marginBottom:9}}><button onClick={up} style={POP_BACK}>{"← "+(pArea.areaType==="state"?"States":((parent&&parent.name)||"Back"))}</button><span style={{flex:1,minWidth:0,fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{pArea.name}</span></div><SearchSplit defaultMode="routes" scope={stId} query={pq} onQuery={setPq} onArea={function(a){setPArea(a);setPq("");}} onRoute={function(r){onPick(r);}}/>{!pq.trim()?<div style={{marginTop:6}}>{kids.map(function(ch){return <div key={ch.id} {...clickable(function(){setPArea(ch);setPq("");})} style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,padding:"10px 4px",cursor:"pointer",borderBottom:"1px solid "+C.borderLight}}><span style={{fontSize:13.5,fontWeight:700,color:C.text}}>{ch.name}</span><span style={{fontSize:12,color:C.textMuted}}>{ac(ch.id)+" ›"}</span></div>;})}{here.map(function(r){return <div key={r.id} {...clickable(function(){onPick(r);})} style={climbRow}><div style={{flex:1,minWidth:0}}><div style={{fontSize:13.5,fontWeight:700,color:C.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{r.name}</div><div style={{fontSize:10.5,color:C.textMuted}}>{cragOf(r)+" · "+(r.grade||"")}</div></div><span style={{color:C.blue,fontSize:12,fontWeight:700,flexShrink:0}}>{"Log →"}</span></div>;})}{!kids.length&&!here.length?<div style={{fontSize:13,color:C.textMuted,padding:"12px 4px",textAlign:"center"}}>Nothing here.</div>:null}</div>:null}</div>)}</div></div></div>),document.body);
@@ -4199,13 +4080,12 @@ function Comments({targetId,comments,onAdd,onViewProfile,onEdit,onDelete,onLike,
     {QUICK_REACTS.map(function(qr){var mine=c.myReaction===qr.k;return <span key={qr.k} aria-label={"React "+qr.l} title={qr.l} {...clickable(()=>{if(onReact)onReact(c.id,qr.k);})} style={{display:"inline-flex",alignItems:"center",justifyContent:"center",width:26,height:26,borderRadius:13,border:"1px solid "+(mine?C.blueDim:C.border),background:mine?C.blueBg:C.surface,cursor:"pointer",fontSize:13,lineHeight:1}}>{qr.e}</span>;})}
     <span {...clickable(()=>setReactFor(c.id))} aria-label={c.myReaction?"Change your reaction":"Add a reaction"} style={{display:"inline-flex",alignItems:"center",gap:3,padding:"0 8px",height:26,borderRadius:13,border:"1px solid "+(c.myReaction?C.blueDim:C.border),background:c.myReaction?C.blueBg:C.surface,color:c.myReaction?C.blue:C.textMuted,cursor:"pointer",fontSize:11,fontWeight:700,whiteSpace:"nowrap"}}>{"☺+"}</span>
   </span>;
-  const ta={width:"100%",padding:"11px 12px",borderRadius:10,border:"1px solid "+C.border,background:C.surface,color:C.text,fontSize:13.5,outline:"none",boxSizing:"border-box",resize:"vertical",minHeight:78,lineHeight:1.5,fontFamily:"inherit"};
   const mainMention=mentionCandidates?groupMentionMatch(text,mentionCandidates):null;
   const replyMention=mentionCandidates?groupMentionMatch(replyTxt,mentionCandidates):null;
   const editMention=mentionCandidates?groupMentionMatch(editText,mentionCandidates):null;
   const mentionRow=(m,pick)=>m?<div style={{display:"flex",flexWrap:"wrap",gap:6,marginTop:6}}>{m.matches.map(function(cand){return <span key={cand.id} {...clickable(()=>pick(cand))} style={{fontSize:12,fontWeight:700,color:C.blue,background:C.blueBg,border:"1px solid "+C.blueDim,borderRadius:14,padding:"4px 10px",cursor:"pointer"}}>{cand.name}</span>;})}</div>:null;
-  const renderReply=(r)=>{if(r.deleted)return <div key={r.id} style={{display:"flex",gap:8,marginTop:8,marginLeft:6}}><div style={{flexShrink:0,width:24,height:24,borderRadius:"50%",background:C.surface,border:"1px solid "+C.border}}/><div style={{flex:1,minWidth:0,fontSize:12.5,color:C.textMuted,fontStyle:"italic",padding:"7px 0"}}>Comment deleted</div></div>;const ra=author(r);const rMine=r.userId===0||!!r.mine;const rEditing=editId===r.id;return <div key={r.id} style={{display:"flex",gap:8,marginTop:8,marginLeft:6}}><div {...clickable(()=>{if(onViewProfile&&ra)onViewProfile(ra);})} style={{flexShrink:0,width:24,height:24,borderRadius:"50%",overflow:"hidden",cursor:"pointer",background:C.surface,display:"flex",alignItems:"center",justifyContent:"center",fontSize:10.5,fontWeight:800,color:C.textSub,border:"1px solid "+C.border}}>{ra.avatar?<img loading="lazy" decoding="async" src={ra.avatar} alt="" style={{width:"100%",height:"100%",objectFit:"cover"}} onError={onImgErr(FALLBACK_COVER)}/>:initial(ra.name)}</div><div style={{flex:1,minWidth:0}}><div style={{fontSize:12.5,fontWeight:700,color:C.text}}>{ra.name}{r.edited?<span style={{fontSize:10.5,fontWeight:600,color:C.textMuted}}>{" · edited"}</span>:null}</div>{rEditing?<div><textarea aria-label="Edit reply" value={editText} onChange={e=>setEditText(e.target.value)} rows={2} style={ta}/>{mentionRow(editMention,cand=>setEditText(t=>t.slice(0,t.length-editMention.frag.length)+"@"+cand.name.split(" ")[0]+" "))}<div style={{display:"flex",gap:12,justifyContent:"flex-end",marginTop:7}}><button onClick={()=>{setEditId(null);setEditText("");}} style={{padding:"6px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:C.textSub,fontSize:12,fontWeight:700,cursor:"pointer"}}>Cancel</button><button onClick={saveEdit} style={{padding:"6px 14px",borderRadius:9,border:"none",background:C.blueSolid,color:"#fff",fontSize:12,fontWeight:700,cursor:"pointer"}}>Save</button></div></div>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginTop:1,wordBreak:"break-word"}}>{renderMD(r.text)}</div>}{rEditing?null:reactChips(r,true)}{rEditing?null:<div style={{display:"flex",gap:22,marginTop:5,alignItems:"center",fontSize:11.5,fontWeight:700}}>{reactBtn(r)}{rMine?<span {...clickable(()=>{setEditId(r.id);setEditText(r.text||"");})} style={{color:C.blue,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>Edit</span>:null}{rMine?<span {...clickable(()=>{if(onDelete)askConfirm({title:"Delete this reply?",confirmLabel:"Delete reply"}).then(function(ok){if(ok)onDelete(r.id);});})} style={{color:C.textMuted,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>Delete</span>:null}</div>}</div></div>;};
-  return <div style={{marginTop:10,paddingTop:12,borderTop:"1px solid "+C.border}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.text,letterSpacing:0.5,textTransform:"uppercase",borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{"Discussion"+(list.length?" ("+list.length+")":"")}</div>{list.length>1?<button onClick={()=>setSort(s=>s==="new"?"old":"new")} style={{flexShrink:0,background:C.surface,border:"1px solid "+C.border,color:C.textSub,borderRadius:8,padding:"4px 10px",fontSize:11,fontWeight:700,cursor:"pointer"}}>{sort==="new"?"Newest":"Oldest"}</button>:null}</div><textarea aria-label="Add a comment" value={text} onChange={e=>setText(e.target.value)} placeholder="Add a comment…" rows={2} style={Object.assign({},ta,{minHeight:56})}/>{mentionRow(mainMention,cand=>setText(t=>t.slice(0,t.length-mainMention.frag.length)+"@"+cand.name.split(" ")[0]+" "))}<div style={{display:"flex",justifyContent:"flex-end",marginTop:6,marginBottom:4}}><button onClick={submit} style={{padding:"10px 18px",borderRadius:8,border:"none",background:text.trim()?C.blueSolid:C.surface,color:text.trim()?"#fff":C.textMuted,fontSize:12,fontWeight:700,cursor:text.trim()?"pointer":"default"}}>{"Post"}</button></div>{list.length?<div style={{marginTop:6}}>{list.map((c,i)=>{const a=author(c);const mine=c.userId===0||!!c.mine;const editing=editId===c.id;if(c.deleted){return <div key={c.id} style={{display:"flex",gap:8,padding:"8px 0",borderTop:i>0?"1px solid "+C.borderLight:"none"}}><div style={{flexShrink:0,width:32,height:32,borderRadius:"50%",background:C.surface,border:"1px solid "+C.border}}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:12,color:C.textMuted,fontStyle:"italic"}}>Comment deleted</div>{repliesFor(c.id).map(renderReply)}</div></div>;}const long=(c.text||"").length>CAP;const isOpen=open[c.id];const body=(long&&!isOpen)?c.text.slice(0,CAP).replace(/\s+\S*$/,"")+"…":c.text;const view=()=>{if(onViewProfile&&a)onViewProfile(a);};return <div key={c.id} style={{display:"flex",gap:8,padding:"8px 0",borderTop:i>0?"1px solid "+C.borderLight:"none"}}><div {...clickable(view)} title={"View "+a.name+"'s profile"} style={{flexShrink:0,width:32,height:32,borderRadius:"50%",overflow:"hidden",cursor:"pointer",background:C.surface,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:800,color:C.textSub,border:"1px solid "+C.border}}>{a.avatar?<img loading="lazy" decoding="async" src={a.avatar} alt="" style={{width:"100%",height:"100%",objectFit:"cover"}} onError={onImgErr(FALLBACK_COVER)}/>:initial(a.name)}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",alignItems:"baseline",gap:6,marginBottom:2,flexWrap:"wrap"}}><span {...clickable(view)} style={{fontSize:12.5,fontWeight:700,color:C.text,cursor:"pointer"}}>{a.name}</span><span style={{fontSize:10,color:C.textMuted}}>{ago(c.ts)}{c.edited?" · edited":""}</span></div>{editing?<div><textarea aria-label="Edit comment" value={editText} onChange={e=>setEditText(e.target.value)} rows={2} style={Object.assign({},ta,{minHeight:56})}/>{mentionRow(editMention,cand=>setEditText(t=>t.slice(0,t.length-editMention.frag.length)+"@"+cand.name.split(" ")[0]+" "))}<div style={{display:"flex",gap:8,justifyContent:"flex-end",marginTop:6}}><button onClick={()=>{setEditId(null);setEditText("");}} style={{padding:"6px 12px",borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.textSub,fontSize:11,fontWeight:700,cursor:"pointer"}}>{"Cancel"}</button><button onClick={saveEdit} style={{padding:"6px 14px",borderRadius:8,border:"none",background:C.blueSolid,color:"#fff",fontSize:11,fontWeight:700,cursor:"pointer"}}>{"Save"}</button></div></div>:/* renderMD, not raw text: the format bar puts **markers** in here, so without a reader a
+  const renderReply=(r)=>{if(r.deleted)return <div key={r.id} style={{display:"flex",gap:8,marginTop:8,marginLeft:6}}><div style={{flexShrink:0,width:24,height:24,borderRadius:"50%",background:C.surface,border:"1px solid "+C.border}}/><div style={{flex:1,minWidth:0,fontSize:12.5,color:C.textMuted,fontStyle:"italic",padding:"7px 0"}}>Comment deleted</div></div>;const ra=author(r);const rMine=r.userId===0||!!r.mine;const rEditing=editId===r.id;return <div key={r.id} style={{display:"flex",gap:8,marginTop:8,marginLeft:6}}><div {...clickable(()=>{if(onViewProfile&&ra)onViewProfile(ra);})} style={{flexShrink:0,width:24,height:24,borderRadius:"50%",overflow:"hidden",cursor:"pointer",background:C.surface,display:"flex",alignItems:"center",justifyContent:"center",fontSize:10.5,fontWeight:800,color:C.textSub,border:"1px solid "+C.border}}>{ra.avatar?<img loading="lazy" decoding="async" src={ra.avatar} alt="" style={{width:"100%",height:"100%",objectFit:"cover"}} onError={onImgErr(FALLBACK_COVER)}/>:initial(ra.name)}</div><div style={{flex:1,minWidth:0}}><div style={{fontSize:12.5,fontWeight:700,color:C.text}}>{ra.name}{r.edited?<span style={{fontSize:10.5,fontWeight:600,color:C.textMuted}}>{" · edited"}</span>:null}</div>{rEditing?<div><RichEditor compact value={editText} onChange={setEditText} ariaLabel="Edit reply" minHeight={56}/>{mentionRow(editMention,cand=>setEditText(t=>t.slice(0,t.length-editMention.frag.length)+"@"+cand.name.split(" ")[0]+" "))}<div style={{display:"flex",gap:12,justifyContent:"flex-end",marginTop:7}}><button onClick={()=>{setEditId(null);setEditText("");}} style={{padding:"6px 12px",borderRadius:9,border:"1px solid "+C.border,background:C.card,color:C.textSub,fontSize:12,fontWeight:700,cursor:"pointer"}}>Cancel</button><button onClick={saveEdit} style={{padding:"6px 14px",borderRadius:9,border:"none",background:C.blueSolid,color:"#fff",fontSize:12,fontWeight:700,cursor:"pointer"}}>Save</button></div></div>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5,marginTop:1,wordBreak:"break-word"}}>{renderMD(r.text)}</div>}{rEditing?null:reactChips(r,true)}{rEditing?null:<div style={{display:"flex",gap:22,marginTop:5,alignItems:"center",fontSize:11.5,fontWeight:700}}>{reactBtn(r)}{rMine?<span {...clickable(()=>{setEditId(r.id);setEditText(r.text||"");})} style={{color:C.blue,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>Edit</span>:null}{rMine?<span {...clickable(()=>{if(onDelete)askConfirm({title:"Delete this reply?",confirmLabel:"Delete reply"}).then(function(ok){if(ok)onDelete(r.id);});})} style={{color:C.textMuted,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>Delete</span>:null}</div>}</div></div>;};
+  return <div style={{marginTop:10,paddingTop:12,borderTop:"1px solid "+C.border}}><div style={{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:10}}><div style={{fontSize:12,fontWeight:700,color:C.text,letterSpacing:0.5,textTransform:"uppercase",borderLeft:"3px solid "+C.blue,paddingLeft:9}}>{"Discussion"+(list.length?" ("+list.length+")":"")}</div>{list.length>1?<button onClick={()=>setSort(s=>s==="new"?"old":"new")} style={{flexShrink:0,background:C.surface,border:"1px solid "+C.border,color:C.textSub,borderRadius:8,padding:"4px 10px",fontSize:11,fontWeight:700,cursor:"pointer"}}>{sort==="new"?"Newest":"Oldest"}</button>:null}</div><RichEditor compact value={text} onChange={setText} ariaLabel="Add a comment" placeholder="Add a comment…" minHeight={56}/>{mentionRow(mainMention,cand=>setText(t=>t.slice(0,t.length-mainMention.frag.length)+"@"+cand.name.split(" ")[0]+" "))}<div style={{display:"flex",justifyContent:"flex-end",marginTop:6,marginBottom:4}}><button onClick={submit} style={{padding:"10px 18px",borderRadius:8,border:"none",background:text.trim()?C.blueSolid:C.surface,color:text.trim()?"#fff":C.textMuted,fontSize:12,fontWeight:700,cursor:text.trim()?"pointer":"default"}}>{"Post"}</button></div>{list.length?<div style={{marginTop:6}}>{list.map((c,i)=>{const a=author(c);const mine=c.userId===0||!!c.mine;const editing=editId===c.id;if(c.deleted){return <div key={c.id} style={{display:"flex",gap:8,padding:"8px 0",borderTop:i>0?"1px solid "+C.borderLight:"none"}}><div style={{flexShrink:0,width:32,height:32,borderRadius:"50%",background:C.surface,border:"1px solid "+C.border}}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:12,color:C.textMuted,fontStyle:"italic"}}>Comment deleted</div>{repliesFor(c.id).map(renderReply)}</div></div>;}const long=(c.text||"").length>CAP;const isOpen=open[c.id];const body=(long&&!isOpen)?c.text.slice(0,CAP).replace(/\s+\S*$/,"")+"…":c.text;const view=()=>{if(onViewProfile&&a)onViewProfile(a);};return <div key={c.id} style={{display:"flex",gap:8,padding:"8px 0",borderTop:i>0?"1px solid "+C.borderLight:"none"}}><div {...clickable(view)} title={"View "+a.name+"'s profile"} style={{flexShrink:0,width:32,height:32,borderRadius:"50%",overflow:"hidden",cursor:"pointer",background:C.surface,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:800,color:C.textSub,border:"1px solid "+C.border}}>{a.avatar?<img loading="lazy" decoding="async" src={a.avatar} alt="" style={{width:"100%",height:"100%",objectFit:"cover"}} onError={onImgErr(FALLBACK_COVER)}/>:initial(a.name)}</div><div style={{flex:1,minWidth:0}}><div style={{display:"flex",alignItems:"baseline",gap:6,marginBottom:2,flexWrap:"wrap"}}><span {...clickable(view)} style={{fontSize:12.5,fontWeight:700,color:C.text,cursor:"pointer"}}>{a.name}</span><span style={{fontSize:10,color:C.textMuted}}>{ago(c.ts)}{c.edited?" · edited":""}</span></div>{editing?<div><RichEditor compact value={editText} onChange={setEditText} ariaLabel="Edit comment" minHeight={56}/>{mentionRow(editMention,cand=>setEditText(t=>t.slice(0,t.length-editMention.frag.length)+"@"+cand.name.split(" ")[0]+" "))}<div style={{display:"flex",gap:8,justifyContent:"flex-end",marginTop:6}}><button onClick={()=>{setEditId(null);setEditText("");}} style={{padding:"6px 12px",borderRadius:8,border:"1px solid "+C.border,background:C.surface,color:C.textSub,fontSize:11,fontWeight:700,cursor:"pointer"}}>{"Cancel"}</button><button onClick={saveEdit} style={{padding:"6px 14px",borderRadius:8,border:"none",background:C.blueSolid,color:"#fff",fontSize:11,fontWeight:700,cursor:"pointer"}}>{"Save"}</button></div></div>:/* renderMD, not raw text: the format bar puts **markers** in here, so without a reader a
               climber who used it would see their own asterisks. pre-wrap comes off with it —
               renderMD emits real paragraphs and lists, so the newlines are already structural. */
             <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,wordBreak:"break-word"}}>{renderMD(body)}{long?<span {...clickable(()=>setOpen(o=>Object.assign({},o,{[c.id]:!isOpen})))} style={{color:C.blue,fontWeight:700,cursor:"pointer",marginLeft:5,whiteSpace:"nowrap"}}>{isOpen?"Show less":"Read more"}</span>:null}</div>}{editing?null:reactChips(c)}{editing?null:<div style={{display:"flex",gap:22,rowGap:14,marginTop:6,alignItems:"center",fontSize:11,fontWeight:700,flexWrap:"wrap"}}><span {...clickable(()=>{if(onLike)onLike(c.id);})} style={{color:c.likedByMe?C.blue:C.textMuted,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>{c.likedByMe?"Liked":"Like"}</span><span {...clickable(()=>{setReplyOpen(replyOpen===c.id?null:c.id);setReplyTxt("");})} style={{color:C.textMuted,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>{"Reply"}</span>{reactBtn(c)}{c.likes?<span style={{color:C.textMuted}}>{c.likes} {"👍"}</span>:null}{mine?<span {...clickable(()=>{setEditId(c.id);setEditText(c.text||"");})} style={{color:C.blue,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>{"Edit"}</span>:null}{mine?<span {...clickable(()=>{if(onDelete)askConfirm({title:"Delete this comment?",confirmLabel:"Delete comment"}).then(function(ok){if(ok)onDelete(c.id);});})} style={{color:C.textMuted,cursor:"pointer",display:"inline-block",padding:"7px 5px",margin:"-7px -5px"}}>{"Delete"}</span>:null}</div>}{repliesFor(c.id).map(renderReply)}{replyOpen===c.id?<div style={{display:"flex",gap:5,marginTop:7,marginLeft:4,alignItems:"flex-start"}}><div style={{flex:1,minWidth:0}}><input aria-label={"Reply to "+a.name} value={replyTxt} onChange={e=>setReplyTxt(e.target.value)} placeholder={"Reply to "+a.name+"…"} style={{width:"100%",boxSizing:"border-box",padding:"6px 9px",borderRadius:12,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:11.5,outline:"none"}}/>{mentionRow(replyMention,cand=>setReplyTxt(t=>t.slice(0,t.length-replyMention.frag.length)+"@"+cand.name.split(" ")[0]+" "))}</div><button onClick={()=>{const v=replyTxt.trim();if(!v)return;if(onReply)onReply(c.id,targetId,v);setReplyTxt("");setReplyOpen(null);}} style={{padding:"9px 14px",borderRadius:12,border:"none",background:C.blueSolid,color:"#fff",fontSize:11,fontWeight:700,cursor:"pointer",flexShrink:0}}>{"Post"}</button></div>:null}</div></div>;})}</div>:null}{reactFor?<ReactionPicker onClose={()=>setReactFor(null)} onPick={function(k){if(onReact)onReact(reactFor,k);setReactFor(null);}}/>:null}</div>;
@@ -4280,4 +4160,4 @@ export function __set__cbBatch(v){_cbBatch=v;}
 function OverlaySkeleton({C,label}){return createPortal(<div role="status" aria-live="polite" style={{position:"fixed",inset:0,background:"rgba(0,0,0,0.45)",zIndex:300,display:"flex",alignItems:"center",justifyContent:"center"}}><div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 18px",color:C.textMuted,fontSize:13}}>{label}</div></div>,document.body);}
 function ScreenSkeleton({C,label}){const bar=(w,h,m)=><div style={{width:w,height:h,borderRadius:8,background:C.surface,marginBottom:m,animation:"cmPulse 1.2s ease-in-out infinite"}}/>;return <div role="status" aria-live="polite" style={{padding:"4px 0 20px"}}><style>{"@keyframes cmPulse{0%,100%{opacity:.55}50%{opacity:1}}@media (prefers-reduced-motion:reduce){[style*=cmPulse]{animation:none!important}}"}</style><div style={{color:C.textMuted,fontSize:13,marginBottom:12}}>{label}</div>{bar("60%",18,14)}{[0,1,2,3].map(k=><div key={k} style={{display:"flex",gap:10,alignItems:"center",marginBottom:12}}><div style={{width:40,height:40,borderRadius:20,background:C.surface,flexShrink:0,animation:"cmPulse 1.2s ease-in-out infinite"}}/><div style={{flex:1}}>{bar("70%",12,6)}{bar("45%",10,0)}</div></div>)}</div>;}
 export {ROAD_STATUS,ROAD_VEHICLE,ROAD_ISSUES,ROAD_LEGACY,ROAD_LABEL,isRoadTag,roadReportOf};
-export {rapSummary,rappelReportsOf,shareOrCopy,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,ShareExportRow,SharedListView,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,trustGapLabels,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,trustContributions,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,MDToolbar,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,PARTNER_NUMBERS,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,seedIdentity,TickList,LogCatch,QuickLog,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,sunTimes,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,analyzeAlignment,Questionnaire,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,PlaceMatches,LogRoutePicker,Resume,AscentPyramid,Challenges,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,RealClimberRow,haveMyLoc,lbRowName,seedHistoryFor,ScreenSkeleton,DbAreaPicker,hoursNum,listShareText,listSheetHtml,OverlaySkeleton,HELP_FEATS};
+export {rapSummary,rappelReportsOf,shareOrCopy,localYmd,weekendEndYmd,printSheet,itinShareText,itinSheetHtml,ShareExportRow,SharedListView,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,PHOTO_ALT_MAX,crewAllConfirmed,crewChatReaders,crewChatParticipantLine,uLenUnit,uLenN,uLenIn,groupEventsEmptyLine,nextMeetup,pubNameRow,groupMemberFromRow,mentionToken,floatPlanState,uTempU,uTempIn,uElevN,uElevIn,uElevUnit,uDistMiN,uDistMiIn,uDistMiUnit,uMassN,uMassIn,uMassUnit,itinDraftVal,itinStoreVal,uTemp,uTempN,uTempDelta,uWind,uWindN,uPrecip,uSnowfall,trustGapLabels,normEditStr,SET_FIELDS,climberLine,wpType,wpIs,trailheadPoint,DbAreaBrowser,DbGuides,DbGuideApply,DbGuideDashboard,_enrichmentDbCache,_loadEnrichmentDb,enrichedRoutes,getEnrichment,determineTier,useEnrichmentDb,enrichRoute,C,HERO_BG,HERO_SHEEN,SZ1,SZ2,SZ3,SZ5,SZ6,DLOCALE,DISC,CAT,UNITS,VOUCH_BOOST,MY_STARS,RESPONSE_RATES,__set_MY_PACE,paceOf,RESPONSE_GRACE_MS,computeResponseRates,protOf,gradeVal,avgStars,vScore,trustContributions,uImp,uRateN,uRateUnit,uRate,NOVAL,_uNum,intOnly,uElev,uDist,uDistMi,uApproxDist,uDistMiUnitLong,ROUTE_LENGTHS,routeLengthLabel,routeAscentFt,gainCoversWholeOuting,gainBelowOwnPins,uMass,catOf,rDiscs,gradeLabelRaw,gradeLabel,routeGradeVal,suggGainFt,suggestionProfile,rankSimilarRoutes,suggestDiscSlots,TRIP,tripOf,SKILLS,SKILL_GROUPS,VOUCH_RATINGS,VOUCH_RATINGS_RETIRED,VOUCH_RATING_LABEL,vouchRated,vouchAvg,TICKTYPES,NONCOMPLETION_TICKS,OUTCOME_REASONS,tickTypesFor,CONDITION_SETS,HAZARD_TAGS,HAZARD_KEYWORD_RE,isHazardTag,RECENT_DAYS,ago,isRecent,COND_ENUMS,condGroupsFor,condMetricsFor,missingFacts,renderMD,RichEditor,caretToEnd,useRichTextareas,gpxDownload,buildGpx,WP_TYPES,WP_SINGLE_TYPES,WP_STYLE,WP_COLORS,wpColor,wpGlyph,MAX_WAYPOINTS,MAX_BIVY,guessWpType,parseGpxText,aspectDirs,sunReadout,sunNow,shapeOf,passesFilters,LVL,LEVEL_DESC,MONTHS,FALLBACK_AV,FALLBACK_COVER,onImgErr,MOUNTAINS,ROUTE_EXTRAS,rxOf,ROUTES,areaHasChildren,auditAreaData,CLIMBERS,DEMO_FILLERS,PRIVACY_CONTROLS_LIVE,DEMO_AUTOLOGIN,SHOW_COVERS,FILLER_CLIMBERS,ALL_CLIMBERS,ME,_PYR,GUIDES,GPHOTOS,GLANGS,RISK_LEVELS,PRE_QS,distMiles,rapStr,gn,trustOf,compat,CMAX_DISC,CMAX_GRADE,CMAX_OBJ,CMAX_VERIF,CMAX_PACE,CMAX_AVAIL,COMPAT_BASE,COMPAT_TOP,COMPAT_MAX,compatUnknown,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,parseHrsRange,fmtHrsRange,mapFitToPace,paceVariants,normTag,buildConsensus,DISC_GEAR,datesAgreed,relTime,agreedDate,CREW_ARCHIVE_GRACE_DAYS,isReady,isArchivedCrew,REPLY_LINES,DISC_TO_REPLY_POOL,replyPoolFor,pickReplyCategory,pickReplyLine,pickImageReplyLine,daysUntil,futLabel,Pill,DiscIcon,Av,ChatComposer,TypingIndicator,MessageRow,Stars,YDSL,VL,SL,MeH,GH,Hr,Bar,EMOJI_ICON,Lbl,notifIcon,ActionIcon,DiscBadge,DiscBadges,TrustBadge,RiskBadge,ElevChart,GPXMap,AspectSunPanel,GearTiers,ReportStats,HelpDot,PARTNER_NUMBERS,EmergencyRescueCard,ANCHOR_TYPES,BailoutForm,StartLocationForm,CatchLedger,SpeedProfile,SpeedCompat,VouchCard,PhotoStrip,ticksFor,seedIdentity,TickList,LogCatch,QuickLog,FriendsFeed,pubName,pubFirst,cById,GROUPS,REACTIONS,reactionCounts,groupMentionMatch,extractMentionIds,mutualsFor,mutualIds,mutualCount,mutualLabel,mutualFirstNames,gdisc,gdlabel,trustFactors,TrustBreakdown,FullProfile,BADWORDS,hasVulgarity,GuideDashboard,sunTimes,ReportModal,ConnectModal,CrewInviteModal,LoginScreen,AVAIL_OPTS,availOf,availMatch,availLabel,DOW,weekOf,hasSlot,AreaRegionSelect,analyzeAlignment,Questionnaire,FloatPlan,inArea,_lev,_tol,fuzzyMatch,fuzzyMatchAny,areaPathNames,hlMatch,mtnOf,routeLoc,routeLocText,PROFILE_GRADES,CLIMB_ROLES,profileGradeRows,roleLabel,BELAY_DEVICES,BELAY_LEVELS,belayLabel,certExpiryInfo,condRep,ADDR_YDS,ADDR_VS,ADDR_WIS,ADDR_MS,ADDR_AIDS,ADDR_ALPS,ADDR_CLS,ADDR_GRADES,gradeGroups,ADDR_STYLE,ADDR_HAZ,ADDR_COMMIT,numsClose,NUM_FIELD_TOL,wpClose,sameEditValue,blankItinDay,itinDaysToDraft,itinDraftToStructured,PACE_TIERS,scaleItinPace,getAvailableItineraries,itinToText,TIME_PRESETS,ItineraryEditor,WaypointMapPicker,Contributions,SunCorrect,SearchSplit,ATYPE,areaClimbCount,areaChildNoun,areaCover,gradeSystemFor,routeGradeSystem,GRADE_BANDS,routeBandIdx,seasonMonths,areaNearMi,areaSort,US_ST,CA_PROV,US_CITIES,US_STATES,fmtAgo,AreaBrowse,AreaLatest,AreaCrags,SuggestedClimbs,topContributors,topContribBadges,TopContribBadge,unfinishedRoutes,routeCompleted,RetryReminder,TopContributors,AreaView,crewMax,_discIconCache,getDiscIconMarkup,OverviewMap,GUIDE_REVIEWS,GMETA,gm,GuideApply,revTime,AvailCal,OPEN_CREWS,Guides,DbClimbPicker,PlaceMatches,LogRoutePicker,Resume,AscentPyramid,Challenges,haptic,CountUp,SwipeRow,MiniCalendar,RouteFinder,TIME_BUDGETS,DIST_BUDGETS,QuickMatch,AreaTree,COMMENTS,Comments,ClassicClimbs,GettingThere,PullToRefresh,ReactionPicker,crewInCrew,crewSize,crewAskedToJoin,notifTarget,_cbBatch,_cbTimer,_toastT,_celebTimer,DB_UID,RealClimberRow,haveMyLoc,lbRowName,seedHistoryFor,ScreenSkeleton,DbAreaPicker,hoursNum,listShareText,listSheetHtml,OverlaySkeleton,HELP_FEATS};
