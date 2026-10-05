@@ -65,7 +65,7 @@ for (const l of LABELS) {
   // the title renders inside the accordion's button
   if (!html.includes(">" + l + "<")) fails.push(`no tour entry renders for the "${l}" tab.`);
 }
-if (html.includes("My Crew")) fails.push(`the tour still says "My Crew"; the tab is labelled "Crew".`);
+if (html.includes("My Crew")) fails.push(`the tour still says "My Crew"; the tab is labelled "Crews".`);
 if (/quick tour of each tab/i.test(html)) fails.push(`the heading still claims "each tab" while non-tab sections are listed.`);
 if (/Tap a tab to expand/i.test(html)) fails.push(`the sub-copy still calls every entry a tab.`);
 

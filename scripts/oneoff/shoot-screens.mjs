@@ -55,7 +55,7 @@ await page.goto(base, { waitUntil: "domcontentloaded" });
 await settledText(page);
 
 let routeMissed = false;
-const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
+const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"];
 for (const t of TABS) {
   const ok = await page.evaluate((label) => {
     const el = [...document.querySelectorAll("[aria-label]")].find((e) => {

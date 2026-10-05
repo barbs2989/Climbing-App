@@ -316,7 +316,7 @@ try {
   log(`signed in as the fixture owner (${fixture.owner.id.slice(0, 8)}), real auth gate live`);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -327,7 +327,7 @@ try {
   // itself empty -- caught by the FORBIDDEN entry above, and by naming the mate here.
   log("crew with a real second member:");
   await reset();
-  await tap("Crew");
+  await tap("Crews");
   // The crew card renders expanded inline on this tab -- there is no separate detail
   // screen to open. Clicking the route name here does NOT drill into the crew, it
   // navigates to the ROUTE, which is how the first draft of this check "failed" on a
@@ -387,7 +387,7 @@ try {
   // must appear on the roster. Before #680 both were false and the screen looked fine.
   log("a group the signed-in account owns:");
   await reset();
-  await tap("Crew");
+  await tap("Crews");
   // Groups are a sub-tab of Crew, not of Partners. Its label carries a count ("Groups1"),
   // which clickText's trailing-digits allowance handles.
   const toGroups = await clickText("Groups");

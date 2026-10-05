@@ -160,7 +160,7 @@ const claim = (start) => new Promise((res, rej) => {
 });
 
 // The labels are `NAV[].label` verbatim, which are also the buttons' aria-labels.
-const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
+const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"];
 const ONLY = (process.env.ONLY || "").trim();
 const SUBTAB = "Logbook:Completed";
 // `isError` is FALSE while react-query is still retrying -- the property that makes an
@@ -529,8 +529,10 @@ async function walk(browser, base, session, fail) {
   // outage empties it back to a bare "Friends" -- so the selector has to accept both, which is
   // what tapByName's ^label(,|$) anchoring is for. A selector demanding the count could not find
   // the control in precisely the state this guard creates.
-  // tapByName anchors at ^label(,|$), so "Crew" cannot select the "Crews" sub-tab beside it.
-  if (!(await tapByName(page, "Crew"))) out.__navFail = (out.__navFail || []).concat("Crew (for sub-views)");
+  // The nav tab and its first sub-tab are BOTH named "Crews". tapByName takes the first match in DOM
+  // order, and the sub-tab bar (above the bottom nav) only exists once you are already on the tab --
+  // so from anywhere else this reaches the nav button, and from the tab itself it is a harmless no-op.
+  if (!(await tapByName(page, "Crews"))) out.__navFail = (out.__navFail || []).concat("Crews (for sub-views)");
   await settle(page);
   for (const sub of CREW_SUBS) {
     if (await tapByName(page, sub)) out["Crew:" + sub] = await waitOutFetch(page, fail);
