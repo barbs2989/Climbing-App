@@ -1,0 +1,846 @@
+{
+ "applied": [
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "op": "patch",
+   "columns": [
+    "loss_ft",
+    "itinerary"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_berdeen_peak_scramble",
+   "area_id": "wa_berdeen_peak",
+   "name": "Berdeen Peak Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3-4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": 48.706769,
+   "lng": -121.456671,
+   "aspect": "E/NW",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "sturdy mountaineering boots or scrambling approach shoes",
+    "ice axe (seasonal, if approach gullies hold snow)",
+    "map/compass or GPS",
+    "trekking poles for bushwhack approach"
+   ],
+   "hazards": [
+    "deep national-park backcountry isolation near Berdeen Lake",
+    "long committing approach"
+   ],
+   "verif": null,
+   "overview": "Berdeen Peak rises above remote, turquoise Berdeen Lake in the Bacon Creek drainage of North Cascades National Park, about 1.25 miles east of 7,080-ft Hagan Mountain, within the NPS-designated 'Berdeen' cross-country zone. There is no trail: the peak is reached by a long, brushy off-trail approach from the end of Bacon Creek Road (Mt. Baker-Snoqualmie NF) near Marblemount, followed by a Class 3 (occasional low Class 4) scramble up the east ridge and NW slopes. It is seldom climbed as a standalone objective — most parties take it as the opening summit of longer Northern Pickets-area ridge traverses, such as the multi-day 'Mystery Ridge' enchainment (Berdeen-Hagan-Mystery-Pioneer-Crowder-Swiss-Whatcom-Easy-Mineral).",
+   "beta": "The only documented ascent (Abegg's party, Aug 2012) climbed directly over the peak's east side and NW slopes rather than contouring around a subsidiary spur, finding mostly Class 3 terrain that is 'steep and mossy' with one or two unavoidable Class 4 moves; careful selection of moss and rock holds was needed on loose ground. Reported Day 1 stats for the full push from the road (including the Porkbelly Ridge approach and a descent to camp beyond the summit) were +6,550 ft / -1,820 ft over 6.3 miles — most of that gain occurs on the way to Berdeen's summit, with the loss coming afterward on the descent toward camp, so treat the raw numbers as slightly inclusive of travel past the summit rather than a pure car-to-summit figure.",
+   "turnaround": "Given the long, pathless brush approach up Porkbelly Ridge, no cell coverage, and no nearby trail or rescue infrastructure, set a firm turnaround time based on remaining daylight and weather — down-climbing the loose, mossy Class 3-4 terrain in the dark or in rain adds significant risk with no easy retreat option.",
+   "auto_generated": true,
+   "alpine_grade": null,
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": 6550,
+   "loss_ft": 1820,
+   "dist_km": 10.1,
+   "max_angle": null,
+   "rappels": "0",
+   "commitment": null,
+   "face": "East Ridge and Northwest Slopes",
+   "permit": "",
+   "comms": "No cell coverage is documented for this area; it lies deep in North Cascades National Park backcountry, far from any highway or repeater. Treat the entire objective as no-signal and plan/communicate accordingly (e.g., a filed itinerary or satellite communicator).",
+   "descent": "Reverse the ascent route back to the Berdeen Lake basin, then retrace the Porkbelly Ridge bushwhack to Bacon Creek Road.",
+   "obj_haz": [
+    "brush/route-finding",
+    "loose rock",
+    "moss-covered holds",
+    "remote/no rescue access"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.64467,
+     "lng": -121.42308,
+     "elev": 850,
+     "name": "Bacon Creek Road End",
+     "note": "Road-end parking off WA-20 near Bacon Creek (~MP 112); a 2018 rockslide near mile 4.7 limits the road to high-clearance vehicles beyond that point.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Bacon Creek Road leaves WA-20 near milepost 112 and runs up to a road-end parking spot at about 850 ft in the Mt. Baker-Snoqualmie National Forest. A 2018 rockslide near mile 4.7 limits the road to high-clearance vehicles beyond that point, and the drivable end shifts year to year with washouts, so a bad year simply adds road-walking to the front of the approach. Nothing is signed or maintained from the road end: the route continues on an intermittent boot path along the old roadbed before angling up onto Porkbelly Ridge."
+    },
+    {
+     "elev": 3800,
+     "name": "Porkbelly Ridge crest gain",
+     "note": "Off-trail bushwhack up onto Porkbelly Ridge, repeatedly described by climbers as one of the brushiest ridges in the range — no tread, slow going.",
+     "type": "Junction",
+     "distMi": 2.5
+    },
+    {
+     "lat": 48.71592,
+     "lng": -121.46459,
+     "elev": 5016,
+     "name": "Berdeen Lake",
+     "note": "Large alpine cirque lake beneath Berdeen Peak's NW slopes, often still substantially ice-covered into August; last reliable water before the high camp.",
+     "type": "Water",
+     "distMi": 5.8
+    },
+    {
+     "lat": 48.709559642857144,
+     "lng": -121.4638125,
+     "elev": 5800,
+     "name": "High camp above Berdeen Lake",
+     "note": "Established high camp roughly 800 ft above Berdeen Lake, used as the base for the summit push; Day 1 totals 6.3 mi / 6,550 ft gain to this camp.",
+     "type": "Campsite",
+     "distMi": 6.3
+    },
+    {
+     "lat": 48.70800928571428,
+     "lng": -121.459845,
+     "elev": 6000,
+     "name": "East ridge gain point",
+     "note": "Leave the high camp and climb onto Berdeen Peak's east ridge, which the route follows before cutting onto the NW slopes near the top.",
+     "type": "Junction",
+     "distMi": 6.8
+    },
+    {
+     "lat": 48.707389142857146,
+     "lng": -121.458258,
+     "elev": 6300,
+     "name": "Mossy Class 4 step",
+     "note": "One or two low Class 4 moves on mossy, heather-covered rock just below the summit block — greasy and exposed when wet or frosted.",
+     "type": "Hazard",
+     "distMi": 7
+    },
+    {
+     "lat": 48.706769,
+     "lng": -121.456671,
+     "elev": 6420,
+     "name": "Berdeen Peak",
+     "note": "True summit (6,420 ft); descent reverses the ascent line back through the high camp and down the Porkbelly Ridge bushwhack.",
+     "type": "Summit",
+     "distMi": 7.2
+    }
+   ],
+   "gpx": [
+    [
+     48.588378,
+     -121.391382
+    ],
+    [
+     48.588989,
+     -121.391937
+    ],
+    [
+     48.589865,
+     -121.392062
+    ],
+    [
+     48.591258,
+     -121.391612
+    ],
+    [
+     48.592708,
+     -121.391248
+    ],
+    [
+     48.5934,
+     -121.390839
+    ],
+    [
+     48.593985,
+     -121.390498
+    ],
+    [
+     48.594111,
+     -121.390541
+    ],
+    [
+     48.59427,
+     -121.390608
+    ],
+    [
+     48.594425,
+     -121.390755
+    ],
+    [
+     48.594749,
+     -121.391139
+    ],
+    [
+     48.595542,
+     -121.391266
+    ],
+    [
+     48.596455,
+     -121.391205
+    ],
+    [
+     48.597089,
+     -121.390515
+    ],
+    [
+     48.597501,
+     -121.39043
+    ],
+    [
+     48.597941,
+     -121.39056
+    ],
+    [
+     48.598309,
+     -121.390708
+    ],
+    [
+     48.598817,
+     -121.391351
+    ],
+    [
+     48.598976,
+     -121.391974
+    ],
+    [
+     48.600694,
+     -121.393757
+    ],
+    [
+     48.600991,
+     -121.394098
+    ],
+    [
+     48.601291,
+     -121.394295
+    ],
+    [
+     48.601743,
+     -121.394614
+    ],
+    [
+     48.602226,
+     -121.395367
+    ],
+    [
+     48.602737,
+     -121.395795
+    ],
+    [
+     48.603281,
+     -121.396893
+    ],
+    [
+     48.604415,
+     -121.397901
+    ],
+    [
+     48.605305,
+     -121.398691
+    ],
+    [
+     48.605909,
+     -121.399291
+    ],
+    [
+     48.606197,
+     -121.399535
+    ],
+    [
+     48.606534,
+     -121.399627
+    ],
+    [
+     48.606797,
+     -121.39945
+    ],
+    [
+     48.607066,
+     -121.399056
+    ],
+    [
+     48.607461,
+     -121.398987
+    ],
+    [
+     48.608207,
+     -121.399326
+    ],
+    [
+     48.60871,
+     -121.399739
+    ],
+    [
+     48.609372,
+     -121.399808
+    ],
+    [
+     48.609807,
+     -121.399945
+    ],
+    [
+     48.610289,
+     -121.40033
+    ],
+    [
+     48.610506,
+     -121.400747
+    ],
+    [
+     48.61079,
+     -121.401357
+    ],
+    [
+     48.610972,
+     -121.401529
+    ],
+    [
+     48.612412,
+     -121.401976
+    ],
+    [
+     48.613024,
+     -121.40231
+    ],
+    [
+     48.613434,
+     -121.403304
+    ],
+    [
+     48.614145,
+     -121.404436
+    ],
+    [
+     48.614619,
+     -121.40505
+    ],
+    [
+     48.615226,
+     -121.405497
+    ],
+    [
+     48.615709,
+     -121.405862
+    ],
+    [
+     48.616463,
+     -121.406419
+    ],
+    [
+     48.616992,
+     -121.406753
+    ],
+    [
+     48.618026,
+     -121.406969
+    ],
+    [
+     48.619019,
+     -121.407273
+    ],
+    [
+     48.619528,
+     -121.407524
+    ],
+    [
+     48.619764,
+     -121.407711
+    ],
+    [
+     48.620037,
+     -121.408006
+    ],
+    [
+     48.620249,
+     -121.408312
+    ],
+    [
+     48.620371,
+     -121.408758
+    ],
+    [
+     48.620753,
+     -121.41055
+    ],
+    [
+     48.620822,
+     -121.411205
+    ],
+    [
+     48.621005,
+     -121.411677
+    ],
+    [
+     48.621302,
+     -121.412445
+    ],
+    [
+     48.622787,
+     -121.413985
+    ],
+    [
+     48.623621,
+     -121.41426
+    ],
+    [
+     48.624451,
+     -121.41436
+    ],
+    [
+     48.625013,
+     -121.414433
+    ],
+    [
+     48.625517,
+     -121.414742
+    ],
+    [
+     48.625838,
+     -121.415124
+    ],
+    [
+     48.626178,
+     -121.415318
+    ],
+    [
+     48.626474,
+     -121.415803
+    ],
+    [
+     48.626767,
+     -121.41649
+    ],
+    [
+     48.62703,
+     -121.416892
+    ],
+    [
+     48.627267,
+     -121.417014
+    ],
+    [
+     48.627669,
+     -121.417089
+    ],
+    [
+     48.628072,
+     -121.417553
+    ],
+    [
+     48.628304,
+     -121.417675
+    ],
+    [
+     48.628926,
+     -121.417813
+    ],
+    [
+     48.629715,
+     -121.418439
+    ],
+    [
+     48.630382,
+     -121.419251
+    ],
+    [
+     48.631109,
+     -121.419031
+    ],
+    [
+     48.631389,
+     -121.419007
+    ],
+    [
+     48.632063,
+     -121.419309
+    ],
+    [
+     48.632595,
+     -121.419448
+    ],
+    [
+     48.63322,
+     -121.419794
+    ],
+    [
+     48.63407,
+     -121.420566
+    ],
+    [
+     48.634794,
+     -121.420798
+    ],
+    [
+     48.635627,
+     -121.421289
+    ],
+    [
+     48.637241,
+     -121.421569
+    ],
+    [
+     48.637869,
+     -121.421667
+    ],
+    [
+     48.638501,
+     -121.421654
+    ],
+    [
+     48.639646,
+     -121.422287
+    ],
+    [
+     48.640209,
+     -121.422415
+    ],
+    [
+     48.640796,
+     -121.422388
+    ],
+    [
+     48.641807,
+     -121.422623
+    ],
+    [
+     48.642594,
+     -121.423079
+    ],
+    [
+     48.643556,
+     -121.423296
+    ],
+    [
+     48.643841,
+     -121.42329
+    ],
+    [
+     48.644192,
+     -121.42303
+    ],
+    [
+     48.644407,
+     -121.423001
+    ],
+    [
+     48.64467,
+     -121.423082
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling"
+   ],
+   "timing": {
+    "totalHrs": 17.5,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": null,
+    "approachTimeHrs": 7.5,
+    "recommendedStart": "5:30 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 7.5,
+      "note": "From the end of Bacon Creek Road (~850 ft) the route leaves the last road tread almost immediately and grinds straight up Porkbelly Ridge — trip reports call it one of the brushies…",
+      "fromTo": "Bushwhack up Porkbelly Ridge to high camp",
+      "section": "Approach"
+     },
+     {
+      "hrs": 10,
+      "note": "Finish the climb to the East Ridge and scramble to the summit (mostly Class 3, with one or two Class 4 moves near the top), then reverse the ascent line all the way back down throu…",
+      "fromTo": "Summit push and full hike out",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "No technical rack is used on this route. The only detailed trip report of an actual Berdeen Peak ascent (a Mystery Ridge enchainment approaching via Porkbelly Ridge and the east side/NW slopes) describes mostly Class 3 terrain with one or two Class 4 moves on steep, mossy, loose rock, and does not mention a rope, harness, or any protection being placed or carried for the summit scramble itself.",
+   "what_to_bring": [
+    "helmet (loose, mossy rock reported)",
+    "sturdy boots or scrambling shoes with good traction on wet/mossy rock",
+    "ice axe if snow lingers in approach gullies (seasonal)",
+    "map/compass or GPS — off-trail, unmaintained route on a peak described as 'not climbed often'",
+    "trekking poles for the Porkbelly Ridge bushwhack approach",
+    "overnight/camping gear if basing at Berdeen Lake as most parties do"
+   ],
+   "pro_tips": [
+    "Reserve the NPS 'Berdeen' cross-country zone permit (max 6 people/party, 3 parties/night) ahead of time via recreation.gov, or get a walk-up permit at the Marblemount Wilderness Information Center",
+    "Most parties climb Berdeen as the first summit of a longer Northern Pickets-area ridge traverse rather than as a standalone dayhike, given the multi-day approach",
+    "The Berdeen Lake basin (camp ~800 ft below the summit) makes a scenic but committing base"
+   ],
+   "watch_out": [
+    "route-finding and dense brush on the Porkbelly Ridge approach — regarded as one of the brushiest ridgelines in the range",
+    "loose rock and moss on the summit scramble",
+    "lingering snow early season",
+    "long, multi-day self-evacuation if injured"
+   ],
+   "pro_needs": "None needed — this is an unroped Class 3-4 scramble. The limiting factor is loose, mossy rock and careful hold selection, not a lack of protectable terrain, so gear is a non-issue; a helmet is the main protective item worth carrying given the reported rockfall/handhold-failure hazard.",
+   "best_season": "late July-September",
+   "high_point_ft": 6420,
+   "aid_grade": null,
+   "approach": "From the end of Bacon Creek Road (~850 ft, Mt. Baker-Snoqualmie NF), an intermittent boot path continues briefly along the old roadbed and the east-bank benches of Bacon Creek before angling up onto Porkbelly Ridge, the broad forested spur that climbs northeast toward Berdeen Peak. There is no maintained, numbered trail here — this is an unofficial climbers'-path/bushwhack route — and tread comes and goes through slide alder, vine maple, and devil's club in the lower timber, easing somewhat in open forest and heather bands higher up. Porkbelly Ridge is one of the brushiest approach ridges in this part of the range, so treat the brush-fighting and route-finding through it as the day's real crux, not the scrambling above. Bacon Creek, crossed or paralleled within the first mile or so above the road-end, is the last easy, reliable water; above that, plan on carrying water or relying on occasional seeps/lingering snow patches until you're near Berdeen Lake. The ridge gains steadily and steeply — roughly 6,550 ft of cumulative gain and 6.3 miles are logged for the full push from the road-end, over Berdeen Peak, and down to a camp above Berdeen Lake, which lines up with this route's recorded ~5,600 ft/23 km round-trip scale. Higher up, the ridge passes from brush into subalpine parkland and then rock/heather benches below Berdeen Peak's east side. One line contours around the summit on a spur ridge to avoid the top entirely, but most parties instead climb directly over the 6,400–6,420 ft summit via the east ridge/east side: easy-to-moderate terrain, mostly low Class 3 with occasional short Class 4 moves on steep, mossy rock, where holds need to be chosen carefully since moss-covered rock is slick, especially wet. Loose blocks and exposed dirt/heather steps along the ridge crest are the main scramble-specific hazards; a helmet is worth carrying. Near the summit, Berdeen Lake's turquoise basin opens up to the north/northwest. North-facing terrain along the approach ridge can hold lingering snow well into midsummer.",
+   "descent_text": "This is a scramble descent with no rappelling — walk/downclimb off, either back down the ascent line or via the peak's northwest slopes, which is how most parties link the summit to a camp above Berdeen Lake. From the top, descend the NW slopes on moderate Class 2–3 dirt, heather, and broken rock, losing roughly 500 ft to the basin above the lake, then rejoin the Porkbelly Ridge line to reverse the bushwhack back down through parkland and timber to Bacon Creek and the road-end trailhead. Stay on or near the ridge crest as long as practical on the way down — dropping off-ridge into the brushier side-drainages or the creek gully below adds substantial extra bushwhacking and is a common way to lose time. Loose, mossy rock immediately below the summit and steep brush lower on the ridge are the main hazards; because both the approach and the return are slow, brushy going, budget a genuinely full, strenuous day (or plan on the overnight camp above Berdeen Lake that most trip reports use) rather than treating this as a quick out-and-back. Parties continuing into a longer traverse (Hagan Mountain, Mystery Ridge, the Pickets) push on past Berdeen Lake instead of returning to the trailhead same-day.",
+   "bail": "From the east ridge or NW slopes, downclimb/retreat the way you came to the Berdeen Lake basin; from there the only realistic exit is back down Porkbelly Ridge to the Bacon Creek Road end — there is no shorter bailout given the off-trail, roadless surroundings.",
+   "pitch_detail": null,
+   "itinerary": {
+    "cal": "Best done July-September once the Porkbelly Ridge brush and upper ridge are snow-free; the drivable end of Bacon Creek Road can vary year to year with washouts, sometimes adding extra road-walking to the approach.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the end of Bacon Creek Road (~850 ft) the route leaves the last road tread almost immediately and grinds straight up Porkbelly Ridge — trip reports call it one of the brushiest ridges in the range, with no consistent boot path despite published mentions of one. Push through brush, timber, and steep duff to a camp near treeline below Berdeen Peak, saving the summit scramble for fresh legs the next morning.",
+      "hours": 7.5,
+      "miles": 6,
+      "title": "Bushwhack up Porkbelly Ridge to high camp",
+      "gainFt": 4600,
+      "lossFt": 300,
+      "packLb": 38,
+      "schedule": [],
+      "objective": "Reach a camp in the basin below Berdeen Peak's east ridge"
+     },
+     {
+      "n": 2,
+      "note": "Finish the climb to the East Ridge and scramble to the summit (mostly Class 3, with one or two Class 4 moves near the top), then reverse the ascent line all the way back down through the Berdeen Lake basin and the Porkbelly Ridge brush to Bacon Creek Road. It's a long combined summit-and-exit day, but downhill travel through already-broken brush moves noticeably faster than the way in.",
+      "hours": 10,
+      "miles": 8.4,
+      "title": "Summit push and full hike out",
+      "gainFt": 1000,
+      "lossFt": 5300,
+      "packLb": 0,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Break camp",
+        "detail": "Many parties stash overnight gear near camp and climb light before returning to pack out."
+       },
+       {
+        "time": "+2 hr",
+        "label": "Gain the East Ridge crest",
+        "detail": "Terrain steepens to steep, mossy Class 3 scrambling."
+       },
+       {
+        "time": "+3 hr",
+        "label": "Summit Berdeen Peak (6,420 ft)",
+        "detail": "One or two Class 4 moves near the top; views into the Mystery Ridge/Pickets high country."
+       },
+       {
+        "time": "+4.5 hr",
+        "label": "Back at camp",
+        "detail": "Break down camp fully and shoulder the overnight pack for the exit."
+       },
+       {
+        "time": "+7 hr",
+        "label": "Re-enter the Porkbelly Ridge brush",
+        "detail": "Steep, slow descent through timber and brush back toward the road."
+       },
+       {
+        "time": "+10 hr",
+        "label": "Back at Bacon Creek Road trailhead",
+        "detail": "End of the drivable/walkable road at ~850 ft."
+       }
+      ],
+      "objective": "Tag Berdeen Peak (6,420 ft) via the East Ridge, then reverse the entire route to the car"
+     }
+    ],
+    "totalNote": "A serious 2-day backpack rather than a dayhike: ~14 miles and 5,600 ft round trip, most of it off-trail through one of the North Cascades' notoriously brushy ridge bushwhacks, with Class 3 (one or two Class 4 moves) scrambling on Berdeen Peak's East Ridge near the top."
+   },
+   "access": {
+    "fees": "$10/person/night backcountry camping fee plus a $6 non-refundable permit reservation fee.",
+    "notes": "60% of sites are reservable in advance via Recreation.gov (2026 lottery Mar 2–13); the remaining 40% are walk-up, obtained in person the day before at the Wilderness Information Center in Marblemount.",
+    "rules": "Falls within NPS's 'Berdeen' cross-country zone (max 6 people/party, up to 3 permitted parties/night), adjoining the 'Bacon Peak' zone. Cross-country camps must be on durable surfaces (snow, rock, bare ground) at least 1 mile from designated camps and 0.5 mile from trails (out of sight of them), never in meadows or within 100 ft of water; no wood fires; human waste must be buried or packed out (blue bags) above treeline.",
+    "permit": "North Cascades National Park backcountry permit required for any overnight stay: $10 per person plus a non-refundable $6 reservation fee (youth 15 and under free). Reserve via recreation.gov (the general reservation window has opened in late April in recent seasons) or get a walk-up permit in person at the Wilderness Information Center in Marblemount.",
+    "group_limit": 6,
+    "landManager": "Mount Baker-Snoqualmie National Forest (Bacon Creek Road approach), entering North Cascades National Park's Stephen Mather Wilderness at the peak itself.",
+    "land_manager": "National Park Service — North Cascades National Park (Stephen Mather Wilderness)",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades National Park wilderness permit for the Berdeen cross-country zone",
+     "where": "Reserve on Recreation.gov, then get the permit by email or in person at the Marblemount Wilderness Information Center."
+    }
+   },
+   "road": {
+    "name": "Bacon Creek Road (Mt. Baker-Snoqualmie NF)",
+    "driveNote": "Leaves WA-20 about 6 miles northeast of Marblemount near Bacon Creek (milepost ~112) and dead-ends at roughly 850 ft elevation. A 2018 rockslide near the 4.7-mile mark narrowed the road to high-clearance vehicles only (repair status unconfirmed) — check current Mt. Baker-Snoqualmie NF conditions before the drive. The road is also closed by fire: the Forest Service's Electric Fire order (06-05-26-19) closes Bacon Creek Road (FR 1060) from SR 20 to NF 1064, and NF 1064 itself, from September 2 through October 31, 2026, unless rescinded sooner."
+   },
+   "climate": {
+    "typical": "Maritime North Cascades; heavy snow lingers in the high backcountry.",
+    "bySeason": {
+     "fall": "brief clear window",
+     "spring": "snowbound; avalanche terrain",
+     "summer": "narrow scramble window once snow recedes",
+     "winter": "deep, remote winter conditions"
+    },
+    "forecastZone": "West Slopes North Cascades"
+   },
+   "emergency": {
+    "notes": "Extremely remote, roadless, off-trail terrain — expect a long self-rescue/carry-out. NPS and Skagit County SAR coordinate mountain rescues in this part of the park; call 911.",
+    "county": "Whatcom (summit and Berdeen Lake); the Bacon Creek Road trailhead itself is just across the line in Skagit County near Marblemount.",
+    "rangerStation": "North Cascades National Park Wilderness Information Center, 7280 Ranger Station Road, Marblemount, WA 98267",
+    "nearestHospital": "PeaceHealth United General Medical Center, 2000 Hospital Dr, Sedro-Woolley, WA — 24-hour ER, (360) 856-6021 (nearest full-service hospital to the Marblemount/Bacon Creek trailhead area).",
+    "sheriffDispatch": "911 for emergencies; Skagit County Sheriff non-emergency line 360-428-3211"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed as a standalone objective; if climbed at all, it is during the narrow late July-September scramble window, often as part of a longer traverse (e.g., the Mystery Ridge / Bacon-Hagan-Blum type enchainments) rather than a dedicated trip",
+    "solitudeRating": 5,
+    "estimatePerSeason": "unknown - very likely single digits of parties per season; only one detailed trip report was located (part of a multi-peak, multi-day enchainment), and no dedicated Berdeen Peak trip reports or forum threads describing it as a standalone objective were found"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Strong multi-day backpacking fitness; the approach involves sustained off-trail travel with significant elevation gain/loss over brushy, rugged terrain toward Berdeen Lake",
+     "packWeight": "Heavy overnight/multi-day pack (camping gear, food, NPS-mandated bear canister/food storage) carried over off-trail ground for multiple days"
+    },
+    "approachTime": "Long, multi-day approach; exact hours are not recorded, but it is a long committing approach with significant off-trail travel via the Bacon Creek / Berdeen Lake backcountry",
+    "requiredSkills": [
+     "off-trail route-finding and navigation (map, compass, GPS) in trail-less wilderness",
+     "Class 3 scrambling comfort with exposure and loose rock",
+     "snow travel and self-arrest judgment for lingering early-season snow",
+     "wilderness self-sufficiency / remote first-aid judgment given long self-evacuation distances",
+     "familiarity with NPS backcountry permit, camp-zone, and food-storage rules"
+    ],
+    "experienceLevel": "Experienced backcountry scramblers only - this is not an entry-level objective given the deep North Cascades National Park approach, off-trail travel, and long self-evacuation distances"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, once snow recedes from the high backcountry",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early July likely still has lingering snow ('narrow scramble window once snow recedes'); conditions generally improve toward late July, which is when the best-season begins",
+      "status": "marginal"
+     },
+     "June": {
+      "reason": "Spring conditions are 'snowbound; avalanche terrain' - the approach and scramble terrain around Berdeen Lake are typically still snow-covered and not a reasonable objective",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Core of the best-season window; most reliable snow-free conditions for the off-trail approach and Class 3 scramble",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Falls outside the best-season; the brief fall clear window closes and early snow can return to this remote, high, maritime North Cascades terrain",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Still within the season window; fall is only a brief clear window before conditions deteriorate, so early-to-mid September is favored over late September",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Maritime North Cascades weather: heavy snow lingers in the high backcountry, with only a narrow snow-free scramble window in summer and a brief clear window in fall",
+     "probability": ""
+    },
+    "exposure": "Remote, committing terrain deep in North Cascades National Park backcountry; Class 3 scrambling exposure combined with long, off-trail approach distances mean a slip or injury implies a long, difficult self-evacuation with no quick rescue access",
+    "avalanche": {
+     "zone": "West Slopes North Cascades; note NWAC issues formal avalanche forecasts primarily for the winter/spring season, so no forecast product specifically covers this route's summer scramble window",
+     "byMonth": {
+      "July": "Moderate",
+      "June": "Considerable",
+      "August": "N/A",
+      "October": "Low",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; this is a Class 3 scramble route with no glacier crossing"
+   },
+   "data_quality": {
+    "gaps": [
+     "Prominence figure (920 ft) could not be independently re-verified this session (peakbagger.com/listsofjohn.com blocked automated fetch) — left unchanged.",
+     "No documented round-trip mileage exists for this off-trail, multi-day approach; gain_ft above is a net trailhead-to-summit elevation difference, not a measured cumulative gain.",
+     "Current status of the 2018 Bacon Creek Road rockslide/repair is unconfirmed as of this research.",
+     "GPS track available (see gpx field).",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-01"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 1,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 48.706769,
+    "peakLng": -121.456671,
+    "trailhead": "Bacon Creek Road end (~850 ft)",
+    "trailheadDirection": "From the end of Bacon Creek Road"
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": "No route-specific trip reports located for Berdeen Peak itself. Inferred from comparable Pasayten Class 3-4 scrambles (e.g. Big Craggy, Blackcap): standard scramble kit, ice axe for lingering snow, helmet for loose rock on Class 4 sections. No rope typically carried.",
+   "ascender": null,
+   "corrections": "Route-specific trip-report data not found despite searching; gear profile inferred from grade/terrain and similar remote Pasayten peaks. Flag for future re-verification if trip reports surface.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Exposed",
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": [
+    {
+     "n": 1,
+     "class": "mostly low Class 3 with occasional short Class 4 moves",
+     "label": "East ridge / east side to the summit",
+     "notes": "From the rock/heather benches below Berdeen Peak's east side, climb directly over the 6,400–6,420 ft summit via the east ridge/east side. Easy-to-moderate terrain on steep, mossy rock — choose holds carefully, moss-covered rock is slick, especially wet. Loose blocks and exposed dirt/heather steps along the ridge crest are the main scramble-specific hazards; a helmet is worth carrying. North-facing terrain can hold lingering snow well into midsummer."
+    },
+    {
+     "n": 2,
+     "label": "Published spur-ridge bypass (avoids the top)",
+     "notes": "The published line contours around the summit on a spur ridge to avoid the top entirely, rather than climbing over it."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "High camp above Berdeen Lake",
+     "role": "main",
+     "type": "camp"
+    },
+    {
+     "elev": 5016,
+     "name": "Berdeen Lake benches",
+     "role": "main",
+     "type": "camp",
+     "notes": "The camp for Berdeen Peak and the substance of the Bacon Creek side of this zone. The documented approach starts at the Bacon Creek road end at valley-bottom elevation, scrambles up Porkbelly Ridge, crosses the east side of the peak around 6,400 ft and drops to camp above the lake — a very big first day with four thousand feet of gain, much of it trackless. The lake sits in a deep cirque a little over a mile east of Hagan Mountain and drains east over an enormous waterfall into a tributary of Bacon Creek, which is the geography that settles the argument about which road it belongs to: it faces Bacon Creek, not Baker Lake. It can be reached from the Blum Lakes over the divide to the northwest, but that is a traverse variation for a party already committed to a long trip, not an approach. From camp Berdeen Peak's east ridge is the way up, and the ground south and west continues onto the Bacon massif. Season is roughly mid-July into September, held back at the front by snow on the ridge and at the back by short days on a route with no trail.",
+     "water": "The lake and its inlet streams, fed off the glaciers above and reliable all season. Treat it. This is the first dependable water since the valley bottom, over four thousand feet below.",
+     "permit": "North Cascades National Park backcountry permit, required for any overnight and written for a cross-country zone rather than a designated camp — a different thing to ask for, and it must be collected in person at the wilderness information center, which is a long way round on the far side of the range from the Anderson Creek trailheads. No campfires anywhere in the zone. Camp on snow, rock or bare ground and never in the meadow, keep a hundred feet back from the water, and carry out human waste. A bear canister is the sensible answer where the heather gives you nothing to hang from; they can usually be borrowed at the permit office.",
+     "capacity": "A handful of tent-sized spots on benches above the lake shore; the basin is large but the flat, durable ground is limited, and this is a cross-country zone with a small party cap rather than an established campground"
+    },
+    {
+     "elev": 850,
+     "name": "Bacon Creek road end and Porkbelly Ridge",
+     "role": "route",
+     "type": "bivy",
+     "notes": "There is no established camping on this approach and the honest answer is to start early and reach the lake basin in one push. The road leaves the highway a few miles east of Marblemount and runs up the valley to a road end around 850 ft, from which Porkbelly Ridge is climbed trackless — steep timber, deadfall and brush with better travel once the ridge crest establishes itself, and no benches, clearings or water worth the name in four thousand feet. The road is the first problem: it carries very large potholes over long stretches, a bridge on the main road beyond one of the side creeks has been out, and the spurs off it are variously blocked by missing bridges, washouts and downed timber, so how far a vehicle gets is a live question that changes year to year and adds miles at the bottom when it goes against you. A party that runs out of daylight on the ridge flattens a spot among the trees and moves at first light; that is the realistic use of this camp, not a plan. The same road end is the start for the Diobsud Creek side of Bacon Peak, which is climbed on a longer line past Salvation Peak with a glacier saddle camp around 6,250 ft — a spring and early summer objective needing snow travel gear, and a different proposition entirely from the summer scramble off the Anderson Creek road.",
+     "water": "The creek near the road end, treated. Above it there is nothing dependable until the lake basin high on the ridge, so fill everything before you start climbing.",
+     "permit": "The road end and the lower part of the ridge are Mt Baker-Snoqualmie National Forest, where a night in a pullout is generally tolerated and no permit is issued. The ground higher up crosses into North Cascades National Park, so if you sleep anywhere above the lower ridge you need a park backcountry permit for the cross-country zone. The boundary is not marked on the ground on this ridge, so ask at the permit office where it falls before planning a bivy rather than deciding on the hill. No campfires above the road, and total burn bans are common on this side through a dry August.",
+     "capacity": "Rough parking at the road end and whatever flat ground you can find in the timber; one party, found rather than chosen. There is no camp here, and that is worth saying plainly."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "berdeen peak pk scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

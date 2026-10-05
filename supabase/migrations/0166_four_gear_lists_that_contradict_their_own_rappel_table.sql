@@ -38,20 +38,26 @@
 -- in the row gives per-station lengths, so repairing it would mean inventing distances. Left for
 -- research; nulling four lengths that a future pass would re-derive is not obviously better.
 
-update routes set gear = array_replace(gear,
+-- REPLAY NOTE (2026-09-30): `gear` is jsonb (since 0001), so `array_replace(gear, …)` as first written
+-- raised and never ran; all four changes were applied by hand in a jsonb-safe form instead (each new
+-- string is on its live row). Each statement now does the same exact-element replace on the jsonb
+-- array, only on a row that holds that element (so a null list stays null).
+update routes set gear = to_jsonb(array_replace(array(select jsonb_array_elements_text(gear)),
   'Single 70 m rope for the descent — parties rappel the North Face route''s existing anchors, not a double-rope rap',
-  'Two ropes for the descent — the five stored stations are the North Face rap line''s double-rope count; on a single rope the same ground is 9-10 rappels')
-where id = 'wa_action_potential';
+  'Two ropes for the descent — the five stored stations are the North Face rap line''s double-rope count; on a single rope the same ground is 9-10 rappels'))
+where id = 'wa_action_potential'
+  and gear ? 'Single 70 m rope for the descent — parties rappel the North Face route''s existing anchors, not a double-rope rap';
 
-update routes set gear = array_replace(gear, 'rope',
-  'two ropes — the last rappel off the ridge saddle is a ~60 m double-rope rappel')
-where id = 'wa_northwest_mox_peak_standard';
+update routes set gear = to_jsonb(array_replace(array(select jsonb_array_elements_text(gear)), 'rope',
+  'two ropes — the last rappel off the ridge saddle is a ~60 m double-rope rappel'))
+where id = 'wa_northwest_mox_peak_standard' and gear ? 'rope';
 
-update routes set gear = array_replace(gear, 'single 60m rope',
-  'two ropes for the stored 7-rappel West Ridge line; a single 60 m rope instead gives the ~5-rappel ridge sequence its note describes')
-where id = 'wa_inspiration_peak_west_ridge';
+update routes set gear = to_jsonb(array_replace(array(select jsonb_array_elements_text(gear)), 'single 60m rope',
+  'two ropes for the stored 7-rappel West Ridge line; a single 60 m rope instead gives the ~5-rappel ridge sequence its note describes'))
+where id = 'wa_inspiration_peak_west_ridge' and gear ? 'single 60m rope';
 
-update routes set gear = array_replace(gear,
+update routes set gear = to_jsonb(array_replace(array(select jsonb_array_elements_text(gear)),
   'Single 30-40m rope is enough for the short technical sections and the Balanced Rock/descent rappels',
-  'Single 30-40 m rope covers the technical sections and the Balanced Rock; the stored West Ridge descent needs two ropes for its final ~50 m double-rope rappel to the west notch')
-where id = 'wa_sherpa_peak_east_ridge';
+  'Single 30-40 m rope covers the technical sections and the Balanced Rock; the stored West Ridge descent needs two ropes for its final ~50 m double-rope rappel to the west notch'))
+where id = 'wa_sherpa_peak_east_ridge'
+  and gear ? 'Single 30-40m rope is enough for the short technical sections and the Balanced Rock/descent rappels';

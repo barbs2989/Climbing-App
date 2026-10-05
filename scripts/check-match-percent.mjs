@@ -203,7 +203,7 @@ if (row.length < 400) dead(`RealClimberRow lifted only ${row.length} chars — e
 const candSrc = (row.match(/var _cand=\{([\s\S]*?)\};/) || [])[1];
 if (!candSrc) dead("ANCHOR LOST: _cand's object literal could not be lifted from RealClimberRow");
 // eslint-disable-next-line no-new-func
-const buildCand = new Function("p", "objIds", "return {" + candSrc + "};");
+const buildCand = new Function("p", "objIds", "verified", "return {" + candSrc + "};");
 const richRow = {
   id: "3f2a91cc-0000-4000-8000-000000000001", name: "Robin Belay", username: "robinb",
   show_name: true, resume_public: true, avatar: null, bio: "b", location: "Salt Lake City, UT",

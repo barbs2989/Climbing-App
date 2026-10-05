@@ -65,7 +65,9 @@ const ALL_NULLED = [
   ["wa_west_twin_needle_south_route", "80 m"],
 ];
 // A partial one: its measured stations must still total, and still say "across N of M".
-const PARTIAL = "wa_forbidden_peak_west_ridge";
+// Was wa_forbidden_peak_west_ridge until its table was rewritten to the 8-station single-rope
+// descent (fix-forbidden-west-ridge-rappels.mjs), which publishes no per-station lengths.
+const PARTIAL = "wa_forbidden_peak_northeast_face";
 
 let failures = 0;
 const fail = (m) => { console.log(`  FAIL ${m}`); failures++; };

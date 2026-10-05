@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-10-01",
   "tables": {
     "areas": [
       "area_type",
@@ -15,6 +15,7 @@
       "lat",
       "lng",
       "name",
+      "name_search",
       "parent_id",
       "parent_peak",
       "path",
@@ -29,6 +30,7 @@
       "created_at",
       "date_occurred",
       "description",
+      "filed_by",
       "id"
     ],
     "blocked_users": [
@@ -37,9 +39,49 @@
       "created_at",
       "id"
     ],
+    "catalog_directory": [
+      "area_id",
+      "area_type",
+      "breadcrumb",
+      "depth",
+      "holds",
+      "key",
+      "lat",
+      "lng",
+      "name",
+      "outline",
+      "parent_id",
+      "path",
+      "route_count",
+      "sort_key",
+      "state"
+    ],
+    "catalog_routes": [
+      "area_breadcrumb",
+      "area_id",
+      "breadcrumb",
+      "discipline",
+      "grade",
+      "key",
+      "name",
+      "route_id",
+      "state"
+    ],
     "cert_track_disciplines": [
       "cert_track",
       "discipline"
+    ],
+    "climb_log_confirmations": [
+      "created_at",
+      "log_id",
+      "partner_id",
+      "verdict"
+    ],
+    "climb_log_partner_names": [
+      "log_id",
+      "names",
+      "updated_at",
+      "user_id"
     ],
     "climb_logs": [
       "anchor_quality",
@@ -70,8 +112,15 @@
       "outcome_reasons",
       "partners",
       "party_size",
+      "photo_hash",
+      "photo_near_route",
+      "photo_taken_on",
       "photos",
       "protection_quality",
+      "rappel_count",
+      "rappel_longest_m",
+      "rappel_rope",
+      "road_note",
       "route_id",
       "seepage",
       "snow_condition",
@@ -165,6 +214,8 @@
     ],
     "crew_members": [
       "crew_id",
+      "gear_claims",
+      "gear_extras",
       "invited_by",
       "joined_at",
       "note",
@@ -253,6 +304,31 @@
       "submitted_at",
       "updated_at"
     ],
+    "group_event_invites": [
+      "created_at",
+      "event_id",
+      "invited_by",
+      "invitee"
+    ],
+    "group_event_rsvps": [
+      "created_at",
+      "event_id",
+      "user_id"
+    ],
+    "group_events": [
+      "capacity",
+      "created_at",
+      "descr",
+      "event_date",
+      "event_time",
+      "group_id",
+      "host",
+      "id",
+      "location",
+      "repeat",
+      "series_id",
+      "title"
+    ],
     "group_members": [
       "group_id",
       "id",
@@ -260,6 +336,23 @@
       "role",
       "status",
       "user_id"
+    ],
+    "group_post_reactions": [
+      "post_id",
+      "reaction",
+      "user_id"
+    ],
+    "group_posts": [
+      "author",
+      "body",
+      "created_at",
+      "edited",
+      "group_id",
+      "id",
+      "photo_alts",
+      "photos",
+      "pinned",
+      "pinned_at"
     ],
     "groups": [
       "accent",
@@ -356,6 +449,14 @@
       "requested_dates",
       "status"
     ],
+    "kudos": [
+      "climb_log_id",
+      "created_at",
+      "giver",
+      "id",
+      "receiver",
+      "route_name"
+    ],
     "messages": [
       "body",
       "created_at",
@@ -370,6 +471,12 @@
       "route_id",
       "user_id"
     ],
+    "profile_emergency_contacts": [
+      "name",
+      "phone",
+      "updated_at",
+      "user_id"
+    ],
     "profile_zips": [
       "updated_at",
       "user_id",
@@ -377,15 +484,23 @@
     ],
     "profiles": [
       "account_type",
+      "avail_week",
+      "availability",
       "avatar",
+      "belay_devices",
       "bio",
       "boulder_grade",
+      "cert_expiry",
       "certifications",
+      "climb_grades",
       "created_at",
       "disciplines",
       "discoverable",
+      "free_until",
+      "hiking_speed_ft_hr",
       "id",
       "is_admin",
+      "level",
       "location",
       "mutuals_visible",
       "name",
@@ -427,6 +542,15 @@
       "updated_at",
       "user_id"
     ],
+    "route_difficulty_ratings": [
+      "axis",
+      "created_at",
+      "id",
+      "rating",
+      "route_id",
+      "updated_at",
+      "user_id"
+    ],
     "route_duplicate_names": [
       "area_id",
       "area_name",
@@ -438,6 +562,7 @@
       "access",
       "access_checked_at",
       "aid_grade",
+      "aid_grade_num",
       "alpine_draws",
       "alpine_grade",
       "approach",
@@ -486,6 +611,7 @@
       "hazards",
       "high_point_ft",
       "ice_grade",
+      "ice_grade_num",
       "id",
       "itinerary",
       "landing",
@@ -495,7 +621,9 @@
       "lng",
       "loss_ft",
       "max_angle",
+      "mixed_grade_num",
       "name",
+      "name_search",
       "obj_haz",
       "outing_shape",
       "overview",

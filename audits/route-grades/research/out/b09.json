@@ -1,0 +1,447 @@
+[
+ {
+  "id": "wa_excellent_adventure_wall_2_joanne_s_overhanging_water_slide",
+  "final_grade": "M6",
+  "scale": "mixed",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall"
+  ],
+  "evidence": "MP lists M6 sport mixed.",
+  "note": "The brief has no mixed scale; this is a pure dry-tool/mixed route with no WI or 5th-class grade, so the M grade is kept rather than inventing one."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_kyles_tunnel_to_issaquah",
+  "final_grade": "WI3+",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall"
+  ],
+  "evidence": "MP lists WI3+ ice."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_moves_like_dave",
+  "final_grade": "M4-",
+  "scale": "mixed",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall"
+  ],
+  "evidence": "MP lists M4- sport/TR mixed.",
+  "note": "The brief has no mixed scale; this is a pure dry-tool/mixed route with no WI or 5th-class grade, so the M grade is kept rather than inventing one."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_seam_reaper",
+  "final_grade": "M5",
+  "scale": "mixed",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/120003713/seam-reaper",
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall"
+  ],
+  "evidence": "MP lists M5, 40 ft sport/TR mixed.",
+  "note": "The brief has no mixed scale; this is a pure dry-tool/mixed route with no WI or 5th-class grade, so the M grade is kept rather than inventing one."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_the_dougie_dance",
+  "final_grade": "M5",
+  "scale": "mixed",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/122350358/the-dougie-dance",
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall"
+  ],
+  "evidence": "MP lists M5 sport mixed, 2 pitches.",
+  "note": "The brief has no mixed scale; this is a pure dry-tool/mixed route with no WI or 5th-class grade, so the M grade is kept rather than inventing one."
+ },
+ {
+  "id": "wa_excellent_adventure_wall_2_toms_barn_animal_collective",
+  "final_grade": "M6",
+  "scale": "mixed",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountainproject.com/route/120294796/toms-barn-animal-collective",
+   "https://www.mountainproject.com/area/120003675/excellent-adventure-wall"
+  ],
+  "evidence": "MP lists 5.8- (summer rock) / M5-6 (dry-tool); top of M range is M6.",
+  "note": "Dry-tool route; 5.8- is its summer rock grade. If the app must use yds/wi/class only, 5.8- is the fallback. The brief has no mixed scale; this is a pure dry-tool/mixed route with no WI or 5th-class grade, so the M grade is kept rather than inventing one."
+ },
+ {
+  "id": "wa_fifth_of_july_mountain_scramble",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Fifth_of_July_Mountain",
+   "https://trailcatjim.com/fifth-of-july-mtn-cow-creek-pass-loop-larch-lakes/"
+  ],
+  "evidence": "Easiest route class 2 via the straightforward south ridge."
+ },
+ {
+  "id": "wa_flora_mountain_southwest_slope",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/flora-mountain/155323",
+   "https://havetent.com/2022/08/17/stehekin-slam-flora-exit-via-tenmile-pass/"
+  ],
+  "evidence": "SW side described as a talus boulder hop; easiest of Tupshin/Devore/Flora, no climbing gear.",
+  "fix": {
+   "rock_grade": "Class 2 (talus and scree)"
+  },
+  "note": "Record overview and breakdown already say Class 2; only rock_grade said 2-3."
+ },
+ {
+  "id": "wa_foggy_peak_scramble",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/foggy-peak/859731",
+   "https://trailcatjim.com/foggy-peak-via-south-face-west-ridge/"
+  ],
+  "evidence": "Beckey rates it class 4 (gully access); careful route choice keeps the summit scramble at class 3."
+ },
+ {
+  "id": "wa_forbidden_peak_east_ledges",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.summitpost.org/east-ledges/166482",
+   "https://www.mountainproject.com/route/108482756/north-ridge"
+  ],
+  "evidence": "SummitPost: technically easiest route to the summit at Class 4; ledges mostly 3rd with short 4th-class rib crossings."
+ },
+ {
+  "id": "wa_forbidden_peak_east_ridge",
+  "final_grade": "5.8-",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/107244142/east-ridge-direct",
+   "https://spokalpine.com/2023/08/01/forbidden-peak-east-ridge-direct-iii-5-8/"
+  ],
+  "evidence": "MP: III 5.8-, second-last pitch is the 5.8 crux; other reports call it 5.8."
+ },
+ {
+  "id": "wa_forbidden_peak_north_ridge",
+  "final_grade": "5.6",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/108482756/north-ridge"
+  ],
+  "evidence": "MP: III 5.6, Moderate Snow; 5.6 left-facing corner.",
+  "note": "Glacier/moat approach is moderate snow; rock is the crux."
+ },
+ {
+  "id": "wa_forbidden_peak_northeast_face",
+  "final_grade": "AI2",
+  "scale": "wi",
+  "confidence": "low",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12196136101/North-America-United-States-WashingtonCascades-Forbidden-Peak-Northeast-Face"
+  ],
+  "evidence": "AAJ FA account: 300 ft of rock, then a 300-ft 50-degree ice patch, then easier upslab rock; no modern grade found.",
+  "note": "Headline \"IV\" with grade_system yds is not a difficulty grade. 50-degree ice is about AI2 (record says AI3). Rock difficulty unstated (old \"grade III\" wording, a few pitons); if the rock proves 5th class, re-grade on yds."
+ },
+ {
+  "id": "wa_forbidden_peak_northwest_face",
+  "final_grade": "5.8",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/112030839/northwest-face",
+   "https://spokalpine.com/2020/07/29/forbidden-peak-nw-face-iv-5-8/"
+  ],
+  "evidence": "MP: 5.8, 7 pitches, Grade III; knife-edge at 5.6 then 5.8 crux.",
+  "note": "Some trip reports call it Grade IV."
+ },
+ {
+  "id": "wa_forbidden_peak_west_ridge",
+  "final_grade": "5.6",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/106450596/west-ridge"
+  ],
+  "evidence": "MP: III 5.6; steep step passed on the left past a fixed pin (5.6)."
+ },
+ {
+  "id": "wa_fortress_mountain_east_ridge",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://hike2hike.com/scrambling/fortress-and-chiwawa-mountains/",
+   "https://www.theoutbound.com/washington/backpacking/scramble-fortress-mountain"
+  ],
+  "evidence": "4th-class route down the east side toward Chiwawa; the ridge has a 4th-class chimney."
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://hike2hike.com/scrambling/fortress-and-chiwawa-mountains/"
+  ],
+  "evidence": "Only the ridge toward the Chiwawa saddle is described online (4th-class chimney); no source for the NE headwall pitches.",
+  "identity": "Named \"Northeast Ridge\" but the overview describes a NE-face headwall plus a long snow slope; the 4th-class chimney ridge from the Fortress-Chiwawa col is the line the East Ridge row already describes."
+ },
+ {
+  "id": "wa_fortress_mountain_southwest_face",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.theoutbound.com/washington/backpacking/scramble-fortress-mountain",
+   "https://hike2hike.com/scrambling/fortress-and-chiwawa-mountains/"
+  ],
+  "evidence": "Southwest slope is low-angle class 2/3; no harder than class 2-3 on the easiest line.",
+  "note": "Class 4 slab is an optional variant, not the crux of the normal line."
+ },
+ {
+  "id": "wa_fortune_peak_east_slope",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/fortune-peak/572552"
+  ],
+  "evidence": "From Headlight Basin one can hike east of the summit and scramble straight up to the ridge and summit; peak is a class 2 scramble."
+ },
+ {
+  "id": "wa_fortune_peak_standard_route",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.summitpost.org/fortune-peak/572552",
+   "https://www.wta.org/go-hiking/trip-reports/trip_report.2022-06-20.4249549226"
+  ],
+  "evidence": "Common route: Lake Ann trail to the ridge, then class 2 scramble; one trip report found a class 3/4 approach to the saddle off the usual line.",
+  "note": "Breakdown says 2-3; easiest line is Class 2."
+ },
+ {
+  "id": "wa_four_brothers_southwest_route",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Four_Brothers_(Cascade_Range)"
+  ],
+  "evidence": "Easiest route: class 2 southwest slope.",
+  "note": "Record says Class 3; no source found for a class-3 crux on the southwest route."
+ },
+ {
+  "id": "wa_franklin_falls_erebus",
+  "final_grade": "WI4",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/117973371/erebus",
+   "https://www.mountainproject.com/area/117973219/franklin-falls"
+  ],
+  "evidence": "MP: WI3-4 M4 (bolted).",
+  "note": "Top of WI range; M4 mixed moves."
+ },
+ {
+  "id": "wa_franklin_falls_left_flow",
+  "final_grade": "WI4",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/117973219/franklin-falls"
+  ],
+  "evidence": "MP: WI3-4."
+ },
+ {
+  "id": "wa_franklin_falls_northwest_passage",
+  "final_grade": "WI4",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/117973219/franklin-falls"
+  ],
+  "evidence": "MP: WI4."
+ },
+ {
+  "id": "wa_franklin_falls_terror",
+  "final_grade": "WI5",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/117973219/franklin-falls"
+  ],
+  "evidence": "MP: WI4-5 M5 (bolted).",
+  "note": "Top of WI range; M5 mixed moves."
+ },
+ {
+  "id": "wa_frenzel_spitz_south_route",
+  "final_grade": "5.6",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [],
+  "evidence": "No route-specific source found online; kept the record's 5.6.",
+  "note": "Record headline says Grade III while commitment says II; could not resolve."
+ },
+ {
+  "id": "wa_fuggs_falls_2_fuggs_falls",
+  "final_grade": "WI3+",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/116582064/fuggs-falls"
+  ],
+  "evidence": "MP: WI3+ (TR) at Frenchman Coulee."
+ },
+ {
+  "id": "wa_gardner_mountain_west_ridge",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Gardner_Mountain",
+   "https://www.summitpost.org/gardner-mountain/632655"
+  ],
+  "evidence": "Southern routes Class 2 (2+); western Gardner Traverse Class 3-4 depending on line.",
+  "identity": "Named \"West Ridge / Saddle Traverse\" but face and breakdown describe the Class 2 south slopes; sources put the west traverse at Class 3-4."
+ },
+ {
+  "id": "wa_garfield_mountain_infinite_bliss",
+  "final_grade": "5.10c",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/108170867/infinite-bliss",
+   "https://www.mountainproject.com/area/108170864/mount-garfield"
+  ],
+  "evidence": "MP: IV 5.10c, 23 pitches."
+ },
+ {
+  "id": "wa_garfield_mountain_leaning_spire_west_route",
+  "final_grade": "5.5",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/108170864/mount-garfield"
+  ],
+  "evidence": "MP lists Leaning Spire West Route at 5.5."
+ },
+ {
+  "id": "wa_garfield_mountain_preiss_route",
+  "final_grade": "5.9",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/108170864/mount-garfield"
+  ],
+  "evidence": "MP lists Preiss Route at 5.9."
+ },
+ {
+  "id": "wa_garfield_mountain_scramble",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://www.cascadeclimber.com/mt__garfield.htm"
+  ],
+  "evidence": "Trip report on the south route: mostly class 2-3, with two easy class-5 leads on the chimney variation.",
+  "identity": "Duplicates the \"South Route (Main Peak)\" row: same south route to the Main Peak, which that row (and sources) put at easy 5th."
+ },
+ {
+  "id": "wa_garfield_mountain_south_route",
+  "final_grade": "5.4",
+  "scale": "yds",
+  "confidence": "low",
+  "sources": [
+   "https://www.cascadeclimber.com/mt__garfield.htm",
+   "https://www.mountainproject.com/area/108170864/mount-garfield"
+  ],
+  "evidence": "Described as easy/low 5th class (several loose pitches); no published number found, kept the record's 5.4."
+ },
+ {
+  "id": "wa_garfield_mountain_southwest_ledges",
+  "final_grade": "5.3",
+  "scale": "yds",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/108170864/mount-garfield"
+  ],
+  "evidence": "MP lists Southwest Ledges at 5.3."
+ },
+ {
+  "id": "wa_ghost_peak_south_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "low",
+  "sources": [
+   "https://en.wikipedia.org/wiki/Ghost_Peak"
+  ],
+  "evidence": "Easiest route listed as Class 4 (West Face); FA account quoted by the record (easy-moderate fifth class) not found online.",
+  "note": "Headline is \"Class 4\" but grade_system is yds and rock_grade says 5th class; internally inconsistent."
+ },
+ {
+  "id": "wa_gilbert_peak_conrad_glacier",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "medium",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/gilbert-peak-conrad-glacier",
+   "https://www.mountainproject.com/area/122751797/gilbert-peak-mt-curtis-gilbert"
+  ],
+  "evidence": "Conrad route joins the Meade Glacier finish, which MP grades 3rd class with Easy Snow.",
+  "fix": {
+   "rock_grade": "Class 3 scrambling (boulder/scree) below the summit"
+  }
+ },
+ {
+  "id": "wa_gilbert_peak_meade_glacier",
+  "final_grade": "Class 3",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/122751797/gilbert-peak-mt-curtis-gilbert"
+  ],
+  "evidence": "MP: Meade Glacier, 3rd class, Easy Snow.",
+  "note": "MP \"Easy Snow\" maps to Class 2; the rock finish is Class 3."
+ },
+ {
+  "id": "wa_gilbert_peak_west_route",
+  "final_grade": "Class 4",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/area/122751797/gilbert-peak-mt-curtis-gilbert"
+  ],
+  "evidence": "MP: West Route, 4th class, R, lots of loose rock.",
+  "note": "Record headline Class 3 understated; its own rock_grade already says 4th class."
+ },
+ {
+  "id": "wa_glacier_peak_cool_glacier_gerdine",
+  "final_grade": "Class 2",
+  "scale": "class",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/107257991/gerdine-ridgecool-glacier"
+  ],
+  "evidence": "MP: Grade II, Easy Snow; glacier travel.",
+  "note": "Mapped MP Easy Snow to Class 2. Going over Disappointment Peak is an optional 4th-class variant."
+ },
+ {
+  "id": "wa_glacier_peak_frostbite_ridge",
+  "final_grade": "AI2",
+  "scale": "wi",
+  "confidence": "high",
+  "sources": [
+   "https://www.mountainproject.com/route/110630353/frostbite-ridge",
+   "https://spokalpine.com/2025/07/21/dakobed-glacier-peak-frostbite-ridge-ii-ai2/"
+  ],
+  "evidence": "MP: 4th, AI1-2, Grade II; final ~200 ft of AI2 ice is the crux.",
+  "note": "Rock at the Rabbit Ears is Class 3-4."
+ }
+]

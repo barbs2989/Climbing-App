@@ -55,6 +55,8 @@ const foldTwins = (a, b) => { const x = foldKind(a), y = foldKind(b); return !(x
 // The suffix a _climbs split child takes after its area's name, decided in SQL by the routes the
 // area holds: all bouldering -> " Bouldering", all ice/mixed -> " Ice Climbs", else " Routes".
 const SPLIT_SUFFIX = areaId => `(select case when bool_and(discipline = 'bouldering') then ' Bouldering' when bool_and(discipline in ('ice', 'mixed')) then ' Ice Climbs' else ' Routes' end from routes where area_id = ${q(areaId)})`;
+// A state's area id prefix, for a state that has no area yet to read it from.
+const POSTAL = { alabama: "al", alaska: "ak", arizona: "az", arkansas: "ar", california: "ca", colorado: "co", connecticut: "ct", delaware: "de", florida: "fl", georgia: "ga", hawaii: "hi", idaho: "id", illinois: "il", indiana: "in", iowa: "ia", kansas: "ks", kentucky: "ky", louisiana: "la", maine: "me", maryland: "md", massachusetts: "ma", michigan: "mi", minnesota: "mn", mississippi: "ms", missouri: "mo", montana: "mt", nebraska: "ne", nevada: "nv", new_hampshire: "nh", new_jersey: "nj", new_mexico: "nm", new_york: "ny", north_carolina: "nc", north_dakota: "nd", ohio: "oh", oklahoma: "ok", oregon: "or", pennsylvania: "pa", rhode_island: "ri", south_carolina: "sc", south_dakota: "sd", tennessee: "tn", texas: "tx", utah: "ut", vermont: "vt", virginia: "va", washington: "wa", west_virginia: "wv", wisconsin: "wi", wyoming: "wy" };
 const slug = s => ((s || "x").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 55) || "x");
 const q = s => "'" + String(s).replace(/'/g, "''") + "'";
 
@@ -133,7 +135,9 @@ function resolver(stateId, stateName, planned, splits) {
   const direct = new Set(sql(`select distinct r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(stateId)})`).map(r => r.area_id));
   const kids = new Map(), hasKids = new Set(rows.map(r => r.parent_id)), ids = new Set(rows.map(r => r.id));
   for (const r of rows) { const k = r.parent_id + "|" + areaNorm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
-  const pre = (() => { const c = {}; for (const r of rows) { const p = r.id.split("_")[0]; if (p !== r.id) c[p] = (c[p] || 0) + 1; } return Object.entries(c).sort((a, b) => b[1] - a[1])[0][0]; })();
+  // The id prefix is the one the state's areas already use (its postal code: "mo_", "nh_"). A state
+  // with no area yet (Mississippi, 2026-10-01) has nothing to read it from, so the postal code is used.
+  const pre = (() => { const c = {}; for (const r of rows) { const p = r.id.split("_")[0]; if (p !== r.id) c[p] = (c[p] || 0) + 1; } const top = Object.entries(c).sort((a, b) => b[1] - a[1])[0]; if (top) return top[0]; if (POSTAL[stateId]) return POSTAL[stateId]; if (/^[a-z]{2}$/.test(stateId)) return stateId; /* a Canadian province id IS its postal code */ throw new Error(`${stateName}: no area id prefix to follow`); })();
   const mint = name => { let id = pre + "_" + slug(name), n = 2; while (ids.has(id)) id = pre + "_" + slug(name) + "_" + n++; ids.add(id); return id; };
   // A level missing from OUR tree (Montana's "Bozeman Area" — its canyons hang straight off the
   // region here) may be skipped, at most twice per route, but only when the NEXT name then matches
@@ -211,7 +215,16 @@ function resolver(stateId, stateName, planned, splits) {
         const s = { id: cur + "_climbs", name: x.name, parent_id: cur, area_type: "crag", region: stateName, lat: x.lat ?? null, lng: x.lng ?? null };
         ids.add(s.id); rows.push(s); byId.set(s.id, s); hasKids.add(cur); direct.delete(cur); direct.add(s.id);
         const k = cur + "|" + areaNorm(s.name); (kids.get(k) || kids.set(k, []).get(k)).push(s);
+        // runState names the child "<X> Routes" / "<X> Bouldering" / "<X> Ice Climbs" (SPLIT_SUFFIX).
+        // MP can file a sub-area of that very name — Massachusetts's "Roadside Crag > Roadside Crag
+        // Routes" (2026-10-01): planned as a second area, the database refused it and the state
+        // failed. So the child is found under the name it will carry, too.
+        const full = x.name + sql(`select ${SPLIT_SUFFIX(cur)} as s`)[0].s;
+        const kf = cur + "|" + areaNorm(full), kfk = cur + "|" + ck(full);
+        if (kf !== k) (kids.get(kf) || kids.set(kf, []).get(kf)).push(s);
+        (kidsK.get(kfk) || kidsK.set(kfk, []).get(kfk)).push(s);
         splits.set(cur, s);
+        if (ck(chain[i]) === ck(full)) { cur = s.id; continue; }
       }
       const leaf = i === chain.length - 1;
       // refuse_duplicate_area: a same-key area within 1.5 km under another parent. An existing one was
@@ -258,6 +271,12 @@ function disciplineOf(type, tk) {
 const PRIMARY = { ice: () => "wi", mixed: tk => tk.yds ? "yds" : "m", aid: tk => tk.yds ? "yds" : "aid", trad: () => "yds", sport: () => "yds", toprope: () => "yds", bouldering: () => "v" };
 const TYPE_DISC = { trad: "trad", sport: "sport", tr: "toprope", boulder: "bouldering", ice: "ice", mixed: "mixed", aid: "aid", alpine: "alpine" };
 
+// A Canadian location path ends "... > Alberta > Canada > North America > International": MP files
+// Canada under its International tree. Dropped, so the chain starts at the province as a US one
+// starts at its state.
+const ABOVE_PROVINCE = new Set(["international", "north america", "canada"]);
+function provinceChain(chain) { let i = 0; while (i < chain.length - 1 && ABOVE_PROVINCE.has(norm(chain[i]))) i++; return chain.slice(i); }
+
 async function runState(st) {
   const files = readdirSync(DIR).filter(f => f.startsWith(st.id + "_") && f.endsWith(".csv"));
   if (!files.length) { console.log(`${st.name}: no export cached — run fetch-mp-ice-mixed-aid.mjs first`); return {}; }
@@ -289,7 +308,7 @@ async function runState(st) {
   const cand = [];
   // Existing-area placements first, so an area CREATED for one route is never planned as a leaf
   // that an existing-area placement later needs to descend through.
-  const rowsIn = [...byUrl.values()].map(r => ({ r, tk: tokens(r.Rating), chain: String(r.Location || "").split(" > ").map(s => s.trim()).reverse() }));
+  const rowsIn = [...byUrl.values()].map(r => ({ r, tk: tokens(r.Rating), chain: provinceChain(String(r.Location || "").split(" > ").map(s => s.trim()).reverse()) }));
   const deferred = [];
   for (const { r, tk, chain } of rowsIn) {
     if (!tk.wi && !tk.m && !tk.aid && !tk.yds && !tk.v) { refused["no grade we can read"] = (refused["no grade we can read"] || 0) + 1; continue; }
@@ -562,7 +581,8 @@ async function runState(st) {
   return { exported: byUrl.size, matched: matched.length, patched: patches.length, added: inserts.length, areas: newAreas.length, refused: nRef };
 }
 
-const states = sql(`select id, name from areas where parent_id = 'usa' and area_type = 'state' order by name`);
+// Canada's provinces are filed as states under 'canada', their ids the postal code (ab, bc).
+const states = sql(`select id, name from areas where parent_id in ('usa', 'canada') and area_type = 'state' order by name`);
 const pick = ALL ? states : states.filter(s => args.includes(s.id));
 if (!pick.length) { console.error("Name a state id or pass --all"); process.exit(1); }
 if (!existsSync(DIR)) { console.error("no " + DIR + " — run fetch-mp-ice-mixed-aid.mjs first"); process.exit(1); }

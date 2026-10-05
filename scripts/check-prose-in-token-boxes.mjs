@@ -182,14 +182,30 @@ let boxes = 0, rendered = 0;
 // unguarded by construction, which is exactly when you most want the reader checked.
 const SENTINEL = "ZZ" + "x".repeat(120) + "ZZ";
 const sentinelRoute = () => {
+  // A column is TEXT if it holds a string in ANY sampled row, not just rows[0]. Keying on rows[0]
+  // alone went blind silently: once the sample's first row had grade null, the sentinel carried no
+  // grade and injection case 5 (raw r.grade in the tick-list pill) could no longer be caught.
   const base = rows[0];
+  const text = new Set(rows.flatMap((r) => Object.keys(r).filter((k) => typeof r[k] === "string")));
   const o = {};
-  for (const [k, v] of Object.entries(base)) o[k] = typeof v === "string" ? SENTINEL : v;
+  for (const [k, v] of Object.entries(base)) o[k] = text.has(k) ? SENTINEL : v;
   return o;
 };
-const ALL = rows.concat([sentinelRoute()]);
+// A SECOND sentinel, filed as a CRAG route. The sample is enriched alpine rows, so the ROUTE FACTS
+// rows that only a crag discipline draws (bolts, descent, aspect, season) were never offered a long
+// value, and the guidebook-fact columns (alt_names, variations, ffa, fwa) are empty catalog-wide and
+// so are not TEXT in any sampled row — the first sentinel cannot reach them either. Arrays get a
+// sentinel ELEMENT: "Also called" and "Variations" are lists of short names, and the question is
+// whether a long one would land in a chip. On a `peak` area catOf() calls trad alpine, hence the
+// crag area type.
+const cragSentinel = () => Object.assign(sentinelRoute(), {
+  discipline: "trad", __crag: true, alt_names: [SENTINEL], variations: [SENTINEL], ffa: SENTINEL, fwa: SENTINEL,
+  guide_stars: 3, bolts: 9, aspect: SENTINEL, season: SENTINEL, descent: SENTINEL.slice(0, 130),
+  anchor: SENTINEL.slice(0, 80), location: SENTINEL.slice(0, 160),
+});
+const ALL = rows.concat([sentinelRoute(), cragSentinel()]);
 for (const r of ALL) {
-  const route = Object.assign(camel(r), { mountainId: r.area_id, _dbArea: { id: r.area_id, name: "Probe", areaType: "peak", region: "Washington" } });
+  const route = Object.assign(camel(r), { mountainId: r.area_id, _dbArea: { id: r.area_id, name: "Probe", areaType: r.__crag ? "crag" : "peak", region: "Washington" } });
   for (const tab of TABS.concat(["lists"])) {
     let html;
     // `lists` is not a RouteDetail sub-tab — it is the tick-list manager on the Logbook tab,

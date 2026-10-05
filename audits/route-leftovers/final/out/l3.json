@@ -1,0 +1,636 @@
+{
+ "results": [
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "item",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states the Wild Sky permit rule, so the split permit text stays.",
+   "evidence": "The forest pages read today still state the free self-issue permit only for the Alpine Lakes Wilderness; the Wild Sky page says only that wilderness regulations apply and some trailheads need a recreation pass; the North Fork Skykomish and Barclay Lake trailhead pages list only the day-use fee; the Henry M. Jackson page asks visitors to sign the trailhead register. No land-manager page states whether a permit is needed in Wild Sky.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS wilderness page",
+    "fs.usda.gov MBS wilderness-regulations",
+    "fs.usda.gov Wild Sky Wilderness page",
+    "fs.usda.gov North Fork Skykomish Trail 1051 + trailhead",
+    "fs.usda.gov Barclay Creek Trail 1055 + Barclay Lake Trailhead",
+    "fs.usda.gov Henry M. Jackson Wilderness page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "kind": "item",
+   "fact": "Total elevation loss for the trip",
+   "verdict": "unresolved",
+   "summary": "loss_ft may not be written, and no land-manager page states a gain or loss for Sheep Gap.",
+   "evidence": "Structural: the fact lives in loss_ft, which this pass may not write. No forest page covers the off-trail summit.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (loss_ft out of bounds)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sheep_gap_mountain_scramble",
+   "kind": "item",
+   "fact": "Round-trip mileage",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a round-trip distance to Sheep Gap’s main summit.",
+   "evidence": "The off-trail summit is not a land-manager trail destination; prior passes found figures only for other objectives.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS (no Sheep Gap or Weden Pass page)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "kind": "item",
+   "fact": "Total route gain/distance vs. approach-to-camp leg only (dist_km 11.3)",
+   "verdict": "already_fixed",
+   "summary": "The route row wa_austera_peak_chockstone_route no longer exists in the live catalog, so there is nothing left to patch.",
+   "evidence": "Live lookup by id returns no row; the peak’s remaining routes are listed under other ids (likely folded in a duplicate cleanup).",
+   "sources": [],
+   "searched": [
+    "live catalog lookup"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_artic_rose",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states this crag’s wilderness status or permit rule, so the replacement wording is still unsourced.",
+   "evidence": "The forest pages read today still state the free self-issue permit only for the Alpine Lakes Wilderness; the Wild Sky page says only that wilderness regulations apply and some trailheads need a recreation pass; the North Fork Skykomish and Barclay Lake trailhead pages list only the day-use fee; the Henry M. Jackson page asks visitors to sign the trailhead register. No land-manager page states whether a permit is needed in Wild Sky. Nothing names the Tye Road crag.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS wilderness page",
+    "fs.usda.gov MBS wilderness-regulations",
+    "fs.usda.gov Wild Sky Wilderness page",
+    "fs.usda.gov North Fork Skykomish Trail 1051 + trailhead",
+    "fs.usda.gov Barclay Creek Trail 1055 + Barclay Lake Trailhead",
+    "fs.usda.gov Henry M. Jackson Wilderness page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "kind": "item",
+   "fact": "total gain: gain_ft/loss_ft 5,200 vs itinerary/approach/totalNote 4,730",
+   "verdict": "unresolved",
+   "summary": "Total summit gain is a route figure no land manager states; the split stays.",
+   "evidence": "Forest trail pages give trail mileage, not a Star Peak summit gain; aligning the itinerary days would still need computed figures.",
+   "sources": [],
+   "searched": [
+    "prior evidence (forest/peak pages)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_gunsight_peak_standard",
+   "kind": "item",
+   "fact": "recommended/actual start time from high camp",
+   "verdict": "unresolved",
+   "summary": "A start time from high camp is a climbing-time fact with no land-manager source.",
+   "evidence": "Lane L: timing has no land-manager source; no new statement found.",
+   "sources": [],
+   "searched": [
+    "none beyond prior evidence (climbing-time fact)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_forbidden_peak_northwest_face",
+   "kind": "item",
+   "fact": "trip length (days)",
+   "verdict": "unresolved",
+   "summary": "Trip length in days is a climbing-schedule fact with no land-manager source, and adding a third day would need computed figures.",
+   "evidence": "Lane L: day durations have no land-manager source.",
+   "sources": [],
+   "searched": [
+    "none beyond prior evidence (climbing-time fact)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "kind": "item",
+   "fact": "Approach distance from Pete Lake Trailhead to Vista Lakes camp",
+   "verdict": "unresolved",
+   "summary": "The forest page states only 4 miles to Pete Lake, not the distance to the Vista Lakes camp.",
+   "evidence": "Pete Lake Trail page: 4 miles to Pete Lake, then 1.3 miles to the Lemah Meadow Trail junction and about 1 mile to the PCT. No figure to Vista Lakes; summing legs is not allowed.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov Okanogan-Wenatchee Pete Lake Trail"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "kind": "item",
+   "fact": "Distance up the Chiwawa River Trail to the Massie Lake turnoff: approach/itinerary/sectionBreakdown 'about 4 miles' vs the 'M' tree waypoint distMi 2.8 (and lake 4.7)",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states the distance to the Massie Lake turnoff.",
+   "evidence": "The Trinity Trailhead page gives the trailhead coordinate and elevation and names the Chiwawa River Trail, but no mileage to the Massie Lake path; the Chiwawa River trail page itself is no longer on the forest site (404).",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov Okanogan-Wenatchee Trinity Trailhead",
+    "fs.usda.gov Chiwawa River trail 1550 (404)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_hinman_hinman_glacier",
+   "kind": "item",
+   "fact": "Elevation gain for the approach leg (trailhead to La Bohn Gap/Lakes camp)",
+   "verdict": "unresolved",
+   "summary": "The forest page states gains only to the river crossing and Jade Lake, not to La Bohn Gap or the lakes.",
+   "evidence": "Necklace Valley Trail page: first 5 miles gain only 600 ft to the East Fork Foss crossing, then 2,550 ft in 2.2 miles to Jade Lake. Nothing to La Bohn Gap; summing would be computed.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS Necklace Valley Trail 1062"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sinister_peak_southwest_route",
+   "kind": "item",
+   "fact": "Total elevation gain and loss for the Southwest Route",
+   "verdict": "unresolved",
+   "summary": "A car-to-car gain for the Southwest Route is not something a land manager states; still unsourced.",
+   "evidence": "No forest or park page covers the off-trail Sinister line.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cascade_peak_east_ridge",
+   "kind": "item",
+   "fact": "distance to the East Ridge/col area",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a distance for the couloir approach to the col.",
+   "evidence": "Off-trail approach from the Cascade River Road; the park’s Cascade Pass page covers only the trail to the pass and Sahale Glacier. dist_km 18.35 km (11.4 mi) matches the row’s 11+ mi round trip, so the clearing rule does not apply.",
+   "sources": [],
+   "searched": [
+    "nps.gov NOCA Cascade Pass trail page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "kind": "item",
+   "fact": "Total round-trip distance for the Standard Route",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states a Sentinel-only distance; dist_km is not cleared because the row itself states about 16 miles each way (a road-walk figure) that its 26.2 km roughly equals.",
+   "evidence": "Live row: dist_km 26.2 (16.3 mi), summit pin 14, itinerary 34 mi total, approach prose ~45 km round trip. The park states only 3.7 mi to Cascade Pass. The clearing rule needs dist_km to match NO figure on the row; the row’s Downey Creek note states roughly 16 miles each way of road walking, so it is left for the owner.",
+   "sources": [],
+   "searched": [
+    "nps.gov NOCA Cascade Pass trail page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_south_face_12",
+   "kind": "item",
+   "fact": "Whole-outing gain/loss: gain_ft 6257 vs loss_ft 6157 on an out-and-back, with day 2 not counting the re-climb over Fourth Creek Pass",
+   "verdict": "unresolved",
+   "summary": "Structural: adopting any total needs computed day figures, and loss_ft may not be written.",
+   "evidence": "Unchanged; no land-manager page states a car-to-car gain for the South Face.",
+   "sources": [],
+   "searched": [
+    "prior evidence only (structural)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_der_dihedral",
+   "kind": "item",
+   "fact": "Day-2 climb duration",
+   "verdict": "unresolved",
+   "summary": "A climbing-day duration has no land-manager source.",
+   "evidence": "Lane L: timing has no land-manager source; no Der Dihedral ascent time found earlier.",
+   "sources": [],
+   "searched": [
+    "none beyond prior evidence (climbing-time fact)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_astroglide",
+   "kind": "item",
+   "fact": "Permit field names the Wild Sky Wilderness",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states this crag’s wilderness status or permit rule, so the replacement wording is still unsourced.",
+   "evidence": "The forest pages read today still state the free self-issue permit only for the Alpine Lakes Wilderness; the Wild Sky page says only that wilderness regulations apply and some trailheads need a recreation pass; the North Fork Skykomish and Barclay Lake trailhead pages list only the day-use fee; the Henry M. Jackson page asks visitors to sign the trailhead register. No land-manager page states whether a permit is needed in Wild Sky. Nothing names the Tye Road crag.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS wilderness page",
+    "fs.usda.gov MBS wilderness-regulations",
+    "fs.usda.gov Wild Sky Wilderness page",
+    "fs.usda.gov North Fork Skykomish Trail 1051 + trailhead",
+    "fs.usda.gov Barclay Creek Trail 1055 + Barclay Lake Trailhead",
+    "fs.usda.gov Henry M. Jackson Wilderness page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_tailgunner_peak_w_route",
+   "kind": "item",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "summary": "No land-manager page states whether this off-trail line from Barclay Creek needs a permit or registration.",
+   "evidence": "The forest pages read today still state the free self-issue permit only for the Alpine Lakes Wilderness; the Wild Sky page says only that wilderness regulations apply and some trailheads need a recreation pass; the North Fork Skykomish and Barclay Lake trailhead pages list only the day-use fee; the Henry M. Jackson page asks visitors to sign the trailhead register. No land-manager page states whether a permit is needed in Wild Sky. The Barclay Creek Trail page says it reaches Wild Sky via spur trails and requires a recreation pass; nothing on a wilderness permit.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS wilderness page",
+    "fs.usda.gov MBS wilderness-regulations",
+    "fs.usda.gov Wild Sky Wilderness page",
+    "fs.usda.gov North Fork Skykomish Trail 1051 + trailhead",
+    "fs.usda.gov Barclay Creek Trail 1055 + Barclay Lake Trailhead",
+    "fs.usda.gov Henry M. Jackson Wilderness page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_three_queens_standard",
+   "kind": "item",
+   "fact": "One-way approach distance (dist_km 8.85 km = 5.5 mi) vs summit waypoint distMi 5.0 and itinerary 10 mi RT",
+   "verdict": "already_fixed",
+   "summary": "dist_km is already null on the live row, and the summit pin (5.0 mi) and the 10 mi round trip no longer contradict each other.",
+   "evidence": "Live row: dist_km null; summit waypoint distMi 5; itinerary 10 mi round trip. The forest Mineral Creek Trail page (5.4 mi trail, currently closed by the Three Queens fire order) gives no summit figure.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov Okanogan-Wenatchee Mineral Creek Trail 1331"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_lizard_mountain_south_route",
+   "kind": "item",
+   "fact": "Approach mileage: itinerary days 1-3 (7.5 + 5.5 + 3 = 16 mi to White Rock Lakes) vs waypoints (Kool-Aid Lake 6.7 mi, White Rock Lakes 13.5 mi)",
+   "verdict": "unresolved",
+   "summary": "The park states only 3.7 miles to Cascade Pass, which the row’s pin already holds; nothing states the legs beyond it.",
+   "evidence": "Park Cascade Pass page: 3.7 mi (6 km) one way to Cascade Pass, 1,700 ft gain. The row’s Cascade Pass pin is already 3.7. Cache Col, Kool-Aid, Yang Yang and White Rock Lakes are off-trail; no land-manager distance to them.",
+   "sources": [],
+   "searched": [
+    "nps.gov NOCA Cascade Pass / Sahale Arm trail page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager page states a one-way distance for the Eldorado ice-cap line to Primus.",
+   "evidence": "Live row: dist_km null. Not a land-manager trail destination; no forest or park page states a figure for this point.",
+   "sources": [],
+   "searched": [
+    "prior evidence; park has no Primus route page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Still null; a summit-route total gain is not a land-manager figure.",
+   "evidence": "Live row: gain_ft null. Not a land-manager trail destination; no forest or park page states a figure for this point.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_primus_peak_south_ridge",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager distance from the Eldorado Creek trailhead to Primus.",
+   "evidence": "Live row: waypoints[1] (Primus Peak) distMi null. Not a land-manager trail destination; no forest or park page states a figure for this point.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "fill",
+   "fact": "approach_logistics.trailheadLat",
+   "verdict": "unresolved",
+   "summary": "Still null; the forest lists no coordinate for the unmarked FR-63 pullout.",
+   "evidence": "Live row: trailheadLat null. The forest’s only nearby trailhead coordinate is the North Fork Skykomish trailhead, the wrong start that was cleared.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS North Fork Skykomish Trailhead page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "kind": "fill",
+   "fact": "approach_logistics.trailheadLng",
+   "verdict": "unresolved",
+   "summary": "Still null; the forest lists no coordinate for the unmarked FR-63 pullout.",
+   "evidence": "Live row: trailheadLng null. The forest’s only nearby trailhead coordinate is the North Fork Skykomish trailhead, the wrong start that was cleared.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS North Fork Skykomish Trailhead page"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager mileage to points on the Cockscomb Ridge.",
+   "evidence": "Live row: waypoints[2..4] distMi null. Glacier/ridge points are not on any forest trail page.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager mileage to points on the Cockscomb Ridge.",
+   "evidence": "Live row: waypoints[2..4] distMi null. Glacier/ridge points are not on any forest trail page.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_baker_cockscomb_ridge",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager mileage to points on the Cockscomb Ridge.",
+   "evidence": "Live row: waypoints[2..4] distMi null. Glacier/ridge points are not on any forest trail page.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_vanishing_point",
+   "kind": "fill",
+   "fact": "waypoints[2].distMi",
+   "verdict": "already_fixed",
+   "summary": "Waypoint index 2 does not exist on the live row (two pins only), so there is nothing to fill.",
+   "evidence": "Live row waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_vanishing_point",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "already_fixed",
+   "summary": "Waypoint index 3 does not exist on the live row (two pins only), so there is nothing to fill.",
+   "evidence": "Live row waypoints: [0] Barclay Lake Trailhead, [1] Dolomite Tower.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager distance to the snow line on the off-trail Airplane Creek bushwhack.",
+   "evidence": "Live row: waypoints[3] distMi null. Not a land-manager trail destination; no forest or park page states a figure for this point.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_mount_saul_se_route",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager distance to the base of the upper east face.",
+   "evidence": "Live row: waypoints[5] distMi null. Not a land-manager trail destination; no forest or park page states a figure for this point.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "already_fixed",
+   "summary": "The route row wa_austera_peak_chockstone_route no longer exists in the live catalog, so there is nothing left to patch.",
+   "evidence": "Live lookup by id returns no row; the peak’s remaining routes are listed under other ids (likely folded in a duplicate cleanup).",
+   "sources": [],
+   "searched": [
+    "live catalog lookup"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "kind": "fill",
+   "fact": "waypoints[5].distMi",
+   "verdict": "unresolved",
+   "summary": "Still absent; no land-manager one-way mileage to the Storm King summit.",
+   "evidence": "Live row: waypoints[5] (summit) has no distMi. The park states trail mileages only to named trail points; the summit is off-trail.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "kind": "fill",
+   "fact": "waypoints[6].distMi",
+   "verdict": "already_fixed",
+   "summary": "Waypoint index 6 no longer exists on the live row, so there is nothing to fill.",
+   "evidence": "Live row has waypoints 0-5; 5 is the summit.",
+   "sources": [],
+   "searched": [
+    "live row"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "kind": "fill",
+   "fact": "waypoints[3].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; no land-manager distance on the off-trail C-J Couloir line.",
+   "evidence": "Live row: waypoints[3] is now the Hanging Glacier Traverse (distMi null); index 2 is the couloir base (null). No park figure for either.",
+   "sources": [],
+   "searched": [
+    "nps.gov NOCA Cascade Pass trail page (trail only)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "kind": "fill",
+   "fact": "waypoints[4].distMi",
+   "verdict": "unresolved",
+   "summary": "Still absent; no land-manager distance on the Johannesburg face.",
+   "evidence": "Live row: waypoints[4] is the summit, with no distMi. No park figure.",
+   "sources": [],
+   "searched": [
+    "nps.gov NOCA Cascade Pass trail page (trail only)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; the forest page gives no distance to the Green Creek climbers’ trail turnoff.",
+   "evidence": "Elbow Lake Trail page describes the trail from the south (Pioneer Camp) and the north end at the Middle Fork Nooksack ford, with no mention of Green Creek or Hildebrand Creek and no mileage to the switchback.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS Elbow Lake Trail 697"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_colchuck_balanced_rock_col_east_lake_side_approch",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still null; the forest states 4 miles to Colchuck Lake but nothing to the col.",
+   "evidence": "Colchuck Lake Trail page: 4-mile trail to the lake (via the Stuart Lake Trail, junction at 2.5 mi), with the route up Aasgard Pass beyond; no figure to the Colchuck-Balanced Rock col.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov Okanogan-Wenatchee Colchuck Lake Trail"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chair_peak_northeast_buttress",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "A climbing time has no land-manager source; still null.",
+   "evidence": "Lane L: timing.* has no land-manager source.",
+   "sources": [],
+   "searched": [
+    "none (climbing-time fact)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_this_my_friend",
+   "kind": "fill",
+   "fact": "dist_km",
+   "verdict": "unresolved",
+   "summary": "Still null; the forest states 4 miles to Colchuck Lake but nothing to this route’s base below Aasgard Pass.",
+   "evidence": "Colchuck Lake Trail page: 4-mile trail to the lake; the Aasgard route continues with no stated mileage.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov Okanogan-Wenatchee Colchuck Lake Trail"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_rock_mountain_west_route",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "A time to the summit has no land-manager source; still null.",
+   "evidence": "Lane L: timing.* has no land-manager source.",
+   "sources": [],
+   "searched": [
+    "none (climbing-time fact)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_chair_peak_north_face",
+   "kind": "fill",
+   "fact": "timing.summitTimeHrs",
+   "verdict": "unresolved",
+   "summary": "A time to the summit has no land-manager source; still null.",
+   "evidence": "Lane L: timing.* has no land-manager source.",
+   "sources": [],
+   "searched": [
+    "none (climbing-time fact)"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_iceman",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; the Washington Pass ice crag approach has no land-manager distance.",
+   "evidence": "Live row: waypoints[1] distMi null. Not a land-manager trail destination; no forest or park page states a figure for this point.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_roofer_madness",
+   "kind": "fill",
+   "fact": "gain_ft",
+   "verdict": "unresolved",
+   "summary": "Still null; the forest page gives no gain to Waterfall Basin.",
+   "evidence": "Squire Creek Trail page describes the slide-blocked road and the trail to the pass with no gain figure and nothing on Waterfall Basin.",
+   "sources": [],
+   "searched": [
+    "fs.usda.gov MBS Squire Creek Trail 654"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_bonanza_peak_north_ridge",
+   "kind": "fill",
+   "fact": "timing.approachTimeHrs",
+   "verdict": "already_fixed",
+   "summary": "The route row wa_bonanza_peak_north_ridge no longer exists in the live catalog, so there is nothing left to patch.",
+   "evidence": "Live lookup by id returns no row; the peak’s remaining routes are listed under other ids (likely folded in a duplicate cleanup).",
+   "sources": [],
+   "searched": [
+    "live catalog lookup"
+   ],
+   "ops": []
+  },
+  {
+   "id": "wa_route_d",
+   "kind": "fill",
+   "fact": "waypoints[1].distMi",
+   "verdict": "unresolved",
+   "summary": "Still null; the Washington Pass ice crag approach has no land-manager distance.",
+   "evidence": "Live row: waypoints[1] distMi null. Not a land-manager trail destination; no forest or park page states a figure for this point.",
+   "sources": [],
+   "searched": [
+    "prior evidence only"
+   ],
+   "ops": []
+  }
+ ]
+}

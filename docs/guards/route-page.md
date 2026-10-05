@@ -37,6 +37,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     links and the fire panel all render without the route carrying one safety field of its own.
     While Safety was content-gated too, 99.5% of the catalog had nowhere to show a live wildfire.
     `hasSafetyContent()` is gone; `hasPlanContent()` stays.
+  - **ROUTE FACTS, section 6 (2026-10-01).** CRAG is five disciplines now — `toprope` and `aid` are
+    crag routes (RouteDetail's `CRAG_CATS`); before, they fell into the alpine layout and a bare one
+    printed "Season TBD". On every crag discipline a BARE route must gain no fact row and no
+    "Season TBD"; an enriched one must show every row WITH its value (a label alone does not pass);
+    season reaches the header strap; and a crag route whose `pitch_detail`/`climate` cannot open a
+    Plan tab shows them on Overview — and only there, so a route WITH a Plan tab must not repeat them.
+    Injection-tested: removing the Season row, reverting the strap, and reverting `cragOnly` to three
+    disciplines each fail by name.
 - **`check:approach-section`** renders the real `RouteDetail` and pins that the Plan tab has
   **one** APPROACH section. There used to be two: "APPROACHES · N ways in" (`approach_variants`)
   and, under it, a separate APPROACH box holding the `approach` paragraph, which read as a third
@@ -93,6 +101,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         `FIELDS`, so the guard that exists to catch a column reaching no screen had never asked
         about it; and a rendered measurement (24,236 → 39,027 characters) that is a fact about
         the DATA's value on a route that carries it, not evidence of a defect.
+      - **...and since 2026-09-30 `difficulty` is in `KNOWN`, on purpose.** The owner reset
+        DIFFICULTY BREAKDOWN to climbers' own reads: every route starts unrated and each axis is
+        the plain average of the 1–5 votes, instead of the seeded profile counted as six votes.
+        `DiffRadar` no longer reads the column, so its "Route-finding" sentinel went too (the
+        label now renders with or without the field). Not a hole to close — do not re-wire it
+        as a base rating without asking.
   - The `KNOWN` map records **reasons, not passes**, and a name in it that starts rendering
     fails as stale bookkeeping.
   - **The `FIELDS` list is hand-maintained, and that was checked rather than assumed —
@@ -133,6 +147,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `startsWith`, not `===`, or the whole sentinel class could report a defect and still exit
       0. Injection-tested: deleting the `Crux` tile from `RouteDetail` fails naming `crux` and
       printing the injected patch, and restoring it goes green.
+    - **ROUTE FACTS (2026-10-01) added six sentinels**: `bolts` (0240), and `guide_stars`,
+      `alt_names`, `variations`, `ffa`, `fwa`. `bolts` and `guide_stars` are `numeric:true` WITH an
+      `anchor` (`Bolts`, `★★★☆`), and a numeric sentinel that has an anchor must now show it as
+      well as change the page — "the page changed" alone passes on any side effect of the patch.
+      `fwa` is probed on the ALPINE base on purpose: a first winter ascent is mostly an alpine fact.
+      `anchor` (0242, 2026-10-02) is the seventh: the route's TOP anchor as a short value, an
+      ANCHOR row on crag routes other than boulders. `features` was NOT given a row — it already
+      draws as RouteTagRow's chips, and a second reader would print it twice.
+      `location` (0243) is the eighth: where the line starts on its wall, the FIRST fact row on a
+      crag route, capped at 160 characters by both the column and the reader.
   - **A FAILED QUERY IS NOT AN EMPTY COLUMN, and conflating the two produced wrong advice
     rather than silence.** `if (!r.ok) return []` made a dead database indistinguishable from
     "no route has this column populated". Main went red twice on 2026-08-12 with all 46
@@ -348,6 +372,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     is exactly what the row's own caption claims, so neither is a data question. *Read the route
     that carries an outlier before filing it as one.*
 - **`check:token-boxes`** asks whether any element **shaped like a token holds a paragraph**. It is
+  - **A SECOND, CRAG sentinel (2026-10-01).** The sample is enriched alpine rows, so the ROUTE FACTS
+    rows only a crag discipline draws (bolts, descent, aspect, season) were never offered a long
+    value, and `alt_names`/`variations`/`ffa`/`fwa` are empty catalog-wide, so they are not TEXT in
+    any sampled row and the first sentinel cannot reach them. The crag sentinel is filed on a `crag`
+    area — on a `peak` area catOf() turns trad into alpine and the probe would be the alpine one again.
   the enforcement for the rule CLAUDE.md has stated in prose since `season` — *before writing a
   researched string into an existing column, look at where that column renders* — which had been
   broken **three** times by the time it was written, the third by a pass that had **read the rule**.
@@ -970,3 +999,45 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     That block reads **raw** source, because the discriminator is a string literal
     (`tab==="safety"`) and the blanker wipes string contents, collapsing every branch to
     `tab===""` — the first run failed with "gone blind" for precisely that reason.
+
+- **`check:approach-overlay`** (in build) — when a climb has more than one way in, the PICKED one
+  drives the whole page and nothing from another leaks under its name.
+  - **Mount Shuksan's Southeast Ridge is why.** It is a summit-pyramid FINISH reached by the
+    Sulphide Glacier or the Fisher Chimneys, from two trailheads. The row could hold one: its pins,
+    camps and numbers were the Sulphide's while its own road prose named Lake Ann, and its 6,627 ft /
+    11.3 km were the whole Sulphide trip, not the ~600 ft ridge.
+  - **The model** (`lib/approaches.js`): an `approach_variants` entry may carry `viaRouteId` (a
+    sibling route that IS the way in) or `trip` (its own trailhead, whole-trip numbers, GPX).
+    RouteDetail lays the picked one over the row ONCE (`route = applyApproach(routeRow, …)`) so every
+    panel follows without being rewritten. Unlinked prose cards get no picker — it would change
+    nothing.
+  - **Every owned key is replaced, including the empty ones.** A way in with no camps recorded
+    shows no camps — not the other way in's. That is the half the guard's fixtures pin hardest.
+  - **A via route's own `summitTimeHrs`/`totalHrs` are dropped**: they time ITS finish (the
+    Sulphide's summit gully), which this climb replaces; the planner times the climbing from this
+    route's own pitches instead.
+  - **...and a trailhead way in drops the stored way's TIMES, even when it records none** (2026-10-01).
+    Windy Peak's Iron Gate way in showed "Long Swamp Trail to the summit and back, 9.5 hr" under
+    PUBLISHED TIMES, because the overlay only touched `timing` when the trip carried one. Now the
+    stored `approachTimeHrs`, `descentTimeHrs`, `recommendedStart`, `totalHrs` and `sectionBreakdown`
+    go for any `trip` (and `sectionBreakdown` for a via route too); only `summitTimeHrs`, the climb's
+    own time, stays. A fixture pins it.
+  - **Camps follow the pick in both directions** (batch 1, 2026-10-01). The row's `bivy` was
+    written for the whole climb, so it held the other way in's camps (Stuart's North Ridge listed
+    Goat Pass, the south-side camp, under Mountaineer Creek). The way in the row describes carries
+    `camps: [names]`; a `trip` carries its camps whole; a linked route lends only the way in ITS own
+    page opens on. A camp both ways share is named on both.
+  - **`storedRow:true`** names the way in the row's own trailhead and numbers describe when it is
+    not the most-used one (Sloan's Corkscrew stores the Cougar Creek pullout; most parties go up
+    Bedal Creek). Without it the picker labelled Cougar Creek's data "Bedal Creek".
+  - **The raw column spelling leaks.** `dbRouteToCamel` spreads the row, and `lib/outing.js` reads
+    `dist_km` when `distKm` is null — so a way in with no distance showed the other's 4.8 mi. The
+    overlay clears both spellings of every owned key; a fixture pins it.
+  - **A way in can live on another peak** (the Fury ridge traverse starts on East Fury's summit):
+    RouteDetail reads any linked route the peak's own list lacks by id.
+  - **SuggestFix is handed `routeRow`, never the overlay** — seeding an edit from the overlay would
+    write the Fisher Chimneys pins into the Southeast Ridge's own `waypoints` column. The wiring half
+    of the guard fails on any other `<SuggestFix route={…}>`.
+  - **Cannot see:** whether a variant's linked data is TRUE — that is `audit:multi-approach` and
+    research. Nor a panel that reads a field outside `APPROACH_OWNED_KEYS` that is in fact
+    approach-specific; add the key there, not a special case in the panel.

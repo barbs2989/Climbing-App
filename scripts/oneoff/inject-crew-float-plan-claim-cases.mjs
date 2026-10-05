@@ -27,13 +27,13 @@ const sum = (p) => crypto.createHash("sha1").update(fs.readFileSync(p)).digest("
 
 const CASES = [
   { name: "collect-claim", file: "lib/LegalView.jsx", fires: true,
-    find: "climbing logs, float plans you file against a crew, the home area",
-    repl: "climbing logs, optional emergency contacts, the home area",
-    expect: "names an emergency contact as something the app has",
+    find: "climbing logs, float plans you file against a crew, the home area you type in, your zip code if you add one, an emergency contact if you save one (visible only to you), and",
+    repl: "climbing logs, optional emergency contacts, the home area you type in, your zip code if you add one, and",
+    expect: "names an emergency contact without saying where it lives or who can read it",
     why: "the real historical collection list — profiles has 24 columns and none is a contact" },
 
   { name: "crew-shares-contact", file: "lib/LegalView.jsx", fires: true,
-    find: "There is no emergency contact on your profile for anyone to see: the one you write into a float plan is held on your own device until you send it to somebody. Filing a float plan against a crew records the date you filed it and the crew’s agreed return day on that crew’s record, which the other members can read — but no screen in the app shows it back to them, so do not rely on your crew to raise the alarm.",
+    find: "You can save one emergency contact (a name and a phone number) in Edit profile, where only you can read it: it is stored with your account, never shown on your profile or to another climber, never contacted by ClimbMatch, and used only to fill in your own float plans. What you write into a float plan is held on your own device until you send it to somebody. Filing a float plan against a crew records the date you filed it and the crew’s agreed return day on that crew’s record, which the other members can read — but no screen in the app shows it back to them, so do not rely on your crew to raise the alarm.",
     repl: "Emergency contacts are never shown on your public profile. If you file a float plan with a crew, your emergency contact is shared with that crew so they can raise the alarm if you do not return.",
     expect: "says an alarm gets raised off a float plan",
     why: "the real historical Privacy §\"What others can see\", restored verbatim" },
@@ -44,14 +44,14 @@ const CASES = [
     expect: "says an alarm gets raised off a float plan",
     why: "the real historical in-app sheet sentence — float_plan carries no route at all" },
 
-  { name: "contact-becomes-settable", file: "ClimbMatch.jsx", fires: true,
-    find: "setEditDraft({availWeek:",
-    repl: "setEditDraft({emergencyContact:ME.emergencyContact||\"\",availWeek:",
-    expect: "an emergency contact is settable now",
-    why: "once a climber can set one, saying the app holds it is CORRECT — report a moved premise, do not go on forbidding it" },
+  { name: "profile-contact-fed-to-crew", file: "ClimbMatch.jsx", fires: true,
+    find: "ME.certExpiry=profile.certExpiry||{};",
+    repl: "ME.certExpiry=profile.certExpiry||{};ME.emergencyContact=(myEcQ.data&&myEcQ.data.name)||\"\";",
+    expect: "something now sets the emergencyContact the crew float plan stores",
+    why: "0237's contact is owner-only and deliberately NOT fed to the crew float plan; the day it is, a crew can read it and the premise has moved" },
 
   { name: "plan-becomes-rendered", file: "lib/CrewCard.jsx", fires: true,
-    find: "{crew.floatPlan?\"✓ Float plan set\":\"⚠ Set float plan\"}",
+    find: "{crew.floatPlan?\"✓ Float plan\":\"⚠ Set float plan\"}",
     repl: "{crew.floatPlan?\"✓ Back by \"+crew.floatPlan.returnBy:\"⚠ Set float plan\"}",
     expect: "a screen reads the stored crew float plan",
     why: "the day a crew is SHOWN the plan, \"your crew can see it\" becomes true — the other half of the premise, and a different repair from a settable contact" },
@@ -68,8 +68,8 @@ const CASES = [
     why: "section 5 masks comments with Babel, or its own documentation of the forbidden access decides the verdict" },
 
   { name: "SILENT-honest-mention-reworded", file: "lib/LegalView.jsx", fires: false,
-    find: "There is no emergency contact on your profile for anyone to see: the one you write into a float plan is held on your own device until you send it to somebody.",
-    repl: "ClimbMatch keeps no emergency contact on your profile at all: what you type into a float plan stays on your phone until you send it.",
+    find: "where only you can read it: it is stored with your account, never shown on your profile or to another climber,",
+    repl: "and only you can read it: it is kept with your account, never shown on your profile or to another climber,",
     why: "a guard pinned to one phrasing forbids improving the copy — the rule is that a sentence naming a contact carries its own honesty" },
 ];
 

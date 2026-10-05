@@ -10,10 +10,11 @@ import { useSession } from "./auth";
 import { searchMatches } from "./search";
 import {
   useGuides, useGuideCredentials, useGuideReviews, useMyInquiriesWithGuide,
-  submitInquiry, submitReview,
+  submitInquiry, submitReview, withdrawInquiry,
   dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS,
 } from "./db";
 import { POP_BACK } from "./popupChrome.js";
+import { askConfirm } from "./ConfirmSheet.jsx";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -57,27 +58,45 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const session = useSession();
   const uid = session && session.user && session.user.id;
   const { data: credentials, isLoading: credsLoading, isError: credsError } = useGuideCredentials(guide.id);
-  const { data: reviews, isLoading: revLoading, isError: revError } = useGuideReviews(guide.id);
-  const { data: myInquiries } = useMyInquiriesWithGuide(uid, guide.id);
+  const { data: reviews, isLoading: revLoading, isError: revError, refetch: refetchReviews } = useGuideReviews(guide.id);
+  const { data: myInquiries, refetch: refetchMyInquiries } = useMyInquiriesWithGuide(uid, guide.id);
   const verified = isGuideVerified(credentials || []);
 
   const [obj, setObj] = useState(""); const [dates, setDates] = useState(""); const [party, setParty] = useState(1); const [msg, setMsg] = useState("");
   const [minor, setMinor] = useState(false); const [disclaimerOk, setDisclaimerOk] = useState(false);
-  const [sent, setSent] = useState(false); const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false); const [sending, setSending] = useState(false); const [sentId, setSentId] = useState(null); const [withdrawing, setWithdrawing] = useState(false);
 
-  const [rating, setRating] = useState(5); const [reviewText, setReviewText] = useState(""); const [reviewSent, setReviewSent] = useState(false);
-  const reviewableInquiry = (myInquiries || []).find(i => !i.reviews || !i.reviews.length);
+  const [rating, setRating] = useState(5); const [reviewText, setReviewText] = useState(""); const [reviewSent, setReviewSent] = useState(false); const [reviewBusy, setReviewBusy] = useState(false);
+  const reviewableInquiry = (myInquiries || []).find(i => i.status !== "withdrawn" && (!i.reviews || !i.reviews.length));
+  // An inquiry still waiting on the guide can be taken back -- the one just sent, or one from an
+  // earlier visit (0226). Nothing could withdraw one before; it just sat in the guide's inbox.
+  const openInquiryId = sentId || ((myInquiries || []).find(i => i.status === "new") || {}).id || null;
+  const withdraw = async () => {
+    if (!openInquiryId || withdrawing) return;
+    if (!(await askConfirm({ title: "Withdraw your inquiry to " + guide.name.split(" ")[0] + "?", confirmLabel: "Withdraw" }))) return;
+    setWithdrawing(true);
+    try {
+      await withdrawInquiry(openInquiryId);
+      setSent(false); setSentId(null); refetchMyInquiries && refetchMyInquiries();
+      notify && notify("Inquiry withdrawn — " + guide.name.split(" ")[0] + " sees it as withdrawn.");
+    } catch (e) {
+      refetchMyInquiries && refetchMyInquiries();
+      notify && notify("Couldn't withdraw that inquiry — " + ((e && e.message) || "try again."));
+    } finally {
+      setWithdrawing(false);
+    }
+  };
 
   const send = async () => {
     if (!uid || !disclaimerOk || sending) return;
     setSending(true);
     try {
-      await submitInquiry({
+      const row = await submitInquiry({
         guide_id: guide.id, climber_id: uid,
         objective: obj, requested_dates: dates, party_size: party, message: msg,
         includes_minor: minor,
       });
-      setSent(true);
+      setSent(true); setSentId(row && row.id || null); refetchMyInquiries && refetchMyInquiries();
       notify && notify("Inquiry sent to " + guide.name.split(" ")[0] + " — they'll reply in the app.");
     } catch (e) {
       notify && notify("Couldn't send that inquiry — please try again.");
@@ -87,13 +106,19 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   };
 
   const postReview = async () => {
-    if (!reviewableInquiry) return;
+    // A second tap used to post again while the first was in flight, and the new review never
+    // appeared in the list because nothing re-read it.
+    if (!reviewableInquiry || reviewBusy || reviewSent) return;
+    setReviewBusy(true);
     try {
       await submitReview({ inquiry_id: reviewableInquiry.id, guide_id: guide.id, climber_id: uid, rating, text: reviewText });
       setReviewSent(true);
+      refetchReviews && refetchReviews();
       notify && notify("Review posted.");
     } catch (e) {
-      notify && notify("Couldn't post that review.");
+      notify && notify("Couldn't post that review — try again.");
+    } finally {
+      setReviewBusy(false);
     }
   };
 
@@ -102,7 +127,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
   const primaryCred = (credentials || []).find(c => c.kind === "primary_track");
 
   return createPortal((
-    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto" ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1150, overflowY: "auto", overscrollBehavior: "contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
         <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
       </div>
@@ -151,14 +176,15 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
           <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 6 }}>Leave a review</div>
           <select aria-label="Star rating" value={rating} onChange={e => setRating(Number(e.target.value))} style={inp}>{[5, 4, 3, 2, 1].map(n => <option key={n} value={n}>{n + " star" + (n === 1 ? "" : "s")}</option>)}</select>
           <textarea aria-label="How did it go?" value={reviewText} onChange={e => setReviewText(e.target.value)} rows={2} placeholder="How did it go?" style={{ ...inp, marginTop: 6, resize: "vertical", fontFamily: "inherit" }} />
-          <button onClick={postReview} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
+          <button onClick={postReview} disabled={reviewBusy} style={{ marginTop: 6, width: "100%", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Post review</button>
         </div> : null}
 
         <div style={label}>Send an inquiry</div>
         {sent ? (
-          <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>Sent — you'll agree on dates and price together before anything is booked. No payment now.</div>
+          <div style={{ fontSize: 13, color: C.textSub, lineHeight: 1.5 }}>Sent — you'll agree on dates and price together before anything is booked. No payment now.{openInquiryId ? <button onClick={withdraw} disabled={withdrawing} style={{ display: "block", marginTop: 8, width: "100%", background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 9, padding: "8px 0", fontSize: 12.5, fontWeight: 700, cursor: withdrawing ? "default" : "pointer" }}>{withdrawing ? "Withdrawing…" : "Withdraw inquiry"}</button> : null}</div>
         ) : (
           <>
+            {openInquiryId ? <div style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 9, padding: "8px 10px", marginBottom: 8 }}><span style={{ flex: 1 }}>{"You have an inquiry waiting on " + guide.name.split(" ")[0] + "."}</span><button onClick={withdraw} disabled={withdrawing} style={{ flexShrink: 0, background: "transparent", border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "5px 10px", fontSize: 12, fontWeight: 700, cursor: withdrawing ? "default" : "pointer" }}>{withdrawing ? "Withdrawing…" : "Withdraw"}</button></div> : null}
             <textarea aria-label="What's your objective?" value={obj} onChange={e => setObj(e.target.value)} rows={2} placeholder="What's your objective?" style={{ ...inp, resize: "vertical", fontFamily: "inherit" }} />
             <input aria-label="Dates you're thinking of" value={dates} onChange={e => setDates(e.target.value)} placeholder="Dates you're thinking of" style={{ ...inp, marginTop: 8 }} />
             <select aria-label="Party size" value={party} onChange={e => setParty(Number(e.target.value))} style={{ ...inp, marginTop: 8 }}>

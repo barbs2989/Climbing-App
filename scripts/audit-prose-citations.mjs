@@ -213,6 +213,10 @@ for (const r of rows) {
   }
   if (Array.isArray(r.waypoints)) r.waypoints.forEach((w, i) => {
     if (w && typeof w.note === "string" && w.note.trim()) values.push({ id: r.id, field: `waypoints[${i}].note`, kind: "waypoint note", text: w.note.replace(/\s+/g, " ").trim() });
+    // `directions` renders as "Getting here — …" in the same card as the note, and was the one
+    // waypoint string this audit never read. Added when a researched pass filled it from the web,
+    // which is exactly when a "per WTA" is most likely to slip in.
+    if (w && typeof w.directions === "string" && w.directions.trim()) values.push({ id: r.id, field: `waypoints[${i}].directions`, kind: "waypoint directions", text: w.directions.replace(/\s+/g, " ").trim() });
   });
 }
 // ROUTE PROSE — the other 20+ climber-facing columns. This audit read road/access/waypoints only,
@@ -315,12 +319,12 @@ for (const v of values) {
 const stale = EXEMPT.filter(e => !hitKeys.has(e[0] + "\0" + e[1]));
 
 const group = k => hits.filter(h => h.kind === k);
-console.log(`${rows.length} ${STATE} routes; ${values.length} prose values (${values.filter(v => v.kind === "road/access").length} road/access, ${values.filter(v => v.kind === "waypoint note").length} waypoint notes, ${values.filter(v => v.kind === "route prose").length} route prose).`);
+console.log(`${rows.length} ${STATE} routes; ${values.length} prose values (${values.filter(v => v.kind === "road/access").length} road/access, ${values.filter(v => v.kind === "waypoint note").length} waypoint notes, ${values.filter(v => v.kind === "waypoint directions").length} waypoint directions, ${values.filter(v => v.kind === "route prose").length} route prose).`);
 console.log(`${hits.length} value(s) on ${new Set(hits.map(h => h.id)).size} route(s) name a third party as the source of a claim.`);
 console.log(`${live.length} value(s) on ${new Set(live.map(h => h.id)).size} route(s) carry a LIVE land-manager reference — operational, and NOT a finding.`);
 console.log(`${EXEMPT.length} exempt, ${stale.length} stale.\n`);
 
-for (const kind of ["road/access", "waypoint note", "route prose"]) {
+for (const kind of ["road/access", "waypoint note", "waypoint directions", "route prose"]) {
   const g = group(kind);
   console.log(`── ${kind.toUpperCase()}: ${g.length} value(s) on ${new Set(g.map(h => h.id)).size} route(s)`);
   const show = FULL ? g : g.slice(0, 10);

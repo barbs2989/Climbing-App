@@ -19,7 +19,10 @@
 // This lives in lib/ rather than in either caller because that anchoring rule is precisely the
 // sort of thing this repo has already paid for existing in several places and drifting -- see
 // SPINNER_RE, and the four grade parsers.
+import { MENU_SCREENS, openFromMenu } from "./menu-screens.mjs";
 export async function tapByName(page, label, settleMs = 1600) {
+  // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+  if (MENU_SCREENS[label]) return openFromMenu(page, label, settleMs);
   const ok = await page.evaluate((label) => {
     const re = new RegExp("^" + label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "(,|$)");
     const el = [...document.querySelectorAll("[aria-label]")].find((e) => {

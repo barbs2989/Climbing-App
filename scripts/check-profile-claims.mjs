@@ -13,8 +13,8 @@
  *      on an empty page. Its EXPERIENCE list is `[...baked, ...live, ...extra]`, where `extra` is
  *      the "Add to résumé" form (six free-text inputs, no route id, no verification) rendered
  *      through the SAME row as a logged ascent.
- *   2. THE DEMO TICK. `onVerifyCourse` flips session-only state; the button says "Verify (demo)"
- *      and the chip it produced said "✓ verified" over a toast asserting a verification as fact.
+ *   2. THE SELF-AWARDED TICK. `onVerifyCourse` let the owner mark their own course verified. It was
+ *      caveated "(demo)" until 2026-09-30, then REMOVED by owner decision; this section keeps it gone.
  *   3. "RAISE IT WITH:". A fixed row of three offered "Verify email" to a climber whose own
  *      résumé, two inches away, reads "✓ Email verified".
  *
@@ -65,13 +65,23 @@ const un = (h) => h.replace(/&#x27;/g, "'").replace(/&#39;/g, "'").replace(/&quo
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import ReactDOM from "react-dom";
+// Resume ends in createPortal(..., document.body), which the server renderer refuses: portals are
+// PLACEMENT, and check:overlays owns that. Flattened and \`document.body\` stubbed for THIS call only,
+// the same scoped patch check:units uses for FullProfile, so nothing else in the bundle moves.
+function flat(fn) {
+  const orig = ReactDOM.createPortal, hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
+}
 import { Resume } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const climber = { id: "u_9f1c2d", name: "Robin Belay", username: "robinbelay", avatar: "",
   location: "Bellingham, WA", vouches: [], certifications: [], courses: [], pyramid: {} };
 const ROUTE = { id: "wa_x", name: "North Ridge", grade: "5.7", discipline: "trad", mountainId: null };
 export function render(props) {
-  return renderToStaticMarkup(React.createElement(Resume, Object.assign(
-    { climber, logs: [], onClose(){}, routeById: (id) => (id === "wa_x" ? ROUTE : null) }, props)));
+  return flat(() => renderToStaticMarkup(React.createElement(Resume, Object.assign(
+    { climber, logs: [], onClose(){}, routeById: (id) => (id === "wa_x" ? ROUTE : null) }, props))));
 }
 `;
 
@@ -132,53 +142,40 @@ else fail("a résumé of hand-typed entries claims 'partner- and community-corro
 if (/ClimbMatch/.test(emptyR)) ok("the footer still says where the document came from");
 else fail("the footer lost its provenance line entirely");
 
-console.log("\n--- a demo-awarded credential says it is a demo ---");
+console.log("\n--- the owner cannot verify their own credential ---");
 
-const demoR = un(render({ editable: true, courses: [{ name: "AIARE 1", org: "", date: "2024-12", verified: true, demo: true }] }));
+// SINCE 2026-09-30 THERE IS NO SELF-VERIFY. The owner decided toasts and controls read as the
+// finished app, and a finished app does not let a climber award their own avalanche cert a tick:
+// "Verify (demo)" and its handler were REMOVED, not reworded. So this section now asserts the
+// control stays gone, and that the two honest chips it sat between still render.
 const realR = un(render({ editable: true, courses: [{ name: "WFR", org: "NOLS", date: "2025-04", verified: true }] }));
 const selfR = un(render({ editable: true, courses: [{ name: "AIARE 1", org: "", date: "2024-12", self: true }] }));
 
-if (demoR.length < 900 || realR.length < 900 || selfR.length < 900)
+if (realR.length < 900 || selfR.length < 900)
   fail("a course render came back thin — nothing in this section is meaningful");
 
-if (/verified \(demo\)/.test(demoR)) ok("a demo-awarded credential is marked '(demo)'");
-else fail("a demo-awarded credential renders identically to a real one");
+if (/✓ verified/.test(realR)) ok("a genuinely verified credential still reads '✓ verified'");
+else fail("the real verified chip was damaged");
 
-if (/✓ verified/.test(realR) && !/\(demo\)/.test(realR))
-  ok("a genuinely verified credential still reads '✓ verified' with no demo mark");
-else fail("the real verified chip was damaged, or now claims to be a demo");
-
-if (/self-reported/i.test(selfR)) ok("a self-reported course still reads 'self-reported'");
-else fail("the self-reported chip was lost");
+if (/self-reported/i.test(selfR) && !/✓ verified/.test(selfR)) ok("a self-reported course reads 'self-reported', never verified");
+else fail("the self-reported chip was lost, or a self-reported course now reads verified");
 
 // The chip must not OPEN with a word character or it glues onto the course name in the announced
-// text — "AIARE 1verified (demo)" — the defect check:a11y-badges exists for. This is why the ✓
-// stays on the demo chip.
-const chip = demoR.match(/>([^<>]*verified \(demo\)[^<>]*)</);
-if (!chip) fail("could not read the demo chip's own text back");
-else if (/^\w/.test(chip[1])) fail(`the demo chip starts with a word character (${JSON.stringify(chip[1])}) — it glues onto the course name`);
-else ok(`the demo chip opens with a non-word glyph (${JSON.stringify(chip[1])})`);
+// text — "WFRverified" — the defect check:a11y-badges exists for.
+const chip = realR.match(/>([^<>]*✓ verified[^<>]*)</);
+if (!chip) fail("could not read the verified chip's own text back");
+else if (/^\w/.test(chip[1])) fail(`the verified chip starts with a word character (${JSON.stringify(chip[1])}) — it glues onto the course name`);
+else ok(`the verified chip opens with a non-word glyph (${JSON.stringify(chip[1])})`);
 
-// THE WIRING, AS SOURCE. Rendering proves the chip CAN say "(demo)"; it cannot prove the button
-// still sets it, nor that the toast stopped asserting a verification — dropping either leaves
-// every render assertion above green. COMMENTS ARE STRIPPED, because the fix's own comment names
-// `demo:true` and an injection deleting the real one passed on the strength of the prose.
+// AS SOURCE, comments stripped: no handler and no control may hand the owner a verification.
+const strip = (t) => t.replace(/\/\*[\s\S]*?\*\//g, " ").replace(/^\s*\/\/.*$/gm, " ");
 const appSrc = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-const handler = appSrc.match(/onVerifyCourse=\{[\s\S]{0,900}?\}\}/);
-if (!handler) fail("ANCHOR LOST: the onVerifyCourse handler is gone — its wiring is unchecked");
-else {
-  const body = handler[0].replace(/\/\*[\s\S]*?\*\//g, " ").replace(/\/\/.*$/gm, " ");
-  if (/demo:\s*true/.test(body)) ok("the handler marks the row demo:true");
-  else fail("the handler no longer sets demo:true — the chip will claim a real verification again");
-  if (/Credential verified/.test(body)) fail("the toast asserts 'Credential verified' as fact again");
-  else ok("the toast does not assert a verification happened");
-  if (/preview|simulated|demo/i.test(body)) ok("...and says which, in the app's own preview wording");
-  else fail("the toast does not say it is a preview");
-}
-
 const coreSrc = readCoreSource();
-if (/Verify \(demo\)/.test(coreSrc)) ok("the button still reads 'Verify (demo)'");
-else fail("the button no longer says '(demo)' — re-check what this control now claims");
+const appCode = strip(appSrc), coreCode = strip(coreSrc);
+if (/onVerifyCourse/.test(appCode) || /onVerifyCourse/.test(coreCode)) fail("an onVerifyCourse self-verify handler is back");
+else ok("no self-verify handler is wired to the résumé");
+if (/Verify \(demo\)|Mark verified/.test(coreCode)) fail("a self-verify button is back on the résumé or the guide dashboard");
+else ok("no control offers to mark your own credential verified");
 
 /* ------------------------------------------- section 3: "Raise it with:" hides completed steps */
 

@@ -158,6 +158,18 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       wxRef.current = L.layerGroup().addTo(map);
       perimRef.current = L.layerGroup().addTo(map);
       fireRef.current = L.layerGroup().addTo(map);
+      // The place the map was opened FOR, named on the map itself. A route page asks for
+      // this (focus.pin) because "zoom in until you can find Vesper Peak" was the job the
+      // climber was left with: the base layer labels peaks only from about zoom 12, a crag
+      // or a sector is never labelled at all, and Satellite labels nothing. An area focus
+      // does not get a pin — a state's or a range's centroid is not a place to point at.
+      if (focus && focus.pin && focus.name) {
+        try {
+          L.circleMarker([vLat, vLng], { radius: 7, color: "#ffffff", weight: 3, fillColor: C.blue, fillOpacity: 1, interactive: false })
+            .addTo(map)
+            .bindTooltip(focus.pinLabel || focus.name, { permanent: true, direction: "top", offset: [0, -8] });
+        } catch (e) {}
+      }
       mapRef.current = map;
       setReady(true);
       map.on("moveend", () => setBbox(bboxOf(map)));

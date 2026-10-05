@@ -57,6 +57,7 @@ npm run check:popup-chrome # ...and every ✕, ← Back and remove-✕ in the ap
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
+npm run check:scroll-containment # every scroll pane contains its overscroll, so a sheet never reads as STUCK (in build)
 
 # ── Browser walks — notes: docs/guards/browser-walks.md ──
 npm run check:ui   # drives the real app in Chrome and asserts per-screen invariants
@@ -89,7 +90,7 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
 npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
 npm run check:no-sources  # no screen prints a field named source (in build)
-npm run check:preview-claims # a control that changes only CLIENT STATE must not claim a real outcome (in build)
+npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
 npm run check:match-percent # the match % blends what the screen SAYS it blends; no term may saturate it (in build)
@@ -137,6 +138,7 @@ npm run check:field-renders # every enriched route column actually reaches a scr
 npm run check:summit-briefing # a peak page states only what its routes AGREE on — and does not withhold what they do
 npm run check:token-boxes  # no element shaped like a chip holds a paragraph
 npm run check:pitch-split # every pitch_detail entry is a row of ROUTE BREAKDOWN, in order (in build)
+npm run check:approach-overlay # the PICKED way in drives the page, nothing from another leaks, edits hit the stored row (in build)
 
 # ── Camping and bivy — notes: docs/guards/camping.md ──
 npm run check:camping      # CAMPING & BIVY reaches Planner, and merges both stores (in build)
@@ -194,8 +196,10 @@ npm run audit:area-parents # is every area filed under the place it belongs to?
 npm run audit:note-voice   # a waypoint note RENDERS — is it written for a climber or for the pipeline?
 npm run audit:prose-citations   # does rendered prose still name a third party as its SOURCE?
 npm run audit:misplaced-prose # ...is ANY rendered string the pipeline talking, NAMING A SOURCE (every state + area blurbs), or a FIRST ASCENT that argues?
+npm run audit:shouted-prose # does any rendered string SHOUT in ALL CAPS? (enrich:apply refuses it too)
 npm run audit:approach-scope # does a route's approach text run past the base of the climb?
 npm run audit:aspect-name    # does a route's NAME point the same way as its `aspect`?
+npm run audit:multi-approach # a climb reached MORE THAN ONE WAY that the page cannot switch between yet
 npm run enrich:next-batch  # next unpitched routes still needing a climbing_route
 npm run check:enrichment-traceable # does a climbing_route batch invent anything?
 npm run audit:terrain      # does a route's safety advice match the terrain it crosses?
@@ -235,6 +239,7 @@ npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
 npm run check:migrations # two migrations must never share a number (in build)
+npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
 ```
 
@@ -291,7 +296,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 - `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
 - `crew` — your crews and direct/crew messaging (`crewView`).
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, settings, verification, trust score.
+- `me` — profile, verification, trust score. **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the **Menu** (the avatar button at the top left, `menuOpen`), whose "You" card leads here. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 
@@ -339,6 +344,11 @@ Each rule below is a summary; the linked file has the incidents behind it and th
   array**, so after any batch write, re-read and reconcile: a 200 is not evidence the data changed.
 - **A row count that decides something must be read with the service key.** An RLS-protected table
   answers `count=exact` with **0 and a 200** under the public key, whatever it holds.
+- **The Supabase GitHub integration REPLAYS `supabase/migrations/` (on since 2026-09-26).** Every
+  migration PR gets an empty preview database, and a merge to `main` applies whatever production
+  has not RECORDED. So when you apply a migration by hand, record its version in
+  `supabase_migrations.schema_migrations` in the same step, or the merge applies it twice; and run
+  `npm run check:migration-replay` before pushing one. → [README-numbering.md](supabase/migrations/README-numbering.md)
 - **Run `npm run check:sql -- fix.sql` before handing over any SQL.** The SQL Editor reports
   success for an UPDATE or DELETE that matched zero rows; a wrong id has already destroyed the only
   copy of a route. → [hand-written-sql.md](docs/codebase/hand-written-sql.md)

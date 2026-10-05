@@ -5,6 +5,12 @@ A control that claims to remember something must store it: float plans and plann
 Part of the guard notes — see [README.md](README.md) for the full index.
 
 - **`check:float-plan-persistence`** asserts that a filed float plan survives leaving the tab.
+  - **THE FORM MOVED TO CREWS (2026-09-30).** It is no longer on the route page's Safety tab: that
+    tab links to **Crews › Float plans** (`lib/FloatPlans.jsx`), which lists every plan on the device
+    (`listFloatPlans`, incl. old `route:<id>` scopes) and exports via Share / Email / Save as PDF.
+    Sections 6–7 now assert the hub's call site and that RouteDetail holds no second `<FloatPlan>`.
+    The crew card's button opens that crew's form; `crews.float_plan` is filed when it is SAVED.
+    The RouteDetail history below is kept for why the lift exists.
   `FloatPlan` holds **eleven** fields and both its render sites are conditional branches —
   `{tab==="safety"?…:null}` on the route page and `{view==="float"?…}` on the crew safety screen —
   so React discarded the state on the way out and tapping **Plan** to check the descent wiped
@@ -177,6 +183,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     real account does not have). **A stale entry fails in BOTH directions**: a key the editor stops
     collecting, and — the useful one — a key that GAINS a column, where the guard flips from silent
     to demanding it be wired.
+    - **2026-10-01, `level` LEFT the list: 0237 gave it a column**, so `NOT_A_COLUMN` is empty and the
+      guard now demands `level` be sent (it is) — the "gains a column" direction, used as designed.
+      0237 also added `climb_grades`, `belay_devices` and `cert_expiry`, all three collected, sent and
+      read back. Until `scripts/schema-snapshot.json` is refreshed this guard reads the OLD snapshot and
+      reports all four as columnless; that is the snapshot, not the wiring.
   - **`ALIAS` is declared, never derived.** `showRealName` stores as `show_name`, and
     `check:visibility-switches` records getting exactly this wrong: it derived `show_real_name`,
     found no column, and reported a healthy control as broken.

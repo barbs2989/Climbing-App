@@ -1,0 +1,432 @@
+{
+ "items": [
+  {
+   "kind": "item",
+   "id": "wa_buckner_mountain_north_face",
+   "fact": "Season window: season/itinerary.cal say Jul-Sep, but best_season/seasonal_guidance/pro_tips say the route is best (and conditions degrade badly by high summer) in Late May-early July",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "The one source that states a window (a club route page: July, August) backs neither side exactly, and aligning best_season would need month-by-month guidance and pro tips that no source gives, so nothing is changed. Club route page for Mount Buckner North Face: 'Seasons: July, August'. The summit route page and its comment give no months; a guide service offers the peak March-October. PEAKBAGGER PASS: Still real; no peakbagger North Face ascent states a season window, so there is still no source for either side. Peakbagger ascent list for Mount Buckner shows about ten North Face entries (dated July, e.g. 2011-07-25 and 2020-07-19); the reports read carry only route names and gear, with no statement of when the face is in condition. Dates of individual ascents are not a stated window."
+  },
+  {
+   "kind": "item",
+   "id": "wa_ghost_peak_south_route",
+   "fact": "distance to the high camp",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "No source states a mileage from Whatcom Pass or Perfect Pass to a camp below Ghost Peak, so the waypoint (about 5 mi past Whatcom Pass) and itinerary day 3 (7.5 mi) cannot be reconciled. A 2016 Northern Pickets party (Crooked Thumb, Phantom, West Challenger) gives only hours and gain per day (Whatcom Pass knoll to the Crooked Thumb Glacier moraine 11.1 h, +3,700 ft) and a 54-mi whole-trip total; it states no leg mileage and did not climb Ghost. Peakbagger and summitpost are blocked and not archived for Ghost Peak. PEAKBAGGER PASS: Peakbagger lists only two Ghost Peak ascents and neither has a trip report or stats, so no stated mileage exists. Peakbagger ascent list for Ghost Peak: two ascents (one undated, one 1986), no trip reports, no gain or distance fields."
+  },
+  {
+   "kind": "item",
+   "id": "wa_ghost_peak_south_route",
+   "fact": "high camp location: Crooked Thumb Glacier moraine vs Luna Cirque/Lousy Lake",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "No source names the camp used for Ghost Peak itself, so the Crooked Thumb Glacier moraine (approach/itinerary) versus Luna Cirque near Lousy Lake (waypoint/descent_text) stays open. The one Hannegan-side report found camped on the Crooked Thumb Glacier southern lateral moraine to climb Crooked Thumb and Phantom, not Ghost; it is a camp for neighbouring peaks, not a statement for this route's line. PEAKBAGGER PASS: Peakbagger has no Ghost Peak trip report naming a camp, so the camp stays open. Peakbagger ascent list for Ghost Peak: two ascents, no trip reports."
+  },
+  {
+   "kind": "item",
+   "id": "wa_ghost_peak_south_route",
+   "fact": "dist_km (shown as one-way approach) holds the round-trip total",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "dist_km 70.81 km is the itinerary round trip, but no source states a one-way distance to Ghost Peak, and halving is not allowed. Only whole-trip totals for other Pickets itineraries were found (54 mi for a Crooked Thumb/Phantom trip); none states a one-way figure for this line. PEAKBAGGER PASS: Peakbagger has no stated one-way distance to Ghost Peak, so dist_km cannot be replaced. Peakbagger ascent list for Ghost Peak: two ascents, no trip reports or distance fields."
+  },
+  {
+   "kind": "item",
+   "id": "wa_argonaut_peak_east_ridge",
+   "fact": "Day-2 schedule spans 4:30 AM-9:00 PM (16.5 hrs) vs the day's stated 13 hours; timing.totalHrs 19; partner_requirements '10-hr round trip from bivy'; gain_ft 4300 vs itinerary total 4157",
+   "prior_file": "audits/route-tab-contradictions/research/out/v001.json",
+   "prior_evidence": "Still real, and no source gives a car-to-car time or total gain for the Southeast Ridge by the Beverly Turnpike / Fourth Creek line this row uses. The club route page for the Southeast Ridge gives 20.0 mi and 4,853 ft, but for the Colchuck Col approach it recommends (Northwest Forest Pass trailhead), not the Teanaway-side line on this row; the peak page gives only 'II 5.6, 8 pitches, two single or one double rappel into the notch' with no time or gain. PEAKBAGGER PASS: None of Argonaut's ~200 peakbagger ascents is logged on the Southeast Ridge, so no time or gain for this line is stated. Peakbagger full ascent list: routes logged are South Route/South Gully scrambles (including two Fourth Creek-trail approaches, 6,559 ft / 10 mi for the south route), NW Arete, NE Couloir and one 'South Couloir, East Ridge/Arete' entry with 3,600 ft and no report; none is the 8-pitch Southeast Ridge."
+  },
+  {
+   "kind": "item",
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "'Base of west ridge' waypoint (6,800 ft, 5.2 mi) sits before the 7,100 ft camp although the ridge scrambling starts at the ~8,000 ft col above camp",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "The pin has since been moved and re-elevated to the 8,000 ft saddle, but its distMi is still 5.2, short of the 6.5 mi camp below it, and no source states a mileage to the saddle. A scramble write-up gives Lake Caroline at 5 mi, leave the Windy Pass trail at 6,700 ft and angle up to the 8,000 ft saddle, with 17 mi round trip; a 2016 report gives 18 mi round trip and reaches the low saddle between Windy Ridge and Cashmere; neither states a distance to the saddle, and a figure would have to be computed. PEAKBAGGER PASS: The peakbagger West Ridge report confirms the climbers' trail runs to the 8,000 ft saddle but gives no mileage to it, so the pin's distMi cannot be set without computing. Peakbagger 2017-08-27 West Ridge report: Eightmile trailhead, camp in meadows near Windy Pass, 'a clear climbers trail and cairns all the way till the saddle at 8000 ft'; no distances stated."
+  },
+  {
+   "kind": "item",
+   "id": "wa_cashmere_mountain_west_ridge",
+   "fact": "Recommended start time from high camp — 5:00 AM vs ~6:00 AM",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "No source recommends a departure time from the high camp, so neither start time can be confirmed. Reports give elapsed times only (4.25 h to the summit car-to-car push; 2016 party 4.4 h from Windy Basin camp; a 2018 party rose after 8 AM); none states a recommended start. PEAKBAGGER PASS: Peakbagger gives one party's actual departure (6:20 AM from a Windy Pass meadow camp), not a recommended start, so neither start time is confirmed. Peakbagger 2017-08-27 West Ridge report: 'Woke up at 6 AM and left camp at 6:20 AM', summit 7:45 AM; no recommendation."
+  },
+  {
+   "kind": "item",
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Pass-to-summit distance: beta/pitch_detail 0.4 mi vs waypoint distMi 7.4 -> 8.5 (1.1 mi)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "No source states a mileage from Fish Creek Pass to the summit by the southeast ridge; sources give only vertical (about 1,000 ft) and time (45 min to an hour). The peak's route page describes the Southeast Ridge from Fish Creek Pass as about 1,000 ft vertical of class 2 with no distance (its '1 mile' figure is for the west ridge from the Oval Lakes side, a different line); a Bulger-list report gives 45 min to an hour from the pass; a regional hike guide gives 7.5 mi to the pass and nothing beyond it. PEAKBAGGER PASS: Peakbagger's short-leg figures for Courtney's SE/East ridge (0.9 mi, about 1,200 ft) start from a 7,191 ft point reached from Star Peak, not from Fish Creek Pass, so none states the pass-to-summit distance. Peakbagger 2026-06-07 SE Ridge ascent: 'Gain on way in: 1203 ft', 'Distance: 0.9 mi', 'Start Trailhead: 7191 ft', climbed second after Star Peak; 2012 East Ridge list entry 1,194 ft / 0.9 mi (also a second peak). Full-trail entries give 7.4-8.7 mi to the summit from the trailhead, nothing from the pass."
+  },
+  {
+   "kind": "item",
+   "id": "wa_courtney_peak_scramble",
+   "fact": "Published approach time 4 hr vs itinerary 5-6 hr to Fish Creek Pass",
+   "prior_file": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "The stated trailhead-to-pass times (about 3 h and about 4 h) are both day-pack times and disagree; adopting 4 h in the overnight schedule would shift its later times and day total, which would have to be computed. A 2020 GPS-timed day party took 3 h 05 min to the pass and a 2023 day hiker about 4 h; no source times the pass with an overnight pack. timing.approachTimeHrs 4 matches one day-hike source, but the itinerary's '+5 to 6 hr' sits in a 32 lb backpacking schedule whose camp arrival (3:30-4:30 PM) and 9.5 h day follow from it, so changing it alone would create a new contradiction. PEAKBAGGER PASS: Peakbagger ascents are day trips that give whole-trip stats, not an overnight-pack time to Fish Creek Pass, so the 4 h tile and the 5-6 h schedule cannot be reconciled from a stated value. Peakbagger Courtney ascent list: trail ascents list 4,394-4,646 ft and 7.4-10.7 mi to the summit (e.g. 2022 'Fish Creek Pass' 4,394 ft / 7.4 mi) with no time to the pass; the 2026-06-07 report gives a 12 h 19 min car-to-car for a four-peak day."
+  },
+  {
+   "kind": "item",
+   "id": "wa_crooked_thumb_peak_south_route",
+   "fact": "First ascent of this route/peak",
+   "prior_file": "audits/route-tab-contradictions/research/out/v005.json",
+   "prior_evidence": "Still a route-identity question for the owner: the named fa party climbed an east-face start that may share the upper ridge with this northwest-couloir line, and no source names who first climbed this start. AAJ note: the 1963 party's new routes were on the east face from a Challenger Arm camp; the row's line starts from the Crooked Thumb Glacier moraine on the west side. No source states the first ascent of the northwest-couloir start. PEAKBAGGER PASS: Peakbagger gives only the peak's 1940 first ascent and 11 later ascents with almost no detail, so who first climbed this route's start is still unsourced. Peakbagger Crooked Thumb Peak page/ascent list: 1940 first-ascent entry; later entries (1986-2024) with one route field ('NW Ridge/west face', 2012), a 76-word Picket Creek report (2022, different approach) and a 1-word report. Nothing names the first party on the northwest-couloir start the row describes."
+  },
+  {
+   "kind": "item",
+   "id": "wa_ingalls_peak_south_ridge",
+   "fact": "pitch count on the South Ridge",
+   "prior_file": "audits/route-tab-contradictions/research/out/v011.json",
+   "prior_evidence": "Each of the row's two figures has its own source: pitches 4 matches the route database (4 pitches, 300 ft) and the three pitch_detail rows match the long-form route page, so the keep-what-the-row-holds rule cannot pick one, and re-splitting into four rows from one trip report's lengths would replace the row's pitch descriptions wholesale. Four pitches: route database; a trip report (60 ft 5.3, 30 ft 5.0, 115 ft 5.4-5.6, 80 ft 5.4). Three pitches: the long-form route page and another report. The row's rappel_detail already follows the 4-pitch division. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Each of the row's two figures has its own source: pitches 4 matches the route database (4 pitches, 300 ft) and the three pitch_detail rows match the long-form route page, so the keep-what-the-row-holds rule cannot pick one, and re-splitting into four rows from one trip report's lengths would replace the row's pitch descriptions wholesale. Four pitches: route database; a trip report (60 ft 5.3, 30 ft 5.0, 115 ft 5.4-5.6, 80 ft 5.4). Three pitches: the long-form route page and another report. The row's rappel_detail already follows the 4-pitch division."
+  },
+  {
+   "kind": "item",
+   "id": "wa_chalangin_peak_southwest_face",
+   "fact": "Climbing season: May-Jun header vs a season description running through September",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "Still real; no source states a season window for the southwest-face line, so neither May-Jun nor a through-September window can be adopted. Accounts of this line give dated late-May and June ascents, a failed November attempt and a failed October/August attempt, and one notes the Thunder Creek route suits the shoulder seasons because it has the least avalanche exposure, but none states when the route is in season. PEAKBAGGER PASS: Peakbagger's Chalangin ascents give dates (April through November) and no stated season for the southwest face, so neither window can be adopted. Peakbagger ascent list: about 30 ascents dated April-November, one route named (Butterfly Glacier) and none naming the southwest face; dates of ascents are not a stated season."
+  },
+  {
+   "kind": "item",
+   "id": "wa_sisu",
+   "fact": "Total route length vs sum of pitch lengths",
+   "prior_file": "audits/route-tab-contradictions/research/out/v003.json",
+   "prior_evidence": "The only source carries both figures (800 ft total and pitch lengths summing to ~173 m), so it cannot say which is wrong; nothing changed. Single route listing: 7 pitches, 800 ft, with the same per-pitch lengths the row holds. No second topo lists Sisu. PEAKBAGGER PASS: Sisu is a crag climb that peakbagger does not list, so it adds no length or pitch data. Peakbagger indexes summits and their ascents; this route is not listed."
+  },
+  {
+   "kind": "item",
+   "id": "wa_nw_ridge_2",
+   "fact": "Is the balanced summit block usually climbed? descent_text says most parties do not attempt it; beta/pro_tips/pro_needs say most parties protect/belay it",
+   "prior_file": "audits/route-tab-contradictions/research/out/v004.json",
+   "prior_evidence": "No source states what most parties do with the summit block; each account describes only its own party (skipping it, rope-tossing it, or jugging it), so neither 'most do not attempt' nor 'most protect it' can be kept. Reports found describe single parties: one rope-tossed the block from the far side, one threw the rope over and jugged, others skipped it. None generalises. PEAKBAGGER PASS: Still real; single-party accounts cannot say what most parties do, and peakbagger ascent records are single-party accounts too. The question needs a source that generalises over parties; ascent reports (peakbagger or elsewhere) each describe one party only, as the prior pass found."
+  },
+  {
+   "kind": "item",
+   "id": "wa_lemah_mountain_east_route",
+   "fact": "Elevation of the glacier-exit / moat transition below the col",
+   "prior_file": "audits/route-tab-contradictions/research/out/v013.json",
+   "prior_evidence": "No source states an elevation for the moat or the glacier exit; neither 6,200 ft (prose) nor 6,500 ft (waypoint) can be sourced. Route pages and reports describe the moat at the rock step below the main summit and the snow-finger exit at 4,800-5,000 ft, with no height for the moat; the latest search found only whole-trip figures (16 mi round trip, 4,700 ft). PEAKBAGGER PASS: Still no source states an elevation for the moat or glacier exit. Earlier route pages and reports give none; the Lemah ascent list was not read on this pass, and ascent stats there record summit-level gain and distance rather than intermediate feature heights."
+  },
+  {
+   "kind": "item",
+   "id": "wa_sherpa_peak_west_ridge",
+   "fact": "Sherpa south basin camp waypoint elev 6200 vs elevFt 6300",
+   "prior_file": "audits/route-tab-contradictions/research/out/v022.json",
+   "prior_evidence": "No source gives an elevation for this informal basin camp, so neither 6,200 nor 6,300 ft can be confirmed; the rendered elev (6,200) already agrees with the bivy entry. Encyclopedia peak page and route write-ups give Longs Pass ~6,200 ft and no figure for the south-basin camp. PEAKBAGGER PASS: No peakbagger Sherpa entry states an elevation for the south-basin camp, so neither 6,200 nor 6,300 ft can be confirmed. Peakbagger Sherpa Peak ascent list (288 entries); the East Ridge / Ingalls Creek reports read give car-to-car time or whole-trip figures, no camp elevation."
+  },
+  {
+   "kind": "item",
+   "id": "wa_chimney_rock_west_face",
+   "fact": "Summit-day gain 3,080 ft reaches the 7,727 ft central summit, not the 7,440 ft South Peak this row climbs",
+   "prior_file": "audits/route-tab-contradictions/research/out/v004.json",
+   "prior_evidence": "Still no source states the gain from the Sunrise Knob camp to the South Peak; the one South Peak report gives only whole-trip figures and times. The South Peak East Gully report gives about 19 mi and 5,000 ft gained and lost for the whole trip, about 5 h camp to summit and 3 h down, but no summit-day gain; the archived peak page's 3,100 ft is to the main summit. A figure from pin heights would be computed. PEAKBAGGER PASS: Peakbagger's South Peak page lists nine ascents with no stated gain or distance and only two very short reports, so there is still no source for the camp-to-South-Peak gain. Peakbagger Chimney Rock - South Peak ascent list (2015-2026): no Gain or Mi values; trip reports of 21 and 6 words only, no figures."
+  }
+ ],
+ "fills": [
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "path": [],
+   "cleared_value": 2,
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states a pitch count for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines. PEAKBAGGER PASS: Summitpost describes the South Route as a Class 3 scramble with no pitches, so the cleared two-pitch value stays out. Summitpost Witches Tower page (live): 'South Route (Class 3) ... find a ledge to traverse around to the east side. From here scrambling large black blocks will lead to the summit. There is a 4ft. slot'; two pitches up to 5.4 are given for the West Buttress, a different line. Peakbagger reports give no pitch count.",
+   "fact": "pitches",
+   "column": "pitches"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "path": [],
+   "cleared_value": [
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Clean granite face and corner off the scramble base — the short technical crux of this quick summit add-on.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 25
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.2",
+     "notes": "Easier moves past a 4-ft summit slot to the top; parties sometimes find rappel slings wrapped on a horn just below the summit for the way down.",
+     "pitch": 2,
+     "anchor": "Sling (horn)",
+     "lengthM": 15
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states roped pitches for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines. PEAKBAGGER PASS: No source gives roped pitches for the Class 3 South Route; the cleared 5.4/5.2 rows belong to the West Buttress. Summitpost: South Route Class 3; West Buttress 'two pitches up to 5.4'.",
+   "fact": "pitch_detail",
+   "column": "pitch_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "path": [],
+   "cleared_value": "A light rack of small to medium pieces protects the short pitches.",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states a rack for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines. PEAKBAGGER PASS: No source states a rack for the Class 3 South Route. Summitpost South Route description is a scramble with no gear; peakbagger reports give none.",
+   "fact": "detailed_rack",
+   "column": "detailed_rack"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "path": [],
+   "cleared_value": "Minimal; a few placements on the granite.",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states protection for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines. PEAKBAGGER PASS: No source states protection for the Class 3 South Route. Summitpost South Route description is a scramble with no protection noted; peakbagger reports give none.",
+   "fact": "pro_needs",
+   "column": "pro_needs"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_witches_tower_south_face",
+   "path": [],
+   "cleared_value": "1",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left empty: the live row now describes the South Face as an unroped Class 3 scramble, and no source states a rappel for this line, so refilling the cleared roped-pitch value would recreate the contradiction. The club South Face page lists it as an alpine scramble (white wall, exposed ledge to the east side, black blocks to the summit) and an encyclopedia entry rates the tower class 3 by its easiest route; neither gives pitches, a rack or rappels. The cleared 5.4/5.2 two-pitch data belonged to the West Buttress / Southwest Corner lines. PEAKBAGGER PASS: No source states a rappel on the South Route. Summitpost South Route description gives no descent or rappel; peakbagger reports give none.",
+   "fact": "rappels",
+   "column": "rappels"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_buckner_mountain_north_face",
+   "prior_evidence": "Pin 1 (Cascade Pass) is on the exit line, and no source gives its distance from the Boston Basin trailhead this route starts at (3.7 mi is from the Cascade Pass road end). Park service: Cascade Pass 3.7 mi from the Cascade Pass trailhead, a different start. PEAKBAGGER PASS: Not filled: no source gives Cascade Pass's distance from the Boston Basin trailhead on this traverse. Peakbagger North Face ascents read give no distances (one starts its stats at the Boston Glacier camp, 7,200 ft); the only stated Cascade Pass figure (3.7 mi) is from the Cascade Pass road end.",
+   "fact": "waypoints[1].distMi",
+   "column": "waypoints[1].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_buckner_mountain_north_face",
+   "prior_evidence": "No source gives Sahale Glacier Camp's distance from the Boston Basin trailhead; the 5-6 mi figure on the peak's route page is from the Cascade Pass road end. Route page comment: about 5-6 miles from the car to the Sahale Arm bivy sites via Cascade Pass. PEAKBAGGER PASS: Not filled: no source gives Sahale Glacier Camp's distance from the Boston Basin trailhead. Peakbagger North Face ascents read state no distances; the 5-6 mi figure found earlier is from the Cascade Pass road end.",
+   "fact": "waypoints[2].distMi",
+   "column": "waypoints[2].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_buckner_mountain_north_face",
+   "prior_evidence": "No source gives the Sahale-Boston col's distance from the Boston Basin trailhead. Route pages give times (col about 2-3 hours from the face) but no mileage. PEAKBAGGER PASS: Not filled: no source gives the Sahale-Boston col's distance from the Boston Basin trailhead. Peakbagger North Face ascents read state no distances; route pages give only times to the col.",
+   "fact": "waypoints[3].distMi",
+   "column": "waypoints[3].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_argonaut_peak_east_ridge",
+   "path": [],
+   "cleared_value": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "From the Argonaut-Colchuck col (~7,700ft) gain the east ridge crest over low-angle blocks and broken granite steps, easing into the climb before the terrain steepens.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 45
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Surmount a compact, steeper granite tower via face moves and thin gear placements; this is the route's technical crux and the most sustained pitch on the ridge.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Weave over and around a series of towers along the crest, alternating short exposed steps with easier ledge traverses; belay from a horn where the ridge narrows.",
+     "pitch": 3,
+     "anchor": "Slung horn",
+     "lengthM": 45
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Moderate climbing and scrambling up blocky granite toward the upper mountain, with route-finding between minor gendarmes rather than sustained difficulty.",
+     "pitch": 4,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Continue past another gendarme on the upper ridge, staying near the crest on exposed but moderate granite before the angle relents toward the summit spires.",
+     "pitch": 5,
+     "anchor": "Block",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.2",
+     "notes": "Class 3-4 ridge traverse to the base of the summit block, finishing with a short nonexposed scramble past the block's small cave feature to the true summit.",
+     "pitch": 6,
+     "anchor": "Gear",
+     "lengthM": 30
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left null: the cleared rows described the col-side East Ridge, and no source gives a pitch-by-pitch breakdown of the Southeast Ridge. The peak page and the club route page give only '8 pitches, II 5.6' and a note that the lower pitches are blocky and lichen-covered; nothing per pitch. PEAKBAGGER PASS: No peakbagger ascent is logged on the Southeast Ridge, so there is no pitch breakdown to fill from. Peakbagger full ascent list shows no Southeast Ridge ascents.",
+   "fact": "pitch_detail",
+   "column": "pitch_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_argonaut_peak_east_ridge",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "notes": "First rappel down steep terrain toward the snow/talus below the notch, off a pre-placed sling on a rock.",
+     "anchor": "sling around a rock/horn",
+     "lengthM": 30
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel from a small tree, continuing down to the snow slopes; parties then traverse a snow-covered ledge toward the east gully.",
+     "anchor": "small tree",
+     "lengthM": 30
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Left null: the cleared entries described a descent toward the east gully from the col-side line, and the one source for this route gives no rappel lengths or anchors. The peak page states only 'two single, or 1 double rope rappel into the notch', which rappel_count_note already says; no per-rappel length or anchor is published. PEAKBAGGER PASS: No peakbagger ascent is logged on the Southeast Ridge, so rappel lengths and anchors stay unstated. Peakbagger full ascent list shows no Southeast Ridge ascents.",
+   "fact": "rappel_detail",
+   "column": "rappel_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_crooked_thumb_peak_south_route",
+   "prior_evidence": "Still null; no source states the moraine camp's elevation (the detailed ascent report gives only time and gain from the previous camp, and its only 7,800 ft figure is a bivouac ledge on the north ridge). Ascent report: 'camp on a narrow lateral moraine at the glacier's southern edge (11.1 hours + 3700 feet from Camp 2)'; no elevation. PEAKBAGGER PASS: No peakbagger Crooked Thumb entry states the moraine camp's elevation. Peakbagger Crooked Thumb ascent list: no report with camp details (one 76-word Picket Creek report, one 1-word report).",
+   "fact": "waypoints[6].elev",
+   "column": "waypoints[6].elev"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_hurry_up_peak_south_ridge",
+   "path": [],
+   "cleared_value": [
+    {
+     "grade": "Class 2-3",
+     "notes": "Scramble up loose scree and rock to reach the saddle. Moderate exposure as elevation increases. Route finding straightforward.",
+     "pitch": "Approach via northwest slope to col between Magic Mountain and Hurry-Up Peak"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Climb mixed broken rock ledges up the south ridge. Moderate to significant exposure. Watch for loose rock; test holds. Height of terrain: ~300 feet of actual climbing.",
+     "pitch": "South ridge from col to false summit"
+    },
+    {
+     "grade": "Class 3-4",
+     "notes": "Drop 80 feet into dirty gully on right side (east face). Climb Class 3-4 broken ledges that corkscrew around the east side of summit block. Exposed scrambling requires careful foot placement. Final 50 feet to true summit.",
+     "pitch": "False summit to true summit (via gully descent and east-side corkscrew)"
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not refilled: the cleared rows were Magic Mountain's south-ridge route (col, false summit, 80 ft gully, corkscrew), and no source gives a stage-by-stage breakdown of Hurry-up's own line; the climbing_route column already describes it. Trip reports for Hurry-up (Kool-Aid Lake, the Magic/Hurry-up saddle about 45 minutes from the lake, a Class 2-3 summit ridge; one 2012 party by the northwest slope) give no pitch-by-pitch division. PEAKBAGGER PASS: No peakbagger report divides Hurry-up's own line into stages with grades, so the cleared Magic Mountain rows stay out. Peakbagger Hurry-Up ascent list (11 entries with data); the reports read give stats or a trip sequence only, no stage-by-stage breakdown.",
+   "fact": "pitch_detail",
+   "column": "pitch_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_hurry_up_peak_south_ridge",
+   "path": [],
+   "cleared_value": 5.9,
+   "cleared_in": "audits/route-tab-contradictions/research/out/v011.json",
+   "prior_evidence": "No source states a one-way distance from the Cascade Pass trailhead to Hurry-up Peak; the stated figures are legs (3.5-3.7 mi to the pass, about 1 mi Cache Col to Kool-Aid Lake, 5.5 mi to the lake), and the cleared 5.9 km was only the trailhead-to-pass leg. A GPS route page gives Kool-Aid Lake as 5.5 mi one way; trip reports give legs only and no distance to the summit. Adding legs would be computed. PEAKBAGGER PASS: Peakbagger's only one-way Hurry-up distance (17 mi) starts from a 2,021 ft point well below the 3,600 ft Cascade Pass trailhead, and the other figures are multi-peak trip totals, so there is still no one-way distance from the row's trailhead. 2022 Hurry-Up ascent: 'Distance: 17 mi / 27.4 km', 'Gain on way in: 5824 ft', 'Start Trailhead: 2021 ft' (a lower start than Cascade Pass trailhead). Other entries: 51.9 mi (whole Ptarmigan trip), 29.3 mi, 19.4 mi / 8,750 ft and 2.4 mi with no route; a 2026 'Kool-Aid Slam' report (Arts Knoll, Magic, Hurry-up) has no mileage.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_east_face",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "notes": "First rappel after traversing the summit ridge to the south-facing anchors.",
+     "anchor": "South-face rappel anchor (rockfall-sheltered)",
+     "lengthM": 55
+    },
+    {
+     "n": 2,
+     "notes": "Continuing down the south face.",
+     "anchor": "South-face rappel anchor",
+     "lengthM": 55
+    },
+    {
+     "n": 3,
+     "notes": "Continuing down the south face.",
+     "anchor": "South-face rappel anchor",
+     "lengthM": 55
+    },
+    {
+     "n": 4,
+     "notes": "Final rappel before navigating the crevasse field on the Chickamin Glacier back to camp.",
+     "anchor": "South-face rappel anchor",
+     "lengthM": 55
+    }
+   ],
+   "cleared_in": "audits/route-tab-contradictions/research/out/r054.json",
+   "prior_evidence": "Not filled: the cleared four 55 m rappels are contradicted by the one first-hand account (two double-rope rappels), and a two-row table would change the page's headline rappel count away from the single-rope figure the rappels text gives; no source gives station lengths. First-hand report: one double-rope rappel to the notch between Middle and South Gunsight, then one loose, dirty rappel into the moat at the base of the notch; no lengths. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Not filled: the cleared four 55 m rappels are contradicted by the one first-hand account (two double-rope rappels), and a two-row table would change the page's headline rappel count away from the single-rope figure the rappels text gives; no source gives station lengths. First-hand report: one double-rope rappel to the notch between Middle and South Gunsight, then one loose, dirty rappel into the moat at the base of the notch; no lengths.",
+   "fact": "rappel_detail",
+   "column": "rappel_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_del_campo_peak_standard",
+   "path": [],
+   "cleared_value": 2,
+   "cleared_in": "audits/route-tab-contradictions/research/out/r050.json",
+   "prior_evidence": "The route is an unroped Class 3-4 scramble and no source states a pitch count for it, so pitches stays null. The field was cleared because the four pitch_detail rows are scramble stages, not roped pitches; club and trip-report descriptions describe an unroped scramble with no pitch count. PEAKBAGGER PASS: Peakbagger reports describe an unroped scramble and give no pitch count, so pitches stays null. 2012-10-07 report: Class 3/low Class 4 scramble, no rope; 2024-07-27 report: 30-45 min scramble up and down, unroped. No pitch count stated.",
+   "fact": "pitches",
+   "column": "pitches"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_big_chief_mountain_west_route",
+   "path": [],
+   "cleared_value": "IV",
+   "cleared_in": "audits/route-tab-contradictions/research/out/r053.json",
+   "prior_evidence": "Not refilled: IV is the 15-pitch Falcon Route's grade, and no source grades the commitment of this Class 3-4 scramble. The route database lists only the Falcon Route (IV 5.9) and a 4th-class Northeast Face; scramble reports give no commitment grade. PEAKBAGGER PASS: The live row no longer exists (row.mjs returns no row for this id), so there is nothing to fill; no source grades this scramble's commitment anyway. node scripts/oneoff/route-leftovers/row.mjs wa_little_big_chief_mountain_west_route -> 'no row'. Prior evidence: IV belongs to the Falcon Route, a different line.",
+   "fact": "commitment",
+   "column": "commitment"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_hardy_snow_scramble",
+   "path": [],
+   "cleared_value": [
+    {
+     "grade": "Class 1-2",
+     "notes": "Brushy forest with boot trail; 1.2-1.5 miles of elevation gain through mixed conifer forest to ridge base. Faint trail; route-finding experience helpful.",
+     "pitch": "1: Forest Approach"
+    },
+    {
+     "grade": "Class 2+",
+     "notes": "Ridge crest and slabs; stay climber's right to avoid 5,200-foot cliff band. Loose blocks and moderate exposure. Approximately 1,000 feet of elevation gain.",
+     "pitch": "2: South Ridge to Cliff Zone"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Leave ridge at 7,200 feet, scramble loose scree and granite blocks on east side of ridge toward summit block notch. Loose, steep terrain with exposure. 800+ feet of gain.",
+     "pitch": "3: Scree and Blocks to Summit Block Notch"
+    },
+    {
+     "grade": "Class 2-3",
+     "notes": "Shallow gully scramble from notch to summit. Loose rock, ~100 feet of scrambling to peak. Final exposed section with good granite.",
+     "pitch": "4: Summit Gully"
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/owner/out/o06-apply.json",
+   "prior_evidence": "Not refilled: the cleared four rows described the separate Swamp Creek south-ridge line; the row is now the Methow Pass southeast-slope route, whose two stages are already in climbing_route, and no source gives a stage-by-stage breakdown with grades for that line. Methow Pass write-ups: climbers' path west from the pass to the east ridge, the saddle below an eastern knob, then Class 2-3 scrambling to the summit; no pitch or stage division beyond that. PEAKBAGGER PASS: The one Methow Pass report on peakbagger describes the line in two parts (steep class 2 scree, then a class 3 finish with a short down-hop to a col), which the row's climbing_route already covers, so no separate graded breakdown is written. Peakbagger Hardy ascent list: 5 Methow Pass entries; 2022 'Methow Pass/SE route' report: 'a standard tedious steep stiff class 2 scramble. The final scramble near the top was nice class 3 with one move being a bit tricky hopping down to a col before doing the final push up the ridge.' No pitch or stage division beyond that.",
+   "fact": "pitch_detail",
+   "column": "pitch_detail"
+  }
+ ]
+}

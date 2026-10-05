@@ -1,0 +1,68 @@
+{
+ "applied": [
+  {
+   "id": "wa_austera_peak",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total route gain/loss/distance vs. the multi-day trip"
+  },
+  {
+   "id": "wa_austera_peak",
+   "column": "loss_ft",
+   "path": [],
+   "fact": "Total route gain/loss/distance vs. the multi-day trip"
+  },
+  {
+   "id": "wa_austera_peak",
+   "column": "dist_km",
+   "path": [],
+   "fact": "Total route gain/loss/distance vs. the multi-day trip"
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "column": "gain_ft",
+   "path": [],
+   "fact": "Total route gain/distance vs. approach-to-camp leg only (gain_ft 6000)"
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "column": "gear",
+   "path": [
+    0
+   ],
+   "fact": "Maximum ice difficulty on the route (gear[0] 'WI4/95°' vs grade/ice_grade/pitch_detail WI5)"
+  }
+ ],
+ "rejected": [],
+ "rollback": [
+  {
+   "id": "wa_austera_peak",
+   "before": {
+    "gain_ft": 1280,
+    "loss_ft": 592,
+    "dist_km": 4.5
+   }
+  },
+  {
+   "id": "wa_austera_peak_chockstone_route",
+   "before": {
+    "gain_ft": 6000
+   }
+  },
+  {
+   "id": "wa_big_four_mountain_spindrift_couloir",
+   "before": {
+    "gear": [
+     "Two ice tools — sustained thin ice up to roughly WI4/95° through the main couloir",
+     "Rigid crampons",
+     "4-5 ice screws — placements are marginal through much of the ice, so don't plan on a dense rack",
+     "A few thin pitons (blades) for shale seams on the mixed third step, where the route exits the ice onto rock",
+     "Small cams and nuts (to ~2\") for the same mixed rock section",
+     "1-2 snow flukes for anchors in unconsolidated spindrift/snow sections",
+     "V-thread tool and cord for ice rappel anchors on the descent",
+     "Helmet — the couloir is a spindrift and rockfall funnel"
+    ]
+   }
+  }
+ ]
+}

@@ -298,7 +298,7 @@ else bad("the column is NOT NULL DEFAULT true, so there is no absent case for th
 // the day the policy is widened. It means more here than it did there -- widen that select and
 // the definer stops being necessary AND the disclosure written into the privacy documents has
 // to be re-derived, because the intersection would no longer need anyone's elevated rights.
-const pol = read("supabase/migrations/0087_connections.sql");
+const pol = read("supabase/migrations/00870_connections.sql");
 const sel = pol.match(/create policy "connections read own"[\s\S]*?;/);
 if (!sel) dead('0087 no longer declares a "connections read own" select policy — ANCHOR LOST');
 if (/auth\.uid\(\)\s*=\s*requester\s+or\s+auth\.uid\(\)\s*=\s*addressee/.test(sel[0])) {

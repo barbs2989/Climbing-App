@@ -324,6 +324,73 @@ the correction knows the screen is wrong, and they have no way to report it.
     `audit:terrain` (which measures suppression the app performs) and `audit:waypoint-order`
     (whose "0" was true only of the routes it could order). *When an audit reports a number, ask
     what it is the number OF before treating it as work.*
+  - **"None of it reaches a climber twice" was FALSE for 322 lines on 250 routes (2026-09-30).**
+    The box did not call that three-way merge for its bullets. It ran TWO: `mergeHazards(hazards,
+    objHaz)` for the bullets, then the three-way merge minus those bullets for the ⚠ lines. When
+    `watch_out` restated a hazard in MORE words, the three-way merge kept the watch_out line and
+    dropped the hazards one, which the audit counted as removed. But the bullets came from the
+    two-way merge and kept it too, so both printed (*"Exposure on summit ridge"* / *"⚠ Exposure on
+    the summit ridge."*). The 08-20 verification checked that the three columns were *passed*, not
+    that the audit's call was the one that *rendered*. **Fixed:** `knownHazards()` in
+    `lib/hazards.js` merges once and splits the survivors by field. RouteDetail and this audit
+    both call it, and the audit **exits 1** if re-merging the printed lines drops anything. It
+    also now reads routes with `hazards` NULL (23 rows) and parses `watch_out` with the app's
+    `toWarnArr` (moved to `lib/hazards.js`; 91 rows store it as a string).
+  - **What the subset rule cannot see is a WORKLIST, not a bug:** paraphrases that share most of
+    their words without either being a subset. Measured after the fix: **468 printed pairs on 334
+    routes at ≥75% token containment**, saved in `audits/2026-09-30-hazard-paraphrase-pairs.json`.
+    Most are a `hazards` line restated in `watch_out`, but some are two different hazards at one
+    place. Do NOT add fuzzy scoring to the merge (the header of `lib/hazards.js` says why), and
+    do NOT sweep them by score: read each pair.
+  - **READ AND REPAIRED the same day: 283 lines removed from 225 routes; 468 pairs → 159.**
+    Every pair was read against one rule: drop a line only if its partner states every fact in it
+    (place, pitch, timing, rating, advice). Verdicts: **320 same** (2 of the reviewers' 322 were
+    overruled on a 50-pair spot check — "rockfall" kept only as "loose rock", and water scarcity
+    narrowed to "at camp"), **126 both carry detail, 22 different hazards**. They are recorded in
+    `audits/2026-09-30-hazard-paraphrase-decisions.json`. `scripts/oneoff/fix-hazard-paraphrase-duplicates.mjs`
+    only REMOVES lines, and refuses a route unless the box loses exactly those lines and
+    `routeTerrain`/`routeTags` are byte-identical. **It refused 17, and those refusals are correct:**
+    6 rows store `watch_out` as a string, 6 drops would empty a column, 1 moves a tag, and **4
+    would bring back a line the merge had been absorbing into the one dropped**. Re-measure with
+    `scripts/oneoff/measure-hazard-paraphrase-pairs.mjs`. Rollback:
+    `audits/2026-09-30-hazard-paraphrase-rollback.json`.
+  - **LOGISTICS LINES, read and repaired 2026-10-01: 45 lines removed from 39 routes.** The ~25
+    seen while reading were the visible tip. `scripts/oneoff/measure-logistics-in-hazard-box.mjs`
+    finds **2,651 printed lines with logistics vocabulary on 2,442 routes**, but most are the seven
+    crag-level shared blobs (≥45 routes each, hazard-dominant, and their closure clause feeds the
+    `raptorClosure` tag), so they are out of scope by decision. All **651 remaining lines were read**:
+    **535 hazard, 22 mixed, 94 logistics**. Remoteness, no cell coverage, long or committing days,
+    sparse beta, and **a gate or washout that ADDS DISTANCE are hazards and stay**. That rule was
+    applied after the fact across all four review batches, which had split on it (17 flips to keep).
+    A logistics line was removed only when the route already states the fact in a field that
+    renders (`road.driveNote/status/seasonalGate`, `permit`, `access.closures/rules/permit/notes`,
+    `approach`, `descent_text`), with a verbatim quote that the script re-checks against the live
+    row. **Nothing was moved:** every logistics fact without a home had no EMPTY field that fitted,
+    and nothing is merged into existing prose. The decisions are in
+    `audits/2026-10-01-hazard-logistics-decisions.json`, the fix is
+    `scripts/oneoff/fix-hazard-logistics-lines.mjs` (the same gates as the paraphrase fix), and the
+    rollback is `audits/2026-10-01-hazard-logistics-rollback.json`. **It refused 5, correctly:** 4
+    string-shaped `watch_out` and 1 that would be emptied. **Two lines a reviewer called suspect were
+    researched and are CORRECT — do not re-raise them.** Hadley Skyline Divide's "closed at mile 0.03
+    while the 2021 washout at milepost 3.1 is repaired" is ONE fact, not two disagreeing ones: the
+    Forest Service gated FS 37 at mile 0.03 on 1 June 2026 to repair the milepost-3.1 washout, and
+    the route's own `approach` says exactly that. Noyes's Olympic Hot Springs washout line looked
+    orphaned only because the reviewer was shown the `road` object, which covers the Quinault side;
+    the route's `approach` and `access.closures` describe the Elwha approach, and NPS confirms that
+    road has been closed beyond Madison Falls since the November 2017 flood. **Lesson: a reviewer
+    shown a subset of a row's columns will call a fact unsupported that the row states elsewhere.**
+  - **`wa_mount_claywood_standard` named Cameron Pass and Lost Pass for the same off-trail start —
+    FIXED to Lost Pass.** The row's approach, beta, climbing_route, pitch_detail, descent_text,
+    itinerary and obj_haz all agree on Lost Pass, so the `hazards` line and the `gear` item were
+    corrected (`scripts/oneoff/fix-claywood-off-trail-starts-at-lost-pass.mjs`). Its **Cameron Pass
+    PIN** was impossible (about 6.6 mi straight-line from the Grand Pass pin against a listed 1.65 mi
+    leg). #2075 (waypoint batch 8) cleared it and the Grand Pass pin. `audit:waypoint-distances` still
+    lists the route for one leg: Lillian Ridge crest at `distMi` 0.7 sits 2.2 mi in a straight line
+    from the trailhead. The PIN is right (USGS ground 6,321 ft against a claimed 6,350, and WTA puts
+    1.6 level miles along the ridge before the descent), so the `0.7` is the wrong record.
+    `check:impossible-leg` already printed "—" for it on the live page. The `audit:waypoint-distances`
+    backlog pass NULLED that `0.7` (WTA puts the ridge high point near 1.5 mi), so the route is
+    off the audit.
 - **`audit:terrain`** measures the app's own **suppression** — how many routes `lib/terrain.js`
   withholds glacier/avalanche advice from because they do not cross that terrain. Read the number
   as a working feature, not a backlog: driving it to zero means handing every dry rock climb a
@@ -535,6 +602,11 @@ the correction knows the screen is wrong, and they have no way to report it.
   `check:no-rendered-sources` enforces it for app *fields* and is structurally blind to this,
   because these citations are free prose inside jsonb columns — every identifier is bound, the
   column is populated, the section renders. Only reading the value finds them.
+  - **`waypoints[].directions` is scanned too, since 2026-10-01** — the "Getting here —" line in
+    the same card as the note, and the one waypoint string the audit never read. Added when a
+    web-researched pass filled 1,642 of them (663 routes; record and brief in
+    `scripts/oneoff/waypoint-directions-research-2026-10-01/`), which is exactly when a "per WTA"
+    is likeliest to slip in. It reported **0 of 2,913** WA directions after that pass.
   - The class had been measured once for `waypoints[].note` and **nobody had ever looked at
     `road.*` / `access.*`** — the same defect in different columns, which is the shape this repo
     keeps repeating (four grade parsers, two `climb_logs` hydrations, three waypoint audits). That
@@ -1023,3 +1095,60 @@ the correction knows the screen is wrong, and they have no way to report it.
     - **26 named-but-not-a-source values are exempt BY NAME in `KEEP`**, each read: a club as the OPERATOR
       of trips or owner of a grading scale, a guidebook a climber is told to CARRY (the owner's KEEP),
       a map app as a TOOL, a first-ascent credit, area naming history.
+- **`audit:shouted-prose`** asks whether a rendered string SHOUTS — ALL-CAPS words used as emphasis.
+  Reported by the user on 2026-09-30 from Megalodon Ridge (Mount Goode), whose *Finding the base of
+  the climbing* opened every paragraph with a shouted lead (*"THE SINGLE STRONGEST TEST IS THAT YOU
+  NEVER CROSS THE GLACIER."*). **A research-batch house style, not one route:** 1,772 distinct strings on 863
+  routes, led by `approach_variants[].baseFinding` (831) and `.notes` (370), `bivy[].permit` (334) and
+  `bivy[].notes` (252). The app's own copy was clean — its capitals are section LABELS, styled with
+  `textTransform:"uppercase"`, which is design, not prose.
+  - **Repaired by changing CASE ONLY.** Each shouted run was extracted with its context and recased
+    (sentence case, names kept Title Case, acronyms and units handled); the applier refused any
+    string whose lowercase differed from the live one, so no word could change. Pass 1 recased
+    1,612 strings on 858 rows; pass 2 caught 160 more on 131 rows that pass 1's dictionary test missed
+    (inflected words — *PLANNED*, *DESCENDS* — British *CENTRE*, and shouted names). Rollbacks:
+    `audits/shouted-prose/`. Scripts: `scripts/oneoff/shouted-prose-recase-2026-09-30/`.
+  - **The detector is `scripts/lib/shouted-prose.mjs`**, shared with `enrich:apply`, which now
+    REFUSES a batch that shouts rather than recasing it — which capitals are names is the author's call.
+    A token is shouting at 4+ capitals unless it is in `ACRONYMS`; two-letter tokens only when
+    adjacent to another capital and one is a short English word (*"NO GO"*). A new acronym that is
+    refused goes in `ACRONYMS`; **never add an English word there.** `detector-test.mjs` in the
+    oneoff folder holds the 8 cases (4 shouts, 4 legitimate — BASE jumpers, SPOT, NEWS-SEWS, SR-20).
+  - **Skipped on purpose:** `name` (real climb names are capitalised, *LIVE FREE OR DIE*), `fa`
+    (climber initials, *JB, DN, RG*), `data_quality` (`MEDIUM`/`UI Route` — enums with no reader).
+  - Service key, reads ~230k routes + 53k areas (~3 min). After 2026-09-30: **0 on 0 rows.** Not a
+    build gate — a property of the DB, not the checkout.
+
+- **`audit:multi-approach`** — which climbs can be reached more than ONE way, and can the page
+  switch between them? Report-only; a signal is a reason to read the row and research the climb.
+  - Signals: `VARIANTS` (≥2 cards, none linked), `PROSE` (names an alternate approach, <2 cards),
+    `OTHER_TH` (prose names a trailhead the stored one does not), `FINISH` (a sibling on the same
+    peak names this route), `NAME` ("via", "Variation", "Finish"), and `DANGLING` — a `viaRouteId`
+    that no longer resolves on the same peak, the one signal that is a DEFECT (exit 1).
+  - **First WA run, 2026-10-01: 8,615 routes, 1 switchable (Shuksan SE Ridge), 557 flagged.** Most
+    `VARIANTS` hits are the same trailhead with a different gully or a seasonal snow line — a card,
+    not a second approach. `FINISH` is the noisiest (283): a sibling naming a route in its descent is
+    not the route being a finish. Research decides; never re-quote these counts, re-run it.
+  - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
+    with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
+    carried a signal, all already read and judged one way in, so every run buried anything new under
+    them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
+    then every `scripts/oneoff/link-multi-approach-batch<N>.plan.json` in batch order, then
+    `settled.json`, with later files winning). It COUNTS a SINGLE or fixed ROW_CONTRADICTS row on one line instead of listing it;
+    `--researched` lists them. It never hides DANGLING, a row researched as multi-approach that still
+    cannot switch, or a row no file has a verdict for. That last case is the point: the Haystack
+    Scramble began flagging mid-session when its sibling's text started naming it, and it was the only
+    row shown. A new verdict goes in `settled.json`, with a `why`.
+  - **...and "0 to read" is only as good as the signals** (batch 4, 2026-10-01). A row whose own text
+    trips nothing is never listed, so the WA zero hid 69 never-researched routes on peaks whose
+    siblings start from different trailheads, plus 72 single verdicts given with only medium or low
+    confidence. Researching them found 9 more multi-approach routes. Before calling this list done
+    again, re-run that cross-check (siblings on one peak naming 2+ trailheads, minus every row with a
+    verdict). Run it over EVERY discipline, not just alpine: batch 5 found 6 more rows that way (rock,
+    boulder), 2 of them multi-approach.
+  - **...and the "already switchable" count can FALL with nothing wrong** (batch 5). The route-identity
+    work (#2167) deleted 34 duplicate rows, 5 of which had been linked here; WA went from 132 linked to
+    128. Before treating a drop as a lost switch, diff the ids every `*multi-approach*.before.json`
+    touched against the live table, read each missing id's KEPT row in that work's merge plan, and
+    compare its ways in with the deleted row's (the rollback file holds the deleted row in full).

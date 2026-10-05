@@ -1,0 +1,249 @@
+{
+ "takenAt": "2026-10-01T06:10:49.264Z",
+ "rows": [
+  {
+   "id": "wa_boston_peak_west_face",
+   "waypoints": [
+    {
+     "lat": 48.49261,
+     "lng": -121.11761,
+     "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+     "type": "Trailhead"
+    },
+    {
+     "lat": 48.49555,
+     "lng": -121.03709,
+     "name": "West Face route start",
+     "type": "route start",
+     "distMi": null,
+     "elevFt": null
+    },
+    {
+     "lat": 48.4841,
+     "lng": -121.05665,
+     "elev": 6400,
+     "name": "Winter approach angle point (~6,400 ft)",
+     "type": "approach",
+     "distMi": null,
+     "elevFt": 6400
+    },
+    {
+     "lat": 48.4954,
+     "lng": -121.0362,
+     "elev": 8894,
+     "name": "Boston Peak Summit",
+     "type": "Summit",
+     "distMi": null,
+     "elevFt": 8894
+    }
+   ]
+  },
+  {
+   "id": "wa_little_tahoma_east_shoulder",
+   "waypoints": [
+    {
+     "lat": 46.869574,
+     "lng": -121.627262,
+     "elev": 5200,
+     "name": "Fryingpan Creek crossing",
+     "note": "Wonderland Trail crosses Fryingpan Creek on a footbridge in old-growth forest before switchbacking up toward Summerland; last easy creek water below treeline.",
+     "type": "Water",
+     "distMi": 3.2
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 5950,
+     "name": "Summerland",
+     "note": "Subalpine meadow camp with a stone shelter below Little Tahoma's east face; a reserved wilderness permit is required to camp here, and it's the jumping-off point for the climbing route.",
+     "type": "Campsite",
+     "distMi": 4.5
+    },
+    {
+     "lat": 46.852924,
+     "lng": -121.678601,
+     "elev": 7900,
+     "name": "Toe of Fryingpan Glacier",
+     "note": "Leave the Wonderland Trail and climb steep talus/heather slopes to gain the lower edge of the Fryingpan Glacier; route-finding through boulders, often snow-covered into midsummer.",
+     "type": "Junction",
+     "distMi": 6.2
+    },
+    {
+     "lat": 46.850275,
+     "lng": -121.693649,
+     "elev": 9100,
+     "name": "Whitman Notch",
+     "note": "The obvious low point in the ridge just left of Little Tahoma; cross here from the Fryingpan Glacier onto the Whitman Glacier.",
+     "type": "Junction",
+     "distMi": 7
+    },
+    {
+     "lat": 46.847167,
+     "lng": -121.702359,
+     "elev": 10200,
+     "name": "Whitman Glacier bergschrund",
+     "note": "Crevasses and a bergschrund open up on the Whitman Glacier below the summit pyramid; rope up and probe for hidden slots, especially in low-snow years.",
+     "type": "Hazard",
+     "distMi": 7.5
+    },
+    {
+     "lat": 46.84856,
+     "lng": -121.706937,
+     "elev": 10800,
+     "name": "East shoulder saddle",
+     "note": "Gain the saddle on Little Tahoma's east shoulder, a narrow crumbly-andesite rib with roughly 2,000 ft of exposure down to the Emmons Glacier on the north side.",
+     "type": "Junction",
+     "distMi": 7.8
+    },
+    {
+     "lat": 46.8884,
+     "lng": -121.611,
+     "elev": 3816,
+     "name": "Fryingpan Creek / Summerland Trailhead",
+     "note": "White River Road ~2.9 mi past the White River entrance turnoff, just beyond the Fryingpan Creek bridge; this is the sole approach for the standard Fryingpan Glacier–Whitman Glacier–East Ridge/East Shoulder route via Summerland and Meany Crest.",
+     "type": "Trailhead",
+     "distMi": 0.03,
+     "elevFt": 3816,
+     "distFrom": "track"
+    },
+    {
+     "lat": 46.8496,
+     "lng": -121.7123,
+     "elev": 11138,
+     "name": "Little Tahoma Peak",
+     "type": "Summit",
+     "distMi": 7.54,
+     "elevFt": 11138,
+     "distFrom": "track"
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_mccausland_n_route",
+   "waypoints": [
+    {
+     "lat": 47.8025,
+     "lng": -121.0765,
+     "elev": 4000,
+     "name": "Smithbrook Trailhead",
+     "note": "Dirt lot for ~15 cars; self-register for wilderness travel here and start up the Smithbrook Trail through brush and an old boulder field before entering forest.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US 2 to a point about 4 miles east of Stevens Pass and turn onto Smith Brook Road, Forest Road 6700. Follow the gravel road roughly 2.6 to 2.8 miles to the Smithbrook Trailhead at about 4,000 feet. Parking is a dirt lot with room for around 15 cars, and you self-register for wilderness travel here before starting up the trail. Forest Road 6700 is closed to vehicles under a storm-damage order effective May 20, 2026 through December 31, 2027 unless lifted sooner; confirm it has reopened before driving. The Smithbrook Road access typically holds snow into early summer, so July through October is the dependable window."
+    },
+    {
+     "lat": 47.7956955,
+     "lng": -121.08958517857143,
+     "elev": 4400,
+     "name": "PCT Junction",
+     "note": "Smithbrook Trail tops out at the Pacific Crest Trail; turn south (left) onto a relatively flat, blueberry- and huckleberry-lined stretch of the PCT.",
+     "type": "Junction",
+     "distMi": 1.5
+    },
+    {
+     "lat": 47.78984,
+     "lng": -121.10083,
+     "elev": 4834,
+     "name": "Lake Valhalla",
+     "note": "Alpine lake tucked beneath Lichtenberg Mountain and Mount McCausland just off the PCT; reliable water source and a popular rest/camp spot before the summit turnoff.",
+     "type": "Water",
+     "distMi": 2.8
+    },
+    {
+     "lat": 47.79179371428572,
+     "lng": -121.10155242857144,
+     "elev": 4900,
+     "name": "McCausland Climber's Path Turnoff",
+     "note": "A small cairn (no trail sign) marks where the unofficial boot path leaves the PCT and heads straight up McCausland's north slopes.",
+     "type": "Junction",
+     "distMi": 2.7
+    },
+    {
+     "lat": 47.79378742857143,
+     "lng": -121.10230485714285,
+     "elev": 5200,
+     "name": "Braided Boot Path / Snow Patches",
+     "note": "Sandy, gravelly climber's path through blueberry and heather crosses a couple of lingering snow patches; several false paths dead-end, so stay on the main cairned line, especially in fog.",
+     "type": "Hazard",
+     "distMi": 2.9
+    },
+    {
+     "lat": 47.797566,
+     "lng": -121.103435,
+     "elev": 5747,
+     "name": "Mount McCausland Summit",
+     "note": "True summit with open views north to Glacier Peak and back down onto Lake Valhalla and Lichtenberg Mountain.",
+     "type": "Summit",
+     "distMi": 3.2
+    }
+   ]
+  },
+  {
+   "id": "wa_mount_olympus_west_ridge",
+   "waypoints": [
+    {
+     "lat": 47.8602,
+     "lng": -123.9345,
+     "elev": 578,
+     "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+     "note": "Hoh Rain Forest Visitor Center trailhead; shared start for multiple Mount Olympus routes.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 47.801305,
+     "lng": -123.710855,
+     "elev": 7980,
+     "name": "Mount Olympus (West Peak)",
+     "type": "Summit",
+     "distMi": 19.68,
+     "elevFt": 7980,
+     "distFrom": "track"
+    },
+    {
+     "lat": 47.812335,
+     "lng": -123.690764,
+     "elev": 6700,
+     "name": "Snow Dome high camp",
+     "type": "Campsite",
+     "distMi": 17.45,
+     "elevFt": 6700,
+     "distFrom": "track"
+    },
+    {
+     "lat": 47.810448,
+     "lng": -123.704464,
+     "elev": 7260,
+     "name": "West Ridge moat (gain ridge)",
+     "type": "Junction",
+     "distMi": 18.43,
+     "elevFt": 7260,
+     "distFrom": "track"
+    }
+   ]
+  },
+  {
+   "id": "wa_south_twin_sister_scramble",
+   "waypoints": [
+    {
+     "lat": 48.70484,
+     "lng": -121.98725,
+     "elev": 7000,
+     "name": "South Twin Sister Summit",
+     "type": "Summit",
+     "distMi": 10.5,
+     "elevFt": 7000,
+     "distFrom": "track"
+    },
+    {
+     "lat": 48.7669,
+     "lng": -122.0394,
+     "name": "Middle Fork Nooksack Gate/Bridge",
+     "type": "Trailhead",
+     "distMi": 0,
+     "elevFt": null
+    }
+   ]
+  }
+ ]
+}

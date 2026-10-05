@@ -1,0 +1,242 @@
+[
+ {
+  "id": "wa_amphitheater_mountain_north_buttress",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_amphitheater_mountain_middle_finger_buttress_right_side",
+  "merge_id": "wa_amphitheater_mountain_north_buttress",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Mountain Project lists no 'North Buttress' on Amphitheatre Mountain; its only III 5.9, 7-pitch line with a 07/15/1973 FA is Middle Finger Buttress - Right Side, which climbs cracks on the NW side of the biggest buttress above Upper Cathedral Lake. This row has the identical grade, commitment, pitch count and FA date, and its own face field calls it 'Middle Finger Buttress (right side)' - it is the same climb under a generic name.",
+  "sources": [
+   "https://www.mountainproject.com/route/109096812/middle-finger-buttress-right-side",
+   "https://www.mountainproject.com/area/109096109/amphitheatre-mountain"
+  ]
+ },
+ {
+  "id": "wa_austera_peak_chockstone_route",
+  "verdict": "PART_OF",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": "wa_austera_peak_southwest_ridge",
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "The 'chockstone route' is the low-5th chockstone gully between Austera's false and true summits, the summit-block finish of the standard approach over the Klawatti/McAllister glaciers; parties can bypass it by scrambling right (Class 3) to the notch above the gully and climbing ~25 ft to the top. It is not a separate line up the mountain, only an optional crux finish of the standard route - fold it into the standard route's breakdown as the summit-block option.",
+  "sources": [
+   "https://www.summitpost.org/austera-peak/152991",
+   "https://www.bcadventureguides.com/trip/austera-peak-chockstone-route/",
+   "https://trailcatjim.com/inspiration-traverse-primus-peak-austera-peak-klawatti-peak-dorado-needle/"
+  ]
+ },
+ {
+  "id": "wa_bears_breast_mountain_se_mega_slab",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_bears_breast_mountain_infinite_beauty",
+  "merge_id": "wa_bears_breast_mountain_se_mega_slab",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "medium",
+  "evidence": "The SE Mega Slab is the feature (a ~3,000 ft sandstone slab from Shovel Creek to the SE shoulder), not a route; Mountain Project lists exactly two routes on it, Timeless Treasure (Windham/Burdo, Aug 2004, center of the slab left of the giant corner) and Infinite Beauty (Windham/Martin, 2005), both 5.6. This row's '2005' FA matches Infinite Beauty, and its generic unroped-slab-then-loose-summit-pitch beta is the same ascent; fold its approach/slab beta into Infinite Beauty (or into the area blurb).",
+  "sources": [
+   "https://www.mountainproject.com/area/127298931/bears-breast-mountain",
+   "https://www.mountainproject.com/route/127298972/timeless-treasure",
+   "https://galenweld.com/blog/2025/10/11/trip-report-bears-breast-mega-slab"
+  ]
+ },
+ {
+  "id": "wa_big_snow_mountain_east_buttress",
+  "verdict": "WRONG_CONTENT",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": "An uncatalogued Pete Doorish route on Big Snow's East Buttress (free at 5.10) - only the 5.10 grade and the freeing claim",
+  "what_this_route_is": {
+   "overview": "A 10-pitch line on the crest of Big Snow Mountain's East Buttress above lower Hardscrabble Lake, a buttress marked by a prominent dihedral and overhangs. Traverse the left side of the lake and scramble two rock bands to the south side of the buttress at about 5,400 ft, then stay close to the crest, working under overhangs from a southern to a northern exposure on very sound granite: four pitches of class 4, then class 5 with a few aid placements.",
+   "grade": "5.7",
+   "fa": "Jeff Dial and Don Williamson, May 11, 1971 (NCCS III, 5.7, A1)"
+  },
+  "confidence": "medium",
+  "evidence": "The 1972 AAJ note by Don Williamson records the East Buttress (Dial/Williamson, May 11 1971) as 10 pitches, 4 of class 4 then class 5 'with occasional pins for aid', NCCS III F7 A1 - the line this page's prose and breakdown describe. The 5.10 grade and the 'later freed by Pete Doorish' claim come from a separate statement that the buttress holds 'a difficult Pete Doorish route that has gone free at 5.10'; nothing ties that route to the 1971 line, so the page's grade belongs to a different, uncatalogued Doorish line.",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12197211601/North-America-United-States-WashingtonCascade-Mountains-Big-Snow-Mountain-East-Butteress",
+   "https://www.summitpost.org/big-snow-mountain/216509"
+  ]
+ },
+ {
+  "id": "wa_bonanza_peak_north_ridge",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_bonanza_peak_mary_green_glacier",
+  "merge_id": "wa_bonanza_peak_north_ridge",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "medium",
+  "evidence": "No source documents a 'North Ridge' route on Bonanza: Mountain Project lists only the Mary Green Glacier, and the standard route is the Mary Green Glacier with steep exposed Class 3-4 scrambling to the upper ridge. This page's overview, beta and breakdown are word-for-word that standard route (Holden Lake/Pass, Mary Green Glacier, gully/rib system to a notch on the upper NE ridge), so it is the Mary Green route under a wrong name and should be folded into it.",
+  "sources": [
+   "https://www.mountainproject.com/area/120386596/bonanza-peak",
+   "https://en.wikipedia.org/wiki/Bonanza_Peak_(Washington)",
+   "https://www.mountaineers.org/activities/activities/glacier-climb-bonanza-peak-mary-green-glacier"
+  ]
+ },
+ {
+  "id": "wa_bulls_tooth_standard",
+  "verdict": "DISTINCT",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "medium",
+  "evidence": "Trip reports confirm a non-technical way to the 6,840 ft high point: one party went up the west gully talus to the notch between two sub-summits and did 'a brief 3rd class scramble southward', another did Class 2 scrambling on the north side of the summit block. The 'undoubtedly the easiest way' South Ridge remark refers to the roped Class 4-5.0 line on the tooth itself (south ridge plus upper west face, with a mantle onto the summit boulder), which is the sibling row - so both routes exist and differ.",
+  "sources": [
+   "https://mountainflamingo.com/2019-08-16-17-lemool-bulls-tooth-doughgob/",
+   "https://rgervin.com/photos2018/20180919BullsTooth/thumb.html",
+   "https://trailcatjim.com/bullseye-traverse-chain-lakes-doelle-lakes-bulls-head-bulls-tooth/"
+  ]
+ },
+ {
+  "id": "wa_chimney_rock_west_face",
+  "verdict": "MISNAMED",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": "South Peak via East Gully",
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "The route is the South Peak via the East Gully: from the upper Chimney Glacier, ~3 leads of wet 4th class left of the main gully, then wide ledges to the notch between the South and Main peaks (~600 ft), then ~400 ft more to the South Peak, protected with stoppers and slings. It is wholly an east-side route; the row's name is correct and only the id's 'west_face' is wrong (ids never change, so keep the name).",
+  "sources": [
+   "https://trailcatjim.com/chimney-rock-south-peak-via-east-gully/"
+  ]
+ },
+ {
+  "id": "wa_colchuck_peak_east_ridge",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_colchuck_peak_colchuck_glacier",
+  "merge_id": "wa_colchuck_peak_east_ridge",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Beckey's 'East Route' on Colchuck is a short scramble northwest from Colchuck Col (Banshee Pass), and it is commonly called the Colchuck Glacier Route because most parties reach the col by the glacier. This row has the same col, the same glacier approach, the same 3rd-class finish and the same 1948 Johnson/Long FA as wa_colchuck_peak_colchuck_glacier - one route under two names.",
+  "sources": [
+   "https://www.summitpost.org/colchuck-peak/151308",
+   "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-colchuck-peak-east-route-1"
+  ]
+ },
+ {
+  "id": "wa_crooked_thumb_peak_south_route",
+  "verdict": "WRONG_CONTENT",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": "FA and the 1963 'diagonal gully and chimney' text belong to the uncatalogued 1963 east-face gully/chimney route (Ardussi, Magnusson, Mech, Swanson)",
+  "what_this_route_is": {
+   "overview": "A rarely repeated snow-and-rock line to Crooked Thumb's narrow granite summit fin. From the snow saddle just north of the peak, climb the obvious northwest couloir to the north ridge, cross loose, scree-covered ledges onto the west face, and climb a vertical crack in the west-face headwall, which is the crux, then finish up the south ridge to the summit. Route-finding on the headwall is the main difficulty.",
+   "grade": "5.8+",
+   "fa": "Unknown (the peak's first ascent was Fred and Helmy Beckey, 1940; their line is not recorded online)"
+  },
+  "confidence": "medium",
+  "evidence": "The 1963 AAJ note says both July 31, 1963 Mountaineers routes were on the EAST face: Jackson/Jensen/Marts/Schmechel straight up from the glacier (class 3-4, the sibling East Face row) and Ardussi/Magnusson/Mech/Swanson by a diagonal gully and chimney system (class 5) to the first notch north of the summit. So this row's FA and its 1963 face text describe a second east-face route, while its grade and route line come from a 2016 ascent by the Northwest Couloir, North Ridge, West Face headwall (5.8+ or 5.2 A1) and South Ridge - two different routes merged, neither of them a 'South Route'.",
+  "sources": [
+   "http://publications.americanalpineclub.org/articles/12196347502",
+   "https://trailcatjim.com/northern-pickets-crooked-thumb-peak-phantom-peak-west-challenger-peak/",
+   "https://en.wikipedia.org/wiki/Crooked_Thumb_Peak"
+  ]
+ },
+ {
+  "id": "wa_cutthroat_peak_southeast_buttress",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_cutthroat_south_buttress",
+  "merge_id": "wa_cutthroat_peak_southeast_buttress",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "The Mountaineers' 'Cutthroat Peak/Southeast Buttress' (III 5.8, with a gully to the 'Tarzan Jump' for a bush) is the South Buttress: Mountain Project's South Buttress page shows the same Tarzan Step, reached either by the gully or by staying on the ridge. This row has no FA or details of its own beyond that grade and length, so it is the South Buttress under The Mountaineers' name.",
+  "sources": [
+   "https://www.mountaineers.org/activities/routes-places/cutthroat-peak-se-buttress",
+   "https://www.mountainproject.com/route/109326651/south-buttress",
+   "https://www.mountainproject.com/photo/117390114/just-before-the-tarzan-step-you-dont-actually-have-to-jump-and-its-really-well-p",
+   "https://ncmountainguides.com/routes/climbing-routes/cutthroat-peak-south-buttress"
+  ]
+ },
+ {
+  "id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "verdict": "DISTINCT",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "medium",
+  "evidence": "This row is the original standard South Ridge (bushwhack and scramble from Gorge Creek, with a ~65 degree step-down at a notch on the old line). Skiers later traversed from the ridge at ~5,700 ft into the main southwest-face gully and bowl (steepest snow ~40 degrees), which is now the more popular way; the two share the lower route but finish differently. Keep this row as the parent and make the southwest row the named variation.",
+  "sources": [
+   "https://www.summitpost.org/davis-peak/257251",
+   "https://climberkyle.com/2026/01/18/davis-peak-ski-tour/",
+   "https://trailcatjim.com/davis-peak-via-gorge-creek-south-buttress-south-ridge/"
+  ]
+ },
+ {
+  "id": "wa_davis_peak_nc_southwest",
+  "verdict": "PART_OF",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": "wa_davis_peak_nc_south_slope_and_ridge",
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "medium",
+  "evidence": "The southwest line leaves the South Ridge around 5,700 ft and traverses into the main southwest-face gully/bowl to the summit; it was pioneered by skiers and avoids the old ridge's steep notch. It shares the whole Gorge Creek approach and lower ridge with the South Slope and Ridge route, so it is a variation of that route. Keep it as a named variation ('Southwest Face'), and trim its beta to the face finish, because it currently re-describes the ridge too.",
+  "sources": [
+   "https://www.summitpost.org/davis-peak/257251",
+   "https://climberkyle.com/2026/01/18/davis-peak-ski-tour/"
+  ]
+ },
+ {
+  "id": "wa_dragontail_peak_r1",
+  "verdict": "PART_OF",
+  "keep_id": null,
+  "merge_id": null,
+  "parent_id": "wa_dragontail_peak_r4",
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "high",
+  "evidence": "Hidden Couloir is the first of the three couloirs of Triple Couloirs: it starts ~6,400 ft above the south end of Colchuck Lake and climbs ~800 ft of 40-50 degree snow/ice before the first rock band (the Runnels). Every source describes it only as the opening section of Triple Couloirs, not as its own route; fold it into Triple Couloirs as a section of the route breakdown.",
+  "sources": [
+   "https://www.summitpost.org/triple-couloirs/282360",
+   "https://www.mountainproject.com/route/107059043/triple-couloirs",
+   "https://climberkyle.com/2018/03/31/dragontail-peak-triple-couloirs-wi2-m3/"
+  ]
+ },
+ {
+  "id": "wa_fortress_mountain_northeast_face",
+  "verdict": "DUPLICATE",
+  "keep_id": "wa_fortress_mountain_east_ridge",
+  "merge_id": "wa_fortress_mountain_northeast_face",
+  "parent_id": null,
+  "correct_name": null,
+  "content_belongs_to": null,
+  "what_this_route_is": null,
+  "confidence": "low",
+  "evidence": "The documented technical way up Fortress from the Chiwawa side is the East Route: moderate snow to a broad notch in the East Ridge, a clean chimney through a blank rock block (the crux), then Class 3-4 ridge and Class 2 boulders to the true summit. Others call this same Fortress-Chiwawa connecting ridge the 'northeast ridge' with a 4th-class chimney, and this row's grade, face and breakdown are that chimney. Its NE-face 'headwall plus snow slope' overview comes from a single forum report and has no other evidence, so fold the row into East Ridge.",
+  "sources": [
+   "https://wenatcheeoutdoors.org/2016/05/30/fortress-mountain-east-route/",
+   "https://www.countryhighpoints.com/buck-fortress-and-chiwawa-winter-ascents/"
+  ]
+ }
+]

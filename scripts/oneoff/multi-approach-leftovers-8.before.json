@@ -1,0 +1,149 @@
+{
+ "wa_the_devils_club": {
+  "bivy": [
+   {
+    "name": "Redoubt Glacier Camp",
+    "role": "main",
+    "type": "camp"
+   }
+  ],
+  "waypoints": [
+   {
+    "lat": 48.7278,
+    "lng": -121.0628,
+    "elev": 1600,
+    "name": "Ross Dam Trailhead (SR-20 milepost 134)",
+    "note": "US-side approach, opposite the Depot Creek approach used for the West Ridge/Beckey route. Climbers take a water taxi (or boat, portaging Diablo Lake to Ross Lake) up Ross Lake ~15 miles to the Little Beaver landing/dock, then hike/bushwhack up the Perry Creek drainage to reach the base of Southeast Mox Peak's East Face.",
+    "type": "Trailhead",
+    "elevFt": 1600,
+    "directions": "From Marblemount, drive SR-20 east past Newhalem and Diablo to the Ross Dam Trailhead near milepost 134, about 14 miles past Newhalem, and park in the small lot. From here a trail drops about 1 mile through forest toward Ross Dam; at the bottom, turn right on the gravel road to the lakeshore, where a phone on the last power pole calls Ross Lake Resort for the water taxi, which must be reserved in advance."
+   },
+   {
+    "lat": 48.95,
+    "lng": -121.26,
+    "elev": 6800,
+    "name": "Base of East Face Headwall",
+    "note": "Bivy ledge below the 1,500-ft near-vertical headwall of the Devil's Club route.",
+    "type": "Junction",
+    "distMi": 9.5
+   },
+   {
+    "lat": 48.9475,
+    "lng": -121.2556,
+    "elev": 8504,
+    "name": "Southeast Mox Peak (Hard Mox) summit / East Face high point",
+    "type": "Summit",
+    "elevFt": 8504
+   }
+  ],
+  "itinerary": {
+   "cal": "No fixed anchors exist anywhere on the route — carry a full natural-gear rack for the rappel descent; the wall is typically driest and safest late August to early September.",
+   "days": [
+    {
+     "n": 1,
+     "note": "Take the Ross Lake water taxi to the Little Beaver dock, then start up the brush-choked Access/Perry Creek drainage toward the base of Southeast Mox. Devil's club and slide alder shred clothing and skin almost immediately — the first-ascent party (Layton & Wolfe, 2005) called this the worst bushwhacking of the whole route.",
+     "hours": 8,
+     "miles": 5,
+     "title": "Boat taxi + bushwhack into the approach drainage",
+     "gainFt": 2000,
+     "lossFt": 0,
+     "packLb": 55,
+     "schedule": [],
+     "objective": "Start the approach toward the East Face"
+    },
+    {
+     "n": 2,
+     "note": "A second full day of brutal bushwhacking is needed just to reach the base of the 2,500-ft East Face — the FA party spent two full days on approach alone before touching rock.",
+     "hours": 8,
+     "miles": 4,
+     "title": "Reach the base of the East Face",
+     "gainFt": 2400,
+     "lossFt": 0,
+     "packLb": 55,
+     "schedule": [],
+     "objective": "Establish camp below the wall"
+    },
+    {
+     "n": 3,
+     "note": "About 1,000 ft of steep slabs lead to a small bivy ledge at the base of the near-vertical, 1,500-ft upper headwall. This sets up an early start on the crux the next day.",
+     "hours": 6,
+     "miles": 1,
+     "title": "Climb the lower slabs to a bivy ledge",
+     "gainFt": 1000,
+     "lossFt": 0,
+     "packLb": 35,
+     "schedule": [],
+     "objective": "Reach the bivy ledge below the headwall"
+    },
+    {
+     "n": 4,
+     "note": "An 18-hour push forces a route through steep, loose, poorly-protected 5.9+ A2- rock to the summit. The descent is a dozen-plus rappels off natural gear anchors (the route has no fixed bolts), reaching the tent around 3:30 AM.",
+     "hours": 18,
+     "miles": 2,
+     "title": "Summit push and all-night rappel descent",
+     "gainFt": 1500,
+     "lossFt": 2500,
+     "packLb": 30,
+     "schedule": [
+      {
+       "time": "Pre-dawn",
+       "label": "Leave the bivy ledge",
+       "detail": "Early start to get a full day on the 1,500-ft headwall above."
+      },
+      {
+       "time": "",
+       "label": "Climb the headwall",
+       "detail": "Steep, loose, poorly-protected 5.9+ A2- rock — the crux of the route."
+      },
+      {
+       "time": "",
+       "label": "Top out",
+       "detail": "Reach the summit after roughly 15 hours of continuous climbing."
+      },
+      {
+       "time": "",
+       "label": "Begin rappelling",
+       "detail": "The first rap anchor hangs up, forcing a strenuous re-climb to free it."
+      },
+      {
+       "time": "",
+       "label": "A dozen+ more rappels",
+       "detail": "Descend the full face on natural gear anchors — no fixed bolts on route."
+      },
+      {
+       "time": "3:30 AM",
+       "label": "Back at the tent",
+       "detail": "Return to base camp roughly 18 hours after leaving the bivy ledge."
+      }
+     ],
+     "objective": "Climb the headwall to the summit and rappel back to camp"
+    },
+    {
+     "n": 5,
+     "note": "After an all-night push, most parties take a slower recovery day retracing the bushwhack back down the drainage toward Ross Lake.",
+     "hours": 7,
+     "miles": 5,
+     "title": "Rest and begin the hike out",
+     "gainFt": 0,
+     "lossFt": 2000,
+     "packLb": 30,
+     "schedule": [],
+     "objective": "Recover and start descending the drainage"
+    },
+    {
+     "n": 6,
+     "note": "Finish the brushy descent back to Ross Lake and catch the water taxi back across the lake to the car.",
+     "hours": 8,
+     "miles": 5,
+     "title": "Bushwhack out and boat back to the car",
+     "gainFt": 0,
+     "lossFt": 2400,
+     "packLb": 25,
+     "schedule": [],
+     "objective": "Return to the trailhead"
+    }
+   ],
+   "totalNote": "A serious 6-day expedition: 2 days of brutal bushwhacking just to reach the wall, 2 days on the 2,500-ft East Face (including an 18-hour summit push and an all-night natural-anchor rappel descent), and 2 more days to recover and hike out."
+  }
+ }
+}

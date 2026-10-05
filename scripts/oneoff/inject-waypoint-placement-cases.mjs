@@ -78,16 +78,16 @@ const CASES = [
     name: "a PEAK coordinate tested for null must stay quiet — not a waypoint",
     file: "rd",
     edit: (s) => s.replace(
-      "function RouteDetail({route,",
-      "function _peakProbe(a){return (a.peaks||[]).filter(p=>p.lat!=null&&p.lng!=null);}\nfunction RouteDetail({route,"),
+      "function RouteDetail({route:routeRow,",
+      "function _peakProbe(a){return (a.peaks||[]).filter(p=>p.lat!=null&&p.lng!=null);}\nfunction RouteDetail({route:routeRow,"),
     expect: "pass",
   },
   {
     name: "READING a placed pin's coordinates is not a placement decision",
     file: "rd",
     edit: (s) => s.replace(
-      "function RouteDetail({route,",
-      "function _readProbe(r){return (r.waypoints||[]).filter(wpPlaced).map(w=>[w.lat,w.lng]);}\nfunction RouteDetail({route,"),
+      "function RouteDetail({route:routeRow,",
+      "function _readProbe(r){return (r.waypoints||[]).filter(wpPlaced).map(w=>[w.lat,w.lng]);}\nfunction RouteDetail({route:routeRow,"),
     expect: "pass",
   },
   /* Section 1c: ONE trailhead resolver. Case 12 is the real historical defect — TrailheadCard

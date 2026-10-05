@@ -60,6 +60,7 @@ import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.
 import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { settledText, looksLikeSpinner } from "./lib/render-settle.mjs";
+import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -199,9 +200,14 @@ try {
 
   const screens = {};
   const tap = async (text, i = 0) => {
+    // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+    if (MENU_SCREENS[text]) return openFromMenu(page, text);
     const hit = await page.evaluate(({ t, idx }) => {
       const els = [...document.querySelectorAll('button,[role="button"],a,select,summary')]
-        .filter((e) => (e.textContent || "").trim() === t);
+        .filter((e) => (e.textContent || "").trim() === t)
+        // The primary nav is a BOTTOM tab bar, so it is LAST in DOM order. A tab label
+        // ("Partners") also names in-page controls; put the nav first so a tab tap means the tab.
+        .sort((a, b) => Number(!!b.closest('[aria-label="Primary"]')) - Number(!!a.closest('[aria-label="Primary"]')));
       if (!els[idx]) return false;
       els[idx].click();
       return true;

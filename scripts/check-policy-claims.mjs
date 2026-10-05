@@ -390,11 +390,27 @@ const draftKeys = [...draftM[1].matchAll(/(?:^|[,{])\s*([A-Za-z_$][\w$]*)\s*:/g)
 if (draftKeys.length < 5) dead(`only ${draftKeys.length} key(s) parsed out of the profile editor's draft — every settability verdict below would be wrong`);
 
 const contactStorable = profileCols.some((c) => /contact/i.test(c));
-const contactEditable = draftKeys.some((k) => /contact/i.test(k));
+/* 0237 made it settable WITHOUT either of the signals above: the contact lives in its own owner-only
+   table (profile_emergency_contacts, like profile_zips), and the editor adds `ec` to the draft only once
+   the climber edits it, so openEdit's literal never names it. Read the editor's INPUTS and App's SAVE
+   instead -- both must be there, or the field is a control that stores nothing. */
+const editorSrc = fs.readFileSync(path.join(ROOT, "lib", "EditProfileScreen.jsx"), "utf8");
+const contactInputs = /aria-label="Emergency contact name"/.test(editorSrc) && /aria-label="Emergency contact phone"/.test(editorSrc);
+const contactSaved = /saveMyEmergencyContact\(uid,/.test(app);
+if (contactInputs !== contactSaved) bad(`the profile editor ${contactInputs ? "offers" : "does not offer"} an emergency contact but App ${contactSaved ? "saves" : "never saves"} one — a field that stores nothing, or a save nothing can reach`);
+const contactEditable = draftKeys.some((k) => /contact/i.test(k)) || (contactInputs && contactSaved);
 const settable = contactStorable || contactEditable;
 
 if (settable) {
-  bad(`an emergency contact is settable now (${contactStorable ? "a profiles column" : "the profile editor"} carries it), so section 4b's premise has moved. Re-read the FAQ and the float-plan toast: copy directing a climber to set one is CORRECT now, and this rule must be re-aimed rather than left standing.`);
+  /* RE-AIMED (0237). A contact CAN be set now, so the failure turned round: copy that still says there
+     is no such field is the false claim. The privacy policy and the FAQ both said exactly that. */
+  ok(`an emergency contact is settable (${contactStorable ? "a profiles column" : "the editor's inputs plus App's saveMyEmergencyContact"})`);
+  const DENY_SOURCES = COPY_SOURCES.concat([["lib/Help.jsx", fs.readFileSync(path.join(ROOT, "lib", "Help.jsx"), "utf8")], ["lib/LegalView.jsx", fs.readFileSync(path.join(ROOT, "lib", "LegalView.jsx"), "utf8")]]);
+  for (const [name, src] of DENY_SOURCES) {
+    for (const m of stripLine(src).matchAll(/(?:there is )?no emergency[- ]contact(?: field)?(?: on your profile)?|no emergency[- ]contact field/gi)) {
+      bad(`${name} still denies the emergency contact a climber can now save: …${m[0]}…`);
+    }
+  }
 } else {
   ok(`nothing can set an emergency contact — ${profileCols.length} profiles columns and ${draftKeys.length} editor fields, none a contact`);
   for (const [name, src] of COPY_SOURCES) {
@@ -407,9 +423,13 @@ if (settable) {
       if (/\bno\b[^.]{0,20}$/i.test(before)) continue;
       bad(`${name} points a climber at a place to set or control an emergency contact, and there is none: …${(before + m[0]).replace(/\s+/g, " ")}…`);
     }
-    for (const m of t.matchAll(/(?:control|choose) who can see it in Settings/gi)) {
-      bad(`${name} claims a Settings control over an emergency contact's visibility, and no such control exists: …${m[0]}…`);
-    }
+  }
+}
+/* Runs in BOTH branches: Settings has no control over who sees a contact whether or not one can be
+   set -- 0237's is owner-only, full stop -- so this claim is false either way. */
+for (const [name, src] of COPY_SOURCES.concat([["lib/Help.jsx", fs.readFileSync(path.join(ROOT, "lib", "Help.jsx"), "utf8")]])) {
+  for (const m of stripLine(src).matchAll(/(?:control|choose) who can see it in Settings/gi)) {
+    bad(`${name} claims a Settings control over an emergency contact's visibility, and no such control exists: …${m[0]}…`);
   }
 }
 
@@ -496,14 +516,19 @@ const planRendered = renderers.length > 0;
 
 /* Judge each legal surface's own STRING LITERALS, never the lifted array source: a sentence split
    across `"],["` would weld two entries together and could borrow a neighbour's honesty marker. */
-const HONEST_CONTACT = /\bno emergency contact\b|\bis no emergency\b|\bnot part of your profile\b|on your (own )?(device|phone)|stays on your|held on your own/i;
+const HONEST_CONTACT = /\bno emergency contact\b|\bis no emergency\b|\bnot part of your profile\b|on your (own )?(device|phone)|stays on your|held on your own|only you can (read|see)|visible only to you/i;
 const HONEST_ALARM = /\bno screen\b|nothing in the app|do not rely|cannot raise|can[’']t raise|will not raise|cannot alert|can[’']t alert/i;
 const ALARM = /raise the alarm|raise an alarm|alert (?:your|the) (?:contact|crew)/i;
 
-if (settable || planRendered) {
-  bad(`section 5's premise has MOVED — ${settable ? "an emergency contact is settable now" : `a screen reads the stored crew float plan (${renderers[0]})`}. Telling a climber their crew can see a float plan may be TRUE now: re-read the Privacy Policy and the in-app sheet and re-aim this rule rather than leaving it standing.`);
+/* RE-AIMED (0237). The premise was never "a contact exists anywhere" but "the crew's float_plan row can
+   carry one": onSetFloatPlan writes `contact: ME.emergencyContact`, and nothing sets that field. 0237 added
+   an OWNER-ONLY contact and deliberately did not feed it there, so the crew row still never holds one.
+   The day something assigns emergencyContact a real value, a crew CAN read a contact, and this inverts. */
+const crewContactSettable = [...app.matchAll(/emergencyContact\s*[:=]\s*([^,;}]{1,40})/g)].some((m) => !/^""/.test(m[1].trim()));
+if (crewContactSettable || planRendered) {
+  bad(`section 5's premise has MOVED — ${crewContactSettable ? "something now sets the emergencyContact the crew float plan stores" : `a screen reads the stored crew float plan (${renderers[0]})`}. Telling a climber their crew can see a float plan may be TRUE now: re-read the Privacy Policy and the in-app sheet and re-aim this rule rather than leaving it standing.`);
 } else {
-  ok(`nothing can set an emergency contact, and no screen reads the stored crew float plan (${fpDistinct.join("/")} are written and never taken off anything)`);
+  ok(`nothing can put an emergency contact on a crew's float plan, and no screen reads the stored crew float plan (${fpDistinct.join("/")} are written and never taken off anything)`);
 
   let sentences = 0;
   for (const [sname, stext] of surfaces) {
@@ -512,7 +537,7 @@ if (settable || planRendered) {
         if (sentence.length < 12) continue;
         sentences++;
         if (/emergency contacts?/i.test(sentence) && !HONEST_CONTACT.test(sentence))
-          bad(`${sname} names an emergency contact as something the app has, and nothing can set one: …${sentence.trim()}…`);
+          bad(`${sname} names an emergency contact without saying where it lives or who can read it: …${sentence.trim()}…`);
         if (ALARM.test(sentence) && !HONEST_ALARM.test(sentence))
           bad(`${sname} says an alarm gets raised off a float plan, and no screen shows a crew the plan it stored: …${sentence.trim()}…`);
       }

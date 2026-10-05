@@ -39,9 +39,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     nowhere. Injection-tested by removing one state entry, which fails naming the type.
   - **`sling_rack` is NOT the cheap text field it looks like**, and this is why the sweep stopped
     where it did: `fmtSlingRack` returns `null` for a plain string, so a text box there would be
-    contributable and render **nothing** — the very defect the sweep exists to remove. Six columns
+    contributable and render **nothing** — the very defect the sweep exists to remove. Five columns
     still need editors that do not exist (`approach_variants`, `climbing_route`, `climate`,
-    `seasonal_hazards`, `sling_rack`, `difficulty`); four must **never** be writable (`verif`,
+    `seasonal_hazards`, `sling_rack`). `difficulty` is NOT one of them any more: its editor was
+    REMOVED on 2026-09-30 with its reader, when DIFFICULTY BREAKDOWN became climbers' own 1–5
+    reads — do not add one back. Four must **never** be writable (`verif`,
     `corrections`, `data_quality`, `gear_confidence` are trust and provenance records, and a write
     path lets a climber forge their own verification). See
     [[climbing-route-edit-pencil-writes-elsewhere]].

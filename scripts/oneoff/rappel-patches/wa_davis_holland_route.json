@@ -1,0 +1,32 @@
+{
+ "id": "wa_davis_holland_route",
+ "area_id": "wa_central_wall_area",
+ "stations": 3,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The anchor at the top of pitch 3.",
+    "notes": "Rappel 1 of 3 on a single rope, down pitch 3 to the anchor at the top of pitch 2."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The anchor at the top of pitch 2.",
+    "notes": "Rappel 2 of 3 on a single rope, down pitch 2 to the anchor at the top of pitch 1."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "bolted belay anchor",
+    "station": "The anchor at the top of pitch 1.",
+    "notes": "Rappel 3 of 3 on a single rope, down pitch 1 to the ground."
+   }
+  ],
+  "rappels": "3 single-rope rappels from the bolted belays, starting at the top of pitch 3; double ropes make it one long rappel to the ground",
+  "rappel_count_note": "Every belay is bolted. Most parties rappel from the top of pitch 3 rather than continuing up the brushy upper pitches. With two ropes it is one long rappel to the ground; with a single rope, one per pitch."
+ }
+}

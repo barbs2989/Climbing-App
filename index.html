@@ -30,6 +30,8 @@
     <!-- Matches the app banner (C.surface), not the page background, so the Android
          status bar reads as an extension of the banner sitting directly below it. -->
     <meta name="theme-color" content="#161b22" />
+    <!-- Declared before the stylesheet so the very first paint (and iOS's scroll indicator) is dark. -->
+    <meta name="color-scheme" content="dark" />
     <!-- What a shared link shows. A ?route= or ?list= link pasted into Messages, Slack or a
          social app used to preview as a bare "ClimbMatch" with no text and no image, because
          the page carried no description at all. og:image and og:url are ABSOLUTE on purpose:
@@ -111,6 +113,23 @@
       .cm-ring { animation: cm-ring 2.4s ease-in-out infinite; transform-origin: 50% 10%; display: inline-block; }
       .cm-puff { animation: cm-puff .6s ease-out forwards; }
       .cm-newitem { animation: cm-glow 1.6s ease-in-out 2; }
+      /* Scrollbars you can SEE, everywhere. Nothing styled them, so the browser drew its default
+         dark thumb on the app's #0d1117 background: a black bar on a near-black page, invisible
+         in the feed and in every popup (Add a climb was the report). One rule on :root reaches
+         every scroller because scrollbar-color is inherited. #6e7681 is 4.1:1 against the page
+         and 3.8:1 against a popup's #161b22 surface (WCAG 1.4.11 asks 3:1 for a UI component).
+         Chrome/Firefox read scrollbar-color; desktop Safari reads only the ::-webkit-scrollbar
+         rules, which Chrome ignores wherever scrollbar-color is set, so the two never fight.
+         A PHONE draws neither: iOS's overlay indicator is black unless the page declares itself
+         dark, and this page never did (computed color-scheme was "normal"). color-scheme: dark
+         is what turns it light -- and it also gives native pickers (date, time) the dark look
+         the rest of the app already has. */
+      :root { color-scheme: dark; scrollbar-color: #6e7681 transparent; }
+      ::-webkit-scrollbar { width: 10px; height: 10px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #6e7681; border-radius: 6px; border: 2px solid transparent; background-clip: padding-box; }
+      ::-webkit-scrollbar-thumb:hover { background: #8b949e; background-clip: padding-box; }
+      ::-webkit-scrollbar-corner { background: transparent; }
       /* Horizontal sliders: smooth touch scroll, no visible scrollbar */
       .cm-hscroll { -webkit-overflow-scrolling: touch; scrollbar-width: none; }
       .cm-hscroll::-webkit-scrollbar { display: none; }
@@ -139,6 +158,14 @@
       }
       /* 16px inputs so iOS doesn't auto-zoom the page when a field is focused */
       input, textarea, select { font-size: 16px !important; }
+      /* iOS Safari draws a date/time input as a native control with its OWN minimum width and
+         ignores width:100%, so DATE CLIMBED ran past the right edge of its card and its value sat
+         centred inside a box wider than every field around it. Dropping the native appearance
+         (touch devices only — desktop keeps its picker icon) lets it take the width it is given. */
+      @supports (-webkit-touch-callout: none) {
+        input[type="date"], input[type="time"], input[type="datetime-local"] { -webkit-appearance: none; appearance: none; display: block; min-width: 0; max-width: 100%; min-height: 38px; }
+        input[type="date"]::-webkit-date-and-time-value, input[type="time"]::-webkit-date-and-time-value { text-align: left; margin: 0; }
+      }
       .cm-fsm { font-size: 13px !important; }
       /* Route/area cover photos hidden for now (pairs with SHOW_COVERS in ClimbMatch.jsx).
          Hide the image, and collapse boxes whose only child is the image so cards don't
@@ -149,22 +176,22 @@
          bundle downloads and React mounts. On a slow phone that gap is several
          seconds, and #root was empty for all of it: a black screen with no sign
          the app was coming. React's createRoot clears this on first render.
-         Mirrors the real banner + primary nav (same colours, paddings and item
+         Mirrors the real banner + bottom primary nav (same colours, paddings and item
          height) so the swap doesn't shift layout. Only the chrome that is
          genuinely about to appear is drawn — content areas are neutral shimmer,
          never placeholder numbers or names. */
-      #cm-boot { max-width: 520px; margin: 0 auto; min-height: 100vh; background: #0d1117; }
+      #cm-boot { max-width: 520px; margin: 0 auto; min-height: 100vh; background: #0d1117; display: flex; flex-direction: column; }
       #cm-boot .b-bar { background: #161b22; border-bottom: 1px solid #30363d; padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 12px; padding-top: calc(16px + env(safe-area-inset-top)); }
       #cm-boot .b-icons { display: flex; justify-content: flex-end; gap: 9px; }
       #cm-boot .b-icons i { width: 36px; height: 36px; border-radius: 10px; border: 1px solid #30363d; background: #1c2330; display: block; }
       #cm-boot .b-mark { font-size: 35px; font-weight: 800; letter-spacing: -0.7px; text-align: center; color: #e6edf3; line-height: 1.1; }
       #cm-boot .b-mark span { color: #2f81f7; }
-      #cm-boot .b-nav { display: flex; background: #161b22; border-bottom: 1px solid #30363d; }
-      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 15px 2px 14px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #99a3ad; border-bottom: 2px solid transparent; }
-      #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; border-bottom-color: #2f81f7; }
+      #cm-boot .b-nav { display: flex; background: #161b22; border-top: 1px solid #30363d; position: sticky; bottom: 0; padding-bottom: env(safe-area-inset-bottom); }
+      #cm-boot .b-nav div { flex: 1; min-width: 0; padding: 9px 2px 8px; display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: min(12.5px, 2.95vw); font-weight: 600; color: #99a3ad; border-top: 2px solid transparent; }
+      #cm-boot .b-nav div:first-child { color: #2f81f7; font-weight: 800; border-top-color: #2f81f7; }
       #cm-boot .b-nav b { width: 24px; height: 24px; border-radius: 6px; background: #21262d; margin: 3px 13px; display: block; }
       #cm-boot .b-nav div:first-child b { background: #0d2044; }
-      #cm-boot .b-body { padding: 14px; display: flex; flex-direction: column; gap: 11px; }
+      #cm-boot .b-body { flex: 1; padding: 14px; display: flex; flex-direction: column; gap: 11px; }
       #cm-boot .b-card { background: #1c2330; border: 1px solid #30363d; border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 9px; }
       #cm-boot .b-line { height: 11px; border-radius: 6px; }
     </style>
@@ -172,12 +199,12 @@
   <body style="margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
     <div id="root"><div id="cm-boot" role="status" aria-label="Loading ClimbMatch" aria-busy="true">
       <div class="b-bar"><div class="b-icons"><i></i><i></i></div><div class="b-mark">Climb<span>Match</span></div></div>
-      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crew</div><div><b></b>Logbook</div><div><b></b>Ranks</div><div><b></b>Profile</div></div>
       <div class="b-body">
         <div class="b-card"><div class="b-line cm-shimmer" style="width:58%"></div><div class="b-line cm-shimmer" style="width:88%"></div><div class="b-line cm-shimmer" style="width:74%"></div></div>
         <div class="b-card"><div class="b-line cm-shimmer" style="width:44%"></div><div class="b-line cm-shimmer" style="width:80%"></div></div>
         <div class="b-card"><div class="b-line cm-shimmer" style="width:66%"></div><div class="b-line cm-shimmer" style="width:52%"></div></div>
       </div>
+      <div class="b-nav"><div><b></b>Home</div><div><b></b>Climbs</div><div><b></b>Partners</div><div><b></b>Crew</div><div><b></b>Logbook</div><div><b></b>Ranks</div></div>
     </div></div>
     <script type="module" src="/main.jsx"></script>
   </body>

@@ -29,8 +29,8 @@ const CASES = [
     // The camping defect's shape, reproduced on a live panel: render prose in a chip.
     name: "2. a camping site's water prose rendered as a chip again",
     edit: (s) => s.replace(
-      '{b.onTrack?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{"Marked on the track"}</span>:null}',
-      '{b.water?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{b.water}</span>:null}'),
+      '{b.onTrack?<span style={chip(C.textMuted,C.border)}>{"Marked on the track"}</span>:null}',
+      '{b.water?<span style={chip(C.textMuted,C.border)}>{b.water}</span>:null}'),
     want: /box\(es\) hold text too long for their shape/,
   },
   {
@@ -74,7 +74,9 @@ const CASES = [
     // live catalog ("Grade III, 5.10a (5 pitches, 900 ft: P1 5.9+, ...)"). Without this case the
     // extra screen could render nothing and the guard would still print ok.
     name: "5. tick-list row goes back to raw r.grade (the seventh screen)",
-    edit: (s) => s.replace('borderRadius:20,padding:"2px 9px"}}>{gradeLabel(r)}</span>', 'borderRadius:20,padding:"2px 9px"}}>{r.grade}</span>'),
+    // The row's grade is plain inline text now (#2082), not a chip; the chip on this screen is the
+    // Logged/To do status pill, so the case puts the raw grade THERE to prove the screen is inspected.
+    edit: (s) => s.replace('borderRadius:6,padding:"2px 7px"}}>{dn?"Logged":"To do"}</span>', 'borderRadius:6,padding:"2px 7px"}}>{r.grade}</span>'),
     want: /box\(es\) hold text too long for their shape/,
   },
 ];

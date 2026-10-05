@@ -41,17 +41,19 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
   const fires = (q.data && q.data.fires) || [];
   const radiusMi = Math.round(NEAR_ROUTE_KM * MI_PER_KM);
   const wrap = { border: "1px solid " + C.border, background: C.surface, borderRadius: 12, padding: "12px 13px", marginBottom: 14 };
-  const hd = { fontSize: 11, fontWeight: 700, letterSpacing: 0.5, textTransform: "uppercase", color: C.textSub, marginBottom: 7 };
+  /* = core's CardHead look (12/800, tracked, a 3px bar), so the first card on Safety reads as one of
+     the route page's card titles. The fire-level heading below keeps its tone on text and bar. */
+  const hd = { fontSize: 12, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.text, marginBottom: 8, borderLeft: "3px solid " + C.blueSolid, paddingLeft: 7, lineHeight: 1.1 };
 
   if (q.isLoading) {
-    return <div style={wrap}><div style={hd}>Fire &amp; smoke</div><div style={{ fontSize: 12, color: C.textMuted }}>Checking federal fire reports…</div></div>;
+    return <div style={wrap}><div role="heading" aria-level={3} style={hd}>Fire &amp; smoke</div><div style={{ fontSize: 12, color: C.textMuted }}>Checking federal fire reports…</div></div>;
   }
 
   // Rule 3.
   if (q.error) {
     return (
       <div style={{ ...wrap, borderColor: C.amber, background: C.amberBg }}>
-        <div style={hd}>Fire &amp; smoke</div>
+        <div role="heading" aria-level={3} style={hd}>Fire &amp; smoke</div>
         <div style={{ fontSize: 12, color: C.text, lineHeight: 1.5, display: "flex", gap: 8 }}>
           <ActionIcon name="alert" size={15} color={C.amber} />
           <span>
@@ -91,7 +93,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
 
   return (
     <div style={{ ...wrap, borderColor: tone.c, background: tone.bg }}>
-      <div style={{ ...hd, color: tone.c, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+      <div role="heading" aria-level={3} style={{ ...hd, color: tone.c, borderLeftColor: tone.c, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
         <ActionIcon name="fire" size={14} color={tone.c} />
         {closeUncontained.length ? "Active fire nearby" : "Active fire in the area"}
       </div>
@@ -120,7 +122,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
         far closer than that — open the map to see mapped perimeters.
       </div>
 
-      <Foot C={C} onOpenFireMap={onOpenFireMap} />
+      <Foot C={C} coord={coord} ActionIcon={ActionIcon} onOpenFireMap={onOpenFireMap} />
     </div>
   );
 }
@@ -128,19 +130,65 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
 // The closure caveat again, deliberately. It is the single most consequential thing
 // this data cannot tell a climber, and someone reading a route page may never open the
 // map where the longer version lives.
-function Foot({ C, onOpenFireMap }) {
+function Foot({ C, coord, ActionIcon, onOpenFireMap }) {
   return (
     <>
+      {onOpenFireMap ? <MapCard C={C} coord={coord} ActionIcon={ActionIcon} onOpen={onOpenFireMap} /> : null}
       <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.55, marginTop: 8 }}>
         This does not show closures or fire restrictions — there is no national feed for them, and a
         fire far from a route can still close its access road.
       </div>
       <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 8 }}>
-        {onOpenFireMap ? (
-          <button onClick={onOpenFireMap} style={{ padding: 0, border: "none", background: "none", color: C.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>Open fire map →</button>
-        ) : null}
         <a href="https://www.fs.usda.gov/alerts" target="_blank" rel="noopener noreferrer" style={{ color: C.blue, textDecoration: "none", fontSize: 11.5, fontWeight: 700 }}>Forest Service alerts →</a>
       </div>
     </>
+  );
+}
+
+// The way into the full Fire map. It was an 11.5px "Open fire map →" text link beside the
+// Forest Service link, and it did not read as a map at all. Now it is a card that SHOWS
+// one: the topo tiles around this climb with a pin on it, over a full-width label.
+//
+// A 3x3 block of zoom-11 OpenTopoMap tiles (the Fire map's own default base layer), offset
+// so the climb's point sits at the card's centre at any width up to the app's 520px column.
+// It is a picture of the terrain only — no fire is drawn on it, because a preview that
+// plotted some fires would invite reading the ones it did not draw as absent. If the tiles
+// fail, the card is still a labelled button on a plain background.
+const PREVIEW_Z = 11, PREVIEW_H = 96;
+function tilePoint(lat, lng, z) {
+  const n = Math.pow(2, z), r = lat * Math.PI / 180;
+  return { x: (lng + 180) / 360 * n, y: (1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n };
+}
+function MapCard({ C, coord, ActionIcon, onOpen }) {
+  const p = tilePoint(coord.lat, coord.lng, PREVIEW_Z);
+  const tx = Math.floor(p.x), ty = Math.floor(p.y);
+  // The point's pixel position inside the 768px block; the block is shifted so that
+  // pixel lands on the card's centre.
+  const ox = (p.x - tx) * 256 + 256, oy = (p.y - ty) * 256 + 256;
+  const tiles = [];
+  for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) tiles.push([dx, dy]);
+  return (
+    <button onClick={onOpen} aria-label="Open fire map — fire perimeters and red-flag warnings around this climb"
+      style={{ display: "block", width: "100%", marginTop: 10, padding: 0, borderRadius: 10, overflow: "hidden", border: "1px solid " + C.blueDim, background: C.card, cursor: "pointer", textAlign: "left" }}>
+      <span aria-hidden="true" style={{ display: "block", position: "relative", height: PREVIEW_H, overflow: "hidden", background: C.surface }}>
+        <span style={{ position: "absolute", left: "50%", top: PREVIEW_H / 2, width: 768, height: 768, marginLeft: -ox, marginTop: -oy }}>
+          {tiles.map(([dx, dy]) => (
+            <img key={dx + "," + dy} alt="" loading="lazy" draggable={false}
+              src={"https://a.tile.opentopomap.org/" + PREVIEW_Z + "/" + (tx + dx) + "/" + (ty + dy) + ".png"}
+              onError={e => { e.currentTarget.style.visibility = "hidden"; }}
+              style={{ position: "absolute", left: (dx + 1) * 256, top: (dy + 1) * 256, width: 256, height: 256, display: "block" }} />
+          ))}
+        </span>
+        <span style={{ position: "absolute", left: "50%", top: PREVIEW_H / 2, width: 14, height: 14, marginLeft: -7, marginTop: -7, borderRadius: "50%", background: C.blue, border: "3px solid #ffffff", boxSizing: "border-box", boxShadow: "0 1px 4px rgba(0,0,0,0.5)" }} />
+      </span>
+      <span style={{ display: "flex", alignItems: "center", gap: 8, padding: "11px 12px", borderTop: "1px solid " + C.border }}>
+        <ActionIcon name="map" size={18} color={C.blue} />
+        <span style={{ flex: 1, minWidth: 0 }}>
+          <span style={{ display: "block", fontSize: 14, fontWeight: 800, color: C.blue }}>Open fire map</span>
+          <span style={{ display: "block", fontSize: 11.5, color: C.textSub, lineHeight: 1.4 }}>Fire perimeters and red-flag warnings around this climb</span>
+        </span>
+        <span aria-hidden="true" style={{ fontSize: 18, fontWeight: 700, color: C.blue }}>›</span>
+      </span>
+    </button>
   );
 }

@@ -1,0 +1,84 @@
+[
+ {
+  "id": "wa_jack_mountain_east_ridge",
+  "verdict": "SINGLE",
+  "reason": "Every ascent account of the East Ridge starts from the Jerry Lakes basin, reached from the south off SR 20 (Canyon Creek, or the East Bank trailhead via Ruby and Crater creeks when the Canyon Creek footbridge is out, which converges on the same Crater Mountain saddle and Jerry Glacier crossing). The northern / Ross Lake East Bank side is the North Ridge's approach; the one north-side party found climbed the North Ridge and DESCENDED the East Ridge, which is not a way in. Note: the row's `approach` prose contradicts its own card (it says the route is gained 'rather than from the Jerry Lakes side' and offers the East Bank Trail as an alternative); the card, not the prose, matches the record. Recommend aligning the prose to the card."
+ },
+ {
+  "id": "wa_mount_adams_wilson_glacier_headwall",
+  "verdict": "UNSURE",
+  "reason": "No ascent account of a Wilson Glacier headwall on Adams could be found at all (the only 'Wilson Headwall' with a write-up is on Rainier). Avalanche Valley, the row's main camp below the Rusk/Wilson glaciers, is reached by two real trail systems — from the south (Cold Springs or Bird Creek Meadows, round the east side past Sunrise Camp and the Klickitat moraines) and from the north (Killen Creek trailhead and the Highline Trail, which ends at Avalanche Valley) — but nothing documents a party using the northern way for THIS route, so a second card would be invented. Also flagged: the row is internally inconsistent — timing.sectionBreakdown stages from Lunch Counter on the south side and 'traverses toward Roosevelt Cliffs', the card says the Wilson is met before the Klickitat coming from the south (the Klickitat lies south of the Rusk and Wilson), and the bivy says Avalanche Valley. Leave as one way and have someone reconcile these."
+ },
+ {
+  "id": "wa_north_ridge_4",
+  "verdict": "SINGLE",
+  "reason": "The only documented approach used by parties is Thunder Creek: Borealis Glacier toe bivy, round the glacial lake and a short glacier crossing to the ridge's foot. The Klawatti-side couloir is the first-ascent line only (the FA account itself says it was probably never used before), and Inspiration Traverse parties who reach Primus from the Klawatti side climb the East Slope, not the North Ridge. The existing single card (which already mentions both as history) is right as one way in."
+ },
+ {
+  "id": "wa_storm_king_north_face",
+  "verdict": "UNSURE",
+  "reason": "One recorded ascent (1978) and no account of its approach found. The geography argues the stored way in is the wrong side: Storm King's north side faces the head of the North Fork Bridge Creek (the Wyeth Glacier cirque on the ridge toward Mount Logan), and descriptions of access to 'the north side of Goode and Storm King' are via the North Fork trail from the Bridge Creek trailhead — while the row's only approach is Park Creek from High Bridge, which is the Southwest Route's side. Not enough to write a second way in, but the stored approach ('East/Northeast from High Bridge via Park Creek drainage') and its Park Creek camp deserve a check before anything else is added. Also note the High Bridge area is under the Sisi Fire closure."
+ },
+ {
+  "id": "wa_sw_ridge",
+  "verdict": "MULTI",
+  "reason": "The Gunsight peaks are approached two genuinely different ways and both are in current use: from the east via High Bridge and Agnes Creek into the Blue Glacier basin (the stored way; a documented party climbed the SW Ridge of Middle Gunsight from this side) and from the west via the Downey Creek trailhead on the Suiattle River Road, Bachelor Creek, Cub Pass, Itswoot Pass, the Dome Glacier and the Chickamin Glacier (several recent parties; described as the most direct approach to Gunsight Peak, and a 2025 party specifically recommends Middle Gunsight's SW side for those coming from Downey). Moderate confidence: the west-side accounts climbed the main/middle spire's west and southwest sides rather than naming this exact ridge. The east way is currently cut by the Sisi Fire closure of High Bridge, which makes the west way the only open one right now.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Agnes Creek from High Bridge, into the Blue Glacier basin",
+    "notes": "From High Bridge, follow the Pacific Crest Trail and the Agnes Creek trail about nine to ten miles, cross Agnes Creek on a log and bushwhack steeply into the upper Blue basin, gaining about 5,000 ft. Camp on the exposed rock ridge above the Blue Glacier, directly below the east side of the Gunsight peaks."
+   },
+   {
+    "ref": "n1",
+    "name": "Downey Creek and the Chickamin Glacier",
+    "notes": "From the Downey Creek trailhead on the Suiattle River Road at about 1,400 ft, follow the Downey Creek and Bachelor Creek trails to Bachelor Meadows and Cub Pass, then go past Cub Lake, over Itswoot Pass and across the Dome Glacier to the Chickamin-Dome col. From the col, descend onto the heavily crevassed Chickamin Glacier and traverse it to the west side of the Gunsight peaks. This is a long, fully glaciated approach with a rope, crevasse gear and route-finding needed throughout.",
+    "trailhead": {
+     "name": "Downey Creek Trailhead",
+     "lat": 48.2591,
+     "lng": -121.2244,
+     "elevFt": 1400
+    },
+    "distMi": null,
+    "gainFt": null
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "High camp above the Blue Glacier": [
+    "n0"
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_shuksan_northeast_ridge",
+  "verdict": "MULTI",
+  "reason": "The Northeast Ridge is the NE ridge of the summit pyramid, so its 'way in' is whichever route delivers you to the upper mountain, and two genuinely different ones are documented: (1) as the finish to the North Face (a 2021 guided party came over Fisher Chimneys, down the White Salmon Glacier, up the North Face, then up the NE Ridge of the summit pyramid) — the stored way; (2) from the Sulphide Glacier (Shannon Ridge trailhead, Baker Lake side): NPS climbing rangers on a Sulphide patrol on 27 July 2024 descended from the upper Sulphide onto the Crystal Glacier and climbed the NE Ridge, reporting it straightforward to reach. Way 2 is given as a via-route on the catalog's Sulphide Glacier row (id confirmed), so no new trailhead or coordinate is needed.",
+  "stored": "n0",
+  "primary": "n0",
+  "ways": [
+   {
+    "ref": "n0",
+    "name": "Up the North Face to the summit pyramid",
+    "notes": "Most parties meet this ridge as the finish of a longer climb. Climb the North Face (or the Hanging Glacier or the Northwest Rib) to the upper mountain, then continue up the northeast ridge of the summit pyramid. A common way to the foot of the North Face is over Fisher Chimneys and down the White Salmon Glacier to a bivy at its base."
+   },
+   {
+    "ref": "n1",
+    "name": "From the Sulphide Glacier, across the Crystal Glacier",
+    "notes": "Climb the Sulphide Glacier to the base of the summit pyramid, then descend a short way east onto the Crystal Glacier and cross it to the foot of the ridge, avoiding a few small crevasses. The ridge is very loose fourth class until the last 200 ft, which is a solid, clean face of low fifth class leading almost to the summit.",
+    "viaRouteId": "wa_mount_shuksan_sulphide_glacier"
+   }
+  ],
+  "fillStored": null,
+  "camps": {
+   "North Face bivy, where the rib meets the face": [
+    "n0"
+   ],
+   "Fisher Chimneys camps, White Salmon and above Winnie's Slide": [
+    "n0"
+   ]
+  }
+ }
+]

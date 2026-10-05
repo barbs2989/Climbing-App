@@ -188,7 +188,27 @@ if (pencilIds.length < 10) {
   console.error(`check:contrib-fields: found only ${pencilIds.length} edit pencil(s) — the scan broke.`);
   process.exit(1);
 }
-const sectionIds = new Set([...rd.matchAll(/\{k:"([A-Za-z0-9_]+)"/g)].map((m) => m[1]));
+/* A FIELD THAT IS DEFINED IS NOT A FIELD THAT RENDERS. The sheet draws only what GROUPS lists
+   (GROUPED = GROUPS.map(… FIELDS.find …)), and this check used to accept any `{k:"…"}` in FIELDS as
+   a section. Eleven editors sat in FIELDS and in no group — the WAYS IN editor, Trailhead &
+   directions, Camping & bivy, the Climbing route sections, Emergency, Crowds and five more — so
+   their pencils ("Edit the approaches") opened a sheet that scrolled nowhere, and no climber could
+   add a missing way in, fix a trailhead, or add a camp, while this guard printed ok. Measured
+   2026-10-01. The section ids are now the GROUPED keys; a FIELDS key in no group fails outright. */
+const _fieldsLine = rd.slice(rd.indexOf("const FIELDS="), rd.indexOf("\n", rd.indexOf("const FIELDS=")));
+const _groupsSrc = rd.slice(rd.indexOf("const GROUPS="), rd.indexOf(";", rd.indexOf("const GROUPS=")));
+if (!_fieldsLine.length || !_groupsSrc.length) { console.error("check:contrib-fields: could not find FIELDS or GROUPS in RouteDetail.jsx — the scan broke."); process.exit(1); }
+const _fieldKeys = [...new Set([..._fieldsLine.matchAll(/\{k:"([A-Za-z0-9_]+)"/g)].map((m) => m[1]))];
+const _grouped = new Set([..._groupsSrc.matchAll(/"([A-Za-z0-9_]+)"/g)].map((m) => m[1]));
+const ungrouped = _fieldKeys.filter((k) => !_grouped.has(k));
+if (_fieldKeys.length < 20) { console.error(`check:contrib-fields: found only ${_fieldKeys.length} FIELDS keys — the scan broke.`); process.exit(1); }
+if (ungrouped.length) {
+  console.error(`check:contrib-fields: ${ungrouped.length} editor(s) defined in FIELDS but in no GROUPS section, so they never render: ${ungrouped.join(", ")}`);
+  console.error("Add each to the GROUPS section it belongs in — its pencil otherwise opens a sheet without it.");
+  process.exit(1);
+}
+console.log(`  ${_fieldKeys.length} editor field(s), every one in a section the sheet renders`);
+const sectionIds = new Set(_fieldKeys);
 // Two sections are rendered with a literal id rather than from a FIELDS key.
 for (const extra of ["bailout", "startLocation"]) sectionIds.add(extra);
 const orphanPencils = [...new Set(pencilIds.filter((id) => !sectionIds.has(id)))];
@@ -231,7 +251,7 @@ console.log(`  ${objKeysTypes.length} keyed-object type(s): each has state and a
 const OBJ_FIELDS = [["ROAD_KEYS", "road"], ["ACCESS_KEYS", "access"], ["TIMING_KEYS", "timing"],
   ["CROWDS_KEYS", "crowds"], ["PARTNER_KEYS", "partnerRequirements"],
   ["SEASONAL_KEYS", "seasonalGuidance"], ["EMERGENCY_KEYS", "emergency"],
-  ["LOGISTICS_KEYS", "approachLogistics"], ["DIFFICULTY_KEYS", "difficulty"],
+  ["LOGISTICS_KEYS", "approachLogistics"],
   ["CLIMATE_KEYS", "climate"], ["SEASHAZ_KEYS", "seasonalHazards"]];
 for (const [constName, field] of OBJ_FIELDS) {
   const m = objKeys.match(new RegExp("const " + constName + "=(\\[[\\s\\S]*?\\]);"));

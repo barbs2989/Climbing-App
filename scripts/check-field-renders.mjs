@@ -100,6 +100,16 @@ const FIELDS = [
   // Listed here so they are walked at all; before this they were absent and unguarded.
   ["prot_rating", "protRating"], ["start_type", "startType"], ["landing", "landing"],
   ["pads", "pads"], ["rock", "rock"], ["crux", "crux"],
+  // ROUTE FACTS (2026-10-01). `bolts` is 0240's column. The other five are the guidebook facts
+  // the owner asked for in the same pass; their migration was NOT applied with this change (see
+  // the PR), and a sentinel needs no column, so the READER is proven either way. All six are
+  // judged through SENTINELS — every one starts with zero populated rows.
+  ["bolts", "bolts"], ["guide_stars", "guideStars"], ["alt_names", "altNames"],
+  ["variations", "variations"], ["ffa", "ffa"], ["fwa", "fwa"],
+  // 0242: the route TOP anchor, judged by sentinel like the six above.
+  ["anchor", "anchor"],
+  // 0243: where the route starts on its wall.
+  ["location", "location"],
 ];
 
 // The route screen is NOT just <RouteDetail/>. ClimbMatch.jsx mounts sibling panels next to
@@ -349,15 +359,24 @@ const SENTINELS = {
   rock: { base: BASES.crag, patch: { rock: "ZZROCKZZ", rockType: "ZZROCKZZ" } },
   crux: { base: BASES.crag, patch: { crux: "ZZCRUXZZ" } },
   pads: { base: BOULDER, patch: { pads: 7 }, numeric: true },
-  // `difficulty` is the 5-axis profile DiffRadar draws. Every leaf is a NUMBER, so there is no
-  // string to search for and the ordinary probe reports it UNPROVABLE — but its rendering has a
-  // deterministic text anchor, because DiffRadar prints its own axis labels and returns null
-  // without the prop. Judge it on that, not on "did the page change": the weaker test passes on
-  // any incidental difference. (An earlier version of this comment claimed the column was dark
-  // catalog-wide; it was not — see the FIELDS note above. The sentinel is still worth having:
-  // nothing had ever asserted that DiffRadar's `if(!d) return null` reader stays wired.)
-  difficulty: { base: BASES.crag, anchor: "Route-finding",
-    patch: { difficulty: { physical: 4, technical: 5, exposure: 3, commitment: 2, routefinding: 1 } } },
+  // ROUTE FACTS. `bolts` renders through <CountUp/> like `pads`, so its NUMBER is unassertable
+  // under SSR; the "Bolts" label is the anchor, and it must be absent without the field.
+  // `guide_stars` renders as a star string (not a number), so its anchor is the stars themselves.
+  // The dbRouteToCamel spread delivers these under their snake_case names too; the readers take
+  // either, and the patch mimics the camelCase the page reads first.
+  bolts: { base: BASES.crag, patch: { bolts: 9 }, numeric: true, anchor: "Bolts" },
+  guide_stars: { base: BASES.crag, patch: { guideStars: 3 }, numeric: true, anchor: "★★★☆" },
+  alt_names: { base: BASES.crag, patch: { altNames: ["ZZALTNAMEZZ"] } },
+  variations: { base: BASES.crag, patch: { variations: ["ZZVARIATIONZZ"] } },
+  ffa: { base: BASES.crag, patch: { ffa: "ZZFFAZZ" } },
+  fwa: { base: BASES.alpine, patch: { fwa: "ZZFWAZZ" } },
+  anchor: { base: BASES.crag, patch: { anchor: "ZZANCHORZZ" } },
+  location: { base: BASES.crag, patch: { location: "ZZLOCATIONZZ" } },
+  // `difficulty` had a sentinel here, anchored on DiffRadar's "Route-finding" label, asserting
+  // the seeded profile stayed wired. The owner reset the breakdown to climbers' reads only
+  // (2026-09-30), so DiffRadar renders on every route and reads no column — the anchor is now
+  // present with or without the field and could only ever report NEVER RENDERS. Removed with the
+  // reader; the column is recorded in KNOWN below.
 };
 
 // Render a sentinel-patched route across every sub-tab and report where it landed. Numeric
@@ -490,7 +509,9 @@ for (const [col, field] of FIELDS) {
   // the right method for these columns permanently, not a stand-in until data arrives.
   if (SENTINELS[col]) {
     const s = assessSentinel(col);
-    const shown = SENTINELS[col].numeric ? s.changed : s.hits.length > 0;
+    // A numeric sentinel WITH an anchor must both change the page and show its anchor: "the page
+    // changed" alone would pass on any side effect of the patch.
+    const shown = SENTINELS[col].numeric ? (s.changed && (!SENTINELS[col].anchor || s.hits.length > 0)) : s.hits.length > 0;
     results.push({
       col, field,
       verdict: shown
@@ -600,6 +621,9 @@ const KNOWN = {
   data_quality: "reader removed on purpose — the DATA QUALITY box duplicated DATA CONFIDENCE "
     + "at the top of Overview and both were replaced by per-section gap notices. Give it a "
     + "home beside the fields it grades if it comes back, not another page-level banner.",
+  difficulty: "reader removed on purpose (owner, 2026-09-30) — DIFFICULTY BREAKDOWN is now the "
+    + "average of climbers' own 1–5 reads, starting unrated, instead of a seeded enrichment "
+    + "profile weighted as six votes. Do not re-wire the column as a base rating without asking.",
 };
 // FAIL CLOSED ON A BROKEN READ, and do it BEFORE any verdict is interpreted. Everything
 // below this line reasons about what rendered; none of it means anything if the rows never

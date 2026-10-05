@@ -1,0 +1,158 @@
+{
+ "file": "v012",
+ "results": [
+  {
+   "id": "wa_east_ridge_9",
+   "fact": "rappel sequence/count on the shared South Ridge descent",
+   "verdict": "fixed",
+   "correct_value": "Two-rope sequence: single-strand from the summit bolts to the two-bolt station atop pitch 3, a double-rope rappel to the big ledge near the top of pitch 2, then one to the base; do not go straight from the summit to pitch 2",
+   "evidence": "The main route database's South Ridge page warns not to rappel from the top straight to the top of pitch 2 even though two 60 m ropes reach, because a crack just below the top anchor wedges ropes, and says to rappel to the top of the third pitch first. An archived club trip report on the East Ridge rappelled the standard South Ridge line with one single and two double-rope rappels. Both agree with the row's rappel_detail table and descent_text (single-strand to a two-bolt ledge, full-length rappel to the slung-boulder ledge near pitch 2, then to the base); only rappel_count_note described a different two-rope sequence starting with a double from the summit to pitch 2 — the very move the sources warn against. The note's sequence sentence is rewritten to the table's, and its warning extended to two ropes.",
+   "sources": [
+    "https://www.mountainproject.com/route/107664796/south-ridge",
+    "https://web.archive.org/web/2024/https://www.mountaineers.org/activities/trip-reports/ingalls-peak-east-ridge-2"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "a double-rope rappel from the summit bolts to the ledge atop pitch 2, a short single to the top of pitch 1, then one more to the base.",
+     "replace": "a short single-strand rappel from the summit bolts to the two-bolt station atop pitch 3, a double-rope rappel to the big ledge near the top of pitch 2, then one more to the base.",
+     "id": "wa_east_ridge_9",
+     "fact": "rappel sequence/count on the shared South Ridge descent"
+    },
+    {
+     "op": "replace_text",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "on one rope: it falls about 15 ft short and the crack below the anchor jams ropes.",
+     "replace": "on any setup: one rope falls about 15 ft short, and on two the crack below the anchor jams ropes.",
+     "id": "wa_east_ridge_9",
+     "fact": "rappel sequence/count on the shared South Ridge descent"
+    }
+   ]
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "fact": "Total elevation gain/loss vs the itinerary's own day-by-day figures",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. An archived 2017 trip report on this exact approach gives only cumulative points (Copper Lake 4.7 mi / 3,900 ft, viewpoint 6.8 mi / 4,900 ft, Big Heart 7.6 mi / 4,575 ft, Angeline viewpoint ~5,000 ft, ridge high point ~5,260 ft) and no total to Iron Cap; other reports give segment gains only, and three more WTA reports on the peak have no archived copy. A car-to-car figure would have to be assembled, so gain_ft/loss_ft 4,707 against the itinerary's 6,400 stay open.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.wta.org/go-hiking/trip-reports/trip_report.2017-07-25.8798406797"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_iron_cap_mountain_south_route",
+   "fact": "Waypoints describe the Middle Fork Snoqualmie / Williams Lake approach while every other field uses the West Fork Foss / Chetwoot Lake approach",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live waypoint list is now West Fork Foss Trailhead, Big Heart Lake (trail end, 7.3 mi), Chetwoot Lake camp and the summit, matching the approach, itinerary and timing.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "fact": "total gain figure vs overview's stated gain",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. New reports found give no total gain (a 2012 ski trip gives only start and summit heights; a January 2025 report gives distance only). The figures on record still disagree: 10,000 ft and 9,069 ft (two listings from one club) and 8,000 ft (one report). No two independent sources agree.",
+   "sources": [
+    "https://cascadecrusades.org/SkiMountaineering/jackmountain/nohokomeen2012/nohokomeen2012.htm",
+    "https://web.archive.org/web/2025/https://cascadeclimbers.com/forum/topic/108005-tr-jack-mountain-nohokomeen-headwall-01262025/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_jack_mountain_nohokomeen_headwall",
+   "fact": "round-trip distance vs overview's stated mileage",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. A January 2025 report from the East Bank trailhead gives 25 miles of hiking/skiing (plus biking on the closed highway), close to the earlier 25.5 mi report and well under the overview's 30 mi; but that party used a different line up through a cliff-band gap at ~4,000 ft before traversing to May Creek, so it is not clearly the same route, and the club listing's 30 mi stands against it. dist_km 11 mi one-way is consistent with the parts (just under 8 mi of trail plus ~3 mi off-trail). Not settled.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://cascadeclimbers.com/forum/topic/108005-tr-jack-mountain-nohokomeen-headwall-01262025/",
+    "https://stevensong.com/usa/washington/jack-mountain-nohokomeen-headwall/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. Searches found only terrain descriptions (the guide-service profile, a 1951-rib report, a 2025 forum report title) and the existing ~30 roped pitches belayed or simul-climbed; no source gives 20 or 12, and the vegetated lower route is pitched differently by every party. Left open.",
+   "sources": [
+    "https://www.alpineinstitute.com/route-profile-ne-buttress-johannesburg-mountain-v-5-8-ai-2/",
+    "https://www.summitpost.org/ne-buttress/166094"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_northeast_ridge_1963_route",
+   "fact": "approach routed via Cascade Pass in waypoints, but never mentioned in the approach prose",
+   "verdict": "not_a_contradiction",
+   "correct_value": null,
+   "evidence": "Already consistent: the live waypoint list no longer has a Cascade Pass pin; it runs trailhead, Cascade River crossing/terminal moraine, base of the C-J couloir, hanging-glacier traverse, summit, with no distMi, matching the approach prose.",
+   "sources": [],
+   "patches": []
+  },
+  {
+   "id": "wa_kaleetan_peak_south_ridge",
+   "fact": "Elevation/location of the route's rock-chimney crux",
+   "verdict": "fixed",
+   "correct_value": "A short (~5 ft) eroded rock chimney near 5,100 ft on the trail between Melakwa Lake and the south peak, not at the summit",
+   "evidence": "An archived club South Route trip report says the trail has eroded so that one spot at about 5,100 ft is a rock chimney about 5 ft tall needing 2-3 downclimbing moves; a separate 2022 club trip report (White Ledges up, South route down) says that between the south peak and Melakwa Lake there is a tricky but brief chimney-gully to scramble down, and calls that chimney the crux. Both put it low on the route, agreeing with beta and rope_note; turnaround and detailed_rack wrongly call it the 'summit chimney' and are reworded.",
+   "sources": [
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/trip-reports/alpine-scramble-kaleetan-peak-south-route-7",
+    "https://web.archive.org/web/2025/https://www.mountaineers.org/activities/trip-reports/alpine-scramble-kaleetan-peak-white-ledges"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "turnaround",
+     "path": [],
+     "find": "(including the summit chimney)",
+     "replace": "(including the short rock chimney near 5,100 ft)",
+     "id": "wa_kaleetan_peak_south_ridge",
+     "fact": "Elevation/location of the route's rock-chimney crux"
+    },
+    {
+     "op": "replace_text",
+     "column": "detailed_rack",
+     "path": [],
+     "find": "A helmet is recommended for the summit chimney and any loose rock below it",
+     "replace": "A helmet is recommended for the short rock chimney near 5,100 ft and the loose rock around it",
+     "id": "wa_kaleetan_peak_south_ridge",
+     "fact": "Elevation/location of the route's rock-chimney crux"
+    }
+   ]
+  },
+  {
+   "id": "wa_kendall_peak_standard",
+   "fact": "Mileage along the PCT to the stump/boot-path turnoff (4.6-5 mi vs 5.5-6 mi vs mile 5.75)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass. The new descriptions found place the stump turnoff by landmark and elevation only (about 1.5 mi beyond the second switchback, ~5,200 ft, a large stump on the left with the boot path 15 ft past it) and give no mileage from the trailhead; round-trip figures on record still range from 9.2 mi to ~11 mi. No two sources agree on the turnoff's mileage.",
+   "sources": [
+    "https://www.theoutbound.com/washington/hiking/hike-kendall-peak",
+    "https://www.outdoorproject.com/united-states/washington/kendall-peak",
+    "https://www.gaiagps.com/hike/248316/kendall-peak-via-pacific-crest-trail/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_klawatti_peak_sw_buttress",
+   "fact": "First ascent of Klawatti Peak",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Third pass, now with the primary record: the 1940 club annual reports that Lloyd Anderson, Tom Gorton and a guest, Carl Boyer, climbed 'Sloppy Mountain' (Klawatti) and Dorado Needle on July 7, 1940, and says fuller accounts were kept in the climbing committee's files — it names no route or face. The long-form peak page (archived) repeats the party and date without a route; the only source tying the 1940 party to the SW Buttress is still the one route database. Party and date are confirmed for the peak; which line they climbed is not, so the row's fa (credited to this route) is left.",
+   "sources": [
+    "http://www.alpental.com/m/1940.pdf",
+    "https://web.archive.org/web/2024/https://www.summitpost.org/klawatti-peak/152520",
+    "https://www.mountainproject.com/route/119380095/klawatti-peak-sw-buttress"
+   ],
+   "patches": []
+  }
+ ]
+}

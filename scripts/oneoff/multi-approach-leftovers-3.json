@@ -1,0 +1,116 @@
+{
+ "wa_goode_mountain_northeast_face": {
+  "waypoints": [
+   {
+    "lat": 48.5049,
+    "lng": -120.7191,
+    "elev": 4400,
+    "name": "Bridge Creek Trailhead",
+    "type": "Trailhead",
+    "elevFt": 4400,
+    "note": "On SR-20 near milepost 159, just over a mile east of Rainy Pass. A short connector trail crosses the highway to the Pacific Crest Trail southbound."
+   },
+   {
+    "lat": 48.4828,
+    "lng": -120.9108,
+    "elev": 9220,
+    "name": "Goode Mountain Summit",
+    "type": "Summit",
+    "elevFt": 9220
+   }
+  ]
+ },
+ "wa_goode_mountain_southwest_couloir": {
+  "waypoints": [
+   {
+    "lat": 48.5049,
+    "lng": -120.7191,
+    "elev": 4400,
+    "name": "Bridge Creek Trailhead",
+    "note": "SR-20 milepost ~159, just over a mile east of Rainy Pass; NPS backcountry permit required for overnight camping, $5/day USFS parking fee, no potable water on site.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Park at the Bridge Creek Trailhead on SR-20 near milepost 159, just over a mile east of Rainy Pass. A $5-per-day USFS parking fee applies here, and there's no potable water on site. An NPS backcountry permit is required for overnight camping in the Goode Glacier/moraine camp zone; reserve it in advance at the Wilderness Information Center in Marblemount.",
+    "elevFt": 4400
+   },
+   {
+    "lat": 48.487365,
+    "lng": -120.853537,
+    "elev": 2800,
+    "name": "PCT / North Fork Bridge Creek Trail junction",
+    "note": "Leave the Pacific Crest Trail here and turn onto the North Fork Bridge Creek Trail toward Goode's north side.",
+    "type": "Junction",
+    "distMi": 10
+   },
+   {
+    "lat": 48.494702,
+    "lng": -120.864313,
+    "elev": 3000,
+    "name": "Grizzly Creek crossing",
+    "note": "Usually an easy log crossing but reported as a dangerously high, hard-to-find ford in early season; trail turns brushy/overgrown just beyond it.",
+    "type": "Hazard",
+    "distMi": 10.5
+   },
+   {
+    "lat": 48.482104,
+    "lng": -120.893868,
+    "elev": 6800,
+    "name": "Lateral moraine camp above Goode Glacier",
+    "note": "Established bivy atop the lateral moraine overlooking the Goode Glacier's seracs; standard base camp for the Southwest Couloir attempt.",
+    "type": "Campsite",
+    "distMi": 13
+   },
+   {
+    "lat": 48.481227,
+    "lng": -120.900589,
+    "elev": 7400,
+    "name": "Goode Glacier crossing",
+    "note": "Cross the glacier from the moraine camp to reach the couloir base; route-finding is tricky and late-season snow bridges can be deteriorated.",
+    "type": "Junction",
+    "distMi": 13.5
+   },
+   {
+    "lat": 48.48,
+    "lng": -120.91,
+    "elev": 8900,
+    "name": "Black Tooth Notch",
+    "note": "Foot-wide notch gained by an exposed class 4 traverse (fixed sling marks the crux step); rock here is loose/\"garbage\" — watch for rockfall onto climbers below.",
+    "type": "Hazard",
+    "distMi": 14.2
+   },
+   {
+    "lat": 48.4829,
+    "lng": -120.9109,
+    "elev": 9220,
+    "name": "Goode Mountain summit",
+    "note": "Highest point in North Cascades National Park; summit block above the notch adds exposed class 4-5 moves before the true top.",
+    "type": "Summit",
+    "distMi": 14.5
+   }
+  ],
+  "approach": "From the Bridge Creek/PCT trailhead on SR-20 near milepost 159 (just over a mile east of Rainy Pass, ~4,400 ft), follow the Pacific Crest Trail southbound along Bridge Creek. This stretch loses elevation steadily — roughly 1,600 ft over about 9.5-9.6 miles — down through forest to the North Fork Camp junction, where the PCT crosses Bridge Creek (a footbridge here has been washed out in past years; check current NPS conditions before counting on it). At the junction, turn onto the North Fork Bridge Creek Trail and head upstream (north); this climber's/stock trail is roughly 7 miles long and regains about 1,700 ft, but grows progressively brushier and less maintained the farther up-valley you go, with alder and overgrowth becoming a real time sink in late summer. The trail eventually peters out in the big cirque below Goode, Storm King, and Mount Logan — most parties leave the maintained tread around mile 13-14 of the approach to ford the North Fork (a cold, sometimes knee-deep crossing; easier a short way upstream near a cairn) and pick up an intermittent boot path/cairns through talus and alder ('tunnel' sections of brush) toward the toe of the Goode Glacier. From there it's off-trail travel over moraine and glacier remnants (light crampons/axe useful if there's residual snow or open crevasses) to a rotten, blocky ridge that accesses the base of the couloir proper — expect loose, moving rock underfoot on this last stretch. Reasonable bivy options exist near the glacier toe (~6,400-6,800 ft, limited flat tent sites) or higher on ledges closer to the couloir base. Total approach is commonly done as a long day-plus-camp, on the order of 15-16 miles and 4,000-4,800 ft of gain to high camp; water is generally available at regular intervals along Bridge Creek and its tributaries but can be scarce higher up near camp, so fill up at the last reliable stream."
+ },
+ "wa_huckleberry_mountain_west_route": {
+  "timing": {
+   "totalHrs": 18,
+   "summitTimeHrs": 13,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 5,
+   "recommendedStart": "5:00 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 5,
+     "note": "From the PCT trailhead at Snoqualmie Pass, hike north over Kendall Katwalk past Ridge Lake to the meadow camp most parties use to break up Huckleberry's unusually long approach bef…",
+     "fromTo": "Approach to high camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 13,
+     "note": "Leave camp light and early, follow the PCT to above Joe Lake, leave it at the meadow northeast of the lake and climb talus into the basin below the west face, then scramble class 3-4 terrain (with a class 4-5 summit block) to the top. Rappel in…",
+     "fromTo": "Summit push and full hike out",
+     "section": "Climb"
+    }
+   ]
+  }
+ }
+}

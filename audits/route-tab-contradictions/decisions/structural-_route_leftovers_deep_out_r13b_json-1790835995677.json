@@ -1,0 +1,367 @@
+{
+ "applied": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "op": "patch",
+   "columns": [
+    "access",
+    "emergency",
+    "best_season",
+    "seasonal_guidance",
+    "climate",
+    "comms"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "area_id": "wa_rimrock_ridge",
+   "name": "Standard Scramble",
+   "discipline": "scrambling",
+   "grade": "Class 3",
+   "grade_system": "class",
+   "grade_num": 3,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": null,
+   "lng": null,
+   "aspect": "Variable",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "helmet",
+    "ice axe",
+    "crampons",
+    "glacier rope, harness and crevasse-rescue kit",
+    "sturdy scrambling boots"
+   ],
+   "hazards": [
+    "Crevassed glaciers on the approach (Middle Cascade and Le Conte Glaciers) — rope up",
+    "An exposed ledge traverse (the Red Ledge) below Arts Knoll, harder when snow-covered",
+    "Loose, blocky rock on the Class 3 steps along the crest",
+    "No reliable water source once on the ridge crest itself",
+    "Afternoon thunderstorms typical of the dry east-Cascades summer",
+    "Remote self-rescue — no cell coverage"
+   ],
+   "verif": null,
+   "overview": "Rimrock Ridge is a remote, rarely climbed crest in the Glacier Peak Wilderness, mostly above 6,500 ft, forming the divide between Flat Creek and the West Fork of Agnes Creek and running east and north-east from Old Guard Peak. Its high point lies a little over 3 miles north-east of Sentinel Peak. No trail reaches it: the few parties on record came onto its west end from the Ptarmigan Traverse near Sentinel Peak.",
+   "beta": "No detailed route description exists for Rimrock Ridge. The recorded parties reached its west end from the Ptarmigan Traverse near Sentinel Peak and followed the crest east over its summits on cross-country alpine ground.",
+   "turnaround": "No party-specific timing data exists for this peak. As on the surrounding Ptarmigan Traverse terrain, plan turnaround around weather, off-trail route-finding time, and the long unmaintained approach rather than a fixed clock time — afternoon thunderstorms and sudden whiteout conditions are common on this section of the North Cascades crest in summer.",
+   "auto_generated": true,
+   "alpine_grade": "F",
+   "rock_grade": null,
+   "ice_grade": null,
+   "gain_ft": null,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": null,
+   "rappels": null,
+   "commitment": "II",
+   "face": null,
+   "permit": null,
+   "comms": "This is deep wilderness with no maintained trail; expect no cell coverage for essentially the entire approach and climb, consistent with the rest of the Glacier Peak Wilderness / Stehekin backcountry. A satellite communicator or PLB is strongly advised.",
+   "descent": null,
+   "obj_haz": [
+    "loose rock",
+    "exposed ridge sections",
+    "remote terrain"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.38025,
+     "lng": -120.83955,
+     "elev": 1600,
+     "name": "Cascade Pass Trailhead",
+     "note": "Large parking lot at the end of the Cascade River Road, about 23 miles from State Route 20 at Marblemount. The Ptarmigan Traverse starts up the Cascade Pass trail from here.",
+     "type": "Trailhead",
+     "distMi": 0
+    },
+    {
+     "lat": 48.342907,
+     "lng": -120.901771,
+     "elev": 2200,
+     "name": "Fivemile Camp",
+     "note": "First established dispersed camp along the Agnes Creek Trail with reliable water from Agnes Creek; common first-night stop for the long valley approach.",
+     "type": "Water",
+     "distMi": 5.1
+    },
+    {
+     "lat": 48.30964,
+     "lng": -120.92038,
+     "elev": 2800,
+     "name": "Swamp Creek Camp",
+     "note": "Established camp at the Swamp Creek confluence with year-round water; last reliably maintained camp before the trail begins climbing out of the valley bottom toward the upper basins.",
+     "type": "Campsite",
+     "distMi": 8.1
+    },
+    {
+     "lat": 48.37557,
+     "lng": -120.97826,
+     "elev": 7230,
+     "name": "Rimrock Ridge summit",
+     "note": "True summit of the ridge crest (listed 7,255-7,260 ft); descent reverses the crest, downclimbing rock steps and bypassing gendarme towers on the same side used on ascent.",
+     "type": "Summit",
+     "distMi": null
+    }
+   ],
+   "gpx": [
+    [
+     48.38025,
+     -120.83955
+    ],
+    [
+     48.342907,
+     -120.901771
+    ],
+    [
+     48.30964,
+     -120.92038
+    ],
+    [
+     48.37557,
+     -120.97826
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "scrambling",
+    "alpine"
+   ],
+   "timing": null,
+   "detailed_rack": "No rock rack is documented for the ridge. The approach along the traverse crosses crevassed glaciers, so the party needs a basic glacier kit: a rope, harnesses, crampons, ice axes and crevasse-rescue gear, plus helmets.",
+   "what_to_bring": [
+    "helmet",
+    "ice axe",
+    "crampons",
+    "glacier rope, harness and crevasse-rescue kit",
+    "navigation tools",
+    "satellite communicator"
+   ],
+   "pro_tips": [
+    "Hold the crest for the cleanest line",
+    "Drop off the spine to bypass the harder towers"
+   ],
+   "watch_out": [
+    "No cairned route or published trip reports exist for this specific ridge — expect genuine routefinding along the crest",
+    "The approach crosses crevassed glaciers — travel roped"
+   ],
+   "pro_needs": "No protection is documented for the ridge crest itself, but the approach crosses crevassed glaciers, so carry a glacier rope, harnesses, crampons and ice axes.",
+   "best_season": "Typically late July through September, once the approach brushfields and any lingering snow on the ridge have melted out. Earlier in the season expect mosquitoes in the lower Agnes Creek valley and possible snow on north-facing sections of the ridge. Check current NPS/USFS trail-condition reports before going, since bridges and camps in this corridor were still being repaired in 2026 after the December 2025 Stehekin flood.",
+   "high_point_ft": 7255,
+   "aid_grade": null,
+   "approach": "No trail reaches Rimrock Ridge. The way in is the north end of the Ptarmigan Traverse. Start at the Cascade Pass trailhead at the end of the Cascade River Road and climb the Cascade Pass trail, then follow the traverse's climbers' path over Cache Col and down to Kool-Aid Lake, the usual first camp. The next day crosses the exposed Red Ledge below Arts Knoll and the crevassed Middle Cascade Glacier (rope up) to the Spider–Formidable col, then drops to Yang Yang Lakes, the usual second camp. On the third day the traverse climbs back to the Le Conte ridge and up the Le Conte Glacier to the col between Le Conte and Sentinel at its head. The parties on record left the traverse here, passed north of Sentinel Peak and followed the ridge east along its crest; the ridge is the divide between Flat Creek and the West Fork of Agnes Creek. Beyond the traverse the line is cross-country alpine ground with no path, and no detailed description of it is published. The Agnes Creek trail (PCT) from High Bridge runs up a different valley and does not lead to the ridge.",
+   "descent_text": "Retrace the ridge crest, downclimbing the rock steps and bypassing towers on the same side used on ascent.",
+   "bail": null,
+   "pitch_detail": null,
+   "itinerary": {
+    "days": [
+     {
+      "n": 1,
+      "note": "Climb the Cascade Pass trail, then follow the traverse's climbers' path up and over Cache Col and down to camp at Kool-Aid Lake.",
+      "hours": null,
+      "miles": null,
+      "title": "Cascade Pass trailhead to Kool-Aid Lake",
+      "gainFt": null,
+      "lossFt": null,
+      "schedule": [],
+      "objective": "Reach Kool-Aid Lake, the usual first camp on the traverse"
+     },
+     {
+      "n": 2,
+      "note": "Cross the exposed Red Ledge below Arts Knoll, rope up for the Middle Cascade Glacier, pass through the Spider–Formidable col and descend to camp at Yang Yang Lakes.",
+      "hours": null,
+      "miles": null,
+      "title": "Kool-Aid Lake to Yang Yang Lakes",
+      "gainFt": null,
+      "lossFt": null,
+      "schedule": [],
+      "objective": "Reach Yang Yang Lakes, the usual second camp"
+     },
+     {
+      "n": 3,
+      "note": "Climb back to the Le Conte ridge and up the Le Conte Glacier toward the col at its head beside Sentinel Peak. Leave the traverse here, pass north of Sentinel and head east onto the ridge crest.",
+      "hours": null,
+      "miles": null,
+      "title": "Yang Yang Lakes to the Le Conte–Sentinel col",
+      "gainFt": null,
+      "lossFt": null,
+      "schedule": [],
+      "objective": "Leave the traverse for the west end of Rimrock Ridge"
+     }
+    ],
+    "totalNote": "Three days on the Ptarmigan Traverse reach the col between Le Conte and Sentinel, where the line onto Rimrock Ridge begins. No published account gives a schedule for the ridge itself or for leaving it, so no total length is stated here."
+   },
+   "access": {
+    "fees": "2026 NPS backcountry fees: $6 non-refundable permit reservation fee plus $10/person/night camping fee within the park boundary (ages 15 and under free); the Forest Service wilderness permit beyond the park boundary is free. Ferry fare to/from Stehekin and any High Bridge shuttle fee are separate.",
+    "rules": "Leave No Trace travel required; camping is restricted to designated/permitted sites within the park/NRA portion of the approach. Food storage from bears is essential — aggressive bear activity has been reported in 2026 at PCT camps in this corridor (Fireweed and South Fork camps in particular).",
+    "permit": "An NPS wilderness permit is required for any overnight camping within the park/NRA boundary near High Bridge (reserve on recreation.gov or get a walk-up permit at the Golden West Visitor Center in Stehekin). Once across into the Glacier Peak Wilderness (Forest Service land), only a free self-issue wilderness permit is required, available at trailhead registration boxes.",
+    "closures": "As of mid-2026 the Stehekin area is still recovering from a historic December 2025 flood: Company Creek Road lost roughly 1,000 ft of roadbed and a levee (an elevated interim road was completed June 23, 2026); North Cascades Lodge at Stehekin is closed for the season (no lodging, dining, fuel, or showers, though ferry and postal service continue); the High Bridge shuttle bus is not running for 2026. On the trail itself, the Agnes Creek bridge at Hemlock Camp (south of the park boundary, in the Glacier Peak Wilderness) is out of service and camping at Hemlock Camp is considered unsafe due to hazard trees — use Cedar Camp or the South Fork Agnes Creek camp instead. Confirm current conditions with the Wilderness Information Center (360-854-7245) before going. Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes the Pacific Crest Trail (Trail 2000) along Agnes Creek on the Chelan Ranger District, along with Agnes Creek Trail 1272, Agnes Gorge Trail 1281 and Swamp Creek Trail 1242. North Cascades National Park's Sisi Fire closures (its fire-closure list, updated September 14, 2026, gives no end date) also close the Pacific Crest Trail from the park boundary down to High Bridge and on to Bridge Creek Camp, the High Bridge area, and the Stehekin Valley Road from Stehekin Valley Ranch to High Bridge. This approach cannot be used while these closures stand. Chelan Ranger District: (509) 682-4900. North Cascades National Park: (360) 854-7200.",
+    "group_limit": 12,
+    "landManager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area for roughly the first mile out of High Bridge, then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness, for the remainder of the approach and the peak itself.",
+    "land_manager": "North Cascades National Park Service Complex / Lake Chelan National Recreation Area (first mile out of High Bridge), then Okanogan-Wenatchee National Forest (Chelan Ranger District), Glacier Peak Wilderness",
+    "parking_pass": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+    "passRequired": "None for the trailhead itself (ferry ticket to Stehekin only; no Northwest Forest Pass required for this wilderness access point).",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "North Cascades NP wilderness permit for the Stehekin valley camps — quota, fee",
+     "where": "Reserve on Recreation.gov and contact the park the day before, as there are no permit services in Stehekin. Camping beyond the park boundary in the Glacier Peak Wilderness needs no park permit."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road (Marblemount to the Cascade Pass trailhead)",
+    "status": "Leaves State Route 20 at Marblemount and runs about 23 miles to the Cascade Pass trailhead at its end. Paved for roughly the first third, then gravel; the final few miles above the Eldorado parking area are narrow and steep, with few places to pass.",
+    "driveNote": "Drive State Route 20 to Marblemount and continue straight onto the Cascade River Road where the highway turns. Follow it to the large parking lot at the road's end.",
+    "seasonalGate": null
+   },
+   "climate": {
+    "summer": "Summer is the working window: the approach brush and the ridge are usually snow-free from late July, with hot days, cool nights and a risk of afternoon thunderstorms; snow cover varies a lot from year to year.",
+    "typical": "Dry east-Cascades climate in the rain shadow of the crest — hot summer days, cool nights, and a much shorter, drier snow season than the west-side Cascades. Afternoon thunderstorms are common in July and August.",
+    "forecastZone": "Not covered by NWAC avalanche forecasts (this is a summer, snow-free-window scramble; no winter forecast zone applies)."
+   },
+   "emergency": {
+    "notes": "No road access and no cell coverage in this drainage — carry a satellite communicator. Any rescue will likely require a multi-hour boat evacuation and/or helicopter.",
+    "county": "Chelan County, WA",
+    "rangerStation": "Golden West Visitor Center, Stehekin (NPS) for the park/NRA portion of the approach; Chelan Ranger District office, Okanogan-Wenatchee National Forest, in Chelan, for the Glacier Peak Wilderness portion.",
+    "nearestHospital": "Lake Chelan Community Hospital, Chelan, WA — roughly 50 lake-miles from Stehekin; backcountry rescues from this drainage are typically by helicopter given the lack of road access to Stehekin.",
+    "sheriffDispatch": "911, or Chelan County Sheriff/Rivercom Dispatch direct at 509-663-9911; technical mountain rescue support comes from the volunteer Chelan County Mountain Rescue."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "rarely climbed overall; what little traffic exists would cluster on August weekends within the Late July-September window",
+    "solitudeRating": 5,
+    "estimatePerSeason": "very low - likely single digits to low tens of parties per season; no trip-report volume or register data found for this summit"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Long wilderness approach fitness - full-day (or overnight) endurance typical of Glacier Peak Wilderness access; exact approach mileage not confirmed in sources",
+     "packWeight": "Light scrambling kit for the ridge itself; overnight/backpacking load (roughly 20-30 lb) likely needed for the approach given the remote access"
+    },
+    "approachTime": "Long/remote approach consistent with Glacier Peak Wilderness (Okanogan-Wenatchee NF) access",
+    "requiredSkills": [
+     "route-finding on an unmaintained approach and along the ridge crest",
+     "exposed Class 3 scrambling, including negotiating rock steps and notches",
+     "sound judgment downclimbing loose rock",
+     "map/compass or GPS navigation in trail-less Glacier Peak Wilderness terrain",
+     "roped glacier travel and crevasse rescue"
+    ],
+    "experienceLevel": "Solid, independent Class 3 scrambler comfortable on an infrequently traveled ridge with loose rock and no fixed protection; not a beginner objective given the remote Glacier Peak Wilderness setting"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through September, with August as the prime month",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Early-to-mid July can still carry lingering snow on the approach slopes; conditions typically firm up by late July when the season window opens",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Matches the best-season - snow-free approach and driest, most stable ridge conditions",
+      "status": "optimal"
+     },
+     "September": {
+      "reason": "Generally dry and stable, continuing August conditions, but shorter daylight and a rising chance of early-season snow late in the month",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "Typical North Cascades/Glacier Peak Wilderness summer pattern - warm, dry days and cool nights during the July-September window",
+     "probability": "Afternoon thunderstorms are a general risk in the North Cascades summer season, but no peak-specific storm data was found for Rimrock Ridge"
+    },
+    "exposure": "Exposure is concentrated at the notches along the ridge crest, compounded by loose rock/blocks on the ridge; a slip near a notch would be consequential, though the route stays at Class 3 rather than sustained technical terrain",
+    "avalanche": {
+     "zone": "N/A - summer-only route; no NWAC zone forecasts for this peak.",
+     "byMonth": {
+      "July": "Low",
+      "August": "Low",
+      "September": "Low"
+     }
+    },
+    "crevasses": "The approach crosses the Middle Cascade and Le Conte Glaciers, both crevassed; rope up. The ridge itself is not glaciated."
+   },
+   "data_quality": {
+    "gaps": [
+     "No dedicated route description for the ridge itself was found. The approach follows the well-documented Ptarmigan Traverse; the line onto the ridge comes from two brief historical accounts.",
+     "Elevation for this peak is reported inconsistently across sources (roughly 7,050-7,260 ft depending on source/USGS interpolation); the prominence figure could not be independently verified.",
+     "The exact line from the traverse onto the west end of the ridge is not described in detail by any account.",
+     "No public GPS track found for this route as of this research pass.",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "LOW",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.37557,
+    "peakLng": -120.97826,
+    "trailhead": "Cascade Pass trailhead (end of Cascade River Road)",
+    "trailheadLat": 48.4754,
+    "trailheadLng": -121.0751,
+    "trailheadDirection": "From State Route 20 at Marblemount, go straight onto the Cascade River Road where the highway turns, and drive it about 23 miles to its end at the Cascade Pass parking lot. The first third is paved, then gravel; the last few miles are narrow and steep."
+   },
+   "sling_rack": null,
+   "alpine_draws": 0,
+   "rope_type": "Single",
+   "rope_length_m": null,
+   "rope_note": "A glacier rope for the approach glaciers; none is documented for the ridge crest.",
+   "ascender": null,
+   "corrections": "No route-specific trip reports found beyond peak elevation (7,260ft); gear inferred purely from stated Class 3 grade.",
+   "gear_confidence": "inferred",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [],
+   "features": [
+    "Adventurous"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": [
+    {
+     "elev": 6120,
+     "name": "Kool-Aid Lake",
+     "role": "route",
+     "type": "camp",
+     "notes": "The usual first camp on the traverse, south of Cache Col.",
+     "water": "The lake and its outlet stream."
+    },
+    {
+     "elev": 5830,
+     "name": "Yang Yang Lakes",
+     "role": "route",
+     "type": "camp",
+     "notes": "The usual second camp, below the Spider–Formidable col; well-established sites by the lakes.",
+     "water": "The lakes."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "standard scramble",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

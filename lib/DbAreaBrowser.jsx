@@ -17,6 +17,7 @@ import { clickable } from "./clickable";
 import { subdivisionNoun, countryOfArea } from "./countries";
 import { effDistKm } from "./outing";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./popupChrome.js";
+import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
 
 // Grade for a compact row. Two things happen inside displayGrade(): a qualifier carried inline
 // ("Class 3 (short 4th-class crux)") is dropped, and the route page's Composite Grade panel shows
@@ -48,7 +49,9 @@ function childNoun(children) {
   const types = [...new Set((children || []).map(c => c.area_type))];
   return (types.length === 1 && CHILD_NOUN[types[0]]) || "Areas";
 }
-const SL = ({ children, C }) => <div style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 18, marginBottom: 9 }}><span style={{ width: 3, height: 14, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{children}</span></div>;
+const SL = ({ children, C }) => <div style={{ display: "flex", alignItems: "center", gap: 7, marginTop: 18, marginBottom: 9 }}><span style={{ width: 3, height: 14, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span role="heading" aria-level={2} style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>{children}</span></div>;
+/* = core's CardHead (this module does not import core). Keep the two in step. */
+const CardHead = ({ children, C, style }) => <div role="heading" aria-level={3} style={Object.assign({ display: "flex", alignItems: "center", gap: 7, minWidth: 0, fontSize: 12, fontWeight: 800, color: C.text, letterSpacing: 0.5, textTransform: "uppercase" }, style)}><span aria-hidden="true" style={{ width: 3, height: 12, borderRadius: 2, background: C.blueSolid, flexShrink: 0 }} /><span style={{ minWidth: 0 }}>{children}</span></div>;
 const Pill = ({ label, color, bg, sm }) => <span style={{ background: bg, color, padding: sm ? "2px 7px" : "3px 10px", borderRadius: 20, fontSize: sm ? 11 : 12, fontWeight: 600, whiteSpace: "nowrap", display: "inline-flex", alignItems: "center", gap: 4 }}>{label}</span>;
 // Title only. It used to carry its own "← Back" too, directly under the sticky "Back to …" bar
 // that already sits above every panel — two Back buttons on one screen, doing the same thing.
@@ -89,8 +92,9 @@ function RouteRow({ r, onOpen, C, areaName }) {
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
 // this file doesn't import — see its own header comment on why) and passed down.
 function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, discSlots, C }) {
-  // null = undecided, so content decides (see autoOpen below); once toggled, the climber wins.
-  const [openManual, setOpenManual] = useState(null);
+  // Collapsed until the climber opens it — the user's call (2026-09-30): the rows are one tap
+  // away behind the "Suggested climbs · N" header, never spread across the area page by default.
+  const [open, setOpen] = useState(false);
   const recentIds = useRecentRouteIds();
   const { data: objRoutes } = useScopedWishlistRoutes(area, wishlist);
   /* THE POOL IS NO LONGER FILTERED BY DISCIPLINE, and that is the actual fix.
@@ -129,13 +133,6 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
   }).filter(b => b.rows.length);
   const popular = (!objectives.length && !recent.length && !bands.length) ? [...candidates].sort((a, b) => (b.stars || 0) - (a.stars || 0)).slice(0, 5) : [];
   const total = objectives.length + recent.length + bands.reduce((n, b) => n + b.rows.length, 0) + popular.length;
-  /* Open on HIGH-SIGNAL rows only — your own objectives, or climbs you were just looking at.
-     NOT on `total`: "More climbs in this area" is the alphabetical fallback (only 6 routes in
-     the whole 205k catalog carry a star rating), and auto-opening for that would make the panel
-     noise on every area page. These arrive async, so the panel opens when the data lands. */
-  const autoOpen = !!(objectives.length || recent.length);
-  const open = openManual === null ? autoOpen : openManual;
-  const setOpen = fn => setOpenManual(typeof fn === "function" ? fn(open) : fn);
   if (!total) return null;
   const lbl = { fontSize: 11.5, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.3, margin: "2px 0 7px" };
   const discLabel = d => (DISCIPLINES.find(x => x[0] === d) || [, d])[1];
@@ -144,7 +141,7 @@ function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rank
   const bandTitle = s => (s.src === "viewed" ? "Because you've been looking at " : "Because you've been climbing ") + discLabel(s.disc);
   return (
     <div style={{ marginTop: 14 }}>
-      <button onClick={() => setOpen(o => !o)} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
+      <button onClick={() => setOpen(o => !o)} aria-expanded={open} style={{ width: "100%", display: "flex", alignItems: "center", gap: 9, background: C.surface, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", cursor: "pointer" }}>
         <span style={{ flex: 1, textAlign: "left", fontSize: 13.5, fontWeight: 700, color: C.text }}>{"Suggested climbs · " + total}</span>
         <span style={{ color: C.blue, fontSize: 13, fontWeight: 700 }}>{open ? "▾" : "▸"}</span>
       </button>
@@ -265,7 +262,7 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
               {areaHits.map(a => (
                 <div key={a.id} {...clickable(() => onJumpToArea(a))} style={row}>
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ fontSize: 13.5, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</div>
+                    <div style={{ fontSize: 13.5, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{a.name}</div>
                     <div style={{ fontSize: 11, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{(ATYPE[a.area_type] || a.area_type) + (a.parent_name ? " · " + a.parent_name : "")}</div>
                   </div>
                   {a.route_count > 0 ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count}</span> : null}
@@ -468,7 +465,7 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
   const lbl = { fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5 };
   return (
     <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "13px 15px", marginBottom: 14 }}>
-      <div style={{ fontSize: 12, fontWeight: 800, color: C.blue, marginBottom: 10, letterSpacing: 0.4 }}>ACROSS EVERY ROUTE HERE</div>
+      <CardHead C={C} style={{ marginBottom: 10 }}>ACROSS EVERY ROUTE HERE</CardHead>
       {rows.map(([label, value, note]) => (
         <div key={label} style={{ marginBottom: 10 }}>
           <div style={lbl}>{label}</div>
@@ -570,7 +567,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
       {rows.map(({ a, mi }) => (
         <div key={a.id} {...clickable(() => onJumpToArea(a))} style={{ background: C.card, borderRadius: 12, padding: "11px 14px", marginBottom: 9, border: "1px solid " + C.borderHi, cursor: "pointer" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
-            <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text, minWidth: 0, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</span>
+            <span style={{ fontWeight: 700, fontSize: 14.5, color: C.text, minWidth: 0, lineHeight: 1.3, overflowWrap: "anywhere" }}>{a.name}</span>
             <span style={{ fontSize: 12, color: C.blue, fontWeight: 600, flexShrink: 0 }}>{(uDistMi ? uDistMi(mi) : mi.toFixed(1) + " mi") + " · " + a.route_count + " →"}</span>
           </div>
         </div>
@@ -630,13 +627,13 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
       </div>
 
       {area.route_count > 0 ? (
-        <button onClick={onFinder} style={{ width: "100%", padding: 13, marginBottom: 8, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 14, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+        <button onClick={onFinder} style={{ ...BTN_LG, width: "100%", marginBottom: 8, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Route finder"}<span style={{ fontSize: 16 }}>{"→"}</span>
         </button>
       ) : null}
       <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>
-        <button onClick={onNear} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>View map</button>
-        <button onClick={onObjectives} style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer" }}>My objectives</button>
+        <button onClick={onNear} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>View map</button>
+        <button onClick={onObjectives} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text }}>My objectives</button>
         {/* DIRECTIONS TO THE AREA. The only such link in the app lived in `GettingThere`, which is
             gated on the seed-only `selArea` and so has never rendered for a real climber — so with
             VITE_USE_DB=true there was no way to navigate to a crag at all. RouteDetail's three
@@ -651,11 +648,11 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
             href={"https://www.google.com/maps/dir/?api=1&destination=" + area.lat + "," + area.lng}
             target="_blank" rel="noopener noreferrer"
             aria-label={"Directions to " + area.name + (area.coords_approx ? " (approximate location)" : "")}
-            style={{ flex: 1, padding: "14px 6px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, fontWeight: 700, cursor: "pointer", textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
+            style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.text, textDecoration: "none", display: "flex", alignItems: "center", justifyContent: "center" }}
           >Directions</a>
         ) : null}
       </div>
-      <button onClick={onAllAreas} style={{ width: "100%", padding: 15, borderRadius: 11, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 16, fontWeight: 800, cursor: "pointer", marginBottom: 14 }}>All areas</button>
+      <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
       {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
@@ -666,7 +663,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
           this is the next thing under their thumb. It is NOT gated on the search rendering —
           a leaf crag has no DbSearchSplit and is exactly where a missing route is likeliest. */}
       {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ width: "100%", padding: 13, borderRadius: 11, border: "1px dashed " + C.border, background: C.surface, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: "pointer", marginBottom: 14, marginTop: 4, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 4, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
           {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
         </button>
       ) : null}
@@ -699,7 +696,10 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 
       {!loading && isLeaf && (
         routes && routes.length > 0
-          ? routes.map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)
+          ? <>
+              <SL C={C}>{routes.length + " climb" + (routes.length !== 1 ? "s" : "")}</SL>
+              {routes.map(r => <RouteRow key={r.id} r={r} onOpen={onOpenRoute} C={C} />)}
+            </>
           /* Only claim the crag is empty when the load actually succeeded — otherwise a
              failed refetch reports "no routes" about a crag it never managed to read. */
           : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div> : null
@@ -722,11 +722,13 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 // WI4 are all just numbers on one line — so with "All" selected no range means anything. See
 // DISC_GRADE_SCALES for which scales each discipline offers and why.
 //
-// ALPINE AND MOUNTAINEERING ARE STILL LEFT OUT. gradeNumFrom (lib/grade.js) takes a YDS number
-// wherever the grade string has one and otherwise falls back to Class, a French alpine grade
-// (AD = 3) or a commitment numeral (Grade III = 3), and their grade_system labels were never
-// corrected (0196 relabelled ice/mixed/aid only), so one number means different grades on
-// different rows there.
+// ALPINE, MOUNTAINEERING AND SCRAMBLING filter BY SCALE (2026-10-01). Their grade_num used to mix
+// YDS, Class, French grades and commitment numerals under labels nobody had corrected, so they
+// were left out. Every WA route in them now carries ONE researched final grade — its crux, on Class,
+// 5.x or WI/AI — in `grade`, with grade_system and grade_num to match (audits/route-grades/), and
+// the out-of-state rows were relabelled to the scale their grade text is written on
+// (scripts/oneoff/relabel-mountain-grade-systems.mjs). So a range passes grade_sys and one number
+// means one grade again: Class 4 and 5.4 are both 4, and the label is what keeps them apart.
 //
 // The RPC compares `grade_num >= min_grade`, which is NULL — i.e. excluded — for a route with
 // no readable grade. The sheet says so rather than letting the count drop unexplained. ──
@@ -782,12 +784,15 @@ const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: 
 //     Project's export (scripts/pipeline/import-mp-grades.mjs) — plus 5.x, the free grade most of
 //     these rows store as their primary grade.
 // Re-run the measurements before widening this.
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
-// The disciplines 0196 relabelled, where grade_system now says which scale grade_num is on, so a
-// range there passes it as grade_sys. The others keep #1811's behaviour: their labels were never
-// corrected (scrambling carries 41 "4th" rows labelled 'yds'), and filtering on them would drop
-// routes the range has always returned.
-const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1 };
+//   mountaineering / alpine / scrambling: one final grade per route, on the scale its crux is on —
+//     Class for walk-ups, scrambles and glacier climbs, 5.x for roped rock, WI/AI for an ice crux
+//     (an ice final also fills ice_grade_num, which the WI range reads).
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "yds", "wi"], alpine: ["yds", "class", "wi"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+// The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
+// as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
+// were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label
+// needed.
+const GRADE_SYS_FILTERED = { ice: 1, mixed: 1, aid: 1, mountaineering: 1, alpine: 1, scrambling: 1 };
 const gradeScalesFor = disc => DISC_GRADE_SCALES[disc] || [];
 const gradeScaleFor = (disc, sys) => { const ss = gradeScalesFor(disc); if (!ss.length) return null; return GRADE_SCALES[ss.indexOf(sys) >= 0 ? sys : ss[0]] || null; };
 const gradeSysFor = (disc, sys) => { const ss = gradeScalesFor(disc); return ss.indexOf(sys) >= 0 ? sys : (ss[0] || ""); };
@@ -850,9 +855,9 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
   if (af.len !== "any") afChips.push({ k: "len", label: lenLabel(lenRange, uElevN, uElevUnit), clear: () => setAf(a => ({ ...a, len: "any" })) });
   if (af.sortBy !== "name") afChips.push({ k: "sort", label: { name_desc: "Z→A", area: "By area", grade_asc: "↓ Easiest", grade_desc: "↑ Hardest", stars_desc: "Most starred" }[af.sortBy], clear: () => setAf(a => ({ ...a, sortBy: "name" })) });
 
-  const rowBtn = on => ({ flex: 1, padding: 13, borderRadius: 10, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.text, fontSize: 14, fontWeight: 800, cursor: "pointer" });
-  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
-  const lab = s => <div style={{ fontSize: 13, fontWeight: 700, color: C.text, textTransform: "uppercase", letterSpacing: 0.5, margin: "20px 0 8px", borderLeft: "3px solid " + C.blue, paddingLeft: 9 }}>{s}</div>;
+  const rowBtn = on => ({ ...BTN_LG, flex: 1, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.text });
+  const chip = (label, on, fn) => <button key={label} onClick={fn} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap" }}>{label}</button>;
+  const lab = s => <SL C={C}>{s}</SL>;
 
   return (
     <div>
@@ -870,7 +875,7 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
           {areaHits.map(a => (
             <div key={a.id} {...clickable(() => onJumpToArea(a))} style={{ display: "flex", alignItems: "center", gap: 10, background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "11px 13px", marginBottom: 8, cursor: "pointer" }}>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: 14.5, fontWeight: 700, color: C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{a.name}</div>
+                <div style={{ fontSize: 14.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{a.name}</div>
                 <div style={{ fontSize: 11.5, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{[ATYPE[a.area_type] || a.area_type, a.parent_name].filter(Boolean).join(" · ")}</div>
               </div>
               {a.route_count > 0 ? <span style={{ fontSize: 12, color: C.textMuted, flexShrink: 0 }}>{a.route_count + " climb" + (a.route_count !== 1 ? "s" : "")}</span> : null}
@@ -898,8 +903,8 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
       )}
       {afChips.length ? (
         <div style={{ display: "flex", gap: 6, flexWrap: "wrap", alignItems: "center", marginBottom: 9 }}>
-          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", borderRadius: 16, border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
-          <button onClick={() => setAf(DEF)} style={{ padding: "5px 8px", background: "none", border: "none", color: C.textMuted, fontSize: 12, fontWeight: 700, cursor: "pointer", textDecoration: "underline" }}>Clear all</button>
+          {afChips.map(c => <button key={c.k} onClick={c.clear} aria-label={"Remove filter: " + c.label} style={{ ...CHIP, display: "inline-flex", alignItems: "center", gap: 5, padding: "7px 10px 7px 12px", border: "1px solid " + C.blueDim, background: C.blueBg, color: C.blue }}>{c.label}<span aria-hidden="true" style={POP_CHIP_X}>✕</span></button>)}
+          <button onClick={() => setAf(DEF)} style={{ ...BTN_LINK(C), padding: "7px 8px", color: C.textMuted, textDecoration: "underline" }}>Clear all</button>
         </div>
       ) : null}
       <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8, padding: "0 2px" }}>{(total != null ? total : all.length) + " route" + ((total != null ? total : all.length) !== 1 ? "s" : "") + " · sorted by " + ({ name: "name", name_desc: "name (Z→A)", area: "area", grade_asc: "easiest", grade_desc: "hardest", stars_desc: "most starred" }[af.sortBy])}</div>
@@ -984,8 +989,8 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
             {lab("Length")}
             <div style={{ display: "flex", gap: 7, flexWrap: "wrap" }}>{LEN_BUCKETS.map(o => chip(lenLabel(o, uElevN, uElevUnit), df.len === o[0], () => setDf(d => ({ ...d, len: o[0] }))))}</div>
             <div style={{ display: "flex", gap: 8, marginTop: 20 }}>
-              <button onClick={() => setDf(DEF)} style={{ flex: 1, padding: 12, borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 14, fontWeight: 700, cursor: "pointer" }}>Clear all</button>
-              <button onClick={() => { setAf(df); setSheet(false); }} style={{ flex: 2, padding: 12, borderRadius: 10, border: "none", background: C.blueSolid, color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer" }}>Show routes</button>
+              <button onClick={() => setDf(DEF)} style={{ ...BTN_LG, flex: 1, border: "1px solid " + C.border, background: C.surface, color: C.textSub }}>Clear all</button>
+              <button onClick={() => { setAf(df); setSheet(false); }} style={{ ...BTN_LG, flex: 2, border: "none", background: C.blueSolid, color: "#fff" }}>Show routes</button>
             </div>
             </div>
           </div>
@@ -1172,7 +1177,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     const withDist = viewCenter ? nearby.map(a => ({ ...a, _mi: haversineMi(viewCenter, a) })) : nearby.map(a => ({ ...a, _mi: null }));
     return withDist.sort((a, b) => (a._mi ?? 1e9) - (b._mi ?? 1e9)).slice(0, 60);
   }, [nearby, bounds, center]);
-  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ padding: "7px 12px", borderRadius: 20, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
+  const discChip = (k, label, on) => <button key={k || "all"} onClick={() => setDisc(k)} aria-pressed={on} style={{ ...CHIP, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : C.surface, color: on ? C.blue : C.textSub, fontSize: 12.5, fontWeight: 700, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{label}</button>;
 
   return (
     <div>
@@ -1186,15 +1191,15 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
         <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
         {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
-        <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
+        <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
         <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>{fullscreen ? "✕" : "⤢"}</button>
         {sel ? (
           <div style={{ position: "absolute", left: 12, right: 12, bottom: 12, zIndex: 1000, background: C.surface, border: "1px solid " + C.blue + "66", borderRadius: 12, padding: "10px 12px", boxShadow: "0 6px 20px rgba(0,0,0,0.5)", display: "flex", alignItems: "center", gap: 10 }}>
             <div style={{ flex: 1, minWidth: 0 }}>
-              <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{sel.name}</div>
+              <div style={{ fontSize: 13.5, fontWeight: 700, color: C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{sel.name}</div>
               <div style={{ fontSize: 11.5, color: C.textMuted }}>{sel.route_count + " climb" + (sel.route_count !== 1 ? "s" : "") + (sel._mi != null ? " · " + (uDistMi ? uDistMi(sel._mi) : sel._mi.toFixed(1) + " mi") : "")}</div>
             </div>
-            <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ padding: "7px 14px", background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, fontSize: 12.5, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Open</button>
+            <button onClick={() => { onOpenArea(sel); setSel(null); }} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0 }}>Open</button>
             <button onClick={() => setSel(null)} title="Close" aria-label="Close" style={POP_CLOSE}>✕</button>
           </div>
         ) : null}
@@ -1251,25 +1256,33 @@ function DbAreaTreeNode({ area, depth, currentId, pinIds, expanded, onToggle, on
   const { data: children, isLoading, error } = useAreaChildren(area.id, { enabled: isOpen });
   const cur = area.id === currentId;
   const n = area.route_count;
-  const pad = 14 + depth * 22;
+  // Indent TAPERS. It used to be 22px per level with no ceiling, so the spires under
+  // Liberty Bell Group (depth 7: usa > wa > region > hwy 20 > north cascades > pass >
+  // group) spent 168px on indent and the name was ellipsised to a few letters on a 390px
+  // phone. Every level must still step right — a hard cap put the group and its own
+  // spires at one indent, reading as siblings — so past depth 4 each level costs 6px.
+  const pad = 12 + Math.min(depth, 4) * 12 + Math.max(depth - 4, 0) * 6;
   return (
     <div>
       <div style={{ display: "flex", alignItems: "center", gap: 8, padding: "12px 12px 12px " + pad + "px", borderBottom: "1px solid " + C.borderLight, background: cur ? C.blueBg : "transparent" }}>
         <button onClick={() => onToggle(area.id)} aria-label={isOpen ? "Collapse" : "Expand"} style={{ flexShrink: 0, width: 38, height: 38, borderRadius: 10, border: "1.5px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 18, fontWeight: 800, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>{isOpen ? "▾" : "▸"}</button>
-        <button onClick={() => onNavigate(area)} style={{ flex: 1, minWidth: 0, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
-          <div style={{ fontSize: 14.5, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
+        {/* One target opens the area: the name, its count and the chevron. The chevron used
+            to be a separate 16px span and the name was cut to one line, so the only ways in
+            were a sliver of truncated text or an arrow a thumb barely covers. Names wrap. */}
+        <button onClick={() => onNavigate(area)} aria-label={"Open " + area.name + (n > 0 ? ", " + n + " climb" + (n !== 1 ? "s" : "") : "")} style={{ flex: 1, minWidth: 0, minHeight: 38, display: "flex", alignItems: "center", gap: 8, textAlign: "left", background: "none", border: "none", cursor: "pointer", padding: "2px 0" }}>
+          <div style={{ flex: 1, minWidth: 0, fontSize: 14.5, lineHeight: 1.3, fontWeight: cur ? 800 : 700, color: cur ? C.blue : C.text, overflowWrap: "anywhere" }}>{area.name}{cur ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px", whiteSpace: "nowrap", display: "inline-block" }}>You are here</span> : null}</div>
+          {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
+          <span aria-hidden="true" style={{ flexShrink: 0, color: C.textMuted, fontSize: 18, padding: "0 2px" }}>{"›"}</span>
         </button>
-        {n > 0 ? <span style={{ flexShrink: 0, fontSize: 11, fontWeight: 700, color: C.textSub, background: C.surface, border: "1px solid " + C.border, borderRadius: 20, padding: "2px 9px" }}>{n}</span> : null}
-        <span {...clickable(() => onNavigate(area))} aria-label={"Open " + area.name} style={{ flexShrink: 0, color: C.textMuted, fontSize: 16, cursor: "pointer", padding: "0 2px" }}>{"›"}</span>
       </div>
       {isOpen ? (
         isLoading
-          ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
+          ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>Loading…</div>
           : children && children.length
             ? pinFirst(children, pinIds).map(k => <DbAreaTreeNode key={k.id} area={k} depth={depth + 1} currentId={currentId} pinIds={pinIds} expanded={expanded} onToggle={onToggle} onNavigate={onNavigate} C={C} />)
             : error
-              ? <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
-              : <div style={{ padding: "10px 14px 10px " + (pad + 22) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
+              ? <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.amber, fontSize: 12 }}>Couldn’t load what’s inside.</div>
+              : <div style={{ padding: "10px 14px 10px " + (pad + 46) + "px", color: C.textMuted, fontSize: 12 }}>No sub-areas.</div>
       ) : null}
     </div>
   );
@@ -1342,7 +1355,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
             : "Tap a name to open that area’s climbs · tap ▸ to see what’s inside it"}
         </div>
       </div>
-      <div style={{ flex: 1, overflowY: "auto", paddingBottom: 30 }}>
+      <div style={{ flex: 1, minHeight: 0, overflowY: "auto", overscrollBehavior: "contain", paddingBottom: 30 }}>
         {q.trim() ? (
           searching ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.textMuted, fontSize: 13 }}>Loading…</div>
           : searchError ? <div style={{ padding: "26px 16px", textAlign: "center", color: C.red, fontSize: 13 }}>Couldn't search areas — check your connection and try again.</div>
@@ -1351,7 +1364,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
             {results.map(m => (
               <div key={m.id} {...clickable(() => onNavigate(m))} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 14px", borderBottom: "1px solid " + C.borderLight, cursor: "pointer", background: m.id === current.id ? C.blueBg : "transparent" }}>
                 <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontSize: 14, fontWeight: 700, color: m.id === current.id ? C.blue : C.text, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}{m.id === current.id ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
+                  <div style={{ fontSize: 14, fontWeight: 700, color: m.id === current.id ? C.blue : C.text, lineHeight: 1.3, overflowWrap: "anywhere" }}>{m.name}{m.id === current.id ? <span style={{ marginLeft: 7, fontSize: 10, fontWeight: 800, color: C.blue, background: C.bg, border: "1px solid " + C.blueDim, borderRadius: 20, padding: "1px 7px" }}>You are here</span> : null}</div>
                   {/* The RPC has always returned area_type and this row threw it away, so a
                       hit read as a bare name with no way to tell a summit from a boulder —
                       while the in-page Areas search two screens over renders exactly this

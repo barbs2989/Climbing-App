@@ -186,7 +186,7 @@ if (markup.includes("+" + rawPts.pts)) {
 // (same weights, counted inputs, a definer). Reading 0038 forever would assert a function the
 // database no longer runs; `check:function-drift` is what ties the newest definition to the live one.
 const MIG_DIR = path.join(ROOT, "supabase", "migrations");
-const sqlFile = fs.readdirSync(MIG_DIR).filter((f) => /^\d{4}_.*\.sql$/.test(f)).sort()
+const sqlFile = fs.readdirSync(MIG_DIR).filter((f) => /^\d{4,5}_.*\.sql$/.test(f)).sort()
   .filter((f) => /create or replace function compute_trust_score\s*\(/i.test(fs.readFileSync(path.join(MIG_DIR, f), "utf8"))).pop();
 if (!sqlFile) dead("no migration defines compute_trust_score — ANCHOR LOST, the server weights cannot be read");
 const sqlAll = fs.readFileSync(path.join(MIG_DIR, sqlFile), "utf8");

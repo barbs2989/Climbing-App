@@ -1,0 +1,137 @@
+{
+ "results": [
+  {
+   "id": "wa_asymptotic",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Rappel distance vs route length",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_asymptotic",
+     "column": "descent_text",
+     "path": [],
+     "find": "single 85-foot rappel",
+     "replace": "single 60-foot rappel"
+    }
+   ]
+  },
+  {
+   "id": "wa_horseshoe_peak_scramble",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Round-trip distance: three disagreeing figures",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_horseshoe_peak_scramble",
+     "column": "approach",
+     "path": [],
+     "find": "consistent with the ~16.8-mile (27 km) round-trip distance",
+     "replace": "for a round trip of about 14 miles (22.5 km)"
+    }
+   ]
+  },
+  {
+   "id": "wa_tye_peak_e_route",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Season this route is actually climbed in",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_tye_peak_e_route",
+     "column": "best_season",
+     "path": [],
+     "expect": "Late July through September gives the driest brush and firmest footing on the upper slopes. Go earlier and you'll likely fight wet slide alder and residual snow patches on shaded ground; wait until October and the first crest snow can return. A separate winter/spring snow-climb or ski-touring line up the same general terrain exists (popular with Stevens Pass backcountry skiers), but it's a steeper, avalanche-exposed undertaking distinct from this summer scramble.",
+     "value": "December through April, on consolidated snow as a snowshoe or ski ascent. Without snow cover there is no trail above Skyline Ridge and the slopes are brushy."
+    }
+   ]
+  },
+  {
+   "id": "wa_guye_peak_improbable_traverse",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Total car-to-car time",
+   "ops": [
+    {
+     "op": "replace_text",
+     "id": "wa_guye_peak_improbable_traverse",
+     "column": "itinerary",
+     "path": [],
+     "find": "Expect roughly 5-7 hours on the route depending on how much you simulclimb, then 2.5-4 hours to get over the three summits and down the Cave Ridge bootpath.",
+     "replace": "Expect roughly 4-5 hours on the face, then 1.5-2 hours over the three summits and down the Cave Ridge trail."
+    }
+   ]
+  },
+  {
+   "id": "wa_kololo_peaks_standard",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "Total elevation gain and loss for the round trip",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_kololo_peaks_standard",
+     "column": "gain_ft",
+     "path": [],
+     "expect": 6120,
+     "value": 6150
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_kololo_peaks_standard",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "roughly 9,500 ft of cumulative gain/loss",
+     "replace": "roughly 6,150 ft of gain"
+    }
+   ]
+  },
+  {
+   "id": "wa_martin_peak_west_ridge",
+   "verdict": "confirmed",
+   "rule": "single source accepted by the owner (2026-10-01)",
+   "fact": "gain_ft 5,300 vs itinerary 3,200 + 2,200 = 5,400 ft and totalNote ~5,400 ft",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_martin_peak_west_ridge",
+     "column": "itinerary",
+     "path": [
+      "days",
+      0,
+      "gainFt"
+     ],
+     "expect": 3200,
+     "value": 3100
+    },
+    {
+     "op": "set",
+     "id": "wa_martin_peak_west_ridge",
+     "column": "itinerary",
+     "path": [
+      "days",
+      2,
+      "lossFt"
+     ],
+     "expect": 3200,
+     "value": 3100
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_martin_peak_west_ridge",
+     "column": "itinerary",
+     "path": [
+      "totalNote"
+     ],
+     "find": "~5,400 ft round trip",
+     "replace": "~5,300 ft round trip"
+    }
+   ]
+  }
+ ],
+ "held": []
+}

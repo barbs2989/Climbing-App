@@ -204,6 +204,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `--route` still takes the renamed-or-deleted branch, so the ordering did not regress.
       The still-loading branch is **not** injection-proven — forcing it needs a genuinely
       degraded database, and that is recorded rather than claimed.
+    - **A sixth branch, 2026-10-02: a database READ failed and the app said so.** Two app
+      texts, both from `lib/DbAreaBrowser.jsx`: `Couldn't load this area — …` when the state's
+      area read errors (and then there is **no search box**, so it used to read as "check the
+      route list rendered before this step"), and `Couldn't search routes…` when the
+      `routes_in_subtree` RPC errors (neither rows, an empty state nor a spinner, so it fell
+      through to "the route list or the search box" — the database probe even read 363ms,
+      because a trivial read is cheap while a state-wide one is not). Both runs that day were
+      the same cause: the anon role's ~3s `statement_timeout`. The search touched every
+      Washington area (2,592 `routes_area_idx` loops, ~17k buffers): 25ms warm, 8.3s cold,
+      61s with the project CPU-starved by bulk imports. The branch reads the app's own error
+      text, as the empty-state branch does, and is tested **before** the missing-search-box
+      branch, because a failed area read is what removes the box. Seen firing only by
+      capturing the page text of a live failing run, not injection-proven.
   - **The Crew sub-views were unreachable until #740/#755 named their buttons**, and that is
     four screens of a six-tab app no render guard had ever opened. `tap()` matches control
     text exactly, and these buttons carry the badge *inside* the control, so `textContent` is
@@ -926,6 +939,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     only thing that gave it away.
   - Failures print a **locator** (the element's inline style), because in a codebase with no
     class names a failure without one sends you hunting through a 40,000-character line.
+  - **What it structurally cannot see: a drag that never reaches a scrollable pane.** Containment
+    governs only a pane that is itself scrolling, so a drag starting on a popup's header, its
+    backdrop, or a pane whose content fits went straight to the page behind — two scrolls from
+    one gesture (reported on "Log a climb", 2026-09-30). That half is not this guard's job; it is
+    the page lock in `lib/dialogA11y.js`, which pins `<body>` (`position:fixed; top:-scrollY`)
+    while any dialog **or any opaque full-viewport fixed layer** is open. Two traps it records:
+    `overflow:hidden` on `<html>` — all it used to do — is **ignored by iOS Safari for a touch
+    drag**, so it passed every desktop check and failed on the phone; and it keyed on
+    `role="dialog"`, which Edit profile, Guides and Calendar do not carry. Measuring it in the
+    extension's tab: a **hidden** tab never fires `requestAnimationFrame`, so the lock looks
+    broken until a screenshot brings the tab to the front.
   - Not in `npm run build` — browser automation, same reasoning as `check:ui`. It **does** run
     on every PR, via `.github/workflows/render-guards.yml`, and that is not decoration: it was
     hand-run only until 2026-08-09, by which point it had **already gone red on main** and

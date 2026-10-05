@@ -147,7 +147,7 @@ const MATRIX = [
   /* gear is NOT here: #806's RACK caption owns that section, and asserting a chip on RACK
      would demand the double label this deliberately avoids. sectionProvenance("gear") is
      still unit-tested in section 5 above, it just has no heading of its own. */
-  ["climate", "CLIMATE &amp; SEASON", { climate: { typical: "Dry.", forecastZone: "Front Range" } }, "conditions", "trad"],
+  ["climate", "CLIMATE &amp; SEASON", { climate: { typical: "Dry.", forecastZone: "Front Range" } }, "planner", "trad"],
   ["hazards", "KNOWN HAZARDS", { hazards: ["rockfall"] }, "safety", "trad"],
 ];
 

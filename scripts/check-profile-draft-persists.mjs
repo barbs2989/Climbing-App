@@ -9,8 +9,8 @@
 //
 // THE RULE IS GENERAL RATHER THAN A PAIR OF NAMES, and that is the point — it would have caught
 // this the day the field was added: every key in openEdit's DRAFT that has a matching `profiles`
-// column must appear in saveEdit's payload. A draft key with NO column says nothing (`level` and
-// `availWeek` are both in that state today and are correctly silent), so the rule cannot nag
+// column must appear in saveEdit's payload. A draft key with NO column says nothing (`level` is in
+// that state today and is correctly silent; `availWeek` was until 0209 gave it `avail_week`), so the rule cannot nag
 // about a field the schema cannot hold.
 //
 // WHY A GATE. The fix is a key in an object literal. Dropping it changes NO identifier, so
@@ -41,10 +41,8 @@ const ALIAS = { showRealName: "show_name" };
 
 // A draft key that is deliberately not a `profiles` column at all. Declared with a reason so the
 // day one gains a column, this guard starts demanding it rather than staying quiet.
-const NOT_A_COLUMN = {
-  availWeek: "the weekly availability grid — `profiles` has no availability column for anyone, which is also why compatUnknown caps the browse row at 3 unknowns",
-  level: "a real profile carries no level; check:real-profile-rows exists because rendering one invents a value the account does not have",
-};
+// `level` sat here until 0237 gave it a column; it is collected, stored and read back now.
+const NOT_A_COLUMN = {};
 
 // ---- 1. LIFT THE DRAFT. Balanced from setEditDraft's own object literal.
 const oi = app.indexOf("openEdit=");

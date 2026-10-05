@@ -107,6 +107,11 @@ const CASES = [
     climbing: /./, hedgedAggregates: false, climbCaveat: false, hedgedApproach: false,
   },
   {
+    name: "published TOTAL with no legs — also whole-day, so the walk is not stacked on it",
+    route: base({ timing: { totalHrs: 8.5 } }),
+    climbing: /^8\.5hr$/, hedgedAggregates: false, climbCaveat: false, hedgedApproach: false,
+  },
+  {
     name: "BOTH legs unknown — one hedge each, and the approach tile hedges too",
     route: base({ distKm: 8, gainM: null, lossM: null }),
     climbing: "N/A", hedgedAggregates: true, climbCaveat: true, hedgedApproach: true,

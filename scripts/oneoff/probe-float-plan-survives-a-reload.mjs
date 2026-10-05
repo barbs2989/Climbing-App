@@ -141,17 +141,20 @@ is(cleared && cleared.form.contact === "" && cleared.form.ret === "21:00",
 const core = readCoreSource(ROOT);
 const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
 const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+// The form moved off the route page to Crews › Float plans; the route links there with its own scope.
+const hub = fs.readFileSync(path.join(ROOT, "lib/FloatPlans.jsx"), "utf8");
 for (const [label, hay, needle] of [
   ["core imports the two helpers", core, "savedFloatPlan, saveFloatPlan } from \"./lib/offline\""],
-  ["FloatPlan accepts who/scope", core, "function FloatPlan({defaults,coords,plan,onPlan,who,scope}"],
+  ["FloatPlan accepts who/scope", core, "function FloatPlan({defaults,coords,plan,onPlan,who,scope,onFiled}"],
   ["FloatPlan WRITES on every change", core, "if(scope)saveFloatPlan(who,scope,next)"],
   ["FloatPlan HYDRATES on mount", core, "savedFloatPlan(who,scope).then("],
-  ["SafetyTab accepts who/scope", core, "function SafetyTab({members,meAnswers,onComplete,who,scope})"],
-  ["SafetyTab forwards them to FloatPlan", core, "<FloatPlan plan={floatPlan} onPlan={setFloatPlan} who={who} scope={scope}/>"],
+  ["SafetyTab accepts who/scope", core, "function SafetyTab({members,meAnswers,onComplete,who,scope,onFiled})"],
+  ["SafetyTab forwards them to FloatPlan", core, "<FloatPlan plan={floatPlan} onPlan={setFloatPlan} who={who} scope={scope} onFiled={onFiled}/>"],
   ["App scopes the crew plan by CREW", app, 'scope={safetyCrew?"crew:"+safetyCrew:null}'],
-  ["App hands RouteDetail the account", app, "key={selRoute.id} who={uid}"],
-  ["RouteDetail destructures who", rd, "function RouteDetail({route,who,presence,"],
-  ["RouteDetail scopes its plan by ROUTE", rd, 'who={who} scope={route.id?"route:"+route.id:null}'],
+  ["App hands Crews › Float plans the account", app, "<FloatPlans who={uid}"],
+  ["the hub forwards who/scope to FloatPlan", hub, "<FloatPlan key={r.scope} plan={openSt} onPlan={setOpenSt} who={who} scope={r.scope}"],
+  ["the route page scopes its plan by CREW, else ROUTE", app, 'openFloatPlan(cr?"crew:"+cr.id:"route:"+r.id,r)'],
+  ["RouteDetail links to it", rd, "onClick={()=>onFloatPlan(route)}"],
 ]) {
   const n = hay.split(needle).length - 1;
   is(n === 1, `${label}${n === 1 ? "" : ` — matched ${n}x, so the chain is broken or ambiguous`}`);

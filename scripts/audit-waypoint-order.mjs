@@ -94,8 +94,11 @@ async function page(after) {
 
 const t = { rows: 0, withWp: 0, wp: 0, reordered: 0, deduped: 0, dupPins: 0,
   allHaveDist: 0, partialDist: 0, dupSummits: 0, dupFar: 0, dupUnplaced: 0,
-  unsortable: 0, afterSummit: 0, afterSummitPins: 0, descentNamed: 0, readingList: 0, selfContradicts: 0 };
-const outOrder = [], outDup = [], outFar = [], outAfter = [], outSelf = [];
+  unsortable: 0, afterSummit: 0, afterSummitPins: 0, descentNamed: 0, readingList: 0, selfContradicts: 0,
+  trailheadLate: 0, detour: 0, detourTested: 0 };
+const outOrder = [], outDup = [], outFar = [], outAfter = [], outSelf = [], outLate = [], outDetour = [];
+const DETOUR_KM = 1, DETOUR_SHARE = 0.25;
+const pathKm = (p) => p.slice(1).reduce((s, x, i) => s + metresApart(p[i], x) / 1000, 0);
 
 let after = "";
 for (;;) {
@@ -172,6 +175,54 @@ for (;;) {
             a: `${pair[0].type} "${String(pair[0].name).slice(0, 34)}" @${pair[0].distMi} mi`,
             b: `${pair[1].type} "${String(pair[1].name).slice(0, 34)}" @${pair[1].distMi} mi`,
             known: known.length, of: dd.length });
+        }
+      }
+
+      // THE START WAS NEVER ASKED ABOUT. Everything below asks what comes AFTER the summit; nothing
+      // asked where the walk BEGINS, and 22 routes listed their trailhead somewhere other than
+      // first — almost all as [...approach pins already in walking order..., Trailhead, Summit],
+      // the two appended to a list whose distMi ascend. Measured 2026-09-30 and repaired in
+      // scripts/oneoff/reorder-waypoint-order-batch7.mjs, except two whose trailhead pin
+      // contradicts the approach its other pins walk (moving a wrong start to the front fixes
+      // nothing). A loop's closing trailhead is not this: only the FIRST trailhead is tested.
+      const ti = dd.findIndex(isTrailheadPin);
+      if (ti > 0) {
+        t.trailheadLate++;
+        if (outLate.length < LIST) outLate.push({ id: r.id, name: r.name, at: ti + 1, of: dd.length,
+          seq: dd.map((w) => (w && w.type) || "?").join(",") });
+      }
+
+      // ONE PIN DRAWS A DETOUR. The stored order IS the drawn line here, so ask the line: would
+      // moving a single pin to its best slot shorten it by more than DETOUR_SHARE and DETOUR_KM?
+      // Measured 2026-10-01 on 157 WA routes: 13 flagged and, read one by one, a flag almost never
+      // meant "wrong order". It meant a WRONG COORDINATE (4 — Claywood x2, Tailgunner, Colfax
+      // Polish), a descent pin listed before the summit (Lichtenberg, Boston SE — their own descent
+      // prose names it), or a pin out of the walking order (Boston W Face, Meany). All were repaired
+      // in scripts/oneoff/fix-waypoint-order-batch8.mjs + reorder-waypoint-order-batch8.mjs. A
+      // TRAILHEAD is never the moved pin: every flag of that kind was a winding trail beating
+      // straight-line geometry, not a defect. Known residue: wa_buck_mountain_south_ridge is real
+      // geography (the trail passes Buck Creek Pass, then doubles back south to the summit).
+      // wa_the_devils_club was the other, and its Depot Creek pins were foreign (batch 9).
+      // A shortest path is not a walking order — this chooses what to READ, never an edit.
+      const pts = dd.filter((w) => w && w.lat != null && w.lng != null && Number.isFinite(+w.lat) && Number.isFinite(+w.lng))
+        .map((w) => ({ w, lat: +w.lat, lng: +w.lng }));
+      if (pts.length >= 4) {
+        t.detourTested++;
+        const L = pathKm(pts);
+        let best = null;
+        pts.forEach((p, i) => {
+          if (isTrailheadPin(p.w)) return;
+          const rest = pts.filter((_, k) => k !== i);
+          for (let j = 0; j <= rest.length; j++) {
+            if (j === i) continue;
+            const l2 = pathKm([...rest.slice(0, j), p, ...rest.slice(j)]);
+            if (!best || l2 < best.l2) best = { i, j, l2 };
+          }
+        });
+        if (best && L - best.l2 > DETOUR_KM && best.l2 / L < 1 - DETOUR_SHARE) {
+          t.detour++;
+          if (outDetour.length < LIST) outDetour.push({ id: r.id, name: r.name, L, l2: best.l2,
+            moved: `${pts[best.i].w.type} "${String(pts[best.i].w.name).slice(0, 40)}"`, from: best.i + 1, to: best.j + 1, of: pts.length });
         }
       }
 
@@ -271,6 +322,15 @@ if (!t.unsortable) {
   console.log(`  what is on screen today is an order the app itself would reject. No prose, no research.`);
   console.log(`  These are ADJUDICATED too — reorder-waypoints-by-distance.mjs skips them by name, e.g.`);
   console.log(`  "the array does not start at its nearest point — likely two approaches spliced together".`);
+  console.log(`  ${t.trailheadLate} list their TRAILHEAD somewhere other than first — the walk starts mid-list.`);
+  console.log(`  Not adjudicated by the six batches (they only asked what follows the summit); batch 7`);
+  console.log(`  read all 22 found on 2026-09-30. Read each before moving it: a trailhead pin that`);
+  console.log(`  contradicts the approach its other pins walk is the defect, not its position. Of the two`);
+  console.log(`  it refused, Meany was repaired in batch 8 (Whiskey Bend copied from a sibling route that`);
+  console.log(`  shares its Elwha pins). Devil's Club was repaired in batch 9: both parties on record came`);
+  console.log(`  up Perry Creek, so its Depot Creek pins were the foreign ones — not its trailhead.`);
+  console.log(`  ${t.detour} of ${t.detourTested} with 4+ placed pins draw a DETOUR one moved pin would remove (>${DETOUR_KM} km,`);
+  console.log(`  >${DETOUR_SHARE * 100}% of the line). Read each: most such flags are a WRONG COORDINATE, not a wrong order.`);
   console.log(`  ${t.afterSummit} list a non-summit pin AFTER the summit (${t.afterSummitPins} pins) — an ADJUDICATED`);
   console.log(`  RESIDUE, not a backlog: this shape was read route by route across six batches and the`);
   console.log(`  keeps carry recorded reasons. Do not re-sweep it on the strength of this count.`);
@@ -285,7 +345,13 @@ if (outFar.length) {
   outFar.sort((x, y) => y.d - x.d).forEach(o =>
     console.log(` ${Math.round(o.d).toString().padStart(6)} m  ${String(o.type).padEnd(10)} ${o.id}\n           "${o.a}"  +  "${o.b}"`));
 }
-if (outDup.length) { console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`)); }
+// Known residue: none. Batch 10 removed Kendall, Western Dihedral and Goode (real copies); batch 11
+// (2026-10-01) moved Pinnacle's saddle onto OSM's named node and cleared Prusik's north-face rappel off
+// the P5 chockstone's coordinate — two different places that had shared one copied coordinate. A NEW
+// duplicate here is new data; see docs/guards/waypoints-and-tracks.md (batches 10-11).
+if (outDup.length) {
+  console.log("\nduplicates:"); outDup.forEach(o => console.log(` ${o.id} — ${o.name}: ${o.was} → ${o.now} [${o.types}]`));
+}
 if (outOrder.length) { console.log("\nreordered:"); outOrder.forEach(o => console.log(` ${o.id} — ${o.name}\n    was: ${o.before}\n    now: ${o.after}`)); }
 if (outSelf.length) {
   console.log("\nTHE ROW CONTRADICTS ITSELF — known distances run backwards in the stored order:");
@@ -293,6 +359,19 @@ if (outSelf.length) {
     console.log(` ${o.worst.toFixed(2).padStart(6)} mi back  ${o.id} — ${o.name}  (${o.known} of ${o.of} pins placed)`);
     console.log(`     ${o.a}\n     then ${o.b}`);
   });
+}
+if (outLate.length) {
+  console.log("\nTHE TRAILHEAD IS NOT THE FIRST PIN:");
+  outLate.forEach(o => console.log(` ${o.id} — ${o.name}  (trailhead is pin ${o.at} of ${o.of})\n    types: ${o.seq}`));
+}
+if (outDetour.length) {
+  console.log("\nONE PIN DRAWS A DETOUR (read the pin's coordinate before its position):");
+  outDetour.forEach(o => console.log(` ${o.id} — ${o.name}  ${o.L.toFixed(1)} km -> ${o.l2.toFixed(1)} km\n    move placed pin ${o.from} of ${o.of} ${o.moved} to slot ${o.to}`));
+  // Re-read in batch 12: Buck's own 189-point track passes Buck Creek Pass (vertex 90) before the
+  // summit (vertex 134), and its approach prose tops out at the pass and contours back SW below
+  // Liberty Cap. The detour is the trail, not a pin.
+  if (outDetour.some(o => o.id === "wa_buck_mountain_south_ridge"))
+    console.log("  (Buck Mountain South Ridge was read in batch 12: the trail passes Buck Creek Pass and doubles back, correct as stored.)");
 }
 if (outAfter.length) {
   console.log("\nAFTER THE SUMMIT AND NOT EXPLAINED BY THE DESCENT (read, do not sweep):");
@@ -302,5 +381,9 @@ if (outAfter.length) {
     console.log(`    unexplained: ${o.pins.join("  |  ")}`);
     if (o.explained.length) console.log(`    (descent prose does name: ${o.explained.join("  |  ")})`);
   });
+  // Read in batch 10: Chair Peak NE Buttress's "Notch/saddle in main ridge" is CORRECT — its own note
+  // is the descent (downclimb from the summit to the notch, then rappel); the prose walks that gully
+  // without the word "notch". Mount Cruiser's "Base of Alpha" was an approach pin and was moved.
+  console.log("  (Chair Peak NE Buttress was read in batch 10: its notch is the descent, correct as stored.)");
 }
 process.exit(0);

@@ -50,7 +50,7 @@ const CASES = [
   ["gear", { gear: ["single set of cams"], gearConfidence: "verified" }, ["overview", "planner"]],
   // The box is gated on route.climate and needs typical / a season key / forecastZone —
   // `summary` alone returns null, which is what made a season-keyed chip look broken.
-  ["climate", { climate: { typical: "Dry, hot afternoons.", forecastZone: "Front Range" } }, ["conditions", "overview"]],
+  ["climate", { climate: { typical: "Dry, hot afternoons.", forecastZone: "Front Range" } }, ["planner", "overview"]],
   ["hazards", { hazards: ["rockfall"], objHaz: ["cornice"] }, ["safety", "overview"]],
 ];
 

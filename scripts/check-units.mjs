@@ -66,13 +66,15 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // the same `ok`. That is the per-file floor lesson check:control-names paid for, where a PARTIAL
 // restyle left the guard checking 1 file of 2 and reporting `ok`.
 //
-// Each sits two below what a clean tree produces (15/22/17/18/15/40/14/10/15 today) -- close enough that a
+// Each sits two below what a clean tree produces (15/22/17/18/15/40/14/10/10 today) -- close enough that a
 // section losing a meaningful part of its work trips, loose enough that a conditional branch
 // taking a `continue` does not. Raise one when you add an assertion; never lower one to make a
 // run pass.
+// `keyed` went 15 -> 10 on 2026-09-30 for a REMOVAL, not a lapse: the contribute form dropped its
+// DIFFICULTY_KEYS editor, and its five unit-invariant axes were five assertions. Its floor follows.
 // `filters` went 30 -> 40 when the LIVE filter (lib/DbAreaBrowser.jsx) gained sections 5 and 6, so
 // its floor rises with it: a floor left at the old count cannot see the new half stop asking.
-const FLOOR = { persist: 13, weather: 37, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 13 };
+const FLOOR = { persist: 13, weather: 37, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 8 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -902,7 +904,9 @@ async function runFilters() {
   else fail("no aria-label still hardcodes miles");
   // 4, not 5: Partners' By Area "Near me" radius slider was REMOVED (a third distance control that
   // read "Needs your location" for every signed-in climber), and its aria-label went with it.
-  if ((mask.match(/uDistMiUnitLong\(\)/g) || []).length >= 4) ok("every distance aria-label takes the unit word from the setting");
+  // 3, not 4: Crews' By Area "Near me" slider went the same way, for the same reason — crew distance
+  // is the filters' MAX DISTANCE alone now, measured from the climber's zip.
+  if ((mask.match(/uDistMiUnitLong\(\)/g) || []).length >= 3) ok("every distance aria-label takes the unit word from the setting");
   else fail("every distance aria-label takes the unit word from the setting");
 
   // 5. THE *LIVE* LENGTH FILTER, WHICH EVERY ASSERTION ABOVE IS BLIND TO. Sections 1-4 are about
@@ -1045,7 +1049,12 @@ async function runVariants() {
   // from the fix refuses every change instead of judging it.
   if (!/\.map\(/.test(seedExpr) || !/distMi:/.test(seedExpr) || !/gainFt:/.test(seedExpr))
     dead("the seed is not the map-over-approachVariants shape this section reads");
-  const seed = new Function("route", "itinDraftVal", "blankVar", "return " + seedExpr + ";");
+  // `tripDraft` seeds the WHERE-IT-STARTS boxes (lib/approaches.js) beside these two. It is passed a
+  // stub: this section measures the distMi/gainFt boundary, and a variant with no `trip` seeds no
+  // trip boxes. The trip boxes keep the same lossless rule by carrying their seeded strings in
+  // `_tSeed`, and are submitted only in "own trailhead" mode, which this fixture never enters.
+  const seed0 = new Function("route", "itinDraftVal", "blankVar", "tripDraft", "return " + seedExpr + ";");
+  const seed = (route, idv, bv) => seed0(route, idv, bv, () => ({}));
 
   const storeKey = 'if(f.type==="variants")return (vals.approachVariants||[])';
   const storeAt = src.indexOf(storeKey);
@@ -1054,7 +1063,8 @@ async function runVariants() {
   if (storeEnd < 0) dead("could not bound the variants submit branch");
   const storeExpr = src.slice(storeAt + 'if(f.type==="variants")return '.length, storeEnd).replace(/;\s*$/, "");
   if (!/\.map\(/.test(storeExpr) || !/\.filter\(/.test(storeExpr)) dead("the variants branch is not the map/filter shape this section reads");
-  const store = new Function("vals", "itinStoreVal", "return " + storeExpr + ";");
+  const store0 = new Function("vals", "itinStoreVal", "uImp", "return " + storeExpr + ";");
+  const store = (vals, isv) => store0(vals, isv, () => M.uImp ? M.uImp() : true);
 
   const blankVar = () => ({ name: "", season: "", distMi: "", gainFt: "", hours: "", notes: "", hazards: "" });
   // THE TWO NUMBERS ARE CHOSEN TO BE LOSSY, and the first version of this probe chose two that were
@@ -1455,11 +1465,8 @@ const UNIT_INVARIANT = {
   summitTimeHrs: "hours",
   descentTimeHrs: "hours",
   solitudeRating: "a unitless 1-5 rating scale, not a measurement",
-  physical: "a unitless grade scale",
-  technical: "a unitless grade scale",
-  exposure: "a unitless grade scale",
-  commitment: "a unitless grade scale",
-  routefinding: "a unitless grade scale",
+  // The five difficulty axes were declared here until 2026-09-30, when the contribute form's
+  // DIFFICULTY_KEYS editor was removed with its reader (DIFFICULTY BREAKDOWN is climbers' own reads).
 };
 
 async function runKeyed() {

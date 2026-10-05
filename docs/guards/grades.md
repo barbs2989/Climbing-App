@@ -134,6 +134,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       keeping its numeral is the point. **One case reported FIRED ON CORRECT WORK and the guard was
       innocent**: it changed `rowGrade`'s shape as well as adding a chain, so rule B's wiring anchor
       fired instead. *An injection that produces a different failure is not a catch.*
+    - **ONE FINAL GRADE on a mountain route (2026-10-01), and it beats the column chain.** On
+      `mountaineering` / `scrambling` / `alpine` rows, `finalGrade()` returns `grade` verbatim when
+      it is exactly one grade on the row's own `grade_system` (`Class 1-4`, `5.x`, `WI/AI n`), and
+      `displayGrade` returns that before walking the chain. The trigger was Disappointment Cleaver:
+      its header read "3rd-4th class" out of a `rock_grade` note while `grade` held "Grade II–III
+      glacier", `grade_num` was null, and no source says 4th class (it is Class 2 with occasional
+      Class 3 moves). The WA catalog's 1,157 mountain/ice routes were then researched online and
+      each given its CRUX — top of any range — on one scale (`audits/route-grades/`,
+      `scripts/oneoff/apply-route-grades.mjs`), which is also what the finder now filters on.
+      **Scoped to those three disciplines on purpose:** on an MP ice or mixed route `grade` is the
+      free grade ("5.7") beside an `ice_grade` headline ("WI4"); a blanket grade-first rule moved
+      198 such headlines from the ice grade to the rock grade (measured, then refused). Four rule-B
+      fixtures pin it: the DC shape, camelCase, a final grade on the WRONG scale (must not win), and
+      the MP ice route (must not move).
     - The live-catalog half is `scripts/oneoff/probe-grade-pill-is-not-a-commitment-grade.mjs`,
       which needs the database: it renders the real `RouteDetail` over the real rows through the
       real `dbRouteToCamel`, and is proven non-vacuous — reverting the rule fails **14** of its

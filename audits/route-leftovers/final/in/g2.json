@@ -1,0 +1,364 @@
+{
+ "items": [
+  {
+   "kind": "item",
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "fact": "Commitment/technical grade disagrees across three fields (II vs I-II vs III)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v008.json",
+   "prior_evidence": "Still split: the two sources that grade this route disagree (III and I-II), and the row already holds both values in different fields, so no single value can be kept by the rule. One route database grades the Sitkum Glacier Grade III (matching alpine_grade); the long-standing route site gives Grade I-II (matching commitment). The rule keeps the row's own value when a source supports it, but here each conflicting value is held by the row and supported by one source, so there is no basis to pick one; grade 'Grade II' sits inside the I-II range. PEAKBAGGER PASS: Peakbagger adds no grade for the Sitkum Glacier; the III vs I-II split between the two earlier sources stands. Peakbagger's Glacier Peak page and ascent list carry no commitment grade for the Sitkum route; Sitkum-labelled ascents in the list date from 1975-2003 (the White Chuck era) and give no grade."
+  },
+  {
+   "kind": "item",
+   "id": "wa_goode_mountain_northeast_face",
+   "fact": "total elevation gain",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "Still real, and no source states a car-to-car gain for the direct Northeast Face; summing the row's day gains would be computed. Searches return the 1954 first-ascent description of the face (ice apron and steep slabs) and graded listings and trip reports for the separate Northeast Buttress; none gives a gain for this line. PEAKBAGGER PASS: Still real; the only Northeast Face entry on peakbagger is the 1954 first ascent, with an 8-word note and no stats. Peakbagger ascent list for Goode Mountain (~230 entries): one 'Northeast Face' row (1954, TR-8, no gain or distance); every other north-side entry is the Northeast Buttress or NE Ridge, different lines."
+  },
+  {
+   "kind": "item",
+   "id": "wa_goode_mountain_northeast_face",
+   "fact": "commitment grade: grade 'IV' vs commitment 'III' vs alpine_grade 'Grade III'",
+   "prior_file": "audits/route-tab-contradictions/research/out/v017.json",
+   "prior_evidence": "Still real; no source grades the direct Northeast Face at all, so not even one source supports IV or III. The only Roman grades found (III-IV, IV) belong to the Northeast Buttress, a different line; the first-ascent account of the face carries no grade. PEAKBAGGER PASS: Still real; peakbagger has no grade for the direct Northeast Face (its only entry is the 1954 first ascent with no grade). Peakbagger ascent list for Goode Mountain: one 'Northeast Face' row (1954) with no grade; all graded north-side ascents are the Northeast Buttress."
+  },
+  {
+   "kind": "item",
+   "id": "wa_mount_despair_east_route",
+   "fact": "Crux grade shown in TECHNICAL STATS vs actual crux difficulty",
+   "prior_file": "audits/route-tab-contradictions/research/out/v016.json",
+   "prior_evidence": "The one source that rates anything puts the 5.0 on a summit-block dihedral its party chose because they saw 'no obvious scramble route', and it says the standard east-ridge line below is Class 3, so it does not settle whether the standard route's crux is Class 4 or 5.0. 2016-era report via the southeast face: led a 'Class 5.0 dihedral' on the right side of the summit block after finding no obvious scramble; descended an easy Class 3 downclimb along the east ridge, 'obviously the standard route that we should have found'. PEAKBAGGER PASS: Peakbagger has no route or grade information for Despair's east/southeast line, so the Class 4 vs 5.0 question stays with the one earlier report. Mount Despair peak page: elevation, first ascent 1939, no route description. Ascent list (12 viewable): no grade/class field filled; only stats are 3,980 ft (1998) and 11,500 ft / 21 mi from Triumph Pass (2020, a multi-peak trip)."
+  },
+  {
+   "kind": "item",
+   "id": "wa_gorillas_direct",
+   "fact": "Bergschrund/glacier hazard on a rock-route approach that has no glacier",
+   "prior_file": "audits/route-tab-contradictions/research/out/v018.json",
+   "prior_evidence": "No source mentions a bergschrund or moat at the base of the West Face Wall, nor rules one out, so the watch_out line is neither removed nor confirmed. Route pages and the first-ascent account describe the wall rising from snow between Stuart Pass and Goat Pass, reached by trail, moderate bushwhacking and easy snow; no schrund or moat named. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: No source mentions a bergschrund or moat at the base of the West Face Wall, nor rules one out, so the watch_out line is neither removed nor confirmed. Route pages and the first-ascent account describe the wall rising from snow between Stuart Pass and Goat Pass, reached by trail, moderate bushwhacking and easy snow; no schrund or moat named."
+  },
+  {
+   "kind": "item",
+   "id": "wa_mount_roosevelt_standard",
+   "fact": "Climbing season window (Jul-Sep chip vs a stated Jul-Oct/May-Oct window elsewhere)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v018.json",
+   "prior_evidence": "Two sources now state windows (peak page: generally climbed May through October; club page: May-September), which support itinerary.cal's May-October but would also require rewriting best_season's snow-in-the-gully guidance and the approach variant's Late July-September, so the chip is left. Peak page: 'The mountain is generally climbed May through October'; season Spring, Summer, Fall. Club route page: 'Seasons: May, June, July, August, September'. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Two sources now state windows (peak page: generally climbed May through October; club page: May-September), which support itinerary.cal's May-October but would also require rewriting best_season's snow-in-the-gully guidance and the approach variant's Late July-September, so the chip is left. Peak page: 'The mountain is generally climbed May through October'; season Spring, Summer, Fall. Club route page: 'Seasons: May, June, July, August, September'."
+  },
+  {
+   "kind": "item",
+   "id": "wa_needle_peak_south_route",
+   "fact": "Crux/route grade (Class 4, 5.0) vs. the pitch-by-pitch breakdown's max grade (Class 3)",
+   "prior_file": "audits/route-tab-contradictions/research/out/v020.json",
+   "prior_evidence": "The only account of the north ridge (blog and WTA report by the same party) describes the 7,300-7,400 ft crux and the summit gully without giving any class, so neither Class 4 (5.0) nor Class 3 can be confirmed. 2023 report: 'tackled the crux between 7300' and 7400' by weaving through the west of the cliff bands', rocks decent with much exposure, a narrow gully below the overhanging crest to the summit; the class 3/class 4 ratings in the same post belong to Mount Lyall and Lyall Ridge on later days. PEAKBAGGER PASS: Peakbagger lists only three Needle Peak ascents, none naming a route or a class, so neither Class 4 (5.0) nor Class 3 is confirmed. Peakbagger ascent list: 2018-08-30 (two climbers), 2023-07-09; the one report reads only that the party was the first to summit since 2006; no route, no grade/class field."
+  },
+  {
+   "kind": "item",
+   "id": "wa_philadelphia_mountain_scramble",
+   "fact": "Avalanche section treats the route as a summer-only scramble while the row calls it a winter/spring snow objective",
+   "prior_file": "audits/route-tab-contradictions/research/out/v020.json",
+   "prior_evidence": "Aligning the avalanche section needs a month-by-month rating for a winter/spring snow ascent, which no source gives; the one route page notes only a short section with some avalanche danger. Archived route page: one short section with some avalanche danger on the way up; no monthly ratings. PEAKBAGGER PASS: A month-by-month avalanche rating is not something peakbagger ascent logs carry, and none of the earlier sources gives one, so the section is not rewritten. Peakbagger ascent records hold dates, routes and trip narratives, not monthly avalanche ratings; the prior source notes only one short section with some avalanche danger."
+  },
+  {
+   "kind": "item",
+   "id": "wa_trapper_mountain_north_couloir",
+   "fact": "Whether the route tops out on Trapper Mountain's summit",
+   "prior_file": "audits/route-tab-contradictions/research/out/v026.json",
+   "prior_evidence": "No source says whether the north couloir finishes on the 7,530 ft summit: the fullest account says only that the party 'topped out in the sun, looking over the south side' and then skied, with no mention of the summit, so high_point_ft and the summit waypoint are left. Couloir trip report: 'Near the top the crust became more apparent ... We topped out in the sun, looking over the south side towards unknown valleys ... then time to drop.' The 2012 first ski descent and 1970s ascent notes are no more specific. PEAKBAGGER PASS: Peakbagger's six Trapper Mountain ascents are summer ascents by other lines (one by the north-face ramp and chimney), none by the North Couloir, so nothing states whether the couloir finishes on the summit. Peakbagger ascent list: six ascents (1978-2025, months June-September), no route named North Couloir. 2008-09-13 report: camped in the basin below the north face, crossed the face on a ramp with a 3rd/4th class chimney to the summit; it is not the couloir."
+  },
+  {
+   "kind": "item",
+   "id": "wa_wing_peak_northwest_ridge",
+   "fact": "How long consolidated/climbable snow lasts on the route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v027.json",
+   "prior_evidence": "No source gives a snow window for the northwest ridge; the known accounts are a June 2020 big-snow ascent and a November 2025 thin-snow ascent. 2020 report met unusually large snowpack in June; 2025 report found thin snow over class 4 rock in November; neither states how long climbable snow lasts. PEAKBAGGER PASS: Still real; Wing Peak's peakbagger ascents give dates and stats but no statement of how long climbable snow lasts. Peakbagger ascent list for Wing Peak (~100 entries, 2006-2026): ascents run from May to November with gains/distances only (e.g. NW slope 443 ft / 3.3 mi from the Gunn col side); no report text read states a snow window, and ascent dates are not a stated window."
+  },
+  {
+   "kind": "item",
+   "id": "wa_prusik_peak_taylor_wood_route",
+   "fact": "number of sections/pitches on the route",
+   "prior_file": "audits/route-tab-contradictions/research/out/v021.json",
+   "prior_evidence": "The only source (the first-ascent party's route listing and write-up) gives both 8 pitches in its header and a 10-pitch description, and the row holds both; one source that states both counts cannot settle which the page should use. Route database page: header 8 pitches, 670 ft; description P1-P10 with P9-P10 added later to reach the true summit. No other party's ascent found. PEAKBAGGER PASS: Still real; the only source gives both 8 and 10 pitches, and one source stating both counts cannot settle which the page should use. First-ascent party's route listing: header 8 pitches, description P1-P10. The Prusik Peak ascent list was not read on this pass."
+  },
+  {
+   "kind": "item",
+   "id": "wa_e_se_face",
+   "fact": "descent line",
+   "prior_file": "audits/route-tab-contradictions/research/out/v028.json",
+   "prior_evidence": "The row still names two descents (reverse the East Face in descent/bail; off the South Face/Southwest Corner side in descent_text), each backed by one source for its own line, so neither is preferred. A route database's East Face entry says the ledges are reversed on descent; the peak page's Southeast Face entry descends by the South Face/Southwest Corner. No source states the descent for the combined E/SE row. PEAKBAGGER PASS: Neither peakbagger nor the live summitpost page states how the Southeast Face is descended, so the row's two descents (reverse the face vs off the south side) still cannot be reduced to one. Summitpost Witches Tower page (live): 'Southeast Face goes up the white rock one pitch 5.6'; the south route is a Class 3 scramble (ledge to the east side, black blocks, 4 ft slot) but no descent is given for any line. Peakbagger Witches Tower ascents (77; reports of 15-766 words) mention tagging the tower only, no route or descent."
+  },
+  {
+   "kind": "item",
+   "id": "wa_johannesburg_mountain_northeast_buttress",
+   "fact": "pitch count vs numbered ROUTE BREAKDOWN rows",
+   "prior_file": "audits/route-tab-contradictions/research/out/v012.json",
+   "prior_evidence": "Still real (pitches 20 and a 20-pitch partner note vs 12 breakdown rows), and no account of the route gives a pitch count at all. Detailed trip reports of the 1951 and 1957 starts describe roping for one to a handful of pitches and climbing the rest unroped or simul; none states 20, 12 or any total, because parties pitch the vegetated lower route differently. PEAKBAGGER PASS: Peakbagger's NE Rib / NE Buttress reports describe the climbing (a scramble pitch, a belay horn, a few early pitches, solo times) but none gives a total pitch count, so 20 vs 12 stays open. Peakbagger Johannesburg ascent list (46 entries; NE Rib 1951 / NE Buttress entries 2013, 2017, 2020, 2023, 2025, 2026). 2013 NE Rib report: 'cl5 move at top of scramble pitch', 'a good belay horn'; 2025 NE buttress '51 rib report: 'these initial first pitches before the brush', times 3 h 40 min up / 3 h 9 min down; 2025 NE Rib 1951 report: bivy at C-J col, no pitch figures. None states a count."
+  },
+  {
+   "kind": "item",
+   "id": "wa_energizer_bunny",
+   "fact": "total route length",
+   "prior_file": "audits/route-tab-contradictions/research/out/v021.json",
+   "prior_evidence": "The one source (the first-ascent party: 5 pitches, 450 ft, 5.10+ A0) supports length_m and rope_note, but it gives no per-pitch lengths, so the five round pitch lengths (about 541 ft in all) cannot be corrected from a source. First-ascent party's report and journal note: 5 pitches, 450 ft. No pitch-by-pitch lengths in any source found; spreading 450 ft across the pitches would be computed. PEAKBAGGER PASS: Peakbagger's Prusik Peak list has no Energizer Bunny entry, so the per-pitch lengths still have no source. Peakbagger Prusik Peak ascent list (378 entries): no route field naming Energizer Bunny or the north face."
+  }
+ ],
+ "fills": [
+  {
+   "kind": "fill",
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "path": [],
+   "cleared_value": 14.5,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json",
+   "prior_evidence": "Left null: the cleared 14.5 km was a White Chuck figure and no source states a one-way distance for the North Fork Sauk / Red Pass line to this route. The peak database's Sitkum route is listed from the White Chuck Road trailhead (2,340 ft, 8,210 ft gain); North Fork Sauk reports give only pieces (trail to the PCT, PCT to Red Pass) or totals for the Glacier Gap and Disappointment Cleaver lines. Assembling pieces would be computed. PEAKBAGGER PASS: No peakbagger ascent states a one-way distance for a Sitkum climb from the North Fork Sauk. Glacier Peak ascent list: every Sitkum-labelled ascent is 1975-2003 (White Chuck access); post-2010 North Fork Sauk ascents are labelled Cool Glacier / Gerdine / Disappointment Cleaver / Glacier Gap lines (e.g. 4,268 ft/16 mi, 8,041 ft/31.3 mi, 10,482 ft/38 mi), none the Sitkum line.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "path": [],
+   "cleared_value": 8300,
+   "cleared_in": "audits/route-leftovers/deep/out/h2-apply.json",
+   "prior_evidence": "Left null: the only stated gain for the Sitkum route (8,210 ft) is from the closed White Chuck Road trailhead, not the North Fork Sauk line this row now describes. Peak database: Sitkum Glacier route, trailhead White Chuck Road 2,340 ft, vertical gain 8,210 ft. No source states a gain for the North Fork Sauk / Red Pass / Sitkum line, which recrosses Red Pass. PEAKBAGGER PASS: No peakbagger ascent states a gain for a Sitkum climb from the North Fork Sauk. Glacier Peak ascent list: Sitkum-labelled ascents are 1975-2003 (White Chuck access, no North Fork Sauk start); North Fork Sauk ascents with gains are other glacier lines.",
+   "fact": "gain_ft",
+   "column": "gain_ft"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_glacier_peak_sitkum_glacier",
+   "prior_evidence": "Summit pin distMi left null: no source states the trailhead-to-summit mileage for the North Fork Sauk line. The cleared 14 mi was a White Chuck figure; North Fork Sauk sources give only partial legs, and summing them would be computed. PEAKBAGGER PASS: No peakbagger ascent states the trailhead-to-summit mileage of the North Fork Sauk / Sitkum line. Glacier Peak ascent list: no post-2003 Sitkum ascent; North Fork Sauk mileages listed belong to other glacier lines and are round trips.",
+   "fact": "waypoints[2].distMi",
+   "column": "waypoints[2].distMi"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_guye_peak_r1",
+   "path": [],
+   "cleared_value": "II-III",
+   "cleared_in": "audits/route-tab-contradictions/decisions/confirmations/c2.json",
+   "prior_evidence": "No source states an alpine grade for the West Face ramp route; the cleared value came from the Improbable Traverse, a separate climb. The club's Guye Peak/West Face page describes the ramp, a 40 ft Class 4-low 5th step and a ~30 ft low-5th crux but gives no pitch count, total length, alpine grade or first ascent. The peak page's 'Ramp Route' is a different 5.7 slab line. PEAKBAGGER PASS: Peakbagger's Guye Peak ascent list logs about a dozen West Face ascents but records no alpine grade for the ramp route, so the field stays null. Peakbagger full ascent list: West Face entries (including 'West Face - NW Ramp', 'W Face, N Section', 'West Face, Beckey's Chimney') with route names only; no grade, pitch, length or first-ascent data.",
+   "fact": "alpine_grade",
+   "column": "alpine_grade"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_guye_peak_r1",
+   "path": [],
+   "cleared_value": 6,
+   "cleared_in": "audits/route-tab-contradictions/decisions/confirmations/c2.json",
+   "prior_evidence": "No source states a pitch count for the West Face ramp route; the cleared value came from the Improbable Traverse, a separate climb. The club's Guye Peak/West Face page describes the ramp, a 40 ft Class 4-low 5th step and a ~30 ft low-5th crux but gives no pitch count, total length, alpine grade or first ascent. The peak page's 'Ramp Route' is a different 5.7 slab line. PEAKBAGGER PASS: No peakbagger West Face entry states a pitch count for the ramp route. Peakbagger full ascent list: West Face entries carry route names only.",
+   "fact": "pitches",
+   "column": "pitches"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_guye_peak_r1",
+   "path": [],
+   "cleared_value": 610,
+   "cleared_in": "audits/route-tab-contradictions/decisions/confirmations/c2.json",
+   "prior_evidence": "No source states a length for the West Face ramp route; the cleared value came from the Improbable Traverse, a separate climb. The club's Guye Peak/West Face page describes the ramp, a 40 ft Class 4-low 5th step and a ~30 ft low-5th crux but gives no pitch count, total length, alpine grade or first ascent. The peak page's 'Ramp Route' is a different 5.7 slab line. PEAKBAGGER PASS: No peakbagger West Face entry states a route length for the ramp route. Peakbagger full ascent list: West Face entries carry route names only.",
+   "fact": "length_m",
+   "column": "length_m"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_guye_peak_r1",
+   "path": [],
+   "cleared_value": "Dave Hiser and Mike Borghoff, 1960 (first winter ascent by Kit Lewis, 1975)",
+   "cleared_in": "audits/route-tab-contradictions/decisions/confirmations/c2.json",
+   "prior_evidence": "No source states a first ascent for the West Face ramp route; the cleared value came from the Improbable Traverse, a separate climb. The club's Guye Peak/West Face page describes the ramp, a 40 ft Class 4-low 5th step and a ~30 ft low-5th crux but gives no pitch count, total length, alpine grade or first ascent. The peak page's 'Ramp Route' is a different 5.7 slab line. PEAKBAGGER PASS: Peakbagger records ascents, not first-ascent parties, and none of its West Face entries names a first ascent of the ramp route. Peakbagger full ascent list: West Face entries carry route names only.",
+   "fact": "fa",
+   "column": "fa"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "path": [],
+   "cleared_value": "AI1",
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; the AI1 came from the range traverse's crux near South Twin, and no source grades the south couloir. Range traverse note (V class 4 AI1 50 degrees) applies to the whole traverse; the winter ascent page rates the gully 3rd class with no ice grade. PEAKBAGGER PASS: Peakbagger's Little Sister entries do not cover the south couloir; the one route report is the NW Rib to N Face, so no ice grade is stated for this line. Peakbagger Little Sister ascent list (20 entries): 2018 entry 7,736 ft / 22 mi with a 34-word report; 2024 report 'NW Rib to N Face. 1000' of sustained low class 5 and class 4' (different line). No south couloir report.",
+   "fact": "ice_grade",
+   "column": "ice_grade"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "path": [],
+   "cleared_value": 50,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; no source gives this gully an angle (the 50 degrees is the traverse's ice crux elsewhere). Winter ascent page: hard snow, steep last bit to the col, 3rd-class gully; no angle. PEAKBAGGER PASS: No peakbagger entry gives the south couloir an angle. Peakbagger Little Sister ascent list: no south couloir report; the one route report is the NW Rib.",
+   "fact": "max_angle",
+   "column": "max_angle"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "path": [],
+   "cleared_value": 3,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; the gully was climbed unroped and no source gives a pitch count. Winter ascent page: climbed unroped, rappels on descent; no pitch count. PEAKBAGGER PASS: No peakbagger entry gives a pitch count for the south couloir. Peakbagger Little Sister ascent list: no south couloir report.",
+   "fact": "pitches",
+   "column": "pitches"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_little_sister_south_couloir",
+   "path": [],
+   "cleared_value": 140,
+   "cleared_in": "audits/route-leftovers/owner/out/o05.json",
+   "prior_evidence": "Still null; no source gives the south couloir's length. No stated length for the gully in any source found. PEAKBAGGER PASS: No peakbagger entry gives the south couloir's length (the 1,000 ft figure is for the NW Rib). 2024 report: 'NW Rib to N Face. 1000' of sustained low class 5 and class 4' - a different line from the south couloir.",
+   "fact": "length_m",
+   "column": "length_m"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_sherpa_peak_east_ridge",
+   "path": [],
+   "cleared_value": "II",
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: no source gives a commitment grade (II or otherwise) for the East Ridge. The peak's route page and the 2005 East Ridge report give only class (3-4, a few low-5th moves); the cleared 'II' had no source. PEAKBAGGER PASS: No peakbagger East Ridge entry gives a commitment grade. Peakbagger Sherpa East Ridge entries (2011 report via Beverly-Turnpike, 18 h car to car; 2012 'NE Coulior to East Ridge AI2 5.6'; 2016 'Ingalls Creek/East Ridge' 6,547 ft, 26 mi; 2018) give no Grade numeral.",
+   "fact": "commitment",
+   "column": "commitment"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_sherpa_peak_east_ridge",
+   "path": [],
+   "cleared_value": 5,
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: the East Ridge is described as a class 3-4 scramble and no source gives a pitch count. No source divides the East Ridge into pitches; the cleared 5 came from the unsourced 5.4-5.7 pitch rows. PEAKBAGGER PASS: No peakbagger East Ridge entry divides the ridge into pitches. The 2011 East Ridge report describes the ridge and the balanced rock but gives no pitch count; other East Ridge entries carry no report.",
+   "fact": "pitches",
+   "column": "pitches"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_sherpa_peak_east_ridge",
+   "path": [],
+   "cleared_value": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.5",
+     "notes": "Gain the east ridge crest above the 8,000 ft notch and climb the first blocky steps on sound granite; mostly class 3-4 with occasional low-5th moves.",
+     "pitch": 1,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": true,
+     "bolts": 0,
+     "grade": "5.7",
+     "notes": "A steeper tower of solid granite just below the Sherpa Balanced Rock obelisk provides the technical crux - a short crack/corner move rated 5.7.",
+     "pitch": 2,
+     "anchor": "Gear",
+     "lengthM": 35
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.6",
+     "notes": "Continue over and around a series of towers along the crest, passing directly beneath the Balanced Rock feature; route-finding among blocks is the main challenge here.",
+     "pitch": 3,
+     "anchor": "Gear",
+     "lengthM": 40
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Moderate, more broken climbing across sandy benches toward the base of the summit block.",
+     "pitch": 4,
+     "anchor": "Gear",
+     "lengthM": 30
+    },
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "Short final pitch up the summit pinnacle to the true summit; most parties then traverse to the West Ridge for the descent rather than reversing this route.",
+     "pitch": 5,
+     "anchor": "Gear",
+     "lengthM": 25
+    }
+   ],
+   "cleared_in": "audits/route-leftovers/deep/out/s3-apply.json",
+   "prior_evidence": "Not filled: no source gives a pitch breakdown, and the cleared rows graded the line 5.4-5.7 and put the 5.7 on the wrong feature. Sources put 5.7 only on the Balanced Rock obelisk and describe the East Ridge as class 3-4; restoring the cleared rows would reintroduce the contradiction. PEAKBAGGER PASS: No peakbagger East Ridge entry gives a pitch-by-pitch breakdown, so the cleared rows stay out. The 2011 East Ridge report gives no pitch division; the only roped climbing it describes is on the balanced rock, a separate summit.",
+   "fact": "pitch_detail",
+   "column": "pitch_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "path": [],
+   "cleared_value": 72.4,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json",
+   "prior_evidence": "Still null; no source states the one-way distance from the Hannegan Pass trailhead to the saddle camp (sources give ~17 mi to Bear Creek and, from the Canadian side, ~9 mi to camp), and joining the legs would be computing. Route guide: Hannegan trailhead down the Chilliwack River trail to Bear Creek camp about 17 mi. North Buttress write-up (Chilliwack Lake Road start): TH to camp ~9 miles. No stated Hannegan-to-camp figure. PEAKBAGGER PASS: Peakbagger lists seven Bear Mountain ascents with no distances, so no Hannegan-to-camp one-way figure. Bear Mountain (Chilliwack) ascent list: 7 ascents (1941-2023); only gains (5,889 ft 1986, 6,059 ft 1996), no distances; one 1941 South Face note.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_bear_mountain_chilliwack_north_buttress",
+   "path": [],
+   "cleared_value": [
+    {
+     "n": 1,
+     "notes": "First of two rappels protecting a short, sometimes-loose 3rd class gully back to the saddle camp; no fixed anchors, back up any existing tat.",
+     "anchor": "Natural anchor (horn/gear/slung block), upper gully",
+     "lengthM": null
+    },
+    {
+     "n": 2,
+     "notes": "Second rappel finishing the descent to the saddle camp.",
+     "anchor": "Natural anchor, lower gully",
+     "lengthM": null
+    }
+   ],
+   "cleared_in": "audits/route-tab-contradictions/research/out/r067.json",
+   "prior_evidence": "Not refilled: the North Buttress descent sources describe a 3rd/4th-class walk-off with no rappel, and the row's rappels field says None; the only two-rappel account is for a different line down the west face. North Buttress write-up: descent 3rd/4th class, down-climb a short 3rd class gully to camp. A West Ridge ascent descended the west face with two short rappels (different route). PEAKBAGGER PASS: Peakbagger has no North Buttress descent account, so the walk-off reading stands and no rappel table is refilled. Bear Mountain (Chilliwack) ascent list: 7 ascents, one 5-word 1941 South Face report; no descent or rappel information.",
+   "fact": "rappel_detail",
+   "column": "rappel_detail"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_direct_north_buttress",
+   "path": [],
+   "cleared_value": 72.4,
+   "cleared_in": "audits/route-leftovers/deep/out/d5-apply.json",
+   "prior_evidence": "No source states a one-way distance from the Hannegan Pass trailhead to the Bear Mountain saddle camp or the route; the stated figures are legs (about 17 mi of trail to Bear Creek camp, then a ridge climb) and round trips (36 mi for a west-side ascent), so a one-way figure would be computed. Area guide: from the Hannegan Pass trailhead along the Chilliwack Trail 'until you reach the Bear Creek camp (roughly 17 miles)', then a cairned path up the ridge with no distance. A Hannegan-side ascent report: '36 miles traveled; 12,500 feet gained & lost' (round trip, different line on the peak). The route page gives only the 60-90 ft from the col. PEAKBAGGER PASS: Still empty: Bear Mountain's peakbagger ascents include no Direct North Buttress entry and no stated distance. Peakbagger ascent list for Bear Mountain (7 entries, 1941-2023): routes named only 'South Face'; two gains (5,889 and 6,059 ft) and no distances; none states a one-way figure from Hannegan Pass trailhead.",
+   "fact": "dist_km",
+   "column": "dist_km"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_direct_north_buttress",
+   "path": [],
+   "cleared_value": "WI5+",
+   "cleared_in": "audits/route-tab-contradictions/research/out/r067.json",
+   "prior_evidence": "Not refilled: the route is a 21-pitch rock climb with only a short neve approach, and no source gives it an ice grade, so ice_grade stays null. Route page: Trad, Alpine, 21 pitches, Grade V, 5.10-, crampons and axe helpful for the steep neve to the slabs; no WI grade anywhere. PEAKBAGGER PASS: Not refilled: no source gives this rock route an ice grade, and peakbagger lists no ascent of it. Peakbagger ascent list for Bear Mountain has no Direct North Buttress ascent; the route page gives Grade V 5.10- trad with only steep neve on the approach.",
+   "fact": "ice_grade",
+   "column": "ice_grade"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_mount_ballard_south",
+   "path": [],
+   "cleared_value": 50,
+   "cleared_in": "audits/route-leftovers/owner/out/o04.json",
+   "prior_evidence": "Still null; the 50 degrees came from the east ridge snow, and no source gives a slope angle for the south-side scramble from Mill Creek. Mill Creek ascent reports describe brush and a gully to the summit block, rated Class 3, with no angle. PEAKBAGGER PASS: Still unresolved after the peakbagger pass; no source states a replacement value for this line. Unchanged from the one-source pass: Still null; the 50 degrees came from the east ridge snow, and no source gives a slope angle for the south-side scramble from Mill Creek. Mill Creek ascent reports describe brush and a gully to the summit block, rated Class 3, with no angle.",
+   "fact": "max_angle",
+   "column": "max_angle"
+  },
+  {
+   "kind": "fill",
+   "id": "wa_lone_wolf",
+   "path": [],
+   "cleared_value": {
+    "cams": "standard Index trad rack up to #4 (Camalot-equivalent)",
+    "nuts": "standard nut set",
+    "runners": "4-6 slings"
+   },
+   "cleared_in": "audits/route-tab-contradictions/research/out/r040.json",
+   "prior_evidence": "Not filled: the cleared value was a trad rack copied from an Index route, and the one source for this bolted sport line names no rack or slings, only chain anchors. The route's database page lists Lone Wolf as Sport 5.10a, 2 pitches, protection 'Chain anchors at the top of each pitch'; it gives no draw count or sling list. PEAKBAGGER PASS: Lone Wolf is a bolted crag line that peakbagger does not list, so no rack or sling list is stated there. Peakbagger indexes summits and their ascents; this route is not listed.",
+   "fact": "sling_rack",
+   "column": "sling_rack"
+  }
+ ]
+}

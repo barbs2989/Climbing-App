@@ -113,7 +113,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
   }
 
   return createPortal((
-    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto" ,maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
+    <div style={{ position: "fixed", inset: 0, background: C.bg, zIndex: 1100, overflowY: "auto", overscrollBehavior: "contain",maxWidth:520,margin:"0 auto",boxSizing:"border-box"}}>
       <div style={{ position: "sticky", top: 0, background: C.surface, borderBottom: "1px solid " + C.border, padding: "12px 16px", zIndex: 2 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
           <button onClick={onClose} style={POP_BACK}>{"← Back"}</button>
@@ -153,7 +153,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
             {nKind === "primary_track" ? <select aria-label="Primary certification track" value={nTrack} onChange={e => setNTrack(e.target.value)} style={{ ...inp, marginTop: 8 }}>{Object.keys(CERT_TRACK_LABELS).map(t => <option key={t} value={t}>{CERT_TRACK_LABELS[t]}</option>)}</select>
               : <select aria-label="Additional certification" value={nCc} onChange={e => setNCc(e.target.value)} style={{ ...inp, marginTop: 8 }}><option value="AIARE">AIARE</option><option value="WFR">WFR</option><option value="other">Other</option></select>}
             <div style={{ display: "flex", gap: 8, marginTop: 8 }}><input aria-label="Certificate no." value={nNum} onChange={e => setNNum(e.target.value)} placeholder="Certificate no." style={inp} /><input aria-label="Issuing org" value={nOrg} onChange={e => setNOrg(e.target.value)} placeholder="Issuing org" style={inp} /></div>
-            <div style={{ display: "flex", gap: 8, marginTop: 9 }}><button onClick={addCred} style={{ flex: 1, background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Submit for verification</button><button onClick={() => setAdding(false)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 9, padding: "8px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div>
+            <div style={{ display: "flex", gap: 12, marginTop: 9 }}><button onClick={addCred} style={{ flex: 1, background: C.blueSolid, color: "#fff", border: "none", borderRadius: 9, padding: "8px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>Submit for verification</button><button onClick={() => setAdding(false)} style={{ background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 9, padding: "8px 14px", fontSize: 13, fontWeight: 600, cursor: "pointer" }}>Cancel</button></div>
           </div> : <button onClick={() => setAdding(true)} style={{ width: "100%", background: C.surface, border: "1px dashed " + C.border, color: C.blue, borderRadius: 10, padding: "10px 0", fontSize: 13, fontWeight: 700, cursor: "pointer" }}>+ Add credential</button>}
         </div>}
 
@@ -170,7 +170,7 @@ export default function DbGuideDashboard({ onClose, notify, C }) {
               </div>
               {q.status !== "new" ? <span style={{ flexShrink: 0, fontSize: 12, fontWeight: 700, color: q.status === "accepted" ? C.green : C.textMuted, background: q.status === "accepted" ? C.greenBg : C.surface, border: "1px solid " + (q.status === "accepted" ? C.greenDim : C.border), borderRadius: 6, padding: "2px 7px" }}>{q.status === "accepted" ? "Accepted" : "Declined"}</span> : null}
             </div>
-            {q.status === "new" ? <div style={{ display: "flex", gap: 8, marginTop: 9 }}>
+            {q.status === "new" ? <div style={{ display: "flex", gap: 12, marginTop: 9 }}>
               <button onClick={() => setInqStatus(q.id, "accepted")} style={{ flex: 1, background: C.green, color: "#04110a", border: "none", borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Accept</button>
               <button onClick={() => setInqStatus(q.id, "declined")} style={{ flex: 1, background: C.surface, border: "1px solid " + C.border, color: C.textSub, borderRadius: 8, padding: "7px 0", fontSize: 12.5, fontWeight: 600, cursor: "pointer" }}>Decline</button>
             </div> : null}

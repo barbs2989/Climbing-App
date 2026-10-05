@@ -38,6 +38,7 @@ import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-set
 import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
 import { tapByName as tapByNameOn } from "./lib/tap-by-name.mjs";
 import { checkScreenCounts } from "./lib/screen-counts.mjs";
+import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -245,13 +246,18 @@ page.on("pageerror", (e) => pageErrors.push(e.message.slice(0, 200)));
 // never opens, and the previous screen gets captured a second time. The
 // identical-screen rule below is what surfaced this; the quoting is the fix.
 const tap = async (text, i = 0) => {
+  // Profile is not on the bar: it opens from the Menu (scripts/lib/menu-screens.mjs).
+  if (MENU_SCREENS[text]) return openFromMenu(page, text);
   // Prefer a real control whose visible label is exactly this text; only then fall
   // back to a text node. Matching text alone can land on a wrapping element that
   // ignores the click -- "Log a climb" looked completely dead that way, while the
   // <button> beside it opened the picker fine.
   const hitControl = await page.evaluate(({ t, idx }) => {
     const els = [...document.querySelectorAll('button,[role="button"],a,select,summary')]
-      .filter((e) => (e.textContent || "").trim() === t);
+      .filter((e) => (e.textContent || "").trim() === t)
+      // The primary nav is a BOTTOM tab bar, so it is LAST in DOM order. A tab label
+      // ("Partners") also names in-page controls; put the nav first so a tab tap means the tab.
+      .sort((a, b) => Number(!!b.closest('[aria-label="Primary"]')) - Number(!!a.closest('[aria-label="Primary"]')));
     if (!els[idx]) return false;
     els[idx].click();
     return true;
@@ -570,6 +576,15 @@ try {
     // "No climbs match this filter."
     const listed = await page.innerText("body").catch(() => "");
     const empty = /No routes match\.|No climbs match this filter\./i.test(listed);
+    // Fifth cause: a database READ failed, and the app said so. DbAreaBrowser renders
+    // "Couldn't load this area — ..." when the area's children/routes read errors (and then
+    // there is no search box to find), and "Couldn't search routes..." when routes_in_subtree
+    // errors. On 2026-10-02 both were the anon role's ~3s statement_timeout on Washington-wide
+    // reads while the project was CPU-starved, and this check reported them as "the route list
+    // rendered before this step" and "the route list or the search box". The app's own error
+    // text is the evidence, so name it rather than infer it -- and test it BEFORE the missing
+    // search box, which a failed area read causes.
+    const appError = (listed.match(/Couldn.t (?:load this area|search routes)[^\n]*/i) || [])[0];
     // Fourth cause, and the one that was being reported as the third: the list never
     // POPULATED. A still-spinning list and a slow database both leave the page with no rows
     // and no empty state, which is exactly the shape the "not missing data" branch below
@@ -591,7 +606,9 @@ try {
     // so nothing was ever typed and the tap was looking through an unfiltered list. That is
     // a different repair from a broken list, and the message must not conflate them.
     fail("route", `could not open the sample route ${JSON.stringify(ROUTE)} in the ${STATE} ${catalog} catalog`
-      + (!input
+      + (appError
+        ? ` — the app showed ${JSON.stringify(appError.trim())}: a database READ failed (usually the anon role's ~3s statement timeout on a state-wide read while the project is slow), so the route was never listed. ${dbNote}. This is the database, not the route list or the search box: re-run once the project is healthy.`
+        : !input
         ? ` — no search box was found on the Routes view, so the name was never typed. Check the route list rendered before this step, not the search itself.`
         : empty
         ? ` — the list rendered and said it has no match, so the row was probably renamed or deleted. This check pins the name; pass --route to point it elsewhere.`

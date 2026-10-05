@@ -26,6 +26,7 @@
 
 import fs from "fs";
 import { patchRow, SUPABASE_URL, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
+import { shoutedStrings } from "./lib/shouted-prose.mjs";
 
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry");
@@ -467,6 +468,15 @@ for (const id of ids) {
       body[k] = v;
     }
     if (body._refuse) { delete body._refuse; continue; }
+  }
+
+  // Every column this script writes renders verbatim, and batches used to SHOUT lead sentences in
+  // capitals — 1,772 distinct strings on 863 routes had to be recased on 2026-09-30 (audit:shouted-prose).
+  // Refused, not recased: deciding which capitals are names is the batch author's call.
+  const shouted = shoutedStrings(body);
+  if (shouted.length) {
+    for (const f of shouted.slice(0, 5)) console.error(`REFUSING ${id} — ${f.path} is written in ALL CAPS (${f.fragments.slice(0, 6).join(" ")}). Write it in sentence case; a real acronym goes in ACRONYMS in scripts/lib/shouted-prose.mjs`);
+    process.exitCode = 1; continue;
   }
 
   console.log(`\n${id}  (${before.name} · ${before.area_id})`);

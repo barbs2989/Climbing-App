@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "id": "wa_e_se_face",
+      "verdict": "unresolved",
+      "resolution": "No ops. The 1986 one-pitch 5.6 Southeast Face still has only one independent source. The 4th-class East Face ledge route now looks like the easy east-side ledge scramble, which the sibling wa_witches_tower_south_face already holds.",
+      "summary": "No second source turned up for the 1986 Southeast Face 5.6. The 'East Face' ledge route has more support now, but it looks like the same easy ledge scramble the sibling South Face / Standard Route row already holds, so making this row East-Face-only would duplicate it.",
+      "evidence": "Seventh pass, 2026-10-01. Internet Archive full-text search, queried through its search API, filtered by identifier and chained phrase by phrase. (1) Beckey, Cascade Alpine Guide, FIRST edition (1973, catalogued as two items): the Witches Tower entry reads 'Approach as for Little Annapurna (North Side). From the inside col (8360') climb up talus to beneath the summit on its south side. Broken slabs lead to the summit; Class 4.' That is the only route given; there is no East Face ledge route and, being 1973, no Southeast Face. The 1987 and 2000 editions add the course route and the 1986 Southeast Face (already read in r12). (2) Every full-text hit for 'Witches Tower' paired with Enchantment, Aasgard, Colchuck, Brynhild, 'Little Annapurna', 'southeast face', Kurtz or Snyder resolves to Beckey or to Selected Climbs in the Cascades. Selected Climbs only names the tower in a list. The 'Curt Snyder' + 'Kevin Kurtz' pair appears only in Beckey 2000. Smoot's Rock Climbing Washington (1999) and Weekend Rock Washington (2005) have no Witches Tower; their only 'Witch' hits are Witch Doctor Wall at Darrington. (3) AAJ: the 1977-86 cumulative index lists Witches Tower at vols 51 and 53 (the 1976 NE Face, already seen). The AAJ 1988 note (read in full) is Beckey and Nordstrom's North Face Dihedral, 30 July 1986, III 5.10, and does not mention the Southeast Face. (4) The Mountaineer annuals for 1983-1990 (one combined PDF, from the archived copy of the club's annuals page, 140 pages, text-extracted) do not mention Witches Tower, Snyder or the route. (5) The club's own route pages list only Witches Tower Southwest Corner (5.5, course route) and South Face (scramble), with no East or Southeast Face. NEW for the East Face: three more accounts of an unroped ledge scramble on the east/south-east side. (a) The 2006 three-day trip report (yellowleaf): 'a short, exposed, slabby ledge on the SSE side ... then a fun, unexposed rock scramble to the summit, with a bit of 3rd class'. Its photo 'Slab route up east side of Witches Tower' draws the line as a rising ledge along the base of the white wall. (b) A 2012 peakery log: 'Despite the intimidating appearance, there is a non-technical route from the East'; peakery names 'East side' as the most-climbed route. (c) The peak page's standard-route text (search-engine extract): go up toward the white wall, find a ledge to traverse around to the east side, scramble large black blocks, class 3. That is the same description the sibling row wa_witches_tower_south_face ('South Face / Standard Route', Class 3) already carries in its beta. So the East Face (east-side ledges, sturdy boots, reverse to descend) and the sibling's standard route look like one scramble, graded 3rd by two accounts and 4th by one. Nothing proves they are the same line, and nothing proves they differ. (6) The 2023 NWHikers report (Dragontail to Witches Tower) says only 'fun scramble ... it's so short' and 'route goes around the right side', with no face or class named. (7) Wenatchee Outdoors 2016 only refers readers to the peak page. Blocked or not tried: theCrag (Cloudflare 403, not bypassed); Google Books not needed after the full-text route. Why no ops: stripping the 5.6 parts would leave an East-Face-only row that most likely duplicates the sibling standard route. Rule 3 then points to the one documented climb no sibling holds, the 1986 Southeast Face 5.6, and that still has only Beckey (the peak page copies his wording). Owner options: (A) merge or delete this row as a duplicate of the sibling standard route; (B) re-point it to Beckey's Southeast Face (1 pitch, 5.6, white rock, chimney under loose blocks then slabs) on the guidebook alone; (C) keep as is. If (A) is chosen, keep this row's MP-derived 'zig-zag ledges / hand-crack variation' detail as a note on the sibling only if a second account turns up.",
+      "sources": [
+        "Beckey, Cascade Alpine Guide, 1st ed. (1973), Witches Tower entry, Internet Archive full-text search",
+        "Beckey, Cascade Alpine Guide: Columbia River to Stevens Pass (1987, 2000), Internet Archive full-text search",
+        "American Alpine Journal 1988 (Witches Tower, North Face Dihedral) and AAJ 1977-1986 cumulative index",
+        "The Mountaineer annuals 1983-1990 (combined PDF, archived copy)",
+        "The Mountaineers route pages: Witches Tower Southwest Corner, Witches Tower South Face",
+        "yellowleaf.org: Cannon, Enchantment, Dragontail, and Witches Tower (2006) and its photos",
+        "peakery: Witches Tower (2012 log)",
+        "Mountain Project: Witches Tower East Face",
+        "NWHikers: more enchantments: colchuck, dragontail, witches tower, mcclellan (2023)",
+        "Wenatchee Outdoors: Witches Tower (2016)"
+      ],
+      "ops": [],
+      "pin_ops": []
+    },
+    {
+      "id": "wa_bald_eagle_peak_scramble",
+      "verdict": "confirmed",
+      "resolution": "Pin 3 (Cliff band bypass gully, 5,400 ft) removed: an interpolated coordinate that both the ground and the written account place wrongly.",
+      "summary": "Still no published position for the three ridge pins. They are not provably off the route, so they stay. Pin 3 stands about 460 ft lower on the ground than the 5,400 ft it claims, which the owner may want to look at.",
+      "evidence": "Seventh pass, 2026-10-01. Scope note: this row is Bald Eagle Peak (6,259 ft) between the East and West Forks of the Foss River near Skykomish. Curry Gap, Long John Camp and 'Bald Eagle Mountain' belong to the different Bald Eagle Mountain on the Sloan/North Fork Sauk divide, so they cannot place these pins. (1) Internet Archive full-text search: 'Bald Eagle Peak' with Foss, 'north ridge' or Skykomish returns Beckey's entry in the 1973, 1987 and 2000 editions ('From the deep valley of the Foss ...'; no coordinates, already read in r12). It also returns the Washington Administrative Code name lists (a state naming entry, approved 12-11-87, for a feature named Bald Eagle Peak; the summit only). The Mountaineer annuals 1983-1990 (140-page PDF, text-extracted) do not mention Bald Eagle Peak. Searches for the old name returned nothing relevant. (2) The 2019 blog report's 'GPS track' link resolves to a Flickr album. Its captions confirm the sequence (Ridge walk > Bypassing 5400' outcrops > Upper basin > Heading for the ridgeline > Final stretch > Snow slope to the top), but the photos carry no geotag. (3) Web search for a GPX, CalTopo or other track for this peak returns only pages already tried (the peak page, a 2000 WTA report, the 2019 and 2021 blog reports) and unrelated Bald Eagle Peaks. No GNIS or USGS name exists for the viewpoint, the 5,400 ft outcrop/gully or the ridge-regain point, so no named-feature coordinate is available. (4) Ground check (USGS 3DEP point query), a measurement and not a source for moving anything: pin 2 (stated 5,267) ground 5,220 ft; pin 3 (stated 5,400) ground 4,943 ft; pin 4 (stated 6,100) ground 6,032 ft; summit (6,259) ground 6,242 ft. Pins 2 and 4 sit at about their stated heights. Pin 3 sits about 460 ft below the 5,400 ft it names, so it is probably low in the bypass gully or basin, not at the cliff band. The peak page's route text (search snippet, r12) puts the 5,400 ft outcrop about 1/2 mi NE of the summit, while pin 3 is roughly 270 m E of it. That points the same way but is one source, with no coordinate. None of pins 2-4 is provably more than 500 m off the described line (east-side bypass, upper basin, regain the crest), so rule 1 does not apply, and the even denominators (11) still mark them as interpolated. Owner option: drop pin 3 (index 3, 'Cliff band bypass gully, 5,400 ft', 47.61620481818182, -121.2681084) as an interpolated point whose ground height contradicts its own label, or leave all three. Otherwise no change. Session owner decision (r15): the USGS ground height at pin 3 is 4,943 ft against its own 5,400 ft label (~460 ft off), and the one written account puts the 5,400 ft outcrop about half a mile NE of the summit while the pin sits ~270 m E. The pin was interpolated by the pipeline (no published coordinate). Removing a manufactured pin both records contradict computes nothing; the bypass stays described in the route prose. Pins 2 and 4 stay (within tolerance of the ground and on the described line). No gpx, so no drawn line is stranded.",
+      "sources": [
+        "Beckey, Cascade Alpine Guide (1973, 1987, 2000), Bald Eagle Peak entry, Internet Archive full-text search",
+        "Washington Administrative Code geographic-names lists (Bald Eagle Peak), Internet Archive full-text search",
+        "The Mountaineer annuals 1983-1990 (combined PDF, archived copy)",
+        "onehikeaweek: Bald Eagle Peak North Ridge (2019) and its Flickr album",
+        "USGS 3DEP elevation point query (ground heights only)"
+      ],
+      "ops": [],
+      "pin_ops": [
+        {
+          "op": "remove_pin",
+          "id": "wa_bald_eagle_peak_scramble",
+          "index": 3,
+          "expect": {
+            "name": "Cliff band bypass gully, 5,400 ft",
+            "lat": 47.61620481818182,
+            "lng": -121.2681084
+          },
+          "why": "interpolated pin; ground height and the written account both contradict its position"
+        }
+      ]
+    }
+  ]
+}

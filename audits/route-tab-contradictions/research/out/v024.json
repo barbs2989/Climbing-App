@@ -1,0 +1,290 @@
+{
+ "file": "v024",
+ "results": [
+  {
+   "id": "wa_south_ridge",
+   "fact": "commitment grade (alpine_grade III vs commitment II)",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present. A 2025 trip report on the South Ridge of South Gunsight describes three short pitches (a corner and lichen face, a very short knife-edge pitch into the cannon hole, then an exposed 5.8-5.9 stem and low-5th finish) reached on the second day from the Downey Creek side, but gives no commitment grade; the route database gives 5.8, 3 pitches, and a ski/climbing article describes three pitches across the cannon hole, neither stating Grade II or III. No source states the numeral. No patch.",
+   "sources": [
+    "https://cascadeclimbers.com/forum/topic/108169-tr-gunsight-e-and-sw-faces-of-middle-s-ridge-of-south-07132025/",
+    "https://www.mountainproject.com/route/106324294/south-ridge",
+    "https://wildsnow.com/20610/washingtons-gunsight-range-backcountry-climbing/"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "fact": "Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)",
+   "verdict": "fixed",
+   "correct_value": "About 500 ft from Freezer Pass down to the Upper Ice Lake basin; the drop on to Lower Ice Lake is roughly 800 ft, not 1,000",
+   "evidence": "A 2024 South Spectacle Butte party states they reached Freezer Pass and dropped about 500 ft to Upper Ice Lake, then contoured above and down to the north shore of Lower Ice Lake and dropped a few hundred feet below it before leaving the trail at ~6,500 ft, which puts Lower Ice Lake near 6,800 ft. USGS ground heights agree: ~7,618 ft at the mapped Freezer Pass saddle, ~7,173 ft at Upper Ice Lake (a ~450 ft drop) and ~6,807 ft at Lower Ice Lake (~800 ft), and the Ice Lakes hike listing puts its high point at the lower lake at ~6,900 ft. So the itinerary's '~500 ft down to the basin' is right, and the 'about 1,000 ft' copies (approach, waypoint 4 directions, descent_text) overstate the drop; no source states a replacement figure, so the number is dropped from those three sentences (rule 4). waypoints[4].elev 6,600 also looks ~200 ft low but no source states the lake's elevation, so it is not changed.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2024-09-30.152010073486",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.807239&y=48.126483&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.79536&y=48.13132&units=Feet&wkid=4326",
+    "https://epqs.nationalmap.gov/v1/json?x=-120.78315&y=48.13331&units=Feet&wkid=4326",
+    "https://www.wta.org/go-hiking/hikes/ice-creek-ice-lakes"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "down talus into the Ice Lakes basin, losing about 1,000 ft, passing the north end",
+     "replace": "down talus into the Ice Lakes basin, passing the north end",
+     "id": "wa_spectacle_buttes_west_route",
+     "fact": "Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      4,
+      "directions"
+     ],
+     "find": "down talus into the Ice Lakes basin, losing about 1,000 ft. Pass the north end",
+     "replace": "down talus into the Ice Lakes basin. Pass the north end",
+     "id": "wa_spectacle_buttes_west_route",
+     "fact": "Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "descent_text",
+     "path": [],
+     "find": "climb back up the talus roughly 1,000 ft to Freezer Pass",
+     "replace": "climb back up the talus to Freezer Pass",
+     "id": "wa_spectacle_buttes_west_route",
+     "fact": "Descent from Freezer Pass into the Ice Lakes basin (~500 ft vs ~1,000 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_spectacle_buttes_west_route",
+   "fact": "dist_km stores the round trip but renders as the one-way approach",
+   "verdict": "fixed",
+   "correct_value": null,
+   "evidence": "dist_km 35.41 km (22.0 mi) renders as 'Approach (one way)', but every source puts the one-way trip at about half that: a 2021 loop party logged Lower Ice Lake over Freezer Pass and the Carne high traverse to Leroy Basin and the Phelps Creek trailhead as 8.7 mi; a 2024 GPS-logged ascent of South Spectacle Butte from Phelps Creek via Leroy Basin and Freezer Pass gave 21.5 mi ROUND TRIP; the club route page gives 15 mi round trip for the peak from Phelps Creek; the row's own waypoints put the summit at 10.3 mi and its itinerary totals ~21 mi round trip. So 22 mi one-way is provably wrong (it is the round trip). The sources do not agree on one one-way figure (the club figure uses a shorter line past Maude's shoulder, and halving is barred when two sources do not state the same round trip), so per rule 1 the slot is set to null rather than replaced; the header distance still comes from the itinerary miles.",
+   "sources": [
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-08-03-3708395725",
+    "https://www.lucasmountainknowledge.com/post/south-spectacle-butte-sept-2024",
+    "https://www.mountaineers.org/activities/routes-places/south-spectacle-butte"
+   ],
+   "patches": [
+    {
+     "op": "set",
+     "column": "dist_km",
+     "path": [],
+     "expect": 35.41,
+     "value": null,
+     "id": "wa_spectacle_buttes_west_route",
+     "fact": "dist_km stores the round trip but renders as the one-way approach"
+    }
+   ]
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "fact": "Summit elevation",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still split: 5,645 ft on the peak's route page and a trip write-up (high_point_ft) vs 5,654 ft (summit waypoint, itinerary schedule and objective), close to a DEM-derived 1,723 m (~5,653 ft); the USGS ground surface around the summit tops out near 5,651 ft. The topo-list and peak-database sites that would give a map-derived figure returned bot challenges/403 in this pass too, and a further search surfaced only the 5,645 figure again. No value is settled by two independent sources the ground also supports. No patch.",
+   "sources": [
+    "https://www.summitpost.org/spinnaker-peak/709148",
+    "https://peakvisor.com/peak/spinnaker-peak.html",
+    "https://epqs.nationalmap.gov/v1/json?x=-121.13311&y=47.76994&units=Feet&wkid=4326"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "fact": "Whether a wilderness permit is needed",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present (permit and access.permit: free self-issue permit at the trailhead; waypoint 0 directions, itinerary.cal, access.overnight_permit and bivy[1]: no permit). The forest's wilderness-regulations page names the free self-issue permit requirement only for the Alpine Lakes Wilderness, and its Wild Sky page mentions only passes and general rules, which leans toward no permit; the peak's route page and the club route page say no parking pass is needed at the roadside start but say nothing about a wilderness permit. Both leaning statements come from one agency, and nothing states the Wild Sky rule outright, so no patch.",
+   "sources": [
+    "https://www.fs.usda.gov/r06/mbs/recreation/wilderness-regulations",
+    "https://www.fs.usda.gov/r06/mbs/recreation/wild-sky-wilderness",
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)",
+   "verdict": "fixed",
+   "correct_value": "From FR-65 turn LEFT (west) onto FR-63 and drive ~4.6 mi to where it re-crosses the North Fork Skykomish; park at the unmarked pullout on the rise just past the bridge, ~1 mile east of Galena (~1,150 ft). No parking pass.",
+   "evidence": "Two independent route descriptions agree on the start the waypoints and itinerary use: the peak's route page (north approach) says to follow FR-65 over Jack Pass, stay LEFT on FR-63 and follow it west ~4.6 mi until it crosses the river again, then park where the road curves right and crests a small hill about a mile east of Galena, and plunge into the woods opposite the river, adding that passes are not required at either parking location; the club route page gives the same drive (turn left onto FR-63, ~4.6 mi, road re-crosses the river and crests a small hill, park there), a start at ~1,156 ft, 'Parking Permit Required: None', and a route that goes directly up from the North Fork Skykomish valley. The approach text, road.driveNote, approach_logistics and the waypoint directions instead turn RIGHT (east) on FR-63 to the North Fork Skykomish Trailhead at the road's end ~12 km from the summit, and access.fees/parking_pass/passRequired/overnight_permit describe that trailhead's Forest Pass. Rule 3: the pullout line wins; every text field is changed to it.",
+   "sources": [
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789",
+    "https://www.mountaineers.org/activities/routes-places/spire-mountain"
+   ],
+   "patches": [
+    {
+     "op": "replace_text",
+     "column": "approach",
+     "path": [],
+     "find": "turn right (east) onto FR-63 and continue about 4.2 miles to its end at the North Fork Skykomish Trailhead (high-clearance vehicle recommended for the final miles; large parking area, vault toilet, no potable water). Walk North Fork Skykomish Trail #1051 a short distance before leaving the trail near the river and heading directly, off-trail, up the steep, brushy, blowdown-choked slope toward Spire Mountain. There is no tread above the trail:",
+     "replace": "turn left (west) onto FR-63 and follow it about 4.6 miles to where it crosses the North Fork Skykomish River again. Just past that bridge the road bends right over a small rise about a mile east of Galena (~1,150 ft); park at the unmarked roadside pullout there. Leave the road on the side away from the river and head directly, off-trail, up the steep, blowdown-choked slope toward Spire Mountain. There is no tread anywhere on the mountain:",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "road",
+     "path": [
+      "driveNote"
+     ],
+     "find": "then right onto FR-63 for ~4.2 mi to road's end at the trailhead.",
+     "replace": "then left (west) onto FR-63 for ~4.6 mi to the unmarked pullout just past the river bridge, about a mile east of Galena.",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "set",
+     "column": "approach_logistics",
+     "path": [
+      "trailhead"
+     ],
+     "expect": "North Fork Skykomish Trailhead",
+     "value": "FR-63 roadside pullout east of Galena",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "approach_logistics",
+     "path": [
+      "trailheadDirection"
+     ],
+     "find": "turn right (east) onto FR-63 and continue about 4.2 miles to its end at the North Fork Skykomish Trailhead (high-clearance vehicle recommended for the final miles; large parking area, vault toilet, no potable water).",
+     "replace": "turn left (west) onto FR-63 and follow it about 4.6 miles to where it crosses the North Fork Skykomish River again; park at the unmarked pullout on the rise just past the bridge, about a mile east of Galena.",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "waypoints",
+     "path": [
+      0,
+      "directions"
+     ],
+     "find": "turn right (east) onto FR-63",
+     "replace": "turn left (west) onto FR-63",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "fees"
+     ],
+     "expect": "$5/vehicle/day or $30/year at the North Fork Skykomish Trailhead — Northwest Forest Pass, Interagency Recreation Pass, or the Forest Service's on-site digital 'Scan & Pay' all work; Washington's Discover Pass is NOT accepted here.",
+     "value": "None: the climb starts from an unmarked roadside pullout on FR-63, not a fee trailhead.",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "parking_pass"
+     ],
+     "expect": "Northwest Forest Pass required at the FR-63 trailhead near Skykomish — $5/day or $30/year.",
+     "value": "No pass needed at the FR-63 roadside pullout east of Galena.",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "set",
+     "column": "access",
+     "path": [
+      "passRequired"
+     ],
+     "expect": "Northwest Forest Pass or Interagency Recreation Pass (or pay the day-use fee on site)",
+     "value": "None at the roadside pullout",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    },
+    {
+     "op": "replace_text",
+     "column": "access",
+     "path": [
+      "overnight_permit",
+      "where"
+     ],
+     "find": "; a Northwest Forest Pass is needed to park at the trailhead.",
+     "replace": "; no parking pass is needed at the roadside pullout.",
+     "id": "wa_spire_mountain_scramble",
+     "fact": "Where the approach starts: North Fork Skykomish Trailhead (end of FR-63) vs an unmarked river-crossing pullout near Galena (~Mile 10, ~1,150 ft)"
+    }
+   ]
+  },
+  {
+   "id": "wa_spire_mountain_scramble",
+   "fact": "approach_logistics trailhead coordinate sits at the North Fork Skykomish Trailhead, ~12 km from the route's start",
+   "verdict": "unresolved",
+   "discovered": true,
+   "correct_value": "The FR-63 pullout just west of the North Fork Skykomish bridge, ~1 mile east of Galena",
+   "evidence": "STRUCTURAL: approach_logistics.trailheadLat/Lng (47.92684,-121.27705) is the North Fork Skykomish Trailhead at the end of FR-63, the wrong start (see the fixed trailhead item: the peak's route page and the club route page both start from the FR-63 pullout on the rise just past the river bridge about a mile east of Galena, ~1,156 ft). The coordinate should move to that pullout; the waypoints[0] pin has no coordinate at all. A coordinate move is outside the patch format.",
+   "sources": [
+    "https://www.summitpost.org/spire-mountain-spire-peak/973789",
+    "https://www.mountaineers.org/activities/routes-places/spire-mountain"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_spire_point_southwest_face",
+   "fact": "Grade disagreement: Class 4 / 5.4 vs. the route's own 5.6 crux",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present (grade 'Class 4', rock_grade '5.4', beta and pitch_detail '5.6'). A third search found only qualitative grades again: low Class 5 for the two rock pitches of the Northeast Route, class 4/5 for the east face, class 5 for the easiest route in the encyclopedia entry, and the peak page's Class 4 with an optional low-5th summit block. No source gives 5.4 or 5.6, so neither end of a YDS range has support and rule 2 cannot apply. No patch.",
+   "sources": [
+    "https://www.summitpost.org/spire-point/811968",
+    "https://en.wikipedia.org/wiki/Spire_Point",
+    "http://publications.americanalpineclub.org/articles/13196002502/Washington-Dome-Peak-Area-Spire-Point",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-07-03.7406946550"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_star_peak_sawtooth_scramble",
+   "fact": "total gain: gain_ft/loss_ft 5,200 vs itinerary/approach/totalNote 4,730",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present. A third search again surfaced only the single Southwest Spur listing (8.7 mi to Fish Creek Pass, 22 mi round trip, 5,200 ft) and the regional hike page (7.5 mi and 3,500 ft to Star Lake, then an off-trail scramble with no figure); multi-day Sawtooth traverses that include Star Peak give whole-trip totals. No second independent source states a Star Peak-only cumulative gain, and 4,730 (net relief) cannot be confirmed either. No patch.",
+   "sources": [
+    "https://wenatcheeoutdoors.org/2016/05/06/star-lake-star-peak/",
+    "https://trailcatjim.com/north-sawtooth-traverse-prince-creek-to-stehekin-2020/",
+    "https://www.summitpost.org/star-peak/151520"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_storm_king_southwest_scramble",
+   "fact": "Where the climbers' path leaves the maintained trail (Park Creek Pass traverse vs the ~4,100 ft washout on the Park Creek trail)",
+   "verdict": "unresolved",
+   "correct_value": "The boot path leaves the Park Creek Pass trail on the Stehekin (south) side at the large whitish washout ~4,100 ft, about two miles above Two Mile Camp; Thunder Creek parties cross Park Creek Pass and descend to it",
+   "evidence": "STRUCTURAL: two sources now state the low start explicitly and neither describes a traverse from the pass. The peak's route page: from Park Creek Camp (2,280 ft) follow the Park Creek trail ~2 mi to a creek-crossing camp, then ~2 mi more to a large washout/rockslide of whitish rock; the boot path to Storm King (and Goode) starts about five minutes up-trail beyond it, marked by a small cairn; the Thunder Creek approach crosses Park Creek Pass, descends into Park Creek and climbs back up southeast then east. The club route page: from Two Mile Camp (3,400 ft) ascend ~2 mi to ~4,100 ft, cross a large washout, look for a small cairn a few hundred yards on and climb the burned ridge, trending climber's left through heather and game trails to cairned Class 2-3 ground and the basin below Goode at 7,400 ft. The row's own coordinates also put the peak and the rib camp EAST of the pass, not west. What should change: approach (sentence 'From Park Creek Pass, leave the maintained trail and traverse cross-country west/southwest ... roughly a mile to reach the cirque'), approach_variants[0].notes (same paragraph), waypoints[3].directions ('Leave the maintained trail at the pass and traverse ... west/southwest') and descent_text ('reverse the cross-country traverse east back to Park Creek Pass') should describe crossing the pass, descending the Park Creek trail to the ~4,100 ft washout and climbing the ridge to the 7,400 ft basin (matching itinerary day 2 and timing.sectionBreakdown[1]); the waypoint list needs a washout/boot-path junction pin and the rib camp's distMi (21, only 1.4 mi past the pass) re-measured, which needs a pin addition and distances no source states. That exceeds the patch format, so no patch.",
+   "sources": [
+    "https://www.summitpost.org/storm-king/273954",
+    "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/storm-king-southwest-route"
+   ],
+   "patches": []
+  },
+  {
+   "id": "wa_summit_chief_mountain_south_route",
+   "fact": "Approach distance from Pete Lake Trailhead to Vista Lakes camp",
+   "verdict": "unresolved",
+   "correct_value": null,
+   "evidence": "Still present (approach ~9 mi, approach_variants[0] ~10 mi, itinerary day 1 and the Vista Lakes waypoint 13 mi). A new source, the Escondido high-route page, gives the leg in pieces: 5.3 mi to the #1323.2 junction, 0.8 mi to the PCT, then about 3.5 mi up to the Escondido ridge tarns (~9.6 mi), which with the club page's 5 + 0.6 + 4.5 mi (~10.1 mi) points to roughly 9.5-10 mi and away from 13 mi; other accounts give 11.6 and ~13 mi. But both near-agreeing figures are sums of legs, not a stated total, and they differ; no single one-way figure is stated by two sources. No patch.",
+   "sources": [
+    "https://www.summitpost.org/escondido-high-route/213620",
+    "https://www.mountaineers.org/activities/routes-places/summit-chief",
+    "https://www.backpacker.com/trips/summit-chiefescondido-lake-loop/"
+   ],
+   "patches": []
+  }
+ ]
+}

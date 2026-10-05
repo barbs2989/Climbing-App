@@ -1,0 +1,264 @@
+{
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "unresolved",
+   "resolution": "no_change",
+   "summary": "Pass claim still rests on the land manager alone, and no two sources place the Tye Road pull-off, so neither the pass value nor the misplaced trailhead pin can be changed under the two-source rule; a rule-1 fallback (keep the pin, null its distance, correct its note) is offered for the owner.",
+   "evidence": "Eighth pass (r22, 2026-10-01), web only, NEW sources only. Row re-read read-only: access.passRequired \"Recreation pass\", access.notes \"...not a developed fee site\", access.parking_pass \"Half Moon Crag: no fee site identified.\"; waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457, -121.0885, distMi 0. ITEM 1 (pass at the pull-off). Not re-counted: everything listed in r1/r4/r7/r10/r14/r16/r19 and held-v010/v011. NEW this pass, none speaks to a pass at the hairpin pull-off: (1) Seattle Times mile-by-mile Stevens Pass guide, read through its 2025-10-13 Wayback copy (the /life/outdoors/ URL; earlier passes only met the bot check on the live page): covers Deception Falls, the MP 58 Iron Goat site and the pass itself, says nothing about Tye Road, the hairpin or passes. (2) A 2016 WTA trip report driving Tye Road to Wellington: road directions only, no pass statement about any roadside pull-off. (3) WSDOT US 2 Stevens Pass Greenway Corridor Management Plan (1999, WSDOT library OCR): lists Old Cascade Highway maintenance/bridge projects and the Iron Goat/Wellington access, no fee or pass text. (4) ADVrider \"Old Cascade Hwy ending at Stevens Pass\" thread: behind a paid-crawler gate (not bypassed), no Wayback copy. (5) Search results for Tye Road with Northwest Forest Pass again surface only the PCT Stevens Pass trailheads, the ski resort parking FAQ and the Wellington trailhead (listed fee sites). Net: still one spot-specific author; no op on passRequired; access.fees and access._raw untouched. ITEM 2 (trailhead pin). Confirmed as a defect, not resolved as a position. The pin sits at the Stevens Pass summit east of the Tye Road turnoff (inside the ski-area lots, per r19), while the row's own directions and approach park about 1.4 mi down Tye Road above the double hairpin. OpenStreetMap geometry of Tye Road (way 6321347 / 6318251) shows the switchbacks at roughly 47.751,-121.117 and 47.753,-121.128, about 2 km by straight line from the pin and some 0.5 km below the crag (47.75586,-121.11626); that is a measurement for the owner, not a figure to write. No source publishes a coordinate, track or mapped feature for the pull-off itself: Mountain Project gives only the crag point (47.75586,-121.11626) and prose; the Treasury boulders on the same road park at a different spot (third switchback, GPS 47.76118,-121.12925); OSM maps no parking at the hairpins (r19); the guidebook map in Weekend Rock Washington is a lend-only scan (not readable); no GPS track, CalTopo/Gaia map or peakbagger ascent for this crag exists in search. So no move_pin under the two-source rule. Decision rule 1 applies (pin provably >500 m from the route's own described start, cannot be placed with two sources, and it is the only trailhead, so it must not be removed): the owner-delegated fallback is to set waypoints[0].distMi to null and replace the note, which currently claims the coordinate is consistent with the directions (false) or points the reader at another route id (pipeline voice). Those two set ops are given in fallback_ops, NOT in ops, because the verdict is not two-source; promote them if the owner accepts rule 1 here. waypoints[0].lat/lng, name, directions, access._raw and access.fees are untouched.",
+   "sources": [
+    "http://web.archive.org/web/20251013070449/https://www.seattletimes.com/life/outdoors/a-mile-by-mile-driving-hiking-and-roadside-wonders-guide-to-scenic-stevens-pass/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-10-26.9036760004",
+    "https://cdm16977.contentdm.oclc.org/digital/collection/p16977coll2/id/8207/",
+    "https://www.advrider.com/f/threads/old-cascade-hwy-ending-at-stevens-pass.507104/",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://stevensong.com/usa/washington/tye-peak/",
+    "https://overpass-api.de/api/interpreter"
+   ],
+   "ops": [],
+   "pin_ops": [],
+   "fallback_ops": [
+    {
+     "op": "set",
+     "id": "wa_half_fast",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 0,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_half_fast",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "This pin is only a placeholder near the Stevens Pass summit, not the parking spot. Drive about 1.4 miles down Tye Road and park in the pullout just above the double hairpin turn."
+    }
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "unresolved",
+   "resolution": "no_change",
+   "summary": "Pass claim still rests on the land manager alone, and no two sources place the Tye Road pull-off, so neither the pass value nor the misplaced trailhead pin can be changed under the two-source rule; a rule-1 fallback (keep the pin, null its distance, correct its note) is offered for the owner.",
+   "evidence": "Eighth pass (r22, 2026-10-01), web only, NEW sources only. Row re-read read-only: access.passRequired \"Recreation pass\", access.notes \"...not a developed fee site\", access.parking_pass \"Half Moon Crag: no fee site identified.\"; waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457, -121.0885, distMi 0. ITEM 1 (pass at the pull-off). Not re-counted: everything listed in r1/r4/r7/r10/r14/r16/r19 and held-v010/v011. NEW this pass, none speaks to a pass at the hairpin pull-off: (1) Seattle Times mile-by-mile Stevens Pass guide, read through its 2025-10-13 Wayback copy (the /life/outdoors/ URL; earlier passes only met the bot check on the live page): covers Deception Falls, the MP 58 Iron Goat site and the pass itself, says nothing about Tye Road, the hairpin or passes. (2) A 2016 WTA trip report driving Tye Road to Wellington: road directions only, no pass statement about any roadside pull-off. (3) WSDOT US 2 Stevens Pass Greenway Corridor Management Plan (1999, WSDOT library OCR): lists Old Cascade Highway maintenance/bridge projects and the Iron Goat/Wellington access, no fee or pass text. (4) ADVrider \"Old Cascade Hwy ending at Stevens Pass\" thread: behind a paid-crawler gate (not bypassed), no Wayback copy. (5) Search results for Tye Road with Northwest Forest Pass again surface only the PCT Stevens Pass trailheads, the ski resort parking FAQ and the Wellington trailhead (listed fee sites). Net: still one spot-specific author; no op on passRequired; access.fees and access._raw untouched. ITEM 2 (trailhead pin). Confirmed as a defect, not resolved as a position. The pin sits at the Stevens Pass summit east of the Tye Road turnoff (inside the ski-area lots, per r19), while the row's own directions and approach park about 1.4 mi down Tye Road above the double hairpin. OpenStreetMap geometry of Tye Road (way 6321347 / 6318251) shows the switchbacks at roughly 47.751,-121.117 and 47.753,-121.128, about 2 km by straight line from the pin and some 0.5 km below the crag (47.75586,-121.11626); that is a measurement for the owner, not a figure to write. No source publishes a coordinate, track or mapped feature for the pull-off itself: Mountain Project gives only the crag point (47.75586,-121.11626) and prose; the Treasury boulders on the same road park at a different spot (third switchback, GPS 47.76118,-121.12925); OSM maps no parking at the hairpins (r19); the guidebook map in Weekend Rock Washington is a lend-only scan (not readable); no GPS track, CalTopo/Gaia map or peakbagger ascent for this crag exists in search. So no move_pin under the two-source rule. Decision rule 1 applies (pin provably >500 m from the route's own described start, cannot be placed with two sources, and it is the only trailhead, so it must not be removed): the owner-delegated fallback is to set waypoints[0].distMi to null and replace the note, which currently claims the coordinate is consistent with the directions (false) or points the reader at another route id (pipeline voice). Those two set ops are given in fallback_ops, NOT in ops, because the verdict is not two-source; promote them if the owner accepts rule 1 here. waypoints[0].lat/lng, name, directions, access._raw and access.fees are untouched.",
+   "sources": [
+    "http://web.archive.org/web/20251013070449/https://www.seattletimes.com/life/outdoors/a-mile-by-mile-driving-hiking-and-roadside-wonders-guide-to-scenic-stevens-pass/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-10-26.9036760004",
+    "https://cdm16977.contentdm.oclc.org/digital/collection/p16977coll2/id/8207/",
+    "https://www.advrider.com/f/threads/old-cascade-hwy-ending-at-stevens-pass.507104/",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://stevensong.com/usa/washington/tye-peak/",
+    "https://overpass-api.de/api/interpreter"
+   ],
+   "ops": [],
+   "pin_ops": [],
+   "fallback_ops": [
+    {
+     "op": "set",
+     "id": "wa_astral_projection",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 0,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_astral_projection",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "This pin is only a placeholder near the Stevens Pass summit, not the parking spot. Drive about 1.4 miles down Tye Road and park in the pullout just above the double hairpin turn."
+    }
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "unresolved",
+   "resolution": "no_change",
+   "summary": "Pass claim still rests on the land manager alone, and no two sources place the Tye Road pull-off, so neither the pass value nor the misplaced trailhead pin can be changed under the two-source rule; a rule-1 fallback (keep the pin, null its distance, correct its note) is offered for the owner.",
+   "evidence": "Eighth pass (r22, 2026-10-01), web only, NEW sources only. Row re-read read-only: access.passRequired \"Recreation pass\", access.notes \"...not a developed fee site\", access.parking_pass \"Half Moon Crag: no fee site identified.\"; waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457, -121.0885, distMi 0. ITEM 1 (pass at the pull-off). Not re-counted: everything listed in r1/r4/r7/r10/r14/r16/r19 and held-v010/v011. NEW this pass, none speaks to a pass at the hairpin pull-off: (1) Seattle Times mile-by-mile Stevens Pass guide, read through its 2025-10-13 Wayback copy (the /life/outdoors/ URL; earlier passes only met the bot check on the live page): covers Deception Falls, the MP 58 Iron Goat site and the pass itself, says nothing about Tye Road, the hairpin or passes. (2) A 2016 WTA trip report driving Tye Road to Wellington: road directions only, no pass statement about any roadside pull-off. (3) WSDOT US 2 Stevens Pass Greenway Corridor Management Plan (1999, WSDOT library OCR): lists Old Cascade Highway maintenance/bridge projects and the Iron Goat/Wellington access, no fee or pass text. (4) ADVrider \"Old Cascade Hwy ending at Stevens Pass\" thread: behind a paid-crawler gate (not bypassed), no Wayback copy. (5) Search results for Tye Road with Northwest Forest Pass again surface only the PCT Stevens Pass trailheads, the ski resort parking FAQ and the Wellington trailhead (listed fee sites). Net: still one spot-specific author; no op on passRequired; access.fees and access._raw untouched. ITEM 2 (trailhead pin). Confirmed as a defect, not resolved as a position. The pin sits at the Stevens Pass summit east of the Tye Road turnoff (inside the ski-area lots, per r19), while the row's own directions and approach park about 1.4 mi down Tye Road above the double hairpin. OpenStreetMap geometry of Tye Road (way 6321347 / 6318251) shows the switchbacks at roughly 47.751,-121.117 and 47.753,-121.128, about 2 km by straight line from the pin and some 0.5 km below the crag (47.75586,-121.11626); that is a measurement for the owner, not a figure to write. No source publishes a coordinate, track or mapped feature for the pull-off itself: Mountain Project gives only the crag point (47.75586,-121.11626) and prose; the Treasury boulders on the same road park at a different spot (third switchback, GPS 47.76118,-121.12925); OSM maps no parking at the hairpins (r19); the guidebook map in Weekend Rock Washington is a lend-only scan (not readable); no GPS track, CalTopo/Gaia map or peakbagger ascent for this crag exists in search. So no move_pin under the two-source rule. Decision rule 1 applies (pin provably >500 m from the route's own described start, cannot be placed with two sources, and it is the only trailhead, so it must not be removed): the owner-delegated fallback is to set waypoints[0].distMi to null and replace the note, which currently claims the coordinate is consistent with the directions (false) or points the reader at another route id (pipeline voice). Those two set ops are given in fallback_ops, NOT in ops, because the verdict is not two-source; promote them if the owner accepts rule 1 here. waypoints[0].lat/lng, name, directions, access._raw and access.fees are untouched.",
+   "sources": [
+    "http://web.archive.org/web/20251013070449/https://www.seattletimes.com/life/outdoors/a-mile-by-mile-driving-hiking-and-roadside-wonders-guide-to-scenic-stevens-pass/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-10-26.9036760004",
+    "https://cdm16977.contentdm.oclc.org/digital/collection/p16977coll2/id/8207/",
+    "https://www.advrider.com/f/threads/old-cascade-hwy-ending-at-stevens-pass.507104/",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://stevensong.com/usa/washington/tye-peak/",
+    "https://overpass-api.de/api/interpreter"
+   ],
+   "ops": [],
+   "pin_ops": [],
+   "fallback_ops": [
+    {
+     "op": "set",
+     "id": "wa_astroglide",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 0,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_astroglide",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "This pin is only a placeholder near the Stevens Pass summit, not the parking spot. Drive about 1.4 miles down Tye Road and park in the pullout just above the double hairpin turn."
+    }
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "unresolved",
+   "resolution": "no_change",
+   "summary": "Pass claim still rests on the land manager alone, and no two sources place the Tye Road pull-off, so neither the pass value nor the misplaced trailhead pin can be changed under the two-source rule; a rule-1 fallback (keep the pin, null its distance, correct its note) is offered for the owner.",
+   "evidence": "Eighth pass (r22, 2026-10-01), web only, NEW sources only. Row re-read read-only: access.passRequired \"Recreation pass\", access.notes \"...not a developed fee site\", access.parking_pass \"Half Moon Crag: no fee site identified.\"; waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457, -121.0885, distMi 0. ITEM 1 (pass at the pull-off). Not re-counted: everything listed in r1/r4/r7/r10/r14/r16/r19 and held-v010/v011. NEW this pass, none speaks to a pass at the hairpin pull-off: (1) Seattle Times mile-by-mile Stevens Pass guide, read through its 2025-10-13 Wayback copy (the /life/outdoors/ URL; earlier passes only met the bot check on the live page): covers Deception Falls, the MP 58 Iron Goat site and the pass itself, says nothing about Tye Road, the hairpin or passes. (2) A 2016 WTA trip report driving Tye Road to Wellington: road directions only, no pass statement about any roadside pull-off. (3) WSDOT US 2 Stevens Pass Greenway Corridor Management Plan (1999, WSDOT library OCR): lists Old Cascade Highway maintenance/bridge projects and the Iron Goat/Wellington access, no fee or pass text. (4) ADVrider \"Old Cascade Hwy ending at Stevens Pass\" thread: behind a paid-crawler gate (not bypassed), no Wayback copy. (5) Search results for Tye Road with Northwest Forest Pass again surface only the PCT Stevens Pass trailheads, the ski resort parking FAQ and the Wellington trailhead (listed fee sites). Net: still one spot-specific author; no op on passRequired; access.fees and access._raw untouched. ITEM 2 (trailhead pin). Confirmed as a defect, not resolved as a position. The pin sits at the Stevens Pass summit east of the Tye Road turnoff (inside the ski-area lots, per r19), while the row's own directions and approach park about 1.4 mi down Tye Road above the double hairpin. OpenStreetMap geometry of Tye Road (way 6321347 / 6318251) shows the switchbacks at roughly 47.751,-121.117 and 47.753,-121.128, about 2 km by straight line from the pin and some 0.5 km below the crag (47.75586,-121.11626); that is a measurement for the owner, not a figure to write. No source publishes a coordinate, track or mapped feature for the pull-off itself: Mountain Project gives only the crag point (47.75586,-121.11626) and prose; the Treasury boulders on the same road park at a different spot (third switchback, GPS 47.76118,-121.12925); OSM maps no parking at the hairpins (r19); the guidebook map in Weekend Rock Washington is a lend-only scan (not readable); no GPS track, CalTopo/Gaia map or peakbagger ascent for this crag exists in search. So no move_pin under the two-source rule. Decision rule 1 applies (pin provably >500 m from the route's own described start, cannot be placed with two sources, and it is the only trailhead, so it must not be removed): the owner-delegated fallback is to set waypoints[0].distMi to null and replace the note, which currently claims the coordinate is consistent with the directions (false) or points the reader at another route id (pipeline voice). Those two set ops are given in fallback_ops, NOT in ops, because the verdict is not two-source; promote them if the owner accepts rule 1 here. waypoints[0].lat/lng, name, directions, access._raw and access.fees are untouched.",
+   "sources": [
+    "http://web.archive.org/web/20251013070449/https://www.seattletimes.com/life/outdoors/a-mile-by-mile-driving-hiking-and-roadside-wonders-guide-to-scenic-stevens-pass/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-10-26.9036760004",
+    "https://cdm16977.contentdm.oclc.org/digital/collection/p16977coll2/id/8207/",
+    "https://www.advrider.com/f/threads/old-cascade-hwy-ending-at-stevens-pass.507104/",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://stevensong.com/usa/washington/tye-peak/",
+    "https://overpass-api.de/api/interpreter"
+   ],
+   "ops": [],
+   "pin_ops": [],
+   "fallback_ops": [
+    {
+     "op": "set",
+     "id": "wa_asymptotic",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 0,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_asymptotic",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "Same approach as all other Half Moon Crag routes; see wa_artic_rose note on coordinate precision.",
+     "value": "This pin is only a placeholder near the Stevens Pass summit, not the parking spot. Drive about 1.4 miles down Tye Road and park in the pullout just above the double hairpin turn."
+    }
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "items": [
+    1,
+    2
+   ],
+   "verdict": "unresolved",
+   "resolution": "no_change",
+   "summary": "Pass claim still rests on the land manager alone, and no two sources place the Tye Road pull-off, so neither the pass value nor the misplaced trailhead pin can be changed under the two-source rule; a rule-1 fallback (keep the pin, null its distance, correct its note) is offered for the owner.",
+   "evidence": "Eighth pass (r22, 2026-10-01), web only, NEW sources only. Row re-read read-only: access.passRequired \"Recreation pass\", access.notes \"...not a developed fee site\", access.parking_pass \"Half Moon Crag: no fee site identified.\"; waypoints[0] \"Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)\" at 47.7457, -121.0885, distMi 0. ITEM 1 (pass at the pull-off). Not re-counted: everything listed in r1/r4/r7/r10/r14/r16/r19 and held-v010/v011. NEW this pass, none speaks to a pass at the hairpin pull-off: (1) Seattle Times mile-by-mile Stevens Pass guide, read through its 2025-10-13 Wayback copy (the /life/outdoors/ URL; earlier passes only met the bot check on the live page): covers Deception Falls, the MP 58 Iron Goat site and the pass itself, says nothing about Tye Road, the hairpin or passes. (2) A 2016 WTA trip report driving Tye Road to Wellington: road directions only, no pass statement about any roadside pull-off. (3) WSDOT US 2 Stevens Pass Greenway Corridor Management Plan (1999, WSDOT library OCR): lists Old Cascade Highway maintenance/bridge projects and the Iron Goat/Wellington access, no fee or pass text. (4) ADVrider \"Old Cascade Hwy ending at Stevens Pass\" thread: behind a paid-crawler gate (not bypassed), no Wayback copy. (5) Search results for Tye Road with Northwest Forest Pass again surface only the PCT Stevens Pass trailheads, the ski resort parking FAQ and the Wellington trailhead (listed fee sites). Net: still one spot-specific author; no op on passRequired; access.fees and access._raw untouched. ITEM 2 (trailhead pin). Confirmed as a defect, not resolved as a position. The pin sits at the Stevens Pass summit east of the Tye Road turnoff (inside the ski-area lots, per r19), while the row's own directions and approach park about 1.4 mi down Tye Road above the double hairpin. OpenStreetMap geometry of Tye Road (way 6321347 / 6318251) shows the switchbacks at roughly 47.751,-121.117 and 47.753,-121.128, about 2 km by straight line from the pin and some 0.5 km below the crag (47.75586,-121.11626); that is a measurement for the owner, not a figure to write. No source publishes a coordinate, track or mapped feature for the pull-off itself: Mountain Project gives only the crag point (47.75586,-121.11626) and prose; the Treasury boulders on the same road park at a different spot (third switchback, GPS 47.76118,-121.12925); OSM maps no parking at the hairpins (r19); the guidebook map in Weekend Rock Washington is a lend-only scan (not readable); no GPS track, CalTopo/Gaia map or peakbagger ascent for this crag exists in search. So no move_pin under the two-source rule. Decision rule 1 applies (pin provably >500 m from the route's own described start, cannot be placed with two sources, and it is the only trailhead, so it must not be removed): the owner-delegated fallback is to set waypoints[0].distMi to null and replace the note, which currently claims the coordinate is consistent with the directions (false) or points the reader at another route id (pipeline voice). Those two set ops are given in fallback_ops, NOT in ops, because the verdict is not two-source; promote them if the owner accepts rule 1 here. waypoints[0].lat/lng, name, directions, access._raw and access.fees are untouched.",
+   "sources": [
+    "http://web.archive.org/web/20251013070449/https://www.seattletimes.com/life/outdoors/a-mile-by-mile-driving-hiking-and-roadside-wonders-guide-to-scenic-stevens-pass/",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report.2016-10-26.9036760004",
+    "https://cdm16977.contentdm.oclc.org/digital/collection/p16977coll2/id/8207/",
+    "https://www.advrider.com/f/threads/old-cascade-hwy-ending-at-stevens-pass.507104/",
+    "https://www.mountainproject.com/area/117712289/half-moon-crag",
+    "https://www.mountainproject.com/area/119589316/treasury",
+    "https://stevensong.com/usa/washington/tye-peak/",
+    "https://overpass-api.de/api/interpreter"
+   ],
+   "ops": [],
+   "pin_ops": [],
+   "fallback_ops": [
+    {
+     "op": "set",
+     "id": "wa_artic_rose",
+     "column": "waypoints",
+     "path": [
+      0,
+      "distMi"
+     ],
+     "expect": 0,
+     "value": null
+    },
+    {
+     "op": "set",
+     "id": "wa_artic_rose",
+     "column": "waypoints",
+     "path": [
+      0,
+      "note"
+     ],
+     "expect": "From Hwy 2 at Stevens Pass, take old Stevens Pass Hwy/Tye Rd downhill toward Wellington and pull off just uphill of the double hairpin turn, ~1.4 mi from US2. This coordinate is an estimated pulloff location consistent with those written directions rather than a surveyed pin.",
+     "value": "This pin is only a placeholder near the Stevens Pass summit, not the parking spot. Drive about 1.4 miles down Tye Road and park in the pullout just above the double hairpin turn."
+    }
+   ]
+  },
+  {
+   "id": "wa_switchback_mountain_scramble",
+   "items": [
+    3
+   ],
+   "verdict": "unresolved",
+   "resolution": "no_change",
+   "summary": "Still only one stated trailhead-to-Cooney-Lake figure on the Foggy Dew / Merchants Basin line (8.5 mi, one author), so day 1 stays at 6.2 with the owner note unchanged; side finding: the day-1 trail was reported closed for the Little Giant Fire in August 2026.",
+   "evidence": "Eighth pass (r22, 2026-10-01). Row re-read read-only: itinerary.days[0].miles 6.2; days[1].miles 12.8; days[1].note restates \"the full 6.2 miles back out\"; Cooney Lake pin distMi 8. Not re-counted: every source in r1/r4/r8/r11/r14/r16/r19. NEW this pass via Internet Archive full-text search and web, none a second stated trailhead-to-lake figure on this line: (1) 100 Hikes in Washington's North Cascades National Park Region (Spring/Manning, 1994 and 2000 editions) and 100 Classic Hikes in Washington: same author family already counted as one source; their Cooney Lake text is a loop described in segments (Foggy Dew trail 5 miles to a junction, Merchants Basin at 6 miles, then from the pass about 1.5 miles down to the lake), round trip 16; no one-way cumulative figure, and summing is not allowed. (2) Trail Riding & Pack Trips in Washington (Wood, 1998): Foggy Dew Falls at 3 miles, Merchants Basin at 6 miles; no Cooney Lake figure in any fragment. (3) Canine Washington: reaches the Merchants Basin meadows, no mileage to Cooney Lake. (4) Best Hikes with Dogs (Nelson): re-read to settle which trailhead its 8.5 belongs to — its Cooney Lake/Martin Lakes entry climbs the end of the Martin Creek valley from the Eagle Lakes trail (Crater Creek start, round trip 17); the \"six miles from the trailhead, Merchants Basin\" sentence belongs to its separate Sunrise Lake/Foggy Dew entry. Not this line (confirms r14). (5) WTA trip report 2021-07-03 (Switchback/Martin/Cooney): a clockwise car-to-car loop from the Crater Creek side, 20.5 mi total, times only. (6) Trailforks \"Foggy Dew Falls and Angel's Staircase\" route: 403, no Wayback copy. (7) AllTrails \"Cooney Lake via Foggy Dew Ridge\": 403, no Wayback copy, and a different trail. (8) Search-summarised land-manager trail lengths: Foggy Dew Creek Trail #417 8.5 mi one way (whole trail) and Martin Creek Trail #429 6.2 mi one way — trail lengths, not trailhead-to-lake figures; owner note: the row's 6.2 equals the stated length of Martin Creek Trail #429, a plausible origin of the error. Net: no op on days[0].miles, days[1].note or days[1].miles. SIDE FINDING (one source, not acted on): Methow Valley News (2026-08-20 trail-closure roundup) lists Foggy Dew 417, Merchants Basin 417.1, Sunrise Lake 417.2, Navarre Way 414 and Pasayten Drive 405 as closed for the Little Giant Fire; the row carries no closure. Worth a land-manager check before the next season; the fire's own closure order (InciWeb, 2026-09-04) was found but not read for this area.",
+   "sources": [
+    "https://archive.org/details/100hikesinwashin0000spri_d3g9",
+    "https://archive.org/details/100hikesinwashin0000spri_j6h3",
+    "https://archive.org/details/100classichikesi0000spri",
+    "https://archive.org/details/trailridingpackt0000wood",
+    "https://archive.org/details/caninewashington0000smit",
+    "https://archive.org/details/besthikeswithdog0000nels",
+    "https://www.wta.org/go-hiking/trip-reports/trip_report-2021-07-06-1852512946",
+    "https://www.trailforks.com/route/foggy-dew-falls-and-angel-s-staircase/",
+    "https://www.alltrails.com/trail/us/washington/cooney-lake-via-foggy-dew-ridge-trail",
+    "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/martin-lake-trail",
+    "https://methowvalleynews.com/2026/08/20/a-roundup-of-regional-trails-closures-that-remain-in-effect/"
+   ],
+   "ops": [],
+   "pin_ops": []
+  }
+ ]
+}
