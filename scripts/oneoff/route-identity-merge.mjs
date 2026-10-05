@@ -19,7 +19,9 @@ import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supab
 
 const DRY = process.argv.includes("--dry");
 const key = requireServiceKey();
-const plan = JSON.parse(fs.readFileSync("audits/route-grades/deep/merge-plan.json", "utf8"));
+// --plan=<file> merges a different researched plan (same shape); its rollback lands beside it.
+const PLAN = (process.argv.find((a) => a.startsWith("--plan=")) || "--plan=audits/route-grades/deep/merge-plan.json").slice(7);
+const plan = JSON.parse(fs.readFileSync(PLAN, "utf8"));
 const REFS = ["climb_logs", "content_reports", "contributions", "crews", "gps_submissions", "hazard_votes", "objectives", "route_base_checkins", "route_difficulty_ratings", "topo_lines", "user_itineraries"];
 const HOLD = {
   wa_davis_peak_nc_southwest: "keep as a named Southwest Face variation; fold its face beta first",
@@ -63,7 +65,7 @@ console.log(`\ndelete ${go.length} | held ${held.length}\n${held.map(h => `  HEL
 if (DRY) process.exit(0);
 
 const tag = Date.now();
-const rb = `audits/route-grades/deep/rollback-merges-${tag}.json`;
+const rb = `${PLAN.replace(/[^/]*$/, "")}rollback-merges-${tag}.json`;
 fs.writeFileSync(rb, JSON.stringify({ deleted_rows: go.map(g => g.d), kept_before: Object.fromEntries(go.filter(g => Object.keys(g.carry).length).map(g => [g.keep, Object.fromEntries(Object.keys(g.carry).map(c => [c, g.k[c] ?? null]))])) }, null, 1));
 console.log("rollback", rb);
 for (const g of go) {

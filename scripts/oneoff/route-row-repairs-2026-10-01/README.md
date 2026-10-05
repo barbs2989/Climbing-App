@@ -44,36 +44,40 @@ the live row; `--settle` judges a pre-ledger crash against the backup. Under loa
 - `fix-stranded-track-vertices.mjs`: 8 sketched lines carried onto their moved pins (one route had lost its
   "not a recorded track" caption); the script gained `--skip=` and a gpx backup per route.
 
-## Owner decisions (not made here)
+## Owner decisions — settled from research, 2026-10-04
 
-- Duplicates: `wa_cutthroat_peak_southeast_buttress` / `wa_cutthroat_south_buttress`;
-  `wa_cutthroat_cauthorn_wilson` / `wa_cutthroat_peak_cauthorn_wilson_couloir`; `wa_bonanza_peak_north_ridge`
-  describes the Mary Green Glacier.
-- Duplicate areas: `wa_amphitheater_mountain` / `wa_amphitheatre_mountain` (~150 m apart); the four Wine Spires
-  area rows sit within ~100 m of each other and Chablis has no elevation.
-- Which approach a row is: Mount Meany (Elwha vs North Fork Quinault), Chikamin SE Slopes (Mineral Creek vs
-  PCT), Forbidden NW Face (1959 rock rib vs NW-face ice), Glacier Peak Frostbite Ridge (White Chuck hike-out vs
-  Suiattle), Kyes Peak (Columbia Glacier line vs the Blanca Lake warning).
-- Rainier Mowich routes: where the start should be while the Fairfax Bridge is closed.
-- Mount Lago: the approach picker's legs are not per-variant.
-- Names / filing outside the editable columns: Queets "South Slopes" is the North Ridge; Hopper's name names two
-  approaches; Skookum's "scramble" id/grade vs a roped 5.4 ridge; Lyall filed under Chiwawa-Entiat but approached
-  from Stehekin.
+The owner asked for these to be decided from the research rather than left open. Each one:
 
-## Still open (found, not yet researched)
+| decision | outcome |
+|---|---|
+| Cutthroat SE Buttress / South Buttress, Bonanza North Ridge / Mary Green | already deleted as duplicates by #2167 |
+| `wa_cutthroat_cauthorn_wilson` / `wa_cutthroat_peak_cauthorn_wilson_couloir` | **same route** (same FA, grade, pitches, length); keep the Couloir row, a strict superset. Plan in `audits/route-identity-2026-10-04/merge-plan.json`, dry run clean, nothing references the row — **the delete itself was not run**: the session's permission check stopped it, so it waits on the owner (`node scripts/oneoff/route-identity-merge.mjs --plan=audits/route-identity-2026-10-04/merge-plan.json`) |
+| Mount Meany: Elwha or North Fork Quinault | **North Fork Quinault / Low Divide / Seattle Basin** — the usual way in, and what the row's logistics, itinerary, variant and road already said. Pins rebuilt on it (Low Divide = end of the OSM Elwha River Trail, USGS 3,637 ft; NPS 16 mi, 3,602 ft) with a leg on every card |
+| Chikamin SE Slopes: Mineral Creek or PCT | **PCT from Snoqualmie Pass** marked primary (the Mountaineers' standard route; the pins, trailhead, itinerary and drive all follow it); Mineral Creek kept as the shorter alternate |
+| Forbidden NW Face: rock rib or ice line | **one route** — the Beckey-Cooper rib starts with ~900 ft of snow/ice from the Forbidden Glacier's north arm. Fixed the three cards that contradicted it (moat note, a "North Ridge" knife-edge, a blank leg) |
+| Frostbite Ridge hike-out | the White Chuck River Trail was destroyed in 2003 and is listed inaccessible; descent and day-4 hike-out rerouted to the PCT, White Pass and the North Fork Sauk, and the White Chuck variant marked unusable |
+| Kyes Peak: glacier or ridge | the **South Ridge** from Virgin Lake is the standard line (and what the row's approach, primary variant and descent describe); pins rebuilt on it, Columbia Glacier kept as the alternate variant |
+| Rainier Mowich start | NPS: no public access to Mowich Lake from SR 165, no alternate route; reachable only on foot via the Wonderland Trail (~27 mi from Westside Road). Mowich Lake stays the start pin, and all four Mowich rows now say this on their trailhead card |
+| Names | Queets "South Slopes" → **North Ridge**; Hopper → **Standard Scramble** (`rename-routes-2026-10-04.mjs`, old names in `name-backups/`). Skookum's name and grade were already right (only its id says "scramble") |
+| Lyall filing | left under Chiwawa-Entiat: every neighbouring peak (Bonanza, Cloudy, Dark, Martin, North Star) is filed there; the Stehekin approach is in the prose |
+| Amphitheater/Amphitheatre areas, Wine Spires areas | not changed: merging areas is a delete and needs the owner; the Wine Spires rows are close because the spires are adjacent towers |
+| Mount Lago approach picker | not changed: per-variant legs are a product feature |
 
-Agent work hit the account's weekly limit before these were done:
+## Open items — done 2026-10-04
 
-- Mount Prophet: the 6,600 ft saddle is not on the USGS grid; Point 6071 pin samples 5,591 ft.
-- McMillan Spire West: camp and glacier-crossing pin heights wrong; the crossing sits below camp.
-- Dated road claims unchecked: Indian Head ("reopened mid-May 2026"), Berge (FR 6200), Waterfall Buttress
-  (4WD, "about 7 miles to its end").
-- Fisher Chimneys: "White Salmon Glacier Lower Bivouac" pin is south of Lake Ann (5,600 ft ground vs 6,700);
-  Hanging Glacier / North Face give Price Lake's direction backwards. Goode High Camp pin 6,600 vs 5,540 ground.
-- The Monk rows: "follow the Boundary Trail east … to Upper Cathedral Lake" — check the direction.
-- Mount Stuart: Cascadian "False Summit Notch" and North Ridge "Great Gendarme" pins are on the wrong side;
-  West Ridge "West Ridge Crest" at 7,200 ft is the ~8,600 ft notch.
-- Chimney Peak The Chimney ends at the main summit (the route tops a 100 ft tower); the Enchanted Valley pin is
-  past the Pyrites Creek turnoff. Mount Anderson Eel Glacier names Echo Rock on the wrong side.
-- Little Tahoma starts at the Fryingpan Creek trailhead that its own variant says is closed until ~2029; Sunset
-  Ridge's descent text is cut off mid-sentence; Lane Peak's "~2,000 ft gain" is impossible.
+- Little Tahoma: the trailhead card now says the Fryingpan Creek parking is closed for the bridge replacement
+  (NPS, into late 2029) and to start from White River Campground.
+- Price Lake directions on Shuksan Hanging Glacier and North Face corrected (OSM: the lake is north of the summit,
+  the White Salmon valley west of it); Sunset Ridge's descent sentence closed; Lane Peak's impossible gain dropped.
+- Pins on the wrong ground cleared: Stuart Cascadian false-summit notch and North Ridge Great Gendarme, Fisher
+  Chimneys lower bivouac (5,602 ft ground vs 6,700), Goode High Camp (5,542 vs 6,600), McMillan Terror Glacier
+  crossing (below its own camp), Prophet "Point 6071" (5,591 ft ground).
+- Road claims checked against the land managers' current alert pages: Indian Head reworded durably (no current
+  Mountain Loop closure); Berge's two closures are still posted and were reworded without order numbers or end
+  dates; Waterfall Buttress's "7 miles" corrected to the ~2-mile washout parking.
+- Chimney Peak "The Chimney" now ends at the tower's top, not the main summit; Mount Anderson's descent no longer
+  names Echo Rock on the wrong side.
+- Not a defect: the Monk rows' "Boundary Trail east" (Upper Cathedral Lake is east of Spanish Camp); Prophet's
+  saddle camp (within ~180 ft of the ground).
+- Not fixed: Chimney Peak's Enchanted Valley pin (the row's own approach consistently uses the chalet; no better
+  line established); Stuart West Ridge crest height (the pin has no coordinate to check).
