@@ -89,7 +89,7 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
 npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
 npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
-npm run check:no-sources  # no screen prints a field named source (in build)
+npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
 npm run check:policy-claims # no legal surface claims a control or a capability the app lacks (in build)
 npm run check:offline-claims # an offline promise is backed by the write that makes it true (in build)
@@ -124,7 +124,6 @@ npm run check:crew  # guards the crew "Ready" calculation (in build)
 
 # ── The route page — notes: docs/guards/route-page.md ──
 npm run check:bare # renders a route with NO enrichment — the shape 99.5% of them have
-npm run check:provenance   # every wired section heading still shows how it was sourced (in build)
 npm run check:access-checked-line # the road/access CHECKED DATE reaches a screen (in build)
 npm run check:trailhead-directions # ONE way to drive there, coordinates with it, labels that match (in build)
 npm run check:trailhead-direction-shape # ...and those directions END AT THE TRAILHEAD, not a hike narrative (in build; --live daily)

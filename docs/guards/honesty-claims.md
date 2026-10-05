@@ -1290,11 +1290,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **The rule is structural, and the precision is the point.** It flags a JSX expression that
     EVALUATES to a property named `source`/`sources`/`sourceNote`. It deliberately does not flag
     **"Water sources"** — a different meaning of the word, twelve times over in real climbing copy —
-    nor `re.source`, nor the provenance chip's `title="How this section was sourced: …"`, which is a
-    kept feature that names no source. A guard that flags correct work teaches people to ignore it.
+    nor `re.source`. (The provenance chip once excused here was removed 2026-10-04.) A guard that flags correct work teaches people to ignore it.
   - **A conditional whose BRANCHES are literals passes**, because the field is only the test:
     `wp._source==="logged" ? "✓ From a logged climb" : "Submitted"` renders authored strings, not
     provenance. Internal edit provenance is fine as long as it does not reach the screen verbatim.
+  - **RULE 2 — WORDING (2026-10-04).** The field rule could not see the surfaces the owner then asked
+    to remove, because each was an authored **literal**: the per-section `Auto-generated` / `On file` /
+    `Climber-verified` chip, *"Road and access last checked against a published source on …"*,
+    *"Tap a row for its sources"*, a suggest-a-fix field labelled *"Why / source"*, the forecast
+    caption *"via Open-Meteo … sources can legitimately disagree"*, the wildfire credits *"live from
+    NIFC and the National Weather Service"* plus the `FIRE_SOURCES` footer, and *"(optional, for
+    attribution)"*. So every JSX text, string and template literal in the app files and `lib/*.js`
+    now fails on `auto-generated`, `source(s/d)`, `attribution` or `provenance` — after removing
+    "water source(s)". Fails closed under 2,000 literals (it sees ~44,800). Injection-tested by
+    restoring the old road line: FAIL, exit 1. **Kept on purpose:** the NWS/MET badges on the
+    forecast's comparison rows (they label which forecast a row is) and `VerifNote`'s status.
   - Fails **closed**: fewer than 5 files parsed, or fewer than 500 rendered expressions seen, is a
     broken traversal rather than a clean app (it sees 4,461 today).
   - Injection-tested, 4 cases at the bottom of the script; cases 1 and 2 are the REAL defects from

@@ -356,7 +356,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **The provenance chip does not already cover this, and the measurement says so in the worst
     way.** `auto_generated` is true on **45%** of the synthetic tracks and on **78%** of the routes
     whose track is genuine — it points the **wrong way**, so a climber reading the chip cannot tell
-    which kind of line is on screen. That is the rule `check:provenance` already records: a
+    which kind of line is on screen. That is the rule the removed `check:provenance` already records: a
     per-section signal must beat the route-level flag.
   - **No waypoint audit can see this class, by construction.** All three ask *"is each pin on this
     route's own track?"* and on these routes the answer is **yes because the track is a copy of the

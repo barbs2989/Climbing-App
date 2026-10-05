@@ -571,7 +571,7 @@ async function runWeather() {
   // NWS/MET winds beside each day are surface figures against an 80 m headline -- on the seeded
   // capture that is 36 mph against NWS's 10. Without a sentence naming the heights the reader
   // sees a 3.6x disagreement between forecasters that is not one.
-  const capt = /Elevation-aware via Open-Meteo[\s\S]{0,900}?<\/div>/.exec(mask);
+  const capt = /Elevation-aware forecast[\s\S]{0,900}?<\/div>/.exec(mask);
   if (!capt) fail("ANCHOR LOST: the forecast panel caption moved — the height caveat cannot be checked");
   else {
     const c = capt[0];
