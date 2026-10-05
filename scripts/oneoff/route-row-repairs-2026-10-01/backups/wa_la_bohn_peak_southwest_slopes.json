@@ -1,0 +1,79 @@
+{
+ "id": "wa_la_bohn_peak_southwest_slopes",
+ "name": "East Ridge",
+ "itinerary": {
+  "cal": "Self-issue wilderness permits (free) are required at the trailhead year-round; the steep final approach to Jade Lake and the gap can hold snow into July, so most parties go July-September.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the East Fork Foss trailhead (~1,650 ft) the Necklace Valley trail is gentle for about 5 miles along the river, then kicks up hard for the final ~2-3 miles, gaining roughly 2,500 ft to Jade Lake (~4,600 ft) — the standard base camp for La Bohn Gap. Most parties treat this as a full but straightforward backpacking day, arriving with time to camp, filter water, and scope the gap.",
+    "hours": 5.5,
+    "miles": 8.2,
+    "title": "Backpack in to Jade Lake / La Bohn Lakes",
+    "gainFt": 3200,
+    "lossFt": 100,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Reach high camp below La Bohn Gap"
+   },
+   {
+    "n": 2,
+    "note": "Break camp early and day-pack up boulder/talus slopes to La Bohn Gap (~5,900 ft), then follow the east ridge/face on solid rock to the summit block — a short, straightforward scramble with light 3rd/easy 4th-class moves near the top. After tagging the summit, most parties return to camp, pack up, and hike the full distance back to the trailhead the same day, making for a long but very doable second day.",
+    "hours": 9.5,
+    "miles": 11.8,
+    "title": "Climb La Bohn Peak and hike out",
+    "gainFt": 2000,
+    "lossFt": 5200,
+    "packLb": 35,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Wake, quick breakfast at camp",
+      "detail": ""
+     },
+     {
+      "time": "6:00 AM",
+      "label": "Leave camp with light day pack",
+      "detail": "Heavier overnight gear stays cached at camp."
+     },
+     {
+      "time": "7:15 AM",
+      "label": "Reach La Bohn Gap",
+      "detail": "Boulder-field navigation through the upper basin."
+     },
+     {
+      "time": "8:15 AM",
+      "label": "Summit La Bohn Peak",
+      "detail": "Short scramble on solid rock along the east ridge; watch the cliff band on the north side."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Back at camp, break camp",
+      "detail": "Full packs on for the hike out."
+     },
+     {
+      "time": "3:30 PM",
+      "label": "Reach trailhead",
+      "detail": "Long, full descent day retracing the Necklace Valley trail."
+     }
+    ],
+    "objective": "Tag La Bohn Peak via La Bohn Gap, then pack out to the trailhead"
+   }
+  ],
+  "totalNote": "A 2-day / 1-night backpack: ~20 mi round trip with ~5,200 ft of total gain, camping at Jade Lake and day-tripping the short summit scramble from La Bohn Gap before hiking all the way out. Very fit parties occasionally push the whole thing car-to-car in one long day (~9-10 hrs), but most parties overnight at Jade/La Bohn Lakes given the long, steep approach."
+ },
+ "pitch_detail": [
+  {
+   "grade": "Class 2-3",
+   "notes": "Talus/scree gully ('Waterfall Route') from the upper Necklace Valley basin near Opal Lake up to the shelf/ridge below La Bohn Gap; loose rock, short 3rd/4th-class steps, occasional snow patches.",
+   "pitch": "1",
+   "lengthM": 457
+  },
+  {
+   "grade": "Class 2",
+   "notes": "Boulder and talus ridge walk over a false summit to the true summit, roughly 1/8 mile of exposed scrambling.",
+   "pitch": "2",
+   "lengthM": 201
+  }
+ ]
+}

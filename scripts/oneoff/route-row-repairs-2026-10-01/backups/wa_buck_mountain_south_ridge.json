@@ -1,0 +1,44 @@
+{
+ "id": "wa_buck_mountain_south_ridge",
+ "name": "South Ridge",
+ "approach": "From the Trinity Trailhead (Glacier Peak Wilderness, self-issue wilderness permit at the kiosk) at the end of the Chiwawa River Road/FR-6200 (~2,800 ft), follow Buck Creek Trail #1513. The trail splits from the Chiwawa River Trail #1550 within the first mile and climbs steadily through forest; around mile 2.75-3 it crosses the upper Chiwawa River, where the old footbridge was reported gone in 2024; look for a log crossing about 20 ft upstream and have a wading backup plan in early season. Above the crossing the trail is a long, fairly shadeless, grinding ascent (mosquitoes/black flies are heavy in July) through forest and then subalpine meadow along the flank of Middle Ridge, opening into increasingly good wildflower and Glacier Peak views as you climb. At roughly 9.25-10 miles and about 3,000-3,300 ft of gain, the trail tops out at Buck Creek Pass (~5,800-5,900 ft) - one of the most scenic passes in the Cascades, with a reliable spring near the pass for water (last dependable source before the basin). Beyond the pass there is no maintained trail: pick up the well-used climbers'/boot path that switchbacks up toward Liberty Cap and the High Pass Trail junction, then leave that path to contour and traverse west/southwest, staying below Liberty Cap, into the upper basin below Buck Mountain's south and west aspects (Louis Creek Basin, ~6,700 ft) - the standard camp for a two-day trip. Follow the ridge crest through Class 2-3 terrain (stepping to locally 3-4 near a horn/gendarme close to the true summit) on loose, rubbly, slabby schist to the top; the summit crest has several bumps within feet of each other, so take care identifying the true high point. Primary approach hazards: rockfall/loose schist (helmet recommended, especially with parties above or below), the river crossing in high water, no reliable water source between the pass and the basin in a dry year, and route-finding above Buck Creek Pass since the climbers' path is intermittent. An alternate historic approach reaches Buck Mountain via Little Giant Pass and the Napeequa Valley, used for longer traverses.",
+ "waypoints": [
+  {
+   "lat": 48.072,
+   "lng": -120.85,
+   "elev": 2800,
+   "name": "Trinity Trailhead",
+   "note": "End of Chiwawa River Road/FR-6200 (last 12 mi rough gravel); pay day-use fee or NW Forest Pass and self-issue a free Glacier Peak Wilderness permit at the kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US-2 at Coles Corner, take SR-207 north 4.2 miles past the Wenatchee River crossing and bear right onto Chiwawa Loop Road. After 1.3 miles turn left onto Chiwawa River Road (FS Road 62) and drive about 22 miles, the last 11 on rough gravel, keeping left at the final junction for the Trinity Trailhead at about 2,800 ft. A Northwest Forest Pass is required and a free wilderness permit is self-issued at the kiosk."
+  },
+  {
+   "lat": 48.10506,
+   "lng": -120.87935,
+   "elev": 3300,
+   "name": "Chiwawa River footbridge",
+   "note": "Crossing of the Chiwawa River about three miles up the trail. The old footbridge was reported gone in 2024; a log crossing sits about 20 ft upstream, and early-season parties may need to wade.",
+   "type": "Water",
+   "distMi": null
+  },
+  {
+   "lat": 48.144,
+   "lng": -120.9629,
+   "elev": 5900,
+   "name": "Buck Creek Pass",
+   "note": "Established camps in scattered trees and meadows; most parties base camp here for the climb, with a junction to the Flower Dome Trail #799 a half mile north.",
+   "type": "Campsite",
+   "distMi": 9.6
+  },
+  {
+   "lat": 48.09363,
+   "lng": -120.9122,
+   "elev": 8534,
+   "name": "Buck Mountain",
+   "note": "True summit; sweeping views of Glacier Peak, Clark Mountain, and the Napeequa valley — first climbed in 1948 by Carl Suback and Ray Rigg.",
+   "type": "Summit",
+   "distMi": 12
+  }
+ ]
+}

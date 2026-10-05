@@ -1,0 +1,86 @@
+{
+ "id": "wa_the_needle_neve_glacier",
+ "name": "Neve Glacier Approach / Standard",
+ "itinerary": {
+  "cal": "North Cascades NP requires a backcountry camping permit (Marblemount Wilderness Info Center); the route is normally climbed July-September once the Colonial/Neve Glacier approach is mostly snow-free on the lower trail but still snow-covered for glacier travel.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Pyramid Lake Trailhead, an easy 2 miles to Pyramid Lake, then the trail turns brutally steep, climbing brush and boot-track to a campsite on the ridge at the toe of the Colonial Glacier (~6,100-6,600 ft). Most parties treat this as a full day in itself given the relentless gain.",
+    "hours": 7,
+    "miles": 5.5,
+    "title": "Approach to col camp",
+    "gainFt": 4900,
+    "lossFt": 0,
+    "packLb": 38,
+    "schedule": [
+     {
+      "time": "7:00 AM",
+      "label": "Leave Pyramid Lake Trailhead",
+      "detail": ""
+     },
+     {
+      "time": "8:30 AM",
+      "label": "Pass Pyramid Lake",
+      "detail": "Trail steepens sharply above here."
+     },
+     {
+      "time": "1:00 PM",
+      "label": "Reach treeline / glacier moraine",
+      "detail": "Rope-up point for many parties if crevasses are open."
+     },
+     {
+      "time": "3:00 PM",
+      "label": "Make camp at the Colonial-Neve col",
+      "detail": "Melt snow for water; rest for an early start."
+     }
+    ],
+    "objective": "Reach camp at the Colonial-Neve Glacier col"
+   },
+   {
+    "n": 2,
+    "note": "Pre-dawn start roped up across the Colonial and Neve Glaciers, traversing west past Horsemans Pack and The Horseman to The Needle's southeast ridge; a short scramble with one unavoidable low-5th-class move gains the summit (rappel recommended for the descent). Back at camp by late morning, most parties break camp immediately and descend the full 4,800 ft back to the trailhead the same day, making for a very long second day.",
+    "hours": 13,
+    "miles": 8.1,
+    "title": "Summit push and hike out",
+    "gainFt": 2300,
+    "lossFt": 7200,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "4:00 AM",
+      "label": "Break camp, rope up",
+      "detail": "Leave heavier gear cached at camp for the glacier traverse."
+     },
+     {
+      "time": "5:30 AM",
+      "label": "Cross Colonial/Neve Glacier",
+      "detail": "Pass Horsemans Pack and The Horseman staying near the glacier edge to avoid steep snow."
+     },
+     {
+      "time": "8:00 AM",
+      "label": "Reach SE ridge of The Needle",
+      "detail": "Scramble/protect the final low-5th-class move."
+     },
+     {
+      "time": "8:30 AM",
+      "label": "Summit, then rappel off",
+      "detail": ""
+     },
+     {
+      "time": "11:00 AM",
+      "label": "Back at camp",
+      "detail": "Break down camp fully and start the descent."
+     },
+     {
+      "time": "5:00 PM",
+      "label": "Back at trailhead",
+      "detail": "Long day; some parties split this into a 3rd day if tired or weather-delayed."
+     }
+    ],
+    "objective": "Traverse the Neve Glacier to The Needle, then descend all the way to the car"
+   }
+  ],
+  "totalNote": "A 2-day/1-night glacier trip: a long, steep approach day to a col camp below Colonial/Neve Glacier, followed by a big combined summit-push-plus-hike-out day (~12-13 hrs)."
+ }
+}

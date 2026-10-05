@@ -1,0 +1,54 @@
+{
+ "id": "wa_abernathy_peak_north_ridge",
+ "name": "North Ridge",
+ "permit": "No wilderness permit is required to hike or camp in the Lake Chelan-Sawtooth Wilderness. No parking pass is needed at the Wolf Creek trailhead.",
+ "access": {
+  "fees": "None at the Wolf Creek trailhead",
+  "rules": "Wilderness regulations; pack out all waste.",
+  "permit": "No self-issue wilderness permit is required for Lake Chelan-Sawtooth Wilderness via the Wolf Creek trailhead (a permit is only needed for overnight stays inside the North Cascades National Park Complex, which this approach does not enter)",
+  "closures": null,
+  "landManager": "Okanogan-Wenatchee National Forest / Lake Chelan-Sawtooth Wilderness",
+  "passRequired": "None at the Wolf Creek trailhead",
+  "overnight_permit": null
+ },
+ "waypoints": [
+  {
+   "lat": 48.48414,
+   "lng": -120.2992,
+   "elev": 2997,
+   "name": "Wolf Creek Trailhead",
+   "note": "Start of Wolf Creek Trail #527, at the end of a gravel Forest Service road west of Winthrop.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Winthrop, take SR 20 across the Methow River bridge at the south end of town and turn right onto Twin Lakes Road. In about 1.5 miles turn right onto Wolf Creek Road, then follow the signs onto gravel Forest Service road to the Wolf Creek Trailhead at about 2,900 ft. A Northwest Forest Pass is required to park."
+  },
+  {
+   "elev": null,
+   "name": "Gardner Meadows",
+   "note": "End of the Wolf Creek Trail, about 10 miles in, and the usual camp. From the last campsites a faint path crosses Wolf Creek toward Abernathy Lake and the upper tarn. Not plotted on the map.",
+   "type": "Campsite",
+   "distMi": 10,
+   "directions": "Follow Wolf Creek Trail #527 up the Wolf Creek valley about 10 miles to its end at Gardner Meadows. The trail drops a couple of hundred feet to the creek right away, then rolls up and down through burned forest, entering the Lake Chelan-Sawtooth Wilderness early on."
+  },
+  {
+   "lat": 48.4862,
+   "lng": -120.5247,
+   "elev": 7680,
+   "name": "North Ridge saddle",
+   "note": "Saddle on the north ridge crest roughly 0.6 mi north of the summit. The coordinate is an estimate, not a surveyed fix.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "From the last campsites, cross Wolf Creek on a faint path toward Abernathy Lake; it soon fades into old burn and deadfall. Stay high above the lake and make a rising traverse into the upper basin to the small tarn with cabin remains, where the stream just below is the last reliable water. From the tarn, climb the spur ridge to the north ridge crest, with a few exposed class 3 moves."
+  },
+  {
+   "lat": 48.4775,
+   "lng": -120.5247,
+   "elev": 8321,
+   "name": "Abernathy Peak summit",
+   "note": "High point of Abernathy Ridge.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Follow a short boot path south along the crest past old mining cables and equipment. Where it fades, scramble class 2-3 boulders and scree on or near the crest to the summit."
+  }
+ ]
+}

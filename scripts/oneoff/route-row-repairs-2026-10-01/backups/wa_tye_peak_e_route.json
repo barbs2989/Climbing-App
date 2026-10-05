@@ -1,0 +1,93 @@
+{
+ "id": "wa_tye_peak_e_route",
+ "name": "East Slopes Scramble",
+ "approach": "Park in the large day-use lot on the north side of US 2 right at the Stevens Pass summit (signed for the PCT/Skyline Lake trailhead); a Northwest Forest Pass or Forest Service day-use fee applies here. Leave from the east end of the lot near the ski area's substation and climb directly up the open east-facing slopes below Cowboy Mountain, or start on the Skyline Lake Trail a short distance to the west for a more established (if brushier) line.",
+ "approach_logistics": {
+  "peakLat": 47.7462,
+  "peakLng": -121.0859,
+  "trailhead": "Skyline Lake Trailhead",
+  "trailheadDirection": "Park in the large day-use lot on the north side of US 2 right at the Stevens Pass summit (signed for the PCT/Skyline Lake trailhead); a Northwest Forest Pass or Forest Service day-use fee applies here."
+ },
+ "waypoints": [
+  {
+   "lat": 47.7473,
+   "lng": -121.0885,
+   "elev": 4061,
+   "name": "Stevens Pass North Lot / Skyline Lake-PCT Trailhead",
+   "note": "Large day-use lot on the north side of US 2 at Stevens Pass summit; climbers' route starts on the gated service road just west of the PCT trailhead, beside the ski area's substation/utility building.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive US 2 to the Stevens Pass summit and park in the large day-use lot on the north side of the highway, signed for the PCT and Skyline Lake trailhead. A Northwest Forest Pass or Forest Service day-use fee applies here. The lot sits at about 4,060 feet, and the climbers' route leaves from the lot itself beside the ski area's substation and utility building, so there is no further driving once you are parked."
+  },
+  {
+   "lat": 47.752013,
+   "lng": -121.090798,
+   "elev": 5000,
+   "name": "Skyline Lake cutoff",
+   "note": "Service road passes a ski-area utility tower near 0.75 mi, then an easy-to-miss, cairn-marked left fork (about 1 mi in) leaves the road for Skyline Lake and the ridge; staying right leads to a cell tower instead.",
+   "type": "Junction",
+   "distMi": 1,
+   "directions": "Walk up the gated service road from the lot, past a ski-area utility tower near 0.75 mile. About a mile in, take the easy-to-miss, cairn-marked left fork off the road; staying right on the road leads to a cell tower instead."
+  },
+  {
+   "lat": 47.752676,
+   "lng": -121.091839,
+   "elev": 5092,
+   "name": "Skyline Lake",
+   "note": "Small alpine lake reached via a short heather-and-huckleberry traverse off the service road; reliable water and a common rest stop/winter camp spot below Skyline Ridge.",
+   "type": "Water",
+   "distMi": 1.25,
+   "directions": "Follow the left fork on a short traverse through heather and huckleberry to the shore of Skyline Lake."
+  },
+  {
+   "lat": 47.753847,
+   "lng": -121.09389,
+   "elev": 5200,
+   "name": "Skyline Ridge gap (steep drop-in)",
+   "note": "Crossing the low point in Skyline Ridge above the lake requires dropping a roughly 150-ft, ~50-degree slope on the back side; snow-free it's mossy, loose rock and brush underfoot, and in winter it can cornice — the route's real crux.",
+   "type": "Hazard",
+   "distMi": 1.5,
+   "directions": "From the lake, climb northwest through timber to the low point in the crest of Skyline Ridge. The correct gap drops about 150 ft at close to fifty degrees on its far side; a gap you can simply walk over is the wrong one."
+  },
+  {
+   "lat": 47.755884,
+   "lng": -121.095264,
+   "elev": 4800,
+   "name": "Creek drainage below Skyline Ridge",
+   "note": "Route bottoms out at the head of a small creek on the north side of the ridge; early-season water source before the traverse toward Tye Ridge.",
+   "type": "Water",
+   "distMi": 1.8,
+   "directions": "Descend the steep back side of the gap, mossy loose rock and brush when snow-free and liable to cornice in winter, to the head of a small creek on the north side of the ridge. This is the last water."
+  },
+  {
+   "lat": 47.757138,
+   "lng": -121.100219,
+   "elev": 5000,
+   "name": "Tye Ridge crest / heather benches",
+   "note": "Steep wooded slope opens into gentle snowy meadows near 4,900 ft, then climbs through thinning timber to gain the crest of Tye Ridge at ~5,000 ft — this is the open heather-bench terrain where the brush finally clears.",
+   "type": "Junction",
+   "distMi": 2.3,
+   "directions": "Climb the steep wooded slope beyond the creek into gentle meadows near 4,900 ft, then up through thinning timber to the crest of Tye Ridge, where the brush clears onto open heather benches."
+  },
+  {
+   "lat": 47.75915,
+   "lng": -121.102119,
+   "elev": 5100,
+   "name": "Saddle between Sky Mountain and Tye Peak",
+   "note": "Estimated elevation for the connecting gap between Sky Mountain and Tye Peak's summit ridge; from here the route turns and climbs directly up the ridgeline to the top, staying on the highest ground to avoid cornices in winter or loose talus in summer.",
+   "type": "Junction",
+   "distMi": 2.6,
+   "directions": "Follow the crest of Tye Ridge north to the saddle between Sky Mountain and Tye Peak."
+  },
+  {
+   "lat": 47.7667,
+   "lng": -121.1077,
+   "elev": 5476,
+   "name": "Tye Peak",
+   "note": "Broad, mostly open summit (aka Point 5476) with views of Rainier, Glacier Peak, Baring, and the Nason Ridge crest when clear; no register, no maintained trail — reverse the same line to descend.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "From the saddle, climb the ridgeline directly to the broad summit, staying on the highest ground to avoid cornices in winter and loose talus in summer."
+  }
+ ]
+}

@@ -1,0 +1,149 @@
+{
+ "id": "wa_mount_olympus_west_ridge",
+ "name": "West Ridge",
+ "waypoints": [
+  {
+   "lat": 47.8602,
+   "lng": -123.9345,
+   "elev": 578,
+   "name": "Hoh River Trailhead (Hoh Rain Forest Visitor Center)",
+   "note": "Hoh Rain Forest Visitor Center trailhead; shared start for multiple Mount Olympus routes.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 about 13 miles south of Forks, turn east on Upper Hoh Road and drive about 18 miles to the road end at the Hoh Rain Forest Visitor Center, about 578 ft. A park entrance pass is required, and overnight trips need an Olympic National Park wilderness permit booked in advance; the Hoh is a quota area."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6700,
+   "name": "Snow Dome high camp",
+   "type": "Campsite",
+   "distMi": 17.45,
+   "elevFt": 6700,
+   "distFrom": "track",
+   "directions": "Follow the Hoh River Trail about 17.5 miles to Glacier Meadows at about 4,300 ft, crossing the ladder and fixed rope at the washout just below the meadows. Take the way trail onto the lateral moraine crest, drop onto the Blue Glacier and rope up, then climb about 2 miles of glacier to Snow Dome."
+  },
+  {
+   "lat": 47.810448,
+   "lng": -123.704464,
+   "elev": 7260,
+   "name": "West Ridge moat (gain ridge)",
+   "type": "Junction",
+   "distMi": 18.43,
+   "elevFt": 7260,
+   "distFrom": "track",
+   "directions": "Cross the Blue Glacier to the southwest, keeping Crystal Pass, Five Fingers Ridge and the West Peak in view as references, to the moat at the ridge's lowest point near 7,260 ft. If you find yourself climbing toward Crystal Pass, you have drifted onto the standard route."
+  },
+  {
+   "lat": 47.801305,
+   "lng": -123.710855,
+   "elev": 7980,
+   "name": "Mount Olympus (West Peak)",
+   "type": "Summit",
+   "distMi": 19.68,
+   "elevFt": 7980,
+   "distFrom": "track",
+   "directions": "Cross the moat and climb about 600 ft of ridge in roughly seven pitches, never harder than 5.4, staying high but slightly south of the loose crest and using shallow gullies, to the base of the summit block, then climb the roughly 100-ft block to the top."
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Hoh River Trail and Blue Glacier to the West Ridge toe",
+   "notes": "The walk in is identical to the standard route: Hoh River Trail from the rain forest trailhead to Glacier Meadows at 4,200-4,300 ft, about 17.4-17.5 miles, including the ladder and fixed rope at the washout below the meadows. Then the way trail onto the lateral moraine crest and down onto the toe of the Blue Glacier, where you rope up.\n\nSnow Dome at roughly 6,700-6,800 ft, about two miles of glacier travel above Glacier Meadows, is the recommended high camp for this route.\n\nFrom Snow Dome, cross the Blue Glacier to the southwest without gaining or losing much height, keeping Crystal Pass, Five Fingers Ridge and the West Peak in view as your three reference points.\n\nA wilderness permit is required year-round for overnight stays in Olympic National Park and must be arranged in advance; the Hoh is a quota area.",
+   "season": "Jun-Aug",
+   "hazards": [
+    "moat at the ridge toe near 7,260 ft, condition varies through the season",
+    "crevasses on the southwest crossing of the Blue Glacier",
+    "runout protection on the ridge despite the moderate grade",
+    "snow bridges over the bergschrund below the direct summit line have collapsed as early as mid-July in some years"
+   ],
+   "baseFinding": "The ridge is gained at a moat at its lowest point, close to 7,260 ft. That moat is the confirmation — it is a specific place, not a stretch of ridge, and whether it can be crossed changes through the season, so plan to inspect rather than assume.\n\nAbove the moat there is roughly 600 ft of ridge and then about 100 ft of summit block.\n\nThe negative marker is easy to spot and easy to ignore: if you are gaining height toward Crystal Pass, you have drifted onto the standard route and are heading for the summit block from the east instead of for the toe of the ridge. The crossing to the West Ridge is essentially level.\n\nThe ridge itself is never harder than 5.4 and never easier than class 3. It can be protected the whole way but is run out in places."
+  }
+ ],
+ "itinerary": {
+  "cal": "No fixed rap stations or cairns on the ridge as of recent reports — carry a full rack and be prepared to build your own anchors on the descent if you ever need to bail off the ridge itself.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Flat old-growth valley approach along the Hoh River.",
+    "hours": 5,
+    "miles": 9,
+    "title": "Hoh River Trail to Olympus Guard Station",
+    "gainFt": 1600,
+    "lossFt": 1250,
+    "packLb": 44,
+    "schedule": [],
+    "objective": "Reach Lewis Meadow / Olympus Guard Station camp"
+   },
+   {
+    "n": 2,
+    "note": "Climb through Elk Lake and the washed-out ladder section; this trip carries a full rock rack for the ridge in addition to glacier gear.",
+    "hours": 6,
+    "miles": 8.3,
+    "title": "Guard Station to Glacier Meadows high camp",
+    "gainFt": 4500,
+    "lossFt": 1300,
+    "packLb": 42,
+    "schedule": [],
+    "objective": "Establish high camp at Glacier Meadows"
+   },
+   {
+    "n": 3,
+    "note": "From Snow Dome, cross the Blue Glacier southwest, roughly level and using Crystal Pass and Five Fingers as landmarks, to a moat at the ridge's low point (~7,260 ft). The ridge is climbed in roughly 7 pitches of variable-quality rock, never harder than 5.4 on route (the crest itself is loose 5.6-5.7), with high exposure — no fixed rap anchors or cairns, so routefinding is on you. Descend by reversing to the standard glacier route rather than downclimbing the ridge.",
+    "hours": 13,
+    "miles": 8,
+    "title": "West Ridge summit day, descend via standard route",
+    "gainFt": 3900,
+    "lossFt": 3900,
+    "packLb": 26,
+    "schedule": [
+     {
+      "time": "1:30-2:30 AM",
+      "label": "Leave Glacier Meadows",
+      "detail": "Early start for the technical day ahead."
+     },
+     {
+      "time": "+4-5 hr",
+      "label": "Cross Blue Glacier to Snow Dome",
+      "detail": "Standard roped glacier crossing."
+     },
+     {
+      "time": "+6 hr",
+      "label": "Gain the West Ridge notch (~7,260 ft)",
+      "detail": "Cross the moat at the low point of the ridge."
+     },
+     {
+      "time": "+7-10 hr",
+      "label": "Climb ~7 pitches of ridge",
+      "detail": "Variable rock quality; be ready to back off or bail if it's wet/loose."
+     },
+     {
+      "time": "Early-mid PM",
+      "label": "Summit (7,980 ft)",
+      "detail": "Ridge tops out near the true summit."
+     },
+     {
+      "time": "6:30-8:30 PM",
+      "label": "Back at Glacier Meadows",
+      "detail": "Descend via the standard Crystal Pass/Snow Dome/Blue Glacier line."
+     }
+    ],
+    "objective": "Climb the ~7-pitch West Ridge, descend via Snow Dome/Crystal Pass"
+   },
+   {
+    "n": 4,
+    "note": "Long hike-out day back to the car; some parties add a rest day given the technical summit day.",
+    "hours": 8,
+    "miles": 17.3,
+    "title": "Hike out to trailhead",
+    "gainFt": 300,
+    "lossFt": 3900,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Return to the Hoh River trailhead"
+   }
+  ],
+  "totalNote": "A 4-day trip on the standard Blue Glacier approach, with one long technical summit day pitching out the ~7-pitch West Ridge (variable rock, 5.4 on route) and descending via the easier standard route instead of the ridge."
+ },
+ "beta": "The West Ridge is reached from Snow Dome by a roughly level crossing of the Blue Glacier to the southwest, gaining the ridge at a moat near its low point (~7,260 ft). About seven pitches of rock follow along and just south of the crest, class 3 to 5.4, to the summit block. It sees far fewer ascents than the Blue Glacier standard route, which is the usual way down."
+}

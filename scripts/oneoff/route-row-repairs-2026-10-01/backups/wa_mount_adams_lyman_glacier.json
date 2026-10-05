@@ -1,0 +1,83 @@
+{
+ "id": "wa_mount_adams_lyman_glacier",
+ "name": "Lyman Glacier",
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "Approach (typically via Killen Creek) to a high camp ~6,900 ft, positioned to traverse toward the Lyman Glacier the next day.",
+    "hours": 5,
+    "miles": 4.1,
+    "title": "Approach to High Camp",
+    "gainFt": 2900,
+    "lossFt": 0,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Reach a high camp positioned for the Lyman Glacier"
+   },
+   {
+    "n": 2,
+    "note": "An early start is essential. Traverse about an hour across lava fields and around the toe of Lava Ridge to the base of the Lyman Glacier at 8,000 ft, then climb moderate glacier terrain and a crux chute (45-65°, ~50 ft) around 10,000 ft, negotiating crevasses and a bergschrund to reach the summit plateau.",
+    "hours": 10,
+    "miles": 6,
+    "title": "Traverse to the Lyman Glacier and climb to the summit",
+    "gainFt": 3800,
+    "lossFt": 3800,
+    "packLb": 20,
+    "schedule": [
+     {
+      "time": "~1 hr from camp",
+      "label": "Reach base of the Lyman Glacier (8,000 ft)",
+      "detail": "Traverse lava fields and around Lava Ridge."
+     },
+     {
+      "time": "",
+      "label": "Climb the crux chute",
+      "detail": "45-65° for about 50 ft near 10,000 ft, varies by year."
+     },
+     {
+      "time": "",
+      "label": "Summit",
+      "detail": "Via open upper slopes past crevasses and a bergschrund."
+     }
+    ],
+    "objective": "Climb the North Lyman Glacier to the summit and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Break camp and hike back out to the trailhead.",
+    "hours": 4,
+    "miles": 4.1,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 2900,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Return to the trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip: approach to high camp, a long summit day on the North Lyman Glacier with a technical crux chute near 10,000 ft, then a hike out."
+ },
+ "waypoints": [
+  {
+   "lat": 46.2885,
+   "lng": -121.5525,
+   "elev": 4600,
+   "name": "Killen Creek Trailhead (Trail #113, FR-2329)",
+   "note": "Standard start, via High Camp and a traverse east past Lava Ridge. Muddy Meadows trailhead, farther east, is an alternative start for the Lava and Lyman glaciers.",
+   "type": "Trailhead",
+   "elevFt": 4600,
+   "directions": "From Randle on US 12, take Forest Road 23 south about 32 miles, the last stretch gravel, to FR 2329, then turn east past Takhlakh Lake about 6 miles to the trailhead. From Trout Lake, take Mt Adams Road and FR 23 north about 24 miles to the same junction. Roads are seasonal. A free wilderness permit is self-issued at the trailhead; a Mt. Adams climbing pass is needed above 7,000 ft May through September."
+  },
+  {
+   "lat": 46.202494,
+   "lng": -121.490746,
+   "elev": 12276,
+   "name": "Mount Adams summit",
+   "type": "Summit",
+   "elevFt": 12276,
+   "directions": "Follow Killen Creek Trail #113 about 3.1 miles to the PCT at about 6,100 ft and continue straight across on High Camp Trail #10 a mile to High Camp. Traverse east and southeast off-trail across the lava fields, the toe of the Lava Glacier, and around or over the toe of Lava Ridge to the base of the Lyman Glacier near 8,000 ft. Climb either lobe of the glacier to the crux chute near 10,000 ft, then easier snow to the summit plateau and summit."
+  }
+ ]
+}

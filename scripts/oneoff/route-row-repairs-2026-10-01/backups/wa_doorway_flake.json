@@ -1,0 +1,48 @@
+{
+ "id": "wa_doorway_flake",
+ "name": "Doorway Flake",
+ "approach": "South Face is another wall within the same Squire Creek Walls complex as Waterfall Basin, reached via the same Darrington-area approach: I-5 to the Arlington exit, SR 530 east through Oso to Darrington, then Squire Creek Road to the washout-blocked parking area. From there, follow the same rough, unmaintained approach — the old roadbed past a landslide crossing, a faint trail through streambed and alder brush, a ford of Squire Creek, and obscure forest track — before breaking into the open basin roughly 2 hours from the car; South Face is one of the walls encountered within that same basin complex, with route-finding (flagging, cairns) required in several spots.",
+ "approach_variants": [
+  {
+   "name": "Squire Creek trail, cut logs, ford and the grassy saddle",
+   "hours": "3",
+   "notes": "Squire Creek Road out of Darrington to the washout gate, then the old roadbed on foot past the flagged landslide crossing.\n\nTurn right at the two cut logs with old logging cable onto the well-beaten boot track. Ford the creek, climb steeply through old-growth forest — the upper section is steep and dirty — and break out into grassland at the grassy saddle bivy, roughly three hours from the trailhead. A second, smaller saddle lies ten minutes west along the wall.",
+   "season": "Summer",
+   "hazards": [
+    "Ford of Squire Creek",
+    "Steep dirty forest on the upper boot track"
+   ],
+   "baseFinding": "The main grassy saddle, at the start of Concerto in C for Drill and Hammer, is the reference point for the whole South Face; the smaller saddle further west is not it. From the saddle the grey granite apron runs out below the wall and the lines are picked off it. Rock here is generally clean slab with cracks that can be dirt-filled low down — dirty cracks near the ground are normal on this face and are not evidence you are off route. The sources consulted give no ground-level marker unique to this line, so identify it off the wall topo from the saddle rather than from anything underfoot."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.22062,
+   "lng": -121.62597,
+   "elev": 1170,
+   "name": "Squire Creek Road washout parking (FS Rd 2040)",
+   "note": "",
+   "type": "Trailhead",
+   "elevFt": 1170,
+   "directions": "From I-5 take the Arlington exit and drive SR 530 east through Oso to Darrington. Leave town on Squire Creek Road and follow it to the washout gate, which is where the road ends for vehicles and where you park. Everything past the gate is walked, starting along the old roadbed past the flagged landslide crossing."
+  },
+  {
+   "lat": 48.19575,
+   "lng": -121.65485,
+   "elev": 3249,
+   "name": "Grassy saddle (South Face routes)",
+   "note": "Shares the same ~3 hr approach as the wall's other South Face routes.",
+   "type": "Base/bivy",
+   "distMi": 3,
+   "directions": "Walk the old roadbed past the flagged landslide crossing to the Squire Creek Trail #654 sign and continue 8 to 10 minutes to two cut logs with old logging cable, then turn right on the boot track down to Squire Creek and ford it. Follow the climbers' track downstream and up through old-growth forest, across a tributary and up two gullies; the top of the second is steep and dirty and opens onto the grassy saddle, about 3 hours from the car."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4958,
+   "name": "Squire Creek Wall (true summit/high point)",
+   "type": "Summit",
+   "elevFt": 4958
+  }
+ ]
+}

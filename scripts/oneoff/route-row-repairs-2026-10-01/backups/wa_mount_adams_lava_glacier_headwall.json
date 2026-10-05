@@ -1,0 +1,71 @@
+{
+ "id": "wa_mount_adams_lava_glacier_headwall",
+ "name": "Lava Glacier Headwall",
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "Approach via Killen Creek to a high camp positioned below the Lava Glacier Headwall, in the triangle formed by the North Ridge and Lava Ridge.",
+    "hours": 5,
+    "miles": 4.1,
+    "title": "Approach to High Camp",
+    "gainFt": 2900,
+    "lossFt": 0,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Reach a high camp below the headwall (between the North Ridge and Lava Ridge)"
+   },
+   {
+    "n": 2,
+    "note": "A very early alpine start is essential — Mount Adams' headwall routes see significant rockfall and are seldom repeated, so timing matters more than on the standard routes. Climb moderate-to-steep snow/ice up the headwall to the summit, then descend the North Ridge.",
+    "hours": 13,
+    "miles": 8.4,
+    "title": "Climb the headwall, descend to the trailhead",
+    "gainFt": 3800,
+    "lossFt": 6700,
+    "packLb": 22,
+    "schedule": [
+     {
+      "time": "~2:00 AM",
+      "label": "Leave high camp",
+      "detail": "Very early start to minimize rockfall/icefall exposure on the headwall."
+     },
+     {
+      "time": "Midday",
+      "label": "Summit",
+      "detail": ""
+     },
+     {
+      "time": "Afternoon-evening",
+      "label": "Descend to the car",
+      "detail": "Via the North Ridge."
+     }
+    ],
+    "objective": "Summit via the Lava Glacier Headwall and descend fully to the car"
+   }
+  ],
+  "totalNote": "A 2-day trip: ~5 hr approach to a high camp below the headwall, then a very early alpine-start summit day (~13 hr) on the Lava Glacier Headwall, descending via the North Ridge."
+ },
+ "waypoints": [
+  {
+   "lat": 46.288612,
+   "lng": -121.551532,
+   "elev": 4600,
+   "name": "Killen Creek Trailhead #113",
+   "note": "Standard start, via High Camp. Muddy Meadows trailhead, farther east, is an alternative start for the Lava and Lyman glaciers.",
+   "type": "Trailhead",
+   "elevFt": 4600,
+   "directions": "From Randle on US 12, take Forest Road 23 south about 32 miles, the last stretch gravel, to FR 2329, then turn east past Takhlakh Lake about 6 miles to the trailhead. From Trout Lake, take Mt Adams Road and FR 23 north about 24 miles to the same junction. Roads are seasonal. A free wilderness permit is self-issued at the trailhead; a Mt. Adams climbing pass is needed above 7,000 ft May through September."
+  },
+  {
+   "lat": 46.202494,
+   "lng": -121.490746,
+   "elev": 12276,
+   "name": "Mount Adams summit",
+   "type": "Summit",
+   "elevFt": 12276,
+   "directions": "Follow Killen Creek Trail #113 about 3.1 miles, crossing East Fork Adams Creek near mile 2.5, to the PCT at about 6,100 ft, then continue straight across on High Camp Trail #10 a mile to High Camp. Traverse east off-trail across the lava fields, past the North Ridge, to the Lava Glacier, and climb it to the triangular headwall between the North Ridge and Lava Ridge. Climb the headwall's 45-degree snow and ice to the summit."
+  }
+ ]
+}

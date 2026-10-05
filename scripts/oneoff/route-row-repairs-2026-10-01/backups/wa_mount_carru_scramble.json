@@ -1,0 +1,88 @@
+{
+ "id": "wa_mount_carru_scramble",
+ "name": "South Slopes Scramble",
+ "approach_logistics": {
+  "peakLat": 48.831994,
+  "peakLng": -120.554332,
+  "trailhead": "Monument Creek Trailhead (Lost River Road / Harts Pass Road)",
+  "trailheadLat": 48.65617,
+  "trailheadLng": -120.51276,
+  "trailheadDirection": "From the Monument Creek Trailhead off Lost River Road past Mazama"
+ },
+ "waypoints": [
+  {
+   "lat": 48.737833,
+   "lng": -120.6785,
+   "elev": 7170,
+   "name": "Slate Peak Trailhead (Buckskin Ridge TH)",
+   "note": "End of Slate Peak Road (FR-5400), a high-clearance gravel spur off Harts Pass Road; self-issue Pasayten Wilderness permit at the kiosk, road typically open only July-September.",
+   "type": "Trailhead",
+   "distMi": 0
+  },
+  {
+   "lat": 48.744811,
+   "lng": -120.659579,
+   "elev": 6500,
+   "name": "Slate Pass",
+   "note": "Saddle on Buckskin Ridge where the Buckskin Ridge/Middle Fork Pasayten trail junction is reached (~30 min from the TH) and the route leaves the ridge crest to drop steeply toward the Middle Fork Pasayten River.",
+   "type": "Junction",
+   "distMi": 1.2
+  },
+  {
+   "lat": 48.82287,
+   "lng": -120.59824,
+   "elev": 6507,
+   "name": "Fred's Lake",
+   "note": "Small subalpine lake with limited established sites reached via a climbing traverse off the Eureka Creek trail; standard first-night base camp for the Carru-Lago-Osceola cluster (~5 hrs in from the trailhead).",
+   "type": "Campsite",
+   "distMi": 7.5
+  },
+  {
+   "lat": 48.81956,
+   "lng": -120.59041,
+   "elev": 7130,
+   "name": "Rolo Pass (ridge crest above Fred's Lake)",
+   "note": "Switchbacks out of the Fred's Lake basin gain this open ridge crest; views back northwest to Fred's Lake and east into the Eureka Creek headwater basin, the divide crossing point toward Shellrock Basin.",
+   "type": "Junction",
+   "distMi": 8.1,
+   "directions": "From Fred's Lake, switchback up the open slope to the ridge-crest pass directly above the lake, with views back down to the lake and east into the Eureka Creek headwaters."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6800,
+   "name": "Upper Eureka Creek crossing",
+   "note": "Rock-hop the Eureka Creek headwaters below Rolo Pass before climbing back up into Shellrock Basin; last reliable water before the summit day.",
+   "type": "Water",
+   "distMi": 9.5,
+   "directions": "Drop east off the pass into the Eureka Creek headwater basin and rock-hop the creek."
+  },
+  {
+   "lat": 48.820821,
+   "lng": -120.552218,
+   "elev": 6800,
+   "name": "Shellrock Basin",
+   "note": "Open meadow/talus basin near Shellrock Pass with tarn water, used as the high camp for Carru, Lago, and Blackcap summit pushes.",
+   "type": "Campsite",
+   "distMi": 11
+  },
+  {
+   "lat": 48.82876,
+   "lng": -120.53984,
+   "elev": 7600,
+   "name": "Lago-Carru saddle",
+   "note": "Broad col between Mount Lago and Mount Carru; leave the basin here and gain Carru's southeast slope/ridge for the final scramble.",
+   "type": "Junction",
+   "distMi": 12.3
+  },
+  {
+   "lat": 48.831994,
+   "lng": -120.554332,
+   "elev": 8595,
+   "name": "Mount Carru",
+   "note": "True summit via class 2-3 talus and short rock on the southeast ridge; exposure enough on the final blocks to keep it interesting.",
+   "type": "Summit",
+   "distMi": 13
+  }
+ ]
+}

@@ -1,0 +1,83 @@
+{
+ "id": "wa_kendall_peak_standard",
+ "name": "Standard Scramble (off the PCT)",
+ "waypoints": [
+  {
+   "lat": 47.4279,
+   "lng": -121.4133,
+   "elev": 3000,
+   "name": "PCT Northbound Trailhead (Kendall Peak / Kendall Katwalk access)",
+   "note": "I-90 Exit 52, Snoqualmie Pass; park in PCT northbound trailhead lot, hike PCT then bootpath to summit.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Leave I-90 at Exit 52 (Snoqualmie Pass West), go north under the freeway onto Alpental Road, and in about 0.1 mile turn right onto the dirt spur into the PCT North Trailhead lot at about 3,000 ft. A Northwest Forest Pass or interagency pass is required to park, and the roughly 50-car lot fills early on weekends; self-issue the free wilderness permit at the trailhead."
+  },
+  {
+   "lat": 47.451796,
+   "lng": -121.378716,
+   "elev": 5387,
+   "name": "Kendall Katwalk (PCT)",
+   "type": "Junction",
+   "distMi": null,
+   "elevFt": 5387
+  },
+  {
+   "lat": 47.443025,
+   "lng": -121.384905,
+   "elev": 5798.7,
+   "name": "Kendall Peak Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 5798.7
+  }
+ ],
+ "itinerary": {
+  "cal": "Best conditions are typically late June through October once the PCT switchbacks and Kendall Gardens are snow-free; the boot path can hold snow into early summer, so an ice axe may be worth carrying in June.",
+  "days": [
+   {
+    "n": 1,
+    "note": "This is a full-day car-to-car outing, not a backpack — the entire route follows the Pacific Crest Trail north from the Commonwealth Basin/Alpine Lakes trailhead near Snoqualmie Pass before leaving the trail on a boot path for a short class 2 scramble to the summit. Most parties are back at the car by mid-to-late afternoon.",
+    "hours": 7,
+    "miles": 9.2,
+    "title": "Car-to-car scramble via the PCT",
+    "gainFt": 2700,
+    "lossFt": 2700,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "7:00 AM",
+      "label": "Leave trailhead",
+      "detail": "Start on the PCT northbound; cross into Commonwealth Basin and begin the main switchbacks."
+     },
+     {
+      "time": "+2.5 hr",
+      "label": "Kendall Gardens",
+      "detail": "Pass through the wildflower basin below the Kendall Katwalk (best late July-August)."
+     },
+     {
+      "time": "+4 hr",
+      "label": "Leave the PCT at the stump",
+      "detail": "Around mile 5.75 (~5,200 ft), a bleached stump marks the unmarked boot path leaving the PCT."
+     },
+     {
+      "time": "+4.5-5 hr",
+      "label": "Reach the summit",
+      "detail": "Boot path and an ascending scramble traverse gain the north/true summit at 5,799 ft; typical summit arrival is late morning to early afternoon (trip reports show ~12:30-1:00 PM for 7-8 AM starts)."
+     },
+     {
+      "time": "+5.5 hr",
+      "label": "Begin descent",
+      "detail": "Reverse the boot path down to the stump and rejoin the PCT."
+     },
+     {
+      "time": "+7 hr",
+      "label": "Back at trailhead",
+      "detail": "Follow the PCT south through Commonwealth Basin to the car; most parties finish by mid-to-late afternoon."
+     }
+    ],
+    "objective": "Summit Kendall Peak (5,799 ft) and return to the trailhead"
+   }
+  ],
+  "totalNote": "A single, moderate day out: roughly 9-11 miles round trip with 2,700-2,800 ft of gain, typically 6-8 hours car-to-car."
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "id": "wa_three_fingers_r2",
+ "name": "Middle Peak (South Face)",
+ "waypoints": [
+  {
+   "lat": 48.1972,
+   "lng": -121.7742,
+   "elev": 3020,
+   "name": "Three Fingers / Goat Flats Trailhead (Tin Can Gap approach)",
+   "note": "FR-41 (Tupso Pass Rd) permanently closed to vehicles past Canyon Creek bridge; hike Goat Flats to Tin Can Gap, drop onto Three Fingers Glacier.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Granite Falls, drive the Mountain Loop Highway east to about milepost 7 and turn left (north) onto Forest Road 41, Tupso Pass Road. The road is closed to vehicles at the washed-out Canyon Creek bridge; park there and walk or bike the remaining 8 to 9 miles, staying on FR 41 past the side roads and then turning right onto FR 4160 to the trailhead at its end. A free self-issued wilderness permit is required."
+  },
+  {
+   "lat": 48.175,
+   "lng": -121.688,
+   "elev": 6800,
+   "name": "Three Fingers - Middle Peak summit",
+   "note": "The South Peak fire lookout is a different summit. Middle Peak's own summit coordinates are approximate.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.169895,
+  "peakLng": -121.687865,
+  "trailhead": "Tupso Pass Trailhead (Trail #641)",
+  "trailheadDirection": "From the Tupso Pass Trailhead via Trail #641"
+ },
+ "itinerary": {
+  "cal": "Beta is thin for this specific summit -- confirm current glacier/snow conditions on the Queest-Alb crossing before committing, and plan for a rope and light rack even though the South Face itself is mostly 3rd/4th class.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Same shared approach as the other Three Fingers summits: Saddle Lake Trailhead up through old-growth forest and Saddle Lake to the meadows at Goat Flats.",
+    "hours": 4.5,
+    "miles": 4.5,
+    "title": "Hike in to Goat Flats camp",
+    "gainFt": 3000,
+    "lossFt": 100,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Reach Goat Flats camp"
+   },
+   {
+    "n": 2,
+    "note": "From camp, traverse via Tin Can Gap toward the saddle between Middle and North Peak, then climb Middle Peak's South Face -- steep snow/scree giving way to class 3-4 rock, with a rope useful for the short exposed moves near the summit ridge.",
+    "hours": 8.5,
+    "miles": 5.5,
+    "title": "Technical summit day: Middle Peak South Face",
+    "gainFt": 2100,
+    "lossFt": 2100,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave Goat Flats camp",
+      "detail": ""
+     },
+     {
+      "time": "6:30 AM",
+      "label": "Reach Tin Can Gap",
+      "detail": "Traverse toward the Middle/North saddle."
+     },
+     {
+      "time": "8:00 AM",
+      "label": "Start South Face scramble",
+      "detail": "Steep snow/scree into class 3-4 rock."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Summit Middle Peak",
+      "detail": "6,797 ft."
+     },
+     {
+      "time": "2:30 PM",
+      "label": "Back at Goat Flats camp",
+      "detail": ""
+     }
+    ],
+    "objective": "Climb Middle Peak via the saddle and South Face"
+   },
+   {
+    "n": 3,
+    "note": "Break camp at Goat Flats and retrace the trail down through Saddle Lake to the trailhead.",
+    "hours": 4,
+    "miles": 4.5,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 3000,
+    "packLb": 32,
+    "schedule": [],
+    "objective": "Return to trailhead"
+   }
+  ],
+  "totalNote": "A 3-day, 2-night trip shaped like the North Peak itinerary: hike in to Goat Flats, a technical South Face summit day via the Middle/North col, then hike out; roughly 14.5 mi and an estimated 5,100 ft of cumulative gain overall."
+ }
+}

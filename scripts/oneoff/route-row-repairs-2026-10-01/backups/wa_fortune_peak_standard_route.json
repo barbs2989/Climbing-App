@@ -1,0 +1,43 @@
+{
+ "id": "wa_fortune_peak_standard_route",
+ "name": "Standard Route (Esmeralda Basin – Lake Ann Pass)",
+ "waypoints": [
+  {
+   "lat": 47.4367,
+   "lng": -120.9369,
+   "elev": 4269,
+   "name": "Esmeralda Trailhead (#1394)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 4269,
+   "directions": "From I-90 Exit 85 east of Cle Elum, take SR-970 to Teanaway Road and follow the North Fork Teanaway Road. Where the pavement ends at 29 Pines Campground, take the right fork, FR 9737, about 10 miles to its end at the Esmeralda Basin Trailhead (about 4,270 ft). A Northwest Forest Pass is required."
+  },
+  {
+   "lat": 47.462695,
+   "lng": -120.953075,
+   "elev": 7382,
+   "name": "Fortune Peak Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 7382,
+   "directions": "Follow the Esmeralda Basin Trail #1394, staying on it where Ingalls Way branches right early on. Higher in the basin, turn right onto the trail toward Lake Ann and switchback up to the saddle above the lake. From the saddle a climbers' boot path follows the ridge north, on or just right of the crest, gaining about 800 ft in half a mile to the summit; expect loose rock and lingering snow early in the season."
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Maintained trail",
+   "notes": "From the trailhead (~4,300 ft) the Esmeralda Basin Trail climbs at a gentle grade through open forest and meadow. Stay on it past the early fork where Ingalls Way branches right toward Ingalls Pass. In early summer the many creek crossings run high, and the upper trail can hold snow into June.",
+   "pitch": "Esmeralda Basin Trail to Lake Ann junction"
+  },
+  {
+   "grade": "Maintained trail, steepening",
+   "notes": "Turn onto the trail toward Lake Ann. It switchbacks up to the saddle above the lake, with Fortune's ridge rising to the north of it. Under snow the trail is hard to follow, and cutting straight uphill leads onto steep snow and dirt slopes, so navigate carefully in early season.",
+   "pitch": "Junction to the pass above Lake Ann"
+  },
+  {
+   "grade": "Class 2-3 scramble",
+   "notes": "From the saddle a climbers' boot path follows the ridge on or just right of the crest, gaining roughly 800 ft in half a mile to the summit (7,382 ft). The steepest ground is near the bottom. Expect loose rock, and in early season a few moves around lingering snow. Staying closer to the crest avoids most of it.",
+   "pitch": "Pass to summit ridge and summit"
+  }
+ ]
+}

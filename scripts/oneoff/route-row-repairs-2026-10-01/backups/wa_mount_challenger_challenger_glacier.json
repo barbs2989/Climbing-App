@@ -1,0 +1,147 @@
+{
+ "id": "wa_mount_challenger_challenger_glacier",
+ "name": "Challenger Glacier",
+ "waypoints": [
+  {
+   "lat": 48.9101,
+   "lng": -121.5927,
+   "elev": 3100,
+   "name": "Hannegan Pass Trailhead",
+   "note": "Road-end at Hannegan Campground off Ruth Creek Rd/FR-32; Northwest Forest Pass required, self-issue wilderness permit needed for NOCA camps ahead.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive to the road-end at Hannegan Campground, at the end of FS Road 32 (Ruth Creek Road) off WA-542 — this is the Hannegan Pass Trailhead. A Northwest Forest Pass is required to park here, and a self-issue wilderness permit is needed for the North Cascades National Park camps ahead on the route."
+  },
+  {
+   "lat": 48.8829219,
+   "lng": -121.5342754,
+   "elev": 5100,
+   "name": "Hannegan Pass",
+   "note": "Trail crests the pass then drops roughly 650 ft per mile into North Cascades National Park toward the Chilliwack River, the gateway from Mt. Baker Wilderness into the park backcountry.",
+   "type": "Junction",
+   "distMi": 4
+  },
+  {
+   "lat": 48.8875,
+   "lng": -121.5236,
+   "elev": 4410,
+   "name": "Boundary Camp",
+   "note": "Marks the Mt. Baker National Forest / North Cascades National Park boundary; established campsites with pit toilet at the bottom of the roughly 2,500 ft descent off Hannegan Pass.",
+   "type": "Campsite",
+   "distMi": 5.3
+  },
+  {
+   "lat": 48.884457,
+   "lng": -121.502415,
+   "elev": 2800,
+   "name": "Chilliwack River ford / Easy Ridge climbers' path",
+   "note": "Faint, unsigned climbers' path leaves the valley trail here to gain Easy Ridge; parties commonly lose it near the river crossing, especially in fog.",
+   "type": "Hazard",
+   "distMi": 7
+  },
+  {
+   "lat": 48.8754,
+   "lng": -121.3646,
+   "elev": 5210,
+   "name": "Whatcom Pass",
+   "note": "High alpine pass on the Chilliwack River/Brush Creek trail (USGS Mount Redoubt quad); the Tapto Lakes side trail branches here while the climbing route continues toward Whatcom Peak and Perfect Pass.",
+   "type": "Junction",
+   "distMi": 16
+  },
+  {
+   "lat": 48.84929,
+   "lng": -121.37458,
+   "elev": 6200,
+   "name": "Perfect Pass",
+   "note": "Renowned high bivy site reached by descending roughly 1,000 ft off Easy Ridge around the exposed 'Imperfect Impasse' notch below Whatcom Peak; last reliable camp before the glacier.",
+   "type": "Campsite",
+   "distMi": null
+  },
+  {
+   "lat": 48.839677,
+   "lng": -121.34233,
+   "elev": 7500,
+   "name": "Challenger Glacier crossing",
+   "note": "Crevassed glacier traverse on Challenger's north/northwest slopes from Perfect Pass; crampons recommended even when an existing boot pack is present in season.",
+   "type": "Hazard",
+   "distMi": 19
+  },
+  {
+   "lat": 48.8356,
+   "lng": -121.342,
+   "elev": 8207,
+   "name": "Mount Challenger (East Summit)",
+   "note": "3rd/4th-class scramble off the glacier exits onto a short 5.5-5.7 pitch to the true east summit; descend by downclimbing to the notch and making a single rappel.",
+   "type": "Summit",
+   "distMi": 19.5
+  }
+ ],
+ "itinerary": {
+  "cal": "Best climbed June-Sept once the Chilliwack River fords and Challenger/Whatcom Glaciers are in reasonable shape; the Ross Lake Resort water taxi (used for the Beaver Pass variant) requires advance reservations.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Hannegan Pass trailhead, climb to Hannegan Pass (~5,000 ft), then drop roughly 2,500 ft into the Chilliwack River valley before re-climbing to camp at Whatcom Pass. Long day with a loaded pack on a mostly good trail; the up-down profile makes it feel longer than the raw mileage suggests.",
+    "hours": 7.5,
+    "miles": 10.4,
+    "title": "Approach to Whatcom Pass camp",
+    "gainFt": 4300,
+    "lossFt": 2400,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Reach Whatcom Pass high camp (5,200 ft)"
+   },
+   {
+    "n": 2,
+    "note": "An early alpine start traverses below Whatcom Peak (dipping to ~5,300 ft) to Perfect Pass, then climbs the Challenger Glacier, crosses the bergschrund, and finishes with a short 5.5-5.7 rock pitch to the true summit. Round trip from camp runs about 11 hours including a lunch break.",
+    "hours": 11,
+    "miles": 9,
+    "title": "Summit day via Perfect Pass and the Challenger Glacier",
+    "gainFt": 3400,
+    "lossFt": 3400,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "7:00 AM",
+      "label": "Leave Whatcom Pass camp",
+      "detail": "Traverse toward Perfect Pass, dipping below Whatcom Peak."
+     },
+     {
+      "time": "~10:00 AM",
+      "label": "Reach Perfect Pass",
+      "detail": "6,300 ft; roughly 3 hours from camp, one of the best bivy sites in the range."
+     },
+     {
+      "time": "~12:00 PM",
+      "label": "Top out on the summit rocks",
+      "detail": "Glacier ascent, bergschrund crossing, then a single 5.5-5.7 pitch (fixed gear) to the true summit."
+     },
+     {
+      "time": "~3:30 PM",
+      "label": "Back to Perfect Pass",
+      "detail": "Includes a lunch/rest break on the descent."
+     },
+     {
+      "time": "6:15 PM",
+      "label": "Return to Whatcom Pass camp",
+      "detail": "About 11 hours car-to-camp round trip."
+     }
+    ],
+    "objective": "Climb Mount Challenger via the Northwest (Challenger) Glacier"
+   },
+   {
+    "n": 3,
+    "note": "Reverse the approach over Hannegan Pass and back down to the car. Parties commonly treat this as a full day given the up-and-down profile; many build in a spare contingency day beforehand for weather given how remote and glacier-dependent this route is.",
+    "hours": 7.5,
+    "miles": 10.4,
+    "title": "Exit to trailhead",
+    "gainFt": 2400,
+    "lossFt": 4300,
+    "packLb": 0,
+    "schedule": [],
+    "objective": "Hike back out to the Hannegan Pass trailhead"
+   }
+  ],
+  "totalNote": "A remote 3-day trip (parties often pad in a 4th weather/contingency day): roughly 37 miles and ~10,000 ft of cumulative gain round trip, anchored by an 11-hour glacier summit day out of Whatcom Pass camp."
+ }
+}

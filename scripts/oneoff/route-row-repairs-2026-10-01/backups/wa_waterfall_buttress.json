@@ -1,0 +1,34 @@
+{
+ "id": "wa_waterfall_buttress",
+ "name": "Waterfall Buttress",
+ "waypoints": [
+  {
+   "lat": 48.2088,
+   "lng": -121.6298,
+   "elev": 1100,
+   "name": "Squire Creek Road Trailhead",
+   "note": "Access from Darrington via Squire Creek Road to blocked parking; road washed out ~2 mi in.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Seattle, take I-5 north to the Arlington exit and follow SR 530 east through Oso to Darrington. In town, go south on Madison Avenue to the T, turn right on Darrington Street, and continue as it becomes Squire Creek Road at the west end of town. Follow the road to the parking area at about 1,100 feet where a washout roughly two miles in gates it off; there is no driving past that point. Everything beyond is on foot, starting with the old roadbed and a flagged landslide crossing about five minutes along."
+  },
+  {
+   "lat": 48.17241,
+   "lng": -121.67254,
+   "elev": 2659,
+   "name": "Waterfall Basin (base of Waterfall Buttress)",
+   "note": "Buttress sits left of the major slab waterfall; hike talus to the buttress toe. Base often buried under avalanche debris early season.",
+   "type": "Base",
+   "distMi": 3.5,
+   "directions": "Walk the old roadbed past the flagged landslide crossing to the original road end, then 20 to 30 minutes on the old trail to a dry streambed about 50 feet wide full of white boulders. Go down the bed about 200 feet, then left into the alder for the informal path; follow it upvalley to the ford of Squire Creek and on along the fading trail and dry creek bed into the open basin. The buttress is the rib just left of the big slab waterfall; hike talus to its toe."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.17241,
+  "peakLng": -121.67254,
+  "trailhead": "Squire Creek Road washout parking (Darrington)",
+  "trailheadLat": 48.2088,
+  "trailheadLng": -121.6298,
+  "trailheadDirection": "From Darrington via Squire Creek Road to the gated washout parking, then the Squire Creek Walls climbers' path"
+ }
+}

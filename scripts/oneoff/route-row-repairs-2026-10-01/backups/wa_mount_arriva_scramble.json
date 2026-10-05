@@ -1,0 +1,74 @@
+{
+ "id": "wa_mount_arriva_scramble",
+ "name": "Southwest Slopes",
+ "waypoints": [
+  {
+   "lat": 48.5879,
+   "lng": -120.8029,
+   "elev": 3700,
+   "name": "Easy Pass Trailhead",
+   "note": "Signed pullout on SR-20 near milepost 151-152 (45 mi east of Marblemount); Northwest Forest Pass required, an NPS wilderness permit is required to camp beyond the pass.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR-20, the North Cascades Highway, about 45 miles east of Marblemount to the signed Easy Pass Trailhead pullout on the south side of the highway between mileposts 151 and 152, at about 3,700 ft. A Northwest Forest Pass is required to park, and camping beyond the pass inside the national park requires a backcountry permit. The highway is closed in winter."
+  },
+  {
+   "lat": 48.575589,
+   "lng": -120.820072,
+   "elev": 4300,
+   "name": "Easy Pass Creek footlog crossing",
+   "note": "Trail crosses Easy Pass Creek (feeds Granite Creek) on a log; it gets sketchy/submerged in high snowmelt water.",
+   "type": "Water",
+   "distMi": 1.2,
+   "directions": "About 300 yards from the trailhead, cross Granite Creek on a footlog, then climb the Easy Pass Trail through hemlock and fir forest to this crossing of Easy Pass Creek."
+  },
+  {
+   "lat": 48.57152,
+   "lng": -120.84178,
+   "elev": 6500,
+   "name": "Easy Pass",
+   "note": "Trail high point and North Cascades NP boundary; leave the maintained tread here and drop west off-trail toward Fisher Creek to reach Arriva's basin.",
+   "type": "Junction",
+   "distMi": 3.5,
+   "directions": "Keep climbing as the trail leaves the forest for the avalanche paths on the flanks of Ragged Ridge, crossing Easy Pass Creek and traversing steep rock slopes and avalanche meadows to the pass at about 6,500 ft."
+  },
+  {
+   "lat": 48.560827083333336,
+   "lng": -120.84059791666667,
+   "elev": 5600,
+   "name": "Fisher Creek Basin (below Arriva)",
+   "note": "Off-trail boot/talus descent from the pass lands in the open basin under Arriva's south/southwest aspect; the maintained Fisher Creek Trail continues down-valley to Fisher Camp (~2 mi further) if splitting the approach over two days.",
+   "type": "Junction",
+   "distMi": 5,
+   "directions": "Cross the pass into North Cascades National Park and descend its west side into the open meadows of Fisher Creek Basin below Arriva."
+  },
+  {
+   "lat": 48.55757833333333,
+   "lng": -120.84512166666667,
+   "elev": 6000,
+   "name": "Talus and snow apron below the SW slopes",
+   "note": "Loose talus interspersed with lingering snowfields/moats guards the base of the climbing line; carry an ice axe into midsummer and watch for hidden meltwater gaps under the snow edge.",
+   "type": "Hazard",
+   "distMi": 5.6
+  },
+  {
+   "lat": 48.552705208333336,
+   "lng": -120.85190729166666,
+   "elev": 7800,
+   "name": "Notch gaining the south/southwest ridge",
+   "note": "Rising traverse across a talus bowl reaches this notch, the gateway into the short Class 3 rock bands and ledge systems leading to the summit block.",
+   "type": "Junction",
+   "distMi": 6.5
+  },
+  {
+   "lat": 48.548915,
+   "lng": -120.857185,
+   "elev": 8215,
+   "name": "Mount Arriva summit",
+   "note": "True (West) summit of Mount Arriva, first climbed 1966; despite sitting only 1.5 mi from Easy Pass it is hidden from the pass and the highway, so route-finding on the final rock bands is the crux.",
+   "type": "Summit",
+   "distMi": 7.2,
+   "directions": "From the notch, scramble good rock along the south ridge crest until the summit block bars the way. Look for a narrow defile where a dark, eroded dike splits the block, climb it until a sloping ramp lets you traverse left back onto the crest, and scramble the crest to the top. If the block above is uniform pale rock with no dark band, you are not at the defile."
+  }
+ ]
+}

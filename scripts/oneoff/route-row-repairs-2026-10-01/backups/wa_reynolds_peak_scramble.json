@@ -1,0 +1,105 @@
+{
+ "id": "wa_reynolds_peak_scramble",
+ "name": "Standard Scramble",
+ "approach": "From the Reynolds Creek Trailhead (~3,100–3,170 ft, reached via Forest Road 4435, which crosses the Twisp River near Mystery Campground before the Spur 4435-015 turnoff to the trailhead), the route follows Reynolds Creek Trail #402, an unmaintained, primitive Forest Service trail entering the Lake Chelan–Sawtooth Wilderness. Trail #402 climbs steadily through mixed conifer forest along Reynolds Creek for roughly 3 miles to the confluence where the South Fork of Reynolds Creek meets the main creek (approx. 4,800–5,000 ft) — parties describe scooting across a downed log to make this crossing, which can be a genuine ford in high early-season flow. This confluence is the last reliable, easy water source before the upper basin, so fill up here. Beyond the crossing, leave the maintained tread and follow the South Fork drainage, staying on the climber's right (south) bank roughly 50 ft above the creek to avoid the worst brush and log-hopping directly in the streambed. Expect about 2 miles of intermittent bushwhacking through slide alder, downed timber, and a boot-path/game-trail tread that comes and goes — this is the route-finding crux of the approach, and parties specifically flag the numerous fallen logs and dense brush here. The drainage opens into a broad talus/scree basin around 5,500–5,700 ft directly below Reynolds Peak's southeast face and the gully/snowfield leading to its east ridge. This basin and the gully above it hold snow well into summer in most years, so carry an ice axe (and traction in early season) even on an otherwise dry-looking late-summer day. From the basin, ascend the scree, talus, and (seasonally) snow of the SE slopes/gully to a saddle/notch on the peak's east ridge, then finish with a short, exposed class 2–3 scramble (occasionally reported as harder, class 3–4, depending on snow coverage) up sound granite summit rocks to the 8,517 ft high point. An alternate, more scenic but similarly long approach exists via Williams Creek Trail and War Creek Ridge from a different Twisp River Road trailhead, but Reynolds Creek Trail #402 is the standard, shorter line. The longer Williams Creek/War Creek Ridge alternative can be combined into a loop with Abernathy Peak or Twisp Pass, running roughly 24 miles round trip with about 8,300 ft of cumulative gain.",
+ "approach_variants": [
+  {
+   "name": "Reynolds Creek Trail and the South Fork drainage",
+   "camps": [
+    "Reynolds Creek upper basin",
+    "Upper Reynolds Creek basin"
+   ],
+   "notes": "The short way in, and short is relative. From the road end off the Twisp River an unmaintained primitive trail climbs through forest alongside the creek for roughly three miles. Above the confluence the tread gives out and about two miles of intermittent bushwhacking through slide alder, downed timber and a boot path that comes and goes is the real crux of the day — several parties lose more time here than on the mountain. The basin above holds snow well into summer, so an axe is worth carrying even when the valley looks dry. A longer alternative comes in over War Creek Ridge from the Williams Creek side and can be strung into a loop with a neighbouring summit, but it joins the same finish. Mark the point where you leave the tread; it is easy to miss coming down.",
+   "season": "Mid-July to September; axe for snow",
+   "hazards": [
+    "Avalanche terrain on the approach slopes and the summit gully whenever they hold snow",
+    "Loose rock and real exposure on the summit block",
+    "Deadfall and heavy brush on the lower trail, which sees little maintenance",
+    "Breakable crust and postholing on spring ascents",
+    "Afternoon thunderstorms on this dry east-side peak"
+   ],
+   "primary": true,
+   "baseFinding": "Follow the creek trail to about 4,800 ft, where the forest opens at the confluence of the South Fork with the main creek — a real, obvious junction of two running streams, usually crossed on a downed log. That confluence is where you leave the maintained tread. Follow the South Fork drainage upward staying on the climber's right bank, roughly fifty feet above the water, which keeps you out of the worst alder and log-hopping in the streambed itself. Timber thins around 5,600 ft and the drainage narrows into a ravine that opens into a broad talus and scree basin directly beneath the peak's southeast face; that basin, at roughly 5,500 to 6,700 ft depending where you stop, is the base of the climbing. From it, a gully that often holds snow well into summer leads up to a notch on the ridge above. The decoy is at the top rather than the bottom: two horns stand across a short notch, the northern one is reached first and is lower, and the true summit is the southern horn."
+  },
+  {
+   "name": "Williams Lake and War Creek Ridge",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Williams Creek Trailhead (West Twisp River Road)",
+     "trailheadElevFt": 2800
+    }
+   },
+   "notes": "Longer, but on good trail at first and far more scenic. From the Williams Creek trailhead on the West Twisp River road at about 2,800 ft, follow the well-marked trail to Williams Lake at about 6,500 ft, then climb over Williams Butte and follow War Creek Ridge toward Camel's Hump. Drop through a boulder break in the cliffs into the upper South Fork Reynolds Creek basin and climb heather and scree to the summit pyramid."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.4056,
+   "lng": -120.4897,
+   "elev": 3170,
+   "name": "Reynolds Creek Trailhead",
+   "note": "End of Spur 4435-015 off FR 4435, which turns off Twisp River Road (~18.3 mi from Twisp); a self-issue wilderness permit is typical at the kiosk, but no Northwest Forest Pass is required at this unimproved trailhead.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Twisp, drive west up the Twisp River Road (FR 44) for 18.3 miles and bear left onto FR 4435. Cross the Twisp River in 0.3 mile, turn right after the bridge to stay on FR 4435, drive 1.1 miles upriver and turn left onto Spur 4435-015, reaching the trailhead in another 0.3 mile at about 3,100 ft. A free self-issued Lake Chelan-Sawtooth Wilderness permit is filled out at the kiosk."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4800,
+   "name": "South Fork Reynolds Creek confluence",
+   "note": "Trail opens up where the South Fork joins the Main Fork; cross on a log and stay climbers-right of the South Fork to avoid extra creek crossings and heavy log-hopping.",
+   "type": "Junction",
+   "distMi": 2.8,
+   "directions": "Follow Reynolds Creek Trail #402 up the north side of Reynolds Creek through forest for about 2.8 miles to around 4,800 ft, where the South Fork valley comes in from the south. The trail is primitive and sees little maintenance, so expect deadfall."
+  },
+  {
+   "lat": 48.385142,
+   "lng": -120.538186,
+   "elev": 5100,
+   "name": "Trail's end / off-trail turn",
+   "note": "Reynolds Creek Trail fades into deadfall and brush here; leave it near the creek and start climbing steep, brushy slopes toward the upper basin — mark this spot, it's easy to miss on the descent.",
+   "type": "Junction",
+   "distMi": 4
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6700,
+   "name": "Upper Reynolds Creek basin",
+   "note": "Open basin below Reynolds' east face where trees give way to scree and talus; last flat ground and reliable creek water before the summit push.",
+   "type": "Campsite",
+   "distMi": 4.8
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7300,
+   "name": "Reynolds-Rennie saddle",
+   "note": "Unnamed saddle/ridge crest between Reynolds and the Rennie/Camel's Hump massif; loose sand, scree and talus underfoot on the final approach to it.",
+   "type": "Junction",
+   "distMi": 5.3,
+   "directions": "Climb scree, talus and, early in the season, snow up the gully out of the basin to the saddle on the ridge above. The gully often holds snow well into summer; carry an axe."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 8100,
+   "name": "Summit block gully",
+   "note": "Class 3-4 gully splits the summit block to a notch in the ridge crest; loose, sometimes snow-covered rock with real exposure — the crux of the standard route.",
+   "type": "Hazard",
+   "distMi": 5.4,
+   "directions": "From the saddle, move into the loose gully that splits the summit block and climb it toward the notch in the crest. This is the Class 3-4 crux, with real exposure and rock that is sometimes snow-covered."
+  },
+  {
+   "lat": 48.37375,
+   "lng": -120.567037,
+   "elev": 8517,
+   "name": "Reynolds Peak (true/south summit)",
+   "note": "True summit is the south horn; the lower North Peak (8,384 ft) sits about 0.3 mi north across the notch.",
+   "type": "Summit",
+   "distMi": 5.5,
+   "directions": "Scramble the exposed summit rocks to the true summit, the southern of the two horns. The lower north peak across the notch is not the high point."
+  }
+ ]
+}

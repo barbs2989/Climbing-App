@@ -1,0 +1,79 @@
+{
+ "id": "wa_mount_redoubt_south_face",
+ "name": "South Face / Redoubt Glacier",
+ "waypoints": [
+  {
+   "lat": 49.033,
+   "lng": -121.4025,
+   "elev": 2600,
+   "name": "Depot Creek Road washout",
+   "note": "Same general trailhead area used for other Depot Creek approaches (Mount Rahm, Southeast Mox Peak) at the point of the road washout.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Access is from the Canadian side, off the Chilliwack River Road. Turn onto Depot Creek Road, a rough dirt spur that has been washed out in places, and drive it to where the washout ends vehicle travel at roughly 2,600 feet; high clearance helps, and it is best driven from mid-summer through early fall. Everything above the parking is on foot, including the international border crossing at Monument 65 up the Depot Creek valley. If you plan to camp at Ouzel Lake, arrange a North Cascades backcountry camping permit through recreation.gov or the Wilderness Information Center before the trip."
+  },
+  {
+   "lat": 49.0009153,
+   "lng": -121.3348472,
+   "elev": 2700,
+   "name": "Monument 65 (US-Canada border)",
+   "note": "",
+   "type": "Junction",
+   "distMi": 1.3
+  },
+  {
+   "lat": 48.977306,
+   "lng": -121.284785,
+   "elev": 3800,
+   "name": "Depot Creek Falls",
+   "note": "~950 ft sliding horsetail falls; fixed handlines assist crossing the slippery slabs at its base, a common wet/exposed pinch point on the approach.",
+   "type": "Water",
+   "distMi": 3
+  },
+  {
+   "lat": 48.9623,
+   "lng": -121.2633,
+   "elev": 5700,
+   "name": "Ouzel Lake",
+   "note": "Flat sandbar at the meadow's edge is the standard base camp for Redoubt and Spickard; reliable running water, well-cairned slabs lead up from here toward the glacier.",
+   "type": "Campsite",
+   "distMi": 6.2
+  },
+  {
+   "lat": 48.96092813333333,
+   "lng": -121.27613333333333,
+   "elev": 6700,
+   "name": "Redoubt Glacier snout",
+   "note": "Rope up and put on crampons here where the slabs above Ouzel Lake give way to the glacier; open crevasses are more exposed early season.",
+   "type": "Junction",
+   "distMi": 7
+  },
+  {
+   "lat": 48.95972775,
+   "lng": -121.2873625,
+   "elev": 7200,
+   "name": "High camp, head of Redoubt Glacier",
+   "note": "Rocky knoll with southern views used as an optional high camp roughly 2 hrs above Ouzel Lake, shortening summit day.",
+   "type": "Campsite",
+   "distMi": 7.7
+  },
+  {
+   "lat": 48.9592133,
+   "lng": -121.292175,
+   "elev": 7800,
+   "name": "Col below the flying buttress / cannonhole notch",
+   "note": "Low point on the south ridge requiring a short low-5th-class move past a chockstone-choked 'cannon slot'; terrain drops off abruptly to the glacier on the north side.",
+   "type": "Hazard",
+   "distMi": 8
+  },
+  {
+   "lat": 48.95782,
+   "lng": -121.300744,
+   "elev": 8969,
+   "name": "Mount Redoubt summit",
+   "note": "Final ~50 ft of exposed Class 4 rock to the true summit — the summit block itself is notoriously loose, rotten Skagit gneiss, so test every hold; complex ridge crest is easy to lose in poor visibility, plan the 3-rappel descent before committing.",
+   "type": "Summit",
+   "distMi": 8.6
+  }
+ ]
+}

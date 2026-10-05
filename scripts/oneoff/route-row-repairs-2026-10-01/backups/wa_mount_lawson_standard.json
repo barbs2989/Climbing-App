@@ -1,0 +1,86 @@
+{
+ "id": "wa_mount_lawson_standard",
+ "name": "Standard Scramble",
+ "approach": "Via the North Fork Quinault Trailhead (North Shore Road), hike the North Fork Quinault River Trail roughly 12 miles to the river ford at Sixteen Mile Camp — the fords at Wild Rose Creek, Elip Creek, and the North Fork itself at Sixteen Mile can be difficult or impassable in high water — then cross the river and leave the trail, climbing off-trail directly up Lawson's north side.",
+ "waypoints": [
+  {
+   "lat": 47.575778,
+   "lng": -123.648002,
+   "elev": 519,
+   "name": "North Fork Quinault Trailhead",
+   "note": "Olympic National Park wilderness camping permit required, booked through Recreation.gov (the Quinault Wilderness Information Center is the staffed office for this valley); the park entrance fee covers parking and no Northwest Forest Pass is needed on National Park land; trail heads upstream along the North Fork Quinault River through old-growth rainforest.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 at Amanda Park on Lake Quinault, turn east on North Shore Road and follow it about 17 miles, the upper part on gravel, to its end at the North Fork Ranger Station and trailhead. The park entrance fee applies; no Northwest Forest Pass is needed."
+  },
+  {
+   "lat": 47.599376,
+   "lng": -123.619146,
+   "elev": 560,
+   "name": "Wolf Bar",
+   "note": "Established riverside camp (6-7 sites) with bear wires on the west bank of the North Fork Quinault; reliable river water but treat before drinking.",
+   "type": "Campsite",
+   "distMi": 2.5,
+   "directions": "Follow the North Fork Quinault River Trail upstream through lowland rainforest about 2.5 miles to the riverside camps at Wolf Bar."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 750,
+   "name": "Wild Rose Creek Ford",
+   "note": "Unbridged crossing where the creek has washed out the trail bank; can be a difficult wet ford in spring/early summer or after rain.",
+   "type": "Hazard",
+   "distMi": 4.9,
+   "directions": "Continue up-valley on the North Fork Quinault River Trail to Wild Rose Creek at about 4.9 miles, an unbridged ford that can be difficult during snowmelt or after rain."
+  },
+  {
+   "lat": 47.628869,
+   "lng": -123.632965,
+   "elev": 780,
+   "name": "Halfway House",
+   "note": "Site of a long-gone Press Expedition-era lodge, now sandy riverside campsites; good water and a natural turnaround/rest point.",
+   "type": "Campsite",
+   "distMi": 5.1,
+   "directions": "About a quarter mile past the Wild Rose Creek ford, the trail reaches the sandy riverside camps at Halfway House."
+  },
+  {
+   "lat": 47.639492,
+   "lng": -123.651445,
+   "elev": 870,
+   "name": "Elip Creek Camp",
+   "note": "Backcountry camp near the Elip Creek/Skyline Trail junction (old sign reads 'Skyline Trail 4.6'); last reliable, easy water before leaving the maintained trail for Lawson.",
+   "type": "Campsite",
+   "distMi": 6.5,
+   "directions": "Continue about 1.5 miles up the trail to Elip Creek Camp, near the junction with the Skyline Trail."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 1050,
+   "name": "North Fork Quinault River Ford / Leave Trail",
+   "note": "Route leaves the maintained trail here, fords the North Fork Quinault River, and begins direct, unmarked bushwhacking up steep timber toward Mount Lawson's north side.",
+   "type": "Junction",
+   "distMi": 12.2,
+   "directions": "Continue up the North Fork Quinault River Trail past Trapper Shelter and the flats around Twelve Mile to the North Fork ford at Sixteen Mile, about 12 miles from the trailhead. The ford can be difficult or impassable at high water; this is where the route leaves the trail."
+  },
+  {
+   "lat": 47.65167932,
+   "lng": -123.60529190666666,
+   "elev": 4000,
+   "name": "North Ridge Gully",
+   "note": "Steep rock-and-snow gully gaining the North Ridge; loose rock underfoot and can hold firm snow into summer, warranting an ice axe/traction check before committing.",
+   "type": "Hazard",
+   "distMi": null
+  },
+  {
+   "lat": 47.656335,
+   "lng": -123.588465,
+   "elev": 5401,
+   "name": "Mount Lawson",
+   "note": "True summit of this isolated 'island peak,' ringed by river valleys on all sides, with broad views over the Quinault drainage; descend by reversing the North Ridge and gully to the river ford.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ],
+ "descent_text": "Descend by reversing the ascent line exactly: down the North Ridge to the top of the chute, then down-climb the loose chute back to the valley floor — this is the most hazard-prone part of the descent, since the same scree and rockbands that were merely tedious going up become genuinely slippery and rockfall-prone with tired legs and no rope; move one at a time through any narrows and stay alert for parties below. At the bottom, re-ford the North Fork Quinault River (same knee-to-thigh-deep crossing as the approach — check levels, as afternoon snowmelt can raise it) to regain the maintained trail near Sixteen Mile camp, then simply walk the North Fork Quinault River Trail back out to the trailhead, re-fording Elip and Wild Rose Creeks en route. There is no rappelling on this route: it is a scramble/walk-off (Grade I, Class 3 via the North Ridge, 'Basic Snow/Rock Scramble', or Class 2 hiking), and nothing on it involves fixed anchors, bolts, or rope work — a hand line could be a reasonable precaution for a mixed-experience party on the loose upper chute or on lingering early-season snow, but it is not a technical necessity."
+}

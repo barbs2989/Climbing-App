@@ -1,0 +1,79 @@
+{
+ "id": "wa_jack_mountain_nohokomeen_headwall",
+ "name": "Nohokomeen Glacier and Headwall",
+ "approach": "From SR 20 milepost 138, park at the East Bank Trailhead (~1,800 ft) and descend briefly to the bridge over Ruby Creek. Follow the East Bank Trail — mostly flat and fast — roughly 8 miles north along Ross Lake to the May Creek camp. (Ross Lake Resort's water taxi will drop parties on the eastern shore and is a legitimate way to skip most of the trail; check current rates and schedule directly with the resort.) At May Creek leave the trail and climb steeply west-to-northwest, loosely ascending between the creeks on the west side of Jack Mountain. Cliff bands begin around 3,200 ft and are threaded on boot and game trails; snow generally appears around 4,800-5,000 ft. About 3 miles of this off-trail work reaches a flat camp just over 5,200 ft below the glacier toe. Strong parties push a second camp onto the upper glacier around 7,400 ft, which shortens summit day considerably. Before the highway opens, parties have biked about 4 miles from the MP 134 gate to the trailhead and continued on foot or ski.",
+ "approach_variants": [
+  {
+   "name": "East Bank Trail on foot from milepost 138, leaving it at May Creek",
+   "camps": [
+    "High camp below the Nohokomeen Glacier",
+    "May Creek Camp, Ross Lake"
+   ],
+   "notes": "Park at the East Bank Trailhead near milepost 138 at about 1,800 ft. The trail drops immediately to the bridge over Ruby Creek and then runs north along Ross Lake, mostly flat and fast, to the May Creek camp. This is the whole of the easy walking. At May Creek leave the trail and climb west to north-west, staying loosely between the creeks on the mountain's west side. Cliff bands start around 3,200 ft and are threaded on boot and game trails rather than climbed; snow generally begins around 4,800 to 5,000 ft. Three miles or so of that work reaches a flat camp just over 5,200 ft below the toe of the ice. Strong parties carry a second camp onto the upper glacier near 7,400 ft, which shortens summit day considerably.",
+   "season": "Late May through July while the headwall is still a snow climb; the highway gate closes the season at both ends",
+   "hazards": [
+    "steep brushy timber with cliff bands from about 3,200 ft, far worse to reverse than to ascend",
+    "crevasses on the Nohokomeen Glacier, thinly bridged late in the season",
+    "sustained steep snow on the headwall itself, with a long runout onto the glacier below",
+    "rockfall and icefall off the wall once the sun reaches it",
+    "a two to four day commitment with no quick way off the mountain"
+   ],
+   "primary": true,
+   "baseFinding": "The timber belt is the navigation, the glacier toe is the arrival. Leaving May Creek you are looking for weaknesses, not a line: the cliff bands from about 3,200 ft up are passed on boot and game trails that thread left and right, so a section that forces you to climb rock means you have pushed into the band rather than around it. The reliable signal that you are through is underfoot rather than overhead - continuous snow starting somewhere near 4,800 to 5,000 ft, and above that the timber gives out onto open ground.\n\nThe camp is a flat bench, not a viewpoint. Just over 5,200 ft the ground levels into a flat bench directly below the toe of the ice. If you are on sloping heather with the ice still out of sight above you, keep going; if you are already on the ice you have walked past the bench.\n\nThe headwall is above the glacier, not at its toe. From the bench the glacier runs up in front of you at an easy angle for a long way before anything steepens. The route's steep ground is the wall at the head of that ice, directly beneath the summit. If you are roping up and swinging tools within minutes of leaving camp, you are on a serac or a crevasse wall low on the glacier, not on the headwall. The headwall is only reached after the whole gentle bowl has been crossed and the ground ahead of you rears up as one continuous face rather than a series of rolls.\n\nA cross-check at the top of the ice: the summit should be directly above the headwall, not off to one side. If the wall in front of you tops out on a shoulder with more mountain visible beyond it, you have drifted around the bowl."
+  },
+  {
+   "name": "Water taxi up Ross Lake to the eastern shore, cutting out most of the trail",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 5200,
+      "name": "High camp below the Nohokomeen Glacier",
+      "role": "main",
+      "type": "camp",
+      "notes": "Most parties climb straight up from the lake trail on day one and camp high on the ridge below the toe of the Nohokomeen Glacier, roughly 5,200 ft, to leave a manageable summit day. Some camp higher on the ridge.",
+      "water": "Snowmelt; early-season trips camp on snow",
+      "permit": "Ross Lake NRA backcountry permit for a cross-country camp",
+      "capacity": "Open slopes and ridge snow; room for a few tents"
+     },
+     {
+      "name": "May Creek Camp, Ross Lake",
+      "role": "route",
+      "type": "camp",
+      "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out.",
+      "water": "Ross Lake and May Creek; treat",
+      "permit": "Ross Lake NRA backcountry permit",
+      "capacity": "Designated lakeshore camp with several tent sites"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Ross Dam Trailhead (SR-20 milepost 134)",
+     "trailheadLat": 48.7278,
+     "trailheadLng": -121.0628
+    }
+   },
+   "notes": "The resort at the south end of Ross Lake runs a water taxi that will drop parties on the eastern shore, which removes most of the flat trail miles and turns the approach into the off-trail climb alone. It has to be booked ahead and the schedule and drop points change, so confirm directly before building a trip around it. The trade is that you are committed to a pickup time on a lake with no road out, so build slack into the plan rather than into the summit day.",
+   "season": "Same window as the trail approach, but only once the boat service is running for the year",
+   "hazards": [
+    "fixed pickup times on a lake with no road out",
+    "the same steep brushy cliff-banded timber belt above the shore",
+    "arriving late enough that the timber belt is done in the dark",
+    "crevasses on the glacier above",
+    "no reliable communication once off the lake"
+   ],
+   "baseFinding": "From the landing the first task is to get onto the trail and find may creek - the East Bank Trail runs along this shore and the departure point is the creek, not a bearing. Once you leave the trail at May Creek every marker is identical to the walk-in variant: cliff bands from around 3,200 ft passed on game trails, continuous snow near 4,800 to 5,000 ft, and the flat bench just over 5,200 ft below the toe of the ice.\n\nThe one thing the boat changes is your margin, not your route. Parties dropped late in the day have started the timber belt in fading light, which is where the cliff bands become genuinely dangerous, because the passages through them are found by eye. If you cannot reach open ground above the bands in daylight, camp low rather than commit to the belt.\n\nThe negative marker is the same: if the ground ahead of you steepens into rock rather than easing onto snow, you are in a cliff band and should traverse to find the boot track rather than force it."
+  },
+  {
+   "name": "Before the highway opens: the gate at milepost 134",
+   "notes": "The highway closes each winter between the gate west of the trailhead and a second gate far to the east, and reopens somewhere between mid-April and early summer depending on the year's damage and snowpack. Parties wanting the headwall in condition have started at the closed gate and covered the road on bikes or skis to the trailhead before starting the walk in. Everything above that is unchanged, except that the snow line is far lower and the timber belt may go faster on skis than it does on foot in summer.",
+   "season": "Late winter and early spring, before the highway is cleared, when the headwall holds its best snow",
+   "hazards": [
+    "avalanche terrain through the timber belt and on the glacier approach in early season",
+    "a long road section on bike or ski before the trip proper starts",
+    "short daylight and cold, with a committing position",
+    "cornices on the upper mountain",
+    "the road gate opening date moves year to year and can strand a plan"
+   ],
+   "baseFinding": "The road section is navigation-free; the approach still starts at may creek. Ride or ski the closed highway to the trailhead near milepost 138 and pick up the East Bank Trail there. The departure from the trail is the creek, as in summer.\n\nWhat changes is where the snow starts. In this window continuous snow is likely to begin well below the 4,800 to 5,000 ft line that summer parties describe, which means the cliff bands between roughly 3,200 ft and there are being crossed on snow rather than on game trails. A band that would be walked around in August may be a loaded slope in April. If the passage you would normally take through a band is a smooth, wind-loaded ramp rather than a boot track, treat it as avalanche terrain and not as a route.\n\nThe flat bench just over 5,200 ft below the glacier toe may be buried and unrecognisable as a bench; in that case the arrival marker is the change of angle where the ground stops climbing and the ice begins running away ahead of you toward the wall."
+  }
+ ]
+}

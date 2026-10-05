@@ -1,0 +1,52 @@
+{
+ "id": "wa_sw_couloir_and_face",
+ "name": "SW Couloir and Face",
+ "waypoints": [
+  {
+   "lat": 48.850182,
+   "lng": -121.686086,
+   "elev": 4700,
+   "name": "Lake Ann TH",
+   "note": "Paved lot on SR 542 just below Artist Point/Austin Pass.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Bellingham, drive SR-542 (Mount Baker Highway) east past Glacier and up past Heather Meadows to the Lake Ann Trailhead lot, about 1 mile below Artist Point at roughly 4,700 ft. The upper highway is usually snowbound until early summer. A Northwest Forest Pass is required to park."
+  },
+  {
+   "lat": 48.8266,
+   "lng": -121.6445,
+   "elev": 4800,
+   "name": "Lake Ann",
+   "type": "Campsite",
+   "distMi": 4.1,
+   "directions": "Take Lake Ann Trail #600 as it descends into the upper Swift Creek basin, then climb out of the basin to the saddle above Lake Ann and drop to the lake, about 4 miles."
+  },
+  {
+   "lat": 48.828,
+   "lng": -121.615,
+   "elev": 6200,
+   "name": "Lower Curtis Glacier icefall base",
+   "note": "From below Fisher Chimneys, traverse right (east) across the Lower Curtis Glacier to the icefall.",
+   "type": "Junction",
+   "distMi": 5.3,
+   "directions": "From the lake, follow the climbers' path toward the Fisher Chimneys. Before reaching the Chimneys, traverse right (east) onto the crevassed Lower Curtis Glacier and follow it up to the upper southeast corner of the basin, where the glacier runs out against the mountain at the foot of the icefall."
+  },
+  {
+   "lat": 48.83,
+   "lng": -121.61,
+   "elev": 7200,
+   "name": "Ice chimney / headwall",
+   "note": "Vertical ice chimney in the lower icefall, the technical crux (WI2-3).",
+   "type": "Hazard",
+   "distMi": 5.8
+  },
+  {
+   "lat": 48.8314,
+   "lng": -121.6031,
+   "elev": 9127,
+   "name": "Mount Shuksan",
+   "type": "Summit",
+   "distMi": 6.5
+  }
+ ]
+}

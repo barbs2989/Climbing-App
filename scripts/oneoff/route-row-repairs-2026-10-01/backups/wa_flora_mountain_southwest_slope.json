@@ -1,0 +1,42 @@
+{
+ "id": "wa_flora_mountain_southwest_slope",
+ "name": "Southwest Slope (Standard Route)",
+ "permit": "North Cascades NP complex: no permit for day climbs; overnight stays at park-complex camps, including Lake Chelan NRA sites in the Stehekin valley, require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center). Bird Creek Camp lies inside the Glacier Peak Wilderness, where no wilderness permit is needed.",
+ "access": {
+  "fees": "No fee for the hike itself; the NPS shuttle bus from Stehekin Landing to Harlequin Bridge costs $5 one-way, and the Lake Chelan ferry (Lady of the Lake) to Stehekin is a separate paid fare.",
+  "notes": "Mixed jurisdiction: the lower Stehekin valley near the boat/floatplane landing is NPS (Lake Chelan NRA); if a party camps at an NPS-side site en route, an NPS backcountry permit would apply for that night specifically.",
+  "rules": "Group size capped at 12 in the Glacier Peak Wilderness portion.",
+  "permit": "No permit required for day hiking; camping at Bird Creek Camp falls within the Glacier Peak Wilderness (USFS), which does not require a wilderness permit, though the initial corridor out of Stehekin passes through NPS-managed Lake Chelan National Recreation Area.",
+  "closures": "Sisi Fire: Okanogan-Wenatchee National Forest closure order 06-17-02-2026-35 (Sisi Fire), in effect August 22 through December 31, 2026 unless lifted sooner, closes Devore Creek Trail 1244 from where it enters the national forest to Hilgard Pass, the 4th of July Basin Trail 1244.1 and Company Creek Trail 1243. This approach cannot be used while the order stands. Chelan Ranger District: (509) 682-4900.",
+  "group_limit": 12,
+  "landManager": "North Cascades National Park Complex / Lake Chelan National Recreation Area (NPS) for the Stehekin approach corridor; Glacier Peak Wilderness, Okanogan-Wenatchee National Forest (USFS) for the Devore Creek Trail beyond the wilderness boundary, including Bird Creek Camp and the summit.",
+  "land_manager": "U.S. Forest Service — Glacier Peak Wilderness (approach partly crosses NPS Lake Chelan National Recreation Area)",
+  "passRequired": "No parking pass reportedly required.",
+  "overnight_permit": {
+   "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+   "what": "North Cascades National Park Service Complex backcountry permit, fee charged",
+   "where": "Reserve on Recreation.gov, or arrange it with the park the day before you travel; there is no permit office or cell service in Stehekin."
+  }
+ },
+ "waypoints": [
+  {
+   "lat": 48.3491,
+   "lng": -120.7224,
+   "name": "Stehekin — Harlequin Bridge (Stehekin Valley Road)",
+   "type": "Trailhead",
+   "distMi": null,
+   "elevFt": null,
+   "directions": "There is no road to Stehekin. From Chelan, take the Lady of the Lake passenger ferry (or a floatplane) up Lake Chelan to Stehekin Landing, then ride the park shuttle bus about 4.4 miles up the Stehekin Valley Road to the Harlequin Bridge stop."
+  },
+  {
+   "lat": 48.24306,
+   "lng": -120.69556,
+   "elev": 8323,
+   "name": "Flora Mountain summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 8323,
+   "directions": "Cross Harlequin Bridge, follow the road past Harlequin Camp and the airstrip to the Stehekin River Trail, and take it about 3 miles southeast to the signed Devore Creek Trail. Climb that about 4 miles to Bird Creek Camp, then go cross-country up to the saddle south of Enigma Peak near 7,460 ft, drop about 600 ft east to cross upper Castle Creek, and climb the loose talus of the southwest ridge to the summit."
+  }
+ ]
+}

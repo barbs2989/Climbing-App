@@ -1,0 +1,74 @@
+{
+ "id": "wa_wilmans_peak_scramble",
+ "name": "Standard Scramble",
+ "waypoints": [
+  {
+   "lat": 48.0268,
+   "lng": -121.4423,
+   "elev": 2362,
+   "name": "Barlow Pass Trailhead",
+   "note": "Gated Monte Cristo Road begins here (open to foot/bike only); Northwest Forest Pass or day-use fee required at the self-issue kiosk.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Granite Falls, follow the Mountain Loop Highway east about 31 miles to Barlow Pass, at about 2,360 ft, where the pavement ends, and park in the Barlow Pass lot. The gated gravel road to Monte Cristo leaves from here and is open only to foot and bike traffic. A Northwest Forest Pass or America the Beautiful pass is required to park."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2400,
+   "name": "Weden Creek (Gothic Basin) Trail 724 junction / South Fork Sauk River crossing",
+   "note": "Just before the river, the Weden Creek/Gothic Basin trailhead splits off; the Sauk crossing here has no bridge (log crossing only), so many day hikers turn back at this point.",
+   "type": "Junction",
+   "distMi": 1,
+   "directions": "Walk around the gate and follow the gravel Monte Cristo road about 1 mile to where the Weden Creek trail toward Gothic Basin branches off, just before the road reaches the South Fork Sauk River."
+  },
+  {
+   "lat": 47.98556,
+   "lng": -121.39389,
+   "elev": 2762,
+   "name": "Monte Cristo townsite",
+   "note": "Old mining townsite with an established 6-site Forest Service campground; surface water in the area can contain arsenic and heavy metals from old tailings, so treat or pack water.",
+   "type": "Campsite",
+   "distMi": 4,
+   "directions": "Cross the South Fork Sauk River on a large log or by fording, since there is no bridge, and continue up the road about 3 miles to the old Monte Cristo townsite."
+  },
+  {
+   "lat": 47.98649,
+   "lng": -121.3729,
+   "elev": 3584,
+   "name": "Glacier Falls slick-rock section",
+   "note": "Past the townsite the Glacier Basin Trail turns very steep, climbing wet, slick bedrock alongside Glacier Falls — poor footing, especially descending in the wet.",
+   "type": "Hazard",
+   "distMi": 5,
+   "directions": "From the townsite, cross the bridge and pick up the Glacier Basin Trail #719 at the old Dumas Street sign. It runs fairly level through forest for about three-quarters of a mile, then turns rough and rocky up to the falls, where it climbs wet, slick bedrock beside them."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4680,
+   "name": "Mystery Hill camp (Glacier Basin)",
+   "note": "Established campsites on the timbered knoll of Mystery Hill (site of old Pride of the Mountains/Mystery mine adits) mark the basin high point where the maintained trail effectively ends.",
+   "type": "Campsite",
+   "distMi": 6.2,
+   "directions": "Continue up the Glacier Basin Trail above the falls through about half a mile of steep, rocky scrambling, then up smooth steep slopes until the ground levels out in Glacier Basin, where established campsites sit on the timbered knoll of Mystery Hill and the maintained trail ends."
+  },
+  {
+   "lat": 47.966393,
+   "lng": -121.35245,
+   "elev": 6400,
+   "name": "Dividing ridge / col below the Wilmans Spires",
+   "note": "Leave the basin and climb steep, very loose talus (or snow early season) to the col on the dividing ridge between Glacier Basin and Seventy-Six Basin; loose rock is the main hazard on this section.",
+   "type": "Junction",
+   "distMi": 7
+  },
+  {
+   "lat": 47.9720517,
+   "lng": -121.3651074,
+   "elev": 6880,
+   "name": "Wilmans Peak (summit)",
+   "note": "Class 3-4 scramble gains the true summit from the dividing ridge; first climbed 1970 via the northwest ridge, with exposed but solid rock on the final pitch.",
+   "type": "Summit",
+   "distMi": 7.5
+  }
+ ]
+}

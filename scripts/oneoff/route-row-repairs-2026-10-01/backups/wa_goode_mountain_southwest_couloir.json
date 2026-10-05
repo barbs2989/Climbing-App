@@ -1,0 +1,94 @@
+{
+ "id": "wa_goode_mountain_southwest_couloir",
+ "name": "Southwest Couloir",
+ "waypoints": [
+  {
+   "lat": 48.5049,
+   "lng": -120.7191,
+   "elev": 4400,
+   "name": "Bridge Creek Trailhead",
+   "note": "SR-20 milepost ~159, just over a mile east of Rainy Pass; NPS backcountry permit required for overnight camping, $5/day USFS parking fee, no potable water on site.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 4400,
+   "directions": "Park at the Bridge Creek Trailhead on SR-20 near milepost 159, just over a mile east of Rainy Pass. A $5-per-day USFS parking fee applies here, and there's no potable water on site. An NPS backcountry permit is required for overnight camping in the Goode Glacier/moraine camp zone; reserve it in advance at the Wilderness Information Center in Marblemount."
+  },
+  {
+   "lat": 48.487365,
+   "lng": -120.853537,
+   "elev": 2800,
+   "name": "PCT / North Fork Bridge Creek Trail junction",
+   "note": "Leave the Pacific Crest Trail here and turn onto the North Fork Bridge Creek Trail toward Goode's north side.",
+   "type": "Junction",
+   "distMi": 10,
+   "directions": "Cross SR-20 on the connector trail and hike the Pacific Crest Trail south along Bridge Creek, losing elevation steadily through forest for about 9.5 miles to the North Fork Camp junction. Turn off the PCT here onto the North Fork Bridge Creek Trail."
+  },
+  {
+   "lat": 48.494702,
+   "lng": -120.864313,
+   "elev": 3000,
+   "name": "Grizzly Creek crossing",
+   "note": "Usually an easy log crossing but reported as a dangerously high, hard-to-find ford in early season; trail turns brushy/overgrown just beyond it.",
+   "type": "Hazard",
+   "distMi": 10.5,
+   "directions": "Head upstream on the North Fork Bridge Creek Trail to the Grizzly Creek crossing, usually an easy log but a high, hard-to-find ford in early season."
+  },
+  {
+   "lat": 48.482104,
+   "lng": -120.893868,
+   "elev": 6800,
+   "name": "Lateral moraine camp above Goode Glacier",
+   "note": "Established bivy atop the lateral moraine overlooking the Goode Glacier's seracs; standard base camp for the Southwest Couloir attempt.",
+   "type": "Campsite",
+   "distMi": 13,
+   "directions": "Continue up the North Fork trail as it grows brushier, then leave the tread and ford the North Fork, easiest a short way upstream near a cairn. Follow an intermittent boot path and cairns through talus and alder tunnels, then climb heather and scree to the lateral moraine above the Goode Glacier."
+  },
+  {
+   "lat": 48.481227,
+   "lng": -120.900589,
+   "elev": 7400,
+   "name": "Goode Glacier crossing",
+   "note": "Cross the glacier from the moraine camp to reach the couloir base; route-finding is tricky and late-season snow bridges can be deteriorated.",
+   "type": "Junction",
+   "distMi": 13.5,
+   "directions": "Leave camp across the moraine and onto the glacier remnant toward the couloir. Route-finding is tricky and late-season snow bridges can be rotten, so rope up."
+  },
+  {
+   "lat": 48.48,
+   "lng": -120.91,
+   "elev": 8900,
+   "name": "Black Tooth Notch",
+   "note": "Foot-wide notch gained by an exposed class 4 traverse (fixed sling marks the crux step); rock here is loose/\"garbage\" — watch for rockfall onto climbers below.",
+   "type": "Hazard",
+   "distMi": 14.2,
+   "directions": "Scramble talus and loose scree to the rotten ridge below the couloir and the narrow cairned ledge that leads into it. Climb the couloir on the solid dark rock of the black stairs along its left side, class 3-4 with a short low fifth-class step low down, to Black Tooth Notch, gained by an exposed class 4 traverse with a fixed sling at the crux step."
+  },
+  {
+   "lat": 48.4829,
+   "lng": -120.9109,
+   "elev": 9220,
+   "name": "Goode Mountain summit",
+   "note": "Highest point in North Cascades National Park; summit block above the notch adds exposed class 4-5 moves before the true top.",
+   "type": "Summit",
+   "distMi": 14.5,
+   "directions": "From the notch, traverse across the upper Northeast Face and climb the exposed class 4-5 summit block to the true top."
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Class 2-3",
+   "notes": "Broad couloir, easy scrambling on snow or the 'black stairs' rock band",
+   "pitch": "Approach gully"
+  },
+  {
+   "grade": "Class 4",
+   "notes": "Steepens near the notch between the summit and West Tower",
+   "pitch": "Upper couloir"
+  },
+  {
+   "grade": "Class 4, locally low 5th",
+   "notes": "Final scramble to the true summit; some parties finish via a traverse across the upper Northeast Face near Black Tooth Notch",
+   "pitch": "Summit block"
+  }
+ ]
+}

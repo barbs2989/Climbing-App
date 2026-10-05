@@ -1,0 +1,194 @@
+{
+ "id": "wa_mount_custer_standard",
+ "name": "Standard Route / South Side",
+ "approach": "From the Depot Creek trailhead (reached via the unsigned dirt spur off Chilliwack Lake Road in BC), follow the old trail south into the US: about 200 yards through old growth to the border obelisk and trail register, then continue on the fading Depot Creek path up the valley. The first stretch follows an old roadbed for under a mile before it vanishes into forest; for roughly 3 miles the route weaves through timber and brush with no consistent tread. At the valley's headwall (~4,800 ft) the trail parallels a waterfall on Depot Creek — expect a stream crossing at its base, wet slabs, and at least two fixed/dangling handlines on the exposed slab sections beside the falls (a real fall hazard if wet or icy). Above the falls the path becomes fainter through talus and brush in the open basin below Mount Redoubt before reaching Lake Ouzel (5,700 ft, ~8-9 miles and ~3,500 ft gain from the car, 5-6 hours), the standard base camp on flat sandy benches. From camp, scramble up the large broken buttress southwest of the lake (cairned to aid the return); partway up the buttress traverse far climber's-right, then continue up to gain the Redoubt Glacier easily. Cross/skirt the glacier (crevasse hazard, rope up if conditions warrant) to reach the obvious SW basin near 7,700 ft below Custer's summit, then continue to the 8,260-ft notch immediately south of the true summit. A short, vertical, 6-8-ft-wide rock gully (with occasional ice) breaks through here — this is the technical crux of the ascent.",
+ "itinerary": {
+  "cal": "Depot Creek runs highest (and the falls headwall is wettest/most dangerous) with snowmelt in June-July; most parties target a stable-weather window in July-September when the crossing at the falls and the border-crossing road are most passable.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Drive to the Depot Creek trailhead on Chilliwack Lake Road (BC side), then follow the old Depot Creek trail/climbers' path up through old growth, past a steep, wet, rooty headwall alongside Depot Creek Falls (the crux of the approach, with an exposed Class 3 rock step), before climbing a final steep pitch onto the outwash plain and up to Ouzel Lake. The international border is crossed on foot at Monument 65, roughly a mile in.",
+    "hours": 8,
+    "miles": 8,
+    "title": "Border approach to Ouzel Lake camp",
+    "gainFt": 3500,
+    "lossFt": 0,
+    "packLb": 35,
+    "schedule": [
+     {
+      "time": "7:00 AM",
+      "label": "Leave trailhead / cross border at Monument 65",
+      "detail": "About 1 mile and 500 ft in, on the old road/climbers' path."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Reach base of Depot Creek Falls headwall",
+      "detail": "Wet, slippery Class 3 rock step; can be the technical crux of the whole trip in high water."
+     },
+     {
+      "time": "1:00 PM",
+      "label": "Top out onto the outwash plain",
+      "detail": "Final steep push gains the last ~1,000 ft on a very steep path."
+     },
+     {
+      "time": "3:00 PM",
+      "label": "Arrive Ouzel Lake, make camp",
+      "detail": "Gravelly moraine above the lake outlet is the standard camp spot."
+     }
+    ],
+    "objective": "Establish camp at Ouzel Lake (5,700 ft)"
+   },
+   {
+    "n": 2,
+    "note": "From Ouzel Lake, contour into the upper basin below Custer's west ridge, ascend snow as high as it holds then loose scree/talus (Custer is notoriously choss-prone) to gain the crest of the west ridge, and traverse right/east to the summit. Many parties link this with neighboring Mount Rahm via the connecting ridge for a longer two-peak day; climbing Custer alone from camp is a shorter 3-5 hour round trip.",
+    "hours": 5,
+    "miles": 3.5,
+    "title": "Climb Mount Custer via the southwest slopes",
+    "gainFt": 2800,
+    "lossFt": 2800,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave camp",
+      "detail": "Early start to have firm snow in the basin and beat afternoon rockfall risk on the loose slopes."
+     },
+     {
+      "time": "6:30 AM",
+      "label": "Reach the upper basin",
+      "detail": "Ascend snowfields as high as they persist before switching to scree."
+     },
+     {
+      "time": "8:00 AM",
+      "label": "Gain the west ridge crest",
+      "detail": "Traverse right (east) along/near the ridge toward the summit block."
+     },
+     {
+      "time": "9:00 AM",
+      "label": "Summit Mount Custer",
+      "detail": "Optional: continue via the connecting ridge to tag Mount Rahm before returning."
+     },
+     {
+      "time": "10:30 AM",
+      "label": "Back at camp",
+      "detail": "Reverse the scree/snow line; loose rock makes the descent care-intensive despite being short."
+     }
+    ],
+    "objective": "Summit Mount Custer (8,630 ft) and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Reverse Day 1 in full: down the steep path off the outwash plain, back down alongside Depot Creek Falls (care needed on the wet Class 3 step, now descending), through the old growth, and back across the border to the cars.",
+    "hours": 7,
+    "miles": 8,
+    "title": "Hike out",
+    "gainFt": 0,
+    "lossFt": 3500,
+    "packLb": 30,
+    "schedule": [],
+    "objective": "Return to the Depot Creek trailhead"
+   }
+  ],
+  "totalNote": "A 3-day trip: two long approach days (~8 mi / 3,500 ft each way, with a wet Class 3 step at Depot Creek Falls) bracket a shorter but loose, choss-prone summit day (~3.5 mi round trip, ~2,800 ft gain/loss, 3-5 hrs from Ouzel Lake camp); very fit parties occasionally push it car-to-summit-and-back in one very long day (~17+ mi, 6,000+ ft), but the standard plan uses a camp at Ouzel Lake."
+ },
+ "pitch_detail": [
+  {
+   "notes": "8-9 miles, 3,500-6,000 ft elevation gain, 5-6 hours. Trail follows old valley, passes steep waterfall section with wet rock requiring careful scrambling or rope assist.",
+   "pitch": "Approach: Depot Creek valley trail to Ouzel Lake"
+  },
+  {
+   "notes": "Semi-open slopes transitioning to alpine around 6,200 ft. Class 2-3 scrambling with minor cliffbands to negotiate. Approximately 2,000 ft elevation gain, 1-2 hours. Rock is very loose throughout.",
+   "pitch": "Ouzel Lake to SW basin (7,700 ft)"
+  },
+  {
+   "notes": "Continued Class 3 scrambling on unstable volcanic breccia. Route-finding is straightforward but loose rock is a constant hazard. Approximately 560 ft gain, 1 hour.",
+   "pitch": "SW basin to 8,260-ft notch"
+  },
+  {
+   "notes": "Final Class 3-4 scramble on notably chossy South Ridge. About 390 ft gain, 30-45 minutes. This section demands helmets and careful foot placement. Descent of this section is the crux and may require rope.",
+   "pitch": "8,260-ft notch to summit via South Ridge"
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 49.0294,
+   "lng": -121.4019,
+   "elev": 2041,
+   "name": "Depot Creek Road turnout, Chilliwack Lake Road",
+   "note": "Park at the large turnout ~0.1 mi before the yellow steel bridge over Depot Creek on Chilliwack Lake Road, BC; high-clearance vehicles can continue up Depot Creek Road.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "This one starts on the Canadian side. Drive Chilliwack Lake Road in BC and park at the large turnout about 0.1 mi before the yellow steel bridge over Depot Creek, around 2,040 ft; Depot Creek Road leaves here as an unsigned dirt spur. High-clearance vehicles can continue up it, but it is a rough 4WD track that ends at a major washout a short way in, where foot travel begins on the old logging-road grade. From there the old Depot Creek trail runs south into the US and the international border is crossed on foot at the obelisk and trail register, and a wilderness permit is required beyond that point for overnight stays on the US side. Target a stable window in July through September, when the crossing at Depot Creek Falls and the border-crossing road are most passable; Depot Creek runs highest with June and July snowmelt."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2600,
+   "name": "Depot Creek Road washout",
+   "note": "Rough 4WD track ends at a major washout around 1.7 mi in; foot travel begins here on the old logging-road grade.",
+   "type": "Junction",
+   "distMi": 1.7,
+   "directions": "Walk, or with a high-clearance 4WD vehicle drive, up the unsigned Depot Creek Road to the major washout where the track ends. Foot travel continues from here on the old logging-road grade."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3600,
+   "name": "US/Canada border marker",
+   "note": "Boundary marker and North Cascades National Park register along the climbers' path; a wilderness permit is required beyond here for overnight stays on the US side.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Continue on foot along the old road grade, then follow the way trail into old-growth forest to the international boundary obelisk (Monument 65) and the North Cascades National Park register."
+  },
+  {
+   "lat": 48.977723,
+   "lng": -121.284755,
+   "elev": 3800,
+   "name": "Depot Creek Falls handline crossing",
+   "note": "Fixed handlines cross the base of Depot Creek Falls; do not attempt this crossing without them, especially when the rock is wet.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Follow the faint Depot Creek climbers' path up the valley, roughly 3 miles through timber and brush with no consistent tread, to the headwall where Depot Creek Falls drops. Cross the base of the falls on the fixed handlines over wet, slippery slabs; do not attempt it without them when the rock is wet."
+  },
+  {
+   "lat": 48.9644,
+   "lng": -121.2647,
+   "elev": 5659,
+   "name": "Ouzel Lake camp",
+   "note": "Established bivy sites ringing Ouzel Lake, the standard base camp for Custer/Rahm/Redoubt/Spickard, with reliable water from the lake.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "Above the falls, climb the steep path onto the outwash plain and continue through scrub, talus and cobbles in the open basin below Mount Redoubt to Ouzel Lake, with camps on flat sandy benches near the lake."
+  },
+  {
+   "lat": 48.977896,
+   "lng": -121.256492,
+   "elev": 7800,
+   "name": "Redoubt Glacier access / flying-buttress col",
+   "note": "Scramble the broken buttress southwest of Ouzel Lake, work right onto the Redoubt Glacier, and cross to the low point (~7,800 ft) in the rock flying buttress toward Custer/Spickard.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "From camp, scramble the large broken buttress southwest of the lake on cairned slabs, traverse far climber's right partway up, and continue onto the Redoubt Glacier. Cross the glacier, roped where crevasses warrant, to the low point of about 7,800 ft in the rock flying buttress toward Custer and Spickard."
+  },
+  {
+   "lat": 48.98403,
+   "lng": -121.252761,
+   "elev": 8300,
+   "name": "Crux gully below Custer-Spickard col",
+   "note": "Vertical, 6-8 ft-wide rock gully that is the route's technical crux (Class 3-4, wet rock reported loose); downclimb or short-rappel here if wet or icy on descent.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Continue into the southwest basin below Custer's summit and climb toward the notch immediately south of the true summit at about 8,260 ft. The break through it is a vertical rock gully only 6 to 8 ft wide, sometimes holding ice, and pulling through it is the technical crux."
+  },
+  {
+   "lat": 48.988938,
+   "lng": -121.249776,
+   "elev": 8630,
+   "name": "Mount Custer summit",
+   "note": "True summit (8,630 ft) with views across the Redoubt, Spickard, and Custer massif of the Chilliwack Group.",
+   "type": "Summit",
+   "distMi": null,
+   "directions": "Above the gully, follow the loose, rust-coloured South Ridge the short remaining distance to the summit. The rock is extremely poor, so wear a helmet and test every hold."
+  }
+ ]
+}

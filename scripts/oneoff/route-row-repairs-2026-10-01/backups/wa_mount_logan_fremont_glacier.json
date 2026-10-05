@@ -1,0 +1,68 @@
+{
+ "id": "wa_mount_logan_fremont_glacier",
+ "name": "Fremont Glacier",
+ "approach": "Start at Colonial Creek Campground trailhead on SR 20 mile 130 (elevation 1,060 ft). Follow Thunder Creek Trail north for approximately 16-18 miles to Thunder Basin camp around 6,000 ft. From Thunder Basin, cross meadows and begin ascending. Traverse gradually northward around a broad ridge through open heather and high alpine terrain, gaining approximately 2 miles to reach Fremont Glacier at 8,000 feet. Campsites exist at Thunder Basin and other designated locations along the approach.",
+ "approach_variants": [
+  {
+   "name": "Park Creek Pass and the heather traverse to the Fremont saddle and the hogsback",
+   "camps": [
+    "Moraine camp above the pass",
+    "Meadows north of Park Creek Pass",
+    "Valley camps on the walk in"
+   ],
+   "notes": "The standard start is the Colonial Creek Campground trailhead on SR-20 near milepost 130, about 1,060-1,200 ft, and the Thunder Creek trail north for roughly 16-18 miles to the Thunder Basin camp area around 6,000 ft and on to Park Creek Pass. A southern alternative reaches the same pass from Stehekin: the High Bridge guard station near 1,600 ft, the Stehekin River trail to the Park Creek trailhead, then the Park Creek trail past Buckner Camp — with a creek crossing on a less-than-substantial footlog that is genuinely nerve-wracking in the dark.\n\nFrom Park Creek Pass leave the maintained trail and traverse gradually northward around a broad ridge through open heather and high alpine terrain, roughly a mile and a half to two miles, crossing a rib around 7,600 ft and a steep gully through cliff bands around 7,350 ft that can hold snow or ice. That brings you to the Fremont Glacier saddle around 8,000-8,250 ft, where rock-outcrop bivy sites with nearby running water make the standard high camp.\n\nFrom camp it is about three and a half hours to the summit.",
+   "season": "July and August",
+   "hazards": [
+    "Crevasses on the Fremont Glacier, generally small but present — rope up",
+    "A bergschrund that opens below the summit ridge as the snow finger melts out late season, and a moat where the glacier meets the crest",
+    "Exposed, often unroped class 3-4 scrambling on the summit ridge",
+    "Long unmaintained cross-country route-finding above the moraine camp",
+    "Footlog crossings over Thunder and Park creeks that are hazardous at night or in high water",
+    "No fixed anchors anywhere on the route — a rappel off the summit block has to be built from a horn, a chockstone or a picket"
+   ],
+   "baseFinding": "The base is the Hogsback — the snow spine at the upper edge of the Fremont Glacier, on the peak's south ridge. You reach it by a gentle glacier crossing from the saddle camp, and there is a moat crossing to step from the snow onto the crest, which late in the season may have no bridge left at all. Snow spine plus a gap to step across is the confirmation you are at the start.\n\nThen count three features in order, and the order is the whole route-finding problem: a class 3-4 rock pitch gains a left-slanting ramp — a fault-line weakness in the cliff bands — to the summit ridge; then exposed class 2-3 ledges on the east side of the ridge lead through a U-notch between the summit tower and the south horn; then a final class 3-4 pitch of about 100 ft on good holds and solid rock reaches the tiny summit.\n\nThe strongest negative test is the ramp: if you are trying to climb the summit tower directly from the glacier, you have missed it. The ramp is the way through the cliff bands and it slants left. Going straight at the tower puts you on ground the route deliberately avoids.\n\nThe U-notch is the second confirmation and it is a shape, not a height: a U-shaped gap between the summit tower and the south horn, reached by traversing ledges on the ridge's east flank. If you never dropped onto the east side, you did not take the ledges.\n\nAnd know which side of the mountain you are on before you start: this is the southeast/southwest approach, from Park Creek Pass. The Douglas Glacier route comes from Easy Pass and the Douglas Creek alder on the west; the Banded Glacier route comes from Fisher Creek and gains the northeast ridge at about 8,800 ft. All three finish on the same summit block and share nothing below it."
+  },
+  {
+   "name": "Stehekin and the Park Creek trail to Park Creek Pass",
+   "trip": {
+    "bivy": [
+     {
+      "name": "Moraine camp above the pass",
+      "role": "main",
+      "type": "bivy",
+      "elevM": 1935,
+      "notes": "Roughly 6,350 ft, gained by turning east from the meadows and climbing about 500 ft into the moraine of the glacier remnant. Flat, sandy and better protected than the open meadows, and the usual high camp for the Fremont Glacier. From here the route traverses about two miles north around a broad ridge over heather and rock to reach the glacier near 8,000 ft.",
+      "water": "Snowmelt off the glacier remnant beside the moraine",
+      "permit": "Inside the park; covered by the same backcountry permit as the rest of the route",
+      "capacity": "A sheltered flat big enough for a few tents"
+     },
+     {
+      "name": "Meadows north of Park Creek Pass",
+      "role": "main",
+      "type": "camp",
+      "elevM": 1859,
+      "notes": "Broad sandy meadows a short way north of Park Creek Pass, which itself sits near 6,100 ft. This is where the long valley walk finally ends and the climbing terrain starts; parties either stop here or push the last 500 ft into the moraine above.",
+      "water": "Creeks and snowmelt in the meadows below the pass",
+      "permit": "Everything on this route is inside North Cascades National Park, so an overnight needs a park backcountry permit and the itinerary is built night by night from designated camps and cross-country zones",
+      "capacity": "Open flat ground rather than built sites; a few parties at a time"
+     },
+     {
+      "name": "Valley camps on the walk in",
+      "role": "route",
+      "type": "camp",
+      "notes": "The approach is long enough that most parties sleep at least one night in the forest before reaching climbing terrain — Thunder Basin in the upper Thunder Creek drainage from the Colonial Creek side, or Buckner Camp on Park Creek (named for the mountain, not on it) coming in from Stehekin. Park Creek has to be crossed near some of these camps and is worth doing in daylight.",
+      "water": "Thunder Creek and Park Creek run beside these camps",
+      "permit": "Designated North Cascades camps, reserved by name for specific nights on the backcountry permit; Stehekin-side parties can obtain the permit at the ranger station there",
+      "capacity": "Established backcountry sites with a fixed number of parties each"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Park Creek Trailhead (Stehekin Valley Road)",
+     "trailheadLat": 48.4282,
+     "trailheadLng": -120.9158
+    }
+   },
+   "notes": "From the Park Creek Trailhead on the Stehekin Valley Road, the Park Creek trail climbs to Park Creek Pass and joins the Thunder Creek line there. It needs the Lake Chelan boat and the Stehekin shuttle to reach the trailhead."
+  }
+ ]
+}

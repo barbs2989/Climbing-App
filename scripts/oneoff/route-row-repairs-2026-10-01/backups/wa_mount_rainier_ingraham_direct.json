@@ -1,0 +1,79 @@
+{
+ "id": "wa_mount_rainier_ingraham_direct",
+ "name": "Ingraham Direct",
+ "waypoints": [
+  {
+   "lat": 46.7858,
+   "lng": -121.7355,
+   "elev": 5420,
+   "name": "Paradise",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 5420,
+   "directions": "Drive SR 706 to Paradise, at about 5,400 ft; the highway is open year-round. The lot is large but fills by 9 AM in summer, so get there early. Entry requires a national park permit, and a park pass runs $30. The nearest supplies are in Ashford, 18 miles away. In the winter season the climbing permit is self-registered at the old station kiosk at Paradise rather than at a staffed wilderness desk."
+  },
+  {
+   "lat": 46.8358,
+   "lng": -121.7311,
+   "elev": 10080,
+   "name": "Camp Muir",
+   "type": "Campsite",
+   "distMi": 4.5,
+   "elevFt": 10080,
+   "directions": "Take the Skyline Trail past Panorama Point to Pebble Creek near 7,200 ft, the last running water, then climb north up the unmarked Muir Snowfield above McClure Rock to Camp Muir, about 4.5 miles in all. In poor visibility hold 355 degrees true from Pebble Creek toward Moon Rocks; crevassed glaciers lie on both sides and a corniced cliff band sits between McClure and Anvil rocks."
+  },
+  {
+   "lat": 46.851731,
+   "lng": -121.760395,
+   "elev": 14406,
+   "name": "Columbia Crest / SW Crater Rim",
+   "type": "Summit",
+   "distMi": 8,
+   "elevFt": 14406,
+   "directions": "Rope up and cross the upper Cowlitz Glacier east to Cathedral Gap, climb through its rock band and round onto the Ingraham Glacier to Ingraham Flats near 11,100 ft. Leave the Disappointment Cleaver rib on your left and stay on snow, weaving through the crevasses and up the headwall under the icefall to rejoin the standard line near 12,300 ft, then switchback up to the crater rim and cross the crater to Columbia Crest."
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "snow slog",
+   "notes": "4,600 ft up the Muir Snowfield; non-glaciated but weather-exposed",
+   "pitch": "Paradise → Camp Muir"
+  },
+  {
+   "grade": "glacier",
+   "notes": "rope up; cross the Cowlitz Glacier to the gap",
+   "pitch": "Camp Muir → Cathedral Gap"
+  },
+  {
+   "grade": "glacier",
+   "notes": "flat crevassed bench; route diverges here from the Cleaver",
+   "pitch": "Ingraham Flats"
+  },
+  {
+   "grade": "steep snow/ice 40–50°",
+   "notes": "climb directly up the headwall past the bergschrund, under the icefall — the crux and the hazard",
+   "pitch": "Ingraham Glacier headwall (direct)"
+  },
+  {
+   "grade": "snow 30–40°",
+   "notes": "weave through crevasses to the SW crater rim",
+   "pitch": "Upper glacier to crater rim"
+  }
+ ],
+ "approach_logistics": {
+  "parking": "Large lot; fills by 9 AM in summer. $30 national park pass",
+  "peakLat": 46.8528,
+  "peakLng": -121.7603,
+  "permits": "National park entry permit required",
+  "supplies": "Ashford, WA (18 miles)",
+  "trailhead": "Paradise (Skyline Trail)",
+  "access_road": "SR 706 to Paradise",
+  "trailheadLat": 46.78669,
+  "trailheadLng": -121.73454,
+  "seasonalNotes": "Open June-September; SR 706 open year-round",
+  "trailhead_gps": "46.7867, -121.7345",
+  "trailhead_name": "Paradise Visitor Center",
+  "trailheadDirection": "From the Paradise parking lot",
+  "trailhead_elevation_ft": 5400
+ }
+}

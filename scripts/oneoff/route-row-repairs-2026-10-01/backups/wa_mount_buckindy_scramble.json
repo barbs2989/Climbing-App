@@ -1,0 +1,77 @@
+{
+ "id": "wa_mount_buckindy_scramble",
+ "name": "Buckindy Glacier/Scramble Route",
+ "approach": "From Darrington, drive north on SR 530 roughly 7-8 miles and turn right onto the Suiattle River Road (FR 26) just after crossing the Sauk River bridge. Follow FR 26 (pavement then gravel) about 20 miles, turn left onto FR 2680, and continue 6 miles to the Green Mountain Trailhead (~3,200 ft). Hike Green Mountain Trail #782 (about 4 miles, ~3,000 ft gain) through old growth and subalpine meadows to the lookout area, then go cross-country along the connecting ridge system east and southeast past the Horse Lake saddle, with slow sidehill travel toward Misch, to Buckindy's north slopes and glacier remnants. This way in is cut: flood damage closed FR 26 to all motor vehicles at milepost 4 under a Forest Service order in effect since April 2, 2026, and the closure takes in the Green Mountain Road (FR 2680). The closure order runs until January 1, 2028 unless it is lifted sooner, which leaves the trailhead roughly twenty miles of closed road past the gate. Check with the Darrington Ranger District before counting on it. The way in that is open comes from the north. Drive Cascade River Road about 14 miles east of Marblemount to Kindy Creek Road (FR 1570), then about 2 miles up that rough spur to a small pullout near 1,850 ft. A climbers' trail climbs Kindy Ridge to a saddle near 4,800 ft south of Point 5116, the same start as for Snowking Mountain. From there, continue south through the Buckindy Range high country to the basins at the head of Kindy Creek or the pass between the Kindy and Buck Creek drainages, where parties camp below Buckindy's north side. That ground is a second or third night out.",
+ "approach_logistics": {
+  "peakLat": 48.351145,
+  "peakLng": -121.206615,
+  "trailhead": "Kindy Creek Road (FR-1570) Pullout",
+  "trailheadDirection": "From Marblemount, drive 14.2 miles up Cascade River Road and turn right onto FR-1570 (Kindy Creek Road) to the small pullout past the Kindy Creek bridge."
+ },
+ "waypoints": [
+  {
+   "lat": 48.4697,
+   "lng": -121.2395,
+   "elev": 1850,
+   "name": "Kindy Creek Road (FR-1570) Pullout",
+   "note": "Drive 14.2 mi up Cascade River Road from Marblemount, then right on FR-1570 (Kindy Creek Road) to a small pullout just past the wooden bridge over Kindy Creek; Northwest Forest Pass needed to park.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Marblemount, drive 14.2 miles up Cascade River Road, then turn right onto FR-1570 (Kindy Creek Road) and park at the small pullout just past the wooden bridge over Kindy Creek, at about 1,850 ft. A Northwest Forest Pass is needed to park here. FR-1570 is washed out, so this is as far as you drive and the trip begins on foot up the blocked, brushy roadbed. Do not plan on the Green Mountain Trailhead approach instead: FR 26, the Suiattle River Road, is closed to all motor vehicles at milepost 4 by a roughly 75-ft-deep washout, under a Forest Service closure order in effect until January 1, 2028."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2350,
+   "name": "FR-1570 Road End",
+   "note": "The old roadbed peters out here after about 2 mi of walking; leave it and drop into timber to pick up the Kindy Creek drainage upstream.",
+   "type": "Junction",
+   "distMi": 2
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2900,
+   "name": "Kindy Creek Crossing",
+   "note": "Last easy, reliable water before the bushwhack steepens toward the cirque — top off here.",
+   "type": "Water",
+   "distMi": 3.2
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5100,
+   "name": "Kindy Creek Cirque",
+   "note": "Open heather basin below Buckindy's north face used as a base camp by parties traversing the Buckindy Range; flat tent sites, exposed to weather.",
+   "type": "Campsite",
+   "distMi": 5
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6100,
+   "name": "Kindy/Goat Creek Glacier Toe",
+   "note": "Rope up here for the crevassed Kindy/Goat Creek glacier ice that guards the upper mountain.",
+   "type": "Junction",
+   "distMi": 5.8
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6800,
+   "name": "Upper Glacier Crevasse/Moat Band",
+   "note": "Open crevasses and a moat can bar direct access to the summit rocks late season; probe and stay roped through this band.",
+   "type": "Hazard",
+   "distMi": 6.4
+  },
+  {
+   "lat": 48.351145,
+   "lng": -121.206615,
+   "elev": 7320,
+   "name": "Mount Buckindy Summit",
+   "note": "Class 4 summit block tops out here; the descent reverses this same downclimb back onto the glacier.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ]
+}

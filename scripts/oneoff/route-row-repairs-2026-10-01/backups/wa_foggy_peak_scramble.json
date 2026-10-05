@@ -1,0 +1,76 @@
+{
+ "id": "wa_foggy_peak_scramble",
+ "name": "Standard Scramble",
+ "waypoints": [
+  {
+   "lat": 48.0268,
+   "lng": -121.4422917,
+   "elev": 2362,
+   "name": "Barlow Pass Trailhead",
+   "note": "Pavement ends here (2,362 ft); Northwest Forest Pass required and a locked gate blocks the old Monte Cristo Road to vehicles from this point.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Granite Falls, drive the Mountain Loop Highway east about 30 miles past Verlot to Barlow Pass, where the pavement ends, and park at the trailhead at about 2,360 ft. The old Monte Cristo road beyond is gated to vehicles. A Northwest Forest Pass is required to park, and a free self-issue wilderness permit is available at the trailhead kiosk."
+  },
+  {
+   "lat": 47.9847,
+   "lng": -121.3897,
+   "elev": 2750,
+   "name": "Monte Cristo Townsite / Glacier Basin Trailhead",
+   "note": "End of the 4-mile gated-road walk or bike from Barlow Pass; pick up Glacier Basin Trail #719 near the old USFS cabin at the east end of the townsite clearing.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "From the gate, follow the old Monte Cristo road — a flat former railroad grade along the South Fork Sauk — for roughly four miles. Most parties ride this stretch and stash bikes at the townsite, which cuts hours off the round trip. The original bridge near the townsite was lost to flooding, so the crossing is made on a log or by fording a side channel: straightforward in low water and genuinely hazardous in rain or heavy snowmelt, so look at it before committing."
+  },
+  {
+   "lat": 47.9885019,
+   "lng": -121.38593697499999,
+   "elev": 2900,
+   "name": "Concentrator Ruins / Waterfalls",
+   "note": "Trail opens up near the ruins of the five-story ore concentrator alongside a series of waterfalls on Glacier Creek, about a mile past the townsite.",
+   "type": "Water",
+   "distMi": 5,
+   "directions": "Pick up the Glacier Basin Trail at the east end of the townsite clearing and climb steadily beside Glacier Creek through forest for about a mile, until the trees open up at the falls."
+  },
+  {
+   "lat": 47.99067323,
+   "lng": -121.3812728575,
+   "elev": 3600,
+   "name": "Glacier Creek Crossing",
+   "note": "Ford Glacier Creek where it has breached old snow dams; footing is unstable and the crossing can be sketchy during early-season high water.",
+   "type": "Hazard",
+   "distMi": 5.7,
+   "directions": "Above the falls the tread turns rough and rocky with short scrambly steps as it works up toward Glacier Basin. Cross Glacier Creek where the trail meets it — footing on the boulders and old snow dams is unstable and early-season flow makes this worth scouting. Fill water here; this is the last place on the route where it is easy and safe to get to."
+  },
+  {
+   "lat": 47.99315475,
+   "lng": -121.3759424375,
+   "elev": 5000,
+   "name": "Snowline / Leave Maintained Trail",
+   "note": "Maintained tread gives way to snow slopes and steep forest around 5,000 ft; leave the Glacier Basin trail here and traverse off-trail toward Foggy Peak's south face.",
+   "type": "Junction",
+   "distMi": 6.5,
+   "directions": "Leave the tread above the creek crossing, before Glacier Basin proper, and claw up through steep, brushy timber toward Foggy Peak. Where you start the traverse is a trade-off: low and you fight more brush, high and you gain elevation you immediately give back. Snowline commonly sits near 5,000 ft into early summer, so carry an axe and consider light crampons for the upper approach."
+  },
+  {
+   "lat": 47.99625665,
+   "lng": -121.36927941249999,
+   "elev": 6400,
+   "name": "Skyline Notch",
+   "note": "Zig-zag up wet, downsloping rock ledges and heathery benches to this notch on the skyline, where the real Class 3-4 climbing begins; loose rockfall hazard, wear a helmet.",
+   "type": "Hazard",
+   "distMi": 7.5,
+   "directions": "Make a long, mostly level cross-country traverse across the Ida Creek slope toward the peak — brushy and tedious rather than technical. The traverse ends beneath a cliffy ridge; turn uphill there and climb talus toward the summit gully. A snowfield often blocks the gully entrance into midsummer and the rock immediately left of it can force short Class 4 moves; above that, work up the ledges and heather benches to the notch. Helmets from the base of the gully up — this ground sheds rock onto anyone below."
+  },
+  {
+   "lat": 47.997735,
+   "lng": -121.366025,
+   "elev": 6810,
+   "name": "Foggy Peak Summit",
+   "note": "True summit (6,810 ft) via a steep, exposed summit block; retrace the south face/west ridge line back through the skyline notch to descend.",
+   "type": "Summit",
+   "distMi": 8,
+   "directions": "From the notch it is a few hundred feet of steep, exposed Class 3–4 scrambling to the top, and the summit block looks harder from below than it climbs. Route-finding is what keeps it at Class 3; wander and it stiffens. Note the line on the way up, because downclimbing it on loose, downsloping rock is the crux of the day rather than the ascent."
+  }
+ ]
+}

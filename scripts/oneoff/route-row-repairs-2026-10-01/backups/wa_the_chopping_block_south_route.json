@@ -1,0 +1,145 @@
+{
+ "id": "wa_the_chopping_block_south_route",
+ "name": "Southeast Face",
+ "approach": "Drive SR 20 to Newhalem, which is reachable year-round from the west (Marblemount/Concrete) since the seasonal highway closure gate sits farther east near Ross Dam/Diablo. Park at the Goodell Creek trailhead on the north side of SR 20, across from Newhalem Campground (take the left just past crossing Goodell Creek, past the gravel pit, to road's end by the creek). Hike the old Goodell Creek Trail — a former logging-road bed — roughly 4 miles up-valley to the Terror Creek Trail junction, marked by a large cairn. Ford Terror Creek (calf-deep by late summer; the last reliable water before high camp), then climb one of the steepest maintained climbers' trails in the Cascades, gaining the ridge crest between Terror and Crescent Creeks via roots and 3rd-class dirt scrambling. Once on the crest — brushy with blueberry bushes and prone to fading in and out — follow it northwest several miles toward Stump Hollow (~5,600 ft) or the Chopping Block/Barrier Ridge camps overlooking Crescent Creek Basin and Mount Terror. Most parties reach camp in one long, steep day and climb the peak the next. Total approach is roughly 6-7 miles with well over 5,000 ft of gain to camp.",
+ "waypoints": [
+  {
+   "lat": 48.68276,
+   "lng": -121.26928,
+   "elev": 500,
+   "name": "Goodell Creek Trailhead",
+   "note": "Old Goodell Creek logging road on SR 20 across from Newhalem Campground; NPS backcountry permit (fee charged mid-May to early October) required for any overnight camping in North Cascades National Park.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR-20 to Newhalem. Coming from the west through Marblemount and Concrete the road is open year-round, since the seasonal highway closure gate sits farther east near Ross Dam and Diablo. Park at the Goodell Creek trailhead on the north side of SR-20, across from Newhalem Campground: take the left just past the Goodell Creek crossing, continue past the gravel pit, and follow the road to its end by the creek at about 500 ft. Any overnight camping in North Cascades National Park needs a backcountry wilderness permit, which carries a fee from mid-May to early October, and the Crescent/Terror Creek approach is usually not snow-free and reliably passable until mid-to-late July."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 1800,
+   "name": "Climbers' Path Cairn",
+   "note": "Cairn marking where the unmaintained Terror Basin/Barrier climbers' path leaves the overgrown Goodell Creek roadbed and turns steeply uphill toward the Southern Pickets.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Hike the old Goodell Creek Trail, a former logging-road bed that is overgrown in places with downed trees and small creek crossings, up-valley about 4 miles to a flat spot marked by cairns, where the unmaintained Terror Basin climbers' path leaves the roadbed and climbs steeply up the slope to the right."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2600,
+   "name": "Terror Creek Log Crossing",
+   "note": "Cross Terror Creek on a large logjam ford point used by climbers approaching the Barrier; can be slick and the log position shifts year to year.",
+   "type": "Hazard",
+   "distMi": 4.7
+  },
+  {
+   "lat": 48.759013,
+   "lng": -121.301766,
+   "elev": 3800,
+   "name": "The Barrier Crest",
+   "note": "Small saddle atop a notoriously loose class-3 ridge dividing the Terror and Crescent Creek basins; careful route-finding and rockfall awareness needed here.",
+   "type": "Junction",
+   "distMi": 5.5
+  },
+  {
+   "lat": 48.767437,
+   "lng": -121.305991,
+   "elev": 5600,
+   "name": "Stump Hollow",
+   "note": "Open, gentle slabby/heather basin between the Barrier and Chopping Block ridge — a common high camp for the Southeast Face, closer to the peak than Terror Basin.",
+   "type": "Campsite",
+   "distMi": 6.3
+  },
+  {
+   "lat": 48.758509,
+   "lng": -121.307305,
+   "elev": 6300,
+   "name": "South Face Gully",
+   "note": "Loose gully on the south side of the Chopping Block/Barrier ridge gains the sloping south face; helmet on, watch for rockfall onto climbers below.",
+   "type": "Hazard",
+   "distMi": 6.8
+  },
+  {
+   "lat": 48.755,
+   "lng": -121.30806,
+   "elev": 6819,
+   "name": "The Chopping Block",
+   "note": "True summit (6,819 ft), labeled Pinnacle Peak on USGS maps; visible from the North Cascades NP Newhalem visitor center on clear days.",
+   "type": "Summit",
+   "distMi": 7
+  }
+ ],
+ "itinerary": {
+  "cal": "North Cascades NP backcountry camping requires a wilderness permit, and the Crescent/Terror Creek approach is typically not snow-free and reliably passable until mid-to-late July.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Goodell Creek trailhead near Newhalem, follow the old logging road then a steep, sometimes brushy climbers' path south of Terror Creek (wading the creek), climbing relentlessly to a ~6,200 ft spur on the Barrier ridge before dropping to a flat camp around 5,800 ft. It's a brutal, sustained grind of well over 5,000 ft with little flat ground until camp.",
+    "hours": 7,
+    "miles": 6.5,
+    "title": "Approach to Southern Pickets high camp",
+    "gainFt": 5700,
+    "lossFt": 400,
+    "packLb": 42,
+    "schedule": [],
+    "objective": "Reach camp near the Barrier / Terror Basin"
+   },
+   {
+    "n": 2,
+    "note": "Cross the Barrier ridge into Stump Hollow/Crescent Creek Basin, then climb south-side slabs and heather to the base of the peak. The route is a rambly scramble with a 200-ft chimney and a slabby face with a few low-5th-class moves below the summit; parties typically make one short rappel (fixed-line/anchor reported at the top) to regain the south-side ledges on descent rather than down-climbing the exposed step. Often combined with an adjacent objective (e.g. West Ridge of Terror) on the same day if time and conditions allow.",
+    "hours": 7,
+    "miles": 3,
+    "title": "Chopping Block summit via Southeast Face",
+    "gainFt": 1400,
+    "lossFt": 1400,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave camp",
+      "detail": "Alpine start, cross the Barrier toward Stump Hollow/Crescent Creek Basin."
+     },
+     {
+      "time": "7:00 AM",
+      "label": "Reach base of south side",
+      "detail": "Traverse slabs/heather below the Chopping Block's south aspect."
+     },
+     {
+      "time": "8:30 AM",
+      "label": "Scramble to summit plateau",
+      "detail": "Low 5th-class moves near the top; stay near the east side to avoid the hardest ground."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Summit",
+      "detail": ""
+     },
+     {
+      "time": "10:00 AM",
+      "label": "Begin descent",
+      "detail": "Short rappel down the south side to regain scramble ledges."
+     },
+     {
+      "time": "12:30 PM",
+      "label": "Back at camp",
+      "detail": ""
+     }
+    ],
+    "objective": "Climb the Chopping Block and return to camp"
+   },
+   {
+    "n": 3,
+    "note": "Reverse the approach: climb back over the Barrier spur and descend the steep climbers' path to Terror Creek and the old logging road back to the car. Loose scree/dirt and brush make the descent slow and hard on the knees despite being downhill.",
+    "hours": 6,
+    "miles": 6.5,
+    "title": "Descend to Goodell Creek trailhead",
+    "gainFt": 400,
+    "lossFt": 5700,
+    "packLb": 42,
+    "schedule": [],
+    "objective": "Hike out"
+   }
+  ],
+  "totalNote": "A 3-day Southern Pickets trip (~6.5 mi and ~5,700 ft each way to camp); the Chopping Block itself is a moderate scramble/rappel day out of high camp and is commonly tacked on as a warm-up alongside another Southern Pickets objective."
+ }
+}

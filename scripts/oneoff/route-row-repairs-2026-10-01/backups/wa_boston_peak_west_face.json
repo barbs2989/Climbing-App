@@ -1,0 +1,58 @@
+{
+ "id": "wa_boston_peak_west_face",
+ "name": "West Face of Boston",
+ "approach": "Winter approach: Cascade River Road to the Eldorado Trailhead gate, then bike/ski up Cascade Pass trail to the highest switchback (~6,400 ft), angle up and drop into the Soldier Boy drainage, then rising-traverse to the Quien Sabe Glacier's NW corner and rope up for the glacier crossing. Summer access would follow the standard Boston Basin approach to the base of the west face (start ~48.49555, -121.03709).",
+ "approach_variants": [
+  {
+   "name": "The Quien Sabe's northwest corner to the lower of the two gullies",
+   "notes": "In winter the recorded approach is Cascade River Road to the Eldorado trailhead gate, then bike or ski up the Cascade Pass trail to the highest switchback near 6,400 ft, angling up and dropping into the Soldier Boy drainage, then a rising traverse to the Quien Sabe Glacier's northwest corner. Rope up for the glacier crossing. In summer the standard Boston Basin approach reaches the same ground.\n\nThe face is used deliberately as the lower-consequence alternative to the Southeast Face when that side is too icy and too unprotected — which is worth knowing, because it means a party may arrive here having changed its mind rather than having planned it.\n\nFive pitches: two of steep snow heading northeast, a large gully east on the third, a fourth to about 200 ft north of the summit, and a fifth across an exposed ridge with a short rock step to the true top.",
+   "season": "Condition-dependent rather than calendar-dependent — documented ascents span a September first ascent on steep snow and a February first winter ascent",
+   "hazards": [
+    "A bergschrund near the base of the face",
+    "Crevasses on the Quien Sabe Glacier approach",
+    "Rime ice needing removal before anything can be climbed or protected, on the winter ascent",
+    "Rock bands between the gullies that are poor rock and poor protection — the gullies themselves protect better than the face between them",
+    "Loose rock characteristic of this peak, especially on the summit rock step"
+   ],
+   "baseFinding": "Count the gullies: there are two prominent ones on this face and the route takes the lower. That is the one countable fact published about the start and it is the one to carry. A party at the base of the other gully is on a different piece of the face, with the rock band between them as the divider.\n\nThe first-move test is the schrund, and its solution is directional: the bergschrund at the base is turned by climbing to climber's right. If your way past the schrund went left, re-examine which gully you are under.\n\nCount the first two belays, which are described by what they sit under rather than by height: two pitches of steep snow head northeast, the first belay under a bulge and the second where a gully opens to the east. If your second stance is not at a place where a gully opens away east, the line is wrong.\n\nAnd you are on the wrong side of the mountain if you crossed a col. The Southeast Face — the standard route — is reached over the Sahale-Boston col at about 8,200 ft and shares that saddle with the Sahale trade route. This face is climbed straight off the northwest corner of the Quien Sabe with no col crossed at all. If you walked over a saddle to get where you are standing, you are under the standard route, not this one.\n\nThe finish confirms it: pitch four tops out about 200 ft north of the summit and the last pitch crosses an exposed ridge with a short rock step to the true top. A route that deposits you on the summit directly has not been this one."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.49261,
+   "lng": -121.11761,
+   "name": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+   "type": "Trailhead",
+   "directions": "From SR-20 at Marblemount, take Cascade River Road east across the Skagit River and follow it about 20 miles to the Eldorado Creek trailhead at milepost 20. From late autumn to spring the road is gated here, three miles below its end at the Cascade Pass trailhead; foot and bicycle traffic may continue past the gate."
+  },
+  {
+   "lat": 48.4841,
+   "lng": -121.05665,
+   "elev": 6400,
+   "name": "Winter approach angle point (~6,400 ft)",
+   "type": "approach",
+   "distMi": null,
+   "elevFt": 6400,
+   "directions": "Bike, walk or ski the road beyond the gate to the Cascade Pass trailhead, climb the Cascade Pass Trail to its highest switchback, then leave the trail and angle up the slope to the northeast to about 6,400 ft."
+  },
+  {
+   "lat": 48.49555,
+   "lng": -121.03709,
+   "name": "West Face route start",
+   "type": "route start",
+   "distMi": null,
+   "elevFt": null,
+   "directions": "Drop into the Soldier Boy drainage and make a rising traverse to the northwest corner of the Quien Sabe Glacier. Rope up and cross the glacier to the foot of the west face, below the lower of its two prominent gullies; the bergschrund at the base is turned on climber's right."
+  },
+  {
+   "lat": 48.4954,
+   "lng": -121.0362,
+   "elev": 8894,
+   "name": "Boston Peak Summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 8894,
+   "directions": "Climb two pitches of steep snow heading northeast, belaying first under a bulge and then where a gully opens to the east. Follow that large gully east on the third pitch, climb a fourth pitch to about 200 ft north of the summit, then cross the exposed ridge with a short rock step to the true top."
+  }
+ ]
+}
