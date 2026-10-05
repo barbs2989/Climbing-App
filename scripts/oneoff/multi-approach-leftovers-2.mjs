@@ -38,6 +38,9 @@ const key = requireServiceKey();
 // the old Terror Basin track, timing, itinerary and the distance/gain it was measured on are cleared, not replaced.
 // `--set 12`: Crowder's Northeast Ridge (reached only over the Southwest Route) loses the same Wild Lake start and
 // camp and the SR-20 road, and takes set 11's Hannegan road. The peak's area blurb is ./crowder-area-blurb.mjs.
+// `--set 13`: Fortress East Ridge gains a second way-in card, the Red Mountain Trail into Chiwawa Basin, which its
+// own card mentioned in one sentence. Same Trinity trailhead, so it is a card, not a switch; no mileage or gain, since
+// the pages disagree on where the Red Mountain junction is.
 const SET = process.argv.includes("--set") ? process.argv[process.argv.indexOf("--set") + 1] : "2";
 const NEXT = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.json`, import.meta.url), "utf8"));
 const BEFORE = JSON.parse(fs.readFileSync(new URL(`./multi-approach-leftovers-${SET}.before.json`, import.meta.url), "utf8"));
