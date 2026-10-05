@@ -30031,3 +30031,65 @@ enrichment work continues alongside this audit.
 
 **Pass 7 starts next run**, from the top of the id-ordered scope with no
 lower bound.
+
+## Batch 379 (2026-10-05, pass 7 — first batch of the new pass)
+
+Checked: wa_a_servant_to_liberty; wa_abernathy_peak_south_ridge;
+wa_accendo_lunae_lib_west_face_var; wa_action_potential;
+wa_agnes_mountain_south_ridge; wa_alpine_lookout_round_mountain_trail;
+wa_american_border_peak_northeast_face; wa_american_border_peak_southeast_face.
+
+Corroborated via WebSearch against Climbing.com, AAC Publications/AAJ,
+CascadeClimbers.com trip reports, Peakbagger, Lemke Climbs, Scott Kranz's
+WA100 page, WTA, Wikipedia, SummitPost, and USFS/NPS pages.
+
+**Fixed (4), see `audits/sql/2026-10-05-batch-379.sql`:**
+`wa_abernathy_peak_south_ridge` — `grade` "Class 2" → "Class 3"
+(`grade_num` 2→3): the route's own prose describes gendarmes needing class 3
+moves, and Lemke Climbs / Scott Kranz's WA100 page / multiple WTA trip
+reports all independently call it Class 3.
+`wa_accendo_lunae_lib_west_face_var` — `fa` date "late July 2012" →
+"September 5, 2012": FA party (Herrington/Bennett/Zimmerman) was already
+correct, but the date was off by over a month per the CascadeClimbers.com TR
+and the AAJ/AAC Publications entry.
+`wa_action_potential` — `high_point_ft` 8492 → 8483: disagreed with this
+row's own summit waypoint (8483) and the parent area row
+(`wa_burgundy_spire.elevation_ft`=8483); Peakbagger independently confirms
+8483.
+`wa_american_border_peak_southeast_face` — `access->land_manager`
+(snake_case key) dropped a false claim that some upper routes cross into
+North Cascades National Park. Every approach feature this route's own beta
+names (Twin Lakes, High Pass, Gargett Mine, Larrabee's west flank, the South
+AmBo Saddle, the Great Chimney) sits in Mount Baker Wilderness, ~40 miles
+from the NCNP boundary — looks like boilerplate bleed from a different
+Baker-area route. The separate camelCase `landManager` key on the same row
+was already correct and untouched.
+
+**Flagged for human review (1):** `wa_alpine_lookout_round_mountain_trail`
+— the row's own `corrections` field claims AllTrails/Peakbagger's 10.2 mi /
+3,061 ft gain figures were "used here," but the stored `dist_km` (8, ≈9.94
+mi RT) / `gain_ft` (2600) instead match a single GPS-tracked trip report,
+not the figure the row says it used. AllTrails does independently report
+10.2 mi / 3,061 ft, so real sources genuinely differ by ~15% on gain here —
+not something to resolve by guessing; needs a human call on which figure to
+persist.
+
+**Clean (3):** `wa_a_servant_to_liberty` (FA Mikey Schaefer w/ Shanjean Lee
+belaying, Aug 6 2016, confirmed via Climbing.com and AAC Publications;
+Liberty Bell's 7,720 ft elevation matches). `wa_agnes_mountain_south_ridge`
+(8,119 ft summit matches Wikipedia/Peakbagger exactly; 1936 FA / 1969 second
+ascent narrative matches Wikipedia/Beckey; the stored 5.8 crux vs. the
+guidebook's "up to 5.6" is a real, already-disclosed source split, not an
+error). `wa_american_border_peak_northeast_face` (7,998 ft high point
+matches the area row and Wikipedia's NAVD88 figure; land_manager correctly
+says Mt. Baker-Snoqualmie NF / Mount Baker Wilderness with no incorrect NCNP
+claim, unlike its SE Face sibling fixed above).
+
+**Query note for future runs:** the live id-ordered query (`discipline=in`
++ `id=like.wa_*` + `order=id.asc`) timed out (57014) without an explicit
+`areas` join. Use the inner-join form instead —
+`routes?select=...&areas!inner(area_type)&discipline=in.(alpine,mountaineering)&id=like.wa_*&areas.area_type=eq.peak&order=id.asc`
+— confirmed fast (~0.35s) and used for this and future batches.
+
+Pass 7 continues next run after `wa_american_border_peak_southeast_face`,
+picking up at `wa_amphitheater_mountain_finger_of_fatwa`.
