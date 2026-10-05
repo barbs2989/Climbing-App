@@ -1,14 +1,15 @@
 // Injection suite for check:summit-briefing.
 //
-// The healthy output of that guard is "all 27 assertions passed", which is also what a guard
+// The healthy output of that guard is "all N assertions passed", which is also what a guard
 // asserting nothing prints — so every claim below is judged on the guard's OWN failure text,
 // never on an exit code, and each case proves its edit landed by CHECKSUM before the guard is
 // believed. `lib/DbAreaBrowser.jsx` is restored byte-identically afterwards and the harness
 // says TREE NOT RESTORED rather than exiting 0 on a tree it has damaged.
 //
-// The two SILENT cases carry as much weight as the rest: a comment quoting the rule, and the
-// ALIAS table written in a different order, are both correct work, and a guard that fired on
-// either would tell an author to stop touching the file.
+// The four cases that targeted the access block's agreement rule (prefix-rule-restored,
+// always-agrees, never-agrees, shows-the-thinnest) and its two SILENT companions were deleted
+// with that block on 2026-10-04 — the owner removed Access & permits from the peak overview,
+// so there is no rule left for them to break. What the guard proves now is the block's ABSENCE.
 import { execFileSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";
@@ -21,38 +22,13 @@ const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 
 const ORIGINAL = fs.readFileSync(FILE, "utf8");
 const BEFORE = sum(ORIGINAL);
 
-const RULE = `  const toks = said.map(v => new Set(normFact(v).split(" ").filter(Boolean)));`;
-const PICK = `  said.forEach((v, i) => { if (toks[i].size > toks[bi].size || (toks[i].size === toks[bi].size && v.length > said[bi].length)) bi = i; });`;
-const AGREE = `  const agreed = toks.every(s => [...s].every(t => toks[bi].has(t)));`;
-
 const CASES = [
   {
-    name: "prefix-rule-restored",
-    why: "THE REAL HISTORICAL DEFECT — agreement by prefix is order-sensitive, so Mount Baker's one agency written place-first reads as a disagreement.",
-    find: AGREE,
-    repl: `  const _l = said.slice().sort((a, b) => b.length - a.length)[0], _n = normFact(_l);\n  const agreed = said.every(v => _n.startsWith(normFact(v)));`,
-    expect: "does NOT hedge the land manager where the routes differ only in WORDING",
-  },
-  {
-    name: "always-agrees",
-    why: "a rule that never refuses puts one side's permit on a mountain that needs two.",
-    find: AGREE,
-    repl: `  const agreed = true;`,
-    expect: "refuses to name one permit when the routes disagree",
-  },
-  {
-    name: "never-agrees",
-    why: "a rule that always refuses withholds every fact the routes DO share.",
-    find: AGREE,
-    repl: `  const agreed = false;`,
-    expect: "does NOT hedge the land manager",
-  },
-  {
-    name: "shows-the-thinnest",
-    why: "agreement holding is not enough — the value on screen has to be the fullest, or the page prints the bare agency name over routes that named the forest and the wilderness.",
-    find: PICK,
-    repl: `  said.forEach((v, i) => { if (toks[i].size < toks[bi].size) bi = i; });`,
-    expect: "shows the MOST SPECIFIC of the agreeing land-manager strings",
+    name: "access-block-restored",
+    why: "the owner removed Access & permits from the peak overview; putting its heading back must fail the guard.",
+    find: `      <CardHead C={C} style={{ marginBottom: 10 }}>ACROSS EVERY ROUTE HERE</CardHead>`,
+    repl: `      <CardHead C={C} style={{ marginBottom: 10 }}>ACROSS EVERY ROUTE HERE</CardHead>\n      <div>Access &amp; permits</div>`,
+    expect: "has NO Access & permits block",
   },
   {
     name: "approach-reads-the-raw-column",
@@ -60,21 +36,6 @@ const CASES = [
     find: "    const ap = numericSpan(rs, effDistKm);",
     repl: "    const ap = numericSpan(rs, r => r.dist_km);",
     expect: "the Approach row shows the route page's own distance",
-  },
-  {
-    name: "SILENT-comment-quoting-the-rule",
-    why: "a comment naming the forbidden prefix shape is documentation; a guard flagging it would forbid explaining itself.",
-    find: RULE,
-    repl: `  // A PREFIX test — normFact(longest).startsWith(normFact(v)) — is what this replaced.\n` + RULE,
-    expect: null,
-  },
-  {
-    name: "SILENT-alias-table-reordered",
-    why: "the alias table is a set; its order says nothing, and reordering it is ordinary work.",
-    find: `const ALIAS = { nw: "northwest",`,
-    repl: `const ALIAS = { usa: "us", nw: "northwest",`,
-    strip: ` usa: "usa-PLACEHOLDER",`,
-    expect: null,
   },
 ];
 

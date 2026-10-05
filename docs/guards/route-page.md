@@ -247,6 +247,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   it runs on every PR and every push to main via `render-guards.yml`, on the **anon key** — `routes`
   is publicly readable and CI has no business holding a key that bypasses RLS, the same stance
   `check:field-renders` takes one job over.
+  - **THE ACCESS & PERMITS BLOCK WAS REMOVED BY THE OWNER (2026-10-04).** The panel's Permit /
+    Land manager / Parking rows — and the `sharedFact` containment rule that decided when to state
+    or refuse them — are gone from the peak overview; access lives on each route page only. The
+    guard now asserts that block's ABSENCE on Mount Baker (all its routes agree, so it is where a
+    revert would render first). The sub-entries below about permit/land-manager agreement, the
+    Stuart/Adams refusals and the injection cases describe that removed block and are history;
+    the approach-range (Adams), rock-span (Stuart) and gate assertions still stand.
   - **IT SHIPPED AS A `scripts/oneoff/` PROBE IN #943 AND WAS RED ON MAIN WHEN SOMEBODY FINALLY RAN
     IT.** Two of its twenty assertions failed and both were real: **Mount Baker's peak page had
     stopped naming its land manager and its parking pass**. Nothing about the app looked wrong,
