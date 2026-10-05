@@ -415,7 +415,7 @@ try {
   await page.waitForTimeout(2500);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -423,7 +423,7 @@ try {
   // Everything above checked default state. This walks one interaction deep,
   // where the last three sessions' worth of real bugs actually were.
   log("interactive state:");
-  for (const tab of ["Home", "Crew", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Crews", "Logbook", "Ranks", "Profile"]) {
     await sweepInteractive(tab);
   }
 
@@ -725,7 +725,7 @@ try {
   // render guard had ever opened, and it is where #569 (a populated crew reading "You + 0
   // climbers") and #688 lived.
   await flow("crew-subviews-switch", async () => {
-    await tap("Crew");
+    await tap("Crews");
     // Only three are captured. `crewView` defaults to "crews", so the Crews sub-view IS the
     // Crew screen already captured in the main walk -- capturing it again would be a
     // byte-identical twin and fail for being correct. That equality is worth asserting

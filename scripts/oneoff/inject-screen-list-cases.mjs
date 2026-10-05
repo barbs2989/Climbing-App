@@ -58,7 +58,7 @@ const CASES = [
   {
     name: "5 SILENT: a complete list is correct work and must not be flagged",
     file: "scripts/check-outage.mjs",
-    edit: (s) => s.replace('["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"]', '["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks",  "Profile"]'),
+    edit: (s) => s.replace('["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]', '["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks",  "Profile"]'),
     want: (r) => r.code === 0,
   },
   {
