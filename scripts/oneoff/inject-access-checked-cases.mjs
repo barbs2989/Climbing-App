@@ -25,8 +25,8 @@ const CASES = [
   { name: "line returned even with no date", file: ROAD, expect: "fail",
     why: "an undated row would claim it had been checked — a fabricated verification on ~1,000 routes",
     edit: (s) => s.replace(
-      "return when ? `Road and access last checked against a published source on ${when}.` : null;",
-      "return `Road and access last checked against a published source on ${when || \"an unknown date\"}.`;") },
+      "return when ? `Road and access last checked on ${when}.` : null;",
+      "return `Road and access last checked on ${when || \"an unknown date\"}.`;") },
 
   { name: "locale formatting", file: ROAD, expect: "fail",
     why: "the rendered date would differ per machine — green locally, red in CI",

@@ -23,8 +23,7 @@
 //   - `wp._source === "logged" ? "✓ From a logged climb" : …` — the value RENDERED there is a
 //     literal; the field only picks between two authored strings. Internal edit provenance is
 //     fine as long as it does not reach the screen verbatim.
-//   - The provenance chip's `title="How this section was sourced: " + prov.label`, which is a
-//     deliberate, kept feature: it says how current a section is and names no source.
+//   (The per-section provenance chip once listed here as a kept exception was REMOVED 2026-10-04.)
 //
 // So the rule is narrow and structural: NO JSX EXPRESSION MAY EVALUATE TO A PROPERTY NAMED
 // `source`, `sources` or `sourceNote`. Static (Babel, no browser, no DB), so it sits in the build.
@@ -46,11 +45,12 @@ const dead = (m) => {
   process.exit(1);
 };
 
-const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
-  .concat(fs.readdirSync(path.join(ROOT, "lib")).filter(f => /\.jsx$/.test(f)).map(f => "lib/" + f));
+const FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx"]
+  .concat(fs.readdirSync(path.join(ROOT, "lib")).filter(f => /\.jsx?$/.test(f)).map(f => "lib/" + f));
 
-let scanned = 0, containers = 0;
-const findings = [];
+let scanned = 0, containers = 0, literals = 0;
+const findings = [], words = [];
+const WORDS = /auto-?generated|\bsourced?s?\b|\battribution\b|\bprovenance\b/i;
 
 for (const rel of FILES) {
   const abs = path.join(ROOT, rel);
@@ -93,10 +93,27 @@ for (const rel of FILES) {
     }
   };
 
+  // RULE 2 — WORDING. The field rule above could not see the per-section "Auto-generated" chip,
+  // "checked against a published source", "Tap a row for its sources" or a form labelled
+  // "Why / source": each was an authored LITERAL, not a field. All were removed 2026-10-04 on the
+  // owner's "remove the auto generated or anything else related to sources". So no literal the app
+  // can render may use that vocabulary. "Water source(s)" is a different meaning and is allowed.
+  const wording = (v, node) => {
+    if (!v || !WORDS.test(v.replace(/water sources?/gi, ""))) return;
+    words.push({ rel, line: node.loc ? node.loc.start.line : 0, text: v.trim().replace(/\s+/g, " ").slice(0, 110) });
+  };
+  traverse(ast, {
+    JSXText(p) { literals++; wording(p.node.value, p.node); },
+    StringLiteral(p) {
+      if (/^(Import|Export)/.test(p.parent.type)) return; // a module path, never screen text
+      literals++; wording(p.node.value, p.node);
+    },
+    TemplateElement(p) { literals++; wording(p.node.value.cooked, p.node); },
+  });
+
   traverse(ast, {
     JSXExpressionContainer(p) {
-      // An attribute value is not screen text. `title=` would be, but the provenance chip's
-      // title is a deliberate kept feature and names no source field.
+      // An attribute value is not screen text for this rule; RULE 2 reads attribute literals.
       if (p.parent && p.parent.type === "JSXAttribute") return;
       containers++;
       const hit = rendersBanned(p.node.expression);
@@ -111,10 +128,19 @@ for (const rel of FILES) {
 if (scanned < 5) dead(`only ${scanned} file(s) parsed — the walk broke`);
 if (containers < 500) dead(`only ${containers} JSX expressions seen across ${scanned} files — the traversal is not reaching the render trees`);
 
-console.log(`check:no-rendered-sources — ${scanned} files, ${containers} rendered expressions`);
+if (literals < 2000) dead(`only ${literals} string literals seen — the wording scan is not reaching the app`);
+
+console.log(`check:no-rendered-sources — ${scanned} files, ${containers} rendered expressions, ${literals} literals`);
+for (const w of words) console.log(`  FAIL  ${w.rel}:${w.line} says "${w.text}"`);
 for (const f of findings) {
   console.log(`  FAIL  ${f.rel}:${f.line} renders \`${f.hit}\` on screen`);
   console.log(`        ${f.snippet}`);
+}
+if (words.length) {
+  console.error(`\ncheck:no-rendered-sources FAILED — ${words.length} literal(s) talk about sources or auto-generation.`);
+  console.error("The app carries no sources and labels nothing \"auto-generated\". Reword: keep the fact or the");
+  console.error("caveat, drop where it came from.");
+  process.exit(1);
 }
 if (findings.length) {
   console.error(`\ncheck:no-rendered-sources FAILED — ${findings.length} screen(s) print a source field.`);
@@ -122,10 +148,11 @@ if (findings.length) {
   console.error("caveat — and drop the attribution; see VerifNote for how that was done.");
   process.exit(1);
 }
-console.log("\nok — no screen prints a field named source, sources or sourceNote");
+console.log("\nok — no screen prints a field named source, sources or sourceNote, and no literal talks about sources");
 
 // Injection-tested, 4 cases:
 //   1. `{route.verif.source}` in a render        -> FAIL naming source          (the real #1069 defect)
 //   2. `{it.sourceNote}`                         -> FAIL naming sourceNote      (the real #999 defect)
 //   3. `{wp._source==="logged"?"a":"b"}`         -> PASS (branches are literals, field is a test)
-//   4. an attribute `title={"…"+prov.label}`     -> PASS (not screen text, and names no source)
+//   4. "Auto-generated" / "Why / source" / "published source" literals -> FAIL (RULE 2, 2026-10-04)
+//   5. "Water sources"                           -> PASS (a different meaning)
