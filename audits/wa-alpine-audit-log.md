@@ -29980,3 +29980,54 @@ but not yet audited, sorting next: `wa_winchester_mountain_south_trail`,
 `wa_witches_tower_southwest_corner`, `wa_witches_tower_west_buttress`,
 `wa_wolframite_mountain_scramble` — pick these up first before re-running the
 live id-ordered query.
+
+## Batch 378 (2026-10-05, pass 6 — final batch of this pass)
+
+Checked: wa_winchester_mountain_south_trail; wa_windy_peak_iron_gate_trail;
+wa_windy_peak_trail; wa_windy_peak_windy_creek_trail;
+wa_witches_tower_south_face; wa_witches_tower_southwest_corner;
+wa_witches_tower_west_buttress; wa_wolframite_mountain_scramble.
+
+Corroborated via WebSearch against Wikipedia, SummitPost, Peakbagger,
+ListsOfJohn, WTA and mindat.org.
+
+**No fixes, nothing flagged. Clean (8):** `wa_winchester_mountain_south_trail`
+— 6,521 ft lookout, built 1935, saved from demolition and restored by Mount
+Baker Club volunteers in 1982, all confirmed via Wikipedia/Mount Baker
+Experience; WTA's 3.4 mi round trip / 1,300 ft gain matches this row's
+one-way `dist_km`=2.7 (~1.7 mi) / `gain_ft`=1300 convention.
+`wa_windy_peak_iron_gate_trail`, `wa_windy_peak_trail`,
+`wa_windy_peak_windy_creek_trail` — all three documented approaches to Windy
+Peak (8,335 ft) match the area row and Wikipedia exactly; the 1932 L-4
+lookout (built by E.W. Allen & Raymond Johnson), its WWII Aircraft Warning
+Service use (Jul 20–Sep 6, 1942), and its 1963 destruction are all confirmed
+via Wikipedia. Stored `prominence_ft`=1773 on the area row matches
+Wikipedia's figure exactly — Peakbagger/ListsOfJohn's newer LiDAR-era
+1,788–1,807 ft figures are a separate, higher-precision survey generation,
+not an error in the stored 1,773. `wa_witches_tower_south_face`,
+`wa_witches_tower_southwest_corner` — 8,566 ft summit / 210 ft prominence
+confirmed exactly via Wikipedia/SummitPost. `wa_witches_tower_west_buttress`
+— elevation matches; the stored FA (Charles Sink & Eric Gerber, July 4,
+1971) could not be independently corroborated via any searchable source (no
+mention of either name found anywhere), but nothing contradicts it either,
+so it was left as-is — this audit only fixes or flags a fact that conflicts
+with a source, not one that simply has no reachable source.
+`wa_wolframite_mountain_scramble` — 8,136 ft vs. Peakbagger's 8,126 ft /
+ListsOfJohn's 8,128 ft is an ordinary sub-10 ft source spread, not touched.
+Its mine-history prose (route: 1908–1918 operation, then 1920/1936
+shipments, early-1940s closure; area row's shorthand: "1908 until … 1942")
+both match the real multi-phase timeline confirmed via
+SummitPost/mindat.org — a boom from 1915–1918, closure in 1920, and a brief
+1942 reopening before the mine shut for good — two levels of detail on the
+same real history, not a contradiction.
+
+**Pass 6 is now complete.** The only route id sorting after
+`wa_wolframite_mountain_scramble` in the live id-ordered scope is
+`wa_wright_pond`, whose area (Cutthroat Creek Wall / Little Liberty Bell) is
+`area_type=crag` — out of scope for this audit. The in-scope catalog grew
+during this pass, from 698 routes at its start to 755 now (measured via a
+`routes!inner(areas.area_type=eq.peak)` join), which is expected since
+enrichment work continues alongside this audit.
+
+**Pass 7 starts next run**, from the top of the id-ordered scope with no
+lower bound.

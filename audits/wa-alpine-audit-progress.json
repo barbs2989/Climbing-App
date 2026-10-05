@@ -1,11 +1,11 @@
 {
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
-  "pass": 6,
-  "last_processed_id": "wa_whitehorse_mountain_nw_shoulder",
-  "total_in_scope_last_count": 698,
-  "total_wa_alpine_or_mountaineering_tagged": 747,
-  "pass_note": "Pass 6 in progress, started 2026-09-08 with batch 241, now through batch 377. Next after wa_whitehorse_mountain_nw_shoulder: run the live id-ordered routes query (see scope_definition) starting just past this id to get the next candidate batch -- the next-candidate list was not pre-computed this run. Note: wa_winchester_mountain_south_trail, wa_windy_peak_iron_gate_trail, wa_windy_peak_trail, wa_windy_peak_windy_creek_trail, wa_witches_tower_south_face, wa_witches_tower_southwest_corner, wa_witches_tower_west_buttress, wa_wolframite_mountain_scramble were already identified as in-scope candidates this run (area_type=peak) but not yet audited -- pick these up first before re-querying.",
+  "pass": 7,
+  "last_processed_id": null,
+  "total_in_scope_last_count": 755,
+  "total_wa_alpine_or_mountaineering_tagged": 830,
+  "pass_note": "Pass 6 completed 2026-10-05 at batch 378 (ended on wa_wolframite_mountain_scramble -- the only later id, wa_wright_pond, is area_type=crag and out of scope). Pass 7 starts fresh: run the live id-ordered routes query (see scope_definition) with no lower bound to get the first candidate batch. total_in_scope_last_count (755) and total_wa_alpine_or_mountaineering_tagged (830) were re-measured this run via routes!inner(areas.area_type) and are both higher than pass 6's start-of-pass figures (698 / 747) -- the catalog grew during pass 6, which is expected and is the reason this audit re-passes rather than stopping after one cycle.",
   "batches": [
     {
       "batch_number": 1,
@@ -7569,6 +7569,25 @@
       "flagged_for_human_review": 0,
       "sql_file": "audits/sql/2026-10-02-batch-377.sql",
       "note": "Fixed 1: wa_warrior_peak_standard high_point_ft 7320->7314 -- this route's own summit waypoint ('Warrior Peak (Southeast Summit)', elev 7314) and the parent area row (wa_warrior_peak.elevation_ft=7314, prominence_ft=804, matching Peakbagger's precise 7,313.9 ft/804 ft prominence exactly) already agreed; only the route's top-level high_point_ft was never brought into line, same drift pattern as batch 376's Vasiliki Ridge fix. Investigated and left as-is (not a new finding, already disclosed): wa_west_craggy_peak_standard_route's high_point_ft (8372) vs its own parent area row wa_west_craggy_peak.elevation_ft (8366) -- this is NOT an undisclosed drift like Warrior Peak above; the area row's own blurb already states '8,366 ft, also cited as 8,372 ft', i.e. a deliberate prior judgment call on which figure to lead with despite both being real, current source values (West Craggy's survey is genuinely unsettled across sources) -- left untouched per this audit's standing practice of not overturning an already-disclosed sub-10ft spread. Clean (7, all independently corroborated via WebSearch): wa_wallaby_peak_standard (FA Fred/Helmy Beckey & Walt Varney, June 17 1942, confirmed via SummitPost/WTA/Mountaineers; elevation 7995 matches area row); wa_washington_ellinor_traverse_ridge (Mount Washington elevation 6260 confirmed via Wikipedia/SummitPost, matching area row); wa_west_face_2 (North Gunsight Peak's West Face -- FA Jim Nelson & Carl Dietrich 1986 5.10 A2, FFA Max Hasson & Jens Holsten July 25 2007 onsight free at 5.11c per Alpinist's contemporary newswire (app stores 5.11+, an equivalent YDS letter-grade rendering, not a conflict), 6 pitches/600ft per StephAbegg matching stored pitches=6/length_m=183, all confirmed); wa_west_twin_needle_south_route (FA of Twin Needles, William Degenhardt/James Martin/Herb Strandberg, August 17 1932, confirmed via AAC Publications/Alpenglow; elevation 7936 matches area row); wa_white_mountain_olympics_scramble (elevation 6378 confirmed via Wikipedia exactly); wa_whitehorse_mountain_nw_shoulder (FA Nels Bruseth 1909 confirmed via Wikipedia/SummitPost; route high_point_ft 6852 vs area elevation_ft 6851 is a 1-ft rounding difference, not treated as an error)."
+    },
+    {
+      "batch_number": 378,
+      "date": "2026-10-05",
+      "route_ids": [
+        "wa_winchester_mountain_south_trail",
+        "wa_windy_peak_iron_gate_trail",
+        "wa_windy_peak_trail",
+        "wa_windy_peak_windy_creek_trail",
+        "wa_witches_tower_south_face",
+        "wa_witches_tower_southwest_corner",
+        "wa_witches_tower_west_buttress",
+        "wa_wolframite_mountain_scramble"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 0,
+      "clean": 8,
+      "sql_file": null,
+      "note": "Fixed 0, flagged 0, clean 8 (all independently corroborated via WebSearch): wa_winchester_mountain_south_trail (6,521 ft lookout, built 1935, restored by Mount Baker Club volunteers in 1982, confirmed via Wikipedia/Mount Baker Experience; WTA's 3.4 mi round trip / 1,300 ft gain matches this row's one-way dist_km=2.7 (~1.7 mi) / gain_ft=1300 convention); wa_windy_peak_iron_gate_trail, wa_windy_peak_trail, wa_windy_peak_windy_creek_trail (all three approaches to Windy Peak, 8,335 ft, matches the area row and Wikipedia exactly; 1932 L-4 lookout built by E.W. Allen & Raymond Johnson, WWII Aircraft Warning Service use Jul 20-Sep 6 1942, destroyed 1963, all confirmed via Wikipedia; stored prominence_ft=1773 matches Wikipedia's figure exactly -- Peakbagger/ListsOfJohn's newer LiDAR-era 1788-1807 ft figures are a separate, higher survey generation, not an error in the stored 1773); wa_witches_tower_south_face, wa_witches_tower_southwest_corner (8,566 ft summit / 210 ft prominence confirmed exactly via Wikipedia/SummitPost); wa_witches_tower_west_buttress (elevation matches; the stored FA -- Charles Sink & Eric Gerber, July 4 1971 -- could not be independently corroborated via any searchable source, but nothing contradicts it either, so left as-is per this audit's rule against fixing or flagging a fact that simply has no reachable source rather than a conflicting one); wa_wolframite_mountain_scramble (8,136 ft vs. Peakbagger's 8,126 ft / ListsOfJohn's 8,128 ft is an ordinary sub-10 ft source spread; the route's own mine-history prose -- 1908-1918 operation, 1920/1936 shipments, early-1940s closure -- and the area row's shorthand '1908 until ... 1942' both match the real multi-phase timeline confirmed via SummitPost/mindat.org -- boom 1915-1918, closed 1920, brief 1942 reopening before final closure -- not a contradiction, just two levels of detail on the same real history). This was the last batch of pass 6: the only route sorting after wa_wolframite_mountain_scramble in the live id-ordered scope is wa_wright_pond, whose area (Cutthroat Creek Wall / Little Liberty Bell) is area_type=crag, out of scope. Pass 6 complete (755 in-scope routes as of this run, up from 698 at pass start -- catalog grew during the pass). Starting pass 7 next run from the top of the id-ordered scope."
     }
   ]
 }
