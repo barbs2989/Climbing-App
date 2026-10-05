@@ -30093,3 +30093,72 @@ claim, unlike its SE Face sibling fixed above).
 
 Pass 7 continues next run after `wa_american_border_peak_southeast_face`,
 picking up at `wa_amphitheater_mountain_finger_of_fatwa`.
+
+---
+
+## 2026-10-05 — Pass 7, Batch 380
+
+Ten routes across 4 peaks (Amphitheater Mountain ×6, Anderson's Thumb, Argonaut Peak ×2,
+Concord Tower): Finger of Fatwa; Middle Finger Buttress - Left Side; Middle Finger Buttress -
+Right Side; North Ridge; Pilgrimage to Mecca; West Route (all Amphitheater Mountain); Standard
+Route (Anderson's Thumb); Southeast Ridge AKA `wa_argonaut_peak_east_ridge`; Northeast Couloir
+(both Argonaut Peak); Around the Cave We Go (Concord Tower).
+
+**Fixed (1):** `wa_amphitheater_mountain_finger_of_fatwa` — `fa` said "Scott Bennett and Blake
+Herrington, **2012**." Blake Herrington's own trip-report blog post ("(New) International Trade
+Routes," posted Aug 25, 2011) describes an Aug 10–17, 2011 trip on which he and Scott Bennett put
+up new routes on both Cathedral Peak ("Last Rites") and Amphitheater Mountain's Middle Finger
+Buttress. The AAC Publications article "Amphitheater Peak, Cathedral Peak, Deacon Peak, Three New
+Routes" lists exactly those same two routes — confirming it's the same trip — but that article
+runs in the *2012* American Alpine Journal, which reports the *prior* season's climbs. The ascent
+was August **2011**; "2012" looks like the AAJ publication year bleeding into the `fa` field.
+Corrected to "Scott Bennett and Blake Herrington, 2011."
+
+**Flagged for human review (2):**
+- `wa_argonaut_peak_east_ridge` (named "Southeast Ridge" in the row) — two unresolved source
+  conflicts on the same row. (1) Naming: the 1977 first-ascent report (AAC Publications) calls
+  this route the "**South** Ridge," climbed May 30, 1977 by Will Parks, Bob Loomis, Dan Schnell,
+  and Dave Seman (names/date match this row's `fa` field exactly, just reordered) — but a prior
+  audit batch (2026-07-15, recorded in this row's own `data_quality.gaps`) deliberately renamed it
+  *to* "Southeast Ridge" citing Mountaineers.org and SummitPost. Both a primary FA report and
+  current guide sites are legitimate; this needs a human call on which name era to keep. (2)
+  Elevation: this row's own summit waypoint and `high_point_ft` both read 8453 ft, but the parent
+  `wa_argonaut_peak` area row has `elevation_ft` = 8457 — a real but small (4 ft) discrepancy, and
+  search results for the peak's elevation were themselves inconsistent across queries (8453 ft in
+  one pass, 8457–8459 ft in others), so this looks like genuine, unresolved source disagreement
+  rather than a pipeline bug worth guessing a fix for.
+- `wa_andersons_thumb_standard` — the row already discloses (via `auto_generated: true` and its own
+  `data_quality.gaps`/`corrections` fields) that no dedicated source for this spire was found. This
+  run turned up one specialized guidebook site, "Climbers Guide to the Olympic Mountains," that
+  does cover Anderson's Thumb directly — but this environment's web-fetch tool could not load that
+  page (or any other primary source page) this run; only search-engine summaries of it were
+  available, and those summaries gave two different, mutually inconsistent elevation figures (~6,850
+  ft in one pass, ~7,033 ft in another — the latter matching nearby Echo Rock, suggesting the
+  summarizer conflated two features on the same page) against this row's stored 6,785 ft. Not
+  trustworthy enough to act on; flagging the elevation specifically as still needing a human with
+  real page access, beyond what the row already self-discloses.
+
+**Clean (7):** `wa_amphitheater_mountain_middle_finger_buttress_left_side` (FA August 1971 — no
+corroborating or contradicting primary source found; elevation/coordinates self-consistent with the
+area row and five sibling routes). `wa_amphitheater_mountain_middle_finger_buttress_right_side` (FA
+July 15, 1973 — same: no contradiction found). `wa_amphitheater_mountain_north_ridge` (FA August 29,
+1973 — same). `wa_amphitheater_mountain_pilgrimage_to_mecca` (FA "Darin Berdinka and Owen Lunz,
+2004" confirmed via Climbing.com: first climbed July 27, 2004). `wa_amphitheater_mountain_west_route`
+(Class 3 walk-up; elevation matches the area row and all five sibling routes at 8,358 ft).
+`wa_argonaut_peak_northeast_couloir` (grade 5.6/WI2, Grade III, ~1,200 ft couloir at 35–50°,
+elevation 8,457 ft matching the area row exactly — all independently corroborated via
+Mountainproject/SummitPost/Lemke Climbs/Wenatchee Outdoors). `wa_around_the_cave_we_go` (grade 5.6
+at Concord Tower confirmed via Mountain Project; high point 7,569 ft matches The Cave Route it
+variates from and 4 of 6 sibling routes on the same tower).
+
+**Tooling note:** the `WebFetch` tool is blocked for every domain tried this run (Mountain Project,
+AAC Publications, thecrag.com, CascadeClimbers, blakeclimbs.blogspot.com, web.archive.org,
+en.wikipedia.org, sites.google.com, nps.gov) — this run's "authoritative source" cross-checks relied
+entirely on `WebSearch` result snippets, which are search-engine summaries of those pages rather than
+the pages themselves, and are occasionally internally inconsistent (see the Anderson's Thumb
+elevation flag above). Fixes in this batch were only made where multiple independent `WebSearch`
+passes agreed on specific, consistent facts; anything a single ambiguous snippet couldn't settle was
+left flagged rather than guessed. Future runs should check whether `WebFetch` access is restorable
+in this environment before relying on it.
+
+Pass 7 continues next run after `wa_around_the_cave_we_go`.
