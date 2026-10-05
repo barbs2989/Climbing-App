@@ -27,7 +27,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE } from "./popupChrome.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
-import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi, FIRE_SOURCES } from "./fire";
+import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 
 const Z = 3000;
 // Continental US, the honest default when we have nothing better to centre on.
@@ -553,12 +553,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           </div>
 
           <div style={{ fontSize: 10.5, color: C.textMuted, lineHeight: 1.6, marginTop: 2 }}>
-            {FIRE_SOURCES.map(s => (
-              <div key={s.href}>
-                <a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: C.textSub, textDecoration: "none" }}>{s.label}</a>
-              </div>
-            ))}
-            <div style={{ marginTop: 3 }}>Acreage and containment are as last reported by the managing agency, not live measurements.</div>
+            <div>Acreage and containment are as last reported by the managing agency, not live measurements.</div>
           </div>
         </div>
       </div>

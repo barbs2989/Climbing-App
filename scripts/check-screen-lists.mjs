@@ -61,7 +61,7 @@ const PARTIAL_ON_PURPOSE = [
     why: "the can-this-probe-fail list: the sub-tabs CAMPING & BIVY could plausibly render on. Photos and Partners host no route prose at all",
   },
   {
-    file: "scripts/check-ui.mjs", kind: "nav-label", values: "Home,Crew,Logbook,Ranks,Profile",
+    file: "scripts/check-ui.mjs", kind: "nav-label", values: "Home,Crews,Logbook,Ranks,Profile",
     why: "the second, INTERACTIVE sweep. Climbs and Partners are walked in the full pass above; neither has a one-interaction-deep state this sweep knows how to drive",
   },
 ];

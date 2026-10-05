@@ -117,8 +117,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `high_point_ft`, plus `alpine_draws`/`rope_length_m`), the four grade variants and
     `rope_type`/`ascender` render outright, and the two that *looked* dead are both
     **used-not-echoed**: `grade_system` selects a format via `gradeSystemFor()` and is never
-    printed, and `auto_generated` picks a provenance chip label in `lib/provenance.js` which
-    needs section content a bare route does not have. So a derived list would carry ~10
+    printed, and `auto_generated` is no longer read by the app at all (its only reader, the
+    provenance chip, was removed 2026-10-04). So a derived list would carry ~10
     exemptions to report **zero** findings — bookkeeping that rots, in exchange for nothing.
     Add a column here by hand when one is added, and re-run that measurement before automating
     it. `check:field-renders`' subject is columns that reach a screen, not list maintenance.
@@ -247,6 +247,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   it runs on every PR and every push to main via `render-guards.yml`, on the **anon key** — `routes`
   is publicly readable and CI has no business holding a key that bypasses RLS, the same stance
   `check:field-renders` takes one job over.
+  - **THE ACCESS & PERMITS BLOCK WAS REMOVED BY THE OWNER (2026-10-04).** The panel's Permit /
+    Land manager / Parking rows — and the `sharedFact` containment rule that decided when to state
+    or refuse them — are gone from the peak overview; access lives on each route page only. The
+    guard now asserts that block's ABSENCE on Mount Baker (all its routes agree, so it is where a
+    revert would render first). The sub-entries below about permit/land-manager agreement, the
+    Stuart/Adams refusals and the injection cases describe that removed block and are history;
+    the approach-range (Adams), rock-span (Stuart) and gate assertions still stand.
   - **IT SHIPPED AS A `scripts/oneoff/` PROBE IN #943 AND WAS RED ON MAIN WHEN SOMEBODY FINALLY RAN
     IT.** Two of its twenty assertions failed and both were real: **Mount Baker's peak page had
     stopped naming its land manager and its parking pass**. Nothing about the app looked wrong,
@@ -451,53 +458,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the commit before the camping collapse. Both earlier designs passed that tree. **Case 5 pins
     the seventh screen** — it reverts the tick-list row to raw `r.grade`, and it MISSED twice
     before the fixture was right. Two cases must stay **quiet**, pinning the exclusions above.
-- **`check:provenance`** asserts that every route-page section that carries a provenance chip
-  still renders one, and that a section with **no data carries none**. The chip says how a
-  section was **sourced** — `Climber-verified` / `On file` / `Auto-generated` — and deliberately
-  not how *true* it is, because nothing in `routes` can support that claim:
-  `data_quality.confidence` is **94.0% "MEDIUM"** across 8,367 WA routes (58 LOW, 57 HIGH), and
-  89% of the `gaps` arrays are one boilerplate sentence repeated 8,021 times. A chip fed by
-  either says one word everywhere. Static apart from a `renderToStaticMarkup` pass, so it sits
-  in `npm run build`. See `lib/provenance.js`.
-  - **Adding the prop is not enough, and that is the whole reason this renders rather than
-    greps.** Five of the first ten wired headings showed no chip, each for its own reason:
-    `rappels` was wired to the wrong one of **two** surfaces that both render the text
-    "RAPPELS" (grep cannot separate them; only one is the heading users see); `gpx` and
-    `waypoints` are **alpine-gated** and invisible to a `trad` fixture — the `cragOnly` trap
-    `check:field-renders` already records; `pitch_detail` split **per entry** across
-    PITCH-BY-PITCH and ROUTE BETA, so wiring one left the other bare (they are one
-    ROUTE BREAKDOWN now, and both fixtures stay because either kind alone must still draw it);
-    and the
-    "CLIMATE & SEASON" box is gated on `route.climate`, **not** `route.season`, so a
-    season-keyed chip there rendered nothing at all.
-  - A failing row distinguishes **"its heading never rendered — fixture too thin"** from a chip
-    bug, because those need opposite fixes. Match a heading, never the chip label alone.
-  - **`gear` is deliberately NOT wired.** #806's RACK caption owns that section, reads the real
-    per-section column (`gear_confidence`) and stays **silent on the verified majority** —
-    praise on every route is what got two page-level graders (`ProvenancePanel`'s DATA
-    CONFIDENCE, `EnrichmentPanels`' DATA QUALITY) deleted. `sectionProvenance("gear")` is still
-    unit-tested; **do not add a second label to RACK**.
-  - **A per-section signal must beat the route-level flag**, and `sectionProvenance` checks
-    `auto_generated` **last** for that reason: 138 WA routes are `auto_generated=true` AND
-    `gear_confidence=verified` — the audit went back and confirmed a generated rack. #810 added
-    the three assertions that exercise the ordering, because every other case in the file sets
-    one signal or the other and would still pass if the two blocks were swapped.
-  - **"`auto_generated` is 5.4% true" is catalog-wide and understates it badly.** Among routes
-    that actually carry these fields — the only ones that render these sections — it is true on
-    **39–66%** (66% of the 584 with a gpx track). So the chip discriminates: 64.4% "On file"
-    across 13,790 chips, not one word everywhere. `scripts/oneoff/measure-provenance-spread.mjs`
-    is the measurement. Judge a signal on the subset that reaches a screen, never on the table.
-  - **Counting chips: count the `title` attribute, not the label text.** `ProvChip` renders its
-    label in both `title="How this section was sourced: …"` and the text node, so counting
-    `"On file"` returns exactly **double**. That artifact read as duplicate labelling on a tab
-    and was very nearly reported as a defect.
-  - One assertion is **marked WEAK in the script on purpose**: "a bare route renders no chip"
-    passes even when `sectionProvenance` is broken to rate absent data, because a bare route's
-    sections are content-gated and never render, so no heading exists to hang a chip on. The
-    honesty rule is pinned by the unit assertions, not by that one.
-  - Injection-tested three times, all caught: neutering `ProvChip` fails **every** reachability
-    row (10 today, real exit code 1); disabling the chip inside `SL` fails its rows; rating
-    absent data fails the four emptiness assertions.
+- **`check:provenance` — REMOVED 2026-10-04 with the chip it guarded.** The route page used to put a
+  `Climber-verified` / `On file` / `Auto-generated` pill beside ~12 section headings (`ProvChip`,
+  its own provenance module). The owner asked for "the auto generated or anything else related to
+  sources" to come out of the app, so the chip, its module and this guard were deleted, and the
+  `autoGenerated` mapping in `dbRouteToCamel` went with them (nothing else read it). **Do not
+  rebuild a per-section "how this was sourced" label** — see `check:no-sources`.
 - **`check:access-checked-line`** asserts the road/access **CHECKED DATE** reaches a screen, and that
   a route without one says **nothing**. Static (one esbuild bundle, two SSR renders), so it sits in
   `npm run build`.

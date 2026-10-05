@@ -42,7 +42,7 @@ import { tapByName } from "../lib/tap-by-name.mjs";
 assertQuietBox("probe-policy-notice-covers-content.mjs");
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
+const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"];
 const NOTICE_TEXT = "Carrying on using ClimbMatch means accepting it";
 
 const log = (s) => console.log(s);

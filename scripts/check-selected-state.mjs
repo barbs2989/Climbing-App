@@ -63,7 +63,7 @@ const arg = (n, d) => { const a = process.argv.find((x) => x.startsWith(`--${n}=
 //
 // It was not academic: the Partners tab carries [Find partners | Join a crew | Hire a guide],
 // which marks its selection with border, background AND colour and announced nothing.
-const TABS = arg("tabs", "Home,Climbs,Partners,Crew,Logbook,Ranks,Profile").split(",").filter(Boolean);
+const TABS = arg("tabs", "Home,Climbs,Partners,Crews,Logbook,Ranks,Profile").split(",").filter(Boolean);
 // EVERY overlay the app declares, DISCOVERED rather than listed.
 //
 // A hand-picked list is what put this guard wrong twice in one day. It shipped walking six

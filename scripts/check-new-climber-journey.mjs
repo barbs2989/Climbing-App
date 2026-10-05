@@ -534,10 +534,10 @@ try {
 
   // THE CREW NAV BUTTON CARRIES A BADGE, so an exact-text click misses it. crewBadgeN renders an
   // unread/invite count INSIDE the button, and this fixture seats the owner as INVITED in a second
-  // crew -- so innerText is not "Crew" for exactly the account this walk uses. The aria-label is
+  // crew -- so innerText is not "Crews" for exactly the account this walk uses. The aria-label is
   // authored and does not move with the count, which is what tapByName's anchoring is for. Same
   // lesson as the Crew SUB-tab bar one line down, one level up the nav.
-  if (!(await tapByName(page, "Crew"))) dead("no Crew tab");
+  if (!(await tapByName(page, "Crews"))) dead("no Crew tab");
   await settledText(page);
   // BY ACCESSIBLE NAME, never by text: the Crew sub-tab buttons render their badge count INSIDE
   // the control, so textContent is "Friends1" and every exact-text strategy misses. tapByName's
@@ -600,7 +600,7 @@ try {
   // friend back on screen with the row already gone.
   await page.goto(base, { waitUntil: "domcontentloaded", timeout: GOTO_MS });
   await settledText(page);
-  if (!(await tapByName(page, "Crew"))) dead("no Crew tab after the reload");
+  if (!(await tapByName(page, "Crews"))) dead("no Crew tab after the reload");
   await settledText(page);
   if (!(await tapByName(page, "Friends"))) dead("no Friends sub-view after the reload");
   await settledText(page);
@@ -643,7 +643,7 @@ try {
   // ONE opener, used for the click and again after the reload. Two copies of a four-step navigation
   // drift, and the second copy is the one that silently stops landing.
   const openMateProfile = async (why) => {
-    if (!(await tapByName(page, "Crew"))) dead(`no Crew tab (${why})`);
+    if (!(await tapByName(page, "Crews"))) dead(`no Crew tab (${why})`);
     await settledText(page);
     if (!(await tapByName(page, "Crews"))) dead(`no Crews sub-view on the Crew tab (${why})`);
     await settledText(page);
