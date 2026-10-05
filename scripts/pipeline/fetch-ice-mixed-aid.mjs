@@ -1,4 +1,4 @@
-// fetch-mp-ice-mixed-aid.mjs — pull Mountain Project's route-finder CSV export for ice, mixed and
+// fetch-ice-mixed-aid.mjs — pull Mountain Project's route-finder CSV export for ice, mixed and
 // aid routes, state by state. Run under the owner's WRITTEN PERMISSION from onX to crawl
 // mountainproject.com (2026-09-24); without that permission this must not be run.
 //
@@ -14,8 +14,8 @@
 // No description prose is requested, so nothing written by Mountain Project's contributors is
 // copied. Every response is cached under catalog/_mp/ (gitignored); a re-run resumes from cache.
 //
-//   node scripts/pipeline/fetch-mp-ice-mixed-aid.mjs            # all states
-//   node scripts/pipeline/fetch-mp-ice-mixed-aid.mjs colorado   # one state (our area id)
+//   node scripts/pipeline/fetch-ice-mixed-aid.mjs            # all states
+//   node scripts/pipeline/fetch-ice-mixed-aid.mjs colorado   # one state (our area id)
 import { existsSync, mkdirSync, readFileSync, writeFileSync, readdirSync } from "node:fs";
 
 const UA = "ClimbMatch-licensed-importer (barbs2989@gmail.com)";

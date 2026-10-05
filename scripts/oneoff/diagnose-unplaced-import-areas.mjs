@@ -1,7 +1,7 @@
-// Report-only: for Mountain Project routes import-mp-grades.mjs refused as "area not in our
+// Report-only: for Mountain Project routes import-route-grades.mjs refused as "area not in our
 // catalog", show WHERE the descent by name stops — the deepest area we do have, and the first name
 // we do not — so missing areas can be told apart from a name-matching gap.
-//   node scripts/oneoff/diagnose-mp-unplaced-areas.mjs montana
+//   node scripts/oneoff/diagnose-unplaced-import-areas.mjs montana
 import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync } from "node:fs";
 

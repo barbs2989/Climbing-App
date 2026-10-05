@@ -1,11 +1,11 @@
-// repair-mp-range-grades.mjs — the ice/mixed/aid Mountain Project imports (#1882, #1956) read a RANGE
+// repair-imported-range-grades.mjs — the ice/mixed/aid Mountain Project imports (#1882, #1956) read a RANGE
 // like "WI3-4" as "WI3-": the token pattern tried the single "-" before "-\d". The full rating is
 // still in `grade`, so each cut-off token is re-read from it and the number that came FROM the
 // cut-off token is replaced. A stored minus grade that is not the start of a range in `grade`
 // ("WI4-" on its own) is left alone.
 //
-//   node scripts/oneoff/repair-mp-range-grades.mjs           # dry run
-//   node scripts/oneoff/repair-mp-range-grades.mjs --apply
+//   node scripts/oneoff/repair-imported-range-grades.mjs           # dry run
+//   node scripts/oneoff/repair-imported-range-grades.mjs --apply
 import { patchRow, requireServiceKey, selectAll } from "../lib/supabase-env.mjs";
 import { gradeNumFrom } from "../../lib/grade.js";
 
