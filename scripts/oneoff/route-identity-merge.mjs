@@ -34,6 +34,7 @@ const HOLD = {
 const CARRY = {
   wa_summit_chief_north_face: ["pitches"],
   wa_mount_rahm_standard: ["fa"],
+  wa_amphitheatre_mountain_middle_finger_buttress_right_side: ["aid_grade", "aid_grade_num"],
 };
 const empty = v => v == null || v === "" || (Array.isArray(v) && !v.length);
 const get = async (path) => { const r = await fetch(`${SUPABASE_URL}/rest/v1/${path}`, { headers: headers(key) }); if (!r.ok) throw new Error(`${path}: ${r.status} ${await r.text()}`); return r.json(); };
