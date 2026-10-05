@@ -1304,7 +1304,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     now fails on `auto-generated`, `source(s/d)`, `attribution` or `provenance` — after removing
     "water source(s)". Fails closed under 2,000 literals (it sees ~44,800). Injection-tested by
     restoring the old road line: FAIL, exit 1. **Kept on purpose:** the NWS/MET badges on the
-    forecast's comparison rows (they label which forecast a row is) and `VerifNote`'s status.
+    forecast's comparison rows (they label which forecast a row is) and `VerifNote`'s status. **The one credit the app DOES carry is the map-tile credit** (`TILE_CREDIT` in `lib/mapKit.jsx`), because the OSM, OpenTopoMap and Esri licences make it a condition of use; owner rule 2026-10-04 is "credit only if we are legally supposed to". Do not remove it as a source mention, and do not add credits anywhere else.
   - Fails **closed**: fewer than 5 files parsed, or fewer than 500 rendered expressions seen, is a
     broken traversal rather than a clean app (it sees 4,461 today).
   - Injection-tested, 4 cases at the bottom of the script; cases 1 and 2 are the REAL defects from
