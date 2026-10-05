@@ -1,6 +1,6 @@
 // check:catalog-duplicates — can the catalog gain a duplicate route again, and has it?
 //
-// 2026-09-25: import-mp-grades --create-areas filed Mountain Project's `North Cascades › Mt. Baker`
+// 2026-09-25: import-route-grades --create-areas filed Mountain Project's `North Cascades › Mt. Baker`
 // beside our `Bellingham and Mt Baker Hwy › Mount Baker` — ~225 copy areas across 27 states,
 // cleaned up by 0213/0215/0217. The user: "make sure the duplicate routes don't happen again".
 // The database now refuses them (0216 on INSERT, 0218 on a move or rename). This guard asks the

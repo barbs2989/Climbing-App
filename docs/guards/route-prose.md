@@ -917,7 +917,7 @@ the correction knows the screen is wrong, and they have no way to report it.
       it**: all 24 candidates were read, and all 24 are Mountain Project — no false positive, and
       no milepost-shaped string appears anywhere in the widened output.
     - **THREE OF THE 24 ARE WORSE THAN A CITATION, AND THOSE THREE ARE REPAIRED — 67 → 64**
-      (`scripts/oneoff/redact-mp-abbreviation-citations.mjs`). `wa_django`'s *"MP average ~3.3
+      (`scripts/oneoff/redact-abbreviation-citations.mjs`). `wa_django`'s *"MP average ~3.3
       stars"* and `wa_kendall_peak_cliff_north_face`'s *"MP notes very low page views"* are the
       **analytics** class this file already records for `crowds` — *page views are not ascents*,
       precision borrowed from the wrong subject, so the qualitative verdict survives and the figure
@@ -927,8 +927,8 @@ the correction knows the screen is wrong, and they have no way to report it.
       4 inches; no pitons needed"*, which also takes that bullet under the 120-character line
       (13 → 12).
     - **THE REST WERE THEN CLOSED AS A REVIEWED BATCH, AND THE CLASS IS NOW EMPTY — 67 → 34, which
-      is exactly the pre-widening baseline** (`scripts/oneoff/redact-mp-abbreviation-citations-2.mjs`,
-      30 values; `scripts/oneoff/redact-mp-abbreviation-citations-3.mjs`, 1 more). So the widening
+      is exactly the pre-widening baseline** (`scripts/oneoff/redact-abbreviation-citations-2.mjs`,
+      30 values; `scripts/oneoff/redact-abbreviation-citations-3.mjs`, 1 more). So the widening
       added 33 findings and all 33 are repaired; **zero `MP` survives anywhere in the audit's
       output.**
       - **"Report, do not sweep" forbids a SWEEP, not a reviewed batch**, and the distinction is the

@@ -1,5 +1,5 @@
-// fetch-mp-rock-boulder.mjs — pull Mountain Project's route-finder CSV export for ROCK (trad, sport,
-// top rope) and BOULDER routes, state by state. The companion of fetch-mp-ice-mixed-aid.mjs and run
+// fetch-rock-boulder.mjs — pull Mountain Project's route-finder CSV export for ROCK (trad, sport,
+// top rope) and BOULDER routes, state by state. The companion of fetch-ice-mixed-aid.mjs and run
 // under the same owner's WRITTEN PERMISSION from onX to crawl mountainproject.com (2026-09-24);
 // without that permission this must not be run.
 //
@@ -15,9 +15,9 @@
 // description prose. Every response is cached under catalog/_mp/ (gitignored); a re-run resumes
 // from cache, so the crawl may be stopped and restarted at any point.
 //
-//   node scripts/pipeline/fetch-mp-rock-boulder.mjs            # all states
-//   node scripts/pipeline/fetch-mp-rock-boulder.mjs delaware   # one state (our area id)
-//   node scripts/pipeline/fetch-mp-rock-boulder.mjs canada --types rock,boulder,ice,mixed,aid
+//   node scripts/pipeline/fetch-rock-boulder.mjs            # all states
+//   node scripts/pipeline/fetch-rock-boulder.mjs delaware   # one state (our area id)
+//   node scripts/pipeline/fetch-rock-boulder.mjs canada --types rock,boulder,ice,mixed,aid
 //                                    # every Canadian province (files named by OUR id: ab_, bc_, ...)
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 

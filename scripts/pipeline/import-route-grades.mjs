@@ -1,5 +1,5 @@
-// import-mp-grades.mjs — bring Mountain Project's routes into the catalog, from the CSV exports
-// scripts/pipeline/fetch-mp-ice-mixed-aid.mjs and fetch-mp-rock-boulder.mjs cached under
+// import-route-grades.mjs — bring Mountain Project's routes into the catalog, from the CSV exports
+// scripts/pipeline/fetch-ice-mixed-aid.mjs and fetch-rock-boulder.mjs cached under
 // catalog/_mp/ (fetched under the owner's licence from onX). ONLY FACTS are used: name, location path, grade, type,
 // pitches, length. No description text exists in the export and none is written.
 //
@@ -15,8 +15,8 @@
 //   4. Anything else is refused and counted by reason.
 // Grade numbers come from lib/grade.js gradeNumFrom — the single parser.
 //
-//   node scripts/pipeline/import-mp-grades.mjs colorado            # dry run
-//   node scripts/pipeline/import-mp-grades.mjs --all --apply       # write + read back
+//   node scripts/pipeline/import-route-grades.mjs colorado            # dry run
+//   node scripts/pipeline/import-route-grades.mjs --all --apply       # write + read back
 import { execFileSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { requireServiceKey, SUPABASE_URL } from "../lib/supabase-env.mjs";
@@ -282,7 +282,7 @@ function provinceChain(chain) { let i = 0; while (i < chain.length - 1 && ABOVE_
 
 async function runState(st) {
   const files = readdirSync(DIR).filter(f => f.startsWith(st.id + "_") && f.endsWith(".csv"));
-  if (!files.length) { console.log(`${st.name}: no export cached — run fetch-mp-ice-mixed-aid.mjs first`); return {}; }
+  if (!files.length) { console.log(`${st.name}: no export cached — run fetch-ice-mixed-aid.mjs first`); return {}; }
   // Every file of the state — slices, their grade splits, sub-area splits, every type — deduped by
   // the route's URL. A slice that hit the cap is a subset of its splits, so reading it is harmless.
   const byUrl = new Map();
@@ -613,7 +613,7 @@ async function runState(st) {
 const states = sql(`select id, name from areas where parent_id in ('usa', 'canada') and area_type = 'state' order by name`);
 const pick = ALL ? states : states.filter(s => args.includes(s.id));
 if (!pick.length) { console.error("Name a state id or pass --all"); process.exit(1); }
-if (!existsSync(DIR)) { console.error("no " + DIR + " — run fetch-mp-ice-mixed-aid.mjs first"); process.exit(1); }
+if (!existsSync(DIR)) { console.error("no " + DIR + " — run fetch-ice-mixed-aid.mjs first"); process.exit(1); }
 console.log((APPLY ? "APPLY" : "DRY RUN") + " — " + pick.length + " state(s)");
 const tot = {};
 for (const st of pick) {

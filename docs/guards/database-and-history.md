@@ -385,7 +385,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Injection-tested 6/6, listed at the bottom of the script. Case 1 is the real historical defect,
     reproduced by un-qualifying `0163`.
 - **`check:catalog-duplicates`** asks whether the catalog can gain a **duplicate route** again, and
-  whether one already has. Built 2026-09-25 after `import-mp-grades --create-areas` filed MP's
+  whether one already has. Built 2026-09-25 after `import-route-grades --create-areas` filed MP's
   `North Cascades › Mt. Baker` beside our `Bellingham and Mt Baker Hwy › Mount Baker` (~225 copy
   areas, 27 states; cleaned by 0213/0215/0217). The user: *"make sure the duplicate routes don't
   happen again"*. **Hand-run, not in build** — a property of the DATABASE, not the checkout (same
