@@ -140,3 +140,23 @@ choice on the same approach (Burgundy Spire N Face, Dark Peak, Silver Star Glaci
 Neve) — kept, since they describe the same climb; DC's was removed because its camp is already
 under CAMPING & BIVY and its base-finding explained other routes. The wider class is the 331
 SINGLE routes in `audits/wa-multi-approach/`, where that pass recorded "No change".
+
+## Deep pass (2026-10-01, second session) — `deep/`
+
+**Grades.** The 108 rows the first pass graded at low confidence or not at all were researched
+again with a higher bar (`deep/BRIEF-grades.md`: two independent sources for `high`; trip reports,
+AAJ first-ascent accounts, guide pages). 104 graded (4 drytooling skipped), 461 searches:
+**15 high, 52 medium, 37 still low** — for those 37 nothing online gives a number, and they keep
+their current grade. 20 grades changed from the first pass; 26 rows written through the same
+`apply-route-grades.mjs --dir=audits/route-grades/deep/out` (0 re-read mismatches). Notable:
+Big Snow East Buttress 5.10 → 5.7 (the 5.10 is a separate Doorish line), Index "NE Buttress" 5.6
+(it is the 1929 North Face route), Tupshin 5.4, Degenhardt SW Class 4, Garfield South Route 5.8,
+North Star East Route Class 2 (its summit step had been copied from Cloudy Peak). Golden Horn
+N Face and Persis "Hexorcist" remain ungraded; Storm King N Face got 5.0 (low) from its 1979 AAJ
+account.
+
+**Identity.** The 74 flagged routes were researched to a verdict each (`deep/BRIEF-identity.md`):
+**33 duplicate pairs, 8 part-of-another-route, 11 misnamed, 4 wrong-content, 8 distinct (flag
+wrong), 1 not found** — 46 high / 23 medium / 5 low confidence. Nothing written:
+**`deep/IDENTITY-DECISIONS.md` is the decision table** (keep / fold-in / rename, with evidence and
+sources), for the owner.

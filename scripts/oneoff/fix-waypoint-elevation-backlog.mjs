@@ -9,6 +9,7 @@
 //   move      lat/lng -> a coordinate a fetched page publishes for that exact feature.
 //   clear     lat/lng -> null: the height is right, the coordinate is not, and nothing replaces it.
 //             Never a trailhead (the route becomes unmeasurable).
+//   nullDist  distMi -> null: a moved pin's stored distance contradicts its published one.
 //   setNote   a cleared pin's note that described the coordinate it no longer has loses that clause.
 //   none      recorded with its reason; never written.
 //
@@ -105,6 +106,10 @@ for (const id of [...new Set(EDITS.map((e) => e.route))]) {
       if (e.op === "copy") { const d = await donorPin(e); if (!d || !near(d.lat, e.lat) || !near(d.lng, e.lng)) { why = `${e.pin} donor gone or moved`; break; } }
       if (e.op === "move" && (!e.source || !e.quote)) { why = `${e.pin} move without a source and quote`; break; }
       moveVertex(p.lat, p.lng, { lat: e.lat, lng: e.lng }); p.lat = e.lat; p.lng = e.lng; done++; touched.push(p);
+    } else if (e.op === "nullDist") {
+      if (p.distMi == null) continue;
+      if (Number(p.distMi) !== Number(e.oldDist)) { why = `${e.pin} distMi changed since it was decided`; break; }
+      p.distMi = null; done++;
     } else if (e.op === "setNote") {
       if (p.note === e.note) continue;
       if (p.note !== e.oldNote) { why = `${e.pin} note changed since it was decided`; break; }

@@ -1,0 +1,3672 @@
+{
+ "applied": [
+  {
+   "id": "wa_half_fast",
+   "op": "patch",
+   "columns": [
+    "permit"
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "op": "patch",
+   "columns": [
+    "permit"
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "op": "patch",
+   "columns": [
+    "permit"
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "op": "patch",
+   "columns": [
+    "permit"
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "op": "patch",
+   "columns": [
+    "permit"
+   ]
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "op": "patch",
+   "columns": [
+    "pitches",
+    "rappels",
+    "descent_text",
+    "rappel_count_note"
+   ]
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "op": "patch",
+   "columns": [
+    "dist_km"
+   ]
+  }
+ ],
+ "rejected": [],
+ "backups": [
+  {
+   "id": "wa_half_fast",
+   "area_id": "wa_half_moon_crag",
+   "name": "Half Fast",
+   "discipline": "trad",
+   "grade": "5.8+",
+   "grade_system": "yds",
+   "grade_num": 8,
+   "pitches": 1,
+   "length_m": 15,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Toproped by David Whitelaw & Ron Cotman (2004); led ground-up by David Whitelaw, Leland Windham & David Wolfe (September 2006)",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "Locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Heat and dehydration on south face",
+    "Rockfall potential",
+    "Loose rock below"
+   ],
+   "verif": null,
+   "overview": "A solid moderate route with good flow and continuous climbing on slab and crack. Excellent for building confidence.",
+   "beta": "Mix of sport bolts and trad placements. South-facing provides good sun exposure. Straightforward climbing with consistent protection.",
+   "turnaround": "Retreat if conditions deteriorate.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.8+",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 48,
+   "rappels": "1 rappel from a 3-bolt chain anchor",
+   "commitment": "II",
+   "face": "Furthest right on the crag",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Satellite communicator recommended due to poor cell coverage in area.",
+   "descent": "Single rappel down fixed anchors.",
+   "obj_haz": [
+    "reachy moves may be harder for shorter climbers"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.25,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Standard sport rack with 10-12 quickdraws, wired stoppers (sizes 1-4), medium nuts (sizes 1-3), 60m rope, belay device, locking carabiners.",
+   "what_to_bring": [
+    "Water (2L)",
+    "Food and snacks",
+    "Sunscreen and hat",
+    "Layer jacket",
+    "Headlamp",
+    "First aid kit",
+    "Route beta"
+   ],
+   "pro_tips": [
+    "Great warm-up for stronger climbers",
+    "Good flow and positive holds throughout",
+    "Excellent afternoon route when temps moderate"
+   ],
+   "watch_out": [
+    "Solar exposure on south face",
+    "Rockfall hazard from upper parties",
+    "Afternoon heat can be intense"
+   ],
+   "pro_needs": "Lead climber comfortable on 5.8+ with mixed protection (bolts and natural gear). Solid footwork and crack skills.",
+   "best_season": "June to September for dry, warm conditions.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel 50 feet from anchors to ground.",
+   "bail": "Rappel off at any station on the route.",
+   "pitch_detail": [
+    {
+     "grade": "5.8+",
+     "notes": "Slab and crack climbing with positive holds and good gear placements. Well-protected line with bolts and natural anchors throughout.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Day trip with driving and approach totaling 3-4 hours round trip.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "None at the roadside pullout (not a fee site)"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling trend with increasing precipitation.",
+    "spring": "Cool with possible precipitation and snow.",
+    "summer": "Warm and relatively dry with occasional thunderstorms.",
+    "winter": "Heavy snow restricts access.",
+    "typical": "Continental mountain climate. Summer highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Approximately 45 minutes to hospital. Helicopter evacuation available. Satellite communication recommended.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": null,
+   "alpine_draws": 8,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Bolted sport, single-pitch; quickdraws only.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Crack"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "half fast",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_astral_projection",
+   "area_id": "wa_half_moon_crag",
+   "name": "Astral Projection",
+   "discipline": "trad",
+   "grade": "5.9-",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 24,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Chris Greyell and David Whitelaw, 1987",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "Locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Solar exposure leading to fluid loss",
+    "Loose rock hazard below climb",
+    "Rockfall potential"
+   ],
+   "verif": null,
+   "overview": "A slightly easier variant of the other 5.9 routes, featuring juggy slab and positive edges with excellent protection throughout.",
+   "beta": "Bolted and naturally protected route with good flow. Ideal warm-up climb on the crag. South-facing with reliable protection points.",
+   "turnaround": "Standard prudent turnaround if weather or conditions change.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9-",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 50,
+   "rappels": "1 rappel from chain anchors",
+   "commitment": "II",
+   "face": "Left side of the crag, right of Arctic Rose",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell service unreliable in area; satellite communication device recommended for safety.",
+   "descent": "Single 85-foot rappel from fixed anchors.",
+   "obj_haz": [
+    "offwidth start requires care",
+    "loose bush/vegetation near the start"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.25,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Sport rack with 10-12 quickdraws, wired stoppers (sizes 1-4), medium nuts (sizes 1-3), 60m dynamic rope, rappel device, locking carabiners.",
+   "what_to_bring": [
+    "Water (2L)",
+    "Food/snacks",
+    "Sunscreen and hat",
+    "Wind jacket",
+    "Headlamp",
+    "First aid kit",
+    "Route beta"
+   ],
+   "pro_tips": [
+    "Excellent warm-up route",
+    "Positive holds throughout build confidence",
+    "Perfect introduction to Half Moon Crag for moderates"
+   ],
+   "watch_out": [
+    "Sun and dehydration on south-facing wall",
+    "Rockfall from higher climbing parties",
+    "Heat can be significant in afternoon"
+   ],
+   "pro_needs": "Comfortable leading 5.9- with mix of bolt and natural gear protection. Good slab footwork and basic crack climbing fundamentals.",
+   "best_season": "June through September.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel directly down using fixed anchors at climb exit to return to base.",
+   "bail": "Rappel at any point via anchors on the route.",
+   "pitch_detail": [
+    {
+     "grade": "5.9-",
+     "notes": "Slab with positive edges and pockets. Well-bolted with natural gear placements available. Straightforward climbing with solid protection throughout.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Day trip: 0.5 hour drive, 1.25 hour approach, 1-1.5 hours climbing, 0.5 hour descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "None at the roadside pullout (not a fee site)"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling and increasingly wet.",
+    "spring": "Cold with possible snow until June.",
+    "summer": "Dry and warm with occasional afternoon thunderstorms.",
+    "winter": "Heavy snow closes access.",
+    "typical": "Mountain climate with occasional thunderstorms. Summer highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Satellite communicator recommended.",
+    "county": "King County",
+    "rangerStation": "Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": {
+    "cams": "rack to ~3in with doubles in finger/hand sizes",
+    "nuts": "stopper set",
+    "runners": "4-6 slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Trad, single-pitch; 60m rope covers the climb and descent.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "10–12 quickdraws",
+    "Wired stoppers (sizes 1–4)",
+    "Nuts (sizes 1–3)",
+    "Cams to ~3in, doubles in finger/hand sizes",
+    "4–6 slings",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Face",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "astral projection",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_asymptotic",
+   "area_id": "wa_half_moon_crag",
+   "name": "Asymptotic",
+   "discipline": "trad",
+   "grade": "5.10b",
+   "grade_system": "yds",
+   "grade_num": 10.5,
+   "pitches": 1,
+   "length_m": 18,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Toproped by David Whitelaw & Ron Cotman (2004); led ground-up by David Whitelaw, Leland Windham & David Wolfe (September 2006)",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "12+ quickdraws",
+    "Wired stoppers",
+    "Nuts (sizes 1-2)",
+    "4-6 locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes",
+    "Rappel device"
+   ],
+   "hazards": [
+    "Rockfall potential from parties climbing above",
+    "Sun exposure on south face can lead to dehydration"
+   ],
+   "verif": null,
+   "overview": "The steepest line on Half Moon Crag, featuring sustained slab climbing with positive holds and consistent gear placements.",
+   "beta": "Predominantly bolted with mixed trad protection. Single 60m rope adequate. South-facing provides good sun exposure.",
+   "turnaround": "Descend if weather deteriorates, if conditions look unsafe, or if you are not comfortable with the difficulty.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.10b",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 55,
+   "rappels": "1 rappel from the route's own bolted anchors",
+   "commitment": "II",
+   "face": "Between Refrigerator Crack and Half Fast",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell service unreliable in crag area beneath Stevens Pass ridge. Satellite communicator recommended for emergencies.",
+   "descent": "Single rappel down the route using fixed anchors at top of climb.",
+   "obj_haz": [
+    "hard, low crux close to the ground"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.25,
+    "summitTimeHrs": 1.5,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Light sport rack with 12+ quickdraws for bolted protection. Bring wired stoppers and medium-sized nuts for occasional slab placements. Single 60m dynamic rope, belay device, 4-6 locking carabiners.",
+   "what_to_bring": [
+    "Water (2L minimum)",
+    "Food and snacks",
+    "Sun protection (sunscreen, hat)",
+    "Layers (wind jacket)",
+    "Headlamp (for emergencies)",
+    "First aid kit",
+    "Topo or phone with beta"
+   ],
+   "pro_tips": [
+    "The huge Refrigerator Crack at the base stays cool even in summer heat",
+    "Start early to avoid afternoon crowds and heat",
+    "South aspect makes this ideal for spring climbing"
+   ],
+   "watch_out": [
+    "Watch for rockfall from higher climbing parties",
+    "Route can be hot on sunny days despite south exposure",
+    "Approach has minimal trail; easy to navigate incorrectly in fog"
+   ],
+   "pro_needs": "Lead climber comfortable on 5.10b slab with bolted protection. Basic trad skills for occasional nut placements helpful but not essential.",
+   "best_season": "June through September provides the most stable and dry conditions. May can be wet, October may have early snow.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rap down from the bolted anchors at the top of the climb using a single 60-foot rappel to the base.",
+   "bail": "Rappel off the route at any belay station.",
+   "pitch_detail": [
+    {
+     "grade": "5.10b",
+     "notes": "Sustained slab climbing with positive edges and consistent crack protection. Mix of bolted anchors and natural gear placements. Ends at fixed anchor at top of crag.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Day trip: 0.5 hour drive from Seattle, 1-1.5 hour approach hike, 1-2 hours for climb and setup, 30 minutes descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "None at the roadside pullout (not a fee site)"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling trend, increasing precipitation. September still good, October increasingly wet/snowy.",
+    "spring": "Cool to cold with possible snow above 4000 feet until June.",
+    "summer": "Dry and warm with occasional afternoon thunderstorms. 70-78F highs, minimal precipitation.",
+    "winter": "Heavy snow, sub-freezing temperatures. Road access can be compromised.",
+    "typical": "Continental mountain climate with significant precipitation. Summer highs 70-78F, lows 48-55F. Afternoon winds common.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Approximately 45 minutes to hospital. Helicopter evacuation possible via King County Sheriff Air Support Unit.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 2,
+    "technical": 4,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": null,
+   "alpine_draws": 10,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Bolted sport, single-pitch (~85ft or less); quickdraws only, no trad rack needed.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "12+ quickdraws",
+    "Wired stoppers and nuts (optional, for occasional slab placements)",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Sustained",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "asymptotic",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_artic_rose",
+   "area_id": "wa_half_moon_crag",
+   "name": "Artic Rose",
+   "discipline": "trad",
+   "grade": "5.6",
+   "grade_system": "yds",
+   "grade_num": 6,
+   "pitches": 1,
+   "length_m": 24,
+   "sort_order": null,
+   "stars": null,
+   "fa": "David Whitelaw and Chris Greyell, 1987",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "8-10 quickdraws",
+    "Wired stoppers (sizes 1-3)",
+    "Nuts (sizes 1-2)",
+    "Locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Solar heat and dehydration risk",
+    "Rockfall hazard from upper parties",
+    "Potential for loose rock below"
+   ],
+   "verif": null,
+   "overview": "The easiest route on Half Moon Crag, offering perfect intro to the area with positive holds and excellent protection throughout.",
+   "beta": "Well-bolted with good natural gear opportunities. Ideal first route on the crag. South-facing provides good sun exposure.",
+   "turnaround": "Safe escape via rappel at any belay station on the route.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.6",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 45,
+   "rappels": "1 rappel from chain anchors (shared with Astral Projection)",
+   "commitment": "I",
+   "face": "Left-hand edge of the crag",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell coverage unreliable; carry satellite communicator if available.",
+   "descent": "Single 85-foot rappel from fixed anchors.",
+   "obj_haz": [
+    "runout climbing in the middle section",
+    "loose stacked blocks low on the route"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 2.75,
+    "summitTimeHrs": 1,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Light sport rack with 8-10 quickdraws, wired stoppers (sizes 1-3), few medium nuts, 60m rope, rappel device, carabiners.",
+   "what_to_bring": [
+    "Water (2L)",
+    "Food and energy snacks",
+    "Sunscreen and hat",
+    "Wind layer jacket",
+    "Headlamp for emergencies",
+    "Basic first aid kit",
+    "Route beta or topo"
+   ],
+   "pro_tips": [
+    "Perfect beginner route on the crag for introducing partners",
+    "Great views from the start of the climb",
+    "Positive holds throughout build climber confidence",
+    "Local classic since first ascent in 1987"
+   ],
+   "watch_out": [
+    "Sun exposure can be intense on afternoon",
+    "Rockfall from parties climbing above",
+    "South-facing wall can get very hot"
+   ],
+   "pro_needs": "Comfortable on 5.6 slab with bolted protection. Good footwork and basic crack skills helpful.",
+   "best_season": "June through September for best weather and access.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel directly down the fixed anchors to return to base.",
+   "bail": "Rappel off route at any point.",
+   "pitch_detail": [
+    {
+     "grade": "5.6",
+     "notes": "Positive slab with easy crack features. Well-bolted and naturally protected throughout entire route. Straightforward progression with good holds and solid protection.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Casual day trip: 0.5 hour drive, 1.25 hour approach, 1 hour climbing, 0.5 hour descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "None at the roadside pullout (not a fee site)"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling trend with increasing precipitation. September still climbs well, October increasingly wet/snowy.",
+    "spring": "Cool with potential snow above 4000 feet until June.",
+    "summer": "Warm and mostly dry with rare thunderstorms in afternoon.",
+    "winter": "Heavy snow restricts access and may close Tye Road.",
+    "typical": "Moderate temperature with occasional summer storms. Highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Approximately 45 minutes to nearest hospital. Helicopter evacuation available through King County Sheriff Air Support Unit. Satellite communicator strongly recommended for any backcountry climbing.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital, 9801 Frontier Ave SE, Snoqualmie, WA 98065",
+    "sheriffDispatch": "911 - King County Sheriff"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 2,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": {
+    "cams": "small-to-mid rack to ~3in",
+    "nuts": "stopper set",
+    "runners": "4-6 shoulder-length slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Trad, single-pitch (~85ft or less); one 60m rope covers the climb and lower/rappel.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "8–10 quickdraws",
+    "Wired stoppers, small set",
+    "Cams, small-to-mid rack to ~3in",
+    "4–6 shoulder-length slings",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Face",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "artic rose",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_astroglide",
+   "area_id": "wa_half_moon_crag",
+   "name": "Astroglide",
+   "discipline": "trad",
+   "grade": "5.9",
+   "grade_system": "yds",
+   "grade_num": 9,
+   "pitches": 1,
+   "length_m": 27,
+   "sort_order": null,
+   "stars": null,
+   "fa": "David Whitelaw and Chris Greyell, 1987",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "60m dynamic rope",
+    "10-12 quickdraws",
+    "Wired stoppers (sizes 1-4)",
+    "Nuts (sizes 1-3)",
+    "4-6 locking carabiners",
+    "Belay device",
+    "Chalk",
+    "Climbing shoes"
+   ],
+   "hazards": [
+    "Sun exposure and dehydration risk",
+    "Loose rock hazard below",
+    "Rockfall from climbing parties above"
+   ],
+   "verif": null,
+   "overview": "A classic moderate crack and slab route with excellent gear placements and straightforward climbing.",
+   "beta": "Excellent mix of bolted anchors and natural protection points. Slab features positive holds and consistent climbing angle. South-facing receives good sun exposure.",
+   "turnaround": "Descend if weather or conditions change.",
+   "auto_generated": false,
+   "alpine_grade": null,
+   "rock_grade": "5.9",
+   "ice_grade": null,
+   "gain_ft": 1000,
+   "loss_ft": null,
+   "dist_km": null,
+   "max_angle": 50,
+   "rappels": "1 rappel, using the shared chain anchor atop Astral Projection",
+   "commitment": "II",
+   "face": "Left edge of Refrigerator Crack",
+   "permit": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+   "comms": "Cell service unreliable; satellite communicator recommended for emergencies.",
+   "descent": "Single 85-foot rappel from fixed anchors.",
+   "obj_haz": [
+    "blank-looking slab can obscure gear placements",
+    "older bolts at the original anchor"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.75108,
+     "lng": -121.1165,
+     "elev": 3577,
+     "name": "Tye Road / Old Stevens Pass Highway pullout (near double hairpin turn, ~1.4 mi from US 2)",
+     "note": "Roadside pullout at the upper end of the double hairpin on Tye Road, about 1.4 miles down from US 2. From here head uphill through open old-growth forest, trending left across a drainage to the base of the crag.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Take US-2 east out of Seattle or Everett over Stevens Pass, then drop onto the old Stevens Pass Highway, now signed Tye Road, which runs toward the Iron Horse Trailhead and the Wellington townsite. Follow it roughly 1.4 miles from US-2 and park in the pullout just uphill of a double hairpin turn. Allow about half an hour of driving."
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4800,
+     "name": "Half Moon Crag",
+     "note": "Granite crag visible from Highway 2, ~45-60min/1,000ft approach through old-growth forest. Routes are short (≤85 ft), so this single coordinate serves as both approach reference and topout.",
+     "type": "Topout",
+     "distMi": null
+    },
+    {
+     "lat": 47.75586,
+     "lng": -121.11626,
+     "elev": 4761,
+     "name": "Half Moon Crag",
+     "type": "Summit",
+     "elevFt": 4761
+    }
+   ],
+   "gpx": null,
+   "elev_pts": null,
+   "disciplines": null,
+   "timing": {
+    "totalHrs": 3.5,
+    "summitTimeHrs": 1.75,
+    "descentTimeHrs": 0.5,
+    "approachTimeHrs": 1.25,
+    "recommendedStart": "7:00 AM"
+   },
+   "detailed_rack": "Medium sport rack: 10-12 quickdraws for bolts, set of wired stoppers (sizes 1-4) for slab cracks, medium nuts (sizes 1-3), 60m dynamic rope, belay device, 4-6 locking carabiners.",
+   "what_to_bring": [
+    "Water (2L minimum)",
+    "Food and snacks",
+    "Sunscreen and hat",
+    "Wind jacket",
+    "Headlamp (for emergencies)",
+    "First aid kit",
+    "Topo or route beta"
+   ],
+   "pro_tips": [
+    "Great warm-up before harder routes on the crag",
+    "Positive holds make this fun and relatively easy for the grade",
+    "First ascent by two legendary local climbers from 1987"
+   ],
+   "watch_out": [
+    "Sun exposure can dehydrate",
+    "Rockfall hazard from upper parties",
+    "South face can get hot in afternoon"
+   ],
+   "pro_needs": "Lead climber comfortable on 5.9 with mix of bolt and natural gear protection. Good slab footwork and crack climbing fundamentals essential.",
+   "best_season": "June through September for optimal climbing conditions.",
+   "high_point_ft": 4761,
+   "aid_grade": null,
+   "approach": "Take US-2 east from Seattle/Everett over Stevens Pass, then drop onto the old Stevens Pass Highway (now Tye Rd), which heads toward the Iron Horse Trailhead and the Wellington townsite; park in the pullout just uphill of a double hairpin turn roughly 1.4 miles from US-2. From there, the on-foot approach follows only faint boot-path traces through open old-growth forest, generally trending uphill and left across a drainage to reach the base of the crag. Expect about 1,000 feet of elevation gain and 45-60 minutes of hiking, with route-finding skills helpful since the tread is intermittent.",
+   "descent_text": "Rappel directly down the route using anchors at climb exit.",
+   "bail": "Safe bail points at any belay location via rappel.",
+   "pitch_detail": [
+    {
+     "grade": "5.9",
+     "notes": "Mix of slab and crack with bolted anchors and gear placements. Positive holds and straightforward climbing progression. Well-protected line throughout.",
+     "pitch": "1"
+    }
+   ],
+   "itinerary": "Full day outing: 0.5 hour drive from Seattle, 1.25 hour hike, 1.5-2 hours climbing, 0.5 hour descent.",
+   "access": {
+    "_raw": {
+     "climbing_permit_type": "None (day use pass only)",
+     "parking_pass_required": "Recreation pass",
+     "climbing_permit_required": false
+    },
+    "fees": "None.",
+    "notes": "Half Moon Crag is reached via an unofficial pulloff with no maintained trail and is not a developed fee site.",
+    "permit": "N/A",
+    "closures": "N/A",
+    "permitZone": "N/A",
+    "landManager": "N/A",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Skykomish Ranger District)",
+    "parking_pass": "Half Moon Crag: no fee site identified.",
+    "passRequired": "None at the roadside pullout (not a fee site)"
+   },
+   "road": {
+    "name": "Old Stevens Pass Highway (Tye Road) near Wellington, off US-2",
+    "status": "Reached via a paved pullout ~1.4 miles down the old highway from US-2 near the double hairpin turn; the approach itself is unmaintained/faint trail through open old-growth forest.",
+    "driveNote": "Roughly 1.5-2 hours from Seattle via US-2 to Stevens Pass/Wellington."
+   },
+   "climate": {
+    "fall": "Cooling with increasing precipitation.",
+    "spring": "Cool, possible snow until June.",
+    "summer": "Warm and relatively dry with occasional thunderstorms.",
+    "winter": "Heavy snow, restricts access.",
+    "typical": "Continental mountain with moderate precipitation. Summer highs 70-78F, lows 48-55F.",
+    "forecastZone": "Stevens Pass area"
+   },
+   "emergency": {
+    "notes": "Satellite communicator recommended.",
+    "county": "King County, Washington",
+    "rangerStation": "Mt. Baker-Snoqualmie National Forest, Skykomish Ranger District",
+    "nearestHospital": "Snoqualmie Valley Hospital",
+    "sheriffDispatch": "911"
+   },
+   "lists": null,
+   "crowds": null,
+   "partner_requirements": null,
+   "seasonal_guidance": null,
+   "seasonal_hazards": null,
+   "data_quality": {
+    "gaps": [
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM"
+   },
+   "difficulty": {
+    "exposure": 3,
+    "physical": 2,
+    "technical": 3,
+    "commitment": 2,
+    "routefinding": 4
+   },
+   "approach_logistics": {
+    "peakLat": 47.75586,
+    "peakLng": -121.11626,
+    "trailhead": "Tye Road pullout (old Stevens Pass Highway, Wellington)",
+    "trailheadDirection": "From US-2 near Stevens Pass, drop onto Tye Road (old Stevens Pass Highway) toward the Iron Horse/Wellington townsite; park at the pullout below the crag"
+   },
+   "sling_rack": {
+    "cams": "rack to ~3in",
+    "nuts": "stopper set",
+    "runners": "4-6 slings"
+   },
+   "alpine_draws": 0,
+   "rope_type": "single dynamic",
+   "rope_length_m": 60,
+   "rope_note": "Trad, single-pitch; 60m rope covers the climb and descent.",
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": "verified",
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": [
+    "10–12 quickdraws",
+    "Wired stoppers (sizes 1–4)",
+    "Nuts (sizes 1–3)",
+    "Cams to ~3in",
+    "4–6 slings",
+    "Single 60m dynamic rope"
+   ],
+   "features": [
+    "Slab",
+    "Crack",
+    "Well-protected"
+   ],
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": null,
+   "climbing_route": null,
+   "bivy": null,
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "astroglide",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "area_id": "wa_ingalls_peak",
+   "name": "South Ridge",
+   "discipline": "alpine",
+   "grade": "5.4",
+   "grade_system": "yds",
+   "grade_num": 4,
+   "pitches": 4,
+   "length_m": 91,
+   "sort_order": null,
+   "stars": null,
+   "fa": "Keith Rankin & Ken Solberg, May 30, 1941",
+   "lat": null,
+   "lng": null,
+   "aspect": "S",
+   "season": "Jul-Sep",
+   "description": null,
+   "gear": [
+    "rope",
+    "light alpine rack",
+    "helmet",
+    "rock shoes optional"
+   ],
+   "hazards": [
+    "routefinding to gain the ridge",
+    "afternoon thunderstorms",
+    "crowds on a popular classic",
+    "loose rock in the approach gully and around the North/South notch",
+    "limited-to-no cell coverage in the Lake Ingalls basin"
+   ],
+   "verif": null,
+   "overview": "The South Ridge of Ingalls Peak is one of the most popular moderate alpine rock climbs in the Teanaway, on excellent reddish peridotite. Several pitches of low-fifth-class climbing on a clean, exposed ridge lead to the main (North) summit, with stunning views of Mount Stuart across the basin.",
+   "beta": "The South Ridge ascends south-facing aspect of North Peak via mixed terrain and crack systems. Hike broken rock and slabs to broad bench below the large red slab. Two main crack variations: traditional 5.4 on left, 5.6 Beckey variation in middle. Pitches are bolted at anchors (pitches 2-3) with additional slings at pitch 1. Serpentine rock sections are notably slick; helmets recommended above 6,900 ft due to rockfall hazard. Parties of 3-4 fit comfortably on small belay ledges.",
+   "turnaround": "As a popular, moderate route it still finishes on an exposed summit ridge — set a turnaround time in advance based on the East Cascades' typical summer afternoon-thunderstorm risk rather than pushing to finish.",
+   "auto_generated": true,
+   "alpine_grade": "II",
+   "rock_grade": "5.4 (5.6 on the popular 'Beckey line' variation)",
+   "ice_grade": null,
+   "gain_ft": 3500,
+   "loss_ft": 3500,
+   "dist_km": 8,
+   "max_angle": 55,
+   "rappels": "4 rappels on a single 60 m rope from the three-bolt summit anchor, one per pitch, with a short downclimb to the pitch-2 ledge where the rope comes up short. Two 60 m ropes cut it to three.",
+   "commitment": "II",
+   "face": "South ridge/notch between the North and South summits",
+   "permit": "",
+   "comms": "Cell phone coverage generally unreliable at peak and base of route; intermittent coverage possible near Ingalls Lake. Satellite communication devices recommended for backcountry travel. Contact Kittitas County Sheriff (509-962-7525) for emergencies via 911 in developed areas only.",
+   "descent": "Rappel the route from the three-bolt summit anchor to the base ledges: four rappels on a single 60 m rope, or three on two 60 m ropes. Then downclimb the gully back to the North-South notch. From the notch, reverse the scree/talus descent to Lake Ingalls and follow the approach trail back to the trailhead.",
+   "obj_haz": [
+    "loose rock",
+    "rockfall from parties above",
+    "afternoon thunderstorms"
+   ],
+   "waypoints": [
+    {
+     "lat": 47.43673,
+     "lng": -120.93696,
+     "elev": 4200,
+     "name": "Esmeralda (Ingalls Way) Trailhead",
+     "note": "End of FR-9737 off North Fork Teanaway River Rd; small lot fills fast in summer, Northwest Forest Pass required, self-issue wilderness permit at the kiosk.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "From Cle Elum, head northeast on SR-970 about 5 miles, turn onto the Teanaway River Road and follow it roughly 23 miles to the road end. The small lot fills fast on summer weekends — a Northwest Forest Pass is required and there is a self-issue wilderness permit at the kiosk."
+    },
+    {
+     "lat": 47.459562,
+     "lng": -120.935089,
+     "elev": 6457,
+     "name": "Ingalls Pass",
+     "note": "Trail crests the pass with the first open view of Mount Stuart and the Ingalls Peaks; forks here, stay left/climber's-path toward Lake Ingalls rather than dropping right into Headlight Basin.",
+     "type": "Junction",
+     "distMi": 3,
+     "directions": "Take the Ingalls Way trail and stay left at the fork around 5,600 ft. Three miles of steady climbing brings you to Ingalls Pass, where Mount Stuart and the Ingalls Peaks come into view all at once. Fork again here: stay left on the climber's path toward Lake Ingalls rather than dropping right into Headlight Basin."
+    },
+    {
+     "lat": 47.470437,
+     "lng": -120.938581,
+     "elev": 6467,
+     "name": "Lake Ingalls",
+     "note": "Last reliable water before the summit scramble; camping and campfires are prohibited immediately around the lake to protect the fragile alpine basin, so treat/carry water here.",
+     "type": "Water",
+     "distMi": 4,
+     "directions": "Traverse from the pass to Lake Ingalls, about a mile. This is the last reliable water before the summit, so fill and treat here — camping and campfires are prohibited around the lake to protect the basin."
+    },
+    {
+     "lat": 47.4716,
+     "lng": -120.9472,
+     "elev": 7361,
+     "name": "Ingalls Col (notch between South and North/main peaks)",
+     "note": "Scramble up slabs, talus and boulders from the lake to this notch below Dogtooth Spire; this is where the roped South Ridge route begins, distinct from the easier North Ridge to South Peak.",
+     "type": "Junction",
+     "distMi": 4.7,
+     "directions": "From the lake, scramble slabs, talus and boulders up to the notch between the North and South peaks, below Dogtooth Spire. Expect snow on this section in June and early July. This notch is where the roped South Ridge begins, and it is a different objective from the easier North Ridge scramble to the South Peak."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7450,
+     "name": "Dogtooth Crags traverse",
+     "note": "Exposed traverse along the right side of the Dogtooth Crags on broken rock and slabs leading to the base bench; loose blocks and route-finding in fog are the main dangers here.",
+     "type": "Hazard",
+     "distMi": 4.8,
+     "directions": "Traverse the right-hand side of the Dogtooth Crags on broken rock and slabs. Loose blocks are the main hazard, and this is the section people lose in fog — it is worth noting your line on the way in so you can reverse it."
+    },
+    {
+     "lat": null,
+     "lng": null,
+     "elev": 7500,
+     "name": "Bench below the red slab (start of roped pitches)",
+     "note": "Broad bench just below a distinctive large red slab; from the notch descend/traverse about 100 ft west to the base of a friction slab and rope up for the 3-pitch 5.4 ridge climb.",
+     "type": "Junction",
+     "distMi": 4.9,
+     "directions": "From the notch, descend and traverse roughly 100 ft west to the broad bench under the distinctive large red slab. Rope up here: the route is three pitches at 5.4, generally good rock with a few 5.2-5.3 moves and real exposure. The first pitch takes an obvious crack for close to a full rope length to a belay at a fixed piton on the slab."
+    },
+    {
+     "lat": 47.472435,
+     "lng": -120.946105,
+     "elev": 7662,
+     "name": "Ingalls Peak (North/main summit)",
+     "note": "True summit of Ingalls Peak; exposed but well-protected 5.4 climbing gains the top, descend by rappelling the route back to the col and reversing the approach.",
+     "type": "Summit",
+     "distMi": 5.1,
+     "directions": "Three pitches gain the true summit — exposed but well protected. Descend by rappelling the line you climbed, which goes in three raps on two 60 m ropes, or four on a single 60 m, using the same anchors, then reverse the scramble to the lake and the trail. Budget 3-4 hours for the approach and 3-5 hours for the climb; by August the whole basin gets hot and there is no shade above the lake."
+    }
+   ],
+   "gpx": [
+    [
+     47.43668,
+     -120.93697
+    ],
+    [
+     47.43757,
+     -120.9373
+    ],
+    [
+     47.43843,
+     -120.93677
+    ],
+    [
+     47.43996,
+     -120.93852
+    ],
+    [
+     47.44108,
+     -120.93821
+    ],
+    [
+     47.44223,
+     -120.93716
+    ],
+    [
+     47.44352,
+     -120.9375
+    ],
+    [
+     47.44443,
+     -120.93806
+    ],
+    [
+     47.44486,
+     -120.93651
+    ],
+    [
+     47.44442,
+     -120.93499
+    ],
+    [
+     47.4441,
+     -120.93447
+    ],
+    [
+     47.44345,
+     -120.93342
+    ],
+    [
+     47.44412,
+     -120.93262
+    ],
+    [
+     47.44475,
+     -120.93222
+    ],
+    [
+     47.44447,
+     -120.93155
+    ],
+    [
+     47.44446,
+     -120.93105
+    ],
+    [
+     47.44549,
+     -120.93041
+    ],
+    [
+     47.44584,
+     -120.93069
+    ],
+    [
+     47.44637,
+     -120.93083
+    ],
+    [
+     47.44675,
+     -120.93206
+    ],
+    [
+     47.44779,
+     -120.93361
+    ],
+    [
+     47.44862,
+     -120.93374
+    ],
+    [
+     47.44957,
+     -120.93384
+    ],
+    [
+     47.45022,
+     -120.93349
+    ],
+    [
+     47.45053,
+     -120.93407
+    ],
+    [
+     47.45125,
+     -120.93524
+    ],
+    [
+     47.45228,
+     -120.93567
+    ],
+    [
+     47.4533,
+     -120.9355
+    ],
+    [
+     47.4544,
+     -120.93523
+    ],
+    [
+     47.45539,
+     -120.93605
+    ],
+    [
+     47.45581,
+     -120.93406
+    ],
+    [
+     47.45668,
+     -120.93446
+    ],
+    [
+     47.45749,
+     -120.93419
+    ],
+    [
+     47.45854,
+     -120.93366
+    ],
+    [
+     47.46074,
+     -120.93925
+    ],
+    [
+     47.46172,
+     -120.94046
+    ],
+    [
+     47.46345,
+     -120.94312
+    ],
+    [
+     47.46509,
+     -120.94405
+    ],
+    [
+     47.46657,
+     -120.94125
+    ],
+    [
+     47.46762,
+     -120.93986
+    ],
+    [
+     47.46888,
+     -120.94053
+    ],
+    [
+     47.47096,
+     -120.94503
+    ],
+    [
+     47.47138,
+     -120.94737
+    ],
+    [
+     47.47247,
+     -120.94634
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine"
+   ],
+   "timing": {
+    "totalHrs": 10,
+    "summitTimeHrs": 10,
+    "descentTimeHrs": null,
+    "approachTimeHrs": null,
+    "recommendedStart": "5:30 AM from the trailhead",
+    "sectionBreakdown": [
+     {
+      "hrs": 10,
+      "note": "Identical route/approach to the other South Ridge entry: a 3-4 hour hike over Ingalls Pass and past Lake Ingalls to the Ingalls Col, then 3 pitches of 4th/low-5th class climbing to…",
+      "fromTo": "South Ridge, car to car",
+      "section": "Climb"
+     }
+    ]
+   },
+   "detailed_rack": "Small rack to ~2 inches; a single set of cams and a few nuts with slings is typically ample for the 5.4 climbing.",
+   "what_to_bring": [
+    "rope",
+    "alpine rack",
+    "helmet",
+    "approach shoes",
+    "sun protection"
+   ],
+   "pro_tips": [
+    "Start at 6-7 am on summer weekends — this is one of the most popular moderate alpine rock climbs in the Cascades and traffic backs up at the base of the red slab.",
+    "The 5.6 direct finish on the red slab is optional; the standard 5.2-5.3 line avoids it entirely.",
+    "A light rack of stoppers and small-to-mid cams is plenty — no need for big gear."
+   ],
+   "watch_out": [
+    "afternoon thunderstorms",
+    "loose blocks",
+    "rope management on the airy ridge"
+   ],
+   "pro_needs": "Light rack, plenty of slings for the blocky ridge.",
+   "best_season": "Mid-June/July through September, sometimes into early October in low-snow years; the notch and approach gully commonly hold snow into late June/early July, and afternoon thunderstorms become a regular risk by August.",
+   "high_point_ft": 7662,
+   "aid_grade": null,
+   "approach": "From the Esmeralda Basin/Ingalls Lake Trailhead (end of Teanaway River Road/USFS Rd 9737), take the Ingalls Way Trail (#1390). At about 0.4 mile bear right at the junction onto Ingalls Way (Esmeralda Basin Trail #1394 continues straight); at roughly 1.4 miles pass the Longs Pass junction. The trail climbs steadily through forest and open slopes to Ingalls Pass (~6,500 ft) at about 3.0-3.1 miles, the Alpine Lakes Wilderness boundary and your first full view of Mount Stuart and the Ingalls group. From the pass, drop slightly and traverse climbers'-left across open slabs and talus (a boot path braids through here; stay on durable surfaces where possible) for roughly another mile to Lake Ingalls (6,480 ft), about 4-4.5 miles and ~2,500-2,600 ft of gain from the trailhead. This is the last reliable water before the climb. From the lake's outlet/left (west) side, scramble up class 2-3 slabs and talus, aiming for the obvious cleft/notch splitting North Ingalls Peak from the main (South) summit, working up to about 7,100 ft. A short section of class 4 leads up a gully to a ledge system at the base of the ridge proper - this is where the roped climbing (pitch 1) begins. No creek fords are involved past the lake; the main approach hazards are loose talus/scree on the slabs above the lake and afternoon thunderstorm exposure on the open ridge - start early. Total approach is commonly reckoned at 3-4 hours from the car.",
+   "descent_text": "Descend by rappelling the South Ridge climbing line itself (or, for parties who diverge, the closely parallel Southwest Face). From the summit it is four rappels on a single 60 m rope, one per pitch, or three with two 60 m ropes, described here for two ropes: (1) a single-strand rappel down the uppermost pitch to a two-bolt anchor on a narrow ledge; (2) a full-length rappel (double-rope length, i.e. using the rope doubled) down to a large ledge/slung boulder near the top of pitch 2 - do not be tempted to skip straight from the summit to the top of pitch 2 in one long rappel, since a crack just below the top anchor is notorious for wedging and stuck ropes have resulted; breaking it at the pitch-3 ledge avoids this; and (3) a final rappel from that ledge down to the base ledges/gully where the climb started. Anchors are a mix of fixed two-bolt stations and natural slung-boulder/horn anchors reinforced with webbing - carry a few extra feet of tat/webbing since the natural anchors get replaced periodically and can be tired. Below the last rappel, downclimb the class 3-4 gully back to the notch and retrace the approach talus/slabs to Lake Ingalls and out via Ingalls Pass.",
+   "bail": "Rappel from slung blocks back toward the col if weather moves in.",
+   "pitch_detail": [
+    {
+     "crux": false,
+     "bolts": 0,
+     "grade": "5.4",
+     "notes": "A full rope-length lead up the obvious crack from the base, easy ground on good rock to a belay at a fixed piton on the slab.",
+     "pitch": 1,
+     "anchor": "Fixed piton (slab)",
+     "lengthM": 50
+    },
+    {
+     "crux": true,
+     "bolts": 2,
+     "grade": "5.6",
+     "notes": "A short pitch and left leads to a belay cove under the dark horns; the harder 5.6 variation climbs the middle crack rather than the easier 5.4 line on the left.",
+     "pitch": 2,
+     "anchor": "2-bolt anchor (ledge)",
+     "lengthM": 20
+    },
+    {
+     "crux": false,
+     "bolts": 3,
+     "grade": "5.4",
+     "notes": "Goes up and right from the right side of the cove to a notch on the left skyline; scramble from here to the true summit.",
+     "pitch": 3,
+     "anchor": "3-bolt anchor (summit)",
+     "lengthM": 20
+    }
+   ],
+   "itinerary": {
+    "cal": "",
+    "days": [
+     {
+      "n": 1,
+      "note": "Identical route/approach to the other South Ridge entry: a 3-4 hour hike over Ingalls Pass and past Lake Ingalls to the Ingalls Col, then 3 pitches of 4th/low-5th class climbing to the ~7,662 ft summit, descending by rappelling the route. Done car-to-car in a day by the vast majority of parties.",
+      "hours": 10,
+      "miles": 10.2,
+      "title": "South Ridge, car to car",
+      "gainFt": 3600,
+      "lossFt": 3600,
+      "packLb": 15,
+      "schedule": [
+       {
+        "time": "5:30 AM",
+        "label": "Leave the trailhead",
+        "detail": "Teanaway River Road, road-end parking at ~4,240 ft"
+       },
+       {
+        "time": "7:30 AM",
+        "label": "Reach Ingalls Pass, contour past Lake Ingalls",
+        "detail": "~6,500 ft pass, then into the basin below the peak"
+       },
+       {
+        "time": "8:30 AM",
+        "label": "Reach Ingalls Col",
+        "detail": "Start of the South Ridge proper"
+       },
+       {
+        "time": "9:00 AM",
+        "label": "Begin roped climbing",
+        "detail": "3 pitches, 4th/low-5th class"
+       },
+       {
+        "time": "11:30 AM",
+        "label": "Summit",
+        "detail": "~7,662 ft, North Peak"
+       },
+       {
+        "time": "3:30 PM",
+        "label": "Back at the trailhead",
+        "detail": "Rappel the route to the Col, then hike out"
+       }
+      ],
+      "objective": "Climb the South Ridge to the summit and hike back out, in a single day"
+     }
+    ],
+    "totalNote": "A single, full day car-to-car: roughly 9-11 hours, ~10 miles round trip with ~3,500-3,800 ft of gain — no camping required."
+   },
+   "access": {
+    "fees": "Northwest Forest Pass or America the Beautiful/Interagency pass required for trailhead parking (single-day pass $5, annual $30)",
+    "rules": "Standard Alpine Lakes Wilderness rules apply: camp well back from Lake Ingalls' shoreline and trails, groups limited to 12, pack out all waste, dogs are prohibited on the Ingalls Way and Longs Pass Trails and at Lake Ingalls.",
+    "permit": "Free self-issue wilderness permit at the trailhead, required for all entry into the Alpine Lakes Wilderness",
+    "closures": "FR-9737 and the trail are typically snow-free by late spring; check the Cle Elum Ranger District recreation report before early-season (May-June) trips.",
+    "group_limit": 12,
+    "landManager": "Okanogan-Wenatchee National Forest, Cle Elum Ranger District",
+    "land_manager": "Okanogan-Wenatchee National Forest — Alpine Lakes Wilderness",
+    "parking_pass": "Esmeralda/Ingalls Way trailhead day-use fee: $5/vehicle/day or $30/year (Northwest Forest Pass or Interagency Pass).",
+    "passRequired": "Northwest Forest Pass / Interagency Recreation Pass",
+    "overnight_permit": {
+     "url": null,
+     "what": "Free self-issue Alpine Lakes Wilderness permit",
+     "where": "Fill one out at the trailhead kiosk. North-side approaches from the Stuart Lake trailhead are inside the Enchantment Permit Area and need that permit instead."
+    }
+   },
+   "road": {
+    "name": "North Fork Teanaway River Road / FR-9737",
+    "status": "Good gravel, generally passable to passenger cars in dry conditions",
+    "driveNote": "~22-23 mi from the SR 970 turnoff (about 8.5 mi on SR 970 + ~13 mi on Teanaway River Rd + ~9.6 mi on FR-9737) to the Esmeralda/Ingalls Way Trailhead (~4,200 ft).",
+    "seasonalGate": "Typically opens by late spring; check Cle Elum Ranger District conditions before early-season trips."
+   },
+   "climate": {
+    "typical": "Dry, sunny east-Cascades climate typical of the Teanaway — noticeably less rain/cloud than the west-side Cascades, but still prone to building afternoon thunderstorms in July and August.",
+    "bySeason": {
+     "fall": "Can offer stable, cool conditions and far fewer crowds into September/October, but shortens daylight for the round trip and can see early-season snow.",
+     "spring": "Snow lingers in the approach gully and the North-South notch into June or early July; traction (microspikes/axe) can help on the trail to Ingalls Pass.",
+     "summer": "Prime season (July-September); hot, exposed rock by midday, so start early (6-7 am) to beat both the heat and afternoon thunderstorm buildup.",
+     "winter": "Not a winter objective — road and trail access are snow-bound."
+    }
+   },
+   "emergency": {
+    "notes": "Cell coverage is unreliable to nonexistent in the Lake Ingalls basin and notch; the most reliable signal is often back near Ingalls Pass or the trailhead. Kittitas County Search & Rescue handles most rescues in this part of the Teanaway.",
+    "county": "Kittitas",
+    "rangerStation": "Cle Elum Ranger District, Okanogan-Wenatchee National Forest",
+    "nearestHospital": "Kittitas Valley Healthcare (KVH), 603 S Chestnut St, Ellensburg, WA — Level IV trauma ER, roughly 45 mi / ~1 hr drive from the trailhead via Teanaway River Rd and SR 970/I-90",
+    "sheriffDispatch": "911 for emergencies; Kittitas County Sheriff non-emergency line 509-962-7525 (Kittcom dispatch)"
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Summer weekends (July-August), especially when paired with the popular Ingalls Lake day-hike/scramble crowd at the Esmeralda Basin/Ingalls Pass trailhead",
+    "solitudeRating": 2,
+    "estimatePerSeason": "Not precisely quantified in sources, but trip reports consistently describe it as one of the most popular moderate alpine rock climbs in the Teanaway, with multiple parties commonly encountered on the ridge on summer weekends; Ingalls Lake itself is described as a 'seven-days-a-week destination'"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Roundtrip on the order of 6-9 miles with ~2,800-3,200 ft of gain, including a pass crossing (Ingalls Pass) and off-trail talus/slab travel to the base of the ridge",
+     "packWeight": "Light alpine rack (small rack + a few slings, approach shoes swapped for rock shoes), roughly 15-20 lbs"
+    },
+    "approachTime": "Roughly 3-4 hours from the Esmeralda Basin trailhead via Ingalls Pass and the Ingalls Lake basin to the start of the ridge",
+    "requiredSkills": [
+     "Leading/following 5.4 traditional or alpine rock",
+     "Multi-pitch rope management and efficient transitions",
+     "Routefinding on talus, slab, and an unmarked alpine ridge to gain and follow the route",
+     "Comfort on loose blocky rock and exposed, airy ridge terrain",
+     "Basic self-rescue / rappel competence for the descent"
+    ],
+    "experienceLevel": "Intermediate alpine rock climber - comfortable leading low 5th class (5.4) alpine rock with loose rock and moderate exposure, and competent scrambling on class 2-3 talus/slabs for the approach"
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Mid-July through September; late July-August is prime",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Prime dry-rock season on this east-slope Cascade climate route; watch for afternoon thunderstorms",
+      "status": "optimal"
+     },
+     "June": {
+      "reason": "Snow typically lingers on the approach and ridge this early; route is generally not in dry-rock condition until snow clears",
+      "status": "marginal"
+     },
+     "August": {
+      "reason": "Peak season - warm, generally dry and sunny, with the same afternoon-storm caveat",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Early snow is possible into fall; not a standard-season objective this late",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Good conditions early in the month; cooler temps and earlier storm/snow risk increase later in September",
+      "status": "good"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "East-slope Cascade climate: generally dry and sunny in summer with a real risk of building afternoon thunderstorms",
+     "probability": "Afternoon thunderstorms are a recurring risk in July-August; plan for an early start and to be off the exposed ridge before storms build"
+    },
+    "exposure": "Sustained, airy exposure along the 3-pitch ridge crest with drop-offs on both sides in places; the existing hazards list already flags loose blocks and rope-management challenges on this airy section, and a slip on unroped 3rd/4th-class ground near the ridge or during the descent scramble/rappel would be a serious fall",
+    "avalanche": {
+     "zone": "N/A - non-glaciated summer alpine rock route, normally climbed after seasonal snow has cleared (roughly the NWAC East Slopes Central forecast area geographically, but avalanche forecasting is not the relevant hazard model for this route's typical July-September season)",
+     "byMonth": {
+      "July": "N/A",
+      "June": "Low",
+      "August": "N/A",
+      "September": "N/A"
+     }
+    },
+    "crevasses": "N/A - no glacier travel; approach is via trail, talus, and slabs to a rock ridge"
+   },
+   "data_quality": {
+    "gaps": [
+     "No quantified per-season party-count or visitor-log data was found; crowding assessment is based on qualitative trip-report language (SummitPost, Mountaineers, Wenatchee Outdoors) rather than hard numbers",
+     "No NWAC or other avalanche-center source explicitly designates a forecast zone boundary for this exact summit; avalanche relevance is inferred to be minimal given the route's dry-rock summer season rather than confirmed against a named zone",
+     "Partner fitness/approach-time figures are estimated from route descriptions and standard Teanaway approach beta rather than a single authoritative timed source",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/7KGM",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026 research pass"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 2,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 47.472435,
+    "peakLng": -120.946105,
+    "trailhead": "Esmeralda Basin Trailhead (FR-9737)",
+    "trailheadLat": 47.43656,
+    "trailheadLng": -120.93697,
+    "trailheadDirection": "From the Esmeralda Basin Trailhead at the end of the North Fork Teanaway Road (FR-9737), via the Ingalls Way Trail"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": null,
+   "gear_confidence": null,
+   "rappel_detail": [
+    {
+     "n": 1,
+     "pull": "Pull from the ledge with the strands held out from the wall so neither end swings back into the crack under the summit anchor.",
+     "notes": "Rappel 1 of 4 on a single 60 m rope: a short rappel from the summit bolts down the uppermost pitch to the two-bolt station at the top of pitch 3.",
+     "anchor": "three-bolt summit anchor",
+     "hazards": [
+      "A crack a couple of feet below the summit bolts is notorious for wedging rope. Stopping at the pitch-3 ledge instead of running the rope through to the top of pitch 2 is the accepted way to avoid it, and is the single most repeated warning on this descent.",
+      "Serpentine is slick rock, and slicker still when damp or dusty; the summit stance is small and the start of the rappel is over the edge rather than off a ledge."
+     ],
+     "lengthM": 30,
+     "station": "The three-bolt anchor on the serpentine summit block at the top of the climb. The rappel off it is short and awkward — a sit-and-spin start straight off the bolts — and drops the last pitch to a two-bolt station on a narrow ledge at the top of pitch 3. Break here even though the terrain below looks like it would go in one longer rappel."
+    },
+    {
+     "n": 2,
+     "pull": "This is the crack that eats ropes on this route. Walk the strands well out from the base of the wall before pulling, and pull briskly so the tail does not drop back in behind the boulder.",
+     "notes": "Rappel 2 of 4. Knot the rope ends: on a 60 m you run out of rope above the ledge and downclimb the last few metres.",
+     "anchor": "two bolts on a narrow ledge, top of pitch 3",
+     "hazards": [
+      "Coming up short leaves the rappeller hanging on a slick serpentine face above the ledge. Knot the ends and confirm the rope reaches before the last person commits.",
+      "A crack near the second slung boulder at the end of pitch 2 has wedged a rope end on the pull; the pitch is easy enough that one party simply scrambled back up to free it, but that is luck rather than a plan."
+     ],
+     "lengthM": null,
+     "station": "Two bolts on a narrow ledge at the top of pitch 3, replacing older pitons. The rappel aims for the large ledge with a slung boulder near the top of pitch 2. A 60 m rope comes up about 5 m (15 ft) short of that ledge and a 70 m only just makes it, so on a 60 m finish with a short downclimb on Class 3 rock to the ledge."
+    },
+    {
+     "n": 3,
+     "pull": "This is the crack that eats ropes on this route. Walk the strands well out from the base of the wall before pulling, and pull briskly so the tail does not drop back in behind the boulder.",
+     "notes": "Rappel 3 of 4, down pitch 2 to the anchor at the top of pitch 1. With two ropes, parties skip this station and go straight to the base.",
+     "anchor": "slung boulder and fixed slings on the big ledge above pitch 2",
+     "hazards": [
+      "Slung-boulder and horn anchors are the weakest links on this descent and have been found tattered by arriving parties.",
+      "A crack near the second slung boulder at the end of pitch 2 has wedged a rope end on the pull; the pitch is easy enough that one party simply scrambled back up to free it, but that is luck rather than a plan."
+     ],
+     "lengthM": null,
+     "station": "Rig from the slung boulder and fixed slings on the big ledge above pitch 2. These are natural anchors reinforced with webbing and are rebuilt periodically, so carry a few metres of spare cord rather than assuming the tat is fresh. On a single 60 m rope, the rappel from here reaches the top of pitch 1."
+    },
+    {
+     "n": 4,
+     "notes": "Rappel 4 of 4, to the base. Below it, downclimb the gully back to the notch.",
+     "anchor": "anchor at the top of pitch 1 (slung boulder or slings)",
+     "hazards": [
+      "Below the last rappel the gully back down to the notch is class 3-4 and loose, with the approach talus and slabs beneath it."
+     ],
+     "lengthM": null,
+     "station": "The anchor at the top of pitch 1. The last rappel lands on the base ledges and the class 3-4 gully where the climb started."
+    }
+   ],
+   "rappel_count_note": "Counted for one 60 m rope: one rappel per pitch, summit to the pitch-3 bolts, pitch 3 to the big ledge above pitch 2 (the rope comes up about 15 ft short, so downclimb the last bit), pitch 2 to the top of pitch 1, and pitch 1 to the base. With two 60 m ropes it is three: the same first two, then one long rappel from the pitch-2 ledge to the base. On any setup, do not run one long rappel from the summit to the top of pitch 2: a crack just under the summit bolts and another near the slung boulder at the end of pitch 2 are both known rope-eaters.",
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Esmeralda Basin trailhead, Ingalls Way over Ingalls Pass to Lake Ingalls",
+     "hours": "3-4",
+     "notes": "Park at the Esmeralda Basin trailhead (about 4,240 ft) at the end of the North Fork Teanaway road, FR 9737. A free self-issue Alpine Lakes wilderness permit is filled out at the register.\n\nThere are two forks and they are easily run together. The first comes at roughly a quarter to half a mile, where the old mine-road grade splits: bear right onto Ingalls Way #1390. Straight on is Esmeralda Basin #1394, a different valley. The second fork is higher, around 5,600 ft and roughly a mile and a half in: right climbs to Longs Pass, which is a viewpoint and the way toward Ingalls Creek and Stuart's south side, not a way to this climb. Stay left.\n\nFrom there the trail traverses steadily to Ingalls Pass at about 6,500 ft, where Mount Stuart and the Ingalls group come into view all at once. Continue about another mile to Lake Ingalls, roughly 6,400-6,480 ft and about 4 miles from the car. This is the last water.\n\nFrom the lake, work up and climber's-left on Class 2-3 slabs, talus and boulders. Stay with the cairned line. Parties who leave it for a more direct-looking line get cliffed out; one party downclimbed past a waterfall to escape.",
+     "distMi": 4,
+     "season": "Roughly Jul-Sep once the slabs above the lake are clear; snow lingers below the notch into early summer",
+     "hazards": [
+      "Cliffing out on the slabs above and beside the lake if you leave the cairned line for a direct one",
+      "Loose talus and scree in the approach gully with parties above",
+      "Afternoon thunderstorms on a wholly exposed ridge — start early",
+      "A 60 m rope does not reach on the descent rappels, roughly fifteen feet short; carry a 70 m or doubles"
+     ],
+     "primary": true,
+     "baseFinding": "The target is visible from the lakeshore: the cleft between the North and South peaks, with a single pointed spire sitting in it. That spire is the Dogtooth. Aim just left of it and let it draw you up the slabs.\n\nAt the Dogtooth, go right for the traditional approach gully. The last gully is scree. If the gully you are in is green and lush it is the wrong one and it will carry you too high — traverse right out of it onto clean scree.\n\nArrival is physical: a short section of Class 4 up a crack of roughly forty feet at the top of the gully lands you on a ledge. That ledge is where the rope comes out. Pitch one is the low-angle slab above it, taking the large crack system up the middle.\n\nTouch test at the start: the rock here is green serpentine, an odd slick band quite unlike the surrounding granite, sitting just up from the Dogtooth crag. Large hexes work in it where cams skate. Confirmation higher up — the pitch-three ledge carries two big bolts and there are three more at the top.\n\nNegative marker, and this is the one that matters. This route climbs the south ridge of the north peak, and the North peak (7,662 ft) is the true summit. The South peak (7,640 ft) is a separate Class 3 scramble that starts from the same notch. If you reached the notch, dropped about fifty feet down its west side and scrambled easy gullies back to a top without ever roping up, you climbed the South peak. That is not this route and not the high point.\n\nSecond marker: finishing the technical pitches does not put you on the summit. There is a few hundred feet of walking left to tag the actual high point, so a summit that arrives the instant the climbing ends is the wrong one."
+    },
+    {
+     "name": "Ingalls Way Alternate #1390.2 through Headlight Basin (the camping branch)",
+     "notes": "Identical to Ingalls Pass. Just past the pass the trail splits and the right-hand branch is signed Ingalls Way Alternate #1390.2. It drops into Headlight Basin, crosses Headlight Creek, and holds the established campsites and the reliable water. The main #1390 stays high along the rim of the basin and is the more direct line to the lake.\n\nThe two rejoin at a signed junction less than a quarter mile below Lake Ingalls, so this costs you a descent and a re-ascent in exchange for a legal camp and running water. Parties climbing the same day generally take the high line; parties camping take the low one.",
+     "season": "Same window; this is the branch to take if you are sleeping out, since camping at Lake Ingalls is prohibited",
+     "hazards": [
+      "Headlight Creek crossing",
+      "Braided use paths through the basin camps — stay on durable ground, this is Alpine Lakes Wilderness",
+      "Extra descent and re-ascent on the way out with a full pack"
+     ],
+     "baseFinding": "This branch does not change where the climbing starts — it rejoins the standard line at the signed junction below the lake, and from there the Dogtooth, the scree gully and the forty-foot Class 4 crack onto the belay ledge are exactly as on the high route.\n\nWhat it does change is your starting view. Coming up out of Headlight Basin you meet the lake from below rather than from the pass, so you will not have had the long look across at the peak that the high traverse gives you. Walk to the lake outlet and pick out the notch and the Dogtooth spire from there before starting up the slabs, rather than trying to identify them mid-scramble."
+    }
+   ],
+   "climbing_route": null,
+   "bivy": [
+    {
+     "name": "Beverly and De Roux campgrounds and the North Fork Teanaway roadside camps",
+     "role": "main",
+     "type": "camp",
+     "notes": "This is what most parties on Ingalls Peak actually use, because all three Ingalls summits are comfortably a long day from the car and there is no reason to carry a camp. Sleeping on the road puts you at the Esmeralda trailhead in minutes rather than driving up from Cle Elum in the dark. The Ingalls group sits entirely outside the Enchantment Permit Area, in the Cle Elum Ranger District, so the whole permit problem that dominates the Icicle Creek side simply does not exist here: a free self-issued slip at the trailhead, a parking pass, and you go. Access is by pavement to the end of Teanaway Road and then gravel Forest Road 9737 for the last several miles; the surface is rough enough to want patience in a low car, holds snow into early summer, and washboards badly by August. Beverly is roughly four miles up the gravel and De Roux about eight, with Esmeralda a mile beyond that. If you do want to sleep high for the South Ridge, the designated sites in Headlight Basin are the legal option and camping is prohibited at Ingalls Lake itself; expect the goats there, which are bold, unbothered by people and interested in anything salty, so relieve yourself well away from camp and do not leave sweaty gear out.",
+     "water": "No potable water at either campground, so bring what you need. The North Fork Teanaway River runs alongside and is easy to filter from.",
+     "permit": "No wilderness permit at all, and nothing to do with the Enchantment lottery. Both campgrounds charge a modest per-night fee paid on site. Roadside dispersed camping is legal on National Forest ground along Forest Road 9737 but is NOT permitted inside the Teanaway Community Forest lower down the valley, where camping is confined to its designated campgrounds. Fire restrictions are common here from midsummer and are taken seriously; this valley is dry and burns. A Northwest Forest Pass is required to park at Esmeralda the next morning.",
+     "capacity": "Beverly holds around fourteen small tent sites; De Roux is smaller still. Both are first come, first served with no reservations. Dispersed pullouts along the road hold many more parties informally."
+    },
+    {
+     "name": "Headlight Basin designated sites",
+     "role": "main",
+     "type": "camp",
+     "notes": "Designated sites just past Ingalls Pass, about half a mile before Lake Ingalls. Camping is not allowed at the lake itself, so this is the overnight option for parties who split the climb.",
+     "water": "Headlight Creek and snowmelt; filter",
+     "permit": "Free self-issue Alpine Lakes Wilderness permit at the trailhead",
+     "capacity": "Designated sites only; several small groups"
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "south ridge rdg",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "area_id": "wa_sentinel_peak",
+   "name": "Standard Route",
+   "discipline": "mountaineering",
+   "grade": "Class 4",
+   "grade_system": "class",
+   "grade_num": 4,
+   "pitches": null,
+   "length_m": null,
+   "sort_order": null,
+   "stars": null,
+   "fa": null,
+   "lat": 48.3562,
+   "lng": -121.0408,
+   "aspect": "W",
+   "season": "Jun-Sep",
+   "description": null,
+   "gear": [
+    "Ice axe",
+    "Crampons",
+    "Helmet — loose rock and sustained steep snow",
+    "Rope and a few slings — protects a short low-5th-class rock step below the west ridge; many parties solo it but it's short enough to belay",
+    "Crevasse awareness on approach — the standard line crosses the LeConte Glacier, which can be actively crevassed"
+   ],
+   "hazards": [
+    "Crevasses on the Le Conte Glacier — rope up for glacier travel",
+    "Cornices near Cache Col and along the approach ridgelines, worst in early season (June-early July)",
+    "Short low-5th-class rock step above the 7,400 ft snow ramp on the west ridge — can be wet/icy",
+    "The Red Ledge traverse between Cache Col and Kool-Aid Lake is exposed when banked with steep snow",
+    "Whiteout/poor-visibility route-finding across the glaciated approach basins",
+    "Extreme remoteness — no cell coverage, long self-rescue times"
+   ],
+   "verif": null,
+   "overview": "Sentinel Peak (8,257 ft) is a remote summit deep in the Dome Peak / Ptarmigan Mountains section of the Glacier Peak Wilderness, standing shoulder-to-shoulder with its near-twin Old Guard Peak a few hundred yards away. It is not a stand-alone objective reached from a road-end trailhead — it's a side-trip peak bagged from a camp along the classic Ptarmigan Traverse, most commonly Yang Yang Lakes or the 7,300 ft Le Conte–Sentinel col. The South Cascade Glacier drapes its west slope and the Le Conte Glacier its northeast slope; views take in the Ptarmigan Traverse peaks from Formidable and Spider-Formidable Col south past Dome, Sinister, Gunsight and Spire.",
+   "beta": "Sentinel is most often climbed, probably almost exclusively climbed, by parties doing the famed Ptarmigan traverse. From a high camp near the LeConte–Sentinel col or on the South Cascade Glacier, parties ascend a slope to a moat on the right side of a ledge/ramp that crosses the south face; the ramp is not difficult but demands care throughout, and the final section to the summit is straightforward Class 2-3 scrambling on snow and rock. A steeper variation exists via the west ridge, involving a steep snow ramp near 7,400 ft and a short low-5th-class rock step into a gully below the final ridge crest — this is harder than the standard line and should be treated as an alternate finish, not the default.",
+   "turnaround": "Firm turnaround; escape options are limited",
+   "auto_generated": true,
+   "alpine_grade": "PD",
+   "rock_grade": "4th class (short section)",
+   "ice_grade": null,
+   "gain_ft": 8500,
+   "loss_ft": 9200,
+   "dist_km": 26.2,
+   "max_angle": 40,
+   "rappels": "None typically needed — parties downclimb the ascent line, or continue south along the Ptarmigan Traverse rather than reversing the route.",
+   "commitment": "III",
+   "face": "West Face (South Cascade Glacier side)",
+   "permit": "Free self-issue Glacier Peak Wilderness permit at the trailhead; no quota. Northwest Forest Pass at many trailheads.",
+   "comms": "No reliable cell coverage along the route — NPS notes reception in the North Cascades backcountry is inconsistent even at high points and shouldn't be relied on for a plan. Carry a satellite communicator (inReach/SPOT). If you can get any signal near the North Cascades NP portion of the approach, Park Dispatch (360-873-4500 ext. 37) reaches North Cascades NP rescue faster than 911 or the county sheriff, who would have to relay to the park anyway.",
+   "descent": "Reverse of ascent route (west ridge or west face), same side as approached",
+   "obj_haz": [
+    "crevasses",
+    "bergschrund",
+    "loose rock",
+    "whiteout/high winds"
+   ],
+   "waypoints": [
+    {
+     "lat": 48.4754,
+     "lng": -121.075,
+     "elev": 3600,
+     "name": "Cascade Pass Trailhead",
+     "note": "End of Cascade River Road, 23 mi from Marblemount; no parking pass needed but a self-issue wilderness permit (Wilderness Info Center, Marblemount) is required for overnight camping in North Cascades NP.",
+     "type": "Trailhead",
+     "distMi": 0,
+     "directions": "Follow Cascade River Road (Forest Road 15, paved then gravel) about 23 miles from Marblemount to its end at the Cascade Pass Trailhead, at roughly 3,600 feet inside North Cascades National Park. The road has washed out in several recent seasons below the trailhead, adding 2 to 6 miles of road walking each way when unrepaired, so check current conditions before you go. No parking pass is required here."
+    },
+    {
+     "lat": 48.4683,
+     "lng": -121.06,
+     "elev": 5392,
+     "name": "Cascade Pass",
+     "note": "Broad forested saddle where the maintained trail tops out; leave the trail here and go cross-country south on the climber's path toward Cache Col.",
+     "type": "Junction",
+     "distMi": 3.7,
+     "directions": "Maintained trail the whole way — 3.7 miles and roughly 1,800 ft of gain on open switchbacks, with Basin Creek and the Doubtful Lake side-valley opening up as you climb. This is the last reliable tread and the last easy water on the route, so fill up at the pass before the maintained trail ends."
+    },
+    {
+     "lat": 48.4484594,
+     "lng": -121.0528892,
+     "elev": 6900,
+     "name": "Cache Col",
+     "note": "Rocky saddle gaining the Ptarmigan Traverse route; an easy snow slope in most conditions but can carry a sizeable cornice early season, and little remains of the Cache Col Glacier below ~7,000 ft.",
+     "type": "Junction",
+     "distMi": 5.5,
+     "directions": "The tread ends at the pass. A faint boot path crosses loose talus and gravel heading south, then climbs the Cache Glacier snowfield to the col; that snow is permanent into late season and steep enough that crampons and an axe are worth carrying rather than optional. The far lip of the col commonly holds a cornice through mid-summer, and it is a hazard on the way out as much as the way in — look at it before you commit to going over."
+    },
+    {
+     "lat": 48.431844,
+     "lng": -121.04648,
+     "elev": 6800,
+     "name": "Kool-Aid Lake",
+     "note": "Small tarn just below/south of Cache Col that's the standard first-night camp for Ptarmigan Traverse parties; exposed heather benches, no reliable fire wood.",
+     "type": "Campsite",
+     "distMi": 6,
+     "directions": "Drop steeply off the far side of the col on a snowfield that usually wants an ice axe, losing only about a hundred feet to the bench holding the tarn. It is a short leg, but it is where a cornice or hard early-morning snow turns a walk into a fall, so treat the top of the descent as the serious part."
+    },
+    {
+     "lat": 48.42158,
+     "lng": -121.048335,
+     "elev": 6800,
+     "name": "Red Ledge",
+     "note": "Exposed Class 3 ledge system across a black rock band that's the crux of the approach; broad and easy when dry but treacherous and hard to protect if snow-covered.",
+     "type": "Hazard",
+     "distMi": 7,
+     "directions": "From the tarn, contour east around the toe of the Cache Glacier and climb to the ledge, which cuts beneath Art's Knoll and is the least technical way through the cliff band above. It is the route-finding and exposure crux of the entire approach: broad and straightforward when dry, and genuinely serious when banked with steep snow, which is common into early July. In a low-snow year the Middle Cascade Glacier line bypasses it."
+    },
+    {
+     "lat": 48.370558,
+     "lng": -121.047419,
+     "elev": 7300,
+     "name": "Le Conte–Sentinel Col",
+     "note": "~7,300 ft notch on the Le Conte Glacier side, north of Sentinel Peak, where the traverse route crosses over before descending southwest toward Sentinel.",
+     "type": "Junction",
+     "distMi": 13,
+     "directions": "The long leg of the approach. Past the ledge, cross the Middle Cascade Glacier and the Spider-Formidable col, then drop to Yang Yang Lakes at about 6,300 ft — good camping and water, and where most parties spend a night rather than pushing through in one go. From the lakes climb the broad Le Conte Glacier to the notch; this is an actively crevassed glacier, so rope up and carry a crevasse-rescue kit. There are dry bivy sites on the notch itself."
+    },
+    {
+     "lat": 48.365747,
+     "lng": -121.04152,
+     "elev": 7400,
+     "name": "Snow ramp below the west ridge",
+     "note": "Steep snow ramp/snowfield crossing at ~7,400 ft leading to the base of Sentinel's west/southwest ridge; crampons and axe recommended, firm in early morning.",
+     "type": "Hazard",
+     "distMi": 13.5,
+     "directions": "Leave the overnight gear at the col and move on light packs. Easy scrambling off the notch leads onto the snowfield filling the basin against the west face, which steepens as it rises and reaches 35-40 degrees near its top. The basin is the reason this peak is climbed in the morning — the slope that takes crampons cleanly at dawn goes soft and sliding by afternoon."
+    },
+    {
+     "lat": 48.3562,
+     "lng": -121.0408,
+     "elev": 8257,
+     "name": "Sentinel Peak Summit",
+     "note": "Final low 5th-class rock moves up the southwest ridge to the true summit; loose rock with sustained exposure on both sides.",
+     "type": "Summit",
+     "distMi": 14,
+     "directions": "From the top of the snow, follow an obvious ledge leftward (north) across the face past a short cliff band, then turn straight up steep, gravelly scree to a short step of upper class 3 to low fifth-class rock. Many parties solo that step, but it is short enough to belay and can be wet or icy, so a rope and a few slings are a reasonable carry — it is the only technical climbing on the route. Above it, roughly 600 ft of broad west ridge leads to the summit; on the way down reverse this line rather than the east ridge, which degrades into rotten rock and steep snow."
+    }
+   ],
+   "gpx": [
+    [
+     48.475609,
+     -121.073381
+    ],
+    [
+     48.475914,
+     -121.073306
+    ],
+    [
+     48.476487,
+     -121.073498
+    ],
+    [
+     48.47633,
+     -121.073059
+    ],
+    [
+     48.476136,
+     -121.0732
+    ],
+    [
+     48.475756,
+     -121.073128
+    ],
+    [
+     48.475741,
+     -121.072825
+    ],
+    [
+     48.477119,
+     -121.073057
+    ],
+    [
+     48.47694,
+     -121.072468
+    ],
+    [
+     48.476604,
+     -121.072126
+    ],
+    [
+     48.477302,
+     -121.072543
+    ],
+    [
+     48.476968,
+     -121.071919
+    ],
+    [
+     48.477308,
+     -121.072029
+    ],
+    [
+     48.476879,
+     -121.071408
+    ],
+    [
+     48.477584,
+     -121.071927
+    ],
+    [
+     48.477929,
+     -121.071561
+    ],
+    [
+     48.478483,
+     -121.071799
+    ],
+    [
+     48.478159,
+     -121.071446
+    ],
+    [
+     48.477497,
+     -121.071329
+    ],
+    [
+     48.477207,
+     -121.070826
+    ],
+    [
+     48.477484,
+     -121.071188
+    ],
+    [
+     48.478596,
+     -121.071159
+    ],
+    [
+     48.478412,
+     -121.070897
+    ],
+    [
+     48.478195,
+     -121.070917
+    ],
+    [
+     48.477666,
+     -121.070521
+    ],
+    [
+     48.47766,
+     -121.070376
+    ],
+    [
+     48.477937,
+     -121.070284
+    ],
+    [
+     48.477802,
+     -121.070083
+    ],
+    [
+     48.477591,
+     -121.070109
+    ],
+    [
+     48.477418,
+     -121.06976
+    ],
+    [
+     48.478189,
+     -121.069813
+    ],
+    [
+     48.4777,
+     -121.069262
+    ],
+    [
+     48.47814,
+     -121.069395
+    ],
+    [
+     48.478446,
+     -121.069191
+    ],
+    [
+     48.478754,
+     -121.069283
+    ],
+    [
+     48.478971,
+     -121.069111
+    ],
+    [
+     48.478404,
+     -121.06878
+    ],
+    [
+     48.478948,
+     -121.068653
+    ],
+    [
+     48.478474,
+     -121.06839
+    ],
+    [
+     48.478688,
+     -121.068554
+    ],
+    [
+     48.478994,
+     -121.068418
+    ],
+    [
+     48.477894,
+     -121.067995
+    ],
+    [
+     48.47797,
+     -121.068071
+    ],
+    [
+     48.4781,
+     -121.068023
+    ],
+    [
+     48.477347,
+     -121.067631
+    ],
+    [
+     48.477615,
+     -121.067702
+    ],
+    [
+     48.477931,
+     -121.067492
+    ],
+    [
+     48.477257,
+     -121.067321
+    ],
+    [
+     48.476745,
+     -121.066614
+    ],
+    [
+     48.477382,
+     -121.067033
+    ],
+    [
+     48.477998,
+     -121.066937
+    ],
+    [
+     48.477275,
+     -121.066399
+    ],
+    [
+     48.476189,
+     -121.065197
+    ],
+    [
+     48.477374,
+     -121.06591
+    ],
+    [
+     48.477886,
+     -121.065898
+    ],
+    [
+     48.477087,
+     -121.065225
+    ],
+    [
+     48.476851,
+     -121.064796
+    ],
+    [
+     48.476326,
+     -121.064672
+    ],
+    [
+     48.475675,
+     -121.064191
+    ],
+    [
+     48.475103,
+     -121.063377
+    ],
+    [
+     48.474421,
+     -121.063043
+    ],
+    [
+     48.474195,
+     -121.062603
+    ],
+    [
+     48.473931,
+     -121.062663
+    ],
+    [
+     48.473371,
+     -121.062088
+    ],
+    [
+     48.472162,
+     -121.061952
+    ],
+    [
+     48.471602,
+     -121.061451
+    ],
+    [
+     48.471072,
+     -121.060465
+    ],
+    [
+     48.470525,
+     -121.060347
+    ],
+    [
+     48.469355,
+     -121.059469
+    ],
+    [
+     48.468701,
+     -121.059456
+    ],
+    [
+     48.468476,
+     -121.05913
+    ],
+    [
+     48.468275,
+     -121.059417
+    ],
+    [
+     48.467866,
+     -121.059474
+    ],
+    [
+     48.46764,
+     -121.058954
+    ],
+    [
+     48.467561,
+     -121.059017
+    ],
+    [
+     48.467724,
+     -121.058986
+    ],
+    [
+     48.467586,
+     -121.05893
+    ],
+    [
+     48.467282,
+     -121.059341
+    ],
+    [
+     48.467175,
+     -121.059817
+    ],
+    [
+     48.46648,
+     -121.059864
+    ],
+    [
+     48.466312,
+     -121.060015
+    ],
+    [
+     48.465971,
+     -121.059765
+    ],
+    [
+     48.464295,
+     -121.059658
+    ],
+    [
+     48.463454,
+     -121.059245
+    ],
+    [
+     48.463029,
+     -121.05945
+    ],
+    [
+     48.462886,
+     -121.059254
+    ],
+    [
+     48.462905,
+     -121.059391
+    ],
+    [
+     48.462749,
+     -121.059227
+    ],
+    [
+     48.462211,
+     -121.059196
+    ],
+    [
+     48.462081,
+     -121.058851
+    ],
+    [
+     48.461962,
+     -121.058908
+    ],
+    [
+     48.46147,
+     -121.058534
+    ],
+    [
+     48.460991,
+     -121.057988
+    ],
+    [
+     48.460945,
+     -121.05814
+    ],
+    [
+     48.46097,
+     -121.058014
+    ],
+    [
+     48.460665,
+     -121.058017
+    ],
+    [
+     48.460147,
+     -121.057657
+    ],
+    [
+     48.459855,
+     -121.05704
+    ],
+    [
+     48.459758,
+     -121.056389
+    ],
+    [
+     48.45958,
+     -121.056395
+    ],
+    [
+     48.459333,
+     -121.055993
+    ],
+    [
+     48.459192,
+     -121.055375
+    ],
+    [
+     48.459167,
+     -121.055525
+    ],
+    [
+     48.459168,
+     -121.05537
+    ],
+    [
+     48.459066,
+     -121.055493
+    ],
+    [
+     48.458981,
+     -121.055294
+    ],
+    [
+     48.458415,
+     -121.055514
+    ],
+    [
+     48.457936,
+     -121.055179
+    ],
+    [
+     48.456571,
+     -121.055015
+    ],
+    [
+     48.455816,
+     -121.054512
+    ],
+    [
+     48.454783,
+     -121.054403
+    ],
+    [
+     48.453593,
+     -121.053219
+    ],
+    [
+     48.45313,
+     -121.05306
+    ],
+    [
+     48.452981,
+     -121.052558
+    ],
+    [
+     48.45265,
+     -121.052337
+    ],
+    [
+     48.448661,
+     -121.052569
+    ],
+    [
+     48.448806,
+     -121.052049
+    ],
+    [
+     48.449252,
+     -121.052009
+    ],
+    [
+     48.448802,
+     -121.052041
+    ],
+    [
+     48.44865,
+     -121.052541
+    ],
+    [
+     48.448741,
+     -121.052186
+    ],
+    [
+     48.448662,
+     -121.052429
+    ],
+    [
+     48.448319,
+     -121.052316
+    ],
+    [
+     48.447212,
+     -121.051393
+    ],
+    [
+     48.446403,
+     -121.051144
+    ],
+    [
+     48.44593,
+     -121.050365
+    ],
+    [
+     48.444975,
+     -121.05005
+    ],
+    [
+     48.44466,
+     -121.049411
+    ],
+    [
+     48.444458,
+     -121.049493
+    ],
+    [
+     48.444406,
+     -121.048977
+    ],
+    [
+     48.444084,
+     -121.049031
+    ],
+    [
+     48.443452,
+     -121.04794
+    ],
+    [
+     48.443088,
+     -121.047959
+    ],
+    [
+     48.442179,
+     -121.047545
+    ],
+    [
+     48.44156,
+     -121.046784
+    ],
+    [
+     48.439621,
+     -121.046238
+    ],
+    [
+     48.439177,
+     -121.045902
+    ],
+    [
+     48.439109,
+     -121.046312
+    ],
+    [
+     48.438405,
+     -121.046311
+    ],
+    [
+     48.4379,
+     -121.046043
+    ],
+    [
+     48.437296,
+     -121.045277
+    ],
+    [
+     48.436436,
+     -121.04484
+    ],
+    [
+     48.435398,
+     -121.044845
+    ],
+    [
+     48.433135,
+     -121.045927
+    ],
+    [
+     48.432797,
+     -121.045872
+    ],
+    [
+     48.432366,
+     -121.046151
+    ],
+    [
+     48.432193,
+     -121.046517
+    ],
+    [
+     48.431792,
+     -121.046682
+    ],
+    [
+     48.431653,
+     -121.047441
+    ],
+    [
+     48.431504,
+     -121.047671
+    ],
+    [
+     48.431597,
+     -121.047929
+    ],
+    [
+     48.431497,
+     -121.048086
+    ],
+    [
+     48.430793,
+     -121.048476
+    ],
+    [
+     48.430321,
+     -121.048238
+    ],
+    [
+     48.429708,
+     -121.048623
+    ],
+    [
+     48.429415,
+     -121.048567
+    ],
+    [
+     48.429219,
+     -121.04885
+    ],
+    [
+     48.426227,
+     -121.047464
+    ],
+    [
+     48.425807,
+     -121.047474
+    ],
+    [
+     48.425359,
+     -121.047025
+    ],
+    [
+     48.424941,
+     -121.046864
+    ],
+    [
+     48.423519,
+     -121.046803
+    ],
+    [
+     48.422802,
+     -121.046994
+    ],
+    [
+     48.422091,
+     -121.047572
+    ],
+    [
+     48.421799,
+     -121.047608
+    ],
+    [
+     48.421742,
+     -121.047974
+    ],
+    [
+     48.421545,
+     -121.048209
+    ],
+    [
+     48.421671,
+     -121.048437
+    ],
+    [
+     48.420484,
+     -121.049635
+    ],
+    [
+     48.420375,
+     -121.049607
+    ],
+    [
+     48.419914,
+     -121.050402
+    ],
+    [
+     48.419485,
+     -121.05014
+    ],
+    [
+     48.419243,
+     -121.050331
+    ],
+    [
+     48.419111,
+     -121.050147
+    ],
+    [
+     48.41919,
+     -121.050029
+    ],
+    [
+     48.418729,
+     -121.049598
+    ],
+    [
+     48.418183,
+     -121.049538
+    ],
+    [
+     48.417389,
+     -121.049779
+    ],
+    [
+     48.417262,
+     -121.049383
+    ],
+    [
+     48.416837,
+     -121.04912
+    ],
+    [
+     48.416771,
+     -121.048479
+    ],
+    [
+     48.416247,
+     -121.048347
+    ],
+    [
+     48.416425,
+     -121.048423
+    ],
+    [
+     48.416265,
+     -121.048375
+    ],
+    [
+     48.416421,
+     -121.04839
+    ],
+    [
+     48.416313,
+     -121.048375
+    ],
+    [
+     48.416387,
+     -121.048456
+    ],
+    [
+     48.416238,
+     -121.047156
+    ],
+    [
+     48.415749,
+     -121.045927
+    ],
+    [
+     48.415147,
+     -121.044958
+    ],
+    [
+     48.414446,
+     -121.04459
+    ],
+    [
+     48.413604,
+     -121.044723
+    ],
+    [
+     48.412515,
+     -121.045656
+    ],
+    [
+     48.410926,
+     -121.047763
+    ],
+    [
+     48.410343,
+     -121.047636
+    ],
+    [
+     48.409773,
+     -121.047886
+    ],
+    [
+     48.409639,
+     -121.048403
+    ],
+    [
+     48.409707,
+     -121.049337
+    ],
+    [
+     48.40992,
+     -121.049867
+    ],
+    [
+     48.409994,
+     -121.050548
+    ],
+    [
+     48.409833,
+     -121.051523
+    ],
+    [
+     48.4094,
+     -121.052572
+    ],
+    [
+     48.408821,
+     -121.05514
+    ],
+    [
+     48.407948,
+     -121.056566
+    ],
+    [
+     48.407751,
+     -121.057694
+    ],
+    [
+     48.407488,
+     -121.058252
+    ],
+    [
+     48.406604,
+     -121.058958
+    ],
+    [
+     48.406449,
+     -121.058747
+    ],
+    [
+     48.406278,
+     -121.059372
+    ],
+    [
+     48.406015,
+     -121.059625
+    ],
+    [
+     48.40329,
+     -121.059917
+    ],
+    [
+     48.402116,
+     -121.05918
+    ],
+    [
+     48.401556,
+     -121.059337
+    ],
+    [
+     48.401352,
+     -121.058798
+    ],
+    [
+     48.400979,
+     -121.058711
+    ],
+    [
+     48.400434,
+     -121.058259
+    ],
+    [
+     48.398873,
+     -121.058204
+    ],
+    [
+     48.39755,
+     -121.057506
+    ],
+    [
+     48.39626,
+     -121.057253
+    ],
+    [
+     48.395908,
+     -121.056853
+    ],
+    [
+     48.395429,
+     -121.056761
+    ],
+    [
+     48.39494,
+     -121.056401
+    ],
+    [
+     48.394265,
+     -121.056555
+    ],
+    [
+     48.39411,
+     -121.056029
+    ],
+    [
+     48.393677,
+     -121.055907
+    ],
+    [
+     48.394234,
+     -121.056515
+    ],
+    [
+     48.39413,
+     -121.05613
+    ],
+    [
+     48.3936,
+     -121.05587
+    ],
+    [
+     48.39302,
+     -121.05599
+    ],
+    [
+     48.39282,
+     -121.05573
+    ],
+    [
+     48.39241,
+     -121.05573
+    ],
+    [
+     48.39232,
+     -121.0564
+    ],
+    [
+     48.39178,
+     -121.05684
+    ],
+    [
+     48.39109,
+     -121.05791
+    ],
+    [
+     48.3904,
+     -121.05805
+    ],
+    [
+     48.39098,
+     -121.05934
+    ],
+    [
+     48.39158,
+     -121.06012
+    ],
+    [
+     48.3921,
+     -121.06169
+    ],
+    [
+     48.39381,
+     -121.06465
+    ],
+    [
+     48.39375,
+     -121.06554
+    ],
+    [
+     48.39344,
+     -121.06644
+    ],
+    [
+     48.39269,
+     -121.06646
+    ],
+    [
+     48.39118,
+     -121.06519
+    ],
+    [
+     48.3897,
+     -121.06306
+    ],
+    [
+     48.38839,
+     -121.06062
+    ],
+    [
+     48.3873,
+     -121.06004
+    ],
+    [
+     48.38314,
+     -121.05992
+    ],
+    [
+     48.381627,
+     -121.05913
+    ],
+    [
+     48.381292,
+     -121.059127
+    ],
+    [
+     48.380863,
+     -121.059476
+    ],
+    [
+     48.380217,
+     -121.061046
+    ],
+    [
+     48.379496,
+     -121.061016
+    ],
+    [
+     48.379385,
+     -121.061969
+    ],
+    [
+     48.379532,
+     -121.060975
+    ],
+    [
+     48.380212,
+     -121.061075
+    ],
+    [
+     48.380897,
+     -121.059381
+    ],
+    [
+     48.381729,
+     -121.059082
+    ],
+    [
+     48.38011,
+     -121.057
+    ],
+    [
+     48.37879,
+     -121.05662
+    ],
+    [
+     48.37768,
+     -121.05581
+    ],
+    [
+     48.37548,
+     -121.05189
+    ],
+    [
+     48.37503,
+     -121.05052
+    ],
+    [
+     48.37376,
+     -121.04961
+    ],
+    [
+     48.37285,
+     -121.0485
+    ],
+    [
+     48.37143,
+     -121.04808
+    ],
+    [
+     48.37007,
+     -121.04706
+    ],
+    [
+     48.3686,
+     -121.04502
+    ],
+    [
+     48.36755,
+     -121.04412
+    ],
+    [
+     48.36705,
+     -121.04305
+    ],
+    [
+     48.36593,
+     -121.04167
+    ],
+    [
+     48.365,
+     -121.04092
+    ],
+    [
+     48.36319,
+     -121.04122
+    ],
+    [
+     48.36285,
+     -121.04255
+    ],
+    [
+     48.361877,
+     -121.04283
+    ],
+    [
+     48.360732,
+     -121.041752
+    ],
+    [
+     48.359639,
+     -121.040991
+    ],
+    [
+     48.357639,
+     -121.040412
+    ],
+    [
+     48.357406,
+     -121.039802
+    ],
+    [
+     48.356228,
+     -121.03792
+    ],
+    [
+     48.356016,
+     -121.035757
+    ],
+    [
+     48.356199,
+     -121.037836
+    ],
+    [
+     48.357399,
+     -121.039776
+    ],
+    [
+     48.357537,
+     -121.040322
+    ]
+   ],
+   "elev_pts": null,
+   "disciplines": [
+    "alpine",
+    "scrambling",
+    "mountaineering"
+   ],
+   "timing": {
+    "totalHrs": 32,
+    "summitTimeHrs": 9,
+    "descentTimeHrs": 8,
+    "approachTimeHrs": 15,
+    "recommendedStart": "6:00 AM from camp",
+    "sectionBreakdown": [
+     {
+      "hrs": 6.5,
+      "note": "From the Cascade River Road trailhead (add 2+ miles of road walking if the seasonal washout below the trailhead hasn't been repaired), climb through forest and meadow to Cascade Pa…",
+      "fromTo": "Approach to Cache Col / Kool-Aid Lakes",
+      "section": "Approach"
+     },
+     {
+      "hrs": 8.5,
+      "note": "Rope up for glacier travel: cross the Red Ledges, the Middle Cascade Glacier, and the Spider-Formidable col, then drop to Yang Yang Lakes before climbing to a high camp at Le Conte…",
+      "fromTo": "Glacier traverse to high camp at Le Conte-Sentinel Col",
+      "section": "Approach"
+     },
+     {
+      "hrs": 9,
+      "note": "Drop packs and climb Sentinel's west face: ascend a steepening snow ramp to about 7,400 ft, take a ledge system left/north past cliff bands, then finish on low 5th-class rock steps…",
+      "fromTo": "Summit Sentinel + Old Guard, move camp down",
+      "section": "Climb"
+     },
+     {
+      "hrs": 8,
+      "note": "Retrace the route from Yang Yang Lakes back over Cascade Pass to the Cascade River Road trailhead (plus the road walk if it's still washed out). Mostly downhill but with the final …",
+      "fromTo": "Exit to trailhead",
+      "section": "Descent"
+     }
+    ]
+   },
+   "detailed_rack": "Glacier kit plus a light rock rack for Class 3-4 terrain",
+   "what_to_bring": [
+    "Helmet",
+    "Ice axe",
+    "Crampons",
+    "Glacier travel rope and crevasse-rescue kit",
+    "Map/compass or GPS track for whiteout navigation",
+    "North Cascades NP backcountry permit paperwork if camping within the park boundary"
+   ],
+   "pro_tips": [
+    "Camp at Yang Yang Lakes or the 7,300 ft Le Conte-Sentinel col and tag Sentinel (and Old Guard, a few hundred yards away and only ~3 ft higher per a 2025 DGPS resurvey) as a light day trip rather than carrying overnight gear onto the peak.",
+    "Treat current conditions on the broader Ptarmigan Traverse (trip reports, NWAC) as your best proxy for Sentinel's approach conditions, since it has no dedicated trailhead or reports of its own.",
+    "A less-common southern approach from White Rock Lakes (Downey/Bachelor Creek side) crosses the Dana Glacier to the west face; the parallel east ridge is looser and steeper (rotten rock into ~60° snow) and should be avoided as a descent."
+   ],
+   "watch_out": [
+    "The Red Ledge, a broad angling rock ramp skirting a spur between Cache Col and Kool-Aid Lake, is the reported crux of the approach when covered in steep snow (common into early July).",
+    "The east ridge is not a good descent option — one party found it degenerated into rotten rock and 60° snow patches; reverse your ascent line instead."
+   ],
+   "pro_needs": "Glacier protection on approach; belay exposed steps",
+   "best_season": "Late July through September is the reliable window once seasonal snow bridges and cornices at Cache Col have stabilized and the Red Ledge has melted out; going earlier (June-early July) means more cornice and steep-snow exposure on the approach but firmer glacier travel, while going into October risks new snow and reduced daylight on this long, remote outing. Because it's reached via the Ptarmigan Traverse, conditions reports for that route (NWAC, recent trip reports) are the best proxy for current snow/glacier state.",
+   "high_point_ft": 8257,
+   "aid_grade": null,
+   "approach": "Start at the Cascade Pass Trailhead at the end of Cascade River Road (paved/gravel Forest Road 15, inside North Cascades NP boundary — verify current road/washout status at nps.gov/noca before driving). Take the maintained Cascade Pass Trail 3.7 miles and about 1,800 ft of gain up open switchbacks and through Basin Creek/Doubtful Lake side-valley scenery to Cascade Pass (5,392 ft), the last reliable trail tread and a good water stop. From the pass, leave the maintained trail and go cross-country south on a boot path, climbing the Cache Glacier snowfield (permanent snow into late season; crampons and axe recommended) to Cache Col (~6,900 ft). The col's far (south) lip commonly corniced through mid-summer — this is a real hazard on both the ascent and the descent back over it. Drop steeply off the south side of Cache Col to the Kool-Aid Lake basin (established camps, reliable water). From Kool-Aid Lake, contour east around the toe of the Cache Glacier and climb to the 'Red Ledge,' a narrow, exposed rock ledge running beneath Art's Knoll that is the standard (least-technical) way through a cliff band and is considered one of the route-finding/exposure cruxes of the whole approach; in low-snow years the alternate Middle Cascade Glacier line can bypass it. Past Red Ledge, traverse to Yang Yang Lakes (~6,300 ft, good camping and water — most parties treat this or Kool-Aid Lake as their overnight base). From Yang Yang Lakes, ascend the broad Le Conte Glacier — a genuine crevassed glacier requiring roped travel — to the Le Conte-Sentinel Col (~7,300 ft), a flat notch atop the glacier with dry bivy sites and the jump-off point for the peak itself. From the col, easy scrambling leads onto snow filling the basin against Sentinel's west face; climb increasingly steep snow (can exceed 35-40°, crampons/axe useful) to its top, then follow an obvious ledge leftward (north) across the face past a short cliff band, then turn straight up steep, gravelly/scree terrain to a short step of upper-class-3/low-class-5 climbing, finishing with roughly 600 ft up the broad west ridge to the summit. Given the ~45 km round trip and glacier travel, this is realistically a multi-day trip (camp at Kool-Aid Lake or Yang Yang Lakes) rather than a car-to-car day climb for most parties.",
+   "descent_text": "Descend the same line used on the ascent — the west ridge and the leftward-slanting face ledge — rather than the looser, steeper east ridge, which is explicitly warned against. Downclimb the short upper-class-3/low-class-5 step facing in, then descend the gravel/scree below it, pick up the diagonal ledge back rightward onto the west-face snowfield, and face-in downclimb or plunge-step the steep snow back down to the Le Conte-Sentinel Col. From there, reverse the approach: rope up again for the Le Conte Glacier's crevasses down to Yang Yang Lakes, back across the exposed Red Ledge, over Cache Col (cornice hazard on the descent to Kool-Aid Lake side just as on the ascent), and down the Cascade Pass Trail to the trailhead. No fixed or bolted rappel exists on Sentinel's standard route — it is a scramble walk-off/downclimb of the ascent line. Some parties place an optional single-rope hand-line or short rappel off a sling/picket to protect the low-5th-class step or the steepest snow near the col in early-season or wet conditions, but this is situational, not a required or documented feature of the route, so treat any rappel as optional protection rather than a mandatory technical descent.",
+   "bail": "Limited bail options - return along the approach",
+   "pitch_detail": [
+    {
+     "grade": "Low 5th class",
+     "notes": "A steep snow ramp near 7,400 ft leads to a short low-5th-class rock step into a gully, then ~600 ft of ridge scrambling to the summit — the only technical section on this route.",
+     "pitch": "Snow ramp to west ridge"
+    }
+   ],
+   "itinerary": {
+    "cal": "Cascade River Road below the Cascade Pass trailhead has washed out in several recent seasons, adding 2-6 miles of road walking each way when unrepaired; check NPS North Cascades road-conditions alerts shortly before your trip, and plan for July-September for stable glacier travel and snow-free rock on the summit block.",
+    "days": [
+     {
+      "n": 1,
+      "note": "From the Cascade River Road trailhead (add 2+ miles of road walking if the seasonal washout below the trailhead hasn't been repaired), climb through forest and meadow to Cascade Pass, then continue up over Cache Col into the basin near Kool-Aid Lakes. This is the heaviest pack day of the trip with a full load of camp and glacier gear.",
+      "hours": 6.5,
+      "miles": 7.2,
+      "title": "Approach to Cache Col / Kool-Aid Lakes",
+      "gainFt": 3300,
+      "lossFt": 100,
+      "packLb": 42,
+      "schedule": [],
+      "objective": "Cross Cascade Pass and Cache Col, establish first camp"
+     },
+     {
+      "n": 2,
+      "note": "Rope up for glacier travel: cross the Red Ledges, the Middle Cascade Glacier, and the Spider-Formidable col, then drop to Yang Yang Lakes before climbing to a high camp at Le Conte-Sentinel Col, directly below Sentinel Peak's west face. This is the technical crux of getting into position and typically the longest day of the trip.",
+      "hours": 8.5,
+      "miles": 9.5,
+      "title": "Glacier traverse to high camp at Le Conte-Sentinel Col",
+      "gainFt": 2600,
+      "lossFt": 2100,
+      "packLb": 40,
+      "schedule": [],
+      "objective": "Reach Le Conte-Sentinel Col (7,300 ft) high camp"
+     },
+     {
+      "n": 3,
+      "note": "Drop packs and climb Sentinel's west face: ascend a steepening snow ramp to about 7,400 ft, take a ledge system left/north past cliff bands, then finish on low 5th-class rock steps to the west ridge and the summit. Many parties tag class-3 Old Guard Peak from the same col before descending to a lower camp at Yang Yang Lakes.",
+      "hours": 9,
+      "miles": 5.3,
+      "title": "Summit Sentinel + Old Guard, move camp down",
+      "gainFt": 1700,
+      "lossFt": 2300,
+      "packLb": 25,
+      "schedule": [
+       {
+        "time": "6:00 AM",
+        "label": "Leave high camp",
+        "detail": "Drop overnight gear at the base of the west face snowfield."
+       },
+       {
+        "time": "~7:30 AM",
+        "label": "Top of snow ramp, onto the rock",
+        "detail": "Snow ramp steepens to roughly 7,400 ft, then a ledge leads left across the face."
+       },
+       {
+        "time": "~9:30 AM",
+        "label": "Summit Sentinel Peak",
+        "detail": "Low 5th-class steps and a short gully gain the west ridge; walk it to the top."
+       },
+       {
+        "time": "~11:30 AM",
+        "label": "Reach Old Guard-Sentinel col",
+        "detail": "Descend and traverse to the base of Old Guard Peak."
+       },
+       {
+        "time": "~1:00 PM",
+        "label": "Summit Old Guard Peak",
+        "detail": "Class 3 scramble on the northwest side; parties often top out by early-to-mid afternoon."
+       },
+       {
+        "time": "~5:00 PM",
+        "label": "Arrive Yang Yang Lakes",
+        "detail": "Roughly a 2-hour descent from the col with full packs to the lower camp."
+       }
+      ],
+      "objective": "Climb Sentinel Peak (8,257 ft) and Old Guard Peak, descend to Yang Yang Lakes"
+     },
+     {
+      "n": 4,
+      "note": "Retrace the route from Yang Yang Lakes back over Cascade Pass to the Cascade River Road trailhead (plus the road walk if it's still washed out). Mostly downhill but with the final climb back over the pass before the long descent to the car.",
+      "hours": 8,
+      "miles": 12.1,
+      "title": "Exit to trailhead",
+      "gainFt": 900,
+      "lossFt": 4700,
+      "packLb": 28,
+      "schedule": [],
+      "objective": "Hike out via Cascade Pass to the road"
+     }
+    ],
+    "totalNote": "A 4-day glacier backpack, roughly 34 miles and 8,500 ft cumulative gain round trip, with high camps at Cache Col/Kool-Aid Lakes and Le Conte-Sentinel Col; strong parties compress this to 3 days by pushing all the way to the col on day 1."
+   },
+   "access": {
+    "fees": "A Northwest Forest Pass (or America the Beautiful pass) is required to park at Forest Service trailheads such as Downey Creek; no fee is charged at the Cascade River Road trailhead inside the national park boundary.",
+    "rules": "Standard Leave No Trace wilderness rules apply: pack out all trash, use existing campsites, and use a bear canister or proper food storage. Campfires are prohibited above roughly 5,000 ft in the Stephen Mather Wilderness portion of the park complex. Group size limits apply (parties are capped, generally 12 in the Glacier Peak Wilderness and smaller near popular North Cascades NP camps). Dogs are prohibited within North Cascades National Park Complex but permitted in the Forest Service portion of Glacier Peak Wilderness.",
+    "permit": "A free North Cascades NP backcountry permit is required for any overnight camping within the park-complex boundary near Cascade Pass/Pelton Basin (2026 lottery ran March 2-13; remaining permits opened to walk-up/online booking April 29). Get permits from the Wilderness Information Center in Marblemount, (360) 854-7245, or email noca_wilderness@nps.gov; self-issue permits are available outside the station when it's closed. Once you're camped beyond the park boundary in the Glacier Peak Wilderness (Forest Service land), no quota permit is required, but a self-issue wilderness permit at the trailhead is expected.",
+    "closures": "Suiattle River Road is closed to vehicles at MP 4 (flood damage) under a Forest Service order in effect April 2, 2026 through January 1, 2028, adding substantial extra approach mileage. Cascade River Road's Pincer Two Fire closure at MP 8 was lifted on September 20, 2024.",
+    "group_limit": 12,
+    "landManager": "Glacier Peak Wilderness, split between Mount Baker-Snoqualmie National Forest (Darrington Ranger District, west/south side) and Okanogan-Wenatchee National Forest (east side); the standard north approach passes through the North Cascades National Park Complex / Stephen Mather Wilderness via Cascade Pass before entering the Forest Service wilderness.",
+    "land_manager": "Mt. Baker-Snoqualmie National Forest (Darrington Ranger District)",
+    "parking_pass": "None at the Cascade River Road trailhead inside the national park boundary — there are no trailhead or parking fees for trails that begin on National Park Service land.",
+    "overnight_permit": {
+     "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+     "what": "No permit for camps south of Cache Col; North Cascades NP wilderness permit for any camp on the Cascade Pass side",
+     "where": "Park permits come from Recreation.gov or the Marblemount Wilderness Information Center. South of Cache Col is Glacier Peak Wilderness, where no permit is needed."
+    }
+   },
+   "road": {
+    "name": "Cascade River Road (north approach) / Suiattle River Road, FSR 26 (south approach)",
+    "status": "Cascade River Road is open: its Pincer Two Fire closure at MP 8 (Marble Creek), in place from July 23, 2024, was lifted on September 20, 2024, and the park's road-conditions page, updated July 3, 2026, lists the road open — check current NPS road-condition alerts before a trip. Suiattle River Road (FSR 26) is closed to vehicles at about MP 4 under a long-term Forest Service closure order (No. 06-05-26-03, effective April 2, 2026 through January 1, 2028) following atmospheric-river flood damage; Grade Creek (FSR 2640), Tenas Creek (FSR 2660), Green Mountain (FSR 2680) and Forest Road 25 are closed as well. The Downey Creek trailhead is normally still reachable on foot or bike from the MP 4 closure point, adding roughly 16 miles each way (about 32 miles round trip) of road walking/biking, but the Forest Service's Miner's Fire order (06-05-26-17) closes the Downey Creek Trailhead and Downey Creek Trail #768 from August 15 through December 31, 2026, unless rescinded sooner.",
+    "driveNote": "Verify current status at nps.gov/noca (Cascade River Road) and the MBS National Forest alert page (Suiattle River Road) before driving out, as road status is subject to change.",
+    "seasonalGate": "Cascade River Road is additionally gated for winter each year around MP 20 (Eldorado)"
+   },
+   "climate": {
+    "typical": "Marine west-slope mountain climate typical of the North Cascades crest: wet, snowy winters and a short, relatively dry alpine summer window.",
+    "bySeason": {
+     "fall": "New snow can arrive by late September/October, re-covering crevasses and adding avalanche/cornice concern while daylight shrinks; a narrowing weather window for this multi-day trip.",
+     "spring": "Deep, unstable snowpack and heavy cornice buildup at passes like Cache Col; glacier crossings are generally well-bridged but approach roads may still be snow-gated.",
+     "summer": "July-September is prime season; expect warm days, cold nights, and a real risk of afternoon thunderstorms building over the crest — start early and be off exposed ridges by early afternoon.",
+     "winter": "Effectively inaccessible; all approach roads are gated and the route becomes a serious winter mountaineering undertaking with full avalanche exposure."
+    }
+   },
+   "emergency": {
+    "notes": "This is a genuinely remote objective reached only via multi-day glacier travel from either end of the Ptarmigan Traverse; there is no cell coverage and any rescue will take many hours to a day or more to reach the peak, so parties should be self-sufficient for crevasse rescue and basic first aid.",
+    "county": "Straddles the Snohomish/Chelan county line; the north approach (Cascade Pass) is in Skagit County and the south approach (Downey Creek) is in Snohomish County.",
+    "rangerStation": "North Cascades NP Wilderness Information Center, Marblemount, (360) 854-7245 (permits/trip planning); Darrington Ranger District (Mt. Baker-Snoqualmie NF), (360) 436-1155, for the Suiattle/Downey Creek side.",
+    "nearestHospital": "North approach: PeaceHealth United General Medical Center, Sedro-Woolley, or Skagit Valley Hospital, Mount Vernon. South approach: Cascade Valley Hospital, Arlington.",
+    "sheriffDispatch": "Skagit County Sheriff non-emergency (360) 336-9450, or North Cascades NP dispatch (360) 856-5700 ext. 515 / after-hours (360) 873-4590 ext. 37, for the north side; Snohomish County Volunteer Search & Rescue (425) 388-3328 for the south side."
+   },
+   "lists": null,
+   "crowds": {
+    "peakTraffic": "Sentinel Peak sits just off the Ptarmigan Traverse near Le Conte and Old Guard; the Traverse corridor itself sees decent July-August traffic (it's one of the more popular unmaintained high routes in the North Cascades, with camps like Itswoot Ridge reported as crowded), but Sentinel Peak is an optional side-summit that most Traverse parties skip in favor of finishing the through-route.",
+    "solitudeRating": 4,
+    "estimatePerSeason": "Likely well under 20 parties a season actually tag the Sentinel Peak summit itself"
+   },
+   "partner_requirements": {
+    "fitnessSpec": {
+     "hiking": "Very high - typically climbed as part of a 5-7 day Ptarmigan Traverse itinerary with sustained daily mileage/elevation gain over trail-less, glaciated terrain",
+     "packWeight": "40-50+ lbs multi-day glacier/alpine kit (rope, rack, crevasse rescue gear, camping and food for 5-7 days)"
+    },
+    "approachTime": "Multi-day - reached via the Ptarmigan Traverse/Dome Peak area; not a single-day approach, effectively a 5-7 day expedition-style itinerary",
+    "requiredSkills": [
+     "roped glacier travel",
+     "crevasse rescue",
+     "Class 3-4 rock scrambling/climbing with exposure",
+     "off-trail alpine routefinding",
+     "multi-day self-supported backcountry travel",
+     "sound judgment in an extremely remote, hard-to-evacuate setting"
+    ],
+    "experienceLevel": "Advanced. This is a remote, multi-day glaciated alpine objective requiring prior experience with roped glacier travel, crevasse rescue, and Class 3-4 alpine rock in a setting where self-rescue may be the only option."
+   },
+   "seasonal_guidance": {
+    "optimalWindow": "Late July through early September",
+    "monthBreakdown": {
+     "July": {
+      "reason": "Route becomes viable as snow recedes, matching the best-season start, but early July can still carry more residual snow/soft glacier bridges than late summer",
+      "status": "good"
+     },
+     "June": {
+      "reason": "Lingering snowpack over approach terrain and creek crossings; glacier travel and moat conditions less predictable, and this early in the season access to the Ptarmigan Traverse trailheads/passes may still be snow-choked",
+      "status": "risky"
+     },
+     "August": {
+      "reason": "Most stable glacier travel and driest rock conditions of the season; core of the best-season window",
+      "status": "optimal"
+     },
+     "October": {
+      "reason": "Outside the best-season window; shortening days, higher storm/new-snow probability, and increased difficulty on the long remote approach",
+      "status": "risky"
+     },
+     "September": {
+      "reason": "Generally stable weather and good climbing conditions, though glacier crevasses are more open/thinning late in the month and early-season storms can arrive by month's end",
+      "status": "optimal"
+     }
+    }
+   },
+   "seasonal_hazards": {
+    "weather": {
+     "typical": "North Cascades alpine weather typical of the Glacier Peak Wilderness - changeable and can turn wet/stormy even within the July-September window, and the approach is long and exposed.",
+     "probability": "Afternoon thunderstorms and fast-moving frontal systems are possible even in peak season; given the multi-day, no-bail-out nature of the approach, a weather window with margin is important."
+    },
+    "exposure": "High consequence: Class 3-4 exposure on loose rock high on the peak, combined with glacier crossings and extreme remoteness, means a fall or injury is far from help - this is not a route with quick rescue options.",
+    "avalanche": {
+     "zone": "N/A - no NWAC forecast zone specifically covers the remote Glacier Peak Wilderness/Dome Peak-Sentinel Peak area, and the route is climbed almost exclusively in summer (Jul-Sep), outside NWAC's active Nov-Apr forecasting season",
+     "byMonth": {
+      "July": "Low",
+      "June": "Moderate",
+      "August": "Low",
+      "September": "Low"
+     }
+    },
+    "crevasses": "Significant - the route crosses glaciated terrain in the Dome Peak/Le Conte Glacier area en route to the summit; glacier travel in the Dome Peak area requires roped travel with crevasse rescue capability."
+   },
+   "data_quality": {
+    "gaps": [
+     "No confirmed first-ascent history found",
+     "Exact difficulty of the low-5th-class step is not graded in any source found (described only as 'low 5th class')",
+     "Elevation of 8,257 ft (8,256.9 ft) and the 355 ft prominence figure are both corroborated by listsofjohn.com's LiDAR-based datasheet, independent of the DGPS resurvey",
+     "Road closure statuses (Cascade River Rd fire closure, Suiattle River Rd washout) are current as of mid-2026 but should be reverified before a trip since they can change",
+     "GPS track sourced from public CalTopo map: https://caltopo.com/m/TK1S",
+     "Difficulty breakdown (physical/technical/exposure/commitment/routefinding) is a computed starting estimate derived from grade, pitch count, and route data on file -- not a researched or crowd-sourced rating. Users can blend in their own read via the UI."
+    ],
+    "confidence": "MEDIUM",
+    "lastVerified": "2026-07-02"
+   },
+   "difficulty": {
+    "exposure": 4,
+    "physical": 4,
+    "technical": 1,
+    "commitment": 3,
+    "routefinding": 5
+   },
+   "approach_logistics": {
+    "peakLat": 48.3562,
+    "peakLng": -121.0408,
+    "trailhead": "Cascade Pass Trailhead (Cascade River Road)",
+    "trailheadLat": 48.475497,
+    "trailheadLng": -121.075031,
+    "trailheadDirection": "From the Cascade Pass Trailhead at the end of Cascade River Road (~3,600 ft)"
+   },
+   "sling_rack": null,
+   "alpine_draws": null,
+   "rope_type": null,
+   "rope_length_m": null,
+   "rope_note": null,
+   "ascender": null,
+   "corrections": " 2026-07-31: approach corrected Cache Col elevation from 6,600-6,800 ft to 6,900 ft (Wikipedia; matches this row's own waypoint). hazards/pitch_detail: removed a \"Dana Glacier\"/\"south face\" line that contradicted this row's own approach/descent_text/itinerary (Dana Glacier is a real but unrelated glacier near Dome Peak, ~2.5 mi south) — pitch_detail now holds only the route's real, already-documented west-ridge finish. 2026-07-31: access.permit date range corrected to the actual 2026 NCNP early-access lottery window (March 2-13; general on-sale April 29), not Feb 10-Mar 3/April 25. access.parking_pass and approach_logistics.trailheadDirection corrected — previously named Mountain Loop Highway and 3,660 ft, neither of which apply to Sentinel Peak (reached via Cascade River Road/Suiattle River Road at a 3,600 ft trailhead, per this row's own waypoints).",
+   "gear_confidence": null,
+   "rappel_detail": null,
+   "rappel_count_note": null,
+   "rack": null,
+   "features": null,
+   "classic": false,
+   "gear_bucket": null,
+   "assumed_gear": null,
+   "gps_contributor_name": null,
+   "outing_shape": null,
+   "approach_variants": [
+    {
+     "name": "Le Conte-Sentinel col from Yang Yang Lakes",
+     "camps": [
+      "Sentinel Pass and Lizard Col",
+      "Cache Col and the Cache Glacier shoulder",
+      "Spider-Formidable Col",
+      "Le Conte Pass"
+     ],
+     "notes": "This peak is reached from a camp on the Ptarmigan Traverse rather than from a road end. From Cascade Pass go over Cache Col to Kool-Aid Lake, take the Red Ledge beneath Art's Knoll through the cliff band, cross to Yang Yang Lakes, then climb the broad Le Conte Glacier to the notch north of the peak. The notch carries dry bivy platforms and most parties leave overnight gear there and climb on light packs.",
+     "season": "Late July to mid-September, and climbed in the morning — the basin snow takes crampons cleanly at dawn and goes soft by afternoon",
+     "hazards": [
+      "The Le Conte Glacier is actively crevassed — rope up and carry a rescue kit",
+      "The Red Ledge is genuinely serious when banked with snow, which is common into early July",
+      "Snow in the west basin reaches 35-40 degrees near its top and softens through the day"
+     ],
+     "primary": true,
+     "baseFinding": "The Le Conte-Sentinel col is the reference: a flat notch at the top of the glacier carrying dry gravel bivy platforms, the only level dry ground for a long way in any direction. From the notch the peak's west side presents one continuous basin of snow running up to a rock face, and that snow is the route. Its top is the only place on the face where a broad, walkable ledge cuts leftward, to the north, beneath a short cliff band. Those two features together are the proof: continuous snow steepening as it rises, and an obvious ledge running left off the top of it. If the snow you have chosen tops out against blank rock with no ledge leading off it, you are too far south in the basin. If you are on bare rock with no snow beneath you at all, you have wandered onto the east side, which degrades into rotten rock and steep snow — that is the side parties get wrong on the descent, and it is not the route."
+    },
+    {
+     "name": "Downey Creek and the south end of the traverse",
+     "trip": {
+      "bivy": [
+       {
+        "name": "Sentinel Pass and Lizard Col",
+        "role": "main",
+        "type": "bivy",
+        "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the direct bases for Sentinel Peak and for Lizard Mountain, which stands just east of the col that carries the route across to the far side. accounts disagree on the elevations of both saddles by several hundred feet, with Lizard quoted anywhere from the high 6,000s to the mid 7,000s, so no numbers are recorded. A camp here is a fair-weather decision and nothing else: there is no shelter, no water, and the ground on both sides is glaciated, so retreating in cloud means downclimbing snow you only saw once in daylight. Most parties cross both in a day and sleep at a lake; the ones who stop are the ones who came to climb the peaks rather than pass them.",
+        "water": "None running. Melt snow, or carry from the lakes below on whichever side you came from. In a late, thin season the snow at the saddles can be gone and then there is nothing at all.",
+        "permit": "Glacier Peak Wilderness, free self-issue permit. Camp on snow, rock or ice only. Pack out human waste, which matters here because the meltwater below feeds the lakes people are drinking from.",
+        "capacity": "Snow platforms and small rock benches at each of the two saddles, one party at a time at either. Nothing built, no toilet, nothing sheltered."
+       },
+       {
+        "name": "White Rock Lakes",
+        "role": "main",
+        "type": "camp",
+        "notes": "The camp at the south end of the high traverse, under the Dana and Chickamin glaciers. Sentinel and Old Guard are climbed from here or from the col above.",
+        "water": "The lakes and snowmelt",
+        "permit": "No permit required (Glacier Peak Wilderness)",
+        "capacity": "Several sites on slabs and heather near the lakes"
+       },
+       {
+        "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+        "role": "route",
+        "type": "bivy",
+        "notes": "Say it plainly: these are not sites, they are wherever a party gets to. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the head of the west fork of Agnes Creek, between the ice on either side. It gets a handful of ascents in a decade and there is no established camp for it, so parties climbing it either work out from the lake basin below or level a spot on the divide and accept a dry, exposed night. The same is true of anyone caught out on the South Cascade side by weather or by a slower day than planned. The season is short and matters more here than anywhere else: July into August has the glaciers covered and the bivouac snow usable, while September brings open crevasses, bare ice and no water at all. Anyone planning a night on this ground should carry the fuel to melt snow and treat the whole thing as an unplanned shelter that happens to be foreseeable.",
+        "water": "Snowmelt only, and unreliable after midsummer. The last certain water on this stretch is the lakes below, and everything east of the divide is snow, ice and bare rock.",
+        "permit": "Glacier Peak Wilderness, free self-issue permit. Camp on snow, rock or ice, never on the heather benches. Pack out human waste. No fires; there is nothing to burn and nothing that would recover.",
+        "capacity": "Whatever the party can level. Rock rings, gravel benches and snow platforms for one party at a time, scattered along the divide. No toilet and no established sites of any kind."
+       }
+      ],
+      "approachLogistics": {
+       "trailhead": "Downey Creek Trailhead (Trail #768, Suiattle River Road)",
+       "trailheadLat": 48.2591,
+       "trailheadLng": -121.2244
+      }
+     },
+     "notes": "From the Downey Creek trailhead on the Suiattle River Road, walk the Downey Creek trail and the brushy Bachelor Creek path to Cub Lake and Itswoot Ridge, then cross the Dana Glacier country to White Rock Lakes. From the lakes, work back up onto the South Cascade Glacier to reach the peak. Plan on several days of off-trail and glacier travel."
+    }
+   ],
+   "climbing_route": [
+    {
+     "n": 1,
+     "label": "Snow basin against the west face",
+     "notes": "From the Le Conte-Sentinel Col (~7,300 ft), easy scrambling leads onto snow filling the basin against Sentinel's west face; climb increasingly steep snow (can exceed 35-40 degrees, crampons/axe useful) to its top."
+    },
+    {
+     "n": 2,
+     "label": "Ledge leftward (north) across the face",
+     "notes": "Follow an obvious ledge leftward (north) across the face past a short cliff band."
+    },
+    {
+     "n": 3,
+     "class": "upper class 3 / low class 5",
+     "label": "Gravelly/scree terrain to a short step",
+     "notes": "Turn straight up steep, gravelly/scree terrain to a short step of upper-class-3/low-class-5 climbing."
+    },
+    {
+     "n": 4,
+     "label": "Broad west ridge to the summit",
+     "notes": "Finish with roughly 600 ft up the broad west ridge to the summit."
+    }
+   ],
+   "bivy": [
+    {
+     "name": "Sentinel Pass and Lizard Col",
+     "role": "main",
+     "type": "bivy",
+     "notes": "The two saddles either side of Sentinel Peak, crossed one after the other on the way from the Le Conte Glacier to the South Cascade Glacier. These are the highest useful sleeping spots on this part of the crest and the direct bases for Sentinel Peak and for Lizard Mountain, which stands just east of the col that carries the route across to the far side. accounts disagree on the elevations of both saddles by several hundred feet, with Lizard quoted anywhere from the high 6,000s to the mid 7,000s, so no numbers are recorded. A camp here is a fair-weather decision and nothing else: there is no shelter, no water, and the ground on both sides is glaciated, so retreating in cloud means downclimbing snow you only saw once in daylight. Most parties cross both in a day and sleep at a lake; the ones who stop are the ones who came to climb the peaks rather than pass them.",
+     "water": "None running. Melt snow, or carry from the lakes below on whichever side you came from. In a late, thin season the snow at the saddles can be gone and then there is nothing at all.",
+     "permit": "Glacier Peak Wilderness, free self-issue permit. Camp on snow, rock or ice only. Pack out human waste, which matters here because the meltwater below feeds the lakes people are drinking from.",
+     "capacity": "Snow platforms and small rock benches at each of the two saddles, one party at a time at either. Nothing built, no toilet, nothing sheltered."
+    },
+    {
+     "name": "White Rock Lakes",
+     "role": "main",
+     "type": "camp",
+     "notes": "The camp at the south end of the high traverse, under the Dana and Chickamin glaciers. Sentinel and Old Guard are climbed from here or from the col above.",
+     "water": "The lakes and snowmelt",
+     "permit": "No permit required (Glacier Peak Wilderness)",
+     "capacity": "Several sites on slabs and heather near the lakes"
+    },
+    {
+     "elev": 6400,
+     "name": "Cache Col and the Cache Glacier shoulder",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The col is the gateway to everything here. From the Cascade Pass trail a boot path climbs south along the arm and onto the mellow Cache Glacier, which is corniced at the col early in the season and can need a careful step through. Parties who leave the car in the afternoon and lose the light on the climb sometimes stop here rather than commit to the awkward descending traverse beyond it, and parties coming back north at the end of a trip do the same. It is a fair-weather choice only: it is a high, open saddle with no shelter and no water, and in cloud the ground on both sides is easy to lose. Treat the elevation as approximate, since published figures for the col vary by a couple of hundred feet.",
+     "water": "None at the col itself. Early in the season there are melt runnels on the shoulder below it; by August there is usually nothing, and parties either carry up from the Cascade Pass side or melt snow. This is the single most common reason people push on down to the tarn below instead of stopping here.",
+     "permit": "This is the last ground on the park side, and the distinction decides which permit you need. A night at or above the col is inside North Cascades National Park and requires an NPS wilderness permit for the relevant cross-country zone, collected in person at the Marblemount Wilderness Information Center, with part of the inventory reservable in advance and part held for walk-ups. Approved bear-resistant food storage applies. One step south of the col you are in Glacier Peak Wilderness and a free self-issue register slip is all that is needed. Do not assume the wilderness self-issue covers a night at the col.",
+     "capacity": "Snow platforms and a few rock benches on the shoulder below and at the col, room for one or two parties. Nothing built, no toilet, no windbreaks worth the name."
+    },
+    {
+     "name": "Spider-Formidable Col",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The working base camp for both Spider Mountain and Mount Formidable, and the reason to know about it is that a party climbing either peak stops here while a party walking the traverse does not. The twin notches of the col divide the two mountains, and it is reached by crossing the upper Middle Cascade Glacier almost due south from the Red Ledge. Spider Mountain is climbed from here by its south gully, stepping onto the buttress to the east and finishing along a corniced east ridge, about nineteen miles round trip from the Cascade Pass trailhead. Formidable is the other direction, and its south scramble is only class 3 but is long, loose, exposed and hard to route-find, with a fatality on record; the same ground is the only practical descent. Estimates of the col's height run from roughly 6,600 to 7,400 feet. The descent off the south side toward Yang Yang can be very steep snow and parties have resorted to a hand line anchored on buried pickets.",
+     "water": "Water trickles off the slabs beside the col through most of the climbing season, which is unusual for ground this high and is the main reason the col gets used as a base rather than just crossed. It is meltwater, so it weakens through August and can stop entirely in a light snow year, and there is nothing else until the lakes well below on either side.",
+     "permit": "Glacier Peak Wilderness, free self-issue permit from the register at whichever trailhead you started from. Camp on snow, rock or bare slab rather than on the heather. Pack out human waste; there is no toilet anywhere south of Cache Col. Stoves only.",
+     "capacity": "A small number of party-sized spots split between the west notch of the col and the ground above the east pass, on glacial slabs and snow. Two parties is comfortable, three is crowded, and there is no toilet."
+    },
+    {
+     "elev": 6800,
+     "name": "Le Conte Pass",
+     "role": "route",
+     "type": "bivy",
+     "notes": "The pass sits on the shoulder above the lakes in the basin below Le Conte Mountain, and it is the direct base for Le Conte itself, which is climbed by working up its east slope on talus and blocky rock by the line of least resistance rather than by any single defined route. It is also where parties running late stop instead of dropping into and re-climbing out of the steep basin below, which is the trade that decides most itineraries on this stretch: better position and worse water, against reliable water and a thousand feet of extra work. From the pass the next day crosses the Le Conte Glacier, which is the most broken ice on this part of the crest and has turned parties around outright, so this is a camp to leave early and roped. Published elevations for the pass vary, so treat the figure as approximate.",
+     "water": "Small tarns at the pass hold water through midsummer and are the practical source, but they are snowmelt pools with tiny catchments and they can be gone or foul by September. Late in the season this is a dry camp and the lakes below are the honest answer.",
+     "permit": "Glacier Peak Wilderness, free self-issue permit. Keep camps back from the tarns, camp on snow, rock or bare ground rather than on the heather, and pack out human waste. Stoves only.",
+     "capacity": "Heather and gravel benches around the pass and its tarns, enough for two or three parties spread out. Unimproved, no toilet."
+    },
+    {
+     "name": "Crest bivouacs above the South Cascade and Chickamin glaciers",
+     "role": "route",
+     "type": "bivy",
+     "notes": "Say it plainly: these are not sites, they are wherever a party gets to. Elephant Head is the southernmost peak, standing on the divide above the lakes at the south end of the crest with big cliffs dropping east into the head of the west fork of Agnes Creek, between the ice on either side. It gets a handful of ascents in a decade and there is no established camp for it, so parties climbing it either work out from the lake basin below or level a spot on the divide and accept a dry, exposed night. The same is true of anyone caught out on the South Cascade side by weather or by a slower day than planned. The season is short and matters more here than anywhere else: July into August has the glaciers covered and the bivouac snow usable, while September brings open crevasses, bare ice and no water at all. Anyone planning a night on this ground should carry the fuel to melt snow and treat the whole thing as an unplanned shelter that happens to be foreseeable.",
+     "water": "Snowmelt only, and unreliable after midsummer. The last certain water on this stretch is the lakes below, and everything east of the divide is snow, ice and bare rock.",
+     "permit": "Glacier Peak Wilderness, free self-issue permit. Camp on snow, rock or ice, never on the heather benches. Pack out human waste. No fires; there is nothing to burn and nothing that would recover.",
+     "capacity": "Whatever the party can level. Rock rings, gravel benches and snow platforms for one party at a time, scattered along the divide. No toilet and no established sites of any kind."
+    }
+   ],
+   "prot_rating": null,
+   "start_type": null,
+   "landing": null,
+   "pads": null,
+   "rock": null,
+   "crux": null,
+   "access_checked_at": null,
+   "name_search": "standard route rte",
+   "ice_grade_num": null,
+   "mixed_grade_num": null,
+   "aid_grade_num": null,
+   "bolts": null,
+   "guide_stars": null,
+   "alt_names": null,
+   "variations": null,
+   "ffa": null,
+   "fwa": null
+  }
+ ],
+ "created": [],
+ "deleted": []
+}

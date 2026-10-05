@@ -1,0 +1,36 @@
+{
+ "id": "wa_chair_peak_east_face",
+ "area_id": "wa_chair_peak",
+ "stations": 3,
+ "set": {
+  "rappel_detail": [
+   {
+    "n": 1,
+    "lengthM": null,
+    "anchor": "slings and rap rings on a tree",
+    "station": "The marked south-facing gully (the southern chimney) south of the summit, reached by traversing back past the false summits; the anchor is a tree rigged with slings and rings at its top.",
+    "notes": "Rappel 1 of 3, single rope, down the drippy, dank chimney."
+   },
+   {
+    "n": 2,
+    "lengthM": null,
+    "anchor": "slings and rings on a tree or chockstone",
+    "station": "Partway down the chimney.",
+    "notes": "Rappel 2 of 3, single rope, to the foot of the chimney."
+   },
+   {
+    "n": 3,
+    "lengthM": null,
+    "anchor": "slings at the head of the snow finger",
+    "station": "The foot of the chimney, above the snow finger.",
+    "notes": "Rappel 3 of 3, down the steep, narrow snow finger below the chimney, back to the basin.",
+    "hazards": [
+     "Seasonal snow: early in the year this is steep snow; later it may be loose rock and scree. Carry extra webbing and rap rings, since the slings are replaced only by passing parties."
+    ]
+   }
+  ],
+  "rappels": "3 rappels down the marked south-facing chimney and the snow finger below it: two single-rope rappels in the chimney, one down the snow finger",
+  "rappel_count_note": "The standard summer descent: two single-rope rappels down the marked southern chimney, then a third down the snow finger below it. Anchors are slings and rings on trees and chockstones; carry spare webbing.",
+  "descent_text": "From the summit, downclimb and traverse back toward the notch area, locate the marked south-facing rappel gully (the southern chimney), and make two single-rope rappels down the chimney and a third down the steep, narrow snow finger below it to return to the approach basin."
+ }
+}

@@ -1,0 +1,3 @@
+{"results":[{"id":"wa_gunn_peak_southeast_route","verdict":"confirmed","rule":"owner 'do all of those' (2026-10-01); clear what sources contradict, never compute","fact":"one-way distance vs round trip","evidence":"Eleven 2026 parties state 6.8-8.0 mi round trip, agreeing with the itinerary's 7.5 mi; the summit pin's 2.75 mi and dist_km 4.8 km (3 mi) one way cannot be half of that. No source states a one-way figure, so both are cleared rather than replaced.","ops":[
+{"op":"set","id":"wa_gunn_peak_southeast_route","column":"waypoints","path":[6,"distMi"],"expect":2.75,"value":null},
+{"op":"set","id":"wa_gunn_peak_southeast_route","column":"dist_km","path":[],"expect":4.8,"value":null}]}]}

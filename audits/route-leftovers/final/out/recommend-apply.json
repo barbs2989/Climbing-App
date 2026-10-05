@@ -1,0 +1,147 @@
+{
+ "results": [
+  {
+   "id": "wa_half_fast",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 do what you recommend: the land manager publishes a permit rule for Alpine Lakes and none for Wild Sky; the row own access says no permit at this roadside pullout",
+   "fact": "permit column names a Wild Sky Wilderness permit; access.permit N/A and passRequired None at the roadside pullout",
+   "evidence": "Forest Service pages (final pass lanes l1-l3): the free self-issue permit is stated for the Alpine Lakes Wilderness only; the Wild Sky page states no permit. Half Moon Crag is an unofficial pulloff with no trail and no trailhead register. All 5 Half Moon Crag routes carry the same text and all are changed.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_half_fast",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+     "value": "No permit needed at the roadside pullout. A Northwest Forest Pass applies only at developed trailheads."
+    }
+   ]
+  },
+  {
+   "id": "wa_astral_projection",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 do what you recommend: the land manager publishes a permit rule for Alpine Lakes and none for Wild Sky; the row own access says no permit at this roadside pullout",
+   "fact": "permit column names a Wild Sky Wilderness permit; access.permit N/A and passRequired None at the roadside pullout",
+   "evidence": "Forest Service pages (final pass lanes l1-l3): the free self-issue permit is stated for the Alpine Lakes Wilderness only; the Wild Sky page states no permit. Half Moon Crag is an unofficial pulloff with no trail and no trailhead register. All 5 Half Moon Crag routes carry the same text and all are changed.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_astral_projection",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+     "value": "No permit needed at the roadside pullout. A Northwest Forest Pass applies only at developed trailheads."
+    }
+   ]
+  },
+  {
+   "id": "wa_asymptotic",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 do what you recommend: the land manager publishes a permit rule for Alpine Lakes and none for Wild Sky; the row own access says no permit at this roadside pullout",
+   "fact": "permit column names a Wild Sky Wilderness permit; access.permit N/A and passRequired None at the roadside pullout",
+   "evidence": "Forest Service pages (final pass lanes l1-l3): the free self-issue permit is stated for the Alpine Lakes Wilderness only; the Wild Sky page states no permit. Half Moon Crag is an unofficial pulloff with no trail and no trailhead register. All 5 Half Moon Crag routes carry the same text and all are changed.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_asymptotic",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+     "value": "No permit needed at the roadside pullout. A Northwest Forest Pass applies only at developed trailheads."
+    }
+   ]
+  },
+  {
+   "id": "wa_artic_rose",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 do what you recommend: the land manager publishes a permit rule for Alpine Lakes and none for Wild Sky; the row own access says no permit at this roadside pullout",
+   "fact": "permit column names a Wild Sky Wilderness permit; access.permit N/A and passRequired None at the roadside pullout",
+   "evidence": "Forest Service pages (final pass lanes l1-l3): the free self-issue permit is stated for the Alpine Lakes Wilderness only; the Wild Sky page states no permit. Half Moon Crag is an unofficial pulloff with no trail and no trailhead register. All 5 Half Moon Crag routes carry the same text and all are changed.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_artic_rose",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+     "value": "No permit needed at the roadside pullout. A Northwest Forest Pass applies only at developed trailheads."
+    }
+   ]
+  },
+  {
+   "id": "wa_astroglide",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-02 do what you recommend: the land manager publishes a permit rule for Alpine Lakes and none for Wild Sky; the row own access says no permit at this roadside pullout",
+   "fact": "permit column names a Wild Sky Wilderness permit; access.permit N/A and passRequired None at the roadside pullout",
+   "evidence": "Forest Service pages (final pass lanes l1-l3): the free self-issue permit is stated for the Alpine Lakes Wilderness only; the Wild Sky page states no permit. Half Moon Crag is an unofficial pulloff with no trail and no trailhead register. All 5 Half Moon Crag routes carry the same text and all are changed.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_astroglide",
+     "column": "permit",
+     "path": [],
+     "expect": "Free self-issue Wild Sky Wilderness permit or trailhead registration; no quota or fee. Northwest Forest Pass at developed trailheads.",
+     "value": "No permit needed at the roadside pullout. A Northwest Forest Pass applies only at developed trailheads."
+    }
+   ]
+  },
+  {
+   "id": "wa_ingalls_peak_south_ridge",
+   "verdict": "confirmed",
+   "rule": "owner 2026-10-01 guidebooks are the source of truth; owner 2026-10-02 do what you recommend",
+   "fact": "header pitches 4 vs 3 everywhere else on the row and in the guidebook",
+   "evidence": "Guidebook (Selected Climbs) calls it a three-pitch route; the other volume gives 3 with an optional belay. The row already says 3 in pitch_detail, waypoints 5 and 6, the itinerary, timing and seasonal hazards. The rappel count (4 on one 60 m, 3 on two) stays; only the clauses tying it to one rappel per pitch go, so no new contradiction is made.",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_ingalls_peak_south_ridge",
+     "column": "pitches",
+     "path": [],
+     "expect": 4,
+     "value": 3
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_ingalls_peak_south_ridge",
+     "column": "rappels",
+     "path": [],
+     "find": " summit anchor, one per pitch, with",
+     "replace": " summit anchor, with"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_ingalls_peak_south_ridge",
+     "column": "descent_text",
+     "path": [],
+     "find": " 60 m rope, one per pitch, or three",
+     "replace": " 60 m rope, or three"
+    },
+    {
+     "op": "replace_text",
+     "id": "wa_ingalls_peak_south_ridge",
+     "column": "rappel_count_note",
+     "path": [],
+     "find": "Counted for one 60 m rope: one rappel per pitch, summit",
+     "replace": "Counted for one 60 m rope: summit"
+    }
+   ]
+  },
+  {
+   "id": "wa_sentinel_peak_standard",
+   "verdict": "confirmed",
+   "rule": "owner-approved clearing: a dist_km that matches no stated one-way or round-trip figure",
+   "fact": "dist_km 26.2 km (16.3 mi) matches nothing on the row",
+   "evidence": "Row states 14 mi to the summit (pin chain 3.7 / 5.5 / 6 / 7 / 13 / 13.5 / 14) and a ~34 mi round trip; 16.3 mi is neither, and the earlier 16-mile road-walk sentence is no longer on the row. Not half of any stated round trip (34 / 2 = 17).",
+   "ops": [
+    {
+     "op": "set",
+     "id": "wa_sentinel_peak_standard",
+     "column": "dist_km",
+     "path": [],
+     "expect": 26.2,
+     "value": null
+    }
+   ]
+  }
+ ]
+}

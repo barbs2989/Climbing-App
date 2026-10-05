@@ -1131,3 +1131,24 @@ the correction knows the screen is wrong, and they have no way to report it.
     not the route being a finish. Research decides; never re-quote these counts, re-run it.
   - Linking is done per route after research (`viaRouteId` to an existing sibling, or a `trip`
     with a trailhead); see `check:approach-overlay` in route-page.md for what the page then does.
+  - **A researched row is not a lead** (2026-10-01). Once WA was worked through, 440 rows still
+    carried a signal, all already read and judged one way in, so every run buried anything new under
+    them. The audit now reads the recorded verdicts (`audits/<state>-multi-approach/2026-10-01-research.json`,
+    then every `scripts/oneoff/link-multi-approach-batch<N>.plan.json` in batch order, then
+    `settled.json`, with later files winning). It COUNTS a SINGLE or fixed ROW_CONTRADICTS row on one line instead of listing it;
+    `--researched` lists them. It never hides DANGLING, a row researched as multi-approach that still
+    cannot switch, or a row no file has a verdict for. That last case is the point: the Haystack
+    Scramble began flagging mid-session when its sibling's text started naming it, and it was the only
+    row shown. A new verdict goes in `settled.json`, with a `why`.
+  - **...and "0 to read" is only as good as the signals** (batch 4, 2026-10-01). A row whose own text
+    trips nothing is never listed, so the WA zero hid 69 never-researched routes on peaks whose
+    siblings start from different trailheads, plus 72 single verdicts given with only medium or low
+    confidence. Researching them found 9 more multi-approach routes. Before calling this list done
+    again, re-run that cross-check (siblings on one peak naming 2+ trailheads, minus every row with a
+    verdict). Run it over EVERY discipline, not just alpine: batch 5 found 6 more rows that way (rock,
+    boulder), 2 of them multi-approach.
+  - **...and the "already switchable" count can FALL with nothing wrong** (batch 5). The route-identity
+    work (#2167) deleted 34 duplicate rows, 5 of which had been linked here; WA went from 132 linked to
+    128. Before treating a drop as a lost switch, diff the ids every `*multi-approach*.before.json`
+    touched against the live table, read each missing id's KEPT row in that work's merge plan, and
+    compare its ways in with the deleted row's (the rollback file holds the deleted row in full).

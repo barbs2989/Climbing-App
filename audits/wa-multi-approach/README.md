@@ -4,7 +4,7 @@ Census: `npm run audit:multi-approach` over all 8,615 WA routes flagged 557; the
 strong signal (or a FINISH signal on an alpine/mountaineering/scrambling route) were each read and
 researched online. The tables below are that first pass; what has since been WRITTEN is next.
 
-## Written (2026-10-01) — 121 WA routes now switch by approach
+## Written (2026-10-01) — 128 WA routes now switch by approach (132 linked; 4 were later deleted as duplicates, see batch 5)
 | step | rows | script (each keeps a `.before.json`; `--rollback` restores it) |
 |---|---|---|
 | Shuksan Southeast Ridge pilot | 1 | `scripts/oneoff/shuksan-se-ridge-two-approaches.mjs` |
@@ -17,6 +17,15 @@ researched online. The tables below are that first pass; what has since been WRI
 | leftovers 3: the other two Goode rows' trailhead waypoint, Huckleberry timing note | 3 | `multi-approach-leftovers-2.mjs --set 3` |
 | leftovers 4: Adams Wilson Headwall made consistent, Storm King coordinate type | 2 | `multi-approach-leftovers-2.mjs --set 4` |
 | leftovers 5: Goode Southwest Couloir card elevation and loss | 1 | `multi-approach-leftovers-2.mjs --set 5` |
+| leftovers 6: Windy Peak gains Iron Gate as a third way in | 2 | `multi-approach-leftovers-2.mjs --set 6` |
+| batch 4: routes the audit could not see + medium/low SINGLE re-checked | 9 | `link-multi-approach-batch2.mjs --batch batch4` (links in `2026-10-01-batch4-research.json`) |
+| leftovers 7: Adams day 1, Huckleberry grade text, Goode parking, Storm King approach + FA name | 6 | `multi-approach-leftovers-2.mjs --set 7` |
+| batch 5: the cross-check re-run across every discipline + the 5 UNSURE | 2 | `link-multi-approach-batch2.mjs --batch batch5` (links in `2026-10-01-batch5-research.json`) |
+| leftovers 8: The Devil's Club camp, pin and day-1 drainage | 1 | `multi-approach-leftovers-2.mjs --set 8` |
+| leftovers 9: the same drainage slip in its Time-to-Summit leg, which set 8 missed | 1 | `multi-approach-leftovers-2.mjs --set 9` |
+| leftovers 10: SEWS Nothing, an empty row, gets the Blue Lake approach, pin and South Arete descent | 1 | `multi-approach-leftovers-2.mjs --set 10` |
+| leftovers 11: Mount Crowder's way in rewritten to its guidebook entry: Hannegan Pass, Easy Ridge, Perfect Pass and the west side of the range to the Phantom-Crowder col, plus Baker River and Pioneer Ridge as a second way in | 1 | `multi-approach-leftovers-2.mjs --set 11` |
+| leftovers 12: Crowder's Northeast Ridge (reached over the Southwest Route) loses the Wild Lake start, camp and SR-20 road; the peak blurb's "eastern crest" is corrected | 1 + 1 area | `multi-approach-leftovers-2.mjs --set 12`, `crowder-area-blurb.mjs` |
 
 Batch 2 re-researched the 68 medium/low MULTI_TRAILHEAD routes (60 MULTI, 4 SINGLE, 4 UNSURE;
 `wa_stanley_burgner` is not a row — the climb is `wa_prusik_peak_south_face_burgner_stanley`) and
@@ -51,11 +60,38 @@ side, while the north face looks onto North Fork Bridge Creek — check before a
 - Adams Wilson Headwall: the approach, card, timing, itinerary, descent and sketch line now all use the east-side approach from Cold Springs to camp in Avalanche Valley, and the glaciers are named in the order you meet them.
 - Storm King North Face: its peak coordinate is now stored as numbers.
 
-**Not touched, on purpose.**
-- **Storm King N Face approach:** the north face looks onto North Fork Bridge Creek, but nothing published describes the 1978 line's approach. The stored Park Creek approach stays until something does.
-- **Adams Wilson Headwall day-1 numbers:** 3.5 mi and 4 hr look short for Cold Springs to Avalanche Valley, but no figure is published to replace them. Its two `access` keys also name different land managers.
-- **Huckleberry grade:** Class 4 stays. Only one source grades the West Face, and it says 5.6.
-- **Windy Peak:** three rows, one per trail (Long Swamp, Windy Creek, Iron Gate), are kept. Each is a real different start, and retiring rows needs the owner.
+**Batch 4: what the audit could not see.** The audit read "0 flagged", but it only flags a row whose own text trips a signal. A cross-check found 69 never-researched routes on peaks whose sibling routes start from different trailheads. It also found 72 routes judged single with only medium or low confidence, and 5 more with no approach data at all. Of those, 143 were researched (some overlapped): 129 SINGLE, 9 MULTI (linked) and 5 UNSURE.
+- **MULTI, now switchable:** Silver Star NE Ridge (Burgundy Col / Silver Star Creek); Emerald Peak SE Ridge (North Fork Entiat / Lucerne and Milham Pass); Lichtenberg SE Route and West Rib (Smith Brook / Stevens Pass); Lincoln Peak standard (Middle Fork Nooksack / Heliotrope Ridge); the Mount Adams circumnavigation (Killen Creek / Cold Springs); Rock Mountain West Route (US-2 / Snowy Creek); Amphitheater Mountain North Ridge (Andrews Creek / Thirtymile); and Little Tahoma East Shoulder (Fryingpan Creek / White River Campground / Paradise; White River is the default while the Fryingpan trailhead is closed for its bridge work).
+- **UNSURE, open:**
+  - `wa_mount_rainier_mowich_face`: the Mowich Lake road has been cut since the Fairfax Bridge closed, and nothing says what parties use instead.
+  - `wa_silver_star_northwest_face`
+  - `wa_mount_crowder_southwest_route`: Goodell Creek or Big Beaver.
+  - `wa_mount_persis_the_hexorcist`
+  - `wa_the_devils_club`: its card says Perry Creek, but its only camp is on the Depot Creek side.
+- **Not written:** several single-approach rows store a trailhead name with no pin, while their own trailhead waypoint has one. Batch 4 only writes the routes judged MULTI.
+
+**Batch 5: the cross-check across every discipline, and the 5 UNSURE.** Re-running the sibling-trailhead cross-check over rock, boulder and ice rows (not just alpine) found 6 rows with no verdict. Those and the 5 UNSURE were researched: 2 MULTI, 6 SINGLE, 3 still UNSURE.
+- **MULTI, now switchable:** Whatcom Peak Southwest Route (Hannegan / Ross Lake water taxi and Little Beaver, the same choice its North Ridge sibling already offers; Whatcom Camp goes with Hannegan only). Bread Loaf (Silver Falls loop from Ohanapecosh / the Eastside Trail from the Grove of the Patriarchs lot, the only way while the campground end is closed; that lot has no pin, because no page states one).
+- **SINGLE:** Silver Star NW Face (the 2019 first ascent went in and out over Burgundy Col); The Devil's Club (Perry Creek only, fixed in leftovers 8: its camp was named for the Redoubt Glacier, and a pin at the Col of the Wild on the Depot Creek side, which repeated the West Ridge row's 9.5 mi, is removed rather than moved because no page places the base of the face); SEWS Nothing (Blue Lake, like The Hitchhiker; the empty row got that approach, pin and the South Arete descent in leftovers 10); Castle in the Sky (both ways to Perfect Pass start at Hannegan); Cutthroat A Virtuous Circle (low: face unknown, but every Cutthroat route starts at the same SR-20 pullout); Don't Climb That She Said (North Fork Sauk; the White Chuck has been washed out for years).
+- **Still UNSURE:**
+  - `wa_mount_rainier_mowich_face`: the Fairfax Bridge closure is permanent. The walk to Mowich Lake is about 23 mi from Sunrise or 28 mi from the Westside Road, and no ascent since April 2025 was found. MULTI needs one page showing a party reaching the North Mowich from somewhere other than Mowich Lake.
+  - `wa_mount_crowder_southwest_route`: the only documented ascent (2012) came from the Bacon Creek road over Jasper and Wild passes and walked out at Hannegan. Neither of the row's own corridors (Goodell Creek, Big Beaver and Access Creek) appears in any account. The row's approach text needs checking on the ground.
+  - `wa_mount_persis_the_hexorcist`: only the name and the first ascensionist are online. Anderson Creek is plausible, but nothing ties it to the route.
+- **Settled SINGLE on the evidence (in `settled.json`).** No further online research would decide these, so each keeps the one way in it already stores. No route data changed.
+  - **Mowich Face:** no other start is documented, and the row already says the road is cut.
+  - **Crowder:** reopened and made MULTI in leftovers 11 (below), after Beckey vol 3 was read.
+  - **The Hexorcist:** no way to the face is documented, and the row already says so.
+  - Reopen any of them only if a new ascent account shows another start.
+- **Crowder, settled by the guidebook (leftovers 11).** Beckey's *Rainy Pass to Fraser River* (2008) is on Google Books with partial preview (id `5S0EVRXtK6YC`); Crowder's entry is on p. 87. It gives the approach as for the west side of Phantom Peak (the Easy Ridge line from Hannegan Pass), continuing south to the Phantom-Crowder col (6,000 ft+), then southwest over a 7,020 ft subsummit and a rib of solid rock to the top; and, as an alternative, the Pioneer Ridge High Route from the Baker River Trail. Neither Goodell Creek nor Access Creek is given for Crowder, and nothing names Wild Pass or Wild Lake, so the row's Terror Basin waypoints, track, 41.5 h timing, itinerary and the distance and gain they implied were cleared rather than re-stated (no one-way figure is published for either line). The Baker River Trail and Easy Ridge Trail entries (pp. 400 and 409) are outside the preview, so the Pioneer Ridge card says only what p. 87 and the Pioneer Ridge entry support.
+- **Deleted under us:** the route-identity work (#2167) deleted 34 duplicate rows. Five of them had been written here: SEWS East Buttress, Mount Stone Putvin, Stuart The Gendarme, Stuart Direct North Ridge, and Rahm Standard. Each kept row already offers the same ways in, or (SEWS Direct East Buttress) the deleted row had only one. The one exception is Rahm Standard's third card, Maselpanik Creek. It reaches the NORTH side, and the kept South Side row (the south gully from Ouzel Lake, researched at high confidence) is reached only by Depot Creek or Silver Creek, both of which it offers. So it was not carried over. The count fell from 132 linked to 128.
+- **Golden Horn Southwest Route** was newly flagged FINISH because the North Face row descends it. Both start at Rainy Pass; it is recorded SINGLE in `settled.json`.
+
+**Closed in leftovers 6 and 7.**
+- **Storm King N Face:** the first-ascent write-up (1978) has the party camping on the south side below the Goode–Storm King saddle, rappelling onto the north-side glacier and going down it to the rock rib. The stored Park Creek approach was right; it now describes that, and the second climber's name is spelled as he wrote it.
+- **Adams Wilson Headwall:** no page states the miles, hours or gain from Cold Springs to Avalanche Valley, and the old day-1 loss of 0 was wrong. Those four numbers are blank. The `timing` hours are kept for the Planner.
+- **Huckleberry West Route:** the row's grade was already 5.6. Its timing, itinerary, hazards, rope note and summit note now say the same, and no longer mention the East Route's Huckleberry Flats.
+- **Goode parking:** the land manager charges at both Bridge Creek and Rainy Pass. All three Goode rows now say parking at Bridge Creek needs a pass; the Northeast Face row had said it was free.
+- **Windy Peak:** the three rows are kept, one per trail. The standard route now offers all three as ways in: Long Swamp, Cathedral Driveway, and Iron Gate with that row's own pin and Horseshoe Basin camp.
 
 | verdict | routes |
 |---|---|

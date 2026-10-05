@@ -1,0 +1,144 @@
+{
+ "wa_east_face_6": {
+  "waypoints": [
+   {
+    "lat": 47.434165,
+    "lng": -121.186307,
+    "elev": 2800,
+    "name": "Pete Lake Trailhead",
+    "note": "Northwest Forest Pass/Interagency Pass honored in the lot; fill out the free self-issue Alpine Lakes Wilderness permit at the trailhead kiosk.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From I-90 Exit 80, go north on Bullfrog Road through two traffic circles onto SR 903, then follow SR 903 through Roslyn and past Cle Elum Lake to Cooper Lake Road (FR 46), about 16.8 miles from the freeway. Turn left on FR 46 for 4.7 miles, then right on FR 4616 for about 1 mile to the Pete Lake trailhead. A Northwest Forest Pass or interagency pass is required to park, plus a free self-issued Alpine Lakes Wilderness permit."
+   },
+   {
+    "lat": 47.475766,
+    "lng": -121.235963,
+    "elev": 2986,
+    "name": "Pete Lake",
+    "note": "Reliable water and established shoreline campsites on the north side; the last easy water before the PCT junction.",
+    "type": "Water",
+    "distMi": 4.5,
+    "directions": "Follow Pete Lake Trail #1323 up the Cooper River valley, about 4.5 nearly flat forested miles, to the lake."
+   },
+   {
+    "lat": 47.48416,
+    "lng": -121.25932,
+    "elev": 3249,
+    "name": "PCT Junction near Lemah Meadows",
+    "note": "Pete Lake Trail meets the PCT here; turn north toward Lemah Meadows rather than continuing to Spectacle Lake.",
+    "type": "Junction",
+    "distMi": 5.3,
+    "directions": "Continue on the trail beyond the lake to its junction with the Pacific Crest Trail near Lemah Meadow."
+   },
+   {
+    "lat": 47.49288,
+    "lng": -121.26014,
+    "elev": 3360,
+    "name": "Avalanche path at Chimney Creek confluence",
+    "note": "Leave the PCT at the first switchback in this avalanche path; a faint, sometimes flagged climber's path drops to a log crossing of the creek and is easy to lose in fog or low light.",
+    "type": "Hazard",
+    "distMi": 6.2,
+    "directions": "Turn north on the PCT, not toward Spectacle Lake, and follow it roughly a mile to where it crosses a wide old avalanche path with heavy blowdown near Chimney Creek and switchbacks sharply. Stop at that first switchback and look west for twin waterfalls spilling out of the hanging basin below the Chimney Glacier."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 4650,
+    "name": "Sunrise Knob",
+    "note": "Standard 2-3 day basecamp on a knob just below the moraine overlooking the falls, roughly 6 hours' hike from the trailhead.",
+    "type": "Campsite",
+    "distMi": 7.5,
+    "directions": "Leave the PCT at the switchback on a faint climbers' path, marked only intermittently with flagging and cairns, that climbs the forest right of the falls between two rounded rock outcrops and a cliff band. Do not follow it up a rocky gully; the line continues left through vine maple and alder, crosses three brushy ravines, and breaks out at Sunrise Knob, the rock buttress above the falls."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 6800,
+    "name": "Chimney Glacier bergschrund/moat",
+    "note": "A short pitch of hard ~45-degree glacier ice and a bergschrund/moat crossing guard the base of the East Face; crampons and axe required, and the moat widens as the season progresses.",
+    "type": "Hazard",
+    "distMi": 8.7,
+    "directions": "From camp, make your way onto the lower Chimney Glacier and rope up. Cross it and break through the cliff band onto the upper glacier, usually by the rock-and-snow gully just left of the icefall (a snow finger far to the left and the icefall itself are the alternatives), then cross the upper glacier to the foot of the gully that leads to the U-Gap, where the moat separates ice from rock."
+   },
+   {
+    "lat": 47.50917,
+    "lng": -121.28556,
+    "elev": 7727,
+    "name": "Chimney Rock, Main (Central) Summit",
+    "note": "True summit, topped out via 3 pitches of 5.3 rock above the moat; descend via rappels and 3rd-class downclimbing back to the glacier.",
+    "type": "Summit",
+    "distMi": 9.3,
+    "directions": "Cross the moat where conditions allow and climb the loose gully toward the U-Gap. About 15 ft below the gap, leave it on the east side onto exposed ledges that wrap around the South Peak to the Main Notch, drop about 50 ft and take a reddish ramp up to the Key Ledge below the summit tower, then climb three pitches of class 4 and low fifth class, the last a chimney that tops out a few feet from the summit cairn."
+   }
+  ]
+ },
+ "wa_lena_lake_to_mt_stone_traverse": {
+  "waypoints": [
+   {
+    "lat": 47.5998,
+    "lng": -123.1508,
+    "elev": 750,
+    "name": "Lena Lake Trailhead",
+    "note": "FS Road 25 trailhead on the Hamma Hamma River; well-graded Lena Lake Trail #810 starts here, Northwest Forest Pass required to park.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "From Hoodsport, drive north on US 101 about 14 miles and turn left onto Hamma Hamma River Road (FS Road 25) near milepost 318. Follow it about 7.5 paved miles to the Lena Lake Trailhead, a lot for about 30 cars. A Northwest Forest Pass or Interagency pass is required to park."
+   },
+   {
+    "lat": 47.6235,
+    "lng": -123.1572,
+    "elev": 1800,
+    "name": "Lena Lake",
+    "note": "55-acre lake with an established Forest Service campground on the west shore; last reliable, easy-access water before the climb steepens toward the upper basin.",
+    "type": "Water",
+    "distMi": 3
+   },
+   {
+    "lat": 47.634404,
+    "lng": -123.205331,
+    "elev": 4550,
+    "name": "Upper Lena Lake",
+    "note": "Backcountry camp basin just inside Olympic National Park; wilderness permit and bear canister required, and the trail ends here and the Scout Lake way-trail continues off-trail.",
+    "type": "Campsite",
+    "distMi": 6.5
+   },
+   {
+    "lat": 47.624834,
+    "lng": -123.228267,
+    "elev": 5200,
+    "name": "Scout Pass",
+    "note": "Primitive way-trail crosses this pass through huckleberry-heather meadows past Lena Tarn and Scout Lake; tread is faint and easy to lose in fog or fresh snow.",
+    "type": "Junction",
+    "distMi": 8.5
+   },
+   {
+    "lat": 47.60399,
+    "lng": -123.26471,
+    "elev": 5934,
+    "name": "St. Peter's Gate",
+    "note": "Rocky notch in Mt. Stone's southeast ridge and the traverse's high point, reached via a steep snow/dirt ramp over loose glacial moraine above Ullin's Bathtubs; gap opens onto the Lake of the Angels basin beyond.",
+    "type": "Junction",
+    "distMi": 10.3
+   },
+   {
+    "lat": 47.6063,
+    "lng": -123.2666,
+    "elev": 6612,
+    "name": "Mount Stone (South Summit)",
+    "note": "Class 3 scramble on solid pillow basalt from St. Peter's Gate; in fog it's easy to confuse the true south summit with the nearby Middle and North summits, and the final gully narrows to Class 3-4.",
+    "type": "Summit",
+    "distMi": 10.8
+   },
+   {
+    "lat": 47.593144,
+    "lng": -123.239673,
+    "elev": 3200,
+    "name": "Putvin Trail cliff/handline section",
+    "note": "Steep, eroded cliff band on the descent below Whitehorse Basin and the Pond of the False Prophet, rigged with a fixed handline and an exposed root system used as a ladder; greasy and dangerous when wet.",
+    "type": "Hazard",
+    "distMi": 13.3
+   }
+  ]
+ }
+}

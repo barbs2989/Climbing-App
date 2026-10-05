@@ -15,7 +15,14 @@
 // a second approach. What decides it is whether the ways in start from different trailheads or
 // arrive by different routes — and that is research, not a regex.
 //
-//   node scripts/audit-multi-approach.mjs [--state wa] [--json out.json] [--all]
+//   node scripts/audit-multi-approach.mjs [--state wa] [--json out.json] [--all] [--researched]
+//
+// A row already READ and judged is not a lead: the WA research verdicts live in
+// audits/<state>-multi-approach/ (2026-10-01-research.json, then the batch plans in scripts/oneoff/,
+// then settled.json — later files win). A route judged SINGLE, or a ROW_CONTRADICTS row whose fix
+// shipped, is counted on one line instead of listed (--researched lists them). DANGLING is never
+// hidden, nor is a route researched as reachable more than one way that still cannot switch, nor any
+// route no file has a verdict for — a NEW row, or one the research never reached, is what to read next.
 //
 // Signals (a row can carry several):
 //   VARIANTS   ≥2 approach_variants and none of them switchable
@@ -32,6 +39,19 @@ const arg = (k, d) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] :
 const STATE = arg("--state", "wa");
 const JSON_OUT = arg("--json", null);
 const ALL = args.includes("--all");
+const SHOW_RESEARCHED = args.includes("--researched");
+
+// Recorded verdicts, oldest first so a later pass overrides an earlier one.
+const verdictOf = new Map();
+const readJson = (u) => { try { return JSON.parse(fs.readFileSync(new URL(u, import.meta.url), "utf8")); } catch (e) { if (e.code === "ENOENT") return null; throw e; } };
+// Every batch plan, in batch order, so a new batch is read without editing this list.
+const PLANS = fs.readdirSync(new URL("./oneoff/", import.meta.url)).map((f) => /^link-multi-approach-batch(\d+)\.plan\.json$/.exec(f)).filter(Boolean).sort((a, b) => a[1] - b[1]).map((m) => "./oneoff/" + m[0]);
+for (const f of [`../audits/${STATE}-multi-approach/2026-10-01-research.json`, ...PLANS]) {
+  const list = readJson(f);
+  if (Array.isArray(list)) for (const x of list) if (x && x.id && x.verdict && x.id.startsWith(STATE + "_")) verdictOf.set(x.id, x.verdict);
+}
+for (const [id, v] of Object.entries(readJson(`../audits/${STATE}-multi-approach/settled.json`) || {})) if (!id.startsWith("_")) verdictOf.set(id, String(v.verdict || v));
+const SETTLED = new Set(["SINGLE", "ROW_CONTRADICTS"]);
 
 const COLS = "id,name,area_id,discipline,approach,approach_variants,approach_logistics,overview,beta,road,description,pitch_detail,descent_text";
 // 300 a page: these are the catalog's widest prose columns, and 1,000 of them per read hit the
@@ -87,16 +107,20 @@ for (const r of rows) {
 const ALPINE = new Set(["alpine", "mountaineering", "scrambling", "ice", "mixed", "hiking"]);
 const score = (o) => (o.signals.includes("DANGLING") ? 100 : 0) + o.signals.length * 10 + (ALPINE.has(o.discipline) ? 5 : 0);
 out.sort((a, b) => score(b) - score(a) || a.id.localeCompare(b.id));
+const isResearched = (o) => SETTLED.has(verdictOf.get(o.id)) && !o.signals.includes("DANGLING");
+const researched = out.filter(isResearched);
+const leads = SHOW_RESEARCHED ? researched : out.filter((o) => !isResearched(o));
 
-const count = (s) => out.filter((o) => o.signals.includes(s)).length;
+const count = (s) => leads.filter((o) => o.signals.includes(s)).length;
 const linkedRoutes = rows.filter((r) => (r.approach_variants || []).some(switchable)).length;
-console.log(`audit:multi-approach — ${STATE}: ${rows.length} routes read, ${linkedRoutes} already switchable, ${out.length} flagged`);
+console.log(`audit:multi-approach — ${STATE}: ${rows.length} routes read, ${linkedRoutes} already switchable, ${SHOW_RESEARCHED ? researched.length + " already researched (listed)" : leads.length + " flagged to read"}`);
+if (!SHOW_RESEARCHED) console.log(`  (${researched.length} more carry a signal but were researched and judged one way in — --researched lists them)`);
 for (const s of ["DANGLING", "VARIANTS", "PROSE", "OTHER_TH", "FINISH", "NAME"]) console.log(`  ${s.padEnd(9)} ${count(s)}`);
 console.log("");
-for (const o of ALL ? out : out.slice(0, 60)) {
+for (const o of ALL ? leads : leads.slice(0, 60)) {
   console.log(`${o.id}  [${o.signals.join(",")}]  ${o.name}`);
   for (const [k, v] of Object.entries(o.evidence)) console.log(`    ${k}: ${String(v).slice(0, 170)}`);
 }
-if (!ALL && out.length > 60) console.log(`\n… ${out.length - 60} more (--all, or --json)`);
-if (JSON_OUT) { fs.writeFileSync(JSON_OUT, JSON.stringify(out, null, 1)); console.log(`\nwrote ${JSON_OUT}`); }
-process.exit(count("DANGLING") ? 1 : 0);
+if (!ALL && leads.length > 60) console.log(`\n… ${leads.length - 60} more (--all, or --json)`);
+if (JSON_OUT) { fs.writeFileSync(JSON_OUT, JSON.stringify(leads.map((o) => ({ ...o, verdict: verdictOf.get(o.id) || null })), null, 1)); console.log(`\nwrote ${JSON_OUT}`); }
+process.exit(out.some((o) => o.signals.includes("DANGLING")) ? 1 : 0);

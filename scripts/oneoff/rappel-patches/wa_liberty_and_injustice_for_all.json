@@ -1,0 +1,25 @@
+{
+ "id": "wa_liberty_and_injustice_for_all",
+ "area_id": "wa_liberty_bell",
+ "stations": 4,
+ "set": {
+  "rappel_detail": [
+   {"n": 1, "lengthM": null, "anchor": "two bolts with fixed biners, top of pitch 5",
+    "station": "Top of the route, where it joins the top of pitch 7 of Thin Red Line.",
+    "notes": "Rappel 1 of 4 on two ropes, down pitch 5 to the pitch-4 anchor."},
+   {"n": 2, "lengthM": null, "anchor": "two bolts with fixed biners, top of pitch 4",
+    "station": "The pitch-4 anchor.",
+    "notes": "Rappel 2 of 4 on two ropes, down pitch 4 to the pitch-3 anchor."},
+   {"n": 3, "lengthM": null, "anchor": "two bolts with fixed biners, top of pitch 3",
+    "station": "The pitch-3 anchor. Parties who stop after pitch 3 start the descent here.",
+    "notes": "Rappel 3 of 4 on two ropes. Skip the pitch-2 anchor and go straight to the pitch-1 anchor.",
+    "hazards": ["Do not stop at the pitch-2 anchor; the line is set up to go past it to pitch 1."]},
+   {"n": 4, "lengthM": null, "anchor": "two bolts with fixed biners, top of pitch 1",
+    "station": "The pitch-1 anchor.",
+    "notes": "Rappel 4 of 4, to the ground."}
+  ],
+  "rappels": "4 double-rope rappels down the route from the top of pitch 5, all from two-bolt anchors with fixed biners, skipping the pitch-2 anchor; 2 if you start from the top of pitch 3",
+  "rappel_count_note": "Rappel the route with two ropes, using each two-bolt anchor in turn except pitch 2, which you skip on the way from pitch 3 to pitch 1. That gives four from the top of pitch 5, and two for parties who stop after pitch 3. Pitch lengths are not published, so no rappel lengths are given; carry two ropes.",
+  "descent_text": "Rappel the route with two ropes; the descent is straightforward and every station is a two-bolt anchor with fixed biners. From the top of pitch 5, where the route joins the top of pitch 7 on Thin Red Line, rappel to the pitch-4 anchor and then to pitch 3. From the top of pitch 3, skip the pitch-2 anchor and rappel directly to the pitch-1 anchor, then to the ground: four rappels in all, or two for parties who stop after pitch 3. Alternatively, continue climbing on Thin Red Line from the top of pitch 5."
+ }
+}

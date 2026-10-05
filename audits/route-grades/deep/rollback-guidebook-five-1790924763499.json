@@ -1,0 +1,353 @@
+{
+ "wa_fortress_mountain_northeast_face": {
+  "name": "Northeast Ridge",
+  "face": "Northeast Face/Ridge (Fortress-Chiwawa saddle)",
+  "commitment": null,
+  "grade": "Class 4",
+  "grade_system": "class",
+  "grade_num": 4,
+  "rock_grade": "Class 4 (short chimney)",
+  "overview": "A steeper, more technical alternative on Fortress's northeast-facing side: several pitches of rock up a headwall, followed by a long snow slope studded with rock islands. The route tops out on the ridge crest short of the true summit, requiring further ridge travel to finish.",
+  "beta": "Little is known about this line: it follows the left side of the visible northeast face, with steeper rock and snow options further right of uncertain quality/rock condition. Expect a mixed rock-and-snow outing rather than a simple scramble, with a rope needed for the pitched rock section.",
+  "pitch_detail": [
+   {
+    "grade": "Class 2-3",
+    "notes": "Broad ridge travel, can be snow-covered or corniced in winter.",
+    "pitch": "Ridge crest below summit"
+   },
+   {
+    "grade": "Class 4",
+    "notes": "Short chimney crux; documented as easy to miss on descent near an 8,500' col.",
+    "pitch": "Chimney section"
+   }
+  ],
+  "descent_text": "Follow the ridge crest down from the summit; locate the 4th-class chimney carefully, as at least one party missed it near an 8,500' col where the direct line was too steep and crossed onto the east face instead. In winter/spring the ridge can be corniced in places and holds steep snow requiring careful downclimbing or a short rope."
+ },
+ "wa_the_chopping_block_south_route": {
+  "name": "South Route",
+  "face": "South Face / gully-ledge system",
+  "aspect": "S",
+  "rock_grade": "5.5",
+  "beta": "Climbers approach via Goodell Creek and Terror Creek to a high camp on the Stump Hollow ridge below the peak, then climb 3rd/4th class terrain with a short section of low-5th-class rock (5.4) to reach the summit. Because the Pickets guard several summits from a shared basin, parties frequently combine this peak with Mount Degenhardt, Mount Terror, or Inspiration Peak on the same trip.",
+  "pitch_detail": [
+   {
+    "grade": "3rd-4th class, loose",
+    "notes": "A loose but moderate gully on the south side gains the base of the sloping south face.",
+    "pitch": "Access gully"
+   },
+   {
+    "grade": "5.4 (low 5th class)",
+    "notes": "Follow the 'obvious line' up the sloping south face; a couple of short, exposed low-5th-class steps; stay near the east side of the peak to reach the summit plateau. Existing rappel tat marks the line.",
+    "pitch": "South face"
+   }
+  ],
+  "rappels": "Reverse the ascent line, or traverse the heather ledge north off the summit. One rappel is reported on the descent, but where it is has not been described.",
+  "descent": "Reverse with a short rappel",
+  "descent_text": "Descend the South Route by reversing the ascent line, or via a heather ledge that traverses back to the north off the summit. Parties combining the Chopping Block with Mount Degenhardt or the Twin Needles typically continue along the Barrier/Chopping Block Ridge rather than dropping straight back to camp.",
+  "detailed_rack": "A light rack is sufficient — the route is mostly 3rd/4th-class terrain with only a couple of short, low-5th-class (5.4) exposed steps. A small set of nuts/cams plus a few slings for the tat-marked sections covers it; many parties treat most of the climb as an unroped scramble with a rope carried for the exposed steps.",
+  "pro_needs": "A light alpine rack sufficient for scattered low-5th-class rock protection (the terrain is closer to 3rd/4th class scrambling with a short 5.4 crux) plus rappel gear for the descent; exact route-specific rack recommendations were not found for this named line.",
+  "rope_note": "2-pitch intermediate alpine rock route (graded 5.4-5.5, Grade II) via access gullies on the south side to a heather ledge. Standard trad rack for moderate 5th-class pitches; remote Southern Pickets approach via Terror Basin.",
+  "partner_requirements": {
+   "fitnessSpec": {
+    "hiking": "Strenuous multi-day off-trail approach with heavy bushwhacking and elevation gain/loss via Goodell Creek and the Terror Creek climbers' path; sustained fitness for consecutive long days carrying full alpine kit",
+    "packWeight": "Heavy (multi-day self-supported alpine load, typically 40-50+ lbs including camping/climbing gear for the approach)"
+   },
+   "approachTime": "Multi-day (one long day up to high camp before summit day) via Goodell Creek and the Terror Creek climbers' path",
+   "requiredSkills": [
+    "off-trail routefinding/navigation",
+    "bushwhack tolerance",
+    "low 5th class rock scrambling (5.4)",
+    "comfort on loose rock and exposed terrain",
+    "basic rope/belay skills for roped scrambling pitches",
+    "self-sufficient wilderness camping/backcountry travel"
+   ],
+   "experienceLevel": "Experienced alpine climber/scrambler comfortable with remote, unmaintained North Cascades terrain - this is not a beginner objective; prior Pickets or similarly remote North Cascades experience strongly recommended"
+  },
+  "timing": {
+   "totalHrs": 20,
+   "summitTimeHrs": 7,
+   "descentTimeHrs": 6,
+   "approachTimeHrs": 7,
+   "recommendedStart": "5:30 AM from camp",
+   "sectionBreakdown": [
+    {
+     "hrs": 7,
+     "note": "From the Goodell Creek trailhead near Newhalem, follow the old logging road then a steep, sometimes brushy climbers' path south of Terror Creek (wading the creek), climbing relentl…",
+     "fromTo": "Approach to Southern Pickets high camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 7,
+     "note": "Cross the Barrier ridge into Stump Hollow/Crescent Creek Basin, then climb south-side slabs and heather to the base of the peak. The route is a rambly scramble with a couple of sho…",
+     "fromTo": "Chopping Block summit via South Route",
+     "section": "Climb"
+    },
+    {
+     "hrs": 6,
+     "note": "Reverse the approach: climb back over the Barrier spur and descend the steep climbers' path to Terror Creek and the old logging road back to the car. Loose scree/dirt and brush mak…",
+     "fromTo": "Descend to Goodell Creek trailhead",
+     "section": "Descent"
+    }
+   ]
+  },
+  "itinerary": {
+   "cal": "North Cascades NP backcountry camping requires a wilderness permit, and the Crescent/Terror Creek approach is typically not snow-free and reliably passable until mid-to-late July.",
+   "days": [
+    {
+     "n": 1,
+     "note": "From the Goodell Creek trailhead near Newhalem, follow the old logging road then a steep, sometimes brushy climbers' path south of Terror Creek (wading the creek), climbing relentlessly to a ~6,200 ft spur on the Barrier ridge before dropping to a flat camp around 5,800 ft. It's a brutal, sustained grind of well over 5,000 ft with little flat ground until camp.",
+     "hours": 7,
+     "miles": 6.5,
+     "title": "Approach to Southern Pickets high camp",
+     "gainFt": 5700,
+     "lossFt": 400,
+     "packLb": 42,
+     "schedule": [],
+     "objective": "Reach camp near the Barrier / Terror Basin"
+    },
+    {
+     "n": 2,
+     "note": "Cross the Barrier ridge into Stump Hollow/Crescent Creek Basin, then climb south-side slabs and heather to the base of the peak. The route is a rambly scramble with a couple of short, exposed low-5th-class moves near the summit plateau; parties typically make one short rappel (fixed-line/anchor reported at the top) to regain the south-side ledges on descent rather than down-climbing the exposed step. Often combined with an adjacent objective (e.g. West Ridge of Terror) on the same day if time and conditions allow.",
+     "hours": 7,
+     "miles": 3,
+     "title": "Chopping Block summit via South Route",
+     "gainFt": 1400,
+     "lossFt": 1400,
+     "packLb": 15,
+     "schedule": [
+      {
+       "time": "5:30 AM",
+       "label": "Leave camp",
+       "detail": "Alpine start, cross the Barrier toward Stump Hollow/Crescent Creek Basin."
+      },
+      {
+       "time": "7:00 AM",
+       "label": "Reach base of south side",
+       "detail": "Traverse slabs/heather below the Chopping Block's south aspect."
+      },
+      {
+       "time": "8:30 AM",
+       "label": "Scramble to summit plateau",
+       "detail": "Low 5th-class moves near the top; stay near the east side to avoid the hardest ground."
+      },
+      {
+       "time": "9:30 AM",
+       "label": "Summit",
+       "detail": ""
+      },
+      {
+       "time": "10:00 AM",
+       "label": "Begin descent",
+       "detail": "Short rappel down the south side to regain scramble ledges."
+      },
+      {
+       "time": "12:30 PM",
+       "label": "Back at camp",
+       "detail": ""
+      }
+     ],
+     "objective": "Climb the Chopping Block and return to camp"
+    },
+    {
+     "n": 3,
+     "note": "Reverse the approach: climb back over the Barrier spur and descend the steep climbers' path to Terror Creek and the old logging road back to the car. Loose scree/dirt and brush make the descent slow and hard on the knees despite being downhill.",
+     "hours": 6,
+     "miles": 6.5,
+     "title": "Descend to Goodell Creek trailhead",
+     "gainFt": 400,
+     "lossFt": 5700,
+     "packLb": 42,
+     "schedule": [],
+     "objective": "Hike out"
+    }
+   ],
+   "totalNote": "A 3-day Southern Pickets trip (~6.5 mi and ~5,700 ft each way to camp); the Chopping Block itself is a moderate scramble/rappel day out of high camp and is commonly tacked on as a warm-up alongside another Southern Pickets objective."
+  },
+  "waypoints": [
+   {
+    "lat": 48.68276,
+    "lng": -121.26928,
+    "elev": 500,
+    "name": "Goodell Creek Trailhead",
+    "note": "Old Goodell Creek logging road on SR 20 across from Newhalem Campground; NPS backcountry permit (fee charged mid-May to early October) required for any overnight camping in North Cascades National Park.",
+    "type": "Trailhead",
+    "distMi": 0,
+    "directions": "Drive SR-20 to Newhalem. Coming from the west through Marblemount and Concrete the road is open year-round, since the seasonal highway closure gate sits farther east near Ross Dam and Diablo. Park at the Goodell Creek trailhead on the north side of SR-20, across from Newhalem Campground: take the left just past the Goodell Creek crossing, continue past the gravel pit, and follow the road to its end by the creek at about 500 ft. Any overnight camping in North Cascades National Park needs a backcountry wilderness permit, which carries a fee from mid-May to early October, and the Crescent/Terror Creek approach is usually not snow-free and reliably passable until mid-to-late July."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 1800,
+    "name": "Climbers' Path Cairn",
+    "note": "Cairn marking where the unmaintained Terror Basin/Barrier climbers' path leaves the overgrown Goodell Creek roadbed and turns steeply uphill toward the Southern Pickets.",
+    "type": "Junction",
+    "distMi": 4,
+    "directions": "Hike the old Goodell Creek Trail, a former logging-road bed that is overgrown in places with downed trees and small creek crossings, up-valley about 4 miles to a flat spot marked by cairns, where the unmaintained Terror Basin climbers' path leaves the roadbed and climbs steeply up the slope to the right."
+   },
+   {
+    "lat": null,
+    "lng": null,
+    "elev": 2600,
+    "name": "Terror Creek Log Crossing",
+    "note": "Cross Terror Creek on a large logjam ford point used by climbers approaching the Barrier; can be slick and the log position shifts year to year.",
+    "type": "Hazard",
+    "distMi": 4.7
+   },
+   {
+    "lat": 48.759013,
+    "lng": -121.301766,
+    "elev": 3800,
+    "name": "The Barrier Crest",
+    "note": "Small saddle atop a notoriously loose class-3 ridge dividing the Terror and Crescent Creek basins; careful route-finding and rockfall awareness needed here.",
+    "type": "Junction",
+    "distMi": 5.5
+   },
+   {
+    "lat": 48.767437,
+    "lng": -121.305991,
+    "elev": 5600,
+    "name": "Stump Hollow",
+    "note": "Open, gentle slabby/heather basin between the Barrier and Chopping Block ridge — a common high camp for the South Route, closer to the peak than Terror Basin.",
+    "type": "Campsite",
+    "distMi": 6.3
+   },
+   {
+    "lat": 48.758509,
+    "lng": -121.307305,
+    "elev": 6300,
+    "name": "South Face Gully",
+    "note": "Loose gully on the south side of the Chopping Block/Barrier ridge gains the sloping south face; helmet on, watch for rockfall onto climbers below.",
+    "type": "Hazard",
+    "distMi": 6.8
+   },
+   {
+    "lat": 48.755,
+    "lng": -121.30806,
+    "elev": 6819,
+    "name": "The Chopping Block",
+    "note": "True summit (6,819 ft), labeled Pinnacle Peak on USGS maps; visible from the North Cascades NP Newhalem visitor center on clear days.",
+    "type": "Summit",
+    "distMi": 7
+   }
+  ],
+  "seasonal_hazards": {
+   "weather": {
+    "typical": "Classic North Cascades alpine weather - cool, changeable, and wetter than the eastern Cascades due to proximity to the crest; snow is possible at this elevation even in summer",
+    "probability": "Afternoon thunderstorms and fast-moving fronts are common; the Pickets are known for rapid, hard-to-predict weather shifts that can strand parties on exposed terrain"
+   },
+   "exposure": "Consequential exposure on the summit scrambling terrain loose rock significantly raises fall risk, and a slip in the access gullies or near the summit plateau could result in a long, ungroomed fall given the route's remoteness and lack of rescue proximity",
+   "avalanche": {
+    "zone": "No dedicated NWAC zone covers this peak; the nearest broad NWAC coverage (West Slopes North) is a rough proxy for early-season snow conditions on the approach, not a route-specific forecast",
+    "byMonth": {
+     "July": "Low",
+     "June": "Considerable",
+     "August": "Low",
+     "October": "N/A",
+     "September": "Low"
+    }
+   },
+   "crevasses": "N/A - no glacier travel on the South Route itself, though nearby approach basins can hold persistent snowfields early season"
+  },
+  "corrections": "Grade corrected from \"Grade II-III, 5.4\" to \"Grade II, 5.5\" and pitches filled in as 5, per Mountaineers.org's route description (corroborated by references to Beckey's Cascade Alpine Guide). This row's own pitch_detail array still only lists 2 of the 5 documented pitches and needs expansion by a future pass."
+ },
+ "wa_jack_mountain_northeast_glacier": {
+  "grade": "Class 3",
+  "grade_num": 3,
+  "rock_grade": null,
+  "overview": "A glacier route on the peak's north face: a small, steep and heavily crevassed glacier, separate from the Nohokomeen Glacier's cirque, climbed until it forces a move onto the ridge to its right, then a snow traverse and a rock scramble to the summit.",
+  "beta": "Climb the narrow, badly broken Northeast Glacier on the north face as far as icefall and crevasses allow, then move right onto the ridge that bounds it. Follow that ridge about 500 ft to an exposed snow traverse, and finish with a steep rock scramble to the summit. Expect steep, heavily crevassed ice low down and loose rock above it.",
+  "hazards": [
+   "Crevasse hazard on the Nohokomeen Glacier basin",
+   "Remote location with a long, difficult retreat"
+  ],
+  "approach": "From the Canyon Creek Trailhead on SR 20 near milepost 141 (about 1,900 ft), ford Canyon Creek - there is no bridge, and the creek runs high and hazardous into midsummer - and climb the switchbacks of Jackita Ridge Trail #738 to the Crater Lake junction. Continue up the Crater Mountain trail to about 6,700 ft, then leave it on a rising traverse to the pass near 7,000 ft between Crater Mountain's main summit and its east summit. Descend steep snow and the crevassed Jerry Glacier toward Jerry Lakes and work around to a camp near 6,000 ft on the east side of Jack. From camp, climb and traverse around onto the north face to the foot of a narrow, badly broken glacier: that is the Northeast Glacier. There is no boot track or cairn beyond Crater Lake.",
+  "approach_variants": [
+   {
+    "name": "Canyon Creek Trailhead, Crater Lake, and the pass between Crater Mountain's summits",
+    "notes": "Ford Canyon Creek at the trailhead and climb Trail #738's switchbacks to the Crater Lake junction, carrying water from the creek. Follow the Crater Mountain trail to about 6,700 ft, then traverse up to the pass near 7,000 ft between Crater Mountain's main and east summits. Descend steep snow and the crevassed Jerry Glacier toward Jerry Lakes, then work around to a camp near 6,000 ft on the east side of Jack. Summit day starts with a climbing traverse around onto the north face to reach the glacier.",
+    "hazards": [
+     "the Canyon Creek ford at the trailhead, high and hazardous into midsummer",
+     "crevasses and steep snow on the Jerry Glacier, crossed both ways",
+     "icefall and crevasses on the narrow, broken Northeast Glacier",
+     "loose rock on the ridge above the glacier",
+     "a long committing position several days from the road"
+    ],
+    "primary": true
+   }
+  ],
+  "descent": "Reverse the route. Parties downclimb the summit ridge and then the headwall — slowly, and best done early while it is still frozen — then plunge back down the glacier and reverse the traverse to the shoulder below the northwest ridge. From the toe of the glacier retrace the cross-country ground to May Creek and walk out the Ross Lake East Bank trail, or take the boat you came in on. This is what both documented ascents did; nobody descends the south-side standard route, which starts from a different trailhead entirely.",
+  "bivy": [
+   {
+    "elev": 5200,
+    "name": "High camp below the Nohokomeen Glacier",
+    "role": "main",
+    "type": "camp",
+    "notes": "Most parties climb straight up from the lake trail on day one and camp high on the ridge below the toe of the Nohokomeen Glacier, roughly 5,200 ft, to leave a manageable summit day. Some camp higher on the ridge.",
+    "water": "Snowmelt; early-season trips camp on snow",
+    "permit": "Ross Lake NRA backcountry permit for a cross-country camp",
+    "capacity": "Open slopes and ridge snow; room for a few tents"
+   },
+   {
+    "name": "May Creek Camp, Ross Lake",
+    "role": "route",
+    "type": "camp",
+    "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out.",
+    "water": "Ross Lake and May Creek; treat",
+    "permit": "Ross Lake NRA backcountry permit",
+    "capacity": "Designated lakeshore camp with several tent sites"
+   }
+  ],
+  "comms": "No cell coverage on the East Bank Trail or anywhere on the north side of Jack Mountain. A satellite messenger or PLB is essential, and note that a deep north-facing cirque gives poor sky view - send messages from open glacier or ridge, not from the bottom of the cirque.",
+  "bail": "Retreat from a steep, crevassed glacier means downclimbing or lowering on pickets and ice screws and re-crossing the schrund, which gets harder as the day warms. Below the glacier, retreat is a bushwhack back down to the East Bank Trail. Because no fixed anchors or documented rappel line exist, carry enough pickets, screws and cord that you can build and leave anchors on both snow and rock.",
+  "best_season": "Early season, when the glacier is still filled in and the bergschrund is closed. The neighbouring Nohokomeen headwall is best in a cold window in May, with parties warning that by June the schrund becomes a problem; the same logic applies to a north-facing glacier here. The Beckey party's 19 July 1978 ascent shows a midsummer climb is possible, but that is a considerably more broken-up glacier.",
+  "pro_tips": [
+   "This is a genuine reconnaissance objective. A published route table and the 1978 first-ascent record are essentially the entire public record; do not expect to find a topo or a trip report.",
+   "Study recent satellite and aerial imagery before you go - the northeast glacier is small and retreating, and its condition and bergschrund position change materially from year to year.",
+   "Go early in the season when the glacier is filled in; the Nohokomeen parties on the same side of the mountain consistently report that the schrund becomes the crux by June.",
+   "Have a scouted descent plan before you commit. The North and East ridges are the natural exits, and one documented party descended the East Ridge after climbing the North Ridge.",
+   "Do not confuse this with the Nohokomeen Glacier headwall, which is a different, much better documented route in the northwestern cirque."
+  ]
+ },
+ "wa_mount_lincoln_standard": {
+  "name": "Standard Scramble (Flapjack Lakes / Sawtooth Ridge)",
+  "face": "South Ridge",
+  "aspect": "S",
+  "beta": "Considered the easiest way up Lincoln (class 2 per the historic first-ascent line), but in practice parties report sustained class 2-3 terrain with a couple of class 3+/occasional class 4 moves near the true summit. The crux isn't technical difficulty so much as route-finding and endurance: thick brush and steep loose duff/scree (35-40+ degree slopes) below the ridge, a chockstone gully/boulder field, and an exposed, chossy knife-edge near the top. Most parties either backpack in and camp at Flapjack Lakes to split the trip over two days, or push it as a very long car-to-car day (12+ hours). A second, unofficial variation leaves the upper Staircase trail directly and climbs open slopes/gullies straight to the south ridge, bypassing Flapjack Lakes but requiring its own route-finding through brush and mossy rock steps (this variation is also used to link nearby Southwest Lincoln).",
+  "pitch_detail": [
+   {
+    "grade": null,
+    "notes": "Staircase trailhead to Flapjack Lakes, ~7 mi one-way, ~3,050-3,100 ft gain, on maintained trail.",
+    "pitch": "Approach"
+   },
+   {
+    "grade": "Class 2",
+    "notes": "Leave the trail near Flapjack Lakes/Gladys Divide and climb steep brush, duff, and scree (35-40°+) toward the south ridge crest.",
+    "pitch": "Off-trail ascent"
+   },
+   {
+    "grade": "Class 2-3",
+    "notes": "Follow the crest of Sawtooth Ridge toward Lincoln, negotiating loose towers, notches, and a chockstone/boulder-field section.",
+    "pitch": "Ridge crest"
+   },
+   {
+    "grade": "Class 3-4 (short)",
+    "notes": "Final airy, exposed scramble on chossy rock to the true summit; a knife-edge section drops away on the far side.",
+    "pitch": "Summit block"
+   }
+  ]
+ },
+ "wa_the_incisor_scramble": {
+  "name": "The Needles Scramble",
+  "face": "The Needles ridge crest",
+  "commitment": null,
+  "fa": "1958 (climbing party not recorded)",
+  "beta": "Approach via the long Royal Basin trail to Upper Royal Basin, then leave trail to gain the Needles ridge crest and work along/among the summits to reach The Incisor. The peaks in the Royal Basin area are not walkups, and the terrain carries rockfall danger from rotten rock, and although the Needles' rock is better than the pillow lava found across much of the Olympics, it is still loose and every hold needs testing. Expect Class 3-5.8 terrain somewhere on the massif depending on which line/summit is taken; no specific graded pitch count or line is established for The Incisor itself.",
+  "pro_needs": "The standard class 3 scramble line does not require technical protection. Parties venturing onto steeper pitches elsewhere among The Needles (up to 5.8) carry a light rock rack, but the route to/near The Incisor is unroped scrambling.",
+  "pro_tips": [
+   "Camp at Royal Lake or the Upper Basin to split the ~7-8 mile approach across two days",
+   "Combine with nearby Gasp Pinnacle or Mount Clark from the same camp since they share the same approach and ridge access",
+   "Summit registers are common on Needles peaks — check for one on The Incisor's block",
+   "Detailed pitch-by-pitch beta is scarce online; consult 'Olympic Mountains: A Climbing Guide' (Olympic Mountain Rescue, 4th ed.) for the definitive route description."
+  ]
+ }
+}

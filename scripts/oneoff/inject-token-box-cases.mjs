@@ -29,8 +29,8 @@ const CASES = [
     // The camping defect's shape, reproduced on a live panel: render prose in a chip.
     name: "2. a camping site's water prose rendered as a chip again",
     edit: (s) => s.replace(
-      '{b.onTrack?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{"Marked on the track"}</span>:null}',
-      '{b.water?<span style={{fontSize:11,fontWeight:700,color:C.textMuted,background:C.surface,border:"1px solid "+C.border,borderRadius:20,padding:"2px 9px"}}>{b.water}</span>:null}'),
+      '{b.onTrack?<span style={chip(C.textMuted,C.border)}>{"Marked on the track"}</span>:null}',
+      '{b.water?<span style={chip(C.textMuted,C.border)}>{b.water}</span>:null}'),
     want: /box\(es\) hold text too long for their shape/,
   },
   {

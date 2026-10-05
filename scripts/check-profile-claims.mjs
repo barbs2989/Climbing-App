@@ -65,13 +65,23 @@ const un = (h) => h.replace(/&#x27;/g, "'").replace(/&#39;/g, "'").replace(/&quo
 const ENTRY = `
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
+import ReactDOM from "react-dom";
+// Resume ends in createPortal(..., document.body), which the server renderer refuses: portals are
+// PLACEMENT, and check:overlays owns that. Flattened and \`document.body\` stubbed for THIS call only,
+// the same scoped patch check:units uses for FullProfile, so nothing else in the bundle moves.
+function flat(fn) {
+  const orig = ReactDOM.createPortal, hadDoc = "document" in globalThis;
+  ReactDOM.createPortal = (children) => children;
+  if (!hadDoc) globalThis.document = { body: {} };
+  try { return fn(); } finally { ReactDOM.createPortal = orig; if (!hadDoc) delete globalThis.document; }
+}
 import { Resume } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 const climber = { id: "u_9f1c2d", name: "Robin Belay", username: "robinbelay", avatar: "",
   location: "Bellingham, WA", vouches: [], certifications: [], courses: [], pyramid: {} };
 const ROUTE = { id: "wa_x", name: "North Ridge", grade: "5.7", discipline: "trad", mountainId: null };
 export function render(props) {
-  return renderToStaticMarkup(React.createElement(Resume, Object.assign(
-    { climber, logs: [], onClose(){}, routeById: (id) => (id === "wa_x" ? ROUTE : null) }, props)));
+  return flat(() => renderToStaticMarkup(React.createElement(Resume, Object.assign(
+    { climber, logs: [], onClose(){}, routeById: (id) => (id === "wa_x" ? ROUTE : null) }, props))));
 }
 `;
 

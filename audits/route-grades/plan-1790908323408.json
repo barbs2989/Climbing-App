@@ -1,0 +1,345 @@
+{
+ "plan": [
+  {
+   "id": "wa_frenzel_spitz_south_route",
+   "batch": "g3.json",
+   "before": {
+    "rock_grade": "5.6 (some parties call the crux 5.7ish)"
+   },
+   "body": {
+    "rock_grade": "5.6"
+   },
+   "headline": [
+    "5.6",
+    "5.6"
+   ],
+   "confidence": "medium",
+   "evidence": "2003 Complete Southern Pickets Traverse summary: 'Frenzlespitz, southeast ridge/face, II 5.6'. The 1961 first-ascent account gives the approach (about 500 ft down Ottohorn's north face) but no grade.",
+   "sources": [
+    "http://publications.americanalpineclub.org/articles/12200403400/Walking-the-Fence-The-Southern-Picket-Enchainment-Washington",
+    "http://publications.americanalpineclub.org/articles/12200415801/North-America-United-States-Washington-Southern-Picket-Range-Complete-Enchainment",
+    "http://publications.americanalpineclub.org/articles/12196206500/First-Ascents-in-the-Southern-Pickets"
+   ]
+  },
+  {
+   "id": "wa_garfield_mountain_south_route",
+   "batch": "g3.json",
+   "before": {
+    "grade": "5.4",
+    "grade_num": 4,
+    "rock_grade": "5.4"
+   },
+   "body": {
+    "grade": "5.8",
+    "grade_num": 8,
+    "rock_grade": "Up to 5.8 in #2 Gully (mostly low 5th, loose and poorly protected)"
+   },
+   "headline": [
+    "5.4",
+    "5.8"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost South Route: #2 Gully 'steps of varying difficulty ranging from Class 3 to Class 5.8'; crux was 'a short climb of 15 feet between slab and overhang'. A cascadeclimber TR describes several loose fifth-class pitches; Beckey's optional Chimney Variation is 'two leads easy class 5'.",
+   "sources": [
+    "https://www.summitpost.org/south-route/166418",
+    "https://www.cascadeclimber.com/mt__garfield.htm"
+   ]
+  },
+  {
+   "id": "wa_half_moon_southwest_slopes",
+   "batch": "g3.json",
+   "before": {
+    "grade": "5.7",
+    "rock_grade": "5.7",
+    "commitment": null
+   },
+   "body": {
+    "grade": "5.7+",
+    "rock_grade": "5.7+",
+    "commitment": "III"
+   },
+   "headline": [
+    "5.7",
+    "5.7+"
+   ],
+   "confidence": "medium",
+   "evidence": "SummitPost North Ridge route page: 'Difficulty: 5.7+ Grade III', seven pitches from the deep notch north of the peak. A 2013 SummitPost TR describes the same seven pitches (friable P1, steep cracks, wide chimney, exposed west-side traverse).",
+   "sources": [
+    "https://www.summitpost.org/north-ridge/163686",
+    "https://www.summitpost.org/north-ridge-of-half-moon-kangaroo-ridge/863616",
+    "https://www.summitpost.org/half-moon/153612"
+   ]
+  },
+  {
+   "id": "wa_inner_constance_standard",
+   "batch": "g3.json",
+   "before": {
+    "grade": "Class 4",
+    "grade_num": 4,
+    "rock_grade": "Class 3-4"
+   },
+   "body": {
+    "grade": "Class 3",
+    "grade_num": 3,
+    "rock_grade": "Class 2-3"
+   },
+   "headline": [
+    "Class 4",
+    "Class 3"
+   ],
+   "confidence": "medium",
+   "evidence": "Trip report on this exact line (South Defile, South Gully, East Ridge): a steep snow finger and gully with deep moats, then the summit is a 'fun Class 2-3 scramble on solid pillow basalt'. No rope used.",
+   "sources": [
+    "https://trailcatjim.com/mt-constance-inner-peak/"
+   ]
+  }
+ ],
+ "refused": [
+  {
+   "id": "wa_andersons_thumb_standard",
+   "batch": "g1.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_big_four_mountain_northwest_ridge",
+   "batch": "g1.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 4"
+  },
+  {
+   "id": "wa_burnt_boot_peak_north_ridge",
+   "batch": "g2.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_chair_bryant_traverse",
+   "batch": "g2.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.4"
+  },
+  {
+   "id": "wa_cinderella_peak_scramble",
+   "batch": "g2.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 4"
+  },
+  {
+   "id": "wa_davis_peak_nc_north_face",
+   "batch": "g2.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.6"
+  },
+  {
+   "id": "wa_dog_park_boulders_chicken_dance",
+   "batch": "g2.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_dog_park_boulders_heel_deal",
+   "batch": "g2.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_dog_park_boulders_juggernaut",
+   "batch": "g2.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_dog_park_boulders_pulp_fixion",
+   "batch": "g2.json",
+   "why": "discipline mixed is out of scope",
+   "final_grade": null
+  },
+  {
+   "id": "wa_forbidden_peak_northeast_face",
+   "batch": "g3.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "AI2"
+  },
+  {
+   "id": "wa_garfield_mountain_scramble",
+   "batch": "g3.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.8"
+  },
+  {
+   "id": "wa_ghost_peak_south_route",
+   "batch": "g3.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_golden_horn_north_face",
+   "batch": "g3.json",
+   "why": "\"\" is not a null grade",
+   "final_grade": null
+  },
+  {
+   "id": "wa_himmelhorn_southeast_route",
+   "batch": "g3.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_inner_constance_northwest_buttress",
+   "batch": "g3.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_jack_mountain_northeast_glacier",
+   "batch": "g4.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 4"
+  },
+  {
+   "id": "wa_lemah_two_goatshead_spire",
+   "batch": "g4.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_lichtenberg_mountain_west_face_west_rib",
+   "batch": "g4.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 4"
+  },
+  {
+   "id": "wa_little_mac_spire_southwest_route",
+   "batch": "g4.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.7"
+  },
+  {
+   "id": "wa_little_sister_south_couloir",
+   "batch": "g4.json",
+   "why": "discipline ice is out of scope",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_massie_peak_west_route",
+   "batch": "g5.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_mount_adams_mount_adams_circumnavigation",
+   "batch": "g5.json",
+   "why": "discipline ice is out of scope",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_mount_adams_wilson_glacier_headwall",
+   "batch": "g5.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_mount_crowder_northeast_ridge",
+   "batch": "g5.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_mount_dana_scramble",
+   "batch": "g5.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_goode_mountain_northeast_face",
+   "batch": "g5.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.8"
+  },
+  {
+   "id": "wa_mount_persis_the_hexorcist",
+   "batch": "g6.json",
+   "why": "\"\" is not a yds grade",
+   "final_grade": null
+  },
+  {
+   "id": "wa_mount_rainier_willis_wall",
+   "batch": "g6.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "AI3"
+  },
+  {
+   "id": "wa_mount_shuksan_northeast_ridge",
+   "batch": "g6.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.7"
+  },
+  {
+   "id": "wa_mushroom_tower_standard",
+   "batch": "g6.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.5"
+  },
+  {
+   "id": "wa_north_gardner_mountain_nw_couloir",
+   "batch": "g6.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_pernod_spire_standard",
+   "batch": "g6.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.7"
+  },
+  {
+   "id": "wa_rimrock_ridge_scramble",
+   "batch": "g7.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_rock_mountain_northeast_ridge",
+   "batch": "g7.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_ruby_mountain_happy_creek",
+   "batch": "g7.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_south_early_winter_spire_east_buttress",
+   "batch": "g7.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.8"
+  },
+  {
+   "id": "wa_spinnaker_peak_s_route",
+   "batch": "g7.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "Class 3"
+  },
+  {
+   "id": "wa_storm_king_north_face",
+   "batch": "g7.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_the_chopping_block_south_route",
+   "batch": "g8.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  },
+  {
+   "id": "wa_thunder_mountain_north_face",
+   "batch": "g8.json",
+   "why": "low confidence, and the row already has a filterable grade",
+   "final_grade": "5.0"
+  }
+ ]
+}

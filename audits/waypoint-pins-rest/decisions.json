@@ -1,0 +1,556 @@
+[
+ {
+  "op": "clear",
+  "route": "wa_mount_adams_adams_glacier",
+  "pin": "Junction|Adams Glacier Base",
+  "oldLat": 46.285,
+  "oldLng": -121.515,
+  "evidence": "EPQS 5,145 ft at 46.285,-121.515; groundBox 4994-5216, accept band 4744-5466. That excludes both 8,000 and the published 7,000 toe height. The point is about 6 mi N of the summit, near the Killen Creek TH. Drop sketch gpx vertex [46.285,-121.515]. Gate 2 passes (HCJ to summit 4.81 mi vs 8.4 mi stored).",
+  "reason": "The coordinate is not on the Adams Glacier. Nothing fetched publishes the toe's coordinate.",
+  "verified": "Pin Junction|Adams Glacier Base appears once, at 46.285,-121.515 with elev 8000 and distMi 7, so the old values match. I measured the ground myself: EPQS gives 5,145 ft and groundBox gives lo 4994 / hi 5216 / relief 222, so the accept band is 4744-5466. The coordinate fails at 8,000 and would still fail at 7,000, so it is wrong whatever height the toe has. The pin's own directions call it 'the glacier toe', and the route prose puts the toe at about 7,000-7,300 ft. A point 5,145 ft high, 0.3 mi south of the trailhead's latitude, is not on the Adams Glacier. It is a Junction, not a Trailhead. Gate 3: the gpx is a 4-vertex sketch, and vertex [46.285,-121.515] has to be dropped along with the pin. Gate 2: High Camp Trail Junction (3.1 mi) to the Summit is 4.81 mi in a straight line against 8.4 mi stored, and the trailhead to the Summit is 6.64 mi against 11.5 mi. Both pass."
+ },
+ {
+  "op": "setElev",
+  "route": "wa_mount_adams_adams_glacier",
+  "pin": "Junction|Adams Glacier Base",
+  "oldElev": 8000,
+  "elev": 7000,
+  "source": "https://en.wikipedia.org/wiki/Adams_Glacier_(Mount_Adams)",
+  "quote": "It flows down from the summit ice cap at over 12,000 feet (3,700 m) for over 2.5 miles (4.0 km) to a terminus near 7,000 feet (2,100 m).",
+  "evidence": "The fetched Wikipedia article gives the terminus as near 7,000 ft. The pin is defined as the glacier toe, and the route prose says 7,000-7,300 ft. The old 8,000 is contradicted.",
+  "verified": "I fetched https://en.wikipedia.org/wiki/Adams_Glacier_(Mount_Adams) with curl. The verbatim text is 'It flows down from the summit ice cap at over 12,000 feet (3,700 m) for over 2.5 miles (4.0 km) to a terminus near 7,000 feet (2,100 m).' It is the Mount Adams article, so this is not a namesake. The pin's directions say it is 'the glacier toe, where parties rope up', which is the terminus. The route prose ('roughly 7,000-7,300 ft') agrees, and the old 8,000 contradicts it. Gate 1 does not apply because the pin has no coordinate after the clear, and an elev without a coordinate is already a valid shape on this route (High Camp). Caveats: Wikipedia's 'near' is an approximation, and the setElev precondition 'coordinate is right' can only be read as vacuous here. If the apply script rejects setElev on a pin with no coordinate, substitute nullElev(oldElev 8000), which the same quote justifies."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_adams_north_ridge",
+  "pin": "Junction|North Ridge Base",
+  "oldLat": 46.275,
+  "oldLng": -121.52,
+  "evidence": "EPQS 5,211 ft; groundBox 5059-5592, accept band 4792-5859. That is below the route's own High Camp at 7,000 ft, which the ridge base lies above. Drop sketch gpx vertex [46.275,-121.52].",
+  "reason": "The coordinate sits below High Camp on the approach, not at the foot of the North Ridge. No published coordinate replaces it.",
+  "verified": "Pin Junction|North Ridge Base appears once, at 46.275,-121.52 with elev 8000 and distMi null, so the old values match. EPQS gives 5,211 ft and groundBox gives 5059-5592 (relief 533), so the accept band is 4792-5859. The point is about 1.8 mi from the Killen Creek TH, below High Camp, which is stored at 7,000 ft and 4.1 mi on the same route. The base of the ridge lies above High Camp, so the coordinate is wrong whatever the height. It is a Junction, not a Trailhead. Gate 3: the gpx is a 3-vertex sketch, and vertex [46.275,-121.52] is dropped with the pin. Gate 2 is not engaged because distMi is null."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_adams_north_ridge",
+  "pin": "Junction|North Ridge Base",
+  "evidence": "Missing evidence: a fetched source stating the elevation where the North Ridge climb starts.",
+  "reason": "Height half unsettled: 8,000 ft has no published backing, but nothing fetched contradicts it either.",
+  "verified": "Kept as proposed. The researcher's height question stays unsettled, and nothing fetched gives a height for the ridge base."
+ },
+ {
+  "op": "move",
+  "route": "wa_old_snowy_mountain_r1",
+  "pin": "Landmark|Snowgrass Flats meadows",
+  "oldLat": 46.483746,
+  "oldLng": -121.481789,
+  "lat": 46.4934549470503,
+  "lng": -121.47009769844419,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query?where=gaz_id%3D1526045&outFields=*&returnGeometry=true&outSR=4326&f=json",
+  "quote": "\"gaz_id\":1526045,\"gaz_name\":\"Snowgrass Flat\",\"gaz_featureclass\":\"Flat\",\"fcode\":15028,\"state_alpha\":\"WA\",\"county_name\":\"Lewis\" ... \"geometry\":{\"points\":[[-121.47009769844419,46.493454947050303]]}",
+  "evidence": "The GNIS Snowgrass Flat point is 0.87 mi from the old pin. The old point has a ground of 4,932 ft, in the forest. The new point's ground is 5,813 ft, and its box admits the paired 5,800. Gate 2: 3.03 mi straight vs 3.0 mi stored.",
+  "verified": "Pin Landmark|Snowgrass Flats meadows appears once, at 46.483746,-121.481789 with elev 6400 and distMi 3, so the old values match. I fetched the GNIS JSON with curl. It is gaz_id 1526045, 'Snowgrass Flat', class Flat, WA, Lewis County, and the geometry points are [[-121.47009769844419,46.493454947050303]]. That is the Goat Rocks feature the trail serves, not a namesake. The pin's note says 'Trail 86 splits here'. WTA (fetched) says the Lily Basin Trail 86 junction at 4.1 miles is the lower portion of Snowgrass Flat, which fits the GNIS point, 0.43 mi past the T97 pin and 0.18 mi from the PCT junction pin. Gate 1 with the paired elev 5,800: EPQS 5,813 ft, groundBox 5740-5945, accept band 5490-6195, so it passes. Gate 2: trailhead to the GNIS point is 3.03 mi against 3.0 mi stored (+0.03), which passes. The next pin, T97, is 0.43 mi away against a 1.0 mi stored step, which passes. The gpx has 976 vertices and is not a sketch. The stored distMi of 3 now understates the trail distance, but it is not impossible."
+ },
+ {
+  "op": "setElev",
+  "route": "wa_old_snowy_mountain_r1",
+  "pin": "Landmark|Snowgrass Flats meadows",
+  "oldElev": 6400,
+  "elev": 5800,
+  "source": "https://www.wta.org/go-hiking/hikes/snowgrass",
+  "quote": "Snowgrass Flat South Cascades > Goat Rocks 46.4642 , -121.5190 Map & Directions Length 8.2 miles, roundtrip Elevation Gain 1,600 feet Highest Point 5,800 feet",
+  "evidence": "WTA's Snowgrass Flat hike gives a high point of 5,800 ft, and the hike ends at the flat. At the GNIS point, EPQS reads 5,813 ft with a box of 5740-5945, so it passes. The old 6,400 is outside the box at both points.",
+  "verified": "I fetched https://www.wta.org/go-hiking/hikes/snowgrass with curl. The page title is 'Snowgrass Flat', and the text reads verbatim: 'Snowgrass Flat South Cascades > Goat Rocks 46.4642 , -121.5190 Map & Directions Length 8.2 miles, roundtrip Elevation Gain 1,600 feet Highest Point 5,800 feet'. The hike runs 4.1 mi each way and ends at the flat ('at 4.1 miles, you've arrived at the lower portion of Snowgrass Flat'), so its highest point is the flat. The ground at the GNIS point is 5,813 ft, and the box (5490-6195) admits 5,800. The old 6,400 falls outside the box at both the old point and the new one. This is valid only if paired with the move above. Caveat: the figure is a trail-guide high point, not a surveyed spot height."
+ },
+ {
+  "op": "clear",
+  "route": "wa_lost_peak_pasayten_scramble",
+  "pin": "Water|Middle Fork Pasayten River flats",
+  "oldLat": 48.783078228571426,
+  "oldLng": -120.61945422857143,
+  "evidence": "Terrain box at the pin is 6,201 to 6,654 ft (EPQS 6,411). The EPQS profile at lat 48.783078 bottoms out at 5,081 ft at lng -120.64, so the pin is about 0.7 mi east of and about 1,300 ft above the river. GNIS Middle Fork Pasayten River gives only a polyline, so nothing can replace the coordinate. Gate 2 passes (Fred's Lake is 5.06 mi in a straight line from Robinson Pass, against a stored 7 mi). There is no gpx.",
+  "reason": "The coordinate is on the valley wall, about 1,300 ft above the river the note places it beside, and no published coordinate exists for the flats.",
+  "verified": "The pin Water|Middle Fork Pasayten River flats exists once, at lat 48.783078228571426, lng -120.61945422857143. I ran groundBox at the pin: 6,201 to 6,654 ft, with EPQS 6,411. My EPQS profile along that latitude reads 6,489, 6,495, 5,285, 5,081 (-120.64), 5,193, 5,723, 6,091 and 6,406 ft, so the valley floor is near -120.64 at about 5,080 ft. The pin sits on the east valley wall, about 1,300 ft above the river, which contradicts its own note ('beside the river'). It is not a Trailhead. Gate 2: Fred's Lake (16 mi) is 5.06 mi in a straight line from Robinson Pass (9 mi), against a stored 7 mi, so it passes. The route has no gpx, so gate 3 does not apply."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_lost_peak_pasayten_scramble",
+  "pin": "Water|Middle Fork Pasayten River flats",
+  "oldElev": 4400,
+  "evidence": "At the GNIS Berk Creek mouth (48.839588,-120.620680) EPQS reads 4,730 ft and the box is 4,730 to 4,804 ft, so the accept range is 4,480 to 5,054 and 4,400 is rejected. The river floor at the pin's latitude is about 5,080 ft. The route prose puts the camp about 3 miles below Robinson Pass, which is upstream of the Berk Creek mouth (about 6 mi in a straight line from the pass).",
+  "reason": "4,400 ft is below every point of the Middle Fork between Robinson Pass and the Berk Creek junction, the stretch where the route camps. No published height exists.",
+  "verified": "oldElev 4400 matches the live row. GNIS Berk Creek (gaz_id 1516431, layer 5) is confirmed with its mouth at 48.839588,-120.620680. groundBox there reads 4,730 to 4,804 ft (EPQS 4,730), so the accept range is 4,480 to 5,054 and 4,400 falls below it. The route's own approach prose says 'drop about three miles into the Middle Fork valley and camp on the river flats', and Robinson Pass is about 6 mi in a straight line from the Berk Creek mouth. So the camp lies upstream of that mouth, where the river is higher than 4,730 ft (about 5,080 at the pin's latitude). The height is impossible on the stretch of river this route uses, independent of the coordinate. I did not rely on the WTA figure."
+ },
+ {
+  "op": "clear",
+  "route": "wa_cathedral_peak_pasayten_se_buttress",
+  "pin": "Junction|Peepsight Trail junction",
+  "oldLat": 48.857306,
+  "oldLng": -120.159132,
+  "source": "https://www.wta.org/go-hiking/hikes/andrews-creek ; https://onehikeaweek.com/2018/06/24/andrew-peak/",
+  "quote": "WTA: \"After 5.5 miles, continue left at a junction ... Make your way down the trail until you reach another junction with the Peepsight Trail.\" onehikeaweek: \"So the 8.5 miles to the Peepsight Trail fork was debris free.\"",
+  "evidence": "The pin's straight line from the trailhead is about 5.57 mi on a nearly straight valley trail. The fetched WTA and onehikeaweek pages place the Peepsight junction(s) at 8.5 mi or later. Gate 2 passes (Andrews Pass is 8.40 mi in a straight line from the Water pin against a stored 8.0, 5% over). The gpx is not a sketch (204 vertices).",
+  "reason": "The pin sits at the 5.5-mile junction, which WTA names as a different junction that comes before the Peepsight fork. The real fork is about 8.5 mi in (with a second, north Peepsight junction about a mile below Andrews Pass), and no source publishes either coordinate.",
+  "verified": "The pin Junction|Peepsight Trail junction exists once, at 48.857306,-120.159132, with distMi 5.5. I fetched WTA andrews-creek myself and it reads verbatim: 'After 5.5 miles, continue left at a junction ... Make your way down the trail until you reach another junction with the Peepsight Trail.' I also fetched onehikeaweek, which reads verbatim: 'So the 8.5 miles to the Peepsight Trail fork was debris free.' The same page mentions a second, north Peepsight Trail junction about a mile short of Andrews Pass. So both Peepsight junctions lie at about 8.5 mi or about 11 mi, and the pin at about trail mile 5.6 is neither one. The coordinate is convicted. It is not a Trailhead. Gate 2: Andrews Pass (12 mi) is 8.40 mi in a straight line from the Water pin (4 mi), against a stored 8.0. That is 0.40 mi over but only 5% over, so it does not fail both thresholds. It is 12.36 mi from the trailhead (3% over). The gpx has 204 vertices with sketch false, so gate 3 does not apply."
+ },
+ {
+  "op": "none",
+  "route": "wa_cathedral_peak_pasayten_se_buttress",
+  "pin": "Junction|Peepsight Trail junction",
+  "reason": "Proposed nullElev, refused on verification: The ground at the pin does reject 6,200: the box is 4,639 to 5,035 ft, so the accept range is 4,389 to 5,285 (EPQS 4,686). At the GNIS Peepsight Creek mouth (48.878486,-120.170386) EPQS reads 5,070 ft and the range is 4,799 to 5,468, so 6,200 is rejected there too. But the claim 'convicted wherever the junction is' does not hold. The onehikeaweek page I fetched describes a SECOND, north Peepsight Trail junction 'a mile shy of Andrews Pass', and WTA's Peepsight page calls the trail an '8.1 mile section of trail that connects to the Andrews Creek trail'. Andrews Pass is 6,700 ft, and a junction a mile below it on the Andrews Creek trail could plausibly sit near 6,200 ft. EPQS samples toward the pass reach 6,000 to 6,900 ft. The pin name does not say which junction is meant. Once the coordinate is cleared, the height is not shown impossible for both candidate junctions, so the nullElev is not proven."
+ },
+ {
+  "op": "setElev",
+  "route": "wa_mount_ballard_south",
+  "pin": "Campsite|Azurite Mine",
+  "oldElev": 5899,
+  "elev": 4440,
+  "source": "Washington DNR Open File Report 2002-3, Azurite Mine (ofr02-3.pdf in https://www.dnr.wa.gov/Publications/ger_ofr2002-3_iaml_azurite.zip)",
+  "quote": "All mining took place above the Wenatchee tunnel, which served as the main haulage level at an elevation of 4440 feet above mean sea level.",
+  "evidence": "DNR location table: 120.78106, 48.68276 (about 3 m from the pin). Table 1: Wenatchee tunnel at 4440, 120.78165 48.6828. EPQS at the pin reads 4,442. Box 4,429 to 4,778, so the accept range is 4,179 to 5,028: 4,440 passes and 5,899 fails.",
+  "reason": "DNR's mine location matches the pin to within about 3 m, and DNR publishes 4,440 ft for the main haulage level about 40 m away. 5,899 is impossible on the ground there.",
+  "verified": "The pin Campsite|Azurite Mine exists once, at 48.68278,-120.78111 with elev 5899, matching the live row. I downloaded the DNR zip myself (ger_ofr2002-3_iaml_azurite.zip) and extracted ofr02-3.pdf. The text reads 'All mining took place above the Wenat-chee tunnel, which served as the main haulage level at an elevation of 4440 feet above mean sea level.' (the hyphen is only a PDF line break). The location table gives 'Azurite Whatcom NE¼NE¼ sec. 30, T37N R17E ... 120.78106 48.68276', which is about 3 m from the pin, so this is the same feature. Table 1 lists 'Wenatchee tunnel ... S65W 4440 120.78165 48.6828'. The report's note says its elevations use the current USGS datum, consistent with my EPQS reading of 4,442 at the pin. groundBox: 4,429 to 4,778 ft, relief 349, so the accept range is 4,179 to 5,028. 4,440 is inside it and 5,899 is outside, so gate 1 passes. The coordinate is unchanged and there is no gpx, so gates 2 and 3 are unaffected."
+ },
+ {
+  "op": "clear",
+  "route": "wa_emerald_peak_se_ridge",
+  "pin": "Junction|Fern Lake Trail #1436 spur junction",
+  "oldLat": 48.0755369,
+  "oldLng": -120.6453854,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/7/query?where=gaz_name%3D'Fern%20Lake'%20AND%20state_alpha%3D'WA'",
+  "quote": "{\"attributes\":{\"gaz_id\":1519498,\"gaz_name\":\"Fern Lake\",\"gaz_featureclass\":\"Lake\",\"county_name\":\"Chelan\"},\"geometry\":{\"x\":-120.64554023105102,\"y\":48.075393979643643}}",
+  "evidence": "Pin is 20 m from GNIS Fern Lake (the lake, not the junction). Box at the pin is 6859-7337 (accept 6609-7587, EPQS 6865) and rejects 4900. The valley track at 48.071911,-120.621175 reads 5104 and its box admits 4900. Pyramid junction is 6.13 mi straight from the TH against 8.3.",
+  "verified": "Pin exists once; old lat/lng match. The GNIS layer 7 fetch (curl) returns 1519498 Fern Lake (Lake, Chelan) at 48.0753940,-120.6455402, 20 m from the pin, so the pin is on the lake, not the trail junction. My groundBox at the pin: 6859-7337, accept 6609-7587, EPQS 6865. That rejects 4900. Nearest gpx sample is 0.818 mi away. At track sample 15 (48.071911,-120.621175) EPQS reads 5104 and the box admits 4900 (4680-5616), so the height is plausible for the valley junction. Gate 2: the Pyramid junction is 6.13 mi straight from the TH against distMi 8.3, so it is fine. The gpx has 303 vertices and is not a sketch. Not a Trailhead."
+ },
+ {
+  "op": "clear",
+  "route": "wa_summit_chief_mountain_south_route",
+  "pin": "Junction|PCT junction near Lemah Meadow",
+  "oldLat": 47.464696,
+  "oldLng": -121.216787,
+  "source": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/pete-lake-trail",
+  "quote": "It's 4 miles to Pete Lake ... 1.3 miles to a junction with Lemah Meadow Trail #1323.2, which takes off to the right (north) and uphill for about 1 mile to Lemah Meadows and a junction with the Pacific Crest Trail.",
+  "evidence": "The pin is 2.53 mi from the TH and 1.18 mi before Pete Lake (GNIS), on the valley floor (EPQS 2896). The junction lies past the lake. Box 2868-2986 rejects 4000.",
+  "verified": "Pin exists once; old lat/lng match. USFS Pete Lake page fetched: '4 miles to Pete Lake' and '1.3 miles to a junction with Lemah Meadow Trail #1323' are both present, and the PCT junction lies beyond the lake. GNIS Pete Lake 47.475772,-121.235978 is 3.68 mi from the TH. The pin is 2.53 mi from the TH and 1.18 mi short of the lake on the TH side, EPQS 2896. Box 2868-2986 (accept 2618-3236) rejects 4000. Nearest gpx sample is 2.99 mi away (the gpx only covers Vista Lakes onward). Gate 2: Vista Lakes is 5.48 mi straight against 13. Not a Trailhead. The coordinate is wrong under any reading of the pin, whether junction or bypass, since both lie beyond Pete Lake."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_summit_chief_mountain_south_route",
+  "pin": "Junction|PCT junction near Lemah Meadow",
+  "oldElev": 4000,
+  "source": "https://www.wta.org/go-hiking/hikes/lemah-meadow",
+  "quote": "Highest Point 3,250 feet ... At 0.9 mile is a small camp site and the junction of the Pacific Crest Trail.",
+  "evidence": "WTA's Lemah Meadow hike tops out at 3,250 ft and passes the PCT junction at 0.9 of 1.0 mi, so the junction is at or below 3,250. The route's approach_variants say ~3,220. The box at the old coordinate (2618-3236 accept) also rejects 4000. The pin's note conflates it with a ~4,000 ft bypass point, so flag the note.",
+  "verified": "Old elev 4000 matches. WTA lemah-meadow fetched: 'Length 1.0 miles', 'Highest Point 3,250 feet', 'At 0.9 mile is a small camp site and the junction of the Pacific Crest Trail.' The route's own approach says to turn onto the PCT 'at about 3,220 ft', so 4000 is wrong for the junction. No fetched page gives the junction's own height, so nullElev is the right op, not setElev. CAVEAT for a human: the pin's NOTE says 'Climbers' bypass leaves ... here near 4,000 ft', which describes a different point (the shortcut off the PCT switchbacks) and is where the 4000 came from. The pin conflates two features, and its note should be reconciled. The name and directions both describe the junction, so nulling the junction's height is still correct."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_stuart_north_ridge",
+  "pin": "Pass|Longs Pass",
+  "reason": "No published distance to Longs Pass exists from THIS route's Stuart Lake trailhead, because the pin belongs to the southern Esmeralda approach (WTA: 5.8 mi roundtrip from Esmeralda Basin/Ingalls Lake trailhead). It is 7.3 mi straight from the Stuart Lake TH against distMi 3.5. Fixing it is structural (move it to the southern approach variant, or drop it) and needs a human decision.",
+  "verified": "none decision, kept as is. The pin and its old values match the live row (Pass|Longs Pass, 47.4492902,-120.9251031, 6300, distMi 3.5); the route file in context is the Cascadian Couloir one, but the reason is structural and needs a human."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_stuart_cascadian_couloir",
+  "pin": "Junction|Long's Pass Trail Junction",
+  "oldLat": 47.453,
+  "oldLng": -120.917,
+  "source": "https://www.fs.usda.gov/r06/okanogan-wenatchee/recreation/trails/longs-pass-trail",
+  "quote": "The Longs Pass Trail begins at Ingalls Way Trail #1390, Ingalls Lake and ends at Ingalls Creek Trail #1215.",
+  "evidence": "The pin (3-dp) is 0.50 mi from and ~600 ft above (EPQS 5488 vs 4861) the track's Ingalls Creek low point. A junction with the creek trail cannot be on the slope. No published coordinate.",
+  "verified": "Pin exists once; old lat/lng 47.453,-120.917 match (3-dp, looks synthetic), and elev is null. Track sample 26 (47.45599,-120.90728) is the creek low point at EPQS 4861. The pin is 0.50 mi from it at EPQS 5488 (box 5213-5752, accept 4944-6021), about 600 ft above Ingalls Creek on the slope down from Longs Pass. A junction with Ingalls Creek Trail #1215 belongs at the creek, so the coordinate is convicted, though by geometry and not by a box failure (the pin has no height for the box to test). Gate 2: Cascadian Couloir Base is 0.94 mi from Longs Pass against a 1.5 mi distMi difference, and 1.97 mi from the TH against 5. The gpx has 650 vertices, not a sketch. Not a Trailhead."
+ },
+ {
+  "op": "clear",
+  "route": "wa_mount_stuart_cascadian_couloir",
+  "pin": "Junction|Ingalls Way Trail Junction",
+  "oldLat": 47.43,
+  "oldLng": -120.9,
+  "source": "https://www.wta.org/go-hiking/hikes/longs-pass",
+  "quote": "From the Esmeralda trailhead, begin hiking on the multi-use trail for just 0.3 miles",
+  "evidence": "The coordinate is 1.79 mi straight from the TH against a stored 0.3 mi (impossible), and 1.67 mi from the nearest track sample. No published coordinate.",
+  "verified": "Pin exists once; old 47.43,-120.9 matches (2-dp). It is 1.79 mi straight from the TH against distMi 0.3, which already fails gate 2. Nearest gpx sample is 1.67 mi away and EPQS reads 5576. WTA longs-pass fetched: it contains '0.3 miles' and the Esmeralda co-ordinates 47.4367,-120.9372, matching the TH. Gate 2 after the clear: Longs Pass is 1.04 mi from the TH against 3.5. Not a Trailhead."
+ },
+ {
+  "op": "nullElev",
+  "route": "wa_mount_stuart_cascadian_couloir",
+  "pin": "Junction|Ingalls Way Trail Junction",
+  "oldElev": 3500,
+  "evidence": "The junction is 0.3 mi up from the 4243 ft Esmeralda TH, so 3500 is impossible. The coordinate is cleared separately (1.79 mi straight vs 0.3 distMi).",
+  "verified": "Old elev 3500 matches. The TH is stored at 4243 (published in its own directions), and the junction is 0.3 mi up an ascending trail, so it cannot be 740 ft below the TH. No published height exists for the junction. The coordinate is independently convicted (above), so recording two decisions is legitimate."
+ },
+ {
+  "op": "clear",
+  "route": "wa_dragontail_peak_r3",
+  "pin": "Junction|Colchuck Col",
+  "oldLat": 47.4744,
+  "oldLng": -120.826256,
+  "source": "https://carto.nationalmap.gov/arcgis/rest/services/geonames/MapServer/5/query (Colchuck Peak, Dragontail Peak)",
+  "quote": "Colchuck Peak [[-120.8463752612931, 47.478194416003454]] ; Dragontail Peak [[-120.83312059322478, 47.47887512498969]]",
+  "evidence": "The col lies between Colchuck Peak (lng -120.8464) and Dragontail (lng -120.8331). The pin is at -120.8263, east of Dragontail on the Aasgard side, 0.10 mi from the descent-traverse track vertex. The height 8500 is unverified; the route's own prose puts the nearby couloir start at ~8,000 ft.",
+  "verified": "Pin exists once; old 47.4744,-120.826256 matches. The route's own text says Colchuck Col is 'the saddle between Colchuck Peak and Dragontail', reached via the Colchuck Glacier (GNIS 47.4801,-120.8395). That puts it west of Dragontail's summit (lng -120.8334). The pin is at lng -120.8263, east of the summit and 0.10 mi from the track's Aasgard-traverse vertex 31, on the descent side. Box 8096-8623 (EPQS 8403) admits 8500, so the conviction is geometric, against both GNIS summits. Not a Trailhead. Gate 2: the summit is fine relative to Colchuck Lake. CAVEAT: the height is NOT confirmed. The route's own prose says the couloir 'starts a couple hundred feet east (left) of Colchuck Col, at about 8,000 ft', which suggests the col is nearer 8000 than 8500. Flag the elev for follow-up research, but the coordinate clear stands on its own."
+ },
+ {
+  "op": "clear",
+  "route": "wa_dragontail_peak_r3",
+  "pin": "Hazard|Pandora's Box notch",
+  "oldLat": 47.476659,
+  "oldLng": -120.829763,
+  "source": "https://en.wikipedia.org/wiki/Dragontail_Peak",
+  "quote": "Coordinates 47°28′43″N 120°50′00″W / 47.4787301°N 120.833421°W",
+  "evidence": "The notch must be SW of the summit (the route says traverse NE from the notch to the summit). The pin is SE of the summit, on the Aasgard side.",
+  "verified": "Pin exists once; old 47.476659,-120.829763 matches. The route text says the couloir entrance is 'a couple hundred feet left (east) of the col', and from the notch you 'traverse northeast to the true summit'. So the notch is SW of the summit and west of Dragontail. The pin is 0.14 mi S and 0.17 mi E of the summit (47.47873,-120.833421), so the summit is NW of the pin, which contradicts the route's own beta. The pin sits 0.126 mi from the Aasgard-side track vertex. Box 7889-8574 (EPQS 8485) admits 8600, so the conviction is geometric. The height is unverified. Not a Trailhead."
+ },
+ {
+  "op": "none",
+  "route": "wa_dragontail_peak_r3",
+  "pin": "Junction|Aasgard Pass",
+  "reason": "Correct as stored. It is 15 m from GNIS 1533528 Colchuck Pass (= Aasgard Pass); the 7841 height matches Wikipedia, and EPQS reads 7810.",
+  "verified": "none decision, kept as is. The Aasgard Pass pin is consistent with GNIS Colchuck Pass."
+ },
+ {
+  "op": "none",
+  "route": "wa_dragontail_peak_r3",
+  "pin": "Junction|North shore / glacier approach",
+  "reason": "No coordinate, and none is published for this generic approach point. 6800 lies within the glacier's published range, so nothing convicts it.",
+  "verified": "none decision, kept as is. The pin has no coordinate."
+ },
+ {
+  "op": "none",
+  "route": "wa_earl_peak_southwest_ridge",
+  "pin": "Trailhead|Beverly Turnpike Trailhead",
+  "reason": "Correct as stored. It is 45 m from WTA's published coordinates, and its box admits 3450.",
+  "verified": "none decision, kept as is. The TH pin is 45 m from WTA's 47.3888,-120.8723 (confirmed in the fetched page), and EPQS reads 3657."
+ },
+ {
+  "op": "clear",
+  "route": "wa_earl_peak_southwest_ridge",
+  "pin": "Junction|Bean Creek Trail fork",
+  "oldLat": 47.395237,
+  "oldLng": -120.869522,
+  "source": "https://www.wta.org/go-hiking/hikes/bean-creek-basin",
+  "quote": "Approximately a half mile from the trailhead, the two trails split.",
+  "evidence": "The pin is 0.17 mi off the real track, on the hillside (EPQS 4563 vs 3963 at the track's turn and 3657 at the TH). The trail split at 0.5 mi lies on the track at 47.39532,-120.87475, whose box admits 3750.",
+  "verified": "Pin exists once; old 47.395237,-120.869522 matches. WTA bean-creek-basin fetched: 'half mile from the trailhead, the two trails split.' is verbatim. The box at the pin (4015-4761, accept 3642-5134) admits 3750, so the box alone does NOT convict. The conviction rests on: pin EPQS 4563 vs TH EPQS 3657, which is 906 ft of gain in 0.44 straight mi for a trail described as a mellow old roadbed. The track's turn east at sample 4 (47.39532,-120.87475, 0.46 mi cumulative) reads 3963. The pin is 0.17 mi off the 162-vertex track, on the slope above it. The height 3750 is admitted at the track split (3615-4579), so it stays. Gate 2: the summit is 2.00 mi from the TH against 3.6. Not a Trailhead."
+ },
+ {
+  "op": "clear",
+  "route": "wa_earl_peak_southwest_ridge",
+  "pin": "Junction|Bean Creek Basin junction",
+  "oldLat": 47.406483,
+  "oldLng": -120.846547,
+  "source": "https://www.wta.org/go-hiking/hikes/bean-creek-basin",
+  "quote": "Around 2 miles in, the surroundings become lusher and the trail crosses a much smaller Bean Creek a final time. ... Immediately following the creek crossing is the trail junction with Earl Peak Trail (1391.1).",
+  "evidence": "The box at the pin (5385-7193 accept, EPQS 6222) rejects 5100. The pin is 0.30 mi from the summit on the ridge. The basin junction is at a creek crossing ~2 mi in, and the track there reads 5084 with a box that admits 5100.",
+  "verified": "Pin exists once; old 47.406483,-120.846547 matches. Box at the pin is 5837-6741, accept 5385-7193, EPQS 6222, so 5100 is rejected. The pin is 0.30 mi from the GNIS summit and 0.056 mi from track sample 28, high on the ridge. WTA fetched: 'Around 2 miles in ... crosses a much smaller Bean Creek a final time.' and 'Immediately following the creek crossing is the trail junction with Earl Peak Trail', so the junction is in the basin (WTA highest 5,500), not on the summit ridge. At track sample 16 (47.40655,-120.85671) EPQS reads 5084 and the box admits 5100 (4758-5725). Coordinate convicted; height plausible. Gate 2: the summit is 2.00 mi from the TH against 3.6. Not a Trailhead."
+ },
+ {
+  "op": "none",
+  "route": "wa_earl_peak_southwest_ridge",
+  "pin": "Summit|Earl Peak summit",
+  "reason": "Correct as stored. It is 8 m from GNIS Earl Peak, and EPQS 7036 matches.",
+  "verified": "none decision, kept as is."
+ },
+ {
+  "op": "none",
+  "route": "wa_garfield_mountain_scramble",
+  "pin": "Trailhead|Middle Fork Road (FR-56) Pullout at Taylor River Crossing",
+  "evidence": "The current pin is on the Middle Fork Trail (OSM), and the straight line to the summit is 2.05 mi against the stored 1.5 mi. The wash 2.6 road miles past the Taylor junction is still unlocated.",
+  "reason": "No fetched source gives a coordinate for the South Route's gravel-wash pullout, and none gives a trail distance to the summit. The only published coordinate nearby, 47.54604,-121.52151, is the Infinite Bliss parking, a different trailhead. Moving the pin there would be a guess.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "none",
+  "route": "wa_garfield_mountain_scramble",
+  "pin": "Summit|Garfield Mountain Summit",
+  "evidence": "GNIS layer 5 geometry [-121.49353783800473,47.552729198611509]. The pin is 47.552695,-121.493635.",
+  "reason": "Correct as stored. GNIS 1519900 is about 8 m from the pin, and the height passes the box.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_index_bluebell",
+  "pin": "Summit|Mount Index Middle Peak",
+  "evidence": "The Mountain Project area 'Middle Peak' point is 47.78063,-121.58179 (EPQS 5,392). The snippet point 47.779685,-121.581745 reads EPQS 5,518.",
+  "reason": "Nothing fetchable gives a summit coordinate. The Peakbagger value was seen only in a search snippet, and the Mountain Project area point is not a summit coordinate.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_index_north_norwegian_buttress",
+  "pin": "Summit|Mount Index Middle Peak",
+  "evidence": "See the wa_mount_index_bluebell entry.",
+  "reason": "Same as the Bluebell route: no fetchable published summit coordinate exists.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "clear",
+  "route": "wa_south_twin_sister_west_ridge",
+  "pin": "Campsite|Orsino Creek Basin / Red Talus Slope",
+  "oldLat": 48.713337,
+  "oldLng": -122.017366,
+  "source": "route's own bivy and prose records; GNIS; USGS EPQS",
+  "evidence": "groundBox at 183 m slop: lo 3,579, hi 4,062, relief 483, admitting 3,329-4,312. EPQS at the pin is 3,710 ft, so the stored 5,000 fails gate 1 by 688 ft. Both of the route's own records agree on the height: the bivy record gives the basin at 4,900, and the prose has the camp high in the basin, just below the West Ridge notch at about 5,200 ft. GNIS puts the head of Orsino Creek at 48.711950,-122.005848 (EPQS about 4,657), 0.53 mi up-valley, so the coordinate sits down-valley on the lower path. The pin is not a sketch-gpx vertex and has no stored distMi.",
+  "verified": "I re-read the live json: the pin exists exactly once at 48.713337,-122.017366 with elev 5000, distMi null and type Campsite (not Trailhead). My own groundBox gave lo 3,579 and hi 4,062, admitting 3,329-4,312, with EPQS 3,710, so the gate fails as claimed. The prose places Orsino Creek Basin above the talus traverse and the cabin ruins, directly below the 5,200 ft notch, and advises camping high in the basin. The neighbouring notch pin (5,200 ft) is 0.6 mi east, so a basin camp cannot sit on 3,600-4,000 ft terrain. The height is supported only by the route's internal records, but those records agree with each other and with the notch. The coordinate is the half the ground convicts. The gpx sketch has 27 vertices, and the pin is not one of them. No distMi is affected."
+ },
+ {
+  "op": "clear",
+  "route": "wa_sinister_peak_southwest_route",
+  "pin": "Water|Bachelor Creek crossing",
+  "oldLat": 48.307443,
+  "oldLng": -121.086625,
+  "source": "GNIS geonames layer for Bachelor Creek; USGS EPQS",
+  "evidence": "GNIS Bachelor Creek (1516014, Skagit County) runs from its mouth at [-121.157068,48.324292] to its source at [-121.093455,48.308461]. The pin, at -121.086625, is about 0.5 km EAST of the creek's source and beyond Cub Lake Pass, so it is not on Bachelor Creek at all. EPQS at the pin is 5,406, and the box (183 m) spans 5,274-6,157, admitting 4,833-6,598, so the stored 3,700 fails gate 1. The prose ('around the 9.5-mile mark (~3,700')') places the ford in the lower valley to the west. After clearing, the Cub Lake Pass pin (10.7 mi) is 6.85 mi straight from the trailhead. The gpx has 201 vertices, so it is not a sketch.",
+  "verified": "I re-read the json: the pin exists once at 48.307443,-121.086625 with elev 3700 and distMi 9.5, and it is a Water pin, not a Trailhead. My own groundBox gave lo 5,274 and hi 6,157, admitting 4,833-6,598, so 3,700 fails. I queried GNIS myself and confirmed the Bachelor Creek source at -121.093455, which places the pin east of the creek's headwaters. The coordinate is convicted and the height fits the lower creek. The remaining distMi values are possible: Cub Lake Pass is 6.85 mi straight against 10.7 stored. The gpx is not a sketch."
+ },
+ {
+  "op": "none",
+  "route": "wa_sinister_peak_southwest_route",
+  "pin": "Junction|Dome-Sinister col",
+  "evidence": "EPQS centre 7,100 against the stored 7,640, which is inside the admitted range.",
+  "reason": "The pin passes the box and no fetched source publishes a coordinate for the col.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "none",
+  "route": "wa_sinister_peak_southwest_route",
+  "pin": "Hazard|Dome Glacier crossing",
+  "evidence": "GNIS Dome Glacier is at 48.305784,-121.038780; the pin is at 48.306924,-121.0249.",
+  "reason": "The pin passes the box. It may be the Chikamin Glacier crossing under the wrong label, but renaming is not an allowed decision.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "none",
+  "route": "wa_sinister_peak_southwest_route",
+  "pin": "Junction|Cub Lake Pass",
+  "evidence": "The pin, 48.308523,-121.093465, sits on the GNIS Bachelor Creek source point.",
+  "reason": "No action is needed. Ground at the pin is 5,903 ft, which fits the 6,000 stored, and gate 2 passes.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "clear",
+  "route": "wa_little_mac_spire_southwest_route",
+  "pin": "Water|Goodell Creek Crossings",
+  "oldLat": 48.728486,
+  "oldLng": -121.289238,
+  "source": "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+  "quote": "continues on to a stream crossing at about 3.5 miles (c.1700')",
+  "evidence": "The fetched Eric's Base Camp page publishes 'a stream crossing at about 3.5 miles (c.1700'). Just beyond the steam, there is a cairn marking the Terror Basin Route ... I started up the steep path near the crest of a spur ridge south of Terror Creek.' So the crossing lies on the valley floor BEFORE the steep spur climb. groundBox at the pin (183 m) gives lo 2,158 and hi 3,199, with EPQS 2,828, so no ground within 183 m comes within 458 ft of 1,700. The pin is on the gpx partway up the spur, about 35 m from a vertex reading 2,731. The height is published and the coordinate is wrong. After clearing, Rocky Streambed (6.0 mi) is 4.88 mi straight from the trailhead. The gpx has 209 vertices, so it is not a sketch.",
+  "verified": "I re-read the json: the pin exists once with the matching old coordinates, elev 1700 and distMi 3.5, and it is a Water pin. My own groundBox gave lo 2,158 and hi 3,199 (EPQS 2,828), admitting 1,637-3,719. The pin technically passes gate 1, but only because of the relief margin. I fetched Eric's page with curl and confirmed verbatim that the c.1700 crossing at 3.5 mi comes before the steep spur ridge. Terrain at least 458 ft higher everywhere within 183 m cannot be a 1,700 ft valley-floor crossing, so the coordinate is convicted by a published height. The remaining distMi values are possible."
+ },
+ {
+  "op": "clear",
+  "route": "wa_little_mac_spire_southwest_route",
+  "pin": "Water|Rocky Streambed Source",
+  "oldLat": 48.753404,
+  "oldLng": -121.267477,
+  "source": "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+  "quote": "Once across the stream, follow it upstream a couple of hundred feet where a path can once again be found (c.5200').",
+  "evidence": "The published height is 5,200 ft. groundBox (183 m) gives lo 5,662 and hi 6,208, admitting 5,389-6,480, with EPQS 5,818, so 5,200 fails gate 1. The coordinate is convicted. After clearing, Terror Basin Notch (6.7 mi) is 5.53 mi straight from the trailhead.",
+  "verified": "The pin exists once and its old values match. I confirmed the quote verbatim with curl, and my own box shows 5,200 below the admitted minimum of 5,389. The page is about the Goodell Creek/Terror Basin route itself. It is not a Trailhead pin, and the remaining distMi values are possible."
+ },
+ {
+  "op": "clear",
+  "route": "wa_little_mac_spire_southwest_route",
+  "pin": "Junction|Terror Basin Notch",
+  "oldLat": 48.762728,
+  "oldLng": -121.276516,
+  "source": "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+  "quote": "Now the route traverses heather benches and rock to a c.6200' notch.",
+  "evidence": "The published height is c.6,200. groundBox (183 m) gives lo 5,361 and hi 5,888, admitting up to 6,152, with EPQS 5,685, so 6,200 fails gate 1. A notch on the ridge crest at 6,200 cannot lie where all ground within 183 m is 5,888 or lower. After clearing, Terror Basin Camp (7.4 mi) is 6.02 mi straight from the trailhead. The gpx has 209 vertices.",
+  "verified": "The pin exists once and its old values match. I confirmed the quote verbatim and my own box (admitting at most 6,152) rejects 6,200. The gpx is not a sketch, and the remaining distMi values are possible."
+ },
+ {
+  "op": "clear",
+  "route": "wa_little_mac_spire_southwest_route",
+  "pin": "Campsite|Terror Basin Camp",
+  "oldLat": 48.76947,
+  "oldLng": -121.282642,
+  "source": "https://ericsbasecamp.net/trips/TerrorBasin/TerrorBasin.htm",
+  "quote": "A good camp spot is below the gap at a small flat gravelly basin (c.5800) with running water, flowers and a view that won't quit.",
+  "evidence": "The published height is c.5,800. groundBox (183 m) gives lo 6,403 and hi 7,608, admitting from 5,801, with EPQS 6,862, so 5,800 fails gate 1. The ground at the pin is more than 1,000 ft above a 'small flat gravelly basin'. After clearing, Loose Rock (7.6 mi) is 6.20 mi straight from the trailhead, which is possible.",
+  "verified": "The pin exists once and its old values match. I confirmed the quote verbatim; my box admits 5,801-8,210, so the stored 5,800 fails, if only marginally. The centre reading of 6,862 and a box minimum of 6,403, both far above a flat basin at 5,800, independently convict the coordinate. It is not a Trailhead pin, and the remaining distMi values are possible."
+ },
+ {
+  "op": "none",
+  "route": "wa_little_mac_spire_southwest_route",
+  "pin": "Summit|Little Mac Spire",
+  "evidence": "The gpx's last vertex is 95 m from GNIS McMillan Spire.",
+  "reason": "No published coordinate for Little Mac Spire exists, and the pin passes the box.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "none",
+  "route": "wa_little_mac_spire_southwest_route",
+  "pin": "Hazard|Loose Rock Below the Summit Block",
+  "evidence": "groundBox 183 m: 6,751-7,731.",
+  "reason": "The pin passes the box and there is no evidence against it.",
+  "verified": "This is a none decision, kept as proposed."
+ },
+ {
+  "op": "clear",
+  "route": "wa_point_success_south_side",
+  "pin": "Campsite|6,400 ft saddle below Success Cleaver",
+  "oldLat": 46.825322,
+  "oldLng": -121.793781,
+  "evidence": "groundBox(183) at pin lo 8,100 / hi 9,054 / relief 954 -> admits [7,623, 9,531]; stored 6,400 fails. GNIS Pyramid Peak 1524723 (46.806848,-121.812084) is 1.54 mi away, but prose places the 6,400 saddle a short descent NNE of Point 6631 just north of Pyramid Peak. Height matches prose; coordinate convicted.",
+  "reason": "Coordinate ~1.5 mi from the saddle north of Pyramid Peak, on 8,100-9,050 ft cleaver ground; height matches the prose.",
+  "verified": "Pin exists once; old 46.825322,-121.793781 elev 6400 matches. My groundBox(183): lo 8,100, hi 9,054, relief 954, so it admits [7,623, 9,531] and 6,400 FAILS. GNIS layer 5 gives Pyramid Peak (Pierce, 1524723) at 46.806848,-121.812084. The pin is 1.54 mi from it, while the pin's own note and the route prose put the saddle a 'short descent NNE from Point 6631' 'just north of' Pyramid Peak, 'at about 6,400 ft'. So the height agrees with the prose and the coordinate is the convicted half. It is not a Trailhead. Gate 2: the trailhead distMi is null, so audit-waypoint-distances.mjs line 167 skips the row (I confirmed this in the code). Caveat for the applier: once both Success pins are cleared, the stored leg from Mirror Lakes (8.0) to the chutes (12.3) is 4.3 mi against a 4.78 mi straight line. That contradiction already exists by the triangle inequality and is not created by the clear, and the detector skips this row anyway. The gpx has 71 vertices, so it is not a sketch."
+ },
+ {
+  "op": "clear",
+  "route": "wa_point_success_south_side",
+  "pin": "Hazard|Lower Success Cleaver gendarmes",
+  "oldLat": 46.833489,
+  "oldLng": -121.783106,
+  "evidence": "groundBox(183) lo 9,759 / hi 10,791 / relief 1,031 -> admits [9,244, 11,306]; stored 8,200 fails. Name 'Lower', note 'bivy options around 8,100-8,300 ft', and pitch_detail 'Lower cleaver (6,500-8,000 ft)' and 'bivy sites near 8,100-8,300 ft' corroborate the height; the coordinate sits near the 10,700 col level.",
+  "reason": "Coordinate on the upper-mid cleaver; height consistent with 'lower' cleaver per the route's own prose.",
+  "verified": "Pin exists once; old 46.833489,-121.783106 elev 8200 matches. groundBox(183): lo 9,759, hi 10,791, relief 1,031, so it admits [9,244, 11,306] and 8,200 FAILS by over 1,000 ft. The name says 'Lower', and the note says 'lower rib; bivy options around 8,100-8,300 ft'. The route's pitch_detail puts the lower cleaver at 6,500-8,000 and the mid cleaver at 8,000-10,700 with bivies at 8,100-8,300. The height is therefore internally corroborated, and the coordinate sits at the ~10,550 level just under the 10,700 col. Coordinate convicted; not a Trailhead. Gate 2: the row is skipped on origin (trailhead distMi null). The same caveat as above applies to the pre-existing Mirror Lakes to chutes leg. Not a sketch gpx."
+ },
+ {
+  "op": "copy",
+  "route": "wa_wallaby_peak_standard",
+  "pin": "Junction|Kangaroo Pass",
+  "oldLat": 48.507692,
+  "oldLng": -120.630724,
+  "lat": 48.5018,
+  "lng": -120.6223,
+  "fromRoute": "wa_kangaroo_temple_north_face",
+  "fromPin": "Junction|Kangaroo Pass",
+  "evidence": "Old box admits [5,305, 6,405], so 6,671 fails. Sibling box admits [5,896, 7,508] (centre 6,665), so it passes. WTA (fetched): 'reaching Kangaroo Pass at 6671 feet'. Gate 2: trailhead 1.265 vs 1.6; Boulder Field to new point 0.827 vs 0.6 leg (0.227 < 0.25, passes); new point to summit 0.472 vs 1.4.",
+  "verified": "Pin exists once; old 48.507692,-120.630724 elev 6671 matches; old box admits [5,305, 6,405], so it fails. I read the sibling from the live DB (anon, read-only): wa_kangaroo_temple_north_face has 'Junction|Kangaroo Pass' at 48.5018,-120.6223, elev 6672, the same place within 0.05 mi. groundBox(183) at the sibling: lo 6,299, hi 7,105, relief 806, admits [5,896, 7,508], so 6,671 PASSES (centre 6,665). WTA wallaby-peak-7995, fetched by me with curl, contains 'reaching Kangaroo Pass at 6671 feet', and the WTA prose says to ascend the SW ridge from the pass, consistent with the summit 0.47 mi NE. Gate 2: the trailhead distMi is 0, so the detector applies. Trailhead to new point is 1.265 mi vs 1.6 stored, OK. Boulder Field (1.0) to new point is 0.827 straight vs a 0.6 leg: 0.227 short, under the 0.25 absolute bar, so it passes narrowly. New point to summit is 0.472 vs 1.4, OK. The gpx has 271 vertices, not a sketch. GNIS has no Kangaroo Pass entry in layer 5."
+ },
+ {
+  "op": "clear",
+  "route": "wa_wallaby_peak_standard",
+  "pin": "Junction|7,400 ft Ridge-to-Face Swing",
+  "oldLat": 48.505564,
+  "oldLng": -120.62458,
+  "evidence": "groundBox(183) lo 5,721 / hi 6,635 / relief 914 -> admits [5,264, 7,092]; stored 7,400 fails. WTA wallaby-peak-7995 (fetched): 'At about 7,400 feet, swing around to the southern flank...', reached after the SW ridge above Kangaroo Pass (6,671). The pin sits below and west of the pass on the approach leg.",
+  "reason": "Published height; coordinate on the approach below the pass.",
+  "verified": "Pin exists once; old 48.505564,-120.62458 elev 7400 matches. groundBox(183): lo 5,721, hi 6,635, relief 914, admits [5,264, 7,092], so 7,400 FAILS. WTA (fetched by me) contains 'At about 7,400 feet, swing around to the southern flank for a final ascent up a south-facing gully' and says this happens after ascending the SW ridge from the pass. The pin is WNW of and lower than Kangaroo Pass (ground about 6,000), on the approach side, so the coordinate is the wrong half. Not a Trailhead. After clearing, Kangaroo Pass (1.6) to the summit (3.0) is 0.472 straight vs a 1.4 leg, OK. Not a sketch gpx."
+ },
+ {
+  "op": "none",
+  "route": "wa_tomyhoi_peak_southeast_ridge",
+  "pin": "Junction|Boot path onto Tomyhoi Arm",
+  "reason": "Not convicted: the box admits [5,371, 6,943] and stored 5,800 passes; gate 2 passes; no fetched source for the col height or coordinate.",
+  "verified": "none decision kept as given."
+ },
+ {
+  "op": "none",
+  "route": "wa_overcoat_peak_southeast_route",
+  "pin": "Junction|Notch on Overcoat Peak's north ridge (Overcoat Col)",
+  "reason": "No fetched source names 'Overcoat Col' or gives the north-ridge notch coordinate; PeakVisor's key col is the SE saddle, and the gpx crosses that col instead. Coordinate stays null.",
+  "verified": "none decision kept as given."
+ },
+ {
+  "op": "move",
+  "route": "wa_overcoat_peak_southeast_route",
+  "pin": "Campsite|Overcoat Lake",
+  "oldLat": 47.509307,
+  "oldLng": -121.294815,
+  "lat": 47.516855,
+  "lng": -121.302939,
+  "source": "USGS GNIS geonames MapServer layer 7, gaz_id 1524109 'Overcoat Lake' (Lake, King County)",
+  "quote": "{\"gaz_id\":1524109,\"gaz_name\":\"Overcoat Lake\",\"gaz_featureclass\":\"Lake\",\"county_name\":\"King\"},\"geometry\":{\"x\":-121.3029392541556,\"y\":47.516855124746726}",
+  "evidence": "Old box admits [5,447, 6,882], so 5,400 fails. GNIS point box admits [5,381, 6,407], so it passes. Trailhead 7.07 vs 12; lake to summit 0.565 vs 2.5.",
+  "verified": "Pin exists once; old 47.509307,-121.294815 elev 5400 matches; old box admits [5,447, 6,882], so it FAILS. I re-queried GNIS MapServer layer 7 myself and got gaz_id 1524109 'Overcoat Lake', Lake, King County, geometry x -121.3029392541556, y 47.516855124746726. That is the only WA match, so it is not a namesake. groundBox(183) at the GNIS point: lo 5,638, hi 6,150, relief 513, admits [5,381, 6,407], so 5,400 PASSES. Gate 2: the trailhead distMi is 0. Trailhead to lake is 7.066 straight vs 12, OK. Lake to the summit (14.5, with the benches cleared and the intermediate pins null) is 0.565 vs a 2.5 leg, OK. The gpx has 49 vertices, not a sketch."
+ },
+ {
+  "op": "clear",
+  "route": "wa_overcoat_peak_southeast_route",
+  "pin": "Campsite|Rock benches above Overcoat Glacier",
+  "oldLat": 47.505871,
+  "oldLng": -121.297914,
+  "evidence": "groundBox(183) lo 5,427 / hi 5,896 / relief 469 -> admits [5,177, 6,146]; stored 6,600 fails. Wikipedia Overcoat Glacier (fetched): coord 47.51389,-121.28861, 'flows north from Overcoat Peak and Chimney Rock', 'descends from 7200 to 6000 ft'. The pin is 0.70 mi SW of the glacier, on the far side of the summit, on ground below the glacier's terminus.",
+  "reason": "Coordinate on the opposite side of the peak from its glacier; height consistent with the glacier's published range.",
+  "verified": "Pin exists once; old 47.505871,-121.297914 elev 6600 matches. groundBox(183): lo 5,427, hi 5,896, relief 469, admits [5,177, 6,146], so 6,600 FAILS. Wikipedia Overcoat_Glacier wikitext (fetched by me) puts the glacier at 47°30'50\"N 121°17'19\"W (47.51389,-121.28861), says it 'flows north from Overcoat Peak and Chimney Rock' and 'descends from 7200 to 6000 ft'. The pin is 0.70 mi SW of that and on the SW side of the summit (47.5137,-121.2918), on 5,400-5,900 ft ground below the glacier's lowest point. It cannot be a 6,600 bench 'above Overcoat Glacier', and 6,600 lies inside the published glacier range, so the coordinate is the wrong half. Not a Trailhead. After clearing, with the lake moved, lake to summit is 0.565 vs 2.5, OK. Not a sketch gpx. Minor note: the proposer's 'east slopes' wording is not in the glacier article I fetched, but the conviction does not depend on it."
+ },
+ {
+  "op": "move",
+  "route": "wa_smears_jugs_and_rock_roll",
+  "pin": "Water|Snow Lakes",
+  "oldLat": 47.522,
+  "oldLng": -120.75,
+  "lat": 47.483116,
+  "lng": -120.7586572,
+  "source": "https://en.wikipedia.org/wiki/Snow_Lakes (raw wikitext, infobox)",
+  "quote": "coordinates            = {{coord|47.483116|-120.7586572|type:waterbody_region:US-WA|display=inline,title}}",
+  "evidence": "Old pin is a 2-dp placeholder 2.7 mi N of the lakes. New point box admits [5,183, 6,034] (centre 5,432.6 = published 5,433), so 5,415 passes. Trailhead 4.79 vs 6; new point to Viviane 1.17 vs 3.3. The sketch gpx's first vertex [47.522,-120.75] must move with the pin.",
+  "verified": "Pin exists once; old 47.522,-120.75 elev 5415 matches. I fetched Wikipedia Snow_Lakes action=raw myself, and it contains verbatim 'coordinates            = {{coord|47.483116|-120.7586572|type:waterbody_region:US-WA|display=inline,title}}', in an article about the Snow Lakes in Chelan County on the east slope of The Enchantments, outflow Snow Creek, the trail #1553 lakes. That is this exact feature. Its elevation of 5,433 is cited to GNIS 1526036; the GNIS MapServer does not return that id, but groundBox's centre at the point is 5,432.6, matching it exactly. groundBox(183): lo 5,433, hi 5,784, relief 352, admits [5,183, 6,034], so 5,415 PASSES. Gate 2: the trailhead distMi is null, so the detector skips the row. Even so, trailhead to new point is 4.793 vs 6, and new point to Viviane (9.3) is 1.173 vs a 3.3 leg, both OK. Gate 3: the gpx is a 6-vertex sketch whose first vertex is exactly [47.522,-120.75], so that vertex must be moved to [47.483116,-120.7586572] together with the pin."
+ },
+ {
+  "op": "none",
+  "route": "wa_magic_mountain_south_ridge",
+  "pin": "Campsite|Kool-Aid Lake",
+  "source": "https://www.nps.gov/noca/planyourvisit/cascade-pass-trail.htm ; https://www.gaiagps.com/hike/235287/kool-aid-lake-via-cascade-pass-trail-and-ptarmigan-traverse/ ; https://www.gaiagps.com/hike/297828/kool-aid-lake-via-ptarmigan-traverse/",
+  "quote": "NPS: \"To Cascade Pass: 3.7 miles (6 km)\". Gaia 235287: \"5.5 mi\" / \"3,307 ft\". Gaia 297828: \"2.2 mi\" (\"This is a moderate one way trail to Kool-Aid Lake\").",
+  "evidence": "GNIS layer 7, Kool-Aid Lake gaz_id 1521763: x=-121.04584823, y=48.43871570. The pin at 48.4386686,-121.0458149 is about 6 m away. GNIS layer 5, Cache Col gaz_id 1517198: points [[-121.05290409,48.44846520]]. The pin at 48.4484594,-121.0528892 is about 1 m away. EPQS at the lake pin reads 6120.06 ft against the stored 6120 (box 5811-6530, ok). EPQS at the Cache Col pin reads 6934.8 against the stored 6903 (box ok). Straight-line chain from the stored pins: TH to Cascade Pass 0.85, pass to toe 0.36, toe to Cache Col 1.07, Cache Col to lake 0.75. That puts the lake at no less than 3.7+0.36+1.07+0.75 = 5.88 mi. The route's own 1013-vertex gpx reaches the lake pin at 6.18 mi (last vertex 256 ft from the pin), but it reaches Cascade Pass at only 3.34 mi against NPS 3.7.",
+  "reason": "Report only, as instructed. No fetched source gives a trail distance from the trailhead to Kool-Aid Lake that is consistent with the route's own correctly placed pins. The only fetched one-figure value is Gaia GPS 'Kool-Aid Lake via Cascade Pass Trail and Ptarmigan Traverse' = '5.5 mi', which is probably the single source behind PR #2130. That page's own embedded track (209 points) measures 3.24 mi from the trailhead to Cascade Pass, but NPS publishes 3.7 mi for that leg, so the 5.5 figure undercounts the switchbacks by about 0.46 mi. Gaia's separate Cascade Pass to Kool-Aid Lake hike reads '2.2 mi'. Added to the NPS 3.7 mi, that gives about 5.9 mi. That figure is a sum of two published numbers, not a single published figure, so it cannot be written. The current 5.5 fails gate (2): the straight line from 'Cache Glacier toe / Mixup Peak traverse' (stored 4.3) to the lake is 1.82 mi, but the stored leg is 1.2. The smallest value that passes the gate is about 5.87. Both pins sit on their GNIS coordinates, so neither the coordinate nor the height is wrong. Only distMi, and the matching itinerary day miles, is in question, and that needs an owner decision.",
+  "verified": "none"
+ },
+ {
+  "op": "nullDist",
+  "route": "wa_old_snowy_mountain_r1",
+  "pin": "Landmark|Snowgrass Flats meadows",
+  "oldDist": 3,
+  "source": "https://www.wta.org/go-hiking/hikes/snowgrass",
+  "quote": "When you reach the junction with the Lily Basin Trail (Trail 86) at 4.1 miles, you've arrived at the lower portion of Snowgrass Flat.",
+  "evidence": "After the move to GNIS Snowgrass Flat the pin lies beyond the Bypass #97 junction pin (distMi 4.0), so 3 mi both contradicts the published 4.1 mi and orders it wrong. 4.1 cannot be written: the leg from the 4.0 junction (0.1 mi) would be shorter than the 0.43 mi straight line."
+ },
+ {
+  "op": "none",
+  "route": "wa_mushroom_tower_standard",
+  "pin": "Junction|Kangaroo Pass",
+  "reason": "Refused by the apply gate: copying Kangaroo Temple North Face's Kangaroo Pass (48.5018,-120.6223) here makes the next pin's stored distance (Snow-filled gully, 2.0 mi) impossible, so the pass stays unplaced until those distances are sourced.",
+  "_was": {
+   "lat": 48.5018,
+   "lng": -120.6223,
+   "fromRoute": "wa_kangaroo_temple_north_face",
+   "fromPin": "Junction|Kangaroo Pass",
+   "evidence": "The pin has no coordinate. The same pass on Kangaroo Temple North Face (elev 6672) sits on ground whose box admits 5,896-7,508, so this pin's 6671 passes; Wallaby gets the same copy."
+  }
+ },
+ {
+  "op": "clear",
+  "route": "wa_magic_mountain_south_ridge",
+  "pin": "Junction|Magic Mountain–Hurry-up Peak col",
+  "oldLat": 48.447488,
+  "oldLng": -121.051294,
+  "evidence": "GNIS places Magic Mountain at 48.445732,-121.041071 (gaz layer 5) and Hurry-up Peak at 48.43396,-121.03791, 0.85 mi apart. The pin is 0.48 mi from Magic and 1.12 mi from Hurry-up (1.6 mi together against 0.85 between them), so it is nowhere on the col between them; it is 0.10 mi from Cache Col, 77 ft off the route's gpx on the Cache Col descent. Elev 7120 kept."
+ },
+ {
+  "op": "clear",
+  "route": "wa_magic_mountain_south_ridge",
+  "pin": "Hazard|Corkscrew ledges below false summit",
+  "oldLat": 48.445478,
+  "oldLng": -121.049911,
+  "evidence": "GNIS places Magic Mountain at 48.445732,-121.041071 (gaz layer 5) and Hurry-up Peak at 48.43396,-121.03791, 0.85 mi apart. The route puts the false summit about 300 ft SE of the true summit; the pin is 0.41 mi WEST of it, 56 ft off the gpx on the Cache Col to Kool-Aid descent, on 6,665 ft ground against the stored 7500. Elev kept."
+ },
+ {
+  "op": "none",
+  "route": "wa_mount_adams_adams_glacier",
+  "pin": "Junction|High Camp Trail Junction",
+  "reason": "Found in this pass: 6100 is beyond the box (admits 5195-5974). No published coordinate or height for the junction was found, so which half is wrong is not decided."
+ },
+ {
+  "op": "none",
+  "route": "wa_south_twin_sister_west_ridge",
+  "pin": "Hazard|Dihedral in the upper cliff band",
+  "reason": "Found in this pass: 6500 is beyond the box (admits 4339-6099). The 6,500 comes only from the route's own prose ('cliffy band around 6,500 ft'), not a published source, so the coordinate cannot be convicted by it."
+ },
+ {
+  "op": "none",
+  "route": "wa_emerald_peak_se_ridge",
+  "pin": "Junction|Pyramid Creek / Pyramid Mtn Trail #1433 junction",
+  "reason": "Found in this pass: 5300 is beyond the box (admits 5392-6392), and the route's own approach says 'near 6,600 ft'. No published height or coordinate; its distMi chain also looks inflated against the track."
+ },
+ {
+  "op": "none",
+  "route": "wa_magic_mountain_south_ridge",
+  "pin": "Campsite|Kool-Aid Lake",
+  "reason": "OWNER DECISION (PR #2130 accepted a single-source 5.5 mi). Both pins are at GNIS; the stored 5.5 is below the 5.88 mi straight-line floor. Independent figures: NPS 3.7 to Cascade Pass + Gaia 2.2 pass-to-lake = 5.9; the route's own gpx 6.18; gpx scaled to NPS ~6.5. Gaia's 5.5 track cuts the Cascade Pass switchbacks (reaches the pass at 3.24 mi vs NPS 3.7)."
+ }
+]
