@@ -275,7 +275,10 @@ const TYPE_DISC = { trad: "trad", sport: "sport", tr: "toprope", boulder: "bould
 // Canada under its International tree. Dropped, so the chain starts at the province as a US one
 // starts at its state.
 const ABOVE_PROVINCE = new Set(["international", "north america", "canada"]);
-function provinceChain(chain) { let i = 0; while (i < chain.length - 1 && ABOVE_PROVINCE.has(norm(chain[i]))) i++; return chain.slice(i); }
+// MP's name for a state or province where ours is shorter: all 447 Yukon climbs were refused as
+// "location outside the state" because MP files them under "Yukon Territory" (2026-10-02).
+const MP_STATE_ALIAS = new Map([["yukon territory", "Yukon"]]);
+function provinceChain(chain) { let i = 0; while (i < chain.length - 1 && ABOVE_PROVINCE.has(norm(chain[i]))) i++; const out = chain.slice(i); if (out.length && MP_STATE_ALIAS.has(norm(out[0]))) out[0] = MP_STATE_ALIAS.get(norm(out[0])); return out; }
 
 async function runState(st) {
   const files = readdirSync(DIR).filter(f => f.startsWith(st.id + "_") && f.endsWith(".csv"));
@@ -349,11 +352,11 @@ async function runState(st) {
     const GENERIC = /\b(face|wall|walls|side|boulder|boulders|buttress|slab|slabs|main|north|south|east|west|upper|lower|left|right|center|central|cliff|cliffs|block|sector|gully)\b/;
     // Each name's key is computed ONCE (materialized), not once per pairing: calling catalog_key
     // inside the correlated subquery timed out on California (300 planned x every state area).
-    for (let i = 0; i < vals.length; i += 1000) for (const h of sql(`
+    for (let i = 0; i < vals.length; i += 250) for (const h of sql(`
       with s as materialized (select id, name, area_type, lat, lng, catalog_key(name) k, search_canon(name) sc
                                 from areas where path <@ (select path from areas where id = ${q(st.id)})),
            v as materialized (select id, name, lat, lng, catalog_key(name) k, search_canon(name) sc
-                                from (values ${vals.slice(i, i + 1000).join(",")}) v(id, name, lat, lng))
+                                from (values ${vals.slice(i, i + 250).join(",")}) v(id, name, lat, lng))
       select v.id, (select s.id || ' (' || s.name || ')' from s
                      where case when v.lat is not null
                            then s.k = v.k and s.lat between v.lat - 0.02 and v.lat + 0.02
@@ -449,12 +452,12 @@ async function runState(st) {
     const dupRoute = new Map();
     // Keys computed once per name (materialized), and route names keyed only in the candidate areas
     // — the correlated form re-keyed the whole state per insert and timed out on California.
-    for (let i = 0; i < vals.length; i += 1000) for (const h of sql(`
+    for (let i = 0; i < vals.length; i += 250) for (const h of sql(`
       with s as materialized (select id, name, lat, lng, catalog_key(name) k
                                 from areas where path <@ (select path from areas where id = ${q(st.id)})),
            v as materialized (select v.id, catalog_key(v.name) rk, catalog_key(coalesce(a.name, nullif(v.aname, ''))) ak,
                                      coalesce(a.lat, v.lat) lat, coalesce(a.lng, v.lng) lng
-                                from (values ${vals.slice(i, i + 1000).join(",")}) v(id, name, area_id, aname, lat, lng)
+                                from (values ${vals.slice(i, i + 250).join(",")}) v(id, name, area_id, aname, lat, lng)
                                 left join areas a on a.id = v.area_id
                                where not route_name_is_placeholder(v.name)),
            c as materialized (select v.id vid, v.rk, s.id nid, s.name nname from v join s
@@ -488,6 +491,15 @@ async function runState(st) {
   const unsplit = new Map([...splits.entries()].filter(([x]) => !splitTo.has(x)).map(([x, c]) => [c.id, x]));
   for (const ins of inserts) if (unsplit.has(ins.area_id)) ins.area_id = unsplit.get(ins.area_id);
   const newAreas = planned.filter(a => keep.has(a.id));
+  // A split of an area this SAME run creates (Washington's "Main Area Bouldering", 2026-10-04: a route
+  // placed in it, then a later one filed a sub-area under it) has nothing in the database to move —
+  // the split transaction failed six times on an area that did not exist yet. Its _climbs child is
+  // just one more new area, inserted right after its parent and named for the routes it receives.
+  for (const { x, c } of effSplits.filter(({ x }) => plannedById.has(x))) {
+    const ds = inserts.filter(i => i.area_id === c.id).map(i => i.discipline);
+    const suffix = ds.length && ds.every(d => d === "bouldering") ? " Bouldering" : ds.length && ds.every(d => d === "ice" || d === "mixed") ? " Ice Climbs" : " Routes";
+    newAreas.splice(newAreas.findIndex(a => a.id === x) + 1, 0, { id: c.id, name: c.name + suffix, parent_id: x, area_type: "crag", region: c.region, lat: c.lat ?? null, lng: c.lng ?? null });
+  }
   if (SAMPLE && newAreas.length) {
     console.log("  sample NEW AREAS:");
     const nameOf = id => (plannedById.get(id) || {}).name || id;
@@ -511,7 +523,7 @@ async function runState(st) {
   // under the area, and the area gets back the count the move took off it (the move did -n on the
   // area and nothing net on its ancestors; a re-parent does not re-bump route_count).
   const num = v => v == null ? "null" : String(+v);
-  for (const { x, c } of effSplits) {
+  for (const { x, c } of effSplits.filter(({ x }) => !plannedById.has(x))) {
     const n = sql(`select count(*)::int n from routes where area_id = ${q(x)}`)[0].n;
     // The _climbs child is the area itself, not a new place, so refuse_duplicate_area (which fired
     // on Arizona's two Rappel Rocks 0.35 km apart) is told so — `set local` lasts for this
@@ -532,10 +544,20 @@ async function runState(st) {
 
   // Then new areas (skipping the _climbs children the splits already made), parents before children (planned order already is), one at a time so the path
   // trigger sees each parent; each read back before a route is pointed at it.
+  // A statement or gateway timeout (Vermont, 2026-10-02, with two other sessions writing) is asked
+  // again up to four times a minute apart; a duplicate key on a retry means the timed-out insert
+  // landed after all, and is checked rather than assumed.
   for (const a of newAreas) {
-    const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/areas`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(a) });
-    const txt = await r.text();
-    if (!r.ok || JSON.parse(txt).length !== 1) throw new Error(`${st.name}: area ${a.id} insert failed ${r.status} ${txt.slice(0, 200)}`);
+    let ok = false, last = "", st0 = 0;
+    for (let t = 0; t < 5 && !ok; t++) {
+      if (t) await new Promise(res => setTimeout(res, 60_000));
+      const r = await fetchRetry(`${SUPABASE_URL}/rest/v1/areas`, { method: "POST", headers: { ...H, Prefer: "return=representation" }, body: JSON.stringify(a) });
+      last = await r.text(); st0 = r.status;
+      ok = r.ok && JSON.parse(last).length === 1;
+      if (!ok && t && /23505/.test(last)) { const g = await fetchRetry(`${SUPABASE_URL}/rest/v1/areas?select=id&id=eq.${encodeURIComponent(a.id)}`, { headers: H }); ok = g.ok && JSON.parse(await g.text()).length === 1; }
+      if (!ok && !(/57014|upstream request timeout/i.test(last) || r.status >= 500)) break;
+    }
+    if (!ok) throw new Error(`${st.name}: area ${a.id} insert failed ${st0} ${last.slice(0, 200)}`);
   }
   if (newAreas.length) {
     let back = 0;
@@ -555,15 +577,21 @@ async function runState(st) {
     const txt = await r.text();
     // A statement timeout (57014) rolls the whole batch back — the insert triggers are slow on a
     // big state (California failed here at 11,792 inserts) — so the same rows are re-sent one at a
-    // time, each with three tries a minute apart.
-    if (!r.ok && /57014/.test(txt)) {
+    // time, each with three tries a minute apart. The GATEWAY can time out too ("upstream request
+    // timeout", Utah 2026-10-02) — and the row may have landed behind it, so a retry answered with
+    // a duplicate key (23505) asks whether that row is now there; the count read-back below still
+    // verifies every insert.
+    const slow = (status, t) => /57014|upstream request timeout/i.test(t) || status >= 500;
+    const landed = async id => { const g = await fetchRetry(`${SUPABASE_URL}/rest/v1/routes?select=id&id=eq.${encodeURIComponent(id)}`, { headers: H }); return g.ok && JSON.parse(await g.text()).length === 1; };
+    if (!r.ok && slow(r.status, txt)) {
       for (const row of batch) {
         let ok = false, last = "";
         for (let t = 0; t < 3 && !ok; t++) {
           if (t) await new Promise(res => setTimeout(res, 60_000));
           const r1 = await post([row]); last = await r1.text();
           ok = r1.ok && JSON.parse(last).length === 1;
-          if (!ok && !/57014/.test(last)) break;
+          if (!ok && /23505/.test(last)) ok = await landed(row.id);
+          if (!ok && !slow(r1.status, last)) break;
         }
         if (!ok) throw new Error(`${st.name}: insert of ${row.id} failed ${last.slice(0, 300)}`);
       }
