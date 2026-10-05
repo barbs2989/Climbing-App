@@ -65,10 +65,16 @@ for (const [id, fs_] of byId) {
   if (APPLY) {
     rollback.push({ id, before: Object.fromEntries(Object.keys(body).map((k) => [k, row[k]])) });
     fs.writeFileSync(rbFile, JSON.stringify(rollback, null, 1));
+    let bad = null;
     for (let t = 0; ; t++) { // the live DB times out under load (57014): back off and retry rather than abandon the batch
       try { await Promise.race([patchRow("routes", id, body, { filter: "select=id" }), new Promise((_, no) => setTimeout(() => no(new Error("timeout: patch hung 45s")), 45000))]); break; }
-      catch (e) { if (t >= 4 || !/-> 5[0-9][0-9]|57014|timeout|fetch failed/.test(String(e))) throw e; console.log(`  retry ${id} after ${String(e).slice(0, 60)}`); await new Promise((z) => setTimeout(z, 15000 * (t + 1))); }
+      catch (e) {
+        // a 4xx (a column check, say) is THIS row's problem: report it and go on to the next route
+        if (!/-> 5[0-9][0-9]|57014|timeout|fetch failed/.test(String(e))) { bad = e; break; }
+        if (t >= 4) throw e; console.log(`  retry ${id} after ${String(e).slice(0, 60)}`); await new Promise((z) => setTimeout(z, 15000 * (t + 1)));
+      }
     }
+    if (bad) { rollback.pop(); fs.writeFileSync(rbFile, JSON.stringify(rollback, null, 1)); console.log(`REFUSED ${id}: ${String(bad).slice(0, 160)}`); refused++; continue; }
     const back = (await getJSON(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}&select=${Object.keys(body).join(",")}`, { headers: headers(key) }))[0];
     for (const [k, v] of Object.entries(body)) if (!same(back[k], v)) throw new Error(`${id}.${k}: re-read ${JSON.stringify(back[k])} is not ${JSON.stringify(v)}`);
   }
