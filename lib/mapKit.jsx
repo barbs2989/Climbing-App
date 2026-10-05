@@ -11,6 +11,19 @@ export const MAP_TILE_URLS = {
   topo: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
 };
 
+// THE ONE CREDIT THE APP CARRIES, because these licences make it a condition of use and nothing
+// else in the app does (owner rule 2026-10-04: credit only where legally required). OSM tiles are
+// ODbL and its guidelines want the credit in a map corner, visible without interaction;
+// OpenTopoMap is CC-BY-SA over OSM + SRTM; Esri's terms require "Powered by Esri" plus the
+// imagery providers. NASA GIBS (the Snow layer) is public domain, so it carries none. `text` is
+// for a surface that cannot hold a link (the fire preview is itself one big button).
+const OSM_LINK = '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>';
+export const TILE_CREDIT = {
+  street: { html: "© " + OSM_LINK, text: "© OpenStreetMap" },
+  topo: { html: "© " + OSM_LINK + ', SRTM · © <a href="https://opentopomap.org" target="_blank" rel="noopener noreferrer">OpenTopoMap</a> (CC-BY-SA)', text: "© OpenStreetMap, SRTM · © OpenTopoMap (CC-BY-SA)" },
+  sat: { html: 'Powered by <a href="https://www.esri.com" target="_blank" rel="noopener noreferrer">Esri</a> · Esri, Maxar, Earthstar Geographics, and the GIS User Community', text: "Powered by Esri · Esri, Maxar, Earthstar Geographics" },
+};
+
 // "Snow" is the one layer that shows the ground as it is NOW. The satellite layer above is a
 // years-old mosaic, usually chosen snow-free, so it can never show fresh snow.
 //
@@ -116,7 +129,7 @@ export function baseTileLayer(L, baseLayer) {
     return L.tileLayer(GIBS + P.layer + "/default/" + s.date + "/" + P.tms + "/{z}/{y}/{x}." + P.ext, { maxNativeZoom: P.native, maxZoom: P.max });
   }
   const url = MAP_TILE_URLS[baseLayer] ? baseLayer : "sat";
-  return L.tileLayer(MAP_TILE_URLS[url], { maxNativeZoom: LAYER_NATIVE_ZOOM[url], maxZoom: DEEPEST_ZOOM });
+  return L.tileLayer(MAP_TILE_URLS[url], { maxNativeZoom: LAYER_NATIVE_ZOOM[url], maxZoom: DEEPEST_ZOOM, attribution: TILE_CREDIT[url].html });
 }
 // Choosing a snow picture steps OUT to the zoom its pixels can carry. The climber can still
 // zoom back in; nothing is locked.
@@ -227,6 +240,10 @@ export function loadLeaflet(onReadyRaw, onError) {
 export function applyBaseLayer(map, tileRef, baseLayer) {
   if (!map || !window.L) return;
   const L = window.L;
+  // Every map is built with attributionControl:false (Leaflet's default prefix links Leaflet
+  // itself, which its BSD licence does not require), so the tile credit gets its own control,
+  // once per map. Leaflet then shows the ACTIVE layer's credit and swaps it with the layer.
+  if (!map.__cmCredit) map.__cmCredit = L.control.attribution({ prefix: false, position: "bottomright" }).addTo(map);
   if (tileRef.current) { try { map.removeLayer(tileRef.current); } catch (e) {} }
   tileRef.current = baseTileLayer(L, baseLayer).addTo(map);
   fitZoomToLayer(map, baseLayer);

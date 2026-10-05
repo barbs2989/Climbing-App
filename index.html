@@ -69,6 +69,12 @@
          after each zoom. Measured 16 of 16 pins carrying the transition. Leaflet's own zoom-animation
          rule (.leaflet-zoom-anim .leaflet-zoom-animated) is more specific and still wins mid-zoom. */
       .leaflet-marker-icon, .leaflet-marker-shadow { transition: none; }
+      /* The map-tile credit (lib/mapKit.jsx TILE_CREDIT) — the one credit the licences require. A thin
+         strip along the map's bottom edge, the full width of the map so a long credit WRAPS inside it
+         rather than running under the corner buttons. Those buttons sit at bottom:26 to clear it. */
+      .leaflet-bottom.leaflet-right { left: 0; }
+      .leaflet-container .leaflet-bottom .leaflet-control-attribution { font-size: 9px; line-height: 1.35; padding: 1px 5px; margin: 0; background: rgba(0,0,0,0.55); color: #d6d6d6; text-align: right; }
+      .leaflet-container .leaflet-bottom .leaflet-control-attribution a { color: #ffffff; }
       /* Motion — subtle life. Respect reduced-motion. */
       @keyframes cm-pop { 0%{transform:scale(.6);opacity:0} 60%{transform:scale(1.12)} 100%{transform:scale(1);opacity:1} }
       @keyframes cm-confetti { 0%{transform:translateY(-10px) rotate(0);opacity:1} 100%{transform:translateY(110vh) rotate(680deg);opacity:0} }
