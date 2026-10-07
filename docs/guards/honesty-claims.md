@@ -1469,7 +1469,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `lib/alpineConditions.js`) reads each discipline's OWN conditions, counts its start time back from
   the Planner's own estimate (`lib/planTimes.js`), and never claims what it did not read. Static, so
   it sits in `npm run build`; injection suite `scripts/oneoff/inject-alpine-conditions-cases.mjs`
-  (10 cases, 9 caught + 1 silent).
+  (16 cases, 15 caught + 1 silent).
   - **OWNER DECISIONS, 2026-10-07:** its own Conditions tab; FLAGS, never stars (no published alpine
     go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
     softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
@@ -1510,7 +1510,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `uTemp`/`uElev`/`uWind`/`uSnowfall`, so section 6 renders every flag in both unit systems.
   - **The weather panel moved here from Safety** for these disciplines, and a route with NO placed
     waypoints now gets its area's coordinate at the route's high point instead of "No forecast yet".
+  - **LIVE READS (section 8).** Avalanche danger (`lib/avalanche.js`: the public map layer's zone
+    polygons, then that zone's forecast by elevation band) shows unless the route's own terrain says
+    `avalanche: "no"`. Its headline is the HIGHEST of the three bands, because a zone's treeline
+    height is not in the data and most climbs cross them. Off season, in season with no rating
+    (Colorado's and Shasta's feeds carried no band ratings on 2026-10-07), outside every zone (all of
+    Canada) and a failed read are FOUR answers, each says "not a rating", and none carries a number,
+    so none can be drawn as Low. Snow on the ground (`lib/snotel.js`) is the nearest snow station
+    within 30 km, from one all-states station list cached on the device for 30 days. A route's state
+    is not on its row, and a border climb can be nearer the next state's station. The section always
+    says how far away the station is and how far below the top. Recent outcomes are the last 60 days of
+    Summit / Attempt / Turned around reports, read from the tick and its outcome reasons. With none,
+    the section is absent, never "0 summited". The alpine tick list gained "Turned around" (the walk list already had
+    it, and `leaderboard()` has never counted it as a send), so every discipline on the tab can log
+    one.
   - **WHAT IT CANNOT SEE:** whether a threshold is RIGHT for a given range (Cascades numbers are rare —
-    most ice and mixed material is Rockies, Colorado and Scotland); the card's runtime fetch (SSR
-    renders only the loading state, so the fixtures exercise the logic directly); avalanche danger
-    and SNOTEL (the next PR).
+    most ice and mixed material is Rockies, Colorado and Scotland); the card's runtime fetches (SSR
+    renders only the loading state, so the fixtures exercise the logic directly, and the two feeds'
+    live shapes were checked by hand on 2026-10-07, not by the build); which BAND a route is in.

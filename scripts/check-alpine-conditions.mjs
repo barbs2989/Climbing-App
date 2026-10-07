@@ -23,6 +23,11 @@
 //   6. WORDS     — every flag words itself in the climber's units, and carries no display text of its own.
 //   7. REACH     — the tab is offered on these disciplines and not on crags, the stars never mount on
 //                  them, the weather panel moved off Safety for them, and a failed forecast says so.
+//   8. LIVE READS — avalanche danger, snow on the ground and recent outcomes: off season, no rating,
+//                  outside every zone and a failed read are four answers and none is "Low"; the snow
+//                  station is the nearest within 30 km and says how far and how much lower; outcomes
+//                  are the last 60 days of Summit / Attempt / Turned around reports, nothing inferred,
+//                  and every discipline on this tab can log a Turned around.
 // Thresholds and their research live in docs/guards/honesty-claims.md.
 import fs from "node:fs";
 import os from "node:os";
@@ -41,7 +46,10 @@ import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 export * from ${JSON.stringify(path.join(ROOT, "lib", "alpineConditions.js"))};
 export { flagText, forecastPoint, KIND_LABEL } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 export { CRAG_SCORE_DISCIPLINES } from ${JSON.stringify(path.join(ROOT, "lib", "conditionsScore.js"))};
-export { __set_UNITS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
+export { inGeometry, zoneFor, avyReading, DANGER_NAME } from ${JSON.stringify(path.join(ROOT, "lib", "avalanche.js"))};
+export { nearestStation, kmBetween, snowReading } from ${JSON.stringify(path.join(ROOT, "lib", "snotel.js"))};
+export { recentOutcomes } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -202,7 +210,59 @@ eq("a failed forecast shows NO flags and says it is not a reading of the conditi
 eq("a day with no flags never says 'safe' or 'good' — it says nothing flagged it", /Nothing in the forecast flags this day\./.test(card) && !/>\s*(Safe|Good to go)/i.test(card), true);
 eq("every kind states what a forecast cannot see", Object.keys(A.KIND_LABEL).every((kk) => new RegExp(kk + ": \"A forecast can’t see").test(card)), true);
 
-const FLOOR = 60;
+console.log("\n8. LIVE READS — avalanche danger, snow on the ground, recent outcomes");
+// A zone 1x1 degree with a hole in the middle, as the avalanche map layer sends its polygons ([lng, lat]).
+const RING = [[-122, 47], [-121, 47], [-121, 48], [-122, 48], [-122, 47]], HOLE = [[-121.6, 47.4], [-121.4, 47.4], [-121.4, 47.6], [-121.6, 47.6], [-121.6, 47.4]];
+const ZONE = { id: 1, type: "Feature", properties: { name: "Probe Zone", center_id: "PRB", off_season: false, danger_level: 2, link: "https://example.org/forecast" }, geometry: { type: "Polygon", coordinates: [RING, HOLE] } };
+const FAR = { id: 2, type: "Feature", properties: { name: "Far Zone", center_id: "FAR" }, geometry: { type: "MultiPolygon", coordinates: [[[[-100, 40], [-99, 40], [-99, 41], [-100, 41], [-100, 40]]]] } };
+eq("a route inside a zone's polygon is in that zone", A.inGeometry(47.2, -121.8, ZONE.geometry), true);
+eq("...a point in a zone's HOLE is not (later rings are holes)", A.inGeometry(47.5, -121.5, ZONE.geometry), false);
+eq("...and a MultiPolygon zone is read part by part", A.inGeometry(40.5, -99.5, FAR.geometry), true);
+eq("zoneFor picks the zone the route is in, and none when it is in none", [A.zoneFor({ features: [FAR, ZONE] }, 47.2, -121.8)?.id, A.zoneFor({ features: [FAR, ZONE] }, 60, -150)], [1, null]);
+const prod = (u, m, l) => ({ danger: [{ valid_day: "current", upper: u, middle: m, lower: l }, { valid_day: "tomorrow", upper: 1, middle: 1, lower: 1 }] });
+const avB = A.avyReading(ZONE, prod(3, 2, 1));
+eq("bands: today's three elevation bands are read, and the headline is the HIGHEST of them", [avB.kind, avB.max, avB.today], ["bands", 3, { upper: 3, middle: 2, lower: 1 }]);
+eq("outside every zone is 'outside', with no rating", A.avyReading(null, null), { kind: "outside" });
+const off = A.avyReading({ properties: { name: "Probe Zone", off_season: true, danger_level: -1 } }, null);
+eq("off season is 'off', never a rating", [off.kind, off.max], ["off", undefined]);
+const none = A.avyReading({ properties: { name: "Probe Zone", off_season: false, danger_level: -1 } }, prod(null, null, null));
+eq("in season with no band or overall rating is 'none' — never an empty set read as Low", [none.kind, none.max], ["none", undefined]);
+const ov = A.avyReading(ZONE, prod(null, null, null));
+eq("in season with no bands but an overall rating reads that rating ('overall')", [ov.kind, ov.max], ["overall", 2]);
+const junk = A.avyReading({ properties: { off_season: false, danger_level: -1 } }, prod(0, -1, 9));
+eq("a band value outside 1-5 is no rating, not a number to show", [junk.kind, junk.max], ["none", undefined]);
+eq("the danger scale's names are the published five", [1, 2, 3, 4, 5].map((d) => A.DANGER_NAME[d]), ["Low", "Moderate", "Considerable", "High", "Extreme"]);
+const STNS = [{ id: "near", name: "Near", elevFt: 3500, lat: 47.0, lng: -121.0 }, { id: "far", name: "Far", elevFt: 5000, lat: 47.4, lng: -121.0 }];
+eq("the snow station is the NEAREST one", A.nearestStation(STNS, 47.05, -121.0, 30)?.id, "near");
+eq("...and no station within 30 km gives none, rather than one from another range", A.nearestStation(STNS, 47.75, -121.0, 30), null);
+eq("great-circle distance: one degree of latitude is 111 km", Math.round(A.kmBetween(47, -121, 48, -121)), 111);
+const vals = [10, 10, 12, 12, 14, 14, 15, 18].map((v, i) => ({ date: "2026-01-0" + (i + 1), value: v }));
+eq("snow on the ground: the latest depth, and its change over a day and a week", A.snowReading(vals), { date: "2026-01-08", depth: 18, d24: 3, d7: 8 });
+eq("...one report gives a depth and NO change (not a change of zero)", A.snowReading(vals.slice(-1)), { date: "2026-01-08", depth: 18, d24: null, d7: null });
+eq("...and a station with no reports gives no reading", A.snowReading([]), null);
+const NOW = Date.UTC(2026, 9, 7, 12), ago = (n) => new Date(NOW - n * 864e5).toISOString().slice(0, 10);
+const acts = [{ tickType: "Attempt", date: ago(59) }, { tickType: "Summit", date: ago(3) }, { tickType: "Turned around", date: ago(10) }, { tickType: "Summit", date: ago(61) }, { tickType: "Redpoint", date: ago(1) }, { tickType: "Conditions", date: ago(1) }, { date: ago(1) }, { tickType: "Summit", date: "last spring" }];
+eq("recent outcomes: Summit / Attempt / Turned around from the last 60 days, newest first, nothing else", A.recentOutcomes(acts, NOW).map((a) => a.tickType), ["Summit", "Turned around", "Attempt"]);
+const noTA = A.ALPINE_COND_DISCIPLINES.filter((d) => { const t = A.tickTypesFor({ discipline: d, grade: d === "ice" ? "WI3" : d === "mixed" ? "M4" : "5.6" }); return !t.includes("Summit") || !t.includes("Turned around"); });
+eq("every discipline on this tab can log a Summit AND a Turned around", noTA, []);
+eq("...and a Turned around is not a send", A.NONCOMPLETION_TICKS.includes("Turned around"), true);
+const strip = (h) => h.replace(/<!-- -->/g, "");
+const today = new Date().toISOString().slice(0, 10);
+const withOut = strip(A.render(Object.assign({}, BASE, { discipline: "mountaineering", activity: [{ id: "o1", user: "A", date: today, tickType: "Turned around", outcomeReasons: ["Weather"], outcomeNote: "Whiteout at the saddle" }, { id: "o2", user: "B", date: today, tickType: "Summit" }] }), "forecast"));
+eq("a route with outcome reports shows them, with the reason and the note", [/Recent outcomes/.test(withOut), /1 of 2 reports in the last 60 days summited\./.test(withOut), /Turned around<\/b> — Weather: Whiteout at the saddle/.test(withOut)], [true, true, true]);
+const glHtml = strip(A.render(Object.assign({}, BASE, { discipline: "mountaineering" }), "forecast"));
+eq("...and one with none has no outcomes section at all (not 'no one summited')", /Recent outcomes|0 of /.test(glHtml), false);
+eq("a snow route mounts the avalanche AND snow sections", [/Avalanche today/.test(glHtml), /Snow on the ground/.test(glHtml)], [true, true]);
+const dryScr = strip(A.render(Object.assign({}, BASE, { discipline: "scrambling" }), "forecast"));
+eq("a scramble whose own data rules avalanche terrain out gets snow but no avalanche section", [/Avalanche today/.test(dryScr), /Snow on the ground/.test(dryScr)], [false, true]);
+eq("a failed avalanche read says it is not a rating", /st\.error\) return[\s\S]{0,300}Couldn’t load the avalanche forecast\. This is not a rating\./.test(card), true);
+eq("...off season, no rating and outside every zone each say 'That is not a rating'", (card.match(/That is not a rating/g) || []).length, 3);
+eq("a failed snow-station read says it says nothing about the snow", /st\.error\) return[\s\S]{0,300}Couldn’t load the snow station\. This says nothing about the snow\./.test(card), true);
+eq("the snow station's distance AND height below the climb are worded every time", /" away at " \+ uElev\(s\.elevFt\)[\s\S]{0,120}below the top of this climb/.test(card), true);
+const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
+eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);
+
+const FLOOR = 85;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);
