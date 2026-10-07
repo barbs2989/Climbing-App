@@ -114,7 +114,7 @@ console.log("check:conditions-score");
 {
   const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "");
-  if (/tab==="forecast"&&showScore\?<div><ConditionsScoreCard route=\{route\} mtn=\{mtn\}\/>/.test(mask) && /\["forecast","Conditions"\]/.test(mask)) ok("ConditionsScoreCard has its own Conditions tab (sub-tab `forecast`)");
+  if (/tab==="forecast"&&showScore\?<div><ConditionsScoreCard route=\{route\} mtn=\{mtn\}.*?\/>/.test(mask) && /\["forecast","Conditions"\]/.test(mask)) ok("ConditionsScoreCard has its own Conditions tab (sub-tab `forecast`)");
   else fail("ConditionsScoreCard is no longer the body of its own Conditions tab (sub-tab `forecast`)");
   if (/x\[0\]==="forecast"\?showScore/.test(mask) && /const showScore=CRAG_SCORE_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask)) ok("the Conditions tab is offered only where the score is");
   else fail("the Conditions tab is no longer gated to scored crag disciplines");

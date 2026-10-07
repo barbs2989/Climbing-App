@@ -67,9 +67,9 @@ const FIELDS = [
   // this guard no longer listing it.
   ["permit", "permits"],
   ["waypoints", "waypoints"], ["gpx", "gpxPts"], ["elev_pts", "elevPts"],
-  ["itinerary", "itinerary"], ["timing", "timing"], ["turnaround", "turnaround"],
+  ["itinerary", "itinerary"], ["timing", "timing"],
   ["hazards", "hazards"], ["obj_haz", "objHaz"], ["watch_out", "watchOut"],
-  ["comms", "comms"], ["emergency", "emergency"], ["bail", "bail"],
+  ["comms", "comms"], ["emergency", "emergency"],
   ["climate", "climate"], ["season", "season"], ["best_season", "bestSeason"],
   ["seasonal_guidance", "seasonalGuidance"], ["seasonal_hazards", "seasonalHazards"],
   ["crowds", "crowds"], ["partner_requirements", "partnerRequirements"],

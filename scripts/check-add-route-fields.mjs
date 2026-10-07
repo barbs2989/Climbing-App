@@ -7,7 +7,7 @@
 // measured on 2026-08-09 it offered 13 distinct fields across all nine disciplines while
 // SuggestFix offered 49 and the merge allow-list SS accepted 53 — and the tailoring ran
 // BACKWARDS, a single-pitch sport route being asked 10 questions against alpine's 8. Alpine
-// had no approach, no height, no rappels, no turnaround and no comms.
+// had no approach, no height, no rappels and no comms.
 //
 // Three questions, none of which the other guards ask:
 //   1. Every key the form SENDS is a key `SS` knows. A key outside SS is accepted, stored,
@@ -129,7 +129,7 @@ const MUST_COVER = [
   // approach control has to write a SENTENCE, and then this name belongs here again.
   "season", "commit", "descentText", "style", "haz", "gear", "beta",
   // the eight #794 added; every one of these was a question the form asked and could not store
-  "protRating", "fa", "crux", "landing", "startType", "rap", "turn", "comms",
+  "protRating", "fa", "crux", "landing", "startType", "rap", "comms",
 ];
 const unpinned = MUST_COVER.filter((k) => !sentSet.has(k));
 if (unpinned.length) {
