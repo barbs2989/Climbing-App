@@ -97,6 +97,28 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Ice and mixed** (36 well-known routes researched the same way): timed climbs are scarce online
     (7 of 36). The 35 m default pitch read 1.1x on ice; the route's own `length_m / pitches` read
     1.4x, so `avgPitchLength` (which no catalog route sets) is not switched to the stored length.
+  - **THE SUMMIT LEG'S DESCENT SHARE GOES ON THE WAY DOWN** (calibration, 2026-10-07, 69 routes with
+    online times). Three stored shapes hold the way down INSIDE the summit leg, and each now sends
+    0.59 of it up and the rest down, on top of any stored descent, so the round trip never drops
+    below the route's own stored total:
+    - **push** (94 rows): approach + summit = total and no descent. It climbed its 0.59 and then
+      DROPPED the 0.41: American Border Peak walked down in 2.9 hr against 7 online.
+    - **derived** (13 rows): only an approach and a total. `total - approach` is the climb AND the way
+      down (Cutthroat South Buttress: 2 hr down against 4.8 online).
+    - **camp** (174 rows): a MULTI-DAY outing (`isMultiDayOuting`) whose walk in and walk out agree
+      within `CAMP_LEG_MATCH` (35%) beside a stored summit leg: that leg is the summit DAY, a round
+      trip from camp (Devore 6 / 11 / 5). Against online times, the camp-shaped rows read as a round
+      trip on 17 of 20 multi-day routes, and as a one-way climb with a walk back on 3 of 4 single-day
+      routes. So a single-day route is left alone. Applying it there scored better on descents (6
+      short, not 8, at 61 routes), but only by stretching too-short stored descents. It made the time UP short on
+      single-day rock (Easy Getaway 0.79x), which is the anchor of the storm start.
+    | model ÷ online, 69 routes | time to summit | descent | car-to-car |
+    |---|---|---|---|
+    | #2256 | 1.3x, 41% within | 1.0x, 14 of 63 short | 1.2x, 47% within |
+    | **+ descent share (shipped)** | **1.2x, 58% within** | **1.1x, 9 short** | **1.2x, 51% within** |
+    Time to summit within 0.8-1.25x: alpine 53% -> 71%, mountaineering 46% -> 64% (short descents
+    5 -> 1), scrambling 25% -> 42%. The rest is mostly descents that are long on the ground
+    (Forbidden's West Ridge, about 10 hr online) and stored legs that are themselves short.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
