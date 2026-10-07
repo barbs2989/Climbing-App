@@ -472,9 +472,30 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - `refused` (199): the rename's PATCH was refused by `refuse_duplicate_area` (0218) — a same-named
       area within 1.5 km. Often the same parent, spelled "White Wall, The" against "(E) The White
       Wall", which the sibling test missed because it does not fold a trailing ", The".
+  - **FOLDED by 0251** (2026-10-07; held list now EMPTY, check:counts clean): 393 copies folded into their keeper, 47 climbs merged, ~1,800
+    moved, 83 keepers renamed. Applied live in pieces by `scripts/oneoff/apply-0251-in-parts.mjs`,
+    because three per-row triggers on `routes` make one transaction outlast the SQL gateway. Met
+    on the way, each a trap for the next fold:
+    - an area holds climbs OR sub-areas (`routes_require_leaf`, `areas_leaf_xor`): 9 groups had one
+      of each, so the flat climbs sit under the place as "Other Climbs" (0221's name);
+    - `refuse_duplicate_route` checks the whole NEIGHBOURHOOD, not the target area: predicted over
+      every move out of band (3 hits, read: Muir one climb, merged; two pairs different climbs);
+    - a climber's TOPO sat on a copy (`topos` cascades on an area delete): moved to the keeper;
+    - re-parenting fires `refuse_duplicate_area` too, which found 3 pairs the planner missed
+      (Acadia's ice tree, Mount Erie's Adventure Crags) — folded.
   - **Cannot see** a label spelling the function does not know, or a ROUTE name: 1,184 route names
     carry a topo number ("(01) Chicken Crack"), but route names also hold real initials ("R. Crumb",
-    "T. Rex", "C. Bailey"), so they were not swept by the same rule.
+    "T. Rex", "C. Bailey"), so they were not swept by the same rule. ROUTE names have their own rule
+    since 2026-10-07, `scripts/lib/route-topo-label.mjs` (shared with `import-route-grades.mjs` so a
+    re-import still matches): a NUMBER label comes off everywhere, a LETTER label only where the area
+    runs a letter series (3+ letters, 9 areas); `scripts/oneoff/strip-route-topo-labels.mjs` renames
+    875 and HOLDS 42 whose bare name a sibling already has (five "Slab" V1s, six "Project"s).
+  - **Spelling twins MERGED by 0253** (2026-10-07): same-area climbs whose names differ by a typo or
+    by spacing, same discipline and base grade — 2,775 candidates, READ pair by pair — 179 merged
+    ("Manhattan / Manhatten Project"), plus 8 rows the source named "to be deleted" / "_delete".
+    NOT merged, on purpose: pairs that read as two climbs ("The Last / The Lost Gardener"), the
+    UNSURE ones, and names whose grade or mark IS the difference ("The 5.7 / 5.7+ Corner"). Same-named
+    placeholders with different grades ("Unnamed" 5.6 / 5.9) are different climbs, never candidates.
   - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
     set the order on screen and removing them lost no guidebook sequence.
 

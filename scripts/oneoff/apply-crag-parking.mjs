@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Writes researched crag PARKING (areas.parking_*, 0251) from per-destination research files, after
+// Writes researched crag PARKING (areas.parking_*, 0255) from per-destination research files, after
 // checking each spot mechanically. Usage: node scripts/oneoff/apply-crag-parking.mjs <dir> [--apply]
 // <dir>/*.json: [{ area_id, lat, lng, name, confidence: "high"|"medium", basis }]
 // A spot is refused unless: the area exists; an OpenStreetMap amenity=parking feature lies within 80 m

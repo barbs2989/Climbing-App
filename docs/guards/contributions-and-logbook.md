@@ -12,7 +12,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   a success message and the route never changes. Static, so it sits in `npm run build`.
   - **Two submission paths, and checking only one was this guard's own first-draft bug.**
     Besides the `FIELDS` list, `RouteDetail` calls `onSubmit` with a literal field name; that
-    is how `bailout` and `startLocation` are filed, and neither is in `FIELDS`, so a
+    is how `startLocation` is filed (and `bailout` was, until bail points were removed 2026-10-07), and it is in `FIELDS`, so a
     FIELDS-only scan cannot see that path at all. Those two are the only `EXEMPT` names,
     because `onContribute` returns before the field-edit path for them (they are additive,
     geo-clustered lists read back through `bailoutEdits`/`startLocationConsensus`). An
