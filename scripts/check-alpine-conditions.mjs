@@ -231,6 +231,8 @@ const ov = A.avyReading(ZONE, prod(null, null, null));
 eq("in season with no bands but an overall rating reads that rating ('overall')", [ov.kind, ov.max], ["overall", 2]);
 const junk = A.avyReading({ properties: { off_season: false, danger_level: -1 } }, prod(0, -1, 9));
 eq("a band value outside 1-5 is no rating, not a number to show", [junk.kind, junk.max], ["none", undefined]);
+const zn = (props) => A.avyReading({ properties: Object.assign({ off_season: true, danger_level: -1 }, props) }, null).zone;
+eq("a zone named after its forecasting centre is not printed (no source names on screen); a place name is", [zn({ name: "CAIC zone", center_id: "CAIC", center: "Colorado Avalanche Information Center" }), zn({ name: "Bridgeport Avalanche Center", center_id: "BAC", center: "Bridgeport Avalanche Center" }), zn({ name: "West Slopes North", center_id: "NWAC", center: "Northwest Avalanche Center" })], [null, null, "West Slopes North"]);
 eq("the danger scale's names are the published five", [1, 2, 3, 4, 5].map((d) => A.DANGER_NAME[d]), ["Low", "Moderate", "Considerable", "High", "Extreme"]);
 const STNS = [{ id: "near", name: "Near", elevFt: 3500, lat: 47.0, lng: -121.0 }, { id: "far", name: "Far", elevFt: 5000, lat: 47.4, lng: -121.0 }];
 eq("the snow station is the NEAREST one", A.nearestStation(STNS, 47.05, -121.0, 30)?.id, "near");

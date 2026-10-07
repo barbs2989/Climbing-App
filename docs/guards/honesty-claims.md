@@ -1469,7 +1469,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `lib/alpineConditions.js`) reads each discipline's OWN conditions, counts its start time back from
   the Planner's own estimate (`lib/planTimes.js`), and never claims what it did not read. Static, so
   it sits in `npm run build`; injection suite `scripts/oneoff/inject-alpine-conditions-cases.mjs`
-  (16 cases, 15 caught + 1 silent).
+  (17 cases, 16 caught + 1 silent).
   - **OWNER DECISIONS, 2026-10-07:** its own Conditions tab; FLAGS, never stars (no published alpine
     go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
     softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
@@ -1516,7 +1516,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     height is not in the data and most climbs cross them. Off season, in season with no rating
     (Colorado's and Shasta's feeds carried no band ratings on 2026-10-07), outside every zone (all of
     Canada) and a failed read are FOUR answers, each says "not a rating", and none carries a number,
-    so none can be drawn as Low. Snow on the ground (`lib/snotel.js`) is the nearest snow station
+    so none can be drawn as Low. Two of the 84 zones are NAMED after their forecasting centre ("CAIC zone",
+    "Bridgeport Avalanche Center"), so `zoneName()` reads those as "this zone": the card-source check
+    for provider names cannot see a name that arrives in the DATA. Snow on the ground (`lib/snotel.js`) is the nearest snow station
     within 30 km, from one all-states station list cached on the device for 30 days. A route's state
     is not on its row, and a border climb can be nearer the next state's station. The section always
     says how far away the station is and how far below the top. Recent outcomes are the last 60 days of
