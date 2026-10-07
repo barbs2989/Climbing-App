@@ -175,6 +175,9 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   if (url.origin !== self.location.origin) return;
+  // The offline state files (dist/states/, ~10 MB per large state) are written into IndexedDB by
+  // lib/offline.js. Caching them here as well would store every downloaded state twice.
+  if (url.pathname.includes("/states/")) return;
 
   event.respondWith(
     fetch(req)
