@@ -254,20 +254,24 @@ for (const d of [...CRAG, "alpine"]) {
    Both directions are asserted: a stock rack must NOT be printed under the note, or it
    restates the note above it and re-creates the duplication mergeGearList exists to remove. */
 {
+  /* 2026-10-07 owner decision: a sport, trad or boulder route shows ONLY its own rack, as item +
+     quantity, and no GEAR section ("What to bring", ROPEWORK, the stock per-discipline list).
+     So the two directions asserted here are: a stated rack reaches the screen with its quantity,
+     and a route with none renders no rack and no gear section at all. */
   const sportBase = { ...bare("sport", "5.12c"), pitches: 6 };
-  const OWN = "Natural gear for the pitch 6 hand crack — the only unbolted pitch on the route";
-  const withRack = text(render({ ...sportBase, rack: [OWN] }, "overview"));
-  if (!withRack.includes("What to bring")) fail("ANCHOR LOST: a sport route no longer renders the 'What to bring' box — this guard checked nothing");
-  else if (!withRack.includes("Natural gear for the pitch 6 hand crack"))
-    fail("sport gear: a sport route carrying its OWN rack does not show it — a route needing natural gear cannot say so");
-  else ok("sport gear: a sport route's own rack reaches the screen");
-
-  /* rackGeneric is decided by RouteDetail from routeRackFor(); with no rack of its own the
-     stock sport list is quickdraws, and printing it here would duplicate the note. */
-  const noRack = text(render(sportBase, "overview"));
-  if (/ON THIS ROUTE/.test(noRack))
-    fail("sport gear: a route with no rack of its own still prints an 'ON THIS ROUTE' list — that can only be the stock kit restated");
-  else ok("sport gear: a route with no rack of its own adds no list under the note");
+  const items = [{ item: "quickdraws", qty: 12 }, { item: "cams", sizes: "#0.5-#3", qty: 1 }];
+  for (const d of ["sport", "trad", "bouldering"]) {
+    const base = d === "sport" ? sportBase : bare(d, d === "bouldering" ? "V4" : "5.9");
+    const withItems = text(render({ ...base, rackItems: d === "bouldering" ? null : items, pads: d === "bouldering" ? 3 : undefined }, "overview"));
+    if (!/RACK/.test(withItems)) fail(`ANCHOR LOST: a ${d} route with a stated rack no longer renders the RACK card — this guard checked nothing`);
+    else if (d !== "bouldering" && !(withItems.includes("quickdraws") && withItems.includes("\u00d712"))) fail(`rack: a ${d} route's rack items lose their quantity`);
+    else if (d === "bouldering" && !(withItems.includes("crash pads") && withItems.includes("\u00d73"))) fail("rack: a boulder route's pads do not reach the RACK card");
+    else ok(`rack: a ${d} route's own rack reaches the screen with its quantities`);
+    const none = text(render(base, "overview"));
+    if (/What to bring|ROPEWORK|GEAR & ESSENTIALS|Standard rack for this discipline/.test(none) || /\bRACK\b/.test(none))
+      fail(`rack: a ${d} route with no rack of its own still prints a rack or gear section — the stock kit is not shown for crag routes`);
+    else ok(`rack: a ${d} route with no rack of its own prints no rack or gear section`);
+  }
 }
 
 // 6. ROUTE FACTS — one set of guidebook facts on every crag discipline, and NOTHING on a bare one.
@@ -275,7 +279,7 @@ for (const d of [...CRAG, "alpine"]) {
 //    of "unknown"s is a placeholder, not a fact), must not print "Season TBD", and a crag route
 //    whose stored breakdown/climate cannot open a Plan tab must still show them — on Overview.
 {
-  const FACT_LABELS = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent"];
+  const FACT_LABELS = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
   for (const d of CRAG) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
