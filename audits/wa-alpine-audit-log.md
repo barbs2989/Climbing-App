@@ -30477,3 +30477,84 @@ exceeds the SQL Editor's ~4000-byte paste limit — a human applying the fix sho
 `BEGIN...COMMIT` block.
 
 Pass 7 continues next run after `wa_bonanza_peak_oregonian_route`.
+
+## Batch 386 (2026-10-07, pass 7)
+
+Checked: `wa_booker_mountain_northeast_face`, `wa_boston_peak_southeast_face`,
+`wa_boving_christensen`, `wa_boving_roofs`, `wa_bryant_peak_north_route`,
+`wa_bryant_peak_west_face`, `wa_buckner_mountain_north_face`, `wa_buckner_mountain_southwest_face`.
+
+**Fixed (1):**
+- `wa_bryant_peak` (areas) `prominence_ft` — stored 346 ft matched no source found anywhere.
+  Wikipedia's infobox gives 321 ft (parent peak Chair Peak, 6,238 ft, 0.65 mi away), consistent
+  with the area's own already-correct elevation (5,801 ft) and parent-peak text. Checked twice
+  independently via websearch; no source (Wikipedia, SummitPost, or otherwise) supports 346 ft.
+  SQL in `audits/sql/2026-10-07-batch-386.sql`.
+
+**Flagged (8):**
+- `wa_bryant_peak_north_route` — a near-empty stub (id/area_id/name/discipline only). No source
+  names a "North Route" on Bryant Peak; the only documented named lines are the standard scramble
+  and a 1994 Northeast Face ice route. Weaker than a routine unenriched stub — recommend a human
+  check a physical Beckey guide before enriching, or retire the row.
+- `wa_bryant_peak_west_face` — only `grade` (5.2) and `fa` ("Ray Clough and Charles Kirschner,
+  July 10, 1938") are populated, and neither is independently confirmed. Mild counter-evidence: a
+  2019–2020 blog describing a new ice line on this same west side says the party found nothing
+  about prior routes there in the Beckey guide, WA Ice book, or online. Clough himself is a real,
+  independently-confirmed 1938 WA climber (credited elsewhere in this DB on Boston Peak's FA), so
+  his name being attached here is plausible but unconfirmed.
+- `wa_booker_mountain` (areas) `prominence_ft` (992) — no single authoritative figure found;
+  estimates range ~960–1,000 ft across sources, so 992 is plausible but not pinned down.
+- `wa_boston_peak_southeast_face` — `descent_text` routes the rappels via the Boston Glacier side,
+  while Mountaineers.org and countryhighpoints.com describe the rappels landing on the Quien Sabe
+  side instead. Could be an error or a legitimate variant; needs a primary source (Beckey or a
+  detailed trip report) to resolve, not a websearch guess.
+- `wa_boving_christensen` (Prusik Peak) — route's existence and pitch count/length (4 pitches,
+  ~450 ft = 137 m) are corroborated by a Stephen Abegg trip report, but the FA credit (Paul Boving
+  and Matt Christensen) isn't independently confirmed, and the route's own `descent` field (two
+  raps to the West Ridge, or finish the West Ridge) and `descent_text` field (one 60 m rap down
+  the north side, shared with neighboring routes) read as two different descents rather than one
+  description worded two ways. Needs Mountain Project or guidebook access (both blocked by this
+  session's network egress) to confirm.
+- `wa_boving_roofs` (South Early Winters Spire) — route and FA (Paul Boving and Steve Pollock) are
+  confirmed via Mountain Project, but the `approach` field's reference to an alternate "Northwest
+  Face/Boving-Pollock line" has no corroborating source; the only other "Boving" feature found is
+  "Boving Roof," a pitch-3 belay landmark on the Southwest Rib (likely the same feature this route
+  is named for, not a separate named line). The area's own `prominence_ft` (647) is also
+  unconfirmed — the only figure found covers the combined Early Winters Spires, not SEWS alone.
+- `wa_buckner_mountain_north_face` — `season` ("Jul-Sep") and `best_season` ("Late May through
+  early July") read as contradictory for an ice/snow route. A first pass leaned toward
+  `best_season` being right, but an independent re-check found mixed signal (Mountaineers.org club
+  trips for this route have run in July in multiple years) — not confident enough to fix either
+  field without a human call on what each is meant to encode. Separately, `descent_text` places
+  the Davenport Mine at 6,200–6,400 ft while the one outside source found (Mindat/Western Mining
+  History) puts the mine itself around 7,598 ft — the mine's existence/location checks out, the
+  elevation band doesn't independently confirm, but the text may describe where the traverse
+  passes near the mine rather than the mine's own benchmark.
+- (Checked clean, no flag, but worth recording since it was the highest-value claim to verify this
+  batch): `wa_buckner_mountain_southwest_face`'s `fa` ("Lewis Ryan, August 1, 1901") is CONFIRMED
+  by two independent sources — an unusually early date, but plausible for Buckner's non-technical
+  standard route. The area's elevation (9,114 ft), prominence (3,034 ft), and "3rd highest in
+  NCNP / 14th highest in WA / 11th on the Bulger list" ranking claims also all check out.
+
+**Clean (otherwise):** `wa_booker_mountain`'s elevation/coordinates and its unusual Abby Williams
+Hill / Booker T. Washington naming history (confirmed in detail via HistoryLink.org and the UW
+Puget Sound Abby Williams Hill Collection archives) — matched exactly; `wa_booker_mountain_northeast_face`'s
+FA (Dan Davis and John Holland, Aug 22 1964) and general route description; `wa_boston_peak`'s
+elevation/prominence/coordinates, FA (Bressler/Clough/Cox/Myers, 1938), and its "largest glacier in
+North Cascades National Park" claim for the Boston Glacier (correct as scoped to the park, though
+could be tightened to say "National Park" explicitly); `wa_prusik_peak` and `wa_south_early_winters_spire`
+area facts (elevation, coordinates, FA) — both confirmed correct.
+
+**Tooling note:** Delegated research to 4 parallel subagents (one per peak pair: Booker+Boston;
+the two Boving routes; Bryant Peak's two stubs; Buckner Mountain's two routes). All four hit this
+session's network egress proxy blocking direct WebFetch to Wikipedia/SummitPost/Mountain
+Project/stephabegg.com, so their findings rest on WebSearch result-summary text rather than direct
+page reads — flagged explicitly above wherever that mattered. Independently re-verified both
+single-source fix candidates (Bryant Peak prominence, Buckner Mountain North Face season) with a
+second, separate websearch pass before deciding: the Bryant Peak figure held up and was fixed; the
+Buckner Mountain season claim did not hold up cleanly on re-check (found evidence of July club
+trips) and was left flagged instead of fixed. `check:sql --table areas` confirmed the one UPDATE
+target exists live and warned (as usual) that the full file exceeds the SQL Editor's paste limit —
+apply just the `BEGIN...COMMIT` block.
+
+Pass 7 continues next run after `wa_buckner_mountain_southwest_face`.
