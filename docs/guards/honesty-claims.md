@@ -1322,6 +1322,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     broken traversal rather than a clean app (it sees 4,461 today).
   - Injection-tested, 4 cases at the bottom of the script; cases 1 and 2 are the REAL defects from
     #1069 and #999, and case 3 must **pass**.
+  - **A response header's NAME is not screen text (2026-10-07).** The shade map reads which terrain
+    model each height tile came from — `r.headers.get("x-amz-meta-x-imagery-sources")` — to show a
+    licence credit only where one is required (Canada's CDEM, not US 3DEP). RULE 2 failed on that
+    protocol key, so a string literal that is the argument of `<x>.headers.get(...)` is skipped. The
+    literal count fell by exactly one (46,329 → 46,328), so nothing else left the scan.
 - **`check:preview-claims`** asserts that **no toast describes the app as a preview, a demo or a
   simulation**. Static (one read of every app source, string-aware paren balancing — no Babel), so it
   sits in `npm run build`.
@@ -1422,6 +1427,35 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     it when the route has no `aspect`. Agent research on the 10 biggest crags confirmed only 34 of
     ~566 walls (6%, 2026-10-07): pages rarely state a facing, so do not read the low coverage as a bug.
     `rock_basis='researched'` (the crag's rock as stated online) reads as stated, not mapped.
+  - **§8 — THE WEATHER BESIDE THE SCORE (2026-10-07, modelled on climbitscore.com's crag page).**
+    The card gained *Day by day* (each day's high/low and feels-like, its RAIN total "0.05" of rain
+    over 4 h" with the top chance, and daylight wind/gusts, humidity range and cloud cover), *Hour by
+    hour* (five panels on one axis — temperature with feels-like and dew point, rain AMOUNT, chance
+    of rain with cloud cover, humidity, wind with gusts and direction arrows — for one day or all 7),
+    feels-like, cloud cover and wind direction under *Right now*, and a **Shade map**.
+    - **Rain by day** counts each hour's rain on the day that hour BEGAN (`precipitation[T]` is the
+      hour before T, so midnight's is the evening before). A day with no precipitation values is
+      null ("Rain not measured"), never "No rain"; a day under 0.01" reads "A trace of rain", not
+      `0.00"`. Checked live against Climbit at Smith Rock: the same 0.05" over 4 h on the same day.
+    - **Gusts print only when stronger than the wind** (after unit rounding): the model sometimes
+      gives a gust below the mean wind, and "4 mph, gusts 3 mph" reads as a bug.
+    - **The shade map** (`lib/ShadeMap.jsx`, arithmetic in `lib/terrainShade.js`) is the TERRAIN's
+      shadow for the sun at a slider time, sunrise to sunset of the chosen day, over the app's own
+      base layers. Heights are the open Terrain Tiles (terrarium) at zoom 14, a 4×4 block that keeps
+      the pin ≥ 1.5 tiles from every edge. A SWEEP along lines away from the sun (each pixel once)
+      costs ~60 ms for the 1024² grid; a ray per pixel at a low sun costs hundreds of millions of
+      steps. The guard pins it on a 100 m ridge: exactly 100 m of shade on the far side at a 45° sun.
+    - **It is NOT scored and does NOT write `areas.aspect`.** It is geometry under a clear sky from a
+      ~7 m model, and the card says so (not trees, not overhangs, not which way one face points; the
+      pin is the crag's location on file). "Sun reaches the pin 7:29 AM – 4:39 PM" is the ground at
+      the pin, worded as such. Climbit feeds its shade into its score; that was deliberately not
+      copied — a crag coordinate is often the parking or the crag's centre, not the wall.
+    - **Terrain credit only where a licence requires it**: each tile names its model in
+      `x-amz-meta-x-imagery-sources`; `TERRAIN_LICENCE_CREDIT` maps the folders checked against live
+      tiles (nrcan_cdem, eudem, uk_lidar, kartverket, nzlinz, austria, pgdc_5m). US 3DEP/NED and SRTM
+      are public domain and add nothing. Checked live: an Alberta crag shows the OGL – Canada line,
+      Smith Rock shows only the imagery credit.
+    - **It loads only near the screen** (IntersectionObserver): sixteen height tiles are ~1.5 MB.
 
 - **`check:alpine-conditions`** asserts that the **alpine Conditions tab** (sub-tab `forecast` on
   alpine, mountaineering, scrambling, ice and mixed routes — `lib/AlpineConditionsCard.jsx`, logic in

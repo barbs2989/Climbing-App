@@ -106,6 +106,10 @@ for (const rel of FILES) {
     JSXText(p) { literals++; wording(p.node.value, p.node); },
     StringLiteral(p) {
       if (/^(Import|Export)/.test(p.parent.type)) return; // a module path, never screen text
+      // A response header's NAME — `r.headers.get("x-amz-meta-x-imagery-sources")` in the shade
+      // map — is a protocol key, never screen text.
+      const cal = p.parent, cv = cal.type === "CallExpression" && cal.callee.type === "MemberExpression" ? cal.callee : null;
+      if (cv && cv.property.name === "get" && cv.object.type === "MemberExpression" && cv.object.property.name === "headers") return;
       literals++; wording(p.node.value, p.node);
     },
     TemplateElement(p) { literals++; wording(p.node.value.cooked, p.node); },
