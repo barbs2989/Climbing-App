@@ -1,4 +1,4 @@
--- 0256 — Group roles that match the app, membership questions, and comments a private group keeps.
+-- 0257 — Group roles that match the app, membership questions, and comments a private group keeps.
 --
 -- Four things, found in one audit of Groups (2026-10-07). Each is stated as what a climber could
 -- actually do against the live policies before this file, not what the screen offered.
@@ -90,7 +90,7 @@ alter table groups drop constraint if exists groups_join_questions_valid;
 alter table groups add constraint groups_join_questions_valid check (group_join_questions_valid(join_questions));
 
 comment on column groups.join_questions is
-  'Up to 5 membership questions asked of a climber requesting to join (0256): '
+  'Up to 5 membership questions asked of a climber requesting to join (0257): '
   '[{prompt, type text|choice, options (choice only, 2-8), required}]. Only asked by groups whose '
   'policy is approval or trust; an open group admits without asking.';
 
@@ -105,7 +105,7 @@ create table if not exists group_join_answers (
 
 comment on table group_join_answers is
   'A request''s answers to a group''s membership questions, as a snapshot of {prompt, type, answer} '
-  '(0256). Readable by the asker and the group''s managers only. Written by request_to_join_group() '
+  '(0257). Readable by the asker and the group''s managers only. Written by request_to_join_group() '
   'only; removed with the membership row it belongs to.';
 
 alter table group_join_answers enable row level security;

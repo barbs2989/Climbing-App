@@ -88,7 +88,7 @@ export const OVERLAY_PAYLOADS = {
   postMenuFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
   reactPickerFor: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[]}]);setGroupPosts({__ov_group:[{id:"__ov_post",authorId:0,text:"Overlay probe post.",date:"2026-01-01"}]});setOpenGroupId("__ov_group");', expr: '"__ov_post"' },
 
-  // 0256's two group sheets. `joinAsk` resolves its group out of createdGroups.concat(GROUPS) and
+  // 0257's two group sheets. `joinAsk` resolves its group out of createdGroups.concat(GROUPS) and
   // renders one field per entry of `joinQuestions`, so the probe group carries one question of each
   // kind -- a written answer and a multiple choice -- and the payload is the shape groupJoinTap
   // builds. `groupReport` with no postId is the report-a-GROUP sheet; it needs only the group.
