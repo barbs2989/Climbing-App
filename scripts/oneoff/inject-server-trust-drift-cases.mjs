@@ -54,10 +54,17 @@ const CASES = [
     says: /FAIL\s+groupTrustShortfall derives its own score/,
     from: "  const mine=Number(score);", to: "  const mine=vScore(score);" },
 
-  { name: "one-handler-left-behind", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "fail",
-    why: "one of the two byte-identical join handlers keeps the old score, so half the app gates on something else",
-    says: /FAIL\s+the join gate reads the displayed score in 1 handler/,
-    from: "var _tShort=groupTrustShortfall(cl,myTrustScore);", to: "var _tShort=groupTrustShortfall(cl,vScore(meLive));",
+  // The two byte-identical join handlers became ONE (groupJoinTap, 2026-10-07), so "one handler left
+  // behind" is now "the one gate reads the wrong score" -- and a second inline handler growing back
+  // is its own case, because that is how the half-the-app split would return.
+  { name: "the-one-gate-reads-another-score", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "fail",
+    why: "the single join gate reads the client model, so every join gates on a number the app never shows",
+    says: /FAIL\s+the join gate is called 1 time\(s\), 0 reading the displayed score/,
+    from: "var _tShort=groupTrustShortfall(cl,myTrustScore);", to: "var _tShort=groupTrustShortfall(cl,vScore(meLive));" },
+  { name: "an-inline-handler-grows-back", file: path.join(ROOT, "ClimbMatch.jsx"), expect: "fail",
+    why: "a join button stops routing through groupJoinTap and gates on its own copy, as the two handlers once did",
+    says: /FAIL\s+the join gate is called 2 time\(s\)/,
+    from: "onClick={()=>groupJoinTap(cl)}", to: "onClick={()=>{if(groupTrustShortfall(cl,myTrustScore)!==null)return;groupJoinTap(cl);}}",
     once: true },
 
   // MUST STAY SILENT. A comment in the migration that names a different number is documentation:
@@ -121,9 +128,10 @@ for (const c of CASES) {
     console.log(`  BROKEN CASE ${c.name}: its anchor is not in the file — the case tests nothing`);
     fail++; continue;
   }
-  // A CASE MAY DELIBERATELY EDIT ONE OF TWO IDENTICAL SITES. `one-handler-left-behind` reproduces
-  // exactly that defect — half the app gating on a different score — so uniqueness is required
-  // unless the case says it means to hit only the first.
+  // A CASE MAY DELIBERATELY EDIT ONE OF TWO IDENTICAL SITES. `an-inline-handler-grows-back` edits
+  // the first of the two join buttons (the old `one-handler-left-behind` edited the first of two
+  // byte-identical handlers, before they became groupJoinTap) — so uniqueness is required unless
+  // the case says it means to hit only the first.
   const hits = before.split(c.from).length - 1;
   if (c.once ? hits < 2 : hits !== 1) {
     console.log(`  BROKEN CASE ${c.name}: anchor appears ${hits} time(s) — the edit could land anywhere`);

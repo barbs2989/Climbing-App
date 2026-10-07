@@ -63,39 +63,40 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     turns "unknown" into "zero": a table with two known 30m rappels and one unknown printed "60 m
     total" and read as the whole descent. It now sums only known stations and says "60 m across 2
     of 3" when the line is partial.
-- **`check:return-leg`** asserts the planner does not re-add a walk its own figures already
-  covered. `hikeH = scarfHrs(distKm, gainM, lossM)` is charged for gain **and** loss, so on a row
-  where those are the whole outing it is already the round trip — and `retH` then added
-  `hikeH * 0.75` on top. **196 WA routes, median +7.67 hr.** Static SSR, so it sits in `npm run build`.
-  - **The app already knew.** `gainCoversWholeOuting` (|loss−gain|/gain ≤ 3%) relabels the tile
-    **"On foot"** and TECH STATS says *"Total ascent is the whole day from the trailhead, not just
-    the walk in"* — and the return leg ignored both. `wa_ptarmigan_traverse` read `21.6hr On foot`
-    with Est. return **16.2 hr after** Est. summit. Label and arithmetic contradicting each other on
-    one screen.
-  - **The premise is solid because 433 of the 484 qualifying rows have gain EXACTLY equal to loss** —
-    a round trip, or a traverse ending at its start elevation. Not a coincidence on a one-way
-    approach. Checked before any code was written, after #1361 shipped a defect for want of exactly
-    that step.
-  - **SCOPED TO THE WALK BRANCH, and the first draft was not.** A pitched route's return is
-    `techH * 0.7` — the descent of the **climb**, which the walk never double-counted — so
-    short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a real leg
-    from **212** rows. Caught before shipping, by a count that did not reconcile (88 "unexplained"
-    against 50 unmatched) rather than by a red guard. Injection case 2 pins it.
-  - **IT DROPS THE "After dark" WARNING ON 102 ROUTES, and that was the decision.** `late` is
-    `retH > 18.5`, so a smaller return means fewer warnings. Keeping them would mean preserving a
-    known double-count as an invisible safety margin that only these 196 routes get — and *a false
-    warning is how a real one stops being read*, the rule this file states for rope warnings and
-    caveats alike. A warning firing off a number the code knows is wrong is not a safety feature.
-  - **NOTHING HAS YET ASKED whether the base walk model is optimistic**, and that is the honest
-    residual. `scarfHrs` at "intermediate" gives ~1,970 ft/hr of ascent, which puts Bonanza's 7,000 ft
-    round trip at ~7.4 hr on foot. If that is fast it is fast on **every** route, including the ~700
-    one-way ones this does not touch — a uniform question needing real party times, which this repo
-    does not have. Do not answer it by restoring the double-count.
-  - Injection-tested both directions, each restoring byte-identically: reverting the fix fails
-    *"Est. return equals Est. summit"*, and the over-broad first draft fails *"a PITCHED
-    whole-outing route keeps its climb descent"*. Live-verified through the real `dbRouteToCamel`
-    (`scripts/oneoff/probe-whole-day-walk-return.mjs`): **106/106** walk-only rows no longer re-add,
-    **49** one-way or pitched rows keep their leg, **0** lost.
+- **`check:return-leg`** holds the planner's time maths, which live in **`lib/planTimes.js`** since
+  2026-10-07 (the Conditions tab's alpine start counts back from the same estimate, so neither may
+  compute it for itself). Static SSR through the real `<Calculator/>`, so it sits in `npm run build`.
+  - **THE WALK IS TWO LEGS.** One `scarfHrs()` used to charge gain AND loss before the summit, so the
+    descent was walked on the way UP: on the 352 gain≈loss rows Est. summit EQUALLED Est. return, and a
+    pitched route's return had no walk out at all. Now `up` = distance + gain, `down` = distance +
+    max(gain, loss) — `loss_ft` holds two conventions (the descent to the car, or only the dips on the
+    way in), and a party back at its car has dropped at least what it climbed. A recorded loop or
+    point-to-point walks half its distance each way. This replaced the older `gainCoversWholeOuting`
+    relabel ("On foot"), which existed only because the single leg was already the round trip.
+  - **A ROUTE'S OWN STORED LEGS WIN OVER THE WALK MODEL.** The walk charges the WHOLE car-to-summit gain
+    on the way in, and a stored summit leg then charged the top of it again (Easton read 17 hr to the
+    summit). So: time to summit = stored approach + stored summit leg where the route has them (or a
+    summit leg derived from its stored total); the descent is the **longer** of the stored descent and
+    the walk down; 0.7 × climb (rappels) is added only to a MODELLED climb. The 94 rows whose
+    `summitTimeHrs` is "Summit push and full descent" count 0.59 of it toward the summit (the median
+    share across the 253 rows that store all three legs).
+  - **MEASURED AGAINST ONLINE TRIP-REPORT TIMES, route by route** (2026-10-07; research files in the
+    session's job dir, method: Sonnet agents reading WTA/Mountaineers/Peakbagger/SummitPost/MP/blog
+    reports per route; model ÷ online over 27 routes, 4 excluded as not the same outing):
+    | | time to summit | descent | car-to-car |
+    |---|---|---|---|
+    | one walk leg (before) | 1.8x | 0.0x, 13 of 23 short | 1.5x |
+    | split walk + stored summit | 1.6x | 1.0x | 1.6x |
+    | **stored legs + longer descent (shipped)** | **1.2x** | **1.0x, 4 short** | **1.3x** |
+    Per discipline, time to summit: mountaineering 1.1x, alpine 1.1x, **scrambling 1.3x** — the
+    scrambling overrun is the open residual, and the run continues over all 515 routes with walk data.
+  - **THE OLD RESIDUAL IS ANSWERED, and the answer is the other direction.** This entry used to say
+    nothing had asked whether the walk model is optimistic. It is not: against real parties it runs
+    LONG, mostly because the walk and a stored leg both charged the same gain. Erring long on the
+    descent stays deliberate — a short descent is the dangerous error.
+  - **Ice and mixed** (36 well-known routes researched the same way): timed climbs are scarce online
+    (7 of 36). The 35 m default pitch read 1.1x on ice; the route's own `length_m / pitches` read
+    1.4x, so `avgPitchLength` (which no catalog route sets) is not switched to the stored length.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)

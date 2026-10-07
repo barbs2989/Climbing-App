@@ -105,7 +105,7 @@ const CRAG = (extra) => ROUTE(Object.assign({ discipline: "sport", areaType: "cr
    that list, which is why a crag Overview can never carry a drive control — see section 1. */
 const BARE = { road: undefined, approach: undefined, approachLogistics: undefined, waypoints: [], descent: undefined, descentText: undefined, rappels: undefined, driveMinSLC: undefined };
 
-let plan, tilesProbe, noCoord, cragOv, cragDup, gateOnly, itinOutback, rawKm100, rawKm70, estPoint;
+let plan, tilesProbe, noCoord, cragOv, cragDup, gateOnly, itinOutback, rawKm100, rawKm40, estPoint;
 try {
   plan = render(ROUTE(), "planner");
   // No coordinate anywhere: no pin, no logistics lat/lng. trailheadPoint() resolves nothing.
@@ -140,7 +140,7 @@ try {
      against exactly the over-reach it exists to reject. A control BETWEEN the halved and the full
      figure separates them: 99.8 > 70 only when the recorded trip shape is honoured. */
   rawKm100 = render(ROUTE({ distKm: 100 }), "planner");
-  rawKm70 = render(ROUTE({ distKm: 70 }), "planner");
+  rawKm40 = render(ROUTE({ distKm: 40 }), "planner");
   estPoint = render(ROUTE({ distKm: 70, outingShape: "point", itinerary: { days: [{ miles: 31 }, { miles: 31 }] } }), "planner");
 } catch (e) { dead(`RouteDetail threw while rendering: ${String(e && e.message).slice(0, 200)}`); }
 
@@ -296,7 +296,10 @@ else fail("the TRAILHEAD card prints stat tiles again (" + tileHits.join(", ") +
    BOTH DIRECTIONS, because a rule that only ever demands a SHORTER estimate is satisfied by an
    unconditional halving -- and the reason a recorded point-to-
    point fixture exists. An outback halves its itinerary total and gets SHORTER; a `point` does not
-   retrace, so its total IS the one-way distance and it gets LONGER. */
+   retrace, so effDistKm is its WHOLE 62 mi (~100 km). The planner walks a point's distance ONCE,
+   split at the summit (the walk is two legs since 2026-10-07), so ~50 km comes before Est. summit:
+   LONGER than a 40 km one-way control. Read raw (70 km, halved: 35) or halved twice (25) it is
+   shorter, so the control still separates all three readings. */
 const estSummit = (html) => {
   const t = text(html);
   const i = t.indexOf("Est. summit");
@@ -312,7 +315,7 @@ const estSummit = (html) => {
   return h * 60 + Number(m[2]) + Number(m[4] || 0) * 1440;
 };
 const eOB = estSummit(itinOutback), eOBc = estSummit(rawKm100);
-const ePT = estSummit(estPoint), ePTc = estSummit(rawKm70);
+const ePT = estSummit(estPoint), ePTc = estSummit(rawKm40);
 if (eOB == null || eOBc == null || ePT == null || ePTc == null) {
   dead("an Est. summit time did not render on one of section 8's four fixtures - ANCHOR LOST, so nothing in section 8 was checked");
 }

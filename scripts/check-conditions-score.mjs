@@ -116,8 +116,15 @@ console.log("check:conditions-score");
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "");
   if (/tab==="forecast"&&showScore\?<div><ConditionsScoreCard route=\{route\} mtn=\{mtn\}.*?\/>/.test(mask) && /\["forecast","Conditions"\]/.test(mask)) ok("ConditionsScoreCard has its own Conditions tab (sub-tab `forecast`)");
   else fail("ConditionsScoreCard is no longer the body of its own Conditions tab (sub-tab `forecast`)");
-  if (/x\[0\]==="forecast"\?showScore/.test(mask) && /const showScore=CRAG_SCORE_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask)) ok("the Conditions tab is offered only where the score is");
-  else fail("the Conditions tab is no longer gated to scored crag disciplines");
+  /* Since 2026-10-07 the tab is ALSO offered on alpine, mountaineering, scrambling, ice and mixed
+     routes, with FLAGS (lib/AlpineConditionsCard.jsx, held by check:alpine-conditions) -- the owner
+     wanted the tab there and no stars. What this guard keeps true is that the STARS stay off them:
+     the tab's gate is the two disjoint sets, and the alpine branch never mounts the score card. */
+  if (/x\[0\]==="forecast"\?\(showScore\|\|showAlpineCond\)/.test(mask) && /const showScore=CRAG_SCORE_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask) && /const showAlpineCond=!showScore&&ALPINE_COND_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask)) ok("the Conditions tab is offered where the score is, or where the alpine flags are — and the flags only where the score is not");
+  else fail("the Conditions tab is no longer gated to the score's disciplines plus the alpine flags'");
+  const alpBranch = (mask.match(/tab==="forecast"&&showAlpineCond\?<div>[\s\S]*?<\/div><\/div>:null\}/) || [""])[0];
+  if (alpBranch && !/ConditionsScoreCard/.test(alpBranch)) ok("the alpine Conditions branch never mounts the star score");
+  else fail(alpBranch ? "the alpine Conditions branch mounts ConditionsScoreCard — stars on an alpine route" : "ANCHOR LOST: the alpine Conditions branch was not found");
   const card = (mask.match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
   if (!card) fail("ANCHOR LOST: function ConditionsScoreCard not found");
   else {
@@ -280,6 +287,78 @@ console.log("check:conditions-score");
   if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /onPrefs=\{\(\)=>setSettingsOpen\(true\)\}/.test(app)) ok("Settings has a Your conditions section, and the Home tile links to it");
   else fail("Your conditions is no longer reachable from Settings (menu and profile) or the Home tile");
 }
+
+// 8. THE WEATHER BESIDE THE SCORE (Climbit's crag page, 2026-10-07) — rain hour by hour and day by
+//    day, feels-like, cloud cover, wind direction, and a SHADE MAP of the terrain's shadow.
+{
+  // Rain by day: precipitation[T] is the hour BEFORE T, so midnight's rain is the previous day's.
+  // Index 72 is 2026-06-10 00:00 (today); 80 = 08:00 today; 96 = 00:00 tomorrow (rain of 23-24 today);
+  // 97 = 01:00 tomorrow.
+  const fx = fixture({ rainAt: [80, 96, 97], rainAmt: 0.1 });
+  fx.hourly.apparent_temperature = fx.hourly.temperature_2m.map((v) => v - 5);
+  fx.hourly.wind_direction_10m = fx.hourly.temperature_2m.map(() => 315);
+  const sR = scoreForecast(fx, WALL, null, NOW);
+  const d0 = sR.days[0], d1 = sR.days[1], d2 = sR.days[2];
+  if (Math.abs(d0.rain - 0.2) < 1e-9 && d0.rainHrs === 2 && Math.abs(d1.rain - 0.1) < 1e-9 && d1.rainHrs === 1 && d2.rain === 0 && d2.rainHrs === 0) ok("day rain: each hour's rain is the day that hour BEGAN in (midnight's is the evening before), and a dry day reads 0, not missing");
+  else fail(`day rain totals are wrong: ${[d0, d1, d2].map((d) => d.rain + "/" + d.rainHrs).join(" ")}`);
+  const noP = fixture(); noP.hourly.precipitation = noP.hourly.precipitation.map(() => null);
+  const sNP = scoreForecast(noP, WALL, null, NOW);
+  if (sNP.days[1].rain === null && sNP.days[1].rainHrs === null) ok("a day with no precipitation values is NOT MEASURED (null), never \"No rain\"");
+  else fail("a day with no precipitation values reads as dry");
+  const h12 = d0.all.find((x) => x.hr === 12);
+  if (h12 && h12.feels === 55 && h12.windDir === 315 && d0.feelsHi === 55 && d0.cloudAvg === 0 && d0.windMax === 4 && d0.gustMax === 6 && d0.rhMin === 35) ok("feels-like and wind direction reach each hour; the day carries feels range, daylight cloud, wind, gusts and humidity");
+  else fail(`hour or day weather fields missing: ${JSON.stringify(h12 && { feels: h12.feels, windDir: h12.windDir })} ${JSON.stringify({ feelsHi: d0.feelsHi, cloudAvg: d0.cloudAvg, windMax: d0.windMax })}`);
+  if (sN0().days[0].feelsHi === null) ok("no feels-like in the forecast is null, not the air temperature");
+  else fail("a missing feels-like was filled in");
+
+  // The shadow sweep against a ridge with a known answer: 100 m high, 10 m a pixel, sun 45° up.
+  const { shadeMask, pointShaded, pinSunSpans, shadeGrid, terrainCredits } = await import("../lib/terrainShade.js");
+  const W = 200, E = new Float32Array(W * W);
+  for (let r = 0; r < W; r++) E[r * W + 100] = 100;
+  const shadedCols = (m) => { const o = []; for (let c = 0; c < W; c++) if (m[100 * W + c] === 1) o.push(c); return o; };
+  const east = shadedCols(shadeMask(E, W, W, 10, 90, 45)), west = shadedCols(shadeMask(E, W, W, 10, 270, 45)), se = shadedCols(shadeMask(E, W, W, 10, 135, 45)), north = shadedCols(shadeMask(E, W, W, 10, 0, 10));
+  if (east.join() === "90,91,92,93,94,95,96,97,98,99" && west.join() === "101,102,103,104,105,106,107,108,109,110" && se.length === 7 && se[se.length - 1] === 99 && north.length === 0) ok("a 100 m ridge under a 45° sun shades exactly 100 m on the side AWAY from it (70 m across for a sun at 45° to the ridge, none along it)");
+  else fail(`the terrain shadow is wrong: east ${east.join()} | west ${west.join()} | se ${se.length} | north ${north.length}`);
+  if (pointShaded(E, W, W, 10, 95, 100, 90, 45, 100) === true && pointShaded(E, W, W, 10, 105, 100, 90, 45, 100) === false && pointShaded(E, W, W, 10, 105, 100, 90, -2, 100) === true) ok("the pin readout agrees: shaded behind the ridge, lit in front of it, dark once the sun is down");
+  else fail("pointShaded disagrees with the shadow map");
+  const holes = new Float32Array(W * W); holes.fill(NaN);
+  const mh = shadeMask(holes, W, W, 10, 90, 45);
+  if (mh.every((v) => v === 2) && pointShaded(holes, W, W, 10, 50, 50, 90, 45, 0) === null) ok("ground with no height on file is UNKNOWN (drawn without shade), never lit or shaded");
+  else fail("missing terrain heights read as lit or shaded");
+  const g = shadeGrid(44.367, -121.14), edge = Math.min(g.pin.c, g.W - g.pin.c, g.pin.r, g.H - g.pin.r);
+  if (g.W === 1024 && edge >= 384 && g.tiles.length === 16) ok(`the terrain block keeps the pin ${edge} px (≥ 1.5 tiles) from every edge`);
+  else fail(`the pin sits ${edge} px from the terrain block's edge`);
+  // A flat grid: the pin sees the sun from sunrise to sunset, in one span.
+  const flat = new Float32Array(1024 * 1024);
+  const rise = Date.parse("2026-06-21T12:30:00Z"), set = Date.parse("2026-06-22T03:30:00Z");
+  const sp = pinSunSpans({ E: flat, emax: 0 }, g, 44.367, -121.14, rise, set, 10);
+  if (sp && sp.length === 1 && sp[0][1] === set) ok("on flat ground the sun reaches the pin in one span that ends at sunset");
+  else fail(`flat-ground sun spans are wrong: ${JSON.stringify(sp)}`);
+  const cr = terrainCredits(["ned13/imgn50w124_13.tif, nrcan_cdem/cdem_dem_092G.tif", "srtm/N25W101.tif", null]);
+  if (cr.length === 1 && /Open Government Licence – Canada/.test(cr[0]) && terrainCredits(["ned/x.tif", "ned19/y.tif", "srtm/z.tif"]).length === 0) ok("the terrain credit appears only where its licence requires it (Canada yes; US 3DEP and SRTM, public domain, no)");
+  else fail(`terrain credits are wrong: ${JSON.stringify(cr)}`);
+
+  // The card and the fetch.
+  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
+  const chart = (rd.match(/function HourlyChart\([\s\S]*?\n}\n/) || [""])[0];
+  const need = ["Day by day", "Hour by hour", "All 7 days", "Shade map", "<ShadeMap ", "Cloud cover", "feels like ", " from the ", "Rain not measured", "A trace of rain"];
+  const lost = need.filter((s) => !card.includes(s));
+  if (!lost.length) ok(`the card renders day by day, hour by hour (a day or all 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
+  else fail(`the card lost: ${lost.join(" | ")}`);
+  const chartNeed = ['"Rain ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "week"];
+  const cLost = chartNeed.filter((s) => !chart.includes(s));
+  if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for a day or the week");
+  else fail(`the hourly chart lost: ${cLost.join(" | ")}`);
+  const fc = fs.readFileSync(path.join(ROOT, "lib/forecast.js"), "utf8");
+  const crag = (fc.match(/export function fetchCragForecast[\s\S]*?\n}\n/) || [""])[0];
+  if (/apparent_temperature/.test(crag) && /wind_direction_10m/.test(crag)) ok("the crag fetch asks for feels-like and wind direction, which the card reads");
+  else fail("the crag fetch no longer asks for feels-like or wind direction");
+  const sm = fs.readFileSync(path.join(ROOT, "lib/ShadeMap.jsx"), "utf8");
+  if (/IntersectionObserver/.test(sm) && /under a clear sky/.test(sm) && /not trees, overhangs/.test(sm) && /isn’t counted/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, says it is a clear-sky terrain shadow (not trees or one face), how far it reaches, and when it failed");
+  else fail("the shade map lost a caveat, its lazy load, its failure state or its slider's name");
+}
+function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 
 console.log(failed ? `\ncheck:conditions-score: ${failed} FAILED` : "\ncheck:conditions-score: all passed");
 process.exit(failed ? 1 : 0);
