@@ -23,7 +23,8 @@ async function getJSON(url, init) {
 
 const FIELDS = new Set(["overview", "name", "grade", "rock_grade", "ice_grade", "alpine_grade", "aid_grade", "commitment", "pitches", "length_m", "fa", "aspect", "face", "gain_ft",
   "descent", "gear", "detailed_rack", "stars", "prot_rating", "season", "rock", "start_type", "landing", "pads", "crux", "max_angle", "rope_length_m",
-  "bolts", "guide_stars", "alt_names", "variations", "ffa", "fwa", "anchor", "features", "location"]);
+  "bolts", "guide_stars", "alt_names", "variations", "ffa", "fwa", "anchor", "features", "location",
+  "rack_items", "sun", "wet", "rock_quality", "fixed_gear"]);
 // A grade proposed with a protection suffix ("5.10a R") is split: the grade keeps the difficulty, prot_rating takes the suffix.
 const PROT = /^(.*\S)\s+(PG-?13|R|X)$/i;
 const [file, flag] = process.argv.slice(2);
@@ -38,7 +39,7 @@ for (const f of fixes) {
   if (!FIELDS.has(f.field)) throw new Error(`${f.id}: field ${f.field} is not a headline fact this script may write`);
   (byId.get(f.id) || byId.set(f.id, []).get(f.id)).push(f);
 }
-const same = (a, b) => (a ?? null) === (b ?? null) || String(a ?? "") === String(b ?? "");
+const same = (a, b) => (a ?? null) === (b ?? null) || String(a ?? "") === String(b ?? "") || (a != null && b != null && typeof a === "object" && typeof b === "object" && JSON.stringify(a) === JSON.stringify(b));
 const rbFile = `scripts/rollback-guidebook-fixes-${Date.now()}.json`;
 const rollback = [];
 let ok = 0, refused = 0;
