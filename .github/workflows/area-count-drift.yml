@@ -71,3 +71,12 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: node scripts/check-area-duplicates.mjs
+      # Fourth: does any area NAME still carry the export's sort label ("a1. The Uberfall - left")?
+      # The importer strips them as it creates; duplicates the label hid are listed in
+      # scripts/data/area-sort-labels-held.json until folded. Anon key, no DB link.
+      - name: Does any area name carry a sort label?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-area-sort-labels.mjs
