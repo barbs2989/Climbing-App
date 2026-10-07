@@ -472,7 +472,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - `refused` (199): the rename's PATCH was refused by `refuse_duplicate_area` (0218) — a same-named
       area within 1.5 km. Often the same parent, spelled "White Wall, The" against "(E) The White
       Wall", which the sibling test missed because it does not fold a trailing ", The".
-  - **FOLDED by 0251** (2026-10-07): 393 copies folded into their keeper, 47 climbs merged, ~1,800
+  - **FOLDED by 0251** (2026-10-07; held list now EMPTY, check:counts clean): 393 copies folded into their keeper, 47 climbs merged, ~1,800
     moved, 83 keepers renamed. Applied live in pieces by `scripts/oneoff/apply-0251-in-parts.mjs`,
     because three per-row triggers on `routes` make one transaction outlast the SQL gateway. Met
     on the way, each a trap for the next fold:

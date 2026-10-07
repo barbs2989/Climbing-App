@@ -3,7 +3,8 @@
 // Why: 0251 moves ~1,800 climbs, and three per-row triggers on routes (route counts, area disciplines,
 // dominant discipline) make each move ~60 ms, so the one transaction outlasts `supabase db query`'s
 // ~100-150 s gateway (524). The same statements run in self-contained transactions instead:
-//   part 1  guards, merges, "Other Climbs" renames, re-parents      (APPLIED 2026-10-07, verified)
+//   part 1  guards, merges, "Other Climbs" renames, re-parents      (APPLIED 2026-10-07)
+// ALL OF 0251 APPLIED AND RECORDED 2026-10-07: this script is SPENT; re-running it fails the final guard harmlessly.
 //   moves   the climb moves, 400 a call — idempotent (`where area_id = from_area`)
 //   final   photos to keepers, area fill, deletes, renames, path fix, recount, verify, and RECORDS 0251
 //           in supabase_migrations.schema_migrations so the merge to main does not replay it
