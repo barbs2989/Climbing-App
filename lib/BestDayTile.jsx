@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { C, DLOCALE, MOUNTAINS, catOf } from "../ClimbMatchCore.jsx";
 import { fetchCragForecast } from "./forecast";
-import { scoreForecast, starsLabel, CRAG_SCORE_DISCIPLINES } from "./conditionsScore.js";
+import { scoreForecast, starsLabel, CRAG_SCORE_DISCIPLINES, OPEN_DAY } from "./conditionsScore.js";
 import { useCondPrefs, scorePrefs } from "./CondPrefs.jsx";
 import { routeRock } from "./rockType.js";
 import { useRoutesByIds, dbRouteToCamel } from "./db.js";
@@ -13,7 +13,7 @@ import { USE_DB } from "./supabase";
    Crag disciplines only, like the score itself; a saved climb with no crag location is listed as
    unscored, never dropped silently. One forecast per crag (routes on one crag share it), at most
    MAX_CRAGS, and the tile says when it is showing fewer than the climber saved.
-   With no saved crag climb it renders nothing: an empty tile would claim there is nothing to rate. */
+   With no saved crag climb it shows only how to get one: no number, so it rates nothing. */
 const MAX_CRAGS = 8;
 const _wx = {};
 const ptOf = function (r) {
@@ -25,7 +25,7 @@ const tint = function (s) { const l = starsLabel(s); return l === "Good" ? C.gre
 const dayName = function (d, i) { if (i === 0) return "Today"; if (i === 1) return "Tomorrow"; try { return new Date(d + "T12:00:00").toLocaleDateString(DLOCALE, { weekday: "short" }); } catch (e) { return d.slice(5); } };
 const hr = function (h) { const a = h >= 12 ? "PM" : "AM"; return (h % 12 || 12) + " " + a; };
 
-export default function BestDayTile({ ids, routeById, onOpen, onPrefs }) {
+export default function BestDayTile({ ids, routeById, onOpen, onPrefs, onExplore }) {
   // Saved ids App has not resolved (it resolves lists, logs and crews, not objectives) are read here,
   // with the same area embed, so a saved DB climb is scored rather than skipped.
   const missing = (ids || []).filter(function (id) { return !routeById(id); });
@@ -64,7 +64,7 @@ export default function BestDayTile({ ids, routeById, onOpen, onPrefs }) {
     const s = scoreForecast(w.data, { lat: x.pt.lat, lng: x.pt.lng, aspect: x.r.aspect || x.r.face || (x.r._dbArea && x.r._dbArea.aspect) || null, family: rk ? rk.family : null, discipline: catOf(x.r) }, prefs);
     return s ? { r: x.r, s: s, crag: x.pt.crag } : { r: x.r, why: "forecast didn’t load", failed: true, crag: x.pt.crag };
   });
-  if (!crag.length) return null;
+  if (!crag.length) return <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "12px 14px", marginBottom: 14 }}><div style={{ fontSize: 11, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.4, marginBottom: 7 }}>{"Best day to climb"}</div><div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"Save a sport, trad, top-rope or bouldering climb and this picks its best day this week."}</div><button onClick={onExplore} style={{ marginTop: 8, background: "none", border: "1px solid " + C.border, color: C.blue, borderRadius: 8, padding: "6px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{"Explore climbs"}</button></div>;
   let best = null;
   for (const row of rows) if (row.s) row.s.days.forEach(function (d, i) { if (d.stars != null && (!best || d.stars > best.d.stars)) best = { row: row, d: d, i: i }; });
   const loading = rows.some(function (x) { return x.loading; }), failed = rows.filter(function (x) { return x.failed; }).length;
@@ -86,10 +86,10 @@ export default function BestDayTile({ ids, routeById, onOpen, onPrefs }) {
       {rows.map(function (row) {
         return <div key={row.r.id} style={{ display: "grid", gridTemplateColumns: dates ? "minmax(0,1fr) repeat(" + dates.days.length + ",30px)" : "1fr", gap: 3, alignItems: "center", padding: "5px 0", borderTop: "1px solid " + C.borderLight }}>
           <button onClick={function () { onOpen(row.r, "forecast"); }} style={{ minWidth: 0, background: "none", border: "none", padding: 0, textAlign: "left", cursor: "pointer", color: C.text }}><div style={{ fontSize: 12.5, fontWeight: 700, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{row.r.name}</div><div style={{ fontSize: 11, color: C.textMuted, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{row.s ? (row.crag || "") : row.loading ? "Loading…" : "No score: " + row.why}</div></button>
-          {row.s && dates ? dates.days.map(function (d, i) { const m = row.s.days.find(function (x) { return x.date === d.date; }); const v = m && m.stars != null ? m.stars : null; return <span key={d.date} aria-label={dayName(d.date, i) + ": " + (v == null ? "no score" : v.toFixed(1) + " of 5")} style={{ textAlign: "center", fontSize: 11.5, fontWeight: 800, color: v == null ? C.textMuted : tint(v), background: C.surface, borderRadius: 6, padding: "4px 0" }}>{v == null ? "–" : v.toFixed(1)}</span>; }) : null}
+          {row.s && dates ? dates.days.map(function (d, i) { const m = row.s.days.find(function (x) { return x.date === d.date; }); const v = m && m.stars != null ? m.stars : null; return <button key={d.date} onClick={function () { OPEN_DAY.date = d.date; onOpen(row.r, "forecast"); }} aria-label={row.r.name + ", " + dayName(d.date, i) + ": " + (v == null ? "no score" : v.toFixed(1) + " of 5")} style={{ textAlign: "center", fontSize: 11.5, fontWeight: 800, color: v == null ? C.textMuted : tint(v), background: C.surface, border: "none", borderRadius: 6, padding: "4px 0", cursor: "pointer", minWidth: 0 }}>{v == null ? "–" : v.toFixed(1)}</button>; }) : null}
         </div>;
       })}
-      <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"Each number is that day’s best 3-hour window, scored as on the route’s Conditions tab." + (over ? " Showing the first " + MAX_CRAGS + " crags you saved." : "") + (failed ? " " + failed + " couldn’t load." : "")}</div>
+      <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"Each number is that day’s best 3-hour window, scored as on the route’s Conditions tab. Tap one to open that day." + (over ? " Showing the first " + MAX_CRAGS + " crags you saved." : "") + (failed ? " " + failed + " couldn’t load." : "")}</div>
     </div> : null}
     {onPrefs ? <button onClick={onPrefs} style={{ marginTop: 8, background: "none", border: "none", padding: "4px 0", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{"Your conditions ›"}</button> : null}
   </div>;
