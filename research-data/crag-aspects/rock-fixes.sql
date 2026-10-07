@@ -1,12 +1,13 @@
 -- Disputed crag rock corrected from online research (rock-verdicts-a/b.json); Ophir Main Wall left alone (the two checks disagreed).
+-- Table Mountain (Grotto, Ort, Welcome) reads basalt: briefly set to latite, reverted on the owner's OK because climbing guides say basalt.
 begin;
 with v(id,rock) as (values
 ('az_lookout_mountain','basalt'),
 ('ca_behind_the_yaks','rhyolite'),
 ('ca_south_face','rhyolite'),
-('ca_grotto_the_3','latite'),
-('ca_ort_wall','latite'),
-('ca_welcome_wall','latite'),
+('ca_grotto_the_3','basalt'),
+('ca_ort_wall','basalt'),
+('ca_welcome_wall','basalt'),
 ('ca_memorial_wall_2','limestone'),
 ('co_lookout_mountain_crag','gneiss'),
 ('tn_main_wall_3','sandstone'),
@@ -21,9 +22,9 @@ with v(id,rock) as (values
 ('az_lookout_mountain','basalt'),
 ('ca_behind_the_yaks','rhyolite'),
 ('ca_south_face','rhyolite'),
-('ca_grotto_the_3','latite'),
-('ca_ort_wall','latite'),
-('ca_welcome_wall','latite'),
+('ca_grotto_the_3','basalt'),
+('ca_ort_wall','basalt'),
+('ca_welcome_wall','basalt'),
 ('ca_memorial_wall_2','limestone'),
 ('co_lookout_mountain_crag','gneiss'),
 ('tn_main_wall_3','sandstone'),
