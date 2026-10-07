@@ -138,8 +138,8 @@ const CASES = [
    * the in-area finder throws again the moment there is no signal. */
   { name: "search-fallback-gone", file: DB, must: "fail", expect: "is NOT wrapped in orOfflineExact",
     why: "§8 — the downloaded catalog can be browsed and no longer searched",
-    find: "queryFn: () => orOfflineExact(async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\",",
-    repl: "queryFn: (async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\"," },
+    find: "() => orOfflineExact(async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\",",
+    repl: "() => (async () => {\n      const { data, error } = await supabase.rpc(\"routes_in_subtree\"," },
 
   { name: "hydration-gone", file: CM, must: "fail", expect: "never calls packedRouteIds",
     why: "§3 — the pack is empty after every reload however well the write worked",
