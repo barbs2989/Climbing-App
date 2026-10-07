@@ -173,7 +173,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     one reader; a form that stores what was typed corrupts the record for **every** reader — a
     metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own
     report told everyone else the route was at -12°C. **Four** writes are covered: the trip-report
-    temperature, the itinerary builder, the bail form's distance, and the approach-variants editor.
+    temperature, the itinerary builder, and the approach-variants editor.
   - **THE VARIANTS WRITE IS THE WORST OF THE FOUR, and not because it is the biggest.** Its two
     numbers are the ones `sameEditValue` compares **numerically with a tolerance** (0.1/0.2 on
     `distMi`, 0.1/50 on `gainFt`) so two climbers who measure 4.8 and 4.9 miles count as agreeing. A
@@ -193,7 +193,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     reload at all, and a throwing `localStorage` cannot take a screen down), `weather` (the forecast
     helpers, and the colour thresholds still receiving RAW imperial), `reports` (a climber's own
     temperature, on screen and on the way into the column), `itinerary` (the builder, the downloaded
-    `.txt`, and the bail form's second writer of the same column), `variants` (the approach-variants
+    `.txt`; the bail form, a second writer of that column, was removed 2026-10-07 and the itinerary FLOOR fell 16 → 12), `variants` (the approach-variants
     editor, on both boundaries and in its two labels), `filters` (the chips, and whether a length
     LABEL agrees with the predicate it labels).
   - **FLOORS ARE PER SECTION, because ONE TOTAL CANNOT SEE A SECTION THAT STOPPED ASKING** — five

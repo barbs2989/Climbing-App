@@ -23,8 +23,8 @@
 // THE CLASS IS ONE CLASS, and the write half is the serious end of it. A display defect
 // misinforms one reader; a form that stores what was typed corrupts the record for every reader
 // -- a metric climber typing 10 meaning 10C had 10 written into `climb_logs.temp_f`, so their
-// own report told everyone else the route was at -12C. FOUR writes are covered here: the trip
-// report temperature, the itinerary builder, the bail form's distance, and the approach-variants
+// own report told everyone else the route was at -12C. THREE writes are covered here: the trip
+// report temperature, the itinerary builder, and the approach-variants
 // editor -- whose two numbers `sameEditValue` compares with a TOLERANCE, so a stored kilometre
 // does not merely display wrong, it lands 1.6x away and the 3-agree merge gate can never be met.
 //
@@ -38,7 +38,7 @@
 //   weather    the forecast helpers convert, the colour thresholds still get RAW imperial, and
 //              -- APP-WIDE -- no new hard-coded imperial unit is welded on with `+`
 //   reports    a climber's OWN temperature, on screen and on the way into the column
-//   itinerary  the plan builder, the downloaded .txt, and the bail form's second writer
+//   itinerary  the plan builder, the downloaded .txt
 //   variants   the approach-variants editor: both boundaries, and its two labels
 //   filters    the filter chips, and whether a length LABEL agrees with the predicate it labels
 //
@@ -74,7 +74,7 @@ const SECTIONS = ["persist", "weather", "reports", "itinerary", "variants", "fil
 // DIFFICULTY_KEYS editor, and its five unit-invariant axes were five assertions. Its floor follows.
 // `filters` went 30 -> 40 when the LIVE filter (lib/DbAreaBrowser.jsx) gained sections 5 and 6, so
 // its floor rises with it: a floor left at the old count cannot see the new half stop asking.
-const FLOOR = { persist: 13, weather: 37, reports: 15, itinerary: 16, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 8 };
+const FLOOR = { persist: 13, weather: 37, reports: 15, itinerary: 12, variants: 13, filters: 38, profile: 12, pitches: 9, keyed: 8 };
 
 const argOnly = (process.argv.find((a) => a.startsWith("--only=")) || "").slice(7);
 if (argOnly && !SECTIONS.includes(argOnly)) {
@@ -186,7 +186,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import ReactDOM from "react-dom";
 import RouteDetail from ${JSON.stringify(RD_PATH)};
-import { ItineraryEditor, BailoutForm, FullProfile } from ${JSON.stringify(CORE_PATH)};
+import { ItineraryEditor, FullProfile } from ${JSON.stringify(CORE_PATH)};
 export { distMiles, ME } from ${JSON.stringify(CORE_PATH)};
 export {
   uTemp, uTempN, uTempDelta, uWind, uWindN, uPrecip, uSnowfall,
@@ -211,9 +211,6 @@ export function renderRoute(route, tab) {
 }
 export function renderEditor(itin) {
   return renderToStaticMarkup(React.createElement(ItineraryEditor, { itin, onChange: noop }));
-}
-export function renderBailout() {
-  return renderToStaticMarkup(React.createElement(BailoutForm, { onSubmit: noop, onCancel: noop, peakCoord: null }));
 }
 // FullProfile ends in createPortal(..., document.body), which the server renderer refuses --
 // portals are PLACEMENT and check:overlays owns that. The patch is SCOPED TO THIS CALL and
@@ -255,7 +252,7 @@ export function renderProfile(climber) {
     "uTempIn", "buildConsensus", "itinDaysToDraft", "itinDraftToStructured", "itinToText",
     "uDistMiIn", "itinDraftVal", "itinStoreVal", "uElev", "ROUTE_LENGTHS",
     "routeLengthLabel", "uDistMi", "uDistMiUnitLong", "uElevN", "uElevUnit",
-    "passesFilters", "__set_UNITS", "renderRoute", "renderEditor", "renderBailout",
+    "passesFilters", "__set_UNITS", "renderRoute", "renderEditor",
     "renderProfile", "distMiles", "ME"];
   for (const n of NEED) if (M[n] === undefined) dead(`${n} is not exported — nothing below was checked.`);
   return M;
@@ -696,7 +693,7 @@ async function runReports() {
 // climber typing 152 meaning metres wrote 152 FEET into a plan other climbers read.
 async function runItinerary() {
   section = "itinerary";
-  console.log("\n== itinerary — the plan builder, the downloaded file, and the bail form's second writer\n");
+  console.log("\n== itinerary — the plan builder, the downloaded file\n");
   await loadBundle();
 
   // One stored day, in the canonical units the column holds.
@@ -781,29 +778,9 @@ async function runItinerary() {
   }
   M.__set_UNITS("imperial");
 
-  // 6. THE SECOND WRITER OF THE SAME COLUMN. A bail point becomes a Bailout WAYPOINT, and the
-  //    waypoint editor already converts `distMi` on the way in -- so one store had two writers and
-  //    one ignored the setting, while the reader (`uDistMi(nearBail.distMi)` on the commitment
-  //    line) converted. A metric climber typed kilometres and read the number back as miles.
-  for (const [u, lab, wrong] of [["imperial", "DIST. TO SAFETY (MI)", "(KM)"], ["metric", "DIST. TO SAFETY (KM)", "(MI)"]]) {
-    M.__set_UNITS(u);
-    const html = M.renderBailout();
-    if (html.length < 600) { fail(`${u}: the bail form rendered ${html.length} chars — too thin to assert against`); continue; }
-    if (html.includes(lab) && !html.includes("DIST. TO SAFETY " + wrong)) ok(`${u}: the bail distance is labelled ${lab}`);
-    else fail(`${u}: the bail distance is not labelled ${lab} — it declares a unit the climber does not use`);
-  }
-  // THE SUBMIT PATH IS ASSERTED AS SOURCE, and the first version of this got it wrong in a way only
-  // the injection showed: it exercised uDistMiIn directly, so reverting the FORM to Number(distMi)
-  // left it green -- it was proving the helper works, not that the form calls it. SSR cannot click
-  // a button, so the wiring is read from the file, exactly as check:topo-outage-copy reads its prop
-  // chain. Matched on the EXPRESSION rather than the helper's name, so the comment beside the fix
-  // (which names uDistMiIn while explaining it) cannot satisfy it.
-  const core = readCoreSource();
-  if (core.includes("distMi:distMi?uDistMiIn(distMi):undefined")) ok("the bail form submits through uDistMiIn, so km typed by a metric climber is stored as miles");
-  else fail("the bail form stores what was typed — the waypoint column is miles, and its reader converts");
-  if (!core.includes("distMi:distMi?Number(distMi):undefined")) ok("the raw submit expression is gone");
-  else fail("the raw submit expression is still there — the waypoint column is miles");
-  // The helper's own arithmetic, which the expression above depends on.
+  // 6. The bail form that was this column's second writer was removed with bail points (owner,
+  //    2026-10-07), taking its four assertions with it; the itinerary FLOOR dropped by exactly four.
+  //    uDistMiIn still converts typed distances for the waypoint editor, so its arithmetic stays.
   M.__set_UNITS("metric");
   if (Math.abs(M.uDistMiIn("2") - 1.24) <= 0.02) ok("metric: 2 km converts to 1.24 mi");
   else fail(`metric: 2 km converted to ${M.uDistMiIn("2")}`);

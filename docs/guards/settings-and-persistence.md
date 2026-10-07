@@ -14,7 +14,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `FloatPlan` holds **eleven** fields and both its render sites are conditional branches —
   `{tab==="safety"?…:null}` on the route page and `{view==="float"?…}` on the crew safety screen —
   so React discarded the state on the way out and tapping **Plan** to check the descent wiped
-  route, partner, party size, vehicle, parking, depart, turnaround, hard return, comms, emergency
+  route, partner, party size, vehicle, parking, depart, hard return, comms, emergency
   contact and notes. The copy invites exactly that workflow: *"File a float plan below before you
   lose cell service."* Static (esbuild + SSR + a source read, **0.9s** against
   `check:policy-claims`' 1.6s beside it), so it sits in `npm run build`.

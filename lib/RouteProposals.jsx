@@ -129,7 +129,6 @@ export function RouteProposalQueue() {
           <Row label="Approach">{v.approach}</Row>
           <Row label="Descent">{v.descentText}</Row>
           <Row label="Rappels">{v.rap}</Row>
-          <Row label="Turnaround">{v.turn}</Row>
           <Row label="Comms">{v.comms}</Row>
           <Row label="Style">{Array.isArray(v.style) && v.style.length ? v.style.join(", ") : null}</Row>
           <Row label="Hazards">{Array.isArray(v.haz) && v.haz.length ? v.haz.join(", ") : null}</Row>
