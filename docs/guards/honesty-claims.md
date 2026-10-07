@@ -1469,7 +1469,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `lib/alpineConditions.js`) reads each discipline's OWN conditions, counts its start time back from
   the Planner's own estimate (`lib/planTimes.js`), and never claims what it did not read. Static, so
   it sits in `npm run build`; injection suite `scripts/oneoff/inject-alpine-conditions-cases.mjs`
-  (17 cases, 16 caught + 1 silent).
+  (19 cases, 18 caught + 1 silent).
   - **OWNER DECISIONS, 2026-10-07:** its own Conditions tab; FLAGS, never stars (no published alpine
     go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
     softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
@@ -1526,6 +1526,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the section is absent, never "0 summited". The alpine tick list gained "Turned around" (the walk list already had
     it, and `leaderboard()` has never counted it as a send), so every discipline on the tab can log
     one.
+  - **SEASON AT THE TOP** (`fetchAlpineClimate`): the crag card's five-year archive climate, but read
+    at the route's high point (`elevation=` in metres; without it the archive reads the grid cell's
+    own height, which on an area coordinate can sit thousands of feet below the summit) and with
+    snowfall. Each month shows high/low and snowfall, or wet days in a month under an inch of snow.
+    Live on 2026-10-07: Baker's summit July 44/25 °F and January 9/−2 °F with 76 in. `monthlyClimate`
+    adds a `snow` key ONLY when snowfall was asked for, so a crag's reading is byte-for-byte unchanged.
+    The guard stubs `fetch` to prove the archive is asked for the summit's height, not inferred from
+    the code's spelling.
   - **WHAT IT CANNOT SEE:** whether a threshold is RIGHT for a given range (Cascades numbers are rare —
     most ice and mixed material is Rockies, Colorado and Scotland); the card's runtime fetches (SSR
     renders only the loading state, so the fixtures exercise the logic directly, and the two feeds'
