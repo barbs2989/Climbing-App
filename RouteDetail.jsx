@@ -3950,7 +3950,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const aspectText=route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null;
   const score=useMemo(function(){
     if(!wx||!wx.data)return null;
-    return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:aspectText,family:rk?rk.family:null,discipline:disc},scorePrefs(cp),undefined,aq&&aq.data?aq.data:null);
+    return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:aspectText,family:rk?rk.family:null,rock:rk?rk.rock:null,discipline:disc},scorePrefs(cp),undefined,aq&&aq.data?aq.data:null);
   },[wx,aq,cp,route.id,rk&&rk.family,aspectText]);
   useEffect(function(){if(!wantDate||!score)return;var i=score.days.findIndex(function(d){return d.date===wantDate;});if(i>=0){setDayI(i);setHrI(null);}setWantDate(null);},[score,wantDate]);
   if(!on)return null;
@@ -3989,7 +3989,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const aqNow=aq&&aq.data&&cur&&cur.aqi!=null?cur.aqi:null;const aqCat=aqiCategory(aqNow);
   const dayAqCat=aqiCategory(day.aqiMax);
   const curF=cur&&cur.factors.dry;
-  const sandWarn=<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red,borderRadius:10,padding:"9px 12px",marginBottom:8}}><div style={{fontSize:13,fontWeight:800,color:C.red}}>Wet sandstone breaks — don’t climb until it’s dry</div><div style={{fontSize:12.5,color:C.text,marginTop:3,lineHeight:1.45}}>{dryLine?"Likely dry from "+dryLine+".":"Can’t tell yet when it will be dry."}</div></div>;
+  const sandWarn=<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red,borderRadius:10,padding:"9px 12px",marginBottom:8}}><div style={{fontSize:13,fontWeight:800,color:C.red}}>Wet sandstone is weak — holds can break. Stay off it until it’s dry</div><div style={{fontSize:12.5,color:C.text,marginTop:3,lineHeight:1.45}}>{dryLine?"Likely dry from "+dryLine+".":"Can’t tell yet when it will be dry."}</div></div>;
   return <div data-conditions-score="1">
     {cur?sec("Right now",<div style={condBox}>
       {wetSand?sandWarn:null}

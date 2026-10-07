@@ -1362,8 +1362,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     points. There is **no clamp** anywhere — the same lesson as `compat()` (docs/codebase/algorithms.md).
   - **...except a NAMED CAP (§7, 2026-10-07)**: summed factors gave an hour of RAIN 53-59 points
     ("Fair"), because temperature, wind and sun still scored. Rain in the past hour, rock under 30%
-    dried, ANY wet sandstone, and AQI > 200 cap the hour at 1 ★; air within 4°F of its dew point and
-    AQI > 150 cap it at 2 ★. Stars are `min(5 × points / measured, lowest cap)`; every cap carries
+    dried, ANY wet sandstone (not conglomerate — see below), and AQI > 200 cap the hour at 1 ★; air
+    within 5°F of its dew point and AQI > 150 cap it at 2 ★.
+  - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
+    on feel:
+    - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).
+    - The AQI caps follow EPA's bands: at 151–200 those active outdoors avoid heavy exertion; above 200, everyone does.
+    - DRY_HOURS follow the climbing bodies (rockType.js lists each one): granite and quartzite 12,
+      limestone and metamorphic 24, sandstone 48. In the model, 48 h of credit works out to the
+      Southern Nevada coalition's "36 h with sun, 3–4 days in winter".
+    - A wet day is ≥ 1 mm, the ETCCDI convention.
+    - Wet sandstone "can lose up to 75% of its strength" (Access Fund). Conglomerate keeps
+      sandstone's drying but NOT that cap: quartz-cemented conglomerate (the Gunks, 1,548 areas)
+      is hard rock, and the guard pins this.
+    - Still conventions, NOT measured: the friction thresholds (no peer-reviewed study fixes one),
+      the drying-rate multipliers, and the 12/16 wet-day month cut-offs. Stars are `min(5 × points / measured, lowest cap)`; every cap carries
     its reason, the card prints it under the factor rows with "The factors alone would give x", and
     the day strip says "Held down by: …". That is not the saturating clamp `compat()` lost — it
     is a stated verdict, and the rows still add up to the points line. Do not "simplify" it back

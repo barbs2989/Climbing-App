@@ -61,7 +61,7 @@ export default function BestDayTile({ ids, routeById, onOpen, onPrefs, onExplore
     if (!w) return { r: x.r, loading: true, crag: x.pt.crag };
     if (w.error) return { r: x.r, why: "forecast didn’t load", crag: x.pt.crag, failed: true };
     const rk = routeRock(x.r);
-    const s = scoreForecast(w.data, { lat: x.pt.lat, lng: x.pt.lng, aspect: x.r.aspect || x.r.face || (x.r._dbArea && x.r._dbArea.aspect) || null, family: rk ? rk.family : null, discipline: catOf(x.r) }, prefs);
+    const s = scoreForecast(w.data, { lat: x.pt.lat, lng: x.pt.lng, aspect: x.r.aspect || x.r.face || (x.r._dbArea && x.r._dbArea.aspect) || null, family: rk ? rk.family : null, rock: rk ? rk.rock : null, discipline: catOf(x.r) }, prefs);
     return s ? { r: x.r, s: s, crag: x.pt.crag } : { r: x.r, why: "forecast didn’t load", failed: true, crag: x.pt.crag };
   });
   if (!crag.length) return <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "12px 14px", marginBottom: 14 }}><div style={{ fontSize: 11, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.4, marginBottom: 7 }}>{"Best day to climb"}</div><div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"Save a sport, trad, top-rope or bouldering climb and this picks its best day this week."}</div><button onClick={onExplore} style={{ marginTop: 8, background: "none", border: "1px solid " + C.border, color: C.blue, borderRadius: 8, padding: "6px 10px", fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{"Explore climbs"}</button></div>;
