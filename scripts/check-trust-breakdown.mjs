@@ -333,10 +333,18 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
     fail("groupTrustShortfall derives its own score — a group's policy would be enforced on a number the app never shows");
   } else ok("the group-join gate does not derive a second score");
 
+  // THE TWO HANDLERS ARE ONE NOW (groupJoinTap, 2026-10-07), which removes the split this count
+  // guarded against rather than policing it: so the assertion is that there is exactly ONE gate
+  // call, that it reads the displayed score, and that EVERY join button reaches it. A second
+  // inline handler growing back would show up as a second groupTrustShortfall( call, and a
+  // button bypassing the gate as fewer than two groupJoinTap(cl) callers.
   cases++;
   const n = app.split("groupTrustShortfall(cl,myTrustScore)").length - 1;
-  if (n !== 2) fail(`the join gate reads the displayed score in ${n} handler(s), expected 2 — the two are byte-identical, so half the app would gate on something else`);
-  else ok("both join handlers gate on the score the app displays");
+  const calls = (app.match(/(?<!function )groupTrustShortfall\(/g) || []).length;   // call sites, not the definition
+  const taps = app.split("onClick={()=>groupJoinTap(cl)}").length - 1;
+  if (n !== 1 || calls !== 1) fail(`the join gate is called ${calls} time(s), ${n} reading the displayed score — expected exactly one call, in groupJoinTap, reading myTrustScore`);
+  else if (taps < 2) fail(`only ${taps} join button(s) route through groupJoinTap — the group card AND the group detail must both, or one of them gates on nothing`);
+  else ok(`the one join gate reads the score the app displays, and all ${taps} join buttons route through it`);
 }
 
 // ---- 6. THE THRESHOLD MUST BE A BAR SOMEBODY CAN WALK UP TO ----
