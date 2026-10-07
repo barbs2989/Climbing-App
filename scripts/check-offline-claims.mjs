@@ -56,10 +56,11 @@ const ok = (m) => { ran++; console.log("  ok   " + m); };
 const fail = (m) => { ran++; bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
 
-let cm, rd, db, off;
+let cm, rd, db, off, tiles, kit, sw;
 try {
   cm = read("ClimbMatch.jsx"); rd = read("RouteDetail.jsx");
   db = read("lib/db.js"); off = read("lib/offline.js");
+  tiles = read("lib/offlineTiles.js"); kit = read("lib/mapKit.jsx"); sw = read("public/sw.js");
 } catch (e) { dead("could not read a source file — nothing was checked. " + e.message); }
 
 /* Comments are stripped before every source test. Three checkers in this repo have been fooled by
@@ -67,7 +68,7 @@ try {
  * every symbol below. Block comments only for the wiring tests: a `//` strip has already eaten
  * real code here once (check:dead-flag-gates) and these are single-expression matches. */
 const strip = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
-const cmS = strip(cm), rdS = strip(rd), dbS = strip(db), offS = strip(off);
+const cmS = strip(cm), rdS = strip(rd), dbS = strip(db), offS = strip(off), tilesS = strip(tiles), kitS = strip(kit), swS = strip(sw);
 
 /* ── 1. THE WRITE: packing a route really puts its row on the device. ────────────────────────
  * Without this the pack is back to being a list of ids, and every sentence promising the beta is
@@ -148,9 +149,11 @@ else fail("lib/offline.js no longer defines packedRouteIds()");
  * vocabulary of absence — check:outage's own design rule. */
 console.log("\n4. THE DISCLAIMER — the surfaces still name what is NOT on the device:");
 /* Other climbers' REPORTS came off this list when the pack began saving the latest of them (§10
- * asserts that save and its reader). Photos, topo images and map tiles still are not stored. */
-if (/Photos, topo images and map tiles are not/.test(rdS))
-  ok("the Plan-tab pack card still names photos, topo images and map tiles as not saved");
+ * asserts that save and its reader), and MAP TILES came off it when the pack began saving the
+ * approach's map (§11). Photos and topo images still are not stored -- and the map is only the
+ * ground around the approach, so the card must say THAT, or "map" reads as the whole map. */
+if (/Photos and topo images are not/.test(rdS) && /saved map covers only the ground around the approach/.test(rdS))
+  ok("the Plan-tab pack card still names photos and topo images as not saved, and bounds the saved map");
 else fail("the Plan-tab pack card no longer says what is NOT saved. Packing stores the route's own\n"
   + "       row and nothing else — a card listing what you have with no mention of what you do not\n"
   + "       is the over-claim this guard has always existed to prevent, in its new form.");
@@ -381,9 +384,35 @@ const SNAP = [
 ];
 for (const [cond, good, why] of SNAP) { if (cond) ok(good); else fail(why); }
 
+/* ── 11. THE MAP IN THE PACK IS BACKED, BOUNDED, AND REACHES THE SCREEN. ─────────────────────
+ * Packing saves map tiles for the ground from the trailhead to the climb (lib/offlineTiles.js).
+ * The card's "Map" chip and the toast's "and the map" are promises, so the chain §10 demands:
+ * WRITTEN by the pack, READ BACK by the map (a failed tile falls back to the saved one), counted
+ * on the card from what is really stored, and REMOVED with the climb. Plus the two links that are
+ * easy to lose: Leaflet itself must be reachable offline, and the tiles must not live in Cache
+ * Storage, where the service worker's activate handler deletes them. */
+console.log("\n11. THE PACK'S MAP — saved, served offline, counted honestly, removed with the climb:");
+const MAP = [
+  [/saveRouteMapOffline\(/.test((packWrap || [""])[0]), "packRouteWithSnapshot saves the route's map",
+    "packRouteWithSnapshot no longer calls saveRouteMapOffline — the card's Map chip would promise tiles nobody wrote"],
+  [/indexedDB\.open\(/.test(tilesS) && !/caches\.open\(/.test(tilesS), "offline tiles live in IndexedDB, not Cache Storage",
+    "lib/offlineTiles.js stores tiles in Cache Storage (or not in IndexedDB) — public/sw.js's activate deletes every cache but the shell, so a worker update would wipe every saved map"],
+  [/offlineTileUrl\(/.test(kitS) && /createTile\(/.test(kitS), "the map's tile layer falls back to the saved tile when a tile fails",
+    "lib/mapKit.jsx no longer reads saved tiles — the pack saves a map that no map ever shows"],
+  [/removeRouteMapOffline\(/.test(offS.match(/export async function unpackRouteOffline[^\n]*/) ? offS.match(/export async function unpackRouteOffline[^\n]*/)[0] : ""),
+    "unpacking a climb removes its map", "unpackRouteOffline no longer removes the map — 'Removed from your trip pack' would leave megabytes behind"],
+  [/routeMapInfo\(/.test(offS) && /mapTiles/.test(offS) && /_pm&&_pm\.mapTiles/.test(rdS), "the Map chip is counted from the tiles actually stored",
+    "the pack card's Map chip is not read from the stored tile count — it would claim a map whether or not one downloaded"],
+  [/ajax\/libs\/leaflet\//.test(swS) && /warmLeafletOffline\(/.test(cmS), "Leaflet itself is cached for offline, and packing fetches it",
+    "public/sw.js no longer caches Leaflet, or packing no longer fetches it — a packed map could not open with no signal at all"],
+  [/packMapNote\(/.test(cmS) && /m\.missing/.test(cmS), "the toast says how much of the map landed",
+    "the pack toast no longer distinguishes a full, partial or failed map download"],
+];
+for (const [cond, good, why] of MAP) { if (cond) ok(good); else fail(why); }
+
 /* Fail closed on a run that quietly stopped asking. Raise this when you add an assertion; never
  * lower it to make a run pass. */
-const EXPECTED = 44;
+const EXPECTED = 51;
 if (ran < EXPECTED)
   dead("only " + ran + " assertion(s) RAN, expected " + EXPECTED
     + " — this guard stopped asking half its questions and still exited 0.");

@@ -569,6 +569,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       and incomplete downloads keep the pack. `scripts/oneoff/verify-pack-vs-state-freshness.mjs`
       runs the real module against real IndexedDB in 8 cases, and fails exactly the two newer-state
       cases against the old code.
+  - **...AND THE PACK CARRIES A MAP NOW (2026-10-07, user-requested), SO §4 MOVED A THIRD TIME AND
+    §11 WAS ADDED.** `packRouteWithSnapshot()` calls `saveRouteMapOffline()` (`lib/offlineTiles.js`):
+    USGS topo + imagery tiles (public domain — OSM, Esri and OpenTopoMap terms forbid bulk offline
+    download) for a 1 km corridor along the route's own track/waypoints/logistics trailhead/area
+    point, or a 2 km circle round a single-point crag, zooms 8-16, capped at 1,500 a layer. Measured:
+    ~168 tiles a layer for an Index crag, 785 for Buck Mountain's South Ridge. Tiles are in their OWN
+    IndexedDB, never Cache Storage — `public/sw.js`'s `activate` deletes every cache but the shell.
+    `baseTileLayer` (lib/mapKit.jsx) falls back tile-by-tile to the saved copy when a tile fails, and
+    crops the z16 ancestor past 16. The service worker's one cross-origin exception caches the pinned
+    Leaflet files, which packing pre-fetches. §4 now demands "Photos and topo images are not" AND
+    that the card BOUNDS the map ("covers only the ground around the approach"); §11 asserts write,
+    IndexedDB storage, the map's fallback read, removal on unpack, a chip counted from stored tiles,
+    Leaflet offline, and a toast that distinguishes full / partial / failed.
   - **THE EMBED SHAPE IS EXPORTED FROM `lib/offline.js` AND IMPORTED BY `lib/db.js`**, not written
     twice. A pack carrying fewer area fields than the network select renders **"undefined"** where
     the peak name goes — `dbRouteToCamel` builds `_dbArea` from `r.areas` whenever it is TRUTHY, so
