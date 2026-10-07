@@ -39,6 +39,7 @@ import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from ".
 import { knownHazards } from "./lib/hazards";
 import { acquireBaseFix, clusterBasePoints, baseCheckinMessage, pendingBaseCheckins, savePendingBaseCheckins } from "./lib/baseCheckin";
 import { routeTags } from "./lib/routeTags";
+import { planTimes } from "./lib/planTimes";
 import { usableFa } from "./lib/fa";
 import {parseGpxText,DbClimbPicker,RealClimberRow,CardHead,SectionJumps,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,Comments,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,trustTier,reporterTrust,reporterWeightTrust,rappelReportsOf,sunReadout} from "./ClimbMatchCore.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
@@ -1799,19 +1800,10 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   const pack=st.pack,setPack=setK("pack");
   const party=st.party,setParty=setK("party");
   const depart=st.depart,setDepart=setK("depart");
-  const hasPublishedSummitH=route.timing&&route.timing.summitTimeHrs!=null;
-  const derivedSummitH=(!hasPublishedSummitH&&route.timing&&route.timing.totalHrs!=null)?Math.max(0,route.timing.totalHrs-(route.timing.approachTimeHrs||0)-(route.timing.descentTimeHrs||0)):null;
-  const hasDerivedSummitH=derivedSummitH!=null&&derivedSummitH>0;
-  // scarfHrs() coerces a missing distance or gain to 0, so a route with neither
-  // reported "0.0hr Approach / 0.0hr Total" and a return time equal to the
-  // departure minute -- a multi-day Olympic approach shown as summiting at 6:00 AM.
-  // A published summit time that equals the published total, with no separate
-  // approach figure, is a car-to-car number: the whole day already. Adding a
-  // separate approach estimate to it double-counts the walk in.
-  // So is a published total with NO legs at all: derivedSummitH then equals the whole
-  // total, and the walk in was stacked on top -- 32 rows (Mastiff's 8.5 hr day put the
-  // summit some 13 hr out). Measured 2026-10-01.
-  const publishedIsWholeDay=!!(route.timing&&route.timing.totalHrs!=null&&route.timing.approachTimeHrs==null&&(route.timing.summitTimeHrs!=null?route.timing.summitTimeHrs===route.timing.totalHrs:route.timing.descentTimeHrs==null));
+  /* The time maths -- stored legs vs the walk model, the up/down split, the whole-day rows -- live in
+     lib/planTimes.js, because the Conditions tab's alpine start counts back from the same estimate. */
+  const P=planTimes(route,{fit,pack,party,depart});
+  const {hasPublishedSummitH,hasDerivedSummitH,publishedIsWholeDay}=P;
   const hasHikeInputs=(route.distKm!=null&&route.distKm!=="")||(route.gainM!=null&&route.gainM!=="");
   // hasHikeInputs is an OR, so ONE of the three is enough to render a confident total -- while
   // scarfHrs still charges every missing component as 0. Measured on the live catalog: 950
@@ -1824,59 +1816,20 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   if(route.distKm==null||route.distKm==="")_missHike.push("approach distance");
   if(route.gainM==null||route.gainM==="")_missHike.push("elevation gain");
   if(route.lossM==null||route.lossM==="")_missHike.push("elevation loss");
-  const hikeInputsComplete=_missHike.length===0;const hikeCoversWholeDay=gainCoversWholeOuting(route);
-  /* ...and that flag now reaches the RETURN, not just the label. `hikeCoversWholeDay` is true when
-     the row's gain and loss agree to within 3% — 433 of the 484 WA rows that qualify have them
-     EXACTLY equal, which is a round trip or a traverse ending at its start elevation, not a
-     coincidence on a one-way approach. For those rows the tile is already relabelled "On foot" and
-     TECH STATS already says "Total ascent is the whole day from the trailhead, not just the walk
-     in" — and then the return leg added another 75% of that same walk on top. Label and arithmetic
-     contradicting each other on one screen: wa_ptarmigan_traverse read `21.6hr On foot` and then
-     put Est. return 16.2 hr after Est. summit.
-
-     SCOPED TO THE WALK BRANCH, and getting that wrong nearly shipped a second defect. A pitched
-     route's return is `techH*0.7` — the descent of the CLIMB, which the walk never double-counted
-     — so short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a
-     real descent leg from the 212 whole-outing rows that carry pitches. Only the `hikeH*0.75`
-     branch is affected.
-
-     This moves Est. return EARLIER, which is normally the dangerous direction; it is safe here
-     only because the figure removed was never a second leg, it was the first one counted twice. */
+  const hikeInputsComplete=_missHike.length===0;
+  /* There used to be a `hikeCoversWholeDay` flag here (gainCoversWholeOuting: gain and loss within
+     3%) that relabelled the Approach tile "On foot" and dropped the walk out from the return,
+     because the one walk leg charged gain AND loss and so was already the round trip on those rows.
+     The walk is split into its up and down legs now (lib/planTimes.js), so there is no round
+     trip to relabel and nothing counted twice: the tile is the walk IN on every row, and every
+     return walks out. check:return-leg holds both. */
   /* A gain PRESENT and contradicted, as opposed to absent. _missHike above names what is
      missing; this names what is impossible. Both make the number below a floor, so they are
      worded the same way and sit together. */
   const gainShort=gainBelowOwnPins(route);
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
   const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
-  /* THE HIKE LEG READS effDistKm, NOT THE RAW COLUMN, AND IT WAS THE LAST READER ON THIS PAGE
-     THAT DID NOT. lib/outing.js exists because two SCREENS answered "how far is the approach"
-     differently; that fix landed on TECH STATS, on the header strap, on the TrailheadCard tile
-     and on the area browser's span, and the planner was left behind -- so one route page stated
-     the approach distance two ways and computed its times from the one it did not show.
-
-     `dist_km` holds two conventions at once and CLAUDE.md forbids normalising it in bulk. This
-     changes only WHICH SOURCE a reader prefers, which is lib/outing.js's own contract: with no
-     itinerary of its own a route gets the stored column back untouched.
-
-     THE CURRENT ARITHMETIC DOUBLE-COUNTS THE WALK OUT on the rows that move most.
-     wa_blizzard_peak_standard is a 64-mile round trip whose dist_km holds the whole 63, so the
-     walk is charged once to reach the summit and then 0.75 of it again to get out -- 110 miles
-     of walking for a 64-mile trip, 72% over. With effDistKm it charges 1.75 x 32 = 56 against
-     that 64, and the shortfall is the deliberate downhill-is-faster factor rather than an error.
-
-     MEASURED BEFORE IT SHIPPED, because erring short on "are you down before dark" is the #641
-     direction that reads green (scripts/oneoff/measure-planner-distance-ab.mjs, which LIFTS this
-     statement and executes it twice with only the distance changed). Of 790 comparable WA routes
-     326 estimates move -- 203 shorter and 118 LONGER, so it is not one-directional -- and the
-     "After dark" warning goes 464 -> 465: ZERO suppressed, one added. It is not a knife-edge
-     either: the median mover sits 10.45 hr from the 18.5 hr line and only 14 of 326 are within
-     two hours of it, because the routes that shorten are multi-day walks estimated at 30-50 hr.
-
-     WHAT IT DOES NOT CLAIM: that effDistKm is the better number on every row. Among the 118 that
-     get LONGER are routes where dist_km may correctly hold the one-way while the itinerary
-     covers more than the approach, and there it overstates -- conservatively, and agreeing with
-     the tile above it, which is the property being bought here. */
-  const hikeH=scarfHrs(effDistKm(route),route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:(hikeCoversWholeDay?0:hikeH*0.75));
+  const {hikeH,techH,totalH,sumH,retH,storedApproachH,storedDescentH}=P;
   const dayOf=h=>Math.floor(Math.round(h*60)/1440);const fmt=h=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
      Both are absolute hours from midnight of the DEPARTURE day, so an estimate that crosses
@@ -1917,7 +1870,10 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   // so the tell went away and the fault did not. These are lower bounds, not estimates.
   // Never paint one green either: a green "Est. return" asserts you are down before dark,
   // and with the walk in and the walk out both counted as zero we cannot assert that.
-  const approachUnknown=hasAnyEstimate&&!hikeInputsComplete&&!publishedIsWholeDay;
+  /* A STORED approach or descent is not a hole: lib/planTimes.js uses the route's own leg where it
+     has one, so a leg is a floor only when it is neither stored nor fully walkable. */
+  const walkInKnown=hikeInputsComplete||storedApproachH!=null,walkOutKnown=hikeInputsComplete||storedDescentH!=null;
+  const approachUnknown=hasAnyEstimate&&!(walkInKnown&&walkOutKnown)&&!publishedIsWholeDay;
   /* THE SAME DEFECT ON THE OTHER LEG. `techHrs(0,...)` is 0, so a roped route with no recorded
      pitch count and no published or derived summit time contributes a climbing leg of ZERO to
      Total, Est. summit and Est. return -- "unknown" counted as "none", which is exactly what the
@@ -1984,7 +1940,7 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":hasHikeInputs?(approachUnknown?"≥":"")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{hikeCoversWholeDay?"On foot":"Approach"}</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":(hasHikeInputs||storedApproachH!=null)?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+totalH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
       </div>
