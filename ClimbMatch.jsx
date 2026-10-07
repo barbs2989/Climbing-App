@@ -294,7 +294,7 @@ export default function App(){
      forecast, without having to remember a button. Seed routes ship in the bundle and are skipped. */
   const packAutoRef=useRef(false);
   useEffect(function(){if(packAutoRef.current||!USE_DB||!packMetaQ.data||!packMetaQ.data.length)return;if(typeof navigator!=="undefined"&&navigator.onLine===false)return;packAutoRef.current=true;
-    var stale=packMetaQ.data.filter(function(m){return !m.seed&&(!m.snapAt||Date.now()-(m.refreshedAt||0)>12*3600000);});/* !snapAt: packed before the snapshot existed — bring it up to the new shape now, not in 12 hours. */
+    var stale=packMetaQ.data.filter(function(m){return !m.seed&&(!m.snapAt||!m.mapAt||m.mapMissing>0||Date.now()-(m.refreshedAt||0)>12*3600000);});/* !snapAt / !mapAt: packed before the snapshot or the map existed — bring it up to the new shape now, not in 12 hours. mapMissing: tiles that failed on a bad connection; only those download again. */
     stale.reduce(function(pr,m){return pr.then(function(){return refreshPack(m.id,true);});},Promise.resolve());},[packMetaQ.data]);
   /* ONE bookmark toggle, because there are two call sites and they were two copies of the same
      three lines — which is exactly how the persistence would have ended up on one of them.
