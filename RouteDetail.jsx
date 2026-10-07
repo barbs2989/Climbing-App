@@ -19,6 +19,7 @@ import { USE_DB, supabase } from "./lib/supabase";
 import {useRoutePairings,useRouteLoggedWith,submitRoutePairing,deleteRoutePairing,usePartnersByObjective,useObjectivesOfUsers,usePackMeta,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, fetchRouteArea, useRouteTripReports, useSavedMedia, useMediaSrc, useToggleSavedMedia} from "./lib/db";
 import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
+import ShadeMap from "./lib/ShadeMap";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, packForecast, savedAgo } from "./lib/offline";
 import { fetchForecastRaw, snapshotPackForecast, fetchCragForecast, fetchCragAir, fetchCragClimate } from "./lib/forecast";
 import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
@@ -3795,12 +3796,18 @@ const agoH=function(h){return h<48?h+" h ago":Math.round(h/24)+" days ago";};
 const condRow=function(k,v,tone,key){return <div key={key||k} style={{display:"grid",gridTemplateColumns:"104px minmax(0,1fr)",gap:10,padding:"7px 0",borderTop:"1px solid "+C.borderLight,fontSize:13,lineHeight:1.45}}><span style={{color:C.textMuted,fontSize:12}}>{k}</span><span style={{color:tone||C.text,minWidth:0}}>{v}</span></div>;};
 const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
 const condNote={fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:8};
+// Sky cover in the National Weather Service's words for eighths of sky (0-1, 2, 3-5, 6-7, 8 oktas).
+const skyWord=function(pct){return pct<=12?"Clear":pct<=37?"Mostly clear":pct<=62?"Partly cloudy":pct<=87?"Mostly cloudy":"Overcast";};
 const aqiTone=function(a){return a==null?C.textMuted:a<=50?C.green:a<=100?C.amber:a<=150?C.orange:C.red;};
-/* HOURLY — the selected day's 24 hours as three small panels sharing one time axis: temperature with
-   dew point (one unit, so one axis), humidity with chance of rain (both percent), wind with gusts.
-   Never two scales on one panel. Hover or drag reads every value for an hour; hours already gone
-   are shaded. */
-function HourlyChart({all,selUtc}){
+/* HOURLY — five small panels sharing one time axis: temperature with feels-like and dew point (one
+   unit, so one axis), rain AMOUNT, chance of rain with cloud cover (both percent), humidity, and
+   wind with gusts and the direction it blows from. Never two scales on one panel. `week` draws all
+   seven days end to end, a dotted line at each midnight. Hover or drag reads every value for an
+   hour; hours already gone are shaded. Rain and its chance are drawn over the hour BEFORE their
+   time stamp, which is the hour they describe. */
+const wkDay=function(date){return new Date(date+"T12:00:00Z").toLocaleDateString(undefined,{weekday:"short",timeZone:"UTC"});};
+const rainN=function(inch){return inch==null?null:uImp()?inch:inch*25.4;};
+function HourlyChart({all,selUtc,week}){
   const [hv,setHv]=useState(null);
   if(!all||all.length<2)return null;
   const W=340,PH=54,L=30,R=46,n=all.length,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
@@ -3808,39 +3815,51 @@ function HourlyChart({all,selUtc}){
   const at=hv!=null&&hv<n?hv:(sel>=0?sel:0);const a=all[at];
   const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;setHv(Math.max(0,Math.min(n-1,Math.round((px-L)/xw))));};
   const lastPast=all.reduce(function(m,h,i){return h.past?i:m;},-1);
+  const mids=week?all.map(function(h,i){return h.hr===0&&i>0?i:-1;}).filter(function(i){return i>=0;}):[];
   const path=function(vals,y){var d="",pen=false;vals.forEach(function(v,i){if(v==null){pen=false;return;}d+=(pen?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1);pen=true;});return d;};
-  const panel=function(key,title,series,lo,hi,axisFmt,bars){
-    if(hi-lo<1)hi=lo+1;
+  const panel=function(key,title,series,lo,hi,axisFmt,bars,extra){
+    if(hi-lo<1e-9)hi=lo+1;
     const y=function(v){return 6+(1-(v-lo)/(hi-lo))*(PH-12);};
-    const ends=series.map(function(s){var li=-1;s.vals.forEach(function(v,i){if(v!=null)li=i;});return li<0?null:{s:s,y:y(s.vals[li])};}).filter(Boolean).sort(function(p,q){return p.y-q.y;});
+    const ends=series.map(function(s){var li=-1;s.vals.forEach(function(v,i){if(v!=null)li=i;});return li<0?null:{s:s,y:y(s.vals[li])};}).filter(Boolean).concat(bars?[{s:{name:bars.name},y:PH-6}]:[]).sort(function(p,q){return p.y-q.y;});
     for(var k=1;k<ends.length;k++)if(ends[k].y-ends[k-1].y<10)ends[k].y=ends[k-1].y+10;
+    for(var k2=ends.length-1;k2>=0;k2--)ends[k2].y=Math.min(ends[k2].y,k2===ends.length-1?PH-6:ends[k2+1].y-10);
     return <div key={key} style={{marginTop:6}}><div style={{fontSize:11,color:C.textSub,fontWeight:700,marginBottom:2}}>{title}</div>
-      <svg width="100%" viewBox={"0 0 "+W+" "+PH} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+" through the day"}>
+      <svg width="100%" viewBox={"0 0 "+W+" "+PH} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+(week?" through the week":" through the day")}>
         {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderLight} opacity={0.45}/>:null}
         <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
+        {mids.map(function(i){return <line key={"m"+i} x1={x(i)} x2={x(i)} y1={0} y2={PH} stroke={C.borderHi} strokeDasharray="2 3"/>;})}
         <text x={L-4} y={y(hi)+3} fontSize="9" fill={C.textMuted} textAnchor="end">{axisFmt(hi)}</text><text x={L-4} y={y(lo)+3} fontSize="9" fill={C.textMuted} textAnchor="end">{axisFmt(lo)}</text>
-        {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v));return <rect key={i} x={x(i)-xw*0.35} y={top} width={Math.max(1,xw*0.7)} height={Math.max(0,y(lo)-top)} rx={2} fill={bars.color} opacity={0.55}/>;}):null}
-        {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth="2" strokeDasharray={s.dash?"4 3":undefined} strokeLinejoin="round"/>;})}
+        {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v)),x0=Math.max(L,x(i)-xw*0.85),x1=Math.max(L,x(i)-xw*0.15);if(x1<=x0)return null;return <rect key={i} x={x0} y={top} width={Math.max(0.8,x1-x0)} height={Math.max(0.8,y(lo)-top)} rx={week?0:2} fill={bars.color} opacity={0.6}/>;}):null}
+        {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth={week?1.5:2} strokeDasharray={s.dash||undefined} strokeLinejoin="round"/>;})}
+        {extra?extra(y):null}
         <line x1={x(at)} x2={x(at)} y1={0} y2={PH} stroke={C.textSub} strokeWidth="1"/>
         {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={x(at)} cy={y(v)} r={3.5} fill={s.color} stroke={C.card} strokeWidth="1.5"/>;})}
         {ends.map(function(e){return <text key={e.s.name} x={W-R+5} y={e.y+3} fontSize="9.5" fill={C.textSub}>{e.s.name}</text>;})}
-        {bars?<text x={W-R+5} y={PH-3} fontSize="9.5" fill={C.textSub}>{bars.name}</text>:null}
       </svg></div>;
   };
-  const T=all.map(function(h){return uTempN(h.temp);}),D=all.map(function(h){return uTempN(h.dew);});
-  const tv=T.concat(D).filter(function(v){return v!=null;});
-  const RH=all.map(function(h){return h.rh;}),POP=all.map(function(h){return h.pop;});
+  const T=all.map(function(h){return uTempN(h.temp);}),F=all.map(function(h){return uTempN(h.feels);}),D=all.map(function(h){return uTempN(h.dew);});
+  const tv=T.concat(F,D).filter(function(v){return v!=null;});
+  const PR=all.map(function(h){return rainN(h.precip);}),prMax=Math.max.apply(null,PR.map(function(v){return v||0;}));
+  const RH=all.map(function(h){return h.rh;}),POP=all.map(function(h){return h.pop;}),CL=all.map(function(h){return h.cloud;});
   const Wd=all.map(function(h){return uWindN(h.wind);}),G=all.map(function(h){return uWindN(h.gust);});
   const wv=Wd.concat(G).filter(function(v){return v!=null;});
+  // A wet hour's scale: never below 0.04" (1 mm), so a trace of drizzle reads as a trace.
+  const prTop=Math.max(uImp()?0.04:1,prMax);
+  const arrowStep=week?12:2;
+  const windArrows=function(y){return all.map(function(h,i){if(i%arrowStep!==0||h.windDir==null||Wd[i]==null)return null;return <g key={"a"+i} transform={"translate("+x(i).toFixed(1)+","+y(Wd[i]).toFixed(1)+") rotate("+Math.round(h.windDir+180)+")"}><path d="M0,-6 L4,3.5 L0,1.5 L-4,3.5 Z" fill={C.text} stroke={C.indigo} strokeWidth="1"/></g>;});};
   const parts=[];
-  if(a.temp!=null)parts.push(uTemp(a.temp));if(a.dew!=null)parts.push("dew point "+uTemp(a.dew));if(a.rh!=null)parts.push(Math.round(a.rh)+"% humidity");if(a.pop!=null)parts.push(a.pop+"% chance of rain");if(a.wind!=null)parts.push("wind "+uWind(a.wind)+(a.gust!=null?", gusts "+uWind(a.gust):""));
+  if(a.temp!=null)parts.push(uTemp(a.temp));if(a.feels!=null&&uTempN(a.feels)!==uTempN(a.temp))parts.push("feels "+uTemp(a.feels));if(a.dew!=null)parts.push("dew point "+uTemp(a.dew));
+  if(a.precip!=null)parts.push(a.precip>0?uPrecip(a.precip)+" rain in the hour before":"no rain in the hour before");if(a.pop!=null)parts.push(a.pop+"% chance of rain");if(a.cloud!=null)parts.push(Math.round(a.cloud)+"% cloud");
+  if(a.rh!=null)parts.push(Math.round(a.rh)+"% humidity");if(a.wind!=null)parts.push("wind "+uWind(a.wind)+(a.windDir!=null?" from the "+DIR8[Math.round(a.windDir/45)%8]:"")+(a.gust!=null&&uWindN(a.gust)>uWindN(a.wind)?", gusts "+uWind(a.gust):""));
   return <div>
-    <div aria-live="polite" style={{fontSize:12.5,color:C.text,lineHeight:1.5,minHeight:38}}><b>{hourLabel(a.hr)}</b>{a.past?<span style={{color:C.textMuted}}>{" (past)"}</span>:null}{" · "+(parts.length?parts.join(" · "):"no values this hour")}</div>
-    {tv.length?panel("t","Temperature and dew point",[{name:"Temp",vals:T,color:C.orange},{name:"Dew pt",vals:D,color:C.cyan,dash:true}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";}):null}
-    {panel("h","Humidity and chance of rain",[{name:"Humidity",vals:RH,color:C.teal}],0,100,function(v){return v+"%";},{name:"Rain",vals:POP,color:C.blue})}
-    {wv.length?panel("w","Wind and gusts",[{name:"Wind",vals:Wd,color:C.indigo},{name:"Gusts",vals:G,color:C.indigo,dash:true}],0,Math.max(10,Math.ceil(Math.max.apply(null,wv))),function(v){return String(v);}):null}
-    <svg width="100%" viewBox={"0 0 "+W+" 12"} style={{display:"block"}} aria-hidden="true">{all.map(function(h,i){return h.hr%6===0?<text key={i} x={x(i)} y={10} fontSize="9" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;})}</svg>
-    <div style={condNote}>{"Wind in "+(uImp()?"mph":"km/h")+". Shaded: hours already gone. Move along a chart to read an hour."}</div>
+    <div aria-live="polite" style={{fontSize:12.5,color:C.text,lineHeight:1.5,minHeight:57}}><b>{(week?wkDay(a.date)+" ":"")+hourLabel(a.hr)}</b>{a.past?<span style={{color:C.textMuted}}>{" (past)"}</span>:null}{" · "+(parts.length?parts.join(" · "):"no values this hour")}</div>
+    {tv.length?panel("t","Temperature, feels like and dew point",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";}):null}
+    {panel("r","Rain ("+(uImp()?"inches":"mm")+")",[],0,prTop,function(v){return v===0?"0":uImp()?v.toFixed(2):v.toFixed(1);},{name:"Rain",vals:PR,color:C.blue})}
+    {panel("p","Chance of rain and cloud cover",[{name:"Cloud",vals:CL,color:C.textSub}],0,100,function(v){return v+"%";},{name:"Chance",vals:POP,color:C.blue})}
+    {panel("h","Humidity",[{name:"Humidity",vals:RH,color:C.teal}],0,100,function(v){return v+"%";})}
+    {wv.length?panel("w","Wind and gusts",[{name:"Wind",vals:Wd,color:C.indigo},{name:"Gusts",vals:G,color:C.indigo,dash:"4 3"}],0,Math.max(10,Math.ceil(Math.max.apply(null,wv))),function(v){return String(v);},null,windArrows):null}
+    <svg width="100%" viewBox={"0 0 "+W+" 12"} style={{display:"block"}} aria-hidden="true">{all.map(function(h,i){if(week)return h.hr===12?<text key={i} x={x(i)} y={10} fontSize="9" fill={C.textMuted} textAnchor="middle">{wkDay(h.date)}</text>:null;return h.hr%6===0?<text key={i} x={x(i)} y={10} fontSize="9" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;})}</svg>
+    <div style={condNote}>{"Wind in "+(uImp()?"mph":"km/h")+"; arrows point the way it blows. Shaded: hours already gone. Move along a chart to read an hour."}</div>
   </div>;
 }
 /* SEASON — twelve months of average high and low at the crag, from the last five years. A bar is
@@ -3880,7 +3899,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const [aq,setAq]=useState(function(){return ck&&_cragAir[ck]?{data:_cragAir[ck]}:null;});
   const [clim,setClim]=useState(function(){return ck&&_cragClim[ck]?{data:_cragClim[ck]}:null;});
   const [tries,setTries]=useState(0);const [aqTries,setAqTries]=useState(0);const [climTries,setClimTries]=useState(0);
-  const [dayI,setDayI]=useState(0);const [hrI,setHrI]=useState(null);const [showPrefs,setShowPrefs]=useState(false);
+  const [dayI,setDayI]=useState(0);const [hrI,setHrI]=useState(null);const [showPrefs,setShowPrefs]=useState(false);const [wk,setWk]=useState(false);
   const cp=useCondPrefs();
   useEffect(function(){
     if(!hasPt||!on)return;
@@ -3927,6 +3946,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const whenOf=function(x){var i=days.findIndex(function(d){return d.date===x.date;});return (i===0?"today":i===1?"tomorrow":i>0?dayName(days[i],i):x.date)+" "+hourLabel(x.hr);};
   const hrs=day.hours;const selI=hrI!=null&&hrI<hrs.length?hrI:(day.best?day.best.i+1:0);const h=hrs[selI];
   const lbl=starsLabel(day.stars);const lblCol=col(day.stars);
+  const shadeAt=(function(){if(!day.sun||day.sun.set==null)return null;var r=day.sun.rise,st=day.sun.set,n=Date.now();if(n>=r&&n<=st)return n;var bh=day.best?day.hours[day.best.i]:null;return bh&&bh.utc>=r&&bh.utc<=st?bh.utc:Math.round((r+st)/2);})();
   const rockLbl=rk?rk.label+(rk.basis==="mapped"?" (mapped)":""):"Rock unknown";
   const facKeys=["temp","humidity","dry","wind","sun"];
   const facNote=function(k,f){
@@ -3954,10 +3974,11 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       {wetSand?sandWarn:null}
       <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+hourLabel(cur.hr)}</div></div></div>
       {cur.caps.length?condRow("Held down by",cur.caps.map(function(c){return c.why;}).join(" · "),C.amber):null}
-      {condRow("Temperature",cur.temp!=null?uTemp(cur.temp):"Not measured")}
+      {condRow("Temperature",cur.temp!=null?uTemp(cur.temp)+(cur.feels!=null&&uTempN(cur.feels)!==uTempN(cur.temp)?" · feels like "+uTemp(cur.feels):""):"Not measured")}
       {condRow("Friction",cur.friction?cur.friction.label:"Not measured",cur.friction?(cur.friction.key==="crisp"?C.green:cur.friction.key==="ok"?C.text:C.amber):C.textMuted)}
       {condRow("Humidity",cur.rh!=null?Math.round(cur.rh)+"%"+(cur.dew!=null?" · dew point "+uTemp(cur.dew):""):"Not measured")}
-      {condRow("Wind",cur.wind!=null?uWind(cur.wind)+(cur.gust!=null?", gusts "+uWind(cur.gust):""):"Not measured")}
+      {condRow("Wind",cur.wind!=null?uWind(cur.wind)+(cur.windDir!=null?" from the "+DIR8[Math.round(cur.windDir/45)%8]:"")+(cur.gust!=null&&uWindN(cur.gust)>uWindN(cur.wind)?", gusts "+uWind(cur.gust):""):"Not measured")}
+      {condRow("Cloud cover",cur.cloud!=null?Math.round(cur.cloud)+"% · "+skyWord(cur.cloud):"Not measured")}
       {condRow("Rain",cur.precip==null?"Not measured":cur.precip>0?uPrecip(cur.precip)+" in the past hour":"None in the past hour")}
       {condRow("Air quality",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:aq&&aq.error?"Not measured (didn’t load)":!aq?"Loading…":"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
     </div>,true):null}
@@ -3985,7 +4006,21 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       {h.missing.length?<div style={{fontSize:11.5,color:C.textMuted,marginTop:9,paddingLeft:9,borderLeft:"2px solid "+C.borderLight,lineHeight:1.5}}>{"Not measured, so left out of the score: "+h.missing.map(notMeasured).join("; ")+"."}{h.missing.indexOf("sun")>=0&&onAddAspect?<button onClick={onAddAspect} style={{display:"block",marginTop:4,padding:"3px 0",border:"none",background:"none",color:C.blue,fontSize:12,fontWeight:700,cursor:"pointer",textAlign:"left"}}>{"Know which way it faces? Add the wall direction →"}</button>:null}</div>:null}
     </div>:null}
     </div>)}
-    {sec("Hourly · "+dayName(day,Math.min(dayI,days.length-1)),<div style={condBox}><HourlyChart all={day.all} selUtc={h?h.utc:null}/></div>)}
+    {sec("Day by day",<div style={condBox}>
+      {days.map(function(d,i){var on=i===Math.min(dayI,days.length-1);var trace=d.rain!=null&&d.rain>0&&uImp()&&d.rain<0.005;
+        var tLine=d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo)+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):"Temperature not measured";
+        var rLine=(d.rain==null?"Rain not measured":d.rain===0?"No rain":trace?"A trace of rain (under 0.01\") over "+d.rainHrs+" h":uPrecip(d.rain)+" of rain over "+d.rainHrs+" h")+(d.popMax?" · up to "+d.popMax+"% chance":"");
+        var wLine=[d.windMax!=null?"Wind to "+uWind(d.windMax)+(d.gustMax!=null&&uWindN(d.gustMax)>uWindN(d.windMax)?", gusts "+uWind(d.gustMax):""):"Wind not measured",d.rhMin!=null?"humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg).toLowerCase()+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ");
+        return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")+". "+tLine+". "+rLine+". "+wLine+"."} style={{display:"grid",gridTemplateColumns:"50px minmax(0,1fr)",gap:10,alignItems:"start",width:"100%",textAlign:"left",padding:"8px 6px",margin:0,border:"none",borderTop:i?"1px solid "+C.borderLight:"none",borderRadius:on?8:0,background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",font:"inherit"}}>
+          <span><span style={{display:"block",fontSize:12.5,fontWeight:800}}>{dayName(d,i)}</span><span style={{display:"block",fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</span></span>
+          <span style={{fontSize:12,lineHeight:1.5,color:C.textSub,minWidth:0}}><span style={{display:"block",color:C.text}}>{tLine}</span><span style={{display:"block",color:d.rain>0?C.blue:C.textSub}}>{rLine}</span><span style={{display:"block"}}>{wLine}</span></span>
+        </button>;})}
+      <div style={condNote}>Temperature and rain cover the whole day; wind, humidity and cloud its daylight hours. Tap a day to open it above and in the charts.</div>
+    </div>)}
+    {sec("Hour by hour",<div style={condBox}>
+      <div role="group" aria-label="Chart range" style={{display:"flex",gap:6,marginBottom:4}}>{[[false,dayName(day,Math.min(dayI,days.length-1))],[true,"All 7 days"]].map(function(o){var on=wk===o[0];return <button key={o[1]} onClick={function(){setWk(o[0]);}} aria-pressed={on} style={{padding:"5px 11px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:700,cursor:"pointer"}}>{o[1]}</button>;})}</div>
+      <HourlyChart all={wk?days.reduce(function(acc,d){return acc.concat(d.all);},[]):day.all} selUtc={h?h.utc:null} week={wk}/>
+    </div>)}
     {sec("Rock & drying",<div style={condBox}>
       {condRow("Rock",rockLbl,rk?C.text:C.textMuted)}
       {condRow("Drying time","About "+score.dryNeed+" h after a typical rain"+(cp.rain==="cautious"?" (you give it longer)":"")+"; less after a drizzle, longer after a soaking")}
@@ -4000,9 +4035,10 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       {day.sun&&day.sun.set!=null?condRow("Sunset",clockAt(score,day.sun.set)):null}
       {score.bearing!=null?condRow("Wall faces",DIR8[Math.round(score.bearing/45)%8]):null}
       {score.bearing!=null&&day.wallSun?condRow("Sun on the wall",day.wallSun.on!=null?"Hits the wall at "+clockAt(score,day.wallSun.on)+" · leaves at "+clockAt(score,day.wallSun.off):"No direct sun on this wall today",day.wallSun.on!=null?C.yellow:C.textSub):null}
-      {score.bearing==null?condRow("Sun on the wall",score.aspectVaries?"The wall faces several ways, so when the sun reaches it isn’t worked out, and sun isn’t scored":"No wall direction on file for this climb, so when the sun reaches it isn’t worked out",C.textMuted):null}
+      {score.bearing==null?condRow("Sun on the wall",(score.aspectVaries?"The wall faces several ways, so when the sun reaches it isn’t worked out, and sun isn’t scored":"No wall direction on file for this climb, so when the sun reaches it isn’t worked out")+". The shade map below shows where the terrain casts shadow.",C.textMuted):null}
       {score.bearing!=null?<div style={condNote}>Times assume a clear sky; ☀ under the hours above marks the ones forecast to be in sun. Terrain and trees that shade the wall aren’t known.</div>:null}
     </div>)}
+    {sec("Shade map",<div style={condBox}>{shadeAt!=null?<ShadeMap lat={lat} lng={lng} rise={day.sun.rise} set={day.sun.set} at0={shadeAt} dayKey={day.date} clock={function(u){return clockAt(score,u);}} C={C}/>:<div style={{fontSize:12.5,color:C.textSub,lineHeight:1.5}}>The forecast has no sunrise and sunset for this day, so the shade can’t be drawn.</div>}</div>)}
     {sec("Air quality",<div style={condBox}>
       {!aq?<div style={{fontSize:12.5,color:C.textMuted}}>Loading air quality…</div>:aq.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={function(){setAqTries(aqTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<div>
         {condRow("Now",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
