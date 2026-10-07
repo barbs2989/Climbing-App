@@ -156,6 +156,25 @@ eq("...and a stored descent LONGER than a 2 km walk down is kept as stored", sto
 /* 94 rows store "Summit push and full descent" in summitTimeHrs (approach + summit = total, no
    descent): the summit leg is the round trip from camp, and 0.59 of it is the way up. */
 eq("a summit leg that INCLUDES the descent counts only its way-up share (0.59) toward Est. summit", push ? push.summit === Math.round((6 + 3 + 10 * 0.59) * 60) : null, true);
+/* ...and that leg's DESCENT share goes on the way down. It used to be dropped: the push climbed its
+   0.59 and walked only the trail out, so American Border Peak came down in 2.9 hr against 7 online.
+   Three stored shapes hold a descent inside the summit leg (lib/planTimes.js): the push; a DERIVED
+   leg (only an approach and a total), whose total - approach is the climb AND the way down; and a
+   MULTI-DAY outing whose walk in ~= walk out, whose summit leg is the summit DAY from camp. Each
+   sends 0.59 up and the rest down, so the round trip is never shorter than the stored total. The
+   walk is kept short (2 km, 1,000 ft) so the stored legs, not the walk, decide. */
+const NEAR = { distKm: 2, gainM: 1000 / FT, lossM: 1000 / FT };
+const CAMP_DAYS = { days: [{ n: 1, title: "Approach to camp" }, { n: 2, title: "Summit day" }, { n: 3, title: "Walk out" }] };
+const pushNear = legs(T({ approachTimeHrs: 3, summitTimeHrs: 10, totalHrs: 13 }, NEAR));
+const derivedNear = legs(T({ approachTimeHrs: 2, totalHrs: 10 }, NEAR));
+const campMulti = legs(T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, Object.assign({ itinerary: CAMP_DAYS }, NEAR)));
+const campOneDay = legs(T({ approachTimeHrs: 6, summitTimeHrs: 11, descentTimeHrs: 5, totalHrs: 22 }, NEAR));
+eq("ANCHOR: the push, derived and camp fixtures rendered", !!pushNear && !!derivedNear && !!campMulti && !!campOneDay, true);
+eq("a push's DESCENT share (0.41) is walked down, not dropped: the round trip is its stored 13 hr total", pushNear ? JSON.stringify([pushNear.down, pushNear.ret]) : null, JSON.stringify([Math.round(10 * 0.41 * 60), (6 + 13) * 60]));
+eq("a DERIVED leg (total - approach) holds the descent too: 0.59 of it up, the rest down", derivedNear ? JSON.stringify([derivedNear.summit, derivedNear.ret]) : null, JSON.stringify([Math.round((6 + 2 + 8 * 0.59) * 60), (6 + 10) * 60]));
+eq("a MULTI-DAY route's summit leg beside walk in ~= walk out is a round trip from camp: 0.59 up", campMulti ? campMulti.summit : null, Math.round((6 + 6 + 11 * 0.59) * 60));
+eq("...and its other 0.41 comes down to camp BEFORE the stored walk out (round trip = the 22 hr total)", campMulti ? campMulti.ret : null, (6 + 22) * 60);
+eq("...while the same legs on a SINGLE-day route are a one-way climb, left whole", campOneDay ? JSON.stringify([campOneDay.summit, campOneDay.down]) : null, JSON.stringify([(6 + 6 + 11) * 60, 5 * 60]));
 const pitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }, { pitches: 8, grade: "5.8" }));
 const unpitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }));
 eq("ANCHOR: pitched and unpitched stored-leg fixtures rendered", !!pitchedStored && !!unpitchedStored, true);
@@ -284,7 +303,7 @@ const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
-const FLOOR = 46;
+const FLOOR = 52;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;
