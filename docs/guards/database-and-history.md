@@ -442,6 +442,32 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     spelling the key does not fold. The trigger (0216/0218) refuses a same-key area within 1.5 km
     at insert; this sweeps what got past it.
 
+- **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
+  label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
+  "l. Sleepy Hollow" — *"We don't want the letters before the name of the area"* — and ~3,900
+  areas in 49 states and provinces had one ("B: …", "(3) …", "12 - …", "* …", "- …").
+  `scripts/oneoff/strip-area-sort-prefixes.mjs` renamed them; the importer strips as it creates.
+  Runs **daily** in `area-count-drift.yml`, anon key, refuses a read under 40k rows.
+  - **ONE rule**, `scripts/lib/area-sort-prefix.mjs`, shared by the rename, the importer and this
+    guard. The importer needs it on BOTH sides: the export's location path still carries the label,
+    so comparing it raw against a renamed area misses it and mints a duplicate. It asks the EXACT
+    spelling first, then the stripped one, because the held areas below would otherwise make two
+    same-named children and refuse every route for either.
+  - **Measured NON-labels** (read, not guessed): "J. Paul Pebble", "L. Ron Hubbard's Boulder",
+    "N. Fork Moorman's Area" (North Fork) — excepted by name; every other lone "E." / "N." is one
+    step of a lettered series. A number that is the name stays ("19 Mile Wall", ".50 Cal Tower").
+    The letter/number label comes off ONCE: "g. V3 - Middle Earth" keeps "V3".
+  - **HELD, listed** (`scripts/data/area-sort-labels-held.json`): areas whose stripped name is a
+    SIBLING's name — "(a) Hook" beside "Hook", "01. West Side" beside "1. West Side" (230 groups,
+    220 with climbs in every copy). Duplicate areas the label was hiding, which
+    `check:area-duplicates` cannot see because it only pairs areas under DIFFERENT parents. They
+    need a fold (0221's pattern), not a rename; after one, `--write-held` shrinks the list.
+  - **Cannot see** a label spelling the function does not know, or a ROUTE name: 1,184 route names
+    carry a topo number ("(01) Chicken Crack"), but route names also hold real initials ("R. Crumb",
+    "T. Rex", "C. Bailey"), so they were not swept by the same rule.
+  - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
+    set the order on screen and removing them lost no guidebook sequence.
+
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**
