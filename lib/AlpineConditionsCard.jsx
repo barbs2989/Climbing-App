@@ -10,8 +10,13 @@ import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFl
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
 import { isMultiDayOuting } from "./outing.js";
+import { fetchAvyMap, zoneFor, fetchAvyProduct, avyReading, DANGER_NAME } from "./avalanche.js";
+import { fetchSnotelStations, nearestStation, fetchSnotelDepth, snowReading } from "./snotel.js";
 
 const _alpWx = {};
+const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
+const MUTED = { fontSize: 12.5, color: C.textSub, lineHeight: 1.55 };
+const RETRY = { marginTop: 6, background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" };
 
 export const KIND_LABEL = { glacier: "Glacier & snow", alpineice: "Alpine ice & mixed", waterfall: "Waterfall ice", cragmixed: "Mixed", scramble: "Scrambling", alpinerock: "Alpine rock" };
 // What a forecast cannot see for each kind (research 2026-10-07): said every time, so a day with no
@@ -75,11 +80,26 @@ export function forecastPoint(route, mtn) {
   return { lat, lng, elevFt: elev != null && isFinite(elev) ? elev : null, campFt, name: top ? (top.name || "the summit") : (area.name || "the area"), pinned: !!top };
 }
 
-export default function AlpineConditionsCard({ route, mtn, calc }) {
+export default function AlpineConditionsCard({ route, mtn, calc, activity }) {
   const terrain = useMemo(function () { return routeTerrain(route); }, [route]);
   const kind = condKind(route, terrain, catOf(route));
   const pt = useMemo(function () { return forecastPoint(route, mtn); }, [route, mtn]);
-  const ck = pt ? pt.lat.toFixed(3) + "," + pt.lng.toFixed(3) + "@" + (pt.elevFt != null ? Math.round(pt.elevFt) : "") : "";
+  if (!kind) return null;
+  /* Avalanche danger unless the route's own data rules avalanche terrain out (terrain.avalanche
+     "no": a dry rock scramble). "unknown" still shows it -- suppression needs evidence. */
+  const avyOn = terrain.avalanche !== "no";
+  return <div>
+    <ForecastBox route={route} calc={calc} kind={kind} terrain={terrain} pt={pt} />
+    {pt ? <div style={BOX}>
+      {avyOn ? <AvalancheSection pt={pt} /> : null}
+      <div style={{ marginTop: avyOn ? 14 : 0 }}><SnowSection pt={pt} /></div>
+      <OutcomesSection activity={activity} />
+    </div> : null}
+  </div>;
+}
+
+function ForecastBox({ route, calc, kind, terrain, pt }) {
+  const ck =pt ? pt.lat.toFixed(3) + "," + pt.lng.toFixed(3) + "@" + (pt.elevFt != null ? Math.round(pt.elevFt) : "") : "";
   const [wx, setWx] = useState(function () { return ck && _alpWx[ck] ? { data: _alpWx[ck] } : null; });
   const [tries, setTries] = useState(0);
   const [dayI, setDayI] = useState(0);
@@ -172,5 +192,87 @@ export default function AlpineConditionsCard({ route, mtn, calc }) {
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
+  </div>;
+}
+
+const HEAD = { marginBottom: 6 };
+const dangerCol = function (d) { return d >= 4 ? C.red : d === 3 ? C.orange : d === 2 ? C.yellow : C.green; };
+
+/* AVALANCHE TODAY. Off season, no rating published, outside every zone and a failed read are four
+   different answers and none of them is "low": each says which it is. The centre is not named (no
+   source credits on screen); the zone is, and its full forecast is one tap away. */
+function AvalancheSection({ pt }) {
+  const [st, setSt] = useState(null), [tries, setTries] = useState(0);
+  useEffect(function () {
+    let live = true; setSt(null);
+    fetchAvyMap().then(function (map) {
+      const z = zoneFor(map, pt.lat, pt.lng);
+      if (!z) return avyReading(null, null);
+      // The zone's band forecast failing still leaves the map's own overall rating to read.
+      return fetchAvyProduct(z.properties.center_id, z.id).then(function (p) { return avyReading(z, p); }, function () { return avyReading(z, null); });
+    }).then(function (r) { if (live) setSt({ r }); }, function () { if (live) setSt({ error: true }); });
+    return function () { live = false; };
+  }, [pt.lat, pt.lng, tries]);
+  const head = <CardHead style={HEAD}>Avalanche today</CardHead>;
+  if (!st) return <div aria-busy="true">{head}<div style={{ ...MUTED, color: C.textMuted }}>Loading the avalanche forecast…</div></div>;
+  if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the avalanche forecast. This is not a rating.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
+  const r = st.r, link = r.link ? <a href={r.link} target="_blank" rel="noreferrer" style={{ display: "inline-block", marginTop: 4, color: C.blue, fontSize: 12, fontWeight: 700 }}>Full avalanche forecast ↗</a> : null;
+  if (r.kind === "outside") return <div>{head}<div style={MUTED}>This climb is outside the avalanche forecast zones the app reads. That is not a rating — check the local forecast before you go.</div></div>;
+  if (r.kind === "off") return <div>{head}<div style={MUTED}>{"No avalanche forecast is being issued for " + (r.zone || "this zone") + " right now (off season). That is not a rating — snow can still slide."}</div>{link}</div>;
+  if (r.kind === "none") return <div>{head}<div style={MUTED}>{"No danger rating is published for " + (r.zone || "this zone") + " today. That is not a rating."}</div>{link}</div>;
+  const pill = function (lbl, d) { return <div key={lbl} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{lbl}</div><div style={{ fontSize: 12.5, fontWeight: 800, color: d ? dangerCol(d) : C.textMuted }}>{d ? d + " · " + DANGER_NAME[d] : "—"}</div></div>; };
+  return <div>{head}
+    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 6 }}><b style={{ color: dangerCol(r.max) }}>{(r.max >= 3 ? "Warning: " : "") + "Up to " + DANGER_NAME[r.max]}</b>{" in " + (r.zone || "this zone") + " today" + (r.kind === "bands" ? " — the highest of the three elevation bands, since a climb usually crosses them." : ".")}</div>
+    {r.kind === "bands" ? <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 6, marginBottom: 2 }}>{pill("Above treeline", r.today.upper)}{pill("Near treeline", r.today.middle)}{pill("Below treeline", r.today.lower)}</div> : null}
+    {link}
+  </div>;
+}
+
+/* SNOW ON THE GROUND at the nearest snow station within 30 km. One point, usually far below the
+   route -- the section says how far away and how much lower, every time. */
+function SnowSection({ pt }) {
+  const [st, setSt] = useState(null), [tries, setTries] = useState(0);
+  useEffect(function () {
+    let live = true; setSt(null);
+    fetchSnotelStations().then(function (s) {
+      const n = nearestStation(s, pt.lat, pt.lng, 30);
+      if (!n) return { none: true };
+      return fetchSnotelDepth(n.id).then(function (v) { return { st: n, r: snowReading(v) }; });
+    }).then(function (x) { if (live) setSt(x); }, function () { if (live) setSt({ error: true }); });
+    return function () { live = false; };
+  }, [pt.lat, pt.lng, tries]);
+  const head = <CardHead style={HEAD}>Snow on the ground</CardHead>;
+  if (!st) return <div aria-busy="true">{head}<div style={{ ...MUTED, color: C.textMuted }}>Loading the nearest snow station…</div></div>;
+  if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the snow station. This says nothing about the snow.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
+  if (st.none) return <div>{head}<div style={MUTED}>No snow station within 30 km of this climb.</div></div>;
+  const s = st.st, r = st.r, below = pt.elevFt != null && s.elevFt != null ? pt.elevFt - s.elevFt : null;
+  const where = "Snow station " + (s.km < 1 ? "under 1 km" : Math.round(s.km) + " km") + " away at " + uElev(s.elevFt) + (below != null && below > 300 ? ", " + uElev(Math.round(below / 100) * 100) + " below the top of this climb" : "");
+  if (!r) return <div>{head}<div style={MUTED}>{where + ". It has not reported this week."}</div></div>;
+  const ch = function (d, w) { return d == null ? null : (d > 0 ? "+" : d < 0 ? "−" : "±") + uSnowfall(Math.abs(d)) + " " + w; };
+  const stale = Date.now() - Date.parse(r.date + "T12:00:00Z") > 2.5 * 864e5;
+  return <div>{head}
+    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5 }}><b>{uSnowfall(r.depth) + " on the ground"}</b>{[ch(r.d24, "in a day"), ch(r.d7, "in a week")].filter(Boolean).map(function (x) { return " · " + x; }).join("")}</div>
+    <div style={MUTED}>{where + "." + (stale ? " Last reported " + new Date(r.date + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }) + "." : "")}</div>
+  </div>;
+}
+
+/* RECENT OUTCOMES: what parties who reported here in the last 60 days did -- summited, attempted or
+   turned around, and why, read straight from their reports (tick type, outcome reasons, note).
+   Nothing is inferred, and with no such report the section is absent rather than "no one summited". */
+export function recentOutcomes(activity, nowMs) {
+  const cut = (nowMs != null ? nowMs : Date.now()) - 60 * 864e5;
+  return (activity || []).filter(function (a) { return a && /^(Summit|Attempt|Turned around)$/.test(a.tickType || "") && a.date && Date.parse(String(a.date).slice(0, 10) + "T12:00:00Z") >= cut; })
+    .sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); });
+}
+function OutcomesSection({ activity }) {
+  const rows = recentOutcomes(activity);
+  if (!rows.length) return null;
+  const up = rows.filter(function (a) { return a.tickType === "Summit"; }).length;
+  return <div style={{ marginTop: 14 }}><CardHead style={HEAD}>Recent outcomes</CardHead>
+    <div style={{ fontSize: 12.5, color: C.text, marginBottom: 4 }}>{up + " of " + rows.length + " report" + (rows.length === 1 ? "" : "s") + " in the last 60 days summited."}</div>
+    {rows.slice(0, 4).map(function (a, i) {
+      const back = a.tickType !== "Summit", why = back && Array.isArray(a.outcomeReasons) && a.outcomeReasons.length ? " — " + a.outcomeReasons.join(", ") : "";
+      return <div key={(a._dbId || a.id || "") + "-" + i} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.45 }}>{new Date(String(a.date).slice(0, 10) + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }) + " · "}<b style={{ color: back ? C.amber : C.green }}>{back ? a.tickType : "Summited"}</b>{why}{back && a.outcomeNote ? ": " + String(a.outcomeNote).slice(0, 140) : ""}</div>;
+    })}
   </div>;
 }

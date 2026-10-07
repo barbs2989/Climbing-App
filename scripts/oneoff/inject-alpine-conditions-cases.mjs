@@ -16,6 +16,12 @@
 //   8  a flag that hard-codes mph (check:units' failure, on this card)
 //   9  a failed forecast that no longer says it is not a reading
 //   10 SILENT: a reworded "what a forecast cannot see" line keeps its claim
+//   11 an off-season avalanche zone read as Low (the absence of a forecast shown as a rating)
+//   12 a route in a zone's hole read as inside it
+//   13 a failed avalanche read that no longer says it is not a rating
+//   14 a snow station from another range (no 30 km cap)
+//   15 outcomes from any date, not the last 60 days
+//   16 the alpine tick list loses Turned around again
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
 import { execFileSync } from "child_process";
@@ -28,6 +34,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", ".
 const FILE = path.join(ROOT, "RouteDetail.jsx");
 const LOGIC = path.join(ROOT, "lib", "alpineConditions.js");
 const CARD = path.join(ROOT, "lib", "AlpineConditionsCard.jsx");
+const AVY = path.join(ROOT, "lib", "avalanche.js");
+const SNOTEL = path.join(ROOT, "lib", "snotel.js");
+const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const CASES = [
@@ -61,9 +70,27 @@ const CASES = [
   { name: "10. SILENT: the glacier's blind-spot line is reworded, claim intact", file: CARD,
     find: "glacier: \"A forecast can’t see whether bridges are open or a boot track is in — check recent reports.\",", repl: "glacier: \"A forecast can’t see whether bridges are open or a boot track is in — read the latest reports.\",",
     expect: "pass" },
+  { name: "11. an off-season avalanche zone is read as Low", file: AVY,
+    find: 'Object.assign({ kind: p.off_season ? "off" : "none" }, base)', repl: 'Object.assign({ kind: "bands", max: 1, today: { upper: 1, middle: 1, lower: 1 } }, base)',
+    expect: "fail", expectText: "off season is 'off', never a rating" },
+  { name: "12. a route in a zone's hole is read as inside it", file: AVY,
+    find: "for (let k = 1; k < rings.length; k++) if (inRing(lng, lat, rings[k])) return false; ", repl: "",
+    expect: "fail", expectText: "a point in a zone's HOLE is not" },
+  { name: "13. a failed avalanche read no longer says it is not a rating", file: CARD,
+    find: "Couldn’t load the avalanche forecast. This is not a rating.", repl: "Couldn’t load the avalanche forecast.",
+    expect: "fail", expectText: "a failed avalanche read says it is not a rating" },
+  { name: "14. a snow station from another range (no distance cap)", file: SNOTEL,
+    find: "if (km <= (maxKm || 30) && (!best || km < best.km))", repl: "if (!best || km < best.km)",
+    expect: "fail", expectText: "no station within 30 km gives none" },
+  { name: "15. outcomes from any date, not the last 60 days", file: CARD,
+    find: ' && Date.parse(String(a.date).slice(0, 10) + "T12:00:00Z") >= cut', repl: "",
+    expect: "fail", expectText: "from the last 60 days, newest first" },
+  { name: "16. the alpine tick list loses Turned around", file: CORE,
+    find: 'if(c==="alpine")return ["Summit","Turned around"].concat(TICKTYPES.roped);', repl: 'if(c==="alpine")return ["Summit"].concat(TICKTYPES.roped);',
+    expect: "fail", expectText: "can log a Summit AND a Turned around" },
 ];
 
-const SNAP = new Map([FILE, LOGIC, CARD].map((f) => [f, fs.readFileSync(f, "utf8")]));
+const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE].map((f) => [f, fs.readFileSync(f, "utf8")]));
 const restoreAll = () => { for (const pair of SNAP) fs.writeFileSync(pair[0], pair[1]); };
 const treeOk = () => [...SNAP].every((pair) => sum(fs.readFileSync(pair[0], "utf8")) === sum(pair[1]));
 let bad = 0;
