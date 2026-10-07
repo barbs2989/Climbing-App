@@ -1,0 +1,488 @@
+[
+ {
+  "pid": "id_massacre_rocks",
+  "crag": "Massacre Rocks",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": "basalt"
+   },
+   {
+    "held": "MISSING",
+    "verdict": "ok",
+    "correct": "basalt"
+   }
+  ],
+  "fills": {
+   "CLOSED TO CLIMBING - The Farmyard": "basalt",
+   "CLOSED TO CLIMBING - Mighty-Mite Wall": "basalt",
+   "Morgue, The": "basalt",
+   "CLOSED TO CLIMBING - The Play Pen": "basalt",
+   "CLOSED TO CLIMBING - Boulder Wall": "basalt",
+   "CLOSED TO CLIMBING - The Overlook": "basalt",
+   "Gang Fight Wall": "basalt",
+   "CLOSED TO CLIMBING - Hidden Cove": "basalt",
+   "CLOSED TO CLIMBING - Wild Onion Wall": "basalt",
+   "CLOSED TO CLIMBING - Forbidden Planet": "basalt",
+   "Shelter Rock": "basalt",
+   "Boulder Wall": "basalt",
+   "Game Show Wall": "basalt",
+   "CLOSED TO CLIMBING - The Far Side Wall": "basalt"
+  },
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105886274/massacre-rocks",
+  "quote": "Massacre Rocks is a climbing area featuring basalt rock"
+ },
+ {
+  "pid": "tennessee",
+  "crag": "Tennessee",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "phyllite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "shale (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "chert (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Ijams Crag": "limestone"
+  },
+  "aspects": {},
+  "url": "https://www.tnvacation.com/trip-inspiration/articles/tennessees-epic-outdoor-rock-climbing-and-bouldering",
+  "quote": "Laurel Falls ... a sandstone paradise; Bee Rock: good quality sandstone"
+ },
+ {
+  "pid": "nv_calico_basin",
+  "crag": "Calico Basin",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://travelnevada.com/climbing/red-rock-canyon-national-conservation-area/",
+  "quote": "Red Rocks offers world-class climbing on Aztec Sandstone"
+ },
+ {
+  "pid": "ab_cougar_canyon_creek",
+  "crag": "Cougar Canyon (Creek)",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": "limestone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://climbingaway.fr/en/climbing-areas/cougar-canyon",
+  "quote": "Cougar Canyon ... The rock type is limestone."
+ },
+ {
+  "pid": "al_little_river_canyon",
+  "crag": "Little River Canyon",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.nps.gov/liri/planyourvisit/rock-climbing-and-rappelling.htm",
+  "quote": "massive sandstone walls that steer the river on both sides"
+ },
+ {
+  "pid": "nc_rumbling_bald",
+  "crag": "Rumbling Bald",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "ok",
+    "correct": "gneiss"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105891895/rumbling-bald",
+  "quote": "Rumbling Bald Mountain features cliffs of metamorphic gneiss rock"
+ },
+ {
+  "pid": "ca_indian_cove_campground",
+  "crag": "Indian Cove Campground",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "ok",
+    "correct": "monzogranite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.nps.gov/thingstodo/rock-climbing-in-indian-cove.htm",
+  "quote": "Joshua Tree's formations are composed primarily of Quartz Monzogranite"
+ },
+ {
+  "pid": "ca_lower_merced_river_canyon",
+  "crag": "Lower Merced River Canyon",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": "granite"
+   },
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "ok",
+    "correct": "tonalite"
+   },
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": "granodiorite"
+   },
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Ad. Arch Rock": "SE"
+  },
+  "url": "https://www.ukclimbing.com/logbook/crag.php?id=2346",
+  "quote": "Arch Rock ... The rock type is granite ... and faces southeast."
+ },
+ {
+  "pid": "co_elevenmile_canyon",
+  "crag": "Elevenmile Canyon",
+  "groups": [
+   {
+    "held": "granite (stated)",
+    "verdict": "ok",
+    "correct": "granite"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": "granite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105744304/elevenmile-canyon",
+  "quote": "The towering walls are composed of Pikes Peak granite"
+ },
+ {
+  "pid": "co_west_ridge_the",
+  "crag": "West Ridge, The",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "West Ridge - part D - Xanadu to Pony Express": "SW",
+   "West Ridge - part C - Pony Express to Long John": "SW",
+   "West Ridge - part E - top to Xanadu": "SW",
+   "West Ridge - part B - Long John to Verschneidung": "SW",
+   "West Ridge - part F - The Potato Chip": "SW",
+   "West Ridge - part A - Verschneidung to base": "SW"
+  },
+  "url": "https://www.mountainproject.com/area/105807716/the-west-ridge",
+  "quote": "enormous variety of climbing on SW-facing Fountain Formation sandstone"
+ },
+ {
+  "pid": "ky_natural_bridge_region",
+  "crag": "Natural Bridge Region",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": "sandstone"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.earthmagazine.org/article/travels-geology-rocks-and-climbing-kentuckys-red-river-gorge/",
+  "quote": "Red River Gorge climbing unique is the wildly featured Corbin sandstone"
+ },
+ {
+  "pid": "mt_hyalite_canyon",
+  "crag": "Hyalite Canyon",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "ok",
+    "correct": "gneiss"
+   },
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "andesite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/106291254/hyalite-canyon",
+  "quote": "gneiss ... at Practice Rock and Crocodile Rock; volcanic area ... on the Magic Wall"
+ },
+ {
+  "pid": "va_great_falls",
+  "crag": "Great Falls",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "wrong",
+    "correct": "metagraywacke"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "wrong",
+    "correct": "metagraywacke"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/109608760",
+  "quote": "The rock at Great Falls is metagraywacke, a type of metamorphosed sandstone."
+ },
+ {
+  "pid": "nc_1_southern_mountains_region",
+  "crag": "Southern Mountains Region",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": "granodiorite"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://summitpost.org/john-rock/154435",
+  "quote": "John Rock is composed of granite; Laurel Knob is a granite wall"
+ },
+ {
+  "pid": "ca_scheelite_canyon_pratt_s_crack_gully",
+  "crag": "Scheelite Canyon / Pratt's Crack Gully",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": "granodiorite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://app.advcollective.com/climbing/scheelite-canyon-pratts-crack-gully-bishops-premier-crack-climbing-destination",
+  "quote": "a series of multi-tiered granite buttresses separated by talus-filled gullies"
+ },
+ {
+  "pid": "tn_obed_clear_creek",
+  "crag": "Obed & Clear Creek",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://home.nps.gov/obed/planyourvisit/rockclimbing.htm",
+  "quote": "drawn to the dramatic sandstone cliffs of Obed Wild & Scenic River"
+ },
+ {
+  "pid": "nc_linville_gorge",
+  "crag": "Linville Gorge",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok",
+    "correct": "quartzite"
+   },
+   {
+    "held": "greywacke (mapped)",
+    "verdict": "wrong",
+    "correct": "quartzite"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "wrong",
+    "correct": "quartzite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105873285/linville-gorge",
+  "quote": "The rock at Linville Gorge is quartzite, and typically low angle."
+ },
+ {
+  "pid": "ut_uinta_mountains",
+  "crag": "Uinta Mountains",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok",
+    "correct": "quartzite"
+   },
+   {
+    "held": "arkose (mapped)",
+    "verdict": "wrong",
+    "correct": "quartzite"
+   },
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.parkrecord.com/news/climbing-in-the-uintas/",
+  "quote": "Local climbers value the quality quartzite found throughout the region"
+ },
+ {
+  "pid": "ut_zion_national_park",
+  "crag": "Zion National Park",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": "sandstone"
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/The_West_Temple",
+  "quote": "The West Temple is a prominent summit composed of Navajo Sandstone"
+ },
+ {
+  "pid": "co_pink_floyd_area",
+  "crag": "Pink Floyd Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://summitpost.org/bouldering-in-unaweep/663538",
+  "quote": "bouldering is on Dakota Sandstone"
+ }
+]
