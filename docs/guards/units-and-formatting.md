@@ -76,6 +76,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `curRefStr`, so one formatter was carrying two conventions the moment the draft moved to
       display units — the editor would have compared `55m` against `"180m"`. `curRefStr` is fed
       `routePitches` now, so one convention flows through.
+    - **THE SEED ANCHOR ACCEPTS A `useMemo` WRAPPER (2026-10-07).** The section lifts the seed
+      ternary by the text `const routePitches=` and evaluates it. When the pitch editor's rows were
+      keyed by row identity, the seed had to be memoised (a seed rebuilt every render would remount
+      every row), and the anchor — written from the fix as the plain-expression shape — refused the
+      change outright, which is the trap this section's own comment warns of. It now accepts either
+      `const routePitches=(…` or `const routePitches=useMemo(function(){return (…`; what it slices
+      and evaluates is the ternary itself in both cases, so the nine injection cases still land.
     - **MEASURED, so it needs no `_orig` guard where `itinStoreVal` does:** every length
       **1-200 m round-trips m→ft→m exactly**, so a box seeded from a stored length and saved
       untouched cannot drift. Miles and pounds do not, which is what that guard exists for.

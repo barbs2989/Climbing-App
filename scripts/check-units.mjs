@@ -1177,12 +1177,18 @@ async function runPitches() {
 
   // ── Lift the two boundaries. SHAPE TESTS, never content ones: an anchor written from the FIX
   //    refuses every change instead of judging it, which is the trap the variants section records.
-  const seedKey = "const routePitches=(route.pitchDetail&&route.pitchDetail.length)";
+  //    The seed may be a bare expression or memoised (`useMemo(function(){return <expr>;},[…])`,
+  //    since the editor keys its rows by row IDENTITY and a seed rebuilt every render would remount
+  //    them); either way the lifted text is the ternary itself, which is what gets evaluated.
+  const seedHead = "const routePitches=";
+  const seedBody = "(route.pitchDetail&&route.pitchDetail.length)";
+  const seedKeys = [seedHead + seedBody, seedHead + "useMemo(function(){return " + seedBody];
+  const seedKey = seedKeys.find((k) => src.includes(k));
+  if (!seedKey) dead("the routePitches seed is not where this section reads it — re-read RouteDetail.jsx");
   const seedAt = src.indexOf(seedKey);
-  if (seedAt < 0) dead("the routePitches seed is not where this section reads it — re-read RouteDetail.jsx");
   const seedEnd = src.indexOf(":[blankPitch(1)];", seedAt);
   if (seedEnd < 0) dead("could not bound the routePitches seed");
-  const seedExpr = src.slice(seedAt + "const routePitches=".length, seedEnd + ":[blankPitch(1)]".length);
+  const seedExpr = src.slice(seedAt + seedKey.length - seedBody.length, seedEnd + ":[blankPitch(1)]".length);
   if (!/\.map\(/.test(seedExpr) || !/lengthM:/.test(seedExpr)) dead("the seed is not the map-over-pitchDetail shape this section reads");
   const seed = new Function("route", "uLenN", "blankPitch", "return " + seedExpr + ";");
 
