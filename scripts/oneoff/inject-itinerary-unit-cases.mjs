@@ -72,15 +72,9 @@ const CASES = [
     find: 'if(d.gainFt)stats.push("Gain "+uElev(d.gainFt));',
     repl: 'if(d.gainFt)stats.push("Gain "+d.gainFt+" ft");',
     says: /the downloaded plan is in the wrong units/ },
-  // THE SECOND WRITER, reverted in each half. Every itinerary assertion still passes while the
-  // bail form writes kilometres into a column of miles.
-  { name: "bail-label-reverts-to-mi", expect: "fail",
-    find: 'marginBottom:5}}>{"DIST. TO SAFETY ("+uDistMiUnit().toUpperCase()+")"}</div>',
-    repl: 'marginBottom:5}}>DIST. TO SAFETY (MI)</div>',
-    says: /the bail distance is not labelled/ },
-  { name: "bail-submit-stores-what-was-typed", expect: "fail",
-    find: 'distMi:distMi?uDistMiIn(distMi):undefined,', repl: 'distMi:distMi?Number(distMi):undefined,',
-    says: /the bail form stores what was typed|raw submit expression is still there/ },
+  // THE SECOND WRITER cases (bail-label-reverts-to-mi, bail-submit-stores-what-was-typed) are SPENT:
+  // the bail form they reverted was removed with bail points (owner, 2026-10-07), and check:units
+  // section 6 lost the four assertions they proved. Nothing writes that column through a form now.
   // MUST STAY SILENT: renaming a local map is ordinary work, and a probe that fired on it would
   // pin an implementation detail rather than the promise.
   { name: "local-map-renamed", expect: "pass",

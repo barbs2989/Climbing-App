@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { C, DLOCALE, MOUNTAINS, catOf } from "../ClimbMatchCore.jsx";
 import { fetchCragForecast } from "./forecast";
-import { scoreForecast, starsLabel, CRAG_SCORE_DISCIPLINES, BAND_PREF, RAIN_PREF, OPEN_DAY } from "./conditionsScore.js";
+import { scoreForecast, starsLabel, CRAG_SCORE_DISCIPLINES, OPEN_DAY } from "./conditionsScore.js";
+import { useCondPrefs, scorePrefs } from "./CondPrefs.jsx";
 import { routeRock } from "./rockType.js";
 import { useRoutesByIds, dbRouteToCamel } from "./db.js";
 import { USE_DB } from "./supabase";
@@ -24,7 +25,7 @@ const tint = function (s) { const l = starsLabel(s); return l === "Good" ? C.gre
 const dayName = function (d, i) { if (i === 0) return "Today"; if (i === 1) return "Tomorrow"; try { return new Date(d + "T12:00:00").toLocaleDateString(DLOCALE, { weekday: "short" }); } catch (e) { return d.slice(5); } };
 const hr = function (h) { const a = h >= 12 ? "PM" : "AM"; return (h % 12 || 12) + " " + a; };
 
-export default function BestDayTile({ ids, routeById, onOpen, onExplore }) {
+export default function BestDayTile({ ids, routeById, onOpen, onPrefs, onExplore }) {
   // Saved ids App has not resolved (it resolves lists, logs and crews, not objectives) are read here,
   // with the same area embed, so a saved DB climb is scored rather than skipped.
   const missing = (ids || []).filter(function (id) { return !routeById(id); });
@@ -50,7 +51,9 @@ export default function BestDayTile({ ids, routeById, onOpen, onExplore }) {
     }
     return function () { live = false; };
   }, [keyStr, tries]);
-  const prefs = { band: BAND_PREF.load() === "auto" ? null : BAND_PREF.load(), rainCaution: RAIN_PREF.load() };
+  // The climber's ideal conditions, from the ONE store the route page and Settings write through,
+  // so a change made on a route re-scores this tile at once (lib/CondPrefs.jsx).
+  const prefs = scorePrefs(useCondPrefs());
   const rows = located.map(function (x) {
     if (!x.pt) return { r: x.r, why: "no crag location on file" };
     if (!keys.includes(x.k)) return { r: x.r, why: "over the " + MAX_CRAGS + "-crag limit", over: true };
@@ -88,5 +91,6 @@ export default function BestDayTile({ ids, routeById, onOpen, onExplore }) {
       })}
       <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"Each number is that day’s best 3-hour window, scored as on the route’s Conditions tab. Tap one to open that day." + (over ? " Showing the first " + MAX_CRAGS + " crags you saved." : "") + (failed ? " " + failed + " couldn’t load." : "")}</div>
     </div> : null}
+    {onPrefs ? <button onClick={onPrefs} style={{ marginTop: 8, background: "none", border: "none", padding: "4px 0", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{"Your conditions ›"}</button> : null}
   </div>;
 }
