@@ -81,7 +81,7 @@ else ok("no `!onboarded`-gated card remains");
 
 // ON HOME, NOT ON CLIMBS. Asserted as ORDER between two anchors rather than by a character window:
 // this file packs a whole screen onto one physical line, so "near" is not a scope.
-const greet = app.indexOf('{greet+", "+ME.name.split(" ")[0]}');
+const greet = app.indexOf('{greetLine}');
 const card = app.indexOf('(accountNeedsOnboarding&&!homeDismiss.includes("climbsetup"))');
 const gaps = app.indexOf('{(()=>{const noGrades=(!ME.sportGrade||ME.sportGrade==="N/A")');
 if (greet < 0 || gaps < 0) dead("ANCHOR LOST: Home's greeting or its setup checklist moved — this run proved nothing about placement.");
