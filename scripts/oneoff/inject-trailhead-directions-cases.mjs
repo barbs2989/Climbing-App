@@ -72,13 +72,15 @@ const CASES = [
     expect: "fail",
   },
   {
-    // The gap #1479 declared and deferred, now closed by #1493 and guarded by section 1b. Reverting
-    // the gate puts GETTING THERE back on BOTH tabs of a crag route, each with its own drive
-    // control — one destination offered twice on one page, which is the #1437 defect one level out.
-    name: "4b. the crag says GETTING THERE on Overview AND Plan again",
-    find: '{cragOnly&&!showPlan?<div style={{marginBottom:12}}>',
-    repl: '{cragOnly?<div style={{marginBottom:12}}>',
+    // REPOINTED 2026-10-07: a crag has no Plan tab any more, so the old "Overview AND Plan" gate
+    // this case reverted is gone. The same defect — one destination offered twice on one crag page —
+    // now has one way back: TrailheadCard's "Drive here" returning beside CragLocationCard's
+    // Google Maps / Apple Maps pair on the crag Overview.
+    name: "4b. a crag offers TrailheadCard's drive control AND the crag card's again",
+    find: '{cragOnly?null:<Capped><TrailheadCard',
+    repl: '{<Capped><TrailheadCard',
     expect: "fail",
+    expectText: "expected exactly the Google Maps + Apple Maps pair",
   },
   {
     name: "5. the seasonal gate loses its only remaining render site",

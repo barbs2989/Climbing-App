@@ -146,9 +146,9 @@ check(text(proseOnly).includes(PROSE) && (proseOnly.match(/>APPROACH</g) || []).
 check(text(varsOnly).includes(V0.name) && text(varsOnly).includes(V1.name) && !text(varsOnly).includes("Full description"), "ways in only: every way in, no empty Full description");
 check(text(none).includes("No approach description"), "neither: the GapNote says the walk is not written down");
 
-console.log("6. a crag with only ways in gets a Plan tab");
-check(/>Plan</.test(cragVars), "a crag whose only approach data is ways in offers a Plan tab");
-check(!/>Plan</.test(cragNone), "...and a bare crag still does not (control)");
+console.log("6. a crag's ways in render on Overview (a crag has no Plan tab since 2026-10-07)");
+check(!/>Plan</.test(cragVars) && text(cragVars).includes(V0.name), "a crag whose only approach data is ways in shows them on Overview, with no Plan tab");
+check(!/>Plan</.test(cragNone) && text(cragNone).includes("No approach description"), "...and a bare crag shows the approach placeholder there (control)");
 
 console.log("7. borrowed numbers keep Overview's label");
 const sc = cards(summit);
