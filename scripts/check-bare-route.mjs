@@ -70,7 +70,7 @@ const bare = (discipline, grade) => ({
 // that they fell into the alpine layout and a bare one printed "Season TBD" under its name.
 const CRAG = ["trad", "sport", "toprope", "aid", "bouldering"];
 const ALPINE = ["alpine", "mountaineering", "ice", "mixed"];
-const TABS = ["overview", "conditions", "photos", "partners", "planner", "safety"];
+const TABS = ["overview", "forecast", "conditions", "photos", "partners", "planner", "safety"];
 const GREEN_BG = "#0f2419"; // C.greenBg — the "you're fine" affirmation
 
 const text = (html) => html.replace(/<style[\s\S]*?<\/style>/g, " ")
@@ -185,13 +185,16 @@ for (const d of [...CRAG, "alpine"]) {
   const rich = { ...cragBase, id: "probe_rich", approach: "Walk up the gully.", descent: "Walk off west.",
     hazards: ["Loose rock in the gully"], objHaz: ["Rockfall"], watchOut: ["Steepens near the top"] };
   const rl = lines(render(rich, "overview"));
-  if (!rl.includes("Plan")) fail("enriched crag route: approach/descent on file but no Plan tab");
-  else ok("enriched crag route: Plan tab offered");
+  /* 2026-10-07: a crag route has NO Plan tab, enriched or not — its plan content renders on
+     Overview (planBody). So the enriched crag must offer no Plan tab, and show approach/descent
+     on Overview instead. */
+  if (rl.includes("Plan")) fail("enriched crag route: offered a Plan tab — a crag's plan content belongs on Overview");
+  else ok("enriched crag route: no Plan tab (plan content is on Overview)");
   if (!rl.includes("Safety")) fail("enriched crag route: hazards on file but no Safety tab");
   else ok("enriched crag route: Safety tab offered");
-  const rp = text(render(rich, "planner"));
-  if (!rp.includes("Walk up the gully") || !rp.includes("Walk off west")) fail("enriched crag route: Plan tab does not render its approach/descent");
-  else ok("enriched crag route: approach and descent render on Plan");
+  const rp = text(render(rich, "overview"));
+  if (!rp.includes("Walk up the gully") || !rp.includes("Walk off west")) fail("enriched crag route: Overview does not render its approach/descent");
+  else ok("enriched crag route: approach and descent render on Overview");
   const rs = text(render(rich, "safety"));
   if (!rs.includes("Loose rock in the gully") || !rs.includes("Steepens near the top")) fail("enriched crag route: Safety tab drops its own hazards/watch-outs");
   else ok("enriched crag route: its own hazards and watch-outs render on Safety");
@@ -257,7 +260,10 @@ for (const d of [...CRAG, "alpine"]) {
   /* 2026-10-07 owner decision: a sport, trad or boulder route shows ONLY its own rack, as item +
      quantity, and no GEAR section ("What to bring", ROPEWORK, the stock per-discipline list).
      So the two directions asserted here are: a stated rack reaches the screen with its quantity,
-     and a route with none renders no rack and no gear section at all. */
+     and a route with none renders no stock kit and no gear section.
+     Later the same day the owner ruled that an EMPTY section stays on the page as a placeholder
+     for climbers to fill — so a crag with no rack shows the RACK/PADS card holding only an
+     "Add the rack" prompt. That is asserted too: a prompt, never a stock list. */
   const sportBase = { ...bare("sport", "5.12c"), pitches: 6 };
   const items = [{ item: "quickdraws", qty: 12 }, { item: "cams", sizes: "#0.5-#3", qty: 1 }];
   for (const d of ["sport", "trad", "bouldering"]) {
@@ -268,16 +274,21 @@ for (const d of [...CRAG, "alpine"]) {
     else if (d === "bouldering" && !(withItems.includes("crash pads") && withItems.includes("\u00d73"))) fail("rack: a boulder route's pads do not reach the RACK card");
     else ok(`rack: a ${d} route's own rack reaches the screen with its quantities`);
     const none = text(render(base, "overview"));
-    if (/What to bring|ROPEWORK|GEAR & ESSENTIALS|Standard rack for this discipline/.test(none) || /\bRACK\b/.test(none))
-      fail(`rack: a ${d} route with no rack of its own still prints a rack or gear section — the stock kit is not shown for crag routes`);
-    else ok(`rack: a ${d} route with no rack of its own prints no rack or gear section`);
+    if (/What to bring|ROPEWORK|GEAR & ESSENTIALS|Standard rack for this discipline/.test(none))
+      fail(`rack: a ${d} route with no rack of its own still prints a stock gear section — the stock kit is not shown for crag routes`);
+    else if (!/No rack listed yet|No quickdraw count yet|No pad count yet/.test(none))
+      fail(`rack: a ${d} route with no rack of its own shows no placeholder to add one`);
+    else ok(`rack: a ${d} route with no rack of its own shows an add-the-rack placeholder and no stock kit`);
   }
 }
 
-// 6. ROUTE FACTS — one set of guidebook facts on every crag discipline, and NOTHING on a bare one.
-//    Every row is gated on its own value: a bare crag route must not gain a single fact row (a row
-//    of "unknown"s is a placeholder, not a fact), must not print "Season TBD", and a crag route
-//    whose stored breakdown/climate cannot open a Plan tab must still show them — on Overview.
+// 6. ROUTE FACTS — one set of guidebook facts on every crag discipline.
+//    OWNER RULE 2026-10-07: every fact the DISCIPLINE has is listed even when the route states none,
+//    as "Not on file yet" with an "Add what you know" link — a placeholder for climbers to fill, never
+//    an "unknown" that reads as a fact, and never a value the route does not have. Facts the
+//    discipline does not have (bolts on a boulder, landing on a sport line) and facts that are not
+//    a discipline question (Quality, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
+//    Still: no "Season TBD", and a crag route's breakdown/climate render on Overview.
 {
   const FACT_LABELS = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
@@ -285,9 +296,19 @@ for (const d of [...CRAG, "alpine"]) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
     const t = text(html), sg = segs(html);
     if (!t.includes("ROUTE FACTS")) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ROUTE FACTS — this section checked nothing`);
-    const hit = FACT_LABELS.filter((l) => sg.includes(l));
-    if (hit.length) fail(`bare ${d} route: ROUTE FACTS prints rows it has no value for (${hit.join(", ")})`);
-    else ok(`bare ${d} route: ROUTE FACTS adds no fact rows`);
+    const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspect", "Season", "Rock quality", "Wet"],
+      sport: ["Location", "Bolts", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
+      trad: ["Location", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"],
+      toprope: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
+      aid: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"] }[d];
+    if (!WANT) fail(`ANCHOR LOST: no expected fact list for crag discipline ${d} — add one`);
+    const valueOf = (l) => { const i = sg.indexOf(l); return i < 0 ? null : sg[i + 1]; };
+    const missing = (WANT || []).filter((l) => valueOf(l) !== "Not on file yet");
+    const stray = FACT_LABELS.filter((l) => !(WANT || []).includes(l) && sg.includes(l));
+    if (missing.length) fail(`bare ${d} route: these discipline facts are not shown as "Not on file yet" placeholders: ${missing.join(", ")}`);
+    else if (stray.length) fail(`bare ${d} route: ROUTE FACTS prints rows that are not this discipline's facts and have no value (${stray.join(", ")})`);
+    else if (!t.includes("Add what you know")) fail(`bare ${d} route: placeholders render with no link to fill them`);
+    else ok(`bare ${d} route: every ${d} fact shows as a fillable "Not on file yet" placeholder, and nothing else`);
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
   }
   for (const d of ["sport", "trad", "toprope", "aid"]) {
@@ -321,10 +342,11 @@ for (const d of [...CRAG, "alpine"]) {
     else ok("crag route with no Plan tab: ROUTE BREAKDOWN renders on Overview");
     if (!t.includes("ZZCLIMATEZZ")) fail("crag route with no Plan tab: its CLIMATE & SEASON is invisible");
     else ok("crag route with no Plan tab: CLIMATE & SEASON renders on Overview");
-    // ...and exactly one home: with a Plan tab, Overview does not repeat them.
+    // ...and exactly once, with or without other plan content (a crag has no Plan tab to share them).
     const withPlan = text(render({ ...r, approach: "Walk the trail." }, "overview"));
-    if (withPlan.includes("ZZPITCHONEZZ") || withPlan.includes("ZZCLIMATEZZ")) fail("crag route WITH a Plan tab: breakdown/climate duplicated onto Overview");
-    else ok("crag route with a Plan tab: breakdown and climate stay on Plan only");
+    const n1 = (withPlan.match(/ZZPITCHONEZZ/g) || []).length, n2 = (withPlan.match(/ZZCLIMATEZZ/g) || []).length;
+    if (n1 !== 1 || n2 !== 1) fail(`crag route with an approach: breakdown x${n1} / climate x${n2} on Overview — each must render exactly once`);
+    else ok("crag route with an approach: breakdown and climate render once, on Overview");
   }
 }
 

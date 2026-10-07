@@ -37,7 +37,7 @@ const require_ = createRequire(import.meta.url);
 const { SUPABASE_URL, headers, anonKey } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
 const { assertDbReachable } = await import(path.join(ROOT, "scripts/lib/db-preflight.mjs"));
 const KEY = process.env.SUPABASE_SERVICE_KEY || anonKey();
-const TABS = ["overview", "conditions", "planner", "safety", "photos", "partners"];
+const TABS = ["overview", "forecast", "conditions", "planner", "safety", "photos", "partners"];
 
 // Column -> the camelCase field RouteDetail would read. Derived from dbRouteToCamel; a column
 // whose camel name is identical is listed once.

@@ -387,9 +387,14 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
   else fail("campingGate admits sport on a crag");
 }
 
-// ── 9. No camping data anywhere → no section, and no crash.
-if (has("alpine", "planner", {})) fail("a route with no camping data still renders the section");
-else ok("no camping data renders no section");
+// ── 9. No camping data anywhere → a PLACEHOLDER, and no crash. Owner rule 2026-10-07: an empty
+//    section a route can have stays on the page for climbers to fill. The gate (section 8) still
+//    decides WHETHER the route can have one — a crag gets no placeholder, because it gets no section.
+{
+  const t = text(render(route("alpine", {}), "planner"));
+  if (t.includes(HEAD) && t.includes("No camps or bivy sites yet")) ok("no camping data renders the section as an add-a-camp placeholder");
+  else fail("a gated route with no camping data shows no CAMPING & BIVY placeholder");
+}
 
 
 // ── 12. MAIN CAMPS vs ON THE ROUTE. A researched `role` splits the list, main camps first; a list

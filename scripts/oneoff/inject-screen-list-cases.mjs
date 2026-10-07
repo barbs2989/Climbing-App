@@ -40,7 +40,7 @@ const CASES = [
   {
     name: "2 REAL: a route sub-tab list walks a tab the route page does not have",
     file: "scripts/check-prose-in-token-boxes.mjs",
-    edit: (s) => s.replace('["overview", "conditions", "planner", "safety", "photos", "partners"]', '["overview", "conditions", "planner", "safety", "photos", "ranks"]'),
+    edit: (s) => s.replace('["overview", "forecast", "conditions", "planner", "safety", "photos", "partners"]', '["overview", "forecast", "conditions", "planner", "safety", "photos", "ranks"]'),
     want: (r) => r.code === 1 && /token-boxes[\s\S]*walks ranks, which is not one of the route page/.test(r.out) && /never walks partners/.test(r.out),
   },
   {
