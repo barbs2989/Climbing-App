@@ -8,17 +8,19 @@
 // strips them as it creates. The rule is ONE function, scripts/lib/area-sort-prefix.mjs, and this
 // asks it of every area, daily, while the import is still adding states.
 //
-// LISTED, not failed: the areas whose stripped name is a SIBLING's name ("(a) Hook" beside "Hook").
-// They are duplicate areas the label was hiding and need a fold, not a rename, so they keep the
-// label until folded — scripts/data/area-sort-labels-held.json. A LIST, not a count. A listed area
-// that no longer carries a label (folded, or renamed) is reported so the list can shrink.
+// LISTED, not failed: the duplicate areas the label was hiding — scripts/data/area-sort-labels-held.json.
+// "sibling": the stripped name is a SIBLING's name ("(a) Hook" beside "Hook"). "refused": the rename
+// run's PATCH was refused by refuse_duplicate_area (0218) — a same-named area within 1.5 km, often
+// under the same parent spelled "White Wall, The" against "(E) The White Wall" (2026-10-07: 199 of
+// them). Both need a fold, not a rename, so they keep the label until folded. A LIST, not a count. A
+// listed area that no longer carries a label (folded, or renamed) is reported so the list can shrink.
 //
 // What it cannot see: a label spelling the function does not know, and a ROUTE name — 1,184 route
 // names carry a topo number ("(01) Chicken Crack"), but route names also hold real initials
 // ("R. Crumb", "T. Rex"), so they were not swept with the same rule.
 //
 //   npm run check:area-sort-labels                    exit 1 on a labelled area not on the list
-//   npm run check:area-sort-labels -- --write-held    re-list today's held areas (only after a fold)
+//   npm run check:area-sort-labels -- --write-held    list EVERY labelled area as held (only straight after a full rename run or a fold)
 //
 // Credentials: anon key; `areas` is publicly readable. No DB link needed, so it runs daily in CI.
 import fs from "fs";
@@ -38,9 +40,16 @@ const labelled = areas.filter(a => stripSortPrefix(a.name) !== a.name);
 if (WRITE) {
   const sibKey = s => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
   const n = new Map(); for (const a of areas) { const k = a.parent_id + "|" + sibKey(stripSortPrefix(a.name)); n.set(k, (n.get(k) || 0) + 1); }
-  const held = Object.fromEntries(labelled.filter(a => n.get(a.parent_id + "|" + sibKey(stripSortPrefix(a.name))) > 1).sort((x, y) => x.id < y.id ? -1 : 1).map(a => [a.id, a.name]));
-  fs.writeFileSync(HELD, JSON.stringify({ written: new Date().toISOString().slice(0, 10), held }, null, 1) + "\n");
-  console.log(`wrote ${Object.keys(held).length} held areas (labelled, and a sibling has the stripped name) to ${path.relative(ROOT, HELD)}`);
+  // EVERY area still labelled, so write this only straight after a full rename run: what that run
+  // left labelled it left for one of two reasons, and both are a duplicate place awaiting a fold.
+  const sib = a => n.get(a.parent_id + "|" + sibKey(stripSortPrefix(a.name))) > 1;
+  const held = Object.fromEntries(labelled.sort((x, y) => x.id < y.id ? -1 : 1).map(a => [a.id, a.name]));
+  const why = Object.fromEntries(labelled.map(a => [a.id, sib(a) ? "sibling" : "refused"]));
+  const nSib = Object.values(why).filter(w => w === "sibling").length;
+  fs.writeFileSync(HELD, JSON.stringify({ written: new Date().toISOString().slice(0, 10),
+    reasons: { sibling: "a sibling already has the stripped name", refused: "refuse_duplicate_area (0218): a same-named area within 1.5 km" },
+    why, held }, null, 1) + "\n");
+  console.log(`wrote ${Object.keys(held).length} held areas (${nSib} sibling, ${Object.keys(held).length - nSib} refused by the DB) to ${path.relative(ROOT, HELD)}`);
   process.exit(0);
 }
 const held = JSON.parse(fs.readFileSync(HELD, "utf8")).held;

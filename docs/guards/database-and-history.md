@@ -456,12 +456,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Measured NON-labels** (read, not guessed): "J. Paul Pebble", "L. Ron Hubbard's Boulder",
     "N. Fork Moorman's Area" (North Fork) — excepted by name; every other lone "E." / "N." is one
     step of a lettered series. A number that is the name stays ("19 Mile Wall", ".50 Cal Tower").
-    The letter/number label comes off ONCE: "g. V3 - Middle Earth" keeps "V3".
-  - **HELD, listed** (`scripts/data/area-sort-labels-held.json`): areas whose stripped name is a
-    SIBLING's name — "(a) Hook" beside "Hook", "01. West Side" beside "1. West Side" (230 groups,
-    220 with climbs in every copy). Duplicate areas the label was hiding, which
-    `check:area-duplicates` cannot see because it only pairs areas under DIFFERENT parents. They
-    need a fold (0221's pattern), not a rename; after one, `--write-held` shrinks the list.
+    The letter/number label comes off ONCE: "g. V3 - Middle Earth" keeps "V3". The owner then asked
+    for online research where the letter may be the name; settled so: "B - Word" → "B Word" (the
+    wall's name), Horse Flats' "Y Crack Boulder" / "A Boulder", "Y - North/South Side" kept (the crag
+    is The Y), "N. Red-Yellow" and "B. School" kept as unsettled. Only 150 renames had no labelled
+    sibling to vouch for them; those were the ones read.
+  - **The rule must be IDEMPOTENT** — the importer strips names the rename already stripped. The
+    first run broke it three ways ("V3 - " read as a letter-dash label, ". . more" as dot markers,
+    "Z1:1:" stacked); tested since: f(f(x)) === f(x) for all 58,515 distinct names.
+  - **HELD, listed** (`scripts/data/area-sort-labels-held.json`, each with its `why`), 474 on
+    2026-10-07 — all duplicate places the label was hiding, needing a fold (0221's pattern), not a
+    rename; after one, `--write-held` shrinks the list:
+    - `sibling` (274): the stripped name is a SIBLING's — "(a) Hook" beside "Hook" (230 groups, 220
+      with climbs in every copy). `check:area-duplicates` cannot see these: it pairs DIFFERENT parents.
+    - `refused` (199): the rename's PATCH was refused by `refuse_duplicate_area` (0218) — a same-named
+      area within 1.5 km. Often the same parent, spelled "White Wall, The" against "(E) The White
+      Wall", which the sibling test missed because it does not fold a trailing ", The".
   - **Cannot see** a label spelling the function does not know, or a ROUTE name: 1,184 route names
     carry a topo number ("(01) Chicken Crack"), but route names also hold real initials ("R. Crumb",
     "T. Rex", "C. Bailey"), so they were not swept by the same rule.

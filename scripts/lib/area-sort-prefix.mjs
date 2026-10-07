@@ -17,7 +17,7 @@ const MARKERS = [
   /^\*+\s*/,                                    // "* Foo", "**Foo"
   /^Ξ\s+/,                                      // "Ξ 10. Big Red + Clifford"
   /^-+\s*(?=[A-Za-z0-9])/,                      // "- Crawford Notch", "-Camden Hills"
-  /^\.\s+/,                                     // ". Western NH"
+  /^\.\s+(?=[A-Za-z0-9])/,                      // ". Western NH" — not ". . more . . ." (that dot is the name)
   /^,\s+/,                                      // ", The Vault"
 ];
 const LABELS = [
@@ -25,9 +25,9 @@ const LABELS = [
   /^\d{1,3}[a-z]?[.)]\s+/,                      // "1. ", "12a. ", "3) "
   /^\((?:\d{1,3}[a-z]?|[A-Za-z]\d{0,2})\)\s*/,  // "(3) ", "(E) ", "(a) "
   /^\d{1,3}[a-z]?\s*[-–—:]\s+(?=\S)/,           // "12 - ", "3: "
-  /^[A-Za-z]\d{0,2}\s*:\s*/,                    // "B: ", "A2: "
-  /^[A-Za-z]\d{0,2}\s+[-–—]\s+/,                // "A - " (a space BOTH sides: "A- and B- Side" is a name)
-];
+  /^[A-Za-z]\d{0,2}\s*:\s*(?:\d{1,2}\s*:\s*)?/, // "B: ", "A2: ", and the stacked "Z1:1: "
+  /^[A-Za-z]\s+[-–—]\s+/,                       // "A - " (a space BOTH sides: "A- and B- Side" is a name;
+];                                              //  one letter only: "V3 - Middle Earth" is a name)
 
 // A letter that BEGINS a name — read, and the doubtful ones researched, 2026-10-07. Every other
 // lone "E." / "N." / "Y - " in the catalog is one step of a lettered series of walls; these are not:
