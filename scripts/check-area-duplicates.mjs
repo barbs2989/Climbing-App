@@ -21,9 +21,14 @@
 // Any pair not on the list fails. A LIST, not a count: a count holds level when one pair is
 // fixed and another lands.
 //
-// What it cannot see: a copy over 3 km from its twin (coordinate slop larger than that), a copy
-// with no coordinate, a copy holding no climbs yet, and a copy spelled differently beyond what the
-// key folds ("Kody Block" vs "The Kody Boulder"). The DB trigger (0216/0218) refuses a same-key
+// A SECOND pass (0255) pairs two areas under the SAME parent on the plain key, at any distance, with or
+// without a coordinate or climbs — the first pass skipped them, and 209 such groups ("Pawn, The" beside
+// "The Pawn") had collected unseen.
+//
+// What it cannot see: a copy under ANOTHER parent over 3 km from its twin (coordinate slop larger than
+// that) or with no coordinate or no climbs yet, and a copy spelled differently beyond what the key folds
+// ("Kody Block" vs "The Kody Boulder"). Long Hill's copy of Hidden in Plain Sight Boulders was all three
+// (another parent, 4 km, other boulder names) and was found by its CLIMBS, not its name. The DB trigger (0216/0218) refuses a same-key
 // area within 1.5 km at insert time; this is the after-the-fact sweep over what got past it.
 //
 //   npm run check:area-duplicates                      report; exit 1 on a pair not on the list
@@ -76,6 +81,27 @@ for (const [g, list] of groups) {
     if (d >= 3) continue;
     const [a, b] = [x, y].sort((p, q) => p.id < q.id ? -1 : 1);
     pairs.set(a.id + "|" + b.id, `${a.name} / ${b.name} (${d.toFixed(2)} km)`);
+  }
+}
+// SAME PARENT (0255): two children of one area under one key are one place filed twice — "Pawn, The"
+// beside "The Pawn", "Mount X" beside "Mt. X", "Catskills" beside "Catskills (Ice)". The pass above skips
+// them; 209 such groups had collected by 2026-10-07. No distance, coordinate or climb is required here:
+// one copy of Poke-O-Moonshine had no coordinate, and an empty copy is still a second row on the screen.
+// The plain key only: a crag beside its own "X Bouldering" / "X Boulders" sibling (the WIDE key, ~75
+// pairs on 2026-10-07) is not paired here yet — some are one place, some a separate boulder field.
+const sib = new Map();
+for (const a of areas) {
+  if (!a.parent_id || String(a.path).split(".").length < 3) continue;
+  const k = a.parent_id + "|" + catalogKey(a.name);
+  (sib.get(k) || sib.set(k, []).get(k)).push(a);
+}
+for (const [g, list] of sib) {
+  const k = g.slice(g.indexOf("|") + 1);
+  if (k.length < 3 || list.length < 2) continue;
+  for (let i = 0; i < list.length; i++) for (let j = i + 1; j < list.length; j++) {
+    const x = list[i], y = list[j];
+    const [a, b] = [x, y].sort((p, q) => p.id < q.id ? -1 : 1);
+    pairs.set(a.id + "|" + b.id, `${a.name} / ${b.name} (same parent)`);
   }
 }
 const found = Object.fromEntries([...pairs].sort());
