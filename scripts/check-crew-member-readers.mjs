@@ -88,7 +88,6 @@ const ALLOW = [
   { key: "x.id===ci.climberId", why: "crewReqIn is the SEED invite list; real invites render from myCrewInvitesQ (#734), so these ids are always seed integers" },
   { key: "x.id===jr.climberId", why: "crewJoinIn is seeded and never written from the DB — no join request ever carries a uuid" },
   { key: "x.id===jq.climberId", why: "same crewJoinIn list, read again for the unfinished-business dropdown" },
-  { key: "cById(rq.climberId)", why: "the seed crew-invite card; the DB invite path resolves its own profiles" },
   { key: "c.id===q.climberId", why: "GuideDashboard is the seed dashboard — DbGuideDashboard is the DB-backed one and resolves separately" },
   { key: "x.id===_t.climberId", why: "a notification's climberId, reached through notifTarget() so the affordance and the click cannot disagree (#1716); the descriptor deliberately keeps the field NAMED climberId so this lookup stays visible to this guard. The result is still guarded by `if(c)`, so a miss opens nothing rather than showing the wrong person" },
 ];

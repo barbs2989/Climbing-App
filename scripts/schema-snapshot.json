@@ -21,6 +21,9 @@
       "name_search",
       "parent_id",
       "parent_peak",
+      "parking_lat",
+      "parking_lng",
+      "parking_name",
       "path",
       "prominence_ft",
       "region",
@@ -334,6 +337,12 @@
       "series_id",
       "title"
     ],
+    "group_join_answers": [
+      "answers",
+      "created_at",
+      "group_id",
+      "user_id"
+    ],
     "group_members": [
       "group_id",
       "id",
@@ -367,6 +376,7 @@
       "disciplines",
       "event_policy",
       "id",
+      "join_questions",
       "location",
       "name",
       "policy",

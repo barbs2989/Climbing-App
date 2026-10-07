@@ -969,6 +969,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     only"* policy was enforced on a number that appears nowhere, and the app could tell you that you
     are trust 14 and then admit you. It takes a **number** now, so a second derivation is impossible
     rather than merely absent, and both byte-identical join handlers pass `myTrustScore`.
+    - **THE TWO HANDLERS ARE ONE NOW (2026-10-07).** The group card and the group detail each held a
+      60-line copy of the join handler, which is why this case counted to **two**. Membership
+      questions (0256) would have been a third thing to keep in step by hand, so both buttons now call
+      `groupJoinTap(cl)`. The assertion moved with it: exactly **one** `groupTrustShortfall(` call
+      site (the definition excluded), reading `myTrustScore`, and **at least two**
+      `onClick={()=>groupJoinTap(cl)}` callers — a regrown inline copy shows up as a second call, and
+      a button that bypasses the gate as fewer than two callers.
     - **THE BAR MOVES, AND THAT IS STATED RATHER THAN DISCOVERED LATER.** The two models are scaled
       differently — a vouch is 4 points in one and 1 in the other — so the same 55 is a different
       threshold. Measured over five example profiles

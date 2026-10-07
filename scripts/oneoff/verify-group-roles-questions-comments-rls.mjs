@@ -168,6 +168,25 @@ try {
   const privReq = await rpc(x, ["5.10", ""]);
   ok("...and cannot ask to join it (invite only)", privReq.status >= 400 && /invite only/i.test(privReq.text), `${privReq.status} ${privReq.text.slice(0, 120)}`);
   ok("a member still reads it", rows(await p(`groups?id=eq.${G}&select=id`)).length === 1);
+
+  // ── createGroupRow / deleteGroupRow, the way lib/db.js now calls them ────────────────────────
+  // A private group created PRIVATE, with a client-minted id and no RETURNING (the only way the
+  // insert passes RLS), and deleted with RETURNING, which the app uses to tell a refusal from a
+  // delete.
+  const pid2 = crypto.randomUUID();
+  const mkPriv = await o("groups", { method: "POST", body: JSON.stringify({ id: pid2, name: "Probe 0256 private", created_by: O.id, visibility: "private" }), headers: { Prefer: "return=minimal" } });
+  ok("a group can be created PRIVATE directly (no RETURNING)", mkPriv.status === 201, `${mkPriv.status} ${mkPriv.text.slice(0, 160)}`);
+  const withRet = await o("groups", { method: "POST", body: JSON.stringify({ id: crypto.randomUUID(), name: "Probe 0256 private 2", created_by: O.id, visibility: "private" }) });
+  ok("...while the same insert WITH RETURNING is refused (why the app mints the id)", withRet.status >= 400, `${withRet.status}`);
+  ok("its owner reads it", rows(await o(`groups?id=eq.${pid2}&select=id,visibility`)).length === 1);
+  ok("an outsider never sees it", rows(await x(`groups?id=eq.${pid2}&select=id`)).length === 0);
+  const xDel = await x(`groups?id=eq.${pid2}`, { method: "DELETE" });
+  ok("an outsider cannot delete it", rows(xDel).length === 0, `${xDel.status}`);
+  const oDel = await o(`groups?id=eq.${pid2}`, { method: "DELETE" });
+  ok("the owner deletes it, and RETURNING comes back with the row", rows(oDel).length === 1, `${oDel.status} ${oDel.text.slice(0, 120)}`);
+  ok("...and it is gone (service-key read)", rows(await svc(`groups?id=eq.${pid2}&select=id`)).length === 0);
+  const mDelG = await m(`groups?id=eq.${G}`, { method: "DELETE" });
+  ok("a moderator cannot delete the group (owner only)", rows(mDelG).length === 0, `${mDelG.status}`);
 } catch (e) {
   console.error("\nFAIL (" + (e && e.message ? e.message : e) + ")"); fail++;
 } finally {
