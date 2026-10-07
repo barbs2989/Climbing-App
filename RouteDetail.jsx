@@ -21,7 +21,7 @@ import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, packForecast, savedAgo } from "./lib/offline";
 import { fetchForecastRaw, snapshotPackForecast, fetchCragForecast } from "./lib/forecast";
-import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, TEMP_BANDS, defaultBand, BAND_PREF, RAIN_PREF, CRAG_SCORE_DISCIPLINES } from "./lib/conditionsScore";
+import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, TEMP_BANDS, defaultBand, BAND_PREF, RAIN_PREF, CRAG_SCORE_DISCIPLINES, OPEN_DAY } from "./lib/conditionsScore";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
 import { useSession, signOut, getProfile, saveProfile } from "./lib/auth";
 import { useRoutePresence } from "./lib/presence";
@@ -3854,11 +3854,13 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     return function(){live=false;};
   },[ck,tries]);
   useEffect(function(){setDayI(0);setHrI(null);},[route.id]);
+  const [wantDate,setWantDate]=useState(function(){var d=OPEN_DAY.date;OPEN_DAY.date=null;return d;});
   const rk=routeRock(route);
   const score=useMemo(function(){
     if(!wx||!wx.data)return null;
     return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null,family:rk?rk.family:null,discipline:disc},{band:band==="auto"?null:band,rainCaution:rain});
   },[wx,band,rain,route.id,rk&&rk.family]);
+  useEffect(function(){if(!wantDate||!score)return;var i=score.days.findIndex(function(d){return d.date===wantDate;});if(i>=0){setDayI(i);setHrI(null);}setWantDate(null);},[score,wantDate]);
   if(!on)return null;
   const box={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px",marginBottom:14};
   const head=<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}><CardHead style={{marginBottom:0}}>CONDITIONS SCORE</CardHead>{hasPt?<button onClick={function(){setShowPrefs(!showPrefs);}} aria-expanded={showPrefs} aria-label="Your ideal conditions" style={{background:"none",border:"1px solid "+(showPrefs?C.blue:C.border),color:showPrefs?C.blue:C.textSub,borderRadius:8,padding:"5px 9px",fontSize:11.5,fontWeight:700,cursor:"pointer"}}>⚙ Your conditions</button>:null}</div>;

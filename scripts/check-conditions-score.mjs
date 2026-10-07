@@ -150,10 +150,15 @@ console.log("check:conditions-score");
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-  if (/<BestDayTile ids=\{wishlist\} routeById=\{routeById\} onOpen=/.test(app) && /<BestDayTile[\s\S]{0,200}<div><div style=\{hd\}>\{"Jump back in"\}/.test(app)) ok("the Best day tile is mounted on Home, over the saved climbs");
+  if (/<BestDayTile ids=\{wishlist\} routeById=\{routeById\} onOpen=/.test(app) && /<BestDayTile[\s\S]{0,320}<div><div style=\{hd\}>\{"Jump back in"\}/.test(app)) ok("the Best day tile is mounted on Home, over the saved climbs");
   else fail("the Best day tile is no longer mounted on Home over the saved climbs");
-  if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /if \(!crag\.length\) return null/.test(tile)) ok("the tile scores with scoreForecast, crag climbs only, and renders nothing with none saved");
-  else fail("the tile no longer shares the score, its crag-only gate, or its empty-means-nothing rule");
+  // With no saved crag climb the tile says how to get one, and prints no number: it rates nothing.
+  const empty = (tile.match(/if \(!crag\.length\) return [^\n]*/) || [""])[0];
+  if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /Save a sport, trad, top-rope or bouldering climb/.test(empty) && /onClick=\{onExplore\}/.test(empty) && !/toFixed|stars/.test(empty)) ok("the tile scores with scoreForecast, crag climbs only, and with none saved shows how to save one, with no number");
+  else fail("the tile no longer shares the score, its crag-only gate, or its no-number empty state");
+  // A score cell opens THAT day on the route's Conditions card, through the one-shot OPEN_DAY.
+  if (/OPEN_DAY\.date = d\.date; onOpen\(row\.r, "forecast"\)/.test(tile) && /OPEN_DAY\.date;OPEN_DAY\.date=null/.test(rd) && /d\.date===wantDate/.test(rd)) ok("a tapped score opens that climb's Conditions tab on that day");
+  else fail("a tapped score no longer opens its day on the Conditions tab");
   if (/not a rating/.test(tile) && /No score: /.test(tile)) ok("a failed forecast or an unlocated climb is SAID, never scored or dropped");
   else fail("the tile no longer says when a climb could not be scored");
   // A wall direction researched for the crag (areas.aspect) reaches BOTH readers.
