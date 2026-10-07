@@ -18,7 +18,7 @@ import {searchMatches} from "./lib/search";
 import { fetchTrustScore } from "./lib/feedbackLoop";
 import { clickable } from "./lib/clickable";
 import { useDialogA11y } from "./lib/dialogA11y";
-import { ROUTE_AREA_EMBED, downloadStateOffline, offlineDownloads, removeStateOffline, unpackRouteOffline, packedRouteIds, savedAreaIds, saveAreaIds, savedObjDates, saveObjDates, offlineRoutesByIds, savedAgo } from "./lib/offline";
+import { ROUTE_AREA_EMBED, downloadStateOffline, offlineDownloads, removeStateOffline, refreshDownloadedStates, unpackRouteOffline, packedRouteIds, savedAreaIds, saveAreaIds, savedObjDates, saveObjDates, offlineRoutesByIds, savedAgo } from "./lib/offline";
 import { snapshotPackForecast } from "./lib/forecast";
 import { useSession, signOut, getProfile, saveProfile, usePasswordRecovery } from "./lib/auth";
 import { useRoutePresence } from "./lib/presence";
@@ -597,6 +597,13 @@ const myVouchesGivenQ=useUserVouches(uid);const vouchTargetIds=useMemo(function(
      downloads are both read. One at a time (dlBusy), each tried ONCE per session so a failure toasts
      once rather than looping, and never while offline — that is not a failure, so it stays untried.
      Only states the catalog actually has: a pin with no catalog row has nothing to download. */
+  /* Every downloaded state catches up to the newest nightly file once a session, quietly and from static
+     files only (refreshDownloadedStates). A pinned state answers the Climbs tab from the device first, so
+     it has to stay fresh or it falls back to the database. The old copy stays until the new file is fully
+     in hand; one the device lost mid-refresh (storage full) leaves the list, and the pin sync below
+     downloads it again. */
+  const dlRefreshTried=useRef(false);
+  useEffect(function(){if(!dlLoaded||dlRefreshTried.current||!downloadedStates.length)return;dlRefreshTried.current=true;refreshDownloadedStates().then(function(rows){if(!rows.length)return;var gone=rows.filter(function(r){return r.removed;}).map(function(r){return r.name;});setDlTimes(function(m){var n=Object.assign({},m);rows.forEach(function(r){if(r.removed)delete n[r.name];else n[r.name]=r.savedAt;});return n;});if(gone.length)setDownloadedStates(function(s){return s.filter(function(x){return gone.indexOf(x)<0;});});}).catch(function(){});},[dlLoaded,downloadedStates]);
   const pinSyncTried=useRef(new Set());
   useEffect(function(){if(!pinsWritable||!dlLoaded||dlBusy||pinnedStates==null)return;if(typeof navigator!=="undefined"&&navigator.onLine===false)return;var nm=pinnedStates.find(function(x){var d=dbStateByName[x];return downloadedStates.indexOf(x)<0&&!pinSyncTried.current.has(x)&&d&&(d.route_count||0)>0;});if(!nm)return;pinSyncTried.current.add(nm);downloadState(nm);},[pinsWritable,dlLoaded,dlBusy,pinnedStates,downloadedStates,dbStateByName]);
   /* ONE-TIME SEED: an account whose pin list has never been set inherits what this browser already
