@@ -388,7 +388,9 @@ export default function App(){
       /* `_org` is the REAL profile and CrewFinder prefers it -- resolving a uuid against seed
          CLIMBERS is the #569/#680/#734/#778/#826 defect check:crew-member-readers exists for. It
          carries no level and no vouches, so climberLine() is what the row may print about them. */
-      return {id:r.id,_db:true,routeId:r.route_id,_route:rmap[r.route_id]||null,
+      /* `_routeMissing` only once the read SUCCEEDED and still lacks the row: a crew whose climb left the
+         catalog (merged or deleted -- one live crew points at `bridalveil_falls`) printed "undefined · undefined". */
+      return {id:r.id,_db:true,routeId:r.route_id,_route:rmap[r.route_id]||null,_routeMissing:!!(_openCrewRoutesQ.isSuccess&&!rmap[r.route_id]),
         organizer:r.created_by,_org:p?{id:p.id,name:p.name||"A climber",avatar:p.avatar||"",location:p.location||"",username:p.username||"",showName:!!p.showName,_profile:true}:null,
         have:conf,spots:Math.max(0,cap-conf),date:((r.dates||[])[0])||"",pace:"",note:"",
         /* crew_listings exposes confirmed_count, not a member list, so the organiser is the only

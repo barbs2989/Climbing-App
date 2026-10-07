@@ -37,6 +37,13 @@ in the lifecycle and in the client.
 | 12 | The mutual-friends ask was capped at 64 **sorted** ids, which could drop the profile you had just opened. | The open profile and the mutuals sheet are asked first. |
 | 13 | Sign-out left the previous account's friends, requests and blocks in memory. | They are cleared on sign-out. |
 | 14 | The Inbox message-request button said **"✓ Accept friend"** but sends a request. | It now reads "+ Add friend". |
+| 15 | **Join a crew** printed **"undefined · undefined"** for a real crew. The finder ignored the route row App fetches for each crew, and one live crew points at a climb that has left the catalog (`bridalveil_falls`). Its member chips also printed hidden real names. | The finder reads the crew's own `_route`. A crew whose climb no longer exists is left out. The chips use `pubFirst`. |
+
+**The browser walk is green on friends again.** `npm run check:new-climber-journey` had been failing
+since 2026-09-30, because the walk clicked Remove without the confirm sheet #2024 added and expected
+a disabled "Requested" where b46f3225 made it "Requested · undo". The walk is updated. It now proves
+in a real browser that Remove deletes the row and survives a reload, and that a sent request is
+pending, addressed correctly, and still known after a reload.
 
 **Decline stays quiet, as on Facebook and LinkedIn.** The requester keeps seeing "Requested", and
 can withdraw and ask again. Block is the hard stop. Nothing yet limits how often someone can

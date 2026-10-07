@@ -774,15 +774,17 @@ try {
     await openMateProfile("after the reload");
     const after = await page.evaluate(() => {
       const b = [...document.querySelectorAll("button")]
-        .filter((x) => ["+ Friend", "Requested", "✓ Friend", "Accept"].includes((x.innerText || "").trim()));
+        .filter((x) => ["+ Friend", "Requested · undo", "✓ Friend", "Accept"].includes((x.innerText || "").trim()));
       if (b.length !== 1) return { n: b.length };
       return { n: 1, label: (b[0].innerText || "").trim(), disabled: !!b[0].disabled };
     });
+    // b46f3225 (2026-09-30) made a second tap WITHDRAW the request, so the control reads
+    // "Requested · undo" and is deliberately ENABLED. This walk still asserted a disabled "Requested"
+    // and died here from then on. What matters is unchanged: after a reload the app must not offer
+    // "+ Friend" (a resend the unique pair index would refuse) — it must know the request is out.
     if (after.n !== 1) dead(`expected exactly 1 connect-state control after the reload, found ${after.n}`);
-    if (after.label === "Requested") ok("after a reload the profile still reads \"Requested\"");
+    if (after.label === "Requested · undo") ok("after a reload the profile still reads \"Requested · undo\" — the request survived and can be taken back");
     else bad(`after a reload the profile offers "${after.label}" — the pending request did not survive, so the climber is invited to send it again`);
-    if (after.disabled) ok("...and the control is disabled, so it cannot be sent twice");
-    else bad("the control is still enabled after the request — a second tap would be refused by the unique constraint on `connections`");
   } finally {
     for (const id of requestIds) {
       await fetch(`${SUPABASE_URL}/rest/v1/connections?id=eq.${id}`, { method: "DELETE", headers: H }).catch(() => {});
