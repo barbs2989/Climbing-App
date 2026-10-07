@@ -1,0 +1,417 @@
+[
+ {
+  "pid": "co_rmnp_rock",
+  "crag": "RMNP - Rock",
+  "groups": [
+   {
+    "held": "metamorphic rock (mapped)",
+    "verdict": "ok",
+    "correct": "gneiss"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Hallett Peak": "gneiss"
+  },
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/The_Sharkstooth",
+  "quote": "Rock type(s): Biotite schist and gneiss (Sharkstooth). Hallett: \"The North Face of Hallett Peak is gneiss\""
+ },
+ {
+  "pid": "va_prospectors",
+  "crag": "Prospectors",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://breakspark.com/rock-climbing",
+  "quote": "traditional and sport climbing routes installed on hard, Appalachian sandstone"
+ },
+ {
+  "pid": "nh_humphrey_s_ledge_2",
+  "crag": "Humphrey's Ledge",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://commonclimber.com/north-conway.html",
+  "quote": "Humphry's is a shorter wall than Cathedral ... both feature granite face climbing"
+ },
+ {
+  "pid": "ok_quartz_mountain",
+  "crag": "Quartz Mountain",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Quartz_Mountain",
+  "quote": "Most of Quartz Mountain and the other exposures in the park are homogeneous pink-red Lugert Granite."
+ },
+ {
+  "pid": "co_morrison_evergreen_littleton",
+  "crag": "Morrison/Evergreen/Littleton",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "amphibolite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "quartz monzonite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Morrison Routes": "SW"
+  },
+  "url": "https://mountainproject.com/area/106853866/morrison-routes",
+  "quote": "Morrison Routes: hard sandstone. Southwest facing, so it gets lots of sun afternoon."
+ },
+ {
+  "pid": "co_cathedral_spires_area",
+  "crag": "Cathedral Spires Area",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.jeffco.us/1191/Cathedral-Spires-Park",
+  "quote": "With beautiful cracks and immaculate granite slabs, this area is truly a climbers' paradise."
+ },
+ {
+  "pid": "tn_lilly_boulders",
+  "crag": "Lilly Boulders",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "chert (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.nps.gov/obed/planyourvisit/boulder-climbing.htm",
+  "quote": "24 sandstone boulders ranging from 8 to over 20 feet tall"
+ },
+ {
+  "pid": "nh_russell_crags",
+  "crag": "Russell Crags",
+  "groups": [
+   {
+    "held": "metasedimentary rock (mapped)",
+    "verdict": "ok",
+    "correct": "schist"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.climbing.com/places/sport-climbing-new-hampshire/?scope=anon",
+  "quote": "cryptic cruxes on the same schist as their geological neighbors to the south"
+ },
+ {
+  "pid": "co_black_wave_boulder_area",
+  "crag": "Black Wave Boulder Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106571728",
+  "quote": "The climbing along Nine Mile Hill exists on the Burro formation ... not as solid as its famous Wingate brother"
+ },
+ {
+  "pid": "ny_b_chapel_pond_pass",
+  "crag": "Chapel Pond Pass",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "wrong",
+    "correct": "anorthosite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105912143/chapel-pond-pass",
+  "quote": "The rock here is anorthosite - an unusual rock in that it's relatively rare"
+ },
+ {
+  "pid": "wy_lower_canyon_granite",
+  "crag": "Lower Canyon Granite",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "wrong",
+    "correct": "granite"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": "granite",
+    "note": "climbers call it granite; may be gneiss as mapped"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/106159177/lower-canyon-granite",
+  "quote": "highly featured, fractured granite that climbs well and has good friction"
+ },
+ {
+  "pid": "az_central_arizona",
+  "crag": "Central Arizona",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "metasedimentary rock (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "wrong",
+    "correct": "tuff"
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Wood Canyon": "perlite"
+  },
+  "aspects": {
+   "Waugh Wall": "S",
+   "Wood Canyon": "W"
+  },
+  "url": "https://mountainproject.com/area/107337796/coon-bluff",
+  "quote": "Coon Bluff: a slurry of volcanic ash, cemented together with rhyolite. Wood Canyon: a perlite flow"
+ },
+ {
+  "pid": "ca_echo_cove",
+  "crag": "Echo Cove",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106167746/echo-cove",
+  "quote": "no rock statement found for Echo Cove"
+ },
+ {
+  "pid": "ca_bowman_valley",
+  "crag": "Bowman Valley",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/113009741",
+  "quote": "The rock is heavily textured granite, with excellent friction"
+ },
+ {
+  "pid": "wi_east_bluff_03_west_of_the_quarry",
+  "crag": "East Bluff 03 - West of the Quarry",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105729927/devils-lake",
+  "quote": "The quartzite rock is beautiful, but it can be slick."
+ },
+ {
+  "pid": "pa_safe_harbor_south",
+  "crag": "Safe Harbor South",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/107374703/safe-harbor",
+  "quote": "no rock statement found; walls mostly face west-southwest"
+ },
+ {
+  "pid": "nc_pilot_mountain",
+  "crag": "Pilot Mountain",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/106039493",
+  "quote": "South-facing quartzite cliffs with plenty of shade."
+ },
+ {
+  "pid": "nc_main_climbing_areas",
+  "crag": "Main Climbing Areas",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "wrong",
+    "correct": "quartzite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/106099514",
+  "quote": "The rock is of a quartzite type."
+ },
+ {
+  "pid": "nm_aguirre_bouldering",
+  "crag": "Aguirre Bouldering",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": "quartz monzonite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://geoinfo.nmt.edu/tour/home.cfml?id=78",
+  "quote": "Organ Needle Quartz Monzonite, which is similar to granite"
+ },
+ {
+  "pid": "az_isolation_canyon",
+  "crag": "Isolation Canyon",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/108428661",
+  "quote": "Beautiful quartzite crag just outside Pine, AZ."
+ }
+]

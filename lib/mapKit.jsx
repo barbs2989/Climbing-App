@@ -5,6 +5,7 @@
 // lazy-loads lib/DbAreaBrowser.jsx).
 import { useEffect, useRef, useState } from "react";
 import { loadUnits } from "./units-pref";
+import { offlineTileUrl, offlineLayerFor } from "./offlineTiles";
 
 export const MAP_TILE_URLS = {
   street: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -130,7 +131,31 @@ export function baseTileLayer(L, baseLayer) {
     return L.tileLayer(GIBS + P.layer + "/default/" + s.date + "/" + P.tms + "/{z}/{y}/{x}." + P.ext, { maxNativeZoom: P.native, maxZoom: P.max });
   }
   const url = MAP_TILE_URLS[baseLayer] ? baseLayer : "sat";
-  return L.tileLayer(MAP_TILE_URLS[url], { maxNativeZoom: LAYER_NATIVE_ZOOM[url], maxZoom: DEEPEST_ZOOM, attribution: TILE_CREDIT[url].html });
+  return new (offlineFallbackLayer(L))(MAP_TILE_URLS[url], { maxNativeZoom: LAYER_NATIVE_ZOOM[url], maxZoom: DEEPEST_ZOOM, attribution: TILE_CREDIT[url].html, cmOffline: offlineLayerFor(url) });
+}
+// NO SIGNAL, AND THE MAP STILL SHOWS THE GROUND YOU PACKED. A tile that fails to load is replaced,
+// one tile at a time, by the trip pack's saved copy (lib/offlineTiles.js) -- USGS imagery under
+// Satellite, USGS topo under Topo and Street. Online every tile loads and none of this runs. The
+// error is passed on only when there is no saved tile either, so Leaflet's own handling is unchanged.
+let _FallbackLayer = null;
+function offlineFallbackLayer(L) {
+  if (_FallbackLayer) return _FallbackLayer;
+  _FallbackLayer = L.TileLayer.extend({
+    createTile(coords, done) {
+      const layer = this.options.cmOffline;
+      let tried = false;
+      const tile = L.TileLayer.prototype.createTile.call(this, coords, (err, t) => {
+        if (!err || tried || !layer) { if (tile._cmUrl) { URL.revokeObjectURL(tile._cmUrl); tile._cmUrl = null; } done(err, t); return; }
+        tried = true;
+        offlineTileUrl(layer, coords.z, coords.x, coords.y).then((u) => {
+          if (!u) { done(err, t); return; }
+          tile._cmUrl = u; tile.src = u; // its load (or error) event re-enters this callback with tried=true
+        }, () => done(err, t));
+      });
+      return tile;
+    },
+  });
+  return _FallbackLayer;
 }
 // Choosing a snow picture steps OUT to the zoom its pixels can carry. The climber can still
 // zoom back in; nothing is locked.
@@ -170,6 +195,16 @@ const LEAFLET = {
     sri: "sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==",
   },
 };
+
+// A map with no signal needs Leaflet itself, not only tiles. public/sw.js keeps a copy of these
+// two pinned files (network-first, like the app shell); packing a climb fetches them through it,
+// so a climber who packed without ever opening a map still gets one at the trailhead. Same URL,
+// same integrity hash, so the browser still verifies what the cache hands back.
+export function warmLeafletOffline() {
+  try {
+    return Promise.all([LEAFLET.js, LEAFLET.css].map((f) => fetch(f.url, { mode: "cors", credentials: "omit", integrity: f.sri }).catch(() => null)));
+  } catch (e) { return Promise.resolve(); }
+}
 
 // PINCHING PAST THE DEEPEST ZOOM BLANKED THE WHOLE MAP. Leaflet's default `bounceAtZoomLimits`
 // lets a pinch carry the map's zoom beyond the tile layer's maxZoom (then 19 satellite, 17 topo) and
