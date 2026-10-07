@@ -4,7 +4,7 @@
 // dependency closure of RouteDetail minus everything reachable from any other
 // export); shared helpers stay in core and are imported below.
 import { tripRowToActivity } from "./lib/tripReportRow.js";
-import { useState, useEffect, useRef, useMemo, useCallback, Suspense, lazy, memo } from "react";
+import { useState, useEffect, useLayoutEffect, useRef, useMemo, useCallback, Suspense, lazy, memo } from "react";
 import { ROAD_KEYS, ACCESS_KEYS, TIMING_KEYS, CROWDS_KEYS, PARTNER_KEYS, SEASONAL_KEYS, EMERGENCY_KEYS, LOGISTICS_KEYS, CLIMATE_KEYS, SEASHAZ_KEYS } from "./lib/objKeys.js";
 import { createPortal } from "react-dom";
 import { DISC_LABELS as DL } from "./lib/discLabels";
@@ -567,19 +567,29 @@ function RouteRackBox({route,activity,onEditRack,rack,onSeeReports,rackGeneric})
    Clipped content stays in the accessibility tree, so a screen reader reads all of it; a keyboard
    user who tabs onto a control below the fold opens the section rather than focusing something
    they cannot see. Collapsing again brings the section's top back into view if it scrolled off,
-   or "Show less" would drop the reader somewhere in the NEXT section. */
-const CAP_AT=620,CAP_SHOW=400;
-function Capped({children}){const outer=useRef(null);const inner=useRef(null);const [tall,setTall]=useState(false);const [open,setOpen]=useState(false);
-  useEffect(function(){var el=inner.current;if(!el)return;function measure(){setTall(el.offsetHeight>CAP_AT);}measure();if(typeof ResizeObserver==="undefined")return;var ro=new ResizeObserver(measure);ro.observe(el);return function(){ro.disconnect();};},[]);
+   or "Show less" would drop the reader somewhere in the NEXT section.
+   Two ways the button could VANISH after "Show less" (reported 2026-10-07, not reproduced):
+   - The scroll ran inside the click handler, BEFORE React drew the collapse, so it measured the
+     expanded layout. It now runs in a layout effect AFTER the collapse is drawn, and checks that
+     the BUTTON is on screen, not just the section's top.
+   - The threshold had no memory. A section whose height drifts after mount (the forecast loads,
+     fails or re-wraps: 628px on one load, 1680px on another) could dip under CAP_AT and take the
+     button with it. Once a section has the button it KEEPS it while collapsing would still hide
+     something (more than CAP_SHOW + CAP_SLACK). A 0 height is a hidden ancestor, not an empty
+     section, so it is ignored. */
+const CAP_AT=620,CAP_SHOW=400,CAP_SLACK=60,NAV_CLEAR=80;/* NAV_CLEAR: the fixed bottom nav covers the last ~70px of the screen */
+function Capped({children}){const outer=useRef(null);const inner=useRef(null);const btn=useRef(null);const closing=useRef(false);const [tall,setTall]=useState(false);const [open,setOpen]=useState(false);
+  useEffect(function(){var el=inner.current;if(!el)return;function measure(){var h=el.offsetHeight;if(!h)return;setTall(function(t){return h>(t?CAP_SHOW+CAP_SLACK:CAP_AT);});}measure();if(typeof ResizeObserver==="undefined")return;var ro=new ResizeObserver(measure);ro.observe(el);return function(){ro.disconnect();};},[]);
   const shut=tall&&!open;
   function onFocusIn(e){if(!shut||!outer.current)return;var top=outer.current.getBoundingClientRect().top;if(e.target.getBoundingClientRect().bottom>top+CAP_SHOW)setOpen(true);}
-  function toggle(){if(open){setOpen(false);var o=outer.current;if(o&&o.getBoundingClientRect().top<0)o.scrollIntoView({block:"start"});}else setOpen(true);}
+  useLayoutEffect(function(){if(open||!closing.current)return;closing.current=false;var o=outer.current,b=btn.current;if(!o)return;var r=b?b.getBoundingClientRect():null;if(o.getBoundingClientRect().top<0||!r||r.top<0||r.bottom>window.innerHeight-NAV_CLEAR)o.scrollIntoView({block:"start"});},[open]);
+  function toggle(){if(open){closing.current=true;setOpen(false);}else setOpen(true);}
   return <div>
     <div ref={outer} onFocus={onFocusIn} style={{position:"relative",maxHeight:shut?CAP_SHOW:"none",overflow:shut?"hidden":"visible"}}>
       <div ref={inner}>{children}</div>
       {shut?<div aria-hidden="true" style={{position:"absolute",left:0,right:0,bottom:0,height:72,background:"linear-gradient(to bottom, transparent, "+C.bg+")",pointerEvents:"none"}}/>:null}
     </div>
-    {tall?<button onClick={toggle} aria-expanded={open} style={{display:"block",width:"100%",margin:"6px 0 14px",padding:"8px",background:"transparent",color:C.blue,border:"1px solid "+C.border,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>{open?"Show less ▴":"Show more ▾"}</button>:null}
+    {tall?<button ref={btn} onClick={toggle} aria-expanded={open} style={{display:"block",width:"100%",margin:"6px 0 14px",padding:"8px",background:"transparent",color:C.blue,border:"1px solid "+C.border,borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>{open?"Show less ▴":"Show more ▾"}</button>:null}
   </div>;
 }
 function WaypointList({waypoints,onFocus,emptyCopy,onAdd}){
