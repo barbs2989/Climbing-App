@@ -93,6 +93,11 @@ if (HOME !== "none") {
 log = [];
 
 // --- replay ------------------------------------------------------------------------------------
+// A leg that fails while another is in flight must not abort the corpus: record it against the
+// query and go on, so one busy-database timeout costs one row of the report, not the report.
+let stray = null;
+process.on("unhandledRejection", (e) => { stray = e; });
+const describe = (e) => (e && (e.message || e.code)) ? `${e.code ? e.code + " " : ""}${e.message || ""}`.trim() : String(e);
 const results = [];
 let totalReq = 0, totalMs = 0;
 for (const q of CORPUS) {
@@ -102,7 +107,9 @@ for (const q of CORPUS) {
     const t0 = Date.now();
     let rows, err = null;
     try { rows = await M.searchRoutesFor(q, LIM, homeStates, db); } catch (e) { err = e; rows = []; }
-    runs.push({ ms: Date.now() - t0, requests: log.length, legs: log.slice(), err: err ? String(err.message || err) : null,
+    if (!err && stray) err = stray;
+    stray = null;
+    runs.push({ ms: Date.now() - t0, requests: log.length, legs: log.slice(), err: err ? describe(err) : null,
       top: rows.map((r) => ({ id: r.id, name: r.name, area: r._dbArea && r._dbArea.name, hint: r._placeHint || undefined })) });
   }
   const first = runs[0];
