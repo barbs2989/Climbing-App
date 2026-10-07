@@ -30271,3 +30271,82 @@ noted in the SQL file, and the target id/old-value were confirmed by hand agains
 instead.
 
 Pass 7 continues next run after `wa_beckey_davis`.
+
+## Batch 383 (2026-10-07, pass 7)
+
+Checked: `wa_beckey_tate`, `wa_beyond_redlining`, `wa_big_chiwaukum_mount_temple_ridge`,
+`wa_big_chiwaukum_three_musketeers_ridge`, `wa_big_craggy_peak_scramble`,
+`wa_big_four_mountain_northwest_ridge`, `wa_big_four_mountain_spindrift_couloir`,
+`wa_big_four_mountain_tower_route`.
+
+**Fixed (1):** `wa_big_four_mountain_spindrift_couloir` — `max_angle` stored as 90, should be 95.
+The row's own `gear` field ("sustained thin ice up to roughly WI5/95°") and `pitch_detail` crux
+entry ("80–95°") already say 95, and the AAC Publications first-ascent note gives the route's
+grade as "IV+ 5.9 95°" — `max_angle` was the one field out of step with both the source and the
+rest of the row. SQL in `audits/sql/2026-10-07-batch-383.sql`.
+
+**Flagged for human review (6):**
+- `wa_beckey_tate` — grade stored `5.9+`; stephabegg.com's trip report/route title gives plain
+  `5.9` (already disclosed in the row's own `data_quality.gaps`, nothing new to adjudicate it).
+  Aspect `S` also disagrees with stephabegg's "SE-facing wall," though AAC Publications and
+  skisickness.com both independently say "south face" — a genuine naming-convention split
+  between reputable sources, not a clear error. Exact FA date "May 29, 1967" — every source
+  agrees on the year, none confirms the day.
+- `wa_beyond_redlining` — the tower is named "Vega North Tower (Eros Tower)". "Vega North Tower"
+  is corroborated by an independent Mountain Project photo caption; "Eros Tower" surfaced only
+  through AI-synthesized search summaries with no direct quote behind it — worth pulling the
+  actual MP page before trusting that parenthetical. Separately, the row's own `season`
+  (`Jun-Sep`) contradicts its own `seasonal_guidance.monthBreakdown`, which rates June
+  "marginal" and gives the real window as mid-July–mid-September (matching `best_season`) — an
+  internal inconsistency, not an external-source dispute.
+- `wa_big_chiwaukum_mount_temple_ridge` / `wa_big_chiwaukum_three_musketeers_ridge` — both rows
+  are empty stubs (every field null except id/area_id/name/discipline/auto_generated/classic/
+  name_search), so there's nothing stored to confirm or refute. Neither route name could be
+  found documented on Big Chiwaukum in any source searched (SummitPost's Big Chiwaukum pages
+  list only "West Route" and "East Route"); both names exist elsewhere in WA climbing literature
+  attached to different peaks (Stuart Range/Enchantments area) — may be real but obscure
+  Beckey-guide lines, or a name mix-up. Needs the physical Cascade Alpine Guide or direct
+  Mountain Project access to confirm before enrichment builds on these names. Also flagging: Big
+  Chiwaukum's elevation has two source-level values circulating — 8,081 ft (WTA/Mountaineers,
+  matching the stored `areas` row) vs. 8,098 ft (Wikipedia/PeakVisor/ListsOfJohn) — looks like
+  contour-estimate vs. spot-elevation, not a typo; not changed without a LIDAR/USGS source.
+- `wa_big_craggy_peak_scramble` — `access.rules` cites a "campfires prohibited above 5,000 ft"
+  rule for the Pasayten Wilderness. Multiple USFS Okanogan-Wenatchee sources found via search
+  instead attach that specific elevation-based ban to the Alpine Lakes Wilderness; no source
+  found either confirms or denies a Pasayten-specific version. May be a conflation between the
+  two wildernesses — needs a direct check of the current Okanogan-Wenatchee NF
+  wilderness-regulations page.
+- `wa_big_four_mountain_tower_route` — FA ("Ben Guydelkon and Ron Miller, July 25, 1972") and
+  overall grade "5.7" could not be corroborated against any source found. `aspect`/`face` are
+  stored as "N"/"North Face (rock towers)", but independent sources (SummitPost's main Big Four
+  page, sverdina.com) consistently place this route on the NE Ridge — the row's own
+  overview/approach text already hedges with "north side/NE ridge," so the structured `aspect`
+  field may be flattening a more specific fact. Also, `length_m` (1219) is identical to Spindrift
+  Couloir's figure — the measured height of the full North Face — even though the Tower Route is
+  a shorter, distinct line over three towers; looks possibly copy-pasted, though no source gives
+  an exact length for the Tower Route to confirm or refute this.
+- Big Four Mountain peak elevation (6,170 ft, shared by all three routes) falls within the normal
+  spread of published figures (Wikipedia: "6,160+ ft"; other secondary sources: ~6,135 ft) but no
+  single source nails 6,170 exactly — not a confident error, just noting the spread.
+
+**Clean (1):** `wa_big_craggy_peak_scramble` apart from the campfire-rule flag above — elevation,
+coordinates, prominence (3,133 ft), Bulger List rank (62nd), "60th-highest in Washington," the
+Copper Glance Trailhead details, and the Class 3 unroped-scramble character all independently
+corroborated via Wikipedia/PeakVisor/the USFS trailhead page/multiple trip reports.
+`wa_big_four_mountain_northwest_ridge`'s FA (Forest Farr and Art Winder, July 19, 1931, first
+ascent of the peak), Class 4 grade, and the three cited ice-cave fatality years (1998, 2010,
+2015) all independently corroborated. `wa_big_four_mountain_spindrift_couloir`'s FA (Bart Paull
+and Doug Littauer, March 2, 1996), grade (IV+ 5.9), and length (~4,000 ft) all independently
+corroborated by AAC Publications, apart from the one fixed field above. The three Big Four
+routes do not contradict each other on the boilerplate facts they share (trailhead, access fees,
+land manager, ice-cave closure, summit coordinates).
+
+**Tooling note:** `WebFetch` remains blocked by the egress proxy for every climbing-info domain
+tried — all cross-checks again relied on `WebSearch` snippets. Delegated per-peak research to 5
+parallel subagents (Big Kangaroo, Morning Star Peak, Big Chiwaukum, Big Craggy Peak, Big Four
+Mountain) — same pattern as batches 381–382. `check:sql` confirmed the one UPDATE's target id
+exists live and warned (correctly) that the full file, including its flagged-for-human-review
+comments, exceeds the SQL Editor's ~4000-byte soft paste limit — a human applying the fix should
+paste just the `BEGIN...COMMIT` block.
+
+Pass 7 continues next run after `wa_big_four_mountain_tower_route`.
