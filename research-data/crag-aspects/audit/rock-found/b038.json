@@ -1,22 +1,362 @@
 [
- {"pid":"oh_bears_den_cabin","crag":"Bears Den Cabin","groups":[{"held":"shale (mapped)","verdict":"wrong","correct":"sandstone"}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://mountainproject.com/area/113860572/bears-den-cabin","quote":"All sandstone - some mossy, some rotty, but some not too bad!"},
- {"pid":"qc_dalquier","crag":"Dalquier","groups":[{"held":"MISSING","verdict":"unclear","correct":null}],"fills":{"Le menhir":"granite","Paroi école":"granite","Cap noir":"granite","Le camping":"granite"},"wallExceptions":{},"aspects":{"Le sommet":"S"},"url":"https://www.mountainproject.com/area/118797210/cap-noir","quote":"This superb wall of compact granite is located in a small valley."},
- {"pid":"va_pinnacle_rock_area","crag":"Pinnacle Rock Area","groups":[{"held":"shale (mapped)","verdict":"unclear","correct":null},{"held":"sandstone (mapped)","verdict":"ok","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://mountainproject.com/area/111742350/breaks-interstate-park","quote":"The Breaks Interstate Park offers sandstone climbing similar to that of the New River Gorge"},
- {"pid":"wa_blockbuster_boulders","crag":"Blockbuster Boulders","groups":[{"held":"tonalite (mapped)","verdict":"unclear","correct":null},{"held":"MISSING","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":null,"quote":null},
- {"pid":"wy_french_cattle_ranch","crag":"French Cattle Ranch","groups":[{"held":"dolomite (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://www.mountainproject.com/area/105855549/french-cattle-ranch","quote":"beautiful gold, white and blue rock"},
- {"pid":"wy_upper_blair","crag":"Upper Blair","groups":[{"held":"granite (mapped)","verdict":"ok","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://main.wsgs.wyo.gov/outreach/cultural-geology/guide-vedauwoo","quote":"Vedauwoo's Sherman Granite is one of the first rock units of Precambrian age"},
- {"pid":"ar_4_east_main_bluff","crag":"East Main Bluff","groups":[{"held":"sandstone (mapped)","verdict":"ok","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://www.mountainproject.com/area/105901605","quote":"The rock is the same great sandstone that is found all over this area."},
- {"pid":"az_east_kelly_canyon","crag":"East Kelly Canyon","groups":[{"held":"sandstone (mapped)","verdict":"ok","correct":null},{"held":"basalt (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://www.mountainproject.com/area/107704281/east-kelly-canyon","quote":"Kelly Canyon is a sandstone climbing area and the rock is very fragile when wet."},
- {"pid":"bc_the_fortress","crag":"The Fortress","groups":[{"held":"granodiorite (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://www.mountainproject.com/area/105946462/skaha","quote":"The rock is Gneiss and crisp edges are the bread-and-butter holds. (Skaha parent page)"},
- {"pid":"id_ross_park","crag":"Ross Park","groups":[{"held":"basalt (mapped)","verdict":"ok","correct":null}],"fills":{},"wallExceptions":{},"aspects":{"Shady Side":"NE"},"url":"https://www.mountainproject.com/area/108167997/ross-park","quote":"two long but short basalt cliff bands"},
- {"pid":"ma_hanging_mountain","crag":"Hanging Mountain","groups":[{"held":"gneiss (mapped)","verdict":"unclear","correct":null},{"held":"granite (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://climbgneiss.org/hanging-mountain/","quote":"contains granite, granitic gneiss, and large pockets of friable schist"},
- {"pid":"mn_sawmill_creek_dome","crag":"Sawmill Creek Dome","groups":[{"held":"diorite (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{"Picnic Rock":"anorthosite"},"aspects":{},"url":"https://www.mountainproject.com/area/105889575/picnic-rock","quote":"The rock here looks and feels like granite, but is actually called Anorthosite."},
- {"pid":"ms_tishomingo","crag":"Tishomingo","groups":[{"held":"sandstone (mapped)","verdict":"ok","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://en.wikipedia.org/wiki/Tishomingo_State_Park","quote":"The boulders and towering cliffs of Hartselle Sandstone"},
- {"pid":"nc_hawksbill_mtn","crag":"Hawksbill Mtn","groups":[{"held":"greywacke (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{"Upper Hawksbill":"N"},"url":"https://www.mountainproject.com/area/202736852/upper-hawksbill","quote":null},
- {"pid":"nc_stone_mountain","crag":"Stone Mountain","groups":[{"held":"granodiorite (mapped)","verdict":"ok","correct":null}],"fills":{},"wallExceptions":{},"aspects":{"Stone Mountain South Face":"S"},"url":"https://mountainproject.com/area/105873297/stone-mountain","quote":"Stone Mountain is a huge granite dome, rising from the North Carolina foothills."},
- {"pid":"nm_bat_cave_area","crag":"Bat Cave Area","groups":[{"held":"granite (mapped)","verdict":"wrong","correct":"limestone"}],"fills":{},"wallExceptions":{},"aspects":{"Barr, The":"W","Bat Cave":"S"},"url":"https://www.mountainproject.com/area/109933147/the-barr","quote":"This wall is amazing, slabby, well-featured limestone that faces west."},
- {"pid":"ny_middle_earth","crag":"Middle Earth","groups":[{"held":"gneiss (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://mountainproject.com/area/106229917/nine-corner-lake","quote":null},
- {"pid":"sd_needles_eye_area","crag":"Needles Eye Area","groups":[{"held":"granite (mapped)","verdict":"ok","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://en.wikipedia.org/wiki/Needles_(Black_Hills)","quote":"a region of eroded granite pillars, towers, and spires within Custer State Park"},
- {"pid":"sd_vc_the","crag":"VC, The","groups":[{"held":"limestone (mapped)","verdict":"ok","correct":null},{"held":"sandstone (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{"Sniper Wall":"E"},"url":"https://www.mountainproject.com/area/106286034/the-vc","quote":"The VC is in a narrow limestone canyon."},
- {"pid":"va_lower_lightside_bouldering","crag":"Lower Lightside Bouldering","groups":[{"held":"shale (mapped)","verdict":"unclear","correct":null}],"fills":{},"wallExceptions":{},"aspects":{},"url":"https://www.mountainproject.com/area/118077507/lightside","quote":"South-facing sandstone goodness. (Lightside parent page)"}
+ {
+  "pid": "oh_bears_den_cabin",
+  "crag": "Bears Den Cabin",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/113860572/bears-den-cabin",
+  "quote": "All sandstone - some mossy, some rotty, but some not too bad!"
+ },
+ {
+  "pid": "qc_dalquier",
+  "crag": "Dalquier",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {
+   "Le menhir": "granite",
+   "Paroi école": "granite",
+   "Cap noir": "granite",
+   "Le camping": "granite"
+  },
+  "wallExceptions": {},
+  "aspects": {
+   "Le sommet": "S"
+  },
+  "url": "https://www.mountainproject.com/area/118797210/cap-noir",
+  "quote": "This superb wall of compact granite is located in a small valley."
+ },
+ {
+  "pid": "va_pinnacle_rock_area",
+  "crag": "Pinnacle Rock Area",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/111742350/breaks-interstate-park",
+  "quote": "The Breaks Interstate Park offers sandstone climbing similar to that of the New River Gorge"
+ },
+ {
+  "pid": "wa_blockbuster_boulders",
+  "crag": "Blockbuster Boulders",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": null,
+  "quote": null
+ },
+ {
+  "pid": "wy_french_cattle_ranch",
+  "crag": "French Cattle Ranch",
+  "groups": [
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105855549/french-cattle-ranch",
+  "quote": "beautiful gold, white and blue rock"
+ },
+ {
+  "pid": "wy_upper_blair",
+  "crag": "Upper Blair",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://main.wsgs.wyo.gov/outreach/cultural-geology/guide-vedauwoo",
+  "quote": "Vedauwoo's Sherman Granite is one of the first rock units of Precambrian age"
+ },
+ {
+  "pid": "ar_4_east_main_bluff",
+  "crag": "East Main Bluff",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105901605",
+  "quote": "The rock is the same great sandstone that is found all over this area."
+ },
+ {
+  "pid": "az_east_kelly_canyon",
+  "crag": "East Kelly Canyon",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107704281/east-kelly-canyon",
+  "quote": "Kelly Canyon is a sandstone climbing area and the rock is very fragile when wet."
+ },
+ {
+  "pid": "bc_the_fortress",
+  "crag": "The Fortress",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105946462/skaha",
+  "quote": "The rock is Gneiss and crisp edges are the bread-and-butter holds. (Skaha parent page)"
+ },
+ {
+  "pid": "id_ross_park",
+  "crag": "Ross Park",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Shady Side": "NE"
+  },
+  "url": "https://www.mountainproject.com/area/108167997/ross-park",
+  "quote": "two long but short basalt cliff bands"
+ },
+ {
+  "pid": "ma_hanging_mountain",
+  "crag": "Hanging Mountain",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://climbgneiss.org/hanging-mountain/",
+  "quote": "contains granite, granitic gneiss, and large pockets of friable schist"
+ },
+ {
+  "pid": "mn_sawmill_creek_dome",
+  "crag": "Sawmill Creek Dome",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Picnic Rock": "anorthosite"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105889575/picnic-rock",
+  "quote": "The rock here looks and feels like granite, but is actually called Anorthosite."
+ },
+ {
+  "pid": "ms_tishomingo",
+  "crag": "Tishomingo",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Tishomingo_State_Park",
+  "quote": "The boulders and towering cliffs of Hartselle Sandstone"
+ },
+ {
+  "pid": "nc_hawksbill_mtn",
+  "crag": "Hawksbill Mtn",
+  "groups": [
+   {
+    "held": "greywacke (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Upper Hawksbill": "N"
+  },
+  "url": "https://www.mountainproject.com/area/202736852/upper-hawksbill",
+  "quote": null
+ },
+ {
+  "pid": "nc_stone_mountain",
+  "crag": "Stone Mountain",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Stone Mountain South Face": "S"
+  },
+  "url": "https://mountainproject.com/area/105873297/stone-mountain",
+  "quote": "Stone Mountain is a huge granite dome, rising from the North Carolina foothills."
+ },
+ {
+  "pid": "nm_bat_cave_area",
+  "crag": "Bat Cave Area",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "wrong",
+    "correct": "limestone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Barr, The": "W",
+   "Bat Cave": "S"
+  },
+  "url": "https://www.mountainproject.com/area/109933147/the-barr",
+  "quote": "This wall is amazing, slabby, well-featured limestone that faces west."
+ },
+ {
+  "pid": "ny_middle_earth",
+  "crag": "Middle Earth",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/106229917/nine-corner-lake",
+  "quote": null
+ },
+ {
+  "pid": "sd_needles_eye_area",
+  "crag": "Needles Eye Area",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Needles_(Black_Hills)",
+  "quote": "a region of eroded granite pillars, towers, and spires within Custer State Park"
+ },
+ {
+  "pid": "sd_vc_the",
+  "crag": "VC, The",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106286034/the-vc",
+  "quote": "The VC is in a narrow limestone canyon."
+ },
+ {
+  "pid": "va_lower_lightside_bouldering",
+  "crag": "Lower Lightside Bouldering",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118077507/lightside",
+  "quote": "South-facing sandstone goodness. (Lightside parent page)"
+ }
 ]
