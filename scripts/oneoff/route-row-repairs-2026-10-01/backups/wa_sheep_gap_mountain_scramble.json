@@ -1,0 +1,87 @@
+{
+ "id": "wa_sheep_gap_mountain_scramble",
+ "name": "Standard Scramble",
+ "approach": "From the Barlow Pass Trailhead (~2,360 ft, on the Mountain Loop Highway about 19.4-19.5 miles east of the Verlot Public Service Center / ~30.5 miles east of Granite Falls; Northwest Forest Pass required), walk south on the flat, gated Monte Cristo Road for roughly 1.5-1.7 miles, paralleling the Sauk River. The Weden Creek / Gothic Basin Trail #724 (an old miner's trail) splits off on the right just before the road's Sauk River crossing. Trail 724 climbs steadily from about 2,300 ft, fords Weden Creek (a real crossing that can be difficult during snowmelt or after rain), then switchbacks through forest and talus to roughly 5,000 ft over about 3.3 miles, passing beneath Foggy Lake/Gothic Basin around the 4.5-mile mark. Leave the maintained trail here and continue west on a flagged boot path past a first pond, then a second, smaller pool, re-crossing the Weden Creek outlet before traversing south — side-hilling steep talus and heather benches between about 4,800 and 5,200 ft — for just over a mile to Weden Pass (5,120 ft). Terrain is class 2-3 talus and heather until the final summit block, which turns into sustained class 3-4 rock and brush with one short step requiring a rope belay. Round trip is nearly 19 km (~12 miles) with substantial cumulative gain concentrated in the last few miles, so plan on a very long day (10-17 hours per available trip reports) or camp overnight in Gothic Basin. Key hazards: the Weden Creek ford, loose rock and brush on the class 3/4 sections, and exposed, sometimes-wet talus traverses between Weden Pass and the summit — a helmet is recommended.",
+ "waypoints": [
+  {
+   "lat": 48.026496,
+   "lng": -121.444001,
+   "elev": 2362,
+   "name": "Barlow Pass Trailhead",
+   "note": "Paved-road parking lot at end of Mountain Loop Highway; Northwest Forest Pass required, walk past the gate onto Monte Cristo Road.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Granite Falls, follow the Mountain Loop Highway east about 11 miles to the Verlot Public Service Center, then about 19.3 miles more to Barlow Pass, where a parking lot with restrooms sits on the north side of the road. A Northwest Forest Pass is required."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 2300,
+   "name": "Weden Creek Trail #724 split",
+   "note": "Leave the gated Monte Cristo Road here (just before the Sauk River crossing) and pick up the signed, steep single-track into Gothic Basin.",
+   "type": "Junction",
+   "distMi": 1,
+   "directions": "Walk east along the highway about 200 ft to the gate and continue down the closed Monte Cristo Road, which parallels the Sauk River. After about three quarters of a mile, just before the road crosses the Sauk, take the Weden Creek / Gothic Basin Trail #724 heading off to the right."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3000,
+   "name": "Weden Creek crossing",
+   "note": "Ford Weden Creek on the climbers' path roughly a mile up the trail; can run high with snowmelt in early season.",
+   "type": "Water",
+   "distMi": 1.8,
+   "directions": "Follow Trail #724 on easy forest walking for about a mile to the Weden Creek ford, which can run high in snowmelt or after rain."
+  },
+  {
+   "lat": 47.989994741176474,
+   "lng": -121.45552772058824,
+   "elev": 3700,
+   "name": "Rocky water gully, mile 3.25",
+   "note": "First of several creek/gully crossings where the trail turns noticeably rockier and steeper for the final push into the basin.",
+   "type": "Water",
+   "distMi": 3.25,
+   "directions": "Beyond the ford the trail begins climbing steadily, switchbacking through forest; near mile 3.25 the tread turns noticeably rockier and steeper at the first of several creek gullies."
+  },
+  {
+   "lat": 47.9801852,
+   "lng": -121.4612902,
+   "elev": 5000,
+   "name": "Gothic Basin tarns",
+   "note": "Two small tarns just below Foggy Lake mark the basin; camping is extremely limited and fragile, day-hike this section if possible.",
+   "type": "Campsite",
+   "distMi": 3.8,
+   "directions": "Keep climbing the rough, rocky trail across further gullies and talus slopes into Gothic Basin, where the small tarns below Foggy Lake mark the basin."
+  },
+  {
+   "lat": 47.97094,
+   "lng": -121.463078,
+   "elev": 5120,
+   "name": "Weden Pass",
+   "note": "Traverse south through steep talus and heather for a bit over a mile from the basin to gain this pass on the ridge crest between Gothic Basin and Sheep Gap's peaks.",
+   "type": "Junction",
+   "distMi": 5.1,
+   "directions": "Leave the maintained tread and follow a flagged boot path west, re-crossing the Weden Creek outlet, then side-hill south across steep talus and heather benches for a bit over a mile to Weden Pass on the ridge crest."
+  },
+  {
+   "lat": 47.96577645714286,
+   "lng": -121.46358288571429,
+   "elev": 5250,
+   "name": "Summit notch rappel",
+   "note": "From Weden Pass traverse SW toward the notch, dropping to ~4900 ft on a brushy dirt ramp to skirt cliff bands, then regain the notch; a short Class 4 step here requires downclimbing or a short (~50-60 ft) rappel.",
+   "type": "Hazard",
+   "distMi": 5.6,
+   "directions": "From the pass, do not climb the first rock you see. Traverse southwest, dropping to about 4,900 ft on a brushy dirt ramp beneath the cliff bands, then regain height to the notch north of the main summit block. A saddle with two lower rock summits to its north is the wrong one."
+  },
+  {
+   "lat": 47.96345,
+   "lng": -121.46395,
+   "elev": 5814,
+   "name": "Sheep Gap Mountain",
+   "note": "True summit register shows only a handful of visits per decade; expect a long day (10-17 hrs) and possible snow/ice axe conditions even in late season.",
+   "type": "Summit",
+   "distMi": 5.9,
+   "directions": "From the notch, lead the short, steep class 4 step above it, protected with slings over horns and trees, then scramble the northeast ridge on loose class 3-4 rock and brush to the main summit."
+  }
+ ]
+}

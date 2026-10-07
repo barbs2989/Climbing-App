@@ -1,0 +1,34 @@
+{
+ "id": "wa_southeast_face",
+ "name": "Southeast Face",
+ "waypoints": [
+  {
+   "lat": 48.48055,
+   "lng": -121.07979,
+   "elev": 3200,
+   "name": "Boston Basin Trailhead (Cascade River Road)",
+   "note": "Turnout at old Diamond Mine Rd fork off Cascade River Rd; climbers trail to Boston Basin, Quien Sabe Glacier approach to Sharkfin Tower. Safety note: a 2005 accident occurred here from parties entering the wrong approach gully, resulting in fatalities.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Cascade River Road roughly 21.7 miles from Marblemount to the small, unsigned Boston Basin pulloff at about 3,200-3,300 feet. It's a rough, sometimes rutted gravel road, so a bit of ground clearance helps. Park at the pulloff alongside the road. A Boston Basin wilderness permit is required for the trip."
+  },
+  {
+   "lat": 48.4996,
+   "lng": -121.0398,
+   "elev": 8120,
+   "name": "Sharkfin Tower summit",
+   "note": "This is Sharkfin Tower's summit, not Mount Torment's — a different, neighboring Boston Basin peak. The coordinate matches the summit waypoint already on this peak's sibling Southeast Ridge route.",
+   "type": "Summit",
+   "distMi": 0
+  },
+  {
+   "lat": 48.50051,
+   "lng": -121.04104,
+   "elev": 8120,
+   "name": "Sharkfin Tower Southeast Face",
+   "type": "Route",
+   "distMi": null,
+   "elevFt": 8120
+  }
+ ]
+}

@@ -15,7 +15,7 @@
 // WHY THE PROVENANCE CHIP DOES NOT ALREADY COVER IT, measured rather than argued:
 // `auto_generated` is true on 45% of the synthetic tracks and on 78% of the routes whose track is
 // genuine. It points the WRONG WAY, so a climber reading the chip cannot tell which kind of line is
-// on screen. `check:provenance` already records the governing rule — a per-section signal must beat
+// on screen. the removed `check:provenance` already records the governing rule — a per-section signal must beat
 // the route-level flag.
 //
 // AND WHY NO WAYPOINT AUDIT CAN SEE THIS CLASS: all three ask "is each pin on this route's own

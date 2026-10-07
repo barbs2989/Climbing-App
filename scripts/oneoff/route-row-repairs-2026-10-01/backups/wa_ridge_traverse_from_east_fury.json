@@ -1,0 +1,66 @@
+{
+ "id": "wa_ridge_traverse_from_east_fury",
+ "name": "Ridge Traverse from East Fury",
+ "approach": "Drive SR-20 (North Cascades Highway) to the Ross Dam Trailhead and walk down to Ross Lake, where most parties take the paid water taxi from Ross Lake Resort to the Big Beaver landing rather than walking the lakeshore trail. From the landing it is about 9.4 miles of nearly flat old-growth trail up the Big Beaver valley to Luna Camp, the usual first night. About a mile and a half beyond camp, leave the trail on a small boot path and cross Big Beaver Creek just north of where Access Creek comes in, around 2,460 ft. Depending on the year this is a log or a wade. Then climb the north side of Access Creek on a faint, brushy climbers' path through Access Creek basin, up the south gully and around the south side of Luna Peak to Luna Col, the usual high camp. From Luna Col, follow the ridge toward Fury over class 3 ground with many short ups and downs. Drop to traverse heather slopes on its south side to the Southeast Glacier near 6,700 ft, then climb the right side of the glacier to steeper snow and a possible bergschrund below East Fury's summit, where the traverse to the West Peak begins. Allow three to five days for the round trip. In summer 2026 wildfire closed the Big Beaver Trail from Big Beaver Stock Camp to Stillwell Camp, including Luna Camp, with no cross-country travel from closed trails, so check current closures with North Cascades National Park before planning.",
+ "waypoints": [
+  {
+   "lat": 48.7278,
+   "lng": -121.0628,
+   "elev": 2100,
+   "name": "Ross Dam Trailhead (SR-20) — via Ross Lake water taxi/hike to Big Beaver, then off-trail to Access Creek/Luna Camp",
+   "note": "Road-accessible trailhead on SR-20 (MP 134-135) at Ross Dam/Ross Lake Resort. Parties either walk ~6 mi along the west shore of Ross Lake or take the Ross Lake Resort water taxi to the Big Beaver Trail junction, hike ~9.4 mi up Big Beaver Trail to Luna Camp, then go off-trail up Access Creek to the Luna-Fury col before climbing East Fury and traversing the connecting ridge (three towers) to reach West Fury.",
+   "type": "Trailhead",
+   "elevFt": 2100,
+   "directions": "Drive SR-20, the North Cascades Highway, to the Ross Dam Trailhead near milepost 134-135; this is the last road access of the trip and the car stays here for the duration. From the parking it is a 15-20 minute descent to Ross Lake. Most parties then arrange a paid water taxi from Ross Lake Resort to the Big Beaver Trail landing rather than walking the roughly 6 miles of west-shore lakeshore trail, and the same taxi is how you get back out."
+  },
+  {
+   "lat": 48.76,
+   "lng": -121.14,
+   "elev": 2460,
+   "name": "Access Creek Junction",
+   "note": "Leave Big Beaver Trail to ascend Access Creek toward the Southern Pickets.",
+   "type": "Junction",
+   "distMi": 15,
+   "directions": "From the Big Beaver landing, follow the nearly flat Big Beaver Trail about 9.4 miles up the valley to Luna Camp. About a mile and a half beyond camp, leave the trail on a small boot path and cross Big Beaver Creek just north of the Access Creek confluence, around 2,460 ft. Depending on the year this is a log or a wade."
+  },
+  {
+   "lat": 48.79,
+   "lng": -121.2,
+   "elev": 6800,
+   "name": "Access Col",
+   "note": "Gains the crest between Access Creek and Luna Cirque.",
+   "type": "Junction",
+   "distMi": 19,
+   "directions": "Climb the north side of Access Creek on a faint, brushy climbers' path up through the Access Creek basin to Access Col."
+  },
+  {
+   "lat": 48.82374,
+   "lng": -121.27636,
+   "elev": 7200,
+   "name": "Luna Col",
+   "note": "High col below Luna Peak; standard approach to the Fury massif.",
+   "type": "Junction",
+   "distMi": 22,
+   "directions": "From Access Col, continue around the south side of Luna Peak to Luna Col, the usual high camp."
+  },
+  {
+   "lat": 48.811,
+   "lng": -121.32,
+   "elev": 8100,
+   "name": "Loose Tower Traverse",
+   "note": "Descend to a low saddle then climb over three loose towers, low 5th class; rope recommended for rappels.",
+   "type": "Hazard",
+   "distMi": 25,
+   "directions": "From Luna Col, follow the ridge toward Fury over class 3 ground with many short ups and downs. Drop to traverse heather slopes on its south side to the Southeast Glacier near 6,700 ft, then climb the right side of the glacier, over a possible bergschrund, to East Fury's summit. From there, descend loose talus west to the East Fury-West Fury saddle, where the towers begin."
+  },
+  {
+   "lat": 48.81222,
+   "lng": -121.32306,
+   "elev": 8301,
+   "name": "West Fury (Mount Fury, official/USGS-named summit)",
+   "type": "Summit",
+   "elevFt": 8301,
+   "directions": "Cross the towers. Bypass the first by about 100 ft of steep snow to a class 4 rock ramp, take scree ramps and a narrow ledge around the north side of the next, and make several low fifth-class moves through a notch. Downclimb or rappel off poor anchors around the remaining gendarmes, then traverse sloping slabs past more pinnacles to the true summit."
+  }
+ ]
+}

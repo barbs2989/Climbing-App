@@ -476,7 +476,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
             style={{...styles.input}}
           />
 
-          <label htmlFor="gps-name" style={{...styles.label}}>Your name (optional, for attribution)</label>
+          <label htmlFor="gps-name" style={{...styles.label}}>Your name (optional)</label>
           <input
             id="gps-name"
             type="text"

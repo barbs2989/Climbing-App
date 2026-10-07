@@ -1,0 +1,44 @@
+{
+ "id": "wa_northwest_face_4",
+ "name": "Northwest Face",
+ "approach": "From the Dutch Miller Gap Trailhead, follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley toward Dutch Miller Gap, but do not go to the gap: leave the main Middle Fork Snoqualmie trail at a small steel bridge well before Dutch Miller Gap and cut cross-country south into Summit Chief Valley; the Northwest Face is visible on the east side of that valley, roughly 3 hours from the trailhead — a distinctly different final leg than the Northeast Face's direct ridge approach.",
+ "approach_variants": [
+  {
+   "name": "Middle Fork Snoqualmie, then cross-country into Summit Chief Valley",
+   "notes": "Do not walk the trail to Dutch Miller Gap. From the Middle Fork Snoqualmie road end, head up the valley on the trail until you reach a small steel bridge, well short of the gap — that bridge is the turnoff. Leave the trail there and travel cross-country in a southerly direction into the mouth of Summit Chief Valley, then up the valley to a camp at around the level where the timber thins. From camp the peak is on the east side of the valley: look across and up, not back at the trail.",
+   "season": "August to September for the documented ascents; snow can linger in the approach gully system earlier in the summer.",
+   "hazards": [
+    "Loose rock on the approach talus and on the lower pitches",
+    "Exposed, unprotected final ridge pitch to the summit",
+    "Residual snow and ice on the pocket glacier and the polished slabs used on the descent, into midsummer",
+    "The turnoff is a small bridge on a long valley trail with no sign — miss it and you commit to a very long day getting back"
+   ],
+   "baseFinding": "From the valley camp, the base is at the top of a talus field roughly nine hundred feet above you, and the marker at its top is a prominent left-trending gully. That gully is the start: the first several rope lengths climb it at fourth and low-fifth class and can be moved together. The physical test is the direction of the gully — it leans left as it rises, and it is the dominant weakness on this side of the peak; a gully that runs straight up or leans right is not it. Above the gully system the climbing becomes continuous crack and groove work on sound rock, so if you are still on broken talus-strewn ground after nine hundred feet of gully you have not reached the route proper. Negative markers: if you have tread underfoot and are standing in a saddle with a trail crossing it, you walked past the steel bridge and are at Dutch Miller Gap on the other route; if you are climbing heather and rock steps directly out of a saddle toward an open bench and a snowfield, that is the gap route too."
+  }
+ ],
+ "itinerary": "Day 1: Hike in from the Middle Fork Trailhead (~3 hrs to leave the maintained trail, plus additional cross-country travel) and establish camp at the ~4,650' gravel wash in Summit Chief Valley. Day 2: Climb the Northwest Face (Falcon Route) and descend via the south ridge/pocket glacier back to camp. Day 3: Hike out to the trailhead.",
+ "road": {
+  "name": "Middle Fork Snoqualmie Road (FR-56) to Middle Fork Trailhead",
+  "status": "Mostly paved but with an ongoing washout-prone section near a river bend that has required repeated construction/slope stabilization work; check current status before driving. Trailhead is 11.8 miles up the road.",
+  "driveNote": "Roughly 1-1.5 hours from Seattle via I-90 to North Bend then up the Middle Fork Road."
+ },
+ "waypoints": [
+  {
+   "lat": 47.5172,
+   "lng": -121.4544,
+   "elev": 1650,
+   "name": "Dingford Creek / Middle Fork Snoqualmie Trailhead",
+   "note": "Same trailhead as the Northeast Face route — this peak does not have route-specific trailheads despite routes being on different faces, since both start up the same valley trail; this route leaves it at a small steel bridge well short of Dutch Miller Gap.",
+   "type": "Trailhead",
+   "elevFt": 1650
+  },
+  {
+   "lat": 47.52965,
+   "lng": -121.25668,
+   "elev": 7225,
+   "name": "Little Big Chief Mountain - Summit",
+   "type": "Summit",
+   "elevFt": 7225
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "id": "wa_e_se_face",
+ "name": "E/SE Face",
+ "approach": "From the Stuart Lake Trailhead (~3,400 ft, reached via ~8.7 mi of Icicle Creek Road southwest of Leavenworth), follow the Stuart Lake Trail south along Mountaineer Creek. At about 2.5 miles, bear left (south) at the signed junction onto the Colchuck Lake Trail (this junction is also where the Lake Stuart fork continues straight); the trail crosses Mountaineer Creek on a log/boulder crossing that can be a wet, awkward ford in early season high water. Continue climbing through forest and over a boulder field to Colchuck Lake (5,570 ft) at roughly 4.3 miles from the trailhead — this is the last reliable, easily accessed water source and most parties treat water here before pushing on. Skirt the lake's east/south shore on climbers' trail through talus to the base of the infamous Aasgard Pass climb: an unmaintained, badly eroded boot-path that gains roughly 2,200-2,500 ft in well under a mile of steep, loose scree, boulders and (through at least June, sometimes into July) lingering snow/ice that can require an ice axe and even crampons or micro-spikes — this is the single biggest approach hazard and crux of the day, with real rockfall risk from parties above and easy route-finding mistakes in cloud or whiteout. Top out at Aasgard Pass (~7,750-7,800 ft), roughly 5 miles and ~4,400 ft above the trailhead. From the pass, instead of contouring west toward Brynhild Lake and the col used for the South Face/Southwest Corner routes, work east/southeast across talus and boulders below Dragontail's south ridge toward the tower's east-facing aspect, staying high along the rim of the Enchantment basin; expect additional short snow patches and blocky talus underfoot right up to the base of the face, with no water beyond what you carried from Colchuck Lake or scooped from snowmelt trickles.",
+ "approach_variants": [
+  {
+   "name": "Aasgard Pass, then east and southeast to the light-coloured rock below Dragontail's south ridge",
+   "notes": "From the Stuart Lake trailhead at about 3,400 ft, the Stuart Lake Trail to the signed fork at about 2.5 miles, left onto the Colchuck Lake Trail and across Mountaineer Creek, then up through forest and a boulder field to Colchuck Lake at 5,570 ft, roughly 4.3 miles. Last reliable water.\n\nSkirt the lake's east and south shore on climbers' trail through talus to the foot of Aasgard Pass, then up the eroded boot path — 2,200 to 2,500 ft in well under a mile of loose scree, boulders and lingering snow. This is the biggest hazard of the day and the place route-finding errors happen in cloud.\n\nFrom the pass at roughly 7,750-7,800 ft, the split from the other Witches Tower routes happens immediately. Instead of contouring west toward the col used by the south face and southwest corner lines, work east and southeast across talus and boulders below Dragontail's south ridge, staying high along the rim of the basin, to reach the tower's east-facing side.\n\nNo water above Colchuck Lake beyond snowmelt trickles.",
+   "gainFt": 4400,
+   "season": "Roughly Jul-Sep once the talus is clear; snow patches persist right up to the base into midsummer",
+   "hazards": [
+    "Aasgard Pass: 2,200-2,500 ft of loose eroded scree, snow and ice into July, rockfall from parties above",
+    "Blocky talus and short snow patches right up to the base",
+    "Little or no protection on the climbing itself",
+    "A four-foot summit slot that must be jumped",
+    "The descent is normally down the south face or southwest corner, i.e. NOT the way you came — you finish on the other side of the tower",
+    "No water above Colchuck Lake"
+   ],
+   "baseFinding": "You never go to a col on this one, and that is the test. Every other route on the tower is reached by gaining a notch — the southwest col, or the col behind the tower. This line approaches the east side directly across talus, staying high along the rim of the basin under Dragontail's south ridge. If you find yourself climbing to a notch, you are on a different route.\n\nWhich direction from the pass: east to southeast. The col routes go west and southwest. That is a genuine fork at the top of Aasgard Pass and it is made within a few minutes of arriving there, so decide before you top out rather than after.\n\nThe rock is the marker: aim for the light-coloured, white granite face on the tower's east side. From below it, the route works up a series of zig-zagging ledges to the summit — that stepped, ledgy character is what identifies it. A face that is continuous and blank in front of you is not the line, and there is a well-known short hand crack on one of the standard variations through it.\n\nGrade check: this is fourth class, one pitch, with little or no protection typically placed. If you are looking at sustained fifth-class climbing you have picked the wrong start on the face.\n\nAnd the summit check common to the whole tower: the true summit is guarded by a four-foot slot that has to be jumped. No slot means no summit.\n\nHonest limit: the east side of the tower is less documented than the col routes, and published descriptions of the exact start line are thin. The direction from the pass, the white rock and the zig-zag ledges are solid; a precise first-move marker is not available and none is invented here."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Leavenworth, follow Icicle Creek Road southwest about 8.7 miles, then the FR-7601 spur to the road-end lot at roughly 3,400 ft."
+  },
+  {
+   "lat": 47.492,
+   "lng": -120.8336,
+   "elev": 5570,
+   "name": "Colchuck Lake",
+   "type": "Water",
+   "distMi": 4,
+   "directions": "Follow the Stuart Lake Trail south along Mountaineer Creek. At about 2.5 miles bear left at the signed fork onto the Colchuck Lake Trail, where the Lake Stuart trail carries straight on, and cross Mountaineer Creek on logs and boulders that can be an awkward wet ford in early-season high water. The trail then climbs through forest and a boulder field to the lake. Fill and treat water here; it is the last easy source on the route."
+  },
+  {
+   "lat": 47.4803,
+   "lng": -120.8206,
+   "elev": 7841,
+   "name": "Aasgard Pass",
+   "note": "Steep pass into the Enchantment basin.",
+   "type": "Junction",
+   "distMi": 5,
+   "directions": "Skirt the lake along its east and south shore on climbers' trail through talus to the foot of the pass, then grind up the eroded boot-track, roughly 2,200-2,500 ft in well under a mile of loose scree and blocks. Snow and ice commonly linger on it into June or July and can call for an axe and traction. Rockfall from parties above is the main hazard, and the line is easy to lose in cloud."
+  },
+  {
+   "lat": 47.476586,
+   "lng": -120.82555,
+   "elev": 8566,
+   "name": "Witches Tower - Summit",
+   "note": "E/SE Face route; tower divides Snow Creek Glacier from the upper Enchantments.",
+   "type": "Summit",
+   "distMi": 5.7,
+   "directions": "From the pass, work uphill to the south and southwest across talus and boulders, staying high along the rim of the basin, until you are beneath the tower's east side; there is no water past the lake beyond snowmelt trickles. The face itself is a zig-zagging ledge system of 4th-class ground, with a short solid hand-crack variation partway up, finishing on a small and very exposed summit block. Early-season snow or thin ice on those ledges makes the footing far harder than the grade suggests."
+  },
+  {
+   "lat": 47.47648,
+   "lng": -120.82544,
+   "name": "East/SE Face base (below tower)",
+   "type": "Route-start",
+   "distMi": null,
+   "elevFt": null
+  }
+ ]
+}

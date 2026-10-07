@@ -1,0 +1,83 @@
+{
+ "id": "wa_mount_berge_southwest_route",
+ "name": "Southwest Route",
+ "waypoints": [
+  {
+   "lat": 48.0266,
+   "lng": -120.829,
+   "elev": 2600,
+   "name": "Little Giant Trailhead (Chiwawa River Road, Trail #1518)",
+   "note": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Little Giant Trailhead, where Little Giant Trail #1518 enters the Glacier Peak Wilderness. The Trinity trailhead is 3.28 mi up-valley on a different approach: this route's own first waypoint is the Chiwawa River ford at 0.1 mi, which sits 0.05 mi from this coordinate and shares its 2,600 ft elevation, and the chain above it runs to Little Giant Pass.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Chiwawa River Road (Forest Road 6200) up-valley from WA-207 near Lake Wenatchee to the Little Giant Trailhead, on the right at about mile 19, roughly three miles before the road's end at Trinity. Forest Road 6200 has been closed beyond Atkinson Flat under a storm-damage order, so check current road status before driving up-valley."
+  },
+  {
+   "lat": 48.026201,
+   "lng": -120.829003,
+   "elev": 2600,
+   "name": "Chiwawa River ford",
+   "note": "Unbridged ford of the Chiwawa River right at the trail's start — waist-deep and swift in early season, only reliably safe in late-summer/fall low water.",
+   "type": "Hazard",
+   "distMi": 0.1,
+   "directions": "Little Giant Trail #1518 reaches the unbridged ford of the Chiwawa River within the first tenth of a mile, and there is no way around it. Expect it waist-deep and swift in early season. It is reliably safe only in late-summer and fall low water."
+  },
+  {
+   "lat": 48.03475167346939,
+   "lng": -120.87912587755102,
+   "elev": 6250,
+   "name": "Spring below Little Giant Pass",
+   "note": "Small spring a few hundred feet below the pass; last dependable water before crossing into the high basins toward Berge.",
+   "type": "Water",
+   "distMi": 4.4,
+   "directions": "Past the ford, climb Trail #1518's steep, badly eroded switchbacks, about 500 ft per mile at first and then a far steeper pitch, to a small spring a few hundred feet below Little Giant Pass. Fill up here: it is the last dependable water before the high basins."
+  },
+  {
+   "lat": 48.03568,
+   "lng": -120.88482,
+   "elev": 6463,
+   "name": "Little Giant Pass",
+   "note": "Top of the steep, badly eroded Little Giant Trail; maintained tread ends here and the route drops toward the Louis Creek/Napeequa basin en route to Berge.",
+   "type": "Junction",
+   "distMi": 4.9,
+   "directions": "Continue a few hundred feet up the trail to Little Giant Pass at 6,463 ft, where the maintained tread ends."
+  },
+  {
+   "lat": 48.07295689655172,
+   "lng": -120.91870944827586,
+   "elev": 7840,
+   "name": "Berge Ridge notch",
+   "note": "Narrow 7,840-ft notch in the ridge crest linking the Louis Creek basin to the Buck Creek/High Pass side beneath Berge's southwest face; exposed scrambling to gain it.",
+   "type": "Junction",
+   "distMi": 6.5
+  },
+  {
+   "lat": 48.089266413793105,
+   "lng": -120.93353520689655,
+   "elev": 7650,
+   "name": "Saddle south of Berge's summit",
+   "note": "Broad saddle on Berge's south side where the southwest-slopes route leaves the basin; ascend through rock bands and steep heather toward the summit ridge.",
+   "type": "Junction",
+   "distMi": 7.2
+  },
+  {
+   "lat": 48.09625620689655,
+   "lng": -120.93988910344827,
+   "elev": 7800,
+   "name": "Exposed gully below summit ridge",
+   "note": "Final gully has slanted slabs with real exposure near the top; solid holds and ledges ease passage but a slip here would be consequential — helmet recommended.",
+   "type": "Hazard",
+   "distMi": 7.5
+  },
+  {
+   "lat": 48.10476,
+   "lng": -120.94257,
+   "elev": 7951,
+   "name": "Mount Berge",
+   "type": "Summit",
+   "distMi": 16.92,
+   "elevFt": 7951,
+   "distFrom": "track"
+  }
+ ]
+}

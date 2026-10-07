@@ -293,73 +293,19 @@ function DbSearchSplit({ scope, onJumpToArea, onOpenRoute, C, onModeChange }) {
 //
 // Reaching a peak on the alpine/scrambling/mountaineering side of the catalog used to give
 // you a name, an elevation and a list of route names. Everything that is true of the
-// MOUNTAIN rather than of one line on it — which permit the trailhead needs, who manages
-// the land, how far the shortest way in is, how many ways up there even are — was one tap
-// further in, on a route page, and you had to open several routes to learn it was the same
-// answer every time. On Mount Baker all nine routes carry the identical permit string.
+// MOUNTAIN rather than of one line on it — how far the shortest way in is, how many ways up
+// there even are — was one tap further in, on a route page.
+//
+// NO ACCESS & PERMITS BLOCK, by the owner's call (2026-10-04). It used to close this panel
+// with Permit / Land manager / Parking rows agreed across the peak's routes; the owner asked
+// for it removed from the peak overview. Access stays on each ROUTE page, where it is
+// specific to the approach you are actually taking. check:summit-briefing asserts it stays gone.
 //
 // Everything here comes from `useAreaRoutes`, which the page has already fetched and which
 // selects `*` — so this is a new READING of rows already in memory, not a new query, and it
 // cannot fail separately from the route list it sits above.
-//
-// The honesty rule this panel is built on: a fact is a PEAK fact only when the routes that
-// state it AGREE. Where they disagree the panel says so and names no value, because picking
-// one would attribute a Teanaway-side permit to an Enchantments-side route. Where only some
-// routes carry it, the denominator is on screen.
 const ALPINE_FAMILY = ["alpine", "mountaineering", "scrambling", "ice", "mixed"];
 
-// Comparison form only — never displayed. Enrichment reached these routes one at a time,
-// so the same fact arrives spelled several ways: Mount Baker's nine routes carry BOTH
-// "Northwest Forest Pass" and "NW Forest Pass", and both "U.S. Forest Service" and "USDA
-// Forest Service — Mount Baker-Snoqualmie National Forest…". Comparing raw strings calls
-// that a disagreement and makes the panel refuse to answer a question it knows the answer
-// to — which is worse than saying nothing, because it teaches you the panel is useless.
-const ALIAS = { nw: "northwest", usda: "us", usa: "us", mt: "mount", mtn: "mountain", natl: "national", nat: "national", nf: "national forest", np: "national park", nra: "national recreation area", usfs: "us forest service", nps: "national park service" };
-function normFact(s) {
-  // Periods go FIRST and separately, so an initialism collapses to one token: "U.S." must
-  // become "us" and not "u s", or it stops matching the "USDA" the alias table folds onto
-  // it and the two Forest Service spellings read as two different agencies.
-  return String(s).toLowerCase().replace(/\./g, "").replace(/[^a-z0-9]+/g, " ").trim().split(" ").map(w => ALIAS[w] || w).join(" ");
-}
-// Routes that state this fact, and whether they agree on it.
-//
-// "Agree" means every version says NOTHING THE FULLEST ONE DOES NOT — its tokens, once
-// spelling is set aside, are contained in the fullest version's. One route stating the
-// manager as "U.S. Forest Service" and another as "USDA Forest Service — Mount
-// Baker-Snoqualmie NF" are not in conflict, the second is simply more specific, and the
-// specific one is what gets displayed. Anything else is a real conflict and the caller
-// must not name a winner: Mount Stuart's Teanaway-side permit explicitly says the
-// Enchantment quota does NOT apply, while its north-side routes say it does. Both are
-// correct about their own approach.
-//
-// CONTAINMENT, NOT A PREFIX, AND THE DIFFERENCE IS ORDER. The first version of this rule
-// asked whether each version was a prefix of the longest, which makes the same fact
-// written agency-first and place-first read as a disagreement: Mount Baker's nine routes
-// carry "U.S. Forest Service" and "Mt. Baker-Snoqualmie National Forest — Mt. Baker
-// Wilderness (USFS)", one agency, and the peak page answered "Differs by route" and named
-// neither the manager nor the parking pass. Measured across the whole WA catalog, prefix
-// agreed on 371 of 563 fact rows and containment agrees on 422 — 51 more, NONE lost, and
-// the value displayed where it already agreed does not move. Every one of the four
-// documented genuine conflicts still refuses: Mount Stuart's and Argonaut's Enchantment
-// permits, Mount Adams' Yakama Nation land, and Agnes Mountain's two forests.
-//
-// What containment is looser about, stated rather than glossed: a short version can be
-// CONTRADICTED by the fullest rather than merely less specific than it — "Northwest Forest
-// Pass" sits inside "Not a Northwest Forest Pass … standard NPS entrance fee applies". The
-// reader is not misled, because the fullest version is the one on screen and it is the one
-// that explains itself; what is lost is the refusal.
-function sharedFact(routes, pick) {
-  const said = routes.map(pick).filter(v => v != null && String(v).trim() !== "").map(v => String(v).trim());
-  if (!said.length) return null;
-  const toks = said.map(v => new Set(normFact(v).split(" ").filter(Boolean)));
-  // The fullest statement. Where agreement holds it is a superset of every other version
-  // by construction, so this is the value to show; a tie between two wordings of one token
-  // set breaks on length, which keeps the more detailed prose.
-  let bi = 0;
-  said.forEach((v, i) => { if (toks[i].size > toks[bi].size || (toks[i].size === toks[bi].size && v.length > said[bi].length)) bi = i; });
-  const agreed = toks.every(s => [...s].every(t => toks[bi].has(t)));
-  return { value: said[bi], agreed, said: said.length, of: routes.length };
-}
 // Smallest and largest of a numeric column, each with the route it came from.
 function numericSpan(routes, pick) {
   const vals = routes.map(r => ({ r, v: Number(pick(r)) })).filter(x => Number.isFinite(x.v) && x.v > 0);
@@ -367,7 +313,6 @@ function numericSpan(routes, pick) {
   vals.sort((a, b) => a.v - b.v);
   return { lo: vals[0], hi: vals[vals.length - 1], said: vals.length, of: routes.length };
 }
-const accessOf = r => (r.access && typeof r.access === "object") ? r.access : {};
 
 // Exported so it can be rendered on its own against real catalog rows. Everything it
 // claims is a reading of other rows, and the only way to check a reading is to render it
@@ -445,22 +390,6 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
     return out;
   }, [routes, area.elevation_ft, uElev, uDistMi]);
 
-  // The access half is built separately because it is the part that must refuse to answer.
-  const access = useMemo(() => {
-    const rs = routes || [];
-    if (rs.length < 2) return null;
-    const family = rs.filter(r => ALPINE_FAMILY.includes(r.discipline));
-    if (family.length * 2 < rs.length) return null;
-    return [
-      ["Permit", sharedFact(rs, r => r.permit)],
-      // Two spellings of one fact live in this jsonb: `land_manager` on essentially every
-      // row, `landManager` on a few. Read both, exactly as the route page's ACCESS &
-      // REGULATIONS panel does — preferring one silently drops the other's routes.
-      ["Land manager", sharedFact(rs, r => accessOf(r).land_manager || accessOf(r).landManager)],
-      ["Parking / entrance", sharedFact(rs, r => accessOf(r).parking_pass || accessOf(r).passRequired)],
-    ].filter(x => x[1]);
-  }, [routes]);
-
   if (!rows || !rows.length) return null;
   const lbl = { fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.5 };
   return (
@@ -473,25 +402,6 @@ export function SummitBriefing({ area, routes, uElev, uDistMi, C }) {
           {note ? <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>{note}</div> : null}
         </div>
       ))}
-      {access && access.length ? (
-        <div style={{ marginTop: 12, paddingTop: 12, borderTop: "1px solid " + C.borderLight }}>
-          <div style={{ ...lbl, color: C.amber, marginBottom: 8 }}>Access &amp; permits</div>
-          {access.map(([label, f]) => (
-            <div key={label} style={{ marginBottom: 9 }}>
-              <div style={lbl}>{label}</div>
-              {f.agreed
-                ? <div style={{ fontSize: 13, color: C.textSub, marginTop: 3, lineHeight: 1.5 }}>{f.value}{f.said < f.of ? <span style={{ color: C.textMuted }}>{" — stated by " + f.said + " of " + f.of + " routes"}</span> : null}</div>
-                /* Routes on the same summit can genuinely need different permits: Mount
-                   Stuart's Teanaway-side approach never enters the Enchantment quota
-                   boundary that its north-side routes do. Naming one of them here would be
-                   a wrong answer delivered with a mountain's authority, so the panel sends
-                   you to the route instead. */
-                : <div style={{ fontSize: 13, color: C.textMuted, marginTop: 3, lineHeight: 1.5, fontStyle: "italic" }}>Differs by route — check the one you are climbing.</div>}
-            </div>
-          ))}
-          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, fontStyle: "italic", lineHeight: 1.45 }}>Confirm current permits and closures with the land manager before you go.</div>
-        </div>
-      ) : null}
       {/* NOT here, deliberately: a season window. Combining the routes' own `season` strings
           means reading English — and these legitimately wrap the year end ("May-Oct (snow
           climb Dec-Apr)"), so a min-to-max of the months mentioned renders Mount Stuart's
@@ -773,21 +683,23 @@ const GRADE_SCALES = (() => {
   const ints = (pre, a, z) => { const o = []; for (let i = a; i <= z; i++) o.push([pre + i, i, i]); return o; };
   // A/C: aid and clean-aid grades share one number (A2 and C2 are both 2), so one option covers both.
   const aid = []; for (let i = 0; i <= 5; i++) aid.push(["A" + i + "/C" + i, i, i]);
-  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid };
+  return { yds, v: [["VB", -1, -1], ...ints("V", 0, 17)], class: ints("Class ", 1, 5), wi: ints("WI", 1, 7), m: ints("M", 1, 14), aid, snow: [["Easy Snow", 1, 1], ["Mod. Snow", 2, 2], ["Steep Snow", 3, 3]] };
 })();
-const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid" };
+const SCALE_NAMES = { yds: "5.x rock", v: "V", class: "Class", wi: "WI ice", m: "M mixed", aid: "A/C aid", snow: "Snow" };
 // AN ALLOW-LIST, each entry MEASURED rather than assumed (2026-09-24, all 205,543 routes —
 // scripts/oneoff/measure-grade-num-coverage-by-discipline.mjs and measure-typed-grade-columns.mjs).
 //   sport / trad / toprope / bouldering: 100% graded on one scale; scrambling 90.6% on Class.
 //   ice / mixed / aid: a route can carry several grades at once ("5.8 AI3", "5.9 A2"), so each
 //     offers its own scale — read from the per-scale columns 0206 added, filled from Mountain
-//     Project's export (scripts/pipeline/import-mp-grades.mjs) — plus 5.x, the free grade most of
+//     Project's export (scripts/pipeline/import-route-grades.mjs) — plus 5.x, the free grade most of
 //     these rows store as their primary grade.
 // Re-run the measurements before widening this.
 //   mountaineering / alpine / scrambling: one final grade per route, on the scale its crux is on —
 //     Class for walk-ups, scrambles and glacier climbs, 5.x for roped rock, WI/AI for an ice crux
-//     (an ice final also fills ice_grade_num, which the WI range reads).
-const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "yds", "wi"], alpine: ["yds", "class", "wi"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
+//     (an ice final also fills ice_grade_num, which the WI range reads). Both also offer Snow:
+//     Mountain Project's Easy / Mod. / Steep Snow, read from snow_grade_num (0246), which a route
+//     carries BESIDE its Class or 5.x grade — the owner wanted both (2026-10-04).
+const DISC_GRADE_SCALES = { sport: ["yds"], trad: ["yds"], toprope: ["yds"], bouldering: ["v"], scrambling: ["class", "yds"], mountaineering: ["class", "snow", "yds", "wi"], alpine: ["yds", "class", "wi", "snow"], aid: ["aid", "yds"], mixed: ["m", "yds"], ice: ["wi", "yds"] };
 // The disciplines whose grade_system says which scale grade_num is on, so a range there passes it
 // as grade_sys: ice/mixed/aid since 0196, and the three mountain disciplines since their labels
 // were corrected (above). The rock disciplines keep #1811's behaviour — one scale each, no label

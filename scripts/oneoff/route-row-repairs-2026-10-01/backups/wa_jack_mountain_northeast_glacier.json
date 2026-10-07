@@ -1,0 +1,91 @@
+{
+ "id": "wa_jack_mountain_northeast_glacier",
+ "name": "Northeast Glacier",
+ "approach": "North from May Creek; northeast face of mountain via glacier approach",
+ "beta": "One of Jack Mountain's established routes; no grade has been recorded for this line.",
+ "overview": "A glacier route ascending the peak's northeast side, near the Nohokomeen Glacier basin.",
+ "approach_logistics": {
+  "trailhead": "May Creek (via Ross Lake shuttle) or East Bank Trail (alternative)",
+  "trailheadLat": 48.7278,
+  "trailheadLng": -121.0628
+ },
+ "approach_variants": [
+  {
+   "name": "Water taxi up Ross Lake to May Creek",
+   "camps": [
+    "High camp below the Nohokomeen Glacier",
+    "May Creek Camp, Ross Lake"
+   ],
+   "notes": "Book the water taxi from Ross Lake Resort, reached by the trail down from the Ross Dam trailhead on SR-20, and ride up the lake to May Creek Camp on the east shore. The usual choice, since it cuts out the lakeshore walk, but it must be booked and the boat does not run early or late in the season.",
+   "primary": true
+  },
+  {
+   "name": "East Bank Trail on foot to May Creek",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 5200,
+      "name": "High camp below the Nohokomeen Glacier",
+      "role": "main",
+      "type": "camp",
+      "notes": "Most parties climb straight up from the lake trail on day one and camp high on the ridge below the toe of the Nohokomeen Glacier, roughly 5,200 ft, to leave a manageable summit day. Some camp higher on the ridge.",
+      "water": "Snowmelt; early-season trips camp on snow",
+      "permit": "Ross Lake NRA backcountry permit for a cross-country camp",
+      "capacity": "Open slopes and ridge snow; room for a few tents"
+     },
+     {
+      "name": "May Creek Camp, Ross Lake",
+      "role": "route",
+      "type": "camp",
+      "notes": "Designated camp on the East Bank Trail about 8 miles from the East Bank trailhead, where climbers leave the trail for the north side of Jack Mountain. It can also be reached by water taxi. Used as a first night or as the camp on the way out.",
+      "water": "Ross Lake and May Creek; treat",
+      "permit": "Ross Lake NRA backcountry permit",
+      "capacity": "Designated lakeshore camp with several tent sites"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "East Bank Trailhead (SR-20)"
+    }
+   },
+   "notes": "Walk the East Bank Trail from SR-20 north along the east shore of Ross Lake to May Creek Camp, where climbers leave the trail. Several hours of flat walking each way, but it needs no booking and works whenever the highway is open."
+  }
+ ],
+ "itinerary": "Most parties on Jack Mountain take three to four days for any route, and there is no reason to think this one is faster. Plan on a day to reach the north side and establish a camp below the glacier, a full summit day on the glacier and the upper mountain, and a day to return — with a fourth day held as weather and route-finding buffer.",
+ "descent_text": "There is no published descent for this route. The realistic options are to reverse the glacier — which on steep, heavily crevassed ice means downclimbing and/or lowering with pickets and screws, and re-crossing the bergschrund — or to traverse to the East Ridge or North Ridge and descend that, both of which are Grade II Class 4 and were used as a descent line by at least one party (a 2006 party ascended the North Ridge and descended the East Ridge). Descending the South Face and walking out over Jerry Lakes is a third option but leaves you on the wrong side of the mountain from your approach and your camp. Whichever you choose, scout it before you climb; committing to an unknown descent on Jack's loose rock in fading light is how this mountain generates epics.",
+ "permit": "North Cascades NP complex: no permit for day climbs; all overnight backcountry stays require a backcountry permit (reserve on Recreation.gov or walk-up at the Marblemount Wilderness Information Center).",
+ "access": {
+  "notes": "Access via high-speed boat shuttle up Ross Lake to May Creek (Ross Lake Resort). Part of North Cascades National Park access area. Mountain rarely climbed due to alpine difficulty.",
+  "overnight_permit": {
+   "url": "https://www.nps.gov/noca/planyourvisit/permits.htm",
+   "what": "North Cascades National Park Complex backcountry permit (covers Ross Lake NRA) - quota, not free",
+   "where": "Reserve on Recreation.gov, or get a walk-up permit at the Wilderness Information Center in Marblemount. Cross-country climbing camps need a permit for the zone you camp in."
+  }
+ },
+ "road": {
+  "name": "SR 20 (North Cascades Highway) to the East Bank Trailhead",
+  "status": "Paved highway; roadside trailhead parking near milepost 138. Ross Lake Resort also runs a water taxi that will drop parties at points along the east shore.",
+  "driveNote": "Take SR 20 to milepost 138. The East Bank Trailhead is on the north side of the highway; from the parking area it is a short descent to the bridge over Ruby Creek.",
+  "seasonalGate": "SR 20 closes each winter between the Ross Dam gate (MP 134) and the Silver Star gate (MP 171), typically late November/early December until mid-April or early May. Early-season parties before the highway opens have biked in from the MP 134 gate."
+ },
+ "waypoints": [
+  {
+   "lat": 48.708,
+   "lng": -120.9779,
+   "elev": 1800,
+   "name": "East Bank Trailhead (SR 20, milepost 138)",
+   "type": "Trailhead",
+   "distMi": 0,
+   "elevFt": 1800,
+   "directions": "Drive SR 20 east from Newhalem to the East Bank Trailhead near milepost 138, at about 1,800 ft. The trail drops from the lot to the bridge over Ruby Creek."
+  },
+  {
+   "lat": 48.77284,
+   "lng": -120.95637,
+   "elev": 9075,
+   "name": "Jack Mountain summit",
+   "type": "Summit",
+   "distMi": null,
+   "elevFt": 9075
+  }
+ ]
+}

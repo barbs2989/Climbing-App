@@ -1,0 +1,151 @@
+{
+ "id": "wa_switchback_mountain_scramble",
+ "name": "Standard Scramble",
+ "waypoints": [
+  {
+   "lat": 48.179245,
+   "lng": -120.253173,
+   "elev": 3400,
+   "name": "Foggy Dew Trailhead (FR 4340-200, Trail #417)",
+   "note": "Coordinate and elevation as published by the Okanogan-Wenatchee National Forest for the Foggy Dew Trailhead, where Foggy Dew Trail #417 begins. The Eagle Lakes / Crater Creek trailhead (4,740 ft) is ~2.9 mi away: Eagle Lakes Trail #431 runs to Martin and Cooney Lakes and never passes Foggy Dew Falls, which is the next waypoint here. Every recorded distance on this route is consistent with this trailhead and impossible from the other.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Twisp, take SR 20 east about 2 miles and continue south on SR 153 about 12 miles, then turn right onto Gold Creek Loop Road and follow it to Gold Creek Road. Drive Gold Creek Road about 5 miles, turn left onto Forest Road 4340-200, and follow it about 3.6 miles to the Foggy Dew Trailhead at road's end, about 3,400 ft. A Northwest Forest Pass or Interagency pass is required to park."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4235,
+   "name": "Foggy Dew Falls",
+   "note": "Steep switchback section passes a two-tiered cascade in a narrow cleft; last easy, reliable water before the trail breaks into open basin country.",
+   "type": "Water",
+   "distMi": 3.4,
+   "directions": "Follow Foggy Dew Trail #417 up the valley on the north side of Foggy Dew Creek through pine and fir forest. At about 3.4 miles a steeper, switchbacking section passes Foggy Dew Falls, a two-tiered cascade in a narrow cleft and the last easy, reliable water before the open basins."
+  },
+  {
+   "lat": 48.1656171,
+   "lng": -120.3490177,
+   "elev": 7300,
+   "name": "Merchants Basin / Cooney Lake Trail #434 split",
+   "note": "Trail #417 tops out of timber into the open, wildflower-covered Merchants Basin below Sawtooth Ridge, where the Cooney Lake Trail #434 splits off toward Cooney Lake.",
+   "type": "Junction",
+   "distMi": 5.5
+  },
+  {
+   "lat": 48.17808,
+   "lng": -120.34868,
+   "elev": 7246,
+   "name": "Cooney Lake",
+   "note": "Larch-rimmed alpine lake with established camps near the outlet; last reliable water before climbing to the pass.",
+   "type": "Campsite",
+   "distMi": 8
+  },
+  {
+   "lat": 48.177027,
+   "lng": -120.352478,
+   "elev": 7900,
+   "name": "Cooney Pass",
+   "note": "7,900 ft saddle on Switchback's southeast side gains the crest of the Southeast Ridge, with views down into Merchants Basin and toward Sunrise Lake.",
+   "type": "Junction",
+   "distMi": 8.6,
+   "directions": "From Cooney Lake, fill water and continue up the trail for roughly another mile on open larch and scree slopes to Cooney Pass, the 7,900-ft saddle on Switchback's southeast side."
+  },
+  {
+   "lat": 48.176084,
+   "lng": -120.356309,
+   "elev": 8100,
+   "name": "Southeast Ridge scramble",
+   "note": "Class 2-3 rock scramble up loose, exposed talus/blocks on the ridge crest to the summit block; expect strong, cold wind near the top.",
+   "type": "Hazard",
+   "distMi": 9.2,
+   "directions": "Leave the tread where it meets the broad southeast ridge and follow the easy crest toward the summit on open rock and talus. Watch for the similar neighboring summit along the same crest; if you walk easy ridge for the better part of a mile you are heading for the wrong peak."
+  },
+  {
+   "lat": 48.17562,
+   "lng": -120.35821,
+   "elev": 8321,
+   "name": "Switchback Mountain (Switchback Peak / Cooney Peak)",
+   "type": "Summit",
+   "elevFt": 8321,
+   "directions": "Continue up the crest as it steepens into a field of large, mostly stable blocks, with a few exposed class 3 steps possible in the last stretch to the 8,321-ft summit."
+  }
+ ],
+ "approach": "Two trailheads reach Cooney Lake and the SE Ridge. (1) Foggy Dew Trailhead (end of FR 4340-200, 3,400 ft) — from Twisp, take SR 20 east ~2 mi, then SR 153 south ~12 mi, then Gold Creek Loop Rd/County Rd 1034 and FR 4340 to the FR 4340-200 spur. Hike Foggy Dew Creek Trail #417 up the North Fork through Merchants Basin, then Cooney Lake Trail #434 to Cooney Lake (~7,200 ft); climb to Cooney Pass and the SE Ridge from there. Round trip is roughly 19 miles with about 5,560 ft of gain (a logged trip report took ~5.5 hr up, ~3 hr down). (2) Eagle Lakes/Crater Creek Trailhead (also off FR 4340, 4,700 ft) — follow the Crater Creek/Eagle Lake Trail #431 about 2.5 miles to a signed cutoff heading south toward Martin and Cooney Lakes, then 4.0 miles to Martin Lakes (6,700 ft) and 2.2 more miles to Cooney Lake (7,200 ft) to join the same summit route.",
+ "itinerary": {
+  "cal": "Foggy Dew Rd (FR 4340) and the upper trail typically hold snow into late June; most parties describe firm scrambling conditions from July through September.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Foggy Dew Creek Trailhead (~3,470 ft), follow Foggy Dew Creek Trail #417 up through forest and past Foggy Dew Falls, then turn off onto the Cooney Lake trail at the Merchants Basin junction and climb to Cooney Lake. Established campsites sit near the outlet (~7,200 ft) with views toward the Sawtooth Ridge peaks.",
+    "hours": 4.5,
+    "miles": 6.2,
+    "title": "Approach to Cooney Lake camp",
+    "gainFt": 3760,
+    "lossFt": 0,
+    "packLb": 32,
+    "schedule": [
+     {
+      "time": "8:00 AM",
+      "label": "Leave trailhead",
+      "detail": "Foggy Dew Creek Trail #417, moderate steady grade through forest."
+     },
+     {
+      "time": "10:30 AM",
+      "label": "Pass Foggy Dew Falls / Merchants Basin junction",
+      "detail": "Turn off onto the Cooney Lake trail toward Cooney Lake."
+     },
+     {
+      "time": "12:30 PM",
+      "label": "Arrive Cooney Lake, make camp",
+      "detail": "Filter water, pitch tents, rest before the next day's scramble."
+     }
+    ],
+    "objective": "Reach Cooney Lake and set up base camp"
+   },
+   {
+    "n": 2,
+    "note": "Leave camp with light packs before sunrise and climb about a mile above Cooney Lake to Cooney Pass and follow Switchback Mountain's broad Southeast Ridge, an easy Class 2-3 scramble to the 8,321 ft summit. After descending to camp, break it down and hike the full 6.2 miles back out to the trailhead the same day — a long but standard single push for fit parties.",
+    "hours": 10,
+    "miles": 12.8,
+    "title": "Summit push and hike out",
+    "gainFt": 1800,
+    "lossFt": 5560,
+    "packLb": 18,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave camp",
+      "detail": "Light daypack; climb above Cooney Lake toward Cooney Pass and the Southeast Ridge."
+     },
+     {
+      "time": "7:30 AM",
+      "label": "Gain the ridge",
+      "detail": "Class 2 terrain, mostly open rock and talus."
+     },
+     {
+      "time": "9:00 AM",
+      "label": "Summit Switchback Mountain",
+      "detail": "8,321 ft; views across the Sawtooth Ridge and Lake Chelan-Sawtooth Wilderness."
+     },
+     {
+      "time": "11:00 AM",
+      "label": "Back at camp",
+      "detail": "Break down camp, refill water, eat lunch."
+     },
+     {
+      "time": "12:00 PM",
+      "label": "Begin hike out",
+      "detail": "Reverse Foggy Dew Creek Trail #417, full pack, steady descent."
+     },
+     {
+      "time": "4:00 PM",
+      "label": "Reach trailhead",
+      "detail": "End of trip."
+     }
+    ],
+    "objective": "Scramble Switchback Mountain, then pack out to the trailhead"
+   }
+  ],
+  "totalNote": "A standard 2-day/1-night backpack: ~19 miles round trip with roughly 5,600 ft of gain, camping one night at Cooney Lake and day-scrambling Switchback Mountain's Class 2-3 Southeast Ridge before hiking fully out."
+ }
+}

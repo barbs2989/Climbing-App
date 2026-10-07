@@ -118,7 +118,7 @@ const SCAN = () => {
   return out;
 };
 
-const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
+const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"];
 await page.goto(base, { waitUntil: "domcontentloaded" });
 await settledText(page);
 

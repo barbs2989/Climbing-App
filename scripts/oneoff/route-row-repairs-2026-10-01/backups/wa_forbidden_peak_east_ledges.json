@@ -1,0 +1,70 @@
+{
+ "id": "wa_forbidden_peak_east_ledges",
+ "name": "East Ledges",
+ "permit": null,
+ "waypoints": [
+  {
+   "lat": 48.48055,
+   "lng": -121.07979,
+   "elev": 3200,
+   "name": "Boston Basin / Cascade River Road trailhead",
+   "type": "Trailhead",
+   "elevFt": 3200,
+   "directions": "From SR 20 at Marblemount, turn onto the Cascade River Road, which crosses the Skagit River and runs east, paved for about 10 miles and then rough gravel. Drive about 22 miles to a small pullout on the left beneath the northeast face of Johannesburg Mountain, at about 3,200 ft, with room for only a handful of cars. The road usually opens to its end by late June or early July. Overnight stays in the park require a backcountry permit."
+  },
+  {
+   "lat": 48.5115,
+   "lng": -121.0579,
+   "elev": 8815,
+   "name": "Forbidden Peak summit / rappel horn",
+   "note": "Start of the descent: locate the rappel horn/anchor near the true summit.",
+   "type": "Summit",
+   "distMi": 0
+  },
+  {
+   "lat": 48.5119,
+   "lng": -121.057,
+   "elev": 8400,
+   "name": "First of 5 rappels",
+   "note": "Approximate position - five single-rope rappels (~400 ft total) down the NE side to reach the ledge system. Coordinates are estimated; no public GPS track exists for this line.",
+   "type": "Hazard",
+   "distMi": 0.1
+  },
+  {
+   "lat": 48.5127,
+   "lng": -121.0555,
+   "elev": 8100,
+   "name": "Ledge traverse begins",
+   "note": "Mostly 3rd class ledges; stay well below the ridge crest, working east.",
+   "type": "Junction",
+   "distMi": 0.3
+  },
+  {
+   "lat": 48.5135,
+   "lng": -121.053,
+   "elev": 7950,
+   "name": "Rock rib crossings (~5 ribs)",
+   "note": "Short 4th-class moves at each rib crossing; cairns (a higher and lower option at each rib) mark the easiest line. Position is approximate/estimated.",
+   "type": "Hazard",
+   "distMi": 0.5
+  },
+  {
+   "lat": 48.514,
+   "lng": -121.0505,
+   "elev": 7800,
+   "name": "Gully back to ridge crest",
+   "note": "A short gully leads back up to the East Ridge crest near the solitary gendarme.",
+   "type": "Junction",
+   "distMi": 0.6
+  },
+  {
+   "lat": 48.5133,
+   "lng": -121.048,
+   "elev": 7300,
+   "name": "Rejoin East Ridge / gully descent to Boston Basin",
+   "note": "From the gendarme, descend the East Ridge's standard gully system back toward Boston Basin and camp.",
+   "type": "Junction",
+   "distMi": 0.9
+  }
+ ]
+}

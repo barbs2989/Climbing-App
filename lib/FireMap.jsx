@@ -27,7 +27,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE } from "./popupChrome.js";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
-import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi, FIRE_SOURCES } from "./fire";
+import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 
 const Z = 3000;
 // Continental US, the honest default when we have nothing better to centre on.
@@ -405,7 +405,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             <div ref={mapDiv} style={{ position: "absolute", inset: 0, background: C.card }} />
             <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
             {/* right: 80 leaves the bottom-right corner to the Me button below. */}
-            <div style={{ position: "absolute", bottom: 10, left: 10, right: 80, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <div style={{ position: "absolute", bottom: 26, left: 10, right: 80, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
               {chip("fires", "Fires", C.red, firesQ.data ? fires.length : null)}
               {chip("perims", "Perimeters", C.orange, perimQ.data ? perims.length : null)}
               {chip("wx", "Red flag", C.amber, wxQ.data ? zones.length : null)}
@@ -414,7 +414,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
                 there is nothing to centre, and a button whose only outcome is an apology
                 is worse than absent. Styled exactly as GPXMap's. */}
             <button onClick={locate} aria-label="Show my location on the map"
-              style={{ position: "absolute", bottom: 10, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
               <span style={{ display: "inline-flex", alignItems: "center", gap: 6, verticalAlign: "middle" }}><ActionIcon name="pin" size={14} color="currentColor" />{locating ? "Locating…" : "Me"}</span>
             </button>
             {/* Top-right under the zoom buttons (which end ~73px down), not GPXMap's
@@ -553,12 +553,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
           </div>
 
           <div style={{ fontSize: 10.5, color: C.textMuted, lineHeight: 1.6, marginTop: 2 }}>
-            {FIRE_SOURCES.map(s => (
-              <div key={s.href}>
-                <a href={s.href} target="_blank" rel="noopener noreferrer" style={{ color: C.textSub, textDecoration: "none" }}>{s.label}</a>
-              </div>
-            ))}
-            <div style={{ marginTop: 3 }}>Acreage and containment are as last reported by the managing agency, not live measurements.</div>
+            <div>Acreage and containment are as last reported by the managing agency, not live measurements.</div>
           </div>
         </div>
       </div>

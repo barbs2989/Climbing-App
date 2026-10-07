@@ -1,0 +1,50 @@
+{
+ "id": "wa_rapple_grapple",
+ "name": "Rapple Grapple",
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "A short west-face line at 4 pitches; approach into the basin, climb up to join the upper Beckey Route area, then rappel/downclimb the standard line to the Liberty Bell-Concord notch and out.",
+    "hours": 8,
+    "miles": 5,
+    "title": "Short car-to-car day climb",
+    "gainFt": 2200,
+    "lossFt": 2200,
+    "packLb": 15,
+    "objective": "Climb Rapple Grapple to the Liberty Bell-Concord notch"
+   }
+  ],
+  "totalNote": "A short single day, roughly 8 hrs car-to-car."
+ },
+ "pitch_detail": [
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.5",
+   "notes": "Shares its first pitch with the Beckey Route: a low-fifth-class traverse and chimney past ledges and small trees to a belay at the base of a steeper chimney.",
+   "pitch": 1,
+   "anchor": "Gear",
+   "lengthM": 35
+  },
+  {
+   "crux": true,
+   "bolts": 0,
+   "grade": "5.8",
+   "notes": "Traverses right along the 'Beckey ledge' past a few trees into an open-book corner with good 5.7 finger and hand cracks — the route's namesake harder alternative to the standard Beckey line.",
+   "pitch": 2,
+   "anchor": "Gear",
+   "lengthM": 35
+  },
+  {
+   "crux": false,
+   "bolts": 0,
+   "grade": "5.6",
+   "notes": "Rejoins the Beckey Route near the top of the buttress for a final short scramble and 5.6 friction slab to the summit.",
+   "pitch": 3,
+   "anchor": "Walk-off (no belay)",
+   "lengthM": 30
+  }
+ ]
+}

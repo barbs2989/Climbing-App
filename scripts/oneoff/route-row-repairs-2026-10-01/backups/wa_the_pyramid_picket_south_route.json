@@ -1,0 +1,82 @@
+{
+ "id": "wa_the_pyramid_picket_south_route",
+ "name": "South Route",
+ "waypoints": [
+  {
+   "lat": 48.68276,
+   "lng": -121.26928,
+   "elev": 600,
+   "name": "Goodell Creek Trailhead",
+   "note": "Park at the gravel pit off the Goodell Creek Campground access road near Newhalem; a North Cascades NP wilderness permit, picked up in person at Marblemount beforehand, is required for overnight camping in Terror Basin.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Take SR-20 to Newhalem and turn off onto the unpaved Goodell Creek Campground access road, the spur directly across from the campground. The trailhead itself is an unsigned pullout at about 600 ft; park at the gravel pit by the upper group camp. Carry the North Cascades wilderness permit you picked up in Marblemount — it is required for overnight camping in Terror Basin."
+  },
+  {
+   "lat": 48.732455,
+   "lng": -121.292459,
+   "elev": 1750,
+   "name": "Terror Creek climbers' trail cairn",
+   "note": "Old logging-road tread ends here; a rock arrow, post, and large cairn mark the unmaintained climbers' trail turning east off the Goodell Creek Trail toward Terror Basin.",
+   "type": "Junction",
+   "distMi": 4.3,
+   "directions": "Hike the Goodell Creek climbers' trail, an old logging-road grade that parallels the creek, a little over 4 miles to where the road tread ends at a rock arrow, post and large cairn marking the Terror Creek climbers' trail."
+  },
+  {
+   "lat": 48.751124,
+   "lng": -121.285693,
+   "elev": 4800,
+   "name": "Rock band / steep gully bushwhack",
+   "note": "Faint, root-pulling Class 3 section through a cliff band with dense brush; easy to lose the boot path here even in good visibility.",
+   "type": "Hazard",
+   "distMi": 5.8,
+   "directions": "Turn east onto the unmaintained climbers' trail and climb steeply through timber; higher up the faint, brushy path works through a cliff band with Class 3 root-pull sections where the tread is easy to lose."
+  },
+  {
+   "lat": 48.756352,
+   "lng": -121.295213,
+   "elev": 5800,
+   "name": "Terror Basin camp",
+   "note": "Flat gravelly basin at treeline with a reliable running-water source and views of the Southern Pickets; standard base camp for Pyramid, Degenhardt, and Terror.",
+   "type": "Campsite",
+   "distMi": 7,
+   "directions": "Above the cliff band, break out onto open heather and talus and work up and west to the flat, gravelly basin at treeline with running water."
+  },
+  {
+   "lat": 48.758515,
+   "lng": -121.302556,
+   "elev": 6200,
+   "name": "Upper Barrier crossing notch",
+   "note": "Cross heather benches and loose rock/moats to this ~6,200 ft notch, the upper Barrier crossing into Crescent Creek Basin (use this crossing, not the lower Stump Hollow one, for Pyramid/Degenhardt).",
+   "type": "Junction",
+   "distMi": 7.6,
+   "directions": "From camp, cross heather benches, loose rock and moats west to the upper Barrier notch at about 6,200 ft. Use this upper crossing, not the lower Stump Hollow one, which sets you up under a different peak."
+  },
+  {
+   "lat": 48.767024,
+   "lng": -121.301615,
+   "elev": 7500,
+   "name": "Degenhardt-Pyramid col",
+   "note": "Gain the ridge crest here; a few low-5th-class moves off the ridge lead onto Pyramid's west side to start the summit scramble.",
+   "type": "Junction",
+   "distMi": 8.3
+  },
+  {
+   "lat": 48.77144,
+   "lng": -121.29193,
+   "elev": 7920,
+   "name": "The Pyramid",
+   "note": "West-side Class 3 scramble tops out on the true summit; descend by reversing the scramble back to the Degenhardt-Pyramid col, with a short rappel where needed.",
+   "type": "Summit",
+   "distMi": 8.6
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.768,
+  "peakLng": -121.288,
+  "trailhead": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+  "trailheadLat": 48.68664,
+  "trailheadLng": -121.27121,
+  "trailheadDirection": "From the Goodell Creek group-camp trailhead off SR-20 near Newhalem"
+ }
+}

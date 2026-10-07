@@ -1,0 +1,67 @@
+{
+ "id": "wa_chockstone_route",
+ "name": "Chockstone Route",
+ "approach_logistics": {
+  "peakLat": 48.512935,
+  "peakLng": -120.655465,
+  "trailhead": "Blue Lake Trailhead (SR-20)",
+  "trailheadLat": 48.518965,
+  "trailheadLng": -120.67436,
+  "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1.5 miles west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+ },
+ "approach_variants": [
+  {
+   "name": "Blue Lake Trail to the chasm between the two spires",
+   "hours": "1-2",
+   "notes": "From the Blue Lake Trailhead (~5,400 ft) on SR-20 about 1.5 miles west of Washington Pass, walk the maintained trail roughly a mile and a half to the signed Liberty Bell Trail #727 climbing-access junction just past a small stream and a large cairn, then take the climbers' path up through slabs, talus and heather into the basin below the west faces.\n\nThe objective from here is the huge cleft that splits the two Early Winters Spires, seen from the west side. Head for its foot. Note this is the west-side gully — the couloir that splits the same two spires on the east side, reached from the highway hairpin, is a different feature and a different route.\n\nBe ready to swap between rock shoes and boots if snow is still lying in the gully.",
+   "season": "Jul-Sep",
+   "hazards": [
+    "snow lingering in the gully early season — axe and crampons",
+    "loose rock funnelled down the gully, including from parties above",
+    "wind in the gully; it channels weather"
+   ],
+   "baseFinding": "The start is at the very foot of the enormous chasm dividing North from South Early Winters Spire — it is the biggest single feature on this side of the group and it is unambiguous even in poor visibility, because nothing else on the west faces is a full-height cleft between two summits. The route opens with a short step of low-fifth-class slab and layback moves, and then it is walking up the gully bed; if you are pulling on anything hard in the first rope length you are on one of the face routes to either side, not in the gully. Pitch one takes cracks and ramps along the left edge of the gully rather than the middle. The house-sized chockstone that names the route sits much higher up the same gully, so do not expect to see it from the base as your confirmation."
+  }
+ ],
+ "waypoints": [
+  {
+   "lat": 48.518965,
+   "lng": -120.67436,
+   "elev": 5400,
+   "name": "Blue Lake TH",
+   "note": "SR 20 pullout 1.5 mi west of Washington Pass.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR-20 (the North Cascades Highway) to the Blue Lake Trailhead on the south side of the highway just west of Washington Pass. The highway over the pass closes in winter. A Northwest Forest Pass or day fee is required to park."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6900,
+   "name": "Spire col (gully base)",
+   "note": "Base of the gully between North and South Early Winters Spires, below the giant chockstones.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Hike the Blue Lake Trail a little over a mile to where the main trail bends right toward the lake, then take the climbers' path up through slabs, talus and heather into the basin below the west faces. Head for the foot of the huge cleft that splits North and South Early Winters Spires; this is the west-side gully, not the east-side couloir reached from the highway hairpin."
+  },
+  {
+   "lat": 48.5133,
+   "lng": -120.6553,
+   "elev": 7300,
+   "name": "Chockstone crux",
+   "note": "5.7 pitch bypassing the first giant chockstone on the left.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Climb a short step of low fifth-class slab and layback moves, then walk up the gully bed, taking cracks and ramps along its left edge, to below the first giant chockstone. Early in the season the gully can hold snow, so carry an axe and crampons."
+  },
+  {
+   "lat": 48.51291,
+   "lng": -120.65557,
+   "elev": 7760,
+   "name": "North Early Winters Spire",
+   "type": "Summit",
+   "distMi": 2.5,
+   "directions": "Pass the chockstone on the left over blocky ground to an exposed lieback and a delicate slab, then continue on good, bolted rock with a rightward traverse and finish up a loose gully and chimney onto the summit plateau."
+  }
+ ]
+}

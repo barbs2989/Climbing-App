@@ -1,0 +1,80 @@
+{
+ "id": "wa_mount_lincoln_standard",
+ "name": "Standard Scramble (Flapjack Lakes / Sawtooth Ridge)",
+ "waypoints": [
+  {
+   "lat": 47.5155,
+   "lng": -123.3295,
+   "elev": 825,
+   "name": "Staircase Ranger Station / North Fork Skokomish Trailhead",
+   "note": "Olympic National Park wilderness permit required, booked through Recreation.gov - there are no longer paper self-registration permits at trailheads. The park entrance fee applies to park here; no Northwest Forest Pass is needed on National Park land.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 101 at Hoodsport, turn west on SR 119 and drive a little more than 9 miles past Lake Cushman to the T with FR 24. Turn left; the pavement ends after 1.7 miles. Continue 3.7 miles on gravel to a junction, bear right, and drive 1.2 miles to the Staircase Ranger Station, with parking across from the campground. The park entrance fee applies; no Northwest Forest Pass is needed."
+  },
+  {
+   "lat": 47.5462056,
+   "lng": -123.3761067,
+   "elev": 950,
+   "name": "Spike Camp",
+   "note": "Established backcountry camp along the North Fork Skokomish River Trail on gentle old-roadbed grade; common first-night option or rest stop before the Flapjack Lakes Trail turnoff.",
+   "type": "Junction",
+   "distMi": 3.4
+  },
+  {
+   "lat": 47.5607536,
+   "lng": -123.3571874,
+   "elev": 2500,
+   "name": "Madeline Creek crossing",
+   "note": "Creek with small waterfalls crossed on the Flapjack Lakes Trail; last reliable water before the final steep push to the lakes basin.",
+   "type": "Water",
+   "distMi": 5.5
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3600,
+   "name": "Black and White Lakes Trail junction",
+   "note": "Signed fork just below Flapjack Lakes where the Black and White Lakes trail splits off; stay left/straight for Flapjack Lakes.",
+   "type": "Junction",
+   "distMi": 6.7
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3900,
+   "name": "Flapjack Lakes basin",
+   "note": "Established Olympic NP backcountry camp (permit + $8/person/night, no fires); standard overnight staging spot for the Lincoln scramble.",
+   "type": "Campsite",
+   "distMi": 7
+  },
+  {
+   "lat": 47.535410652173915,
+   "lng": -123.32792586956522,
+   "elev": 5150,
+   "name": "Saddle below Lincoln's north sub-peak",
+   "note": "Off-trail climb from Flapjack Lakes gains this saddle on Sawtooth Ridge; route-finding is tricky here and GPS tracks tend to drift in the boulder/brush terrain.",
+   "type": "Junction",
+   "distMi": 8.3
+  },
+  {
+   "lat": 47.54432326086957,
+   "lng": -123.32779934782609,
+   "elev": 5550,
+   "name": "Chockstone gully / ridge scramble section",
+   "note": "Steep (35-40+ degree) loose scree and a chockstone-choked gully with Class 3+ exposed, no-fall moves; both sides of the ridge here are steep enough to slide.",
+   "type": "Hazard",
+   "distMi": 8.9
+  },
+  {
+   "lat": 47.550265,
+   "lng": -123.327715,
+   "elev": 5868,
+   "name": "Mount Lincoln",
+   "note": "True summit of Mount Lincoln, second-highest point on Sawtooth Ridge; nearby North Peak (5,690ft) and Southwest Peak (5,486ft) are separate sub-summits.",
+   "type": "Summit",
+   "distMi": 9.3
+  }
+ ],
+ "permit": null
+}

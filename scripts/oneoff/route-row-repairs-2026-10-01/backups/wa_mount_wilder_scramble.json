@@ -1,0 +1,71 @@
+{
+ "id": "wa_mount_wilder_scramble",
+ "name": "Mount Wilder Scramble",
+ "approach": "Mount Wilder sits deep in the Elwha drainage and this is a genuine multi-day backpack approach, not a day hike-in. From the Whiskey Bend trailhead (reached by an extra ~7-mile road-walk/bike-in from Madison Falls, where Olympic Hot Springs Road has been closed to vehicles since November 2017 flood damage), follow the Elwha River Trail south along the river's east bank through old-growth lowland forest. Established waypoints/camps along the way (mileages approximate, gathered from NPS and trip-report cross-referencing): the Humes Ranch cutoff around 2.7 mi, Lillian River Camp around 4.9 mi (reliable water, log crossing of the Lillian River), Mary's Falls around 8.8 mi, Canyon Camp around 9.6 mi (trail narrows through a rocky gorge section), Elkhorn around 11.4 mi (old guard-station clearing, bear wire), and Hayes River Guard Station around 16 mi (junction with the Hayes River/Dodger Point trail). Continue upriver to Camp Wilder, roughly 20 miles from Whiskey Bend (established campsites, bear wire, small shelter), which sits in the river bottom directly below the peak's steep south face and is the logical base camp for the climb. Water is abundant along the river trail (numerous tributary crossings) but there is no bridge maintenance guarantee on side creeks — expect to rock-hop or ford minor tributaries, higher and faster in early season. From Camp Wilder there is no maintained trail to the summit: leave the river trail and climb north/northeast off-trail, first through streamside brush and old forest, then heather benches and talus, to gain the peak's south ridge. The south aspect of Mount Wilder rises nearly 3,800 feet in under two miles, so expect sustained, steep, trail-less travel on a mix of open slope, talus, and brush, with real route-finding needed to link the cleanest line to the ridge crest — there is no cairned or established scramble path, and this peak has no recorded first ascent date, reflecting how rarely it's visited. Top off water at Camp Wilder or a tributary before starting the climb, since it is scarce higher on the ridge.",
+ "waypoints": [
+  {
+   "lat": 47.968,
+   "lng": -123.583,
+   "elev": 1198,
+   "name": "Whiskey Bend Trailhead",
+   "note": "Start of the Elwha River Trail; Olympic Hot Springs Road is washed out beyond Madison Falls, adding roughly 6.9 mi of walking or biking each way just to reach this trailhead.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Port Angeles, drive west on US 101 and turn left onto Olympic Hot Springs Road, following it into the Elwha Valley to the Madison Falls parking area. The road is closed to vehicles beyond a washout here, so walk or bike roughly 7 miles up Olympic Hot Springs Road and then the Whiskey Bend Road to the Whiskey Bend Trailhead, where the Elwha River Trail begins."
+  },
+  {
+   "lat": 47.902313,
+   "lng": -123.490328,
+   "elev": 1296,
+   "name": "Mary's Falls Camp",
+   "note": "Established riverside camp with reliable water from the Elwha River, roughly the halfway point to Hayes River.",
+   "type": "Campsite",
+   "distMi": 8.8
+  },
+  {
+   "lat": 47.809356,
+   "lng": -123.453846,
+   "elev": 2000,
+   "name": "Hayes River Guard Station",
+   "note": "Historic patrol cabin and backcountry camp beside the Elwha River; the maintained trail continues upvalley toward Chicago Camp and Low Divide from here.",
+   "type": "Junction",
+   "distMi": 16.1
+  },
+  {
+   "lat": 47.766733,
+   "lng": -123.460105,
+   "elev": 2300,
+   "name": "Camp Wilder",
+   "note": "Backcountry camp (tent sites, bear wire, shelter) about 3.7 mi past Hayes River; leave the maintained trail here per route beta and head cross-country toward the upper Elwha Basin.",
+   "type": "Junction",
+   "distMi": 19.8
+  },
+  {
+   "lat": 47.77620185111111,
+   "lng": -123.52258969777778,
+   "elev": 4200,
+   "name": "Upper Elwha Basin",
+   "note": "Open heather benches and headwater creeks below Mount Wilder's south face; the last reliable water before the scree/talus climb to the ridge.",
+   "type": "Water",
+   "distMi": 21.5
+  },
+  {
+   "lat": 47.771827475555554,
+   "lng": -123.5211522488889,
+   "elev": 5000,
+   "name": "South-Face Scree/Talus Slope",
+   "note": "Loose scree and talus on a slope that gains nearly 3,800 ft in under 2 miles on this south aspect; watch for rockfall and keep the party close together.",
+   "type": "Hazard",
+   "distMi": 22
+  },
+  {
+   "lat": 47.767725,
+   "lng": -123.519805,
+   "elev": 5939,
+   "name": "Mount Wilder Summit",
+   "note": "True summit via the Class 2 south ridge; the southernmost peak of the Bailey Range, with Mount Olympus visible 8.7 mi WNW.",
+   "type": "Summit",
+   "distMi": 22.5
+  }
+ ]
+}

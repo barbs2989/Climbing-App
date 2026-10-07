@@ -1,0 +1,151 @@
+{
+ "id": "wa_mount_ballard_south",
+ "name": "South Slopes",
+ "waypoints": [
+  {
+   "lat": 48.7063,
+   "lng": -120.9185,
+   "elev": 1900,
+   "name": "Canyon Creek Trailhead",
+   "note": "Large parking lot on SR 20 just east of milepost 141, west of Rainy Pass. The trail follows Canyon Creek about 6 miles to the Mill Creek Trail junction, the start of this route's approach. The east-side line up the East Ridge starts elsewhere, at a locked gate on the Slate Creek road below Harts Pass (about 3,800 ft).",
+   "type": "Trailhead",
+   "elevFt": 1900,
+   "directions": "Drive SR 20 to the Canyon Creek Trailhead just past milepost 141, about 33 miles east of Marblemount or 55 miles west of Winthrop; the large parking area is at about 1,900 ft. A Northwest Forest Pass or the day-use fee (self-pay station on site) is required to park."
+  },
+  {
+   "lat": 48.726226,
+   "lng": -120.830383,
+   "elev": 2750,
+   "name": "Mill Creek ford",
+   "note": "Ford Mill Creek just below the trail junction — last reliable, easy-to-reach water before the long climb toward Azurite.",
+   "type": "Water",
+   "distMi": 5.7,
+   "directions": "Follow the Canyon Creek trail upstream along Canyon Creek about 5.7 miles to the ford of Mill Creek, the last easy water before the long climb."
+  },
+  {
+   "lat": 48.7302,
+   "lng": -120.831381,
+   "elev": 2800,
+   "name": "Mill Creek Trail junction",
+   "note": "Leave the Canyon Creek tread here and turn up the Mill Creek/Azurite Pass Trail; maintained trail effectively ends beyond this point.",
+   "type": "Junction",
+   "distMi": 6,
+   "directions": "From the ford continue a short way to the junction where the Mill Creek Trail toward Azurite Pass leaves the Canyon Creek trail."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4350,
+   "name": "Overgrown Mill Creek Trail",
+   "note": "Tread disappears under heavy slide alder and downed timber left from the mine-era trail's disuse — expect a slow, scratchy alder-hacking bushwhack for several miles.",
+   "type": "Hazard",
+   "distMi": 8.5,
+   "directions": "Turn up the Mill Creek Trail and follow it up the Mill Creek valley. Within a couple of miles the tread begins to vanish under slide alder and downed timber, and the going becomes a slow bushwhack."
+  },
+  {
+   "lat": 48.68278,
+   "lng": -120.78111,
+   "elev": 4440,
+   "name": "Azurite Mine",
+   "note": "Flat ground amid the old defunct copper/silver mine workings on Mill Creek; the common overnight camp before pushing toward the Ballard basin.",
+   "type": "Campsite",
+   "distMi": 11
+  },
+  {
+   "lat": 48.686458,
+   "lng": -120.767274,
+   "elev": 6600,
+   "name": "Azurite–Ballard basin",
+   "note": "Reached via roughly 3 more brush-choked miles above the mine; open basin at the base of Ballard's south slopes and a typical bivy before the summit push.",
+   "type": "Campsite",
+   "distMi": 14
+  },
+  {
+   "lat": 48.687683,
+   "lng": -120.762661,
+   "elev": 7400,
+   "name": "South-face brush and gully route-finding",
+   "note": "Steep, loose terrain with several look-alike chutes low on the south face — picking the wrong gully here is the main way parties get cliffed out or turned back.",
+   "type": "Hazard",
+   "distMi": 15,
+   "directions": "From the basin, push north through the brush band low on the south slopes onto steep, rocky ground, where several look-alike chutes split the face around 7,400 ft. Read the ground before committing to one, and do not follow the clean-looking south ridge, which is blocked higher by a notch with a gendarme."
+  },
+  {
+   "lat": 48.6885416,
+   "lng": -120.759433,
+   "elev": 8371,
+   "name": "Mount Ballard summit (south/true peak)",
+   "type": "Summit",
+   "elevFt": 8371
+  }
+ ],
+ "itinerary": {
+  "cal": "The Mill Creek Trail is severely brushed-in and essentially unmaintained year-round, so most parties wait until after peak snowmelt (mid-July through September) to reduce stream crossings and lingering snow on the upper mountain.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Hike the Canyon Creek Trail (about 6 good miles) then turn onto the Mill Creek Trail (about 5 miles). Parties describe Mill Creek as badly overgrown and blown-down — the first 4 brushy miles alone can eat 4 hours — so budget a long day even though the mileage looks modest. Camp near the Azurite Mine site at Ballard's base.",
+    "hours": 7.5,
+    "miles": 11,
+    "title": "Approach to base camp",
+    "gainFt": 2600,
+    "lossFt": 200,
+    "packLb": 40,
+    "schedule": [],
+    "objective": "Reach camp near the old Azurite Mine, at the foot of Mount Ballard"
+   },
+   {
+    "n": 2,
+    "note": "A steep, mostly off-trail scramble on brush, scree, and rock with two well-known cruxes: thick brush low on the mountain, and route-finding into the correct summit gully higher up (sustained 3rd class with a couple of exposed 4th class steps). Parties commonly tack on nearby Azurite Peak from the same camp if time and weather allow, but Ballard alone is already a long day — parties note a long evening getting back to camp.",
+    "hours": 11,
+    "miles": 5.5,
+    "title": "Summit day: Mount Ballard's south slopes",
+    "gainFt": 3700,
+    "lossFt": 3700,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave camp with light day packs",
+      "detail": "Early start to give a buffer for slow brush and route-finding."
+     },
+     {
+      "time": "+2-3 hr",
+      "label": "Fight through the lower brush band",
+      "detail": "The first, thickest crux — dense pine, alder, and slide brush low on the south slopes."
+     },
+     {
+      "time": "+1-2 hr",
+      "label": "Find and climb the summit gully",
+      "detail": "Second crux — loose talus/scree narrowing into a gully, with a few 3rd/4th class steps; easy to pick the wrong gully in poor visibility."
+     },
+     {
+      "time": "Midday-early PM",
+      "label": "Summit (8,371 ft)",
+      "detail": ""
+     },
+     {
+      "time": "Afternoon-evening",
+      "label": "Descend the same route to camp",
+      "detail": "Downclimb the loose gully carefully; expect a late return to camp."
+     }
+    ],
+    "objective": "Climb from camp to the 8,371 ft summit and back via the south-facing slopes/gully"
+   },
+   {
+    "n": 3,
+    "note": "Retrace the Mill Creek Trail and then the Canyon Creek Trail back to the car. The brushy Mill Creek stretch is slow again on tired legs, so it typically takes about as long as the way in.",
+    "hours": 7.5,
+    "miles": 11,
+    "title": "Hike out",
+    "gainFt": 200,
+    "lossFt": 2600,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Return to the Canyon Creek trailhead"
+   }
+  ],
+  "totalNote": "A 3-day, ~31-mile round-trip backpack with roughly 6,000-6,500 ft of cumulative gain: a long brushy approach to a base camp below the peak, one long summit day up the south slopes, and an equally slow hike back out — strong, fast parties sometimes compress this to 2 days, but 3 (2 nights) is the common pace given how bad the Mill Creek Trail brush is."
+ },
+ "beta": "Mount Ballard's south side is a Class 3 scramble from a camp at the old Azurite Mine on Mill Creek. The approach is the hard part: about six miles of good trail up Canyon Creek, then roughly five miles on the Mill Creek trail, most of it buried in slide alder and deadfall. Above camp the climb is steep, rocky ground with two cruxes: a band of brush low on the mountain and, higher up, picking the gully that actually leads to the summit block, where a few short steps need hands. The higher of Ballard's two summits is the southern one. The east ridge from the Slate Creek side is a separate, harder line described under its own approach."
+}

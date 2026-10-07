@@ -1,0 +1,97 @@
+{
+ "id": "wa_mount_rainier_kautz_glacier",
+ "name": "Kautz Glacier",
+ "waypoints": [
+  {
+   "lat": 46.78669,
+   "lng": -121.73454,
+   "elev": 5400,
+   "name": "Paradise Parking Area",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From SR 706 at Ashford, drive east through the park's Nisqually Entrance and follow the Paradise Road past Longmire about 18 miles to Paradise. Climbers park in the upper Paradise lot by the visitor center at about 5,400 ft. A park entrance pass is required, plus the climbing registration and a wilderness permit for the high camps."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6336,
+   "name": "Glacier Vista",
+   "type": "Junction",
+   "distMi": 1.5,
+   "directions": "Leave the upper Paradise lot on the Skyline Trail and follow the standard Muir-bound tread as it climbs above the meadows. Glacier Vista is the marked overlook where the Nisqually opens up several hundred feet below you. This is where the Kautz route leaves the trail system for good."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7300,
+   "name": "Wilson Gully (Crux)",
+   "type": "Hazard",
+   "distMi": 3.5,
+   "directions": "Follow the climbers' path along the moraine to about 6,300 ft, then drop onto the Nisqually and rope up before starting across — the crossing threads crevassed terrain under icefall and is genuinely dangerous in poor visibility. Take the line of least resistance over to the far side and the distinct low-angle snow gully there, then climb it to the bench above at roughly 7,300 to 7,400 ft. Move through this stretch early and do not stop in it."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 10800,
+   "name": "Camp Hazard",
+   "type": "Campsite",
+   "distMi": 7,
+   "directions": "From the top of the gully follow the ridge line up past the string of established camps — Wilson Moraine, then Lower and Upper Castle, which is where most parties spend the first night and where running water is usually available from mid-June on. Above the Castle the Turtle snowfield leads to Camp Hazard: sun-cupped firm snow and glacier ice, so keep an ice tool in hand. Stay to the west side of the snowfield, because its centre and east flank are raked by rock and ice off the Kautz Ice Cliff."
+  },
+  {
+   "lat": 46.8517,
+   "lng": -121.7603,
+   "elev": 14406,
+   "name": "Columbia Crest",
+   "type": "Summit",
+   "distMi": 13,
+   "directions": "Leave camp in the dark. Drop a couple of hundred feet through the gully between the rock cliff and the ice cliff, then move left around the base of the ice cliff to the foot of the chute — this is the deposition zone under the ice cliff and the reason for the alpine start, so cross it moving. The chute is two steps of snow and ice separated by easier snow, each anything from a short pitch to a few hundred feet depending on the year, bare and hard in a lean year, and six to eight screws is a sensible rack. Above it, angle up the upper Kautz and Wapowety Cleaver, working around crevasses, moats along the rock, and a large bergschrund near the crater rim before the flat walk to the top."
+  }
+ ],
+ "itinerary": {
+  "cal": "",
+  "days": [
+   {
+    "n": 1,
+    "note": "Hike to Glacier Vista, cross the Nisqually Glacier and climb past the Castle camps to Camp Hazard, with some crevasse navigation.",
+    "hours": 6,
+    "miles": 5,
+    "title": "Paradise to Camp Hazard",
+    "gainFt": 5700,
+    "packLb": 50,
+    "objective": "Reach Camp Hazard (~10,800 ft)"
+   },
+   {
+    "n": 2,
+    "note": "Alpine start to cross the exposed Kautz Ice Chute quickly (active icefall zone), climb the upper Kautz to the summit, then descend the Disappointment Cleaver to Paradise.",
+    "hours": 12,
+    "miles": 8,
+    "title": "Summit day",
+    "gainFt": 3300,
+    "lossFt": 9000,
+    "packLb": 30,
+    "schedule": [
+     {
+      "time": "~2:00 AM",
+      "label": "Leave Camp Hazard"
+     },
+     {
+      "label": "Cross the Kautz Ice Chute",
+      "detail": "Exposed to icefall — move continuously, do not stop"
+     },
+     {
+      "label": "Climb the upper ice step and the upper Kautz Glacier"
+     },
+     {
+      "label": "Summit"
+     },
+     {
+      "label": "Descend DC to Muir, continue to Paradise"
+     }
+    ],
+    "objective": "Cross the Kautz Ice Chute and summit"
+   }
+  ],
+  "totalNote": "A standard 2-day trip (~9,300 ft gain); a 3-day version adds a night to acclimatize and time the ice chute in cold, stable conditions."
+ }
+}

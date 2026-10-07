@@ -1,0 +1,137 @@
+{
+ "id": "wa_mount_christie_west",
+ "name": "North Couloir / Christie Glacier",
+ "waypoints": [
+  {
+   "lat": 47.5757,
+   "lng": -123.6482,
+   "elev": 519,
+   "name": "North Fork Quinault Trailhead / Ranger Station",
+   "note": "Road-end trailhead in Olympic National Park; wilderness permit must be obtained before the trip (none issued here), NPS entrance fee applies.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive to the North Fork Quinault Ranger Station and trailhead at the end of North Fork Quinault River Road (North Shore Road), about 17 miles east of US-101 at Lake Quinault. It is a road-end trailhead at roughly 500 feet inside Olympic National Park, and an NPS entrance fee applies. No permits are issued at the trailhead: every overnight camp used on this route (Halfway House or Elip Creek, Low Divide, and Martins Park) needs a wilderness permit obtained in advance, online, by phone or at a Wilderness Information Center."
+  },
+  {
+   "lat": 47.5987,
+   "lng": -123.61934,
+   "elev": 1020,
+   "name": "Wolf Bar",
+   "note": "Gravel riverside bar beside the North Fork Quinault with several roomy sites, the first realistic camp option out of the trailhead.",
+   "type": "Campsite",
+   "distMi": 2.5,
+   "directions": "Follow the North Fork Quinault River Trail upstream through old-growth rainforest about 2.5 miles to Wolf Bar, a gravel bar beside the river with several roomy sites."
+  },
+  {
+   "lat": 47.6233,
+   "lng": -123.627785,
+   "elev": 1120,
+   "name": "Halfway House Camp",
+   "note": "Forested camp with a couple of sandy sites on the site of a long-gone early-1900s trailside lodge, roughly the halfway mark to Low Divide.",
+   "type": "Campsite",
+   "distMi": 5.1,
+   "directions": "Continue up the river trail to Halfway House Camp, a forested camp near the 5-mile mark."
+  },
+  {
+   "lat": 47.633986,
+   "lng": -123.645454,
+   "elev": 1450,
+   "name": "Elip Creek Crossing / Trail Junction",
+   "note": "Ford Elip Creek and pass the junction with the Elip Creek Trail (old sign reads 'Skyline Trail 4.6'); a streamside campsite sits right at the junction.",
+   "type": "Junction",
+   "distMi": 6.5,
+   "directions": "Continue upstream to Elip Creek: ford the creek and pass the junction with the Elip Creek Trail, staying on the North Fork Quinault River Trail. A streamside camp sits right at the junction."
+  },
+  {
+   "lat": 47.651004,
+   "lng": -123.650782,
+   "elev": 1850,
+   "name": "Trapper Shelter",
+   "note": "Basic three-sided trail shelter with flat tent spots nearby; NPS designates it day-use/emergency only, don't count on it as an overnight camp.",
+   "type": "Campsite",
+   "distMi": 8.1,
+   "directions": "Stay on the North Fork Quinault River Trail upstream to Trapper Shelter, a three-sided shelter near 8 miles that is for day or emergency use only."
+  },
+  {
+   "lat": 47.72343,
+   "lng": -123.559044,
+   "elev": 3602,
+   "name": "Low Divide",
+   "note": "High pass separating the Quinault and Elwha drainages, site of the historic Low Divide ranger station and the junction where the climbers' route leaves the maintained trail for Martin's Park.",
+   "type": "Junction",
+   "distMi": 15.3,
+   "directions": "Continue up the valley on the North Fork Quinault River Trail, fording the North Fork at Sixteen Mile Camp, which can run thigh-deep in high water, and climb to Low Divide on the Quinault-Elwha divide."
+  },
+  {
+   "lat": 47.710955,
+   "lng": -123.545108,
+   "elev": 5600,
+   "name": "North Saddle / Christie Glacier Crossing",
+   "note": "Snow couloir above Martin's Park tops out on this ridge saddle; the traverse below the summit block crosses the crevasse-exposed Christie Glacier, rope up here.",
+   "type": "Hazard",
+   "distMi": 18.8,
+   "directions": "From Low Divide take the rough path into Martins Park and the Martin Lakes basin. From lower Martins Park climb the broad snow-and-rock couloir that runs south toward the peak, about 2,100 ft, to the saddle on the north ridge near 5,600 ft. Crampons and an axe are standard on firm morning snow."
+  },
+  {
+   "lat": 47.698005,
+   "lng": -123.545585,
+   "elev": 6182,
+   "name": "Mount Christie Summit",
+   "note": "True summit reached by a Class 2-3 scramble up the southeast ridge, above dense krummholz and the loose, partly overhanging Class 4 cliff over the high col; parties rappel that cliff on descent.",
+   "type": "Summit",
+   "distMi": 20.3,
+   "directions": "From the saddle drop down loose gravelly slopes to the lower edge of the Christie Glacier, rope up and cross it, stepping over the moat at its top to the high col east of the summit. Climb the loose Class 4 cliff above the col, push through dense krummholz, and scramble the Class 2-3 southeast ridge to the summit."
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "North Fork Quinault to Low Divide, then Martins Park and the north couloir",
+   "camps": [
+    "Low Divide — the pass camp for Mount Seattle and Mount Christie"
+   ],
+   "notes": "Every published account climbs the north couloir out of Martins Park to a north-ridge saddle, crosses the Christie Glacier to a col east of the summit, and finishes up the southeast ridge. From the North Fork Quinault Ranger Station at roughly 500 ft, at the end of the North Fork Quinault River Road about 17 miles east of US-101 at Lake Quinault, follow the North Fork Quinault River Trail upstream past Wolf Bar at about 2.5 miles, Halfway House Camp near 5 miles, Elip Creek near 6.5 miles, Trapper Shelter near 8.1 miles (day and emergency use only), a ford of the North Fork at Sixteen Mile Camp near 13.2 miles that can run thigh-deep in high water, and Low Divide near 15.3-16.7 miles, which sits on the actual Quinault-Elwha drainage divide. From Low Divide take the rough fisherman's path into Martins Park and the Martin Lakes basin and camp there.",
+   "season": "Roughly Jul-Sep. Firm morning snow in the couloir is what makes this line reasonable; late season it thins to loose rock",
+   "hazards": [
+    "A loose, chossy, poorly protected Class 4 step above the high col that has changed between seasons — treat published descriptions of it as provisional",
+    "Glacier travel on the Christie Glacier with a moat at its top whose width varies year to year and by time of day",
+    "Steep snow in the entry couloir with runout risk, and refreezing snow in it on a late return",
+    "Dense subalpine krummholz above the col",
+    "A thigh-deep ford of the North Fork Quinault at Sixteen Mile Camp in high water",
+    "Extreme remoteness — an injury near the summit means a multi-day self-extraction or a helicopter"
+   ],
+   "primary": true,
+   "baseFinding": "From lower Martins Park there is one broad snow-and-rock couloir and it runs south toward the peak. That is the whole arrival test and it is why parties consistently report finding it easily: you walk out of the lower meadows and over to the base of the snowfield. You are at the base when the meadow ends and continuous snow begins, with the couloir running away from you south — not west. If the drainage you are looking up runs any other direction, it is not this one.\n\nThe confirming test is a number and a duration: the couloir gains about 2,100 ft and tops out at a saddle on the north ridge near 5,600 ft, and parties consistently report about three and a half hours for it. If you have climbed far more than 2,100 ft without reaching a saddle, you are in the wrong gully.\n\nSecond test, past the saddle, and it is the one that catches the real trap on this peak: from the saddle you drop down loose gravelly slopes to the lower edge of the Christie Glacier. A route that only ever climbs is not this one. Rope up — reports describe few or no open crevasses but the angle is enough that parties treat it as glacier ground anyway. At the top of the glacier a moat forms where ice meets rock; in a good year it is a single easy step across to the high col. Check it before committing, because it is the thing that changes year to year.\n\nWhat waits at the col, so it is not a surprise: the barrier above it is a chossy eroded cliff band, very steep to locally overhanging, and it is the crux of the peak, not a formality. It has changed between recent seasons — one party found the expected weakness gone and had to force a line to the right across an extremely loose, essentially unprotectable ledge on a tight rope. Expect dense krummholz above it before the rock improves and the Class 2-3 southeast ridge leads to the summit."
+  },
+  {
+   "name": "Elwha side to Low Divide, from Whiskey Bend",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 3600,
+      "name": "Low Divide — the pass camp for Mount Seattle and Mount Christie",
+      "role": "main",
+      "type": "camp",
+      "notes": "Low Divide is the saddle between Mount Seattle and Mount Christie and the obvious base for both, and by all accounts it is the most comfortable camp in the interior — flat, watered, with a toilet and a bear hang. Mount Seattle has three established scramble lines from here, by Noyes Basin, by Seattle Creek Basin and by the south slopes, and the upper meadows above camp are open walking. Mount Christie is usually taken by dropping to Martins Park, a boulder garden about three miles below the Christie Glacier, and climbing the north couloir from there. The honest planning point is which side you walk in from: this is 28.4 miles from Whiskey Bend up the Elwha, and 16 miles from the North Fork Quinault trailhead, so unless you are traversing the range you should be coming from the Quinault. Wasps have been a real problem on the lower forest sections in late summer, and stings there have put people out of action for days.",
+      "water": "Reliable — a stream runs through the camp all season",
+      "permit": "Olympic wilderness permit required, booked in advance. Not itself a quota area, but it is a long way from any road and may not appear in an online search, so telephone the wilderness information centre if the site will not show. Bear canister mandatory. No fires at this elevation.",
+      "capacity": "Around five sites, with a bear hang, a toilet and flat ground; small enough that a large party will fill it"
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Whiskey Bend Trailhead (Elwha)",
+     "trailheadLat": 47.968,
+     "trailheadLng": -123.583
+    }
+   },
+   "notes": "Low Divide is a divide, and the Elwha reaches it from the north just as the Quinault does from the south. Historically this meant the Elwha River Trail from the Whiskey Bend Trailhead. Since the November 2017 Olympic Hot Springs Road washout, Whiskey Bend has been closed to vehicles, which adds an extra 6.2 miles each way on foot or by bike from the Madison Falls parking area simply to reach the trailhead — check current road status before choosing this side, because that closure is what decides whether it is competitive with the Quinault.\n\nFrom Low Divide the route is identical to the Quinault variant: the fisherman's path into Martins Park and the Martin Lakes basin, camp, and the north couloir.\n\nNo mileage is quoted for this side because published figures assume Whiskey Bend is drivable and most currently are not.",
+   "season": "Roughly Jul-Sep, on the same window as the Quinault side",
+   "hazards": [
+    "Road closure at Olympic Hot Springs Road adds 6.2 miles each way and may change season to season",
+    "Everything above Low Divide is the same as the Quinault variant: the Class 4 step above the col, the Christie Glacier moat, and the entry couloir",
+    "A long Elwha valley walk with river crossings",
+    "No cell coverage and multi-day self-rescue exposure"
+   ],
+   "baseFinding": "Identical to the Quinault variant once you are at Low Divide, and that shared test is a good one: from lower Martins Park there is one broad snow-and-rock couloir and it runs south toward the peak. Walk to where the meadow ends and the snow begins. Up it about 2,100 ft, roughly three and a half hours, to a saddle on the north ridge near 5,600 ft; then down loose gravel to the Christie Glacier; then the moat at the glacier's top and the high col east of the summit.\n\nThe extra test this side needs is at Low Divide itself, because you arrive from the opposite direction. Low Divide is a trail junction and the site of the historic ranger station, and it is where the climbers' route leaves maintained trail for Martins Park. Coming up from the Elwha, that turn is on your right as you crest the divide and it is a rough fisherman's path, not a signed one. If you have started descending toward the Quinault, you have walked past it."
+  }
+ ]
+}

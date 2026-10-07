@@ -25,6 +25,7 @@
 // anything: a 100%-contained fire 5 miles off is smoke, and an uncontained one at 45
 // miles is a road-closure risk tomorrow, not today.
 import { useFiresNear, NEAR_ROUTE_KM, fireLevel, fireColor, fmtAcres, fmtContained, fmtDiscovered } from "./fire";
+import { TILE_CREDIT } from "./mapKit";
 
 const MI_PER_KM = 0.621371;
 
@@ -180,6 +181,8 @@ function MapCard({ C, coord, ActionIcon, onOpen }) {
           ))}
         </span>
         <span style={{ position: "absolute", left: "50%", top: PREVIEW_H / 2, width: 14, height: 14, marginLeft: -7, marginTop: -7, borderRadius: "50%", background: C.blue, border: "3px solid #ffffff", boxSizing: "border-box", boxShadow: "0 1px 4px rgba(0,0,0,0.5)" }} />
+        {/* OpenTopoMap tiles: CC-BY-SA, so the licence credit rides on the picture. Plain text — the card is one button and cannot hold a link. */}
+        <span style={{ position: "absolute", left: 0, right: 0, bottom: 0, fontSize: 9, lineHeight: 1.35, padding: "1px 5px", background: "rgba(0,0,0,0.55)", color: "#d6d6d6", textAlign: "right" }}>{TILE_CREDIT.topo.text}</span>
       </span>
       <span style={{ display: "flex", alignItems: "center", gap: 8, padding: "11px 12px", borderTop: "1px solid " + C.border }}>
         <ActionIcon name="map" size={18} color={C.blue} />

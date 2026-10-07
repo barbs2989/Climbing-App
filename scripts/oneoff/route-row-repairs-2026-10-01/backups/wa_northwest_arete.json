@@ -1,0 +1,165 @@
+{
+ "id": "wa_northwest_arete",
+ "name": "Northwest Arete",
+ "waypoints": [
+  {
+   "lat": 47.5278,
+   "lng": -120.8205,
+   "elev": 3400,
+   "name": "Stuart Lake Trailhead",
+   "note": "Self-issue day-use wilderness permit at the kiosk; parking is very limited and the Enchantment Permit Area prohibits dogs.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From US 2 at the west end of Leavenworth, take Icicle Creek Road 8.5 miles and turn left onto FS Road 7601 (Eightmile Road). Follow this bumpy dirt road about 4 miles to the road end. A Northwest Forest Pass is required to park, the road is closed in winter, and day trips need the free self-issued Enchantment day-use permit at the trailhead."
+  },
+  {
+   "lat": 47.503532,
+   "lng": -120.845759,
+   "elev": 4400,
+   "name": "Colchuck Lake / Stuart Lake trail fork",
+   "note": "Trail flattens at a signed fork — Colchuck Lake left, Stuart Lake right; stay right toward Stuart Lake; the route leaves that trail for Mountaineer Creek farther on.",
+   "type": "Junction",
+   "distMi": 2.2,
+   "directions": "Follow Stuart Lake Trail #1599 up the Mountaineer Creek valley, crossing the creek on a log footbridge, then switchback up to the signed fork where the trail flattens."
+  },
+  {
+   "lat": 47.498516,
+   "lng": -120.861207,
+   "elev": 4700,
+   "name": "Cross-country departure into Mountaineer Creek drainage",
+   "note": "Leave the maintained trail here for brushy, off-trail travel through Devil's Club, slide alder, and boulder-strewn creek terrain toward Argonaut's north side.",
+   "type": "Junction",
+   "distMi": 3,
+   "directions": "Stay right on the Stuart Lake Trail rather than turning onto the Colchuck Lake Trail. Continue to about 4,700 ft, where a faint boot path leaves the trail toward Mountaineer Creek."
+  },
+  {
+   "lat": 47.479735,
+   "lng": -120.864637,
+   "elev": 6800,
+   "name": "Lower basin below Argonaut's north face",
+   "note": "Rough rest/bivy basin where the bushwhack ends and the technical approach up the granite slab begins.",
+   "type": "Campsite",
+   "distMi": 4.7,
+   "directions": "Follow the faint path over and down to Mountaineer Creek, up the creek to about 4,780 ft, then bushwhack to a boulder field below Argonaut. Traverse the boulders south-southwest on cairns and cut through slide alder, keeping to talus on climber's right where you can, then climb through trees, talus and dry creek beds past waterfall slabs into the north basin."
+  },
+  {
+   "lat": 47.475187,
+   "lng": -120.86096,
+   "elev": 7300,
+   "name": "Snow-covered granite slab",
+   "note": "Steep, partly snow-covered granite slab leading into the couloir; slick and exposed when wet or icy.",
+   "type": "Hazard",
+   "distMi": 5.1,
+   "directions": "Climb out of the basin onto the steep granite slab at the foot of the snow finger. It is slick and exposed when wet, icy or partly snow-covered."
+  },
+  {
+   "lat": 47.471558,
+   "lng": -120.862146,
+   "elev": 7900,
+   "name": "40+ degree snow/ice couloir",
+   "note": "Couloir steepens to 40+ degrees near its top; crampons recommended for the final pitch to the notch.",
+   "type": "Hazard",
+   "distMi": 5.4,
+   "directions": "Continue up into the snow finger, which steepens past 40 degrees near its top. Carry an axe and crampons: it can be firm or icy late in the season, with loose, dirty rock where the snow has pulled back."
+  },
+  {
+   "lat": 47.470795,
+   "lng": -120.863477,
+   "elev": 8050,
+   "name": "Notch below the Northwest Arete",
+   "note": "Gain the ridge here and rope up for roughly seven pitches of Class 4 to 5.6+ climbing up the arete.",
+   "type": "Junction",
+   "distMi": 5.6,
+   "directions": "Finish up the top of the snow finger to the small col at the very foot of the Northwest Arete, where the roped climbing starts."
+  },
+  {
+   "lat": 47.470119,
+   "lng": -120.861477,
+   "elev": 8457,
+   "name": "Argonaut Peak summit (west summit, true)",
+   "note": "True summit is the west of two nearly equal summits (SE and W); the standard descent does not reverse the arete: it traverses east and rappels about four times to the Argonaut-Colchuck col.",
+   "type": "Summit",
+   "distMi": 6,
+   "directions": "Climb about seven pitches of blocky Class 4 to 5.6 up the arete. The crux is a flake taken au cheval followed by one insecure move to a good ledge; above it, take the right-hand of two corners, then traverse left off it to reach the summit ridge and the west summit, the true high point."
+  }
+ ],
+ "itinerary": {
+  "cal": "Approach from the Stuart Lake trailhead via Mountaineer Creek; a free self-issued permit covers day use, and an overnight camp falls under the Enchantment Permit Area rules (May 15-Oct 31) and snow can linger on the upper approach/glacier into summer — a 2023 Labor Day party found 4 in. of fresh snow up high.",
+  "days": [
+   {
+    "n": 1,
+    "note": "Hike from the Stuart Lake trailhead via Mountaineer Creek, then bushwhack up toward the basin below the couloir/notch, camping near water around 6,000 ft.",
+    "hours": 4.5,
+    "miles": 6,
+    "title": "Approach to basin camp",
+    "gainFt": 2600,
+    "lossFt": 0,
+    "packLb": 35,
+    "schedule": [],
+    "objective": "Reach a camp in the basin below Argonaut's north side"
+   },
+   {
+    "n": 2,
+    "note": "Climb the approach couloir to the notch, then 7 pitches up the Northwest Arête (mostly Class 4-5.6) to the summit. Descend east with about four rappels to the Argonaut-Colchuck col, drop back into the basin, break camp, and hike out.",
+    "hours": 14.5,
+    "miles": 6,
+    "title": "Couloir, NW Arete, and out",
+    "gainFt": 2457,
+    "lossFt": 5057,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "4:00 AM",
+      "label": "Leave camp",
+      "detail": "Up the couloir toward the notch."
+     },
+     {
+      "time": "6:00 AM",
+      "label": "Reach notch, rope up",
+      "detail": "Start of the 7-pitch arête."
+     },
+     {
+      "time": "9:30 AM",
+      "label": "Reach summit",
+      "detail": ""
+     },
+     {
+      "time": "12:00 PM",
+      "label": "Begin descent",
+      "detail": "Traverse east and rappel about four times to the Argonaut-Colchuck col."
+     },
+     {
+      "time": "3:00 PM",
+      "label": "Back at camp",
+      "detail": "Break camp for the hike out."
+     },
+     {
+      "time": "6:30 PM",
+      "label": "Reach trailhead",
+      "detail": "Fast parties instead push the whole route car-to-car in ~17 hrs."
+     }
+    ],
+    "objective": "Climb to the notch, up the arête, and exit to the trailhead"
+   }
+  ],
+  "totalNote": "Standard plan is 2 days (basin bivy + a big summit/exit day, ~14.5 hrs); strong parties also do the whole thing car-to-car in a single ~17 hr push, and some parties stretch it to 3 relaxed days with side-scrambles of Colchuck or Dragontail."
+ },
+ "approach_variants": [
+  {
+   "name": "Stuart Lake TH cross-country up Mountaineer Creek to the north basin",
+   "hours": "4-5",
+   "notes": "From the Stuart Lake Trailhead, hike the Stuart Lake Trail and go straight past the Colchuck Lake turnoff. Continue to about 4,700 ft, where a faint path leaves the trail for Mountaineer Creek. Follow it over and down to the creek, then up the creek to roughly 4,780 ft, and bushwhack up to a boulder field below Argonaut at about 4,925 ft.\n\nTraverse the boulders following cairns south-southwest and cut through slide alder — this brush is the notorious part of the day, and staying on talus to climber's right where you can avoids the worst of it. Then head up in or beside the trees, through boulders, talus, scree and dry creek beds, past waterfall slabs, into the north basin below Argonaut at about 6,700 ft. Roughly four hours car-to-basin for an efficient party.\n\nExpect to lose the boot path in the boulder field. Most of this approach is navigated by feel; there is no marked trail. Wet, mossy logs over Mountaineer Creek are a nuisance in both directions.",
+   "gainFt": 3300,
+   "season": "mid-Jul-Sep; parties report significant snow and slush still hampering things into late June",
+   "hazards": [
+    "Dense slide alder in the Mountaineer Creek drainage",
+    "Wet, mossy log crossings of Mountaineer Creek",
+    "Boot path disappears in the boulder field — sustained off-trail navigation",
+    "Firm or icy snow finger to the col late season",
+    "Waterfall slabs on the approach",
+    "Descent route-finding is genuinely tricky and is not a place to be in poor visibility"
+   ],
+   "baseFinding": "From the north basin at about 6,700 ft, a snow finger runs up to the southwest. Climbing it — late in the season with some loose, dirty rock where the snow has pulled back — brings you to a small col / notch at the very foot of the Northwest Arete. That col is the start of the roped climbing.\n\nSo the sequence in poor visibility is: basin floor, single obvious snow tongue heading southwest, top of the tongue, notch. The snow finger can be firm or icy late in the season and looks more intimidating than the grade suggests — carry an axe and consider crampons even though this is a rock route.\n\nAbove the col the arete gives six to eight pitches of blocky, generally solid Class 4 to 5.6 with route-finding that is described as straightforward. If the climbing above your notch is immediately hard or featureless, you are not on the arete.\n\nDo not plan to reverse the arete: the descent traverses off east to the Argonaut-Colchuck col with roughly four rappels, so you finish on the other side of the mountain from your packs and your approach."
+  }
+ ]
+}

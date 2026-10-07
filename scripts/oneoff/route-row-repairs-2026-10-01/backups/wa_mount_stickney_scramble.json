@@ -1,0 +1,76 @@
+{
+ "id": "wa_mount_stickney_scramble",
+ "name": "Standard Scramble",
+ "waypoints": [
+  {
+   "lat": 47.94902,
+   "lng": -121.68729,
+   "elev": 1680,
+   "name": "Olney Creek Road Gate",
+   "note": "Gated logging-road junction on Sultan Basin Road ~11.2-11.5 mi north of Sultan; no formal lot, park on the road shoulder.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Sultan, follow Sultan Basin Road north about 11.2 to 11.5 miles to the gated junction with Olney Creek Road. Olney Creek Road is closed to public vehicle travel, so that gate is where the drive ends. There is no formal lot — park on the road shoulder at the junction. The day starts on foot from the gate, walking the closed logging road uphill."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 3700,
+   "name": "Second Switchback / Climbers' Path",
+   "note": "Closed Olney Creek logging road levels off at the second switchback here; a boot path breaks off to the right and follows the ridge crest toward the summit.",
+   "type": "Junction",
+   "distMi": 4.8,
+   "directions": "Walk the closed Olney Creek logging road uphill about 4.8 miles, past a first switchback, to a second switchback where the grade eases around 3,700 ft. Nothing is signed here and mapped road alignments are unreliable, so go by the switchback on the ground."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4050,
+   "name": "Ridge Path Fade-Out",
+   "note": "The climbers' path peters out on the ridge crest around 4,000-4,200 ft; leave it and traverse cross-country southeast toward One Acre Lake.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Leave the road on the unsigned but well-established boot path on the right (north) side, which climbs onto a forested ridge crest and follows it until the tread fades out around 4,050 to 4,200 ft."
+  },
+  {
+   "lat": 47.91294,
+   "lng": -121.6175,
+   "elev": 4200,
+   "name": "One Acre Lake",
+   "note": "Small alpine lake passed on its east side; last reliable water before the dry summit basin, but no confirmed shoreline coordinate found.",
+   "type": "Water",
+   "distMi": null,
+   "directions": "Leave the tread and traverse southeast cross-country, aiming for a small pond just northeast of point 4875, then continue southeast to a second minor ridge and cross open slopes into the rocky basin holding One Acre Lake."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 4500,
+   "name": "Upper Drainage Tarns",
+   "note": "Ascend the drainage above the lake to a cluster of small tarns; flattish ground here works as a rough bivy for an overnight attempt.",
+   "type": "Water",
+   "distMi": null,
+   "directions": "Pass the lake on its east side and follow the drainage above it up to a cluster of small tarns around 4,500 ft."
+  },
+  {
+   "lat": 47.90941576923076,
+   "lng": -121.620795,
+   "elev": 4900,
+   "name": "Summit Basin Gully",
+   "note": "Rocky basin/boulder field below the final ridge; the gully to the summit crest is wet, muddy, easy 4th class and can hold old snow or cornice debris into early summer — many parties carry a rope to rappel it.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "Work up and around toward the bowl directly beneath the summit block, into the rocky basin and boulder field below it. The gully to take is the one on the right, immediately west of the summit hump; in winter and spring at least one avalanche-prone slope is crossed on the way."
+  },
+  {
+   "lat": 47.902325,
+   "lng": -121.608525,
+   "elev": 5307,
+   "name": "Mount Stickney Summit",
+   "note": "True summit gained via a short, airy walk/scoot across an exposed ridge section past a small plateau to the final rock hump.",
+   "type": "Summit",
+   "distMi": 6.5,
+   "directions": "Climb the wet, loose, easy fourth-class gully to the notch just under the summit ridge, then walk and scoot across the short, exposed ridge past a small plateau to the final rock hump."
+  }
+ ]
+}

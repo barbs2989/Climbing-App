@@ -1,0 +1,71 @@
+{
+ "id": "wa_grotto_mountain_e_route",
+ "name": "East Ridge Scramble",
+ "waypoints": [
+  {
+   "lat": 47.76305,
+   "lng": -121.39002,
+   "elev": 3500,
+   "name": "NF-6514-410 road's end",
+   "note": "Park at the end of spur 410 off Eagle Creek Road (FS-6514), which leaves Beckler River Road (FS-65): about five miles in, keep on 410 at the fork and continue past the Eagle Lake trailhead to the road's end; no maintained trail beyond this point.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Roughly 6.5 miles of gravel and dirt Forest Service road from pavement. The drive-in is variable and worth confirming with the Skykomish Ranger District before committing to it."
+  },
+  {
+   "elev": 3700,
+   "name": "Brushy drainage / streambed",
+   "note": "Route starts by climbing a mossy, brush-choked streambed that is slick when wet; poor footing before the terrain opens.",
+   "type": "Hazard",
+   "distMi": 0.3,
+   "directions": "There is no trail from the car; the line goes straight into thick huckleberry toward the talus above. Rather than fighting the brush, drop into the streambed running alongside it, which is much easier going even though the rock underfoot is slick."
+  },
+  {
+   "elev": 4300,
+   "name": "Saddle east of Grotto Lake basin",
+   "note": "Huckleberry-covered saddle where the route angles right off the drainage onto the ridge proper before contouring toward Klinger Ridge.",
+   "type": "Junction",
+   "distMi": 0.8,
+   "directions": "Follow the drainage and the talus beside it up into the rock basin around 4,300 ft. Route-finding is entirely on you here, with no trail and no markers, and morning fog frequently sits in this basin well past sunrise, so carry a track you can navigate to."
+  },
+  {
+   "lat": 47.76511,
+   "lng": -121.41621,
+   "elev": 4705,
+   "name": "Klinger Lake",
+   "note": "Small tarn at the top of the basin below Klinger Ridge; snowmelt-fed and a reliable early-season water source before the final push.",
+   "type": "Water",
+   "distMi": 1.3
+  },
+  {
+   "lat": 47.76475426363636,
+   "lng": -121.41701651818181,
+   "elev": 4600,
+   "name": "Klinger Ridge meadow gain",
+   "note": "Meadowy ridge crest reached via a rising talus traverse; fog commonly lingers here into mid-morning, obscuring the correct line.",
+   "type": "Junction",
+   "distMi": 1.5,
+   "directions": "From the tarn and basin below the ridge, make a rising traverse across talus into a gully, then climb a heathered slope beneath a cliff band, which dodges a slide-alder tangle, to reach the open meadow crest above 4,600 ft. A cairn near here has pulled parties off the direct line; staying in the gully to about 4,800 ft is the more direct way."
+  },
+  {
+   "lat": 47.76369275454545,
+   "lng": -121.41944477272727,
+   "elev": 5300,
+   "name": "Notch below summit tower",
+   "note": "Steep talus leads to a notch west of a prominent rock tower; a short vertical downclimb on the south side is exposed and helmet-recommended.",
+   "type": "Hazard",
+   "distMi": 2.1,
+   "directions": "Follow the meadow and boulder crest upward, but do not try to hold the literal east ridge crest, which cliffs out and does not go as a through-route. From about 4,800 ft, weave up through steep granite blocks and cross a final talus field to reach the notch."
+  },
+  {
+   "lat": 47.76321,
+   "lng": -121.42058,
+   "elev": 5618,
+   "name": "Grotto Mountain summit",
+   "note": "Class 4 scramble up a final gully off the notch gains the summit block; views south into the Bolt Creek Fire-burned drainage and across to Mount Baring.",
+   "type": "Summit",
+   "distMi": 2.4,
+   "directions": "Downclimb the short, steep, near-vertical step on the south side of the notch. This is the most exposed move on the route and the rock is loose in places. Then move a short way west into the gully below the summit block and scramble Class 3-4 to the top."
+  }
+ ]
+}

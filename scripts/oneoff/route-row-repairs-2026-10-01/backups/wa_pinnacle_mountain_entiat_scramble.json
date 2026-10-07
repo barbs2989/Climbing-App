@@ -1,0 +1,86 @@
+{
+ "id": "wa_pinnacle_mountain_entiat_scramble",
+ "name": "Standard Scramble",
+ "itinerary": {
+  "cal": "Access is via ~38 miles of FS Road 51 from the town of Entiat; go after the road and high country are snow-free (typically July-October) and note this is Glacier Peak Wilderness, so wilderness group-size/camping rules apply.",
+  "days": [
+   {
+    "n": 1,
+    "note": "From the Entiat River Trailhead, follow the Entiat River Trail about 7 miles to the 45-Mile Sheep Driveway, then climb off-trail via Aurora Creek into the Pinnacle Creek drainage below Borealis Ridge, gaining most of the day's elevation in the final push above treeline. Parties describe this as a long, ~10-11 hour carry with a full pack; camp is pitched wherever water and a flat spot align (common sites: ~6,500 ft in the Pinnacle Creek drainage, or up on the ~7,600 ft Borealis Ridge crest for a shorter summit day).",
+    "hours": 9,
+    "miles": 14,
+    "title": "Backpack in to high camp (Entiat River Trail option)",
+    "gainFt": 4700,
+    "lossFt": 0,
+    "packLb": 32,
+    "schedule": [
+     {
+      "time": "6:00 AM",
+      "label": "Leave Entiat River Trailhead",
+      "detail": "Northwest Forest Pass required; ~38 mi up FS Road 51 from the town of Entiat to reach the TH."
+     },
+     {
+      "time": "+3 hr",
+      "label": "Clear the Entiat River Trail miles",
+      "detail": "First 7 miles go quickly on good trail along the river."
+     },
+     {
+      "time": "+6 hr",
+      "label": "Enter the Pinnacle Creek drainage / burn zone",
+      "detail": "Trail quality degrades through old fire damage above the basin; open meadows and larches begin."
+     },
+     {
+      "time": "~4-6 PM",
+      "label": "Make camp",
+      "detail": "Common sites are ~6,500 ft in the Pinnacle Creek drainage or higher on Borealis Ridge (~7,600 ft) if you want a shorter summit day."
+     }
+    ],
+    "objective": "Reach a high camp near Borealis Ridge / Pinnacle Creek below Pinnacle"
+   },
+   {
+    "n": 2,
+    "note": "An early, light-pack scramble to the summit and back to camp, followed by breaking camp and hiking all the way out the same day — reported as a very long ~10-11 hour, ~15-mile day but the standard way solo/2-day parties do it. The climb itself is an easy Class 2 walk/scramble on the south slopes from the crest saddle just south of the peak, though loose scree and talus make the last stretch tedious.",
+    "hours": 11,
+    "miles": 15,
+    "title": "Summit push and hike out",
+    "gainFt": 700,
+    "lossFt": 5400,
+    "packLb": 12,
+    "schedule": [
+     {
+      "time": "5:00 AM",
+      "label": "Leave camp",
+      "detail": "Light/day pack; climb from camp to the crest saddle just south of the peak."
+     },
+     {
+      "time": "+2 hr",
+      "label": "Traverse the burn zone ridge",
+      "detail": "Class 2 ridge travel with crappy scree underfoot; route stays below 8,000 ft until the final pitch."
+     },
+     {
+      "time": "+3.5 hr",
+      "label": "Summit Pinnacle Mountain",
+      "detail": "Final push up steep, loose scree/talus on the south slopes to the 8,400 ft summit."
+     },
+     {
+      "time": "~11:00 AM",
+      "label": "Back at camp",
+      "detail": "Reverse the ascent route; break down camp and shoulder full pack."
+     },
+     {
+      "time": "12:00 PM",
+      "label": "Begin hike out",
+      "detail": "Retrace the Entiat River Trail the full ~14-15 miles back to the car."
+     },
+     {
+      "time": "~7-9 PM",
+      "label": "Reach trailhead",
+      "detail": "A long finish; many parties are hiking the last miles in fading light."
+     }
+    ],
+    "objective": "Climb Pinnacle Mountain (8,400 ft) then pack out to the trailhead"
+   }
+  ],
+  "totalNote": "A 2-day, roughly 27-29 mile round trip with ~5,000-5,500 ft of total gain: a long backpack in via the Entiat River Trail to a high camp in the Pinnacle Creek drainage/Borealis Ridge, then an early summit scramble followed by a full hike-out the same day."
+ }
+}

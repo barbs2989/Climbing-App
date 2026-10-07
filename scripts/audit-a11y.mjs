@@ -147,7 +147,7 @@ const record = (screen, rows) => {
   }
 };
 
-const TABS = ["Home", "Climbs", "Partners", "Crew", "Logbook", "Ranks", "Profile"];
+const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"];
 await page.goto(base, { waitUntil: "domcontentloaded", timeout: 180000 });
 await page.waitForTimeout(3500);
 

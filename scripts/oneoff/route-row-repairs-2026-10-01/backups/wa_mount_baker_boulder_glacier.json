@@ -1,0 +1,50 @@
+{
+ "id": "wa_mount_baker_boulder_glacier",
+ "name": "Boulder Glacier",
+ "approach": "From Sedro-Woolley, drive SR 20 east 16 miles to milepost 82, turn north on Baker Lake Highway (FR 11) for about 18 miles, then (after Boulder Creek Campground) turn onto FR 1130 for about 1 mile to FR 1131, and follow it to the Boulder Ridge Trailhead. Hike the Boulder Ridge Trail (maintained about 2 miles to the wilderness boundary), then a steep, unmaintained boot path with a 3rd-class rock band around 3.4 mi/4,700 ft, continuing up the moraine to a high camp around 5,500 ft just below the Boulder Glacier.",
+ "approach_variants": [
+  {
+   "name": "Boulder Ridge Trail #605 to the moraine, then the lower Boulder Glacier",
+   "notes": "From the Boulder Ridge Trailhead at the end of FR-1131 off Baker Lake Road (about 2,700 ft — the lowest trailhead of any Baker route, which is where the 8,000+ ft of gain comes from), follow Boulder Ridge Trail #605. The first two miles are nearly flat through old clear-cut and timber and end at a boggy clearing at the Mount Baker Wilderness boundary; the maintained tread effectively stops there. Beyond it the route is a steep, unmaintained boot path up heather. Around 4,700 ft it crosses a Class 3 rock band, which parties have sometimes found protected by a fixed line left by an earlier team — treat any fixed line as unknown gear, not as trail furniture. Above the rock band the path gains the crest of a lateral moraine and follows it. Between the meadow and the basalt cliff, stay on or near the moraine crest north of Boulder Creek: the game trails here drop toward the creek and lead nowhere useful. Camp is on the ridge. Two elevations are published for it and they do not agree — so plan to camp where the ridge runs out into snow rather than at a number.",
+   "season": "Roughly May-Jul. This is a short-season route: the Boulder shrinks and breaks up early, and by August the crevasse field that is walkable in June is a maze",
+   "hazards": [
+    "A Class 3 rock band around 4,700 ft on an unmaintained boot path, sometimes with an unknown fixed line on it",
+    "Losing the moraine crest onto game trails that drop to Boulder Creek",
+    "A crevasse field that opens fast — this route has one of the shortest usable seasons on the mountain",
+    "Rockfall from the buttress near 9,300 ft on the upper mountain, on the way down as well as up",
+    "8,000 ft of gain from the lowest trailhead on the peak, so a late turnaround is a long descent in the dark"
+   ],
+   "baseFinding": "The moraine crest is the handrail, and the route starts where it dies. Everything from the rock band upward is a walk along a single narrow spine of moraine with the drop into Boulder Creek on one side. In cloud you do not need to see anything: keep the crest under your feet and keep the creek noise on the same side of you the whole way. If the ground under you goes flat and broad, or you are suddenly walking with the creek on the other side, you have come off the moraine and are on the game trails below it.\n\nArrival: the ridge runs out into snow and ice near 6,300 ft, and that transition — trail-and-heather to glacier — is the base of the route. There is nothing subtle about it; the ground stops being walkable in boots.\n\nThe discriminator against the other route from this camp, and it matters because both start from the same spot: this route stays on the glacier. The Boulder-Park Cleaver route crosses the lower glacier northwest to the toe of a rock cleaver and gets onto rock. If you find yourself walking toward a rock rib and looking for a place to step off the ice, you are on the cleaver route, not this one. This route goes up the ice.\n\nWhat going too far looks like: contouring so far northwest that the Park Glacier headwall comes into view above you. That is the neighbouring aspect and its own set of routes."
+  }
+ ],
+ "itinerary": {
+  "cal": "A less-traveled, drier east-side route; conditions and the boot path are less established than the Coleman-Deming or Easton sides, so allow extra route-finding time.",
+  "days": [
+   {
+    "n": 1,
+    "note": "A long, arduous east-side approach through clearcut and timber onto Boulder Ridge; most parties camp where the ridge meets the glacier at about 5,500-5,700 ft; a sheltered site near 7,500 ft beside the cleaver shortens the summit day for those who carry higher.",
+    "hours": 4.5,
+    "miles": 6.5,
+    "title": "Approach to high camp",
+    "gainFt": 3000,
+    "lossFt": 0,
+    "packLb": 45,
+    "schedule": [],
+    "objective": "Boulder Ridge trailhead to high camp where the ridge meets the glacier"
+   },
+   {
+    "n": 2,
+    "note": "From camp, climb the glacier alongside the cleaver, negotiating crevasses and a bergschrund, then finish up steep snow for the last ~500 ft to the summit. Reverse the route back to camp and continue out to the trailhead.",
+    "hours": 12,
+    "miles": 9.5,
+    "title": "Summit and hike out",
+    "gainFt": 5100,
+    "lossFt": 8100,
+    "packLb": 18,
+    "schedule": [],
+    "objective": "Climb the Boulder Glacier/Cleaver to the summit, descend to the car"
+   }
+  ],
+  "totalNote": "A quieter, longer approach than the standard routes: 4-5 hrs to camp, then a 5-7 hr summit push followed by the full hike out, for roughly 16 miles and 8,100 ft round trip."
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "id": "wa_whitehorse_mountain_nw_shoulder",
+ "name": "Northwest Shoulder",
+ "approach": "Start at the Niederprum Trailhead (Trail #653, ~918 ft) at the end of Old Mine Road. Because the Moose Creek bridge just past the gate has been closed and barricaded with boulders for years, you now park at the gate, scramble over the boulder barricade, and cross the old wooden bridge on foot to rejoin the road to the actual trailhead about 1.25 miles farther on — this detour adds roughly 2.6 miles round trip and 400 ft of extra gain beyond what older published mileages state. From the signed trailhead, Trail #653 switchbacks up through forest for about 1.3 miles, crossing into Boulder River Wilderness (marked by a small boundary sign) and passing an old slide-alder opening with views north to Darrington and the Sauk Valley. At roughly 3,200 ft you reach 'the flat,' a level clearing that was the site of Chas Niederprum's old mining cabin — a natural rest/camp spot with good views of the peak. Beyond the flat the maintained tread ends; continue on a climbers' boot path through thinning, brushy forest (deadfall to weave around) up to continuous snow around 2,600 ft of gain from the trailhead. From there make a gently rising traverse south for about 0.5 mile into a wide, usually snow-filled couloir (holds snow into early July in normal years); ascend it to Lone Tree Pass (~4,970–5,000 ft, roughly 2 miles and 4,000+ ft above the trailhead — despite the name there are three trees near the pass, not one). From the pass, do a pleasant ridge traverse east for 600–700 m, then drop about 500 ft southeast through trees to a bench near a small lake/flat meadow at ~4,915 ft (a sheltered, view-blessed bivy option). Continue a long rising traverse east for roughly 2 km through forest and open slopes below cliff bands, then climb a gully/open slope to High Pass (~6,032–6,100 ft). Cross High Pass onto the So-Bahli-Ahli (Whitehorse) Glacier and continue up snow (up to ~35° at the steepest) toward the summit snow ridge; rope up for crevasse hazard, which becomes real from roughly July onward. Key hazards along the way: the barricaded creek/bridge crossing at the start, avalanche-prone terrain in the entry couloir to Lone Tree Pass, vague/brushy route-finding beyond 'the flat,' crevasses on the upper glacier in mid-to-late season, and the summit bergschrund/moat, which by midsummer often forces a short section of 5th-class rock or a delicate roped snow-bridge crossing just below the top. No reliable water past the trailhead area once you're on snow — carry what you need or plan to melt.",
+ "approach_logistics": {
+  "peakLat": 48.210935,
+  "peakLng": -121.677415,
+  "trailhead": "Niederprum Trailhead",
+  "trailheadDirection": "Start at the Niederprum Trailhead (Trail #653, ~918 ft) at the end of Old Mine Road."
+ },
+ "waypoints": [
+  {
+   "lat": 48.259498,
+   "lng": -121.708682,
+   "name": "Niederprum Trailhead",
+   "type": "Trailhead",
+   "distMi": 0.04,
+   "elevFt": null,
+   "distFrom": "track",
+   "directions": "From Darrington, drive SR 530 west about 5 miles to the community of Whitehorse and turn left (south) onto 387th Ave NE, also called Old Mine Road, at the gas station and convenience store. Follow it 0.6 mile to its dead end at a steel gate and a barricade of large boulders, at about 900 ft, and park there. A free self-issued Boulder River Wilderness permit applies."
+  },
+  {
+   "lat": 48.210935,
+   "lng": -121.677415,
+   "elev": 6850.5,
+   "name": "Whitehorse Mountain Summit",
+   "type": "Summit",
+   "distMi": 5.94,
+   "elevFt": 6850.5,
+   "distFrom": "track",
+   "directions": "Cross the boulders and wooden bridge on foot and walk the old road about 1.25 miles to the signed start of Trail #653, which switchbacks up to the flat near 3,200 ft. A brushy boot path continues to snow; traverse south into a broad snow couloir and climb it to Lone Tree Pass, go east and drop southeast to a small lake bench, make the long rising traverse east to High Pass, then cross the glacier to the summit."
+  }
+ ],
+ "pitch_detail": [
+  {
+   "grade": "Trail",
+   "notes": "About 1 mile of switchbacks from the trailhead, roughly 900-1,900 ft.",
+   "pitch": "Niederprum Trail (maintained)"
+  },
+  {
+   "grade": "Class 2, brushy",
+   "notes": "Unmaintained climbers' path gaining ~4,000 ft through timber and brush to the bench near the old Niederprum mine (~4,000-4,100 ft).",
+   "pitch": "Boot path / brush to alpine bench"
+  },
+  {
+   "grade": "Snow travel",
+   "notes": "Ascend/traverse snowfields to Lone Tree Pass (~4,860-4,970 ft).",
+   "pitch": "Snow slopes to Lone Tree Pass"
+  },
+  {
+   "grade": "Class 2-3",
+   "notes": "Descend/traverse below cliffs on the south side of the northwest ridge to High Pass (~6,000-6,030 ft).",
+   "pitch": "Traverse to High Pass"
+  },
+  {
+   "grade": "Class 3 (snow/glacier + rock)",
+   "notes": "Cross the Whitehorse Glacier, climb a snow/ice ridge to the summit block, finish with exposed Class 3 scrambling (some parties note a short low-5th-class step) to the true summit.",
+   "pitch": "Glacier and summit block"
+  }
+ ],
+ "beta": "Begin on Niederprum Trail #953/653, which quickly degenerates into a steep, brushy boot path gaining roughly 4,000 ft to an alpine bench near the old Niederprum mine. Continue on snow to Lone Tree Pass (~4,900 ft; the 'lone tree' is actually a cluster of three trees, not at the pass), traverse below the northwest ridge to High Pass (~6,000-6,030 ft), cross onto the Whitehorse Glacier, and climb a snow/ice ridge to the base of the summit block, finishing with exposed Class 3 scrambling to the true summit.\n\nEarly in the season, roughly April to June, the same line is climbed as a continuous snow and ice route. Parties stay on snow higher on the shoulder and face instead of threading the rock bands that appear later, keep climber's right on the glacier to avoid the worst crevassing, and meet a steep, sometimes icy rollover of about 50-55 degrees, the crux in these conditions. It is a popular ski and splitboard objective: many skin or boot the glacier basin and switch to crampons only for the final steep pitch below the summit, then ski back toward High Pass and Lone Tree Pass. Once deep snow has buried the brush, some parties go more directly up Snow Gulch from near the trailhead and stash skis around 2,500 ft for the descent."
+}

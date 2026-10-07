@@ -1,0 +1,62 @@
+{
+ "id": "wa_austera_peak",
+ "name": "Austera Peak",
+ "waypoints": [
+  {
+   "lat": 48.4926,
+   "lng": -121.1176,
+   "elev": 2100,
+   "name": "Eldorado Creek / Cascade River Road TH",
+   "note": "Large pullout at mile 20 of Cascade River Road; cross the Cascade River on a log/flagged crossing to the climbers' trail.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "From Marblemount, follow Cascade River Road south about 20 miles to the parking area near mile 20 — paved for the first 10 miles, gravel and washboard after that. Any overnight needs a free North Cascades backcountry permit, reserved in advance on Recreation.gov or drawn from the walk-up allocation in person at the Marblemount Wilderness Information Center."
+  },
+  {
+   "lat": 48.533,
+   "lng": -121.129,
+   "elev": 7600,
+   "name": "Eldorado (East Ridge) camp",
+   "note": "High camp on the Inspiration Glacier flat used as base for Eldorado's satellite peaks.",
+   "type": "Campsite",
+   "distMi": 5.5,
+   "directions": "Backtrack a short distance along the road from the lot to find a safe crossing of the Cascade River — historically a large log or a braided ford, and it shifts from year to year. On the far side a steep, unmaintained climbers' path gains 3,000-3,500 ft through old-growth forest to a boulder field, crosses Eldorado Creek and opens into the meadows of the Eldorado Creek basin, then continues onto glacier to the camp on the Inspiration flat. Figure 5-6 hours from the car, with roped travel and crevasse-rescue gear needed above the meadows."
+  },
+  {
+   "lat": 48.546,
+   "lng": -121.118,
+   "elev": 7900,
+   "name": "Klawatti col",
+   "note": "Break in the ridge above the McAllister Glacier; rappel ~75 ft to the Klawatti Glacier.",
+   "type": "Junction",
+   "distMi": 6.8,
+   "directions": "Rope up and traverse the Inspiration Glacier northeast at roughly 7,800 ft, continuing well past Eldorado's own summit and the Tepeh Towers to the col on Klawatti's flank. Pass through the col and follow Klawatti's north ridge along the upper reaches of the McAllister Glacier to the break in the ridge at about 7,900 ft."
+  },
+  {
+   "lat": 48.555,
+   "lng": -121.108,
+   "elev": 7700,
+   "name": "Klawatti Glacier crevasses",
+   "note": "Traverse high and left across the crevassed Klawatti Glacier toward Austera.",
+   "type": "Hazard",
+   "distMi": 7.6,
+   "directions": "Work through the moat below the break — usually straightforward by August, more of a problem early season or in a heavy snow year — then rappel about 75 ft onto the Klawatti Glacier. Leave a retrievable cordelette rather than fixed gear, since the exit reverses this pitch on lead at about 5.5. Rope up again and traverse the glacier high and climber's left toward Austera; the Klawatti has receded a great deal, so expect the crossing to be more broken than older descriptions suggest, and the peak itself does not resolve until you are close."
+  },
+  {
+   "lat": 48.5685,
+   "lng": -121.1015,
+   "elev": 8339,
+   "name": "Austera Peak",
+   "note": "Final 30 ft of low 5th-class climbing on the northeast face.",
+   "type": "Summit",
+   "distMi": 8.3,
+   "directions": "Leave the glacier where the traverse runs out below the peak and scramble a few hundred feet of 4th class, then trend and traverse left along a broken ridge to the sub-summit. A final short pitch of well-protected low 5th class swings right onto the northeast face to the true summit; the rock on the summit tower is loose enough to be worth belaying."
+  }
+ ],
+ "approach_logistics": {
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadLat": 48.49261,
+  "trailheadLng": -121.11761,
+  "trailheadDirection": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+ }
+}

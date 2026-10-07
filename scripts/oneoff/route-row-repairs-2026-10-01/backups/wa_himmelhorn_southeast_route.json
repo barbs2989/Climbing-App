@@ -1,0 +1,86 @@
+{
+ "id": "wa_himmelhorn_southeast_route",
+ "name": "Standard Route",
+ "waypoints": [
+  {
+   "lat": 48.68276,
+   "lng": -121.26928,
+   "elev": 600,
+   "name": "Goodell Creek Trailhead",
+   "note": "Old roadbed starts at the Goodell Creek group campground turnout off SR 20 (milepost 119) near Newhalem; NPS wilderness permit required for overnight; no parking pass is needed at this National Park trailhead.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR 20 about 60 miles - roughly an hour and a half - east from Burlington and park at the Goodell Creek Campground turnout at milepost 119, just west of Newhalem. The highway is paved all the way to here, and the trailhead sits west of both of SR 20's winter closure gates (Ross Dam at milepost 134, and Newhalem at milepost 120 in harder winters), so driving access to this trailhead does not depend on the seasonal opening of the highway east of the park."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 1700,
+   "name": "Roadbed End / Basin Fork",
+   "note": "The 4-mile old roadbed peters out at a stone cairn in a wide clearing; the defined path forks right toward Terror Creek Basin, while a fainter boot path continues straight for the Crescent Creek Basin / Stump Hollow approach used for Himmelhorn, Ottohorn, and Frenzel Spitz.",
+   "type": "Junction",
+   "distMi": 4,
+   "directions": "Follow the old decommissioned logging roadbed upstream along the true left (south) side of Goodell Creek. It is grassy and gravelly, flat and easy walking for roughly 4 to 4.5 miles, gaining only a few hundred feet from the ~600 ft trailhead to about 1,700-1,800 ft. The end of it is not obvious from the tread - watch on the right, in the wide clearing, for the cairn or stone marker climbers call the 'stone arrow', which is what marks the unsigned climbers' path leaving the creek bottom."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5100,
+   "name": "Treeline Breakout",
+   "note": "Boot path breaks out of old-growth forest onto steep heather benches and slab; the steep, brushy tread above the roadbed is easy to lose in fog.",
+   "type": "Junction",
+   "distMi": 6.3,
+   "directions": "Top off water at Goodell Creek before leaving the roadbed: there is none reliable again until treeline. From the cairn, the boot path leaves the creek bottom and switchbacks steeply up into old-growth forest toward Stump Hollow. Expect steep root-and-duff footing with slide alder and devil's club low down; the path stays reasonably distinct with flagging and cairns higher up, but multiple trip reports on this approach describe losing it, and it is especially easy to lose in fog - track it deliberately rather than trusting the tread to hold. Around 5,000-5,600 ft the timber gives way to the heather benches and slab of Stump Hollow, a slabby basin wedged between the Barrier ridge and the Chopping Block."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6200,
+   "name": "Terror-Crescent Divide Saddle",
+   "note": "Rising traverse gains this ~6,200 ft saddle on the ridge dividing Terror Creek and Crescent Creek basins; drop west off the saddle into Crescent Creek Basin from here.",
+   "type": "Junction",
+   "distMi": 6.7,
+   "directions": "From Stump Hollow, make a rising traverse over meadow, slab and - early to mid season - snow to the broad saddle at roughly 6,200 ft on the Barrier, the ridge dividing Terror Creek basin from Crescent Creek basin. Carry an ice axe for this, and crampons early season."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6050,
+   "name": "Crescent Creek Basin Streams",
+   "note": "Two snowmelt streams run off the slabs above camp; reliable early-to-mid season but reported to thin out by late August in dry years.",
+   "type": "Water",
+   "distMi": 7,
+   "directions": "This leg is the Barrier crossing, the most exposed piece of the approach and one of the route's named hazards. Cross by one of two options: a lower line on a loose, exposed ledge system at the toe of the Terror Glacier, or a higher line over moat terrain and steep choss just below Mt. Degenhardt. Either takes under an hour, but both are loose enough that rockfall onto anyone below is the real hazard - helmets on, and do not stack the party. Drop the far (west) side of the saddle into Crescent Creek Basin, where two snowmelt streams run off the slabs; they are reliable early to mid season but reported to thin out by late August in dry years, so plan your water around that rather than assuming they run."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 6050,
+   "name": "Crescent Creek Basin Camp",
+   "note": "Established gravel-and-heather camp on slabs used as the base for Himmelhorn, Ottohorn, and Frenzel Spitz; reach it via the stump-hollow traverse rather than the Terror Basin path.",
+   "type": "Campsite",
+   "distMi": 7.1,
+   "directions": "A last short step across the gravel and heather slabs from the stream draws to the established basin camp at roughly 5,800 ft below Mt. Terror. This is the standard base for Himmelhorn, Ottohorn and Frenzel Spitz, and it is reached by the Stump Hollow traverse rather than by the Terror Basin path. Camping here is at-large with no designated sites, but an NPS backcountry permit is required for the overnight, and a park-wide moratorium bans new fixed anchors - plan on clean, removable gear for everything above."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7400,
+   "name": "Himmel-Otto Col Gully",
+   "note": "Narrow gully gains the Himmel-Otto col between Himmelhorn and Ottohorn; straightforward snow early season, but by late season expect icy neve, chossy moats, and an overhanging boulder near the top forcing a loose class 3/4 bypass on climber's left.",
+   "type": "Hazard",
+   "distMi": 7.6,
+   "directions": "From camp, climb the narrow gully leading to the Himmel-Otto col between Himmelhorn and Ottohorn. What this leg actually is depends entirely on season. Early, it is a straightforward snow climb with a bit of scrambling near the top: axe, and crampons if it has firmed up. Late, the same gully is icy hardpack with choss-filled moats along the rock margins, and an overhanging boulder near the col commonly forces a loose, exposed Class 3-4 bypass on the climber's left. Coming back down late season, parties often find fixed or placed rappel anchors in the moat sections more trustworthy than downclimbing loose rock alongside hard snow - there are no bolted stations anywhere on this route, so carry slings, cord and tat to build your own."
+  },
+  {
+   "lat": 48.77639,
+   "lng": -121.31472,
+   "elev": 7880,
+   "name": "Himmelhorn Summit",
+   "note": "True summit (7,880 ft); from the Himmel-Otto col the route follows a ledge onto the north face and climbs the northwest side. Downclimb and rappel the same line back to the col to descend.",
+   "type": "Summit",
+   "distMi": 7.9,
+   "directions": "From the Himmel-Otto col, follow a ledge onto the north face and continue up the northwest side, mostly scrambling with short steeper steps of Class 4 to low fifth class, to the 7,880 ft summit."
+  }
+ ]
+}

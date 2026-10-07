@@ -30,7 +30,7 @@ const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
 
 // each case is a list of [file, find, replace]; `find` must match exactly once
 const CASES = [
-  { name: "1 my-crew", edits: [[CORE, '["","Crew","', '["","My Crew","']], expect: "fail", why: "the real defect: the tour called the Crew tab 'My Crew'" },
+  { name: "1 my-crew", edits: [[CORE, '["","Crews","', '["","My Crew","']], expect: "fail", why: "the real defect: the tour called the Crews tab 'My Crew'" },
   { name: "2 no-home", edits: [[CORE, '["","Home","', '["","Home2","']], expect: "fail", why: "the real defect: Home, the landing tab, had no entry" },
   { name: "3 nav-rename", edits: [[APP, 'label:"Ranks"', 'label:"Leaderboards"'], [HTML, "<div><b></b>Ranks</div>", "<div><b></b>Leaderboards</div>"]], expect: "fail", why: "a tab renamed in NAV must drag the tour with it (boot shell renamed too, so only section 2 can fail)" },
   { name: "4 anchor", edits: [[CORE, "const HELP_FEATS=[", "const HELP_FEATSX=["]], expect: "fail", why: "a renamed tour must fail closed, never pass" },

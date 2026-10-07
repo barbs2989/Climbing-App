@@ -1,0 +1,82 @@
+{
+ "id": "wa_northwest_ridge_2",
+ "name": "Northwest Ridge",
+ "waypoints": [
+  {
+   "lat": 48.48055,
+   "lng": -121.07979,
+   "elev": 3200,
+   "name": "Boston Basin Trailhead",
+   "note": "Small unmarked pullout at roughly mile 22 of Cascade River Road across from Johannesburg Mountain; room for only 6-8 cars and no facilities.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Cascade River Road from Marblemount to the small unmarked pullout just past mile marker 22, across from Johannesburg Mountain, at roughly 3,200 ft. There is room for only six to eight cars and no facilities, so a full pullout leaves you no good options. From the car the route follows the old mining road about three quarters of a mile to the historic mine site before the steep, eroded Boston Basin climbers' path begins."
+  },
+  {
+   "lat": 48.495285503823006,
+   "lng": -121.06747915612374,
+   "elev": 5300,
+   "name": "Old miner's cabin site (Boston Basin mine relic)",
+   "note": "Remains of a historic mining cabin mark the trail breaking out of forest onto the open basin slopes; steep, eroded tread up to this point.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Walk the old mining road about a mile to the old mine site, then climb the steep, eroded climbers' path through forest, crossing several streams, until it breaks out of the trees near 5,300 ft at the remains of an old mining cabin."
+  },
+  {
+   "lat": 48.498778993522855,
+   "lng": -121.06547071801339,
+   "elev": 5600,
+   "name": "South Fork Boston Creek crossing",
+   "note": "Last easy, reliable creek crossing just below the lower Boston Basin camps; fill up here before heading into the alpine.",
+   "type": "Water",
+   "distMi": null,
+   "directions": "Continue up the path onto the open basin slopes to the last and largest creek crossing. If the direct crossing looks hard, follow a path along the edge of the ravine to an easier spot where it drops in to cross; fill water here."
+  },
+  {
+   "lat": 48.494755,
+   "lng": -121.063487,
+   "elev": 5700,
+   "name": "Lower Boston Basin Camp",
+   "note": "Established backcountry campsites just above treeline; NPS wilderness permit required and food must be stored per park regulations.",
+   "type": "Campsite",
+   "distMi": null,
+   "directions": "Across the creek, the path climbs a short way to the lower camps on a moraine ridge with small trees, just below the bare slabs left by the receding Quien Sabe Glacier."
+  },
+  {
+   "lat": 48.50304881426711,
+   "lng": -121.06301596032296,
+   "elev": 6400,
+   "name": "Western edge of Quien Sabe Glacier",
+   "note": "Climbers leave the upper basin meadows/moraine here and rope up for glacier travel toward Sharkfin Col.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 48.49971120802525,
+   "lng": -121.05126691518167,
+   "elev": 7200,
+   "name": "Quien Sabe Glacier crevasses / Sharkfin bergschrund",
+   "note": "Large crevasses open on this glacier by late season and a substantial bergschrund forms beneath the couloir below Sharkfin Tower; probe or find a snow bridge.",
+   "type": "Hazard",
+   "distMi": null
+  },
+  {
+   "lat": 48.501633,
+   "lng": -121.045319,
+   "elev": 7720,
+   "name": "Sharkfin Col",
+   "note": "Low point on the ridge just west of Sharkfin Tower; the FA route gains the crest here via a loose, chossy couloir off Sharkfin before traversing onto Boston's northwest ridge.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 48.49583,
+   "lng": -121.03579,
+   "elev": 8894,
+   "name": "Boston Peak",
+   "note": "True summit; final ridge is extremely loose, friable rock (5.5 X) with serious exposure, and the FA party simply continued their traverse rather than downclimbing, so a separate descent must be planned.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ]
+}

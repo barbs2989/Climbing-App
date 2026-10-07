@@ -1,0 +1,53 @@
+{
+ "id": "wa_ellation",
+ "name": "Ellation",
+ "waypoints": [
+  {
+   "lat": 48.9102,
+   "lng": -121.592,
+   "elev": 3100,
+   "name": "Hannegan Pass Trailhead",
+   "note": "",
+   "type": "Trailhead",
+   "elevFt": 3100,
+   "directions": "From I-5 Exit 255 in Bellingham, drive the Mt. Baker Highway (SR-542) east through Glacier and about 12.5 miles beyond it, then turn left onto Hannegan Pass Road (Forest Road 32). Follow it 5.3 miles to the road end at the Hannegan Pass Trailhead, about 3,100 ft. A Northwest Forest Pass is required to park."
+  },
+  {
+   "lat": 48.91508,
+   "lng": -121.58401,
+   "elev": 5000,
+   "name": "Top of Ellation",
+   "note": "8-pitch, ~700' 5.11a (or 5.10 A0) up shallow grooves above the crag.",
+   "type": "Topout",
+   "distMi": 1.2
+  },
+  {
+   "lat": 48.91508,
+   "lng": -121.58401,
+   "name": "Mamie Peak crag (Ellation start)",
+   "type": "Crag/route start",
+   "distMi": null,
+   "elevFt": null
+  },
+  {
+   "lat": 48.91508,
+   "lng": -121.58401,
+   "elev": 5000,
+   "name": "Mamie Peak (top of 8-pitch buttress)",
+   "type": "Summit",
+   "elevFt": 5000
+  }
+ ],
+ "approach_logistics": {
+  "trailhead": "Hannegan Pass Trailhead (Trail #674, FR-32)",
+  "trailheadLat": 48.91049444,
+  "trailheadLng": -121.5894222,
+  "trailheadDirection": "From SR-542 12.5 miles east of Glacier, up Hannegan Pass Road (FR-32) 5.3 miles to the road-end trailhead (~3,120 ft), via the Ruth Creek valley"
+ },
+ "approach": "This crag's coordinates correspond to the Hannegan Pass/Ruth Creek Valley area near Mt. Baker, sometimes referenced as 'Ellation Crags,' a minor, lightly-developed granite cragging/multipitch area. The general access is from I-5 Exit 255, east on SR-542 (Mt. Baker Highway) about 46 miles, then a left onto Forest Road 32 (Hannegan Pass Road) for about 4 miles to the Hannegan Pass Trailhead. Beyond that trailhead, published approach details for the crag itself are sparse and inconsistent, so the exact on-foot route and distance are not confirmed.",
+ "road": {
+  "name": "Hannegan Pass Trailhead (end of FS-32), off Mt. Baker Highway (SR-542)",
+  "status": "FS-32 is a maintained forest road running 4 miles from SR-542 to the Hannegan Pass Trailhead at road's end; generally passable to standard cars in season.",
+  "driveNote": "Roughly 2-2.5 hours from Seattle/Bellingham via SR-542 and FS-32 to the trailhead; the peak itself is only a few minutes' walk up-trail from the parking area."
+ }
+}

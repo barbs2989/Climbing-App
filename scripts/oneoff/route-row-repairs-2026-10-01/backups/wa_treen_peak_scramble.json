@@ -1,0 +1,73 @@
+{
+ "id": "wa_treen_peak_scramble",
+ "name": "Standard Scramble",
+ "itinerary": {
+  "cal": "Best done April-October per Mountaineers route page; expect lingering snow in the summit gully into early summer, when an ice axe (and possibly crampons) is recommended.",
+  "days": [
+   {
+    "n": 1,
+    "note": "A long, strenuous single-day scramble: a steep, unmaintained miners' trail gains Green Ridge, then it's off-trail cross-country travel through heather meadows and past several tarns/lakes (with real up-and-down 'roller coaster' terrain, not just steady gain) before a final gully/cliff-band scramble to the summit. Most parties treat this as car-to-car, not an overnight - there's no established camp on this route and trip reports consistently describe it as a one-day outing.",
+    "hours": 11,
+    "miles": 7,
+    "title": "Car-to-car scramble",
+    "gainFt": 6100,
+    "lossFt": 6100,
+    "packLb": 15,
+    "schedule": [
+     {
+      "time": "5:30 AM",
+      "label": "Leave Green Ridge trailhead",
+      "detail": "TH at ~1,350 ft on NF-5620 off Middle Fork Snoqualmie Rd; start up the steep miners' trail."
+     },
+     {
+      "time": "+3.5 hr",
+      "label": "Gain the ridge crest (~4,700 ft)",
+      "detail": "Trail fades; continue cross-country through open forest and heather meadows past a series of tarns."
+     },
+     {
+      "time": "+4.5 hr",
+      "label": "Traverse Upper Garfield Mountain Lake and Charlie Brown Lake",
+      "detail": "Involves descending/re-climbing several hundred feet - the route is not a steady uphill grind."
+     },
+     {
+      "time": "+6 hr",
+      "label": "Final scramble to the summit",
+      "detail": "Work through cliff bands to a talus field (~4,850 ft), find the obvious gully, then steep heather slopes to the top."
+     },
+     {
+      "time": "~11:30 AM",
+      "label": "Summit (5,765 ft)",
+      "detail": "Panoramic views over the Middle Fork Snoqualmie/Alpine Lakes Wilderness."
+     },
+     {
+      "time": "~4:30-5:30 PM",
+      "label": "Back at trailhead",
+      "detail": "Descent retraces the ascent; expect ~4 hrs down given the undulating terrain and route-finding."
+     }
+    ],
+    "objective": "Summit Treen Peak and return to the Green Ridge trailhead"
+   }
+  ],
+  "totalNote": "A single, long car-to-car day: roughly 7 miles round trip with about 6,100 ft of total gain (4,400 ft net), because the off-trail line loses and regains roughly 800 ft between Green Ridge and the lakes - plan on 10-12 hours car to car."
+ },
+ "pitch_detail": [
+  {
+   "grade": "Class 2-3",
+   "notes": "Boulder field ascent from the lake (~4,700 ft) toward a jagged rock formation, turning right about 100 ft below it to reach a mini-ridge near 5,100 ft.",
+   "pitch": "Charlie Brown Lake to rock outcrop/mini-ridge",
+   "lengthM": 122
+  },
+  {
+   "grade": "Class 3",
+   "notes": "Skirt a second rock formation via a rock ledge, then ascend extremely steep, loose dirt slopes to the summit ridge (~5,600 ft).",
+   "pitch": "Rock ledge bypass to summit ridge",
+   "lengthM": 152
+  },
+  {
+   "grade": "Class 2",
+   "notes": "Easier ridge walk from ~5,600 ft to the 5,765 ft summit.",
+   "pitch": "Summit ridge to true summit",
+   "lengthM": 50
+  }
+ ]
+}

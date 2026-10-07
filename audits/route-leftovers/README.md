@@ -336,7 +336,7 @@ earlier passes cleared to null for want of a second source (loss_ft and access e
 The owner cleared peakbagger's security check in the browser; the 260 entries section 19 left `unresolved` were
 re-read there (peak pages and climbers' ascent reports, whose filled-in "Distance" / "Gain on way in" / "Time" fields
 count as that climber stating the figure). Inputs built by `scripts/oneoff/route-leftovers/build-pb-inputs.mjs`;
-rules `scripts/oneoff/route-leftovers/peakbagger-instructions.md`; apply file by `build-pb-apply.mjs`.
+rules `scripts/oneoff/route-leftovers/peak-list-instructions.md`; apply file by `build-pb-apply.mjs`.
 - 260 results: 8 confirmed, 5 already fixed (fills whose waypoint index no longer exists), 247 unresolved.
   Applied: 7 results, 17 ops, 6 routes, 0 rejected (`pb-apply.json`).
 - Applied: Stickney road walk 4.8 mi from the current Sultan Basin Road gate (every copy, incl. the approach variant's

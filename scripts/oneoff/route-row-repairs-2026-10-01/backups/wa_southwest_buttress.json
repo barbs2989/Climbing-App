@@ -1,0 +1,90 @@
+{
+ "id": "wa_southwest_buttress",
+ "name": "Southwest Buttress",
+ "waypoints": [
+  {
+   "lat": 48.49261,
+   "lng": -121.11761,
+   "elev": 2100,
+   "name": "Eldorado Creek Trailhead (Cascade River Road)",
+   "note": "Same start as the East Ridge; cross the Cascade River on a log downstream of the parking area.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive Cascade River Road to the Eldorado Creek trailhead at about road mile 20, elevation roughly 2,100 ft, and park in the trailhead lot. The climb starts by leaving the parking area and backtracking a short way downstream to find a log or a ford across the Cascade River, then picking up the climbers' path on the west side of Eldorado Creek. This is the same start the East Ridge uses; the trailhead-to-glacier approach is identical for both."
+  },
+  {
+   "lat": 48.52897,
+   "lng": -121.171809,
+   "elev": 5650,
+   "name": "Eldorado Creek Basin camp",
+   "note": "Open-basin camp option after the first two talus fields and a waterfall crossing.",
+   "type": "Campsite",
+   "distMi": null
+  },
+  {
+   "lat": 48.531491,
+   "lng": -121.125156,
+   "elev": 7500,
+   "name": "Eldorado/Inspiration Glacier high camp",
+   "note": "Base camp on the flat glacier shelf used to stage the Inspiration/McAllister glacier traverse.",
+   "type": "Campsite",
+   "distMi": null
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 8000,
+   "name": "Inspiration–McAllister Glacier col",
+   "note": "Cross north across Inspiration Glacier to this col, then drop northwest onto the McAllister Glacier.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "From high camp, rope up and cross north over the Inspiration Glacier to the col at about 8,000 ft where it meets the McAllister Glacier."
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7800,
+   "name": "McAllister Glacier crossing",
+   "note": "Descend the McAllister Glacier toward its southwest gap; navigate visible crevasses, especially late-season.",
+   "type": "Hazard",
+   "distMi": null,
+   "directions": "From the col, drop northwest onto the McAllister Glacier and descend toward its southwest gap, threading the visible crevasses, which open up late in the season."
+  },
+  {
+   "lat": 48.546646,
+   "lng": -121.143528,
+   "elev": 7600,
+   "name": "Marble Creek–McAllister pass",
+   "note": "Lowest gap on the SW side of the glacier; cross to the small Marble Creek side glacier, generally on the pass's east side.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Continue across the McAllister to the Marble Creek-McAllister pass, the lowest gap on the southwest side of the glacier, and cross onto the small Marble Creek side glacier, generally on the pass's east side."
+  },
+  {
+   "lat": 48.548183,
+   "lng": -121.141069,
+   "elev": 7900,
+   "name": "Base of Southwest Buttress gully",
+   "note": "A snow-filled gully roughly 700 vertical feet below the pass leads to the start of the buttress climbing.",
+   "type": "Junction",
+   "distMi": null
+  },
+  {
+   "lat": 48.5497,
+   "lng": -121.1386,
+   "elev": 8440,
+   "name": "Dorado Needle summit",
+   "note": "9-pitch, Grade III, 5.7-5.8 buttress tops out on the true summit after a left-leaning corner on the upper ridge.",
+   "type": "Summit",
+   "distMi": null
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.5497,
+  "peakLng": -121.1386,
+  "trailhead": "Eldorado Creek trailhead (Cascade River Road mile 20)",
+  "trailheadLat": 48.49261,
+  "trailheadLng": -121.11761,
+  "trailheadDirection": "From the Eldorado Creek trailhead lot at mile 20 on Cascade River Road (~2,100 ft)"
+ }
+}

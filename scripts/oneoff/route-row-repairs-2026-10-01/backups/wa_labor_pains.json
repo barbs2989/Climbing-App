@@ -1,0 +1,41 @@
+{
+ "id": "wa_labor_pains",
+ "name": "Labor Pains",
+ "waypoints": [
+  {
+   "lat": 48.518965,
+   "lng": -120.67436,
+   "elev": 5200,
+   "name": "Blue Lake TH",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "Drive SR 20 to the Blue Lake Trailhead on the south side of the highway, about 1 mile west of Washington Pass, at roughly 5,200 ft. A Northwest Forest Pass is required to park. The highway over the pass closes in winter."
+  },
+  {
+   "lat": 48.51291,
+   "lng": -120.65557,
+   "elev": 6900,
+   "name": "Chockstone Route start (shared)",
+   "note": "Shares its start with the Chockstone Route before breaking left onto steeper 5.11a terrain.",
+   "type": "Junction",
+   "distMi": null,
+   "directions": "Hike the Blue Lake Trail and take the climbers' path into the basin below the Liberty Bell Group. Continue past South Early Winters Spire to the west side of the two Early Winters Spires and the base of the big chasm between them, where the Chockstone Route starts."
+  },
+  {
+   "lat": 48.51291,
+   "lng": -120.65557,
+   "elev": 7760,
+   "name": "North Early Winters Spire",
+   "type": "Summit",
+   "distMi": null
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 48.512935,
+  "peakLng": -120.655465,
+  "trailhead": "Blue Lake Trailhead (SR-20)",
+  "trailheadLat": 48.518965,
+  "trailheadLng": -120.67436,
+  "trailheadDirection": "From the Blue Lake Trailhead on SR-20 (~1 mile west of Washington Pass, 5,400 ft), via the Blue Lake Trail to the climbers' path"
+ }
+}

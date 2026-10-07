@@ -264,10 +264,25 @@ if (moves.length) {
 
 if (!process.argv.includes("--apply")) { console.log("\ndry run"); process.exit(0); }
 
+// --skip=id1,id2 leaves a planned route untouched (a pairing a human read and did not believe), and
+// every write keeps the line it replaced, so a carried vertex can be put back.
+const SKIP = new Set((process.argv.find((a) => a.startsWith("--skip=")) || "--skip=").slice(7).split(",").filter(Boolean));
+const { default: fs } = await import("fs");
+const BK = new URL("./stranded-track-vertices-backups/", import.meta.url);
+fs.mkdirSync(BK, { recursive: true });
+const todo = plan.filter((p) => !SKIP.has(p.id));
+if (SKIP.size) console.log(`\nskipping ${plan.length - todo.length}: ${[...SKIP].join(", ")}`);
 let wrote = 0;
-for (const p of plan) { await patchRow("routes", p.id, { gpx: p.next }); wrote++; }
+for (const p of todo) {
+  const [cur] = await selectAll("routes", "id,gpx", `id=eq.${p.id}`, { pageSize: 5 });
+  const bf = new URL(`${p.id}.json`, BK);
+  if (!fs.existsSync(bf)) fs.writeFileSync(bf, JSON.stringify({ id: p.id, gpx: cur.gpx }, null, 1));
+  await patchRow("routes", p.id, { gpx: p.next }); wrote++;
+}
 console.log(`\nwrote ${wrote} row(s); re-reading to reconcile`);
-const back = await selectAll("routes", "id,gpx,waypoints", "", { pageSize: 1000 });
+plan.length = 0; plan.push(...todo);
+const back = [];
+for (const p of plan) back.push(...(await selectAll("routes", "id,gpx,waypoints", `id=eq.${p.id}`, { pageSize: 5 })));
 const byId = new Map(back.map((r) => [r.id, r]));
 let ok = 0;
 for (const p of plan) {

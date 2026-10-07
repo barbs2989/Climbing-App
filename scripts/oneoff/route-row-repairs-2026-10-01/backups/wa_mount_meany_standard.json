@@ -1,0 +1,84 @@
+{
+ "id": "wa_mount_meany_standard",
+ "name": "Standard Route",
+ "waypoints": [
+  {
+   "lat": 47.968,
+   "lng": -123.583,
+   "elev": 1198,
+   "name": "Whiskey Bend Trailhead",
+   "note": "Start of the Elwha River Trail; Olympic Hot Springs Road is washed out beyond Madison Falls, adding roughly 6.9 mi of walking or biking each way just to reach this trailhead.",
+   "type": "Trailhead",
+   "distMi": 0
+  },
+  {
+   "lat": 47.80931,
+   "lng": -123.453858,
+   "elev": 1500,
+   "name": "Hayes River Guard Station",
+   "note": "Historic Elwha River patrol cabin where the Hayes River joins the Elwha; reliable water and a junction with side trails into the upper valley.",
+   "type": "Junction",
+   "distMi": 16.1
+  },
+  {
+   "lat": 47.7366057,
+   "lng": -123.5293929,
+   "elev": 1900,
+   "name": "Chicago Camp / Elwha ford",
+   "note": "Established riverside camp; the Elwha River must be forded nearby to continue upvalley toward the basin, and can run cold and high with snowmelt.",
+   "type": "Water",
+   "distMi": 21.1
+  },
+  {
+   "lat": 47.75567,
+   "lng": -123.56692,
+   "elev": 3100,
+   "name": "Elwha Basin",
+   "note": "Traditional high base camp used by Mountaineers club expeditions since the early 1900s; braided channels and brush ('the maze') make routefinding into the basin confusing.",
+   "type": "Campsite",
+   "distMi": 26
+  },
+  {
+   "lat": 47.768789,
+   "lng": -123.578631,
+   "elev": 4300,
+   "name": "Elwha Snow Finger",
+   "note": "Steep, roughly 2-mile perennial snow/avalanche-debris gully gaining the Bailey Range crest from Elwha Basin; watch for hidden meltwater moats and rockfall off the flanking cliffs.",
+   "type": "Hazard",
+   "distMi": 28.5
+  },
+  {
+   "lat": 47.784532,
+   "lng": -123.592684,
+   "elev": 4760,
+   "name": "Dodwell-Rixon Pass",
+   "note": "Gains the Elwha-Queets divide atop the Bailey Range; open scree and heather traversing toward the Noyes-Meany group begins here.",
+   "type": "Junction",
+   "distMi": 31.5
+  },
+  {
+   "lat": 47.762059,
+   "lng": -123.596088,
+   "elev": 6000,
+   "name": "Noyes-Meany Col",
+   "note": "Class 2+ saddle between Mount Noyes and Mount Meany; the standard scramble line onto Meany's upper slopes leaves the col here.",
+   "type": "Junction",
+   "distMi": 33.5
+  },
+  {
+   "lat": 47.750958,
+   "lng": -123.597855,
+   "elev": 6695,
+   "name": "Mount Meany",
+   "type": "Summit",
+   "elevFt": 6695
+  },
+  {
+   "lat": 47.5761,
+   "lng": -123.6479,
+   "name": "North Fork Quinault Trailhead / Ranger Station",
+   "note": "End of North Fork Quinault River Road, south side of Olympic NP near Lake Quinault.",
+   "type": "Trailhead"
+  }
+ ]
+}

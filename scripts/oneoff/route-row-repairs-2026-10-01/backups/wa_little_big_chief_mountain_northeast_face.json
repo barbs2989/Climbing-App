@@ -1,0 +1,136 @@
+{
+ "id": "wa_little_big_chief_mountain_northeast_face",
+ "name": "Northeast Face",
+ "waypoints": [
+  {
+   "lat": 47.5172,
+   "lng": -121.4544,
+   "elev": 1650,
+   "name": "Dingford Creek / Middle Fork Snoqualmie Trailhead",
+   "note": "parking area on FS Road 56, ~17-18 miles from North Bend, providing access to Middle Fork Trail 1003 which leads to Dutch Miller Gap/Summit Chief Valley.",
+   "type": "Trailhead",
+   "elevFt": 1650,
+   "directions": "From I-90 Exit 34, go north on 468th Ave SE about 0.6 mile and turn right onto the Middle Fork Snoqualmie Road (FS Road 56). Follow it about 12 miles to the main Middle Fork trailhead, cross the large concrete bridge, and turn right onto the gravel road signed for Dingford and Dutch Miller Gap. Drive this heavily potholed road about 6 miles to the parking area at the gate, at about 1,650 ft."
+  },
+  {
+   "lat": 47.52965,
+   "lng": -121.25668,
+   "elev": 7225,
+   "name": "Little Big Chief Mountain - Summit",
+   "type": "Summit",
+   "elevFt": 7225,
+   "directions": "Walk past the gate and follow the old Middle Fork road and then the Dutch Miller Gap Trail #1030 up the valley, about 14 to 15 miles in all, past Hardscrabble Horse Camp and the Williams Lake junction to Dutch Miller Gap. From the gap climb about 500 ft of heather and rock steps onto the northeast ridge to an open bench, cross a snowfield into the cirque below the east face, and climb the short belayed pitches to the summit."
+  }
+ ],
+ "approach_logistics": {
+  "peakLat": 47.52965,
+  "peakLng": -121.25668,
+  "trailhead": "Dingford Creek / Middle Fork Snoqualmie Trailhead",
+  "trailheadLat": 47.5172,
+  "trailheadLng": -121.4544
+ },
+ "approach": "From the Dutch Miller Gap Trailhead, follow Dutch Miller Gap Trail 1030 up the Middle Fork Snoqualmie valley about 14-15 miles to Dutch Miller Gap, passing Hardscrabble Horse Camp and the Williams Lake trail junction along the way. Little Big Chief sits immediately southwest of the gap, reached from the gap itself by an off-trail scramble up the peak's east slope/northeast ridge, with a short but exposed class 4 notch as the crux below the summit. An alternate, longer approach comes from the east via the Necklace Valley Trail off Foss River Road (Skykomish/US 2 side), crossing La Bohn Gap before dropping to Dutch Miller Gap. A second long approach comes from the southeast: the Waptus River Trail from Salmon La Sac to Waptus Lake (with an unbridged river ford below the lake), a ford of Chief Creek near the head of the lake, then the Dutch Miller Gap trail up past Lake Ivanhoe to the gap. For this specific route: continue the standard Middle Fork Snoqualmie trail all the way up to Dutch Miller Gap, then climb directly above the gap onto the peak's northeast ridge/face — no cross-country detour into Summit Chief Valley needed.",
+ "pitch_detail": [
+  {
+   "grade": "3rd-4th class",
+   "notes": "Heather and rock steps up the NE ridge (~500 ft) to an open snow bench.",
+   "pitch": "1",
+   "lengthM": 152
+  },
+  {
+   "grade": "Snow/glacier travel",
+   "notes": "Ascend through the cirque below the east face and up the summit snowfield.",
+   "pitch": "2",
+   "lengthM": 439
+  },
+  {
+   "grade": "3rd-4th class (belayed)",
+   "notes": "Final ~60-ft belayed pitch direct to the summit, or move left for the alternate direct-summit variant.",
+   "pitch": "3",
+   "lengthM": 18
+  }
+ ],
+ "approach_variants": [
+  {
+   "name": "Middle Fork Snoqualmie to Dutch Miller Gap",
+   "camps": [
+    "Williams Lake and the upper Middle Fork meadows below Dutch Miller Gap",
+    "Hardscrabble Horse Camp, Middle Fork Snoqualmie"
+   ],
+   "notes": "The standard way. From the Middle Fork Snoqualmie road end, follow the Dutch Miller Gap trail up the valley for a long day — roughly fourteen to fifteen miles — passing the horse camp and the Williams Lake trail junction on the way to the gap. Most parties break this over two days and camp near Williams Lake or at the gap. There is no cross-country detour for this route: stay on the trail to the top.",
+   "season": "July to September; recorded ascents cluster in August and September. The upper cirque holds snow well into summer, so carry an axe.",
+   "hazards": [
+    "Snow lingering in the approach cirque well into summer, with variable soft, icy or moat-riddled conditions",
+    "Loose rock on the heather and rock steps, on the ridge and on the face",
+    "No cell coverage, and a remote position that makes rescue difficult",
+    "The gap is a trail high point with several ways off it — confirm you are on the southwest side before committing"
+   ],
+   "primary": true,
+   "baseFinding": "The climbing starts directly above the gap. From the low point of Dutch Miller Gap, turn onto the peak immediately southwest of it — the first ground above the trail that needs hands is the start, roughly five hundred feet of heather and rock steps rising onto the northeast ridge. The physical test is the sequence: heather steps give way to an open bench, and above the bench you cross a snowfield into a cirque below the east face; if you have not crossed snow you have not reached the cirque, and the two short belayed pitches to the summit start from it. At the top of the first of those pitches, move climber's left for the direct finish. Negative markers: if you left the trail at a small steel bridge well below the gap and dropped south into a side valley, you are heading for the long gully-and-crack route on the far side of the mountain; if you are looking up nine hundred feet of talus at a prominent left-trending gully, you are under that route and not this one."
+  },
+  {
+   "name": "Necklace Valley and La Bohn Gap from the north",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Necklace Valley Trailhead (Foss River Road)"
+    }
+   },
+   "notes": "A longer alternative from the other side of the divide: the Necklace Valley trail off the Foss River road, over La Bohn Gap, then down to Dutch Miller Gap. It joins the standard line at the gap, so everything above is identical. Worth knowing about mainly as a through-trip option or if the Middle Fork road end is not usable.",
+   "season": "July to September.",
+   "hazards": [
+    "Long approach over a second pass, with snow on La Bohn Gap into summer",
+    "Loose rock above the gap",
+    "Remote, rescue-difficult terrain with no cell coverage"
+   ],
+   "baseFinding": "You are aiming for the same point as the standard approach: the low saddle of Dutch Miller Gap, with the peak on its southwest side. Coming from the north you drop TO the gap rather than climbing to it, so the check is that you have finished descending and the peak is now above you on the left. The climbing begins at the first hands-on heather-and-rock steps above the gap, leading to an open bench and then a snowfield crossing into the cirque below the east face. Negative marker: if you are still descending and the ground ahead keeps dropping into a valley, you have passed the gap and are heading down the Middle Fork."
+  },
+  {
+   "name": "Pete Lake and Summit Chief camp from the east",
+   "trip": {
+    "approachLogistics": {
+     "trailhead": "Pete Lake Trailhead (Trail #1323, FR-4616)",
+     "trailheadLat": 47.435,
+     "trailheadLng": -121.1855
+    }
+   },
+   "notes": "The eastern option, from a camp near Pete Lake and Summit Chief. It does not reach Dutch Miller Gap at all — it comes at the peak's northeast basin from the other side and joins the route higher up. It is the approach that puts the ridge notch in your path, which the trail-to-the-gap line avoids.",
+   "season": "July to September.",
+   "hazards": [
+    "Exposed low-fifth-class crux move at the ridge notch, which most parties belay",
+    "Route-finding through the northeast basin's cliff bands",
+    "Loose rock throughout",
+    "Remote with no cell coverage"
+   ],
+   "baseFinding": "From camp, work into the peak's northeast basin. The route is guarded by a ridge notch, and the notch is identified by a single feature: a large vertical crack forming a low-fifth-class step that most parties rope up for. If the notch you have reached can be walked through, it is not this one. Above the notch the ground eases and joins the snowfield and cirque used by the trail approach. Negative marker: if you are standing in a broad trail saddle with tread underfoot, you are at Dutch Miller Gap and on the standard line, where no such crack step exists."
+  },
+  {
+   "name": "Waptus River and Lake Ivanhoe from Salmon La Sac",
+   "trip": {
+    "bivy": [
+     {
+      "elev": 2792,
+      "name": "Waptus Lake, with Spade Lake above it",
+      "role": "route",
+      "type": "camp",
+      "notes": "Waptus is roughly nine miles of easy river trail from Salmon la Sac with only about 800 ft of gain, which makes it the least strenuous long approach in the zone and a genuinely pleasant first night. For climbers here it is the eastern gateway to Little Big Chief Mountain, which sits immediately southwest of Dutch Miller Gap. The useful camps for that peak are not at the lake but a couple of miles further up the valley, near the bridge over the Waptus River above the lake and near the ford of Chief Creek — call it twelve miles in — and from there the Dutch Miller Gap trail climbs past Lake Ivanhoe to the gap, where the northeast face scramble starts. Spade Lake is the other well-known destination above Waptus and it is worth being clear about what it is and is not: the spur trail gains nearly 3,000 ft in about three miles of steep, downed-timber forest with scrambly and overgrown sections, and it lands in a rocky cirque on the flank of Mount Daniel. It is a superb, lonely camp and it is not a base for Chimney Rock, which lies across the valley on the other side of the crest. Snow lingers in the Spade cirque into July. Honest caveat for 2026: the Waptus and Spade trails were both inside the Cle Elum Ranger District fire closure through the summer — check the status of the closure order before driving to Salmon la Sac.",
+      "water": "Waptus Lake, the Waptus River and Chief Creek at the lower camps; the lake and small inlet streams at Spade",
+      "permit": "Free self-issue Alpine Lakes Wilderness permit. Northwest Forest Pass at the Salmon la Sac trailhead. Group limit twelve including stock — this is horse country and the trail is shared. Campfires are permitted at Waptus but banned at Spade and everywhere else above 5,000 ft. Camp at least a hundred feet back from water and off the meadows.",
+      "capacity": "Large — Waptus has upwards of two dozen established sites strung along the shore and near the outlet, first come first served. Spade Lake above is the opposite: scattered bluff sites for a party or two."
+     }
+    ],
+    "approachLogistics": {
+     "trailhead": "Salmon La Sac / Waptus River Trailhead"
+    }
+   },
+   "notes": "The long southeastern way in, usually spread over two or three days. From the Salmon La Sac road end north of Cle Elum, follow the Waptus River trail up its gentle valley to Waptus Lake, roughly nine miles. The old hiker bridge over the river below the lake is gone, so this is a real ford, about knee deep at normal summer flow. Past the lake the trail follows the southeast shore, which can hold steep snow into early summer, to a ford of Chief Creek near the head of the lake, about twelve miles from the car. From Chief Creek the Dutch Miller Gap trail switchbacks up the forested slope, passes Lake Ivanhoe and reaches the gap, roughly five more miles and about 2,000 ft higher. At the gap it meets the standard approach, and the climbing above is the same.",
+   "season": "July to September. The river ford and the lakeshore snow are both much more serious during snowmelt.",
+   "hazards": [
+    "Unbridged Waptus River ford below the lake: cold and swift, and serious in snowmelt",
+    "Chief Creek ford near the head of Waptus Lake",
+    "Steep snowfields on the lake's southeast shore into early summer",
+    "Very long approach far from help, with no cell coverage"
+   ],
+   "baseFinding": "You are aiming for the same point as the standard approach: the low saddle of Dutch Miller Gap, with the peak on its southwest side. Coming up from Lake Ivanhoe you climb to the gap from the east, so the check is that the trail has stopped climbing and starts to drop west toward the Middle Fork, with the peak above you on the left. The climbing starts at the first heather and rock steps above the gap and leads to an open bench, then a snowfield crossing into the cirque below the east face. Negative marker: if you are still beside Lake Ivanhoe or below it, you have not reached the gap yet."
+  }
+ ]
+}

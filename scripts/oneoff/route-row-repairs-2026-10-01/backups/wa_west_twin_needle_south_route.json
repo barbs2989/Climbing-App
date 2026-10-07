@@ -1,0 +1,73 @@
+{
+ "id": "wa_west_twin_needle_south_route",
+ "name": "South Route",
+ "waypoints": [
+  {
+   "lat": 48.68664,
+   "lng": -121.27121,
+   "elev": 600,
+   "name": "Goodell Creek / Upper Goodell Group Camp trailhead (SR-20, Newhalem)",
+   "note": "Unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek; no parking pass is needed, but an overnight trip needs a wilderness permit from the Wilderness Information Center in Marblemount.",
+   "type": "Trailhead",
+   "distMi": 0,
+   "directions": "The trailhead is an unpaved turnout off SR-20 across from Newhalem, signed for Goodell Creek. No parking pass is needed here, but camping in the Terror or Crescent Creek basins needs a wilderness permit, issued in person at the Wilderness Information Center in Marblemount."
+  },
+  {
+   "lat": 48.713999,
+   "lng": -121.289245,
+   "elev": 2200,
+   "name": "Upper trail fork",
+   "note": "Maintained forestry-road-bed trail ends here; climbers' path continues with diminishing cairns/flagging toward Terror Creek.",
+   "type": "Junction",
+   "distMi": 3.5,
+   "directions": "Follow the old, overgrown Goodell Creek logging road up the valley for about 3.5 miles to the fork where the road tread ends and a cairned climbers' path continues toward Terror Creek."
+  },
+  {
+   "lat": 48.718238,
+   "lng": -121.291407,
+   "elev": 2500,
+   "name": "Terror Creek crossing",
+   "note": "Ford Terror Creek at a shallow braid; crossing depth is very flow-dependent and can be a wade in high water.",
+   "type": "Water",
+   "distMi": 4
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 5400,
+   "name": "The Barrier",
+   "note": "Steep, brushy, loose ridge (spur off Mt. Degenhardt) separating Terror Creek and Crescent Creek basins; cross via a loose ledge system near the lower Terror Glacier or a higher moat crossing below Degenhardt — classic sustained 'Pickets Class 3' that turns parties back.",
+   "type": "Hazard",
+   "distMi": 6
+  },
+  {
+   "lat": 48.766899,
+   "lng": -121.301569,
+   "elev": 6050,
+   "name": "Crescent Creek Basin camp (below Mt. Terror)",
+   "note": "Established high camp on a flat bench below Mount Terror with meltwater from two overhead slab streams; the basin runs 6,050–6,440 ft.",
+   "type": "Campsite",
+   "distMi": 7.5
+  },
+  {
+   "lat": null,
+   "lng": null,
+   "elev": 7400,
+   "name": "Eye Col gully traverse",
+   "note": "Drop ~300 ft below the moraine to Crescent Creek's head, then rising-traverse below the Eye Col gully past an adjacent buttress on a minor rib to a notch, avoiding a closed chimney and loose choss.",
+   "type": "Junction",
+   "distMi": 8.7,
+   "directions": "From camp, drop about 300 feet below the moraine to the head of Crescent Creek, then make a rising traverse beneath the gully system on the peak's south side, past the buttress that divides it. Avoid the right-hand gully, which ends in a closed chimney; take the minor rib on its climber's left and pitch through the chockstones in the gully above to the Eye Col notch at about 7,400 feet."
+  },
+  {
+   "lat": 48.77667,
+   "lng": -121.3125,
+   "elev": 7936,
+   "name": "West Twin Needle",
+   "note": "Above the Eye Col, a 5.7 pitch up white slabs on the east face, then scrambling to the true summit; descend via rappels off the Himmelhorn–West Twin Needle col.",
+   "type": "Summit",
+   "distMi": 9.5,
+   "directions": "From the Eye Col, climb a 5.7 pitch up the white slabs on the east face, then scramble the easier ground above to the true summit."
+  }
+ ]
+}
