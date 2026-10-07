@@ -60,7 +60,7 @@ const unlock = () => { try { fs.unlinkSync(LOCK); } catch (e) { /* already gone 
 process.on("exit", unlock);
 for (const sig of ["SIGINT", "SIGTERM"]) process.on(sig, () => { unlock(); process.exit(130); });
 
-const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", DB = "lib/db.js", OFF = "lib/offline.js";
+const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", DB = "lib/db.js", OFF = "lib/offline.js", KIT = "lib/mapKit.jsx";
 
 /* The ordering case needs the hydration effect MOVED above the sign-in reset rather than edited,
  * because the defect is a position and not a character. Cut the block, re-insert it immediately
@@ -84,7 +84,7 @@ function moveHydrationAboveReset(src) {
 const CASES = [
   { name: "write-gone", file: CM, must: "fail", expect: "never calls packRouteWithSnapshot",
     why: "§1 — the pack button stops writing, so the beta is not on the device at all",
-    find: "packRouteWithSnapshot(id,{seed:seed})", repl: "Promise.resolve({seed:seed})", all: true },
+    find: "packRouteWithSnapshot(id,{seed:seed,", repl: "Promise.resolve({seed:seed,", all: true },
 
   /* The SECOND link of the write: the button still calls the wrapper, the wrapper stops writing the
    * row. The snapshot would then be saved beside a route that is not there. */
@@ -110,8 +110,18 @@ const CASES = [
 
   { name: "unpack-gone", file: OFF, must: "fail", expect: "could never be removed",
     why: "§1 — removing from the pack stops reclaiming the storage",
-    find: 'export async function unpackRouteOffline(routeId) { await idbDelete("pack", routeId); }',
-    repl: "export async function unpackRouteOffline(routeId) { void routeId; }" },
+    find: 'export async function unpackRouteOffline(routeId) { await idbDelete("pack", routeId); try { await removeRouteMapOffline(routeId); }',
+    repl: "export async function unpackRouteOffline(routeId) { void routeId; try { await removeRouteMapOffline(routeId); }" },
+
+  /* §11. The pack keeps its row and snapshot and stops saving the map, so the card's Map chip and
+   * the toast promise tiles nobody wrote; and the map stops reading the saved tiles, so a pack
+   * full of tiles still shows a blank map with no signal. Neither changes a single render online. */
+  { name: "map-write-gone", file: DB, must: "fail", expect: "no longer calls saveRouteMapOffline",
+    why: "§11 — the pack stops saving the approach's map",
+    find: "map = await saveRouteMapOffline(routeId, row, opts && opts.onMapProgress);", repl: "map = null;" },
+  { name: "map-fallback-gone", file: KIT, must: "fail", expect: "no longer reads saved tiles",
+    why: "§11 — tiles are saved and the map never shows them offline",
+    find: "offlineTileUrl(layer, coords.z, coords.x, coords.y).then(", repl: "Promise.resolve(null).then(" },
 
   /* THE SILENT HALF. Write, copy and hydration all stay; only the fallback goes. Nothing renders
    * differently, no name moves, and the pack empties the moment there is no signal. */
@@ -143,7 +153,7 @@ const CASES = [
 
   { name: "disclaimer-gone", file: RD, must: "fail", expect: "no longer says what is NOT saved",
     why: "§4 — the card lists what you have and stops naming what you do not",
-    find: "<b style={{color:C.text}}>Photos, topo images and map tiles are not</b>, and anything newer needs a connection.",
+    find: "<b style={{color:C.text}}>Photos and topo images are not</b>, the saved map covers only the ground around the approach (US topo and satellite, to zoom 16), and anything newer needs a connection.",
     repl: "Everything you need is here." },
 
   { name: "claims-photos", file: RD, must: "fail", expect: "claims something is on the device",
