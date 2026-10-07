@@ -1,0 +1,387 @@
+[
+ {
+  "pid": "nc_looking_glass_rock",
+  "crag": "Looking Glass Rock",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Looking_Glass_Rock",
+  "quote": "Named for the way its granite face reflects the sunshine"
+ },
+ {
+  "pid": "ny_s_books_tier",
+  "crag": "Books Tier",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108193801",
+  "quote": "Rock is mainly granitic gneiss or granite (or perhaps some different metamorphic rock up higher in the Books tier)"
+ },
+ {
+  "pid": "ca_sonora_pass_highway_108",
+  "crag": "Sonora Pass Highway (108)",
+  "groups": [
+   {
+    "held": "andesite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Jailhouse Rock": "basalt"
+  },
+  "aspects": {
+   "Jailhouse Rock": "W"
+  },
+  "url": "https://www.accessfund.org/capabilities/land-holdings/jailhouse-rock",
+  "quote": "overhanging amphitheater on the western face of a basalt lava flow known locally as Table Rock"
+ },
+ {
+  "pid": "mn_duluth_bouldering",
+  "crag": "Duluth Bouldering",
+  "groups": [
+   {
+    "held": "anorthosite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "gabbro (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/111642705/duluth-area",
+  "quote": "No rock type stated for the Duluth bouldering areas"
+ },
+ {
+  "pid": "co_main_elk_creek",
+  "crag": "Main Elk Creek",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/109649590/main-elk-creek",
+  "quote": "Main Elk Creek is home to some good, limestone, sport climbing crags"
+ },
+ {
+  "pid": "tx_east_mountain",
+  "crag": "East Mountain",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "wrong",
+    "correct": "syenite"
+   }
+  ],
+  "fills": {
+   "Meddle Shop": "syenite"
+  },
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Hueco_Tanks",
+  "quote": "The park consists of three syenite (a weak form of granite) mountains."
+ },
+ {
+  "pid": "ny_h_southern_mountains",
+  "crag": "Southern Mountains",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Otter Lake Cliff": "S"
+  },
+  "url": "https://mountainproject.com/area/107020105/otter-lake-cliff?print=1",
+  "quote": "No rock type stated; Otter Lake Cliff: Short south facing cliff on the north side of Otter Lake"
+ },
+ {
+  "pid": "wa_tumwater_canyon",
+  "crag": "Tumwater Canyon",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105794001/tumwater-canyon",
+  "quote": "Similar in character and rock type (quartz diorite) to Icicle Creek"
+ },
+ {
+  "pid": "or_rocky_butte",
+  "crag": "Rocky Butte",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "wrong",
+    "correct": "basalt"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://rockclimbing.com/routes/North_America/United_States/Oregon/Portland_Metro_Area/Rocky_Butte",
+  "quote": "an open 24/7 secluded crag that hosts varied routes of basalt"
+ },
+ {
+  "pid": "co_turkey_rocks",
+  "crag": "Turkey Rocks",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105797943/turkey-rocks?print=1",
+  "quote": "well protected crack climbing on reddish granite"
+ },
+ {
+  "pid": "nc_moore_s_wall_routes",
+  "crag": "Moore's Wall (Routes)",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://carolinaclimbers.org/climbing-areas/moores-wall.html",
+  "quote": "Amazing quartzite in the NC piedmont."
+ },
+ {
+  "pid": "az_euro_dog_valley",
+  "crag": "Euro Dog Valley",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "wrong",
+    "correct": "welded tuff"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://commonclimber.com/queen-creek-canyon.html",
+  "quote": "Queen Creek Canyon: welded volcanic tuff cliffs and spires"
+ },
+ {
+  "pid": "or_terra_nova",
+  "crag": "Terra Nova",
+  "groups": [
+   {
+    "held": "tuff (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/121280575/terra-nova",
+  "quote": "No rock type stated (mentions exfoliating rock, crispy holds)"
+ },
+ {
+  "pid": "md_cumberland_narrows_aka_lover_s_leap",
+  "crag": "Cumberland Narrows aka Lover's Leap",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "quartzite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Cumberland_Narrows",
+  "quote": "Cliffs and talus of the two mountains' Tuscarora quartzite caprock are prominent within the Narrows."
+ },
+ {
+  "pid": "ok_charon_s_gardens",
+  "crag": "Charon's Gardens",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105858670/wichita-mountains-wildlife-refuge?print=1",
+  "quote": "World Class granite is the name of the game with some nice boulders as well."
+ },
+ {
+  "pid": "oh_mrg_southeast_aka_darkside",
+  "crag": "MRG Southeast (aka Darkside)",
+  "groups": [
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://ntprd.org/?p=10667",
+  "quote": "natural dolomite cliffs reaching heights up to 50 feet for rock climbing"
+ },
+ {
+  "pid": "wa_tum_tum",
+  "crag": "Tum Tum",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/107662173/tumtum",
+  "quote": "Good solid granite cracks and slab"
+ },
+ {
+  "pid": "az_paradise_forks",
+  "crag": "Paradise Forks",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Davidson Wall": "W"
+  },
+  "url": "https://mountainproject.com/area/105792038/davidson-wall?print=1",
+  "quote": "Picture golden brown basalt columns and steep, long, demanding routes."
+ },
+ {
+  "pid": "bc_harrison_bluffs",
+  "crag": "Harrison Bluffs",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://shop.alpineinstitute.com/blogs/equipment-shop-blog/skip-the-squamish-swarms-an-overview-of-the-harrison-bluffs-climbing-area",
+  "quote": "fine-grained granite cliffs"
+ },
+ {
+  "pid": "md_great_falls_maryland_side",
+  "crag": "Great Falls - Maryland Side",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://potomacmountainclub.org/climbing-crags-beta/virginia-crags/great-falls-national-park-rocktr/",
+  "quote": "The rock type - mica schist - is very slippery"
+ }
+]
