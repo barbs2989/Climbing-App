@@ -20,8 +20,9 @@ import {useRoutePairings,useRouteLoggedWith,submitRoutePairing,deleteRoutePairin
 import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, packForecast, savedAgo } from "./lib/offline";
-import { fetchForecastRaw, snapshotPackForecast, fetchCragForecast } from "./lib/forecast";
-import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, TEMP_BANDS, defaultBand, BAND_PREF, RAIN_PREF, CRAG_SCORE_DISCIPLINES } from "./lib/conditionsScore";
+import { fetchForecastRaw, snapshotPackForecast, fetchCragForecast, fetchCragAir, fetchCragClimate } from "./lib/forecast";
+import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
+import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
 import { useSession, signOut, getProfile, saveProfile } from "./lib/auth";
 import { useRoutePresence } from "./lib/presence";
@@ -40,7 +41,7 @@ import { knownHazards } from "./lib/hazards";
 import { acquireBaseFix, clusterBasePoints, baseCheckinMessage, pendingBaseCheckins, savePendingBaseCheckins } from "./lib/baseCheckin";
 import { routeTags } from "./lib/routeTags";
 import { usableFa } from "./lib/fa";
-import {parseGpxText,DbClimbPicker,RealClimberRow,CardHead,SectionJumps,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,Comments,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,trustTier,reporterTrust,reporterWeightTrust,rappelReportsOf,sunReadout} from "./ClimbMatchCore.jsx";
+import {parseGpxText,DbClimbPicker,RealClimberRow,CardHead,SectionJumps,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,BailoutForm,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,Comments,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,trustTier,reporterTrust,reporterWeightTrust,rappelReportsOf,sunReadout} from "./ClimbMatchCore.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
 import { approachOptions, defaultApproachKey, viaRouteOf, applyApproach, approachKeyOf, tripTrailheadDraft, tripTrailheadStore, tripTrailheadMerge } from "./lib/approaches.js";
 import { POP_CLOSE, POP_CLOSE_MEDIA, POP_BACK_MEDIA, POP_REMOVE } from "./lib/popupChrome.js";
@@ -3826,23 +3827,110 @@ function metWxLabel(code){
   if(s.indexOf("thunder")>=0)return "Thunderstorms";
   return s;
 }
-/* CONDITIONS SCORE — stars for how good the climbing is, hour by hour, on a CRAG route (sport, trad,
-   top-rope, bouldering; never alpine, scrambling, mountaineering, ice or mixed, where a dry-rock
-   friction number would be wrong). The scoring is lib/conditionsScore.js; this is only its card.
+/* CONDITIONS — the crag Conditions tab (sport, trad, top-rope, bouldering; never alpine, scrambling,
+   mountaineering, ice or mixed, where a dry-rock friction number would be wrong). The scoring is
+   lib/conditionsScore.js; this renders it as SECTIONS, each under its own heading and one idea per
+   row, because the tab is long and must read section by section:
+     RIGHT NOW · BEST TIME TO CLIMB · HOURLY · ROCK & DRYING · SUN ON THE WALL · AIR QUALITY · SEASON
+   (the route page then adds the weather sources and ROAD CONDITIONS below it).
    The forecast is fetched at the CRAG's coordinate, so a crag route with no waypoints still gets one.
-   Every number on it is accountable: tapping an hour lists each factor's points, the rows add up to
-   the headline, and a factor with no input says "not measured" instead of counting as zero or as a
-   pass. A failed fetch says so and shows no stars — it is not a rating. */
-const _cragWx={};
+   Every number is accountable: tapping an hour lists each factor's points, the rows add up to the
+   points line, a cap names its reason, and a factor with no input says "not measured" instead of
+   counting as zero or as a pass. A failed fetch says so and shows no stars — it is not a rating;
+   a failed air-quality or climate read says "not measured", never "clean" or "no season". */
+const _cragWx={},_cragAir={},_cragClim={};
+const DIR8=["N","NE","E","SE","S","SW","W","NW"];
+const agoH=function(h){return h<48?h+" h ago":Math.round(h/24)+" days ago";};
+const condRow=function(k,v,tone,key){return <div key={key||k} style={{display:"grid",gridTemplateColumns:"104px minmax(0,1fr)",gap:10,padding:"7px 0",borderTop:"1px solid "+C.borderLight,fontSize:13,lineHeight:1.45}}><span style={{color:C.textMuted,fontSize:12}}>{k}</span><span style={{color:tone||C.text,minWidth:0}}>{v}</span></div>;};
+const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
+const condNote={fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:8};
+const aqiTone=function(a){return a==null?C.textMuted:a<=50?C.green:a<=100?C.amber:a<=150?C.orange:C.red;};
+/* HOURLY — the selected day's 24 hours as three small panels sharing one time axis: temperature with
+   dew point (one unit, so one axis), humidity with chance of rain (both percent), wind with gusts.
+   Never two scales on one panel. Hover or drag reads every value for an hour; hours already gone
+   are shaded. */
+function HourlyChart({all,selUtc}){
+  const [hv,setHv]=useState(null);
+  if(!all||all.length<2)return null;
+  const W=340,PH=54,L=30,R=46,n=all.length,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
+  const sel=all.findIndex(function(h){return h.utc===selUtc;});
+  const at=hv!=null&&hv<n?hv:(sel>=0?sel:0);const a=all[at];
+  const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;setHv(Math.max(0,Math.min(n-1,Math.round((px-L)/xw))));};
+  const lastPast=all.reduce(function(m,h,i){return h.past?i:m;},-1);
+  const path=function(vals,y){var d="",pen=false;vals.forEach(function(v,i){if(v==null){pen=false;return;}d+=(pen?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1);pen=true;});return d;};
+  const panel=function(key,title,series,lo,hi,axisFmt,bars){
+    if(hi-lo<1)hi=lo+1;
+    const y=function(v){return 6+(1-(v-lo)/(hi-lo))*(PH-12);};
+    const ends=series.map(function(s){var li=-1;s.vals.forEach(function(v,i){if(v!=null)li=i;});return li<0?null:{s:s,y:y(s.vals[li])};}).filter(Boolean).sort(function(p,q){return p.y-q.y;});
+    for(var k=1;k<ends.length;k++)if(ends[k].y-ends[k-1].y<10)ends[k].y=ends[k-1].y+10;
+    return <div key={key} style={{marginTop:6}}><div style={{fontSize:11,color:C.textSub,fontWeight:700,marginBottom:2}}>{title}</div>
+      <svg width="100%" viewBox={"0 0 "+W+" "+PH} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+" through the day"}>
+        {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderLight} opacity={0.45}/>:null}
+        <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
+        <text x={L-4} y={y(hi)+3} fontSize="9" fill={C.textMuted} textAnchor="end">{axisFmt(hi)}</text><text x={L-4} y={y(lo)+3} fontSize="9" fill={C.textMuted} textAnchor="end">{axisFmt(lo)}</text>
+        {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v));return <rect key={i} x={x(i)-xw*0.35} y={top} width={Math.max(1,xw*0.7)} height={Math.max(0,y(lo)-top)} rx={2} fill={bars.color} opacity={0.55}/>;}):null}
+        {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth="2" strokeDasharray={s.dash?"4 3":undefined} strokeLinejoin="round"/>;})}
+        <line x1={x(at)} x2={x(at)} y1={0} y2={PH} stroke={C.textSub} strokeWidth="1"/>
+        {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={x(at)} cy={y(v)} r={3.5} fill={s.color} stroke={C.card} strokeWidth="1.5"/>;})}
+        {ends.map(function(e){return <text key={e.s.name} x={W-R+5} y={e.y+3} fontSize="9.5" fill={C.textSub}>{e.s.name}</text>;})}
+        {bars?<text x={W-R+5} y={PH-3} fontSize="9.5" fill={C.textSub}>{bars.name}</text>:null}
+      </svg></div>;
+  };
+  const T=all.map(function(h){return uTempN(h.temp);}),D=all.map(function(h){return uTempN(h.dew);});
+  const tv=T.concat(D).filter(function(v){return v!=null;});
+  const RH=all.map(function(h){return h.rh;}),POP=all.map(function(h){return h.pop;});
+  const Wd=all.map(function(h){return uWindN(h.wind);}),G=all.map(function(h){return uWindN(h.gust);});
+  const wv=Wd.concat(G).filter(function(v){return v!=null;});
+  const parts=[];
+  if(a.temp!=null)parts.push(uTemp(a.temp));if(a.dew!=null)parts.push("dew point "+uTemp(a.dew));if(a.rh!=null)parts.push(Math.round(a.rh)+"% humidity");if(a.pop!=null)parts.push(a.pop+"% chance of rain");if(a.wind!=null)parts.push("wind "+uWind(a.wind)+(a.gust!=null?", gusts "+uWind(a.gust):""));
+  return <div>
+    <div aria-live="polite" style={{fontSize:12.5,color:C.text,lineHeight:1.5,minHeight:38}}><b>{hourLabel(a.hr)}</b>{a.past?<span style={{color:C.textMuted}}>{" (past)"}</span>:null}{" · "+(parts.length?parts.join(" · "):"no values this hour")}</div>
+    {tv.length?panel("t","Temperature and dew point",[{name:"Temp",vals:T,color:C.orange},{name:"Dew pt",vals:D,color:C.cyan,dash:true}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";}):null}
+    {panel("h","Humidity and chance of rain",[{name:"Humidity",vals:RH,color:C.teal}],0,100,function(v){return v+"%";},{name:"Rain",vals:POP,color:C.blue})}
+    {wv.length?panel("w","Wind and gusts",[{name:"Wind",vals:Wd,color:C.indigo},{name:"Gusts",vals:G,color:C.indigo,dash:true}],0,Math.max(10,Math.ceil(Math.max.apply(null,wv))),function(v){return String(v);}):null}
+    <svg width="100%" viewBox={"0 0 "+W+" 12"} style={{display:"block"}} aria-hidden="true">{all.map(function(h,i){return h.hr%6===0?<text key={i} x={x(i)} y={10} fontSize="9" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;})}</svg>
+    <div style={condNote}>{"Wind in "+(uImp()?"mph":"km/h")+". Shaded: hours already gone. Move along a chart to read an hour."}</div>
+  </div>;
+}
+/* SEASON — twelve months of average high and low at the crag, from the last five years. A bar is
+   one month's range; green months are PRIME for you (average high in your ideal band and under 12
+   wet days), amber GOOD (within a few degrees and under 16). Historical averages, never a forecast. */
+function SeasonChart({clim,band}){
+  const [hv,setHv]=useState(null);
+  const ms=clim.months;const W=340,H=104,L=28,R=6,cw=(W-L-R)/12;
+  const lo=Math.min.apply(null,ms.map(function(m){return uTempN(m.lo);}).concat([uTempN(band[0])]))-3,hi=Math.max.apply(null,ms.map(function(m){return uTempN(m.hi);}).concat([uTempN(band[1])]))+3;
+  const y=function(v){return 4+(1-(v-lo)/(hi-lo))*(H-8);};
+  const fitCol={prime:C.green,good:C.amber,off:C.borderHi};
+  const NAMES=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const curM=new Date().getMonth();
+  const fits=ms.map(function(m){return monthFit(m,band);});
+  const prime=NAMES.filter(function(_,i){return fits[i]==="prime";}),good=NAMES.filter(function(_,i){return fits[i]==="good";});
+  const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;setHv(Math.max(0,Math.min(11,Math.floor((px-L)/cw))));};
+  const m=hv!=null?ms[hv]:null;
+  return <div>
+    {condRow("Prime months",prime.length?prime.join(", "):"None — no month averages a high in your range with under 12 wet days",prime.length?C.green:C.textSub)}
+    {good.length?condRow("Good months",good.join(", "),C.amber):null}
+    <div style={{marginTop:8}}><svg width="100%" viewBox={"0 0 "+W+" "+(H+14)} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={"Average high and low by month. Prime: "+(prime.join(", ")||"none")+". Good: "+(good.join(", ")||"none")+"."}>
+      <rect x={L} y={y(uTempN(band[1]))} width={W-L-R} height={Math.max(0,y(uTempN(band[0]))-y(uTempN(band[1])))} fill={C.green} opacity={0.1}/>
+      <text x={L-4} y={y(uTempN(band[1]))+3} fontSize="9" fill={C.textMuted} textAnchor="end">{uTempN(band[1])+"°"}</text><text x={L-4} y={y(uTempN(band[0]))+3} fontSize="9" fill={C.textMuted} textAnchor="end">{uTempN(band[0])+"°"}</text>
+      {ms.map(function(mo,i){var cx=L+cw*i+cw/2,t=y(uTempN(mo.hi)),b=y(uTempN(mo.lo));return <g key={i}><rect x={cx-6} y={t} width={12} height={Math.max(2,b-t)} rx={4} fill={fitCol[fits[i]]} opacity={hv==null||hv===i?1:0.55}/><text x={cx} y={H+11} fontSize="9.5" fill={i===curM?C.text:C.textMuted} fontWeight={i===curM?800:400} textAnchor="middle">{NAMES[i][0]}</text></g>;})}
+    </svg></div>
+    <div aria-live="polite" style={{fontSize:12.5,color:C.text,minHeight:19,marginTop:4}}>{m?<span><b>{NAMES[hv]}</b>{" · high "+uTemp(m.hi)+", low "+uTemp(m.lo)+" · "+Math.round(m.wetDays)+" wet days · "+uPrecip(m.rain)+" rain"}</span>:<span style={{color:C.textMuted}}>Move along the chart to read a month.</span>}</div>
+    <div style={{display:"flex",flexWrap:"wrap",gap:"4px 12px",fontSize:11.5,color:C.textSub,marginTop:6}}>{[["prime","Prime"],["good","Good"],["off","Off season"]].map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5}}><span aria-hidden="true" style={{width:9,height:9,borderRadius:3,background:fitCol[p[0]]}}/>{p[1]}</span>;})}<span>Shaded band: your ideal temperature</span></div>
+    <div style={condNote}>{"Averages for "+clim.years+" at the crag — a guide to the season, not a forecast."}</div>
+  </div>;
+}
 function ConditionsScoreCard({route,mtn}){
   const disc=catOf(route);const on=CRAG_SCORE_DISCIPLINES.includes(disc);
   const lat=mtn&&typeof mtn.lat==="number"?mtn.lat:(mtn&&mtn.lat!=null?+mtn.lat:null),lng=mtn&&typeof mtn.lng==="number"?mtn.lng:(mtn&&mtn.lng!=null?+mtn.lng:null);
   const hasPt=lat!=null&&lng!=null&&isFinite(lat)&&isFinite(lng);
   const ck=hasPt?lat.toFixed(3)+","+lng.toFixed(3):"";
   const [wx,setWx]=useState(function(){return ck&&_cragWx[ck]?{data:_cragWx[ck]}:null;});
-  const [tries,setTries]=useState(0);
+  const [aq,setAq]=useState(function(){return ck&&_cragAir[ck]?{data:_cragAir[ck]}:null;});
+  const [clim,setClim]=useState(function(){return ck&&_cragClim[ck]?{data:_cragClim[ck]}:null;});
+  const [tries,setTries]=useState(0);const [aqTries,setAqTries]=useState(0);const [climTries,setClimTries]=useState(0);
   const [dayI,setDayI]=useState(0);const [hrI,setHrI]=useState(null);const [showPrefs,setShowPrefs]=useState(false);
-  const [band,setBand]=useState(BAND_PREF.load);const [rain,setRain]=useState(RAIN_PREF.load);
+  const cp=useCondPrefs();
   useEffect(function(){
     if(!hasPt||!on)return;
     if(_cragWx[ck]){setWx({data:_cragWx[ck]});return;}
@@ -3850,12 +3938,27 @@ function ConditionsScoreCard({route,mtn}){
     fetchCragForecast(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
     return function(){live=false;};
   },[ck,tries]);
+  useEffect(function(){
+    if(!hasPt||!on)return;
+    if(_cragAir[ck]){setAq({data:_cragAir[ck]});return;}
+    let live=true;setAq(null);
+    fetchCragAir(lat,lng).then(function(j){_cragAir[ck]=j;if(live)setAq({data:j});},function(){if(live)setAq({error:true});});
+    return function(){live=false;};
+  },[ck,aqTries]);
+  useEffect(function(){
+    if(!hasPt||!on)return;
+    if(_cragClim[ck]){setClim({data:_cragClim[ck]});return;}
+    let live=true;setClim(null);
+    fetchCragClimate(lat,lng).then(function(m){_cragClim[ck]=m;if(live)setClim({data:m});},function(){if(live)setClim({error:true});});
+    return function(){live=false;};
+  },[ck,climTries]);
   useEffect(function(){setDayI(0);setHrI(null);},[route.id]);
   const rk=routeRock(route);
+  const aspectText=route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null;
   const score=useMemo(function(){
     if(!wx||!wx.data)return null;
-    return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null,family:rk?rk.family:null,discipline:disc},{band:band==="auto"?null:band,rainCaution:rain});
-  },[wx,band,rain,route.id,rk&&rk.family]);
+    return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:aspectText,family:rk?rk.family:null,discipline:disc},scorePrefs(cp),undefined,aq&&aq.data?aq.data:null);
+  },[wx,aq,cp,route.id,rk&&rk.family,aspectText]);
   if(!on)return null;
   const box={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px",marginBottom:14};
   const head=<div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:8}}><CardHead style={{marginBottom:0}}>CONDITIONS SCORE</CardHead>{hasPt?<button onClick={function(){setShowPrefs(!showPrefs);}} aria-expanded={showPrefs} aria-label="Your ideal conditions" style={{background:"none",border:"1px solid "+(showPrefs?C.blue:C.border),color:showPrefs?C.blue:C.textSub,borderRadius:8,padding:"5px 9px",fontSize:11.5,fontWeight:700,cursor:"pointer"}}>⚙ Your conditions</button>:null}</div>;
@@ -3868,34 +3971,54 @@ function ConditionsScoreCard({route,mtn}){
   const fmt=function(s){return s==null?"–":s.toFixed(1);};
   const starRow=function(s){var out=[];for(var i=1;i<=5;i++)out.push(<span key={i} style={{color:s!=null&&s>=i-0.25?col(s):C.borderHi}}>★</span>);return out;};
   const dayName=function(d,i){if(i===0)return "Today";return new Date(d.date+"T12:00:00Z").toLocaleDateString(undefined,{weekday:"short",timeZone:"UTC"});};
+  const whenOf=function(x){var i=days.findIndex(function(d){return d.date===x.date;});return (i===0?"today":i===1?"tomorrow":i>0?dayName(days[i],i):x.date)+" "+hourLabel(x.hr);};
   const hrs=day.hours;const selI=hrI!=null&&hrI<hrs.length?hrI:(day.best?day.best.i+1:0);const h=hrs[selI];
   const lbl=starsLabel(day.stars);const lblCol=col(day.stars);
+  const rockLbl=rk?rk.label+(rk.basis==="mapped"?" (mapped)":""):"Rock unknown";
   const facKeys=["temp","humidity","dry","wind","sun"];
   const facNote=function(k,f){
     if(k==="temp")return uTemp(f.val)+" · "+f.note;
-    if(k==="humidity")return Math.round(f.val)+"% humidity";
-    if(k==="dry")return f.raining?"Raining this hour":(f.atLeast?"No rain in the last "+f.val+" h":"Last rain "+f.val+" h ago")+" · "+(rk?rk.label+(rk.basis==="mapped"?" (mapped)":""):"Rock unknown")+" dries in about "+f.need+" h"+(f.pop?" · "+f.pop+"% chance of rain":"");
+    if(k==="humidity")return Math.round(f.val)+"% humidity"+(f.dew!=null?" · dew point "+uTemp(f.dew):"")+(f.friction?" · "+f.friction.label:"");
+    if(k==="dry")return (f.raining?"Rain in the past hour ("+uPrecip(f.precip)+")":(f.atLeast?"No rain in the past 14 days":"Last rain "+agoH(f.val)))+" · "+rockLbl+" dries in about "+f.need+" h"+(!f.raining&&f.frac<1?" · about "+Math.round(f.frac*100)+"% dry":"")+(f.pop?" · "+f.pop+"% chance of rain":"")+(f.damp?" · air at its dew point":"");
     if(k==="wind")return uWind(f.val)+(f.gust!=null&&f.gust>f.val+3?", gusts "+uWind(f.gust):"");
     if(k==="sun")return (f.lit?"Wall in sun":"Wall in shade")+(f.want==="either"?"":" · you want "+f.want);
     return "";
   };
   const notMeasured=function(k){
-    if(k==="sun")return "Sun / shade: this climb has no wall direction on file";
+    if(k==="sun")return score.aspectVaries?"Sun / shade: the wall faces several ways, so sun isn’t scored":"Sun / shade: this climb has no wall direction on file";
     return FACTOR_LABEL[k]+": no forecast value for this hour";
   };
-  const chip=function(on,label,onClick,key){return <button key={key} onClick={onClick} aria-pressed={on} style={{padding:"6px 10px",borderRadius:8,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:on?C.green:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer"}}>{label}</button>;};
-  const bandRange=function(k){var b=TEMP_BANDS[k];return uTemp(b[0])+"–"+uTemp(b[1]);};
-  return <div style={box} data-conditions-score="1">{head}
-    {showPrefs?<div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:10,display:"flex",flexDirection:"column",gap:8}}>
-      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5}}>Saved on this device. They change the score on every crag route.</div>
-      <div><div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>Ideal temperature</div><div role="group" aria-label="Ideal temperature" style={{display:"flex",gap:6,flexWrap:"wrap"}}>{["auto","cool","standard","warm"].filter(function(k){return k==="auto"||k!==defaultBand(disc);}).map(function(k){return chip(band===k,k==="auto"?("Default ("+bandRange(defaultBand(disc))+")"):((k==="cool"?"Cool ":k==="warm"?"Warm ":"Mild ")+bandRange(k)),function(){setBand(k);BAND_PREF.save(k);},k);})}</div></div>
-      <div><div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>After rain</div><div role="group" aria-label="After rain" style={{display:"flex",gap:6,flexWrap:"wrap"}}>{chip(rain==="normal","Usual drying time",function(){setRain("normal");RAIN_PREF.save("normal");},"n")}{chip(rain==="cautious","Give it longer",function(){setRain("cautious");RAIN_PREF.save("cautious");},"c")}</div></div>
+  const cur=score.now;
+  const wetSand=score.sandstone&&cur&&cur.dryFrac!=null&&cur.dryFrac<1;
+  const dryLine=score.dryFrom?whenOf(score.dryFrom):score.dryBeyond?"Not within the 7-day forecast":null;
+  const sec=function(title,body,first){return <div key={title}><SL first={first}>{title}</SL>{body}</div>;};
+  const aqNow=aq&&aq.data&&cur&&cur.aqi!=null?cur.aqi:null;const aqCat=aqiCategory(aqNow);
+  const dayAqCat=aqiCategory(day.aqiMax);
+  const curF=cur&&cur.factors.dry;
+  const sandWarn=<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red,borderRadius:10,padding:"9px 12px",marginBottom:8}}><div style={{fontSize:13,fontWeight:800,color:C.red}}>Wet sandstone breaks — don’t climb until it’s dry</div><div style={{fontSize:12.5,color:C.text,marginTop:3,lineHeight:1.45}}>{dryLine?"Likely dry from "+dryLine+".":"Can’t tell yet when it will be dry."}</div></div>;
+  return <div data-conditions-score="1">
+    {cur?sec("Right now",<div style={condBox}>
+      {wetSand?sandWarn:null}
+      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+hourLabel(cur.hr)}</div></div></div>
+      {cur.caps.length?condRow("Held down by",cur.caps.map(function(c){return c.why;}).join(" · "),C.amber):null}
+      {condRow("Temperature",cur.temp!=null?uTemp(cur.temp):"Not measured")}
+      {condRow("Friction",cur.friction?cur.friction.label:"Not measured",cur.friction?(cur.friction.key==="crisp"?C.green:cur.friction.key==="ok"?C.text:C.amber):C.textMuted)}
+      {condRow("Humidity",cur.rh!=null?Math.round(cur.rh)+"%"+(cur.dew!=null?" · dew point "+uTemp(cur.dew):""):"Not measured")}
+      {condRow("Wind",cur.wind!=null?uWind(cur.wind)+(cur.gust!=null?", gusts "+uWind(cur.gust):""):"Not measured")}
+      {condRow("Rain",cur.precip==null?"Not measured":cur.precip>0?uPrecip(cur.precip)+" in the past hour":"None in the past hour")}
+      {condRow("Air quality",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:aq&&aq.error?"Not measured (didn’t load)":!aq?"Loading…":"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
+    </div>,true):null}
+    {sec("Best time to climb",<div style={box}>{head}
+    {showPrefs?<div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
+      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>Saved on this device. They change the score on every crag route and on Home. Also in Settings.</div>
+      <CondPrefsControls disc={disc}/>
     </div>:null}
     <div role="group" aria-label="Day" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:10}}>{days.map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")} style={{flex:"0 0 auto",minWidth:52,padding:"6px 4px",borderRadius:9,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:11.5,fontWeight:700}}>{dayName(d,i)}</div><div style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</div><div style={{fontSize:10.5,color:C.textMuted}}>{d.hi!=null?uTemp(d.hi)+"/"+uTemp(d.lo):""}</div></button>;})}</div>
     <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}><div style={{fontSize:34,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(day.stars)}</div><div><div aria-hidden="true" style={{fontSize:19,letterSpacing:1.5,lineHeight:1.1}}>{starRow(day.stars)}</div><span style={{display:"inline-block",marginTop:3,padding:"2px 9px",borderRadius:20,fontSize:11.5,fontWeight:800,color:lblCol,background:day.stars>=4?C.greenBg:day.stars>=2.5?C.amberBg:C.redBg}}>{lbl}</span></div></div>
-    <div style={{fontSize:13,color:C.text,marginBottom:10}}>{day.best?<span>{"Best window "}<b>{hourLabel(day.best.start)+" – "+hourLabel(day.best.end%24)}</b></span>:"No three dry daylight hours in a row to score"}</div>
+    <div style={{fontSize:13,color:C.text,marginBottom:day.capWhy.length?4:10}}>{day.best?<span>{"Best window "}<b>{hourLabel(day.best.start)+" – "+hourLabel(day.best.end)}</b></span>:(dayI===0?"Fewer than three daylight hours left to score":"Fewer than three daylight hours to score")}</div>
+    {day.capWhy.length?<div style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Held down by: "+day.capWhy.join(" · ")}</div>:null}
     {hrs.length?<div style={{marginBottom:10}}>
-      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>Daylight hours <span style={{textTransform:"none",letterSpacing:0,fontWeight:500}}>(tap one)</span></div>
+      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>{dayI===0?"Daylight hours left ":"Daylight hours "}<span style={{textTransform:"none",letterSpacing:0,fontWeight:500}}>(tap one)</span></div>
       <div style={{display:"grid",gridTemplateColumns:"repeat("+hrs.length+",minmax(0,1fr))",gap:3}}>{hrs.map(function(x,i){var inBest=day.best&&i>=day.best.i&&i<day.best.i+3;return <button key={x.time} onClick={function(){setHrI(i);}} aria-pressed={i===selI} aria-label={hourLabel(x.hr)+", "+fmt(x.stars)+" stars"} style={{height:38,padding:0,borderRadius:5,cursor:"pointer",background:col(x.stars),opacity:0.35+(x.stars||0)/5*0.65,border:i===selI?"2px solid "+C.text:"none",boxShadow:inBest?"0 -3px 0 "+C.green:"none"}}/>;})}</div>
       <div style={{display:"grid",gridTemplateColumns:"repeat("+hrs.length+",minmax(0,1fr))",gap:3,marginTop:3}}>{hrs.map(function(x,i){return <div key={x.time} style={{fontSize:9.5,color:C.textMuted,textAlign:"center",whiteSpace:"nowrap"}}>{i%3===0?hourLabel(x.hr).replace(" ",""):""}{score.bearing!=null?<div aria-hidden="true" style={{fontSize:10,color:x.lit?C.yellow:C.textMuted}}>{x.lit?"☀":"▪"}</div>:null}</div>;})}</div>
     </div>:null}
@@ -3905,9 +4028,40 @@ function ConditionsScoreCard({route,mtn}){
         <div style={{display:"grid",gridTemplateColumns:"92px minmax(0,1fr) 44px",gap:8,alignItems:"center",fontSize:12.5}}><span style={{color:C.text}}>{FACTOR_LABEL[k]}</span><div style={{height:7,background:C.borderLight,borderRadius:4,overflow:"hidden"}}><div style={{width:Math.round(pc*100)+"%",height:"100%",background:fc}}/></div><span style={{textAlign:"right",color:C.textSub,fontVariantNumeric:"tabular-nums"}}>{f.pts+"/"+WEIGHTS[k]}</span></div>
         <div style={{fontSize:11.5,color:C.textMuted,marginLeft:100,lineHeight:1.45}}>{facNote(k,f)}</div>
       </div>;})}</div>
+      {h.caps.length?<div data-caps="1" style={{fontSize:12,color:C.amber,marginTop:9,paddingLeft:9,borderLeft:"2px solid "+C.amber,lineHeight:1.5}}>{h.caps.map(function(c){return <div key={c.why}>{"Capped at "+c.stars+" ★ — "+c.why}</div>;})}<div style={{color:C.textMuted}}>{"The factors alone would give "+fmt(h.rawStars)+"."}</div></div>:null}
       {h.missing.length?<div style={{fontSize:11.5,color:C.textMuted,marginTop:9,paddingLeft:9,borderLeft:"2px solid "+C.borderLight,lineHeight:1.5}}>{"Not measured, so left out of the score: "+h.missing.map(notMeasured).join("; ")+"."}</div>:null}
     </div>:null}
-    <div style={{fontSize:11,color:C.textMuted,marginTop:10,lineHeight:1.5}}>A forecast for the crag, not a promise about the rock. Seepage, wet cracks and how a wall actually holds water are for your own eyes.</div>
+    </div>)}
+    {sec("Hourly · "+dayName(day,Math.min(dayI,days.length-1)),<div style={condBox}><HourlyChart all={day.all} selUtc={h?h.utc:null}/></div>)}
+    {sec("Rock & drying",<div style={condBox}>
+      {condRow("Rock",rockLbl,rk?C.text:C.textMuted)}
+      {condRow("Drying time","About "+score.dryNeed+" h after a typical rain"+(cp.rain==="cautious"?" (you give it longer)":"")+"; less after a drizzle, longer after a soaking")}
+      {curF?condRow("Last rain",curF.raining?"In the past hour":curF.atLeast?"None in the past 14 days":agoH(curF.val)+" · "+uPrecip(curF.rain24)+" in the day before it stopped"):null}
+      {cur&&cur.dryFrac!=null?condRow("Rock now",cur.dryFrac>=1?(cur.factors.dry&&cur.factors.dry.damp?"Dried out from rain, but the air is at its dew point — shaded rock may be damp":"Likely dry"):"Likely wet — about "+Math.round(cur.dryFrac*100)+"% dried",cur.dryFrac>=1?C.green:C.amber):null}
+      {dryLine?condRow("Likely dry from",dryLine):null}
+      {score.seep?condRow("Seepage risk",<span><b style={{color:score.seep.risk==="high"?C.red:score.seep.risk==="moderate"?C.amber:C.green}}>{score.seep.risk==="high"?"High":score.seep.risk==="moderate"?"Moderate":"Low"}</b>{" · "+uPrecip(score.seep.rain7)+" of rain in 7 days, "+uPrecip(score.seep.rain14)+" in "+(score.seep.short?"the days on record":"14 days")}</span>):null}
+      <div style={condNote}>Seepage is a risk from recent rain, not a reading: cracks, seams and overhangs can stay wet for days after the face is dry. Drying times are rules of thumb for the rock type.</div>
+    </div>)}
+    {sec("Sun on the wall",<div style={condBox}>
+      {day.sun?condRow("Sunrise",clockAt(score,day.sun.rise)):null}
+      {day.sun&&day.sun.set!=null?condRow("Sunset",clockAt(score,day.sun.set)):null}
+      {score.bearing!=null?condRow("Wall faces",DIR8[Math.round(score.bearing/45)%8]):null}
+      {score.bearing!=null&&day.wallSun?condRow("Sun on the wall",day.wallSun.on!=null?"Hits the wall at "+clockAt(score,day.wallSun.on)+" · leaves at "+clockAt(score,day.wallSun.off):"No direct sun on this wall today",day.wallSun.on!=null?C.yellow:C.textSub):null}
+      {score.bearing==null?condRow("Sun on the wall",score.aspectVaries?"The wall faces several ways, so when the sun reaches it isn’t worked out, and sun isn’t scored":"No wall direction on file for this climb, so when the sun reaches it isn’t worked out",C.textMuted):null}
+      {score.bearing!=null?<div style={condNote}>Times assume a clear sky; ☀ under the hours above marks the ones forecast to be in sun. Terrain and trees that shade the wall aren’t known.</div>:null}
+    </div>)}
+    {sec("Air quality",<div style={condBox}>
+      {!aq?<div style={{fontSize:12.5,color:C.textMuted}}>Loading air quality…</div>:aq.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={function(){setAqTries(aqTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<div>
+        {condRow("Now",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
+        {condRow(dayI===0?"Worst today":"Worst "+dayName(day,dayI),day.aqiMax!=null?"AQI "+Math.round(day.aqiMax)+" · "+dayAqCat.label:"No air-quality forecast this far ahead",day.aqiMax!=null?aqiTone(day.aqiMax):C.textMuted)}
+        {cur&&cur.pm25!=null?condRow("Fine smoke",Math.round(cur.pm25)+" µg/m³ of PM2.5 now"):null}
+        <div style={condNote}>Above AQI 150 the score is held to 2 ★, above 200 to 1 ★ — smoke makes hard breathing the day’s real hazard.</div>
+      </div>}
+    </div>)}
+    {sec("Season",<div style={condBox}>
+      {!clim?<div style={{fontSize:12.5,color:C.textMuted}}>Loading the climate history…</div>:clim.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load the climate history for this crag. This says nothing about its season.</div><button onClick={function(){setClimTries(climTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<SeasonChart clim={clim.data} band={score.band}/>}
+    </div>)}
+    <div style={{fontSize:11,color:C.textMuted,marginTop:10,lineHeight:1.5}}>A forecast for the crag, not a promise about the rock. Wet cracks and how a particular wall holds water are for your own eyes.</div>
   </div>;
 }
 function pickForecastWaypoints(waypoints){
