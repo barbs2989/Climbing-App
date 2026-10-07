@@ -30350,3 +30350,54 @@ comments, exceeds the SQL Editor's ~4000-byte soft paste limit — a human apply
 paste just the `BEGIN...COMMIT` block.
 
 Pass 7 continues next run after `wa_big_four_mountain_tower_route`.
+
+## Batch 384 (2026-10-07, pass 7)
+
+Checked: `wa_big_kangaroo_going_down_under`, `wa_big_kangaroo_kearney_thomas`,
+`wa_big_kangaroo_skinny_start`, `wa_big_kangaroo_walkabout`, `wa_big_kangaroo_west_face`,
+`wa_big_snagtooth_west_ridge`, `wa_big_snow_mountain_east_buttress`,
+`wa_big_snow_mountain_east_ridge_hardscrabble_route`.
+
+**Fixed (2):**
+- `wa_big_kangaroo_kearney_thomas.fa` — stored "Kearney and Thomas (first names and date
+  unknown)"; both SuperTopo and AAC Publications (AAJ) name the full party and date. Now
+  "Alan Kearney and Jeff Thomas (joined by Jeff's father, Bill Thomas), August 1984."
+- `wa_big_snagtooth` (areas row) `elevation_ft` — stored 8,379 ft matched no source. The
+  route row's own `high_point_ft` (8,374) already carried the current figure: a 2023 Country
+  High Points resurvey measured 8,374.3 ft, finding the old USGS quad value (8,330 ft) was
+  44 ft low; Wikipedia's Snagtooth Ridge infobox now uses the corrected 8,374 ft. SQL in
+  `audits/sql/2026-10-07-batch-384.sql`.
+
+**Flagged for human review (4):**
+- `wa_big_kangaroo_kearney_thomas` — pitch count stored 7, but SuperTopo/AAC snippets mention
+  8 pitches; a lower-confidence secondary detail, not independently cross-confirmed like the
+  FA fix above.
+- `wa_big_kangaroo_west_face` — grade stored 5.6, but Mountaineers.org and SummitPost both
+  grade the same 1942 Beckey line (there called "West Route") 5.5 — may be a naming/edition
+  convention difference rather than an error. (This row's id already carries a separate,
+  deliberately-not-renamed id-slug mismatch documented 2026-07-28; this grade note is new and
+  distinct from that.)
+- `wa_big_snagtooth_west_ridge` — stored `fa` text reads "...September 29, 1946 (first ascent
+  of the peak)". AAJ 1948 confirms that party/date for the peak, but the actual 1946 line
+  was a southwest-face route (scree/gully/ribs/chimney/slab), not the ridge-gain-at-a-saddle
+  line this row describes as the standard route. The hedge isn't technically false but invites
+  conflating peak-FA with route-FA — worth a precision rewrite, not a factual correction.
+- `wa_big_snow_mountain_east_buttress` — the A1 aid grade, 10-pitch count, and a claimed later
+  free ascent at 5.10 could not be corroborated against any source found (SummitPost
+  independently confirms only the FA party/date/III-5.7). Not contradicted either — flagged as
+  unverifiable, not a confirmed error.
+
+**Clean (6):** `wa_big_kangaroo_going_down_under`, `wa_big_kangaroo_skinny_start`, and
+`wa_big_kangaroo_walkabout` all independently corroborated via AAC Publications/AAJ 2013
+writeups (FA party, date, pitch count, length, and grade match exactly). `wa_big_kangaroo_west_face`'s
+FA (Fred and Helmy Beckey with Walt Varney, June 21, 1942) confirmed via Wikipedia/AAJ.
+`wa_big_snow_mountain_east_buttress`'s FA party/date/grade (III, 5.7) confirmed via SummitPost.
+`wa_big_snow_mountain_east_ridge_hardscrabble_route`'s gain_ft (5,300) confirmed via a
+Mountaineers trip report, and the Dingford-gate detour mileage confirmed via WTA/SummitPost.
+Big Snow Mountain's shared peak elevation (6,680 ft) confirmed via Wikipedia/PeakVisor.
+
+**Tooling note:** Delegated research to 3 parallel subagents, one per peak group (Big Kangaroo
+— 5 routes, Big Snagtooth — 1, Big Snow Mountain — 2). `check:sql` confirmed both UPDATE
+targets exist live.
+
+Pass 7 continues next run after `wa_big_snow_mountain_east_ridge_hardscrabble_route`.
