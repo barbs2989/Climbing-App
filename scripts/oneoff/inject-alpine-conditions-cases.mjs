@@ -22,6 +22,7 @@
 //   14 a snow station from another range (no 30 km cap)
 //   15 outcomes from any date, not the last 60 days
 //   16 the alpine tick list loses Turned around again
+//   17 a zone named after its forecasting centre printed on screen ("CAIC zone")
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
 import { execFileSync } from "child_process";
@@ -88,6 +89,9 @@ const CASES = [
   { name: "16. the alpine tick list loses Turned around", file: CORE,
     find: 'if(c==="alpine")return ["Summit","Turned around"].concat(TICKTYPES.roped);', repl: 'if(c==="alpine")return ["Summit"].concat(TICKTYPES.roped);',
     expect: "fail", expectText: "can log a Summit AND a Turned around" },
+  { name: "17. a zone named after its forecasting centre is printed", file: AVY,
+    find: "const base = { zone: zoneName(p),", repl: "const base = { zone: p.name || null,",
+    expect: "fail", expectText: "a zone named after its forecasting centre is not printed" },
 ];
 
 const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE].map((f) => [f, fs.readFileSync(f, "utf8")]));
