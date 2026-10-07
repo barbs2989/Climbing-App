@@ -1361,3 +1361,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. Seepage and how a particular wall holds
     water are not modelled; the card's footer says so.
+  - **Home tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, above *Jump back in*) is the SAME
+    `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
+    nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an
+    unlocated climb as "No score: …" rather than dropping it. At most 8 crags are fetched, and it says so.
+  - **Wall direction (0249)**: `areas.aspect` is written ONLY from an online statement about the wall
+    or its crag (agents: `research-data/crag-aspects/`, `scripts/apply-crag-research.mjs`; page text:
+    `scripts/extract-wall-aspects.mjs`), never from terrain. Both the card and the tile fall back to
+    it when the route has no `aspect`. Agent research on the 10 biggest crags confirmed only 34 of
+    ~566 walls (6%, 2026-10-07): pages rarely state a facing, so do not read the low coverage as a bug.
+    `rock_basis='researched'` (the crag's rock as stated online) reads as stated, not mapped.

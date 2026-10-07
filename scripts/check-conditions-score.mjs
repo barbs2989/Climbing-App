@@ -144,5 +144,23 @@ console.log("check:conditions-score");
   else fail(`${sites.length} place(s) render routeRock but only ${marked} say "(mapped)"`);
 }
 
+// 6. HOME — the "Best day to climb" tile (lib/BestDayTile.jsx) is the SAME score over the saved crag
+//    climbs, so its number and the Conditions tab's must come from one function, under one gate.
+{
+  const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
+  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  if (/<BestDayTile ids=\{wishlist\} routeById=\{routeById\} onOpen=/.test(app) && /<BestDayTile[\s\S]{0,200}<div><div style=\{hd\}>\{"Jump back in"\}/.test(app)) ok("the Best day tile is mounted on Home, over the saved climbs");
+  else fail("the Best day tile is no longer mounted on Home over the saved climbs");
+  if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /if \(!crag\.length\) return null/.test(tile)) ok("the tile scores with scoreForecast, crag climbs only, and renders nothing with none saved");
+  else fail("the tile no longer shares the score, its crag-only gate, or its empty-means-nothing rule");
+  if (/not a rating/.test(tile) && /No score: /.test(tile)) ok("a failed forecast or an unlocated climb is SAID, never scored or dropped");
+  else fail("the tile no longer says when a climb could not be scored");
+  // A wall direction researched for the crag (areas.aspect) reaches BOTH readers.
+  const fallback = /aspect: ?(?:x\.)?r(?:oute)?\.aspect ?\|\| ?(?:x\.)?r(?:oute)?\.face ?\|\| ?\((?:x\.)?r(?:oute)?\._dbArea ?&& ?(?:x\.)?r(?:oute)?\._dbArea\.aspect\)/;
+  if (fallback.test(rd.replace(/\s/g, "")) && fallback.test(tile.replace(/\s/g, ""))) ok("the card and the tile both fall back to the crag's researched wall direction");
+  else fail("a reader of the score no longer falls back to areas.aspect");
+}
+
 console.log(failed ? `\ncheck:conditions-score: ${failed} FAILED` : "\ncheck:conditions-score: all passed");
 process.exit(failed ? 1 : 0);
