@@ -3838,7 +3838,7 @@ function ConditionsScoreCard({route,mtn}){
   const rk=routeRock(route);
   const score=useMemo(function(){
     if(!wx||!wx.data)return null;
-    return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:route.aspect||route.face||null,family:rk?rk.family:null,discipline:disc},{band:band==="auto"?null:band,rainCaution:rain});
+    return scoreForecast(wx.data,{lat:lat,lng:lng,aspect:route.aspect||route.face||(route._dbArea&&route._dbArea.aspect)||null,family:rk?rk.family:null,discipline:disc},{band:band==="auto"?null:band,rainCaution:rain});
   },[wx,band,rain,route.id,rk&&rk.family]);
   if(!on)return null;
   const box={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px",marginBottom:14};
