@@ -22,7 +22,8 @@ const entry = path.join(dir, "entry.js"), out = path.join(dir, "bundle.mjs");
 fs.writeFileSync(entry, [
   `export { default as RouteDetail, SuggestFix } from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};`,
   `export { dbRouteToCamel } from ${JSON.stringify(path.join(ROOT, "lib", "db.js"))};`,
-  `export { trailheadPoint, catOf } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`,
+  `export { trailheadPoint, catOf, enrichRoute } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};`,
+  `export { SeasonalGuidancePanel, CrowdsPanel } from ${JSON.stringify(path.join(ROOT, "EnrichmentPanels.jsx"))};`,
 ].join("\n"));
 execFileSync("npx", ["esbuild", entry, "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
   "--define:import.meta.env={}", "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
@@ -32,7 +33,15 @@ const _err = console.error; console.error = (...a) => { if (!String(a[0]).includ
 // SuggestFix portals into document.body. Stub the portal BEFORE the bundle's react-dom facade exists,
 // and give it a body only while the form renders, so RouteDetail itself still renders without a DOM.
 { const { createRequire } = await import("node:module"); const rd = createRequire(path.join(ROOT, "package.json"))("react-dom"); rd.createPortal = (c) => c; }
-const { RouteDetail, SuggestFix, dbRouteToCamel, trailheadPoint, catOf } = await import(out);
+const { RouteDetail, SuggestFix, dbRouteToCamel, trailheadPoint, catOf, enrichRoute, SeasonalGuidancePanel, CrowdsPanel } = await import(out);
+const SRC = ["ClimbMatch.jsx", "lib/db.js", "lib/offline.js", "RouteDetail.jsx"].map((f) => fs.readFileSync(path.join(ROOT, f), "utf8")).join("\n");
+// LOAD PATHS. A route reaches the page three ways, and each builds _dbArea itself: the area browser
+// (dbRouteToCamel over this file's SEL), a shared ?route= link / offline pack / other queries (dbRouteToCamel
+// over THEIR OWN areas() embed), and search/RPC rows (no embed; fetchRouteArea fills it in). A field added
+// to one and not the others shows when browsing and vanishes from a link — the walk-in did, #2236/#2237.
+// Every embed in the app source is replayed below, and the REAL fetchRouteArea runs against a stub client.
+const EMBEDS = [...new Set([...SRC.matchAll(/\*, areas\([^"`]*?parent:parent_id\(name\)\)/g)].map((m) => m[0]))];
+const FRA = (() => { const m = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8").match(/export async function fetchRouteArea\(routeId\) \{[\s\S]*?\n\}/); if (!m) throw new Error("fetchRouteArea not found in lib/db.js"); return m[0].replace(/^export /, ""); })();
 
 const key = requireServiceKey();
 const SEL = "*, areas(name,area_type,region,lat,lng,elevation_ft,prominence_ft,avy_zone,blurb,approach,approach_min,rock,rock_basis,aspect,parent:parent_id(name))";
@@ -66,9 +75,13 @@ const FOREIGN = { bouldering: ["Bolts", "Anchor", "Protection", "Fixed gear"], s
   aid: ["Landing", "Crash pads", "Start", "Bolts", "Protection"] };
 const SECTIONS = ["GETTING THERE", "APPROACH", "DESCENT", "ROUTE TRACK", "ROUTE FACTS", "CLIMATE & SEASON", "ROUTE BREAKDOWN", "ACCESS & REGULATIONS", "RACK", "CRAG", "PARKING"];
 
+const stub = { from: () => ({ select: (sel) => ({ eq: (_c, id) => ({ maybeSingle: async () => { const r = await get(`select=${encodeURIComponent(sel)}&id=eq.${encodeURIComponent(id)}`); return { data: r[0] || null, error: null }; } }) }) }) };
+const fetchRouteArea = new Function("supabase", FRA + "; return fetchRouteArea;")(stub);
+const PC = new Proxy({}, { get: () => "#000" });
+const panels = (r, onAdd) => text(renderToStaticMarkup(React.createElement(React.Fragment, null, React.createElement(SeasonalGuidancePanel, { route: r, C: PC, ActionIcon: () => null, onAdd }), React.createElement(CrowdsPanel, { route: r, reported: null, C: PC, ActionIcon: () => null, onAdd }))));
 const problems = [];
 const P = (id, d, m) => problems.push(`${d.padEnd(14)} ${id}: ${m}`);
-let rendered = 0; const C = { walkIn: 0, targetsChecked: 0, crag: 0, nonCrag: 0, withParking: 0, noParking: 0, linksChecked: 0, factsChecked: 0, noAreaCoord: 0 };
+let rendered = 0; const C = { loadPaths: 0, seasonPh: 0, crowdPh: 0, walkIn: 0, targetsChecked: 0, crag: 0, nonCrag: 0, withParking: 0, noParking: 0, linksChecked: 0, factsChecked: 0, noAreaCoord: 0 };
 const discs = process.argv.includes("--crag-only") ? CRAG : [...CRAG, "alpine", "mountaineering", "scrambling", "ice", "mixed"];
 const parkFilter = "approach_logistics->>trailheadLat=not.is.null";
 for (const d of discs) {
@@ -144,7 +157,13 @@ for (const d of discs) {
       const walk = String((r._dbArea && r._dbArea.approach) || "").trim();
       if (walk) { C.walkIn++; if (!/WALK-IN/.test(t)) P(r.id, d, "crag walk-in on file but no WALK-IN"); if (/No approach description/.test(t)) P(r.id, d, "says the approach is not written down beside the crag's walk-in"); }
       // every placeholder's Add button must open a field the contribute form OFFERS for this discipline
-      const targets = ["approachLogistics", "road", "comms"].concat(catOf(r) === "bouldering" ? ["pads"] : catOf(r) === "sport" ? ["draws"] : ["rack"]);
+      // App mounts SEASONAL GUIDANCE and CROWDS on a crag's Overview: an empty one is a placeholder whose Add opens its field
+      { const er = enrichRoute(r), pt = panels(er, noop), filled = panels(er, undefined);
+        if (!/SEASONAL GUIDANCE/.test(pt)) P(r.id, d, "no SEASONAL GUIDANCE section (not even a placeholder)");
+        if (/SEASONAL GUIDANCE/.test(filled) === /Add the best season/.test(pt)) P(r.id, d, "SEASONAL GUIDANCE: placeholder and content disagree"); else if (!/SEASONAL GUIDANCE/.test(filled)) C.seasonPh++;
+        if (!/CROWDS & SOLITUDE/.test(pt)) P(r.id, d, "no CROWDS section (not even a placeholder)");
+        if (/CROWDS & SOLITUDE/.test(filled) === /No crowd reports for this climb yet/.test(pt)) P(r.id, d, "CROWDS: placeholder and content disagree"); else if (!/CROWDS & SOLITUDE/.test(filled)) C.crowdPh++; }
+      const targets = ["approachLogistics", "road", "comms", "seasonalGuidance", "crowds"].concat(catOf(r) === "bouldering" ? ["pads"] : catOf(r) === "sport" ? ["draws"] : ["rack"]);
       if (/No approach description/.test(t)) targets.push("approach");
       if (/No descent recorded/.test(t)) targets.push("descentText");
       if (/No rappel information/.test(t)) targets.push("rap");
@@ -165,9 +184,15 @@ for (const d of discs) {
       if (["scrambling"].includes(d) && /No ropework notes|No protection information/.test(text(pl))) P(r.id, d, "scramble shows a roped placeholder");
     }
     if (!/Cell \/ sat coverage|Cell coverage/.test(ts)) P(r.id, d, "no cell-coverage section on Safety");
+    // the same route through every OTHER load path must render the same Overview
+    if (crag) {
+      for (const emb of EMBEDS) { const [alt] = await get(`select=${encodeURIComponent(emb)}&id=eq.${encodeURIComponent(row.id)}`); C.loadPaths++; if (text(render(dbRouteToCamel(alt), "overview")) !== t) P(r.id, d, `Overview differs when loaded with the embed "${emb.slice(0, 60)}…" (a shared link / pack / query path)`); }
+      const bare = { ...row }; delete bare.areas; const viaSearch = dbRouteToCamel(bare); if (!viaSearch._dbArea) viaSearch._dbArea = await fetchRouteArea(row.id); C.loadPaths++;
+      if (text(render(viaSearch, "overview")) !== t) { const k1 = Object.keys(r._dbArea || {}).filter((k) => !(k in (viaSearch._dbArea || {}))); P(r.id, d, "Overview differs when opened from search (fetchRouteArea)" + (k1.length ? " — it lacks " + k1.join(",") : "")); }
+    }
   }
 }
 console.log(`rendered ${rendered} real routes x3 tabs`, JSON.stringify(C));
 if (problems.length) { console.log(problems.length + " problem(s):"); for (const p of problems) console.log("  " + p); process.exit(1); }
-if (!C.withParking || (!C.noParking && !process.argv.includes("--all-parking")) || !C.linksChecked || (!C.nonCrag && !process.argv.includes("--crag-only") && !process.argv.includes("--all-parking"))) { console.log("VACUOUS: a branch of the audit was never exercised"); process.exit(2); }
+if (!EMBEDS.length || !C.loadPaths || !C.seasonPh || !C.crowdPh || !C.withParking || (!C.noParking && !process.argv.includes("--all-parking")) || !C.linksChecked || (!C.nonCrag && !process.argv.includes("--crag-only") && !process.argv.includes("--all-parking"))) { console.log("VACUOUS: a branch of the audit was never exercised"); process.exit(2); }
 console.log("audit: ok — every sampled route keeps every promise");
