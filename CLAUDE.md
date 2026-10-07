@@ -88,6 +88,7 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
 npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
+npm run check:conditions-score # the crag CONDITIONS SCORE adds up, leaves out what it did not measure, and stays off alpine (in build)
 npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
 npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)

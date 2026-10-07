@@ -1339,3 +1339,25 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Non-toast leftovers deliberately NOT swept** (the ask was toasts): the résumé's
     *Verify (demo)* button and *✓ verified (demo)* chip, and the seed `GuideDashboard`'s
     *Mark verified (demo)* (renders only when `USE_DB` is off, i.e. never in production).
+
+- **`check:conditions-score`** asserts that the crag **CONDITIONS SCORE** (Conditions tab, sport /
+  trad / top-rope / bouldering only — `lib/conditionsScore.js`, card `ConditionsScoreCard` in
+  `RouteDetail.jsx`) **adds up, leaves out what it did not measure, and is offered nowhere it cannot
+  judge**. Static, no network, no credentials; in `npm run build`.
+  - **Arithmetic**: each factor is rounded to whole points BEFORE summing, so the "x of y points"
+    line is exactly the sum of the rows printed under it, and stars are exactly 5 × points / measured
+    points. There is **no clamp** anywhere — the same lesson as `compat()` (docs/codebase/algorithms.md).
+  - **Not measured is not zero**: an unknown aspect (532 of ~300k crag routes have one, measured
+    2026-10-07) drops sun/shade and the max becomes 85. Scoring it 0 would mark every such crag a
+    star worse; scoring it full would mark it better. Both were the tempting default.
+  - **Crag-only is a USER DECISION (2026-10-07)**: no score on alpine, scrambling, mountaineering,
+    ice or mixed. A dry-rock friction number is wrong there, and a wrong number is worse than none.
+    Section 4 fails if `CRAG_SCORE_DISCIPLINES` ever grows one of them.
+  - **Rock type**: the drying factor reads `routeRock()` (lib/rockType.js): a route's own `rock`,
+    else its area's (`areas.rock`, 0248). `rock_basis='mapped'` is the bedrock at the crag's
+    coordinate (scripts/derive-area-rock.mjs) and **agrees with what routes state on rock FAMILY
+    for 174 of 215 areas (81%)**, so §5 requires every place that renders `routeRock(route)` to
+    mark a mapped one. Do not drop the marker because "it is usually right": one in five is not.
+  - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
+    measurements, and the card says which rock it assumed. Seepage and how a particular wall holds
+    water are not modelled; the card's footer says so.
