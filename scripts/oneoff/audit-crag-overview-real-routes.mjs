@@ -44,7 +44,7 @@ const EMBEDS = [...new Set([...SRC.matchAll(/\*, areas\([^"`]*?parent:parent_id\
 const FRA = (() => { const m = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8").match(/export async function fetchRouteArea\(routeId\) \{[\s\S]*?\n\}/); if (!m) throw new Error("fetchRouteArea not found in lib/db.js"); return m[0].replace(/^export /, ""); })();
 
 const key = requireServiceKey();
-const SEL = "*, areas(name,area_type,region,lat,lng,elevation_ft,prominence_ft,avy_zone,blurb,approach,approach_min,rock,rock_basis,aspect,parent:parent_id(name))";
+const SEL = "*, areas(name,area_type,region,lat,lng,elevation_ft,prominence_ft,avy_zone,blurb,approach,approach_min,rock,rock_basis,aspect,parking_lat,parking_lng,parking_name,parent:parent_id(name))";
 const get = async (qs) => { for (let i = 0; ; i++) { const r = await fetch(SUPABASE_URL + "/rest/v1/routes?" + qs, { headers: headers(key) }); if (r.ok) return r.json(); const b = (await r.text()).slice(0, 200); if (i >= 4 || !/57014/.test(b)) throw new Error(r.status + " " + b); await new Promise((z) => setTimeout(z, 3000 * (i + 1))); } }; // statement timeouts under load: retry
 const rnd = () => "abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random() * 26)] + "abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random() * 26)];
 async function sample(filter, n) {
@@ -81,7 +81,7 @@ const PC = new Proxy({}, { get: () => "#000" });
 const panels = (r, onAdd) => text(renderToStaticMarkup(React.createElement(React.Fragment, null, React.createElement(SeasonalGuidancePanel, { route: r, C: PC, ActionIcon: () => null, onAdd }), React.createElement(CrowdsPanel, { route: r, reported: null, C: PC, ActionIcon: () => null, onAdd }))));
 const problems = [];
 const P = (id, d, m) => problems.push(`${d.padEnd(14)} ${id}: ${m}`);
-let rendered = 0; const C = { loadPaths: 0, seasonPh: 0, crowdPh: 0, walkIn: 0, targetsChecked: 0, crag: 0, nonCrag: 0, withParking: 0, noParking: 0, linksChecked: 0, factsChecked: 0, noAreaCoord: 0 };
+let rendered = 0; const C = { areaParking: 0, loadPaths: 0, seasonPh: 0, crowdPh: 0, walkIn: 0, targetsChecked: 0, crag: 0, nonCrag: 0, withParking: 0, noParking: 0, linksChecked: 0, factsChecked: 0, noAreaCoord: 0 };
 const discs = process.argv.includes("--crag-only") ? CRAG : [...CRAG, "alpine", "mountaineering", "scrambling", "ice", "mixed"];
 const parkFilter = "approach_logistics->>trailheadLat=not.is.null";
 for (const d of discs) {
@@ -90,6 +90,8 @@ for (const d of discs) {
   if (CRAG.includes(d) && !process.argv.includes("--all-parking")) rows = rows.concat(await sample(`discipline=eq.${d}&${parkFilter}`, 3));
   // routes at crags that carry a WALK-IN (areas.approach): 220 areas, easy for a random sample to miss
   if (CRAG.includes(d) && !process.argv.includes("--all-parking")) { if (!globalThis._walkAreas) { const ar = await (await fetch(SUPABASE_URL + "/rest/v1/areas?select=id&approach=not.is.null&limit=500", { headers: headers(key) })).json(); globalThis._walkAreas = ar.map((x) => x.id); } const pick = globalThis._walkAreas.sort(() => Math.random() - 0.5).slice(0, 40); const wid = (await get(`select=id&discipline=eq.${d}&area_id=in.(${pick.map((x) => '"' + x + '"').join(",")})&limit=3`)).map((x) => x.id); if (wid.length) rows = rows.concat(await get(`select=${encodeURIComponent(SEL)}&id=in.(${wid.map((i) => '"' + i + '"').join(",")})`)); } // make sure parking is exercised
+  // routes whose PARKING comes from their area (areas.parking_*, 0251), not their own row
+  if (CRAG.includes(d) && !process.argv.includes("--all-parking")) { if (!globalThis._parkAreas) { const ar = await (await fetch(SUPABASE_URL + "/rest/v1/areas?select=id&parking_lat=not.is.null&limit=1000", { headers: headers(key) })).json(); globalThis._parkAreas = ar.map((x) => x.id); } const pick = globalThis._parkAreas.sort(() => Math.random() - 0.5).slice(0, 60); const pid = pick.length ? (await get(`select=id&discipline=eq.${d}&area_id=in.(${pick.map((x) => '"' + x + '"').join(",")})&limit=3`)).map((x) => x.id) : []; if (pid.length) { rows = rows.concat(await get(`select=${encodeURIComponent(SEL)}&id=in.(${pid.map((i) => '"' + i + '"').join(",")})`)); C.areaParking += pid.length; } }
   for (const row of rows) {
     let r;
     try { r = dbRouteToCamel(row); } catch (e) { P(row.id, d, "dbRouteToCamel threw " + e.message); continue; }
@@ -194,5 +196,5 @@ for (const d of discs) {
 }
 console.log(`rendered ${rendered} real routes x3 tabs`, JSON.stringify(C));
 if (problems.length) { console.log(problems.length + " problem(s):"); for (const p of problems) console.log("  " + p); process.exit(1); }
-if (!EMBEDS.length || !C.loadPaths || !C.seasonPh || !C.crowdPh || !C.withParking || (!C.noParking && !process.argv.includes("--all-parking")) || !C.linksChecked || (!C.nonCrag && !process.argv.includes("--crag-only") && !process.argv.includes("--all-parking"))) { console.log("VACUOUS: a branch of the audit was never exercised"); process.exit(2); }
+if (!C.areaParking || !EMBEDS.length || !C.loadPaths || !C.seasonPh || !C.crowdPh || !C.withParking || (!C.noParking && !process.argv.includes("--all-parking")) || !C.linksChecked || (!C.nonCrag && !process.argv.includes("--crag-only") && !process.argv.includes("--all-parking"))) { console.log("VACUOUS: a branch of the audit was never exercised"); process.exit(2); }
 console.log("audit: ok — every sampled route keeps every promise");
