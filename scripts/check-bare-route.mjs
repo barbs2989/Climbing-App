@@ -282,10 +282,13 @@ for (const d of [...CRAG, "alpine"]) {
   }
 }
 
-// 6. ROUTE FACTS — one set of guidebook facts on every crag discipline, and NOTHING on a bare one.
-//    Every row is gated on its own value: a bare crag route must not gain a single fact row (a row
-//    of "unknown"s is a placeholder, not a fact), must not print "Season TBD", and a crag route
-//    whose stored breakdown/climate cannot open a Plan tab must still show them — on Overview.
+// 6. ROUTE FACTS — one set of guidebook facts on every crag discipline.
+//    OWNER RULE 2026-10-07: every fact the DISCIPLINE has is listed even when the route states none,
+//    as "Not on file yet" with an "Add what you know" link — a placeholder for climbers to fill, never
+//    an "unknown" that reads as a fact, and never a value the route does not have. Facts the
+//    discipline does not have (bolts on a boulder, landing on a sport line) and facts that are not
+//    a discipline question (Quality, Also called, Variations, FFA/FWA, Sun, Descent) stay absent.
+//    Still: no "Season TBD", and a crag route's breakdown/climate render on Overview.
 {
   const FACT_LABELS = ["Quality", "Bolts", "Descent", "Aspect", "Season", "Also called", "Variations", "First Free Ascent", "First Winter Ascent", "Sun", "Wet", "Rock quality", "Fixed gear"];
   const segs = (h) => h.replace(/<style[\s\S]*?<\/style>/g, " ").replace(/<[^>]+>/g, "\n").split("\n").map((x) => x.trim()).filter(Boolean);
@@ -293,9 +296,19 @@ for (const d of [...CRAG, "alpine"]) {
     const html = cache.get(d + "/overview") || render(bare(d, "5.9"), "overview");
     const t = text(html), sg = segs(html);
     if (!t.includes("ROUTE FACTS")) fail(`ANCHOR LOST: ${d} overview no longer titles its facts card ROUTE FACTS — this section checked nothing`);
-    const hit = FACT_LABELS.filter((l) => sg.includes(l));
-    if (hit.length) fail(`bare ${d} route: ROUTE FACTS prints rows it has no value for (${hit.join(", ")})`);
-    else ok(`bare ${d} route: ROUTE FACTS adds no fact rows`);
+    const WANT = { bouldering: ["Location", "Landing", "Crash pads", "Start", "Aspect", "Season", "Rock quality", "Wet"],
+      sport: ["Location", "Bolts", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
+      trad: ["Location", "Protection", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"],
+      toprope: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet"],
+      aid: ["Location", "Anchor", "Aspect", "Season", "Rock quality", "Wet", "Fixed gear"] }[d];
+    if (!WANT) fail(`ANCHOR LOST: no expected fact list for crag discipline ${d} — add one`);
+    const valueOf = (l) => { const i = sg.indexOf(l); return i < 0 ? null : sg[i + 1]; };
+    const missing = (WANT || []).filter((l) => valueOf(l) !== "Not on file yet");
+    const stray = FACT_LABELS.filter((l) => !(WANT || []).includes(l) && sg.includes(l));
+    if (missing.length) fail(`bare ${d} route: these discipline facts are not shown as "Not on file yet" placeholders: ${missing.join(", ")}`);
+    else if (stray.length) fail(`bare ${d} route: ROUTE FACTS prints rows that are not this discipline's facts and have no value (${stray.join(", ")})`);
+    else if (!t.includes("Add what you know")) fail(`bare ${d} route: placeholders render with no link to fill them`);
+    else ok(`bare ${d} route: every ${d} fact shows as a fillable "Not on file yet" placeholder, and nothing else`);
     if (t.includes("Season TBD")) fail(`bare ${d} route: header strap says "Season TBD" — a crag route states a season only when it has one`);
   }
   for (const d of ["sport", "trad", "toprope", "aid"]) {
