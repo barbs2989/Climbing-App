@@ -55,7 +55,7 @@ console.error(JSON.stringify(tally), "| rock writes", rock.size, "| confirmation
 const vals = function (rows) { return rows.map(function (r) { return "(" + r.map(q).join(",") + ")"; }).join(",\n"); };
 // --verify prints one SELECT counting the planned changes that did NOT land (all zero = applied).
 if (args.includes("--verify")) {
-  console.log("select (select count(*) from areas a join (values\n" + (vals([...rock]) || "('',''") + ") v(id,rock) on a.id=v.id where a.rock is distinct from v.rock or a.rock_basis<>'researched') rock_missed, (select count(*) from areas where rock_basis='mapped' and id in (" + ([...confirm].map(q).join(",") || "''") + ")) confirm_missed, (select count(*) from areas a join (values\n" + (vals([...aspect]) || "('',''") + ") v(id,aspect) on a.id=v.id where a.aspect is null) aspect_missed;");
+  console.log("select (select count(*) from areas a join (values\n" + (vals([...rock]) || "('','')") + ") v(id,rock) on a.id=v.id where a.rock is distinct from v.rock or a.rock_basis<>'researched') rock_missed, (select count(*) from areas where rock_basis='mapped' and id in (" + ([...confirm].map(q).join(",") || "''") + ")) confirm_missed, (select count(*) from areas a join (values\n" + (vals([...aspect]) || "('','')") + ") v(id,aspect) on a.id=v.id where a.aspect is null) aspect_missed;");
   process.exit(0);
 }
 console.log("begin;");
