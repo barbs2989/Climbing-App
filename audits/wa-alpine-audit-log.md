@@ -30162,3 +30162,59 @@ left flagged rather than guessed. Future runs should check whether `WebFetch` ac
 in this environment before relying on it.
 
 Pass 7 continues next run after `wa_around_the_cave_we_go`.
+
+## Batch 381 (2026-10-07, pass 7)
+
+Checked: `wa_arrowhead_mountain_south_route`, `wa_austera_peak`, `wa_austera_peak_southwest_ridge`,
+`wa_bacon_peak_diobsud`, `wa_bald_eagle_peak_daniel_glacier`, `wa_bald_eagle_peak_south_spur`,
+`wa_bald_eagle_peak_southwest_route`, `wa_baldy_standard`.
+
+**Fixed (2):**
+- `wa_austera_peak` — the elev-7900 waypoint ("rappel ~75 ft to the Klawatti Glacier") was named
+  "Klawatti col," but that name belongs to the separate pass at ~7,800 ft reached first; this
+  7,900 ft feature is the Klawatti-Austera col one ridge segment further on. AAC Publications'
+  route description and the Mountaineers.org Inspiration-McAllister-Klawatti Ice Cap Traverse
+  page both distinguish the two cols, and the sibling row
+  `wa_austera_peak_southwest_ridge` already names this same 7,900 ft feature correctly —
+  confirming the fix. Corrected the waypoint name to "Klawatti-Austera col."
+- `wa_baldy_standard` — `high_point_ft` stored 6827, disagreeing with 6808, which this row's own
+  `data_quality.gaps` field says it already standardized on (citing a 6,797-6,827 ft cross-source
+  spread) and which the parent area row, the route's own "Baldy summit" waypoint, and its
+  overview text all already use. SummitPost corroborates 6,808 ft as the most-repeated external
+  figure; nothing found supports 6,827 ft specifically. Corrected `high_point_ft` to 6808.
+
+**Flagged for human review (4):**
+- `wa_austera_peak` and `wa_austera_peak_southwest_ridge` — both state the Klawatti-Austera col
+  rappel as "~75 ft," but independent trip reports (Mountaineers.org, lemkeclimbs.com) describe
+  the same rappel as 40 ft or ~50 ft depending on the year's moat conditions. Sources disagree
+  with each other and the row itself already notes the moat "varies enormously with the month,"
+  so this reads as genuine year-to-year variability rather than a provable error — left as-is.
+- `wa_bacon_peak_diobsud` — the stored `gpx` track (593 points) lies entirely east of the summit
+  and never comes near the Watson Lakes trailhead, wilderness-boundary saddle, or Diobsud basin
+  waypoints, all of which sit well west of the summit; the summit waypoint falls at the extreme
+  western edge of the track's own bounding box instead of being traced by it. The drawn/downloadable
+  line does not match the Watson Lakes approach the waypoints and prose describe — possibly a
+  different line (the overview mentions an alternate, brushier approach from Bacon Creek Road,
+  which would run east of the summit), but nothing in the row confirms that. Needs a real GPS
+  track or guidebook check before replacing or re-labeling it.
+- `wa_bald_eagle_peak_daniel_glacier` — "Daniel Glacier" is a specific, documented named glacier
+  route on Mount Daniel (Mountaineers.org, SummitPost), not a generic name pattern. Bald Eagle
+  Peak's own area row describes it as non-glaciated (`avy_zone`: "non-glaciated summer scramble"),
+  and no source found documents a "Daniel Glacier" feature on Bald Eagle Peak itself. The row
+  carries no other data (coordinates, description) to correct with a value fix — this looks like
+  a possible mis-filed route (named for Mount Daniel, filed under Bald Eagle Peak's `area_id`)
+  that needs a human decision on whether to re-file it, rename it, or confirm it was intentional.
+
+**Clean (3):** `wa_arrowhead_mountain_south_route` (elevation, prominence, parent-peak, coordinates,
+rail-crossing hazard, gain/distance all corroborated; the route name/aspect briefly looked
+contradictory against its own beta text but resolves once you account for the peak's "arrowhead"
+rockslide-scar naming). `wa_bald_eagle_peak_south_spur` and `wa_bald_eagle_peak_southwest_route`
+(bare unenriched stubs — only id/area_id/name/discipline populated, nothing to contradict; "South
+Spur" is a generic route-name pattern seen on many peaks, not a misfile).
+
+**Tooling note:** `WebFetch` is still blocked by the egress proxy for every source domain tried
+this run (confirmed again against nps.gov) — all cross-checks again relied on `WebSearch` snippets
+rather than full pages. Fixes were only made where the row's own internal fields already converged
+on one value and/or multiple independent snippets agreed; the rest went to the flagged list.
+
+Pass 7 continues next run after `wa_baldy_standard`.

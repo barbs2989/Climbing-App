@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_around_the_cave_we_go",
+  "last_processed_id": "wa_baldy_standard",
   "total_in_scope_last_count": 755,
   "total_wa_alpine_or_mountaineering_tagged": 830,
-  "pass_note": "Pass 7, batch 380 (2026-10-05) continued from wa_amphitheater_mountain_finger_of_fatwa through wa_around_the_cave_we_go. Reused the fast inner-join query form from batch 379's note (routes?select=id,discipline,areas!inner(area_type)&discipline=in.(alpine,mountaineering)&id=like.wa_*&areas.area_type=eq.peak&order=id.asc&id=gt.<last_processed_id>) -- still fast. WebFetch was unavailable for every source domain tried this run (see audit log); cross-checks relied on WebSearch snippets only, which is weaker corroboration -- future runs should retest WebFetch access. Next run continues after wa_around_the_cave_we_go, picking up at wa_arrowhead_mountain_south_route.",
+  "pass_note": "Pass 7, batch 381 (2026-10-07) continued from wa_arrowhead_mountain_south_route through wa_baldy_standard. Used the same fast inner-join query form as prior batches (routes?select=id,discipline,areas!inner(area_type)&discipline=in.(alpine,mountaineering)&id=like.wa_*&areas.area_type=eq.peak&order=id.asc&id=gt.<last_processed_id>). Delegated per-route research to 5 parallel subagents (grouped by shared peak where routes shared context) to parallelize the WebSearch-heavy cross-checking; this worked well and is worth repeating. WebFetch is still EGRESS_BLOCKED for every domain tried (re-confirmed against nps.gov this run) -- cross-checks again relied entirely on WebSearch snippets. Next run continues after wa_baldy_standard.",
   "batches": [
     {
       "batch_number": 1,
@@ -7628,6 +7628,25 @@
       "clean": 7,
       "sql_file": "audits/sql/2026-10-05-batch-380.sql",
       "note": "Fixed 1: wa_amphitheater_mountain_finger_of_fatwa fa '...2012'->'...2011' -- Blake Herrington's own Aug 25 2011 blog post describes an Aug 10-17 2011 trip establishing this route plus Cathedral Peak's Last Rites, matching the AAC Publications 'Three New Routes' article naming the same two routes; that article runs in the 2012 AAJ (reporting the prior season), so 2012 was the publication year bleeding into the ascent-year field. Flagged 2: wa_argonaut_peak_east_ridge -- (a) named 'Southeast Ridge' in the row but the 1977 FA report (AAC) calls it the 'South Ridge' (FA party/date otherwise match exactly); a prior batch (2026-07-15) deliberately renamed TO 'Southeast Ridge' per Mountaineers.org/SummitPost -- real source conflict between the primary FA report and modern guide sites, needs a human call; (b) this row's own waypoint/high_point_ft=8453 vs parent area elevation_ft=8457, and WebSearch itself returned inconsistent figures (8453 in one pass, 8457-8459 in others) for the peak's elevation -- genuine small source disagreement, not guessed. wa_andersons_thumb_standard -- row already discloses no dedicated source was found (auto_generated=true); this run located one specialized guidebook ('Climbers Guide to the Olympic Mountains') that covers it directly, but WebFetch could not load it (or any source page) this run, and WebSearch summaries of it gave two mutually inconsistent elevations (~6850 ft vs ~7033 ft, the latter likely conflating nearby Echo Rock) against the stored 6785 ft -- flagging the elevation specifically as still unresolved. Clean 7 (no contradicting source found): the other 5 Amphitheater Mountain routes (2 FAs from 1971/1973 uncorroborated but uncontradicted; Pilgrimage to Mecca's July 27 2004 FA confirmed via Climbing.com; West Route's elevation matches 5 siblings); wa_argonaut_peak_northeast_couloir (grade/length/elevation all corroborated via Mountainproject/SummitPost/Lemke Climbs/Wenatchee Outdoors); wa_around_the_cave_we_go (grade matches Mountain Project; high point matches The Cave Route it variates from). Tooling note: WebFetch was EGRESS_BLOCKED for every domain tried (Mountain Project, AAC Publications, thecrag.com, CascadeClimbers, blakeclimbs.blogspot.com, web.archive.org, en.wikipedia.org, sites.google.com, nps.gov) -- all cross-checks this run used WebSearch snippets only, which is why ambiguous/conflicting cases were flagged rather than resolved."
+    },
+    {
+      "batch_number": 381,
+      "date": "2026-10-07",
+      "route_ids": [
+        "wa_arrowhead_mountain_south_route",
+        "wa_austera_peak",
+        "wa_austera_peak_southwest_ridge",
+        "wa_bacon_peak_diobsud",
+        "wa_bald_eagle_peak_daniel_glacier",
+        "wa_bald_eagle_peak_south_spur",
+        "wa_bald_eagle_peak_southwest_route",
+        "wa_baldy_standard"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 4,
+      "clean": 3,
+      "sql_file": "audits/sql/2026-10-07-batch-381.sql",
+      "note": "Fixed 2: wa_austera_peak -- elev-7900 waypoint renamed 'Klawatti col' -> 'Klawatti-Austera col' (it's the second, further col reached after the true Klawatti Col at ~7800ft; AAC Publications and Mountaineers.org both distinguish the two, and sibling row wa_austera_peak_southwest_ridge already names this feature correctly). wa_baldy_standard -- high_point_ft 6827 -> 6808 to match the value this row's own data_quality.gaps field says it already standardized on (6797-6827ft cross-source spread), and which the parent area row, the route's own summit waypoint, and its overview text all already use; SummitPost corroborates 6808ft, nothing found supports 6827ft. Flagged 4: wa_austera_peak and wa_austera_peak_southwest_ridge both state the Klawatti-Austera col rappel as '~75 ft', but independent trip reports (Mountaineers.org, lemkeclimbs.com) describe 40ft or ~50ft depending on year/moat conditions -- genuine year-to-year variability, not a provable error. wa_bacon_peak_diobsud -- stored gpx track (593 pts) lies entirely east of the summit and never approaches the Watson Lakes TH/saddle/basin waypoints, all west of the summit; doesn't match the described approach, needs a real GPS track or guidebook check before replacing. wa_bald_eagle_peak_daniel_glacier -- 'Daniel Glacier' is a documented named feature/route on Mount Daniel (a different peak), not Bald Eagle Peak, which its own area row calls non-glaciated; row carries no other data to correct, looks like a possible mis-filed route needing a human re-file/rename decision. Clean 3: wa_arrowhead_mountain_south_route (elevation/prominence/parent-peak/coordinates/hazards all corroborated); wa_bald_eagle_peak_south_spur and wa_bald_eagle_peak_southwest_route (bare unenriched stubs, nothing to contradict). Tooling note: WebFetch still EGRESS_BLOCKED for every domain tried (confirmed again against nps.gov) -- all cross-checks used WebSearch snippets only."
     }
   ]
 }
