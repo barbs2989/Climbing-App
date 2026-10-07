@@ -70,7 +70,7 @@ const bare = (discipline, grade) => ({
 // that they fell into the alpine layout and a bare one printed "Season TBD" under its name.
 const CRAG = ["trad", "sport", "toprope", "aid", "bouldering"];
 const ALPINE = ["alpine", "mountaineering", "ice", "mixed"];
-const TABS = ["overview", "conditions", "photos", "partners", "planner", "safety"];
+const TABS = ["overview", "forecast", "conditions", "photos", "partners", "planner", "safety"];
 const GREEN_BG = "#0f2419"; // C.greenBg — the "you're fine" affirmation
 
 const text = (html) => html.replace(/<style[\s\S]*?<\/style>/g, " ")

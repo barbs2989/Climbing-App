@@ -287,8 +287,10 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 `export default function App()` (near the bottom, ~line 2208) holds **~100 `useState` hooks** and every screen. Navigation is driven by a single `tab` state string. Main tabs:
 
 - `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
-- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `partners`, `photos`.
-  - **Six, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
+- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
+  - **`forecast` is labelled "Conditions"** (the crag conditions score, sport/trad/top-rope/bouldering only); `conditions` is
+    labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.
+  - **Seven, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
     which is the same wrong list `check:screen-lists` records as costing `check:token-boxes` a whole walk. The guard was
     fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
     reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and

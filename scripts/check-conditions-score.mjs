@@ -14,7 +14,8 @@
 //   3. DIRECTION — a dry, mild, still day beats the same day just after rain; sandstone 30 h after
 //      rain is wetter than granite 30 h after rain (DRY_HOURS 48 vs 24); a south wall is lit at
 //      solar noon and a north wall is not.
-//   4. REACH — RouteDetail mounts ConditionsScoreCard on the Conditions tab, the card renders a row
+//   4. REACH — RouteDetail gives ConditionsScoreCard its OWN tab (sub-tab `forecast`, labelled
+//      "Conditions"; Send Reports stays separate — owner decision 2026-10-07), the card renders a row
 //      for EVERY factor in WEIGHTS, says "not measured" for a missing one, refuses to show stars
 //      when the fetch failed, and is gated to crag disciplines only — never alpine, scrambling,
 //      mountaineering, ice or mixed (a user decision, 2026-10-07).
@@ -106,8 +107,10 @@ console.log("check:conditions-score");
 {
   const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "");
-  if (/tab==="conditions"\?[\s\S]{0,600}<ConditionsScoreCard route=\{route\} mtn=\{mtn\}\/>/.test(mask)) ok("ConditionsScoreCard is mounted on the Conditions tab");
-  else fail("ConditionsScoreCard is no longer mounted on the Conditions tab");
+  if (/tab==="forecast"&&showScore\?<div><ConditionsScoreCard route=\{route\} mtn=\{mtn\}\/>/.test(mask) && /\["forecast","Conditions"\]/.test(mask)) ok("ConditionsScoreCard has its own Conditions tab (sub-tab `forecast`)");
+  else fail("ConditionsScoreCard is no longer the body of its own Conditions tab (sub-tab `forecast`)");
+  if (/x\[0\]==="forecast"\?showScore/.test(mask) && /const showScore=CRAG_SCORE_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask)) ok("the Conditions tab is offered only where the score is");
+  else fail("the Conditions tab is no longer gated to scored crag disciplines");
   const card = (mask.match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
   if (!card) fail("ANCHOR LOST: function ConditionsScoreCard not found");
   else {
