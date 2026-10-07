@@ -21,7 +21,7 @@
 // Any pair not on the list fails. A LIST, not a count: a count holds level when one pair is
 // fixed and another lands.
 //
-// A SECOND pass (0255) pairs two areas under the SAME parent on the plain key, at any distance, with or
+// A SECOND pass (0256) pairs two areas under the SAME parent on the plain key, at any distance, with or
 // without a coordinate or climbs — the first pass skipped them, and 209 such groups ("Pawn, The" beside
 // "The Pawn") had collected unseen.
 //
@@ -83,7 +83,7 @@ for (const [g, list] of groups) {
     pairs.set(a.id + "|" + b.id, `${a.name} / ${b.name} (${d.toFixed(2)} km)`);
   }
 }
-// SAME PARENT (0255): two children of one area under one key are one place filed twice — "Pawn, The"
+// SAME PARENT (0256): two children of one area under one key are one place filed twice — "Pawn, The"
 // beside "The Pawn", "Mount X" beside "Mt. X", "Catskills" beside "Catskills (Ice)". The pass above skips
 // them; 209 such groups had collected by 2026-10-07. No distance, coordinate or climb is required here:
 // one copy of Poke-O-Moonshine had no coordinate, and an empty copy is still a second row on the screen.
