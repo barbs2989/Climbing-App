@@ -139,6 +139,35 @@ const outback = legs(route({ gainM: 4000 / FT, lossM: 4000 / FT, distKm: 10 }));
 eq("ANCHOR: loop and out-and-back rendered", !!loop && !!outback, true);
 eq("a 20 km loop takes the same day as a 10 km-each-way out-and-back", loop && outback ? loop.ret === outback.ret && loop.summit === outback.summit : null, true);
 
+console.log("\na route's own STORED legs win over the walk model, and the descent is the longer of the two");
+/* lib/planTimes.js. The walk model charges the WHOLE car-to-summit gain on the way in, and a stored
+   summit leg then charged the top of it again: Easton read 17 hr to the summit. Against online
+   trip-report times (2026-10-07, 27 routes, model / online) walk + stored summit read 1.6x and
+   stored approach + stored summit 1.2x; the stored descent alone read 0.8x with 14 of 23 SHORT, so
+   the descent is the LONGER of the stored one and the walk down. Depart is the fixture's 6:00 AM. */
+const T = (timing, over) => route(Object.assign({ gainM: 7000 / FT, lossM: 7000 / FT, timing }, over || {}));
+const stored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 4, totalHrs: 12 }));
+const storedNear = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 4, totalHrs: 12 }, { distKm: 2, gainM: 1000 / FT, lossM: 1000 / FT }));
+const push = legs(T({ approachTimeHrs: 3, summitTimeHrs: 10, totalHrs: 13 }));
+eq("ANCHOR: the stored-leg fixtures rendered", !!stored && !!storedNear && !!push, true);
+eq("Est. summit = depart + STORED approach + STORED summit leg, not the walk model's approach", stored ? stored.summit === (6 + 3 + 5) * 60 : null, true);
+eq("a stored descent SHORTER than the 20 km walk down is replaced by the walk down", stored ? stored.down > 4 * 60 : null, true);
+eq("...and a stored descent LONGER than a 2 km walk down is kept as stored", storedNear ? storedNear.down === 4 * 60 : null, true);
+/* 94 rows store "Summit push and full descent" in summitTimeHrs (approach + summit = total, no
+   descent): the summit leg is the round trip from camp, and 0.59 of it is the way up. */
+eq("a summit leg that INCLUDES the descent counts only its way-up share (0.59) toward Est. summit", push ? push.summit === Math.round((6 + 3 + 10 * 0.59) * 60) : null, true);
+const pitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }, { pitches: 8, grade: "5.8" }));
+const unpitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }));
+eq("ANCHOR: pitched and unpitched stored-leg fixtures rendered", !!pitchedStored && !!unpitchedStored, true);
+eq("a STORED summit leg already covers its rappels: no 0.7 x climb is added on top", pitchedStored && unpitchedStored ? pitchedStored.down === unpitchedStored.down : null, true);
+/* A stored approach is not a hole: with no distance or gain on file the Approach tile states the
+   stored leg as a value, not a floor, and the lower-bound note stays away when both legs are stored. */
+const noWalkHtml = text(render(route({ distKm: null, timing: { approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 2, totalHrs: 10 } })));
+const tile = /(≥?)(\d+\.\d)hr Approach/.exec(noWalkHtml);
+eq("ANCHOR: the Approach tile rendered for a route with stored legs and no walk inputs", !!tile, true);
+eq("...and it states the stored approach (3.0hr) with no lower-bound mark", tile ? tile[1] + tile[2] : null, "3.0");
+eq("...and no 'Lower bounds only' note claims the walk is missing", /Lower bounds only — this climb has no recorded/.test(noWalkHtml), false);
+
 /* The warning div sits immediately after the tile's own "Est. summit" / "Est. return" caption and
    is identified by carrying a margin-top the caption does not. Read from the RAW markup rather
    than the stripped text: stripping welds the label to the next tile, and there is no reliable
@@ -255,7 +284,7 @@ const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
-const FLOOR = 36;
+const FLOOR = 46;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;
@@ -263,5 +292,5 @@ if (ran < FLOOR) {
 
 console.log(fail
   ? `\ncheck:return-leg: ${fail} FAILURE(S)`
-  : `\ncheck:return-leg: ok — the walk is split at the summit, every route walks out, the descent is at least the gain, and each red label names the day it lands on (${ran} assertions).`);
+  : `\ncheck:return-leg: ok — the walk is split at the summit, stored legs win and the descent is the longer of stored and walked, every route walks out, and each red label names the day it lands on (${ran} assertions).`);
 process.exit(fail ? 1 : 0);

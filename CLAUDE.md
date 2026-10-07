@@ -151,7 +151,7 @@ npm run check:pitch-discount # the climbing-time discount is bounded, and the pl
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
-npm run check:return-leg      # a walk that already covers the day is not re-added, and each red warning names the DAY it lands on (in build)
+npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
