@@ -116,8 +116,15 @@ console.log("check:conditions-score");
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "");
   if (/tab==="forecast"&&showScore\?<div><ConditionsScoreCard route=\{route\} mtn=\{mtn\}.*?\/>/.test(mask) && /\["forecast","Conditions"\]/.test(mask)) ok("ConditionsScoreCard has its own Conditions tab (sub-tab `forecast`)");
   else fail("ConditionsScoreCard is no longer the body of its own Conditions tab (sub-tab `forecast`)");
-  if (/x\[0\]==="forecast"\?showScore/.test(mask) && /const showScore=CRAG_SCORE_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask)) ok("the Conditions tab is offered only where the score is");
-  else fail("the Conditions tab is no longer gated to scored crag disciplines");
+  /* Since 2026-10-07 the tab is ALSO offered on alpine, mountaineering, scrambling, ice and mixed
+     routes, with FLAGS (lib/AlpineConditionsCard.jsx, held by check:alpine-conditions) -- the owner
+     wanted the tab there and no stars. What this guard keeps true is that the STARS stay off them:
+     the tab's gate is the two disjoint sets, and the alpine branch never mounts the score card. */
+  if (/x\[0\]==="forecast"\?\(showScore\|\|showAlpineCond\)/.test(mask) && /const showScore=CRAG_SCORE_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask) && /const showAlpineCond=!showScore&&ALPINE_COND_DISCIPLINES\.includes\(catOf\(route\)\)/.test(mask)) ok("the Conditions tab is offered where the score is, or where the alpine flags are — and the flags only where the score is not");
+  else fail("the Conditions tab is no longer gated to the score's disciplines plus the alpine flags'");
+  const alpBranch = (mask.match(/tab==="forecast"&&showAlpineCond\?<div>[\s\S]*?<\/div><\/div>:null\}/) || [""])[0];
+  if (alpBranch && !/ConditionsScoreCard/.test(alpBranch)) ok("the alpine Conditions branch never mounts the star score");
+  else fail(alpBranch ? "the alpine Conditions branch mounts ConditionsScoreCard — stars on an alpine route" : "ANCHOR LOST: the alpine Conditions branch was not found");
   const card = (mask.match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
   if (!card) fail("ANCHOR LOST: function ConditionsScoreCard not found");
   else {

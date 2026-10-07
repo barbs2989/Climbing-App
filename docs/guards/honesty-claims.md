@@ -1422,3 +1422,54 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     it when the route has no `aspect`. Agent research on the 10 biggest crags confirmed only 34 of
     ~566 walls (6%, 2026-10-07): pages rarely state a facing, so do not read the low coverage as a bug.
     `rock_basis='researched'` (the crag's rock as stated online) reads as stated, not mapped.
+
+- **`check:alpine-conditions`** asserts that the **alpine Conditions tab** (sub-tab `forecast` on
+  alpine, mountaineering, scrambling, ice and mixed routes — `lib/AlpineConditionsCard.jsx`, logic in
+  `lib/alpineConditions.js`) reads each discipline's OWN conditions, counts its start time back from
+  the Planner's own estimate (`lib/planTimes.js`), and never claims what it did not read. Static, so
+  it sits in `npm run build`; injection suite `scripts/oneoff/inject-alpine-conditions-cases.mjs`
+  (10 cases, 9 caught + 1 silent).
+  - **OWNER DECISIONS, 2026-10-07:** its own Conditions tab; FLAGS, never stars (no published alpine
+    go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
+    softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
+    be different… same with scrambling and mountaineering, research online".
+  - **THE DISCIPLINES DISAGREE ON DIRECTION, which is why there is one KIND per route and not one flag
+    set.** Researched online the same day (guide services, avalanche centres, Parks Canada, AAC
+    Accidents, Weiss et al. 2011 in the *Journal of Glaciology*, practitioner threads):
+    | kind (how told apart) | leads with | start counts back from |
+    |---|---|---|
+    | glacier — mountaineering | no overnight freeze at the SNOW's height (forecast freezing level, not a clear sky); softening from ~7-9 AM | back DOWN below the snow before it softens: soften − (up + down), or the summit leg × 1.69 from camp |
+    | alpine ice — `ice` with AI, snow in the grade, or on a peak; `mixed` with snow, 4+ pitches or 820+ ft | the same, off the face AND its descent before it warms (ACMG: "before noon") | as glacier |
+    | waterfall ice — `ice`, WI, no snow, crag | temperature HISTORY: a night above freezing, 3+ days over 34 °F, +20 °F in 48 h, a sharp fall, rain, too few cold days to form, new snow and wind loading above the gully | **none** — there is no daily softening deadline |
+    | crag mixed — `mixed` otherwise | weeks of freeze to lock blocks and turf in; a thaw is NOT a warning (thaw-freeze builds snow-ice) | **none** |
+    | scrambling | thunder; WET ROCK; cold + wet = verglas (a cold night is BAD here) | off the summit by noon on a storm day, or the forecast onset if earlier |
+    | alpine rock — `alpine` (incl. trad the page calls alpine) | showers and storms mid-climb; verglas | the START OF THE DESCENT before the storm |
+    Alpine rock and scrambles also get the snow logic when the route's own text says it crosses snow
+    (`routeTerrain().snow === "yes"`).
+  - **THRESHOLDS AND THEIR STATUS — the screen calls every one a rule of thumb, never a standard:**
+    published: thunder by WMO weather code 95-99; NWS wind chill (frostbite in ~30 min from about
+    −18 °F); prolonged above-freezing including at NIGHT destabilises waterfall ice (Weiss et al.);
+    avalanche the top ice hazard (Parks Canada). Rule of thumb: off summits by noon (CFI 2026, Roach;
+    CFI's 2020 deck said 10 AM); summit gusts 30 mph caution / 50 warn (Met Office gale = 50); a foot
+    of new snow in a day = obvious instability. Single source: CAPE ≥ 400 J/kg as a lightning
+    predictor (1994 New Mexico study — NWS says no CAPE value makes storms certain, so it only ever
+    reads "possible", and only with rain in the air); DeBruin's ice chart (night over 32 °F, 3+ days
+    over 34 °F, +20 °F in 48 h); Gadd (2 / 4 in of new snow, 25 mph loading); Abacus (blocks need ~2
+    weeks of sub-zero). Ours: a 15 °F fall in 6 h as "sudden cooling" (Weiss gives the mechanism, not
+    a number); snow assumed down to HALFWAY up the gain when the route has no camp pin (the card says
+    so). Not found anywhere, so not flagged: refreeze hours, bridge strength, rock drying time, a
+    scramble wind limit, a whiteout visibility.
+  - **A FLOOR GIVES NO START.** `planTimes().legsFloor` — part of the walk or the climb is not on
+    file, so the Planner marks it "≥". A start counted back from a minimum is too LATE, the dangerous
+    direction, so the card says why there is no start instead. That is ~11,989 of the 12,685
+    alpine-type routes (only 696 carry distance and gain).
+  - **NEVER "SAFE".** A day with no flags says *Nothing in the forecast flags this day* and every kind
+    states what a forecast cannot see (bridges, whether the ice is in, wet rock…). A failed fetch shows
+    no flags and says it is not a reading. Flags carry VALUES only and the card words them through
+    `uTemp`/`uElev`/`uWind`/`uSnowfall`, so section 6 renders every flag in both unit systems.
+  - **The weather panel moved here from Safety** for these disciplines, and a route with NO placed
+    waypoints now gets its area's coordinate at the route's high point instead of "No forecast yet".
+  - **WHAT IT CANNOT SEE:** whether a threshold is RIGHT for a given range (Cascades numbers are rare —
+    most ice and mixed material is Rockies, Colorado and Scotland); the card's runtime fetch (SSR
+    renders only the loading state, so the fixtures exercise the logic directly); avalanche danger
+    and SNOTEL (the next PR).

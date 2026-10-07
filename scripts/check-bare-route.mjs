@@ -240,8 +240,12 @@ for (const d of [...CRAG, "alpine"]) {
   // Position: it is the first thing on the tab, above the float-plan prompt and the forecasts.
   const st = text(render(located("alpine"), "safety"));
   const iF = st.search(FIRE), iB = st.indexOf("Committing objective"), iW = st.indexOf("Weather & mountain forecasts");
-  if (iB < 0 || iW < 0) fail("ANCHOR LOST: the Safety tab's banner/forecast sections were renamed — update this guard");
-  else if (iF > iB || iF > iW) fail("nearby fire: no longer the first section on Safety");
+  /* The weather list LEFT Safety for alpine, mountaineering, scrambling, ice and mixed routes on
+     2026-10-07 -- it lives on their Conditions tab now (check:alpine-conditions holds that), so on
+     this alpine fixture it is rightly absent. The float-plan banner is the anchor that must be here;
+     the forecasts are held to "below the fire" only where Safety still carries them. */
+  if (iB < 0) fail("ANCHOR LOST: the Safety tab's float-plan banner was renamed — update this guard");
+  else if (iF > iB || (iW >= 0 && iF > iW)) fail("nearby fire: no longer the first section on Safety");
   else ok("nearby fire: first section on Safety, above the float plan and the forecasts");
 }
 
