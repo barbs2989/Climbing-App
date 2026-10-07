@@ -9,7 +9,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { useRecentRouteIds } from "./recent";
-import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./mapKit";
+import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
@@ -943,15 +943,13 @@ function ObjectivesPanel({ area, wishlist, onOpen, C }) {
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
 function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
-  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), userRef = useRef(null), tileRef = useRef(null);
+  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
   const [bounds, setBounds] = useState(null);
   const [center, setCenter] = useState(center0 || null);
   const [baseLayer, setBaseLayer] = useState("sat");
   const [sel, setSel] = useState(null);
-  const [locating, setLocating] = useState(false);
-  const [geoErr, setGeoErr] = useState("");
   const [fullscreen, setFullscreen] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
@@ -1001,7 +999,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     };
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
-    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; userRef.current = null; tileRef.current = null; } };
+    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; } };
   }, []);
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
@@ -1059,25 +1057,15 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     }
   }, [ready, nearby]);
 
-  const locate = () => {
-    if (!navigator.geolocation) { setGeoErr("Location isn't available on this device."); return; }
-    setLocating(true); setGeoErr("");
-    navigator.geolocation.getCurrentPosition(pos => {
-      setLocating(false);
-      const la = pos.coords.latitude, ln = pos.coords.longitude;
-      setCenter({ lat: la, lng: ln });
-      const L = window.L, map = mapRef.current;
-      if (L && map) {
-        if (userRef.current) userRef.current.setLatLng([la, ln]);
-        else userRef.current = L.circleMarker([la, ln], { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
-        map.setView([la, ln], 10);
-        setTimeout(() => readBounds(map), 350); // after the pan/zoom animation settles
-      }
-    }, err => {
-      setLocating(false);
-      setGeoErr(err && err.code === 1 ? "Location permission denied — enable it to see climbs near you." : "Couldn't get your location right now.");
-    }, { enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 });
-  };
+  // Live, and refining: see useFollowMe in lib/mapKit.jsx. Only the FIRST fix re-centres the
+  // nearby list -- re-querying on every step of a walk would refetch for nothing.
+  const me = useFollowMe(mapRef, { C, zoom: 10, onFix: (f, first) => {
+    if (!first) return;
+    setCenter({ lat: f.lat, lng: f.lng });
+    const map = mapRef.current;
+    if (map) setTimeout(() => readBounds(map), 350); // after the pan/zoom animation settles
+  } });
+  const locate = me.locate, locating = me.locating, geoErr = me.err;
 
   // Sort the list by distance from the CURRENT viewport center, not the fixed
   // point the map opened at — otherwise, once you've panned somewhere else, the
@@ -1096,7 +1084,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       {!fullscreen ? <ViewToggle mode="map" onList={onBack} onMap={() => {}} C={C} /> : null}
       {!fullscreen ? (
         <>
-          <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locating ? "Locating…" : "Use my location"}</button>
+          <button onClick={locate} disabled={locating} style={{ width: "100%", padding: 11, borderRadius: 10, border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, fontSize: 13.5, fontWeight: 700, cursor: locating ? "default" : "pointer", marginBottom: 8 }}>{locateLabel(me, "Use my location")}</button>
           {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
         </>
       ) : null}
