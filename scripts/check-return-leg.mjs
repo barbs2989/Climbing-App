@@ -103,27 +103,41 @@ const eq = (label, got, want) => {
 const TIMES = /([^ ]+ [AP]M(?: \(\+\d+d\))?) Est\. summit.*?([^ ]+ [AP]M(?: \(\+\d+d\))?) Est\. return/;
 const times = (r) => { const m = text(render(r)).match(TIMES); return m ? { summit: m[1], ret: m[2] } : null; };
 
+/* Clock text -> minutes since the departure day's midnight, so two tiles can be SUBTRACTED. A
+   leading "≥" is the lower-bound marker (no climbing time on file) and is kept out of the number. */
+const mins = (t) => { const m = /^≥?(\d+):(\d+) ([AP]M)(?: \(\+(\d+)d\))?$/.exec(t || ""); if (!m) return null; return ((+m[1] % 12) + (m[3] === "PM" ? 12 : 0)) * 60 + +m[2] + (m[4] ? +m[4] * 1440 : 0); };
+const legs = (r) => { const t = times(r); if (!t) return null; const s = mins(t.summit), e = mins(t.ret); return s == null || e == null ? null : { summit: s, ret: e, down: e - s }; };
+
 console.log("the planner renders both clock tiles (so an EQUAL pair is not vacuous)");
-const wholeDay = route({ gainM: 7000 / FT, lossM: 7000 / FT });
-const t0 = times(wholeDay);
-eq("ANCHOR: both tiles rendered", !!t0, true);
+const roundTrip = legs(route({ gainM: 7000 / FT, lossM: 7000 / FT }));
+eq("ANCHOR: both tiles rendered and parsed", !!roundTrip, true);
 
-console.log("\na walk that already covers the day is not re-added");
-eq("Est. return equals Est. summit", t0 ? t0.summit === t0.ret : null, true);
+console.log("\nthe walk is TWO legs: the descent is walked after the summit, not before it");
+/* THE DEFECT THIS SECTION NOW HOLDS. One walk leg charged gain AND loss before the summit, so on a
+   gain=loss round trip the summit landed at the END of the day and Est. return equalled Est.
+   summit -- 352 routes, measured 2026-10-07 -- and every loss_ft made the summit later. */
+const dipsOnly = legs(route({ gainM: 7000 / FT, lossM: 500 / FT }));
+const noLoss = legs(route({ gainM: 7000 / FT }));
+eq("ANCHOR: the dips-only and no-loss shapes rendered", !!dipsOnly && !!noLoss, true);
+eq("a round trip returns AFTER its summit", roundTrip ? roundTrip.down > 0 : null, true);
+eq("Est. summit does not move with loss_ft (the descent is not walked on the way up)", roundTrip && dipsOnly && noLoss ? roundTrip.summit === dipsOnly.summit && dipsOnly.summit === noLoss.summit : null, true);
+/* loss_ft holds two conventions; a party back at its car has dropped at least what it climbed. */
+eq("the walk out descends at least the gain, whatever loss_ft holds", roundTrip && dipsOnly && noLoss ? roundTrip.down === dipsOnly.down && dipsOnly.down === noLoss.down : null, true);
+const bigLoss = legs(route({ gainM: 5150 / FT, lossM: 7680 / FT }));
+const bigGainOnly = legs(route({ gainM: 5150 / FT }));
+eq("...and a loss LARGER than the gain (gain from high camp, loss to the car) is walked in full", bigLoss && bigGainOnly ? bigLoss.down > bigGainOnly.down : null, true);
 
-console.log("\n...and every other shape KEEPS its return leg");
-/* One-way: gain and loss differ, so hikeH really is just the walk in. */
-const oneWay = times(route({ gainM: 7000 / FT, lossM: 500 / FT }));
-eq("ANCHOR: one-way rendered", !!oneWay, true);
-eq("a one-way approach still adds a return", oneWay ? oneWay.summit !== oneWay.ret : null, true);
-/* PITCHED whole-outing: the return is techH*0.7, the descent of the CLIMB, which the walk never
-   double-counted. This is the case the first draft of the fix wrongly stripped, on 212 rows. */
-const pitchedWhole = times(route({ gainM: 7000 / FT, lossM: 7000 / FT, pitches: 8, grade: "5.8" }));
-eq("ANCHOR: pitched whole-outing rendered", !!pitchedWhole, true);
-eq("a PITCHED whole-outing route keeps its climb descent", pitchedWhole ? pitchedWhole.summit !== pitchedWhole.ret : null, true);
-/* Just outside the app's own 3% window — not a whole-outing row. */
-const nearMiss = times(route({ gainM: 7000 / FT, lossM: 6500 / FT }));
-eq("outside the 3% window still adds a return", nearMiss ? nearMiss.summit !== nearMiss.ret : null, true);
+console.log("\n...a pitched route walks out too, and a loop walks its distance once");
+/* A pitched route's return was techH*0.7 ALONE -- the climb's descent with no walk to the car. */
+const pitchedFar = legs(route({ gainM: 3000 / FT, lossM: 3000 / FT, pitches: 8, grade: "5.8", distKm: 20 }));
+const pitchedNear = legs(route({ gainM: 3000 / FT, lossM: 3000 / FT, pitches: 8, grade: "5.8", distKm: 2 }));
+eq("ANCHOR: pitched routes rendered", !!pitchedFar && !!pitchedNear, true);
+eq("a PITCHED route's return includes the walk out (a longer walk, a longer descent)", pitchedFar && pitchedNear ? pitchedFar.down > pitchedNear.down : null, true);
+/* A recorded loop holds the WHOLE outing in its distance: 20 km round a loop is 10 out and 10 back. */
+const loop = legs(route({ gainM: 4000 / FT, lossM: 4000 / FT, distKm: 20, outingShape: "loop" }));
+const outback = legs(route({ gainM: 4000 / FT, lossM: 4000 / FT, distKm: 10 }));
+eq("ANCHOR: loop and out-and-back rendered", !!loop && !!outback, true);
+eq("a 20 km loop takes the same day as a 10 km-each-way out-and-back", loop && outback ? loop.ret === outback.ret && loop.summit === outback.summit : null, true);
 
 /* The warning div sits immediately after the tile's own "Est. summit" / "Est. return" caption and
    is identified by carrying a margin-top the caption does not. Read from the RAW markup rather
@@ -241,7 +255,7 @@ const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
-const FLOOR = 31;
+const FLOOR = 36;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;
@@ -249,5 +263,5 @@ if (ran < FLOOR) {
 
 console.log(fail
   ? `\ncheck:return-leg: ${fail} FAILURE(S)`
-  : `\ncheck:return-leg: ok — a whole-day walk is not counted twice, every other shape keeps its return, and each red label names the day it lands on (${ran} assertions).`);
+  : `\ncheck:return-leg: ok — the walk is split at the summit, every route walks out, the descent is at least the gain, and each red label names the day it lands on (${ran} assertions).`);
 process.exit(fail ? 1 : 0);

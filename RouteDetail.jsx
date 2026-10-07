@@ -1824,24 +1824,13 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
   if(route.distKm==null||route.distKm==="")_missHike.push("approach distance");
   if(route.gainM==null||route.gainM==="")_missHike.push("elevation gain");
   if(route.lossM==null||route.lossM==="")_missHike.push("elevation loss");
-  const hikeInputsComplete=_missHike.length===0;const hikeCoversWholeDay=gainCoversWholeOuting(route);
-  /* ...and that flag now reaches the RETURN, not just the label. `hikeCoversWholeDay` is true when
-     the row's gain and loss agree to within 3% — 433 of the 484 WA rows that qualify have them
-     EXACTLY equal, which is a round trip or a traverse ending at its start elevation, not a
-     coincidence on a one-way approach. For those rows the tile is already relabelled "On foot" and
-     TECH STATS already says "Total ascent is the whole day from the trailhead, not just the walk
-     in" — and then the return leg added another 75% of that same walk on top. Label and arithmetic
-     contradicting each other on one screen: wa_ptarmigan_traverse read `21.6hr On foot` and then
-     put Est. return 16.2 hr after Est. summit.
-
-     SCOPED TO THE WALK BRANCH, and getting that wrong nearly shipped a second defect. A pitched
-     route's return is `techH*0.7` — the descent of the CLIMB, which the walk never double-counted
-     — so short-circuiting the whole expression the way `publishedIsWholeDay` does would strip a
-     real descent leg from the 212 whole-outing rows that carry pitches. Only the `hikeH*0.75`
-     branch is affected.
-
-     This moves Est. return EARLIER, which is normally the dangerous direction; it is safe here
-     only because the figure removed was never a second leg, it was the first one counted twice. */
+  const hikeInputsComplete=_missHike.length===0;
+  /* There used to be a `hikeCoversWholeDay` flag here (gainCoversWholeOuting: gain and loss within
+     3%) that relabelled the Approach tile "On foot" and dropped the walk out from the return,
+     because the one walk leg charged gain AND loss and so was already the round trip on those rows.
+     The walk is split into its up and down legs now (see hikeH/downH below), so there is no round
+     trip to relabel and nothing counted twice: the tile is the walk IN on every row, and every
+     return walks out. check:return-leg holds both. */
   /* A gain PRESENT and contradicted, as opposed to absent. _missHike above names what is
      missing; this names what is impossible. Both make the number below a floor, so they are
      worded the same way and sit together. */
@@ -1876,7 +1865,21 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
      get LONGER are routes where dist_km may correctly hold the one-way while the itinerary
      covers more than the approach, and there it overstates -- conservatively, and agreeing with
      the tile above it, which is the property being bought here. */
-  const hikeH=scarfHrs(effDistKm(route),route.gainM,route.lossM,fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:(hikeCoversWholeDay?0:hikeH*0.75));
+  /* THE WALK IS TWO LEGS: UP BEFORE THE SUMMIT, DOWN AFTER IT. One scarfHrs() charged gain AND loss
+     before the summit, so the descent was walked on the way UP: Est. summit ran late (median +1.0 hr,
+     up to +6.5) and the return was short -- on gain≈loss rows it added nothing, so Est. summit and
+     Est. return were the SAME time, and a pitched route's return had no walk out at all. Against the
+     routes that publish their own times (2026-10-07, 817 non-crag routes): the walk in ran 1.49x the
+     published approach (now 1.14x), and the descent 0.64x the published descent with 195 rows under
+     0.8x (now 1.38x, 35 under). Erring LONG on the way down is deliberate: the descent is where soft
+     snow and tired legs are, so a short one is the dangerous error.
+       up   = the walk in: distance + GAIN only.
+       down = the walk out: distance + max(gain, loss). loss_ft holds two conventions (the descent to
+              the car, or only the dips on the way in -- 545 ft on a 6,266 ft Hozomeen climb), and a
+              party back at its car has dropped at least what it climbed, so the larger one is used.
+     A recorded loop or point-to-point holds the WHOLE outing in its distance, so each leg walks half. */
+  const _walkKm=effDistIsWholeTrip(route)&&effDistKm(route)!=null?effDistKm(route)/2:effDistKm(route);
+  const hikeH=scarfHrs(_walkKm,route.gainM,0,fit,pack),downH=scarfHrs(_walkKm,0,Math.max(route.lossM||0,route.gainM||0),fit,pack),techH=hasPublishedSummitH?route.timing.summitTimeHrs:hasDerivedSummitH?derivedSummitH:techHrs(route.pitches,route.avgPitchLength||35,gn(route.grade)),totalH=(publishedIsWholeDay?techH:hikeH+techH)+(party>2?(party-2)*0.4:0),sumH=depart+totalH,retH=publishedIsWholeDay?sumH:sumH+(route.pitches>0?techH*0.7:0)+downH;
   const dayOf=h=>Math.floor(Math.round(h*60)/1440);const fmt=h=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.
      Both are absolute hours from midnight of the DEPARTURE day, so an estimate that crosses
@@ -1984,7 +1987,7 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
       <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":hasHikeInputs?(approachUnknown?"≥":"")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{hikeCoversWholeDay?"On foot":"Approach"}</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":hasHikeInputs?(approachUnknown?"≥":"")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+totalH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
       </div>

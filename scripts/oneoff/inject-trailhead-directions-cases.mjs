@@ -116,8 +116,8 @@ const CASES = [
        imported and four other readers keep calling it -- which is precisely the shape
        audit:silent-reverts says in its own closing caveat it cannot see. */
     name: "11. the planner's hike leg reads the raw dist_km column again",
-    find: "const hikeH=scarfHrs(effDistKm(route),route.gainM",
-    repl: "const hikeH=scarfHrs(route.distKm,route.gainM",
+    find: "const _walkKm=effDistIsWholeTrip(route)&&effDistKm(route)!=null?effDistKm(route)/2:effDistKm(route);",
+    repl: "const _walkKm=route.distKm;",
     expect: "fail",
     expectText: "the planner's estimate is UNCHANGED by the route's itinerary",
   },
@@ -126,8 +126,8 @@ const CASES = [
        identical but for the itinerary, so it cannot be satisfied -- or defeated -- by how the
        call is spelled. A guard pinned to the expression would forbid an ordinary hoist. */
     name: "12. SILENT: the distance is hoisted to a local, still effDistKm",
-    find: "  const hikeH=scarfHrs(effDistKm(route),route.gainM",
-    repl: "  const _planKm=effDistKm(route);const hikeH=scarfHrs(_planKm,route.gainM",
+    find: "  const _walkKm=effDistIsWholeTrip(route)&&effDistKm(route)!=null?effDistKm(route)/2:effDistKm(route);",
+    repl: "  const _planKm=effDistKm(route);const _walkKm=effDistIsWholeTrip(route)&&_planKm!=null?_planKm/2:_planKm;",
     expect: "pass",
   },
   {
