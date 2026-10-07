@@ -396,7 +396,7 @@ try {
     const seenByMate = await mp.evaluate(() => document.body.innerText || "");
     if (seenByMate.includes(JOURNEY_ROUTE_NAME)) ok(`the mate FINDS the owner's crew ("${JOURNEY_ROUTE_NAME}") in Join a crew`);
     else bad(`the mate cannot find the owner's crew — "${JOURNEY_ROUTE_NAME}" is absent from Join a crew, so a real climber's crew is invisible to another real climber`);
-    if (/undefined/.test(seenByMate)) bad("the crew list contains the word undefined — a row resolved against the wrong store");
+    if (/undefined/.test(seenByMate)) { const at = seenByMate.indexOf("undefined"); bad("the crew list contains the word undefined — a row resolved against the wrong store: …" + seenByMate.slice(Math.max(0, at - 120), at + 40).replace(/\s+/g, " ") + "…"); }
     else ok("no undefined in the mate's crew list");
     await mp.close().catch(() => {});
   } finally {
@@ -587,6 +587,19 @@ try {
     b[0].click(); return true;
   });
   if (!clickedRemove) dead("the Remove control could not be clicked");
+  // #2024 (2026-09-30) put a confirm sheet in front of Remove, and this walk kept clicking only
+  // "Remove" -- so from then on it asserted a removal nobody had confirmed and went red at the
+  // database check, then cascaded into every phase after it. Confirm it the way a climber must.
+  await page.waitForSelector('[role="alertdialog"]', { timeout: 8000 }).catch(() => dead("Remove opened no confirm sheet — the flow the climber sees has changed"));
+  const confirmed = await page.evaluate(() => {
+    const d = document.querySelector('[role="alertdialog"]');
+    const b = d && [...d.querySelectorAll("button")].find((x) => (x.innerText || "").trim() === "Remove friend");
+    if (!b) return null;
+    const title = d.getAttribute("aria-label") || "";
+    b.click(); return title;
+  });
+  if (confirmed === null) dead("the confirm sheet has no 'Remove friend' button");
+  ok(`confirmed the removal in the sheet ("${confirmed}")`);
   await settledText(page);
   await new Promise((r) => setTimeout(r, 2500));
 

@@ -2489,7 +2489,8 @@ function ReportModal({climber,onClose,onSubmit,alreadyBlocked}){
 function ConnectModal({climber,onClose,onSend}){
   const c=climber;
   const shared=(ME.objectiveIds||[]).filter(id=>(c.objectiveIds||[]).includes(id)).map(id=>ROUTES.find(r=>r.id===id)).filter(Boolean);
-  const first=(c.name||"").split(" ")[0];
+  /* The name THEY chose to show. `.name.split` put a hidden real name in the header, the suggested note and the footer. */
+  const first=pubFirst(c);
   const suggested=shared.length?("Hi "+first+", I saw we both want to climb "+shared[0].name+". I’m looking for a solid, safety-minded partner for it — want to team up?"):("Hi "+first+", I’d love to connect and find a climb to do together.");
   const [note,setNote]=useState("");
   const MAX=300;
@@ -2519,7 +2520,7 @@ function ConnectModal({climber,onClose,onSend}){
   </div>;
 }
 function CrewInviteModal({climber,route,onClose,onSend}){
-  const c=climber,first=(c.name||"").split(" ")[0];
+  const c=climber,first=pubFirst(c);
   const suggested="Hi "+first+", want to join my crew for "+route.name+"? "+(route.grade?("It’s "+route.grade+". "):"")+"Looking for a solid, safety-minded partner — let me know!";
   const [note,setNote]=useState("");
   const MAX=300;

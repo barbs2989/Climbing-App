@@ -49,8 +49,10 @@ const read = () => fs.readFileSync(APP, "utf8");
 const CASES = [
   {
     name: "write-gone",
-    find: `sendConnectionRequest(uid,c.id).then`,
-    repl: `false&&sendConnectionRequest(uid,c.id).then`,
+    // The request now carries the optional note (0257); `_note` keeps this unique against the
+    // re-ask inside _resolvePairClash, which passes `note`.
+    find: `sendConnectionRequest(uid,c.id,_note).then`,
+    repl: `false&&sendConnectionRequest(uid,c.id,_note).then`,
     // The assertion this case must fire, matched against FAIL lines only. Matching the text an
     // assertion prints when it PASSES reports MISSED against a guard firing correctly, which this
     // repo has done twice.
@@ -58,8 +60,10 @@ const CASES = [
   },
   {
     name: "hydra-gone",
-    find: `if(outgoing.length)setFriendReqOut`,
-    repl: `if(false&&outgoing.length)setFriendReqOut`,
+    // The hydration now REPLACES the uuid half of friendReqOut on every read (0257 PR) instead of
+    // concatenating once, so dropping the outgoing half means concatenating nothing.
+    find: `.filter(function(x){return !_isUid(x);}).concat(outgoing))`,
+    repl: `.filter(function(x){return !_isUid(x);}).concat([]))`,
     expect: "the pending request did not survive",
   },
 ];
