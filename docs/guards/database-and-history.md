@@ -485,7 +485,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (Acadia's ice tree, Mount Erie's Adventure Crags) — folded.
   - **Cannot see** a label spelling the function does not know, or a ROUTE name: 1,184 route names
     carry a topo number ("(01) Chicken Crack"), but route names also hold real initials ("R. Crumb",
-    "T. Rex", "C. Bailey"), so they were not swept by the same rule.
+    "T. Rex", "C. Bailey"), so they were not swept by the same rule. ROUTE names have their own rule
+    since 2026-10-07, `scripts/lib/route-topo-label.mjs` (shared with `import-route-grades.mjs` so a
+    re-import still matches): a NUMBER label comes off everywhere, a LETTER label only where the area
+    runs a letter series (3+ letters, 9 areas); `scripts/oneoff/strip-route-topo-labels.mjs` renames
+    875 and HOLDS 42 whose bare name a sibling already has (five "Slab" V1s, six "Project"s).
+  - **Spelling twins MERGED by 0253** (2026-10-07): same-area climbs whose names differ by a typo or
+    by spacing, same discipline and base grade — 2,775 candidates, READ pair by pair — 179 merged
+    ("Manhattan / Manhatten Project"), plus 8 rows the source named "to be deleted" / "_delete".
+    NOT merged, on purpose: pairs that read as two climbs ("The Last / The Lost Gardener"), the
+    UNSURE ones, and names whose grade or mark IS the difference ("The 5.7 / 5.7+ Corner"). Same-named
+    placeholders with different grades ("Unnamed" 5.6 / 5.9) are different climbs, never candidates.
   - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
     set the order on screen and removing them lost no guidebook sequence.
 

@@ -22,6 +22,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { requireServiceKey, SUPABASE_URL } from "../lib/supabase-env.mjs";
 import { gradeNumFrom } from "../../lib/grade.js";
 import { stripSortPrefix } from "../lib/area-sort-prefix.mjs";
+import { stripRouteTopoLabel, letterSeriesAreas } from "../lib/route-topo-label.mjs";
 
 const args = process.argv.slice(2);
 const APPLY = args.includes("--apply"), ALL = args.includes("--all"), SAMPLE = args.includes("--sample"), CREATE = args.includes("--create-areas");
@@ -447,9 +448,16 @@ async function runState(st) {
   for (const x of existing) (looseByArea.get(x.area_id) || looseByArea.set(x.area_id, []).get(x.area_id)).push({ xn: loose(x.name), name: x.name });
   const stateNames = new Map();
   for (const x of sql(`select r.name, catalog_key(r.name) as k, r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(st.id)}) and not route_name_is_placeholder(r.name)`)) (stateNames.get(x.k) || stateNames.set(x.k, []).get(x.k)).push(x);
+  // The export still carries the guidebook TOPO NUMBER ("(01) Chicken Crack"); our climbs were renamed
+  // without it (2026-10-07). Match the export's own name FIRST — a climb that kept its number because
+  // the number is all that tells it from a same-named neighbour ("4. Slab" / "5. Slab") — then the
+  // stripped one; a NEW climb is added without the label unless that would repeat a name in its area.
+  const letterSeries = letterSeriesAreas(cand.map(c => ({ name: mpName(c.r), area_id: c.areaId })));
   for (const { r, tk, areaId } of cand) {
-    const name = mpName(r);
-    const e = byKey.get(areaId + "|" + norm(name)) || byCk.get(areaId + "|" + ck(name));
+    const raw = mpName(r), bare = stripRouteTopoLabel(raw, { letterSeries: letterSeries.has(areaId) });
+    const find = n => byKey.get(areaId + "|" + norm(n)) || byCk.get(areaId + "|" + ck(n));
+    const e = find(raw) || (bare !== raw ? find(bare) : null);
+    const name = bare !== raw && !find(bare) && !seenNew.has(areaId + "|" + norm(bare)) ? bare : raw;
     if (e) {
       const p = {};
       if (tk.wi && e.ice_grade_num == null) { p.ice_grade_num = tk.wi.num; if (!e.ice_grade) p.ice_grade = tk.wi.tok; }
