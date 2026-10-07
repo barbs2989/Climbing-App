@@ -16,7 +16,7 @@ import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, waypointCaveat, trackCov
 import { accessCheckedLine } from "./lib/road";
 import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
 import { USE_DB, supabase } from "./lib/supabase";
-import {useRoutePairings,useRouteLoggedWith,submitRoutePairing,deleteRoutePairing,usePartnersByObjective,useObjectivesOfUsers,usePackMeta,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, useCrewMessagesRealtime, useDirectMessagesRealtime, fetchRouteArea, useRouteTripReports, useSavedMedia, useMediaSrc, useToggleSavedMedia} from "./lib/db";
+import {useRoutePairings,useRouteLoggedWith,submitRoutePairing,deleteRoutePairing,usePartnersByObjective,useObjectivesOfUsers,usePackMeta,checkInAtRouteBase, withdrawBaseCheckin, useRouteBaseCheckins, useComments, addComment as dbAddComment, editComment as dbEditComment, deleteComment as dbDeleteComment, setCommentLike, submitContribution, fetchCrewMessages, markDmThreadRead, fetchCrewLastReads, countCrewUnread, markCrewRead, useRouteContributions, dbRouteToCamel, useAreaRoutes, useMyContributions, useProfilesByIds, useFullProfile, useRoutesByIds, useStates, useAreaChildren, useAreaSearch, useSubtreeRoutes, useAreaTopos, topoPhotoUrl, uploadTopoPhoto, updateTopoAlt, submitTopoLine, updateTopoLine, deleteTopoLine, deleteTopoPhoto, useAreaPaths, useRouteSearch, useMyObjectives, useObjectiveCounts, saveObjective, removeObjective, useMyCrews, createCrew, updateCrewRow, deleteCrewRow, addCrewMember as dbAddCrewMember, ackCrewDay, unackCrewDay, useProfileSearch, useMyCrewInvites, updateCrewMemberStatus, removeCrewMember, useUserLogs, createClimbLog, updateClimbLog, deleteClimbLog, uploadLogPhoto, useUserVouches, useClimberVouches, giveVouch, revokeVouch, useBelajCatches, logBelajCatch, addVerification, useVerificationRecords, inviteToCrewByEmail, useCrewEmailInvites, deleteCrewEmailInvite, sendCrewMessage, useCrewMessages, fetchOlderCrewMessages, sendDirectMessage, useDirectMessages, fetchMyDirectMessages, fetchOlderDirectMessages, markMessageAsRead, fetchRouteArea, useRouteTripReports, useSavedMedia, useMediaSrc, useToggleSavedMedia} from "./lib/db";
 import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, packForecast, savedAgo } from "./lib/offline";
@@ -32,7 +32,6 @@ import AuthModal from "./lib/AuthModal";
 const EMPTY_ARR=[];
 import { clickable } from "./lib/clickable";
 import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel, splitParagraphs, monthRank } from "./EnrichmentPanels";
-import { renderToStaticMarkup } from "react-dom/server";
 import { MAP_TILE_URLS, loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml } from "./lib/mapKit";
 import { shortGrade, gradeDetail, cruxGrade } from "./lib/grade";
 import { routeTerrain, fitGear, saysNotApplicable } from "./lib/terrain";
@@ -4085,6 +4084,9 @@ function WeatherPanel({waypoints,showPlan,packId}){
   const key=points.map(function(w){return w.type+"_"+w.name;}).join("|");
   useEffect(function(){
     if(!points.length)return;
+    // Cancelled on cleanup: the three forecast fetches resolve after an unmount (leaving the route
+    // page) or after the waypoint set changes, and each used to write into a dead panel.
+    let live=true;
     points.forEach(function(w){
       const k=w.type+"_"+w.name;
       // forecast_days=16 is Open-Meteo's max — pulls the full range it forecasts
@@ -4204,9 +4206,11 @@ function WeatherPanel({waypoints,showPlan,packId}){
           return {date:date,tempLo:Math.round(Math.min.apply(null,d.temps)),tempHi:Math.round(Math.max.apply(null,d.temps)),feelsLo:Math.round(Math.min.apply(null,d.feels)),feelsHi:Math.round(Math.max.apply(null,d.feels)),wx:WX_CODE_LABEL[wxCode]||null,wxCode:wxCode,windMax:Math.round(Math.max.apply(null,d.winds)),wind10Max:d.winds10.length?Math.round(Math.max.apply(null,d.winds10)):null,gustMax:Math.round(Math.max.apply(null,d.gusts)),popMax:Math.round(Math.max.apply(null,d.pops)),precipIn:Math.round(sum(d.precips)*100)/100,snowIn:Math.round(sum(d.snows)*100)/100,freezeMax:Math.round(Math.max.apply(null,d.fz)),uvMax:Math.round(Math.max.apply(null,d.uvs)*10)/10,parts:parts,hours:d.hours,nws:nws,met:met};
         });
         const _today=toLocalDay(new Date().toISOString());
+        if(!live)return;
         setData(function(p){return Object.assign({},p,{[k]:o.at?{days:days.filter(function(dy){return dy.date>=_today;}),savedAt:o.at}:{days:days}});});
-      }).catch(function(){setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
+      }).catch(function(){if(!live)return;setData(function(p){return Object.assign({},p,{[k]:{error:true}});});});
     });
+    return function(){live=false;};
   },[key]);
   if(!points.length)return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"12px 14px"}}><CardHead style={{marginBottom:6}}>WEATHER FORECAST</CardHead><div style={{fontSize:12.5,color:C.textSub,lineHeight:1.6}}>{"No forecast yet — this route has no named waypoints to forecast from. "+(showPlan?"Add a trailhead and summit waypoint on the Plan tab to unlock AM/PM/Night forecasts here.":"Once a trailhead and summit waypoint are added, AM/PM/Night forecasts appear here.")}</div></div>;
   /* A fourth copy of the waypoint colour/icon map lived here, under its own names, which is
