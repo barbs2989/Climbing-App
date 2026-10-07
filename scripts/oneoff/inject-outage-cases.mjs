@@ -93,8 +93,8 @@ const CASES = {
   },
   groups: {
     file: "ClimbMatch.jsx",
-    from: '{groupsUnavailable?"couldn’t load":joinedGroups.length+" joined"}',
-    to: '{joinedGroups.length+" joined"}',
+    from: '{groupsUnavailable?"couldn’t load":myGroupsNow().length+" joined"}',
+    to: '{myGroupsNow().length+" joined"}',
     expect: "fail",
     names: /Crew:Groups/,
   },
