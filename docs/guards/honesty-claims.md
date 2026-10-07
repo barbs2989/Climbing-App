@@ -1360,6 +1360,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Arithmetic**: each factor is rounded to whole points BEFORE summing, so the "x of y points"
     line is exactly the sum of the rows printed under it, and stars are exactly 5 × points / measured
     points. There is **no clamp** anywhere — the same lesson as `compat()` (docs/codebase/algorithms.md).
+  - **...except a NAMED CAP (§7, 2026-10-07)**: summed factors gave an hour of RAIN 53-59 points
+    ("Fair"), because temperature, wind and sun still scored. Rain in the past hour, rock under 30%
+    dried, ANY wet sandstone, and AQI > 200 cap the hour at 1 ★; air within 4°F of its dew point and
+    AQI > 150 cap it at 2 ★. Stars are `min(5 × points / measured, lowest cap)`; every cap carries
+    its reason, the card prints it under the factor rows with "The factors alone would give x", and
+    the day strip says "Held down by: …". That is not the saturating clamp `compat()` lost — it
+    is a stated verdict, and the rows still add up to the points line. Do not "simplify" it back
+    into a factor weight: a weight can only cost points, never say "don't climb".
+  - **Defects fixed with §7 (each checked against a live Open-Meteo response)**: drizzle under 0.01"
+    was ignored (Open-Meteo reports 0.1 mm = 0.004" steps — any `> 0` now counts); `dew_point_2m`
+    was fetched and never read (now condensation + the friction reading); today's best window and
+    default hour could already be past (hours with `utc + 1h <= now` are not offered); one
+    `utc_offset_seconds` was applied to the whole series, an hour off after a DST change (now
+    `timeformat=unixtime` + the response's `timezone` through Intl, and `is_day` for daylight);
+    drying ignored how much rain fell and the weather since (now credit per hour, scaled by the
+    24 h rain total). `precipitation[T]` is the rain of the hour BEFORE T and is labelled "in the
+    past hour", not "this hour".
+  - **Prefs are ONE store** (`lib/CondPrefs.jsx`, `useSyncExternalStore`): the Home tile read
+    localStorage during render and went stale after a change on a route page. Settings has a *Your
+    conditions* section (menu and profile both open Settings); the tile links to it. All four band
+    chips render, so a saved band equal to the discipline default is pressed as itself.
+  - **Air quality, sun on the wall, seepage and season** are on the card too. A failed air read
+    says "not measured … not a clean-air reading" and caps nothing; a failed climate read says it
+    "says nothing about its season". Seepage is a RISK from 7/14-day rain totals, worded as such.
+    Aspect `'varies'` (0249) says the wall faces several ways, not "no wall direction on file".
   - **Not measured is not zero**: an unknown aspect (532 of ~300k crag routes have one, measured
     2026-10-07) drops sun/shade and the max becomes 85. Scoring it 0 would mark every such crag a
     star worse; scoring it full would mark it better. Both were the tempting default.
@@ -1372,8 +1397,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     for 174 of 215 areas (81%)**, so §5 requires every place that renders `routeRock(route)` to
     mark a mapped one. Do not drop the marker because "it is usually right": one in five is not.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
-    measurements, and the card says which rock it assumed. Seepage and how a particular wall holds
-    water are not modelled; the card's footer says so.
+    measurements, and the card says which rock it assumed. How a particular wall holds water is
+    not modelled — seepage is only a risk from recent rain — and the card says so.
   - **Home tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, above *Jump back in*) is the SAME
     `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
     nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an

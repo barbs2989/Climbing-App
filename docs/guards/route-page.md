@@ -234,7 +234,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       **Do not "fix" this with an index without first re-measuring whether the app has started
       issuing this query shape.**
     - CI timeout is 25 minutes for this reason, not because a healthy run is slow (~40–85s).
-  - Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
+  - (2026-10-07: `turnaround` and `bail` left the pair list — the owner removed both from the app; the columns stay, unread.) Injection-tested: removing the TURNAROUND section fails naming `turnaround`; neutering the
     long-beta block fails naming `beta`. The fail-closed half is injection-tested against a
     **local HTTP server standing in for PostgREST** — 500s, connection refused, `200 []`,
     `400 42703`, and fail-once-then-succeed — which needs no database and caught the

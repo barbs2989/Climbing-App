@@ -8,7 +8,7 @@
 //
 // React discards the state of a branch it leaves, so tapping Plan to check the descent — the
 // obvious thing to do while filling a float plan in — wiped route, partner, party size, vehicle,
-// parking, depart, turnaround, hard return, comms, emergency contact and notes. The copy invites
+// parking, depart, hard return, comms, emergency contact and notes. The copy invites
 // exactly that workflow: "File a float plan below before you lose cell service."
 //
 // The fix lifts `form`/`saved`/`checkedIn` into an OPTIONAL `plan`/`onPlan` pair owned by the
@@ -85,7 +85,7 @@ const EXPECTED = 22;
 
 // ---- 1. The shape is declared in ONE place.
 const init = floatPlanState({ route: "North Ridge" });
-const FIELDS = ["route", "partner", "party", "vehicle", "lot", "depart", "turn", "ret", "comms", "contact", "notes"];
+const FIELDS = ["route", "partner", "party", "vehicle", "lot", "depart", "ret", "comms", "contact", "notes"];
 const missing = FIELDS.filter((k) => !(k in (init.form || {})));
 if (!missing.length) ok(`floatPlanState() declares all ${FIELDS.length} fields`);
 else fail(`floatPlanState() is missing ${missing.join(", ")}`);
@@ -98,7 +98,7 @@ else fail("saved/checkedIn do not start false");
 // that used to be destroyed; if it does not reach the markup the lift has done nothing.
 const TYPED = {
   form: { route: "North Ridge", partner: "Robin Belay", party: "2", vehicle: "grey Tacoma",
-          lot: "Heliotrope Ridge TH", depart: "04:30", turn: "13:00", ret: "21:00",
+          lot: "Heliotrope Ridge TH", depart: "04:30", ret: "21:00",
           comms: "InReach, check in at the col", contact: "Sam 555-0100", notes: "crevasse rescue kit" },
   saved: false, checkedIn: false,
 };
