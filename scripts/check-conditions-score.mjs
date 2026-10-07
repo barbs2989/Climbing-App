@@ -12,7 +12,7 @@
 //   2. NOT MEASURED — with no wall direction, sun/shade is LEFT OUT (listed in `missing`, the max
 //      drops to 85), never scored 0 and never scored full.
 //   3. DIRECTION — a dry, mild, still day beats the same day just after rain; sandstone 30 h after
-//      rain is wetter than granite 30 h after rain (DRY_HOURS 48 vs 24); a south wall is lit at
+//      rain is wetter than granite 30 h after rain (DRY_HOURS 48 vs 12); a south wall is lit at
 //      solar noon and a north wall is not.
 //   4. REACH — RouteDetail gives ConditionsScoreCard its OWN tab (sub-tab `forecast`, labelled
 //      "Conditions"; Send Reports stays separate — owner decision 2026-10-07), the card renders a row
@@ -96,7 +96,7 @@ console.log("check:conditions-score");
   const wet = at(scoreForecast(fixture({ rainAt: [78] }), WALL, null, NOW), 12); // rained 06:00 today
   if (dry && wet && dry.stars > wet.stars && wet.factors.dry.pts < dry.factors.dry.pts) ok(`a dry day (${dry.stars.toFixed(2)}) beats the same day six hours after rain (${wet.stars.toFixed(2)})`);
   else fail("rain six hours ago did not lower the score");
-  // 30 h after rain: granite (24 h) is dry, sandstone (48 h) is not.
+  // 30 h after rain: granite (12 h) is dry, sandstone (48 h) is not.
   const fx = fixture({ rainAt: [54] }); // 06:00 yesterday -> 30 h before 12:00 today
   const gr = at(scoreForecast(fx, WALL, null, NOW), 12), ss = at(scoreForecast(fx, { ...WALL, family: "sandstone" }, null, NOW), 12);
   if (DRY_HOURS.sandstone > DRY_HOURS.granite && gr.factors.dry.pts === WEIGHTS.dry && ss.factors.dry.pts < WEIGHTS.dry) ok(`30 h after rain: granite is dry (${gr.factors.dry.pts}/${WEIGHTS.dry}), sandstone is not yet (${ss.factors.dry.pts}/${WEIGHTS.dry})`);
@@ -217,12 +217,20 @@ console.log("check:conditions-score");
   const hS = at(sS, 12);
   if (hS && hS.dryFrac < 1 && hS.stars <= 1 && hS.caps.some((c) => /sandstone/i.test(c.why)) && sS.dryFrom && sS.dryFrom.utc > NOW) ok(`sandstone 30 h after rain is capped at 1 star, likely dry from ${sS.dryFrom.date} ${sS.dryFrom.hr}:00`);
   else fail(`wet sandstone is not held down or has no dry-from time: ${hS && hS.stars} ${sS.dryFrom && sS.dryFrom.time}`);
+  // Conglomerate dries like sandstone but is not WEAK when wet (quartz-cemented, e.g. the Gunks):
+  // same drying, no sandstone cap. A conglomerate wall warned "holds can break" would be false.
+  const sC = scoreForecast(fixture({ rainAt: [54] }), { ...WALL, family: "sandstone", rock: "conglomerate" }, null, NOW);
+  const hC = at(sC, 12);
+  if (hC && !sC.sandstone && !hC.caps.some((c) => /sandstone/i.test(c.why)) && hC.dryFrac === hS.dryFrac) ok(`conglomerate dries like sandstone (${Math.round(hC.dryFrac * 100)}%) without the weak-when-wet cap`);
+  else fail(`conglomerate is treated as weak wet sandstone, or dries differently: ${sC.sandstone} ${hC && hC.caps.map((c) => c.why)}`);
   // Prefs: the band and the after-rain caution both reach the score.
   const warm = at(scoreForecast(fixture({ temp: 75 }), WALL, { band: "warm" }, NOW), 12), std = at(scoreForecast(fixture({ temp: 75 }), WALL, { band: "standard" }, NOW), 12);
   if (warm.factors.temp.pts === WEIGHTS.temp && std.factors.temp.pts < WEIGHTS.temp) ok("a 'warm' band scores 75° as ideal; 'standard' does not");
   else fail(`the temperature band pref does not reach the score: warm ${warm.factors.temp.pts}, standard ${std.factors.temp.pts}`);
   const fx = fixture({ rainAt: [66] });
-  const norm = scoreForecast(fx, WALL, { rainCaution: "normal" }, NOW), caut = scoreForecast(fx, WALL, { rainCaution: "cautious" }, NOW);
+  // A limestone wall (24 h): granite dries in 12 h now, which would leave BOTH settings fully dry here.
+  const LIME = { ...WALL, family: "limestone" };
+  const norm = scoreForecast(fx, LIME, { rainCaution: "normal" }, NOW), caut = scoreForecast(fx, LIME, { rainCaution: "cautious" }, NOW);
   if (caut.dryNeed === Math.round(norm.dryNeed * 1.5) && at(caut, 12).factors.dry.pts < at(norm, 12).factors.dry.pts) ok(`"Give it longer" stretches drying ${norm.dryNeed} h -> ${caut.dryNeed} h and lowers the dry score`);
   else fail("the after-rain pref does not reach the score");
   // Local time across a daylight-saving change: unix timestamps, placed by the crag's own timezone.
@@ -252,7 +260,7 @@ console.log("check:conditions-score");
   // The card, the tile, Settings and the fetch.
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
-  const need = ["Wet sandstone breaks — don’t climb until it’s dry", "Fewer than three daylight hours to score", "Capped at ", "not a clean-air reading", "This says nothing about its season", "the wall faces several ways", "Seepage risk", "<HourlyChart ", "<SeasonChart ", "Sun on the wall", "Right now", "Best time to climb", "Rock & drying", "Air quality", "Season"];
+  const need = ["Wet sandstone is weak — holds can break. Stay off it until it’s dry", "Fewer than three daylight hours to score", "Capped at ", "not a clean-air reading", "This says nothing about its season", "the wall faces several ways", "Seepage risk", "<HourlyChart ", "<SeasonChart ", "Sun on the wall", "Right now", "Best time to climb", "Rock & drying", "Air quality", "Season"];
   const lost = need.filter((s) => !card.includes(s));
   if (!lost.length) ok(`the card renders every section and honesty line (${need.length} anchors)`);
   else fail(`the card lost: ${lost.join(" | ")}`);
