@@ -29,16 +29,27 @@ const LABELS = [
   /^[A-Za-z]\d{0,2}\s+[-–—]\s+/,                // "A - " (a space BOTH sides: "A- and B- Side" is a name)
 ];
 
-// A lone capital and a full stop that BEGIN a name — read, 2026-10-07: every other "E." / "N." in
-// the catalog is one step of a lettered series of walls; these three are not.
-const NAMES_NOT_LABELS = /^(?:J\. Paul|L\. Ron|N\. Fork)\b/;
+// A letter that BEGINS a name — read, and the doubtful ones researched, 2026-10-07. Every other
+// lone "E." / "N." / "Y - " in the catalog is one step of a lettered series of walls; these are not:
+// J. Paul / L. Ron are people, N. Fork is North Fork, "Y - North Side" is a side of the crag called
+// The Y (Los Alamos). "N. Red-Yellow" (Case Mountain) and "B. School" (St-Alban) could not be settled
+// either way, so they keep what they have rather than lose a letter that may be their name.
+const NAMES_NOT_LABELS = /^(?:J\. Paul|L\. Ron|N\. Fork|N\. Red-Yellow|B\. School|Y - (?:North|South) Side)\b/;
+// ...and where the letter IS the name but the dash is the export's: Bowman Valley's "B Word" wall,
+// Horse Flats' "Y Crack Boulder" (a Y-shaped crack) and "A Boulder" (beside "B1 Boulder", "X4 Boulder").
+const LETTER_IS_NAME = /^([A-Z]) [-–—] (?=(?:Word|Boulder|Crack Boulder)\b)/;
 
 export function stripSortPrefix(name) {
   const raw = String(name ?? "");
   const off = (s, res) => { const re = res.find(re => re.test(s) && s.replace(re, "").trim()); return re ? s.replace(re, "") : null; };
   let s = raw.replace(/^\s+/, "");
   for (let n = 0, t; n < 4 && (t = off(s, MARKERS)) != null; n++) s = t;
-  if (!NAMES_NOT_LABELS.test(s)) s = off(s, LABELS) ?? s;
-  s = s.replace(/\s*\*+$/, "").replace(/\s{2,}/g, " ").trim();   // "*Flagstaff Bouldering*"
+  if (LETTER_IS_NAME.test(s)) s = s.replace(LETTER_IS_NAME, "$1 ");
+  else if (!NAMES_NOT_LABELS.test(s)) s = off(s, LABELS) ?? s;
+  // A trailing "*" closes a leading one ("*Flagstaff Bouldering*") or stands alone ("Micro*"); one
+  // that closes a starred phrase INSIDE the name ("**AREA CLOSED**", "*Lower Falls*") is kept.
+  const bare = s.replace(/\s*\*+$/, "");
+  if (!bare.includes("*")) s = bare;
+  s = s.replace(/\s{2,}/g, " ").trim();
   return s || raw.trim();
 }
