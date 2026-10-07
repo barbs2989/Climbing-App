@@ -30218,3 +30218,56 @@ rather than full pages. Fixes were only made where the row's own internal fields
 on one value and/or multiple independent snippets agreed; the rest went to the flagged list.
 
 Pass 7 continues next run after `wa_baldy_standard`.
+
+## Batch 382 (2026-10-07, pass 7)
+
+Checked: `wa_baring_mountain_east_face`, `wa_baring_mountain_oatmeal_man`, `wa_baring_mountain_r1`,
+`wa_bear_mountain_chilliwack_north_buttress`, `wa_bears_breast_mountain_infinite_beauty`,
+`wa_bears_breast_mountain_southwest_face`, `wa_bears_breast_mountain_timeless_treasure`,
+`wa_beckey_davis`.
+
+**Fixed (1):**
+- `wa_baring_mountain_r1` (North Face, Baring Mountain) — `seasonal_hazards.exposure` cited "a
+  1951 fatality during an early attempt," but this row's own `partner_requirements` field and
+  sibling route `wa_baring_mountain_oatmeal_man`'s `watch_out` text both already say 1952. Per
+  AAC Publications ("The North Face of Mount Baring"), the fatality (Richard Berge, in a
+  retreat-in-storm fall) was in 1952; 1951 was an earlier, non-fatal Schoening/Berge attempt on
+  the same route, which this one field had conflated with the fatal one. Corrected to 1952.
+
+**Flagged for human review (2 issues, 3 rows):**
+- `wa_bears_breast_mountain_southwest_face` — grade is stored as 5.6 throughout (`grade`,
+  `rock_grade`, and the pitch-by-pitch breakdown), but independent sources (Wikipedia's Bears
+  Breast Mountain article, consistent across several searches) call this specific route class
+  5.4, "the easiest route" on the peak. Could be an overall-route-grade-vs-hardest-pitch
+  convention difference rather than an error; needs a check against Beckey's Cascade Alpine
+  Guide directly before touching it.
+- `wa_bears_breast_mountain_infinite_beauty` and `wa_bears_breast_mountain_timeless_treasure` —
+  both cite a specific Okanogan-Wenatchee closure order ("06-17-03-2026-44," Three Queens Fire,
+  effective 2026-09-18 to 2026-10-31). Plausible and inside its stated window as of this run, but
+  the order number itself could not be independently located via search this run — not
+  contradicted, just unverifiable with the tools available. Needs someone with live USFS-order
+  access to confirm before it's trusted as an active closure.
+
+**Clean (5):** `wa_baring_mountain_east_face` (elevation/summit identity and shared
+road/fee/land-manager facts corroborated or internally consistent; FA and grade too obscure to
+independently confirm or contradict). `wa_baring_mountain_oatmeal_man` (same — FA/grade
+unfindable independently, everything else consistent). `wa_bear_mountain_chilliwack_north_buttress`
+(elevation, coordinates, FA party/date/grade/piton-and-bolt tally, pitch count, length, and the
+first-free-ascent history all independently corroborated — Wikipedia, AAJ 1968, Steph Abegg's
+route page). `wa_bears_breast_mountain_southwest_face` (elevation, coordinates and the 1939
+Beckey/Barto/Swift FA — including the "Beckey was 16" detail — independently corroborated by
+Wikipedia; only the grade is flagged above). `wa_beckey_davis` (Prusik Peak) (elevation, FA
+party/date, grade, pitch count, length, and the Enchantment Permit Area lottery requirement all
+independently corroborated — SummitPost, AAC Publications, Mountain Project, stephabegg.com).
+
+**Tooling note:** `WebFetch` is still blocked by the egress proxy for every climbing-info domain
+tried (re-confirmed this run with direct `curl` against mountainproject.com and nps.gov, both
+`CONNECT tunnel failed, 403`) — all cross-checks again relied on `WebSearch` snippets. Delegated
+per-route research to 4 parallel subagents, one per peak (Baring Mountain's 3 routes together,
+Bear Mountain, Bears Breast Mountain's 3 routes together, Prusik Peak's `wa_beckey_davis`) — same
+pattern as prior batches, worked well. `check:sql` could not auto-verify this batch's one UPDATE
+(its statement splitter is semicolon-naive and the patched text itself contains a semicolon);
+noted in the SQL file, and the target id/old-value were confirmed by hand against a fresh DB read
+instead.
+
+Pass 7 continues next run after `wa_beckey_davis`.
