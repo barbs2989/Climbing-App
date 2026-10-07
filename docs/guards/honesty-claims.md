@@ -971,7 +971,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     rather than merely absent, and both byte-identical join handlers pass `myTrustScore`.
     - **THE TWO HANDLERS ARE ONE NOW (2026-10-07).** The group card and the group detail each held a
       60-line copy of the join handler, which is why this case counted to **two**. Membership
-      questions (0257) would have been a third thing to keep in step by hand, so both buttons now call
+      questions (0258) would have been a third thing to keep in step by hand, so both buttons now call
       `groupJoinTap(cl)`. The assertion moved with it: exactly **one** `groupTrustShortfall(` call
       site (the definition excluded), reading `myTrustScore`, and **at least two**
       `onClick={()=>groupJoinTap(cl)}` callers — a regrown inline copy shows up as a second call, and

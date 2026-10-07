@@ -1,4 +1,4 @@
-// Does 0257 keep its promises, as FOUR real accounts see it? O owns a group, M is its moderator,
+// Does 0258 keep its promises, as FOUR real accounts see it? O owns a group, M is its moderator,
 // P is a plain member, X is an outsider who asks to join. Every refusal has a control that
 // succeeds, and every write is read back — RLS refuses an UPDATE/DELETE by matching zero rows, so
 // a 200 is not evidence of anything.
@@ -53,7 +53,7 @@ try {
 
   // ── setup: an OPEN public group, M and P walk in ─────────────────────────────────────────────
   const gid = crypto.randomUUID();
-  const mk = await o("groups", { method: "POST", body: JSON.stringify({ id: gid, name: "Probe 0257 group", created_by: O.id, policy: "open", visibility: "public" }), headers: { Prefer: "return=minimal" } });
+  const mk = await o("groups", { method: "POST", body: JSON.stringify({ id: gid, name: "Probe 0258 group", created_by: O.id, policy: "open", visibility: "public" }), headers: { Prefer: "return=minimal" } });
   if (mk.status >= 300) dead(`O could not create the group (${mk.status}) ${mk.text.slice(0, 160)}`);
   G = gid;
   for (const [who, u] of [[m, M], [p, P]]) {
@@ -174,9 +174,9 @@ try {
   // insert passes RLS), and deleted with RETURNING, which the app uses to tell a refusal from a
   // delete.
   const pid2 = crypto.randomUUID();
-  const mkPriv = await o("groups", { method: "POST", body: JSON.stringify({ id: pid2, name: "Probe 0257 private", created_by: O.id, visibility: "private" }), headers: { Prefer: "return=minimal" } });
+  const mkPriv = await o("groups", { method: "POST", body: JSON.stringify({ id: pid2, name: "Probe 0258 private", created_by: O.id, visibility: "private" }), headers: { Prefer: "return=minimal" } });
   ok("a group can be created PRIVATE directly (no RETURNING)", mkPriv.status === 201, `${mkPriv.status} ${mkPriv.text.slice(0, 160)}`);
-  const withRet = await o("groups", { method: "POST", body: JSON.stringify({ id: crypto.randomUUID(), name: "Probe 0257 private 2", created_by: O.id, visibility: "private" }) });
+  const withRet = await o("groups", { method: "POST", body: JSON.stringify({ id: crypto.randomUUID(), name: "Probe 0258 private 2", created_by: O.id, visibility: "private" }) });
   ok("...while the same insert WITH RETURNING is refused (why the app mints the id)", withRet.status >= 400, `${withRet.status}`);
   ok("its owner reads it", rows(await o(`groups?id=eq.${pid2}&select=id,visibility`)).length === 1);
   ok("an outsider never sees it", rows(await x(`groups?id=eq.${pid2}&select=id`)).length === 0);
@@ -197,5 +197,5 @@ try {
   for (const u of made) { if (rows(await svc(`profiles?id=eq.${u.id}&select=id`)).length) leftU.push(u.id); }
   if (leftG.length || leftU.length) { console.log(`\nteardown left: group ${leftG.length}, accounts ${leftU.length}`); fail++; }
 }
-console.log(fail ? `\n${fail} failure(s).` : "\nok — 0257: owner-only roles, moderators remove members only, roster privacy, membership questions, members-only group comments.");
+console.log(fail ? `\n${fail} failure(s).` : "\nok — 0258: owner-only roles, moderators remove members only, roster privacy, membership questions, members-only group comments.");
 process.exit(fail ? 1 : 0);

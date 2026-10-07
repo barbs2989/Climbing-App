@@ -4025,7 +4025,7 @@ const COMMENTS = DEMO_FILLERS ? [
   {id:"cm_lcc1",targetId:"lcc",userId:3,text:"Gate Buttress lot fills by ~8am on weekends. Carpool or get there early.",ts:"2026-06-22"},
   {id:"cm_sr1",targetId:"lcc_schoolroom",userId:1,text:"Classic intro multipitch. Bring doubles to #2 and a couple long slings for the wandering pitch.",ts:"2026-06-23"}
 ] : [];
-/* `onModRemove` is passed only where the viewer may take down OTHER people's comments -- a group's organizer or moderator on a group post (0257). Everywhere else it is absent and nothing changes. */
+/* `onModRemove` is passed only where the viewer may take down OTHER people's comments -- a group's organizer or moderator on a group post (0258). Everywhere else it is absent and nothing changes. */
 function Comments({targetId,comments,onAdd,onViewProfile,onEdit,onDelete,onLike,onReact,onReply,mentionCandidates,onModRemove}){
   const [text,setText]=useState("");const [reactFor,setReactFor]=useState(null);const [open,setOpen]=useState({});const [sort,setSort]=useState("new");const [editId,setEditId]=useState(null);const [editText,setEditText]=useState("");const [replyOpen,setReplyOpen]=useState(null);const [replyTxt,setReplyTxt]=useState("");
   const list=comments.filter(c=>c.targetId===targetId&&!c.parentId).slice().sort((a,b)=>{const d=new Date(a.ts).getTime()-new Date(b.ts).getTime();return sort==="new"?-d:d;});
