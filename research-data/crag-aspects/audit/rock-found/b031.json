@@ -1,0 +1,404 @@
+[
+ {
+  "pid": "bc_squamish",
+  "crag": "Squamish",
+  "groups": [
+   {
+    "held": "quartz diorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Mount_Habrich",
+  "quote": "Rock type: Granodiorite ... a granitic horn"
+ },
+ {
+  "pid": "ca_barker_dam_area",
+  "crag": "Barker Dam Area",
+  "groups": [
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.nps.gov/thingstodo/hike-barker-dam-trail.htm",
+  "quote": "This trail will take you by monzogranite rock formations and boulders"
+ },
+ {
+  "pid": "co_cascade_canyon",
+  "crag": "Cascade Canyon",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {
+   "Friendship Wall": "limestone"
+  },
+  "wallExceptions": {},
+  "aspects": {
+   "Restaurant Row": "E"
+  },
+  "url": "https://mountainproject.com/area/105827468/cascade-canyon?print=1",
+  "quote": "a good selection of limestone sport routes"
+ },
+ {
+  "pid": "co_eldorado_canyon_bouldering",
+  "crag": "Eldorado Canyon Bouldering",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "quartz monzonite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "monzogranite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/108217581",
+  "quote": "bulletproof polished sandstone (Creek Slab page: 'hardened Eldorado sandstone')"
+ },
+ {
+  "pid": "co_land_s_end_area",
+  "crag": "Land's End Area",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "mudstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Land's End Wall": "W"
+  },
+  "url": "https://mountainproject.com/area/107685611/grand-mesa?print=1",
+  "quote": "layers of basalt up to 70 feet thick, creating steep, featured walls"
+ },
+ {
+  "pid": "qc_weir",
+  "crag": "Weir",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108344215/weir?print=1",
+  "quote": ""
+ },
+ {
+  "pid": "sd_blue_sky",
+  "crag": "Blue Sky",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Indecent Exposure": "W"
+  },
+  "url": "https://www.mountainproject.com/v/106552961",
+  "quote": "lined with steep slopes capped by bands of limestone"
+ },
+ {
+  "pid": "wa_bouldering_in_icicle_creek",
+  "crag": "Bouldering in Icicle Creek",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "diorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/120379546/leavenworth?print=1",
+  "quote": "granite-to-diorite domes; mapping includes diorite, granodiorite, tonalite and gabbro"
+ },
+ {
+  "pid": "wy_lower_blair_i_ii_iii_and_vicinity",
+  "crag": "Lower Blair I, II, III, and vicinity",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://en.wikipedia.org/wiki/Vedauwoo",
+  "quote": "The 1.4 billion year old Sherman Granite is the rock formation"
+ },
+ {
+  "pid": "ab_grassi_lakes",
+  "crag": "Grassi Lakes",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105893722/grassi-lakes?print=1",
+  "quote": "Grassi is famous for overhanging limestone with large juggy pockets"
+ },
+ {
+  "pid": "az_granite_mountain",
+  "crag": "Granite Mountain",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105787785/granite-mountain?print=1",
+  "quote": "beautiful white fine-grained granite"
+ },
+ {
+  "pid": "ca_marble_caves",
+  "crag": "Marble Caves",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "wrong",
+    "correct": "limestone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/106042239/marble-caves?print=1",
+  "quote": "blue, gold and white-streaked limestone of typically excellent quality"
+ },
+ {
+  "pid": "ca_mission_gorge",
+  "crag": "Mission Gorge",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/books/110544401",
+  "quote": "An unusual kind of metamorphosed volcanic stone (which may in fact be a type of granite)"
+ },
+ {
+  "pid": "co_mitchell_creek_canyon",
+  "crag": "Mitchell Creek Canyon",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118825570/corona-crag?print=1",
+  "quote": ""
+ },
+ {
+  "pid": "co_red_rock_canyon_open_space",
+  "crag": "Red Rock Canyon Open Space",
+  "groups": [
+   {
+    "held": "arkose (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {
+   "Ripple Wall": "sandstone",
+   "Sayers' Wall": "sandstone",
+   "Westbay Wall": "sandstone"
+  },
+  "wallExceptions": {},
+  "aspects": {
+   "Sayers' Wall": "W"
+  },
+  "url": "https://www.mountainproject.com/area/105744457/red-rock-canyon-open-space?print=1",
+  "quote": "Over 90 bolted routes up to 130 feet high ascend the ruddy sandstone walls"
+ },
+ {
+  "pid": "co_rock_garden_boulder_area",
+  "crag": "Rock Garden Boulder Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106571728?print=1",
+  "quote": "Dakota sandstone and Burro Canyon Formation are the rocks climbed in Nine Mile"
+ },
+ {
+  "pid": "ct_pinnacle_rock",
+  "crag": "Pinnacle Rock",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105877744/pinnacle-rock?print=1",
+  "quote": "consist of basalt rock (aka trap rock)"
+ },
+ {
+  "pid": "nm_albuquerque_area",
+  "crag": "Albuquerque Area",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Ranger Station Wall": "S",
+   "Little Beaver Town": "N"
+  },
+  "url": "https://mountainproject.com/area/106299665/albuquerque-area?print=1",
+  "quote": "A short, south-facing limestone cliff ... A small granite wall"
+ },
+ {
+  "pid": "nv_kyle_canyon",
+  "crag": "Kyle Canyon",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105850026/mount-charleston?print=1",
+  "quote": "hard (and often manufactured) limestone routes"
+ },
+ {
+  "pid": "nv_red_spring_boulders",
+  "crag": "Red Spring Boulders",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/106657528/red-spring-boulders?print=1",
+  "quote": "The sandstone is fragile and is very easily damaged when wet."
+ }
+]
