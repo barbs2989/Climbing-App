@@ -30401,3 +30401,79 @@ Big Snow Mountain's shared peak elevation (6,680 ft) confirmed via Wikipedia/Pea
 targets exist live.
 
 Pass 7 continues next run after `wa_big_snow_mountain_east_ridge_hardscrabble_route`.
+
+## Batch 385 (2026-10-07, pass 7)
+
+Checked: `wa_big_snow_mountain_north_slope_dingford_route`, `wa_big_snow_mountain_southwest_ridge`,
+`wa_black_peak_northeast_ridge`, `wa_blizzard_peak_standard`, `wa_bonanza_peak_cascadian_route`,
+`wa_bonanza_peak_mary_green_glacier`, `wa_bonanza_peak_northeast_buttress`,
+`wa_bonanza_peak_oregonian_route`.
+
+**Fixed (2):**
+- `wa_big_snow_mountain` (areas) `prominence_ft` — stored 1,402 ft matched no source. Wikipedia's
+  infobox (corroborated by a PeakVisor listing) gives 1,360 ft, consistent with the area's own
+  blurb text naming Overcoat Peak as the parent 3.75 mi ESE. SQL in
+  `audits/sql/2026-10-07-batch-385.sql`.
+- `wa_blizzard_peak` (areas) `elevation_ft` and `wa_blizzard_peak_standard` (routes)
+  `high_point_ft` — both stored 7,622 ft, matching no source. TopoQuest's USGS-derived record
+  (Castle Peak, WA 1:24K quad) gives 7,601 ft at coordinates that exactly match this row's stored
+  lat/lng. Only the two value columns were corrected this batch — the area blurb, route
+  overview/approach prose, and several waypoints/pitch_detail/itinerary JSON sub-fields still
+  spell out "7,622 ft" and need a separate prose sweep (flagged below).
+
+**Flagged for human review (8):**
+- `wa_big_snow_mountain_southwest_ridge` — a near-empty stub row; no source found names a
+  "Southwest Ridge" line on this peak (documented lines are an East Ridge/Hardscrabble route,
+  a Northeast Ridge, and the North Slope/Dingford route already in the catalog). Not proof the
+  line doesn't exist, just unverifiable — worth a check before enriching the stub.
+- `wa_big_snow_mountain_north_slope_dingford_route` — its own `permit`/`access` fields say no
+  parking fee / pass not required at Dingford Creek Trailhead, in tension with three independent
+  listings (Mountaineers.org, two WTA pages) that all name a Northwest Forest Pass as the
+  trailhead's parking requirement. May be a real distinction (unstaffed trailhead vs. fee-booth
+  site); needs the current USFS Snoqualmie Ranger District page checked directly.
+- `wa_black_peak_northeast_ridge` — `alpine_grade`/`commitment` stored "II", but Mountaineers.org
+  and Outdoor Project both call it Grade III and SummitPost's own route page calls it Grade I —
+  three sources, three grades, no single fix supportable. Also `gain_ft`/`dist_km` sit between
+  two conflicting secondary sources and can't be confirmed either way.
+- `wa_bonanza_peak` (areas) `elevation_ft` (9,516) vs. two of its own route rows'
+  `high_point_ft` (9,511) — an internal split mirroring a real split in sources
+  (Wikipedia/PeakVisor vs. SummitPost/Mountaineers.org). Needs a human call on which figure to
+  standardize, then a sweep of all three rows.
+- `wa_bonanza_peak_mary_green_glacier` — its `fa`/`overview` text credits the 1937 FA to "what's
+  now the standard Mary Green Glacier route," but Wikipedia's Bonanza Peak/Company Glacier
+  articles (citing Beckey) credit the 1937 FA to a Company Glacier line instead, with Mary Green
+  Glacier described separately as today's easiest route. Needs an editorial rewrite, not a value
+  swap. Separately, this row spells the FA climber "Curtis Ijames" while the area blurb spells
+  the same person "Curtis James" — sources themselves split the same way (Wikipedia vs. the NPS
+  North Cascades Historic Resource Study), so no spelling can be confirmed outright.
+- `wa_bonanza_peak_northeast_buttress` — the strongest finding this batch. Its `fa` names "Kurt
+  Buchwald, Peter Avolio, and Martin Volken, August 21–22, 2004" as "the first leg of the first
+  three-summit traverse of Bonanza." Despite Bonanza being extensively documented (AAJ/AAC,
+  SummitPost, Wikipedia, Mountaineers.org, CascadeClimbers), no search turned up any trace of
+  these climbers, that traverse, or a route named "Northeast Buttress" on this peak anywhere. The
+  real second technical route to Bonanza's main summit is the Northwest Ridge (V, 5.8; Blake
+  Herrington and Tim Haider, 2007, via Dark Peak/Dark Glacier) — a different aspect, party, year,
+  and approach than this row describes. This row's own `corrections` field already hedges in a
+  way consistent with a pipeline that asserted a party/date it could not actually source. Flagged
+  for a human decision (rewrite, re-attribute to the real Northwest Ridge, or pull), not fixed —
+  we have no verified correct value to write. A secondary, lower-priority grade inconsistency
+  (5.7 vs. "5.7/5.8" vs. "5.6–5.7" across fields) on the same row wasn't worth fixing separately.
+
+**Clean (7):** `wa_big_snow_mountain`'s elevation (6,680 ft) and parent/location facts; the full
+Dingford route approach/waypoints/gain/grade; `wa_black_peak`'s FA (Lage Wernstedt, 1926),
+prominence, and location; `wa_black_peak_northeast_ridge`'s FA (Roger Jackson and Michael
+Kennedy, 9/1/1973), approach, and waypoints; `wa_bonanza_peak`'s prominence, three named glaciers,
+and Lake Chelan/Holden approach; `wa_bonanza_peak_cascadian_route` (FA, grade, pitches, length,
+gain, position on the wall, even the old cam at pitch 4 — all matched the 2024 AAC Publications
+report in detail); `wa_bonanza_peak_oregonian_route` (FA, grade, length, the atypical ~32-mile
+bike/hike approach — all matched the AAC Publications report).
+
+**Tooling note:** Delegated research to 2 parallel subagents, one per peak pair (Big Snow
+Mountain + Black Peak; Blizzard Peak + Bonanza Peak). Independently re-verified the two fixed
+figures with a direct websearch before writing SQL, since each subagent's own report flagged only
+single-source backing. `check:sql` confirmed all three UPDATE targets exist live (both `--table
+areas` and `--table routes`) and warned (correctly, as in recent batches) that the full file
+exceeds the SQL Editor's ~4000-byte paste limit — a human applying the fix should paste just the
+`BEGIN...COMMIT` block.
+
+Pass 7 continues next run after `wa_bonanza_peak_oregonian_route`.
