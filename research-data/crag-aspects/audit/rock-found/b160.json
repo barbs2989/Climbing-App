@@ -1,0 +1,674 @@
+[
+ {
+  "pid": "ut_la_sal_mountains",
+  "crag": "La Sal Mountains",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119916349/brumley-canyon",
+  "quote": "Brumley Canyon: 'baked Entrada sandstone'; Hideout Wall: 'a high quality Wingate sandstone wall'"
+ },
+ {
+  "pid": "ut_south_side_boulders",
+  "crag": "South Side Boulders",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "wrong",
+    "correct": "granite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112924926/south-side-boulders",
+  "quote": "They are all granite boulders with pretty clear landings."
+ },
+ {
+  "pid": "va_devil_s_marbleyard",
+  "crag": "Devil's Marbleyard",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/114031728/devils-marbleyard",
+  "quote": "Devil's Marbleyard is a large quartzite talus field located outside of Natural Bridge, Virginia."
+ },
+ {
+  "pid": "va_reid_hollow_road",
+  "crag": "Reid Hollow Road",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "note": "Held in triage: crag page says charnockite, which lib/rockType.js does not list yet (granite family, so held granite dries the same)."
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119608341/reid-hollow-road",
+  "quote": "plenty of tape before deciding to pull on the razor sharp charnockite here."
+ },
+ {
+  "pid": "vt_ent_boulders",
+  "crag": "ENT Boulders",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108369450/ent-boulders",
+  "quote": "ENT Boulders page and parent Smugglers' Notch Bouldering page name no rock"
+ },
+ {
+  "pid": "vt_rooftopia",
+  "crag": "Rooftopia",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119814740/rooftopia",
+  "quote": "Crag page and all seven wall pages name no rock"
+ },
+ {
+  "pid": "wa_1_cable_sign_zone",
+  "crag": "Cable Sign Zone",
+  "groups": [
+   {
+    "held": "gabbro (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120343140/cable-sign-zone",
+  "quote": "Zone page names no rock; parent Pistol Boulders: 'diorite-heavy granodiorite and metamorphosed blocky andesite' (mixed)"
+ },
+ {
+  "pid": "wa_3_access_road_zone",
+  "crag": "Access Road Zone",
+  "groups": [
+   {
+    "held": "gabbro (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120343166/access-road-zone",
+  "quote": "Zone page names no rock; parent Pistol Boulders mixes granodiorite and andesite"
+ },
+ {
+  "pid": "wa_bebop_dinky_secret_crags",
+  "crag": "Bebop-Dinky-Secret Crags",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/110928298/bebop-dinky-secret-crags",
+  "quote": "Only 'Several small granite domes.' (loose granite; wall pages name no rock)"
+ },
+ {
+  "pid": "wa_fern_gully_cluster",
+  "crag": "Fern Gully Cluster",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119609288/fern-gully-cluster",
+  "quote": "Cluster page names no rock; parent Treasury says only 'granite climbs'"
+ },
+ {
+  "pid": "wa_helena_ridge",
+  "crag": "Helena Ridge",
+  "groups": [
+   {
+    "held": "metavolcanic rock (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/200724242/helena-ridge",
+  "quote": "Crag and both wall pages name no rock"
+ },
+ {
+  "pid": "wa_prospect_boulders",
+  "crag": "Prospect Boulders",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/115383226/prospect-boulders",
+  "quote": "Crag page names no rock; only parent Miller River Boulders: 'quality granodiorite blocs in the Skykomish Valley'"
+ },
+ {
+  "pid": "wa_western_alpine_lakes",
+  "crag": "Western Alpine Lakes",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "rhyolite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "tuff (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "dacite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "serpentinite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120313408/western-alpine-lakes",
+  "quote": "Region page mixed (rhyolite, andesite, granodiorite); wall pages say only 'granite' or nothing"
+ },
+ {
+  "pid": "wi_01_surprise",
+  "crag": "Surprise",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119915151/surprise",
+  "quote": "Crag page and all four boulder pages name no rock"
+ },
+ {
+  "pid": "wv_fiddle_area",
+  "crag": "Fiddle Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112497534/fiddle-area",
+  "quote": "Fiddle Area, Fiddle Rock, Wave Rider pages name no rock (only a guidebook ad says 'gritstone')"
+ },
+ {
+  "pid": "wy_bruce_s_boulders",
+  "crag": "Bruce's Boulders",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "quartz diorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Old Lady Driver": "granite"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/121789596/old-lady-driver",
+  "quote": "Old Lady Driver: 'Large granite boulder with problems on all sides.' Beauty and Horror: 'Massive granite boulder' (loose)"
+ },
+ {
+  "pid": "wy_the_spires",
+  "crag": "The Spires",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/123875746/the-spires",
+  "quote": "Crag page and all five wall pages name no rock"
+ },
+ {
+  "pid": "wy_upper_bridge_bands",
+  "crag": "Upper Bridge Bands",
+  "groups": [
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Bandit Wall, The": "S",
+   "Hideout Wall, The": "S"
+  },
+  "url": "https://www.mountainproject.com/area/106160383/upper-bridge-bands",
+  "quote": "No rock named; Bandit Wall 'this one faces south'; Hideout Wall 'With a southern aspect this cliff'"
+ },
+ {
+  "pid": "ak_black_rapids_bouldering",
+  "crag": "Black Rapids Bouldering",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {
+   "Buffalo Boulder": "gneiss",
+   "Split Face Boulder": "granite"
+  },
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119188621/buffalo-boulder",
+  "quote": "Buffalo: 'comprised of polished gneiss'; Split Face: 'comprised of fine grained granite'"
+ },
+ {
+  "pid": "ak_sky_pilot_areas",
+  "crag": "Sky Pilot Areas",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108953770/sky-pilot-areas",
+  "quote": "Sky Pilot Areas, Sky Pilot and Upper Sky Pilot pages name no rock"
+ },
+ {
+  "pid": "al_monte_sano_state_park",
+  "crag": "Monte Sano State Park",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "limestone"
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/125060736/buzzards-roost",
+  "quote": "Buzzards Roost: 'Limestone roof'; Bread Boulder: 'The slick and bunchy limestone'"
+ },
+ {
+  "pid": "al_rocks_that_are_higher_than_i_bouldering_area_the",
+  "crag": "Rocks that are Higher than I Bouldering Area, The",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/116072812/the-rocks-that-are-higher-than-i-bouldering-area",
+  "quote": "The rock is sandstone and conglomerate. (mixed; boulder pages name no rock)"
+ },
+ {
+  "pid": "ar_richland_creek_area",
+  "crag": "Richland Creek Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112392929/heaven-boulders",
+  "quote": "Heaven Boulders and Richland Creek Area pages name no rock"
+ },
+ {
+  "pid": "az_cholla_mountain",
+  "crag": "Cholla Mountain",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105801327/cholla-mountain",
+  "quote": "There is a lot of granite here"
+ },
+ {
+  "pid": "az_druid_the",
+  "crag": "Druid, The",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105738074/the-druid",
+  "quote": "Crag, East Face and West Face pages name no rock"
+ },
+ {
+  "pid": "az_mendoza_canyon_aka_coyote_domes",
+  "crag": "Mendoza Canyon (aka Coyote Domes)",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105738040/mendoza-canyon-aka-coyote-domes",
+  "quote": "Elephant, Right Dome pages say granite; Middle, Pentagram, Table, and all diorite-group walls name none"
+ },
+ {
+  "pid": "az_nursery_the_2",
+  "crag": "Nursery, The",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106664863/the-nursery",
+  "quote": "Crag and wall pages name no rock"
+ },
+ {
+  "pid": "az_west_kelly_canyon",
+  "crag": "West Kelly Canyon",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107703270/west-kelly-canyon",
+  "quote": "West Kelly Canyon offers quiet and diverse bouldering on the white Coconino Sandstone"
+ },
+ {
+  "pid": "bc_cat",
+  "crag": "Cat",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "note": "Demoted in triage: \"most of the problems tend to be on ... Gneiss\" is hedged."
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/114543652/cat",
+  "quote": "most of the problems tend to be on steep, quality Gneiss involving big moves"
+ },
+ {
+  "pid": "bc_lower_badge_trail_boulders",
+  "crag": "Lower Badge Trail Boulders",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/126546425/lower-badge-trail-boulders",
+  "quote": "Crag page and parents Sheriff's Badge / North Wall Boulders name no rock"
+ },
+ {
+  "pid": "bc_south_cliffs",
+  "crag": "South Cliffs",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112912144/south-cliffs",
+  "quote": "Crag page and all six wall pages name no rock"
+ },
+ {
+  "pid": "ca_blind_man_s_bluff_area",
+  "crag": "Blind Man's Bluff Area",
+  "groups": [
+   {
+    "held": "rhyolite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118043275/blind-mans-bluff",
+  "quote": "Only 'Sport climbing on lava pockets, huecos, and knobs'; parent: 'volcanic in origin'"
+ },
+ {
+  "pid": "ca_burst_rock",
+  "crag": "Burst Rock",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Burst Rock Main Face": "E"
+  },
+  "url": "https://www.mountainproject.com/area/123418988/burst-rock-main-face",
+  "quote": "Only loose 'excellent granite' (guidebook blurb); Main Face: 'Biggest area ... at the very top of Burst Rock. East Facing.'"
+ },
+ {
+  "pid": "ca_buttermilk_stem_area",
+  "crag": "Buttermilk Stem Area",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106130694/buttermilk-stem-area",
+  "quote": "Crag and all three boulder pages name no rock"
+ },
+ {
+  "pid": "ca_cottonwood_giants",
+  "crag": "Cottonwood Giants",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/110085465/cottonwood-giants",
+  "quote": "Only 'rock quality ... much like the rest of McCain valley'; parent says 'granite'"
+ },
+ {
+  "pid": "ca_eastern_atlantis",
+  "crag": "Eastern Atlantis",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/122414506/eastern-atlantis",
+  "quote": "Crag page and boulder pages name no rock"
+ },
+ {
+  "pid": "ca_ghost_road_area",
+  "crag": "Ghost Road Area",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106090669/ghost-road-area",
+  "quote": "Only 'The rock varies from grainy to excellent.'; wall pages name no rock"
+ },
+ {
+  "pid": "ca_gilligan_s_island_2",
+  "crag": "Gilligan's Island",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Ginger's Face": "S"
+  },
+  "url": "https://www.mountainproject.com/area/105891817/gingers-face",
+  "quote": "No rock named; Ginger's Face: 'Crag to the left ... Faces south. Some crumbly rock.'"
+ },
+ {
+  "pid": "ca_highway_50_corridor",
+  "crag": "Highway 50 Corridor",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/109968910/highway-50-corridor",
+  "quote": "Corridor page and all five wall pages name no rock"
+ },
+ {
+  "pid": "ca_ice_caves_outer_area",
+  "crag": "Ice Caves, Outer Area",
+  "groups": [
+   {
+    "held": "rhyolite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106637330/ice-caves-outer-area",
+  "quote": "Crag page names no rock; only region-wide 'volcanic tuff' (UKC Sad Boulders)"
+ }
+]
