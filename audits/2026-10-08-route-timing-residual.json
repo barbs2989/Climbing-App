@@ -1,0 +1,2023 @@
+{
+ "date": "2026-10-08",
+ "what": "The routes the Planner still read > 20% short on ANY leg (time to summit, descent or car to car) against >= 2 online reports after the 27-row repair, plus The Perfect Crime (its descent is shared with Easy Getaway). Most stored no times at all, so the walk model set them.",
+ "rule": [
+  "As in audits/2026-10-08-route-timing-repairs.json: a published figure wins (inside a range, the reports' median clamped into it); else >= 3 timed reports or 2 that agree; a leg counts when its two ends match.",
+  "A row with no stored legs gets a FULL set or none: a stored summit leg beside a missing approach makes the Planner walk the whole gain AND add the leg on top (lib/planTimes.js). Where only the car-to-car time clears the bar, only totalHrs is stored: the whole-day shape 32 rows already use, which shows one car-to-car time and gives no alpine start rather than a split it cannot support.",
+  "A stored leg the evidence shows wrong but cannot replace is cleared, not guessed (Baker's 2 hr descent).",
+  "No 0-hour approach is written: no alpine row in the catalog uses one."
+ ],
+ "measured": {
+  "note": "lib/planTimes.js at the calculator defaults vs the first-pass online medians, 515 sampled routes. short = model < 0.8x online. Whole-day rows have no modelled time to summit or descent, so they leave those two counts (Baring, Pyramid Peak, Big Snagtooth).",
+  "timeToSummitShort": "14 of 181 -> 7 of 178",
+  "descentShort": "18 of 161 -> 13 of 158",
+  "carToCarShort": "20 of 191 -> 15 of 191",
+  "alpine": "time to summit within 58% -> 62%; descent short 7 -> 5 of 32"
+ },
+ "counts": {
+  "routes": 15,
+  "fixed": 9,
+  "left": 6
+ },
+ "rollback": "scripts/rollback-timing-fixes-1791456669190.json",
+ "routes": [
+  {
+   "id": "wa_the_perfect_crime_with_variations",
+   "route": null,
+   "peak": null,
+   "action": "fix",
+   "why": "The Perfect Crime and Easy Getaway share one descent off the Cutthroat Wall (both rows describe the same rappel from the notch and the gully back to the base). The two timed descents agree: 2 hr (this route) and 2.25 hr (Easy Getaway) from the top to the car, against the stored 1.5. Descent set to 2, as on Easy Getaway; total to the sum of the legs, 9.",
+   "timing": {
+    "before": {
+     "approach": 2,
+     "summit": 5,
+     "descent": 1.5,
+     "total": 8
+    },
+    "after": {
+     "approach": 2,
+     "summit": 5,
+     "descent": 2,
+     "total": 9
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": 2,
+     "c2c": null
+    },
+    "before": {
+     "sum": 7,
+     "c2c": 8.5,
+     "down": 1.5
+    },
+    "after": {
+     "sum": 7,
+     "c2c": 9,
+     "down": 2
+    }
+   },
+   "evidence": {
+    "firstPass": "the Cutthroat Wall descent shared with Easy Getaway (see the 27-row audit)",
+    "residualPass": null
+   }
+  },
+  {
+   "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+   "route": "East Ridge via Aasgard Pass Route",
+   "peak": "Dragontail Peak",
+   "action": "fix",
+   "why": "No legs were stored, so the Planner walked it from distance and gain: 5.4 hr up, 4.6 down, 10 car to car, against reports of about 7 / 6 / 13. Trailhead to Colchuck Lake is 2 hr in four reports (a leg Colchuck routes share); car to summit runs 5.4-8 hr (median 6.75) and summit to car 4.3-6 (median 5.7) in four reports each; car to car 9-15 (median about 12.6). Set to 2 / 5 / 5.5, total 12.5.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": 2,
+     "summit": 5,
+     "descent": 5.5,
+     "total": 12.5
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 7,
+     "down": 6,
+     "c2c": 13
+    },
+    "before": {
+     "sum": 5.4,
+     "c2c": 10,
+     "down": 4.6
+    },
+    "after": {
+     "sum": 7,
+     "c2c": 12.5,
+     "down": 5.5
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 6,
+     "sources": [
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2024-06-03.222951377859",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2024-07-22.110714744944",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2014-06-22.9946803329",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2021-07-21-2102966920",
+      "https://www.mountaineers.org/activities/trip-reports/alpine-scramble-dragontail-peak-aasgard-pass",
+      "https://www.wta.org/go-hiking/trip-reports/trip_report-2026-07-17.120545834348"
+     ],
+     "notes": "Single-day car-to-car, so approachH 0 and campToSummitH is car to summit. WTA June 1 2024 (snow): trailhead 6:30, Aasgard Pass 11:15, summit 1 pm (6.5 h), car 7 pm (6 h down), 12.5 h c2c. WTA July 2024: left 6 am, summit ~1 pm (7 h), '~15 hours' total, 16-17 mi. WTA June 21 2014: 7 am start, 'just over 13 hours', ~14 mi, snowfield on the east ridge, packs left for the short class-2 summit scramble. Search-result summaries of Mountaineers/WTA reports (pages not read): June 2014 8 h up + 1 h on top + 6 h down via Asgard; Aug 2013 fast party 8 am-5 pm = 9 h, ~14 mi (the 9 h low end - a fast outlier); 2025 solo ~10 h combined with Colchuck Peak (not used). WTA July 2021 13 h includes Little Annapurna (not used). Typical split stated across reports: trailhead to Colchuck Lake 1.5-2 h, summit to Aasgard Pass 1.3-2.5 h, Aasgard to trailhead 1.5-3 h."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Stuart Lake (Colchuck Lake) trailhead, Icicle Creek Rd, about 3,400 ft",
+      "camp": null,
+      "base": "Colchuck Lake, then Aasgard Pass (7,800 ft) and the 8,500 ft saddle below the summit"
+     },
+     "published": [
+      {
+       "source": "Mazamas East Ridge activity listing (read via search snippet)",
+       "leg": "days",
+       "hours": null,
+       "days": 2,
+       "ownWords": "Listing says car to car in two or more days",
+       "url": "https://mazamas.org/activity/170/"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.mountaineers.org/activities/trip-reports/dragontail-peak-colchuck-col",
+       "year": 2019,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 5.4,
+       "carToCarH": 13.08,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "May 2019 Mountaineers, search snippet only; exact page number among the dragontail-peak-colchuck-col family not pinned. Up via Colchuck Col/SSE ridge: car to summit 7:20, 21 min on top, summit to car 5:24 via Aasgard Pass (ends match the descent leg). Total 13:05. Up-route differs from this route, so campToSummit not recorded."
+      },
+      {
+       "url": "https://stephabegg.com/trip-reports/washington/cbr-nw-ridge/",
+       "year": 2025,
+       "approachH": 2,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 4.27,
+       "carToCarH": null,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jul 31 2025 solo, fast, fetched. TH 3:23am to north end of Colchuck Lake 5:23 (approachH is car to lake, 2 h). Dragontail summit 8:56, Aasgard Pass 10:14 (1:18), trailhead 1:12pm (pass to TH 2:58): summit to car 4:16 by clock difference and by sum of stated splits. Up route was Colchuck Glacier plus Colchuck Peak, descent was Aasgard so the descent leg matches. Total 9:49 includes Colchuck Peak, not recorded."
+      },
+      {
+       "url": "https://www.francisbaileyh.com/2022/07/01/dragontail-peak/",
+       "year": 2022,
+       "approachH": 2,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 12.65,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jul 1 2022, fetched. Dragontail via Aasgard Pass only. Trailhead to Colchuck Lake 'just under 2 hours' (recorded 2.0). Total 12 h 39 min, about 23 km, 2,080 m gain; start about 4:30am (not stated clock)."
+      },
+      {
+       "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2025-07-15.075022991489",
+       "year": 2025,
+       "approachH": null,
+       "campToSummitH": 5.42,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 10.2,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jul 2025 solo, WTA, search snippet only (page 403): at TH 6:45am, summit after 5:25 by own count, total 10:12, 13.6 mi, about 5,700 ft. Route up/down not stated. Fast solo."
+      },
+      {
+       "url": "https://www.wta.org/go-hiking/trip-reports/trip_report-2020-06-15-0475682321",
+       "year": 2020,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 11.2,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jun 2020, WTA, snippet only: TH 5:50am, back about 5pm with many breaks (11.2 h by clock difference). Titled Colchuck Lake, Aasgard Pass, Dragontail; summit time not given."
+      },
+      {
+       "url": "https://www.oregonhikers.org/forum/viewtopic.php?t=19851",
+       "year": 2014,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": null,
+       "sameAsStored": false,
+       "note": "Aug 18 2014, fetched, did not climb Dragontail. Colchuck Lake up Aasgard Pass 1.5 h, back down the pass 1 h 10 min (start 5:05am). Useful for the pass leg only."
+      }
+     ],
+     "notes": "No guidebook hours online; Mountaineers Aasgard route page (403) gives 16 mi, 5,300 ft only. Typical stated splits: TH to lake about 2 h, lake to pass 1.5 h up, pass to summit about 50 min (2007 SummitPost snippet), summit to pass 1.3 h, pass to TH 1.2-3 h. Aasgard descent is slow, loose (Mountaineers 2025 snippet calls it the hardest part). Mountaineers/WTA 2013 snippet: fast party 9 h c2c (first pass has). WTA adminonly returned 502 this session."
+    }
+   }
+  },
+  {
+   "id": "wa_mount_baker_boulder_park_cleaver",
+   "route": "Boulder–Park Cleaver",
+   "peak": "Mount Baker",
+   "action": "fix",
+   "why": "The stored 3 / 3 / 2 (8 hr) ran far under every figure found. Published route figures: trailhead to camp 4-5 hr, camp to summit 5-7, summit back to camp about 3; reports agree (camp in 5.5 and 6.25 hr, camp to summit 5). Approach and climb set to the published 5 and 5. The stored 2 hr descent is shorter than the published 3 hr to camp alone and no summit-to-car figure clears the bar, so it is cleared rather than guessed, with the total that depended on it; the Planner walks the descent from distance and gain (about 9 hr).",
+   "timing": {
+    "before": {
+     "approach": 3,
+     "summit": 3,
+     "descent": 2,
+     "total": 8
+    },
+    "after": {
+     "approach": 5,
+     "summit": 5,
+     "descent": null,
+     "total": null
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 11.3,
+     "down": 6.9,
+     "c2c": 18.5
+    },
+    "before": {
+     "sum": 6,
+     "c2c": 15.2,
+     "down": 9.2
+    },
+    "after": {
+     "sum": 10,
+     "c2c": 19.2,
+     "down": 9.2
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 4,
+     "sources": [
+      "https://turns-all-year.com/trip-reports/july-12-2004-mt-baker-boulder-park-cleaver",
+      "https://nextadventure.net/blogs/blog/trip-report-mount-baker",
+      "https://summitpost.org/boulder-glacier-cleaver/165032",
+      "https://www.turns-all-year.com/trip-reports/august-6-7-2005-baker-park-hw-via-bp-cleaver",
+      "https://turns-all-year.com/trip-reports/july-12-13th-2008-boulder-glacier-mt-baker",
+      "https://www.mountaineers.org/activities/trip-reports/glacier-climb-mount-baker-boulder-glacier"
+     ],
+     "notes": "Boulder Ridge TH. Fields are SINGLE-DAY-PUSH values (approachH 0 = car-to-summit in one go, per brief), because every timed report of this exact cleaver line is a day push: July 2004 (turns-all-year, several parties): left Seattle before 2am, headed up trail 5am, handline at 4,500 ft in under 2h, reached snow by 7-8am; one party turned at ~9,100 ft near 12:54pm, others topped out ~1:45pm and 4pm (summit 4pm = ~11h from a 5am car departure; derived from stated clock times); skied down 1pm. 2016 single push (nextadventure.net, Boulder Ridge/Cleaver/Glacier): TH ~3:50am, summit ~3:30pm = 11h36 stated, back at car 10:30pm, 18h30 round trip stated (summit->car 6.9h is the difference). SummitPost: strong light parties ~10h car-to-car, most plan 2-3 days; so typicalDays 1 reflects the reports found, guides advise 2-3. Two-day approach reference (same ridge/cleaver, Boulder Glacier reports): TH "
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Boulder Ridge (Boulder Creek) trailhead, FR 1131 off Baker Lake Rd, about 2,700 ft",
+      "camp": "High camp on snow near the cleaver, 6,800-7,500 ft (Mountaineers lists a 5,700 ft ridge camp or a sheltered flat near 7,500 ft)",
+      "base": "Base of the Boulder-Park Cleaver at about 7,200 ft"
+     },
+     "published": [
+      {
+       "source": "Mountaineers Mount Baker / Boulder Glacier route page (via search snippet; 403 on fetch)",
+       "leg": "approach",
+       "hours": [
+        4,
+        5
+       ],
+       "days": null,
+       "ownWords": "Four to five hours from trailhead to camp",
+       "url": "https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier"
+      },
+      {
+       "source": "Mountaineers Mount Baker / Boulder Glacier route page (snippet)",
+       "leg": "campToSummit",
+       "hours": [
+        5,
+        7
+       ],
+       "days": null,
+       "ownWords": "Five to seven hours camp to the 10,778 ft summit",
+       "url": "https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier"
+      },
+      {
+       "source": "Mountaineers Mount Baker / Boulder Glacier route page (snippet)",
+       "leg": "summitToCamp",
+       "hours": 3,
+       "days": null,
+       "ownWords": "Trip profile lists about three hours summit back to camp",
+       "url": "https://www.mountaineers.org/activities/routes-places/mt-baker-boulder-glacier"
+      },
+      {
+       "source": "SummitPost Boulder Glacier Cleaver page (snippet; first pass cited it for other numbers)",
+       "leg": "carToCar",
+       "hours": 10,
+       "days": null,
+       "ownWords": "Strong light parties in excellent conditions can go car to car in ten hours",
+       "url": "https://summitpost.org/boulder-glacier-cleaver/165032"
+      },
+      {
+       "source": "SummitPost Boulder Glacier Cleaver page (snippet)",
+       "leg": "days",
+       "hours": null,
+       "days": 2,
+       "ownWords": "Most parties should plan two or three days",
+       "url": "https://summitpost.org/boulder-glacier-cleaver/165032"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.mountaineers.org/activities/trip-reports/glacier-climb-mount-baker-boulder-glacier",
+       "year": 2018,
+       "approachH": 6.25,
+       "campToSummitH": 5,
+       "summitToCampH": 3,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Jun 16-17 2018 Mountaineers, search snippets only (page 403). TH 10am to camp 4:15pm at 6,800 ft (6.25 h by clock difference). Day 2 left camp 2:30am up north side of the Boulder-Park cleaver, on summit 7:30-8:15am (5.0 h to arrival), back at camp 11:15am (3.0 h from 8:15 leaving). Same cleaver line."
+      },
+      {
+       "url": "https://www.mountaineers.org/activities/trip-reports/mount-baker-boulder-glacier-1",
+       "year": 2015,
+       "approachH": 5.5,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "2015 Mountaineers (page number among boulder-glacier-N not pinned), snippet only: left TH 10:15am, reached 6,800 ft camp at base of the cleaver in 'about 5.5 hours'. A separate SummitPost party of 9 (Jun 20-21 2015, summitpost.org/mt-baker-boulder-glacier/943783) estimated about 8 h to a 7,800 ft high camp and left camp 4am, no summit time in snippet."
+      },
+      {
+       "url": "https://turns-all-year.com/trip-reports/may-14-16-2004-boulder-glacier-mt-baker",
+       "year": 2004,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "SKI trip, fetched, Boulder Glacier not the cleaver. May 2004: TH about noon, glacier toe 5pm, camp 5,900 ft; left camp 6:30am, summit about 2pm (7.5 h), back at camp about 40 min later. Times nulled per ski rule."
+      },
+      {
+       "url": "https://www.turns-all-year.com/trip-reports/mt-baker-via-boulder-glacier-april-9-10-2016",
+       "year": 2016,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "SKI trip, fetched. Apr 2016, summit about 2pm 'later than anticipated'; 1.5 h and 45 blowdowns from where they met the trail back to the car. Nulled per ski rule."
+      }
+     ],
+     "notes": "Camp-based timed reports are scarce; the Mountaineers route page (4-5 h to camp, 5-7 h to summit, ~3 h down) is the main published anchor and its camp-to-summit and summit-to-camp agree with the 2018 report (5.0 and 3.0 h). Stored summit 3 h is well under every figure found. Stored approach 3 h is also under the 4-6 h found. Stored descent 2 h is under the stated ~3 h. First-pass day-push numbers (car to summit 11.3 h, descent 6.9 h) are the other cluster. Mountaineers May 2026 snippet: woke 2am, started 3am, camps at 6,900/7,300 ft, no summit time."
+    }
+   }
+  },
+  {
+   "id": "wa_southeast_ridge_se_corner",
+   "route": "Southeast Ridge (SE Corner)",
+   "peak": "Mount Shuksan Routes",
+   "action": "fix",
+   "why": "Only the 5.5 hr approach was stored, so the Planner walked the rest: 7.4 hr to the summit against about 11.7 reported. Published figures put high camp to summit at 4-6 hr; reports took 4, 4.5, 6 and 6.2 (median about 5.3). Summit to car runs 5.1-7.25 in five reports of this route and the Sulphide route it descends (median 6.7). Stored approach kept; climb 5.5, descent 6.5, total 17.5.",
+   "timing": {
+    "before": {
+     "approach": 5.5,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": 5.5,
+     "summit": 5.5,
+     "descent": 6.5,
+     "total": 17.5
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 11.7,
+     "down": 6.7,
+     "c2c": 15.9
+    },
+    "before": {
+     "sum": 7.4,
+     "c2c": 13.6,
+     "down": 6.1
+    },
+    "after": {
+     "sum": 11,
+     "c2c": 17.5,
+     "down": 6.5
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 2,
+     "sources": [
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2018-08-16.2879862484",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2024-08-02.082633993978",
+      "https://images.clubexpress.com/11928/attach/4198377_0_Chemeketans-Mount_Shuksan_via_Fisher_Chimenys_SE_Ridge-7.6.2025-7.8.2025.pdf",
+      "https://www.mountaineers.org/activities/trip-reports/mount-shuksan-fisher-chimneys-6"
+     ],
+     "notes": "From the Shannon Ridge (Sulphide) trailhead. WTA Aug 12 2018 (overnight; SE Rib finish, ~4 pitches 5.4, rappelled the gully): TH 10:30 -> high camp 4:00 pm (5.5 h); left camp 4:15 am, first group on summit 10:25 (6.2 h), last 11:35 (7.3 h); left summit 11:40, camp 3:50 pm, left camp 4:35, car 7:10 pm (summit->car 6.75 h moving incl. 45 min break camp; carToCar 18.5 = 5.5 + 6.2 + 6.75 summed). WTA Aug 1 2024 (day trip, 2:40 am start, summit 9:20, car 4:00 pm, 13 h 20 min with 4 h 50 min stopped; car->summit 6.7 h, summit->car 6.7 h): party planned the SE ridge but only one member stayed on it, two dropped to the standard gully, so it is a ridge/gully mix. Not recorded in fields (different trailhead, Lake Ann / Fisher Chimneys approach): Chemeketans July 2025 camped above Winnie's Slide, left 3:15 am, ridge climb 4.5 h, gully descent 5 h (rockfall, rappels), back in camp 8 pm (~17 h camp r"
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Shannon Ridge (Sulphide) trailhead, end of FR 1152-014 off Baker Lake Rd, about 2,500 ft",
+      "camp": "Sulphide Glacier high camp, 6,400 ft (also rock-island camp 6,100 ft and ridge pass camp 5,400 ft; one 2009 party bivied at ~6,000 ft)",
+      "base": "South snout of the Sulphide Glacier, then base of the summit pyramid reached across the glacier"
+     },
+     "published": [
+      {
+       "source": "Mountaineers Mount Shuksan/Sulphide Glacier route page (via search snippet; 403 on fetch)",
+       "leg": "approach",
+       "hours": [
+        5,
+        6
+       ],
+       "days": null,
+       "ownWords": "Five to six hours for the walk in to camp",
+       "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mount-shuksan-sulphide-glacier"
+      },
+      {
+       "source": "Mountaineers Mount Shuksan/Sulphide Glacier route page (snippet)",
+       "leg": "campToSummit",
+       "hours": [
+        5,
+        6
+       ],
+       "days": null,
+       "ownWords": "Camp to summit is a similar stretch, five to six hours",
+       "url": "https://www.mountaineers.org/activities/routes-places/north-cascades-national-park-cross-country-zones/high-occupancy-xc-zones/mount-shuksan-sulphide-glacier"
+      },
+      {
+       "source": "Northwest Alpine Guides Sulphide Glacier itinerary (fetched)",
+       "leg": "approach",
+       "hours": [
+        4,
+        5
+       ],
+       "days": null,
+       "ownWords": "Hike to high camp takes four to five hours; overview says five to six",
+       "url": "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-sulphide-glacier/"
+      },
+      {
+       "source": "Northwest Alpine Guides Sulphide Glacier page (fetched)",
+       "leg": "campToSummit",
+       "hours": [
+        4,
+        5
+       ],
+       "days": null,
+       "ownWords": "Overview lists four to five hours camp to summit",
+       "url": "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-sulphide-glacier/"
+      },
+      {
+       "source": "Northwest Alpine Guides Sulphide Glacier page (fetched)",
+       "leg": "campToCar",
+       "hours": [
+        2,
+        3
+       ],
+       "days": null,
+       "ownWords": "Hike out from high camp takes two to three hours",
+       "url": "https://www.northwestalpineguides.com/northwest-climbs/mount-shuksan-sulphide-glacier/"
+      },
+      {
+       "source": "RMI Guides Shuksan Sulphide Glacier (fetched)",
+       "leg": "approach",
+       "hours": [
+        4,
+        5
+       ],
+       "days": null,
+       "ownWords": "Day 1 hike to Shuksan high camp, four to five hours",
+       "url": "https://www.rmiguides.com/north-cascades/shuksan-sulphide-glacier"
+      },
+      {
+       "source": "RMI Guides Shuksan Sulphide Glacier (fetched)",
+       "leg": "campToCar",
+       "hours": [
+        3,
+        4
+       ],
+       "days": null,
+       "ownWords": "Hike back to trailhead three to four hours",
+       "url": "https://www.rmiguides.com/north-cascades/shuksan-sulphide-glacier"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://apps.yellowleaf.org/scramble/g/r/2005-06-25-Shuksan.html",
+       "year": 2005,
+       "approachH": 4.27,
+       "campToSummitH": 4.5,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 5.07,
+       "carToCarH": 14.12,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jun 25 2005 one-day push, fetched, FR 1152-014 trailhead. TH to 'high camp' 4:16, high camp to summit 4:30, summit to TH 5:04, total 14:07, all stated. Climbed the Sulphide gully (SW side of the pyramid), not the SE ridge; no overnight, so 'high camp' is a landmark. Approach and descent legs share the same ends."
+      },
+      {
+       "url": "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-shuksan-sulphide-glacier-3",
+       "year": 2018,
+       "approachH": 5,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Aug 2018 Mountaineers, snippet only (exact page number among the Sulphide Glacier reports not pinned): 'Car to Camp - about 5 hours', arrived about 3pm at 6,400 ft high camp. Snippet says last climber on summit 8:15 ('roughly five hours' camp to summit by the search tool, start not stated) so campToSummit left null. May overlap with the first-pass WTA Aug 2018 trip (5.5 h) if same date."
+      },
+      {
+       "url": "https://www.nwhikers.net/forums/viewtopic.php?p=517408",
+       "year": 2009,
+       "approachH": null,
+       "campToSummitH": 6,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Jun 30 2009 Sulphide Glacier / SE Rib, fetched. Bivy about 6,000 ft (snow from 4,500 ft on Shannon Ridge). Started up lower snowfield and onto glacier at 6:00am, base of summit pyramid 8:30am, topped out 'somewhere around noon' (about 6 h, approximate end), stayed 'a couple hours', truck at dusk. Camp departure not separately stated."
+      },
+      {
+       "url": "https://summitpost.org/mount-shuksan/climbers-log/150347/p3",
+       "year": 2011,
+       "approachH": null,
+       "campToSummitH": 4,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Log dated Aug 7 2011, search snippet only (403): left high camp 4:30am, SE rib, summit about 8:30am (4 h by clock difference), downclimbed the gully. Fast, great weather. A separate Aug 2011 SummitPost SE Rib entry reports a one-day ascent of '15.5 hours car to car' (snippet; not pinned to a URL)."
+      },
+      {
+       "url": "https://adventuresinelevation.com/mount-shuksan-via-sulphide-glacier/",
+       "year": 2026,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Jun 13-14 2026, fetched (same trip as the UBC VOC 'Shenanigans on Shuksan' post: identical 3:30am start and 6:50 summit departure, counted once). Left camp 3:30am, left summit 6:50am (so camp to summit under 3.3 h), back to car 'early afternoon'. Central gully up, standard route down. No arrival time stated."
+      },
+      {
+       "url": "https://happyoutside.xyz/climbing-mount-shuksan-sulphide-glacier-se-rib-july-2025-trip-report-2/",
+       "year": 2025,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Jul 4-5 2025 SE Rib, fetched. TH 9:10am Fri, left camp 3:23am Sat; descended the glacier early afternoon 'later than intended' because of crowding and rappels on the ridge. No camp arrival, summit or car times."
+      }
+     ],
+     "notes": "Strongest evidence: published guide/Mountaineers figures put camp to summit at 4-6 h (plus the SE rib/gully bottleneck), approach 4-6 h, hike out 2-4 h. Stored approach 5.5 sits inside the 4-6 h range. Reports: 4.0 h (fast 2011), 4.5 h (2005), about 6 h (2009), 6.2-7.3 h (first pass 2018). Descent from summit to car 5.1 h (2005 day push); descent summit to camp not separately timed in any report found. Not recorded: Chemeketans Jul 2025 and The Cloud Ocean 2017 (Fisher Chimneys approach, other trailhead); CascadeClimbers Jun 2016 snippet (camp ~7,500 ft, rib about 3 h, top at 10am); Mountaineers Jul 2014 left camp 3am 'on par with the route description' (no numbers). Both Mountaineers and CascadeClimbers pages 403 or render blank."
+    }
+   }
+  },
+  {
+   "id": "ca_mt_shasta_avalanche_gulch",
+   "route": "Avalanche Gulch",
+   "peak": "Mt. Shasta",
+   "action": "fix",
+   "why": "No legs were stored, so the Planner walked it: 5.9 hr to the summit against 7.75 reported. Bunny Flat to Helen Lake took 3, 3 and 3.75 hr in three reports; Helen Lake to the summit 4.5-5.5 in six (median 5); summit to car 3-7 in nine (median about 3.8); car to car 10-16 (median 12). Set to 3 / 5 / 4, total 12.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": 3,
+     "summit": 5,
+     "descent": 4,
+     "total": 12
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 7.8,
+     "down": 3.5,
+     "c2c": 11.3
+    },
+    "before": {
+     "sum": 5.9,
+     "c2c": 10.8,
+     "down": 4.9
+    },
+    "after": {
+     "sum": 8,
+     "c2c": 12.9,
+     "down": 4.9
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 8,
+     "sources": [
+      "https://www.summitpost.org/mount-shasta/climbers-log/150188/d-53708",
+      "https://summitpost.org/mount-shasta/climbers-log/150188/d-24890",
+      "https://www.summitpost.org/mount-shasta/climbers-log/150188/d-45621",
+      "https://www.oregonhikers.org/archive/view/626",
+      "https://alpenglowexpeditions.com/adventure/2-day-avalanche-gulch-climb",
+      "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-mount-shasta-avalanche-gulch-2",
+      "https://www.shedreamsofalpine.com/blog/2017/7/7/mount-shasta-avalanche-gulch-route",
+      "https://www.turns-all-year.com/trip-reports/may-4-2010-mt-shasta-avalanche-gulch"
+     ],
+     "notes": "Fields use the SINGLE-DAY frame from Bunny Flat (car to summit, approachH 0), matching how the app models it. Three day climbs (SummitPost logs, via snippets): 3 am start, summit 8:30, left summit ~9:30, back 1 pm (5.5 h up, 3.5 h down, 10 h c2c, May 2007); 4:30 am start, summit 12:15, back 3:45 pm (7.75 up, 3.5 down, 11.25 c2c, May 2007); ~3 am, top ~11, back ~5 pm (8 up, 6 down, 14 h c2c, June 2004 - slow). Another May 2007 log 'summit in just over 9 hours' (start point not named). Many parties camp at Lake Helen (10,400 ft) = 2 days: oregonhikers: Bunny Flat 8 am to Helen Lake 11 am (3 h), left camp 2:15 am, summit 7:10 (4.9 h), camp 9 am, car 11 am (2 h camp to car); Mountaineers July 2019: left Helen Lake 3:15 am, summit 8:15-8:45 (5-5.5 h), back in camp 11:30, left camp 12:45 pm, cars ~3:30 pm; 2004 group broke camp 1 am, summit 6:30 (5.5 h); one party 4 h down to Helen Lake + 3.25"
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Bunny Flat (6,880 ft)",
+      "camp": "Helen Lake (10,400 ft); some parties stop at Horse Camp (about 7,900 ft)",
+      "base": "Helen Lake at the foot of Avalanche Gulch"
+     },
+     "published": [
+      {
+       "source": "U of Utah student trip page, planned figures (2001)",
+       "leg": "approach",
+       "hours": [
+        3,
+        4
+       ],
+       "days": null,
+       "ownWords": "Bunny Flat to Helen Lake with packs planned at three to four hours.",
+       "url": "https://home.chpc.utah.edu/~mcuma/spring01/shasta01e.html"
+      },
+      {
+       "source": "U of Utah student trip page, planned figures (2001)",
+       "leg": "campToSummit",
+       "hours": [
+        3,
+        6
+       ],
+       "days": null,
+       "ownWords": "Helen Lake to summit planned at three to six hours.",
+       "url": "https://home.chpc.utah.edu/~mcuma/spring01/shasta01e.html"
+      },
+      {
+       "source": "U of Utah student trip page, planned figures (2001)",
+       "leg": "summitToCamp",
+       "hours": [
+        2,
+        3
+       ],
+       "days": null,
+       "ownWords": "Summit back to Helen Lake planned at two to three hours.",
+       "url": "https://home.chpc.utah.edu/~mcuma/spring01/shasta01e.html"
+      },
+      {
+       "source": "U of Utah student trip page, planned figures (2001)",
+       "leg": "campToCar",
+       "hours": 2,
+       "days": null,
+       "ownWords": "Helen Lake down to the trailhead with packs planned at two hours.",
+       "url": "https://home.chpc.utah.edu/~mcuma/spring01/shasta01e.html"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.snwburd.com/bob/trip_reports/shasta_2.html",
+       "year": 2002,
+       "approachH": 3.75,
+       "campToSummitH": 5,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 3.25,
+       "carToCarH": 12,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "May 25 2002 day trip from Bunny Flat, no camp. Stated clock times: start 3:15a, Helen Lake about 7a, summit 12p, back 3:15p. approachH = start to Helen Lake, campToSummitH = Helen Lake to summit (passed through, not camped), differences of stated clock times. Car to summit 8.75 h."
+      },
+      {
+       "url": "https://home.chpc.utah.edu/~mcuma/spring01/shasta01e.html",
+       "year": 2001,
+       "approachH": null,
+       "campToSummitH": 5.5,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 7,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Jun 8-9 2001, camped Lake Helen 10,443 ft. Sat: left camp 5:30am, summit 11am (walking rather slowly), at trailhead about 6pm. campToSummit and summitToCar are differences of stated clock times; summitToCar includes breaking camp at Helen. Friday hike in started about 1pm, arrival at Helen not stated."
+      },
+      {
+       "url": "https://shastaavalanche.org/node/7354",
+       "year": 2022,
+       "approachH": 3,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 5,
+       "carToCarH": 16,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Shasta Avalanche Center observation Jun 26 2022, day trip. Left Bunny Flat 2am, Helen Lake 5am (stated), Red Banks 9-9:30, left summit a little after 1pm, back at car by 6 (pm implied). Slow day: lost about 1 h after missing a trail turn near Helen. summitToCar and carToCar are clock differences, approximate."
+      },
+      {
+       "url": "https://www.summitpost.org/mount-shasta/climbers-log/150188/p31",
+       "year": 2004,
+       "approachH": null,
+       "campToSummitH": 5,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "SummitPost log Jun 20 2004, party of 4 camped Lake Helen, left 3am and 'reached it in 5 hours' (stated). Read from search snippet; page 403s; URL attribution from snippet title. Differs from the first-pass 2004 log (broke camp 1am)."
+      },
+      {
+       "url": "https://summitpost.org/mount-shasta/climbers-log/150188/d-139044",
+       "year": 2012,
+       "approachH": null,
+       "campToSummitH": 4.47,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "SummitPost log, climbed Jul 26 2012: 4:28 Helen Lake to summit (stated; third attempt). Read from search snippet; URL attribution is from a snippet that listed several Jul 2012 logs, so the number may belong to a neighbouring log. Fast, good conditions."
+      }
+     ],
+     "notes": "Frames: where approachH is given the base is Helen Lake. Day-hike reports without a Helen split (not recorded as legs): climber.org 2004/1288 (Jul 12 2004, 1am start, summit 10:30, 9.5 h up, car time not stated, start point ambiguous); SummitPost Aug 2008 log (14 h from Bunny Flat: 8 up, 1 on top, 5 down, no URL attached); Apr 2008 log (3am, summit 10am, car 1pm = 7 up, 3 down, 10 c2c, no URL attached); Mountaineers Jun 2015 (left Helen 3:15am, summit 8:15, camp 10:40, trailhead 2:15pm; exact Mountaineers URL uncertain, 403s); SummitPost 'Avalanche Gulch x 2 overnight and day-hike (4 hrs 50 mins to the top)' d-141237 start point unstated. Published: Alpenglow (first pass) and Forest Service/Lonely Planet give no hours. Selters' book text not reachable."
+    }
+   }
+  },
+  {
+   "id": "wa_southwest_face",
+   "route": "Southwest Face",
+   "peak": "The Tooth Routes",
+   "action": "fix",
+   "why": "No legs were stored, so the Planner walked it: 4 hr to the summit and 7.2 car to car, against about 6.4 and 10 reported. Car to the base took 2.1, 2.4, 2.75 and 3 hr in four reports; the descent is the South Face's, timed at 2.5-7 hr from summit to car in five reports (median 4); the two Southwest Face car-to-car times agree (10 and 11.8), and its one timed climb took 4 hr. Set to 2.5 / 4 / 4, total 10.5.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": 2.5,
+     "summit": 4,
+     "descent": 4,
+     "total": 10.5
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 6.4,
+     "down": 3,
+     "c2c": 10
+    },
+    "before": {
+     "sum": 4,
+     "c2c": 7.2,
+     "down": 3.2
+    },
+    "after": {
+     "sum": 6.5,
+     "c2c": 10.5,
+     "down": 4
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 2,
+     "sources": [
+      "https://www.mountaineers.org/activities/trip-reports/the-tooth-southwest-face-1",
+      "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-the-tooth-southwest-face-1",
+      "https://www.mountaineers.org/activities/routes-places/the-tooth-southwest-face"
+     ],
+     "notes": "Mountaineers pages 403 to fetch; from search snippets. Sept 27 2015 party of 4: left Alpental just after 7, over Pineapple Pass and started climbing 9:30 (~2.4 h car-to-base), summit 1:30 pm (campToSummit = car to summit ~6.4 h, includes climbing and some crowding on South Face), ~0.5 h on summit, rap + walk back for packs 1.5 h, at cars ~5 pm => ~10 h car-to-car; summitToCar 3.0 h excludes the 0.5 h summit stay. Aug 11 2023 party: left Alpental 6:40, at base of climb ~8:45 (~2.1 h approach); no summit/return times in snippet. Route page grades it II 5.7 (app says 5.5). South Face for comparison: 9-10.25 h car-to-car."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Alpental upper parking lot (Snoqualmie Pass)",
+      "camp": null,
+      "base": "Base of the Southwest Face just past Pineapple Pass / the scramble up to the South Face"
+     },
+     "published": [
+      {
+       "source": "Mountaineers The Tooth South Face route page (same trailhead and summit; read from snippet)",
+       "leg": "campToSummit",
+       "hours": [
+        5,
+        6
+       ],
+       "days": null,
+       "ownWords": "Trailhead to summit listed at five to six hours (car to summit).",
+       "url": "https://mountaineers.org/explore/routes-places/the-tooth-south-face"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-the-tooth-southwest-face",
+       "year": 2019,
+       "approachH": 2.75,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Mountaineers Jul 21 2019, SW Face, party of 4. Met Alpental 6AM, Pineapple Pass by 8:30, at base of SW face by 8:45 (clock difference 2h45). Summit and return times not in the snippet (page 403s)."
+      },
+      {
+       "url": "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-the-tooth-southwest-face-1",
+       "year": 2023,
+       "approachH": 2.08,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 11.83,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Same Aug 11 2023 report the first pass read for the approach (left 6:40, base 8:45). A search snippet adds the end: descended the South Face and 'I think it was about 6:30pm' when all were back down, so carToCar is about 11.8 h by clock difference, approximate. Route-finding slowed them."
+      },
+      {
+       "url": "https://lemkeclimbs.com/the-tooth-south-face",
+       "year": 2013,
+       "approachH": null,
+       "campToSummitH": 6,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 2.5,
+       "carToCarH": 8.5,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Lemke, Apr 23 2013, SOUTH FACE (5.4), spring snow. Parked by 6am, top about noon, back at car 2:30pm. campToSummit = car to summit, summitToCar the shared descent/return, both clock differences. South Face, not SW Face, but both legs have the same two ends."
+      },
+      {
+       "url": "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/tooth_previous.html",
+       "year": 2003,
+       "approachH": 3,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 9,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Belitz, Jul 26 2003, SOUTH FACE (5.4). Left Alpental 7am, Pineapple Pass about 10am (3 h to the pass), '1 hr from Pineapple Pass to Summit', stated '9 hrs roundtrip from Alpental' including about 2 h waiting behind a Mountaineers party."
+      }
+     ],
+     "notes": "SW Face data is thin: it is II 5.7 per Mountaineers and rarely climbed; car-to-summit 6.4 h from the first-pass 2015 report remains the only SW Face summit time. South Face reference points from snippets, URLs not pinned (Mountaineers pages 403): beginner course party 14 h car to car (4 h to base, 3 h up, 4 h down, 3 h to car); May 2019 basic party on the summit by noon and at cars just past 4PM (about 4 h summit to car); 12.5 h round trip leaving the upper lot about 6am; course listings say about 12 h; Mountaineers 2023 student trip 12 h C2C; early-season report 13 h; 2004 climber 8 h car to car 'without hurrying'. Descent for SW Face is the same as South Face (reverse the scramble to Pineapple Pass), so those descent legs apply."
+    }
+   }
+  },
+  {
+   "id": "wa_baring_mountain_northwest_ridge",
+   "route": "Northwest Ridge",
+   "peak": "Main Peak",
+   "action": "fix",
+   "why": "No times were stored, so the Planner walked it in 6.3 hr car to car against about 9-10 reported. Twelve timed reports put car to car at 5.6-11.6 hr (median about 9) and two guidebooks are quoted at 6 or 9 hr. No report splits the walk to the ridge from the scramble consistently, so only the car-to-car total is stored (a whole-day row): 9 hr.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": 9
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 5.5,
+     "down": 4,
+     "c2c": 10
+    },
+    "before": {
+     "sum": 3.4,
+     "c2c": 6.3,
+     "down": 2.9
+    },
+    "after": {
+     "sum": null,
+     "c2c": 9,
+     "down": null
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 7,
+     "sources": [
+      "https://www.wta.org/go-hiking/trip-reports/trip_report-2022-04-23-4761964304",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2022-04-04-2867026265",
+      "https://www.wta.org/go-hiking/trip-reports/trip_report-2022-03-26-9280997361",
+      "https://sverdina.com/baring1_SHORT.asp",
+      "https://www.mountaineers.org/activities/trip-reports/mount-baring-northwest-ridge-5",
+      "https://www.mountaineers.org/activities/trip-reports/mount-baring-northwest-ridge-4",
+      "https://mountaineers.org/activities/trip-reports/alpine-scramble-mount-baring-northwest-ridge-1",
+      "https://www.mountaineers.org/activities/trip-reports/mount-baring-northwest-ridge"
+     ],
+     "notes": "Single-day car-to-car from Barclay Lake trailhead; campToSummit = car to summit (approachH 0). Car-to-car: 9.0 h (May 2017, incl 30 min summit lunch), ~9 h (Jul 2017), 10 h (May 2015, 9 people, summit in 5 h), 10 h (23 Apr 2022: 7 AM start, 6 h up, 4 h down), 11.5 h (May 2014, snow wall rapped, descent nearly as long as ascent). Mountaineers figures are from search snippets (403 on fetch). Excluded: 2 Apr 2022 turnaround below the boulder field (6 h up, 6 h down, 12 h total, no summit). Outlier: Oct 2003 sverdina 2.5 h car to summit. A snippet also cited 9 h c2c, 6.7 mi, 4.6k gain in summer 2025 with ~1 h lost off route (source not confirmed). Snow reports are the slower ones; dry reports ~9 h."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Barclay Lake trailhead at end of FR 6024 off US-2 (road currently damaged by a late-2025 landslide per snippet; adds walking)",
+      "camp": null,
+      "base": "Talus basin below the notch; the notch gully is the crux, ridge reached about 2,000 ft up the climbers' path"
+     },
+     "published": [
+      {
+       "source": "SummitPost 2005 comment saying two guidebooks list 6 h or 9 h (guidebooks unnamed; snippet only)",
+       "leg": "carToCar",
+       "hours": [
+        6,
+        9
+       ],
+       "days": null,
+       "ownWords": "Two guidebooks quoted as a six-hour or a nine-hour climb",
+       "url": "https://www.summitpost.org/baring-mountain/climbers-log/151113/d-18350"
+      },
+      {
+       "source": "Komoot highlight page, unsourced general guidance",
+       "leg": "carToCar",
+       "hours": [
+        8,
+        12
+       ],
+       "days": null,
+       "ownWords": "Plan a full day of 8 to 12 hours round trip",
+       "url": "https://www.komoot.com/highlight/6108854"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://apps.yellowleaf.org/scramble/g/r/2005-10-29-baring.html",
+       "year": 2005,
+       "approachH": null,
+       "campToSummitH": 5.08,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 3.65,
+       "carToCarH": 8.73,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Oct 29 2005, fetched, Barclay Lake TH, west ridge. 5 h 05 ascending, 3 h 39 descending, 8 h 44 total; all stated (page also names a 'Baring Lake trailhead' at the end, likely same lot)."
+      },
+      {
+       "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2019-11-02.3292969176",
+       "year": 2019,
+       "approachH": null,
+       "campToSummitH": 4.58,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 3.75,
+       "carToCarH": 8.33,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Nov 2 2019, WTA, search snippet only (page 403): left car 8:40am, summit 1:15pm, car 5:00pm. Differences of stated clock times; descent figure includes any time on top."
+      },
+      {
+       "url": "https://www.washingtonstatehiking.com/reportslist/baring_mountain",
+       "year": 2024,
+       "approachH": null,
+       "campToSummitH": 3.33,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 2.63,
+       "carToCarH": 6.42,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Feb 9 2024, fetched. Logged 3 h 20 ascent, 27 min on top, 2 h 38 descent, 6 h 25 total (13:13 to 19:38). Fast, winter date, single logged report."
+      },
+      {
+       "url": "https://hikingwithhadland.com/2021/05/16/baring-mountain-05-14-2021/",
+       "year": 2021,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 11.6,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "May 14 2021, fetched. TH 9am, ridge in just under 2 h, then lost the flagging and spent about 2 h on steep forest traverse (off route). Total time 11:37, moving 5:30; author says '11 hrs C2C' with GPS caveats. Slow outlier."
+      },
+      {
+       "url": "http://cwillett.imathas.com/local/baring/index.html",
+       "year": 2007,
+       "approachH": null,
+       "campToSummitH": 5,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 4,
+       "carToCarH": 9,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Apr 7 2007, search snippet only (cert error on fetch): left TH 8:30am, '5 leisurely hours up, 4 down', west ridge, spring conditions; carToCar is the sum of the two stated legs."
+      },
+      {
+       "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2013-08-18.7305885854",
+       "year": 2013,
+       "approachH": null,
+       "campToSummitH": 5,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Aug 4 2013, WTA, snippets only (page 403). Header '5 hours up, 3 hours down', but narrative says back at TH just over 4 h after leaving the summit as light faded (late start, 8:30am). The two descent figures conflict so summitToCar left null."
+      },
+      {
+       "url": "https://www.summitpost.org/baring-mountain/climbers-log/151113",
+       "year": 2009,
+       "approachH": null,
+       "campToSummitH": 2.75,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 2.08,
+       "carToCarH": null,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Aug 2009 SummitPost log, snippet only (403): 70 min to ridge top + 50 to talus basin + 25 to saddle + 20 to summit = 165 min up (sum of stated legs); descent 2 h 05. Very fast party; route may be the same NW ridge but not confirmed."
+      },
+      {
+       "url": "https://www.wta.org/go-hiking/hikes/mount-baring",
+       "year": 2025,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 5.58,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jul 5 2025 solo WTA report, snippet only (specific URL not retrieved): total time 5 h 35 min, 5.71 mi, 4,122 ft. Very fast solo outlier."
+      },
+      {
+       "url": "https://www.wta.org/go-hiking/trip-reports/trip_report.2009-07-18.8087540061",
+       "year": 2009,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 10,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jul 15 2009 family group, 'all day (10 hours including breaks)', snippet only; snowfield to the saddle."
+      }
+     ],
+     "notes": "Spread by season: dry/fast parties 6-9 h car to car (summit 3-5 h up, 2-4 h down), snow or off-route days 10-12 h. Descent runs 2-4 h, typically 3.5-4 h on tired legs, so 'descent 4 h' is well supported; first pass already has 10 h median c2c. Peakery aggregates 9 h 23 min across 10 logged climbs (user logs, not a published figure). Dec 2011 winter snippet: ridge 10:30, summit 3:30pm, not recorded. Mountaineers pages 403; all Mountaineers numbers are snippets."
+    }
+   }
+  },
+  {
+   "id": "co_pyramid_peak_northeast_ridge",
+   "route": "Northeast Ridge",
+   "peak": "Pyramid Peak",
+   "action": "fix",
+   "why": "No times were stored, so the Planner walked it in 7 hr car to car. Published figures put the day at 7-10 hr (and 7-9); nine timed reports run 5.7-13.75 (median 10). No consistent split between the approach and the ridge was found, so only the car-to-car total is stored (a whole-day row): 10 hr, the reports' median at the top of the published range.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": 10
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 4.7,
+     "down": 4,
+     "c2c": 9
+    },
+    "before": {
+     "sum": 3.8,
+     "c2c": 7,
+     "down": 3.2
+    },
+    "after": {
+     "sum": null,
+     "c2c": 10,
+     "down": null
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 4,
+     "sources": [
+      "https://pages.uoregon.edu/dbelitz/db_virtual/db_climbing/peaks/pyramid_pk.html",
+      "https://climber.org/reports/2003/1114.html",
+      "https://climber.org/reports/2000/656.html",
+      "https://www.14ers.com/php14ers/tripreport.php?trip=2528"
+     ],
+     "notes": "Single-day car-to-car from Maroon Lake TH, so approachH 0 and campToSummitH = car->summit, and the summit-day time includes the descent only in carToCarH. Belitz Aug 2007: 5h10 up, 4h10 down, 10 h, start 06:30. Edinger Jul 2003 (class 4 NE ridge): 08:45 start, summit 13:00 (his narrative says 12:30), car 16:45, 8.0 h. Climber.org Jul 2000: 05:20 start, summit 10:40, car 15:30 (~10 h). 14ers.com Jul 2006: 04:00 start, summit 08:15, car 11:00, 7 h total (fast). A search summary also cited an 8.5 h June 2012 day (~4 h up, 3.5 h down) but I could not attach a URL to it."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Maroon Lake trailhead (Maroon Bells, about 9,580 ft)",
+      "camp": null,
+      "base": "NE ridge saddle about 12,980 ft above the Amphitheater"
+     },
+     "published": [
+      {
+       "source": "Boulder Weekly, article on the standard northeast ridge",
+       "leg": "carToCar",
+       "hours": [
+        7,
+        10
+       ],
+       "days": null,
+       "ownWords": "Climb framed as a seven to ten hour day, about eight miles.",
+       "url": "https://archives.boulderweekly.com/?p=6571"
+      },
+      {
+       "source": "Hiking and Fishing / My Outdoor Basecamp route page ('book time', no book named)",
+       "leg": "carToCar",
+       "hours": [
+        7,
+        9
+       ],
+       "days": null,
+       "ownWords": "Duration listed seven to nine hours, 8.2 miles, 4,900 feet.",
+       "url": "https://myoutdoorbasecamp.com/?p=18577"
+      },
+      {
+       "source": "stavislost.com route blurb (low quality, outlier)",
+       "leg": "carToCar",
+       "hours": [
+        4,
+        6
+       ],
+       "days": null,
+       "ownWords": "Blog headline says four to six hours out and back.",
+       "url": "https://stavislost.com/hikes/trail/pyramid-peak/"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.14ers.com/php14ers/tripreport.php?trip=16111",
+       "year": 2015,
+       "approachH": 0,
+       "campToSummitH": 6.17,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 5.3,
+       "carToCarH": 12.1,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Hoot, Jul 3 2015, NE ridge from Maroon Lake. Start 4:24am, summit 10:34, left summit 11:12, car 4:30pm; stated '12 hours and 6 minutes'. campToSummitH = car to summit (single day, approach 0). Slow, crowded day (CMC group)."
+      },
+      {
+       "url": "https://14ers.com/php14ers/tripreport.php?trip=19499",
+       "year": 2019,
+       "approachH": 0,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 4.25,
+       "carToCarH": 11,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Wentzl, Jul 10 2019, NE ridge, snowy year. Start about 6:30am, 13,000 ft saddle close to 10:00, left summit about 12:45pm, car a little after 5:00pm; stated 'about 11 hour effort'. summitToCar is a clock difference. Summit time not stated."
+      },
+      {
+       "url": "https://www.14ers.com/php14ers/tripreport.php?trip=2213",
+       "year": 2005,
+       "approachH": 0,
+       "campToSummitH": 3.42,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 2.42,
+       "carToCarH": 5.67,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "doumall, Jul 23 2005, NE ridge. Stated 3h25 up, 2h25 down, 5h40 excluding 30 min on top (start 5:15, summit 8:40). Very fast, outlier; campToSummit = car to summit."
+      },
+      {
+       "url": "https://www.14ers.com/php14ers/tripreport.php?trip=12284",
+       "year": 2012,
+       "approachH": 0,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 10.75,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jul 1 2012, NE ridge. On trail 4:15 (am implied), topped out 'just before 10', back at car at 3 (pm implied). carToCar = difference of stated clock times; summit time too vague to record."
+      },
+      {
+       "url": "https://www.14ers.com/php14ers/tripreport.php?trip=15646",
+       "year": 2014,
+       "approachH": 0,
+       "campToSummitH": 3.17,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Jay521/Aug 8 2014, NE ridge. Left Maroon Lake 4:20am, summitted 'around 7:30' (so about 3.2 h car to summit, very fast). Return time not stated. Segments: TH to 1000 ft wall 1h45, Amphitheater end to ridge 20 min, 13,000 ft to summit 1 h."
+      },
+      {
+       "url": "https://rickcrandall.net/pyramid-peak-a-dream-climb-2/",
+       "year": 2012,
+       "approachH": 0,
+       "campToSummitH": 7,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": 6,
+       "carToCarH": 13.75,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Rick Crandall, Sep 15 2012, route via Amphitheater, saddle, ledges, green wall (NE ridge). Met 5am at Maroon Lake, summit noon ('7 hours from Maroon Lake' in caption), left 12:45, car 6:45pm, stated '13 hours and 45 minutes'. Slow group; campToSummit = car to summit; summitToCar is a clock difference."
+      }
+     ],
+     "notes": "campToSummitH means car to summit in this single-day frame (approach 0). First-pass 8.5 h 'June 2012 day' now has a URL: 14ers.com trip 12154 (SurfNTurf, Jun 25 2012, 5:45am start, 4 up/1 on top/3.5 down) but the author says the report 'except for the route beta was satire', so I did NOT record it as a report; do not weight it. 14ers trip 2214 (Jul 31 2005) is camp-based from Crater Lake: camp 3:45am, top 8:45, back at camp about 1:30 = 5.0 h camp to summit, car not reached. 14ers trip 5678 (Feb 2009, West Couloir, winter) is a different route. Roach's text and a clean guidebook hour figure were not reachable; published entries are news/hiking-site estimates."
+    }
+   }
+  },
+  {
+   "id": "wa_big_snagtooth_west_ridge",
+   "route": "West Ridge (Standard Route)",
+   "peak": "Big Snagtooth",
+   "action": "fix",
+   "why": "No times were stored, so the Planner walked it in 8.7 hr car to car. Seven timed reports run 6.25-13 hr (median 11.5; summer scree days 11.5-12.5, snow days faster). Only one report times the walk to the ridge, so only the car-to-car total is stored (a whole-day row): 11.5 hr.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": 11.5
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 6.1,
+     "down": 5.3,
+     "c2c": 12
+    },
+    "before": {
+     "sum": 4.7,
+     "c2c": 8.7,
+     "down": 4
+    },
+    "after": {
+     "sum": null,
+     "c2c": 11.5,
+     "down": null
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 5,
+     "sources": [
+      "https://www.mountaineers.org/activities/trip-reports/big-snagtooth-west-ridge",
+      "https://mountaineers.org/activities/trip-reports/big-snagtooth-west-ridge-1",
+      "https://www.mountaineers.org/activities/trip-reports/big-snagtooth-west-ridge-2",
+      "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-big-snagtooth-west-ridge",
+      "https://www.mountaineers.org/activities/trip-reports/basic-alpine-climb-big-snagtooth-west-ridge-1",
+      "https://stevensong.com/big-snagtooth/",
+      "https://www.countryhighpoints.com/big-snagtooth-and-the-craggies-in-a-day/"
+     ],
+     "notes": "Single-day car-based, so approachH 0 and campToSummit = car->summit. Reports: Jul 2015 4:55am->summit 11:00->cars 4:25pm (6.1h up, 5.4h down, 11.5h total); Aug 2014 6:40am->summit 1:45pm->cars ~7pm (7.1h up, ~12h, included a Willow Tooth side trip); May 2016 8am->cars 8:30pm 12.5h (route-finding/hidden gully, 2 rappels); Jun 2018 6:30am->summit 9:30 (3h)->1h on top->cars 12:45pm = 6.25h total, scree-surf/glissade descent (fast outlier, snow-filled basin); Apr 2019 ski day 13h incl 1h lunch. Jun 2019 report gives start (~5am) only. Summer bushwhack/scree is slower than spring snow."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Highway 20 shoulder pullout (4,320 ft) about 3.5 mi east of the Washington Pass hairpin (Silver Star / Early Winters Creek)",
+      "camp": null,
+      "base": "West ridge crest / upper basin (about 7,000-8,000 ft) below the summit block"
+     },
+     "published": [],
+     "reports": [
+      {
+       "url": "https://www.nwhikers.net/forums/viewtopic.php?t=20326",
+       "year": 2007,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 10,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "NWHikers May 11 2007, Big Snagtooth + Willow Tooth (5 min). 'Rough Stats: 8 miles, 5000', 10 Hours' (stated; not explicitly labelled car to car). Spring snow in the gully, glissades down. No clock times."
+      },
+      {
+       "url": "https://www.peakbagger.com/climber/ascent.aspx?aid=416586",
+       "year": 2014,
+       "approachH": 4,
+       "campToSummitH": 2,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 10,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Peakbagger ascent May 24 2014, group with fixed lines. Read from search snippet (page 403s): on trail about 8:30am, on the west ridge 12:30, lead members on top about 2:30pm, back at vehicles about 6:30pm. approachH = car to west ridge crest, campToSummitH = ridge to FIRST summiters (rest of group later, so summit-to-car not recorded), carToCar = clock difference. Spring snow."
+      }
+     ],
+     "notes": "Spring snow reports run faster up the slope than summer scree (first pass notes the same). Not recorded: countryhighpoints Feb 20 2021 (snowmobile 6am, skis 7am, back to cars 9:30pm, 22 mi snowmobile + 9 mi ski, no summit time); Lemke May 2013 (no times, 30 m rope fine); WTA Jun 29 2020 (turned back, 3000 ft bushwhack, 1000 ft choss, 50 ft climbing); Steven Song Jun 2018 and Mountaineers Jul 2015 / Aug 2014 / May 2016 / Apr 2019 are first-pass. Mountaineers route page has distance only (about 7.5 mi, 4,500 ft listed on a 2019 outing) and no hours, so there is no published hour figure. SummitPost pages and WTA reports 403."
+    }
+   }
+  },
+  {
+   "id": "wa_colchuck_peak_north_buttress_couloir",
+   "route": "North Buttress Couloir",
+   "peak": "Colchuck Peak",
+   "action": "leave",
+   "why": "Approach (Colchuck Lake, shared with Dragontail: 2 hr) and the climb (published 3-4 hr from the lake) are supported, but no summit-to-car figure clears the bar (one winter report with a road closure), so a full set of legs cannot be written. The Planner keeps walking it.",
+   "timing": null,
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": 6.8,
+     "c2c": 13
+    },
+    "before": {
+     "sum": 5.5,
+     "c2c": 10,
+     "down": 4.5
+    },
+    "after": {
+     "sum": 5.5,
+     "c2c": 10,
+     "down": 4.5
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 7,
+     "sources": [
+      "https://summitpost.org/colchuck-peak/151308",
+      "https://www.mountaineers.org/activities/trip-reports/colchuck-peak-north-buttress-couloir-1",
+      "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-colchuck-peak-north-buttress-couloir-1",
+      "https://wenatcheeoutdoors.org/2018/11/12/winter-climb-north-buttress-couloir/",
+      "https://wenatcheeoutdoors.org/2016/07/16/colchuck-north-buttress-couloir/",
+      "https://sverdina.com/colchuck1.asp",
+      "https://www.turns-all-year.com/trip-reports/january-23-25-2004-colchuck-peak-n-buttresscouloir"
+     ],
+     "notes": "Mostly 2-day (lake camp). campToSummit = lake camp to summit: winter 2015 leave 6:30, summit just after noon (~5.75h); Klenke account noon couloir start to 7:40 PM summit (~7.7h, slow); a 2020 report says earlier reports range 4-8h lake to summit. Couloir alone: 1.5h to notch (2016), ~2h (2004), just under 2.5h (May 2019). Single-day: SummitPost 2012 log '13 hours car to car' (excludes Bellingham drive; inferred). 2014 Mountaineers: left lake camp 5 AM, back at car 8 PM (15h camp-to-car, descent via Colchuck Glacier). summitToCar 6.75h = winter 2015 summit ~12:15 to car ~7 PM incl. breaking camp (road closure adds walking). Summit-day times include descent only in 2014/2015 reports. Approach car-to-lake not cleanly reported (4h on skis in 2004 incl. winter road). Mountaineers/SummitPost pages 403, so some data from search snippets only."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Stuart Lake / Colchuck Lake trailhead, Icicle Creek Rd (about 3,400 ft); winter road closure can add miles",
+      "camp": "Colchuck Lake (camp at the lake, day-trip also done)",
+      "base": "Colchuck Glacier toe, base of the North Buttress Couloir, under a quarter mile from the lake"
+     },
+     "published": [
+      {
+       "source": "SummitPost North Buttress Couloir route page (read in search snippet only; page 403s)",
+       "leg": "campToSummit",
+       "hours": [
+        3,
+        4
+       ],
+       "days": null,
+       "ownWords": "Easy climb from a Colchuck Lake camp, or a long day from trailhead",
+       "url": "https://www.summitpost.org/north-buttress-couloir/162206"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.jeffreyjhebert.com/adventures/north-buttress-couloir-on-colchuck-peak",
+       "year": 2015,
+       "approachH": 2.5,
+       "campToSummitH": 3,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": null,
+       "sameAsStored": false,
+       "note": "Apr 18 2015, Jeff Hebert. Fetched. Drove to TH ~11am, ~2.5 h to far side of Colchuck Lake. Left lake 2:15pm, couloir entrance 3:15, couloir top 4:15, summit about 1 h later via north face: campToSummit 3.0 = sum of three stated 1 h legs (summit clock time itself not stated). Ski/foot not stated, spring snow. No descent times."
+      },
+      {
+       "url": "https://turns-all-year.com/trip-reports/january-23-25-2004-colchuck-peak-n-buttresscouloir",
+       "year": 2004,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "SKI trip, winter (first-pass source, re-fetched for splits only). Icicle Rd 4 mi skin 1:45; TH to Colchuck Lake about 4 h; couloir about 2 h to top of N Buttress, did NOT summit (avy), skied it; lake to car under 3 h on skis. Times nulled per ski rule."
+      },
+      {
+       "url": "https://cascadeclimbers.com/forum/topic/64939-tr-colchuck-peak-north-buttress-couloir-272009/",
+       "year": 2009,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 19,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Feb 7 2009 WINTER one-day push; thread plan was 16-20 h, a reply said about 19 h round trip; summit around 3 AM per snippet. Read from search snippet only (page renders blank). Winter outlier, not typical."
+      },
+      {
+       "url": "https://cascadeclimbers.com/forum/topic/32815-tr-colchuck-peak-north-buttress-couloir-492005/",
+       "year": 2005,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": null,
+       "sameAsStored": false,
+       "note": "Apr 9 2005, snippet only. One party: 4.5 h 'lake-to-lake'. Another climber: almost 5 h slogging to the summit (start point not stated), then glissade down Colchuck Glacier. Ends unclear so times nulled."
+      },
+      {
+       "url": "https://cascadeclimbers.com/forum/topic/99477-tr-colchuck-peak-north-buttress-couloir-6192016/",
+       "year": 2016,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": null,
+       "sameAsStored": false,
+       "note": "Jun 19 2016, snippet only: fast glissade down the glacier got party 'back to the lake in 1.5 hours' (start of that 1.5 h not stated, probably top of route). Not used as a number."
+      },
+      {
+       "url": "https://www.summitpost.org/colchuck-peak/climbers-log/151308",
+       "year": 2004,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": null,
+       "sameAsStored": false,
+       "note": "Jun 2004 SummitPost log (Tom Fralich), snippet: climbed the couloir in 3.5 h from Colchuck Lake; unclear whether that ends at couloir top or summit. Also May 2006 log: left bivy 4am, summit 11am (7 h) but the bivy was at the Stuart/Colchuck junction, not the lake, so ends do not match."
+      }
+     ],
+     "notes": "Thin: no published car-to-car or descent figure found anywhere reachable (Mountaineers route page is metadata only; Beckey text not online). Mountaineers/SummitPost/CascadeClimbers pages 403 or render blank so most numbers are snippets. Descent via Colchuck Glacier is a glissade when snow is good: 1.5 h lake-ward (2016 snippet), whole lake-to-car under 3 h on skis (2004). Winter road closure at Bridge Creek adds 8 mi round trip (2019 Mountaineers, snippet). WTA Jun 2024 Colchuck Peak report: 04:45 start, back at car 14:30 (9.75 h) but route not identified as NBC (likely glacier route), not recorded. Mountaineers 2021 snippet: 9am hike-in, lake about 3pm (6 h, conditions unknown), not recorded."
+    }
+   }
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "route": "Dark Glacier Route",
+   "peak": "Dark Peak",
+   "action": "leave",
+   "why": "Published camp-to-summit 7-9 hr and back 5-7 hr, but the trailhead-to-Swamp Creek approach and the walk out each have a single on-foot report (2006), so a full set of legs cannot be written. Note: a three-day route that reads as single-day because it has no itinerary.",
+   "timing": null,
+   "planner": {
+    "online": {
+     "sum": 14.5,
+     "down": null,
+     "c2c": null
+    },
+    "before": {
+     "sum": 8.5,
+     "c2c": 16,
+     "down": 7.5
+    },
+    "after": {
+     "sum": 8.5,
+     "c2c": 16,
+     "down": 7.5
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 4,
+     "sources": [
+      "https://turns-all-year.com/trip-reports/may-4-6-2018-dark-peak-second-descent",
+      "https://www.countryhighpoints.com/dark-peak-bonanza-peak-and-martin-peak/",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report.2015-11-12.9219426920",
+      "https://www.mountaineers.org/activities/trip-reports/dark-peak-dark-glacier",
+      "https://www.mountaineers.org/activities/routes-places/dark-peak-dark-glacier"
+     ],
+     "notes": "ALL reports start at High Bridge / Agnes Creek (PCT) after the Stehekin ferry and bus - none from Cascade Pass; Hemlock Camp is ~12.5 mi up the PCT (and reportedly gone from deadfall), Swamp Creek camp ~8 mi. Turns-All-Year May 2018 SKI trip (3 days): left High Bridge ~2 PM, camp near Swamp Creek 7:30 PM (5.5 h, snow-covered trail); day 2 woke 4:30, headwall ~9 AM, summit 3 PM, back at camp 8 PM (5 h incl. ski descent), 'a 14-hour day' (campToSummit 9 h = 14 h minus the 5 h descent - DERIVED); day 3 skinned ~3 mi, High Bridge shortly after noon. Country High Points Jul 2018 (2 people, 2 days, NW ridge from Hemlock Camp, bivy on snow ~10 PM, top of Dark Glacier by 8 AM; 'a few hours' to Swamp Creek; went on to Bonanza). WTA Jun 2015 (solo): brushy Swamp Creek approach reached lower basin an hour after dark, no useful numbers. Mountaineers (pages 403, search summaries only): 2025 party sum"
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "High Bridge / Agnes Creek PCT trailhead near Stehekin (about 1,600-1,700 ft), reached by the Stehekin bus",
+      "camp": "Swamp Creek Camp (2,800 ft) on the Agnes Creek trail; Five Mile Camp (2,200 ft) is the alternate",
+      "base": "Lower basin (about 4,300 ft), then upper basin (5,100 ft) and base of the Dark Glacier (meadow about 5,000 ft)"
+     },
+     "published": [
+      {
+       "source": "SummitPost Swamp Creek Route page (read via search snippet; page 403s)",
+       "leg": "campToSummit",
+       "hours": [
+        7,
+        9
+       ],
+       "days": null,
+       "ownWords": "Seven to nine hours from Swamp Creek Camp up to the summit",
+       "url": "https://www.summitpost.org/swamp-creek-route/165326"
+      },
+      {
+       "source": "SummitPost Swamp Creek Route page (same page, snippet)",
+       "leg": "summitToCamp",
+       "hours": [
+        5,
+        7
+       ],
+       "days": null,
+       "ownWords": "Five to seven hours to get back down to Swamp Creek camp",
+       "url": "https://www.summitpost.org/swamp-creek-route/165326"
+      },
+      {
+       "source": "SummitPost Swamp Creek Route page (same page; snippet gives a second, longer split)",
+       "leg": "campToSummit",
+       "hours": [
+        8,
+        10
+       ],
+       "days": null,
+       "ownWords": "About 5 h to reach glacier base, then 3-5 h up the glacier",
+       "url": "https://www.summitpost.org/swamp-creek-route/165326"
+      },
+      {
+       "source": "Mountaineers Dark Peak/Dark Glacier route page (snippet; page 403s)",
+       "leg": "approach",
+       "hours": [
+        4,
+        5
+       ],
+       "days": null,
+       "ownWords": "Camp to the lower basin only (part of the summit leg), 4-5 hours",
+       "url": "https://www.mountaineers.org/activities/routes-places/dark-peak-dark-glacier"
+      },
+      {
+       "source": "Mountaineers Dark Peak/Dark Glacier route page (snippet)",
+       "leg": "days",
+       "hours": null,
+       "days": 3,
+       "ownWords": "Route says the climb requires three days",
+       "url": "https://www.mountaineers.org/activities/routes-places/dark-peak-dark-glacier"
+      }
+     ],
+     "reports": [
+      {
+       "url": "http://mtnvista.net/Mountains/Mountains%202006/06%2006-24%20Dark%20Peak.htm",
+       "year": 2006,
+       "approachH": 4.5,
+       "campToSummitH": 9,
+       "summitToCampH": 6.5,
+       "campToCarH": 3.75,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "Jun 24-26 2006, fetched. High Bridge 12:30pm to Swamp Creek Camp 5:00pm (stated 4:30 h, 8.6 mi). Left camp 5:30am, summit 2:30pm (9 h by clock difference), back at camp 9pm (6.5 h by clock difference, includes time on top). Author's own total camp round trip 15:30 h. Camp to High Bridge listed 3:45 h (8.6 mi). Page has an 8:45pm meadow time that is likely a typo for am."
+      },
+      {
+       "url": "https://www.lemkeclimbs.com/glacier-peak-wilderness-mountain-massacre.html",
+       "year": 2017,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": null,
+       "sameAsStored": false,
+       "note": "Jul 13 2017, fetched. Multi-peak traverse (Bonanza then Dark from Holden Pass), NOT usable. Dark summit about 3pm, ran down glacier to 5,000 ft meadow, no trail down Swamp Creek, camp at about 3,800 ft at dark ('16 hour day')."
+      },
+      {
+       "url": "https://countryhighpoints.com/dark-peak-attempt",
+       "year": 2017,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": null,
+       "sameAsStored": false,
+       "note": "Aug 29-31 2017, fetched. Attempt, no summit. Reached Swamp Creek Camp about 12:30pm after 8-mile PCT hike from the morning park bus (bus time not stated). Lost trail in alder for 'a few hours', camped meadow 4,300 ft at sunset."
+      }
+     ],
+     "notes": "Only one clean timed summit-day report (2006). SummitPost's published numbers for camp to summit (7-9 h, or 8-10 h) and back (5-7 h) bracket the 2006 times (9 h up, 6.5 h down); one SummitPost-cited party did camp-to-camp in 16 h. Approach car to Swamp Creek Camp: 4.5 h with a pack in 2006. Starting from Five Mile Camp adds 2 h round trip (SummitPost snippet). Mountaineers 2025 trip used a newer west approach (Hemlock Camp reportedly gone to deadfall), no usable times. Dark Peak is 2-3 days in all sources."
+    }
+   }
+  },
+  {
+   "id": "id_thompson_peak_south_couloir",
+   "route": "South Couloir",
+   "peak": "Thompson Peak",
+   "action": "leave",
+   "why": "Two car-to-summit times that do not agree (4.5 and 7 hr) and no clean summit-and-return day; below the evidence bar.",
+   "timing": null,
+   "planner": {
+    "online": {
+     "sum": 7,
+     "down": null,
+     "c2c": 12
+    },
+    "before": {
+     "sum": 4.5,
+     "c2c": 8.5,
+     "down": 3.9
+    },
+    "after": {
+     "sum": 4.5,
+     "c2c": 8.5,
+     "down": 3.9
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 3,
+     "sources": [
+      "https://fastestknowntime.com/route/thompson-peak-id",
+      "https://stavislost.com/hikes/trail/thompson-peak-and-mickeys-spire-loop/",
+      "https://twooutliers.com/thompson-peak-hike-idaho/",
+      "https://www.backpacker.com/stories/northern-rockies-thompson-peak-id/?scope=anon",
+      "https://summitpost.org/thompson-peak/climbers-log/153013",
+      "https://www.exploringtherockies.com/2017/12/02/sawtooth-intro-williams-and-thompson-peaks/",
+      "https://www.boundfornowhere.com/blog/asa-ep10"
+     ],
+     "notes": "Thin data; SummitPost logs returned 403 so the 2014/2018/2020 figures are from search-result text only. Day-trip mode from Redfish Lake backpackers' lot: ~6-6.5 mi one way, ~4,200 ft gain, 12.3-13 mi round trip, last ~1.5-2.5 mi is a steep boulder field that took 'as long as the first 5 miles' (twooutliers). Reports: 2018 party left 7 am, summit ~2 pm (7 h, with a waterfall stop); Aug 2014 snowy loop 13 h car to car with 7 h return in rotten snow (outlier, snowshoes needed); a 2020 log claims ~1:35 to summit (fast outlier); FKT attempt 2023 ascent 1:25 / round trip 2:24 (elite, ignore). carToCarH median/range are mostly GUIDE estimates (one guide '10-14 h'; stavislost 8-11 h for a 13.3 mi Thompson+Mickey's Spire loop) plus the 13 h snowy report - no clean typical-party round-trip report found. summitToCar: only the 7 h snowy return (outlier), so null. Stavislost 2017 loop and exploringth"
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Redfish Lake backpackers' parking lot (Fishhook Creek trailhead), Sawtooth NRA",
+      "camp": "Lake 9,000 / Goat Lake below the Thompson-Williams saddle (for overnight parties)",
+      "base": "Lake 9,000 at the foot of the headwall; saddle then the south couloir"
+     },
+     "published": [
+      {
+       "source": "Mazamas South Couloir activity listing, Sept 2020 (changed to a day climb by the leader)",
+       "leg": "days",
+       "hours": null,
+       "days": 2,
+       "ownWords": "Listing says car to car in two or more days",
+       "url": "https://mazamas.org/activity/instance/7074/detail/"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://thebigoutside.com/roof-of-idahos-sawtooths-hiking-thompson-peak/",
+       "year": 2020,
+       "approachH": null,
+       "campToSummitH": 4.5,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Michael Lanza, fetched. Late July, early-morning start at the Redfish trailhead, 'four-and-a-half hours after starting' on the summit; 6.5 mi, 4,200 ft. This is car to summit in one day (campToSummit used as car to summit, no camp). No descent time. Year uncertain (page shows 2020 and 2026 dates)."
+      },
+      {
+       "url": "http://thegranolachronicles.blogspot.com/2012/08/thompson-peak.html",
+       "year": 2012,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": 9,
+       "days": 1,
+       "sameAsStored": false,
+       "note": "Aug 13 2012 solo, fetched. Start just before 8:00am, turnaround 1pm, back at trailhead 'a few minutes past 5' (about 9 h by clock difference; the author's stats line says 8 h). Summit time not stated, so it is unclear whether the summit was reached. South couloir via Lake 9,000. 14 mi."
+      },
+      {
+       "url": "https://www.jamesjusthiking.com/2002-trip-reports/thompson-peak",
+       "year": 2002,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": 2,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Jul 6 2002, fetched, backpack. Started hiking 9:00am day 1, camped at Lake 9,000; summit 8:45 on day 2 (camp start time not stated), 10 min on top, broke camp 10:30, back at trailhead 12:30 (2 h camp to car, clock difference, with packs). Route went north ridge then around to the south gully."
+      },
+      {
+       "url": "https://www.jessb.org/thompson-peak/",
+       "year": 2020,
+       "approachH": 3.5,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": 2.5,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "Aug 2020 three-day backpack, fetched. Day 1 trailhead to the lake below Thompson: 5 mi, 2,440 ft, stated 3:30 hr (included a missed-trail bushwhack, started 10-something am). Day 2 from camp: 4.3 mi, 1,970 ft, 5:30 hr round trip camp to camp INCLUDING a Mt Carter side trip (so no summit-only leg). Day 3 camp to car: 4.8 mi, stated 2:30 hr with packs."
+      },
+      {
+       "url": "https://www.idahosummits.com/thompson/thompson.htm",
+       "year": 2003,
+       "approachH": 3,
+       "campToSummitH": 2,
+       "summitToCampH": null,
+       "campToCarH": 2,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "Jul 19 2003, fetched. The page's own 'Approx.' segment estimates for a backpack trip: pack in 3 h (5 mi), lake to Thompson 2 h (2 mi), Thompson to Carter 30 min, Carter to camp 1.5 h, pack out 2 h (5 mi). Approximate, written by the party, not a guide."
+      }
+     ],
+     "notes": "Thin. No clean day-trip report with summit AND return times found; SummitPost logs 403. Car to summit about 4.5 h (Lanza) plus a descent of about 3.5-4.5 h would give 8-9 h, consistent with Granola (8-9 h c2c) but that is my inference, not stated. Overnight legs: car to Lake 9,000 about 3-3.5 h, lake to car about 2-2.5 h, lake to summit about 2 h (all with packs). Not recorded: FKT 2023 ascent 1:25, round trip 2:24 (elite); Idaho Alpine Zone Thompson plus Mickey's Spire plus Anna's Pinnacle 14 h car to car with summit alone about 5 h (multi-peak, cert error on fetch); Anne's Travels turned back 0.3 mi short in late Sept, 14 mi round trip, no times; Dr. Dirtbag 2023 summit 'mid-afternoon', late start, no times; AllTrails reviewer 8 h (unverified). Lopez's Idaho climbing guide update page gives route (Class 3 scramble, pp. 161-162) but no hours. stored is null."
+    }
+   }
+  },
+  {
+   "id": "wa_sherpa_glacier",
+   "route": "Sherpa Glacier",
+   "peak": "Mount Stuart",
+   "action": "leave",
+   "why": "No timed Sherpa ascent or descent beyond the one July 2011 descent (the same trip that timed Ice Cliff); below the evidence bar.",
+   "timing": null,
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": 8.5,
+     "c2c": null
+    },
+    "before": {
+     "sum": 6.3,
+     "c2c": 11.7,
+     "down": 5.4
+    },
+    "after": {
+     "sum": 6.3,
+     "c2c": 11.7,
+     "down": 5.4
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 3,
+     "sources": [
+      "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-mount-stuart-sherpa-glacier",
+      "https://vimeo.com/27183342",
+      "https://www.summitpost.org/mount-stuart/climbers-log/150353/d-82006",
+      "https://sverdina.com/stuart2.asp",
+      "https://vftt.org/goto/post?id=346057",
+      "https://wenatcheeoutdoors.org/2023/09/20/trouble-on-mount-stuart/"
+     ],
+     "notes": "approachH = Stuart Lake TH to the 5,400 ft basin camp: ~5.5 h (May 2023 Mountaineers: ~3 h to leave the trail + 2.5 h to camp, snippet-sourced, road closed at Bridge Creek adding 4 mi / 1h20 from cars; July 2011: 2.5 h trail + 3 h bushwhack) and 2.5 h (June 2004, fast). summitToCarH 8.5 is the July 2011 descent via the Sherpa couloir (summit to camp 4 h + camp to car 4.5 h, sum of legs; that party climbed Ice Cliff). campToSummit left null: May 2023 party took 4 h camp to the top of the couloir/ridge but turned back ~200 ft below the summit in wind; May 2011 party turned back below summit ridge, 7 h camp round trip. No clean Sherpa-ascent summit report. North Ridge parties (4 AM start, summit 6 PM, Sherpa descent with a bivy) not recorded."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Stuart Lake trailhead (3,600 ft, end of Eightmile Rd); in winter and early season the Bridge Creek Campground lot, about 4 road miles lower",
+      "camp": "Basin camp about 5,400 ft under the Sherpa and Ice Cliff glaciers (Mountaineer Creek)",
+      "base": "Foot of the Sherpa Glacier / couloir up to the east ridge"
+     },
+     "published": [
+      {
+       "source": "SummitPost Sherpa Glacier route page (read from search snippet; page 403s)",
+       "leg": "days",
+       "hours": null,
+       "days": 1,
+       "ownWords": "Time required listed as most of a day; grade II steep snow.",
+       "url": "https://www.summitpost.org/route/164046/sherpa-glacier.html"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.mountaineers.org/activities/trip-reports/intermediate-alpine-climb-mount-stuart-sherpa-glacier",
+       "year": 2022,
+       "approachH": 7.67,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "Mountaineers Feb 2022, successful 3-day winter climb. Day 1 stated 7h40 from the Bridge Creek lot (road closed, snowshoes, hard snow) to the basin camp below Sherpa/Ice Cliff glaciers. Read from search snippet; summit-day and descent times not in snippet. Winter road closure adds miles, so this runs longer than the Stuart Lake TH approach."
+      }
+     ],
+     "notes": "No Sherpa-descent or Sherpa-ascent summit-day timing found; sparse route. Not recorded (wrong trailhead or route): Mountain Project forum 111978991 (Jul 2016, North Ridge/Cascadian: 4-6 h summit to south TH, ~4 h Cascadian descent to car, 12-13 h car to car from south) ; SummitPost Aug 2017 log 9:15 am to 7:15 pm (route not named, Esmeralda lot, probably Cascadian); Jul 2005 North Ridge car-to-car attempt 32 h; Abegg 2010 Stuart Glacier Couloir 33 h with bivy (calls Sherpa descent quick and easy, no time). Ski ascents (Wenatchee Outdoors, skimo.co, turns-all-year Mar 2022: left Icicle Rd closure 6 AM, left camp 7:30 AM for Sherpa Peak NE couloir) carry no usable legs. 1969 SummitPost log: Sherpa solo reached top of glacier late, back at cars 10:30 PM, no start time. Jun 2016 SummitPost log: late-afternoon Sherpa downclimb too soft, bivied at the saddle. WTA/Mountaineers route page and Abegg 8737/8909 returned 403."
+    }
+   }
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "route": "Southeast Ridge (Crater Lake Approach)",
+   "peak": "Raven Ridge",
+   "action": "leave",
+   "why": "Two car-to-car times that do not agree (7.5 and 11 hr, the long one off route in deep snow) and no published hours; below the evidence bar.",
+   "timing": null,
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": null,
+     "c2c": 9.3
+    },
+    "before": {
+     "sum": 3.5,
+     "c2c": 6.5,
+     "down": 3
+    },
+    "after": {
+     "sum": 3.5,
+     "c2c": 6.5,
+     "down": 3
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 2,
+     "sources": [
+      "https://adminonly.wta.org/go-hiking/trip-reports/tripreport-2004100304",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2021-05-03-8845724852",
+      "https://www.countryhighpoints.com/raven-ridge-winter-ascent/",
+      "https://adminonly.wta.org/go-hiking/trip-reports/trip_report-2022-06-12-3058093680"
+     ],
+     "notes": "Both car-to-car times are from the Crater Creek trailhead via Crater Lakes: 2004 WTA 7.5 h (took the open south slope, not strictly the SE ridge); May 2021 WTA 11 h incl 45 min break (5:30am-4:49pm, heavy early-season snow, snowshoes/crampons, off-route, ran out of water; leg splits not given). Not recorded: winter SE-ridge ski ascent (countryhighpoints, overnight, plowed-road start) and a June 2022 overnight (no clock times). Hike is 8.6 mi RT to Crater Lakes plus the climb."
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Crater Creek trailhead (about 4,700 ft, FS 4340-300)",
+      "camp": "Crater Lakes (lower lake camp about 6,840 ft) if overnighting; a day party has none",
+      "base": "SE ridge crest about 8,000 ft above the Crater Lakes basin"
+     },
+     "published": [
+      {
+       "source": "WTA Crater Lakes hike page / Mountaineers Crater Lakes page (distance only)",
+       "leg": "approach",
+       "hours": null,
+       "days": null,
+       "ownWords": "Trailhead to Crater Lakes 8.6 miles round trip, about 2,220-2,350 ft gain.",
+       "url": "https://www.wta.org/go-hiking/hikes/crater-lakes"
+      }
+     ],
+     "reports": [],
+     "notes": "No timed report found for the Crater Creek / Crater Lakes approach beyond the two first-pass car-to-car figures. Hours need to be assembled from distance: Crater Lakes about 4 mi and about 2,100 ft up from the trailhead (WTA, Mountaineers). Not recorded (other trailheads, null times): Libby Lake TH (north side) Oct 2014 solo Hoodoo + Raven Ridge 9am to 3:30pm = 6.5 h both peaks (lemkeclimbs.com/hoodoo-peak-and-raven-ridge; Raven gully 900 ft loose, about 30 min); Libby Creek TH Nov 6 2016 snowshoe, summit about 2pm, car about 6:30pm (countryhighpoints.com/raven-ridge); Summer Blossom TH five-peak day Sep 15 2018, 5:30am to 11:55pm (countryhighpoints, hoodoo-raven-ridge-martin-bigelow-switchback); winter ski via Crater Lake 2019, 3am start, plowed-road start; Mazamas Sawtooth Lakes Loop (Crater Creek TH) has no clock times. Mountaineers Hoodoo & Raven Ridge page lists 14.0 mi, 5,500 ft (Libby). WTA adminonly returned 502 and www.wta.org 403 for every trip report, so the 2023/2018/2025 Crater Lakes reports could not be read."
+    }
+   }
+  },
+  {
+   "id": "wa_dome_peak_dome_glacier",
+   "route": "Dome Glacier",
+   "peak": "Dome Peak",
+   "action": "leave",
+   "why": "FLAGGED, dangerous direction. The stored 7 hr 'summit day' matches the published ONE-WAY camp-to-summit figure (6-8 hr), but approach 8.5 and hike out 7.5 make the row read as the camp shape, so the Planner and the alpine start treat 7 hr as the whole round trip from camp. One report (2003) took 14 hr camp to camp. No summit-to-camp figure clears the bar, so it is not rewritten: it needs that one leg.",
+   "timing": null,
+   "planner": {
+    "online": {
+     "sum": 16.2,
+     "down": null,
+     "c2c": null
+    },
+    "before": {
+     "sum": 12.6,
+     "c2c": 23,
+     "down": 10.4
+    },
+    "after": {
+     "sum": 12.6,
+     "c2c": 23,
+     "down": 10.4
+    }
+   },
+   "evidence": {
+    "firstPass": {
+     "nReports": 8,
+     "sources": [
+      "https://www.mountaineers.org/activities/trip-reports/dome-peak-dome-glacier",
+      "https://www.mountaineers.org/activities/trip-reports/glacier-climb-dome-peak-dome-glacier",
+      "https://www.mountaineers.org/activities/trip-reports/glacier-climb-dome-peak-dome-glacier-1",
+      "https://www.mountaineers.org/activities/trip-reports/basic-glacier-climb-dome-peak-dome-glacier",
+      "https://mountaineers.org/activities/trip-reports/intermediate-alpine-climb-dome-peak-dome-glacier",
+      "https://www.wta.org/go-hiking/trip-reports/tripreport-2006070138",
+      "https://www.summitpost.org/dome-peak/climbers-log/150357",
+      "https://countryhighpoints.com/dome-and-sinister-peaks",
+      "https://stephabegg.com/?p=8961"
+     ],
+     "notes": "Approach = Downey Creek TH (1,450 ft) to camp at/just above Cub Lake (~4,700+ ft gain): 10.1 h (holiday weekend, heavy snow, 2:54 to Bachelor/Downey junction), ~9 h (2019), 9 h (2015, +1 h to Itswoot Ridge camp), 10 h (2017, 5 am start, 4,700 ft), ~7 h (May 2018, left TH 2:30 pm, camp ~9:30 pm - fast, strong party). Camp to summit: 7:13 (same snowy holiday-weekend log); 2003 climber logged a 14 h summit day from Cub Lake (round trip, not to summit); May 2018 party left camp 6:30 am, Dome-Chickamin Col 10:30 (they also did Sinister, 1:30 pm; Dome summit time unrecorded). Exit: May 2018 party left camp 5:45 am, car 11:15 am = 5.5 h camp-to-car; no summit-to-camp time found. Mountaineers route page profile (a club estimate, not a report) says 9-11 h to camp, 6-8 h camp to summit. Aug 2017 party: TH 7:30 am, glacier 11:30, Dome Col 12:30, summit ridge 1:30 pm (appears to have started higher "
+    },
+    "residualPass": {
+     "places": {
+      "trailhead": "Downey Creek trailhead (1,450 ft, Suiattle River Rd)",
+      "camp": "Cub Lake (about 5,000 ft) or Itswoot Ridge (6,200-6,400 ft, about 1 h higher; saves 2 h of summit day by one party's account)",
+      "base": "Dome Glacier below Dome Col (8,560 ft)"
+     },
+     "published": [
+      {
+       "source": "Mountaineers Dome Peak/Dome Glacier route page (club estimate, read from snippet)",
+       "leg": "approach",
+       "hours": [
+        9,
+        11
+       ],
+       "days": null,
+       "ownWords": "Trailhead to camp estimated nine to eleven hours.",
+       "url": "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier"
+      },
+      {
+       "source": "Mountaineers Dome Peak/Dome Glacier route page (club estimate, read from snippet)",
+       "leg": "campToSummit",
+       "hours": [
+        6,
+        8
+       ],
+       "days": null,
+       "ownWords": "Camp to summit estimated six to eight hours.",
+       "url": "https://www.mountaineers.org/activities/routes-places/dome-peak-dome-glacier"
+      }
+     ],
+     "reports": [
+      {
+       "url": "https://www.nwhikers.net/forums/viewtopic.php?p=1011298",
+       "year": 2015,
+       "approachH": 11,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": 7.17,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "NWHikers Jun 30-Jul 2 2015. Start shortly before 9:30am, 6 mi to Bachelor Creek in 2 h, 'arrived at camp at 8pm, 11 hours after leaving the car' (stated; hot day, Itswoot Ridge camp per snippet). Summit day left camp 9am (summit/return not timed). Hike out left camp 6:20, back at car 1:30 (clock difference 7h10, 93 F)."
+      },
+      {
+       "url": "https://chasingdonutscom.wordpress.com/2020/09/12/dome-and-sinister-alt-route/",
+       "year": 2020,
+       "approachH": 8.05,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "Chasing Donuts, Sep 2020 (post date). On trail 10:27am, reached Itswoot Ridge about 6:30pm = 8.05 h (clock difference). Left for Dome by 7:30 next day; Dome summit time not stated."
+      },
+      {
+       "url": "https://turns-all-year.com/trip-reports/dome-south-couloir-sinister-north-face",
+       "year": 2025,
+       "approachH": 8.1,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": null,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 3,
+       "sameAsStored": false,
+       "note": "Apr 25 2025 ski trip. Stated 'just over 8 hours' trailhead to Itswoot Ridge camp (2.5 h to Bachelor Creek turnoff); standard climbing route had them on the summit ridge in about 2.5 h from camp (summit ridge, not summit; spring snow). No descent or hike-out times."
+      },
+      {
+       "url": "https://www.nwhikers.net/forums/viewtopic.php?p=1126149",
+       "year": 2018,
+       "approachH": null,
+       "campToSummitH": null,
+       "summitToCampH": null,
+       "campToCarH": 8.83,
+       "summitToCarH": null,
+       "carToCarH": null,
+       "days": 2,
+       "sameAsStored": false,
+       "note": "NWHikers May 26-27 2018, Dome + Sinister. Camp was a bivy at Dome Col (higher than Cub Lake/Itswoot, so a longer hike out). Left col descending the Dome Glacier at 11:00, Downey Creek at 5:30, car 7:50pm = 8.83 h (clock difference, am/pm implied). Start 'just before 6' reached the col about 6:30 (am/pm not stated, so approach not recorded)."
+      }
+     ],
+     "notes": "Mountaineers blog 'Rescue on Dome Peak' (2015): from a Cub Lake camp the party projected 15 h camp-to-camp for the summit day, starting 4:30am; they said Itswoot camp would shorten the summit day by more than 2 h (projection from a rescue story, not a timed climb; page 403s, snippet only). Mountaineers Jul 2019 report: Itswoot camp saves little (writer's view). sverdina Sep 2002 (Itswoot camp, hike in reached Six Mile 11pm, hike out '11-ish mile trek', no durations). NWHikers Sep 2 2012: Itswoot camp at 6400 ft, up 6am moving 6:30, one group at car 8:50pm, no camp departure time. CascadeClimbers 2015/2019 reports render blank; WTA reports 2000/2002/2019 403 (www) and 502 (adminonly). Approach range now 7-11 h with first-pass data."
+    }
+   }
+  }
+ ]
+}
