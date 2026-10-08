@@ -553,7 +553,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       "EM: (closed)", a private area it calls not open yet. A same-name pair 52 km apart is not "two places"
       when the ids match; read the tree before calling it. The park copies folded into the current ones, and
       the park's PARKING was kept off them (generator `noPark`): a fold must not carry a trailhead onto an
-      area the source has closed. Happy Trails' pin was the source's own "best guess" (its page says "near
+      area the source has closed. Their pins first stayed the closed area's placeholder (~52 km off); 0283,
+      on the owner's word, gave each its own earlier pin back from the rollback file. Happy Trails' pin was the source's own "best guess" (its page says "near
       bridge"); Snag Wall is the guidebook's wall by the bridge, so the three shared climbs are Snag Wall's.
       The empty "Cone, The" is the source's empty The Cone, gone. Joshua Tree's "Pinto Basin (aka Eastern
       Territorries)" bouldering nested into Split Rocks and Jumbo Rock Area (pins line up), Cottonwood
