@@ -1,0 +1,1674 @@
+{
+ "date": "2026-10-08",
+ "what": "Ice and mixed Planner times against online times: the first sample of 36 hand-picked routes plus a second of 24 documented routes (12 waterfall-ice classics, 12 alpine-scale). The Planner computes every one of these (no ice row stores a timing leg), so the check is on the MODEL, and a per-route repair would be a new full set of stored legs.",
+ "rule": "Same bar as the alpine repair: a published figure for the route and its own trailhead wins; otherwise at least three independent timed reports, or two that agree; a row with no stored legs gets a FULL set or none.",
+ "outcome": "No route clears the bar for a full set. No constant in the model is moved (the ratio spreads from 0.1 to 2.8 and the spread is route structure, not calibration). One structural defect is fixed in code: a pitch count the route's own length contradicts is read as no pitch count (lib/planTimes.js realPitches).",
+ "summary": {
+  "routes": 60,
+  "withAnyTimedLeg": 24,
+  "withClimbTime": 17,
+  "withCarToCar": 18,
+  "climb35_over_online": {
+   "n": 17,
+   "p25": 0.5,
+   "p50": 0.8,
+   "p75": 1.1,
+   "withinPct": 35,
+   "short": 8,
+   "long": 3
+  },
+  "climb35_over_online_without_placeholder_counts": {
+   "n": 15,
+   "p25": 0.6,
+   "p50": 0.9,
+   "p75": 1.1,
+   "withinPct": 40,
+   "short": 6,
+   "long": 3
+  },
+  "climbAtOwnLength_over_online": {
+   "n": 17,
+   "p25": 1,
+   "p50": 1.4,
+   "p75": 1.5,
+   "withinPct": 24,
+   "short": 3,
+   "long": 10
+  },
+  "rappelDescent_over_online_rappel": {
+   "n": 5,
+   "p25": 1.5,
+   "p50": 1.6,
+   "p75": 1.8,
+   "withinPct": 0,
+   "short": 1,
+   "long": 4
+  },
+  "placeholderPitchCountsInSample": [
+   "ab_mount_snowdome_slipstream",
+   "ab_mount_andromeda_andromeda_strain"
+  ]
+ },
+ "rows": [
+  {
+   "id": "ab_weeping_wall_area_polar_circus",
+   "name": "Polar Circus",
+   "discipline": "ice",
+   "grade": "WI5",
+   "storedPitches": 9,
+   "lengthM": 503,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 6.2,
+    "climbAtOwnLength": 9,
+    "rappelDescent": 4.4
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": 14.5,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "Only one real timed party (14.5 h car to car), which broke trail from the road for several hours."
+  },
+  {
+   "id": "ab_weeping_wall_area_lower_weeping_wall",
+   "name": "Lower Weeping Wall",
+   "discipline": "ice",
+   "grade": "WI4-5",
+   "storedPitches": 3,
+   "lengthM": 168,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.9,
+    "climbAtOwnLength": 2.7,
+    "rappelDescent": 1.3
+   },
+   "online": {
+    "approachH": 0.17,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_lake_louise_ice_louise_falls",
+   "name": "Louise Falls",
+   "discipline": "ice",
+   "grade": "WI4-5",
+   "storedPitches": 3,
+   "lengthM": 107,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.9,
+    "climbAtOwnLength": 1.9,
+    "rappelDescent": 1.3
+   },
+   "online": {
+    "approachH": 0.95,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_professor_falls_area_the_professor_falls",
+   "name": "The Professor Falls",
+   "discipline": "ice",
+   "grade": "WI4",
+   "storedPitches": 6,
+   "lengthM": 274,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.8,
+    "climbAtOwnLength": 4.7,
+    "rappelDescent": 2.7
+   },
+   "online": {
+    "approachH": 1.5,
+    "climbH": 3,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 5,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "nh_huntington_ravine_winter_ice_pinnacle_gully",
+   "name": "Pinnacle Gully",
+   "discipline": "ice",
+   "grade": "WI3 Steep Snow",
+   "storedPitches": 3,
+   "lengthM": 152,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.8,
+    "climbAtOwnLength": 2.3,
+    "rappelDescent": 1.2
+   },
+   "online": {
+    "approachH": 2.5,
+    "climbH": 1.5,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": 7,
+    "typicalDays": 1
+   },
+   "nReports": 5,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "nh_4_mt_webster_winter_ice_mixed_shoestring_gully",
+   "name": "Shoestring Gully",
+   "discipline": "ice",
+   "grade": "5.5 WI2 M1-2 Easy Snow",
+   "storedPitches": 6,
+   "lengthM": null,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.3,
+    "climbAtOwnLength": null,
+    "rappelDescent": 1.6
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "nh_cathedral_ledge_ice_climbs_repentance",
+   "name": "Repentance",
+   "discipline": "ice",
+   "grade": "5.9 WI5 M4-5",
+   "storedPitches": 3,
+   "lengthM": 107,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.8,
+    "climbAtOwnLength": 1.9,
+    "rappelDescent": 1.3
+   },
+   "online": {
+    "approachH": 0.04,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "co_bridalveil_area_bridalveil_falls",
+   "name": "Bridalveil Falls",
+   "discipline": "ice",
+   "grade": "WI5+",
+   "storedPitches": 3,
+   "lengthM": 122,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.1,
+    "climbAtOwnLength": 2.3,
+    "rappelDescent": 1.5
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": 8,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "ak_keystone_canyon_2_bridalveil_falls",
+   "name": "Bridalveil Falls",
+   "discipline": "ice",
+   "grade": "WI5",
+   "storedPitches": 5,
+   "lengthM": 244,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.5,
+    "climbAtOwnLength": 4.5,
+    "rappelDescent": 2.4
+   },
+   "online": {
+    "approachH": 0.08,
+    "climbH": 3.5,
+    "descentH": 1.5,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": 6,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "ut_upper_provo_falls_the_fang",
+   "name": "The Fang",
+   "discipline": "ice",
+   "grade": "WI5",
+   "storedPitches": 3,
+   "lengthM": 119,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.1,
+    "climbAtOwnLength": 2.3,
+    "rappelDescent": 1.5
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "nh_6_standard_route_area_standard_route",
+   "name": "Standard Route",
+   "discipline": "ice",
+   "grade": "WI3+",
+   "storedPitches": 2,
+   "lengthM": 91,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.2,
+    "climbAtOwnLength": 1.4,
+    "rappelDescent": 0.8
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ny_chapel_pond_chouinard_s_gully",
+   "name": "Chouinard's Gully",
+   "discipline": "ice",
+   "grade": "WI3",
+   "storedPitches": 2,
+   "lengthM": 91,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.2,
+    "climbAtOwnLength": 1.4,
+    "rappelDescent": 0.8
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ny_wilmington_notch_high_falls_crag_multiplication_gully",
+   "name": "Multiplication Gully",
+   "discipline": "ice",
+   "grade": "WI3+",
+   "storedPitches": 3,
+   "lengthM": 69,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.8,
+    "climbAtOwnLength": 1.3,
+    "rappelDescent": 1.2
+   },
+   "online": {
+    "approachH": 0.17,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "wy_4_majo_ranch_n_facing_mean_green",
+   "name": "Mean Green",
+   "discipline": "ice",
+   "grade": "WI4+",
+   "storedPitches": 7,
+   "lengthM": 274,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 4.5,
+    "climbAtOwnLength": 4.8,
+    "rappelDescent": 3.1
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "co_glenwood_canyon_ice_hidden_falls",
+   "name": "Hidden Falls",
+   "discipline": "ice",
+   "grade": "WI4-5",
+   "storedPitches": 3,
+   "lengthM": 76,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.9,
+    "climbAtOwnLength": 1.5,
+    "rappelDescent": 1.3
+   },
+   "online": {
+    "approachH": 2,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ut_stairway_to_heaven_2_stairway_to_heaven",
+   "name": "Stairway to Heaven",
+   "discipline": "ice",
+   "grade": "WI5 R",
+   "storedPitches": 10,
+   "lengthM": 305,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 6.9,
+    "climbAtOwnLength": 6.2,
+    "rappelDescent": 4.8
+   },
+   "online": {
+    "approachH": 0.1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "co_eureka_stairway_to_heaven",
+   "name": "Stairway to Heaven",
+   "discipline": "ice",
+   "grade": "WI4",
+   "storedPitches": 7,
+   "lengthM": 366,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 4.5,
+    "climbAtOwnLength": 6.1,
+    "rappelDescent": 3.1
+   },
+   "online": {
+    "approachH": 0.33,
+    "climbH": 4.25,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "ab_mt_bourgeau_bourgeau_left_hand",
+   "name": "Bourgeau Left-Hand",
+   "discipline": "ice",
+   "grade": "WI5",
+   "storedPitches": 4,
+   "lengthM": 183,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.8,
+    "climbAtOwnLength": 3.4,
+    "rappelDescent": 1.9
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": 0.58,
+    "carToCarH": 7,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "bc_mount_dennis_carlsberg_column",
+   "name": "Carlsberg Column",
+   "discipline": "ice",
+   "grade": "WI5",
+   "storedPitches": 2,
+   "lengthM": 91,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.4,
+    "climbAtOwnLength": 1.7,
+    "rappelDescent": 1
+   },
+   "online": {
+    "approachH": 0.33,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "me_06_all_winter_ice_routes_chimney_pond_other_sub_areas_cilley_barber",
+   "name": "Cilley-Barber",
+   "discipline": "ice",
+   "grade": "WI4",
+   "storedPitches": 7,
+   "lengthM": 305,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 4.5,
+    "climbAtOwnLength": 5.3,
+    "rappelDescent": 3.1
+   },
+   "online": {
+    "approachH": 8,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "co_camp_bird_road_the_ribbon",
+   "name": "The Ribbon",
+   "discipline": "ice",
+   "grade": "WI4",
+   "storedPitches": 4,
+   "lengthM": null,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.5,
+    "climbAtOwnLength": null,
+    "rappelDescent": 1.8
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_mount_fay_north_face_chouinard_route",
+   "name": "North Face - Chouinard Route",
+   "discipline": "ice",
+   "grade": "AI2-3 Mod. Snow",
+   "storedPitches": 5,
+   "lengthM": 305,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.7,
+    "climbAtOwnLength": 4.1,
+    "rappelDescent": 1.9
+   },
+   "online": {
+    "approachH": 8.5,
+    "climbH": 4,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": 5,
+    "carToCarH": null,
+    "typicalDays": 3
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "wa_lake_lenore_and_soap_lake_ice_champagne",
+   "name": "Champagne",
+   "discipline": "ice",
+   "grade": "WI5",
+   "storedPitches": 2,
+   "lengthM": 61,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.4,
+    "climbAtOwnLength": 1.2,
+    "rappelDescent": 1
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "vt_08e_elephant_s_head_area_2_elephant_s_head_gully",
+   "name": "Elephant's head gully",
+   "discipline": "ice",
+   "grade": "WI3",
+   "storedPitches": 2,
+   "lengthM": 91,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.2,
+    "climbAtOwnLength": 1.4,
+    "rappelDescent": 0.8
+   },
+   "online": {
+    "approachH": 0.33,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "nh_cannon_ice_climbs_daedalus",
+   "name": "Daedalus",
+   "discipline": "mixed",
+   "grade": "M7+",
+   "storedPitches": 7,
+   "lengthM": 244,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 4.9,
+    "climbAtOwnLength": 4.9,
+    "rappelDescent": 3.4
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_mount_andromeda_asteroid_alley",
+   "name": "Asteroid Alley",
+   "discipline": "mixed",
+   "grade": "M6",
+   "storedPitches": 5,
+   "lengthM": 366,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.3,
+    "climbAtOwnLength": 6.1,
+    "rappelDescent": 2.3
+   },
+   "online": {
+    "approachH": 1.75,
+    "climbH": 10.25,
+    "descentH": 3,
+    "descentMethod": "rappel",
+    "walkOutH": 0.5,
+    "carToCarH": 15.67,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "ab_howse_peak_northeast_buttress_blackband_variation",
+   "name": "Northeast Buttress - Blackband Variation",
+   "discipline": "mixed",
+   "grade": "5.10- M3 R",
+   "storedPitches": 32,
+   "lengthM": 1219,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 21.2,
+    "climbAtOwnLength": 22.6,
+    "rappelDescent": 14.9
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 3
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "co_ne_buttress_hallett_peak_mixed_ice_great_dihedral_to_upper_buttress",
+   "name": "Great Dihedral to Upper Buttress",
+   "discipline": "mixed",
+   "grade": "M5-",
+   "storedPitches": 5,
+   "lengthM": 305,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.2,
+    "climbAtOwnLength": 4.9,
+    "rappelDescent": 2.2
+   },
+   "online": {
+    "approachH": 1.25,
+    "climbH": 3.5,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": 10,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "co_andrews_creek_the_gash_brain_freeze",
+   "name": "Brain Freeze",
+   "discipline": "mixed",
+   "grade": "M5+ Steep Snow",
+   "storedPitches": 8,
+   "lengthM": 305,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 5.1,
+    "climbAtOwnLength": 5.4,
+    "rappelDescent": 3.6
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "co_camp_bird_road_pride_is_the_devil",
+   "name": "Pride is the Devil",
+   "discipline": "mixed",
+   "grade": "5.9 M5-6 X",
+   "storedPitches": 7,
+   "lengthM": 311,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 4.3,
+    "climbAtOwnLength": 5.1,
+    "rappelDescent": 3
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "wa_north_early_winter_spire_chockstone_route",
+   "name": "Chockstone Route",
+   "discipline": "mixed",
+   "grade": "5.7 M1-2 Easy Snow",
+   "storedPitches": 6,
+   "lengthM": 183,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.1,
+    "climbAtOwnLength": 2.9,
+    "rappelDescent": 2.2
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "bc_needle_peak_north_face",
+   "name": "North Face",
+   "discipline": "mixed",
+   "grade": "5.7 M4 Steep Snow",
+   "storedPitches": 4,
+   "lengthM": 457,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.1,
+    "climbAtOwnLength": 5.3,
+    "rappelDescent": 1.5
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ak_mendenhall_towers_ice_mixed_the_fall_line",
+   "name": "The Fall Line",
+   "discipline": "mixed",
+   "grade": "M5",
+   "storedPitches": 7,
+   "lengthM": 366,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 4.5,
+    "climbAtOwnLength": 6.1,
+    "rappelDescent": 3.1
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ut_stairway_to_heaven_2_the_penitent_path",
+   "name": "The Penitent Path",
+   "discipline": "mixed",
+   "grade": "M9",
+   "storedPitches": 12,
+   "lengthM": 366,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 9.3,
+    "climbAtOwnLength": 8.4,
+    "rappelDescent": 6.5
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ca_pyramid_peak_inconceivable",
+   "name": "Inconceivable",
+   "discipline": "mixed",
+   "grade": "M5 Steep Snow",
+   "storedPitches": 6,
+   "lengthM": 335,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.8,
+    "climbAtOwnLength": 5.5,
+    "rappelDescent": 2.7
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ut_mt_ogden_2_southeast_ridge",
+   "name": "Southeast Ridge",
+   "discipline": "mixed",
+   "grade": "5.7 M3-4 Mod. Snow",
+   "storedPitches": 7,
+   "lengthM": 259,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.7,
+    "climbAtOwnLength": 3.8,
+    "rappelDescent": 2.6
+   },
+   "online": {
+    "approachH": 0.5,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_cascade_mountain_ice_cascade_falls",
+   "name": "Cascade Falls",
+   "discipline": "ice",
+   "grade": "WI3 PG13",
+   "storedPitches": 5,
+   "lengthM": 305,
+   "pitchesOnline": 4,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.9,
+    "climbAtOwnLength": 4.5,
+    "rappelDescent": 2.1
+   },
+   "online": {
+    "approachH": 0.2,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": 0.2,
+    "carToCarH": 7,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "Car to car 7 h across three reports but no leg split; a whole-day figure alone is not stored on an ice row."
+  },
+  {
+   "id": "ab_mount_murchison_murchison_falls",
+   "name": "Murchison Falls",
+   "discipline": "ice",
+   "grade": "WI4-5",
+   "storedPitches": 4,
+   "lengthM": 183,
+   "pitchesOnline": 4,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.5,
+    "climbAtOwnLength": 3.1,
+    "rappelDescent": 1.8
+   },
+   "online": {
+    "approachH": 1.5,
+    "climbH": 4.5,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": 9.5,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "Climb 4.5 h and 9.5 h car to car are one comment; the descent and walk out are untimed."
+  },
+  {
+   "id": "ab_mt_bourgeau_bourgeau_right_hand",
+   "name": "Bourgeau Right-Hand",
+   "discipline": "ice",
+   "grade": "WI4",
+   "storedPitches": 6,
+   "lengthM": 305,
+   "pitchesOnline": 7,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3.8,
+    "climbAtOwnLength": 5.1,
+    "rappelDescent": 2.7
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": 0.6,
+    "carToCarH": 7,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "Car to car 7 h, approach 1 h, walk out 0.6 h; no climb or descent leg."
+  },
+  {
+   "id": "ab_stanley_headwall_nemesis",
+   "name": "Nemesis",
+   "discipline": "ice",
+   "grade": "WI6",
+   "storedPitches": 4,
+   "lengthM": 160,
+   "pitchesOnline": 4,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 3,
+    "climbAtOwnLength": 3.3,
+    "rappelDescent": 2.1
+   },
+   "online": {
+    "approachH": 2,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_icefields_parkway_north_ice_curtain_call",
+   "name": "Curtain Call",
+   "discipline": "ice",
+   "grade": "WI6",
+   "storedPitches": 2,
+   "lengthM": 125,
+   "pitchesOnline": 2,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.5,
+    "climbAtOwnLength": 2.4,
+    "rappelDescent": 1.1
+   },
+   "online": {
+    "approachH": 0.6,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_mount_snowdome_slipstream",
+   "name": "Slipstream",
+   "discipline": "ice",
+   "grade": "WI4+",
+   "storedPitches": 1,
+   "lengthM": 914,
+   "pitchesOnline": 6,
+   "placeholderPitchCount": true,
+   "model": {
+    "climb35": 0.6,
+    "climbAtOwnLength": 12.4,
+    "rappelDescent": 0.4
+   },
+   "online": {
+    "approachH": 2,
+    "climbH": 7.5,
+    "descentH": 5.5,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": 16,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "Stored 1 pitch on a 909 m route (about 6 ice pitches and long simul ground online). Climb 7.5 h agrees across two reports, but the descent 5.5 h is one report and the approach is 1 to 'a few' hours, so no full set clears the bar. The placeholder count is now read as unknown."
+  },
+  {
+   "id": "ab_weeping_wall_area_upper_weeping_wall_weeping_pillar",
+   "name": "Upper Weeping Wall; Weeping Pillar",
+   "discipline": "ice",
+   "grade": "WI5-6",
+   "storedPitches": 3,
+   "lengthM": 183,
+   "pitchesOnline": 3,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.1,
+    "climbAtOwnLength": 3.2,
+    "rappelDescent": 1.5
+   },
+   "online": {
+    "approachH": 0.1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": 9,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "Car to car 9 h, but the lower wall must be climbed first and the approach figure covers only the walk to it."
+  },
+  {
+   "id": "ab_north_ghost_hydrophobia",
+   "name": "Hydrophobia",
+   "discipline": "ice",
+   "grade": "WI5+",
+   "storedPitches": 3,
+   "lengthM": 152,
+   "pitchesOnline": 3,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.1,
+    "climbAtOwnLength": 2.8,
+    "rappelDescent": 1.5
+   },
+   "online": {
+    "approachH": 2.5,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 4,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_david_thompson_highway_kitty_hawk",
+   "name": "Kitty Hawk",
+   "discipline": "ice",
+   "grade": "WI5",
+   "storedPitches": 4,
+   "lengthM": 152,
+   "pitchesOnline": 5,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.8,
+    "climbAtOwnLength": 2.9,
+    "rappelDescent": 1.9
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "mt_winter_dance_area_winter_dance",
+   "name": "Winter Dance",
+   "discipline": "ice",
+   "grade": "WI5-6 M8",
+   "storedPitches": 4,
+   "lengthM": 137,
+   "pitchesOnline": 4,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 2.8,
+    "climbAtOwnLength": 2.7,
+    "rappelDescent": 1.9
+   },
+   "online": {
+    "approachH": 1.5,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": 12,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "The 12 h car to car is a slow first-free-ascent outlier; two reports."
+  },
+  {
+   "id": "ab_whiteman_falls_drainage_ice_mixed_whiteman_falls",
+   "name": "Whiteman Falls",
+   "discipline": "ice",
+   "grade": "WI5-6",
+   "storedPitches": 2,
+   "lengthM": 91,
+   "pitchesOnline": 2,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.4,
+    "climbAtOwnLength": 1.7,
+    "rappelDescent": 1
+   },
+   "online": {
+    "approachH": 1.5,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "bc_triangle_wall_twin_falls_main",
+   "name": "Twin Falls Main",
+   "discipline": "ice",
+   "grade": "WI2+",
+   "storedPitches": 3,
+   "lengthM": 213,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 1.6,
+    "climbAtOwnLength": 2.8,
+    "rappelDescent": 1.1
+   },
+   "online": {
+    "approachH": 0.2,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": null,
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ak_mt_huntington_the_harvard_route",
+   "name": "The Harvard Route",
+   "discipline": "ice",
+   "grade": "WI3 M6 C1 Steep Snow",
+   "storedPitches": 30,
+   "lengthM": 1219,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 17.6,
+    "climbAtOwnLength": 19.7,
+    "rappelDescent": 12.3
+   },
+   "online": {
+    "approachH": 1,
+    "climbH": 38,
+    "descentH": 7,
+    "descentMethod": "rappel",
+    "walkOutH": 0.3,
+    "carToCarH": null,
+    "typicalDays": 4
+   },
+   "nReports": 5,
+   "verdict": "left",
+   "why": "Fly-in expedition route of 3 to 4 days; the figures are camp to camp and the model's pitch convention is not its structure."
+  },
+  {
+   "id": "bc_mount_robson_kain_face",
+   "name": "Kain Face",
+   "discipline": "ice",
+   "grade": "Easy 5th AI3 Steep Snow",
+   "storedPitches": 20,
+   "lengthM": 2743,
+   "pitchesOnline": 20,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 11.8,
+    "climbAtOwnLength": 36.2,
+    "rappelDescent": 8.2
+   },
+   "online": {
+    "approachH": null,
+    "climbH": 4.2,
+    "descentH": 3.5,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": 15,
+    "typicalDays": 3
+   },
+   "nReports": 6,
+   "verdict": "left",
+   "why": "Multi-day alpine route; the one 4.2 h figure is a segment, not the climb."
+  },
+  {
+   "id": "ak_moose_s_tooth_ham_eggs",
+   "name": "Ham & Eggs",
+   "discipline": "ice",
+   "grade": "WI4 M4 Steep Snow",
+   "storedPitches": 10,
+   "lengthM": 914,
+   "pitchesOnline": 12,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 6.4,
+    "climbAtOwnLength": 13.9,
+    "rappelDescent": 4.5
+   },
+   "online": {
+    "approachH": 0.2,
+    "climbH": 9,
+    "descentH": 3,
+    "descentMethod": "rappel",
+    "walkOutH": 0.2,
+    "carToCarH": 12,
+    "typicalDays": 1
+   },
+   "nReports": 5,
+   "verdict": "left",
+   "why": "Fly-in route: every figure is camp to camp on the glacier, and the route's trailhead is not a car. A figure applies only to its own trailhead, so none is written."
+  },
+  {
+   "id": "ak_moose_s_tooth_shaken_not_stirred",
+   "name": "Shaken not Stirred",
+   "discipline": "ice",
+   "grade": "WI5 M5 Steep Snow",
+   "storedPitches": 15,
+   "lengthM": 914,
+   "pitchesOnline": 18,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 10.4,
+    "climbAtOwnLength": 16.2,
+    "rappelDescent": 7.3
+   },
+   "online": {
+    "approachH": 0.08,
+    "climbH": 6,
+    "descentH": null,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": 15.5,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "No full set of legs from at least three independent timed reports."
+  },
+  {
+   "id": "ak_mt_hunter_north_couloir_mini_moonflower",
+   "name": "North Couloir Mini-Moonflower",
+   "discipline": "ice",
+   "grade": "AI4",
+   "storedPitches": 14,
+   "lengthM": 610,
+   "pitchesOnline": 14,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 8.9,
+    "climbAtOwnLength": 10.5,
+    "rappelDescent": 6.2
+   },
+   "online": {
+    "approachH": 2.5,
+    "climbH": 11,
+    "descentH": 3,
+    "descentMethod": "rappel",
+    "walkOutH": null,
+    "carToCarH": 21,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "Fly-in, camp to camp; the only published ranges were seen as search snippets (the site refused the connection). Not written."
+  },
+  {
+   "id": "ab_mount_andromeda_andromeda_strain",
+   "name": "Andromeda Strain",
+   "discipline": "ice",
+   "grade": "5.11a WI4+ M6",
+   "storedPitches": 1,
+   "lengthM": 610,
+   "pitchesOnline": null,
+   "placeholderPitchCount": true,
+   "model": {
+    "climb35": 0.7,
+    "climbAtOwnLength": 9.5,
+    "rappelDescent": 0.5
+   },
+   "online": {
+    "approachH": 2.5,
+    "climbH": 10,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 3,
+   "verdict": "left",
+   "why": "Stored 1 pitch on a 610 m route; the climb is 10 h in three reports but no descent or car-to-car figure exists. The placeholder count is now read as unknown."
+  },
+  {
+   "id": "ab_mount_andromeda_near_earth_practice_gully",
+   "name": "Near Earth Practice Gully",
+   "discipline": "ice",
+   "grade": "WI3 Steep Snow",
+   "storedPitches": 10,
+   "lengthM": 610,
+   "pitchesOnline": 10,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 5.9,
+    "climbAtOwnLength": 9,
+    "rappelDescent": 4.1
+   },
+   "online": {
+    "approachH": 3,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "wa_summit_chief_mountain_north_face",
+   "name": "North Face",
+   "discipline": "ice",
+   "grade": "WI3",
+   "storedPitches": 12,
+   "lengthM": 610,
+   "pitchesOnline": 12,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 7.1,
+    "climbAtOwnLength": 9.3,
+    "rappelDescent": 4.9
+   },
+   "online": {
+    "approachH": 6.5,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 2
+   },
+   "nReports": 1,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "bc_mount_robson_the_north_face",
+   "name": "The North Face",
+   "discipline": "ice",
+   "grade": "AI3-4 Steep Snow",
+   "storedPitches": 14,
+   "lengthM": 2286,
+   "pitchesOnline": null,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 8.2,
+    "climbAtOwnLength": 29.7,
+    "rappelDescent": 5.8
+   },
+   "online": {
+    "approachH": null,
+    "climbH": 21,
+    "descentH": 7,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 3
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "Multi-day alpine route (two reports, camp to camp); not a car-based day."
+  },
+  {
+   "id": "co_mchenry_s_peak_2_big_mac_couloir",
+   "name": "Big Mac Couloir",
+   "discipline": "ice",
+   "grade": "WI4- M5",
+   "storedPitches": 11,
+   "lengthM": 366,
+   "pitchesOnline": 11,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 7,
+    "climbAtOwnLength": 6.7,
+    "rappelDescent": 4.9
+   },
+   "online": {
+    "approachH": 4.3,
+    "climbH": 7.5,
+    "descentH": 2.25,
+    "descentMethod": "walk-off",
+    "walkOutH": 1.5,
+    "carToCarH": 15.5,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "One fully timed report (a winter ski approach, 4.3 h) plus a vague 'one to two days'; two reports that do not agree. Below the bar."
+  },
+  {
+   "id": "co_loch_vale_uphill_central_buttress",
+   "name": "Central Buttress",
+   "discipline": "ice",
+   "grade": "WI5 M6 Steep Snow R",
+   "storedPitches": 11,
+   "lengthM": 366,
+   "pitchesOnline": 11,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 7.6,
+    "climbAtOwnLength": 7.3,
+    "rappelDescent": 5.3
+   },
+   "online": {
+    "approachH": null,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "walk-off",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": null
+   },
+   "nReports": 0,
+   "verdict": "left",
+   "why": "No timed report found."
+  },
+  {
+   "id": "ab_storm_mountain_eye_of_the_storm",
+   "name": "Eye of the Storm",
+   "discipline": "ice",
+   "grade": "WI5 M6",
+   "storedPitches": 11,
+   "lengthM": 701,
+   "pitchesOnline": 11,
+   "placeholderPitchCount": false,
+   "model": {
+    "climb35": 7.6,
+    "climbAtOwnLength": 12.3,
+    "rappelDescent": 5.3
+   },
+   "online": {
+    "approachH": 4,
+    "climbH": null,
+    "descentH": null,
+    "descentMethod": "mixed",
+    "walkOutH": null,
+    "carToCarH": null,
+    "typicalDays": 1
+   },
+   "nReports": 2,
+   "verdict": "left",
+   "why": "No timed report found."
+  }
+ ]
+}

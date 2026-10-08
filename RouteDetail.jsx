@@ -40,7 +40,7 @@ import { rappelReportedMax, rappelHeaderLabel, rappelSingleRopeWarning } from ".
 import { knownHazards } from "./lib/hazards";
 import { acquireBaseFix, clusterBasePoints, baseCheckinMessage, pendingBaseCheckins, savePendingBaseCheckins } from "./lib/baseCheckin";
 import { routeTags } from "./lib/routeTags";
-import { planTimes } from "./lib/planTimes";
+import { planTimes, realPitches } from "./lib/planTimes";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
 import { ALPINE_COND_DISCIPLINES } from "./lib/alpineConditions.js";
 import { usableFa } from "./lib/fa";
@@ -1831,7 +1831,7 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
      worded the same way and sit together. */
   const gainShort=gainBelowOwnPins(route);
   const missHikeLabel=_missHike.length===1?_missHike[0]:_missHike.slice(0,-1).join(", ")+" or "+_missHike[_missHike.length-1];
-  const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||!!route.pitches;
+  const hasAnyEstimate=hasHikeInputs||hasPublishedSummitH||hasDerivedSummitH||realPitches(route)>0;
   const {hikeH,techH,totalH,sumH,retH,storedApproachH}=P;
   const dayOf=h=>Math.floor(Math.round(h*60)/1440);const fmt=h=>{let total=Math.round(h*60);const day=dayOf(h);total=total%1440;const hr=Math.floor(total/60),mn=total%60,ap=hr>=12?"PM":"AM",h12=hr%12||12;return `${h12}:${String(mn).padStart(2,"0")} ${ap}${day>0?" (+"+day+"d)":""}`;};
   /* THE TWO RED LABELS BELOW ARE COMPARED AGAINST A CLOCK HOUR, AND sumH/retH ARE UNBOUNDED.

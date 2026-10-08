@@ -64,6 +64,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
+export { realPitches, MAX_PITCH_FT } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route) {
@@ -80,7 +81,7 @@ await build({
   loader: { ".jsx": "jsx" }, define: { "import.meta.env": "{}" },
   outfile: out, logLevel: "error",
 });
-const { render } = require_(out);
+const { render, realPitches, MAX_PITCH_FT } = require_(out);
 
 const text = (h) => h.replace(/<[^>]+>/g, " ").replace(/&#x27;/g, "'").replace(/&amp;/g, "&").replace(/\s+/g, " ");
 const FT = 3.28084;
@@ -319,7 +320,32 @@ const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
-const FLOOR = 57;
+console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- not a 0.6 hr climb");
+/* Slipstream stores 1 pitch on a 909 m route, and the Planner printed "Climbing 0.6 hr" for a day the
+   reports time at 7.5 hr of climbing: "unknown" counted as "none" on the leg that matters. 197 ice and
+   mixed rows are in that state (a count of 1 beside 100+ m, no stored time). Such a route is read
+   exactly like one with NO count: the Climbing tile reads N/A and the totals carry the lower bound. */
+{
+  const tileOf = (h, cap) => { const m = h.match(new RegExp(`<div[^>]*>([^<]*)</div><div[^>]*>${cap}<`)); return m ? m[1].trim() : null; };
+  const summitOf = (h) => (h.match(/<div[^>]*>([^<]*)<\/div><div[^>]*>Est\.\s*(?:top-out|finish|summit)</) || [])[1]?.trim() ?? null;
+  const known = { distKm: 8, gainM: 900, lossM: 900 };
+  const R = (over) => route(Object.assign({}, known, over));
+  const place = render(R({ pitches: 1, routeFt: 3000 })), none = render(R({ pitches: 0 })), firm = render(R({ pitches: 1, routeFt: 200 }));
+  const many = render(R({ pitches: 12, routeFt: 3600 })), over = render(R({ pitches: 12, routeFt: 6000 }));
+  eq("ANCHOR: the Climbing and Total tiles rendered on every fixture", [place, none, firm, many, over].every((h) => tileOf(h, "Climbing") != null && tileOf(h, "Total") != null), true);
+  eq("1 pitch on a 3,000 ft route: the Climbing tile reads N/A, not a 0.6 hr climb", tileOf(place, "Climbing"), "N/A");
+  eq("...and Total carries the lower-bound marker, because the climbing leg is unknown", tileOf(place, "Total").startsWith("≥"), true);
+  eq("...identical to a route with NO pitch count at all (Climbing, Total, Est. summit)", [tileOf(place, "Climbing"), tileOf(place, "Total"), summitOf(place)].join("|"), [tileOf(none, "Climbing"), tileOf(none, "Total"), summitOf(none)].join("|"));
+  eq("a real single pitch (1 pitch, 200 ft) keeps a firm climbing time", /hr$/.test(tileOf(firm, "Climbing")) && !tileOf(firm, "Total").startsWith("≥"), true);
+  eq("12 pitches on 3,600 ft (300 ft each) is plausible and keeps its time", /hr$/.test(tileOf(many, "Climbing")), true);
+  eq("12 pitches on 6,000 ft keeps its time: a longer count can be right (a route's length includes the scrambling between pitches)", /hr$/.test(tileOf(over, "Climbing")), true);
+  const bare = render(route({ distKm: undefined, gainM: undefined, lossM: undefined, pitches: 1, routeFt: 3000 }));
+  eq("a placeholder count with NO walk either leaves nothing to estimate: Total reads N/A, not '≥0.6hr'", tileOf(bare, "Total"), "N/A");
+  eq("realPitches: a count of 1 stands up to the cap and is 0 over it; a longer count and none are untouched", [realPitches({ pitches: 1, routeFt: MAX_PITCH_FT }), realPitches({ pitches: 1, routeFt: MAX_PITCH_FT + 1 }), realPitches({ pitches: 6, routeFt: 99999 }), realPitches({ pitches: 0 }), realPitches({}), realPitches(null)].join(","), "1,0,6,0,0,0");
+  eq("...and a route with no length keeps its count (seed routes carry none)", realPitches({ pitches: 3 }), 3);
+}
+
+const FLOOR = 67;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;
