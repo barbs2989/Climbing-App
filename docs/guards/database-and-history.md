@@ -601,8 +601,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **The guard caught its own regression within hours** (2026-10-08): the snow import, run with the
     importer from BEFORE #2265, added one climb (Potosi Peak's North Couloir) and re-created "CO Ice &
     Mixed > Ouray (Ice/Mixed)" under their old ids to hold it. **0268** moved Potosi Peak beside Teakettle
-    Mountain (San Juans > Northern San Juans) and deleted the two buckets. Any import must run from a
-    checkout that has `scripts/lib/generic-area-name.mjs`; a red here after an import means it did not.
+    Mountain (San Juans > Northern San Juans) and deleted the two buckets. The same run reached Vermont
+    too: "VT Ice and Mixed" came back holding "Mansfield - the Chin" (Hourglass Chute) — **0275** moved
+    it under Northern Vermont > Mt Mansfield, keeping its name so the importer's same-name-nearby match
+    finds it next time. Any import must run from a checkout that has `scripts/lib/generic-area-name.mjs`;
+    a red here after an import means it did not. Fold a re-created bucket by hand: move what it holds to
+    its geographic home (`catalog_find_area` first), keep the child's own name, delete the bucket.
 
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
