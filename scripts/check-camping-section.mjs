@@ -250,9 +250,14 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
     water: "WATER_PROSE about a melt stream that runs until late August and then stops entirely.",
     permit: "PERMIT_PROSE about a quota area that must be booked well in advance of the trip.",
     notes: "NOTES_PROSE about the walk in." };
-  const t = text(render(route("alpine", { bivy: [LONG] }), "planner"));
+  // The FIRST rendered site opens expanded on purpose (the permit panel above it must not be the
+  // only written thing a climber sees), so the collapse is asserted on the SECOND site onward.
+  const FIRST = { name: "Opened camp", type: "camp", elev: 4800, water: "OPENING_STREAM_TEXT about the creek below camp." };
+  const t = text(render(route("alpine", { bivy: [FIRST, LONG] }), "planner"));
   const start = t.indexOf(HEAD), after = t.indexOf("ROUTE TRACK", start + 1);
   const panel = t.slice(start, after > start ? after : start + 3000);
+  if (panel.includes("OPENING_STREAM_TEXT")) ok("the first site is shown in full before any tap");
+  else fail("the first site's detail is collapsed — the section shows only the permit and closed rows");
 
   const leaked = ["CAPACITY_PROSE", "WATER_PROSE", "PERMIT_PROSE", "NOTES_PROSE"].filter(k => panel.includes(k));
   if (!leaked.length) ok("prose fields are collapsed out of the default view");
@@ -404,14 +409,14 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
     { name: "Side Bivy", role: "route" }, { name: "Base Camp Alpha", role: "main" }, { name: "Loose Site" },
   ];
   const t = text(render(route("alpine", { bivy: sorted }), "planner"));
-  const iM = t.indexOf("MAIN CAMPS"), iR = t.indexOf("ON THE ROUTE"), iO = t.indexOf("OTHER SITES");
-  if (iM >= 0 && iR > iM && iO > iR) ok("sorted sites render MAIN CAMPS, then ON THE ROUTE, then OTHER SITES");
-  else fail(`group headings missing or out of order (main ${iM}, route ${iR}, other ${iO})`);
+  const iM = t.indexOf("WHERE MOST PARTIES SLEEP"), iO = t.indexOf("OTHER OPTIONS");
+  if (iM >= 0 && iO > iM) ok("sorted sites render WHERE MOST PARTIES SLEEP, then OTHER OPTIONS");
+  else fail(`group headings missing or out of order (main ${iM}, other ${iO})`);
   const a = t.indexOf("Base Camp Alpha"), b = t.indexOf("Side Bivy"), c = t.indexOf("Loose Site");
-  if (a > iM && a < iR && b > iR && b < iO && c > iO) ok("each site renders under its own group");
+  if (a > iM && a < iO && b > iO && c > iO) ok("each site renders under its own group");
   else fail("a site rendered under the wrong group");
   const flat = text(render(route("alpine", { bivy: [SITE, { name: "Other Place" }] }), "planner"));
-  if (!/MAIN CAMPS|ON THE ROUTE|OTHER SITES/.test(flat)) ok("an unsorted list renders flat, with no group headings");
+  if (!/WHERE MOST PARTIES SLEEP|OTHER OPTIONS/.test(flat)) ok("an unsorted list renders flat, with no group headings");
   else fail("an unsorted list was given group headings");
   const g = campGroups([{ name: "Pin", role: "route", onTrack: true }]);
   if (g.length === 1 && g[0].title === null) ok("a Campsite pin's default role alone does not trigger grouping");
