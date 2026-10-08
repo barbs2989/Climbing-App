@@ -30887,3 +30887,65 @@ from batch 390's Chianti Spire fix; replaced the semicolon with a double-dash an
 (confirmed the UPDATE's target id exists live).
 
 Pass 7 continues next run after `wa_classic_route_2`.
+
+## Batch 392 (2026-10-08, pass 7)
+
+Continued from `wa_classic_route_2` through `wa_colchuck_peak_south_route` (skipped `wa_clean_break`,
+`wa_comb_the_*` and `wa_concerto_in_c_for_drill_and_hammer` in between — all three sit under crag-type
+areas, not peaks). Ten routes: Colchuck Balanced Rock's East Route, South Route and West Face; and
+seven Colchuck Peak routes (Colchuck Glacier, Holsten-Hilden, North Buttress Couloir, Northeast
+Couloir, Northeast Gully, South Face, South Route).
+
+**No confirmed errors this batch.** Several facts were independently reconfirmed, including one
+important safety claim: `wa_colchuck_peak_northeast_couloir`'s stored account of a fatal avalanche —
+3 deaths, Feb 19 2023 — matches extensive, independent corroboration (news coverage, the Chelan
+County Sheriff's incident report, and NWAC's final accident report naming the victims and tying the
+slide to this exact couloir's terrain-trap character). Also clean: `wa_colchuck_peak_colchuck_glacier`'s
+8,705 ft summit elevation and 1948 Johnson/Long FA (both independently sourced), its Beckey "East
+Route" vs. common "Colchuck Glacier" dual naming; `wa_colchuck_peak_north_buttress_couloir`'s FA (Ray
+Lilleby and Jim Wickwire, 15 July 1962, per SummitPost) and its stored May 24 2018 wet-avalanche
+near-miss, which matches a Mountaineers.org first-person account in detail (and, as stored, is
+correctly described as an aborted climb rather than a fatality); `wa_colchuck_balanced_rock_west_face`'s
+FA (Tom Boley/Jack Lewis, 1980), grade (5.11+), pitch count (9, with the row's own `data_quality.gaps`
+already disclosing an 8-vs-9 split some older trip reports use), 8,240 ft high point, approach via
+Stuart Lake/Colchuck Lake Trails, and single ~30m east-side rappel off a slung horn; and
+`wa_colchuck_peak_holsten_hilden`'s FA (Jens Holsten and Dan Hilden, January 2011 — confirmed via
+Hilden's own 2012 AAJ first-hand account) and its two-pitch AI3+ ice start into an M6 chimney finish.
+
+**Flagged, not fixed:** `wa_colchuck_balanced_rock_west_face`'s `length_m` (366m, ≈1,200 ft) runs
+notably longer than every outside source and the row's *own* `overview` text, which both put the
+route at "850-1000 vertical feet" (≈259-305m) — but this may be a real, non-error difference between
+total rope-length climbed across 9 pitches (which can exceed net vertical gain on a wandering route)
+and the vertical-height figure sources quote, so left unfixed rather than guessed at; worth a human
+check against the per-pitch lengths. `wa_colchuck_balanced_rock_east_route` and `_south_route` (both
+already minimal rows: id/name/grade only) could not be found by either name on Colchuck Balanced Rock
+in any source checked (Mountain Project's full route list, SummitPost, stephabegg.com, Wenatchee
+Outdoors, thecrag.com) — "East Route" is a real climbing-history name, but for Beckey's line up the
+*adjacent* Colchuck Peak (correctly stored here as `wa_colchuck_peak_colchuck_glacier`'s alternate
+name), not anything found on Colchuck Balanced Rock itself; worth a human check against a physical
+Beckey guide for whether CBR has unlisted Class 2/3 scramble lines under these names, or whether the
+rows are misattributed. `wa_colchuck_peak_northeast_gully` (also a bare id/name/discipline row) could
+not be matched to any named route on Colchuck Peak in SummitPost's full route roster either — the only
+"gully" references found there describe an unnamed approach gully and an "East Gully" used in a
+descent context, neither matching this name; may be a duplicate/alias of the Northeast Couloir or
+North Buttress Couloir rather than a distinct route. `wa_colchuck_peak_south_face`'s FA ("Ed Cooper
+and Ron Niccoli, August 7, 1958") and `wa_colchuck_peak_south_route`'s Class 2 grade are both
+plausible but unconfirmed by any source reached — Cooper is a real, prolific era-appropriate Cascades
+climber, but no source ties him to a Colchuck Peak South Face specifically; the south side's class
+rating varies "Class 2" to "Class 3" across the few sources that mention it informally, without a
+named "South Route" line appearing anywhere. `wa_colchuck_peak_holsten_hilden`'s own `corrections`
+field attributes its secondary grade (III, WI3 M6) to "Mountain Project currently lists" — research
+found that exact grade independently in the AAC's own 2012 "Cascades Summary" article instead (MP's
+live page was unreachable to confirm or deny), and that same AAC source gives the FA date as late
+March 2011 against Hilden's own first-hand account's January 2011 (which the row already uses, and
+which is the more credible primary source) — a minor provenance nuance, not a wrong fact, left for a
+human to tighten up if desired.
+
+**Tooling note:** Delegated research to 3 parallel subagents (Colchuck Balanced Rock's 3 routes;
+Colchuck Peak's glacier/couloir group of 4; Colchuck Peak's Holsten-Hilden/South Face/South Route).
+Same network-egress limits as recent batches — WebFetch to mountainproject.com,
+publications.americanalpineclub.org, wikipedia.org, wenatcheeoutdoors.org and stephabegg.com was
+blocked (EGRESS_BLOCKED) on every attempt across all three subagents; WebSearch snippets were the
+only working method and are the basis for every finding above.
+
+Pass 7 continues next run after `wa_colchuck_peak_south_route`.
