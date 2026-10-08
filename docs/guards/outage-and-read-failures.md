@@ -1429,3 +1429,8 @@ that they had none — on the one screen whose whole subject is who you climb wi
     Injection suite `scripts/oneoff/inject-write-readers-cases.mjs`: 6 cases (a writer drops its
     refresh, a list forgets a reader, a NEW writer with none, a DECLARED name nobody declares; and two
     that must stay silent — an extra name, and a refresh through a callee).
+  - **It counts writers no screen calls.** `addVerification` is imported by three files and called
+    by none, so the production bundle drops it and its `verificationRecordsReaders` with it (43 of
+    the 44 lists survive minification). The guard reads source, not the bundle, and that is right —
+    a dead writer wired up tomorrow must already refresh its readers — but a bundle marker for this
+    change must not expect every list.
