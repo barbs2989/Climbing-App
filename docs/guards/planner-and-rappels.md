@@ -168,22 +168,28 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - Alpine descents were the open residual (0.9x, 13 of 33 short). The cause was short STORED
       totals on technical routes: Forbidden's West Ridge stored 15 hr, against about 20 hr car to
       car online. That called for per-route repairs (guidebook or report), not a formula.
-  - **THE PER-ROUTE REPAIR (2026-10-08): 27 rows read one at a time, 12 changed, 15 left with a
+  - **THE PER-ROUTE REPAIR (2026-10-08): 27 rows read one at a time, 14 changed, 13 left with a
     reason each** (`audits/2026-10-08-route-timing-repairs.json`, written by
-    `scripts/oneoff/apply-timing-fixes.mjs` with a rollback file). The 27 are every row whose
-    descent or car-to-car ran > 20% short of online. Each got a second research pass for a
-    published figure and more timed reports. The rule:
+    `scripts/oneoff/apply-timing-fixes.mjs` with a rollback file per run). The 27 are every row
+    whose descent or car-to-car ran > 20% short of online. Each got a second research pass for a
+    published figure and more timed reports, and the under-evidenced ones a third. The rule:
     - A published figure for the route and trailhead wins; inside a published range, use the
       reports' median clamped into it. With none, use >= 3 reports, or 2 that agree.
     - A report the stored times were TAKEN from checks nothing. Stuart's Upper North Ridge stored
       one fast party's 9 / 4 / 18.5.
     - Only a leg > 20% short moved. A stored total is kept where the evidence allows, and its parts
       are re-filed.
-    - Measured, model ÷ online: short descents 29 -> 20 of 161 (alpine 13 -> 9, mountaineering
-      14 -> 9). Descents within went 51% -> 57%, time to summit within 49% -> 52%.
-    - Of the 20 still short, 6 store no timing at all (the walk model sets them) and 1 has a single
-      report. The rest are the 11 rows left for want of evidence or because the published figure
-      agrees with the Planner, plus Forbidden and Triumph, which now sit at the published figure.
+    - **A LEG IS EVIDENCE WHEN ITS TWO ENDS MATCH, whatever the party climbed** (the third pass).
+      Eldorado's Northeast Face comes down the standard route, whose 13 reports gave the descent
+      its single report lacked. Easy Getaway shares the Cutthroat Wall descent with The Perfect
+      Crime, and their two timed descents agree. Look for the shared leg before calling a row
+      unresearchable.
+    - Measured, model ÷ online: short descents 29 -> 20 -> 18 of 161 (alpine 13 -> 9 -> 7,
+      mountaineering 14 -> 9). Descents within went 51% -> 58%, and the alpine descent median
+      0.9x -> 1.0x. Time to summit within went 49% -> 52%.
+    - Of the 18 still short, 6 store no timing at all (the walk model sets them) and 1 has a single
+      report. The rest are rows left for want of evidence or because the published figure agrees
+      with the Planner, plus Forbidden and Triumph, which now sit at the published figure.
     - **The trap: a multi-day repair must keep the CAMP shape** (summit leg = the summit day from
       camp and back, approach and descent within `CAMP_LEG_MATCH`). From camp, the alpine start
       counts back `1.69 x` the summit leg. Re-filing Icy as one-way legs (3 hr to the summit) would
@@ -192,10 +198,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       leg did the opposite: Icy's start counted back 12.5 hr, Shuksan's 14.5, Glacier Peak's 22.
       Run every repair through planTimes and the start window before writing it. A stored 13 hr
       summit DAY read as one way put Glacier Peak's summit 28.5 hr out.
-    - Left for the owner: Ptarmigan's 30 hr total (a traverse with no summit, published in DAYS;
-      moving or elapsed is a convention call). Flagged, below the bar: Elephant Butte's 3 hr
-      summit leg against a 10 hr camp round trip in one 1998 report, and the walk out the Ice
-      Cliff Glacier row may leave out.
+    - **`totalHrs` IS MOVING TIME, by measurement.** Of the 301 alpine rows that store all four
+      figures, 276 store the total as the sum of the legs. Only a handful use elapsed time with
+      nights in it: Elephant Butte's 36 is 12 hours of legs plus a night. Ptarmigan's 30 is
+      therefore moving time, with its 14.3 hr traverse filed in no leg (s = 0, no summit). It sits
+      within 20% of a guide itinerary's fit-party 36 hr, so it stays.
+    - Flagged after three passes, below the bar: Elephant Butte's 3 hr summit leg against a 10 hr
+      camp round trip in one 1998 report. The Ice Cliff Glacier row may leave out its walk out.
+      Shuksan's North Face has one trip from a camp (2016).
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
