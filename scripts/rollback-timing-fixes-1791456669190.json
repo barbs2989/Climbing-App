@@ -1,0 +1,233 @@
+[
+ {
+  "id": "wa_the_perfect_crime_with_variations",
+  "field": "timing",
+  "before": {
+   "totalHrs": 8,
+   "summitTimeHrs": 5,
+   "descentTimeHrs": 1.5,
+   "approachTimeHrs": 2,
+   "recommendedStart": "Pre-dawn given the approach length and multi-stage descent"
+  },
+  "after": {
+   "totalHrs": 9,
+   "summitTimeHrs": 5,
+   "descentTimeHrs": 2,
+   "approachTimeHrs": 2,
+   "recommendedStart": "Pre-dawn given the approach length and multi-stage descent"
+  }
+ },
+ {
+  "id": "wa_dragontail_peak_east_ridge_aasgard_pass",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Pre-dawn (roughly 3-5 a.m.) alpine start"
+  },
+  "after": {
+   "totalHrs": 12.5,
+   "summitTimeHrs": 5,
+   "descentTimeHrs": 5.5,
+   "approachTimeHrs": 2,
+   "recommendedStart": "Pre-dawn (roughly 3-5 a.m.) alpine start",
+   "sectionBreakdown": [
+    {
+     "hrs": 2,
+     "fromTo": "Trailhead to Colchuck Lake",
+     "section": "Approach"
+    },
+    {
+     "hrs": 5,
+     "fromTo": "Up Aasgard Pass and the east ridge to the summit",
+     "section": "Climb"
+    },
+    {
+     "hrs": 5.5,
+     "fromTo": "Back down Aasgard Pass and out to the trailhead",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_mount_baker_boulder_park_cleaver",
+  "field": "timing",
+  "before": {
+   "totalHrs": 8,
+   "summitTimeHrs": 3,
+   "descentTimeHrs": 2,
+   "approachTimeHrs": 3,
+   "recommendedStart": "5 AM"
+  },
+  "after": {
+   "totalHrs": null,
+   "summitTimeHrs": 5,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 5,
+   "recommendedStart": "5 AM",
+   "sectionBreakdown": [
+    {
+     "hrs": 5,
+     "fromTo": "Trailhead to high camp near the cleaver",
+     "section": "Approach"
+    },
+    {
+     "hrs": 5,
+     "fromTo": "High camp to the summit",
+     "section": "Climb"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_southeast_ridge_se_corner",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": 5.5,
+   "recommendedStart": "Alpine start from high camp to cross glaciers while snow is firm"
+  },
+  "after": {
+   "totalHrs": 17.5,
+   "summitTimeHrs": 5.5,
+   "descentTimeHrs": 6.5,
+   "approachTimeHrs": 5.5,
+   "recommendedStart": "Alpine start from high camp to cross glaciers while snow is firm",
+   "sectionBreakdown": [
+    {
+     "hrs": 5.5,
+     "fromTo": "Trailhead to the Sulphide Glacier high camp",
+     "section": "Approach"
+    },
+    {
+     "hrs": 5.5,
+     "fromTo": "Across the glacier and up the southeast ridge to the summit",
+     "section": "Climb"
+    },
+    {
+     "hrs": 6.5,
+     "fromTo": "Down the standard route and out to the trailhead",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "ca_mt_shasta_avalanche_gulch",
+  "field": "timing",
+  "before": {
+   "recommendedStart": "Around 2 a.m. for a summit day from Helen Lake or a single-day push from Bunny Flat"
+  },
+  "after": {
+   "recommendedStart": "Around 2 a.m. for a summit day from Helen Lake or a single-day push from Bunny Flat",
+   "approachTimeHrs": 3,
+   "summitTimeHrs": 5,
+   "descentTimeHrs": 4,
+   "totalHrs": 12,
+   "sectionBreakdown": [
+    {
+     "hrs": 3,
+     "fromTo": "Bunny Flat to Helen Lake",
+     "section": "Approach"
+    },
+    {
+     "hrs": 5,
+     "fromTo": "Helen Lake up Avalanche Gulch to the summit",
+     "section": "Climb"
+    },
+    {
+     "hrs": 4,
+     "fromTo": "Summit back down to Bunny Flat",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_southwest_face",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Early morning to beat afternoon thunderstorm risk and crowding on the popular approach/routes"
+  },
+  "after": {
+   "totalHrs": 10.5,
+   "summitTimeHrs": 4,
+   "descentTimeHrs": 4,
+   "approachTimeHrs": 2.5,
+   "recommendedStart": "Early morning to beat afternoon thunderstorm risk and crowding on the popular approach/routes",
+   "sectionBreakdown": [
+    {
+     "hrs": 2.5,
+     "fromTo": "Alpental to the base of the face past Pineapple Pass",
+     "section": "Approach"
+    },
+    {
+     "hrs": 4,
+     "fromTo": "Up the Southwest Face to the summit",
+     "section": "Climb"
+    },
+    {
+     "hrs": 4,
+     "fromTo": "Down the South Face and out to Alpental",
+     "section": "Descent"
+    }
+   ]
+  }
+ },
+ {
+  "id": "wa_baring_mountain_northwest_ridge",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Start at or before first light, especially in snow season when you want the gully firm on the way up and softening (but not rotten) on the way down. In late summer an early start mainly buys you shade on the steep forested path and a margin on the long descent."
+  },
+  "after": {
+   "totalHrs": 9,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "Start at or before first light, especially in snow season when you want the gully firm on the way up and softening (but not rotten) on the way down. In late summer an early start mainly buys you shade on the steep forested path and a margin on the long descent."
+  }
+ },
+ {
+  "id": "co_pyramid_peak_northeast_ridge",
+  "field": "timing",
+  "before": {
+   "recommendedStart": "Before dawn, aiming to summit by late morning"
+  },
+  "after": {
+   "recommendedStart": "Before dawn, aiming to summit by late morning",
+   "totalHrs": 10
+  }
+ },
+ {
+  "id": "wa_big_snagtooth_west_ridge",
+  "field": "timing",
+  "before": {
+   "totalHrs": null,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "An early/pre-dawn start is advisable given the long, loose approach and the exposed, unprotected summit block — parties often describe full days finishing close to sunset."
+  },
+  "after": {
+   "totalHrs": 11.5,
+   "summitTimeHrs": null,
+   "descentTimeHrs": null,
+   "approachTimeHrs": null,
+   "recommendedStart": "An early/pre-dawn start is advisable given the long, loose approach and the exposed, unprotected summit block — parties often describe full days finishing close to sunset."
+  }
+ }
+]

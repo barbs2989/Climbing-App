@@ -149,9 +149,83 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **A rappel floor** (walk down + 0.7 × the modelled climb) on stored-leg pitched routes. Short
       alpine descents went 9 -> 6 of 22, but the upper quartile reached 2.0x and the within share
       fell from 32% to 23%, because it charges rappels on walk-off routes (Serpentine Arête).
-    - Alpine descents remain the open residual (0.9x, 13 of 33 short). The cause is short STORED
-      totals on technical routes: Forbidden's West Ridge stores 15 hr, against about 20 hr car to
-      car online. That calls for per-route repairs (guidebook or report), not a formula.
+    - **Overwriting stored times with trip-report medians: REFUSED.** It was the obvious per-route
+      repair for the residual below. But `timing` is defined by the contribute form as "published
+      times for a fit party in good conditions — the guidebook figure", and guidebooks are the
+      owner's source of truth. A median of trip reports is neither published nor a fit party's day.
+      What WAS done instead is the per-route repair below: each row read on its own, a published
+      figure first, and only a short leg moved.
+      A scan for rows that misstate their own figure found ONE single leg over 36 hours in 970
+      rows: Jötnar's 168. That is the first ascent's seven days, and it matches the catalog's
+      ELAPSED convention for multi-day routes. It is the only published figure for a barely repeated
+      VI A3+ wall, so it stays. Nulling it would model the wall as a one-day free climb.
+  - **A STORED LEG IS A FIT PARTY'S DAY, AND THE SCREEN SAYS SO** (`P.legsStored`). Fitness and pack
+    scale only the walk model, so on a row with stored legs those inputs barely move the estimate.
+    The Planner said "Or estimate for your party" above them regardless. Now, when legs are stored,
+    the Planner names what is a fit party's published time and says to allow more for a slower party.
+    The alpine start says a slower party should start earlier. Section 1 holds the line, and the
+    injection suite's `fit-party-line-removed` case proves it.
+    - Alpine descents were the open residual (0.9x, 13 of 33 short). The cause was short STORED
+      totals on technical routes: Forbidden's West Ridge stored 15 hr, against about 20 hr car to
+      car online. That called for per-route repairs (guidebook or report), not a formula.
+  - **THE PER-ROUTE REPAIR (2026-10-08): 27 rows read one at a time, 14 changed, 13 left with a
+    reason each** (`audits/2026-10-08-route-timing-repairs.json`, written by
+    `scripts/oneoff/apply-timing-fixes.mjs` with a rollback file per run). The 27 are every row
+    whose descent or car-to-car ran > 20% short of online. Each got a second research pass for a
+    published figure and more timed reports, and the under-evidenced ones a third. The rule:
+    - A published figure for the route and trailhead wins; inside a published range, use the
+      reports' median clamped into it. With none, use >= 3 reports, or 2 that agree.
+    - A report the stored times were TAKEN from checks nothing. Stuart's Upper North Ridge stored
+      one fast party's 9 / 4 / 18.5.
+    - Only a leg > 20% short moved. A stored total is kept where the evidence allows, and its parts
+      are re-filed.
+    - **A LEG IS EVIDENCE WHEN ITS TWO ENDS MATCH, whatever the party climbed** (the third pass).
+      Eldorado's Northeast Face comes down the standard route, whose 13 reports gave the descent
+      its single report lacked. Easy Getaway shares the Cutthroat Wall descent with The Perfect
+      Crime, and their two timed descents agree. Look for the shared leg before calling a row
+      unresearchable.
+    - Measured, model ÷ online: short descents 29 -> 20 -> 18 of 161 (alpine 13 -> 9 -> 7,
+      mountaineering 14 -> 9). Descents within went 51% -> 58%, and the alpine descent median
+      0.9x -> 1.0x. Time to summit within went 49% -> 52%.
+    - Of the 18 still short, 6 store no timing at all (the walk model sets them) and 1 has a single
+      report. The rest are rows left for want of evidence or because the published figure agrees
+      with the Planner, plus Forbidden and Triumph, which now sit at the published figure.
+    - **The trap: a multi-day repair must keep the CAMP shape** (summit leg = the summit day from
+      camp and back, approach and descent within `CAMP_LEG_MATCH`). From camp, the alpine start
+      counts back `1.69 x` the summit leg. Re-filing Icy as one-way legs (3 hr to the summit) would
+      have counted back 5 hr against a 6-8.5 hr round trip, about 2.5 hr too late, because rappel
+      descents run nearly as long as the way up, not 0.69 of it. A hike out filed inside the summit
+      leg did the opposite: Icy's start counted back 12.5 hr, Shuksan's 14.5, Glacier Peak's 22.
+      Run every repair through planTimes and the start window before writing it. A stored 13 hr
+      summit DAY read as one way put Glacier Peak's summit 28.5 hr out.
+    - **`totalHrs` IS MOVING TIME, by measurement.** Of the 301 alpine rows that store all four
+      figures, 276 store the total as the sum of the legs. Only a handful use elapsed time with
+      nights in it: Elephant Butte's 36 is 12 hours of legs plus a night. Ptarmigan's 30 is
+      therefore moving time, with its 14.3 hr traverse filed in no leg (s = 0, no summit). It sits
+      within 20% of a guide itinerary's fit-party 36 hr, so it stays.
+    - Flagged after three passes, below the bar: Elephant Butte's 3 hr summit leg against a 10 hr
+      camp round trip in one 1998 report. The Ice Cliff Glacier row may leave out its walk out.
+      Shuksan's North Face has one trip from a camp (2016).
+  - **THE RESIDUAL (2026-10-08): 15 more rows, 9 changed, 6 left**
+    (`audits/2026-10-08-route-timing-residual.json`). These are every route still > 20% short on ANY
+    leg after the 27, plus The Perfect Crime, which shares Easy Getaway's descent. Most stored NO
+    times at all, so the walk model set them.
+    - **A row with no stored legs gets a FULL set or none.** A stored summit leg beside a missing
+      approach makes the Planner walk the whole gain AND add the leg on top. Where only the
+      car-to-car time clears the bar (Baring, Pyramid Peak, Big Snagtooth), only `totalHrs` is
+      stored: the whole-day shape. It shows one car-to-car time and gives NO alpine start, which
+      is better than a split nobody measured. No 0-hour approach is written: no alpine row uses one.
+    - A stored leg the evidence shows wrong but cannot replace is CLEARED, not guessed (Baker's
+      Boulder-Park Cleaver: 2 hr descent against a published 3 hr to camp alone).
+    - Measured: time to summit short 14 -> 7 of 178, car to car 20 -> 15 of 191, descent 18 -> 13
+      of 158. Three of the descent's five are the whole-day rows LEAVING that count, not fixed in it.
+    - **FLAGGED, the dangerous direction: Dome Peak.** Its 7 hr "summit day" is the published
+      ONE-WAY camp-to-summit time (6-8 hr). The approach and hike out are within `CAMP_LEG_MATCH`,
+      so the Planner reads the 7 as the whole round trip from camp. The alpine start counts back
+      7 hr where one report took 14. It needs one summit-to-camp figure; none clears the bar yet.
+    - **TRAP in the writer: jsonb reorders keys.** `apply-timing-fixes.mjs` compared JSON text, so
+      a row written with NEW keys read back as "not the intended timing" and reported REFUSED after
+      a correct write (Shasta, Pyramid Peak). It now compares with keys sorted.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
@@ -856,3 +930,36 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       is that intermediate topout.
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
+
+- **`check:sun-times`** asserts that **the Calendar's sunrise and sunset match an ephemeris to the
+  minute** — sixteen reference instants (four Washington points by four dates, Open-Meteo's daily
+  sunrise/sunset) that `sunRiseSet()` in `lib/conditionsScore.js` must land within three minutes
+  of, plus the polar-day, polar-night and bad-input shapes, plus two source checks: `lib/Calendar.jsx`
+  imports and calls `sunRiseSet`, and no app file declares a `sunTimes` of its own. Static, one
+  import, so it sits in `npm run build`.
+  - **WHY IT EXISTS.** Until 2026-10-07 the Calendar's Daylight line printed "solar noon ± half the
+    day length" as clock times — no longitude, no equation of time, no daylight saving, no disc or
+    refraction. Measured (`scripts/oneoff/probe-sun-times-vs-open-meteo.mjs`): **44–70 min early at
+    sunrise and 60–89 min early at sunset through the daylight-saving months**; within 6 min at
+    sunrise in December (no DST, near the zone's meridian) but still 6–13 min early at sunset; the
+    day 11–19 min short all year. A party setting a summer alpine start by it left camp an hour
+    before it needed to, and the line looked exactly like a correct one. A proper solar position
+    already existed twenty lines away (`sunPosition`, the crag conditions score's); the solver walks
+    it through the local day and bisects each horizon crossing.
+  - **IT IS THE ONLY GATE THAT EXECUTES THE FUNCTION.** Every other guard reads source. A rewrite
+    that drops the refraction term, reads longitude wrong, or scans the UTC day instead of the local
+    one is valid JS that renders a confident number — so the check is numeric, and the injection
+    suite (`scripts/oneoff/inject-sun-times-cases.mjs`, 6 cases) proves each of those is caught.
+  - **THE REFERENCE IS ABSOLUTE INSTANTS, NOT CLOCK TIMES — a trap met building it.** The first
+    capture asked Open-Meteo for local times and got Seattle's December sunrise as 08:54, an hour
+    late: the API stamps the whole response with the offset of the day it is *asked*, so a December
+    row fetched in October carried the summer offset. The solver was right and the reference wrong,
+    which a guard built on that table would have failed forever. `timeformat=unixtime` has no
+    offset to get wrong. Refresh the table with the probe above, never by hand.
+  - **TZ IS PINNED to `America/Los_Angeles` before any Date exists**, because the solver lays out
+    the *device's* local day, as the Calendar does. On a box in another zone the "local day" is a
+    different span of hours and a crossing can belong to a neighbouring date.
+  - **WHAT IT CANNOT SEE:** the Calendar renders the instants in the device's zone, which is the
+    climber's, not the route's. A Washington climber planning an Alaska route from home reads
+    Pacific clock times. That is the pre-existing behaviour, unchanged, and not what this guard
+    measures.

@@ -48,7 +48,12 @@ function sources(dir, acc = []) {
 // `invite only` is a REFUSAL — the branch it sits in performs no write at all, it tells a climber
 // why the tap did nothing. The category was already documented on the line above; the vocabulary
 // simply had no phrasing for a group that admits nobody without an invitation (0178).
-const NOT_A_CLAIM = /could not|couldn|did ?n|failed|error|retry|try again|only the|invite only|not allowed|on this device|locally only|won.t be saved|sign in|log in/i;
+// `no longer open` / `no longer on your friends list` / `already connected` report a connection row
+// the SERVER says is gone or already accepted — the branch performs no write and says so. They are the
+// honest replacement for "You and X are now connected" over a row that no longer existed (0257 PR).
+// Spelled out whole, not as a bare `no longer`, which would also excuse a real claim like
+// "X will no longer see your posts".
+const NOT_A_CLAIM = /could not|couldn|did ?n|failed|error|retry|try again|only the|invite only|not allowed|on this device|locally only|won.t be saved|sign in|log in|is no longer open|no longer on your friends list|are already connected/i;
 
 function scan() {
   const found = new Map();

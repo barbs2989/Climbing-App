@@ -30,6 +30,13 @@
 //                  and every discipline on this tab can log a Turned around. The season is read at the
 //                  TOP of the climb, with snowfall, and says it is a guide, not a forecast.
 //                  A day the forecast MODELS disagree on gets a caution; one model is no comparison.
+//   9. SUN AND SHADE — the terrain's shadow on the route's OWN pins (summit, base, highest camp), a
+//                  line per kind on what the sun does there, steep-and-sunlit ground only where snow or
+//                  ice is in play.
+//  10. SUN ON THE FACE — glacier and alpine ice count the start back from the first sun on the steep
+//                  ground of the face (owner: "do what you recommend", research 2026-10-08): be above
+//                  each height before the sun reaches it, no lag; never on rock or a scramble, never
+//                  after a night that did not freeze; and the card says what it could not read.
 // Thresholds and their research live in docs/guards/honesty-claims.md.
 import fs from "node:fs";
 import os from "node:os";
@@ -52,7 +59,7 @@ export { fetchAlpineClimate } from ${JSON.stringify(path.join(ROOT, "lib", "fore
 export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 export { inGeometry, zoneFor, avyReading, DANGER_NAME } from ${JSON.stringify(path.join(ROOT, "lib", "avalanche.js"))};
 export { nearestStation, kmBetween, snowReading } from ${JSON.stringify(path.join(ROOT, "lib", "snotel.js"))};
-export { recentOutcomes } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
+export { recentOutcomes, sunPins, sunFace } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -107,6 +114,9 @@ eq("mountaineering is GLACIER & snow", k({ discipline: "mountaineering" }, { sno
 eq("...unless its own text says no snow, when it is read as a scramble", k({ discipline: "mountaineering" }, { snow: "no" }), "scramble");
 eq("scrambling is SCRAMBLING", k({ discipline: "scrambling" }), "scramble");
 eq("a trad route the page calls alpine (it climbs a peak) is ALPINE ROCK", k({ discipline: "trad" }, {}, "alpine"), "alpinerock");
+eq("an ALPINE route graded AI is alpine ice, not rock (Chair Peak N Face, AI2)", k({ discipline: "alpine", grade: "AI2" }, {}, "alpine"), "alpineice");
+eq("...and one graded WI (Triple Couloirs, WI3)", k({ discipline: "alpine", grade: "WI3" }, {}, "alpine"), "alpineice");
+eq("...while an alpine rock grade stays alpine rock", k({ discipline: "alpine", grade: "5.8" }, {}, "alpine"), "alpinerock");
 eq("a sport route gets no alpine kind", k({ discipline: "sport" }, {}, "sport"), null);
 eq("the alpine set and the crag score's set are DISJOINT", A.ALPINE_COND_DISCIPLINES.filter((d) => A.CRAG_SCORE_DISCIPLINES.includes(d)), []);
 
@@ -306,10 +316,86 @@ for (const units of ["imperial", "metric"]) {
 }
 A.__set_UNITS("imperial");
 eq("the card adds that flag only to a day the models disagree on, from a second read that adds NOTHING when it fails", /fetchAlpineSpread\([\s\S]{0,200}function \(\) \{ if \(live\) setSp\(null\); \}/.test(card) && /if \(ms && ms\.over\.length\) r = /.test(card), true);
+eq("a start counted back from STORED legs says they are a fit party's times, so a slower party starts earlier", /P\.legsStored \? "\. Times are this route’s published times for a fit party \(Plan tab\), so a slower party should start earlier\."/.test(card), true);
 const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);
 
-const FLOOR = 105;
+console.log("\n9. SUN AND SHADE — the terrain's shadow on the route's own pins");
+{
+  const W = (type, lat, lng, elev) => ({ type, lat, lng, elev });
+  const pins = A.sunPins({ waypoints: [W("trailhead", 46.85, -121.73, 5400), W("camp", 46.83, -121.73, 8000), W("camp", 46.82, -121.73, 10000), W("base", 46.81, -121.74, 10200), W("summit", 46.85, -121.76, 14400), W("topout", 46.85, -121.76, 14400), W("summit", "", "", null)] });
+  eq("the pins are the route's own: summit, base and the HIGHEST camp — never the trailhead, and a top-out beside a summit is not a second top", pins.map((p) => p.key + "@" + p.lat), ["Summit@46.85", "Base@46.81", "Campsite@46.82"]);
+  // A summit pin a pixel off the model's top read first sun 80 min late at Colchuck Peak (2026-10-07).
+  eq("only the SUMMIT is read at the terrain's high point beside it; a base or camp keeps its own pixel, where a wall beside it is real shade", pins.map((p) => p.key + ":" + p.top), ["Summit:true", "Base:false", "Campsite:false"]);
+  const shadeSrc = fs.readFileSync(path.join(ROOT, "lib", "ShadeMap.jsx"), "utf8");
+  eq("...and the map snaps exactly those pins", /return px && p\.top && d \? highestNear\(d\.E, grid\.W, grid\.H, px, Math\.round\(SUMMIT_SNAP_M \/ grid\.pxM\)\) : px;/.test(shadeSrc), true);
+  eq("a route with no placed pins has none (the map then falls back to the forecast point, said to be the area's)", A.sunPins({ waypoints: [W("summit", null, null, null)] }), []);
+  eq("...and the section tells an area pin from the route's own", /place=\{pins\.length \? "climb" : "area"\}/.test(card), true);
+  eq("every kind gets its OWN line on what the sun does there", Object.keys(A.KIND_LABEL).every((kk) => new RegExp("\\n  " + kk + ": \"").test(card.slice(card.indexOf("const SUN_NOTE")))), true);
+  eq("...each called a rule of thumb on screen", /SUN_NOTE\[kind\] \+ " A rule of thumb\."/.test(card), true);
+  eq("steep-and-sunlit ground is offered only where snow or ice is in play (not on a dry scramble or rock)", /const steep = kind === "glacier" \|\| kind === "alpineice" \|\| kind === "waterfall" \|\| kind === "cragmixed" \|\| hasSnowLegs\(kind, terrain\);/.test(card), true);
+  eq("the terrain is centred on the CLIMB (its base, else its top), not the trailhead", /p\.key === "Base"[\s\S]{0,120}p\.key === "Summit" \|\| p\.key === "Topout"/.test(card), true);
+  eq("it reads the SELECTED day's sunrise and sunset, and renders under the forecast", /<SunShadeSection route=\{route\} kind=\{kind\} terrain=\{terrain\} pt=\{pt\} fc=\{fc\} day=\{day\}/.test(card) && /day\.sunrise \* 1000, set = day\.sunset \* 1000/.test(card), true);
+  // The section reads day.sunrise, so the card's own day objects must CARRY it: they are rebuilt from
+  // localDays() with only the fields the card names, and the first draft dropped these two, which
+  // rendered the section for nobody while the line above passed.
+  eq("...and the card's day objects carry the sunrise and sunset that line reads", /out\.push\(Object\.assign\(\{ date: d\.date, sum: daySummary\(fc, d\), sunrise: d\.sunrise, sunset: d\.sunset \}/.test(card), true);
+  const fcSrc = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
+  eq("...which the alpine forecast fetch asks for", /export function fetchAlpineForecast[\s\S]{0,1200}daily=sunrise,sunset/.test(fcSrc), true);
+  const judge = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
+  eq("the judgement module IMPORTS no terrain: the card reads it and hands over plain numbers", /^import[^\n]*(terrainShade|ShadeMap)/m.test(judge), false);
+}
+
+console.log("\n10. SUN ON THE FACE — be above each height of the face before the sun first reaches it");
+{
+  eq("the climb starts early enough to be above 9,000 ft (3/4 of the way, in a 4 h climb) when the sun reaches it", A.sunClimbStart([{ ft: 9000, at: 1e6 }, { ft: 11000, at: 1 }, { ft: 5000, at: 1 }], 6000, 10000, 4), { at: 1e6 - 3 * 3600, ft: 9000, sunAt: 1e6 });
+  eq("...and with nothing to read, or no height to climb, nothing binds", [A.sunClimbStart([], 6000, 10000, 4), A.sunClimbStart([{ ft: 9000, at: 1 }], null, 10000, 4), A.sunClimbStart([{ ft: 9000, at: 1 }], 6000, 10000, 0)], [null, null, null]);
+  const M = DAY0 + T * 86400, LEGS2 = { up: 6, down: 4, fromCamp: false, floor: false, tech: 4, hike: 2 };
+  const SUN = { bands: [{ ft: 9500, at: M + 7 * 3600 }, { ft: 8000, at: M + 9 * 3600 }], fromFt: 5000, topFt: 10000 };
+  const frozen = forecast(() => ({ fl: 5000 })), LEGS3 = Object.assign({}, LEGS2, { down: 1 });
+  // A warm day (the freezing level passes 10,000 ft at 11:00) and snow read high (9,800 ft softens at
+  // 11:00, so the snow start is 11:00 - 7 h = 04:00): the sun on the face comes first.
+  const gs = run(forecast(thaw), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 9800, legs: LEGS3, sun: SUN });
+  eq("glacier on a warm day: the SUN decides — above 9,500 ft by 07:00 is a 4 h climb from 01:24 after the 2 h walk in", gs.start && [Math.round(clock(gs.start.at) * 10) / 10, gs.start.why, gs.start.sun.ft], [1.4, "sun", 9500]);
+  const gc = run(frozen, { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS2, sun: SUN });
+  eq("...but on a day the air at those heights never thaws, the sun sets NO deadline, and says why", [gc.sun, gc.sunCold, gc.start && gc.start.why], [null, true, null]);
+  const ga = run(forecast(thaw), { kind: "alpineice", terrain: { snow: "yes" }, highFt: 10000, snowFt: 9800, legs: LEGS3, sun: SUN });
+  eq("...and alpine ice the same", ga.start && ga.start.why, "sun");
+  const gsn = run(forecast(thaw), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS2, sun: SUN });
+  eq("when the SNOW deadline is earlier it decides, and the sun's reading is still handed back to be shown", [gsn.start && gsn.start.why, gsn.sun && gsn.sun.ft], ["snow", 9500]);
+  const rk = run(frozen, { kind: "alpinerock", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS2, sun: SUN });
+  eq("alpine rock never counts the sun (it dries and warms rock)", [rk.sun, rk.start && rk.start.why], [null, null]);
+  const nf = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS2, sun: SUN });
+  eq("after a night that never froze there is NO sun deadline: nothing was frozen in place to begin with", [has(nf, "no-refreeze"), nf.sun], [true, null]);
+  const cp = run(forecast(thaw), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 9800, legs: { up: 4, down: 3, fromCamp: true, floor: false, tech: 4, hike: 0 }, sun: { bands: [{ ft: 9500, at: M + 7 * 3600 }], fromFt: 8000, topFt: 10000 } });
+  eq("from camp, the whole summit leg is the climb and nothing is added for a walk in", cp.start && [Math.round(clock(cp.start.at) * 100) / 100, cp.start.why], [4, "sun"]);
+  const fl = run(frozen, { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: { up: 6, down: 4, fromCamp: false, floor: true, tech: 4, hike: 2 }, sun: SUN });
+  eq("a Planner estimate that is only a floor still gives no start at all", fl.start, null);
+
+  const Wp = (type, lat, lng, elev) => ({ type, lat, lng, elev });
+  const route = (aspect, wps) => ({ aspect, waypoints: wps });
+  const f1 = A.sunFace(route("NE", [Wp("trailhead", null, null, 3400), Wp("summit", 47.48, -120.85, 8705)]), "glacier", { campFt: null }, false);
+  eq("the face is read from the summit pin and a one-direction aspect, from the trailhead's height", f1 && [f1.deg, f1.fromFt, f1.top.key, f1.ctr.key], [45, 3400, "Summit", "Summit"]);
+  eq("...from the highest camp on a multi-day push, its height read even when the pin isn't placed", A.sunFace(route("N", [Wp("camp", null, null, 5000), Wp("camp", 47.49, -120.83, 5570), Wp("summit", 47.48, -120.85, 8705)]), "alpineice", {}, true).fromFt, 5570);
+  eq("...and with no camp height, from the trailhead's — lower, so the start errs EARLY", A.sunFace(route("N", [Wp("trailhead", null, null, 3400), Wp("summit", 47.48, -120.85, 8705)]), "alpineice", {}, true).fromFt, 3400);
+  eq("an aspect that isn't one direction, a missing summit pin or a missing start height is NAMED, not guessed", [A.sunFace(route("varies", [Wp("trailhead", null, null, 3400), Wp("summit", 47.48, -120.85, 1)]), "glacier", {}, false), A.sunFace(route("NE", [Wp("trailhead", null, null, 3400)]), "glacier", {}, false), A.sunFace(route("NE", [Wp("summit", 47.48, -120.85, 1)]), "glacier", {}, true)], [{ missing: "aspect" }, { missing: "summit" }, { missing: "from" }]);
+  const nm = (name) => A.sunFace(Object.assign(route("N", [Wp("trailhead", null, null, 3400), Wp("summit", 47.48, -120.85, 8705)]), { name }), "glacier", {}, false);
+  eq("a RIDGE route gets no sun deadline (what sheds off a flank falls away from the crest), but a face, couloir or glacier named beside a ridge does", ["Liberty Ridge", "North Face of the Northwest Ridge", "Southwest Ridge / McAllister Glacier", "Northeast Couloir", "Standard Route"].map((n) => nm(n).missing || "face"), ["ridge", "face", "face", "face", "face"]);
+  eq("...and the card says so", /ridge: "it climbs a ridge, and what sheds off either side falls away from the crest"/.test(card), true);
+  eq("...and rock, scrambles and waterfall ice get no face at all", ["alpinerock", "scramble", "waterfall"].map((kk) => A.sunFace(route("NE", [Wp("trailhead", null, null, 1), Wp("summit", 1, 1, 2)]), kk, {}, false)), [null, null, null]);
+
+  eq("the card hands the day's face reading to the judgement, and only a COMPUTED one", /sun: fs && fs\.bands \? fs : null/.test(card), true);
+  eq("a start the sun decided says so, with the height and the hour", /day\.start\.why === "sun" \?[^\n]*" and be above " \+ uElev\(Math\.ceil\(day\.start\.sun\.ft \/ 50\) \* 50\) \+ " by "[^\n]*when the sun reaches steep ground that sheds onto the line above that height/.test(card), true);
+  eq("...and says the line is the fall line from the summit, not a traced route, and reads one flank on a ridge", /The line is the fall line down the " \+ faceDir \+ " side from the summit, not a traced route — on a ridge it reads one flank\./.test(card), true);
+  eq("the model's limits are said beside it — no lag counted, shade isn't frozen, cornices, seracs, narrow walls", /no lag is counted/.test(card) && /shade isn’t proof the snow is frozen/.test(card) && /misses cornices, seracs and narrow walls/.test(card), true);
+  eq("...and on a glacier, that no timing reduces serac fall", /kind === "glacier" \? " No timing reduces serac fall\." : ""/.test(card), true);
+  eq("a night that never froze says the sun gives no deadline", /The sun gives no deadline today: with nothing frozen overnight/.test(card), true);
+  eq("...and so does a day too cold for the sun to matter", /day\.sunCold \? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day/.test(card), true);
+  eq("what the start could not read is said, every time (no aspect, no summit pin, no start height, no terrain)", /This start doesn’t count in sun on the face: /.test(card) && /Couldn’t load the terrain, so this start doesn’t count in sun on the face\./.test(card), true);
+  eq("...in the start box itself", /\{startEl\}\{sunEl\}/.test(card), true);
+}
+
+const FLOOR = 153;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);

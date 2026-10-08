@@ -28,9 +28,14 @@ const q = function (s) { return "'" + String(s).replace(/'/g, "''") + "'"; };
 const cleanRock = function (s) { const r = rocksIn(String(s || "")); return r.length === 1 ? r[0] : null; };
 const norm = function (s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); };
 
-const walls = JSON.parse(fs.readFileSync(path.join(DIR, "walls.json"), "utf8"));
+// walls-extra.json: walls the snapshot does not hold (they had no rock when it was taken), added by
+// hand when a batch names one, so its fill is applied and verified like any other.
+const extra = path.join(DIR, "walls-extra.json");
+const walls = JSON.parse(fs.readFileSync(path.join(DIR, "walls.json"), "utf8")).concat(fs.existsSync(extra) ? JSON.parse(fs.readFileSync(extra, "utf8")) : []);
+// A man-made wall (audit/man-made.json) has no rock on purpose: no verdict on its crag may give it one.
+const MAN_MADE = JSON.parse(fs.readFileSync(path.join(DIR, "man-made.json"), "utf8"));
 const byPid = new Map();
-for (const w of walls) { if (!byPid.has(w[1])) byPid.set(w[1], []); byPid.get(w[1]).push(w); }
+for (const w of walls) { if (MAN_MADE[w[0]]) continue; if (!byPid.has(w[1])) byPid.set(w[1], []); byPid.get(w[1]).push(w); }
 
 const rock = new Map(), confirm = new Set(), aspect = new Map(), routeFix = [];
 const tally = { ok: 0, wrong: 0, unclear: 0, exceptions: 0, fills: 0, aspects: 0, skipped: 0 };

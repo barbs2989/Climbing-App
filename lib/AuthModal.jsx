@@ -43,6 +43,9 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
   const [busy, setBusy] = useState(false);
   const [done, setDone] = useState(false);
   const [adult, setAdult] = useState(false); // 18+ attestation, create-account only
+  // App Review asks that users AGREE to terms with zero tolerance for objectionable content before
+  // they can post -- an affirmative box, not a "by continuing" line. Create-account only.
+  const [agreed, setAgreed] = useState(false);
   // Turnstile (lib/captcha.jsx). Off until a site key is set, and then asked on the three forms
   // that reach Supabase with a password or an email: sign in, create account, forgot password.
   // A token is spent by ONE attempt, so every attempt ends by asking for a fresh widget.
@@ -89,6 +92,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     // would not be verified either -- so it collects more and proves the same. Gate the write,
     // not just the checkbox, or the rule is decoration.
     if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
+    if (mode === "up" && !agreed) { setErr("Agree to the Terms of Service and Community Guidelines to create an account."); return; }
     if (mode === "up" && password.length < MIN_PASSWORD) { setErr(`Use at least ${MIN_PASSWORD} characters.`); return; }
     if (captchaMissing()) return;
     setErr(""); setInfo(""); setBusy(true);
@@ -97,6 +101,12 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
       ? await signIn(email.trim(), password, token)
       : await signUp(email.trim(), password, name.trim(), POLICY_VERSION, token);
     setBusy(false); if (needsCaptcha) spendCaptcha();
+    // A BANNED account (0264) is refused by GoTrue itself with "User is banned". Say what that means
+    // in the app's own words; the reason they were banned was shown in-app before the ban took effect.
+    if (error && (error.code === "user_banned" || /user is banned/i.test(error.message || ""))) {
+      setErr("This account has been banned by ClimbMatch Safety for breaking the Community Guidelines, so it can’t sign in.");
+      return;
+    }
     if (error) { setErr(error.message); return; }
     // Signing up with an address that already has an account is NOT an error:
     // to avoid leaking which emails are registered, Supabase returns a decoy user
@@ -128,6 +138,7 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
     // the Terms would again assert an age nothing checks. Google is not enabled on the project
     // today, so this is closing the hole before it opens rather than fixing a live one.
     if (mode === "up" && !adult) { setErr("You must be 18 or older to create an account."); return; }
+    if (mode === "up" && !agreed) { setErr("Agree to the Terms of Service and Community Guidelines to create an account."); return; }
     setErr(""); setInfo(""); setBusy(true);
     const { error } = await signInWithGoogle();
     setBusy(false);
@@ -202,6 +213,12 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
             <span>I am 18 or older.</span>
           </label>
         )}
+        {mode === "up" && (
+          <label style={{ display: "flex", alignItems: "flex-start", gap: 9, marginBottom: 12, fontSize: 12.5, color: c.sub, lineHeight: 1.45, cursor: "pointer" }}>
+            <input type="checkbox" checked={agreed} onChange={(e) => { setAgreed(e.target.checked); if (e.target.checked) setErr(""); }} style={{ marginTop: 2, width: 16, height: 16, accentColor: c.blue, flexShrink: 0, cursor: "pointer" }} />
+            <span>I agree to the Terms of Service and Community Guidelines. ClimbMatch has zero tolerance for objectionable content or abusive users.</span>
+          </label>
+        )}
         {needsCaptcha && <Turnstile resetKey={mode + ":" + captchaRound} onToken={(t) => { setCaptcha(t); if (t) setErr(""); }} onError={setErr} />}
         {err && <div role="alert" style={{ color: c.red, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{err}</div>}
         {info && <div role="status" style={{ color: c.green, fontSize: 12.5, marginBottom: 10, lineHeight: 1.45 }}>{info}</div>}
@@ -217,6 +234,8 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
           <div style={{ marginTop: 12, fontSize: 11.5, color: c.sub, lineHeight: 1.5, textAlign: "center" }}>
             By {mode === "up" ? "creating an account" : "signing in"} you agree to our{" "}
             <button onClick={() => onLegal("terms")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Terms of Service</button>
+            {", "}
+            <button onClick={() => onLegal("guidelines")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Community Guidelines</button>
             {" "}and{" "}
             <button onClick={() => onLegal("privacy")} style={{ background: "none", border: "none", color: c.blue, fontSize: 11.5, fontWeight: 700, cursor: "pointer", padding: 0, textDecoration: "underline", textUnderlineOffset: "2px" }}>Privacy Policy</button>.
           </div>

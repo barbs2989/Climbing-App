@@ -396,7 +396,7 @@ try {
     const seenByMate = await mp.evaluate(() => document.body.innerText || "");
     if (seenByMate.includes(JOURNEY_ROUTE_NAME)) ok(`the mate FINDS the owner's crew ("${JOURNEY_ROUTE_NAME}") in Join a crew`);
     else bad(`the mate cannot find the owner's crew — "${JOURNEY_ROUTE_NAME}" is absent from Join a crew, so a real climber's crew is invisible to another real climber`);
-    if (/undefined/.test(seenByMate)) bad("the crew list contains the word undefined — a row resolved against the wrong store");
+    if (/undefined/.test(seenByMate)) { const at = seenByMate.indexOf("undefined"); bad("the crew list contains the word undefined — a row resolved against the wrong store: …" + seenByMate.slice(Math.max(0, at - 120), at + 40).replace(/\s+/g, " ") + "…"); }
     else ok("no undefined in the mate's crew list");
     await mp.close().catch(() => {});
   } finally {
@@ -587,6 +587,19 @@ try {
     b[0].click(); return true;
   });
   if (!clickedRemove) dead("the Remove control could not be clicked");
+  // #2024 (2026-09-30) put a confirm sheet in front of Remove, and this walk kept clicking only
+  // "Remove" -- so from then on it asserted a removal nobody had confirmed and went red at the
+  // database check, then cascaded into every phase after it. Confirm it the way a climber must.
+  await page.waitForSelector('[role="alertdialog"]', { timeout: 8000 }).catch(() => dead("Remove opened no confirm sheet — the flow the climber sees has changed"));
+  const confirmed = await page.evaluate(() => {
+    const d = document.querySelector('[role="alertdialog"]');
+    const b = d && [...d.querySelectorAll("button")].find((x) => (x.innerText || "").trim() === "Remove friend");
+    if (!b) return null;
+    const title = d.getAttribute("aria-label") || "";
+    b.click(); return title;
+  });
+  if (confirmed === null) dead("the confirm sheet has no 'Remove friend' button");
+  ok(`confirmed the removal in the sheet ("${confirmed}")`);
   await settledText(page);
   await new Promise((r) => setTimeout(r, 2500));
 
@@ -761,15 +774,17 @@ try {
     await openMateProfile("after the reload");
     const after = await page.evaluate(() => {
       const b = [...document.querySelectorAll("button")]
-        .filter((x) => ["+ Friend", "Requested", "✓ Friend", "Accept"].includes((x.innerText || "").trim()));
+        .filter((x) => ["+ Friend", "Requested · undo", "✓ Friend", "Accept"].includes((x.innerText || "").trim()));
       if (b.length !== 1) return { n: b.length };
       return { n: 1, label: (b[0].innerText || "").trim(), disabled: !!b[0].disabled };
     });
+    // b46f3225 (2026-09-30) made a second tap WITHDRAW the request, so the control reads
+    // "Requested · undo" and is deliberately ENABLED. This walk still asserted a disabled "Requested"
+    // and died here from then on. What matters is unchanged: after a reload the app must not offer
+    // "+ Friend" (a resend the unique pair index would refuse) — it must know the request is out.
     if (after.n !== 1) dead(`expected exactly 1 connect-state control after the reload, found ${after.n}`);
-    if (after.label === "Requested") ok("after a reload the profile still reads \"Requested\"");
+    if (after.label === "Requested · undo") ok("after a reload the profile still reads \"Requested · undo\" — the request survived and can be taken back");
     else bad(`after a reload the profile offers "${after.label}" — the pending request did not survive, so the climber is invited to send it again`);
-    if (after.disabled) ok("...and the control is disabled, so it cannot be sent twice");
-    else bad("the control is still enabled after the request — a second tap would be refused by the unique constraint on `connections`");
   } finally {
     for (const id of requestIds) {
       await fetch(`${SUPABASE_URL}/rest/v1/connections?id=eq.${id}`, { method: "DELETE", headers: H }).catch(() => {});
