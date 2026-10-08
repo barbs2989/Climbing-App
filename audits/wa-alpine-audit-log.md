@@ -31201,3 +31201,62 @@ publications.americanalpineclub.org and recreation.gov was blocked (EGRESS_BLOCK
 attempt across all four agents, consistent with every recent batch.
 
 Pass 7 continues next run after `wa_dragontail_peak_east_route`.
+
+---
+
+## 2026-10-08 — Pass 7, Batch 397
+
+Eight routes across three peaks: six remaining Dragontail Peak routes (Northwest Face,
+Gerber-Sink, Pandora's Box/W Couloir, Triple Couloirs, Serpentine Arête, West Route), Witches
+Tower's East Face, and Eagle Rock's Standard Scramble.
+
+**Zero confirmed errors** with a citable contradicting source — no SQL file this batch.
+
+**Flagged for human review:** Dragontail Peak area's blurb calling Triple Couloirs "Grade IV"
+when most sources (Mountaineers.org, SummitPost) say Grade III, though AAI's own profile title
+reads "III-IV" — a source conflict, not a clean error. `wa_dragontail_peak_northwest_face`'s FA
+(Beckey/Davis, June 28 1962) is unconfirmed, and the only "Northwest Face" AAJ report found (1984,
+Wilson/Wasson) describes a Grade IV route requiring an overnight summit bivouac — far more
+involved than the stored 3-pitch/Grade-III/700-ft line; may be a different route sharing the name,
+needs a human with AAJ/Beckey access. `wa_dragontail_peak_r2` (Gerber-Sink)'s description (North
+Face low point, ~2,000 ft of ice/mixed runnels) is nearly identical to a separately-named
+"Cotter-Bebie" route cited on the same face elsewhere — a possible same-route-two-names question,
+not resolved. `wa_dragontail_peak_r3` (Pandora's Box)'s `gain_ft` (5,500) is ~60 ft off its own
+waypoints' implied gain (3,400 → 8,840 ft = 5,440 ft) — a minor internal inconsistency, no
+external source to adjudicate. `wa_dragontail_peak_r4` (Triple Couloirs) has several fields where
+one source agrees and another disagrees: `commitment` III vs. III-IV, `rock_grade` 5.8 vs. 5.7,
+`alpine_grade` "D" (no source uses French/Alpine notation for this route at all), and trailhead
+elevation 3,400 ft vs. a USFS page's 3,000 ft. `wa_dragontail_peak_serpentine_arete`'s FA
+(Hargis/Ossiander, 1973) rests on a single trip report's speculative guess about an old piton's
+age, not a documented credit — recommend checking Beckey's Cascade Alpine Guide directly.
+`wa_dragontail_peak_west_route`'s informal "Pandora's Box" nickname overlap in a couple of trip
+reports was checked and is **not** a catalog duplicate — Mountain Project and SummitPost both
+carry "West Route" as its own distinct, correctly-graded entry. Witches Tower's `route_count` (5)
+couldn't be checked against Mountain Project's own area table (unreachable). `wa_e_se_face`'s
+cited 2006 yellowleaf.org trip report may describe the tower's general scramble route rather than
+this specific face — the snippet doesn't disambiguate. Eagle Rock's `rock` ("tuff") has no
+geologic source either way. Eagle Rock's `road` field cites very specific FR6510/FR6514
+mileposts and a "June 30, 2026" washout date with **zero corroboration found anywhere** —
+unusually precise and unverifiable; worth a human checking the live MBS Skykomish Ranger District
+alert page directly before trusting it. `wa_eagle_rock_scramble`'s summit-register/low-traffic
+estimate is plausible (every source agrees the peak is rarely climbed) but unconfirmed against an
+actual register.
+
+Clean / independently reconfirmed (not exhaustive): Dragontail Peak's elevation (8,840 ft),
+prominence (1,760 ft), and name-origin history; Triple Couloirs' FA party/date, pitch count (20),
+and length (~2,500 ft); Serpentine Arête's pitch count (14), length (~2,000 ft, three independent
+sources), rock grade/crux description, and waypoint elevations (Aasgard Pass 7,841 ft is an exact
+USGS GNIS match); Gerber-Sink's pitch count (10), ice grade (WI3+ M4), and face description;
+Pandora's Box's location, steepness, and unroped-scramble character; Witches Tower's elevation
+(8,566 ft), prominence (210 ft), coordinates, and its blurb's geographic claims (bearing to
+Dragontail Peak, distance from Prusik Peak) — both checked by coordinate math and confirmed; Eagle
+Rock's elevation, prominence, coordinates, and approach road chain; Eagle Rock Standard Scramble's
+grade, gain (1,464 ft), one-way distance (0.8 mi), and round-trip time, all matching SummitPost
+point for point.
+
+**Tooling notes:** Delegated research to 3 parallel subagents (Dragontail routes 1-3; Dragontail
+routes 4-6; Witches Tower + Eagle Rock). WebFetch was blocked (DNS/ENOTFOUND, consistent with
+EGRESS_BLOCKED) on every domain tried across all three agents, including Wikipedia this time;
+WebSearch snippets were again the sole working method.
+
+Pass 7 continues next run after `wa_eagle_rock_scramble`.
