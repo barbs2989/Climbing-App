@@ -244,6 +244,7 @@ npm run check:sql -- fix.sql # would this hand-written SQL actually match anythi
 npm run check:merge-survival # did a merge silently DELETE what a parent added?
 npm run audit:silent-reverts # ...and did a SQUASH, which leaves no merge commit?
 npm run check:schema # lib/db.js never reads a table or column the database lacks (in build)
+npm run check:list-row-columns # the Climbs list's THIN ROW carries every column its readers read, and nothing they don't (in build)
 npm run check:migrations # two migrations must never share a number (in build)
 npm run check:migration-replay # does supabase/migrations rebuild an EMPTY database, as a Supabase preview does? (--compare-live: into the LIVE schema)
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)

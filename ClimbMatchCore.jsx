@@ -3613,7 +3613,7 @@ function DbClimbPicker({onPickRoute,selectedIds,onViewRoute,start,onExit,pickLab
   const statesQ=useStates();
   const countries=(countriesQ.data||[]).filter(function(c){return (c.route_count||0)>0;});
   const childrenQ=useAreaChildren(pArea?pArea.id:null,{enabled:!!pArea});
-  const routesQ=useAreaRoutes(pArea?pArea.id:null);
+  const routesQ=useAreaRoutes(pArea?pArea.id:null,{full:true});/* full rows: a picked route goes to the log form, not through openRoute's hydration */
   const atCountry=!!pArea&&pArea.area_type==="country";
   const areaSearchQ=useAreaSearch(pArea?pArea.id:null,pq);
   /* Route search is scoped to an area on purpose, and the null root is not a tidy-up: at
