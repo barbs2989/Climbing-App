@@ -16,7 +16,11 @@ const [file, flag] = process.argv.slice(2);
 const APPLY = flag === "--apply";
 const key = requireServiceKey();
 const fixes = JSON.parse(fs.readFileSync(file, "utf8"));
-const same = (a, b) => JSON.stringify(a ?? null) === JSON.stringify(b ?? null);
+// jsonb stores an object's keys in ITS order (shorter keys first), not the order they were written in,
+// so compare with keys sorted: a row written with new keys read back "not the 'to'" and was reported
+// REFUSED although it held exactly the intended values (Shasta, Pyramid Peak, 2026-10-08).
+const canon = (v) => (Array.isArray(v) ? v.map(canon) : v && typeof v === "object" ? Object.keys(v).sort().reduce((o, k) => ((o[k] = canon(v[k])), o), {}) : v);
+const same = (a, b) => JSON.stringify(canon(a ?? null)) === JSON.stringify(canon(b ?? null));
 const near = (a, b) => Math.abs(a - b) < 0.05;
 
 function invalid(t) {

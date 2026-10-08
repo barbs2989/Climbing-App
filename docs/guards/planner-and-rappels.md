@@ -206,6 +206,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - Flagged after three passes, below the bar: Elephant Butte's 3 hr summit leg against a 10 hr
       camp round trip in one 1998 report. The Ice Cliff Glacier row may leave out its walk out.
       Shuksan's North Face has one trip from a camp (2016).
+  - **THE RESIDUAL (2026-10-08): 15 more rows, 9 changed, 6 left**
+    (`audits/2026-10-08-route-timing-residual.json`). These are every route still > 20% short on ANY
+    leg after the 27, plus The Perfect Crime, which shares Easy Getaway's descent. Most stored NO
+    times at all, so the walk model set them.
+    - **A row with no stored legs gets a FULL set or none.** A stored summit leg beside a missing
+      approach makes the Planner walk the whole gain AND add the leg on top. Where only the
+      car-to-car time clears the bar (Baring, Pyramid Peak, Big Snagtooth), only `totalHrs` is
+      stored: the whole-day shape. It shows one car-to-car time and gives NO alpine start, which
+      is better than a split nobody measured. No 0-hour approach is written: no alpine row uses one.
+    - A stored leg the evidence shows wrong but cannot replace is CLEARED, not guessed (Baker's
+      Boulder-Park Cleaver: 2 hr descent against a published 3 hr to camp alone).
+    - Measured: time to summit short 14 -> 7 of 178, car to car 20 -> 15 of 191, descent 18 -> 13
+      of 158. Three of the descent's five are the whole-day rows LEAVING that count, not fixed in it.
+    - **FLAGGED, the dangerous direction: Dome Peak.** Its 7 hr "summit day" is the published
+      ONE-WAY camp-to-summit time (6-8 hr). The approach and hike out are within `CAMP_LEG_MATCH`,
+      so the Planner reads the 7 as the whole round trip from camp. The alpine start counts back
+      7 hr where one report took 14. It needs one summit-to-camp figure; none clears the bar yet.
+    - **TRAP in the writer: jsonb reorders keys.** `apply-timing-fixes.mjs` compared JSON text, so
+      a row written with NEW keys read back as "not the intended timing" and reported REFUSED after
+      a correct write (Shasta, Pyramid Peak). It now compares with keys sorted.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
