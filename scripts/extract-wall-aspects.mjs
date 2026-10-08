@@ -94,7 +94,9 @@ for (const [mp, r] of found) {
 }
 
 // Agreement against what we already hold: the routes' own aspect (majority per area) and areas.aspect.
-const routeAsp = await selectAll("routes", "id,area_id,aspect", "aspect=not.is.null", { pageSize: 1000 });
+const routeAsp = [];
+const ids = [...new Set(out.map(function (o) { return o.id; }))];
+for (let i = 0; i < ids.length; i += 40) routeAsp.push(...await selectAll("routes", "id,area_id,aspect", "aspect=not.is.null&area_id=in.(" + ids.slice(i, i + 40).map(encodeURIComponent).join(",") + ")", { pageSize: 500 }));
 const held = new Map();
 for (const r of routeAsp) { const m = String(r.aspect).match(/^\s*(north[- ]?east|north[- ]?west|south[- ]?east|south[- ]?west|north|south|east|west|ne|nw|se|sw|n|s|e|w)\b/i); if (m && !held.has(r.area_id)) held.set(r.area_id, B[key(m[1])]); }
 for (const o of ours) if (o.aspect && o.aspect !== "varies") held.set(o.id, B[o.aspect.toLowerCase()]);
