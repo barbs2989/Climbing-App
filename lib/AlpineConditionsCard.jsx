@@ -177,7 +177,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
         ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"Too long for one push: counting back from the Plan tab’s estimate puts the start " + daysEarly + " days early. Plan a camp — see the Plan tab."}</div>
         : <div>
           <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
-          <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + ". Times are the Plan tab’s estimate at its own fitness and pack."}</div>
+          <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + (P.legsStored ? ". Times are this route’s published times for a fit party (Plan tab), so a slower party should start earlier." : ". Times are the Plan tab’s estimate at its own fitness and pack.")}</div>
         </div>;
     } else if (day.noFreeze && floor) {
       startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"No start time from the snow: it didn’t freeze overnight at " + uElev(floor.ft) + ", so there is no frozen window to be back down in."}</div>;
