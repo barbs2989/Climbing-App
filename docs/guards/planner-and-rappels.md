@@ -119,6 +119,39 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Time to summit within 0.8-1.25x: alpine 53% -> 71%, mountaineering 46% -> 64% (short descents
     5 -> 1), scrambling 25% -> 42%. The rest is mostly descents that are long on the ground
     (Forbidden's West Ridge, about 10 hr online) and stored legs that are themselves short.
+  - **THE FULL RUN (2026-10-08): all 515 sampled routes researched.** 249 have an online time, from
+    1,176 reports. 24 rows are left out with a reason each: another line, another trailhead, a ski
+    descent, a multi-peak day, or a stored time that CAME FROM the report found (Gunsight's 2017
+    trip, Davis Peak's 2009 one), which agrees by construction and checks nothing. Model ÷ online:
+    | | time to summit (181) | descent (161) | car-to-car (191) |
+    |---|---|---|---|
+    | one walk leg (before #2256) | 1.8x, 16% within | 0.5x, **96 short** | 1.3x, 34% within |
+    | #2256 | 1.3x, 36% within | 1.0x, 43 short | 1.2x, 40% within |
+    | **+ descent share (#2266)** | **1.2x, 49% within** | **1.1x, 29 short** | **1.2x, 46% within** |
+    Per discipline, time to summit: alpine 1.1x (53% within), mountaineering 1.2x (52%; short
+    descents 54 -> 25 -> 14), scrambling 1.3x (38%). Every route, its sources and both estimates
+    are in the owner's per-route report (an Artifact, "Planner Time Audit").
+  - **MEASURED, NOT SHIPPED. Do not re-derive these:**
+    - **The walk model in place of stored legs.** On routes that have both, stored legs read:
+      | | stored legs | walk model alone |
+      |---|---|---|
+      | scrambling | 1.41x, 0 short of 31 | 0.96x, 8 short |
+      | mountaineering | 1.22x, 3 short of 74 | 0.73x, **45 short** |
+      | alpine | 1.14x, 2 short of 30 | 0.90x, 12 short |
+      The walk model is closer only on scrambles, and there it puts a quarter of them short. A
+      short time to summit gives a start too late for the storm deadline, so stored legs stay
+      everywhere. The scramble overrun is the catalog's stored scramble times (guidebook planning
+      times), not the formula.
+    - **A per-discipline push split from the catalog.** Complete alpine rows store
+      summit / (summit + descent) at a 0.63 median (mountaineering 0.58, scrambling 0.54), so
+      their STORED descents are already short. Splitting by it would shorten alpine descents
+      further.
+    - **A rappel floor** (walk down + 0.7 × the modelled climb) on stored-leg pitched routes. Short
+      alpine descents went 9 -> 6 of 22, but the upper quartile reached 2.0x and the within share
+      fell from 32% to 23%, because it charges rappels on walk-off routes (Serpentine Arête).
+    - Alpine descents remain the open residual (0.9x, 13 of 33 short). The cause is short STORED
+      totals on technical routes: Forbidden's West Ridge stores 15 hr, against about 20 hr car to
+      car online. That calls for per-route repairs (guidebook or report), not a formula.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
