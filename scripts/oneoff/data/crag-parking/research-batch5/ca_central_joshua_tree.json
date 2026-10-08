@@ -1,0 +1,65 @@
+[
+ {
+  "area_id": "ca_hall_of_horrors_area",
+  "lot": "w88311985",
+  "lat": 33.998577,
+  "lng": -116.144806,
+  "name": "Hall of Horrors parking area, large paved lot with restroom on Park Blvd",
+  "confidence": "high",
+  "basis": "Mountain Project Hall of Horrors page: 'a large paved parking area with a bathroom will be your cue', first prominent rock area on the left driving from Ryan Campground. The brief lot is mapped by name as 'Hall of Horrors Parking Area' (access yes, no fee), 0.46 km from the area coordinate."
+ },
+ {
+  "area_id": "ca_saddle_rocks_area",
+  "lot": "w88311985",
+  "lat": 33.998577,
+  "lng": -116.144806,
+  "name": "Hall of Horrors parking area, large paved lot with restroom on Park Blvd",
+  "confidence": "medium",
+  "basis": "Mountain Project Saddle Rocks page: 'Park at the large, paved lot that's used for Hall of Horrors, cross the road and follow a signed trail to the base of the rock' (about 15 minutes). Lot is the mapped, named Hall of Horrors Parking Area, 0.7 km from the area coordinate. The page also allows roadside parking between Ryan Campground and Sheep Pass, which has no mapped lot."
+ },
+ {
+  "area_id": "ca_cave_corridor_area",
+  "lot": "w88311970",
+  "lat": 34.00278,
+  "lng": -116.136257,
+  "name": "Ryan Mountain trailhead parking lot on Park Blvd",
+  "confidence": "medium",
+  "basis": "Mountain Project Cave Corridor page: 'Park as you would for the Ryan Mountain trailhead ... The formations are a short hike south from the large parking lot.' The brief has the mapped Ryan Mountain Trailhead node (34.002519,-116.135922) and this unnamed public parking polygon 0.03 km from it and 0.1 km from the Cave Corridor Area coordinate, so the parking polygon was chosen as the lot."
+ },
+ {
+  "area_id": "ca_oyster_bar_area",
+  "lot": "w88311968",
+  "lat": 33.992345,
+  "lng": -116.150175,
+  "name": "Oyster Bar parking area, paved lot on Park Blvd past Ryan Campground",
+  "confidence": "medium",
+  "basis": "Mountain Project Oyster Bar Area page: park in the 'large paved turnout roughly halfway between Ryan Campground and the Hall of Horrors/Saddle Rocks area'; the Oyster Bar route page says the 'paved parking (a small lot) a short distance past Ryan Campground', then a signed trail to Target Rock. The mapped 'Oyster Bar Parking Area' (access yes, no fee) sits at 33.9923, between Ryan Campground (33.984) and Hall of Horrors lot (33.9986), 0.7 km from the area coordinate. Match by position and name."
+ },
+ {
+  "area_id": "ca_echo_rock",
+  "lot": "r15514493",
+  "lat": 34.022768,
+  "lng": -116.156661,
+  "name": "Echo Tee parking area, about half a mile from Hidden Valley Campground",
+  "confidence": "high",
+  "basis": "Mountain Project Echo Rock page: 'Park at the Echo Tee Parking Area, located about a half mile from Hidden Valley Campground.' The brief lot is mapped as 'Echo T Parking Area' and is 0.25 km from the Echo Rock coordinate."
+ },
+ {
+  "area_id": "ca_lakeside_rock",
+  "lot": "n254756695",
+  "lat": 34.026263,
+  "lng": -116.146981,
+  "name": "Barker Dam parking area at the end of the Barker Dam road",
+  "confidence": "medium",
+  "basis": "Mountain Project Lakeside Rock page: 'From the Barker Dam parking area follow the trail out to Barker Dam proper and look east to a light-colored slabby wall.' The Barker Dam lot is the road-end lot east of the Bighorn Pass Road junction; the mapped 'Barker Dam Trail (Easternmost)' trailhead is the easternmost Barker Dam trail node, 0.6 km from the rock. Overpass place-check was unreachable, so the match is by name and position only."
+ },
+ {
+  "area_id": "ca_gunsmoke_area_2",
+  "lot": "n254756695",
+  "lat": 34.026263,
+  "lng": -116.146981,
+  "name": "Barker Dam parking area at the end of the Barker Dam road",
+  "confidence": "medium",
+  "basis": "Mountain Project Gunsmoke bouldering page: 'Park in the large paved lot and follow a trail past the old parking lot ... going straight ahead leads to Barker Dam', about 10 minutes from the car. Taken as the Barker Dam lot; mapped Barker Dam trailhead node is 0.3 km from the area coordinate. Match by name and position only."
+ }
+]

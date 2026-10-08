@@ -1067,3 +1067,52 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     prefilters with `<%` OR `%` at their defaults and applies `word_similarity >= 0.5` itself —
     measured: "shucksan" scores 0.55 (missed by `<%` alone), "stuard" 0.29 similarity (missed
     by `%` alone).
+
+- **`check:list-row-columns`** — the Climbs list's THIN ROW carries every column its readers read,
+  and no column they do not. **Why it exists (MEASURED 2026-10-08).** `useAreaRoutes` selected
+  `ROUTE_AREA_EMBED` (`*` plus the area embed) for a list that renders a name, a grade, stars and a
+  sub-line. `scripts/oneoff/measure-list-row-bytes.mjs` over the live catalog: a full row averages
+  **2,384 bytes and the list reads 332** (40 typical areas, 238 rows); the enriched peaks are the
+  real cost — Liberty Bell's 20 routes were **635 KB** (gpx 195 KB, approach_variants 43,
+  rappel_detail 40, access 36, pitch_detail 35) for a list that renders 17 KB, Rainier's 26 were
+  551 KB for 29, and the largest fan-out, Stone Fort's 356 boulders, 824 KB for 119 — 131 KB of
+  that the SAME area embed repeated 356 times. The query is also one of the persisted ones
+  (`lib/query-persist.js`), so the whole of it was being written to IndexedDB on every area opened.
+  **The fix:** `useAreaRoutes` selects a literal column list (`id,name,…,approach_variants,
+  areas(name,area_type)`, 18 columns) and stamps each network row `_thin`; `openRoute()` sees the
+  stamp and reads the full row by id through `fetchRouteRow()` (the one by-id reader, which the
+  `?route=` shared link now uses too) behind a "Loading climb…" placeholder, and a failed read
+  closes the page with a toast rather than rendering a row that would read as "not recorded" for
+  everything the list left out. `scripts/oneoff/probe-thin-list-select.mjs` runs the literal that
+  ships against the live database: Baker 260 → 39 KB, Liberty Bell 635 → 62, Stone Fort 824 → 151,
+  same order as the full select, name and area_type on every row. **Who else held that row and
+  what they needed:** the route page's sibling list (`useAreaRoutes(route.mountainId)` — the
+  prev/next cells and "More on this peak" rows read name, discipline, the grade chain, and
+  `_dbArea.areaType` through `catOf → climbsAPeak`, which is why the embed keeps `area_type`); its
+  approach picker, whose VIA route needs approach data, so every via id is now read in full by id
+  (`useRoutesByIds`) and its thin sibling drops out of `_apSibs` until that lands — the picker's
+  own "Loading the route this approach follows…" covers the gap; the reverse link
+  (`approachFinishes`) reads siblings' `approach_variants`, so that column stays in the list; and
+  the climb picker (`DbClimbPicker`), which hands a row to the LOG FORM rather than to openRoute,
+  so it asks for `{ full: true }` under its own key. **What the guard does:** parses the readers
+  (RouteRow, SummitBriefing, the sibling cells and rows, ApproachPicker, the two approach memos)
+  and every function they hand a row to, across lib/DbAreaBrowser.jsx, lib/grade.js,
+  lib/outing.js, ClimbMatchCore.jsx and RouteDetail.jsx; maps camelCase reads back to columns
+  through dbRouteToCamel's own object; decides what IS a column from `scripts/schema-snapshot.json`
+  (so `r.stars` is a column read and `r.cover`, seed-only, is not); and fails on a column read but
+  not selected, selected but read by nobody, selected but not in the snapshot, or an embed without
+  `name`/`area_type`. 55 reads over 22 readers resolve to the 18 columns, exactly. **Traps met
+  building it:** Babel's `path.traverse` visits descendants only, so a property whose value is a
+  bare `r.gain_ft` was invisible until the walk started from the property; RouteRow takes its row
+  as a destructured prop, and ApproachPicker's `route` prop is the page's FULL route, so each entry
+  names which props are rows rather than guessing from names; SummitBriefing aliases `routes` to
+  `rs` and passes `effDistKm` by reference, so a local alias of the rows is a row and a function
+  passed beside a row is walked. Before the snapshot was the column source, the suite's
+  "select-drops-a-column" case was MISSED: `stars` left the select and stopped being "known", so the
+  read was filed as seed-only — a guard that learns what a column is from the select it is checking
+  cannot see the select lose one. **What it cannot see:** a NEW consumer of `useAreaRoutes` that this
+  file does not list (add it to ENTRIES); a read spelled `row[expr]` beyond the string arrays it
+  resolves (GRADE_SOURCES); a column the live schema gained since the snapshot. Suite:
+  `scripts/oneoff/inject-list-row-columns-cases.mjs` (6/6: a reader gaining `length_m`, the select
+  losing `stars`, the select carrying `descent_text`, the embed losing `area_type`, RouteRow renamed
+  — all caught and named; a camelCase read of a selected column stays silent).
