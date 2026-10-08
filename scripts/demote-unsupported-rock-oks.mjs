@@ -5,6 +5,7 @@
 //     (ROCK-BRIEF: a page saying only "granite" never confirms tonalite/granodiorite/…),
 //   - names a different specific rock of the same family (e.g. monzogranite for held granodiorite), or
 //   - names a different family altogether,
+// (plus MANUAL below: groups read by hand whose quote fits but whose source is not one),
 // and turns them back into "unclear": the JSON verdict is rewritten (so re-applying a batch cannot
 // confirm them again) and the SQL puts those walls back to rock_basis 'mapped', rock unchanged.
 // Quotes naming NO rock are left alone: they name formations ("Wingate", "Burro formation") the
@@ -23,6 +24,11 @@ const write = process.argv.includes("--write"), verify = process.argv.includes("
 const GENERIC = new Set(["volcanic rock", "metamorphic rock", "metavolcanic rock", "metasedimentary rock", "sedimentary rock", "tuff"]);
 const LOOSE = new Set(["granite", "sandstone", "limestone"]);
 const NOTE = "demoted 2026-10-08: the recorded quote does not name this rock";
+// Groups whose quote names the rock but whose SOURCE is not one: read by hand. pid|held -> why.
+const MANUAL = new Map([
+  ["co_central|sandstone", "demoted 2026-10-08: the only source is an AI-generated encyclopedia, and it names both rocks"],
+  ["co_central|conglomerate", "demoted 2026-10-08: the only source is an AI-generated encyclopedia, and it names both rocks"],
+]);
 const q = function (s) { return "'" + String(s).replace(/'/g, "''") + "'"; };
 const norm = function (s) { return String(s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); };
 
@@ -34,7 +40,7 @@ for (const w of walls) { if (!byPid.has(w[1])) byPid.set(w[1], []); byPid.get(w[
 // rewritten IN PLACE inside its own record's text, and the result must parse to exactly the object
 // intended — a reserialise would rewrite every line of 67 files.
 const reEsc = function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); };
-const demoteText = function (text, pid, held) {
+const demoteText = function (text, pid, held, note) {
   const at = text.search(new RegExp('"pid"\\s*:\\s*"' + reEsc(pid) + '"'));
   if (at < 0) throw new Error("record not found: " + pid);
   const next = text.slice(at + 1).search(/"pid"\s*:/);
@@ -42,7 +48,7 @@ const demoteText = function (text, pid, held) {
   const re = new RegExp('("held"\\s*:\\s*"' + reEsc(held) + ' \\(mapped\\)"\\s*,\\s*"verdict"\\s*:\\s*)"ok"');
   const span = text.slice(at, end);
   if (!re.test(span)) throw new Error("group not found: " + pid + " " + held);
-  return text.slice(0, at) + span.replace(re, '$1"unclear", "demoted": "' + NOTE + '"') + text.slice(end);
+  return text.slice(0, at) + span.replace(re, '$1"unclear", "demoted": "' + note + '"') + text.slice(end);
 };
 
 const rows = [], why = {};
@@ -56,18 +62,21 @@ for (const f of fs.readdirSync(path.join(DIR, "rock-found")).sort()) {
     const own = new Set();
     for (const name of Object.keys(Object.assign({}, c.wallExceptions, c.fills))) { const n = norm(name); const w = ws.find(function (x) { return norm(x[2]) === n; }) || ws.find(function (x) { const m = norm(x[2]); return m.startsWith(n) || n.startsWith(m); }); if (w) own.add(w[0]); }
     for (const g of c.groups || []) {
-      if (g.verdict !== "ok" || /\((stated|researched)\)$/.test(g.held)) continue;
+      if (/\((stated|researched)\)$/.test(g.held)) continue;
       const held = g.held.replace(/ \(mapped\)$/, "");
-      if (held === "MISSING" || GENERIC.has(held)) continue;
-      const said = rocksIn([g.quote, g.note, c.quote].filter(Boolean).join(" "));
-      if (!said.length || said.includes(held)) continue;
-      const kind = said.every(function (r) { return LOOSE.has(r); }) ? "loose word" : said.every(function (r) { return rockFamily(r) === rockFamily(held); }) ? "other rock, same family" : "other family";
       const hit = ws.filter(function (w) { return w[3] === held && w[4] === "mapped" && !own.has(w[0]); });
+      if (g.demoted) { for (const w of hit) rows.push([w[0], held]); continue; } // withdrawn on an earlier run
+      if (g.verdict !== "ok" || held === "MISSING") continue;
+      const said = rocksIn([g.quote, g.note, c.quote].filter(Boolean).join(" "));
+      let kind, note = NOTE;
+      if (MANUAL.has(c.pid + "|" + held)) { kind = "read by hand"; note = MANUAL.get(c.pid + "|" + held); }
+      else if (GENERIC.has(held) || !said.length || said.includes(held)) continue;
+      else kind = said.every(function (r) { return LOOSE.has(r); }) ? "loose word" : said.every(function (r) { return rockFamily(r) === rockFamily(held); }) ? "other rock, same family" : "other family";
       why[kind] = why[kind] || { groups: 0, walls: 0 }; why[kind].groups++; why[kind].walls += hit.length;
       for (const w of hit) rows.push([w[0], held]);
       if (!verify) console.error(f, c.pid, "|", held, "x" + hit.length, "|", kind, "|", said.join("/"));
-      g.verdict = "unclear"; g.demoted = NOTE; changed = true;
-      text = demoteText(text, c.pid, held);
+      g.verdict = "unclear"; g.demoted = note; changed = true;
+      text = demoteText(text, c.pid, held, note);
     }
   }
   if (write && changed) {
