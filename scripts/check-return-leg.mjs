@@ -332,15 +332,22 @@ console.log("\na pitch count of 1 beside 100+ m of climb is no pitch count -- no
   const R = (over) => route(Object.assign({}, known, over));
   const place = render(R({ pitches: 1, routeFt: 3000 })), none = render(R({ pitches: 0 })), firm = render(R({ pitches: 1, routeFt: 200 }));
   const many = render(R({ pitches: 12, routeFt: 3600 })), over = render(R({ pitches: 12, routeFt: 6000 }));
-  eq("ANCHOR: the Climbing and Total tiles rendered on every fixture", [place, none, firm, many, over].every((h) => tileOf(h, "Climbing") != null && tileOf(h, "Total") != null), true);
+  /* FULL TRIP TIME: the Total tile is approach + climb + DESCENT. It used to stop at the summit (descent only
+     moved Est. return), so a climber budgeting the day by it undercounted by the whole way down. */
+  const hrs = (t) => { const m = /^≥?(\d+(?:\.\d+)?)hr$/.exec(t || ""); return m ? +m[1] : null; };
+  const sumOfLegs = (h) => { const a = hrs(tileOf(h, "Approach")), c = hrs(tileOf(h, "Climbing")), d = hrs(tileOf(h, "Descent")); return a == null || c == null || d == null ? null : a + c + d; };
+  eq("ANCHOR: the Descent tile rendered on a route with a pitch count", hrs(tileOf(many, "Descent")) != null, true);
+  eq("Total trip = Approach + Climbing + Descent (within rounding), not approach + climb alone", sumOfLegs(many) != null && Math.abs(sumOfLegs(many) - hrs(tileOf(many, "Total trip"))) <= 0.25, true);
+  eq("...and it is LONGER than approach + climb alone by the descent", hrs(tileOf(many, "Total trip")) > hrs(tileOf(many, "Approach")) + hrs(tileOf(many, "Climbing")), true);
+  eq("ANCHOR: the Climbing and Total tiles rendered on every fixture", [place, none, firm, many, over].every((h) => tileOf(h, "Climbing") != null && tileOf(h, "Total trip") != null), true);
   eq("1 pitch on a 3,000 ft route: the Climbing tile reads N/A, not a 0.6 hr climb", tileOf(place, "Climbing"), "N/A");
-  eq("...and Total carries the lower-bound marker, because the climbing leg is unknown", tileOf(place, "Total").startsWith("≥"), true);
-  eq("...identical to a route with NO pitch count at all (Climbing, Total, Est. summit)", [tileOf(place, "Climbing"), tileOf(place, "Total"), summitOf(place)].join("|"), [tileOf(none, "Climbing"), tileOf(none, "Total"), summitOf(none)].join("|"));
-  eq("a real single pitch (1 pitch, 200 ft) keeps a firm climbing time", /hr$/.test(tileOf(firm, "Climbing")) && !tileOf(firm, "Total").startsWith("≥"), true);
+  eq("...and Total carries the lower-bound marker, because the climbing leg is unknown", tileOf(place, "Total trip").startsWith("≥"), true);
+  eq("...identical to a route with NO pitch count at all (Climbing, Total, Est. summit)", [tileOf(place, "Climbing"), tileOf(place, "Total trip"), summitOf(place)].join("|"), [tileOf(none, "Climbing"), tileOf(none, "Total trip"), summitOf(none)].join("|"));
+  eq("a real single pitch (1 pitch, 200 ft) keeps a firm climbing time", /hr$/.test(tileOf(firm, "Climbing")) && !tileOf(firm, "Total trip").startsWith("≥"), true);
   eq("12 pitches on 3,600 ft (300 ft each) is plausible and keeps its time", /hr$/.test(tileOf(many, "Climbing")), true);
   eq("12 pitches on 6,000 ft keeps its time: a longer count can be right (a route's length includes the scrambling between pitches)", /hr$/.test(tileOf(over, "Climbing")), true);
   const bare = render(route({ distKm: undefined, gainM: undefined, lossM: undefined, pitches: 1, routeFt: 3000 }));
-  eq("a placeholder count with NO walk either leaves nothing to estimate: Total reads N/A, not '≥0.6hr'", tileOf(bare, "Total"), "N/A");
+  eq("a placeholder count with NO walk either leaves nothing to estimate: Total reads N/A, not '≥0.6hr'", tileOf(bare, "Total trip"), "N/A");
   eq("realPitches: a count of 1 stands up to the cap and is 0 over it; a longer count and none are untouched", [realPitches({ pitches: 1, routeFt: MAX_PITCH_FT }), realPitches({ pitches: 1, routeFt: MAX_PITCH_FT + 1 }), realPitches({ pitches: 6, routeFt: 99999 }), realPitches({ pitches: 0 }), realPitches({}), realPitches(null)].join(","), "1,0,6,0,0,0");
   eq("...and a route with no length keeps its count (seed routes carry none)", realPitches({ pitches: 3 }), 3);
 }

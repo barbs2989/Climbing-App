@@ -185,7 +185,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     days.forEach(function (d, k) {
       if (d.date < today) return;
       const fs = faceSun[d.date];
-      let r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
+      let r = dayFlags(fc, days, k, { kind, rockToo: kind === "glacier" && catOf(route) === "alpine", terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
       const ms = sp ? modelSpread(sp, d.date) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc.utc_offset_seconds) : [];

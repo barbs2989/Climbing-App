@@ -1642,6 +1642,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       from camp to count back from).
     - **Do not re-derive:** `techH` IS the published total on a whole-day row (pinned by a test), so
       the split is applied to the right number; the Plan tab's walk model is NOT added on top.
+
+## A glaciated ALPINE route keeps the glacier card (2026-10-08)
+
+`condKind` (lib/alpineConditions.js) used to send `alpine` to `alpinerock` and only `mountaineering` to `glacier`.
+Re-filing a glaciated route as alpine (El Dorado East Ridge: Inspiration Glacier, then 5.7) would have stripped its
+crevasse-bridge, snow-deadline, sun-on-face and avalanche-panel logic. An alpine route whose own terrain read says
+`glacier: "yes"` is now kind `glacier`, and `ctx.rockToo` keeps the rock-weather flags (verglas, wet rock, showers)
+on it. The evidence is the terrain read, never the discipline. `check:alpine-conditions` holds it.
+
   - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
     Section 12 of the guard. Three things it holds, each measured, not assumed:
     - **Every box names its OWN period.** Open-Meteo (open-meteo.com/en/docs) stamps hour T and means the
