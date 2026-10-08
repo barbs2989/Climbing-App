@@ -39,7 +39,8 @@ for (const it of items) {
   const [a] = await q(`areas?select=id,name,path,lat,lng,parking_lat&id=eq.${encodeURIComponent(it.area_id)}`);
   if (!a) why.push("no such area");
   if (!["high", "medium"].includes(it.confidence)) why.push("confidence " + it.confidence);
-  if (!(Math.abs(it.lat) <= 90 && Math.abs(it.lng) <= 180) || !String(it.lat).includes(".") || String(it.lat).split(".")[1].length < 4) why.push("bad coordinate");
+  // Few decimals reads as a hand-typed approximation — unless it IS a brief's mapped lot (38.084000 prints as 38.084).
+  if (!(Math.abs(it.lat) <= 90 && Math.abs(it.lng) <= 180) || (!fromBrief(it) && (!String(it.lat).includes(".") || String(it.lat).split(".")[1].length < 4))) why.push("bad coordinate");
   if (!it.name || SOURCEY.test(it.name) || it.name.length > 80) why.push("name: " + it.name);
   let d = null; if (a && a.lat != null) { d = km(a.lat, a.lng, it.lat, it.lng); if (d > 4) why.push(`${d.toFixed(1)} km from the crag`); }
   let lots = []; if (!why.length) { lots = fromBrief(it) || (await new Promise((z) => setTimeout(z, 1500)), await lotNear(it.lat, it.lng)); if (!lots.length) why.push("no mapped parking within 80 m"); }
