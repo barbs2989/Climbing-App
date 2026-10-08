@@ -470,6 +470,24 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     within 1.5 km at insert; this sweeps what got past it. Long Hill Conservation Area was a copy of
     Hidden in Plain Sight Boulders under another parent 4 km off with other boulder names — found by
     its CLIMBS (Megaman V3, Dick Move V1-2, Party Foul V3+ on both), folded in 0256.
+  - **The 6 pairs 0261 held as UNSURE were settled from the source by 0274** (2026-10-08). Read so
+    nobody re-researches them:
+    - **West Kootenay** was not a pair but a mis-import: the source keeps three PARALLEL trees under
+      the region (roped crags by town, boulders, a 2-climb ice tree), and ours split the TOWN tree
+      across "West Kootenay Boulders" and "West Kootenay Ice", so Nelson, Castlegar and Slocan Valley
+      stood twice and "Ice" held 134 rock routes. Now one tree by place; both buckets are gone. Ymir's
+      and Poison River's boulders went inside their crags (Ymir Swimming Hole, Poison River Bluffs).
+      Different places, LEFT APART: the two Grohman Narrows (Highway 3A boulders / box canyon across
+      the river, 2.7 km) and "Valhalla" (boulders, 49.45 N) / Valhalla Mountains (40 km north). The
+      Grohman boulders carry no coordinate, so the cross-parent pass cannot pair them; it needs none.
+    - Olympia (WA) sat on Huntamer Park's exact coordinate: folded. Cascade Canyon Bouldering: nested.
+    - DIFFERENT places: Jobs Peak / Jobs Peak Bouldering (range foot, 4 km), Pine Mountain (Bartow Co.)
+      / Pine Mountain Boulders (Harris Co., 190 km, empty), Big Water's towers / Big Water Boulders,
+      Lightning Bolt Boulder / Dynamic Blocks.
+    - A fold that RAISES a keeper's grade must set `grade_num` too (lib/grade.js): 0251–0271 kept the
+      keeper's old one, which left Unknown Shores (V7-8 at 7) and Spaceballs (5.11a at 10.75) out of
+      their sort slot; 0274 fixed both. Aid and multi-system strings ("5.9 C2", "5.8 WI4 M5") disagree
+      with the parser by convention, not by defect.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
@@ -519,6 +537,9 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     re-import still matches): a NUMBER label comes off everywhere, a LETTER label only where the area
     runs a letter series (3+ letters, 9 areas); `scripts/oneoff/strip-route-topo-labels.mjs` renames
     875 and HOLDS 42 whose bare name a sibling already has (five "Slab" V1s, six "Project"s).
+    Researched 2026-10-08: the source names NONE of them (open projects, "Unnamed", problems really
+    called "Slab" or "V2"), so the number stays. One was a stale copy — Shawshank's "8.  5.12?" is
+    the source's #8 renamed "Current Project - newly bolted" — merged by 0274; 41 remain held.
   - **Spelling twins MERGED by 0253** (2026-10-07): same-area climbs whose names differ by a typo or
     by spacing, same discipline and base grade — 2,775 candidates, READ pair by pair — 179 merged
     ("Manhattan / Manhatten Project"), plus 8 rows the source named "to be deleted" / "_delete".
