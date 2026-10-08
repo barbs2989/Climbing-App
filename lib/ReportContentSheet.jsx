@@ -1,5 +1,5 @@
 // Report a piece of content: a message, crew-chat message, group post or event, comment, trip
-// report, group, topo or list (0260's report_content). Opened from anywhere through lib/reportBus.
+// report, group, topo or list (0263's report_content). Opened from anywhere through lib/reportBus.
 //
 // Shaped on ReportModal (ClimbMatchCore.jsx), which reports a PERSON, and deliberately keeps its two
 // rules: the reasons are a closed list the reviewer can sort by, and "Also block" is offered only

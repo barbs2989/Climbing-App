@@ -1,4 +1,4 @@
-// Does 0260 do what it says, against the LIVE database, with real accounts?
+// Does 0263 do what it says, against the LIVE database, with real accounts?
 //
 //   node scripts/oneoff/probe-reports-reach-the-content.mjs
 //
@@ -40,7 +40,7 @@ const code = (r) => (r && r.body && r.body.code) || "";
 const msg = (r) => (r && r.body && (r.body.message || r.body.msg)) || JSON.stringify(r && r.body);
 
 function sql(text) {
-  const f = path.join(os.tmpdir(), "probe-0260-" + process.pid + "-" + Math.random().toString(36).slice(2) + ".sql");
+  const f = path.join(os.tmpdir(), "probe-0263-" + process.pid + "-" + Math.random().toString(36).slice(2) + ".sql");
   fs.writeFileSync(f, text);
   try { return execFileSync("npx", ["supabase", "db", "query", "--linked", "-f", f], { encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] }); }
   finally { fs.unlinkSync(f); }
@@ -78,7 +78,7 @@ async function destroy() {
 }
 
 async function main() {
-  console.log("0260 — reports reach the content; five real accounts, anon key + each climber's own JWT" + NL);
+  console.log("0263 — reports reach the content; five real accounts, anon key + each climber's own JWT" + NL);
   const A = await createUser("a", "Ada Author"), B = await createUser("b", "Bo Reporter"),
         C = await createUser("c", "Cy Reporter"), D = await createUser("d", "Di Reporter"), M = await createUser("m", "Mo Moderator");
   made.push(A, B, C, D, M);
@@ -101,7 +101,7 @@ async function main() {
   row = (await truth("/rest/v1/messages?select=moderation&id=eq." + mid)).body[0];
   if (row && row.moderation === "visible") ok("a client cannot take a message down by PATCHing `moderation`");
   else bad("a client cannot take a message down by PATCHing `moderation`", JSON.stringify(row));
-  const preHidden = await as(A).post("/rest/v1/comments", { target_id: "probe-0260-route", user_id: A.id, text: "pre-hidden?", moderation: "removed" }, { Prefer: "return=representation" });
+  const preHidden = await as(A).post("/rest/v1/comments", { target_id: "probe-0263-route", user_id: A.id, text: "pre-hidden?", moderation: "removed" }, { Prefer: "return=representation" });
   const phid = Array.isArray(preHidden.body) && preHidden.body[0] && preHidden.body[0].id;
   if (phid) cleanup.comments.push(phid);
   row = phid && (await truth("/rest/v1/comments?select=moderation&id=eq." + phid)).body[0];
@@ -150,7 +150,7 @@ async function main() {
   else bad("a signed-out caller cannot file a content report", anon.status);
 
   // ---- 5. THREE REPORTERS HOLD A COMMENT; ITS AUTHOR STILL SEES IT, NOBODY ELSE DOES
-  const cm = await as(A).post("/rest/v1/comments", { target_id: "probe-0260-route", user_id: A.id, text: "this beta is a lie, idiots" }, { Prefer: "return=representation" });
+  const cm = await as(A).post("/rest/v1/comments", { target_id: "probe-0263-route", user_id: A.id, text: "this beta is a lie, idiots" }, { Prefer: "return=representation" });
   const cid = Array.isArray(cm.body) && cm.body[0] && cm.body[0].id;
   if (!cid) throw new Error("CONTROL FAILED: A could not comment (" + cm.status + " " + msg(cm) + ")");
   cleanup.comments.push(cid);

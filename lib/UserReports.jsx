@@ -9,7 +9,7 @@
 // same reason: 0158's SELECT policy already returns nothing to a non-admin, so the gate stops a
 // non-admin being shown an empty queue rather than being the boundary itself.
 //
-// A REPORT ABOUT CONTENT CAN BE ACTED ON (0260). Since report_content(), a report about a message,
+// A REPORT ABOUT CONTENT CAN BE ACTED ON (0263). Since report_content(), a report about a message,
 // post, comment, trip report, group, topo or list carries a SERVER-SIDE copy of what was reported
 // (`snapshot`), and "Remove it" takes the content down for everyone but its author through
 // moderate_content() -- audited, and closing every open report about the same item at once.
