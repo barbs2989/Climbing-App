@@ -511,7 +511,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       ("(North Face)" / "(South Face)"), generic names on different formations.
     - **The sweep's own blind spot**: it paired only inside one LEVEL-3 region, so a state whose trees
       start at level 3 (Minnesota's "Duluth Area" / "Duluth Area (Rock and Ice)") never met itself.
-      Measured the same way across a whole state: **861 more pairs** (California 459) — the next round.
+      Measured the same way across a whole state: **861 more pairs** (California 459); 337 READ
+      (`res/p2-verdicts-*.json`), swept by **0277**. Again nearly all second imports of whole regions:
+      "Eastern Sierra" (414 climbs, no pins) / "Sierra Eastside" (6,624); "Southern-Western Sierra" /
+      "Western Sierra" (its highway GROUPING nodes, "Hwy 41: Fresno Dome, Shuteye Ridge", dissolved so their
+      places meet their twins); "South Central Alaska" / "Anchorage & South Central Alaska" and its ice tree
+      (ours held the falls only as EMPTY copies); "South-Central & Yakima"; Duluth; Bangor; Jemez; Sage
+      Mountain; New River Gorge; Wyoming's "Laramie Area" copies of Vedauwoo. Read, so nobody re-reads them:
+      Palo Duro Canyon State Park keeps its copy's "{PROHIBITED}" (the source's current name); Keystone
+      Canyon's Tunnel Wall rock routes and the same lines climbed as winter mixed are TWO climbs each (M8 /
+      5.12a); "Black Ice" in Owens River Gorge and at Great Falls Basin are two climbs 190 km apart.
+    - A pair is found by NAME, so a copy renamed by its import still hides: Duluth's "North Hartley" held
+      exactly "Hartley"'s 10 problems, and "Casket Quarry (ICE/MIXED)" held the 30 climbs its empty twin
+      "Casket Quarry ICE" lacked — both found only by their CLIMBS when the trees were laid side by side.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
