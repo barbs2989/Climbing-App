@@ -30672,3 +30672,77 @@ than direct page reads — noted explicitly above wherever it affected confidenc
 `node scripts/check-sql-targets.mjs --table routes` confirmed the one UPDATE target exists live.
 
 Pass 7 continues next run after `wa_cathedral_peak_pasayten_se_buttress`.
+
+## Batch 389 (2026-10-08, pass 7)
+
+Checked: Cathedral Rock's three routes (`wa_cathedral_rock_northeast_buttress`,
+`wa_cathedral_rock_northeast_ridge_2003_variation`, `wa_cathedral_rock_southeast_face_chimney`)
+and Chair Peak's seven (`wa_chair_bryant_traverse`, `wa_chair_peak_east_face`,
+`wa_chair_peak_north_face`, `wa_chair_peak_northeast_buttress`, `wa_chair_peak_northwest_ridge`,
+`wa_chair_peak_south_ridge`, `wa_chair_peak_southeast_face`).
+
+**Fixed (1):**
+- `wa_cathedral_rock_northeast_buttress` `pitches` (7 → 8) — the first-ascent party's own
+  account (AAC Publications / *American Alpine Journal* 1985, "Washington—Cascade Mountains,
+  Cathedral Rock, Northeast Buttress," reported by Gary Speer) states the route — Bellamy and
+  Speer, Grade III, 5.7 — was climbed in eight pitches. Grade and FA names already matched the
+  AAJ report and were left alone. SQL in `audits/sql/2026-10-08-batch-389.sql`.
+
+**Flagged (7):**
+- `wa_cathedral_rock_northeast_ridge_2003_variation` and `wa_cathedral_rock_southeast_face_chimney`
+  — entirely unverified. No source reached (AAC Publications, Mountain Project, SummitPost,
+  general search) documents a 2003 Preiss/Bunker climb on Cathedral Rock under either name, and
+  nothing calls the peak's NE aspect a "Northeast Ridge" rather than "Northeast Buttress" — every
+  source describing that side of the mountain uses "Northeast Buttress." Live possibility that
+  one real (or entirely unverifiable) route has been split into two DB rows — once as a "direct
+  start, 2003" note already sitting on the Northeast Buttress row, and once as this fully separate
+  entry — but nothing found to confirm or resolve either placement. The Southeast Face Chimney's
+  1973 FA (Holt/Johnson/Van Hollebeke) likewise returned zero matches anywhere searched; plausible
+  as a print-only Beckey entry, but unconfirmed.
+- `wa_chair_peak_north_face`'s FA ("Kit Lewis, Charlie Hampson, Rob Harris, Greg Jacobson, January
+  1975") looks like it may conflate a real, different credit: an AAC-published account gives the
+  Northwest Ridge's first *winter* ascent as January 1975 by Kit Lewis and Robert Harris — a
+  two-person party. Two of the four names and the exact year match the North Face's stored FA,
+  which is a real red flag for cross-route conflation, but nothing confirms the North Face
+  attribution itself one way or the other.
+- `wa_chair_peak_north_face` (`dist_km` 10.78) and `wa_chair_peak_northeast_buttress` (`dist_km`
+  10.46) are outliers against every other Chair Peak route's ~4.8–4.9 km. Both figures match
+  round-trip Snow Lake Trail mileages commonly cited for this trailhead (6.7 mi and 6.5 mi ×
+  1.60934) almost exactly, while ~4.8 km matches the one-way distance to Chair's climbing basin —
+  strongly suggesting these two rows recorded a round-trip hike distance in km while their siblings
+  recorded a one-way approach distance. This is exactly the dual `dist_km` convention
+  `docs/codebase/route-identity.md` already warns is present catalog-wide, so per that doc this is
+  flagged rather than bulk-normalized.
+- `wa_chair_peak_south_ridge`'s name and "Class 2" grade could not be matched to any documented
+  Chair Peak route — Beckey's *Cascade Alpine Guide* (via SummitPost) names a "Southeast Route,"
+  class 3-4, as the peak's easiest line instead, a materially different difficulty. Possible
+  duplicate or misnaming against `wa_chair_peak_southeast_face`, which a Mountaineers trip listing
+  and Beckey both independently confirm as a real class 3-4 route by that name.
+- `wa_chair_bryant_traverse`'s FA ("Ari Schneider, Jason Linker") and the route name itself
+  returned no corroboration in any guidebook, SummitPost, Mountain Project, AAC, or trip-report
+  source searched, though the underlying Chair–Bryant col/ridge terrain is real and traveled
+  (documented in ski-traverse and scramble contexts). Possibly a genuine but unpublished local
+  route; possibly misattributed.
+
+**Clean:** Cathedral Rock's summit elevation (6,724 ft) and coordinates (47.555058/-121.135524,
+confirmed as the Alpine Lakes Wilderness peak near Cle Elum/Salmon la Sac, not a different
+same-named WA peak), its trailhead elevation and FR 4330/Trail #1345 approach, and the Southwest
+Face as the peak's real standard scramble descent/ascent (all via Wikipedia, SummitPost, and the
+Mountaineers); `wa_chair_peak_east_face`'s FA (Don Blair and Art Winder, September 30, 1933,
+matching SummitPost's "first definite recorded ascent" almost verbatim) and its "5.2 (5.5 at the
+overhanging band)" grade description; Chair Peak's own summit elevation (6,238 ft) and
+coordinates (independently confirmed via Wikipedia, SummitPost and PeakVisor as the
+Alpental/Snoqualmie Pass peak, not the unrelated Colorado "Chair Mountain" that kept surfacing in
+search); `wa_chair_peak_northeast_buttress`'s grade/character and aspect (SummitPost's "III WI3
+AI3"), with its stored `fa: null` confirmed as a genuine documented gap rather than a data error;
+`wa_chair_peak_northwest_ridge`'s aspect, pitch count and summer-rock character; and
+`wa_chair_peak_southeast_face` as a real, Beckey-documented class 3-4 route — not a phantom entry,
+just a sparsely populated one this pass found nothing wrong with.
+
+**Tooling note:** Delegated research to 2 parallel subagents (Cathedral Rock's 3 routes; Chair
+Peak's 7). Both hit this session's network egress proxy blocking direct WebFetch to
+mountainproject.com, mountaineers.org, en.wikipedia.org and publications.americanalpineclub.org,
+so findings rest on WebSearch snippet summaries rather than direct page reads.
+`node scripts/check-sql-targets.mjs --table routes` confirmed the one UPDATE target exists live.
+
+Pass 7 continues next run after `wa_chair_peak_southeast_face`.
