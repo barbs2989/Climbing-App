@@ -391,6 +391,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `bivy[].capacity/.water/.permit` took up to **1,386 characters** into chips. Renders the real
   `RouteDetail` over real rows and reads the markup, so it needs the DB — **not** a build gate; it
   runs on every PR via `render-guards.yml`.
+  - **ITS ONE READ TIMED OUT ON FIVE CI RUNS IN A DAY (2026-10-08), AND THE RED SAID NOTHING ABOUT
+    PROSE.** `routes?climbing_route=not.is.null&limit=40` is a sparse-filter read, and about fifteen
+    render-guard jobs start together and each read the catalog, so it answered `57014 statement
+    timeout` on PRs #2284, #2289, #2297 and the merge of #2303 — each also failing its re-run
+    minutes later. A guard that goes red on a busy database trains everyone to re-run it, which is
+    how a real finding would be re-run into a pass. It now retries a 5xx (4 tries, a growing pause)
+    and still FAILS CLOSED if the read never succeeds; a 4xx, or a persistent 5xx, stays a failure.
+    Not fixed by narrowing the read: the sample must be enriched rows, and the filter is the only
+    way to get them.
   - **`check:field-renders` is the near miss, and the distinction is the whole point.** That guard
     asks whether a column reaches a screen. All three of these did — correctly, in full, in the
     wrong shape. **Reaching a screen and fitting the element it reaches are different questions.**

@@ -35,7 +35,20 @@ const LONG = Number((process.argv.find((a) => a.startsWith("--long=")) || "--lon
 // only dilute the sample; and `climbing_route=not.is.null` is sparse, so selectAll's `order=id.asc`
 // walks the id index and times out (57014) — the plan CLAUDE.md records for check:field-renders.
 const SAMPLE = Number((process.argv.find((a) => a.startsWith("--sample=")) || "--sample=40").split("=")[1]);
-const res = await fetch(`${SUPABASE_URL}/rest/v1/routes?select=*&climbing_route=not.is.null&limit=${SAMPLE}`, { headers: headers(anonKey()) });
+/* A STATEMENT TIMEOUT IS THE DATABASE BEING BUSY, NOT A FINDING. About fifteen render-guard jobs start
+   at once in CI and every one reads the catalog, so this one sparse-filter read hit 57014 on five CI
+   runs in a single day (2026-10-08: PRs #2284, #2289, #2297 and the merge of #2303, each also failing
+   its re-run). The guard then reported FAIL, so a red check said nothing about prose in a chip. It
+   retries a 5xx a few times with a growing pause, and still FAILS CLOSED if the read never succeeds:
+   a 4xx, or a 5xx that persists, stays a failure, so an unreadable catalog is never a pass. */
+const READ = `${SUPABASE_URL}/rest/v1/routes?select=*&climbing_route=not.is.null&limit=${SAMPLE}`;
+let res;
+for (let attempt = 1; attempt <= 4; attempt++) {
+  res = await fetch(READ, { headers: headers(anonKey()) });
+  if (res.ok || res.status < 500 || attempt === 4) break;
+  console.log(`read failed (${res.status}), retry ${attempt} of 3 in ${attempt * 5}s`);
+  await new Promise((r) => setTimeout(r, attempt * 5000));
+}
 if (!res.ok) {
   console.log(`FAIL: the catalog read failed (${res.status}) — this is NOT "no prose in a chip".`);
   console.log("      " + (await res.text()).slice(0, 200));
