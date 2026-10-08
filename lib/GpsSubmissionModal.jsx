@@ -253,7 +253,7 @@ export default function GpsSubmissionModal({ routeId, routeName, onClose, onSucc
           <div style={{...styles.successContent}}>
             <div style={{fontSize: '32px', marginBottom: '12px'}}>✓</div>
             <h2 style={{...styles.heading, color: C.success}}>Thanks for contributing!</h2>
-            <p style={{...styles.text}}>Your GPS track is under review (24-48 hours)</p>
+            {/* No turnaround is promised: a person reviews tracks when they can, and nothing measures or enforces 24-48 hours. */}<p style={{...styles.text}}>Your GPS track is waiting for a person to review it.</p>
             <div style={{...styles.scoreBox}}>
               <div style={{fontSize: '18px', fontWeight: 'bold', color: C.accent}}>
                 Quality Score: {qualityScore}/100
