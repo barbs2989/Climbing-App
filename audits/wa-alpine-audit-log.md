@@ -30558,3 +30558,49 @@ target exists live and warned (as usual) that the full file exceeds the SQL Edit
 apply just the `BEGIN...COMMIT` block.
 
 Pass 7 continues next run after `wa_buckner_mountain_southwest_face`.
+
+## Batch 387 (2026-10-08, pass 7)
+
+Checked: `wa_bulls_tooth_south_ridge`, `wa_burgundy_spire_north_face`,
+`wa_burnt_boot_peak_north_ridge`, `wa_cardinal_peak_nw_couloir_north_ridge`,
+`wa_carne_mountain_trail_route`, `wa_cascade_peak_east_ridge`, `wa_cascade_peak_nw_chimney`.
+
+**Fixed (2):**
+- `wa_bulls_tooth` (areas) `elevation_ft` — stored 6849 ft disagreed with the route's own
+  `high_point_ft` on `wa_bulls_tooth_south_ridge` (6840) and with every outside source found
+  (Wikipedia, PeakVisor both give 6,840 ft; no source gives 6,849). Brings the area row in line
+  with both its own route's figure and the outside sources.
+- `wa_carne_mountain_trail_route` `approach` — the prose stated the summit sits at "7,091 ft",
+  a lone outlier against this route's own `high_point_ft` (7085), the `wa_carne_mountain` area
+  row's `elevation_ft` (7085), and outside sources (WTA and Mountaineers.org both 7,085 ft).
+  SQL for both fixes in `audits/sql/2026-10-08-batch-387.sql`.
+
+**Flagged (2):**
+- `wa_burgundy_spire` (areas) `elevation_ft` (8483) — matches no source found. The route's own
+  `data_quality` note (on `wa_burgundy_spire_north_face`) claims "peak databases" cite 8,492 ft,
+  but this pass found no source giving that figure either. Three different numbers now exist for
+  this one peak (area: 8483, route's narrative claim: 8492, route's own `high_point_ft`: 8400 —
+  the only one with real independent corroboration, from SummitPost, Mountaineers.org, and a
+  Steph Abegg trip report). Needs a human call on which convention the catalog means to track.
+- `wa_burgundy_spire_north_face` `fa` ("Fred Beckey party, 1953", plus a "tunnel at Burgundy
+  Ledge" free-climb detail) — an AAC report confirms a multi-day aid ascent of roughly the same
+  shape, but the 1953 date, Beckey attribution, and tunnel detail aren't independently
+  confirmable via websearch. Needs AAJ archive or Beckey's *Cascade Alpine Guide* access.
+
+**Clean:** `wa_cascade_peak`'s elevation (7,428 ft, exact Wikipedia match) and
+`wa_cascade_peak_east_ridge`'s fa (Beckey/Schoening/Sharpe, July 23 1950 — exact Wikipedia
+match); `wa_burnt_boot_peak_north_ridge`'s fa (Williamson/Bucher/Oas, 1971 — matches PeakVisor's
+route-specific attribution, distinct from the peak's separate 1963 overall FA by
+Weiser/Stockwell); `wa_carne_mountain`'s elevation and its `access`/`road` closure claims
+(Chiwawa River Road debris-flow closure since May 20 2026, and the Little Giant Fire closure
+through Oct 31 2026 — both independently confirmed still active as of this run, so the row
+already reflects reality rather than needing a fix); `wa_cardinal_peak`'s elevation (8596,
+checked but not flagged — sources disagree among themselves, 8,595 vs 8,590, and 8596 sits
+within that same noise band, so there's no single authoritative figure to correct it against).
+
+**Tooling note:** Ran `scripts/check-sql-targets.mjs` against both `--table routes` and
+`--table areas` before finalizing — both write targets confirmed to exist live, no destructive
+deletes. The full SQL file (4.7KB) exceeds the SQL Editor's paste limit; apply just the
+`BEGIN...COMMIT` block.
+
+Pass 7 continues next run after `wa_cascade_peak_nw_chimney`.
