@@ -1,0 +1,694 @@
+[
+ {
+  "pid": "ut_grandeur_peak",
+  "crag": "Grandeur Peak",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Quarry": "quartzite"
+  },
+  "aspects": {
+   "Reef": "N",
+   "Rocket Reef": "N"
+  },
+  "url": "https://www.mountainproject.com/area/105817947/grandeur-peak",
+  "quote": "'The Quarry is raw quartzite'; 'Rocket Reef is the lowest section of the continuous, winding limestone ridge.'",
+  "note": "Wall pages: Reef 'Sharp and solid limestone'; Rocket Reef 'This north-facing limestone wall'; Upper Reef 'More of the Grandeur Peak quality limestone'; Quarry 'dirty, broken quartzite is local fare at the Quarry' (crag page agrees). Aspects: Reef 'The northern aspect of the wall'; Rocket Reef 'north-facing'. Upper Reef page says 'Southwest facing' but crag page says 'All areas are north facing' - conflict, left out. Quarry 'Enter the box canyon with the north-facing wall' not plainly the wall's own aspect - left out."
+ },
+ {
+  "pid": "ut_marjum_canyon",
+  "crag": "Marjum Canyon",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Buffalo Bill Wall": "E",
+   "Gammelstock": "W"
+  },
+  "url": "https://www.mountainproject.com/area/106291475/marjum-canyon",
+  "quote": "'The rock is Limestone and tends to be sharp so extra finger tips are advised.'",
+  "note": "Crag on one rock; Castlevania page also 'castle-like limestone structure'. Aspects: Buffalo Bill Wall 'This crag faces due East'; Gammelstock 'Being west facing'. Eye of the Needle Wall description is only the terse 'North Facing.' - left out. Tower Ridge none."
+ },
+ {
+  "pid": "ut_maybird_slide_area",
+  "crag": "Maybird Slide Area",
+  "groups": [
+   {
+    "held": "quartz monzonite (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Purple Wall": "E",
+   "Puzzle, The": "W"
+  },
+  "url": "https://www.mountainproject.com/area/105984586/maybird-slide-area",
+  "quote": "'The rock here is Little Cottonwood's famous quartz monzonite'",
+  "note": "Purple Wall page also 'overhanging quartz monzonite'. Aspects: Purple Wall 'The wall is east-facing'; The Puzzle 'a west-facing slab'. Crag-wide 'Most of the cliffs are east-facing' is hedged, not carried down."
+ },
+ {
+  "pid": "ut_outer_canyon",
+  "crag": "Outer Canyon",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "amphibolite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/202208651/the-shard-boulder",
+  "quote": "Shard Boulder description: 'The quartzite boulder in between the Golden Egg and The Gemstone'",
+  "note": "Crag page names no rock. Dice Cube 'different kind of rock than the granite in LCC' (unnamed). Gemstone, Pocket, Golden Egg, Dynomite pages name no rock (Gemstone only a photo caption 'large quartzite boulder' - not used). Shard exception rests on its one-sentence description."
+ },
+ {
+  "pid": "va_barred_owl_area",
+  "crag": "Barred Owl Area",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/127382369/peggys-pinch-bouldering",
+  "quote": "Parent: 'The rock is a mix of greenstone and granite'",
+  "note": "Parent-only and mixed. Barred Owl Area and its 4 boulder pages name no rock or aspect."
+ },
+ {
+  "pid": "va_boomslang_area",
+  "crag": "Boomslang Area",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/127310477/boomslang-area",
+  "quote": "Crag and boulder pages name no rock",
+  "note": "Only grandparent Atkins Bouldering: 'bullet hard southern sandstone that has a touch of extra quartzite' (parent-only, mixed). Eagle/Neon Cross mention pebbles only."
+ },
+ {
+  "pid": "va_butternut_hill",
+  "crag": "Butternut Hill",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118988106/butternut-hill",
+  "quote": "'Composed of really solid light grey stone.'",
+  "note": "No rock named on crag or 5 boulder pages. Parent Mill Creek only hedged: 'very similar to the sandstone found at the Cascades'."
+ },
+ {
+  "pid": "va_c_137_area",
+  "crag": "C-137 Area",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/113957295/c-137-area",
+  "quote": "Crag and 5 boulder pages name no rock",
+  "note": "Parent Blue Ridge Parkway only: 'Most of the rock in the first 25 miles or so on the parkway is greenstone', with Old Rag granite bands (parent-only, mixed)."
+ },
+ {
+  "pid": "va_front_blasters",
+  "crag": "Front Blasters",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Hooligan Boulder": "sandstone",
+   "Horrendo Boulder": "sandstone",
+   "Steel Boulder": "sandstone"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120573942/right-blasters",
+  "quote": "Horrendo: 'excellent sandstone'; Hooligan: 'perfect Sandstone slopers'; Steel: 'piece of sandstone awesomeness'",
+  "note": "MP area is now titled 'Right Blasters' (same 5 boulders, under Keelowkee Lake > Blaster Blocks; its page says 'Starting with Horrindo and moving to the right is all Front Blaster territory'). Our lat/lng (36.917,-82.647) differs from MP (36.858,-82.904). Exceptions from each boulder's own page. Lost World only 'fine grit sand stone texture' (texture wording) and Missionary names no rock - left in the unclear group."
+ },
+ {
+  "pid": "va_philly_blocks",
+  "crag": "Philly Blocks",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/119774927/philly-blocks",
+  "quote": "Burden Boulder: 'Short problems with great sandstone texture.'",
+  "note": "Crag page names no rock; only Burden Boulder (texture wording) of 10 walls mentions sandstone; others name none ('iron texture', 'good stone'). No aspects (Mighty Boulder only morning light)."
+ },
+ {
+  "pid": "va_turtle_area",
+  "crag": "Turtle Area",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/117725636/turtle-area",
+  "quote": "'The rock quality is fantastic!' (no rock named)",
+  "note": "Crag, Cliff Mountain Boulders and 6 boulder pages name no rock. Only the High Knob Landform region page says 'lee-type sandstone' (region-wide)."
+ },
+ {
+  "pid": "vt_jay_line",
+  "crag": "Jay Line",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/203792232/jay-line",
+  "quote": "Crag, Burnt Mountain and 5 boulder pages name no rock",
+  "note": "No other source found."
+ },
+ {
+  "pid": "vt_vermont_s_lonely_rocks_northern",
+  "crag": "Vermont's Lonely Rocks - Northern",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118777198/red-rocks-boulder",
+  "quote": "Red Rocks Boulder: 'Coarse limestone boulder with small tree and vegetation on top.'",
+  "note": "Crag page names no rock; Indian Brook, Tree Farm, Roadside on Rt 15 pages name none. Red Rocks Boulder page says limestone but UVM bedrock page says Red Rocks Park shows Monkton Quartzite (park-wide) - sources disagree, so no exception."
+ },
+ {
+  "pid": "wa_420_boulders_the",
+  "crag": "420 Boulders, The",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108558125/the-420-boulders",
+  "quote": "'Rock quality is quite amazing and the landings tend to be flat.' (no rock named)",
+  "note": "Crag and 3 sub-area pages name no rock or aspect."
+ },
+ {
+  "pid": "wa_a_upper_wall",
+  "crag": "Upper Wall",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/114278651/mt-washington",
+  "quote": "Grandparent: 'The climbing here is all on metamorphosed andesite aka rhinostone'",
+  "note": "Upper Wall, Crag of the 20s, Quadratic Cave, Boundless Slab, Waterfall Wall pages name no rock. Mt Washington statement is parent-only. Crag of the 20s 'North facing' is parent-level, not carried down."
+ },
+ {
+  "pid": "wa_east_tower",
+  "crag": "East Tower",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.djc.com/special/concrete/10003368.htm",
+  "quote": "'After it was cast in place, the project was sandblasted to clean it up and give it a uniform texture.'",
+  "note": "MAN-MADE: Marymoor Park climbing structure is cast-in-place concrete (DJC; Seattle Times 1994 'concrete rock'). No rock fill."
+ },
+ {
+  "pid": "wa_exit_47",
+  "crag": "Exit 47",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Fun Forest": "S"
+  },
+  "url": "https://www.mountainproject.com/area/112012438/exit-47",
+  "quote": "'Rounded, fine-grained granite, much like the Index granite.'",
+  "note": "Plain 'granite' on crag and all 3 wall pages - does not confirm held granodiorite. Aspect: Fun Forest 'Small, south-facing freeway-side crag'."
+ },
+ {
+  "pid": "wa_land_of_snee",
+  "crag": "Land of Snee",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/203111461/land-of-snee",
+  "quote": "Crag and 3 boulder pages name no rock",
+  "note": "Mrs. Bergsnerkula has only photo titles for faces."
+ },
+ {
+  "pid": "wa_lower_bond_boulders",
+  "crag": "Lower Bond Boulders",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/117999207/lower-bond-boulders",
+  "quote": "Crag and wall pages name no rock",
+  "note": "Parent Bond Boulders: 'Rock quality is great, just like the Fridge' (no rock). Aspect: MP area titled 'Sockeye': 'The main Sockeye boulder is north facing' (page name lacks 'Boulder')."
+ },
+ {
+  "pid": "wa_marcus",
+  "crag": "Marcus",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear",
+    "note": "Demoted in triage: the only source is the one-line description \"Limestone cave and overhanging walls.\""
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106798275/marcus",
+  "quote": "'Limestone cave and overhanging walls.'",
+  "note": "Crag on one rock; wall pages name no rock or aspect."
+ },
+ {
+  "pid": "wa_mazama",
+  "crag": "Mazama",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "granite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Fire Wall": "limestone"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/124737301/townes-wall",
+  "quote": "Townes Wall: 'Composed of a unique glacier-polished granite.'",
+  "note": "Mazama page names no rock. Fire Wall page: 'A large, yet relatively undeveloped, massif of quality limestone.' Valhalla only 'metamorphic rock wall'; Rough Cut none. Townes Wall 'Routes Mostly Face: East' is hedged - no aspect."
+ },
+ {
+  "pid": "wa_pigeon_stool_group_lower",
+  "crag": "Pigeon Stool Group Lower",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "wrong",
+    "correct": "diorite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/116486129/pigeon-stool-group-lower",
+  "quote": "'Shady and dry, mostly solid diorite, fun roofs and great spooky face climbing.'",
+  "note": "End of the Rope Crag page: 'Shady and dry diorite.' Parent Mount Erie: 'Rock type: Diorite'; Wikipedia Mount Erie agrees ('feldspar- and hornblende-rich diorite'). Held value is generic."
+ },
+ {
+  "pid": "wa_spring_mountain",
+  "crag": "Spring Mountain",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/110142131/spring-mountain",
+  "quote": "'The rock is Tonalitic Orthogneiss.'",
+  "note": "Crag on one rock. Crag-wide 'The walls are south facing' not carried to the two sub-walls; their pages give no aspect."
+ },
+ {
+  "pid": "wi_06_alpine_club_beautiful_soup",
+  "crag": "Alpine Club/Beautiful Soup",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/118982309/alpine-clubbeautiful-soup",
+  "quote": "Crag and 4 boulder pages name no rock",
+  "note": "No crag- or wall-level rock statement."
+ },
+ {
+  "pid": "wi_3_greatest_show",
+  "crag": "Greatest Show",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106554352/greatest-show",
+  "quote": "'Sandstone (!) bouldering area with one of the Lake's hardest lines.'",
+  "note": "Greatest Bluff page: 'Some of the only sandstone bouldering at the Lake.'"
+ },
+ {
+  "pid": "wi_500_ft_boulder_field",
+  "crag": "500 ft. Boulder Field",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106514768/500-ft-boulder-field",
+  "quote": "Crag and 6 boulder pages name no rock",
+  "note": "No crag- or wall-level rock statement."
+ },
+ {
+  "pid": "wi_above_500_foot",
+  "crag": "Above 500 Foot",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Railroad Slab": "N"
+  },
+  "url": "https://www.mountainproject.com/area/106554318/above-500-foot",
+  "quote": "Crag and 6 boulder pages name no rock",
+  "note": "Aspect: Railroad Slab 'A north-facing slab near the top of an open boulder field.'"
+ },
+ {
+  "pid": "wi_jim_falls",
+  "crag": "Jim Falls",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106402585/jim-falls",
+  "quote": "'Big Granite boulders near the Jim Falls dam.'",
+  "note": "Plain 'granite' (crag, Bald Eagle Split, Bridge Boulders) does not decide held gneiss."
+ },
+ {
+  "pid": "wv_coral_area",
+  "crag": "Coral Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/114250690/coral-area",
+  "quote": "Crag and boulder pages name no rock",
+  "note": "Only the park-wide Coopers Rock page names 'Upper Connoquenessing Sandstone' (parent-only)."
+ },
+ {
+  "pid": "wv_death_block_area",
+  "crag": "Death Block Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/114306642/death-block-area",
+  "quote": "Death Block Boulders: 'a handful of classics on amazing gritstone'",
+  "note": "'gritstone' is loose wording; Allusionist none; park-wide Coopers Rock page only. 'Mostly Southern-facing boulders' is hedged - no aspect."
+ },
+ {
+  "pid": "wv_entrance_boulder_area",
+  "crag": "Entrance Boulder Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/124173353/entrance-boulder-area",
+  "quote": "Crag and 7 wall pages name no rock",
+  "note": "Only the park-wide Coopers Rock page names sandstone (parent-only)."
+ },
+ {
+  "pid": "wy_ghost_town_the",
+  "crag": "Ghost Town, The",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Rising from the Ashes": "N"
+  },
+  "url": "https://www.mountainproject.com/area/112091550/the-ghost-town",
+  "quote": "'The rock quality is quite variable.' (no rock named)",
+  "note": "Dead Zone only 'reminiscent of Baldwin Creek'; Specter Wall none. Aspect: Rising from the Ashes 'North facing cliff in the center of the Ghost Town wall.'"
+ },
+ {
+  "pid": "wy_lucerne_valley",
+  "crag": "Lucerne Valley",
+  "groups": [
+   {
+    "held": "mudstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Conglomerate": "conglomerate",
+   "Twin Fin": "conglomerate"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106542833/lucerne-valley",
+  "quote": "'the rock in the area is sandstone and conglomerate'",
+  "note": "Crag-wide mixed statement decides no group. Wall pages: Conglomerate 'two conglomerate outcrops'; Twin Fin 'a blade of conglomerate'; Road Side Cliff Band 'the obvious sandstone cliffband'. Snaggletooth 'odd sandstone matrix that in spots looks like pocketed rhyolite' - hedged, left out. Twin Fin 'The south facing, overhung face' names a face only - no aspect. No wall page supports mudstone."
+ },
+ {
+  "pid": "wy_telephone_road",
+  "crag": "Telephone Road",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105834139/telephone-road",
+  "quote": "'The rock out here, especially the stuff out at Eagle Rock, is some of the best granite anywhere.'",
+  "note": "Hobgoblin Boulders page: 'they are of different rock than most of whats around here' (unnamed), so crag holds more than one rock and the crag-wide line decides nothing. Eagle Rock 'immaculate granite'; Telephone Road Boulders names no rock ('slope ... faces southeast' / 'face all different directions' - no aspect)."
+ },
+ {
+  "pid": "ab_big_rock",
+  "crag": "Big Rock",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "quartzite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106254775/big-rock",
+  "quote": "'Big Rock is a Quartzite Glacial erratic which originated from a landslide in the Tonquin Valley'",
+  "note": "Okotoks Erratic. Alberta gov page agrees: 'made up of quartzite'. Our lat/lng (51.071,-114.113) is in Calgary; MP gives 50.7059,-114.0764 (same breadcrumb Alberta > Calgary, same East/West Boulder walls). Climbing now prohibited."
+ },
+ {
+  "pid": "ak_eagle_river",
+  "crag": "Eagle River",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Kiliak Wall": "S"
+  },
+  "url": "https://www.mountainproject.com/area/108339771/kiliak-wall",
+  "quote": "Kiliak Wall: 'generally decent rock and fantastic views' (no rock named)",
+  "note": "Eagle River, Kiliak Wall, Frostbite Boulders pages name no rock - no fills. Aspect: Kiliak Wall 'The wall is south facing'."
+ },
+ {
+  "pid": "ak_fairangel_gap_and_valley",
+  "crag": "Fairangel Gap and Valley",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108255973/tin-can-rock",
+  "quote": "Tin Can Rock: 'a beautiful black and gold speckled solid granite'",
+  "note": "Crag page names no rock; Sugar Cube and Tunnel Vision Wall name none, so not every wall covered."
+ },
+ {
+  "pid": "al_water_tower_area",
+  "crag": "Water Tower Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/121726713/water-tower-area",
+  "quote": "'The sand stone is good quality unlike the Eddie Area conglomerate'",
+  "note": "Crag on one rock. Boulder pages say only 'faces downhill' - no aspects."
+ },
+ {
+  "pid": "ar_horn_mountain",
+  "crag": "Horn Mountain",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/202278355/horn-mountain",
+  "quote": "Crag and 4 wall pages name no rock",
+  "note": "Walls described only as 'orange rock with black streaks'."
+ },
+ {
+  "pid": "ar_lone_wadi",
+  "crag": "Lone Wadi",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/120224344/lone-wadi",
+  "quote": "'Best guess is that this is Atoka Sandstone.'",
+  "note": "Hedged ('best guess'); 5 wall pages name no rock."
+ }
+]
