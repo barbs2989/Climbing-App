@@ -83,6 +83,7 @@ npm run check:outage-landmark # ...and check:outage's own sub-tab landmark must 
 npm run check:overlay-absence # every overlay that claims you have none is gated or explained
 npm run check:outage # with the database down, does any screen say you have nothing?
 npm run check:read-failures # no failed read that a caller reads as an empty one (in build)
+npm run check:write-readers # a write REFRESHES every cached query that reads its table — the acting screen is not the only reader (in build)
 npm run check:outage-flag-reach # no outage flag that is computed and then read by nothing (in build)
 npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads once, not "This screen hit a bug" (in build)
 

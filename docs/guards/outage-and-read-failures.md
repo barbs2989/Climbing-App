@@ -1385,3 +1385,47 @@ that they had none — on the one screen whose whole subject is who you climb wi
   - **A failed PREFETCH also fires `vite:preloadError`** and so reloads. That is intended for the
     deploy case; `main.jsx`'s idle prefetch skips offline and Save-Data so it cannot reload a
     climber at a trailhead.
+
+- **`check:write-readers`** — a write to a table REFRESHES every cached query that reads it (landed
+  2026-10-08). The query client keeps an answer for 60 s (`main.jsx` `staleTime`), and its comment
+  claimed *"every write path updates its screen through a setter, refetch() or an invalidate"*. The
+  write-side entry above measured that for the ACTING screen (40 of 43 `.then` sites) and it holds.
+  It is not the whole claim: a setter fixes the acting screen's local copy and nothing else, so every
+  OTHER reader of that table — another screen, the same list after remount, the other climber's
+  profile — keeps the pre-write rows until the minute passes. Measured before the guard: **111 write
+  functions in `lib/db.js`, 5 invalidating anything; 93 writer×table pairs over 38 tables with a
+  cached reader and no refresh** (plus `saveProfile` in `lib/auth.js`, and `objectiveReaders` itself
+  missing `objectives-of-users`). A call-site sweep of 24 of those writers found 36 reachable sites:
+  20 refetch the acting query, 16 update local state only (vouches, crews, crew and direct messages,
+  discoverable and photo fields) — so after `giveVouch`, `useUserVouches` and the vouched climber's
+  `climber-vouches` showed the old count for up to a minute. Fixed the way the two earlier incidents
+  were (`objectiveReaders`, `logReaders`): one `const <table>Readers = [[…]]` list per table, placed
+  before the table's first writer, and `invalidateKeys(<table>Readers)` before every writer's final
+  return — landed by `scripts/oneoff/add-write-reader-invalidation.mjs`, which reads the guard's own
+  failure list so the two cannot disagree; 7 writers with a return in each branch were done by hand.
+  - **The rule:** every exported function in a `lib/` file touching `supabase` that calls
+    `.from("T").insert/update/delete/upsert`, where some `useQuery` queryFn reads `"T"` (directly or
+    through ONE helper it calls), must name every reader of `"T"` in an `invalidateKeys(...)` /
+    `qc.invalidateQueries(...)` — directly, through a top-level reader list, or through ONE other
+    top-level function it calls. Extra names are accepted. `DECLARED` holds allowed exceptions with
+    a reason, is empty, and fails if it names a function no file declares. Fails closed under 60
+    writers, 60 readers or 20 tables with both.
+  - **What it cannot see, stated:** a reader whose queryFn goes through an RPC reads tables the
+    source never names — 12 on 2026-10-08 (`route-logged-with`, `area-contributors`, `leaderboard`,
+    `leaderboard-top-climbs`, `log-tags-for-me`, `my-trust-counts`, `verified-users`, `partners-near`,
+    `partners-by-objective`, `route-base-checkins`, `mutual-connections`, `user-top-contrib-areas`).
+    The ones whose relation is plain are named by hand in the lists (`vouches`, `belay_catches` and
+    `verification_records` → `my-trust-counts`; `connections` → `mutual-connections`; climb logs →
+    `route-logged-with`, `log-tags-for-me`; `route_base_checkins`); the leaderboard family carries a
+    `version` the caller bumps. A write made inline in a screen is outside the discovered set, the
+    same boundary `check:read-failures` records. A reader list is a hand-copy of the table's readers:
+    the guard re-derives the required set from the source on every run, so a list that falls behind
+    fails, which is the point of having it.
+  - **Traps met building it:** the first measurement found 93 pairs and the guard 96 — it also walks
+    `lib/auth.js` (one writer) and resolves one level of queryFn helper calls, which the measurement
+    did not. The codemod's single insert-before-return misses a writer with a `return` in EACH branch
+    (delete-or-upsert shapes: `saveMyZip`, `castHazardVote`, `deleteComment`, …); it detects a return
+    after the first write that is not the last statement and refuses them rather than half-fixing.
+    Injection suite `scripts/oneoff/inject-write-readers-cases.mjs`: 6 cases (a writer drops its
+    refresh, a list forgets a reader, a NEW writer with none, a DECLARED name nobody declares; and two
+    that must stay silent — an extra name, and a refresh through a callee).
