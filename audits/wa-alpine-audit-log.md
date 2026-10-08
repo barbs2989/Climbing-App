@@ -30949,3 +30949,80 @@ blocked (EGRESS_BLOCKED) on every attempt across all three subagents; WebSearch 
 only working method and are the basis for every finding above.
 
 Pass 7 continues next run after `wa_colchuck_peak_south_route`.
+
+## Batch 393 (2026-10-08, pass 7)
+
+Continued from `wa_colchuck_peak_south_route` through `wa_crooked_thumb_peak_east_face` (skipped
+`wa_comb_the_*`, `wa_complete_south_buttress` and `wa_concerto_in_c_for_drill_and_hammer` in between
+— all sit under crag-type areas, `wa_comb_the_climbs`/`wa_south_face`, not peaks). Ten routes:
+Colchuck Peak's West Ridge; Colfax Peak's three north-face ice lines (Cosley-Houston, Kimchi
+Suicide Volcano, Polish Route); Colonial Peak's West Ridge/Colonial Glacier; Concord Tower's North
+Face; Copper Peak's South Route; Corteo Peak's Southwest Ridge; Crater Mountain's Standard Route;
+Crooked Thumb Peak's East Face.
+
+**Three confirmed errors fixed** (`audits/sql/2026-10-08-batch-393.sql`): `wa_colfax_peak_cosley_houston`'s
+`length_m` (305m/~1000ft) was almost certainly carried over from the neighboring Polish Route's
+correct 305m figure — the row's own `overview` text already says "~600 ft," and Alpinist's route
+list for the face independently gives "ca. 700′" — corrected to 213m (700ft, the more specific
+externally-sourced figure). `wa_concord_tower_north_face`'s `high_point_ft` (7,611 ft, the
+ListsOfJohn figure the row's own `data_quality.gaps` already flagged as disputed) is contradicted
+by four independent sources (Mountain Project, Mountaineers.org, SummitPost, wenatcheeoutdoors.org)
+that all converge on 7,560 ft instead — corrected, with the gaps note updated to record the
+resolution. `wa_copper_peak_south_route`'s own `corrections` field was itself wrong: it hedged
+toward this being the Olympic Mountains' "Copper Mountain" (non-technical, Class 2-3), directly
+contradicting the row's own coordinates, area description and glaciated/roped content — the stored
+lat/lng (48.1745741, -120.803989) match Wikipedia's and SummitPost's figures for the Entiat
+Mountains Copper Peak (near Mt. Fernow, Glacier Peak Wilderness) to within ~15m, confirming the
+row was describing the right peak all along; replaced the confusing note with an accurate one.
+
+**Confirmed clean:** `wa_colfax_peak_kimchi_suicide_volcano`'s FA (Colin Haley & Sarah Hart, April
+2015, matching Haley's own site and the AAC) and grade/length (AI4+ M5, 300m, matching the AAC's
+"300m, AI4+ M5 R" almost exactly); `wa_colonial_peak_west_ridge`'s 1931 Degenhardt/Strandberg FA
+(also the peak's own FA), 7,771 ft elevation, and the NPS North Cascades backcountry permit fee
+structure ($10/person + $6 reservation fee, charged mid-May–early Oct only); `wa_corteo_peak_southwest_ridge`'s
+1935 Lehmann/Ulrichs FA, 8,107 ft elevation (ListsOfJohn-corroborated over a competing ~8,080 ft
+figure), and its standing as Corteo's standard/easiest line; `wa_crater_mountain_standard_route`'s
+Whatcom County placement (it does sit in Whatcom County, not Skagit/Okanogan — not the error the
+audit prompt suspected), 8,132 ft elevation, Pasayten Wilderness/Okanogan-Wenatchee NF placement
+(not North Cascades NP), and a real, WSDOT-corroborated June 14 2026 SR-20 reopening spanning the
+exact mileposts (142–148) next to this route's own trailhead; `wa_concord_tower_north_face`'s FA
+(Beckey & Parrott, June 12 1956) and its two seemingly-contradictory descent fields (`descent`'s
+"Beckey Gully" walk-off vs. `descent_text`'s 3-rappel North Face descent) — both are real,
+legitimate options SummitPost documents separately, just not labeled as alternatives in the row;
+`wa_copper_peak_south_route`'s August 1937 Bennet/Courtwright/Hagman FA and its "21st-highest
+overall, 19th on the Bulger List" framing, which are two different rankings and not a contradiction.
+
+**Flagged, not fixed:** `wa_colchuck_peak_west_ridge`'s FA ("Rick La Belle, Glen Sterr, and Pat
+Carney, July 18 1971") — targeted searches on all three names returned zero climbing-history hits
+anywhere (AAJ, SummitPost, Mountain Project); worth a human check against a physical Beckey guide
+or AAJ archives before concluding it's fabricated. Relatedly, "West Ridge" itself may not be a real
+distinct named route on Colchuck Peak — one SummitPost snippet uses "West Ridge/Colchuck Col" only
+as informal shorthand for the standard Colchuck Glacier route (already in the DB as the separate
+`wa_colchuck_peak_colchuck_glacier` row), raising a real possibility this row is a duplicate/mislabel
+rather than an independent line — this closes out the Colchuck Peak route family audited across
+batches 392–393. `wa_crooked_thumb_peak_east_face`'s FA ("Jackson, Jensen, Marts, Schmechel, July 31
+1963") is unverifiable from any reachable source; note the peak's overall documented FA is a
+different, well-corroborated 1940 climb by Fred & Helmy Beckey, which isn't necessarily a
+contradiction (one could be the peak FA, the other a specific-line FA on the same peak) but is
+worth a human cross-check against Beckey's own Cascade Alpine Guide or AAJ 1964 "Climbs and
+Expeditions" notes. `wa_colfax_peak_polish_route`'s `dist_km` (14.48) runs almost double
+`wa_colfax_peak_cosley_houston`'s (7.49) despite both rows' own beta text stating they share the
+same trailhead and lower approach, and both sharing identical `gain_ft`/`high_point_ft` — a real
+discrepancy, but no source could confirm which figure (if either) is correct; recommend a human/GPX
+recheck of the underlying track rather than guessing which to fix.
+
+**Tooling notes:** Delegated research to 5 parallel subagents. Network egress to mountainproject.com,
+summitpost.org, wikipedia.org, publications.americanalpineclub.org, nps.gov, stephabegg.com,
+peakvisor.com and climberkyle.com was blocked on every attempt across all five; WebSearch snippets
+were the only working method. One of my own research prompts previewed a route's `road` JSON field
+truncated mid-sentence, which led a subagent to flag a "stale road status" that turned out, once the
+full field was re-pulled directly from the live DB, to already be correct and consistent across all
+three Colfax rows (Glacier Creek Road reopened 20 Aug 2026) — not included in the SQL file; a
+reminder to pull full field values rather than previews before handing them to a research subagent.
+Also re-hit (twice, in this batch's own SQL) the `check-sql-targets.mjs` trap already on record from
+batches 390/392: the checker's naive per-line stripper treats a literal `--` *inside a quoted SQL
+string* exactly like a line comment (truncating the rest of the line), on top of the already-known
+bare-`;`-inside-a-string trap — rewrote both long text corrections to avoid both characters inside
+their quoted literals, then confirmed clean with `node scripts/check-sql-targets.mjs`.
+
+Pass 7 continues next run after `wa_crooked_thumb_peak_east_face`.
