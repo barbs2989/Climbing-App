@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-07",
+  "generatedAt": "2026-10-08",
   "tables": {
     "areas": [
       "approach",
@@ -114,6 +114,7 @@
       "gpx_track",
       "id",
       "itinerary",
+      "moderation",
       "mud",
       "notes",
       "outcome_note",
@@ -156,6 +157,7 @@
       "edited",
       "id",
       "likes",
+      "moderation",
       "parent_id",
       "target_id",
       "text",
@@ -258,6 +260,7 @@
       "crew_id",
       "id",
       "image_url",
+      "moderation",
       "updated_at",
       "user_id"
     ],
@@ -313,6 +316,13 @@
       "submitted_at",
       "updated_at"
     ],
+    "group_bans": [
+      "banned_by",
+      "created_at",
+      "group_id",
+      "reason",
+      "user_id"
+    ],
     "group_event_invites": [
       "created_at",
       "event_id",
@@ -334,6 +344,7 @@
       "host",
       "id",
       "location",
+      "moderation",
       "repeat",
       "series_id",
       "title"
@@ -344,17 +355,37 @@
       "group_id",
       "user_id"
     ],
+    "group_join_declines": [
+      "declined_at",
+      "declined_by",
+      "group_id",
+      "message",
+      "user_id"
+    ],
+    "group_member_prefs": [
+      "group_id",
+      "last_seen_at",
+      "notify",
+      "user_id"
+    ],
     "group_members": [
       "group_id",
       "id",
+      "invited_by",
       "joined_at",
       "role",
+      "rules_agreed_at",
       "status",
       "user_id"
     ],
     "group_post_reactions": [
       "post_id",
       "reaction",
+      "user_id"
+    ],
+    "group_post_saves": [
+      "created_at",
+      "post_id",
       "user_id"
     ],
     "group_posts": [
@@ -364,10 +395,27 @@
       "edited",
       "group_id",
       "id",
+      "moderation",
       "photo_alts",
       "photos",
       "pinned",
-      "pinned_at"
+      "pinned_at",
+      "topic"
+    ],
+    "group_reports": [
+      "created_at",
+      "detail",
+      "group_id",
+      "id",
+      "reason",
+      "reported_user",
+      "reporter",
+      "resolved_at",
+      "resolved_by",
+      "snapshot",
+      "status",
+      "target_id",
+      "target_kind"
     ],
     "groups": [
       "accent",
@@ -377,10 +425,13 @@
       "disciplines",
       "event_policy",
       "id",
+      "invite_policy",
       "join_questions",
       "location",
+      "moderation",
       "name",
       "policy",
+      "rules",
       "visibility"
     ],
     "guide_credentials": [
@@ -478,9 +529,21 @@
       "created_at",
       "id",
       "image_url",
+      "moderation",
       "read",
       "recipient_id",
       "sender_id"
+    ],
+    "moderation_actions": [
+      "action",
+      "actor",
+      "created_at",
+      "id",
+      "note",
+      "report_id",
+      "target_id",
+      "target_kind",
+      "target_owner"
     ],
     "objectives": [
       "created_at",
@@ -713,6 +776,7 @@
       "created_by",
       "id",
       "license",
+      "moderation",
       "photographer",
       "storage_path"
     ],
@@ -732,6 +796,7 @@
       "description",
       "icon",
       "id",
+      "moderation",
       "name",
       "route_ids",
       "shared",
@@ -748,7 +813,12 @@
       "reporter_label",
       "reviewed_at",
       "reviewed_by",
-      "status"
+      "snapshot",
+      "snapshot_at",
+      "snapshot_media",
+      "status",
+      "target_id",
+      "target_kind"
     ],
     "verification_records": [
       "created_at",
