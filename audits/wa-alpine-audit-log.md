@@ -31137,3 +31137,67 @@ Project route pages, an AAJ season report, and a CascadeClimbers.com FA trip rep
 needing a direct fetch.
 
 Pass 7 continues next run after `wa_dolphin_chimney`.
+
+## Batch 396 (2026-10-08, pass 7)
+
+Continued from `wa_dome_peak_dome_glacier` through `wa_dragontail_peak_east_route` (skipped
+`wa_doorway_flake`'s area `wa_south_face` — a crag, not a peak). Nine routes across four peaks:
+Dome Peak's Dome Glacier and Indian Summer; Dorado Needle's East Ridge / Inspiration Glacier; Dot
+Mountain's Standard Scramble; and five Dragontail Peak routes (Backbone Ridge, Boving Route,
+Colchuck Col Buttress, East Ridge via Aasgard Pass, East Route).
+
+**4 confirmed errors** → fixes in `audits/sql/2026-10-08-batch-396.sql`:
+- Dome Peak's own `elevation_ft` (8,926 ft) and area blurb disagreed with Wikipedia, WTA, and
+  SummitPost (all 8,920 ft) — and with both of this app's own Dome Peak route rows, which already
+  stored `high_point_ft = 8920`. Corrected the area row.
+- `wa_dome_peak_indian_summer`'s `pro_tips` misplaced the same-trip new route "Lily of the West" on
+  Dome Peak's South Face; the original CascadeClimbers.com FA trip report and an AAC Cascades-summary
+  citation both place it on the West Face of South Gunsight Peak, a separate peak climbed the same
+  trip. Corrected the location.
+- The same route's `access.closures` named the active 2026 fire closure "Miner's Fire"; WTA's live
+  Downey Creek trail page (updated the closure's own start date, 2026-08-15) names it the "Miner's
+  Creek Fire." Corrected the name (the cited order number and end date could not be independently
+  confirmed — left as-is).
+- `wa_dorado_needle_east_ridge`'s `fa` field appended an unsupported "(attribution uncertain)" hedge
+  to the Firey/Hoesli/Knudson/Renz 1971 credit; Beckey's Cascade Alpine Guide (quoted verbatim by
+  American Alpine Institute) states this party/date with no caveat, and no source disputes it.
+  Removed the hedge.
+
+**Flagged for human review:** Dragontail Peak's `wa_dragontail_peak_east_route` ("East Route," a
+near-empty stub: Mod. Snow / 0 pitches / nothing else populated) looks like a likely duplicate of
+`wa_dragontail_peak_east_ridge_aasgard_pass` — multiple sources describe the Aasgard Pass →
+Snow Creek Glacier → east-ridge-saddle → Class 3 scramble line under the "East Ridge"/"Standard
+East Ridge" name, and no second distinct east-side snow/scramble route was found; not merged or
+deleted per the audit's own rule against guessing which row to keep. Also flagged, not fixed: Dome
+Peak's `prominence_ft` (8,926 ft area's companion figure, 3,079 — Wikipedia gives 3,040, no second
+source found to adjudicate); `wa_dome_peak_indian_summer`'s `pitches` (7) is in real tension with
+the original FA trip report's own "8 pitches" language, but the row's prose is built around a
+7-pitch narrative, so fixing the number alone would make the row self-contradictory — needs a
+fuller human re-derivation; the same route's fire-closure order number and end date; Backbone
+Ridge's `prominence_ft` (1,760 vs. one third-party site's 1,783) and an unconfirmed accident claim;
+Dorado Needle's `pitches`/`commitment` and an unconfirmed col label; Dot Mountain's storm-closure
+start date (row says "roughly March 2026," WTA's reporting is dated mid/late April) and an internal
+grade/prose tension (`grade` "Class 2" vs. the row's own Class 3-4 route description) that may be a
+deliberate scoping choice rather than an error; and `wa_dragontail_peak_colchuck_col_buttress`,
+which no source reached (Mountain Project, SummitPost, AAJ, CascadeClimbers, Wenatchee Outdoors)
+could confirm OR contradict under that exact name — too obscure for search-snippet verification,
+not fixed or flagged as wrong, just unconfirmed.
+
+Clean / independently reconfirmed (not exhaustive): Dome Peak's 1936 FA history for both summits
+and its route-count; Dome Glacier's own FA, `high_point_ft`, and the Suiattle River Road/FR 26
+washout closure order and dates; Indian Summer's FA party/date/grade against the original trip
+report; Dorado Needle's elevation (8,440 ft), location, FA, grade (5.7, matching a 2016
+reassessment over Beckey's stale 5.5), approach, and permit fees; Dot Mountain's name origin,
+ridge-line location, and area placement; Backbone Ridge's FA (incl. the Fin Direct variation),
+grade/pitches/length/commitment matching Mountain Project exactly, and crux pitch detail; Boving
+Route's FA (confirmed via the first ascensionist's own CascadeClimbers trip report) and grade;
+Colchuck Col Buttress's area/hierarchy placement; East Ridge via Aasgard Pass's elevation,
+coordinates, Aasgard Pass elevation, route description, approach mileages, and permit/quota rules.
+
+**Tooling notes:** Delegated research to 4 parallel subagents (Dome Peak; Dorado Needle + Dot
+Mountain; Dragontail routes 1-3; Dragontail routes 4-5). WebSearch was again the primary or sole
+working method — WebFetch to mountainproject.com, summitpost.org, cascadeclimbers.com,
+publications.americanalpineclub.org and recreation.gov was blocked (EGRESS_BLOCKED) on every
+attempt across all four agents, consistent with every recent batch.
+
+Pass 7 continues next run after `wa_dragontail_peak_east_route`.
