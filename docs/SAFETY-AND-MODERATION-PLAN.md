@@ -112,6 +112,23 @@ Google Play also requires a **web URL for account deletion**.
 - `GpsSubmissionModal` promises review in "24-48 hours".
 - "Our moderators will take a look" on the group report; #2258 removes it.
 
+### Update 2026-10-08: what phases 1–2 changed (owner approved the plan 2026-10-07)
+
+The table above is the state measured on 2026-10-07. Since then:
+
+| Requirement | Now | How |
+|---|---|---|
+| Flag content | **PRESENT** | `report_content()` (0263) covers DMs, crew chat, group posts and events, comments, trip reports, groups, topos, lists and profiles, with a server-side snapshot of what was reported. Group members can also report a post or comment to that group's own moderators (`group_reports`, 0260, #2277). |
+| Act within 24 h | **PARTIAL** | The queue shows how long each report has waited. An admin-only Home banner counts waiting reports and appeals, red from 20 h. `notify-safety-report` (deployed) emails each report **once `RESEND_API_KEY` and `SAFETY_ALERT_EMAIL` are set — not yet**. |
+| Remove content | **PRESENT** | `moderate_content()` removes, holds or restores; it is audited and closes every report about the item. Three independent reporters hold an item automatically. An admin can now delete a reported photo's file. |
+| Eject the user | **PRESENT** | `set_account_standing()` (0264). **Suspend** leaves the account read-only for N days; it can still sign in to see why and appeal. **Ban** stops sign-in (`auth.users.banned_until`) and removes everything they posted. A restrictive write gate closes the hour an old token would otherwise live. Terms §8/§10 ("we may suspend") are now backed. |
+| Statement of reasons + appeal | **PRESENT** | A restricted account sees the reason and end date on every tab. Removed content is labelled for its author. One-tap appeal for both; the reviewer reverses or keeps the decision. |
+| Block | **PRESENT** | Plus group invites since 0260 (#2277). Crew chat and existing content are still not hidden from the blocker. |
+| Filter | **MISSING** | Phase 3 (needs an AI API key). |
+| Terms "I agree", contact, deletion | **PARTIAL / MISSING** | Phase 4. |
+
+Also found and closed on the way: a DM **recipient could rewrite the sender's message** (UPDATE policy with no WITH CHECK). Live probes: `probe-reports-reach-the-content.mjs` 29/29, `probe-suspend-ban-and-appeal.mjs` 28/28.
+
 ---
 
 ## Part 3 — Proposed moderation system: AI screens, a person decides
