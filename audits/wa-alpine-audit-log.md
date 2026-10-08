@@ -30604,3 +30604,71 @@ deletes. The full SQL file (4.7KB) exceeds the SQL Editor's paste limit; apply j
 `BEGIN...COMMIT` block.
 
 Pass 7 continues next run after `wa_cascade_peak_nw_chimney`.
+
+## Batch 388 (2026-10-08, pass 7)
+
+Checked: `wa_castle_in_the_sky` (Whatcom Peak), `wa_castle_peak_pasayten_east_ridge`,
+`wa_castle_peak_pasayten_north_ridge`, `wa_castle_peak_pasayten_the_drawbridge` (Castle Peak,
+Pasayten), `wa_castle_peak_tatoosh_la_villa`, `wa_castle_peak_tatoosh_southeast_face` (The
+Castle, Tatoosh Range), `wa_cathedral_peak_last_rites`, `wa_cathedral_peak_pasayten_se_buttress`
+(Cathedral Peak, Pasayten).
+
+**Fixed (1):**
+- `wa_cathedral_peak_pasayten_se_buttress` `grade` — stored 5.10a is an outlier against four
+  independent sources (Wikipedia, a Steph Abegg trip report, lemkeclimbs.com,
+  chossclimbers.com), all of which give 5.9 (9-10 pitches). The route's own `gear` field
+  already distinguishes a "5.10a link-pitch bypass" from the standard line avoiding the
+  original P9 offwidth, so 5.10a most likely describes that one bypass pitch, not the route
+  overall. This also resolves a discrepancy the route's own `data_quality.gaps` note had
+  already flagged ("5.7-5.9 in most trip reports vs III 5.10a in one recent source") without
+  fixing it. SQL in `audits/sql/2026-10-08-batch-388.sql`.
+
+**Flagged (2):**
+- `wa_castle_peak_pasayten_north_ridge` `fa` — stored as the literally truncated "John R", with
+  no other fields on the row filled in. Research could not confirm or complete this name: no
+  source credits a first ascent of a "North Ridge" on this Castle Peak to anyone, and more to
+  the point, Wikipedia's own route list for this peak (sourced to Beckey's 2008 *Cascade Alpine
+  Guide*) names six routes — South Route, East-Southeast Ridge, North Face West Side, North
+  Buttress East, North Face East Buttress, North Face Right Central Buttress — and none of them
+  is called "North Ridge." The route may be one of those under an informal name, or the row may
+  not describe a documented route at all. John Roper (a real, prolific North Cascades
+  first-ascensionist) was considered as a candidate completion of "John R" but no source ties
+  him to this peak, so left as "needs human verification" rather than guessed.
+- `wa_cathedral_peak_last_rites` `fa` ("Scott Bennett and Blake Herrington, August 2011") —
+  could not be corroborated anywhere (Mountain Project, SummitPost, Wikipedia, Mazamas, Steph
+  Abegg's trip reports, Alpinist, the Mountaineers were all checked). Bennett and Herrington are
+  real NW climbers with a documented 2011 partnership, but the trip found for that year was in
+  BC's Waddington Range (The Blade, Stiletto Peak), not the Pasayten. Doesn't prove the route or
+  credit is wrong — Mountain Project route pages aren't always indexed by search, and
+  mountainproject.com couldn't be fetched directly from this session — but flagging since no
+  independent source backs it up.
+
+**Clean:** `wa_whatcom_peak`'s elevation (7,574 ft, exact Wikipedia match); `wa_castle_in_the_sky`'s
+approach (Hannegan Pass → Easy Ridge → Easy Peak → "Imperfect Impasse" → Perfect Pass →
+Challenger Glacier — independently confirmed as the standard line to this exact area, with
+"Imperfect Impasse" a real, named obstacle corroborated by three separate trip reports) and its
+hazard note's claim of 2022 Chilliwack Complex fire damage to the Chilliwack River/Copper
+Ridge/Whatcom Pass trail network (confirmed via NPS/InciWeb); `wa_castle_peak_pasayten`'s
+elevation (8,343 ft, matching a modern GPS survey over a couple of lower SummitPost figures);
+`wa_castle_peak_pasayten_the_drawbridge`'s FA (Zentler/Schilling, 2017, confirmed via an AAC
+Publications/AAJ article) and its unusual claim that the first-ascent party illegally crossed the
+Canadian border on foot from Manning Provincial Park (confirmed in the same AAJ source); `The
+Castle`'s elevation (6,440 ft, Wikipedia + a Mountaineers listing, against one conflicting
+SummitPost figure of 6,460 ft); the La Villa/Southeast Face approach geography and its
+"1.3 mi / ~1,050 ft to the Pinnacle-Plummer saddle" figures (confirmed via NPS and SummitPost);
+the Southeast Face route's claim of a real, active "Plummer Peak Fire" closing the Butter Creek
+Research Natural Area (confirmed via an NPS closure order and news coverage from Aug-Sept 2026 —
+not fabricated, and as of this run's date no reopening notice was found, so the closure likely
+still stands) and its $82/10,000-ft/glacier climbing-fee claim (confirmed against the current NPS
+fee page); `wa_cathedral_peak_pasayten`'s elevation (8,606 ft, Wikipedia + PeakVisor, against a
+recurring alternate of 8,601 ft in Mazamas/SummitPost/Country Highpoints — a 5 ft cross-source
+spread too small to call either one wrong).
+
+**Tooling note:** Delegated research to 2 parallel subagents (Whatcom Peak + Castle Peak
+Pasayten; The Castle Tatoosh + Cathedral Peak Pasayten). Both hit this session's network egress
+proxy blocking direct WebFetch to nps.gov, mountainproject.com, summitpost.org, and
+lamountaineers.org, so findings from those domains rest on WebSearch snippet summaries rather
+than direct page reads — noted explicitly above wherever it affected confidence.
+`node scripts/check-sql-targets.mjs --table routes` confirmed the one UPDATE target exists live.
+
+Pass 7 continues next run after `wa_cathedral_peak_pasayten_se_buttress`.
