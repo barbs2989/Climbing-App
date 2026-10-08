@@ -10,6 +10,10 @@
       "until",
       "user_id"
     ],
+    "app_settings": [
+      "key",
+      "value"
+    ],
     "areas": [
       "approach",
       "approach_min",
@@ -32,6 +36,7 @@
       "parking_lat",
       "parking_lng",
       "parking_name",
+      "parking_note",
       "path",
       "prominence_ft",
       "region",
@@ -793,6 +798,10 @@
       "name",
       "query",
       "user_id"
+    ],
+    "screening_terms": [
+      "category",
+      "term"
     ],
     "topo_lines": [
       "created_at",
