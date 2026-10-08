@@ -1640,8 +1640,11 @@ export function campDetail(b){
    the same refusal the rappel columns already record: do not read a fact out of English prose.
    So the summary line carries only what somebody wrote into a field that holds a VALUE, and the
    prose is one tap away rather than one guess away. */
-function CampSite({b,i}){
-  const [open,setOpen]=useState(false);
+function CampSite({b,i,first}){
+  /* The FIRST site opens expanded: above it sits the overnight-permit panel, and a section that
+     shows only a permit and then a column of collapsed rows does not read as naming a place to
+     sleep. One full site (capacity, water, permit) proves the rest are real; the others stay one tap away. */
+  const [open,setOpen]=useState(!!first);
   const detail=campDetail(b);
   const more=detail.length>0||!!String((b&&b.notes)||"").trim();
   const nm=(b&&b.name)||("Camp "+(i+1));
@@ -1697,11 +1700,11 @@ function CampingPanel({route,onEdit}){
     <OvernightPermit route={route}/>
     {campGroups(sites).map(function(g,gi){return <div key={g.key} style={{marginTop:g.title&&gi?16:0}}>
       {g.title?<div style={{marginBottom:9}}><div style={{fontSize:11.5,fontWeight:800,color:C.purple,letterSpacing:0.6}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
-      {g.sites.map(function(s){return <CampSite key={s.i} b={s.b} i={s.i}/>;})}
+      {g.sites.map(function(s,si){return <CampSite key={s.i} b={s.b} i={s.i} first={gi===0&&si===0}/>;})}
     </div>;})}
   </div>;
 }
-/* MAIN CAMPS first, then ON THE ROUTE, then anything unsorted. Grouping only happens once at least
+/* Where most parties sleep first, then other options. Grouping only happens once at least
    one site carries a researched role; a route whose list was never sorted renders exactly the flat
    list it always did, rather than filing every site under OTHER SITES. Order WITHIN a group is the
    stored order — the research wrote main camps most-used first and on-route sites in the order you
@@ -1709,10 +1712,13 @@ function CampingPanel({route,onEdit}){
 export function campGroups(sites){
   const all=(sites||[]).map(function(b,i){return {b:b,i:i};});
   if(!all.some(function(s){return s.b&&s.b.sorted;}))return [{key:"all",title:null,blurb:null,sites:all}];
+  /* TWO groups, not three. "Main camps" over "On the route" read as a geography claim and was often
+     false: a main camp can sit ABOVE a site on the route's own line. The split is about USE — where
+     most parties sleep, then the rest for a slower pace, bad weather or an emergency — so the
+     route-role and unsorted sites share the second group, in stored order. */
   return [
-    {key:"main",title:"MAIN CAMPS",blurb:"Where most parties on this route sleep.",sites:all.filter(function(s){return s.b.role==="main";})},
-    {key:"route",title:"ON THE ROUTE",blurb:"Further sites on the route's own line — for a slow day, bad weather or an emergency.",sites:all.filter(function(s){return s.b.role==="route";})},
-    {key:"other",title:"OTHER SITES",blurb:"Added by climbers and not yet sorted.",sites:all.filter(function(s){return !s.b.role;})}
+    {key:"main",title:"WHERE MOST PARTIES SLEEP",blurb:"The camps and bivies most parties on this route actually use.",sites:all.filter(function(s){return s.b.role==="main";})},
+    {key:"other",title:"OTHER OPTIONS",blurb:"Further sites for a slower pace, bad weather or an emergency.",sites:all.filter(function(s){return s.b.role!=="main";})}
   ].filter(function(g){return g.sites.length;});
 }
 /* WHERE TO GET THE OVERNIGHT PERMIT for the zone this route sleeps in. `access.permit` answers the
