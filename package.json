@@ -30,6 +30,7 @@
     "audit:terrain": "node scripts/audit-route-terrain.mjs",
     "audit:approach-scope": "node scripts/audit-approach-scope.mjs",
     "audit:rappel-claims": "node scripts/audit-rappel-claims.mjs",
+    "audit:mountaineering-rule": "node scripts/audit-mountaineering-rule.mjs",
     "audit:aspect-name": "node scripts/audit-aspect-vs-name.mjs",
     "audit:multi-approach": "node scripts/audit-multi-approach.mjs",
     "audit:camp-elevations": "node scripts/audit-camp-elevations.mjs",
