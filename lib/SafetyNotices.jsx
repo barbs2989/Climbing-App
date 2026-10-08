@@ -9,7 +9,7 @@
 // The reason shown is the one the reviewer typed into set_account_standing(); the climber can read
 // only their own row (RLS), so nothing here can show anybody else's standing.
 import { useState } from "react";
-import { C } from "../ClimbMatchCore.jsx";
+import { C, DLOCALE } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "./popupChrome.js";
 
 export function AccountStandingNotice({ standing, onAppeal }) {
@@ -17,7 +17,7 @@ export function AccountStandingNotice({ standing, onAppeal }) {
   const banned = standing.status === "banned";
   let untilTxt = "";
   if (!banned && standing.until) {
-    try { untilTxt = new Date(standing.until).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }); } catch (_e) { untilTxt = String(standing.until).slice(0, 10); }
+    try { untilTxt = new Date(standing.until).toLocaleDateString(DLOCALE, { month: "short", day: "numeric", year: "numeric" }); } catch (_e) { untilTxt = String(standing.until).slice(0, 10); }
   }
   return <div role="status" style={{ margin: "0 0 12px", padding: "12px 14px", borderRadius: 12, border: "1px solid " + C.red, background: C.redBg, color: C.text }}>
     <div style={{ fontSize: 14, fontWeight: 800, color: C.red }}>{banned ? "Your account has been banned by ClimbMatch Safety" : "Your account is suspended" + (untilTxt ? " until " + untilTxt : "")}</div>
