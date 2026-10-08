@@ -175,6 +175,13 @@ eq("a DERIVED leg (total - approach) holds the descent too: 0.59 of it up, the r
 eq("a MULTI-DAY route's summit leg beside walk in ~= walk out is a round trip from camp: 0.59 up", campMulti ? campMulti.summit : null, Math.round((6 + 6 + 11 * 0.59) * 60));
 eq("...and its other 0.41 comes down to camp BEFORE the stored walk out (round trip = the 22 hr total)", campMulti ? campMulti.ret : null, (6 + 22) * 60);
 eq("...while the same legs on a SINGLE-day route are a one-way climb, left whole", campOneDay ? JSON.stringify([campOneDay.summit, campOneDay.down]) : null, JSON.stringify([(6 + 6 + 11) * 60, 5 * 60]));
+/* ...and a stored leg is a FIT PARTY's day ("published times for a fit party in good conditions",
+   the contribute form's definition of `timing`), which fitness and pack do not scale. The Planner
+   says so rather than presenting it as the climber's own day; a walk-only route makes no such claim. */
+const fitLine = (r) => { const m = /data-fit-party="1"[^>]*>([^<]*)</.exec(render(r)); return m ? m[1].replace(/&#x27;|\u2019/g, "’") : null; };
+eq("a route with a published approach and climb says they are a FIT party's times, unscaled by fitness and pack", /approach and climb are this route’s published times for a fit party, so fitness and pack don’t change them/.test(fitLine(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 4, totalHrs: 12 })) || ""), true);
+eq("...a published car-to-car day says the car-to-car time is", /car-to-car time is this route’s published time for a fit party/.test(fitLine(route({ distKm: null, timing: { summitTimeHrs: 9, totalHrs: 9 } })) || ""), true);
+eq("...and a route timed by the walk model alone makes no fit-party claim", fitLine(route({ gainM: 1000 / FT, lossM: 1000 / FT })), null);
 const pitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }, { pitches: 8, grade: "5.8" }));
 const unpitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }));
 eq("ANCHOR: pitched and unpitched stored-leg fixtures rendered", !!pitchedStored && !!unpitchedStored, true);
@@ -303,7 +310,7 @@ const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
-const FLOOR = 52;
+const FLOOR = 55;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;

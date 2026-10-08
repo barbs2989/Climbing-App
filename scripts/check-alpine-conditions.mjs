@@ -306,6 +306,7 @@ for (const units of ["imperial", "metric"]) {
 }
 A.__set_UNITS("imperial");
 eq("the card adds that flag only to a day the models disagree on, from a second read that adds NOTHING when it fails", /fetchAlpineSpread\([\s\S]{0,200}function \(\) \{ if \(live\) setSp\(null\); \}/.test(card) && /if \(ms && ms\.over\.length\) r = /.test(card), true);
+eq("a start counted back from STORED legs says they are a fit party's times, so a slower party starts earlier", /P\.legsStored \? "\. Times are this route’s published times for a fit party \(Plan tab\), so a slower party should start earlier\."/.test(card), true);
 const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);
 

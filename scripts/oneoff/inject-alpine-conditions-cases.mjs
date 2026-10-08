@@ -28,6 +28,7 @@
 //   20 a day the models disagree on goes unflagged
 //   21 ONE model answering read as the models agreeing
 //   22 a start counted back from a softening hour on a night that never froze
+//   23 a start from a fit party's stored legs that no longer says so
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
 import { execFileSync } from "child_process";
@@ -113,6 +114,9 @@ const CASES = [
   { name: "22. a start counted back from 'softening' on a night that never froze", file: LOGIC,
     find: "if (snowLegs && softAt != null && !noFreeze) {", repl: "if (snowLegs && softAt != null) {",
     expect: "fail", expectText: "that day gets NO snow-anchored start" },
+  { name: "23. a start from a fit party's stored legs no longer says so", file: CARD,
+    find: "P.legsStored ? \". Times are this route\u2019s published times for a fit party (Plan tab), so a slower party should start earlier.\" : ", repl: "false ? \"\" : ",
+    expect: "fail", expectText: "says they are a fit party's times" },
 ];
 
 const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST].map((f) => [f, fs.readFileSync(f, "utf8")]));

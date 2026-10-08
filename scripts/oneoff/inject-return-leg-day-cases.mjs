@@ -196,6 +196,14 @@ const CASES = [
     must: /DERIVED leg \(total - approach\) holds the descent too/,
   },
   {
+    name: "fit-party-line-removed",
+    why: "the Planner presents a fit party's published day as the climber's own again -- fitness and " +
+         "pack inputs on screen that do not change the stored approach or climb",
+    edits: [{ find: "{P.legsStored?<div data-fit-party=\"1\"", repl: "{false?<div data-fit-party=\"1\"" }],
+    expect: "fail",
+    must: /FIT party's times, unscaled by fitness and pack/,
+  },
+  {
     name: "SILENT-camp-tolerance-nudged",
     file: PLAN,
     why: "MUST STAY SILENT. The guard pins the behaviour on a clear camp shape, not the exact 35% " +
