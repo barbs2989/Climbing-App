@@ -143,24 +143,26 @@ async function main() {
   const again = await request(A, B);
   if (again.status >= 300 && code(again) === "23505") note("after a DECLINE, a fresh request is refused 23505 while the declined row exists");
   else if (again.status < 300) note("after a DECLINE, a fresh request is accepted immediately");
-  // The requester can clear the declined row themselves ("remove either side"), and then ask again.
+  // The requester can still withdraw the (quietly) declined request -- but since 0267 they cannot then
+  // ask again for 21 days. That closes the withdraw-and-re-ask loop this probe used to record as a NOTE.
   await remove(A, rowAB);
   const again2 = await request(A, B);
   rows = await truth(A, B);
-  // By design (0257 PR): a decline is QUIET — the requester still sees "Requested" and may withdraw it,
-  // as on Facebook/LinkedIn — so withdraw-and-ask-again is possible. Block is the hard stop; a
-  // per-pair cooldown / weekly request cap is proposed, not built.
-  if (again2.status < 300 && rows.length === 1 && rows[0].status === "pending") note("...the REQUESTER may withdraw a declined request and ask again (quiet decline; Block is the hard stop; no rate limit yet)");
-  else ok("a declined requester cannot re-ask by deleting the decline (" + (code(again2) || again2.status) + ")");
-  // B changes their mind about the decline: can the decliner later accept? Only while pending.
+  if (again2.status >= 300 && rows.length === 0) ok("a declined requester cannot withdraw and re-ask (0267 cooldown: " + ((again2.body && again2.body.message) || again2.status) + ")");
+  else bad("a declined requester cannot withdraw and re-ask", again2.status + " " + JSON.stringify(rows));
+  // The DECLINER changing their mind is not held to the cooldown: B asks A, A accepts.
+  const fromDecliner = await request(B, A);
+  rows = await truth(A, B);
+  if (fromDecliner.status < 300 && rows.length === 1) ok("...while the DECLINER may ask at any time");
+  else bad("the decliner may ask at any time", fromDecliner.status + " " + JSON.stringify(fromDecliner.body));
   const rowAB2 = rows[0] && rows[0].id;
 
   // ---- 6. ACCEPT, then UNFRIEND, then re-request
-  await respond(B, rowAB2, "accepted");
+  await respond(A, rowAB2, "accepted");
   rows = await truth(A, B);
-  if (rows[0] && rows[0].status === "accepted") ok("B accepts — row is 'accepted'");
-  else bad("B accepts", JSON.stringify(rows));
-  await respond(B, rowAB2, "pending");
+  if (rows[0] && rows[0].status === "accepted") ok("A accepts — row is 'accepted'");
+  else bad("A accepts", JSON.stringify(rows));
+  await respond(A, rowAB2, "pending");
   rows = await truth(A, B);
   if (rows[0].status === "accepted") ok("an accepted connection cannot be pushed back to pending");
   else bad("an accepted connection cannot be pushed back to pending", JSON.stringify(rows));
@@ -211,25 +213,26 @@ async function main() {
   else bad("after UNBLOCKING, a friend request goes through again", unb.status + "/" + afterUnblock.status + " " + JSON.stringify(rows));
   if (rows[0]) await remove(B, rows[0].id);
 
-  // ---- 8. THE REQUEST NOTE (0257). Delivered to the addressee, private to the pair, and not editable.
-  const withNote = await request(B, A, { note: "Want to rope up for the West Ridge next weekend?" });
-  rows = await truth(A, B);
+  // ---- 8. THE REQUEST NOTE (0257). Delivered to the addressee, private to the pair, not editable.
+  // C -> B: B withdrew their own request to A at the end of step 7, so 0267's cooldown now holds B -> A.
+  const longNote = await request(C, B, { note: "x".repeat(301) });
+  if (longNote.status >= 300 && code(longNote) === "23514") ok("a note over 300 characters is refused (23514)");
+  else bad("a note over 300 characters is refused", longNote.status + " " + code(longNote));
+  const withNote = await request(C, B, { note: "Want to rope up for the West Ridge next weekend?" });
+  rows = await truth(C, B);
   if (withNote.status < 300 && rows[0] && rows[0].id) ok("a request can carry a note");
   else bad("a request can carry a note", withNote.status + " " + JSON.stringify(withNote.body));
   const nRow = rows[0] && rows[0].id;
+  const bSees = await api("/rest/v1/connections?select=note&id=eq." + nRow, { method: "GET" }, anonKey(), B.jwt);
+  if (Array.isArray(bSees.body) && bSees.body[0] && /West Ridge/.test(bSees.body[0].note || "")) ok("...the ADDRESSEE can read it");
+  else bad("...the ADDRESSEE can read it", JSON.stringify(bSees.body));
   const aSees = await api("/rest/v1/connections?select=note&id=eq." + nRow, { method: "GET" }, anonKey(), A.jwt);
-  if (Array.isArray(aSees.body) && aSees.body[0] && /West Ridge/.test(aSees.body[0].note || "")) ok("...the ADDRESSEE can read it");
-  else bad("...the ADDRESSEE can read it", JSON.stringify(aSees.body));
-  const cSees = await api("/rest/v1/connections?select=note&id=eq." + nRow, { method: "GET" }, anonKey(), C.jwt);
-  if (Array.isArray(cSees.body) && cSees.body.length === 0) ok("...a third climber cannot");
-  else bad("...a third climber cannot", JSON.stringify(cSees.body));
-  await api("/rest/v1/connections?id=eq." + nRow, { method: "PATCH", body: JSON.stringify({ note: "edited by the addressee" }) }, anonKey(), A.jwt);
+  if (Array.isArray(aSees.body) && aSees.body.length === 0) ok("...a third climber cannot");
+  else bad("...a third climber cannot", JSON.stringify(aSees.body));
+  await api("/rest/v1/connections?id=eq." + nRow, { method: "PATCH", body: JSON.stringify({ note: "edited by the addressee" }) }, anonKey(), B.jwt);
   const noteNow = await api("/rest/v1/connections?select=note&id=eq." + nRow, { method: "GET" }, svc);
   if (noteNow.body && noteNow.body[0] && /West Ridge/.test(noteNow.body[0].note || "")) ok("...and the addressee cannot rewrite it");
   else bad("...and the addressee cannot rewrite it", JSON.stringify(noteNow.body));
-  const longNote = await request(C, B, { note: "x".repeat(301) });
-  if (longNote.status >= 300) ok("a note over 300 characters is refused (" + (code(longNote) || longNote.status) + ")");
-  else bad("a note over 300 characters is refused", longNote.status);
 
   console.log(NL + pass + " passed, " + fail + " failed, " + findings.length + " behaviour note(s).");
 }

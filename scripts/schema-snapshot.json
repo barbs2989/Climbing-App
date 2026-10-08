@@ -172,6 +172,13 @@
       "updated_at",
       "user_id"
     ],
+    "connection_events": [
+      "addressee",
+      "at",
+      "id",
+      "kind",
+      "requester"
+    ],
     "connections": [
       "addressee",
       "created_at",
@@ -608,6 +615,7 @@
       "photos_public",
       "pinned_states",
       "primary_account_id",
+      "requests_from",
       "resume_public",
       "show_name",
       "show_on_ranks",
