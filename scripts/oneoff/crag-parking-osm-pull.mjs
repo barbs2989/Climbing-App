@@ -11,7 +11,7 @@ const dir = process.argv[2]; if (!dir) { console.error("usage: crag-parking-osm-
 fs.mkdirSync(path.join(dir, "tiles"), { recursive: true });
 const key = requireServiceKey();
 const areasF = path.join(dir, "areas.json"), cragF = path.join(dir, "crag-area-ids.json");
-if (!fs.existsSync(areasF)) fs.writeFileSync(areasF, JSON.stringify(await selectAll("areas", "id,name,parent_id,path,lat,lng,route_count,area_type,parking_lat", "", { key, pageSize: 1000 })));
+if (!fs.existsSync(areasF)) fs.writeFileSync(areasF, JSON.stringify(await selectAll("areas", "id,name,parent_id,path,lat,lng,route_count,area_type,parking_lat,parking_lng,parking_name", "", { key, pageSize: 1000 })));
 if (!fs.existsSync(cragF)) { const rs = await selectAll("routes", "id,area_id", "discipline=in.(trad,sport,toprope,aid,bouldering)", { key, pageSize: 1000 }); const n = {}; for (const r of rs) n[r.area_id] = (n[r.area_id] || 0) + 1; fs.writeFileSync(cragF, JSON.stringify(n)); }
 const areas = JSON.parse(fs.readFileSync(areasF, "utf8")), crag = JSON.parse(fs.readFileSync(cragF, "utf8"));
 const T = 0.25, tiles = new Set();
