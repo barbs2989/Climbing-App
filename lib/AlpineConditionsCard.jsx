@@ -4,7 +4,7 @@
 // climber's own units. The crag score (ConditionsScoreCard) is a different card for different
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
-import { C, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
+import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread } from "./forecast.js";
 import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread } from "./alpineConditions.js";
 import { routeTerrain } from "./terrain.js";
@@ -12,6 +12,8 @@ import { planTimes } from "./planTimes.js";
 import { isMultiDayOuting } from "./outing.js";
 import { fetchAvyMap, zoneFor, fetchAvyProduct, avyReading, DANGER_NAME } from "./avalanche.js";
 import { fetchSnotelStations, nearestStation, fetchSnotelDepth, snowReading } from "./snotel.js";
+import ShadeMap, { loadTerrain } from "./ShadeMap.jsx";
+import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands, faceBearing } from "./terrainShade.js";
 
 const _alpWx = {}, _alpSp = {};
 const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
@@ -128,9 +130,16 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
      to camp (0.69 of the way up -- the catalog's own complete rows). */
   const P = planTimes(route, calc || {});
   const fromCamp = isMultiDayOuting(route) && (P.hasPublishedSummitH || P.hasDerivedSummitH);
-  const legs = { up: fromCamp ? P.techH : P.hikeH + P.techH, down: P.downH, fromCamp, floor: P.legsFloor || P.publishedIsWholeDay };
+  const legs = { up: fromCamp ? P.techH : P.hikeH + P.techH, down: P.downH, fromCamp, floor: P.legsFloor || P.publishedIsWholeDay, tech: P.techH, hike: fromCamp ? 0 : P.hikeH };
   const snowLegs = hasSnowLegs(kind, terrain);
   const floor = snowLegs ? snowFloorFt(route, pt && pt.campFt) : null;
+
+  /* SUN ON THE FACE for the selected day (lib/terrainShade.js faceSunBands), so the start can count
+     back from it: glacier and alpine ice, with a summit pin, a one-direction aspect and a height the
+     push starts from. Read for the day on screen only — the start is shown for no other. */
+  const face = useMemo(function () { return sunFace(route, kind, pt, fromCamp); }, [route, kind, pt, fromCamp]);
+  const [faceSun, setFaceSun] = useState({});
+  useEffect(function () { setFaceSun({}); }, [route.id]);
 
   const model = useMemo(function () {
     if (!wx || !wx.data || !kind) return null;
@@ -138,13 +147,33 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     const out = [];
     days.forEach(function (d, k) {
       if (d.date < today) return;
-      let r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs });
+      const fs = faceSun[d.date];
+      let r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
       const ms = sp ? modelSpread(sp, d.date) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
-      out.push(Object.assign({ date: d.date, sum: daySummary(fc, d) }, r));
+      out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset }, r));
     });
     return { fc, days: out.slice(0, 7) };
-  }, [wx, sp, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp]);
+  }, [wx, sp, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]);
+  const selDay = model && model.days.length ? model.days[Math.min(dayI, model.days.length - 1)] : null;
+  useEffect(function () {
+    if (!face || face.missing || legs.floor || !selDay || selDay.sunrise == null || selDay.sunset == null || faceSun[selDay.date]) return;
+    const date = selDay.date, rise = selDay.sunrise * 1000, set = selDay.sunset * 1000, grid = shadeGrid(face.ctr.lat, face.ctr.lng);
+    let live = true, done = false, tm = 0;
+    const put = function (v) { done = true; setFaceSun(function (m) { const n = Object.assign({}, m); n[date] = v; return n; }); };
+    setFaceSun(function (m) { const n = Object.assign({}, m); n[date] = { busy: true }; return n; });
+    loadTerrain(grid).then(function (T) {
+      if (!live) return;
+      // A tick later, so the card paints first: ~0.5 s of arithmetic on a phone.
+      tm = setTimeout(function () {
+        if (!live) return;
+        const px = gridPx(grid, face.top.lat, face.top.lng), top = px && highestNear(T.E, grid.W, grid.H, px, Math.round(SUMMIT_SNAP_M / grid.pxM));
+        const b = top ? faceSunBands(T, grid, top, face.deg, face.top.lat, face.top.lng, rise, set, 10, face.fromFt / 3.28084) : null;
+        put(b ? { bands: b.map(function (x) { return { ft: x.e * 3.28084, at: Math.round(x.at / 1000) }; }), topFt: T.E[top.r * grid.W + top.c] * 3.28084, fromFt: face.fromFt } : { error: true });
+      }, 30);
+    }, function () { if (live) put({ error: true }); });
+    return function () { live = false; clearTimeout(tm); if (!done) setFaceSun(function (m) { if (!m[date] || !m[date].busy) return m; const n = Object.assign({}, m); delete n[date]; return n; }); };
+  }, [face, legs.floor, selDay && selDay.date]);
 
   if (!kind) return null;
   const box = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
@@ -155,12 +184,29 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
   const days = model.days, fc = model.fc;
   if (!days.length) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub }}>The forecast came back with no days ahead to read.</div></div>;
   const day = days[Math.min(dayI, days.length - 1)];
-  const dayName = function (d, i) { return i === 0 ? "Today" : new Date(d.date + "T12:00:00Z").toLocaleDateString(undefined, { weekday: "short", timeZone: "UTC" }); };
+  const dayName = function (d, i) { return i === 0 ? "Today" : new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { weekday: "short", timeZone: "UTC" }); };
   const nWarn = function (d) { return d.flags.filter(function (f) { return f.level === "warn"; }).length; };
   const nCaution = function (d) { return d.flags.filter(function (f) { return f.level === "caution"; }).length; };
   const dot = function (col) { return <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: col, margin: "0 1.5px" }} />; };
 
-  let startEl = null;
+  let startEl = null, sunEl = null;
+  const faceDir = face && !face.missing ? ["N", "NE", "E", "SE", "S", "SW", "W", "NW"][Math.round(face.deg / 45) % 8] : "";
+  /* What the start did with the sun on the face, said every time: it counted it, or why it could not.
+     A deadline counted from a model must carry the model's limits (research 2026-10-08). */
+  if (face && !legs.floor) {
+    const fs = faceSun[day.date], noFrz = day.noFreeze || day.flags.some(function (f) { return f.key === "fl-above-night"; });
+    const MISSING = { ridge: "it climbs a ridge, and what sheds off either side falls away from the crest", summit: "the route has no summit pin on file", aspect: "its aspect on file isn’t one direction", from: legs.fromCamp ? "no camp height is on file" : "no trailhead height is on file" };
+    const line = face.missing ? "This start doesn’t count in sun on the face: " + MISSING[face.missing] + "."
+      : !fs || fs.busy ? "Checking when the sun reaches the face…"
+      : fs.error ? "Couldn’t load the terrain, so this start doesn’t count in sun on the face."
+      : noFrz ? "The sun gives no deadline today: with nothing frozen overnight, rock, ice and snow can be loose from the start."
+      : day.sun && !(day.start && day.start.why === "sun") ? "The sun reaches steep ground shedding onto the line above " + uElev(Math.ceil(day.sun.ft / 50) * 50) + " at " + clockOf(fc, day.sun.sunAt) + "; this start has you above that height by then."
+      : day.sunCold ? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day — on a cold day the sun alone sets no deadline."
+      : !day.sun ? "Under a clear sky the sun doesn’t reach the steep ground shedding onto the line above " + uElev(Math.round(face.fromFt / 100) * 100) + " all day."
+      : "";
+    const caveat = fs && fs.bands && !noFrz ? "The line is the fall line down the " + faceDir + " side from the summit, not a traced route — on a ridge it reads one flank. Clear-sky terrain shade from heights about 7 m apart: it misses cornices, seracs and narrow walls, and shade isn’t proof the snow is frozen. Rock and ice can start moving minutes or hours after first sun — no lag is counted — and sun can still shed rime on a cold day." + (kind === "glacier" ? " No timing reduces serac fall." : "") : "";
+    if (line || caveat) sunEl = <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: startEl ? 6 : 0 }}>{line}{line && caveat ? " " : ""}{caveat}</div>;
+  }
   if (kind !== "waterfall" && kind !== "cragmixed") {
     if (legs.floor) {
       startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>No start time: the Plan tab’s estimate for this climb is only a minimum (part of the approach or the climbing isn’t on file), and a start counted back from a minimum would be too late.</div>;
@@ -171,13 +217,14 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       const offBy = clockOf(fc, day.start.at + legs.up * 3600), storm = day.thunder && day.thunder.likely ? "forecast" : "possible";
       const why = day.start.why === "snow"
         ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
+        : day.start.why === "sun" ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
         : day.start.why === "storm-descent" ? "to reach the top (" + hrs(legs.up) + ") and start down by " + offBy + ", before the thunderstorms " + storm + " this afternoon"
         : "to be off the summit (" + hrs(legs.up) + " up) by " + offBy + ", before the thunderstorms " + storm + " this afternoon";
       startEl = daysEarly >= 2
         ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"Too long for one push: counting back from the Plan tab’s estimate puts the start " + daysEarly + " days early. Plan a camp — see the Plan tab."}</div>
         : <div>
           <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
-          <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + ". Times are the Plan tab’s estimate at its own fitness and pack."}</div>
+          <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + (P.legsStored ? ". Times are this route’s published times for a fit party (Plan tab), so a slower party should start earlier." : ". Times are the Plan tab’s estimate at its own fitness and pack.")}</div>
         </div>;
     } else if (day.noFreeze && floor) {
       startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"No start time from the snow: it didn’t freeze overnight at " + uElev(floor.ft) + ", so there is no frozen window to be back down in."}</div>;
@@ -188,7 +235,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
 
   const s = day.sum;
   const readout = [["High / low", s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—"], ["Freezing level", s.flLo != null ? uElev(Math.round(s.flLo / 100) * 100) + "–" + uElev(Math.round(s.flHi / 100) * 100) : "—"], ["Gusts", s.gust != null ? uWind(s.gust) : "—"], ["New snow", uSnowfall(s.snow)]];
-  return <div style={box}>
+  return <div><div style={box}>
     {head}
     <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4, marginBottom: 10 }}>{days.map(function (d, i) {
       const on = i === Math.min(dayI, days.length - 1), w = nWarn(d), c = nCaution(d);
@@ -198,7 +245,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
         <div style={{ fontSize: 10.5, color: C.textMuted }}>{d.sum.hi != null ? uTemp(d.sum.hi) + "/" + uTemp(d.sum.lo) : ""}</div>
       </button>;
     })}</div>
-    {startEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}</div> : null}
+    {startEl || sunEl ? <div style={{ background: C.surface, borderRadius: 10, padding: "10px 12px", marginBottom: 10 }}>{startEl}{sunEl}</div> : null}
     <div style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 10 }}>
       {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
@@ -207,6 +254,77 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
+  </div>
+  <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
+  </div>;
+}
+
+/* SUN AND SHADE — when the sun reaches the route's own pins, from the terrain (lib/terrainShade.js).
+   Research, 2026-10-08: rockfall, icefall and wet slides start when the sun reaches the slopes ABOVE
+   a party, so the advice everywhere is to work back from sun arrival (Torreys Peak couloir accident,
+   AAC; Mont Blanc's Goûter couloir monitoring, where the safe hour is specific to each couloir;
+   Portland Mountain Rescue; a Devil's Kitchen report where rime let go as the sun hit the walls).
+   Wet loose snow follows the sun round the aspects — east first, west in the warm afternoon — and
+   centres put the slope that lets go at about 35° (STEEP_DEG). What the sun does differs by kind,
+   so each gets its own line; every one is a rule of thumb. Not scored, and it moves no start time:
+   the start stays the Planner's, counted back from the snow and the storms. */
+const SUN_NOTE = {
+  glacier: "Rock, ice and wet snow start to move once the sun reaches the slopes above you, not just where you stand — be past steep sunlit ground before the sun gets to it.",
+  alpineice: "Ice and rock let go once the sun reaches the face and the slopes above it — be off the line before the sun gets there.",
+  waterfall: "Sun on the ice, or on snow above it, loosens both — even while you climb in shade.",
+  cragmixed: "Sun strips rime and softens turf; mixed ground in shade keeps its ice longer.",
+  scramble: "Sun dries wet rock and melts thin ice; rock in shade stays wet or icy longer.",
+  alpinerock: "On a cold day a face in sun is warmer to climb; one in shade stays cold, and keeps any verglas.",
+};
+const SUN_PINS = [["Summit", "Summit"], ["Topout", "Top"], ["Base", "Base"], ["Campsite", "High camp"]];
+export function sunPins(route) {
+  const wps = (route.waypoints || []).filter(wpPlaced), out = [];
+  SUN_PINS.forEach(function (sp) {
+    let ws = wps.filter(function (w) { return wpIs(w, sp[0]); });
+    if (!ws.length) return;
+    // The highest camp is the one a summit day leaves from.
+    if (sp[0] === "Campsite") ws = ws.slice().sort(function (a, b) { return (+b.elev || 0) - (+a.elev || 0); });
+    if (sp[0] === "Topout" && out.some(function (p) { return p.key === "Summit"; })) return;
+    // A summit is read at the terrain's own high point beside the pin (lib/terrainShade.js highestNear).
+    out.push({ key: sp[0], label: sp[1], lat: +ws[0].lat, lng: +ws[0].lng, top: sp[0] === "Summit" });
+  });
+  return out;
+}
+/* What the start needs to count in sun on the face: the summit (or top-out) pin, the way the face
+   looks (`aspect`, one direction), and the height the push starts from (the highest camp on a
+   multi-day route, else the trailhead's, which errs early). `missing` names what isn't on file — measured 2026-10-08,
+   1 of ~935 snow/ice routes has a base pin, so the face is read from the top. Glacier and alpine ice
+   only; null for every other kind. */
+const SUN_FACE = /\b(face|couloir|gully|chute|glacier|headwall|wall|bowl|icefall|ice ?fall|gulch|chimney|slabs?)\b/i, SUN_RIDGE = /\b(ridge|ar[eê]te|buttress|spur|cleaver|traverse)\b/i;
+export function sunFace(route, kind, pt, fromCamp) {
+  if (kind !== "glacier" && kind !== "alpineice") return null;
+  const pins = sunPins(route), top = pins.find(function (p) { return p.key === "Summit" || p.key === "Topout"; });
+  const deg = faceBearing(route.aspect);
+  const ht = function (t) { return (route.waypoints || []).filter(function (w) { return wpIs(w, t) && w.elev != null && w.elev !== "" && isFinite(+w.elev); }).map(function (w) { return +w.elev; }); };
+  const thFt = ht("Trailhead").length ? ht("Trailhead")[0] : null, camps = ht("Campsite");
+  // A camp's height, placed or not; with none on file, the trailhead's: LOWER, so the start errs early.
+  const fromFt = fromCamp && camps.length ? Math.max.apply(null, camps) : thFt;
+  if (!top) return { missing: "summit" };
+  // A RIDGE has almost nothing draining onto its crest: what sheds off either flank falls away from
+  // it, so the fall line down one side is not the route (78 of the 325 routes with a summit pin and
+  // an aspect, 2026-10-08). A name that also says face, couloir, gully or glacier is read as that.
+  if (SUN_RIDGE.test(route.name || "") && !SUN_FACE.test(route.name || "")) return { missing: "ridge" };
+  if (deg == null) return { missing: "aspect" };
+  if (fromFt == null) return { missing: "from" };
+  return { top: top, deg: deg, fromFt: fromFt, ctr: pins.find(function (p) { return p.key === "Base"; }) || top };
+}
+function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday }) {
+  const pins = useMemo(function () { return sunPins(route); }, [route]);
+  if (!pt || !day || day.sunrise == null || day.sunset == null) return null;
+  // The terrain is centred on the CLIMB: its base, else its top, else the forecast point.
+  const ctr = pins.find(function (p) { return p.key === "Base"; }) || pins.find(function (p) { return p.key === "Summit" || p.key === "Topout"; }) || pt;
+  const rise = day.sunrise * 1000, set = day.sunset * 1000, now = Date.now();
+  const at0 = isToday && now >= rise && now <= set ? now : Math.min(set, rise + 3 * 3600e3);
+  const steep = kind === "glacier" || kind === "alpineice" || kind === "waterfall" || kind === "cragmixed" || hasSnowLegs(kind, terrain);
+  return <div style={BOX}>
+    <CardHead style={{ marginBottom: 6 }}>SUN AND SHADE</CardHead>
+    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 8 }}>{SUN_NOTE[kind] + " A rule of thumb."}</div>
+    <ShadeMap lat={ctr.lat} lng={ctr.lng} pins={pins.length ? pins : null} steep={steep} place={pins.length ? "climb" : "area"} rise={rise} set={set} at0={at0} dayKey={day.date} clock={function (u) { return clockOf(fc, Math.round(u / 1000)); }} C={C} />
   </div>;
 }
 
@@ -267,7 +385,7 @@ function SnowSection({ pt }) {
   const stale = Date.now() - Date.parse(r.date + "T12:00:00Z") > 2.5 * 864e5;
   return <div>{head}
     <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5 }}><b>{uSnowfall(r.depth) + " on the ground"}</b>{[ch(r.d24, "in a day"), ch(r.d7, "in a week")].filter(Boolean).map(function (x) { return " · " + x; }).join("")}</div>
-    <div style={MUTED}>{where + "." + (stale ? " Last reported " + new Date(r.date + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }) + "." : "")}</div>
+    <div style={MUTED}>{where + "." + (stale ? " Last reported " + new Date(r.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }) + "." : "")}</div>
   </div>;
 }
 
@@ -285,7 +403,7 @@ function SeasonSection({ pt }) {
   if (!st) return <div aria-busy="true">{head}<div style={{ ...MUTED, color: C.textMuted }}>Loading the climate at the top…</div></div>;
   if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the climate. This says nothing about the season.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
   const m = st.m, now = new Date().getMonth();
-  const name = function (i) { return new Date(Date.UTC(2026, i, 15)).toLocaleDateString(undefined, { month: "short", timeZone: "UTC" }); };
+  const name = function (i) { return new Date(Date.UTC(2026, i, 15)).toLocaleDateString(DLOCALE, { month: "short", timeZone: "UTC" }); };
   return <div>{head}
     <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 4, marginBottom: 6 }}>{m.months.map(function (x, i) {
       const wet = x.snow != null && x.snow >= 1 ? uSnowfall(x.snow) + " snow" : Math.round(x.wetDays) + " wet d";
@@ -315,7 +433,7 @@ function OutcomesSection({ activity }) {
     <div style={{ fontSize: 12.5, color: C.text, marginBottom: 4 }}>{up + " of " + rows.length + " report" + (rows.length === 1 ? "" : "s") + " in the last 60 days summited."}</div>
     {rows.slice(0, 4).map(function (a, i) {
       const back = a.tickType !== "Summit", why = back && Array.isArray(a.outcomeReasons) && a.outcomeReasons.length ? " — " + a.outcomeReasons.join(", ") : "";
-      return <div key={(a._dbId || a.id || "") + "-" + i} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.45 }}>{new Date(String(a.date).slice(0, 10) + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }) + " · "}<b style={{ color: back ? C.amber : C.green }}>{back ? a.tickType : "Summited"}</b>{why}{back && a.outcomeNote ? ": " + String(a.outcomeNote).slice(0, 140) : ""}</div>;
+      return <div key={(a._dbId || a.id || "") + "-" + i} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.45 }}>{new Date(String(a.date).slice(0, 10) + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }) + " · "}<b style={{ color: back ? C.amber : C.green }}>{back ? a.tickType : "Summited"}</b>{why}{back && a.outcomeNote ? ": " + String(a.outcomeNote).slice(0, 140) : ""}</div>;
     })}
   </div>;
 }

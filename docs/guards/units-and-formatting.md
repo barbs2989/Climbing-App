@@ -502,3 +502,24 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Proven by `scripts/oneoff/probe-dates-honour-the-preference.mjs` — 15 assertions, no browser and
     no database. **Both halves of the hardening are proven load-bearing by A/B**: dropping the falsy
     guard fails 2, and removing the `T12:00:00` fails the off-by-one-day assertion and nothing else.
+
+- **`check:date-locale`** asserts that **every date or time on screen is formatted through the
+  climber's date preference** — a `.toLocaleDateString` / `.toLocaleTimeString` call whose first
+  argument is missing, `undefined`, `null` or a string literal fails. Static (Babel parse of the
+  app files and `lib/`), so it sits in `npm run build`.
+  - **WHY IT EXISTS.** The entry above records the first census of this class: five surfaces
+    rendering a raw ISO date, found by reading a CI capture, repaired by one `shortDate`. The census
+    of 2026-10-07 found **nine more calls passing `undefined`**, written after that entry — core's
+    relative-time helper, three on the route page (the weekday labels and a closure date), four in
+    the alpine conditions card, one in the map kit's snow-layer date — each in a file whose other
+    formatters pass `DLOCALE`. A convention that is mostly followed is exactly what a guard is for:
+    nothing else reads the first argument of these calls, and `check:units` deliberately does not.
+  - **THE MAP KIT CANNOT READ `DLOCALE`**: core imports `lib/mapKit.jsx`, so it cannot import
+    core back, and its toggle is rendered by five callers that hand it no locale. It reads the
+    stored preference itself through `currentDateLocale()` in `lib/date-pref.js` — the same
+    mapping over the same stored value App seeds its state from and writes on change, so the two
+    cannot disagree outside a render with no storage, where both are `undefined`.
+  - **WHAT IT CANNOT SEE:** it reads the *call*, not the value. A `locale` prop handed down empty
+    (`FireMap`'s is passed from App — a reading, not a guarantee) passes. And `toLocaleString()` is
+    deliberately excluded: in this app it formats NUMBERS, and a thousands separator is not the date
+    preference. Injection suite: `scripts/oneoff/inject-date-locale-cases.mjs`, 5 cases.

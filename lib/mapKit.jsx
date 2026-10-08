@@ -5,6 +5,7 @@
 // lazy-loads lib/DbAreaBrowser.jsx).
 import { useEffect, useRef, useState } from "react";
 import { loadUnits } from "./units-pref";
+import { currentDateLocale } from "./date-pref";
 import { offlineTileUrl, offlineLayerFor } from "./offlineTiles";
 
 export const MAP_TILE_URLS = {
@@ -307,7 +308,9 @@ export function BaseLayerToggle({ baseLayer, setBaseLayer, C, snow, snowAt }) {
   const opts = [["sat", "Satellite"], ["topo", "Topo"], ["street", "Street"]].concat(snow ? [["snow", "Snow"]] : []);
   const step = { width: 30, height: 30, borderRadius: 7, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 15, fontWeight: 800, lineHeight: 1, padding: 0, cursor: "pointer" };
   const off = { opacity: 0.35, cursor: "default" };
-  const fmt = (d) => new Date(d + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" });
+  // The climber's date preference, read from its store: this file is imported BY core, so it
+  // cannot read core's DLOCALE, and five callers hand this toggle no locale.
+  const fmt = (d) => new Date(d + "T12:00:00Z").toLocaleDateString(currentDateLocale(), { month: "short", day: "numeric", timeZone: "UTC" });
   return (
     <>
       <div style={{ position: "absolute", top: 10, left: 10, zIndex: 1000, display: "flex", gap: 4 }}>

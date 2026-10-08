@@ -22,6 +22,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { requireServiceKey, SUPABASE_URL } from "../lib/supabase-env.mjs";
 import { gradeNumFrom } from "../../lib/grade.js";
 import { stripSortPrefix } from "../lib/area-sort-prefix.mjs";
+import { genericAreaName } from "../lib/generic-area-name.mjs";
 import { stripRouteTopoLabel, letterSeriesAreas } from "../lib/route-topo-label.mjs";
 
 const args = process.argv.slice(2);
@@ -216,6 +217,11 @@ function resolver(stateId, stateName, planned, splits) {
       if (!c.length) c = (kidsF.get(cur + "|" + fk(chain[i])) || []).filter(r => foldTwins(chain[i], r.name));
       if (c.length === 1) { cur = c[0].id; continue; }
       if (c.length > 1) return { why: "two of our areas share this name under one parent", at: chain.slice(0, i + 1).join(" > ") };
+      // A level named only by DISCIPLINE ("Bouldering", "Other Climbs", "CO Ice & Mixed") is a bucket
+      // the generic-area fold removed (owner, 2026-10-07: areas are places). Step THROUGH it rather than
+      // create it again: its sub-areas now hang off the place above, and a climb filed on the bucket
+      // itself lands on that place — or, if the place has sub-areas, is refused for a person to place.
+      if (genericAreaName(chain[i], [stateName, ...chain.slice(0, i)])) continue;
       const nxt = i + 1 < chain.length ? (kids.get(cur + "|" + areaNorm(chain[i + 1])) || []) : [];
       if (nxt.length === 1 && skips < 2) { skips++; continue; }
       if (!create) return { why: "area not in our catalog" };

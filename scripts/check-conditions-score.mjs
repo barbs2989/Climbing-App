@@ -334,6 +334,39 @@ console.log("check:conditions-score");
   const sp = pinSunSpans({ E: flat, emax: 0 }, g, 44.367, -121.14, rise, set, 10);
   if (sp && sp.length === 1 && sp[0][1] === set) ok("on flat ground the sun reaches the pin in one span that ends at sunset");
   else fail(`flat-ground sun spans are wrong: ${JSON.stringify(sp)}`);
+  // Steep ground (the alpine map's STEEP SLOPES IN SUN): a 45° ramp is steep, a 25° ramp is not.
+  const { steepMask, gridPx, STEEP_DEG } = await import("../lib/terrainShade.js");
+  const ramp = (deg) => { const R = new Float32Array(W * W), k = Math.tan(deg * Math.PI / 180) * 10; for (let r = 0; r < W; r++) for (let c = 0; c < W; c++) R[r * W + c] = c * k; return R; };
+  const s45 = steepMask(ramp(45), W, W, 10), s25 = steepMask(ramp(25), W, W, 10), s36 = steepMask(ramp(STEEP_DEG + 1), W, W, 10), s34 = steepMask(ramp(STEEP_DEG - 1), W, W, 10);
+  if (STEEP_DEG === 35 && s45[100 * W + 100] === 1 && s25[100 * W + 100] === 0 && s36[50 * W + 50] === 1 && s34[50 * W + 50] === 0 && s45[0] === 0) ok("steep ground is 35°+ (36° is, 34° is not), and the grid's edge is never marked");
+  else fail("the 35° steep-ground mask is wrong");
+  const gp = gridPx(g, 44.367, -121.14), off = gridPx(g, 45.5, -121.14);
+  if (gp && gp.c === g.pin.c && gp.r === g.pin.r && off === null) ok("a pin is placed on the terrain block where it falls, and one off the block is null (said, not guessed)");
+  else fail(`gridPx is wrong: ${JSON.stringify(gp)} / ${JSON.stringify(off)}`);
+  // A SUMMIT pin a pixel off the model's top is "shaded" by that top at a low sun; read at the high
+  // point it is lit. Colchuck Peak read first sun 8:30 AM against a 7:10 sunrise before this, and The
+  // Tooth's pin, 20 m down the north face, lost the midday sun to its own top.
+  const { highestNear, SUMMIT_SNAP_M } = await import("../lib/terrainShade.js");
+  const cone = new Float32Array(W * W); for (let r = 0; r < W; r++) for (let c = 0; c < W; c++) cone[r * W + c] = 300 - Math.hypot(c - 100, r - 100);
+  cone[90 * W + 100] = 400; cone[100 * W + 98] = NaN;
+  const top = highestNear(cone, W, W, { c: 99, r: 100 }, Math.round(SUMMIT_SNAP_M / 6.5)), far = highestNear(cone, W, W, { c: 99, r: 103 }, Math.round(SUMMIT_SNAP_M / 6.5)), fromNaN = highestNear(cone, W, W, { c: 98, r: 100 }, 3);
+  if (top.c === 100 && top.r === 100 && far.c === 100 && far.r === 100 && fromNaN.c === 100 && pointShaded(cone, W, W, 6.5, 99, 100, 90, 5, 400) === true && pointShaded(cone, W, W, 6.5, 100, 100, 90, 5, 400) === false) ok("a summit pin a pixel off the top is read AT the top (from 6 m or 20 m off, as Colchuck's and The Tooth's were; not a higher spike 65 m away), where the top no longer shades it");
+  else fail(`highestNear is wrong: ${JSON.stringify(top)} / ${JSON.stringify(far)} / ${JSON.stringify(fromNaN)}`);
+  // THE FACE a route climbs (the alpine start's sun deadline): a 45° pyramid under October sun.
+  const { faceSunBands, faceBearing, FACE_MIN_LIT } = await import("../lib/terrainShade.js");
+  const asp = ["NE", "S/SW", "South / Southeast", "S (final summit tower faces NE)", "north-east", "varies", "N/S", "E to S to W (traverses around the peak)", "N/NE (chimneys) transitioning to S (pyramid)"].map(faceBearing);
+  if (JSON.stringify(asp) === JSON.stringify([45, 202.5, 157.5, 180, 45, null, null, null, null])) ok("a route's aspect gives a face only when it names one direction or two neighbours (prose, \"varies\" and opposites give none)");
+  else fail(`faceBearing is wrong: ${JSON.stringify(asp)}`);
+  const pyr = new Float32Array(g.W * g.H); for (let r = 0; r < g.H; r++) for (let c = 0; c < g.W; c++) pyr[r * g.W + c] = Math.max(0, 2000 - g.pxM * Math.max(Math.abs(c - g.pin.c), Math.abs(r - g.pin.r)));
+  const oRise = Date.parse("2026-10-08T14:10:00Z"), oSet = Date.parse("2026-10-09T01:40:00Z"), PT = { E: pyr, emax: 2000 };
+  const faceFirst = (deg) => { const b = faceSunBands(PT, g, g.pin, deg, 44.367, -121.14, oRise, oSet, 10, 0); return { b, first: b.length ? Math.min(...b.map((x) => x.at)) : null }; };
+  const fE = faceFirst(90), fW = faceFirst(270), fN = faceFirst(0);
+  if (FACE_MIN_LIT === 8 && fE.first - oRise <= 20 * 60e3 && fW.first - oRise >= 3 * 3600e3 && fN.b.length === 0) ok("the ground draining onto an EAST line takes the sun at sunrise, a WEST line's hours later, and a NORTH face none all day: a slope turned from the sun is in its own shadow, and a sliver of ridge beside the top (fewer than 8 lit samples) doesn't count");
+  else fail(`faceSunBands is wrong: east +${fE.first && Math.round((fE.first - oRise) / 60e3)} min, west +${fW.first && Math.round((fW.first - oRise) / 60e3)} min, north ${fN.b.length} band(s)`);
+  if (fE.b.every((x, i) => x.e < 2000 && (i === 0 || (x.e >= fE.b[i - 1].e && x.at <= fE.b[i - 1].at)))) ok("...bands run up the line, below the top, and a lower point is reached no LATER than a higher one (it gathers every source above it)");
+  else fail("face bands are out of order");
+  if (faceSunBands(PT, g, g.pin, 90, 44.367, -121.14, oRise, oSet, 10, 1500).every((x) => x.e >= 1500)) ok("...and the line ends where the push starts: nothing below that height is read");
+  else fail("the line runs below the push's start");
   const cr = terrainCredits(["ned13/imgn50w124_13.tif, nrcan_cdem/cdem_dem_092G.tif", "srtm/N25W101.tif", null]);
   if (cr.length === 1 && /Open Government Licence – Canada/.test(cr[0]) && terrainCredits(["ned/x.tif", "ned19/y.tif", "srtm/z.tif"]).length === 0) ok("the terrain credit appears only where its licence requires it (Canada yes; US 3DEP and SRTM, public domain, no)");
   else fail(`terrain credits are wrong: ${JSON.stringify(cr)}`);
