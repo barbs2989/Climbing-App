@@ -870,3 +870,36 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       is that intermediate topout.
   - Read-only, anon key, fails closed on an empty read. **Not a build gate** — a property of the DB,
     not the checkout, so no code change can cause or fix it; same reasoning as `check:counts`.
+
+- **`check:sun-times`** asserts that **the Calendar's sunrise and sunset match an ephemeris to the
+  minute** — sixteen reference instants (four Washington points by four dates, Open-Meteo's daily
+  sunrise/sunset) that `sunRiseSet()` in `lib/conditionsScore.js` must land within three minutes
+  of, plus the polar-day, polar-night and bad-input shapes, plus two source checks: `lib/Calendar.jsx`
+  imports and calls `sunRiseSet`, and no app file declares a `sunTimes` of its own. Static, one
+  import, so it sits in `npm run build`.
+  - **WHY IT EXISTS.** Until 2026-10-07 the Calendar's Daylight line printed "solar noon ± half the
+    day length" as clock times — no longitude, no equation of time, no daylight saving, no disc or
+    refraction. Measured (`scripts/oneoff/probe-sun-times-vs-open-meteo.mjs`): **44–70 min early at
+    sunrise and 60–89 min early at sunset through the daylight-saving months**; within 6 min at
+    sunrise in December (no DST, near the zone's meridian) but still 6–13 min early at sunset; the
+    day 11–19 min short all year. A party setting a summer alpine start by it left camp an hour
+    before it needed to, and the line looked exactly like a correct one. A proper solar position
+    already existed twenty lines away (`sunPosition`, the crag conditions score's); the solver walks
+    it through the local day and bisects each horizon crossing.
+  - **IT IS THE ONLY GATE THAT EXECUTES THE FUNCTION.** Every other guard reads source. A rewrite
+    that drops the refraction term, reads longitude wrong, or scans the UTC day instead of the local
+    one is valid JS that renders a confident number — so the check is numeric, and the injection
+    suite (`scripts/oneoff/inject-sun-times-cases.mjs`, 6 cases) proves each of those is caught.
+  - **THE REFERENCE IS ABSOLUTE INSTANTS, NOT CLOCK TIMES — a trap met building it.** The first
+    capture asked Open-Meteo for local times and got Seattle's December sunrise as 08:54, an hour
+    late: the API stamps the whole response with the offset of the day it is *asked*, so a December
+    row fetched in October carried the summer offset. The solver was right and the reference wrong,
+    which a guard built on that table would have failed forever. `timeformat=unixtime` has no
+    offset to get wrong. Refresh the table with the probe above, never by hand.
+  - **TZ IS PINNED to `America/Los_Angeles` before any Date exists**, because the solver lays out
+    the *device's* local day, as the Calendar does. On a box in another zone the "local day" is a
+    different span of hours and a crossing can belong to a neighbouring date.
+  - **WHAT IT CANNOT SEE:** the Calendar renders the instants in the device's zone, which is the
+    climber's, not the route's. A Washington climber planning an Alaska route from home reads
+    Pacific clock times. That is the pre-existing behaviour, unchanged, and not what this guard
+    measures.

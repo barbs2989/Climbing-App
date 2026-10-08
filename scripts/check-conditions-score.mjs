@@ -334,6 +334,24 @@ console.log("check:conditions-score");
   const sp = pinSunSpans({ E: flat, emax: 0 }, g, 44.367, -121.14, rise, set, 10);
   if (sp && sp.length === 1 && sp[0][1] === set) ok("on flat ground the sun reaches the pin in one span that ends at sunset");
   else fail(`flat-ground sun spans are wrong: ${JSON.stringify(sp)}`);
+  // Steep ground (the alpine map's STEEP SLOPES IN SUN): a 45° ramp is steep, a 25° ramp is not.
+  const { steepMask, gridPx, STEEP_DEG } = await import("../lib/terrainShade.js");
+  const ramp = (deg) => { const R = new Float32Array(W * W), k = Math.tan(deg * Math.PI / 180) * 10; for (let r = 0; r < W; r++) for (let c = 0; c < W; c++) R[r * W + c] = c * k; return R; };
+  const s45 = steepMask(ramp(45), W, W, 10), s25 = steepMask(ramp(25), W, W, 10), s36 = steepMask(ramp(STEEP_DEG + 1), W, W, 10), s34 = steepMask(ramp(STEEP_DEG - 1), W, W, 10);
+  if (STEEP_DEG === 35 && s45[100 * W + 100] === 1 && s25[100 * W + 100] === 0 && s36[50 * W + 50] === 1 && s34[50 * W + 50] === 0 && s45[0] === 0) ok("steep ground is 35°+ (36° is, 34° is not), and the grid's edge is never marked");
+  else fail("the 35° steep-ground mask is wrong");
+  const gp = gridPx(g, 44.367, -121.14), off = gridPx(g, 45.5, -121.14);
+  if (gp && gp.c === g.pin.c && gp.r === g.pin.r && off === null) ok("a pin is placed on the terrain block where it falls, and one off the block is null (said, not guessed)");
+  else fail(`gridPx is wrong: ${JSON.stringify(gp)} / ${JSON.stringify(off)}`);
+  // A SUMMIT pin a pixel off the model's top is "shaded" by that top at a low sun; read at the high
+  // point it is lit. Colchuck Peak read first sun 8:30 AM against a 7:10 sunrise before this, and The
+  // Tooth's pin, 20 m down the north face, lost the midday sun to its own top.
+  const { highestNear, SUMMIT_SNAP_M } = await import("../lib/terrainShade.js");
+  const cone = new Float32Array(W * W); for (let r = 0; r < W; r++) for (let c = 0; c < W; c++) cone[r * W + c] = 300 - Math.hypot(c - 100, r - 100);
+  cone[90 * W + 100] = 400; cone[100 * W + 98] = NaN;
+  const top = highestNear(cone, W, W, { c: 99, r: 100 }, Math.round(SUMMIT_SNAP_M / 6.5)), far = highestNear(cone, W, W, { c: 99, r: 103 }, Math.round(SUMMIT_SNAP_M / 6.5)), fromNaN = highestNear(cone, W, W, { c: 98, r: 100 }, 3);
+  if (top.c === 100 && top.r === 100 && far.c === 100 && far.r === 100 && fromNaN.c === 100 && pointShaded(cone, W, W, 6.5, 99, 100, 90, 5, 400) === true && pointShaded(cone, W, W, 6.5, 100, 100, 90, 5, 400) === false) ok("a summit pin a pixel off the top is read AT the top (from 6 m or 20 m off, as Colchuck's and The Tooth's were; not a higher spike 65 m away), where the top no longer shades it");
+  else fail(`highestNear is wrong: ${JSON.stringify(top)} / ${JSON.stringify(far)} / ${JSON.stringify(fromNaN)}`);
   const cr = terrainCredits(["ned13/imgn50w124_13.tif, nrcan_cdem/cdem_dem_092G.tif", "srtm/N25W101.tif", null]);
   if (cr.length === 1 && /Open Government Licence – Canada/.test(cr[0]) && terrainCredits(["ned/x.tif", "ned19/y.tif", "srtm/z.tif"]).length === 0) ok("the terrain credit appears only where its licence requires it (Canada yes; US 3DEP and SRTM, public domain, no)");
   else fail(`terrain credits are wrong: ${JSON.stringify(cr)}`);
