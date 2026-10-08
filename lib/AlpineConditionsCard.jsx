@@ -6,7 +6,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread } from "./forecast.js";
-import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread } from "./alpineConditions.js";
+import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
 import { isMultiDayOuting } from "./outing.js";
@@ -130,7 +130,12 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
      to camp (0.69 of the way up -- the catalog's own complete rows). */
   const P = planTimes(route, calc || {});
   const fromCamp = isMultiDayOuting(route) && (P.hasPublishedSummitH || P.hasDerivedSummitH);
-  const legs = { up: fromCamp ? P.techH : P.hikeH + P.techH, down: P.downH, fromCamp, floor: P.legsFloor || P.publishedIsWholeDay, tech: P.techH, hike: fromCamp ? 0 : P.hikeH };
+  /* A route that publishes ONE whole-day time is counted back from that total where the kind allows it
+     (wholeDayLegs): a scramble or alpine rock route, on a single day. `wholeDay` carries the total so the
+     card says the up/down split is assumed. Every other whole-day row keeps NO start, and says why. */
+  const wd = P.publishedIsWholeDay && !fromCamp ? wholeDayLegs(P.techH, kind) : null;
+  const legs = wd ? { up: wd.up, down: wd.down, fromCamp: false, floor: false, tech: wd.up, hike: 0, wholeDay: wd.total }
+    : { up: fromCamp ? P.techH : P.hikeH + P.techH, down: P.downH, fromCamp, floor: P.legsFloor || P.publishedIsWholeDay, tech: P.techH, hike: fromCamp ? 0 : P.hikeH };
   const snowLegs = hasSnowLegs(kind, terrain);
   const floor = snowLegs ? snowFloorFt(route, pt && pt.campFt) : null;
 
@@ -209,22 +214,25 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
   }
   if (kind !== "waterfall" && kind !== "cragmixed") {
     if (legs.floor) {
-      startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>No start time: the Plan tab’s estimate for this climb is only a minimum (part of the approach or the climbing isn’t on file), and a start counted back from a minimum would be too late.</div>;
+      startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{P.publishedIsWholeDay
+        ? (fromCamp ? "No start time: this climb’s published time is one figure for the whole trip, with no summit day from camp to count back from."
+          : "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb, and a start for a glacier or ice climb is counted back from those two separately.")
+        : "No start time: the Plan tab’s estimate for this climb is only a minimum (part of the approach or the climbing isn’t on file), and a start counted back from a minimum would be too late."}</div>;
     } else if (day.start) {
       const st = floorQ(day.start.at);
       const startDate = new Date(st * 1000 + (fc.utc_offset_seconds || 0) * 1000).toISOString().slice(0, 10);
       const daysEarly = Math.round((Date.parse(day.date) - Date.parse(startDate)) / 864e5);
       const offBy = clockOf(fc, day.start.at + legs.up * 3600), storm = day.thunder && day.thunder.likely ? "forecast" : "possible";
       const why = day.start.why === "snow"
-        ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
+        ? (legs.wholeDay ? "to do the " + hrs(legs.wholeDay) + " day and be back down by " : legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp and be back down by " : "to climb " + hrs(legs.up) + " and walk " + hrs(legs.down) + " back down by ") + clockOf(fc, day.softAt) + ", when the snow at " + uElev(floor.ft) + " starts to soften"
         : day.start.why === "sun" ? (legs.fromCamp ? "to climb " + hrs(legs.up) + " from camp" : "to walk in (" + hrs(legs.hike) + ") and climb " + hrs(legs.tech)) + " and be above " + uElev(Math.ceil(day.start.sun.ft / 50) * 50) + " by " + clockOf(fc, day.start.sun.sunAt) + ", when the sun reaches steep ground that sheds onto the line above that height"
-        : day.start.why === "storm-descent" ? "to reach the top (" + hrs(legs.up) + ") and start down by " + offBy + ", before the thunderstorms " + storm + " this afternoon"
-        : "to be off the summit (" + hrs(legs.up) + " up) by " + offBy + ", before the thunderstorms " + storm + " this afternoon";
+        : day.start.why === "storm-descent" ? "to reach the top" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + ")") + " and start down by " + offBy + ", before the thunderstorms " + storm + " this afternoon"
+        : "to be off the summit" + (legs.wholeDay ? "" : " (" + hrs(legs.up) + " up)") + " by " + offBy + ", before the thunderstorms " + storm + " this afternoon";
       startEl = daysEarly >= 2
         ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"Too long for one push: counting back from the Plan tab’s estimate puts the start " + daysEarly + " days early. Plan a camp — see the Plan tab."}</div>
         : <div>
           <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
-          <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + (P.legsStored ? ". Times are this route’s published times for a fit party (Plan tab), so a slower party should start earlier." : ". Times are the Plan tab’s estimate at its own fitness and pack.")}</div>
+          <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + (legs.wholeDay ? ". The route publishes one whole-day time (" + hrs(legs.wholeDay) + ") with no split, so the way up is counted as " + Math.round(LIMITS.wholeDayUpShare * 100) + "% of it: a rule of thumb that errs early. It is a fit party’s time, so a slower party should start earlier still." : P.legsStored ? ". Times are this route’s published times for a fit party (Plan tab), so a slower party should start earlier." : ". Times are the Plan tab’s estimate at its own fitness and pack.")}</div>
         </div>;
     } else if (day.noFreeze && floor) {
       startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"No start time from the snow: it didn’t freeze overnight at " + uElev(floor.ft) + ", so there is no frozen window to be back down in."}</div>;

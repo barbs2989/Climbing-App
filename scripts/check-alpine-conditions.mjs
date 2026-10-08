@@ -37,6 +37,10 @@
 //                  ground of the face (owner: "do what you recommend", research 2026-10-08): be above
 //                  each height before the sun reaches it, no lag; never on rock or a scramble, never
 //                  after a night that did not freeze; and the card says what it could not read.
+//  11. WHOLE-DAY ROWS — a route that publishes ONE car-to-car time is counted back from that total only
+//                  for a scramble or alpine rock route (the way up taken as wholeDayUpShare of it, said
+//                  out loud); a glacier or alpine ice row, or a multi-day one, keeps NO start and is no
+//                  longer called "only a minimum".
 // Thresholds and their research live in docs/guards/honesty-claims.md.
 import fs from "node:fs";
 import os from "node:os";
@@ -54,6 +58,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 export * from ${JSON.stringify(path.join(ROOT, "lib", "alpineConditions.js"))};
 export { flagText, forecastPoint, KIND_LABEL } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
+export { planTimes } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
 export { CRAG_SCORE_DISCIPLINES, monthlyClimate } from ${JSON.stringify(path.join(ROOT, "lib", "conditionsScore.js"))};
 export { fetchAlpineClimate } from ${JSON.stringify(path.join(ROOT, "lib", "forecast.js"))};
 export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
@@ -395,7 +400,33 @@ console.log("\n10. SUN ON THE FACE — be above each height of the face before t
   eq("...in the start box itself", /\{startEl\}\{sunEl\}/.test(card), true);
 }
 
-const FLOOR = 153;
+console.log("\n11. WHOLE-DAY ROWS — one published total counts back where the kind allows it, and says the split is assumed");
+{
+  const r2 = (x) => Math.round(x * 1e6) / 1e6, WL = A.wholeDayLegs;
+  const sc = WL(10, "scramble");
+  eq("a scramble's whole-day 10 h is 8 h up + 2 h down (the way up is wholeDayUpShare of it)", [r2(sc.up), r2(sc.down), sc.total, A.LIMITS.wholeDayUpShare], [8, 2, 10, 0.8]);
+  eq("...and so is alpine rock: neither has a sun deadline that needs the walk in and the climb apart", r2(WL(10, "alpinerock").up), 8);
+  eq("a glacier, alpine ice, waterfall ice and crag mixed get NO whole-day legs (their sun deadline needs the split, or they have no start)", ["glacier", "alpineice", "waterfall", "cragmixed", null].map((kk) => WL(10, kk)), [null, null, null, null, null]);
+  eq("a total that is not a positive number gives none: 0, -1, null, undefined, a string, NaN", [0, -1, null, undefined, "10", NaN].map((x) => WL(x, "scramble")), [null, null, null, null, null, null]);
+  const wdL = { up: sc.up, down: sc.down, fromCamp: false, floor: false, tech: sc.up, hike: 0, wholeDay: sc.total };
+  const wst = run(forecast((d, h) => (d === T && h === 14 ? { code: 95 } : {})), { kind: "scramble", terrain: { snow: "no" }, highFt: 8000, snowFt: null, legs: wdL });
+  eq("a thunder day on a 10 h scramble: off the summit by NOON, 8 h up -> start 04:00", wst.start && [clock(wst.start.at), wst.start.why], [4, "storm-summit"]);
+  const wsn = run(forecast(thaw), { kind: "scramble", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: wdL });
+  eq("a snowy 10 h scramble: back down by the softening hour with the WHOLE 10 h (up + down = the total) -> 23:00 the night before", wsn.start && [r2(clock(wsn.start.at)), wsn.start.why], [-1, "snow"]);
+  eq("a whole-day row on a glacier still gets NO start (floor), as before", run(forecast(thaw), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: { up: 10, down: 0, fromCamp: false, floor: true } }).start, null);
+  const pt = A.planTimes({ timing: { totalHrs: 10, recommendedStart: "4:00 AM from the trailhead" }, pitches: 0 });
+  eq("the Planner reads a total-only timing as a whole day and its techH IS that total (the number the card splits)", [pt.publishedIsWholeDay, pt.techH], [true, 10]);
+  const pk = A.planTimes({ timing: { totalHrs: 10, approachTimeHrs: 3, summitTimeHrs: 4, descentTimeHrs: 3 }, pitches: 0 });
+  eq("...and a row with legs is NOT a whole day: it keeps its own legs", pk.publishedIsWholeDay, false);
+  eq("the card counts a whole-day row back only on a single day and only where wholeDayLegs allows", /const wd = P\.publishedIsWholeDay && !fromCamp \? wholeDayLegs\(P\.techH, kind\) : null;/.test(card), true);
+  eq("...every other whole-day row keeps the floor (no start)", /floor: P\.legsFloor \|\| P\.publishedIsWholeDay/.test(card), true);
+  eq("...and says WHY: a whole-day figure is not 'only a minimum'", /P\.publishedIsWholeDay\s*\? \(fromCamp \? "No start time: this climb’s published time is one figure for the whole trip[^"]*"\s*: "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb/.test(card), true);
+  eq("...while a row that really is a minimum still says so", /: "No start time: the Plan tab’s estimate for this climb is only a minimum/.test(card), true);
+  eq("a start counted back from a whole-day total says the split is ASSUMED, and that it errs early", /legs\.wholeDay \? "\. The route publishes one whole-day time \(" \+ hrs\(legs\.wholeDay\) \+ "\) with no split, so the way up is counted as " \+ Math\.round\(LIMITS\.wholeDayUpShare \* 100\) \+ "% of it: a rule of thumb that errs early\./.test(card), true);
+  eq("...and does not print a way-up time the route never published ('(8 h up)')", /\(legs\.wholeDay \? "" : " \(" \+ hrs\(legs\.up\) \+ " up\)"\)/.test(card), true);
+}
+
+const FLOOR = 168;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);
