@@ -30746,3 +30746,90 @@ so findings rest on WebSearch snippet summaries rather than direct page reads.
 `node scripts/check-sql-targets.mjs --table routes` confirmed the one UPDATE target exists live.
 
 Pass 7 continues next run after `wa_chair_peak_southeast_face`.
+
+## Batch 390 (2026-10-08, pass 7)
+
+Checked: `wa_chair_peak_voie_de_chaise`, `wa_chair_peak_west_ridge` (Chair Peak, finishing it off),
+`wa_chalangin_peak_little_giant_pass_luahna_col` (Chalangin Peak), `wa_chelan_butte_chelan_butte_trail`
+(Chelan Butte), `wa_chianti_spire_east_face`, `wa_chianti_spire_lichen_bouquet`,
+`wa_chianti_spire_north_face` (Chianti Spire), `wa_chimney_peak_the_chimney` (Chimney Peak, Olympic NP),
+`wa_chimney_rock_east_face_direct` (Chimney Rock). Skipped `wa_clean_break` on `wa_juno_tower` — a crag,
+not a peak, out of this audit's scope.
+
+**Fixed (2):**
+- `wa_chelan_butte` (areas) `elevation_ft` and `wa_chelan_butte_chelan_butte_trail`'s `high_point_ft`
+  — both stored 3,812 ft, but the route's own `corrections` field already said Peakbagger, PeakVisor
+  and WTA all confirm a 3,835 ft summit; the elevation columns were simply never updated to match.
+  Re-confirmed independently via SummitPost ("Elevation: 3835 ft") and WillhiteWeb ("Summit
+  Elevation: 3,835 feet"), against no source anywhere for 3,812 ft.
+- `wa_chianti_spire_east_face` `approach` and `descent_text` — both fields opened with a dangling
+  self-reference to a route id, `wa_east_face_rebel_yell`, that does not exist anywhere in the live
+  table. This row's own name is "East Face (Rebel Yell area / standard)" — it IS Rebel Yell — so the
+  lead sentences ("This is the same East Face/Rebel Yell line as wa_east_face_rebel_yell..." /
+  "Same descent as the standard East Face/Rebel Yell line:...") were pointing at a nonexistent
+  sibling, almost certainly a pipeline artifact from however this row was generated or merged.
+  Stripped the self-referential preamble from both fields; the rest of each field's prose was
+  already correct and is unchanged. SQL in `audits/sql/2026-10-08-batch-390.sql`.
+
+**Flagged (7):**
+- `wa_chalangin_peak_little_giant_pass_luahna_col`'s Chiwawa River Road storm-damage closure end
+  date ("through 31 December 2027") — the closure itself is real (confirmed via the Leavenworth
+  Echo and a WTA trail-conditions note, both describing a spring-2026 debris flow near Atkinson
+  Flat), but every source describes the reopening as "until further notice" pending repair funding,
+  with no source giving a hard 2027 end date. Reads like invented precision layered onto a real
+  open-ended closure.
+- `wa_chelan_butte_chelan_butte_trail`'s Feb 1–Mar 31 WDFW mule-deer winter closure claim — no WDFW
+  source found for that exact window on the Chelan Wildlife Area/Chelan Butte unit. Real but
+  *different* nearby winter closures exist (Wenatchee Foothills Dec 1–Apr 1; Burch Mountain Road
+  Feb 15–Mar 31), which this may be conflating.
+- `wa_chianti_spire_east_face`'s second FA climber (stored as Mark Bebie, matching a Beckey-cited
+  SummitPost page) vs. one Mountain-Project-derived search snippet instead naming "Carl Dietrich" —
+  a genuine, unresolved source conflict. Its 198 m length is also in tension with one source
+  suggesting 800 ft / 242 m instead.
+- `wa_chianti_spire_lichen_bouquet`'s FA party for the name "Lichen Bouquet" specifically — a
+  primary 1989 AAJ account by Alan Kearney matches the stored party (Kearney, Culberson, Kelley)
+  and route description almost verbatim, but a Beckey-guide-cited SummitPost page names the FA of
+  the route *called* "Lichen Bouquet" as Kearney and Houston instead. Possibly two distinct 1989
+  Kearney east-face lines conflated into one row.
+- `wa_chianti_spire_north_face`'s approach description of a "Burgundy-Chianti notch" — the 1953 AAJ
+  first-ascent account instead names a "Pernod-Chianti notch" for the FA party's own approach.
+  Could describe a different, modern access line rather than contradict the FA, so not called a
+  confirmed error, but worth a closer check against the full Beckey text.
+- `wa_chimney_peak_the_chimney`'s road-access claim ("South Shore Road closed at mile 8, access via
+  North Shore Road") looks stale against 2026 reporting, which instead describes a mile-4.1 washout
+  on Graves Creek Road itself (with North Shore Road necessary but not sufficient, since Graves
+  Creek Road beyond its own washout is foot/bike only).
+- `wa_chimney_rock_east_face_direct`'s FA "Cornelius Molenaar, Elvis R. Johnson (1954)" — every
+  reachable source on Chimney Rock's climbing history (Wikipedia, SummitPost, Mountain Project,
+  PeakVisor, Mountaineers.org) mentions only the 1930 FA (Farr/Winder/Byington) and a 1940 repeat
+  (Crooks/Beckey); nothing in 1954. "Elvis R. Johnson" produced zero hits anywhere in Pacific NW
+  climbing history across many search angles. Suspect, but no corrected name could be identified —
+  left as "needs human verification" rather than guessed.
+
+**Clean:** `wa_chair_peak_voie_de_chaise`'s FA (Ian Nicholson and Tino Villanueva, 2022), grade
+(5.9-) and 8-pitch count (Mountaineers.org: "8 pitches... 5.6-5.9"; gethighonaltitude.com: "Grade II,
+5.9"); `wa_chair_peak_west_ridge`'s 5.7 grade (one independent Mountaineers.org trip report);
+Chalangin Peak's 8,371 ft elevation (matches a 2025 lidar resurvey reported via
+countryhighpoints.com) and its Little Giant Fire closure through 31 Oct 2026 (a real, large 2026
+WA wildfire — confirmed via a USFS closure order plus WTA and news coverage); Chianti Spire's
+8,400 ft elevation (Mountaineers.org + SummitPost); `wa_chianti_spire_east_face`'s grade/pitch
+count (III 5.10b, 7 pitches per Mountaineers.org) and primary FA (Bebie/Nelson, Beckey-cited);
+`wa_chianti_spire_north_face`'s FA (Joe Hieb and Art Maki, September 1952 — confirmed as the first
+ascent of the spire itself, not just this route) and grade (5.6); Chimney Peak's 6,917 ft elevation
+and 1941 first ascent (Tolvo J. Nelson, USGS) — confirmed distinct from the unrelated 7,681 ft
+Chimney Peak in Idaho's Selway Crags — and The Chimney's own 1970 FA (Banner/Johnson, 5.3); Chimney
+Rock's 7,727 ft elevation and East Face Direct's grade/9-pitch/moat-crossing description (a Lemke
+Climbs trip report: "9 pitches... class 5.6", moat crossing at the base).
+
+**Tooling note:** Delegated research to 4 parallel subagents (Chair Peak's 2 routes; Chalangin Peak
++ Chelan Butte; Chianti Spire's 3 routes; Chimney Peak + Chimney Rock). All hit this session's
+network egress proxy blocking direct WebFetch to mountainproject.com, summitpost.org,
+mountaineers.org, wikipedia.org, fs.usda.gov, wta.org and americanalpineclub.org, so findings rest
+on WebSearch snippet summaries rather than direct page reads.
+`node scripts/check-sql-targets.mjs` (routes) and `--table areas` both confirmed all 3 UPDATE
+targets exist live. One statement's prose embedded literal semicolons, which the checker's naive
+statement-splitter initially misread as extra statement boundaries (a real Postgres parser would
+have handled it fine, but an unverifiable statement isn't one to hand over) — rewrote those two
+semicolons as em-dashes so the file checks cleanly, with no change in meaning.
+
+Pass 7 continues next run after `wa_chimney_rock_east_face_direct`.
