@@ -534,6 +534,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       root: its problems merged into Horse Pens 40's boulders, the rest went inside as "Horse Pens 40
       Routes". LEFT, read: 7 Mile Rock / Coal Mt. Crag (27 climbs on both, which crag is unsettled);
       Missouri's two boulders whose copies sit under "Closed Areas" (a fold could erase a closure).
+    - **The 16 pairs the sweeps LEFT were researched on the source and settled by 0279** (2026-10-08),
+      so nobody re-researches them. Merged: 7 Mile Rock's 27 routes (Coal Mt. Crag is a second crag that
+      listed them too); Marlow Profile = Bald Mountain Preserve (folded; Main Face's pin moved 100 km to
+      Marlow, approximate); The Cube's problems (Clamshell Cave, not Twisted Tree's Ice Cube); Walker Texas
+      Ranger's boulder (Buttermilks, not James River Park System's list); Blow-Hard Wall's three (not Main
+      Wall - West End's); Pawtuckaway's one Lower Cliff (the copy's ROCK climbs only — its two ice entries
+      sit on Stonehouse Pond's wrong pin and are not Pawtuckaway's). "High Bluffs" renamed "(South)".
+      Two places / climbs AT THE SOURCE, left apart: Boulder N / Pimp Juice Boulder; the two Lake of the
+      Woods; High Bluffs North / South; Lewis Creek's two Upper Falls (9 km); Montezuma Tower / White Twin;
+      Slicksides (a trad crack and a pothole boulder problem). Not settled: Missouri's Hide and Seek and
+      Hiker's boulders (the copies sit under "Closed Areas", one with a private-land notice); Tongue
+      River's Happy Trails / Snag Wall (the source itself lists the three routes on both); the empty
+      "Cone, The" (no page).
     - **A tie the grade parser cannot break**: `gradeNumFor` scores "5.9" and "5.9+" alike, so "keep
       the HIGHER grade" needs a tie-break on the suffix ("+" over none over "-") or a fold quietly keeps
       the lower-reading one. 0278's planner (`higher.mjs`) applies it.
