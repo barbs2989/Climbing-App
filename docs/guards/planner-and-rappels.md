@@ -1048,3 +1048,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     climber's, not the route's. A Washington climber planning an Alaska route from home reads
     Pacific clock times. That is the pre-existing behaviour, unchanged, and not what this guard
     measures.
+
+## The Plan card is FULL TRIP TIME: approach + climb + descent (2026-10-08)
+
+The Plan-tab card was headed "Time-to-Summit" (alpine/mountaineering/scramble), "Time Estimate" (rock, ice, mixed)
+or "Approach Time" (bouldering), and its **Total** tile was `totalH` = approach + climb. The descent never entered
+it; it only pushed the separate "Est. return" clock. A climber budgeting the day by "Total 9.5 hr" was short by the
+whole way down. It is now **"Full Trip Time"** for every discipline, with an Approach / Climbing / Descent / **Total
+trip** row, and `tripH` (lib/planTimes.js) is defined as `retH - depart` so the tile and the return clock cannot
+disagree. A whole-day published figure is already car-to-car and is not given a descent on top (the Descent tile
+reads "incl."). `totalH` is unchanged: the summit clock and the alpine start count back from it.
+`check:return-leg` holds Total trip = Approach + Climbing + Descent.

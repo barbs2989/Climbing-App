@@ -1903,7 +1903,7 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
      flag, because an unrecorded pitch count says nothing about the walk. */
   const lowerBound=approachUnknown||climbUnknown;
   return <div style={{background:C.card,borderRadius:12,padding:"12px 14px",border:`1px solid ${C.border}`}}>
-    <div style={{fontSize:14,fontWeight:700,color:C.blue,marginBottom:4}}>{["sport","trad","toprope","rock","aid","ice","mixed"].indexOf(route.discipline)>=0?"Time Estimate":route.discipline==="bouldering"?"Approach Time":"Time-to-Summit"}</div>
+    <div style={{fontSize:14,fontWeight:700,color:C.blue,marginBottom:4}}>{"Full Trip Time"}</div>
     {/* The heading used to read "PUBLISHED TIMES · CAR-TO-CAR", hardcoded on every route carrying a
         timing object, and it never asked whether the published plan WAS car-to-car. Measured over
         the 1,005 WA routes that have one: 404 contradict it in their own words ("5:30 AM from
@@ -1932,7 +1932,7 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
     <div style={{fontSize:12,color:C.textMuted,marginBottom:12}}>{/* Names what this number IS, never how it is computed. The formula was on screen
         ("Scarf's Rule + exponential technical grade penalty") and told a climber nothing
         they could act on — the inputs below already say what it responds to. */}
-      {route.timing?"Or estimate for your party":"Estimate for your party"}</div>
+      {(route.timing?"Or estimate for your party":"Estimate for your party")+" · approach, climb and descent, car to car"}</div>
     {P.legsStored?<div data-fit-party="1" style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:-8,marginBottom:12}}>{(publishedIsWholeDay?"The car-to-car time is this route’s published time":storedApproachH!=null?"The approach and climb are this route’s published times":"The climb is this route’s published time")+" for a fit party, so fitness and pack don’t change "+(publishedIsWholeDay||storedApproachH==null?"it":"them")+". Allow more if your party is slower."}</div>:null}
     {multiDay?<div data-multiday={itinDayCount(route)} style={{background:C.amberBg,borderRadius:9,padding:"9px 11px",marginBottom:12,border:`1px solid ${C.amber}44`,fontSize:12,color:C.textSub,lineHeight:1.5}}>{"This route is typically done over "+itinDayCount(route)+" days. The single-push estimate below is a reference only — the "}<b style={{color:C.amber}}>Trip plan</b>{" above is the realistic one."}</div>:null}
     <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9,marginBottom:12}}>
@@ -1943,10 +1943,11 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
       <div><div style={{...SUB_LABEL,marginBottom:3}}>DEPART</div><select aria-label="Departure time" value={depart} onChange={e=>setDepart(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
         <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":(hasHikeInputs||storedApproachH!=null)?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+totalH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{publishedIsWholeDay?"incl.":hasAnyEstimate?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
+        <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+P.tripH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total trip</div></div>
       </div>
       <Hr/>
       <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:9}}>

@@ -122,6 +122,9 @@ eq("a trad route the page calls alpine (it climbs a peak) is ALPINE ROCK", k({ d
 eq("an ALPINE route graded AI is alpine ice, not rock (Chair Peak N Face, AI2)", k({ discipline: "alpine", grade: "AI2" }, {}, "alpine"), "alpineice");
 eq("...and one graded WI (Triple Couloirs, WI3)", k({ discipline: "alpine", grade: "WI3" }, {}, "alpine"), "alpineice");
 eq("...while an alpine rock grade stays alpine rock", k({ discipline: "alpine", grade: "5.8" }, {}, "alpine"), "alpinerock");
+eq("a GLACIATED alpine route (El Dorado East Ridge: Inspiration Glacier, then 5.7) keeps the GLACIER card", k({ discipline: "alpine", grade: "5.7" }, { glacier: "yes", snow: "yes" }, "alpine"), "glacier");
+eq("...but an alpine route with snow and NO glacier stays alpine rock (snow legs only)", k({ discipline: "alpine", grade: "5.7" }, { glacier: "no", snow: "yes" }, "alpine"), "alpinerock");
+eq("...and a glaciated alpine route graded AI/WI is still alpine ice", k({ discipline: "alpine", grade: "AI3" }, { glacier: "yes" }, "alpine"), "alpineice");
 eq("a sport route gets no alpine kind", k({ discipline: "sport" }, {}, "sport"), null);
 eq("the alpine set and the crag score's set are DISJOINT", A.ALPINE_COND_DISCIPLINES.filter((d) => A.CRAG_SCORE_DISCIPLINES.includes(d)), []);
 
