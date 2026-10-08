@@ -1,0 +1,380 @@
+[
+ {
+  "pid": "nc_east_side_boulders",
+  "crag": "East Side Boulders",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/113828500",
+  "quote": "Exquisite gneiss boulders in a beautiful forest setting"
+ },
+ {
+  "pid": "sd_shadowlands",
+  "crag": "Shadowlands",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/106552961",
+  "quote": "lined with steep slopes capped by bands of limestone"
+ },
+ {
+  "pid": "wi_interstate_park",
+  "crag": "Interstate Park",
+  "groups": [
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "wrong",
+    "correct": "basalt"
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105794827/interstate-park",
+  "quote": "roped climbing and bouldering on billion year old basalt"
+ },
+ {
+  "pid": "wv_eastern_wv",
+  "crag": "Eastern WV",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Reeds Creek": "limestone"
+  },
+  "aspects": {
+   "Reeds Creek": "S"
+  },
+  "url": "https://www.mountainproject.com/area/108057633",
+  "quote": "Eagle Rocks is a vertical limestone fin jutting from the flanks of Cave Mountain."
+ },
+ {
+  "pid": "ar_northwest_arkansas_nwa_region",
+  "crag": "Northwest Arkansas (NWA) Region",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Mount Sequoyah Bouldering": "S"
+  },
+  "url": "https://www.mountainproject.com/area/123545787",
+  "quote": "This limestone bluff line contains one large roof (Crystal Cave)"
+ },
+ {
+  "pid": "or_madrone_wall",
+  "crag": "Madrone Wall",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.clackamas.us/parks/madronewall",
+  "quote": "the 120-foot basalt wall that bisects the property"
+ },
+ {
+  "pid": "id_closed_to_climbing_main_wall",
+  "crag": "CLOSED TO CLIMBING Main Wall",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105886274/massacre-rocks",
+  "quote": "The rock is high quality black, brown, and tan basalt."
+ },
+ {
+  "pid": "id_main_wall_4",
+  "crag": "Main Wall",
+  "groups": [
+   {
+    "held": "basalt (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105886274/massacre-rocks",
+  "quote": "The rock is high quality black, brown, and tan basalt."
+ },
+ {
+  "pid": "il_c_north_falls",
+  "crag": "North Falls",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://climbinghouse.com/jackson-falls-guide/",
+  "quote": "high-quality and bullet-hard sandstone rock climbing in Illinois"
+ },
+ {
+  "pid": "me_shagg_crag",
+  "crag": "Shagg Crag",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "wrong",
+    "correct": "granite"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105964909/shagg-crag",
+  "quote": "Shagg Crag has all three: steep, juggy, granite climbing."
+ },
+ {
+  "pid": "wv_south_peak_west_face",
+  "crag": "South Peak - West Face",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "quartzite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105861910/seneca-rocks",
+  "quote": "The rock is formed from white Tuscarora quartzite, which feels much like sandstone."
+ },
+ {
+  "pid": "az_munchkinland_area",
+  "crag": "Munchkinland Area",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Wall of the Waltzing Witches": "E",
+   "Towers, The": "W",
+   "Wall of the Marching Munchkins": "W",
+   "Wall of the Dancing Dwarfs": "W",
+   "Wall of the Trundling Trolls": "E"
+  },
+  "url": "https://www.mountainproject.com/area/105738203",
+  "quote": "No rock named for Munchkinland; aspects: Witches 20 deg S of E, the 3 walls 20 deg N of W."
+ },
+ {
+  "pid": "az_west_stronghold",
+  "crag": "West Stronghold",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105738034/cochise-stronghold",
+  "quote": "a spectacular landscape of rugged canyons and towering granite domes"
+ },
+ {
+  "pid": "ca_needles_kern_river_the",
+  "crag": "Needles / Kern River, The",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105851693",
+  "quote": "a series of enormous granite spires"
+ },
+ {
+  "pid": "co_palace_the_2",
+  "crag": "Palace, The",
+  "groups": [
+   {
+    "held": "schist (mapped)",
+    "verdict": "wrong",
+    "correct": "granite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Wall With a View": "SE"
+  },
+  "url": "https://www.mountainproject.com/area/105873941",
+  "quote": "A grotto of featured granite, some steep and overhanging"
+ },
+ {
+  "pid": "ma_weetamoo_area",
+  "crag": "Weetamoo Area",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105908096/lynn-woods",
+  "quote": "Most of the boulders are course grained Peabody granite, pinkish-tan or grey in color."
+ },
+ {
+  "pid": "tn_the_tennessee_wall",
+  "crag": "The Tennessee Wall",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105851828/the-tennessee-wall",
+  "quote": "features hundreds of great routes on beautiful hard sandstone"
+ },
+ {
+  "pid": "ga_palisades_the",
+  "crag": "Palisades, The",
+  "groups": [
+   {
+    "held": "amphibolite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "schist (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://ngmdb.usgs.gov/Geolex/UnitRefs/ChattahoocheePalisadesRefs_999.html",
+  "quote": "quartzite... Named for the Palisades of the Chattahoochee River... where it forms cliff outcrops"
+ },
+ {
+  "pid": "qc_mont_rigaud",
+  "crag": "Mont Rigaud",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {
+   "Elephant Cave": "granite",
+   "Hidden Wall": "granite",
+   "Fairyland": "granite",
+   "Upper Tier": "granite",
+   "Bob's Wall": "granite",
+   "Main Wall": "granite",
+   "Gully Walls": "granite",
+   "STD Wall": "granite"
+  },
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/106884635/mont-rigaud",
+  "quote": "high quality pink granite cliff"
+ },
+ {
+  "pid": "wa_lower_lump_area",
+  "crag": "Lower Lump Area",
+  "groups": [
+   {
+    "held": "granodiorite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105790635/index",
+  "quote": "Just one hour east of Seattle sits the state's best steep granite."
+ }
+]

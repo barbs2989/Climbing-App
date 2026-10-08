@@ -1,0 +1,371 @@
+[
+ {
+  "pid": "co_dry_creek_crag",
+  "crag": "Dry Creek Crag",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/112787268/dry-creek-crag",
+  "quote": "a short, sandstone cliff ~30-50 feet tall"
+ },
+ {
+  "pid": "co_lower_dream_canyon",
+  "crag": "Lower Dream Canyon",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105810533/lower-dream-canyon?print=1",
+  "quote": "Lower Dream Canyon page names no rock; granite only in search snippets for Boulder Canyon / Upper Dream Canyon"
+ },
+ {
+  "pid": "nm_pond_the",
+  "crag": "Pond, The",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "dacite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106278931/the-pond",
+  "quote": "The Pond page names no rock; 'volcanic' only in search snippets (climbingaway 503, rockclimbing.com refused)"
+ },
+ {
+  "pid": "or_willamette_valley",
+  "crag": "Willamette Valley",
+  "groups": [
+   {
+    "held": "dacite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "tuff (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "basalt (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "diorite (mapped)",
+    "verdict": "wrong",
+    "correct": "sandstone"
+   },
+   {
+    "held": "andesite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "volcanic rock (mapped)",
+    "verdict": "wrong",
+    "correct": "basalt"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Brice Creek Falls": "basalt",
+   "Santiam Pinnacle": "andesite"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105824042",
+  "quote": "The rock at Harlan Quarry is sandstone altered by the intrusion of a basalt dike. | Skinner Butte: The basalt columns are all trad and TR lines | Brice Creek Falls: Several basaltic bouldering problems | Santiam Pinnacle (mazamas.org): an andesite pinnacle of pretty good rock | Larison Rock: probably ryodacitic (hedged)"
+ },
+ {
+  "pid": "pa_rim_road_climbing_area",
+  "crag": "Rim Road Climbing Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/106055887",
+  "quote": "Rim Road page names no rock; 'western Pennsylvania sandstone' only in a search snippet (publiclands 403)"
+ },
+ {
+  "pid": "tn_south_clear_creek",
+  "crag": "South Clear Creek",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://rockaroundtheworld.co.uk/2015/10/22/the-obed-wild-and-scenic-national-river/",
+  "quote": "Sandstone crags along the Obed and Clear Creek Rivers ... South Clear Creek is a 25 min walk"
+ },
+ {
+  "pid": "ut_schoolroom_the",
+  "crag": "Schoolroom, The",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Alcove / BNF Area": "NW"
+  },
+  "url": "https://www.mountainproject.com/area/105804409/the-schoolroom",
+  "quote": "long two (or more in spots) tiered quartzite cliff band"
+ },
+ {
+  "pid": "wv_sunset_wall_area",
+  "crag": "Sunset Wall Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/jimi-cliff/112825798",
+  "quote": "Sunset Wall and Big Blocks pages name no rock; sandstone only in rockclimbing.com snippet (unreachable) and Coopers parent"
+ },
+ {
+  "pid": "az_mormon_trail_closures_in_effect",
+  "crag": "Mormon Trail (Closures in Effect)",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/111442588/mormon-trail-closures-in-effect",
+  "quote": "MP page names no rock (only 'choss'); granite only in park-wide tourism snippets"
+ },
+ {
+  "pid": "ca_catacombs",
+  "crag": "Catacombs",
+  "groups": [
+   {
+    "held": "rhyolite (mapped)",
+    "verdict": "wrong",
+    "correct": "tuff"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/106064857/catacombs",
+  "quote": "The rock is good pocketed tuff, and almost all the landings are on perfect flat pumice."
+ },
+ {
+  "pid": "co_420s",
+  "crag": "420s",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105745936/420s",
+  "quote": "420s page names no rock; only canyon-wide 'granite and gneiss' (madboulder snippet)"
+ },
+ {
+  "pid": "co_palisade_mountain",
+  "crag": "Palisade Mountain",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105746737/palisade-mountain",
+  "quote": "Palisade page names no rock; Skull Rock: 'granite like everything else in the Big Thompson Canyon' (canyon-wide)"
+ },
+ {
+  "pid": "id_all_american_area",
+  "crag": "All American Area",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/111401524/all-american-area",
+  "quote": "All American pages name no rock; parent Massacre Rocks: 'high quality black, brown, and tan basalt'"
+ },
+ {
+  "pid": "id_east_sector",
+  "crag": "East Sector",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/112563713/three-spires",
+  "quote": "East Sector/Three Spires pages name no rock; granite only on parent Castle Rocks (snippet)"
+ },
+ {
+  "pid": "nh_echo_crag",
+  "crag": "Echo Crag",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105947922/echo-crag",
+  "quote": "Echo Crag and The Shield pages name no rock type"
+ },
+ {
+  "pid": "sc_pumpkintown",
+  "crag": "Pumpkintown",
+  "groups": [
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://carolinaclimbers.org/climbing-areas/pumpkintown-sc.html",
+  "quote": "The cliff hosts some of the most impeccable granite in the US (same site calls Table Rock 'granitoid gneiss')"
+ },
+ {
+  "pid": "ut_sentinel_area",
+  "crag": "Sentinel Area",
+  "groups": [
+   {
+    "held": "conglomerate (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/v/110207028",
+  "quote": "Only parent Moe's Valley: 'The sandstone here is easily damaged when wet.'"
+ },
+ {
+  "pid": "va_towers_lodges",
+  "crag": "Towers/Lodges",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/112460094/towerslodges?print=1",
+  "quote": "Towers/Lodges page names no rock; sandstone only on parent Breaks Interstate Park (snippet)"
+ },
+ {
+  "pid": "az_cochise_trail_boulders",
+  "crag": "Cochise Trail Boulders",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "ok",
+    "correct": null
+   },
+   {
+    "held": "metasedimentary rock (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://arizonahighways.com/cochise-trail",
+  "quote": "a field of granite boulders, some of which are as big as a Dutch Bros. Coffee drive-through"
+ },
+ {
+  "pid": "az_midgley_bridge_area",
+  "crag": "Midgley Bridge Area",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear",
+    "correct": null
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "ok",
+    "correct": null
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105808423/midgley-bridge-area",
+  "quote": "This area is located just northwest of Midgley Bridge, up on a prominent step of sandstone."
+ }
+]
