@@ -97,6 +97,12 @@ export default function LoginScreen({ onClose, onAuthed, recovery, onRecovered, 
       ? await signIn(email.trim(), password, token)
       : await signUp(email.trim(), password, name.trim(), POLICY_VERSION, token);
     setBusy(false); if (needsCaptcha) spendCaptcha();
+    // A BANNED account (0264) is refused by GoTrue itself with "User is banned". Say what that means
+    // in the app's own words; the reason they were banned was shown in-app before the ban took effect.
+    if (error && (error.code === "user_banned" || /user is banned/i.test(error.message || ""))) {
+      setErr("This account has been banned by ClimbMatch Safety for breaking the Community Guidelines, so it can’t sign in.");
+      return;
+    }
     if (error) { setErr(error.message); return; }
     // Signing up with an address that already has an account is NOT an error:
     // to avoid leaking which emails are registered, Supabase returns a decoy user

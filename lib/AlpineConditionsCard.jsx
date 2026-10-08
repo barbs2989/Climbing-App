@@ -12,6 +12,7 @@ import { planTimes } from "./planTimes.js";
 import { isMultiDayOuting } from "./outing.js";
 import { fetchAvyMap, zoneFor, fetchAvyProduct, avyReading, DANGER_NAME } from "./avalanche.js";
 import { fetchSnotelStations, nearestStation, fetchSnotelDepth, snowReading } from "./snotel.js";
+import ShadeMap from "./ShadeMap.jsx";
 
 const _alpWx = {}, _alpSp = {};
 const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
@@ -141,7 +142,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       let r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs });
       const ms = sp ? modelSpread(sp, d.date) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
-      out.push(Object.assign({ date: d.date, sum: daySummary(fc, d) }, r));
+      out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset }, r));
     });
     return { fc, days: out.slice(0, 7) };
   }, [wx, sp, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp]);
@@ -188,7 +189,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
 
   const s = day.sum;
   const readout = [["High / low", s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—"], ["Freezing level", s.flLo != null ? uElev(Math.round(s.flLo / 100) * 100) + "–" + uElev(Math.round(s.flHi / 100) * 100) : "—"], ["Gusts", s.gust != null ? uWind(s.gust) : "—"], ["New snow", uSnowfall(s.snow)]];
-  return <div style={box}>
+  return <div><div style={box}>
     {head}
     <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4, marginBottom: 10 }}>{days.map(function (d, i) {
       const on = i === Math.min(dayI, days.length - 1), w = nWarn(d), c = nCaution(d);
@@ -207,6 +208,54 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
+  </div>
+  <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
+  </div>;
+}
+
+/* SUN AND SHADE — when the sun reaches the route's own pins, from the terrain (lib/terrainShade.js).
+   Research, 2026-10-08: rockfall, icefall and wet slides start when the sun reaches the slopes ABOVE
+   a party, so the advice everywhere is to work back from sun arrival (Torreys Peak couloir accident,
+   AAC; Mont Blanc's Goûter couloir monitoring, where the safe hour is specific to each couloir;
+   Portland Mountain Rescue; a Devil's Kitchen report where rime let go as the sun hit the walls).
+   Wet loose snow follows the sun round the aspects — east first, west in the warm afternoon — and
+   centres put the slope that lets go at about 35° (STEEP_DEG). What the sun does differs by kind,
+   so each gets its own line; every one is a rule of thumb. Not scored, and it moves no start time:
+   the start stays the Planner's, counted back from the snow and the storms. */
+const SUN_NOTE = {
+  glacier: "Rock, ice and wet snow start to move once the sun reaches the slopes above you, not just where you stand — be past steep sunlit ground before the sun gets to it.",
+  alpineice: "Ice and rock let go once the sun reaches the face and the slopes above it — be off the line before the sun gets there.",
+  waterfall: "Sun on the ice, or on snow above it, loosens both — even while you climb in shade.",
+  cragmixed: "Sun strips rime and softens turf; mixed ground in shade keeps its ice longer.",
+  scramble: "Sun dries wet rock and melts thin ice; rock in shade stays wet or icy longer.",
+  alpinerock: "On a cold day a face in sun is warmer to climb; one in shade stays cold, and keeps any verglas.",
+};
+const SUN_PINS = [["Summit", "Summit"], ["Topout", "Top"], ["Base", "Base"], ["Campsite", "High camp"]];
+export function sunPins(route) {
+  const wps = (route.waypoints || []).filter(wpPlaced), out = [];
+  SUN_PINS.forEach(function (sp) {
+    let ws = wps.filter(function (w) { return wpIs(w, sp[0]); });
+    if (!ws.length) return;
+    // The highest camp is the one a summit day leaves from.
+    if (sp[0] === "Campsite") ws = ws.slice().sort(function (a, b) { return (+b.elev || 0) - (+a.elev || 0); });
+    if (sp[0] === "Topout" && out.some(function (p) { return p.key === "Summit"; })) return;
+    // A summit is read at the terrain's own high point beside the pin (lib/terrainShade.js highestNear).
+    out.push({ key: sp[0], label: sp[1], lat: +ws[0].lat, lng: +ws[0].lng, top: sp[0] === "Summit" });
+  });
+  return out;
+}
+function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday }) {
+  const pins = useMemo(function () { return sunPins(route); }, [route]);
+  if (!pt || !day || day.sunrise == null || day.sunset == null) return null;
+  // The terrain is centred on the CLIMB: its base, else its top, else the forecast point.
+  const ctr = pins.find(function (p) { return p.key === "Base"; }) || pins.find(function (p) { return p.key === "Summit" || p.key === "Topout"; }) || pt;
+  const rise = day.sunrise * 1000, set = day.sunset * 1000, now = Date.now();
+  const at0 = isToday && now >= rise && now <= set ? now : Math.min(set, rise + 3 * 3600e3);
+  const steep = kind === "glacier" || kind === "alpineice" || kind === "waterfall" || kind === "cragmixed" || hasSnowLegs(kind, terrain);
+  return <div style={BOX}>
+    <CardHead style={{ marginBottom: 6 }}>SUN AND SHADE</CardHead>
+    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 8 }}>{SUN_NOTE[kind] + " A rule of thumb."}</div>
+    <ShadeMap lat={ctr.lat} lng={ctr.lng} pins={pins.length ? pins : null} steep={steep} place={pins.length ? "climb" : "area"} rise={rise} set={set} at0={at0} dayKey={day.date} clock={function (u) { return clockOf(fc, Math.round(u / 1000)); }} C={C} />
   </div>;
 }
 
