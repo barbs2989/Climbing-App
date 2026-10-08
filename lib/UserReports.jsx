@@ -9,22 +9,36 @@
 // same reason: 0158's SELECT policy already returns nothing to a non-admin, so the gate stops a
 // non-admin being shown an empty queue rather than being the boundary itself.
 //
-// DELIBERATELY PLAINER THAN THE PHOTO QUEUE. There is no thumbnail to show and no "take it down"
-// equivalent, because what to DO about a reported climber — warn, suspend, block, nothing — is a
-// policy question nobody has answered. Pretending otherwise by adding a Suspend button would put
-// a control here that no code behind it implements. What this screen can honestly offer is the
-// three states the schema already models, so a reviewer can record that they looked.
+// A REPORT ABOUT CONTENT CAN BE ACTED ON (0260). Since report_content(), a report about a message,
+// post, comment, trip report, group, topo or list carries a SERVER-SIDE copy of what was reported
+// (`snapshot`), and "Remove it" takes the content down for everyone but its author through
+// moderate_content() -- audited, and closing every open report about the same item at once.
+// A report about a PERSON (no target) still has only the three states the schema models: what to
+// do about an account -- suspend, ban -- does not exist yet, and a button for it would put a
+// control here that no code behind it implements.
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useUserReports, reviewUserReport, useMyFiledReports } from "./db";
+import { useUserReports, reviewUserReport, useMyFiledReports, moderateContent } from "./db";
 import { C } from "../ClimbMatchCore";
 import { clickable } from "./clickable";
+import { askConfirm } from "./ConfirmSheet.jsx";
 
 const AGES = (iso) => {
   if (!iso) return "";
   const d = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
   return d <= 0 ? "today" : d === 1 ? "yesterday" : d + " days ago";
+};
+// How long a report has WAITED, in the unit the 24-hour target is stated in.
+const WAITED = (iso) => {
+  if (!iso) return { text: "", late: false };
+  const h = (Date.now() - new Date(iso).getTime()) / 3600000;
+  const text = h < 1 ? "waiting under an hour" : h < 48 ? "waiting " + Math.floor(h) + " h" : "waiting " + Math.floor(h / 24) + " days";
+  return { text, late: h >= 20 };
+};
+export const REPORT_KIND_LABEL = {
+  message: "Direct message", crew_message: "Crew chat message", group_post: "Group post", group_event: "Group event",
+  comment: "Comment", trip_report: "Trip report", group: "Group", topo: "Topo", list: "List", profile: "Profile",
 };
 
 // What the person who FILED a report can see of it.
@@ -87,15 +101,33 @@ export function UserReportQueue({ notify, onViewProfile }) {
       .catch((e) => notify && notify("That didn't work — " + ((e && e.message) || "try again")))
       .finally(() => setBusy(null));
   };
+  // Take the reported content down, or keep it up. Both close EVERY open report about the item.
+  const act = (r, action) => {
+    const isProfile = r.target_kind === "profile";
+    const ask = action === "remove"
+      ? askConfirm({ title: isProfile ? "Clear this profile’s bio and photos?" : "Remove this " + (REPORT_KIND_LABEL[r.target_kind] || "content").toLowerCase() + "?",
+          body: isProfile ? "Their bio, avatar and photos are cleared. This can’t be undone from here." : "It disappears for everyone except its author, who sees that ClimbMatch Safety removed it. You can restore it later.",
+          confirmLabel: isProfile ? "Clear profile" : "Remove it" })
+      : Promise.resolve(true);
+    ask.then((ok) => {
+      if (!ok) return;
+      setBusy(r.id);
+      moderateContent(r.target_kind, r.target_id, action === "remove" ? "remove" : "restore", r.id)
+        .then(() => { refresh(); notify && notify(action === "remove" ? "Removed — every report about it is closed." : "Kept up — every report about it is dismissed."); })
+        .catch((e) => notify && notify("That didn't work — " + ((e && e.message) || "try again")))
+        .finally(() => setBusy(null));
+    });
+  };
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
       {data.map((r) => (
         <div key={r.id} style={{ background: C.card, border: "1px solid " + (r.status === "reviewing" ? C.amber + "55" : C.border), borderRadius: 12, padding: "11px 12px" }}>
           <div style={{ display: "flex", alignItems: "baseline", gap: 8, flexWrap: "wrap" }}>
+            {r.target_kind ? <span style={{ fontSize: 10.5, fontWeight: 800, color: C.blue, background: C.blueBg, borderRadius: 7, padding: "2px 6px" }}>{(REPORT_KIND_LABEL[r.target_kind] || r.target_kind).toUpperCase()}</span> : null}
             <span style={{ fontSize: 13.5, fontWeight: 700, color: C.text }}>{r.reason || "No reason given"}</span>
             {r.status === "reviewing" ? <span style={{ fontSize: 10.5, fontWeight: 700, color: C.amber, background: C.amberBg, borderRadius: 7, padding: "2px 6px" }}>BEING REVIEWED</span> : null}
-            <span style={{ fontSize: 11.5, color: C.textMuted, marginLeft: "auto" }}>{AGES(r.created_at)}</span>
+            {(() => { const w = WAITED(r.created_at); return <span title="Target: acted on within 24 hours" style={{ fontSize: 11.5, color: w.late ? C.red : C.textMuted, fontWeight: w.late ? 700 : 400, marginLeft: "auto" }}>{w.text}</span>; })()}
           </div>
           {/* Both sides named. A reviewer cannot judge an accusation without knowing who it is
               about, and `reported_name` is stored at report time so it survives a rename. */}
@@ -106,8 +138,28 @@ export function UserReportQueue({ notify, onViewProfile }) {
               : <span style={{ fontWeight: 700 }}>{r.reported_name || "a climber"}</span>}
             {" · filed by " + (r.reporter_label || (r.reporter ? "a signed-in climber" : "someone signed out"))}
           </div>
-          {r.detail ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 6, lineHeight: 1.45, whiteSpace: "pre-wrap" }}>{r.detail}</div> : null}
-          <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
+          {/* WHAT WAS REPORTED, as the server copied it at report time -- the reporter cannot write this. */}
+          {r.target_kind && (r.snapshot || (Array.isArray(r.snapshot_media) && r.snapshot_media.length)) ? <div style={{ marginTop: 7, background: C.surface, border: "1px solid " + C.borderLight, borderLeft: "3px solid " + C.red, borderRadius: 9, padding: "8px 10px" }}>
+            <div style={{ fontSize: 10.5, fontWeight: 800, color: C.textMuted, letterSpacing: 0.4, marginBottom: 3 }}>WHAT WAS REPORTED</div>
+            {r.snapshot ? <div style={{ fontSize: 13, color: C.text, lineHeight: 1.45, whiteSpace: "pre-wrap", maxHeight: 180, overflowY: "auto", overscrollBehavior: "contain" }}>{r.snapshot}</div> : null}
+            {Array.isArray(r.snapshot_media) && r.snapshot_media.length ? <div style={{ display: "flex", gap: 6, flexWrap: "wrap", marginTop: 6 }}>{r.snapshot_media.filter((u) => typeof u === "string" && u).slice(0, 8).map((u, i) => <a key={i} href={u} target="_blank" rel="noopener noreferrer"><img src={u} alt={"Reported image " + (i + 1)} loading="lazy" style={{ width: 64, height: 64, objectFit: "cover", borderRadius: 7, border: "1px solid " + C.border }} /></a>)}</div> : null}
+          </div> : null}
+          {r.detail ? <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 6, lineHeight: 1.45, whiteSpace: "pre-wrap" }}>{(r.target_kind ? "Reporter’s note: " : "") + r.detail}</div> : null}
+          {r.target_kind ? <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
+            <button disabled={busy === r.id} onClick={() => act(r, "remove")}
+              style={{ padding: "7px 11px", borderRadius: 9, border: "none", background: C.redSolid, color: "#fff", fontSize: 12.5, fontWeight: 700, cursor: busy === r.id ? "default" : "pointer" }}>
+              {busy === r.id ? "Working…" : r.target_kind === "profile" ? "Clear bio & photos" : "Remove it"}
+            </button>
+            {r.target_kind !== "profile" ? <button disabled={busy === r.id} onClick={() => act(r, "keep")}
+              style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.green + "55", background: C.greenBg, color: C.green, fontSize: 12.5, fontWeight: 700, cursor: busy === r.id ? "default" : "pointer" }}>
+              Keep it up
+            </button> : null}
+            {r.status !== "reviewing" ? <button disabled={busy === r.id} onClick={() => set(r, "reviewing")}
+              style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.amber + "55", background: C.amberBg, color: C.amber, fontSize: 12.5, fontWeight: 700, cursor: busy === r.id ? "default" : "pointer" }}>
+              I'm looking at this
+            </button> : null}
+          </div> : null}
+          {r.target_kind ? null : <div style={{ display: "flex", gap: 7, marginTop: 9, flexWrap: "wrap" }}>
             {r.status !== "reviewing"
               ? <button disabled={busy === r.id} onClick={() => set(r, "reviewing")}
                   style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.amber + "55", background: C.amberBg, color: C.amber, fontSize: 12.5, fontWeight: 700, cursor: busy === r.id ? "default" : "pointer" }}>
@@ -122,7 +174,7 @@ export function UserReportQueue({ notify, onViewProfile }) {
               style={{ padding: "7px 11px", borderRadius: 9, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12.5, fontWeight: 600, cursor: busy === r.id ? "default" : "pointer" }}>
               Dismiss
             </button>
-          </div>
+          </div>}
         </div>
       ))}
     </div>

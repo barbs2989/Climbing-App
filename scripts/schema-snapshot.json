@@ -114,6 +114,7 @@
       "gpx_track",
       "id",
       "itinerary",
+      "moderation",
       "mud",
       "notes",
       "outcome_note",
@@ -156,6 +157,7 @@
       "edited",
       "id",
       "likes",
+      "moderation",
       "parent_id",
       "target_id",
       "text",
@@ -258,6 +260,7 @@
       "crew_id",
       "id",
       "image_url",
+      "moderation",
       "updated_at",
       "user_id"
     ],
@@ -334,6 +337,7 @@
       "host",
       "id",
       "location",
+      "moderation",
       "repeat",
       "series_id",
       "title"
@@ -364,6 +368,7 @@
       "edited",
       "group_id",
       "id",
+      "moderation",
       "photo_alts",
       "photos",
       "pinned",
@@ -379,6 +384,7 @@
       "id",
       "join_questions",
       "location",
+      "moderation",
       "name",
       "policy",
       "visibility"
@@ -478,9 +484,21 @@
       "created_at",
       "id",
       "image_url",
+      "moderation",
       "read",
       "recipient_id",
       "sender_id"
+    ],
+    "moderation_actions": [
+      "action",
+      "actor",
+      "created_at",
+      "id",
+      "note",
+      "report_id",
+      "target_id",
+      "target_kind",
+      "target_owner"
     ],
     "objectives": [
       "created_at",
@@ -713,6 +731,7 @@
       "created_by",
       "id",
       "license",
+      "moderation",
       "photographer",
       "storage_path"
     ],
@@ -732,6 +751,7 @@
       "description",
       "icon",
       "id",
+      "moderation",
       "name",
       "route_ids",
       "shared",
@@ -748,7 +768,12 @@
       "reporter_label",
       "reviewed_at",
       "reviewed_by",
-      "status"
+      "snapshot",
+      "snapshot_at",
+      "snapshot_media",
+      "status",
+      "target_id",
+      "target_kind"
     ],
     "verification_records": [
       "created_at",
