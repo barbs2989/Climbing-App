@@ -6,7 +6,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread } from "./forecast.js";
-import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
+import { condKind, hasSnowLegs, localDays, localHour, windChillF, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
+import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass } from "./HourTiles.jsx";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
 import { isMultiDayOuting } from "./outing.js";
@@ -61,7 +62,7 @@ export function flagText(f) {
     case "wet-rock": return uPrecip(v.inch) + " of rain in the last two days — wet rock climbs harder than its grade";
     case "showers": return v.pct + "% chance of rain — retreating or rappelling wet is where things go wrong";
     case "new-snow": return uSnowfall(v.inch) + " of new snow at the summit" + (v.scramble ? " — a snowed-up scramble is a winter climb" : "");
-    case "wind": return "Summit gusts to " + uWind(v.gust);
+    case "wind": return "Summit gusts to " + uWind(v.gust) + " in daylight";
     case "models-disagree": return "Forecast models disagree on this day (" + [v.over.indexOf("gust") >= 0 ? "gusts " + uWind(v.gust[0]) + "–" + uWind(v.gust[1]) : null, v.over.indexOf("high") >= 0 ? "highs " + uTemp(v.high[0]) + "–" + uTemp(v.high[1]) : null, v.over.indexOf("fl") >= 0 ? "freezing level " + uElev(Math.round(v.fl[0] / 100) * 100) + "–" + uElev(Math.round(v.fl[1] / 100) * 100) : null].filter(Boolean).join(", ") + ") — read its flags as low confidence";
     case "wind-chill": return "Wind chill " + uTemp(v.chill) + " — frostbite on exposed skin in about 30 minutes";
     default: return f.key;
@@ -242,7 +243,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
   }
 
   const s = day.sum;
-  const readout = [["High / low", s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—"], ["Freezing level", s.flLo != null ? uElev(Math.round(s.flLo / 100) * 100) + "–" + uElev(Math.round(s.flHi / 100) * 100) : "—"], ["Gusts", s.gust != null ? uWind(s.gust) : "—"], ["New snow", uSnowfall(s.snow)]];
+  const readout = [["High / low", s.hi != null ? uTemp(s.hi) + " / " + uTemp(s.lo) : "—"], ["Freezing level", s.flLo != null ? uElev(Math.round(s.flLo / 100) * 100) + "–" + uElev(Math.round(s.flHi / 100) * 100) : "—"], ["Gusts, any hour", s.gust != null ? uWind(s.gust) : "—", s.gust != null && s.gustDay != null ? "daylight hours: " + uWind(s.gustDay) : null], ["New snow", uSnowfall(s.snow)]];
   return <div><div style={box}>
     {head}
     <div role="group" aria-label="Day" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 4, marginBottom: 10 }}>{days.map(function (d, i) {
@@ -258,12 +259,85 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
     </div>
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div></div>; })}</div>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
   </div>
+  <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
   <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
+  </div>;
+}
+
+/* HOUR BY HOUR for the selected day, at the forecast's own point and height (owner, 2026-10-08: "more of an
+   hour by hour breakdown" for alpine, mountaineering and scrambling). It adds NO judgement: every marker
+   is a time lib/alpineConditions.js already computed for the day (sunrise, the start, the hour the snow
+   softens, the first thunderstorm hour, sunset), and every colour is one of LIMITS' own cuts.
+   WHAT EACH BOX MEANS (Open-Meteo docs, verified 2026-10-08): temperature, wind, cloud and the freezing
+   level are the reading AT the hour; rain, snow, the chance of precipitation and the 10 m GUST are the
+   sum / probability / maximum of the hour BEFORE it. Each box names its own period.
+   WHAT IT CANNOT SAY: mountain models run low in strong wind (HRRR over Wyoming and Colorado: large
+   negative bias at the strongest speeds), so a quiet hour is not a promise; NWS wind chill assumes wind at
+   5 ft and no sun, and is fed the 10 m wind (colder, the safe way); NWS publishes no CAPE cut for
+   thunderstorms, so "possible" is the strongest word a CAPE hour gets and nothing here says "safe". */
+function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
+  const h = fc.hourly;
+  const found = localDays(fc).find(function (d) { return d.date === day.date; });
+  const endT = day.sunset != null ? day.sunset + 3600 : null;
+  const idx = (found ? found.hours : []).filter(function (i) { return localHour(fc, i) >= 3 && (endT == null ? localHour(fc, i) <= 21 : h.time[i] <= endT); });
+  const [sel, setSel] = useState(null);
+  if (!idx.length) return null;
+  const kt = [];
+  if (day.sunrise != null) kt.push({ at: day.sunrise, label: "Sunrise", tone: C.yellow });
+  if (day.start && !(legs && legs.floor)) {
+    const st = floorQ(day.start.at), sd = new Date(st * 1000 + (fc.utc_offset_seconds || 0) * 1000).toISOString().slice(0, 10);
+    kt.push({ at: st, label: (legs.fromCamp ? "Leave camp by" : "Start by"), after: sd !== day.date ? " (the night before)" : "", tone: C.green });
+  }
+  if (snowLegs && day.softAt != null && !day.noFreeze) kt.push({ at: day.softAt, label: (floor ? "Snow at " + uElev(floor.ft) : "Snow") + " starts to soften", tone: C.amber });
+  if (day.thunder) kt.push({ at: day.thunder.at, label: day.thunder.likely ? "Thunderstorms in the forecast from" : "Thunderstorms possible from", tone: C.red });
+  if (day.sunset != null) kt.push({ at: day.sunset, label: "Sunset", tone: C.yellow });
+  kt.sort(function (a, b) { return a.at - b.at; });
+  const marksIn = function (T) { return kt.filter(function (k) { return k.at >= T && k.at < T + 3600; }); };
+  const startI = day.start && !(legs && legs.floor) ? idx.find(function (i) { const st = floorQ(day.start.at); return st >= h.time[i] && st < h.time[i] + 3600; }) : null;
+  const firstDay = idx.find(function (i) { return !h.is_day || h.is_day[i] === 1; });
+  const cur = sel != null && idx.indexOf(sel) >= 0 ? sel : (startI != null ? startI : (firstDay != null ? firstDay : idx[0]));
+  const v = function (k, i) { return h[k] && typeof h[k][i] === "number" && isFinite(h[k][i]) ? h[k][i] : null; };
+  const sev = function (i) {
+    const g = v("wind_gusts_10m", i), code = v("weather_code", i);
+    if ((g != null && g >= LIMITS.gustWarn) || (code != null && code >= 95)) return C.red;
+    if ((g != null && g >= LIMITS.gustCaution) || (day.thunder && h.time[i] >= day.thunder.at && h.time[i] < day.thunder.at + 3600)) return C.amber;
+    return null;
+  };
+  const T = h.time[cur], hr = localHour(fc, cur), t = v("temperature_2m", cur), w = v("wind_speed_10m", cur), g = v("wind_gusts_10m", cur), dir = v("wind_direction_10m", cur);
+  const pop = v("precipitation_probability", cur), pr = v("precipitation", cur), sn = v("snowfall", cur), fl = v("freezing_level_height", cur), cl = v("cloud_cover", cur), code = v("weather_code", cur);
+  const wc = t != null && w != null ? windChillF(t, w) : null, chilled = wc != null && t != null && t - wc >= 5;
+  const tops = pt.elevFt;
+  const marks = marksIn(T);
+  return <div style={BOX}>
+    <CardHead style={{ marginBottom: 8 }}>{"HOUR BY HOUR · " + dayLabel.toUpperCase()}</CardHead>
+    <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{"Key times for this day, then each hour at " + (tops != null ? uElev(tops) : "the forecast point") + ". Tap an hour."}</div>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>{kt.map(function (k, j) { return <span key={j} style={{ fontSize: 12, fontWeight: 700, color: C.text, background: C.surface, border: "1px solid " + k.tone + "99", borderRadius: 20, padding: "4px 10px", lineHeight: 1.3 }}>{k.label + " " + clockOf(fc, k.at) + (k.after || "")}</span>; })}</div>
+    <div role="group" aria-label="Pick an hour" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 6, marginBottom: 8 }}>{idx.map(function (i) {
+      const on = i === cur, sv = sev(i), mk = marksIn(h.time[i]).length;
+      return <button key={h.time[i]} onClick={function () { setSel(i); }} aria-pressed={on} aria-label={clockHr(localHour(fc, i)) + (sv === C.red ? ", strong wind or thunderstorm in the forecast" : sv ? ", caution" : "") + (mk ? ", a key time falls in this hour" : "")} style={{ flex: "0 0 auto", minWidth: 58, padding: "8px 8px 6px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: on ? C.blue : C.textSub, fontSize: 12, fontWeight: on ? 800 : 600, cursor: "pointer" }}>
+        {clockHr(localHour(fc, i))}
+        <span style={{ display: "block", height: 8, lineHeight: "8px", marginTop: 2 }}>{sv ? <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: sv, margin: "0 1.5px" }} /> : null}{mk ? <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: 2, background: C.blue, margin: "0 1.5px" }} /> : null}</span>
+      </button>;
+    })}</div>
+    <div aria-live="polite">
+      <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{dayLabel + " · " + clockHr(hr)}{cl != null ? <span style={{ fontSize: 12, fontWeight: 600, color: C.textMuted }}>{"  ·  cloud " + Math.round(cl) + "%"}</span> : null}</div>
+      {marks.length ? <div style={{ fontSize: 12, color: C.text, marginTop: 3 }}>{marks.map(function (k) { return k.label + " " + clockOf(fc, k.at) + (k.after || ""); }).join(" · ")}</div> : null}
+      {code != null && code >= 95 ? <div style={{ fontSize: 12.5, fontWeight: 700, color: C.red, marginTop: 3 }}>Thunderstorms in the forecast this hour</div> : null}
+      <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, margin: "3px 0 8px" }}>{"Temperature, wind and the freezing level are the reading at " + clockHr(hr) + ". Gusts, rain, snow and chance of precipitation cover the hour before it, " + spanEnding(hr) + "."}</div>
+      <TileGrid>
+        <Tile label="Temperature" when={"at " + clockHr(hr)} value={t != null ? uTemp(t) : NOT_MEASURED} sub={chilled ? "Wind chill " + uTemp(wc) : null} tone={wc != null && wc <= LIMITS.windChillWarn ? C.red : null} />
+        <Tile label="Wind" when={"at " + clockHr(hr)} value={w != null ? uWind(w) : NOT_MEASURED} sub={dir != null ? "from the " + compass(dir) : null} />
+        <Tile label="Gusts" when={spanEnding(hr)} value={g != null ? uWind(g) : NOT_MEASURED} tone={g != null && g >= LIMITS.gustWarn ? C.red : g != null && g >= LIMITS.gustCaution ? C.amber : null} sub={g == null ? null : g >= LIMITS.gustWarn ? "past the " + uWind(LIMITS.gustWarn) + " warning line" : g >= LIMITS.gustCaution ? "past the " + uWind(LIMITS.gustCaution) + " caution line" : "strongest moment in that hour"} />
+        <Tile label={sn != null && sn > 0 ? "Snow" : "Rain"} when={spanEnding(hr)} value={sn != null && sn > 0 ? uSnowfall(sn) : pr == null ? NOT_MEASURED : pr === 0 ? "None" : uPrecip(pr)} tone={(sn > 0 || pr > 0) ? C.blue : null} sub={pop != null ? pop + "% chance of precipitation" : null} />
+        <Tile label="Freezing level" when={"at " + clockHr(hr)} value={fl != null ? uElev(Math.round(fl / 100) * 100) : NOT_MEASURED} sub={fl == null || tops == null ? null : "Air at " + uElev(tops) + " is " + (fl > tops ? "above" : "below") + " 0 °C" + (snowLegs && floor ? "; at the lowest snow you cross (" + uElev(floor.ft) + ") it is " + (fl > floor.ft ? "above" : "below") + " 0 °C" : "")} wide />
+      </TileGrid>
+    </div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by 10–18 °F. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
   </div>;
 }
 

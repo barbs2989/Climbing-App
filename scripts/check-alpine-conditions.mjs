@@ -426,7 +426,32 @@ console.log("\n11. WHOLE-DAY ROWS — one published total counts back where the 
   eq("...and does not print a way-up time the route never published ('(8 h up)')", /\(legs\.wholeDay \? "" : " \(" \+ hrs\(legs\.up\) \+ " up\)"\)/.test(card), true);
 }
 
-const FLOOR = 168;
+/* ── 12. HOUR BY HOUR: every box names its OWN period, and the day's gust is one number everywhere ──
+   Open-Meteo stamps hour T and means the reading AT T for temperature, wind and the freezing level, but
+   the sum/probability/maximum of the hour BEFORE T for rain, snow, chance of precipitation and gusts
+   (open-meteo.com/en/docs, 2026-10-08). One shared label would be wrong for half the boxes beside it.
+   And the top "Gusts" tile counted DAYLIGHT hours while the summit forecast below it counted all 24
+   (Rainier, live, 2026-10-08: 4 vs 13 mph and 17.7 vs 25.1 on two of seven days), so the owner saw two
+   numbers for one thing. */
+console.log("\n12. HOUR BY HOUR — each box names its own period; the day's gust is stated once, with its window");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const tiles = fs.readFileSync(path.join(ROOT, "lib", "HourTiles.jsx"), "utf8");
+  const day = { hours: [0, 1, 2] }, fc = { utc_offset_seconds: 0, hourly: { time: [0, 3600, 7200], temperature_2m: [30, 40, 50], freezing_level_height: [9000, 9000, 9000], wind_gusts_10m: [10, 50, 20], is_day: [1, 0, 1], snowfall: [0, 0, 0], precipitation: [0, 0, 0] } };
+  const sm = A.daySummary(fc, day);
+  eq("the day's gust counts EVERY hour of the day (the summit forecast's own window): 50, the night hour included", sm.gust, 50);
+  eq("...and the daylight maximum is kept beside it, so the card can state both: 20", sm.gustDay, 20);
+  eq("the top tile says which window it is and prints the daylight figure under it", /\["Gusts, any hour", s\.gust != null \? uWind\(s\.gust\) : "—", s\.gust != null && s\.gustDay != null \? "daylight hours: " \+ uWind\(s\.gustDay\) : null\]/.test(card), true);
+  eq("the wind FLAG says it is a daylight reading, because that is the window the flag is judged on", /case "wind": return "Summit gusts to " \+ uWind\(v\.gust\) \+ " in daylight";/.test(card), true);
+  eq("the hour boxes for gusts and rain/snow carry the hour BEFORE the stamp (spanEnding)", /label="Gusts" when=\{spanEnding\(hr\)\}/.test(card) && /when=\{spanEnding\(hr\)\} value=\{sn != null && sn > 0/.test(card), true);
+  eq("...and temperature, wind and the freezing level carry the reading AT the stamp", /label="Temperature" when=\{"at " \+ clockHr\(hr\)\}/.test(card) && /label="Wind" when=\{"at " \+ clockHr\(hr\)\}/.test(card) && /label="Freezing level" when=\{"at " \+ clockHr\(hr\)\}/.test(card), true);
+  eq("the hour before 1 PM is '12–1 PM', and across noon and midnight it names both halves", /11 AM–12 PM/.test(tiles) && /11 PM–12 AM/.test(tiles), true);
+  eq("no hour is ever labelled safe, and the card says so", !/label="[^"]*[Ss]afe/.test(card) && /no hour is marked safe/.test(card), true);
+  eq("the section is mounted for the SELECTED day (keyed, so a new day resets the hour)", /<HourByHour key=\{day\.date\} fc=\{fc\} day=\{day\}/.test(card), true);
+  eq("the alpine forecast fetch asks for the wind direction the hour box prints", /export function fetchAlpineForecast[\s\S]{0,900}wind_direction_10m/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
+}
+
+const FLOOR = 177;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);
