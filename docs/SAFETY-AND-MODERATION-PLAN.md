@@ -296,6 +296,14 @@ What works, and is true once Part 3 exists:
 
   **Availability has no Friends tier yet.** Today it has no visibility setting at all (`profiles.availability` is readable as the profile is), so adding one is a separate decision.
 
+**Update 2026-10-08 (0272, 0273): trip reports are readable by everyone unless the climber changes that** (the owner's rule). Live probe `probe-trip-reports-default.mjs` 15/15.
+
+- **The setting:** Settings › Privacy & safety › "Who can read your trip reports" (Everyone / My friends / Just me), stored in `profiles.trip_reports_default`, default Everyone.
+  - Every new report starts from it, and the log form can still pick differently for one report.
+  - Changing it offers to apply it to earlier reports. A link stays under the setting while any earlier report differs.
+- **The database fallback:** a report written without a visibility now takes the author's setting. The 0037 column default `'crew'` is gone; with no crew, it had made a report readable by nobody.
+- **0273 fixes a regression from 0269.** Signed-out visitors could not read ANY trip report or route conditions: the read policy named `are_friends`, which they may not run, so every read returned 401. The policy now calls `is_my_friend()`, which answers only about the caller's own friendships. Signed-in climbers can no longer call `are_friends` on two other people, which had let anyone map friendships around "Show mutual friends".
+
 The original proposal follows. Items are ordered by safety value for an app whose friendships turn into meetups.
 
 1. **Request limits:**
