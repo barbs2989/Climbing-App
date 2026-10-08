@@ -36,7 +36,8 @@ function decodeBlob(b) {
     im.src = u;
   });
 }
-function loadTerrain(grid) {
+// Shared with the alpine card's start, so the map and the start read one download.
+export function loadTerrain(grid) {
   if (_terrain[grid.key]) return _terrain[grid.key];
   const E = new Float32Array(grid.W * grid.H).fill(NaN), heads = [];
   let got = 0;
