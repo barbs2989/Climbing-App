@@ -25,6 +25,8 @@
 //   17 a zone named after its forecasting centre printed on screen ("CAIC zone")
 //   18 the season read at the grid cell's own height, not the top of the climb
 //   19 a failed climate read that no longer says it says nothing about the season
+//   20 a day the models disagree on goes unflagged
+//   21 ONE model answering read as the models agreeing
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
 import { execFileSync } from "child_process";
@@ -101,6 +103,12 @@ const CASES = [
   { name: "19. a failed climate read no longer says it says nothing about the season", file: CARD,
     find: "Couldn’t load the climate. This says nothing about the season.", repl: "Couldn’t load the climate.",
     expect: "fail", expectText: "a failed climate read says it says nothing about the season" },
+  { name: "20. a day the models disagree on goes unflagged", file: LOGIC,
+    find: '  if (gust && gust[1] - gust[0] >= LIMITS.spreadGust) over.push("gust");\n', repl: "",
+    expect: "fail", expectText: "models 45 mph apart on the day's top gust flag it" },
+  { name: "21. one model answering reads as the models agreeing", file: LOGIC,
+    find: "return v.length >= 2 ? [Math.min.apply(null, v), Math.max.apply(null, v)] : null;", repl: "return v.length >= 1 ? [Math.min.apply(null, v), Math.max.apply(null, v)] : null;",
+    expect: "fail", expectText: "ONE model answering is no comparison" },
 ];
 
 const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST].map((f) => [f, fs.readFileSync(f, "utf8")]));

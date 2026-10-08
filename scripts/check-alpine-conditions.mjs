@@ -29,6 +29,7 @@
 //                  are the last 60 days of Summit / Attempt / Turned around reports, nothing inferred,
 //                  and every discipline on this tab can log a Turned around. The season is read at the
 //                  TOP of the climb, with snowfall, and says it is a guide, not a forecast.
+//                  A day the forecast MODELS disagree on gets a caution; one model is no comparison.
 // Thresholds and their research live in docs/guards/honesty-claims.md.
 import fs from "node:fs";
 import os from "node:os";
@@ -279,6 +280,28 @@ eq("...and with no height on file it asks for none, rather than inventing one", 
 eq("a snow route mounts the season section", /Season at the top/.test(glHtml), true);
 eq("a failed climate read says it says nothing about the season", /st\.error\) return[\s\S]{0,300}Couldn’t load the climate\. This says nothing about the season\./.test(card), true);
 eq("...and the season says where it was read and that it is a guide, not a forecast", /"Averages for " \+ m\.years \+ " at "[\s\S]{0,160}a guide to the season, not a forecast\./.test(card), true);
+// MODELS DISAGREE. One day, three models, every hour the same value per model.
+const SPD = (gusts, highs, fls) => {
+  const time = [], H = { time }, t0 = Date.UTC(2026, 0, 15) / 1000;
+  for (let i = 0; i < 24; i++) time.push(t0 + i * 3600);
+  ["gfs_seamless", "icon_seamless", "ecmwf_ifs025"].forEach((m, j) => { H["wind_gusts_10m_" + m] = time.map(() => gusts[j]); H["temperature_2m_" + m] = time.map(() => highs[j]); H["freezing_level_height_" + m] = time.map(() => fls[j]); });
+  return { utc_offset_seconds: 0, hourly: H };
+};
+const msA = A.modelSpread(SPD([20, 30, 65], [30, 32, 31], [8000, 8500, null]), "2026-01-15");
+eq("models 45 mph apart on the day's top gust flag it (the freezing level is compared across the two that send one)", msA && [msA.over, msA.fl], [["gust"], [8000, 8500]]);
+const msB = A.modelSpread(SPD([20, 25, 30], [30, 44, 31], [6000, 9500, null]), "2026-01-15");
+eq("...as do highs 14 F apart and freezing levels 3,500 ft apart", msB && msB.over, ["high", "fl"]);
+const msC = A.modelSpread(SPD([20, 25, 30], [30, 32, 31], [8000, 8500, null]), "2026-01-15");
+eq("...and ordinary disagreement (gusts 10 mph apart) flags nothing", msC && msC.over, []);
+eq("ONE model answering is no comparison: null, never 'they agree'", A.modelSpread(SPD([20, null, null], [30, null, null], [8000, null, null]), "2026-01-15"), null);
+eq("...and a day the spread does not cover is null too", A.modelSpread(SPD([20, 30, 65], [30, 32, 31], [8000, 8500, null]), "2026-01-16"), null);
+for (const units of ["imperial", "metric"]) {
+  A.__set_UNITS(units);
+  const t = A.flagText({ key: "models-disagree", level: "caution", v: msB });
+  eq(`the disagreement flag words itself in ${units} units`, [/undefined|NaN|null/.test(t), units === "metric" ? /\bft\b|mph|°F/.test(t) : /km\/h| m\b/.test(t)], [false, false]);
+}
+A.__set_UNITS("imperial");
+eq("the card adds that flag only to a day the models disagree on, from a second read that adds NOTHING when it fails", /fetchAlpineSpread\([\s\S]{0,200}function \(\) \{ if \(live\) setSp\(null\); \}/.test(card) && /if \(ms && ms\.over\.length\) r = /.test(card), true);
 const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);
 
