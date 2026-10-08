@@ -478,7 +478,38 @@ console.log("\n13. SMOKE AND AIR QUALITY — flagged on the EPA's bands, never r
   eq("the smoke flag joins the day's flags (and so the day chips' dots)", /if \(sf\) r = Object\.assign\(\{\}, r, \{ flags: r\.flags\.concat\(\[sf\]\) \}\);/.test(card), true);
 }
 
-const FLOOR = 191;
+/* ── 14. WEATHER ALERTS — the alpine card had none; an alert must land on the right day, and "none" must never be claimed unread ──
+   Shapes below are the live response (api.weather.gov/alerts/active, 2026-10-08): a Blowing Dust Advisory had
+   expires 07:15 and ends 19:00 the next day -- the MESSAGE expires hours before the EVENT ends, because it is
+   due to be reissued. Reading `expires` would drop a live alert hours early. */
+console.log("\n14. WEATHER ALERTS — each on the right local day, by its event window; unread is never 'none'");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const fcSrc2 = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
+  const feat = (event, severity, onset, ends, expires, description) => ({ id: "urn:" + event, properties: { event, severity, urgency: "Expected", certainty: "Likely", onset, effective: onset, ends, expires, description } });
+  const json = { features: [
+    feat("Blowing Dust Advisory", "Moderate", "2026-10-09T12:00:00-07:00", "2026-10-09T19:00:00-07:00", "2026-10-09T07:15:00-07:00", "* WHAT...Patchy blowing dust expected, with\nvisibility dropping to one-quarter mile.\nWinds 15 to 25 mph.\n\n* WHERE...Coulee City"),
+    feat("High Wind Warning", "Severe", "2026-10-08T15:00:00-07:00", "2026-10-09T05:00:00-07:00", "2026-10-09T05:00:00-07:00", null),
+  ] };
+  const al = A.normAlerts(json), off = -25200;
+  eq("both alerts are read, and the WHAT line is kept whole across its line breaks, in the issuer's words", al[0].what, "Patchy blowing dust expected, with visibility dropping to one-quarter mile. Winds 15 to 25 mph.");
+  eq("an alert with no description has no WHAT (nothing invented)", al[1].what, null);
+  eq("the event window ends at `ends`, NOT at the earlier message `expires` (19:00 local, not 07:15)", al[0].end, Date.parse("2026-10-09T19:00:00-07:00"));
+  eq("a day the event touches lists it: the dust advisory on 10-09", A.alertsForDay(al, "2026-10-09", off).map((a) => a.event).includes("Blowing Dust Advisory"), true);
+  eq("...and a day it does not touch does not: 10-08 has only the wind warning", A.alertsForDay(al, "2026-10-08", off).map((a) => a.event), ["High Wind Warning"]);
+  eq("the 07:15 expiry would have missed an afternoon query on 10-09 -- the event window does not", A.alertsForDay(al, "2026-10-09", off).length, 2);
+  eq("most severe first", A.alertsForDay(al, "2026-10-09", off)[0].event, "High Wind Warning");
+  eq("Severe is a WARNING; Moderate is a CAUTION; Minor and Unknown are cautions", [A.alertLevel({ severity: "Extreme" }), A.alertLevel({ severity: "Severe" }), A.alertLevel({ severity: "Moderate" }), A.alertLevel({ severity: "Minor" }), A.alertLevel({ severity: "Unknown" })], ["warn", "warn", "caution", "caution", "caution"]);
+  eq("no alerts and no response are both []", [A.normAlerts({ features: [] }).length, A.normAlerts(null).length], [0, 0]);
+  eq("outside the US the fetch resolves {outside:true} (HTTP 400), which the card words as NOT CHECKED", /r\.status === 400\) return \{ outside: true \}/.test(fcSrc2) && /Weather alerts are only checked for places in the United States\. Nothing was checked for this route\./.test(card), true);
+  eq("a failed read is 'not measured' with a retry, never 'none'", /Couldn’t load weather alerts, so they are not measured\. This is not a report of none\./.test(card), true);
+  eq("a quiet day says none is NOT an all-clear and that an alert covers a zone, not the route", /a day with none is not an all-clear/.test(card) && /covers a whole forecast zone, which can be much larger than the route/.test(card), true);
+  eq("the alerts are cached for minutes, not the session (they are issued and cancelled within the hour)", /ALERT_TTL = 10 \* 60 \* 1000/.test(card), true);
+  eq("each alert joins the day's flags, so the day chips show it", /key: "alert", level: alertLevel\(a\)/.test(card), true);
+  eq("the card prints the alert's own prose verbatim and says so, in the units issued", /"As issued: " \+ a\.what/.test(card), true);
+}
+
+const FLOOR = 205;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);

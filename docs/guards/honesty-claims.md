@@ -1676,3 +1676,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     aloft or pooled in a valley is not seen", and a failed read says "not measured", never "clean". Checked live on
     Rainier, Wenatchee and Boulder (all Good today); the smoky case is covered by synthetic series, since October
     is clean.
+  - **WEATHER ALERTS on the alpine card (2026-10-08, owner: "do weather alerts").** Section 14 of the guard. Active
+    watches, warnings and advisories at the route's point (api.weather.gov/alerts/active?point=, US only, open to
+    the browser). Each alert is shown AS ISSUED: its event name, severity, urgency, certainty, window, and its
+    `WHAT...` line verbatim (in the units it was issued in; a paraphrase of a wind speed is a wrong wind speed).
+    Extreme/Severe flag as a warning, everything else issued as a caution, and the flag joins the day chips.
+    - **Use `ends`, never `expires`, for the event window.** A live Blowing Dust Advisory had `expires` 07:15 and
+      `ends` 19:00: the MESSAGE expires hours before the EVENT ends, because it is due to be reissued. Reading
+      `expires` drops a live alert hours early. Pinned by a test built on that shape.
+    - **Outside the US the service answers HTTP 400 "out of bounds"**: that reads "not checked", never "none". A
+      failed read is "not measured" with a retry. A quiet day says none is NOT an all-clear (alerts are issued a
+      day or two ahead) and that an alert covers a forecast ZONE, far larger than a route and across very
+      different heights. Cached for 10 minutes, not the session: alerts are issued and cancelled within the hour.
+    - **The alert's own `headline` is NOT printed**: it ends "...by NWS <office>", which names the issuer and
+      would break `check:no-sources`' rule that no screen names a provider.
+    - **Not shown, on research:** WSDOT pass status (needs an access code; unauthenticated request is HTTP 401).

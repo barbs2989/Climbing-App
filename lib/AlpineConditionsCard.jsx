@@ -5,8 +5,8 @@
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
 import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
-import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir } from "./forecast.js";
-import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
+import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts } from "./forecast.js";
+import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass } from "./HourTiles.jsx";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
@@ -16,7 +16,8 @@ import { fetchSnotelStations, nearestStation, fetchSnotelDepth, snowReading } fr
 import ShadeMap, { loadTerrain } from "./ShadeMap.jsx";
 import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands, faceBearing } from "./terrainShade.js";
 
-const _alpWx = {}, _alpSp = {}, _alpAir = {};
+const _alpWx = {}, _alpSp = {}, _alpAir = {}, _alpAlerts = {};
+const ALERT_TTL = 10 * 60 * 1000; // alerts are issued and cancelled within the hour: a session-long cache would hide a new one
 const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
 const MUTED = { fontSize: 12.5, color: C.textSub, lineHeight: 1.55 };
 const RETRY = { marginTop: 6, background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" };
@@ -37,6 +38,13 @@ function clockOf(fc, unixS) {
   const d = new Date(unixS * 1000 + (fc.utc_offset_seconds || 0) * 1000);
   const hr = d.getUTCHours(), mn = d.getUTCMinutes(), h12 = hr % 12 || 12;
   return h12 + ":" + String(mn).padStart(2, "0") + (hr < 12 ? " AM" : " PM");
+}
+// "until Thu 4:00 PM" / "from Thu 12:00 PM until Thu 7:00 PM": an alert's own event window, in the route's local time.
+function windowLabel(fc, a) {
+  const st = function (ms) { const sh = new Date(ms + (fc.utc_offset_seconds || 0) * 1000); return sh.toLocaleDateString(DLOCALE, { weekday: "short", timeZone: "UTC" }) + " " + clockOf(fc, ms / 1000); };
+  const now = Date.now();
+  if (a.end == null) return a.start != null && a.start > now ? "from " + st(a.start) : "in effect";
+  return (a.start != null && a.start > now ? "from " + st(a.start) + " " : "") + "until " + st(a.end);
 }
 // Round a start DOWN to the quarter hour: rounding up would start later than the arithmetic says.
 const floorQ = (s) => Math.floor(s / 900) * 900;
@@ -63,6 +71,7 @@ export function flagText(f) {
     case "showers": return v.pct + "% chance of rain — retreating or rappelling wet is where things go wrong";
     case "new-snow": return uSnowfall(v.inch) + " of new snow at the summit" + (v.scramble ? " — a snowed-up scramble is a winter climb" : "");
     case "wind": return "Summit gusts to " + uWind(v.gust) + " in daylight";
+    case "alert": return "Weather alert: " + v.event + " (" + String(v.severity).toLowerCase() + " severity), " + v.when + " — covers a whole forecast zone, not just this route";
     case "smoke": return "Smoke and air quality: US AQI up to " + Math.round(v.aqi) + " (" + aqiWord(v.aqi).toLowerCase() + ") — a forecast for the area, not a reading at the route; smoke aloft or pooled in a valley is not seen";
     case "models-disagree": return "Forecast models disagree on this day (" + [v.over.indexOf("gust") >= 0 ? "gusts " + uWind(v.gust[0]) + "–" + uWind(v.gust[1]) : null, v.over.indexOf("high") >= 0 ? "highs " + uTemp(v.high[0]) + "–" + uTemp(v.high[1]) : null, v.over.indexOf("fl") >= 0 ? "freezing level " + uElev(Math.round(v.fl[0] / 100) * 100) + "–" + uElev(Math.round(v.fl[1] / 100) * 100) : null].filter(Boolean).join(", ") + ") — read its flags as low confidence";
     case "wind-chill": return "Wind chill " + uTemp(v.chill) + " — frostbite on exposed skin in about 30 minutes";
@@ -135,6 +144,17 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     fetchCragAir(pt.lat, pt.lng).then(function (j) { _alpAir[ck] = j; if (live) setAir({ data: j }); }, function () { if (live) setAir({ error: true }); });
     return function () { live = false; };
   }, [ck, kind, airTries]);
+  // Weather alerts: another optional read, US only. Outside it, or failed, says so -- never "no alerts".
+  const [alerts, setAlerts] = useState(function () { const c = ck && _alpAlerts[ck]; return c && Date.now() - c.at < ALERT_TTL ? { data: c.data } : null; });
+  const [alertTries, setAlertTries] = useState(0);
+  useEffect(function () {
+    if (!pt || !kind) return;
+    const c = _alpAlerts[ck];
+    if (c && Date.now() - c.at < ALERT_TTL) { setAlerts({ data: c.data }); return; }
+    let live = true; setAlerts(null);
+    fetchPointAlerts(pt.lat, pt.lng).then(function (j) { _alpAlerts[ck] = { at: Date.now(), data: j }; if (live) setAlerts({ data: j }); }, function () { if (live) setAlerts({ error: true }); });
+    return function () { live = false; };
+  }, [ck, kind, alertTries]);
   useEffect(function () { setDayI(0); }, [route.id]);
 
   /* The legs the start counts back from: the Planner's own estimate, at the Planner's own inputs. A
@@ -168,12 +188,14 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       let r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
       const ms = sp ? modelSpread(sp, d.date) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
+      const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc.utc_offset_seconds) : [];
+      if (al.length) r = Object.assign({}, r, { flags: r.flags.concat(al.map(function (a) { return { key: "alert", level: alertLevel(a), v: { event: a.event, severity: a.severity, when: windowLabel(fc, a) } }; })) });
       const aq = air && air.data ? airDay(air.data, d.date) : null, sf = smokeFlag(aq);
       if (sf) r = Object.assign({}, r, { flags: r.flags.concat([sf]) });
       out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset, aqi: aq }, r));
     });
     return { fc, days: out.slice(0, 7) };
-  }, [wx, sp, air, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]);
+  }, [wx, sp, air, alerts, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]);
   const selDay = model && model.days.length ? model.days[Math.min(dayI, model.days.length - 1)] : null;
   useEffect(function () {
     if (!face || face.missing || legs.floor || !selDay || selDay.sunrise == null || selDay.sunset == null || faceSun[selDay.date]) return;
@@ -277,6 +299,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
     </div>
   </div>
+  <AlertsSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} alerts={alerts} fc={fc} onRetry={function () { setAlertTries(alertTries + 1); }} />
   <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
   <AirSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} air={air} onRetry={function () { setAirTries(airTries + 1); }} />
   <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
@@ -352,6 +375,31 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
       </TileGrid>
     </div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by 10–18 °F. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
+  </div>;
+}
+
+/* WEATHER ALERTS for the selected day: each alert exactly as issued (its event name, severity and window), and
+   its WHAT line verbatim in the units it was issued in -- not paraphrased, because a paraphrase of a wind speed
+   is a wrong wind speed. Outside the US nothing is checked, and it says so; a failed read is "not measured";
+   a day with no alert says that none is not an all-clear. */
+function AlertsSection({ day, dayLabel, alerts, fc, onRetry }) {
+  const list = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), day.date, fc.utc_offset_seconds) : [];
+  return <div style={BOX}>
+    <CardHead style={{ marginBottom: 8 }}>{"WEATHER ALERTS · " + dayLabel.toUpperCase()}</CardHead>
+    {!alerts ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading weather alerts…</div>
+      : alerts.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load weather alerts, so they are not measured. This is not a report of none.</div><button onClick={onRetry} style={RETRY}>Try again</button></div>
+      : alerts.data.outside ? <div style={MUTED}>Weather alerts are only checked for places in the United States. Nothing was checked for this route.</div>
+      : !list.length ? <div style={MUTED}>{"No weather alert is in effect for this area " + (dayLabel === "Today" ? "today" : "on " + dayLabel) + "."}</div>
+      : <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>{list.map(function (a, i) {
+        const col = alertLevel(a) === "warn" ? C.red : C.amber;
+        return <div key={a.id + i} style={{ background: C.surface, border: "1px solid " + col + "77", borderRadius: 10, padding: "9px 11px" }}>
+          <div style={{ fontSize: 14, fontWeight: 800, color: col }}>{a.event}</div>
+          <div style={{ fontSize: 12, color: C.text, marginTop: 2 }}>{windowLabel(fc, a)}</div>
+          <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{[a.severity + " severity", a.urgency, a.certainty].filter(Boolean).join(" · ")}</div>
+          {a.what ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 5 }}>{"As issued: " + a.what}</div> : null}
+        </div>;
+      })}</div>}
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>An alert covers a whole forecast zone, which can be much larger than the route and span very different heights, so it may not describe the route itself. Alerts are issued only a day or two ahead: a day with none is not an all-clear.{list.length ? " The wording above is kept in the units it was issued in." : ""}</div>
   </div>;
 }
 
