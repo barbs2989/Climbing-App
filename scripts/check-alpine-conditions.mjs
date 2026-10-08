@@ -45,7 +45,7 @@
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { createRequire } from "node:module";
 import { build } from "esbuild";
 
@@ -64,7 +64,7 @@ export { fetchAlpineClimate } from ${JSON.stringify(path.join(ROOT, "lib", "fore
 export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 export { inGeometry, zoneFor, avyReading, DANGER_NAME } from ${JSON.stringify(path.join(ROOT, "lib", "avalanche.js"))};
 export { nearestStation, kmBetween, snowReading } from ${JSON.stringify(path.join(ROOT, "lib", "snotel.js"))};
-export { recentOutcomes, sunPins, sunFace } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
+export { recentOutcomes, reportFreshness, sunPins, sunFace } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -509,7 +509,60 @@ console.log("\n14. WEATHER ALERTS — each on the right local day, by its event 
   eq("the card prints the alert's own prose verbatim and says so, in the units issued", /"As issued: " \+ a\.what/.test(card), true);
 }
 
-const FLOOR = 205;
+/* ── 15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — each states what it is and what it cannot see ──
+   Thresholds are PUBLISHED where they exist (fog = visibility under 1 km; NWS "measurable" snow = 0.1 in; snow
+   accumulates 500-1500 ft below the 0 C line) and stated as ours where they do not (steady = under 10% in 3 h).
+   Shapes are the live responses (waterservices.usgs.gov, 2026-10-08). */
+console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — published cuts, stated limits, nothing read as zero");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const ST = await import(pathToFileURL(path.join(ROOT, "lib", "streams.js")).href);
+  const off = 0, t0 = Date.UTC(2026, 9, 1) / 1000;
+  const mk = (n, f) => Array.from({ length: n }, (_, i) => f(i));
+  const fc = { utc_offset_seconds: off, hourly: { time: mk(24 * 8, (i) => t0 + i * 3600), snowfall: mk(24 * 8, (i) => (i === 24 * 2 + 5 ? 0.3 : i === 24 * 6 + 3 ? 0.04 : 0)), precipitation: mk(24 * 8, (i) => (i >= 24 * 7 + 2 && i < 24 * 7 + 5 ? 0.05 : 0)), freezing_level_height: mk(24 * 8, () => 8000), is_day: mk(24 * 8, (i) => (i % 24 >= 7 && i % 24 < 18 ? 1 : 0)), visibility: mk(24 * 8, (i) => (i === 24 * 7 + 9 ? 400 : i === 24 * 7 + 3 ? 100 : 20000)) } };
+  const days = A.localDays(fc), nowS = t0 + 24 * 7 * 3600 + 12 * 3600;
+  const sh = A.snowHistory(fc, "2026-10-08", nowS);
+  eq("the last MEASURABLE snow day is Oct 3 (0.3 in), not Oct 7's 0.04 in trace", [sh.lastDate, sh.daysAgo, Math.round(sh.lastIn * 10) / 10], ["2026-10-03", 5, 0.3]);
+  eq("a trace (<0.1 in/day) does not count", A.snowHistory({ utc_offset_seconds: 0, hourly: { time: fc.hourly.time, snowfall: fc.hourly.snowfall.map((v) => (v === 0.3 ? 0.04 : v)) } }, "2026-10-08", nowS).none, true);
+  eq("no snowfall series at all is NULL, not 'none'", A.snowHistory({ utc_offset_seconds: 0, hourly: { time: fc.hourly.time } }, "2026-10-08", nowS), null);
+  const sl = A.snowLevel(fc, days[7]);
+  eq("snow level = the freezing level over the WET hours less 1500 and 500 ft (8000 -> 6500 to 7500)", [sl.snowLo, sl.snowHi, sl.wetHours], [6500, 7500, 3]);
+  eq("a dry day has NO snow level (null), never a number", A.snowLevel(fc, days[3]), null);
+  const fg = A.fogHours(fc, days[7]);
+  eq("fog counts DAYLIGHT hours under 1 km only: 1 (the 9 AM 400 m), not the 3 AM 100 m", [fg.hours, fg.minM], [1, 400]);
+  eq("a clear day has no fog hours (null)", A.fogHours(fc, days[3]), null);
+  const iv = (vals, q) => ({ value: { timeSeries: [{ variable: { variableCode: [{ value: "00060" }], noDataValue: -999999 }, sourceInfo: { siteName: "TEST RIVER" }, values: [{ value: vals.map((v, i) => ({ value: String(v), qualifiers: q || ["P"], dateTime: new Date(Date.UTC(2026, 9, 7, 23, 0) + i * 3 * 3600e3).toISOString().replace("Z", "").slice(0, 19) + ".000-07:00" })) }] }] } });
+  const f = ST.flowReading(iv([100, 100, 110, 130, 200]));
+  eq("the trend is read over 3 h against the 10% line: 130 -> 200 is rising", [f.trend, Math.round(f.pct)], ["rising", 54]);
+  eq("under 10% reads steady", ST.flowReading(iv([100, 100, 105])).trend, "steady");
+  eq("the high and low of the 24 h are the series' own", [f.hi.v, f.lo.v], [200, 100]);
+  eq("the no-data sentinel (-999999) is not a reading, and an all-sentinel series is NULL, never 0", ST.flowReading(iv([-999999, -999999])), null);
+  eq("an ice-affected reading is flagged in plain words (and the card then shows no number)", ST.flowReading(iv([100, 120], ["Ice"])).flags, ["ice-affected"]);
+  eq("a provisional reading says so", f.provisional, true);
+  eq("times are the GAUGE's own local clock from its stamp, not the viewer's zone", ST.clockOfStamp("2026-10-08T16:00:00.000-07:00"), "4:00 PM");
+  eq("no series is NULL", ST.flowReading({ value: { timeSeries: [] } }), null);
+  const rdb = "# c\nagency_cd\tsite_no\tstation_nm\tdec_lat_va\tdec_long_va\n5s\t15s\t50s\t16s\t16s\nUSGS\t111\tNEAR RIVER\t46.75\t-122.08\nUSGS\t222\tFAR CREEK\t47.50\t-121.0\n";
+  const sites = ST.parseSites(rdb);
+  eq("the site list parses past the comments and the width row", sites.map((x) => x.no), ["111", "222"]);
+  eq("the nearest gauge is returned only within the limit: 25 km finds 111, 3 km finds nothing", [ST.nearestGauge(sites, 46.78, -122.0, 25).no, ST.nearestGauge(sites, 46.78, -122.0, 3)], ["111", null]);
+  eq("an empty site list (the service answers 404 for no gauges) is []", ST.parseSites("").length, 0);
+  eq("a card with no gauge says streams are NOT MEASURED and that this is not a report that streams are low", /so stream flow is not measured here\. This is not a report that streams are low\./.test(card), true);
+  eq("a failed gauge read is 'not measured' with a retry", /Couldn’t load stream gauges, so stream flow is not measured\./.test(card), true);
+  eq("the card states that a gauge is not the crossing, the depth-times-speed range, and early crossing", /different stream from the one you cross/.test(card) && /depth times speed/.test(card) && /cross early/.test(card), true);
+  eq("a flagged gauge reading shows NO number", /so no number is shown/.test(card), true);
+  eq("no provider is named in the new sections (the gauge's agency never prints)", !/USGS|Open-Meteo|NWS|SNOTEL/.test(card.slice(card.indexOf("function SnowfallSection"), card.indexOf("/* WEATHER ALERTS for the selected day:"))), true);
+  eq("fog is a CAUTION that says the model is unchecked in mountains and no fog hour is not a clear day", /whose accuracy in the mountains is unchecked; no fog hour is not a clear day/.test(card), true);
+  eq("the snow section hands snowLevel the RAW local day (it has `hours`); the card's per-day summary has none and crashed the route page", /const raw = localDays\(fc\)\.find\(function \(d\) \{ return d\.date === day\.date; \}\);[\s\S]{0,120}lvl = raw \? snowLevel\(fc, raw\) : null/.test(card), true);
+  eq("...and snowLevel on a day shape WITHOUT hours would throw, which is why it must not be handed one", (() => { try { A.snowLevel(fc, { date: "2026-10-08" }); return false; } catch (e) { return true; } })(), true);
+  eq("the snow section says the history is modelled, flags nothing, and that stability depends on the layers beneath", /not a measurement on the route/.test(card) && /depends on the layers beneath it/.test(card), true);
+  const now = Date.UTC(2026, 9, 8, 18);
+  const rfr = A.reportFreshness([{ date: "2026-10-03" }, { date: "2026-09-01T10:00" }, { date: "2026-10-07" }, { date: null }, {}], now);
+  eq("report freshness: the newest is Oct 7 (1 day ago), 2 of the 3 dated reports are within 14 days", [rfr.daysAgo, rfr.last14, rfr.total], [1, 2, 3]);
+  eq("no dated report is NULL (the card then says none is on file), never 'today'", [A.reportFreshness([], now), A.reportFreshness([{ date: null }], now)], [null, null]);
+  eq("report freshness with none on file says nothing recent is known, and a failed read is not 'none'", /so nothing recent is known about its conditions/.test(card) && /This is not a report that there are none\./.test(card), true);
+}
+
+const FLOOR = 238;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);
