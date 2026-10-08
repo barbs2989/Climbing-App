@@ -31026,3 +31026,64 @@ bare-`;`-inside-a-string trap — rewrote both long text corrections to avoid bo
 their quoted literals, then confirmed clean with `node scripts/check-sql-targets.mjs`.
 
 Pass 7 continues next run after `wa_crooked_thumb_peak_east_face`.
+
+## Batch 394 (2026-10-08, pass 7)
+
+Continued from `wa_crooked_thumb_peak_south_route` through `wa_dark_side_of_liberty` (skipped
+`wa_doorway_flake` in between — files under `wa_south_face`, a crag area, not a peak). Eight
+routes: Crooked Thumb Peak's South Route; Cutthroat Peak's five routes (Cauthorn-Wilson Couloir,
+East Face, South Buttress, The Swarm, West Ridge); Dark Peak's Dark Glacier Route; Liberty Bell's
+Dark Side of Liberty.
+
+**No confirmed errors this batch** — every specific, checkable claim that returned a clear answer
+came back corroborated, and no SQL file was produced. Notably: `wa_dark_peak_dark_glacier_route`'s
+road field cites a very specific "Sisi Fire" closure (Stehekin Valley Road, High Bridge area,
+closed effective ~Sept 4 2026, list updated Sept 14 2026) and a December 2025 Stehekin flood — both
+checked out as real, independently corroborated 2025-2026 events (NPS flood-update pages, AAJ/park
+news coverage of the fire), not stale or fabricated claims. `wa_dark_side_of_liberty`'s FA (Mikey
+Schaefer & Shanjean Lee, Aug 2019, equipped via a 2018 rappel-in from the neighboring Barber Pole
+route), its P1/P2 pitch grades, and its distinctive P4 finger-crack-into-V9/V10-boulder crux all
+matched the AAC Publications feature and Mountain Project almost verbatim. `wa_cutthroat_the_swarm`'s
+FA (Willis/Perz, July 2023) and `wa_cutthroat_west_ridge`'s FA (Adam/Bedayn/Davis, July 22 1937 —
+also Cutthroat Peak's overall FA) both matched Mountain Project/Mountaineers sources exactly.
+`wa_cutthroat_peak_northeast_face`'s already-corrected name ("East Face") and its FA
+(Bard/Chouinard/Cunningham, 1976, III 5.10, 6 pitches) were independently reconfirmed via an AAC
+editor's note. `wa_crooked_thumb_peak_south_route`'s elevation (8,129 ft), peak coordinate
+(48.8267, -121.3412), and Whatcom County placement all matched Wikipedia to 4 decimal places.
+
+**Flagged for human review (unverifiable or genuinely ambiguous, not contradicted):**
+`wa_crooked_thumb_peak_south_route`'s FA ("Ardussi, Magnusson, Mech, Swanson — Mountaineers, July
+31 1963") has zero independent corroboration for any of the four names, though a 1963 Mountaineers
+Summer Outing did run in this exact area — plausible but unconfirmed; its route-specific beta
+(face description, rock_grade, 2016-repeat detail) is likewise unconfirmable, no trip report for
+this obscure line turned up anywhere; and its own `corrections` field text ("Grade III-IV/5.6")
+contradicts the row's own `grade` (5.8+) and `commitment` (IV) fields — a stale note from an
+earlier pass, left unreconciled since no external source confirms which figure is right.
+`wa_cutthroat_peak_cauthorn_wilson_couloir`'s FA (Cauthorn/Wilson, April 1984) has no independent
+source beyond the route's own name implying it. `wa_cutthroat_south_buttress`'s FA ("Beckey and
+Don Gordon, 1958") is in real tension with an AAC report describing a Beckey route on Cutthroat's
+south side done with **Don Claunch**, published in the 1959 AAJ and called the "South Face" rather
+than "South Buttress" — could be a different route, a conflated name, or a misattributed partner;
+not confident enough in any specific replacement to fix. Its 12-pitch count also runs below one
+source's ~16-pitch figure (soft flag, pitch counts vary by route-finding), and its descent_text's
+"ASCA rebolted in 2010" claim found no corroboration in ASCA/Access Fund's own project listings.
+Cutthroat Peak's own elevation is a genuine cross-source conflict, not a typo: Wikipedia/PeakVisor
+give 8,066 ft (matching every row's `high_point_ft`), while SummitPost gives 8,050 ft for the
+peak's higher south summit and separately notes the USGS quad mislabels the *lower* north summit
+(7,865 ft) as "Cutthroat Peak" — the East Face route's own prose ("8,050 ft") and its
+`high_point_ft` field (8,066) each cite one of two real, source-backed numbers for two different
+summit points of the same peak, so this is left as-is pending a human call on which summit the app
+means to track. `wa_dark_peak_dark_glacier_route`'s gain_ft (7,100) runs well above a Mountaineers
+trip listing's ~6,000 ft figure (different camp/day-count baseline, not clearly a contradiction),
+and its shuttle-fare and permit-quota details are only weakly corroborated by reseller listings
+rather than an official source.
+
+**Tooling notes:** Delegated research to 4 parallel subagents (Cutthroat Peak's 5 routes together;
+Crooked Thumb Peak alone; Dark Peak alone; Dark Side of Liberty alone). WebSearch was the primary
+or sole working method for all four — WebFetch to mountainproject.com, publications.
+americanalpineclub.org, climbing.com, summitpost.org and nps.gov was blocked (egress rules) on
+every attempt, consistent with every recent batch. No SQL file this run since nothing crossed the
+confirmed-error bar — per the audit's own guardrails, a clean/flagged-only outcome is logged as-is
+rather than manufacturing a fix.
+
+Pass 7 continues next run after `wa_dark_side_of_liberty`.
