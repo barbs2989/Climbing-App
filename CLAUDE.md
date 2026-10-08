@@ -88,6 +88,8 @@ npm run check:chunk-reload # a lazy screen whose file a DEPLOY removed reloads o
 
 # ── Honesty of what the screen claims — notes: docs/guards/honesty-claims.md ──
 npm run check:trust-breakdown # the factors under WHAT FEEDS YOUR SCORE add up to it (in build)
+npm run check:conditions-score # the crag CONDITIONS SCORE adds up, leaves out what it did not measure, and stays off alpine (in build)
+npm run check:alpine-conditions # the ALPINE Conditions tab: each discipline its own flags, a start counted back from the Planner, nothing it did not read (in build)
 npm run check:untracked-factors # a factor nobody has measured must not read as ZERO (in build)
 npm run check:no-sources  # no screen prints a field named source, or any text about sources or "auto-generated" (in build)
 npm run check:preview-claims # no toast tells a climber the app is a PREVIEW, a demo or a simulation (in build)
@@ -150,7 +152,7 @@ npm run check:pitch-discount # the climbing-time discount is bounded, and the pl
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
-npm run check:return-leg      # a walk that already covers the day is not re-added, and each red warning names the DAY it lands on (in build)
+npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
 npm run audit:rappel-claims  # does `rappels` claim raps the route's own descent_text denies?
@@ -229,6 +231,7 @@ npm run check:approve-route-columns # nothing may fork approve_new_route again (
 npm run check:counts# does every areas.route_count still match the truth?
 npm run check:catalog-duplicates # can a duplicate route land again (triggers live on INSERT+UPDATE), and has one?
 npm run check:area-duplicates # is any PLACE filed twice? (same-name areas < 3 km, vs a READ list; daily)
+npm run check:area-sort-labels # no area is named with the source's sort label ("a1. The Uberfall"); daily
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
 npm run check:function-drift # is the LIVE function the one the migrations describe?
 npm run check:column-drift # ...and is the LIVE TABLE? (a column git has never seen)
@@ -285,9 +288,11 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (near the bottom, ~line 2208) holds **~100 `useState` hooks** and every screen. Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
-- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `partners`, `photos`.
-  - **Six, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
+- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Best day to climb* (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
+  - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
+    labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.
+  - **Seven, and Ranks is NOT one of them** — that is a top-level NAV tab. This bullet used to say so, omitting Partners,
     which is the same wrong list `check:screen-lists` records as costing `check:token-boxes` a whole walk. The guard was
     fixed then and this sentence was not, so a reader starting here would reintroduce it; section 4 of that guard now
     reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and

@@ -19,13 +19,13 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const MD = path.join(ROOT, "CLAUDE.md");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
-const GOOD = "sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `partners`, `photos`.";
+const GOOD = "sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.";
 
 const CASES = [
-  { name: "1 ranks-back (real defect)", find: GOOD, repl: "sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `photos`, `ranks`.", expect: "fail" },
-  { name: "2 partners-missing", find: GOOD, repl: "sub-`tab` state: `overview`, `conditions`, `planner`, `safety`, `photos`.", expect: "fail" },
+  { name: "1 ranks-back (real defect)", find: GOOD, repl: "sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `photos`, `ranks`.", expect: "fail" },
+  { name: "2 partners-missing", find: GOOD, repl: "sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `photos`.", expect: "fail" },
   { name: "3 anchor renamed", find: "- `routes` — explore climbs by area", repl: "- `climbs` — explore climbs by area", expect: "fail" },
-  { name: "4 explanation names the absent id", find: "**Six, and Ranks is NOT one of them**", repl: "**Six — `ranks` is NOT one of them**", expect: "pass" },
+  { name: "4 explanation names the absent id", find: "**Seven, and Ranks is NOT one of them**", repl: "**Seven — `ranks` is NOT one of them**", expect: "pass" },
 ];
 
 let bad = 0;

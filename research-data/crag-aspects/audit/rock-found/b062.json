@@ -1,0 +1,354 @@
+[
+ {
+  "pid": "co_blob_rock",
+  "crag": "Blob Rock",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/105744617/blob-rock",
+  "quote": "Crag page names no rock; only a 'granite' listing (loose word) and canyon-wide USGS Boulder Creek Granodiorite."
+ },
+ {
+  "pid": "co_boondocks_area",
+  "crag": "Boondocks Area",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/111960265/boondocks-area",
+  "quote": "Crag page: 'an abundance of rock that is generally very good in quality' - no rock named."
+ },
+ {
+  "pid": "co_dark_side_the_4",
+  "crag": "Dark Side, The",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/113115801/the-dark-side",
+  "quote": "Crag and sub-wall pages name no rock; parent Ophir page: Ophir Wall 'granitic rock'; forum: rhyolite."
+ },
+ {
+  "pid": "co_glenwood_canyon",
+  "crag": "Glenwood Canyon",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Dead Horse Crag": "quartzite",
+   "Quartzite Wasteland": "quartzite",
+   "Unknown Tower": "quartzite",
+   "Super Puoux": "limestone",
+   "Eastside Fins": "quartzite",
+   "Hanging Lake Trail Boulder": "granite"
+  },
+  "aspects": {
+   "Super Puoux": "S"
+  },
+  "url": "https://www.mountainproject.com/area/106075001/dead-horse-crag",
+  "quote": "Dead Horse Crag: 'hard, compact, horizontally banded quartzite.' Canyon: 'varying layers of limestone and Precambrian granite.'"
+ },
+ {
+  "pid": "co_skyland_boulders",
+  "crag": "Skyland Boulders",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/107163609/crested-butte",
+  "quote": "No fetched page names the Skyland boulders' rock."
+ },
+ {
+  "pid": "co_spring_creek",
+  "crag": "Spring Creek",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "Just say Joe Wall": "NW"
+  },
+  "url": "https://www.mountainproject.com/area/106446648/spring-creek",
+  "quote": "Only Spring Creek Tower: 'Huge pile of granite'; crag and other wall pages name no rock."
+ },
+ {
+  "pid": "ma_quarry_land",
+  "crag": "Quarry Land",
+  "groups": [
+   {
+    "held": "granite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/108856956/quarry-land1",
+  "quote": "Crag page names no rock type."
+ },
+ {
+  "pid": "mn_carlton_peak",
+  "crag": "Carlton Peak",
+  "groups": [
+   {
+    "held": "diorite (mapped)",
+    "verdict": "wrong",
+    "correct": "anorthosite"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105814854/carlton-peak",
+  "quote": "The rock is anorthosite, very strong, but also very abrasive"
+ },
+ {
+  "pid": "mt_stormcastle",
+  "crag": "Stormcastle",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "gneiss (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {
+   "Prow, The": "limestone"
+  },
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107643334/the-prow",
+  "quote": "The Prow is a large limestone area to the right of the Hantavirus cave."
+ },
+ {
+  "pid": "nv_cathedral_rock",
+  "crag": "Cathedral Rock",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105859044/cathedral-rock",
+  "quote": "Crag page names no rock; only parent Mount Charleston page says limestone."
+ },
+ {
+  "pid": "nv_white_rock_spring",
+  "crag": "White Rock Spring",
+  "groups": [
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105731983/white-rock-spring",
+  "quote": "Only the Red Rocks-wide banner: 'The sandstone in Red Rocks is fragile'; description names no rock."
+ },
+ {
+  "pid": "on_the_crag_next_door",
+  "crag": "The Crag Next Door",
+  "groups": [
+   {
+    "held": "shale (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "sandstone (mapped)",
+    "verdict": "wrong",
+    "correct": "limestone"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "The Crag Next Door - Sport and Trad": "SE"
+  },
+  "url": "https://www.mountainproject.com/area/125325872/the-crag-next-door-sport-and-trad",
+  "quote": "The walls are made of limestone that is relatively fresh and unpolished"
+ },
+ {
+  "pid": "qc_grand_morne",
+  "crag": "Grand Morne",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.pleinairalacarte.com/en/qc/chaudiere-appalaches-en/mount-grand-morne/",
+  "quote": "Formed by cushions of basaltic lava layers, it rises steeply to an altitude of 608 metres."
+ },
+ {
+  "pid": "qc_val_b_lair_closed",
+  "crag": "Val-Bélair (Closed)",
+  "groups": [
+   {
+    "held": "MISSING",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {
+   "Main Wall": "granite",
+   "Secteur Latin": "granite",
+   "Secteur Nord-Ouest": "granite"
+  },
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108550529/val-belair-closed",
+  "quote": "it's a 22 meters in 3 sections of pink granit"
+ },
+ {
+  "pid": "tx_brownwood",
+  "crag": "Brownwood",
+  "groups": [
+   {
+    "held": "limestone (mapped)",
+    "verdict": "ok"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/107217388/brownwood",
+  "quote": "quite a bit of regular bouldering on solid limestone next to the lake"
+ },
+ {
+  "pid": "ut_blacksmith_fork_canyon",
+  "crag": "Blacksmith Fork Canyon",
+  "groups": [
+   {
+    "held": "dolomite (mapped)",
+    "verdict": "unclear"
+   },
+   {
+    "held": "limestone (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/106210774/blacksmith-fork-canyon",
+  "quote": "Crag: 'consisting mainly of limestone routes' (hedged); Sea Wall: 'Prominent limestone cliff band'."
+ },
+ {
+  "pid": "ut_s_curves",
+  "crag": "S-Curves",
+  "groups": [
+   {
+    "held": "quartzite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {
+   "S-Curve - New Cliche": "S",
+   "S-Curve - The Pile": "E"
+  },
+  "url": "https://www.mountainproject.com/area/105739374/s-curve-lower",
+  "quote": "S-Curve Lower: 'the rock is hard quartzite'; other walls and crag page name no rock."
+ },
+ {
+  "pid": "wa_bend_the",
+  "crag": "Bend, The",
+  "groups": [
+   {
+    "held": "andesite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://mountainproject.com/area/105929507/the-bend",
+  "quote": "Crag and wall pages name no rock; andesite only in Tieton-wide sources."
+ },
+ {
+  "pid": "wa_calendar_butte",
+  "crag": "Calendar Butte",
+  "groups": [
+   {
+    "held": "metavolcanic rock (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/123101684/calendar-butte",
+  "quote": "Crag and wall pages name no rock type."
+ },
+ {
+  "pid": "wa_carnival_crag",
+  "crag": "Carnival Crag",
+  "groups": [
+   {
+    "held": "tonalite (mapped)",
+    "verdict": "unclear"
+   }
+  ],
+  "fills": {},
+  "wallExceptions": {},
+  "aspects": {},
+  "url": "https://www.mountainproject.com/area/108090133/carnival-crag",
+  "quote": "The rock is well featured and solid - no rock type named."
+ }
+]

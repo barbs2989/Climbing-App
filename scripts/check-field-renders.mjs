@@ -37,7 +37,7 @@ const require_ = createRequire(import.meta.url);
 const { SUPABASE_URL, headers, anonKey } = await import(path.join(ROOT, "scripts/lib/supabase-env.mjs"));
 const { assertDbReachable } = await import(path.join(ROOT, "scripts/lib/db-preflight.mjs"));
 const KEY = process.env.SUPABASE_SERVICE_KEY || anonKey();
-const TABS = ["overview", "conditions", "planner", "safety", "photos", "partners"];
+const TABS = ["overview", "forecast", "conditions", "planner", "safety", "photos", "partners"];
 
 // Column -> the camelCase field RouteDetail would read. Derived from dbRouteToCamel; a column
 // whose camel name is identical is listed once.
@@ -67,9 +67,9 @@ const FIELDS = [
   // this guard no longer listing it.
   ["permit", "permits"],
   ["waypoints", "waypoints"], ["gpx", "gpxPts"], ["elev_pts", "elevPts"],
-  ["itinerary", "itinerary"], ["timing", "timing"], ["turnaround", "turnaround"],
+  ["itinerary", "itinerary"], ["timing", "timing"],
   ["hazards", "hazards"], ["obj_haz", "objHaz"], ["watch_out", "watchOut"],
-  ["comms", "comms"], ["emergency", "emergency"], ["bail", "bail"],
+  ["comms", "comms"], ["emergency", "emergency"],
   ["climate", "climate"], ["season", "season"], ["best_season", "bestSeason"],
   ["seasonal_guidance", "seasonalGuidance"], ["seasonal_hazards", "seasonalHazards"],
   ["crowds", "crowds"], ["partner_requirements", "partnerRequirements"],

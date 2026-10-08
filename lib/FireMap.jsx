@@ -26,7 +26,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { POP_CLOSE } from "./popupChrome.js";
-import { loadLeaflet, applyBaseLayer, BaseLayerToggle } from "./mapKit";
+import { loadLeaflet, applyBaseLayer, BaseLayerToggle, useFollowMe, locateLabel } from "./mapKit";
 import { useActiveFires, useFirePerimeters, useFireWeather, fireColor, fireLevel, fmtAcres, fmtContained, fmtDiscovered, fmtEnds, fmtStarts, zoneInEffect, fireDistMi } from "./fire";
 
 const Z = 3000;
@@ -111,7 +111,6 @@ function bboxForView(el, lat, lng, zoom) {
 export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.round(mi) + " mi", focus = null, locale = undefined }) {
   const mapDiv = useRef(null), mapRef = useRef(null), tileRef = useRef(null);
   const perimRef = useRef(null), wxRef = useRef(null), fireRef = useRef(null);
-  const userRef = useRef(null), accRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
   const [bbox, setBbox] = useState(null);
@@ -183,7 +182,6 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
       cancelled = true; clearTimeout(ft);
       if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} }
       mapRef.current = null; tileRef.current = null; perimRef.current = null; wxRef.current = null; fireRef.current = null;
-      userRef.current = null; accRef.current = null;
     };
   }, []);
 
@@ -261,8 +259,6 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   // The control is GPXMap's "📍 Me" button, and like it, locating draws where you are —
   // a dot and an accuracy ring — rather than only moving the map, which left nothing
   // on screen to say which point was you.
-  const [locateMsg, setLocateMsg] = useState("");
-  const [locating, setLocating] = useState(false);
   // GPXMap's "↺ Reset view", offered — as there — only once locating has moved the map
   // away from where it opened. It returns to that opening view (viewFor), so a climber
   // who located themselves 200 miles from the area they were browsing can get back.
@@ -270,31 +266,17 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
   const resetView = () => {
     const map = mapRef.current;
     if (!map) return;
+    me.release();
     const [vLat, vLng, vZoom] = viewFor(focus);
     try { map.setView([vLat, vLng], vZoom, { animate: true }); } catch (e) {}
   };
+  // Live, and refining: see useFollowMe in lib/mapKit.jsx for why one reading was "a little off".
+  const me = useFollowMe(mapRef, { C, zoom: 9, onFix: (f, first) => { if (first) setLocatedOnce(true); } });
+  const [mapMsg, setMapMsg] = useState("");
+  const locateMsg = me.err || mapMsg;
   const locate = () => {
-    if (!navigator.geolocation) { setLocateMsg("This browser can't share your location."); return; }
-    if (!mapRef.current) { setLocateMsg("The map isn't loaded, so there's nothing to centre."); return; }
-    setLocating(true); setLocateMsg("");
-    navigator.geolocation.getCurrentPosition(
-      p => {
-        setLocating(false);
-        const L = window.L, map = mapRef.current;
-        if (!L || !map) return;
-        const la = p.coords.latitude, ln = p.coords.longitude, ac = p.coords.accuracy || 50;
-        try {
-          if (userRef.current) userRef.current.setLatLng([la, ln]);
-          else userRef.current = L.circleMarker([la, ln], { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
-          if (accRef.current) accRef.current.setLatLng([la, ln]).setRadius(ac);
-          else accRef.current = L.circle([la, ln], { radius: ac, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12 }).addTo(map);
-          map.setView([la, ln], 9);
-          setLocatedOnce(true);
-        } catch (e) { setLocateMsg("Couldn't move the map."); }
-      },
-      err => { setLocating(false); setLocateMsg(err && err.code === 1 ? "Location permission is off for this site." : "Couldn't get your location."); },
-      { enableHighAccuracy: true, timeout: 12000, maximumAge: 30000 }
-    );
+    if (!mapRef.current) { setMapMsg("The map isn't loaded, so there's nothing to centre."); return; }
+    setMapMsg(""); me.locate();
   };
 
   // Which product to headline. Priority order, and each step is load-bearing:
@@ -405,7 +387,7 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
             <div ref={mapDiv} style={{ position: "absolute", inset: 0, background: C.card }} />
             <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} />
             {/* right: 80 leaves the bottom-right corner to the Me button below. */}
-            <div style={{ position: "absolute", bottom: 10, left: 10, right: 80, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
+            <div style={{ position: "absolute", bottom: 26, left: 10, right: 80, zIndex: 1000, display: "flex", gap: 6, flexWrap: "wrap" }}>
               {chip("fires", "Fires", C.red, firesQ.data ? fires.length : null)}
               {chip("perims", "Perimeters", C.orange, perimQ.data ? perims.length : null)}
               {chip("wx", "Red flag", C.amber, wxQ.data ? zones.length : null)}
@@ -414,8 +396,8 @@ export default function FireMap({ onClose, C, ActionIcon, uDistMi = mi => Math.r
                 there is nothing to centre, and a button whose only outcome is an apology
                 is worse than absent. Styled exactly as GPXMap's. */}
             <button onClick={locate} aria-label="Show my location on the map"
-              style={{ position: "absolute", bottom: 10, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
-              <span style={{ display: "inline-flex", alignItems: "center", gap: 6, verticalAlign: "middle" }}><ActionIcon name="pin" size={14} color="currentColor" />{locating ? "Locating…" : "Me"}</span>
+              style={{ position: "absolute", bottom: 26, right: 10, zIndex: 1000, background: C.blueSolid, color: "#ffffff", border: "none", borderRadius: 9, padding: "7px 11px", fontSize: 12, fontWeight: 700, cursor: "pointer", boxShadow: "0 2px 8px rgba(0,0,0,0.4)" }}>
+              <span style={{ display: "inline-flex", alignItems: "center", gap: 6, verticalAlign: "middle" }}><ActionIcon name="pin" size={14} color="currentColor" />{locateLabel(me, "Me")}</span>
             </button>
             {/* Top-right under the zoom buttons (which end ~73px down), not GPXMap's
                 bottom-left: that corner holds the layer chips here. */}

@@ -569,6 +569,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       and incomplete downloads keep the pack. `scripts/oneoff/verify-pack-vs-state-freshness.mjs`
       runs the real module against real IndexedDB in 8 cases, and fails exactly the two newer-state
       cases against the old code.
+  - **...AND THE PACK CARRIES A MAP NOW (2026-10-07, user-requested), SO §4 MOVED A THIRD TIME AND
+    §11 WAS ADDED.** `packRouteWithSnapshot()` calls `saveRouteMapOffline()` (`lib/offlineTiles.js`):
+    USGS topo + imagery tiles (public domain — OSM, Esri and OpenTopoMap terms forbid bulk offline
+    download) for a 1 km corridor along the route's own track/waypoints/logistics trailhead/area
+    point, or a 2 km circle round a single-point crag, zooms 8-16, capped at 1,500 a layer. Measured:
+    ~168 tiles a layer for an Index crag, 785 for Buck Mountain's South Ridge. Tiles are in their OWN
+    IndexedDB, never Cache Storage — `public/sw.js`'s `activate` deletes every cache but the shell.
+    `baseTileLayer` (lib/mapKit.jsx) falls back tile-by-tile to the saved copy when a tile fails, and
+    crops the z16 ancestor past 16. The service worker's one cross-origin exception caches the pinned
+    Leaflet files, which packing pre-fetches. §4 now demands "Photos and topo images are not" AND
+    that the card BOUNDS the map ("covers only the ground around the approach"); §11 asserts write,
+    IndexedDB storage, the map's fallback read, removal on unpack, a chip counted from stored tiles,
+    Leaflet offline, and a toast that distinguishes full / partial / failed.
   - **THE EMBED SHAPE IS EXPORTED FROM `lib/offline.js` AND IMPORTED BY `lib/db.js`**, not written
     twice. A pack carrying fewer area fields than the network select renders **"undefined"** where
     the peak name goes — `dbRouteToCamel` builds `_dbArea` from `r.areas` whenever it is TRUTHY, so
@@ -956,6 +969,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     only"* policy was enforced on a number that appears nowhere, and the app could tell you that you
     are trust 14 and then admit you. It takes a **number** now, so a second derivation is impossible
     rather than merely absent, and both byte-identical join handlers pass `myTrustScore`.
+    - **THE TWO HANDLERS ARE ONE NOW (2026-10-07).** The group card and the group detail each held a
+      60-line copy of the join handler, which is why this case counted to **two**. Membership
+      questions (0258) would have been a third thing to keep in step by hand, so both buttons now call
+      `groupJoinTap(cl)`. The assertion moved with it: exactly **one** `groupTrustShortfall(` call
+      site (the definition excluded), reading `myTrustScore`, and **at least two**
+      `onClick={()=>groupJoinTap(cl)}` callers — a regrown inline copy shows up as a second call, and
+      a button that bypasses the gate as fewer than two callers.
     - **THE BAR MOVES, AND THAT IS STATED RATHER THAN DISCOVERED LATER.** The two models are scaled
       differently — a vouch is 4 points in one and 1 in the other — so the same 55 is a different
       threshold. Measured over five example profiles
@@ -1304,11 +1324,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     now fails on `auto-generated`, `source(s/d)`, `attribution` or `provenance` — after removing
     "water source(s)". Fails closed under 2,000 literals (it sees ~44,800). Injection-tested by
     restoring the old road line: FAIL, exit 1. **Kept on purpose:** the NWS/MET badges on the
-    forecast's comparison rows (they label which forecast a row is) and `VerifNote`'s status.
+    forecast's comparison rows (they label which forecast a row is) and `VerifNote`'s status. **The one credit the app DOES carry is the map-tile credit** (`TILE_CREDIT` in `lib/mapKit.jsx`), because the OSM, OpenTopoMap and Esri licences make it a condition of use; owner rule 2026-10-04 is "credit only if we are legally supposed to". Do not remove it as a source mention, and do not add credits anywhere else.
   - Fails **closed**: fewer than 5 files parsed, or fewer than 500 rendered expressions seen, is a
     broken traversal rather than a clean app (it sees 4,461 today).
   - Injection-tested, 4 cases at the bottom of the script; cases 1 and 2 are the REAL defects from
     #1069 and #999, and case 3 must **pass**.
+  - **A response header's NAME is not screen text (2026-10-07).** The shade map reads which terrain
+    model each height tile came from — `r.headers.get("x-amz-meta-x-imagery-sources")` — to show a
+    licence credit only where one is required (Canada's CDEM, not US 3DEP). RULE 2 failed on that
+    protocol key, so a string literal that is the argument of `<x>.headers.get(...)` is skipped. The
+    literal count fell by exactly one (46,329 → 46,328), so nothing else left the scan.
 - **`check:preview-claims`** asserts that **no toast describes the app as a preview, a demo or a
   simulation**. Static (one read of every app source, string-aware paren balancing — no Babel), so it
   sits in `npm run build`.
@@ -1339,3 +1364,190 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Non-toast leftovers deliberately NOT swept** (the ask was toasts): the résumé's
     *Verify (demo)* button and *✓ verified (demo)* chip, and the seed `GuideDashboard`'s
     *Mark verified (demo)* (renders only when `USE_DB` is off, i.e. never in production).
+
+- **`check:conditions-score`** asserts that the crag **CONDITIONS SCORE** (Conditions tab, sport /
+  trad / top-rope / bouldering only — `lib/conditionsScore.js`, card `ConditionsScoreCard` in
+  `RouteDetail.jsx`) **adds up, leaves out what it did not measure, and is offered nowhere it cannot
+  judge**. Static, no network, no credentials; in `npm run build`.
+  - **Arithmetic**: each factor is rounded to whole points BEFORE summing, so the "x of y points"
+    line is exactly the sum of the rows printed under it, and stars are exactly 5 × points / measured
+    points. There is **no clamp** anywhere — the same lesson as `compat()` (docs/codebase/algorithms.md).
+  - **...except a NAMED CAP (§7, 2026-10-07)**: summed factors gave an hour of RAIN 53-59 points
+    ("Fair"), because temperature, wind and sun still scored. Rain in the past hour, rock under 30%
+    dried, ANY wet sandstone (not conglomerate — see below), and AQI > 200 cap the hour at 1 ★; air
+    within 5°F of its dew point and AQI > 150 cap it at 2 ★.
+  - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
+    on feel:
+    - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).
+    - The AQI caps follow EPA's bands: at 151–200 those active outdoors avoid heavy exertion; above 200, everyone does.
+    - DRY_HOURS follow the climbing bodies (rockType.js lists each one): granite and quartzite 12,
+      limestone and metamorphic 24, sandstone 48. In the model, 48 h of credit works out to the
+      Southern Nevada coalition's "36 h with sun, 3–4 days in winter".
+    - A wet day is ≥ 1 mm, the ETCCDI convention.
+    - Wet sandstone "can lose up to 75% of its strength" (Access Fund). Conglomerate keeps
+      sandstone's drying but NOT that cap: quartz-cemented conglomerate (the Gunks, 1,548 areas)
+      is hard rock, and the guard pins this.
+    - Still conventions, NOT measured: the friction thresholds (no peer-reviewed study fixes one),
+      the drying-rate multipliers, and the 12/16 wet-day month cut-offs. Stars are `min(5 × points / measured, lowest cap)`; every cap carries
+    its reason, the card prints it under the factor rows with "The factors alone would give x", and
+    the day strip says "Held down by: …". That is not the saturating clamp `compat()` lost — it
+    is a stated verdict, and the rows still add up to the points line. Do not "simplify" it back
+    into a factor weight: a weight can only cost points, never say "don't climb".
+  - **Defects fixed with §7 (each checked against a live Open-Meteo response)**: drizzle under 0.01"
+    was ignored (Open-Meteo reports 0.1 mm = 0.004" steps — any `> 0` now counts); `dew_point_2m`
+    was fetched and never read (now condensation + the friction reading); today's best window and
+    default hour could already be past (hours with `utc + 1h <= now` are not offered); one
+    `utc_offset_seconds` was applied to the whole series, an hour off after a DST change (now
+    `timeformat=unixtime` + the response's `timezone` through Intl, and `is_day` for daylight);
+    drying ignored how much rain fell and the weather since (now credit per hour, scaled by the
+    24 h rain total). `precipitation[T]` is the rain of the hour BEFORE T and is labelled "in the
+    past hour", not "this hour".
+  - **Prefs are ONE store** (`lib/CondPrefs.jsx`, `useSyncExternalStore`): the Home tile read
+    localStorage during render and went stale after a change on a route page. Settings has a *Your
+    conditions* section (menu and profile both open Settings); the tile links to it. All four band
+    chips render, so a saved band equal to the discipline default is pressed as itself.
+  - **Air quality, sun on the wall, seepage and season** are on the card too. A failed air read
+    says "not measured … not a clean-air reading" and caps nothing; a failed climate read says it
+    "says nothing about its season". Seepage is a RISK from 7/14-day rain totals, worded as such.
+    Aspect `'varies'` (0249) says the wall faces several ways, not "no wall direction on file".
+  - **Not measured is not zero**: an unknown aspect (532 of ~300k crag routes have one, measured
+    2026-10-07) drops sun/shade and the max becomes 85. Scoring it 0 would mark every such crag a
+    star worse; scoring it full would mark it better. Both were the tempting default.
+  - **Crag-only is a USER DECISION (2026-10-07)**: no score on alpine, scrambling, mountaineering,
+    ice or mixed. A dry-rock friction number is wrong there, and a wrong number is worse than none.
+    Section 4 fails if `CRAG_SCORE_DISCIPLINES` ever grows one of them.
+  - **Rock type**: the drying factor reads `routeRock()` (lib/rockType.js): a route's own `rock`,
+    else its area's (`areas.rock`, 0248). `rock_basis='mapped'` is the bedrock at the crag's
+    coordinate (scripts/derive-area-rock.mjs) and **agrees with what routes state on rock FAMILY
+    for 174 of 215 areas (81%)**, so §5 requires every place that renders `routeRock(route)` to
+    mark a mapped one. Do not drop the marker because "it is usually right": one in five is not.
+  - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
+    measurements, and the card says which rock it assumed. How a particular wall holds water is
+    not modelled — seepage is only a risk from recent rain — and the card says so.
+  - **Home tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, above *Jump back in*) is the SAME
+    `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
+    nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an
+    unlocated climb as "No score: …" rather than dropping it. At most 8 crags are fetched, and it says so.
+  - **Wall direction (0249)**: `areas.aspect` is written ONLY from an online statement about the wall
+    or its crag (agents: `research-data/crag-aspects/`, `scripts/apply-crag-research.mjs`; page text:
+    `scripts/extract-wall-aspects.mjs`), never from terrain. Both the card and the tile fall back to
+    it when the route has no `aspect`. Agent research on the 10 biggest crags confirmed only 34 of
+    ~566 walls (6%, 2026-10-07): pages rarely state a facing, so do not read the low coverage as a bug.
+    `rock_basis='researched'` (the crag's rock as stated online) reads as stated, not mapped.
+  - **§8 — THE WEATHER BESIDE THE SCORE (2026-10-07, modelled on climbitscore.com's crag page).**
+    The card gained *Day by day* (each day's high/low and feels-like, its RAIN total "0.05" of rain
+    over 4 h" with the top chance, and daylight wind/gusts, humidity range and cloud cover), *Hour by
+    hour* (five panels on one axis — temperature with feels-like and dew point, rain AMOUNT, chance
+    of rain with cloud cover, humidity, wind with gusts and direction arrows — for one day or all 7),
+    feels-like, cloud cover and wind direction under *Right now*, and a **Shade map**.
+    - **Rain by day** counts each hour's rain on the day that hour BEGAN (`precipitation[T]` is the
+      hour before T, so midnight's is the evening before). A day with no precipitation values is
+      null ("Rain not measured"), never "No rain"; a day under 0.01" reads "A trace of rain", not
+      `0.00"`. Checked live against Climbit at Smith Rock: the same 0.05" over 4 h on the same day.
+    - **Gusts print only when stronger than the wind** (after unit rounding): the model sometimes
+      gives a gust below the mean wind, and "4 mph, gusts 3 mph" reads as a bug.
+    - **The shade map** (`lib/ShadeMap.jsx`, arithmetic in `lib/terrainShade.js`) is the TERRAIN's
+      shadow for the sun at a slider time, sunrise to sunset of the chosen day, over the app's own
+      base layers. Heights are the open Terrain Tiles (terrarium) at zoom 14, a 4×4 block that keeps
+      the pin ≥ 1.5 tiles from every edge. A SWEEP along lines away from the sun (each pixel once)
+      costs ~60 ms for the 1024² grid; a ray per pixel at a low sun costs hundreds of millions of
+      steps. The guard pins it on a 100 m ridge: exactly 100 m of shade on the far side at a 45° sun.
+    - **It is NOT scored and does NOT write `areas.aspect`.** It is geometry under a clear sky from a
+      ~7 m model, and the card says so (not trees, not overhangs, not which way one face points; the
+      pin is the crag's location on file). "Sun reaches the pin 7:29 AM – 4:39 PM" is the ground at
+      the pin, worded as such. Climbit feeds its shade into its score; that was deliberately not
+      copied — a crag coordinate is often the parking or the crag's centre, not the wall.
+    - **Terrain credit only where a licence requires it**: each tile names its model in
+      `x-amz-meta-x-imagery-sources`; `TERRAIN_LICENCE_CREDIT` maps the folders checked against live
+      tiles (nrcan_cdem, eudem, uk_lidar, kartverket, nzlinz, austria, pgdc_5m). US 3DEP/NED and SRTM
+      are public domain and add nothing. Checked live: an Alberta crag shows the OGL – Canada line,
+      Smith Rock shows only the imagery credit.
+    - **It loads only near the screen** (IntersectionObserver): sixteen height tiles are ~1.5 MB.
+
+- **`check:alpine-conditions`** asserts that the **alpine Conditions tab** (sub-tab `forecast` on
+  alpine, mountaineering, scrambling, ice and mixed routes — `lib/AlpineConditionsCard.jsx`, logic in
+  `lib/alpineConditions.js`) reads each discipline's OWN conditions, counts its start time back from
+  the Planner's own estimate (`lib/planTimes.js`), and never claims what it did not read. Static, so
+  it sits in `npm run build`; injection suite `scripts/oneoff/inject-alpine-conditions-cases.mjs`
+  (22 cases, 21 caught + 1 silent).
+  - **OWNER DECISIONS, 2026-10-07:** its own Conditions tab; FLAGS, never stars (no published alpine
+    go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
+    softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
+    be different… same with scrambling and mountaineering, research online".
+  - **THE DISCIPLINES DISAGREE ON DIRECTION, which is why there is one KIND per route and not one flag
+    set.** Researched online the same day (guide services, avalanche centres, Parks Canada, AAC
+    Accidents, Weiss et al. 2011 in the *Journal of Glaciology*, practitioner threads):
+    | kind (how told apart) | leads with | start counts back from |
+    |---|---|---|
+    | glacier — mountaineering | no overnight freeze at the SNOW's height (forecast freezing level, not a clear sky); softening from ~7-9 AM | back DOWN below the snow before it softens: soften − (up + down), or the summit leg × 1.69 from camp |
+    | alpine ice — `ice` with AI, snow in the grade, or on a peak; `mixed` with snow, 4+ pitches or 820+ ft | the same, off the face AND its descent before it warms (ACMG: "before noon") | as glacier |
+    | waterfall ice — `ice`, WI, no snow, crag | temperature HISTORY: a night above freezing, 3+ days over 34 °F, +20 °F in 48 h, a sharp fall, rain, too few cold days to form, new snow and wind loading above the gully | **none** — there is no daily softening deadline |
+    | crag mixed — `mixed` otherwise | weeks of freeze to lock blocks and turf in; a thaw is NOT a warning (thaw-freeze builds snow-ice) | **none** |
+    | scrambling | thunder; WET ROCK; cold + wet = verglas (a cold night is BAD here) | off the summit by noon on a storm day, or the forecast onset if earlier |
+    | alpine rock — `alpine` (incl. trad the page calls alpine) | showers and storms mid-climb; verglas | the START OF THE DESCENT before the storm |
+    Alpine rock and scrambles also get the snow logic when the route's own text says it crosses snow
+    (`routeTerrain().snow === "yes"`).
+  - **THRESHOLDS AND THEIR STATUS — the screen calls every one a rule of thumb, never a standard:**
+    published: thunder by WMO weather code 95-99; NWS wind chill (frostbite in ~30 min from about
+    −18 °F); prolonged above-freezing including at NIGHT destabilises waterfall ice (Weiss et al.);
+    avalanche the top ice hazard (Parks Canada). Rule of thumb: off summits by noon (CFI 2026, Roach;
+    CFI's 2020 deck said 10 AM); summit gusts 30 mph caution / 50 warn (Met Office gale = 50); a foot
+    of new snow in a day = obvious instability. Single source: CAPE ≥ 400 J/kg as a lightning
+    predictor (1994 New Mexico study — NWS says no CAPE value makes storms certain, so it only ever
+    reads "possible", and only with rain in the air); DeBruin's ice chart (night over 32 °F, 3+ days
+    over 34 °F, +20 °F in 48 h); Gadd (2 / 4 in of new snow, 25 mph loading); Abacus (blocks need ~2
+    weeks of sub-zero). Ours: a 15 °F fall in 6 h as "sudden cooling" (Weiss gives the mechanism, not
+    a number); snow assumed down to HALFWAY up the gain when the route has no camp pin (the card says
+    so). Not found anywhere, so not flagged: refreeze hours, bridge strength, rock drying time, a
+    scramble wind limit, a whiteout visibility.
+  - **NO REFREEZE GIVES NO SNOW START.** Found live on Easton Glacier (2026-10-07): with the freezing
+    level above the snow all night, `softensAt()` returned the first daylight hour, so the card said
+    "be back down by 8:00 AM, when the snow starts to soften" beside its own warning that the snow
+    starts soft. A night with no refreeze now gives no snow-anchored start, and the card says there is
+    no frozen window. A storm deadline can still set one.
+  - **A FLOOR GIVES NO START.** `planTimes().legsFloor` — part of the walk or the climb is not on
+    file, so the Planner marks it "≥". A start counted back from a minimum is too LATE, the dangerous
+    direction, so the card says why there is no start instead. That is ~11,989 of the 12,685
+    alpine-type routes (only 696 carry distance and gain).
+  - **NEVER "SAFE".** A day with no flags says *Nothing in the forecast flags this day* and every kind
+    states what a forecast cannot see (bridges, whether the ice is in, wet rock…). A failed fetch shows
+    no flags and says it is not a reading. Flags carry VALUES only and the card words them through
+    `uTemp`/`uElev`/`uWind`/`uSnowfall`, so section 6 renders every flag in both unit systems.
+  - **The weather panel moved here from Safety** for these disciplines, and a route with NO placed
+    waypoints now gets its area's coordinate at the route's high point instead of "No forecast yet".
+  - **LIVE READS (section 8).** Avalanche danger (`lib/avalanche.js`: the public map layer's zone
+    polygons, then that zone's forecast by elevation band) shows unless the route's own terrain says
+    `avalanche: "no"`. Its headline is the HIGHEST of the three bands, because a zone's treeline
+    height is not in the data and most climbs cross them. Off season, in season with no rating
+    (Colorado's and Shasta's feeds carried no band ratings on 2026-10-07), outside every zone (all of
+    Canada) and a failed read are FOUR answers, each says "not a rating", and none carries a number,
+    so none can be drawn as Low. Two of the 84 zones are NAMED after their forecasting centre ("CAIC zone",
+    "Bridgeport Avalanche Center"), so `zoneName()` reads those as "this zone": the card-source check
+    for provider names cannot see a name that arrives in the DATA. Snow on the ground (`lib/snotel.js`) is the nearest snow station
+    within 30 km, from one all-states station list cached on the device for 30 days. A route's state
+    is not on its row, and a border climb can be nearer the next state's station. The section always
+    says how far away the station is and how far below the top. Recent outcomes are the last 60 days of
+    Summit / Attempt / Turned around reports, read from the tick and its outcome reasons. With none,
+    the section is absent, never "0 summited". The alpine tick list gained "Turned around" (the walk list already had
+    it, and `leaderboard()` has never counted it as a send), so every discipline on the tab can log
+    one.
+  - **SEASON AT THE TOP** (`fetchAlpineClimate`): the crag card's five-year archive climate, but read
+    at the route's high point (`elevation=` in metres; without it the archive reads the grid cell's
+    own height, which on an area coordinate can sit thousands of feet below the summit) and with
+    snowfall. Each month shows high/low and snowfall, or wet days in a month under an inch of snow.
+    Live on 2026-10-07: Baker's summit July 44/25 °F and January 9/−2 °F with 76 in. `monthlyClimate`
+    adds a `snow` key ONLY when snowfall was asked for, so a crag's reading is byte-for-byte unchanged.
+    The guard stubs `fetch` to prove the archive is asked for the summit's height, not inferred from
+    the code's spelling.
+  - **MODELS DISAGREE** (`fetchAlpineSpread` + `modelSpread`): the same 7 days from GFS, ICON and
+    ECMWF (ECMWF sends no freezing level, so that is compared across two). A day whose models sit 40
+    mph apart on the top gust, 12 °F on the high or 3,000 ft on the mean freezing level gets a caution
+    worded with the range ("read its flags as low confidence"). The cuts are OURS. Nothing is
+    published, and summit gusts disagree by a median 21 mph on ORDINARY days (six summits × 7 days,
+    2026-10-07). So each cut sits near the 90th percentile; a lower one flagged most days and meant
+    nothing. One model answering is NULL, not agreement. A failed spread read adds nothing, and the
+    card never says the models agree.
+  - **WHAT IT CANNOT SEE:** whether a threshold is RIGHT for a given range (Cascades numbers are rare —
+    most ice and mixed material is Rockies, Colorado and Scotland); the card's runtime fetches (SSR
+    renders only the loading state, so the fixtures exercise the logic directly, and the two feeds'
+    live shapes were checked by hand on 2026-10-07, not by the build); which BAND a route is in.

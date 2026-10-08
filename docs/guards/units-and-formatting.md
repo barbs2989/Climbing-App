@@ -76,6 +76,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       `curRefStr`, so one formatter was carrying two conventions the moment the draft moved to
       display units — the editor would have compared `55m` against `"180m"`. `curRefStr` is fed
       `routePitches` now, so one convention flows through.
+    - **THE SEED ANCHOR ACCEPTS A `useMemo` WRAPPER (2026-10-07).** The section lifts the seed
+      ternary by the text `const routePitches=` and evaluates it. When the pitch editor's rows were
+      keyed by row identity, the seed had to be memoised (a seed rebuilt every render would remount
+      every row), and the anchor — written from the fix as the plain-expression shape — refused the
+      change outright, which is the trap this section's own comment warns of. It now accepts either
+      `const routePitches=(…` or `const routePitches=useMemo(function(){return (…`; what it slices
+      and evaluates is the ternary itself in both cases, so the nine injection cases still land.
     - **MEASURED, so it needs no `_orig` guard where `itinStoreVal` does:** every length
       **1-200 m round-trips m→ft→m exactly**, so a box seeded from a stored length and saved
       untouched cannot drift. Miles and pounds do not, which is what that guard exists for.
@@ -173,7 +180,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     one reader; a form that stores what was typed corrupts the record for **every** reader — a
     metric climber typing 10 meaning 10°C had **10 written into `climb_logs.temp_f`**, so their own
     report told everyone else the route was at -12°C. **Four** writes are covered: the trip-report
-    temperature, the itinerary builder, the bail form's distance, and the approach-variants editor.
+    temperature, the itinerary builder, and the approach-variants editor.
   - **THE VARIANTS WRITE IS THE WORST OF THE FOUR, and not because it is the biggest.** Its two
     numbers are the ones `sameEditValue` compares **numerically with a tolerance** (0.1/0.2 on
     `distMi`, 0.1/50 on `gainFt`) so two climbers who measure 4.8 and 4.9 miles count as agreeing. A
@@ -193,7 +200,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     reload at all, and a throwing `localStorage` cannot take a screen down), `weather` (the forecast
     helpers, and the colour thresholds still receiving RAW imperial), `reports` (a climber's own
     temperature, on screen and on the way into the column), `itinerary` (the builder, the downloaded
-    `.txt`, and the bail form's second writer of the same column), `variants` (the approach-variants
+    `.txt`; the bail form, a second writer of that column, was removed 2026-10-07 and the itinerary FLOOR fell 16 → 12), `variants` (the approach-variants
     editor, on both boundaries and in its two labels), `filters` (the chips, and whether a length
     LABEL agrees with the predicate it labels).
   - **FLOORS ARE PER SECTION, because ONE TOTAL CANNOT SEE A SECTION THAT STOPPED ASKING** — five

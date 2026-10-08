@@ -12,7 +12,7 @@
 
 import { useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { useRouteProposals, approveNewRoute, rejectNewRoute } from "./db";
+import { useRouteProposals, approveNewRoute, rejectNewRoute, preferNetworkReads } from "./db";
 import { gradeNumFor } from "./grade";
 import { discLabel } from "./discLabels";
 import { C } from "../ClimbMatchCore";
@@ -50,7 +50,9 @@ export function RouteProposalQueue() {
 
   const refresh = () => {
     qc.invalidateQueries({ queryKey: ["route-proposals"] });
-    // A new row in `routes` changes area listings and their counts.
+    // A new row in `routes` changes area listings and their counts. A downloaded state answers
+    // those lists from the device until tonight's file has the row, so read the network from here on.
+    preferNetworkReads();
     qc.invalidateQueries({ queryKey: ["area-routes"] });
   };
 
@@ -129,7 +131,6 @@ export function RouteProposalQueue() {
           <Row label="Approach">{v.approach}</Row>
           <Row label="Descent">{v.descentText}</Row>
           <Row label="Rappels">{v.rap}</Row>
-          <Row label="Turnaround">{v.turn}</Row>
           <Row label="Comms">{v.comms}</Row>
           <Row label="Style">{Array.isArray(v.style) && v.style.length ? v.style.join(", ") : null}</Row>
           <Row label="Hazards">{Array.isArray(v.haz) && v.haz.length ? v.haz.join(", ") : null}</Row>

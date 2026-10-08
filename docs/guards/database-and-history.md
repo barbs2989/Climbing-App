@@ -438,9 +438,83 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     is `audits/area-pairs-2026-09-26/fold.mjs`) or a newly READ different place (`--write-baseline`).
   - **Proven to fail**: with Kraft Boulders / Kraft Crags removed from the list it exits 1 naming
     exactly that pair.
-  - **Cannot see** a copy over 3 km off, one with no coordinate, one holding no climbs yet, or a
-    spelling the key does not fold. The trigger (0216/0218) refuses a same-key area within 1.5 km
-    at insert; this sweeps what got past it.
+  - **SAME PARENT, second pass (0256, 2026-10-07)**: two children of one area under the plain
+    `catalog_key` pair at ANY distance, with or without a coordinate or climbs. The first pass skips
+    a shared parent, and 209 groups had collected there unseen — one import's "Pawn, The" beside
+    another's "The Pawn" at the same coordinate (The Needles of Rushmore 1,503 + 33 climbs, The
+    Tennessee Wall, The Callahans, The Near Trapps), "Mount X" / "Mt. X", "X" / "X Area", and an ICE
+    tree's copy of a crag ("Catskills (Ice)", Poke-O-Moonshine's copy with NO coordinate). 0256 folded
+    them (0251's planner, adapted). Read as different places and LISTED: Index / Mount Index, Baker
+    Crags / Mount Baker, Mount Wilson / Wilson Peak, Jump For Jesus / its Area (0251's reading).
+    - Across two copies of one wall the climbs pair up as ONE climb in halves: one import carries
+      the FA, the other the pitches and length, and the grades drifted ("The Mordor Wall" 5.6 /
+      5.7 A3). A placeholder with the SAME grade on both copies is one climb; with different grades
+      it stays two (owner rule). The higher grade is kept.
+    - **Not paired yet**: a crag beside its own "X Bouldering" / "X Boulders" sibling under one
+      parent (the wide key; ~75 pairs on 2026-10-07). Some are one place, some a separate boulder
+      field ("Mount Morrison" / "Morrison Boulders") — read before folding.
+  - **Cannot see** a copy under another parent over 3 km off, one with no coordinate, one holding no
+    climbs yet, or a spelling the key does not fold. The trigger (0216/0218) refuses a same-key area
+    within 1.5 km at insert; this sweeps what got past it. Long Hill Conservation Area was a copy of
+    Hidden in Plain Sight Boulders under another parent 4 km off with other boulder names — found by
+    its CLIMBS (Megaman V3, Dick Move V1-2, Party Foul V3+ on both), folded in 0256.
+
+- **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
+  label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
+  "l. Sleepy Hollow" — *"We don't want the letters before the name of the area"* — and ~3,900
+  areas in 49 states and provinces had one ("B: …", "(3) …", "12 - …", "* …", "- …").
+  `scripts/oneoff/strip-area-sort-prefixes.mjs` renamed them; the importer strips as it creates.
+  Runs **daily** in `area-count-drift.yml`, anon key, refuses a read under 40k rows.
+  - **ONE rule**, `scripts/lib/area-sort-prefix.mjs`, shared by the rename, the importer and this
+    guard. The importer needs it on BOTH sides: the export's location path still carries the label,
+    so comparing it raw against a renamed area misses it and mints a duplicate. It asks the EXACT
+    spelling first, then the stripped one, because the held areas below would otherwise make two
+    same-named children and refuse every route for either.
+  - **Measured NON-labels** (read, not guessed): "J. Paul Pebble", "L. Ron Hubbard's Boulder",
+    "N. Fork Moorman's Area" (North Fork) — excepted by name; every other lone "E." / "N." is one
+    step of a lettered series. A number that is the name stays ("19 Mile Wall", ".50 Cal Tower").
+    The letter/number label comes off ONCE: "g. V3 - Middle Earth" keeps "V3". The owner then asked
+    for online research where the letter may be the name; settled so: "B - Word" → "B Word" (the
+    wall's name), Horse Flats' "Y Crack Boulder" / "A Boulder", "Y - North/South Side" kept (the crag
+    is The Y), "N. Red-Yellow" and "B. School" kept as unsettled. Only 150 renames had no labelled
+    sibling to vouch for them; those were the ones read.
+  - **The rule must be IDEMPOTENT** — the importer strips names the rename already stripped. The
+    first run broke it three ways ("V3 - " read as a letter-dash label, ". . more" as dot markers,
+    "Z1:1:" stacked); tested since: f(f(x)) === f(x) for all 58,515 distinct names.
+  - **HELD, listed** (`scripts/data/area-sort-labels-held.json`, each with its `why`), 474 on
+    2026-10-07 — all duplicate places the label was hiding, needing a fold (0221's pattern), not a
+    rename; after one, `--write-held` shrinks the list:
+    - `sibling` (274): the stripped name is a SIBLING's — "(a) Hook" beside "Hook" (230 groups, 220
+      with climbs in every copy). `check:area-duplicates` cannot see these: it pairs DIFFERENT parents.
+    - `refused` (199): the rename's PATCH was refused by `refuse_duplicate_area` (0218) — a same-named
+      area within 1.5 km. Often the same parent, spelled "White Wall, The" against "(E) The White
+      Wall", which the sibling test missed because it does not fold a trailing ", The".
+  - **FOLDED by 0251** (2026-10-07; held list now EMPTY, check:counts clean): 393 copies folded into their keeper, 47 climbs merged, ~1,800
+    moved, 83 keepers renamed. Applied live in pieces by `scripts/oneoff/apply-0251-in-parts.mjs`,
+    because three per-row triggers on `routes` make one transaction outlast the SQL gateway. Met
+    on the way, each a trap for the next fold:
+    - an area holds climbs OR sub-areas (`routes_require_leaf`, `areas_leaf_xor`): 9 groups had one
+      of each, so the flat climbs sit under the place as "Other Climbs" (0221's name);
+    - `refuse_duplicate_route` checks the whole NEIGHBOURHOOD, not the target area: predicted over
+      every move out of band (3 hits, read: Muir one climb, merged; two pairs different climbs);
+    - a climber's TOPO sat on a copy (`topos` cascades on an area delete): moved to the keeper;
+    - re-parenting fires `refuse_duplicate_area` too, which found 3 pairs the planner missed
+      (Acadia's ice tree, Mount Erie's Adventure Crags) — folded.
+  - **Cannot see** a label spelling the function does not know, or a ROUTE name: 1,184 route names
+    carry a topo number ("(01) Chicken Crack"), but route names also hold real initials ("R. Crumb",
+    "T. Rex", "C. Bailey"), so they were not swept by the same rule. ROUTE names have their own rule
+    since 2026-10-07, `scripts/lib/route-topo-label.mjs` (shared with `import-route-grades.mjs` so a
+    re-import still matches): a NUMBER label comes off everywhere, a LETTER label only where the area
+    runs a letter series (3+ letters, 9 areas); `scripts/oneoff/strip-route-topo-labels.mjs` renames
+    875 and HOLDS 42 whose bare name a sibling already has (five "Slab" V1s, six "Project"s).
+  - **Spelling twins MERGED by 0253** (2026-10-07): same-area climbs whose names differ by a typo or
+    by spacing, same discipline and base grade — 2,775 candidates, READ pair by pair — 179 merged
+    ("Manhattan / Manhatten Project"), plus 8 rows the source named "to be deleted" / "_delete".
+    NOT merged, on purpose: pairs that read as two climbs ("The Last / The Lost Gardener"), the
+    UNSURE ones, and names whose grade or mark IS the difference ("The 5.7 / 5.7+ Corner"). Same-named
+    placeholders with different grades ("Unnamed" 5.6 / 5.9) are different climbs, never candidates.
+  - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
+    set the order on screen and removing them lost no guidebook sequence.
 
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),

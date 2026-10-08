@@ -6,10 +6,10 @@
 // accepted, toasted as recorded, written to the contributions table, and then never read by
 // anything. The climber sees a success message and the route never changes.
 //
-// This is not hypothetical: the bailout/startLocation comment in ClimbMatch.jsx documents
+// This is not hypothetical: the startLocation comment in ClimbMatch.jsx documents
 // exactly this shape ("a contributions row for them would be written and never read"), and
-// those two are handled by returning BEFORE the field-edit path — which is why they are the
-// only legitimate exemptions here.
+// it is handled by returning BEFORE the field-edit path — which is why it is the
+// only legitimate exemption here.
 //
 // Static and fast (no DB, no browser), so it sits in `npm run build` with the other gates.
 //
@@ -65,15 +65,15 @@ if (!form.length || !ss.size) {
 
 // There are TWO ways a field reaches onContribute, and checking only the first was this
 // guard's own first-draft bug. Besides the FIELDS list, RouteDetail calls onSubmit directly
-// with a literal field name — that is how bailout and startLocation are filed, and they are
-// NOT in FIELDS, so a FIELDS-only scan can never see that path at all.
+// with a literal field name — that is how startLocation is filed (bailout was too, until bail
+// points were removed), and it is NOT in FIELDS, so a FIELDS-only scan can never see that path at all.
 const direct = [...rd.matchAll(/onSubmit\(\{[^)]{0,120}?field:\s*"([a-zA-Z0-9_]+)"/g)].map((m) => m[1]);
 
 // Exempt from the SS requirement because onContribute returns BEFORE the field-edit path for
-// them: they are additive, geo-clustered lists read back through bailoutEdits /
+// them: they are additive, geo-clustered lists read back through
 // startLocationConsensus, not scalar fields. A name here that stops being filed that way
 // must fail, so the list cannot rot.
-const EXEMPT = ["bailout", "startLocation"];
+const EXEMPT = ["startLocation"];
 const stale = EXEMPT.filter((k) => !direct.includes(k) && !form.includes(k));
 if (stale.length) {
   console.error(`stale exemption(s): ${stale.join(", ")} — no longer submitted anywhere. Remove from EXEMPT.`);
@@ -209,8 +209,9 @@ if (ungrouped.length) {
 }
 console.log(`  ${_fieldKeys.length} editor field(s), every one in a section the sheet renders`);
 const sectionIds = new Set(_fieldKeys);
-// Two sections are rendered with a literal id rather than from a FIELDS key.
-for (const extra of ["bailout", "startLocation"]) sectionIds.add(extra);
+// One section is rendered with a literal id rather than from a FIELDS key (bail points, the
+// other, were removed from the app on 2026-10-07).
+for (const extra of ["startLocation"]) sectionIds.add(extra);
 const orphanPencils = [...new Set(pencilIds.filter((id) => !sectionIds.has(id)))];
 if (orphanPencils.length) {
   const n = pencilIds.filter((id) => orphanPencils.includes(id)).length;

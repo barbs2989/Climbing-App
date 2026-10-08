@@ -3,12 +3,27 @@
 // Zero imports from ClimbMatch.jsx — same "leaf module" pattern as lib/db.js —
 // so both files can import this without a circular dependency (ClimbMatch.jsx
 // lazy-loads lib/DbAreaBrowser.jsx).
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { loadUnits } from "./units-pref";
+import { offlineTileUrl, offlineLayerFor } from "./offlineTiles";
 
 export const MAP_TILE_URLS = {
   street: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   sat: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
   topo: "https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png",
+};
+
+// THE ONE CREDIT THE APP CARRIES, because these licences make it a condition of use and nothing
+// else in the app does (owner rule 2026-10-04: credit only where legally required). OSM tiles are
+// ODbL and its guidelines want the credit in a map corner, visible without interaction;
+// OpenTopoMap is CC-BY-SA over OSM + SRTM; Esri's terms require "Powered by Esri" plus the
+// imagery providers. NASA GIBS (the Snow layer) is public domain, so it carries none. `text` is
+// for a surface that cannot hold a link (the fire preview is itself one big button).
+const OSM_LINK = '<a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a>';
+export const TILE_CREDIT = {
+  street: { html: "© " + OSM_LINK, text: "© OpenStreetMap" },
+  topo: { html: "© " + OSM_LINK + ', SRTM · © <a href="https://opentopomap.org" target="_blank" rel="noopener noreferrer">OpenTopoMap</a> (CC-BY-SA)', text: "© OpenStreetMap, SRTM · © OpenTopoMap (CC-BY-SA)" },
+  sat: { html: 'Powered by <a href="https://www.esri.com" target="_blank" rel="noopener noreferrer">Esri</a> · Esri, Maxar, Earthstar Geographics, and the GIS User Community', text: "Powered by Esri · Esri, Maxar, Earthstar Geographics" },
 };
 
 // "Snow" is the one layer that shows the ground as it is NOW. The satellite layer above is a
@@ -116,7 +131,31 @@ export function baseTileLayer(L, baseLayer) {
     return L.tileLayer(GIBS + P.layer + "/default/" + s.date + "/" + P.tms + "/{z}/{y}/{x}." + P.ext, { maxNativeZoom: P.native, maxZoom: P.max });
   }
   const url = MAP_TILE_URLS[baseLayer] ? baseLayer : "sat";
-  return L.tileLayer(MAP_TILE_URLS[url], { maxNativeZoom: LAYER_NATIVE_ZOOM[url], maxZoom: DEEPEST_ZOOM });
+  return new (offlineFallbackLayer(L))(MAP_TILE_URLS[url], { maxNativeZoom: LAYER_NATIVE_ZOOM[url], maxZoom: DEEPEST_ZOOM, attribution: TILE_CREDIT[url].html, cmOffline: offlineLayerFor(url) });
+}
+// NO SIGNAL, AND THE MAP STILL SHOWS THE GROUND YOU PACKED. A tile that fails to load is replaced,
+// one tile at a time, by the trip pack's saved copy (lib/offlineTiles.js) -- USGS imagery under
+// Satellite, USGS topo under Topo and Street. Online every tile loads and none of this runs. The
+// error is passed on only when there is no saved tile either, so Leaflet's own handling is unchanged.
+let _FallbackLayer = null;
+function offlineFallbackLayer(L) {
+  if (_FallbackLayer) return _FallbackLayer;
+  _FallbackLayer = L.TileLayer.extend({
+    createTile(coords, done) {
+      const layer = this.options.cmOffline;
+      let tried = false;
+      const tile = L.TileLayer.prototype.createTile.call(this, coords, (err, t) => {
+        if (!err || tried || !layer) { if (tile._cmUrl) { URL.revokeObjectURL(tile._cmUrl); tile._cmUrl = null; } done(err, t); return; }
+        tried = true;
+        offlineTileUrl(layer, coords.z, coords.x, coords.y).then((u) => {
+          if (!u) { done(err, t); return; }
+          tile._cmUrl = u; tile.src = u; // its load (or error) event re-enters this callback with tried=true
+        }, () => done(err, t));
+      });
+      return tile;
+    },
+  });
+  return _FallbackLayer;
 }
 // Choosing a snow picture steps OUT to the zoom its pixels can carry. The climber can still
 // zoom back in; nothing is locked.
@@ -156,6 +195,16 @@ const LEAFLET = {
     sri: "sha512-puJW3E/qXDqYp9IfhAI54BJEaWIfloJ7JWs7OeD5i6ruC9JZL1gERT1wjtwXFlh7CjE7ZJ+/vcRZRkIYIb6p4g==",
   },
 };
+
+// A map with no signal needs Leaflet itself, not only tiles. public/sw.js keeps a copy of these
+// two pinned files (network-first, like the app shell); packing a climb fetches them through it,
+// so a climber who packed without ever opening a map still gets one at the trailhead. Same URL,
+// same integrity hash, so the browser still verifies what the cache hands back.
+export function warmLeafletOffline() {
+  try {
+    return Promise.all([LEAFLET.js, LEAFLET.css].map((f) => fetch(f.url, { mode: "cors", credentials: "omit", integrity: f.sri }).catch(() => null)));
+  } catch (e) { return Promise.resolve(); }
+}
 
 // PINCHING PAST THE DEEPEST ZOOM BLANKED THE WHOLE MAP. Leaflet's default `bounceAtZoomLimits`
 // lets a pinch carry the map's zoom beyond the tile layer's maxZoom (then 19 satellite, 17 topo) and
@@ -227,6 +276,10 @@ export function loadLeaflet(onReadyRaw, onError) {
 export function applyBaseLayer(map, tileRef, baseLayer) {
   if (!map || !window.L) return;
   const L = window.L;
+  // Every map is built with attributionControl:false (Leaflet's default prefix links Leaflet
+  // itself, which its BSD licence does not require), so the tile credit gets its own control,
+  // once per map. Leaflet then shows the ACTIVE layer's credit and swaps it with the layer.
+  if (!map.__cmCredit) map.__cmCredit = L.control.attribution({ prefix: false, position: "bottomright" }).addTo(map);
   if (tileRef.current) { try { map.removeLayer(tileRef.current); } catch (e) {} }
   tileRef.current = baseTileLayer(L, baseLayer).addTo(map);
   fitZoomToLayer(map, baseLayer);
@@ -350,4 +403,121 @@ export function pinHtml(nm, n, d, color, brd, iconMarkup) {
     (bottom ? "<text font-size='" + fs + "' font-weight='700' fill='#fff' stroke='rgba(0,0,0,0.85)' stroke-width='2.5' paint-order='stroke fill' style='stroke-linejoin:round'><textPath href='#" + id + "b' xlink:href='#" + id + "b' startOffset='50%' text-anchor='middle'>" + bottom + "</textPath></text>" : "") +
     badgeMarkup +
     "</svg>";
+}
+
+// "WHERE AM I" ON EVERY MAP, and why it is a WATCH, not one reading.
+// Every map's locate button used to call getCurrentPosition once, with maximumAge 30 s, and draw
+// whatever came back. On a phone the FIRST answer is nearly always the network fix (wifi / cell
+// tower, often 30-500 m out) or a cached one; the GPS fix that follows a few seconds later was
+// never asked for. And a single reading never moves, so the dot fell behind as soon as you
+// walked -- "a little off", exactly when you are hunting for the start of a route.
+//
+// So the button starts a watchPosition with enableHighAccuracy and maximumAge 0 that runs while the
+// map is open. GPS needs no network: once the page is loaded the dot keeps tracking with no signal
+// and no wifi (the TILES do need one -- the service worker does not cache them).
+//
+// Which readings move the dot (acceptFix): a better or equal one always; a coarser one only if
+// the current one is stale or the two cannot both be true (you really moved). Without that a
+// stray tower fix arriving between GPS fixes yanked the dot hundreds of metres and back.
+//
+// The map follows you until you drag it; the button then re-centres and resumes following.
+export const FIX_STALE_MS = 15000;
+export const FIX_LOST_MS = 45000;
+function fixDistM(a, b) {
+  const R = 6371000, rad = Math.PI / 180;
+  const dLat = (b.lat - a.lat) * rad, dLng = (b.lng - a.lng) * rad;
+  const s = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * rad) * Math.cos(b.lat * rad) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(s));
+}
+export function acceptFix(cur, next) {
+  if (!next || !Number.isFinite(next.lat) || !Number.isFinite(next.lng)) return false;
+  if (!cur) return true;
+  const acc = Number.isFinite(next.acc) ? next.acc : Infinity;
+  // GPS-grade readings always move the dot, even a little worse than the last: holding out for
+  // the best one ever seen left a walking climber's dot 20-30 m behind them.
+  if (acc <= Math.max(cur.acc * 2, 30)) return true;
+  if (next.t - cur.t > FIX_STALE_MS) return true;
+  return fixDistM(cur, next) > acc + cur.acc;
+}
+
+export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
+  const [locating, setLocating] = useState(false);
+  const [following, setFollowing] = useState(false);
+  const [acc, setAcc] = useState(null);
+  const [lost, setLost] = useState(false);
+  const [err, setErr] = useState("");
+  const watchRef = useRef(null), curRef = useRef(null), autoRef = useRef(false);
+  const dotRef = useRef(null), ringRef = useRef(null), hookedRef = useRef(null), onFixRef = useRef(onFix);
+  onFixRef.current = onFix;
+  const stop = () => { if (watchRef.current != null) { try { navigator.geolocation.clearWatch(watchRef.current); } catch (e) {} watchRef.current = null; } };
+  useEffect(() => stop, []);
+  // A fix that has stopped arriving must not keep reading as current: say how old it is.
+  useEffect(() => {
+    if (!following) return;
+    const t = setInterval(() => { const c = curRef.current; setLost(!!c && Date.now() - c.seen > FIX_LOST_MS); }, 5000);
+    return () => clearInterval(t);
+  }, [following]);
+  const draw = (fix, first) => {
+    const L = window.L, map = mapRef.current;
+    if (!L || !map) return;
+    // The map can be rebuilt under us (route change, fullscreen); a marker on a removed map is invisible.
+    if (hookedRef.current !== map) { hookedRef.current = map; dotRef.current = null; ringRef.current = null; map.on("dragstart", () => { autoRef.current = false; }); }
+    const ll = [fix.lat, fix.lng], r = Number.isFinite(fix.acc) ? fix.acc : 50;
+    if (dotRef.current) dotRef.current.setLatLng(ll);
+    else dotRef.current = L.circleMarker(ll, { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
+    if (ringRef.current) ringRef.current.setLatLng(ll).setRadius(r);
+    else ringRef.current = L.circle(ll, { radius: r, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12, interactive: false }).addTo(map);
+    if (first) map.setView(ll, Math.max(map.getZoom(), zoom));
+    else if (autoRef.current) map.panTo(ll, { animate: true });
+  };
+  const locate = () => {
+    if (typeof navigator === "undefined" || !navigator.geolocation) { setErr("Location isn’t available on this device."); return; }
+    setErr("");
+    autoRef.current = true;
+    const map = mapRef.current;
+    if (watchRef.current != null) {
+      // Already following: the button re-centres on the latest fix and resumes following.
+      const c = curRef.current;
+      if (c && map) map.setView([c.lat, c.lng], Math.max(map.getZoom(), zoom));
+      return;
+    }
+    setLocating(true);
+    let first = true;
+    watchRef.current = navigator.geolocation.watchPosition(
+      (pos) => {
+        const c = pos.coords || {};
+        const fix = { lat: c.latitude, lng: c.longitude, acc: Number.isFinite(c.accuracy) ? c.accuracy : Infinity, t: pos.timestamp || Date.now(), seen: Date.now() };
+        if (curRef.current) curRef.current.seen = fix.seen;
+        setLost(false);
+        if (!acceptFix(curRef.current, fix)) return;
+        curRef.current = fix;
+        setLocating(false); setFollowing(true); setErr("");
+        setAcc(Number.isFinite(fix.acc) ? fix.acc : null);
+        draw(fix, first);
+        if (onFixRef.current) onFixRef.current(fix, first);
+        first = false;
+      },
+      (e) => {
+        if (e && e.code === 1) { stop(); setLocating(false); setFollowing(false); setErr("Location permission is off for this site — allow it in your browser or device settings to see where you are."); return; }
+        // A timeout or a lost signal is not the end of a watch: it keeps trying.
+        if (!curRef.current) setErr("Still looking for a GPS signal — step out from under trees or the wall.");
+      },
+      { enableHighAccuracy: true, maximumAge: 0, timeout: 20000 }
+    );
+  };
+  // A view the climber asked for (Reset view, Fit all) must not be yanked back by the next fix.
+  // The dot keeps moving; the button resumes following.
+  const release = () => { autoRef.current = false; };
+  return { locate, release, locating, following, acc, lost, err };
+}
+// The locate button's words. Once following, the label IS the accuracy, in the climber's units, so
+// "a little off" is something the screen states rather than something you discover at the crag.
+export function fmtFixAcc(m) {
+  if (!Number.isFinite(m)) return "";
+  return loadUnits() === "metric" ? Math.round(m) + " m" : Math.round(m * 3.28084).toLocaleString() + " ft";
+}
+export function locateLabel(st, idle) {
+  if (st.locating) return "Locating…";
+  if (st.following) return st.lost ? "No GPS fix" : st.acc != null ? "±" + fmtFixAcc(st.acc) : idle;
+  return idle;
 }

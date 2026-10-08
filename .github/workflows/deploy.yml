@@ -132,6 +132,24 @@ jobs:
           # sign-in box and could not see a single climb. Whether the app gates on a
           # real account is a product decision, and the recorded one is to stay open.
           VITE_DEMO_AUTOLOGIN: "true"
+      # The offline state files (state-snapshots.yml builds them nightly into the Actions cache).
+      # Restored by key PREFIX, so the newest set wins. Missing is not an error: the app falls back
+      # to paging the database, exactly as it did before these files existed.
+      - uses: actions/cache/restore@v4
+        if: steps.tip_early.outputs.current == 'true'
+        with:
+          path: state-snapshots
+          key: state-snapshots-none
+          restore-keys: state-snapshots-
+      - name: Ship the offline state files with the site
+        if: steps.tip_early.outputs.current == 'true'
+        run: |
+          if [ -f state-snapshots/index.json ]; then
+            mkdir -p dist/states && cp state-snapshots/* dist/states/
+            echo "offline state files: $(ls dist/states | wc -l) file(s), $(du -sh dist/states | cut -f1)"
+          else
+            echo "no offline state files in the cache yet — the app will use the live database path"
+          fi
       # The run_attempt suffix is required — artifact names must be unique within
       # a run, so a bare "github-pages" collides on the second attempt. It does
       # mean this workflow must be re-run WHOLE:

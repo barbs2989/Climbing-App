@@ -21,6 +21,8 @@ import { execFileSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { requireServiceKey, SUPABASE_URL } from "../lib/supabase-env.mjs";
 import { gradeNumFrom } from "../../lib/grade.js";
+import { stripSortPrefix } from "../lib/area-sort-prefix.mjs";
+import { stripRouteTopoLabel, letterSeriesAreas } from "../lib/route-topo-label.mjs";
 
 const args = process.argv.slice(2);
 const APPLY = args.includes("--apply"), ALL = args.includes("--all"), SAMPLE = args.includes("--sample"), CREATE = args.includes("--create-areas");
@@ -35,7 +37,10 @@ const decode = s => String(s || "").replace(/&#0?39;|&apos;/g, "'").replace(/&qu
 const norm = s => String(s || "").normalize("NFKD").replace(/[̀-ͯ]/g, "").replace(/&#0?39;|&apos;/g, "'").replace(/&amp;/g, "&").trim().toLowerCase();
 // Area names only: our Adirondack areas carry sorting prefixes ("D: Keene Valley and Chapel Pond",
 // "* Adirondack Ice & Mixed") that the export's location path does not.
-const areaNorm = s => norm(s).replace(/^(?:[a-z]\s*:\s*|\*\s*)/, "").trim();
+// Since 2026-10-07 the export's own sort labels too ("a1. The Uberfall - left", "(3) Snake Wall"):
+// our areas were renamed without them, the export's path still carries them. stripSortPrefix is
+// the one rule both use.
+const areaNorm = s => norm(stripSortPrefix(s)).replace(/^(?:[a-z]\s*:\s*|\*\s*)/, "").trim();
 // The DATABASE's own name key (catalog_key: "Flintstone, The" = "The Flintstone"), which its
 // refuse_duplicate_area / refuse_duplicate_route triggers compare by. Asked of the database rather
 // than re-implemented, so the importer and the triggers cannot disagree about what is a duplicate.
@@ -141,6 +146,11 @@ function resolver(stateId, stateName, planned, splits) {
   const direct = new Set(sql(`select distinct r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(stateId)})`).map(r => r.area_id));
   const kids = new Map(), hasKids = new Set(rows.map(r => r.parent_id)), ids = new Set(rows.map(r => r.id));
   for (const r of rows) { const k = r.parent_id + "|" + areaNorm(r.name); (kids.get(k) || kids.set(k, []).get(k)).push(r); }
+  // The EXACT spelling, asked first: 274 areas kept their label because stripping it would name
+  // them the same as a sibling ("(a) Hook" beside "Hook" — duplicates awaiting a fold). Under the
+  // stripped key alone, that parent has two "hook"s and every route for either would be refused.
+  const exact = new Map();
+  for (const r of rows) { const k = r.parent_id + "|" + norm(r.name); (exact.get(k) || exact.set(k, []).get(k)).push(r); }
   // The id prefix is the one the state's areas already use (its postal code: "mo_", "nh_"). A state
   // with no area yet (Mississippi, 2026-10-01) has nothing to read it from, so the postal code is used.
   const pre = (() => { const c = {}; for (const r of rows) { const p = r.id.split("_")[0]; if (p !== r.id) c[p] = (c[p] || 0) + 1; } const top = Object.entries(c).sort((a, b) => b[1] - a[1])[0]; if (top) return top[0]; if (POSTAL[stateId]) return POSTAL[stateId]; if (/^[a-z]{2}$/.test(stateId)) return stateId; /* a Canadian province id IS its postal code */ throw new Error(`${stateName}: no area id prefix to follow`); })();
@@ -162,9 +172,15 @@ function resolver(stateId, stateName, planned, splits) {
   // Flintstone", and refuse_duplicate_area would reject the second one anyway.
   const keyOf = x => x.k ?? ck(x.name);
   const byId = new Map(rows.map(r => [r.id, r])), byName = new Map(), kidsK = new Map(), byFold = new Map(), kidsF = new Map();
+  // An area still carrying its sort label (held for a fold) is indexed under its STRIPPED key too:
+  // placeInner asks with the stripped chain, so "a. Beginning of cliff to Gelsa", found only by the
+  // same-name-nearby rule (MP files it under "The Near Trapps", ours under "Near Trapps, The"), was
+  // missed and a second copy planned — measured on New York, 2026-10-07.
+  catalogKeys(rows.map(r => stripSortPrefix(r.name)));
   const index = r => {
-    const k = keyOf(r); (byName.get(k) || byName.set(k, []).get(k)).push(r); const kk = r.parent_id + "|" + k; (kidsK.get(kk) || kidsK.set(kk, []).get(kk)).push(r);
-    const f = fk(r.name); (byFold.get(f) || byFold.set(f, []).get(f)).push(r); const fkk = r.parent_id + "|" + f; (kidsF.get(fkk) || kidsF.set(fkk, []).get(fkk)).push(r);
+    const s = stripSortPrefix(r.name);
+    for (const k of new Set([keyOf(r), ck(s)])) { (byName.get(k) || byName.set(k, []).get(k)).push(r); const kk = r.parent_id + "|" + k; (kidsK.get(kk) || kidsK.set(kk, []).get(kk)).push(r); }
+    for (const f of new Set([fk(r.name), fk(s)])) { (byFold.get(f) || byFold.set(f, []).get(f)).push(r); const fkk = r.parent_id + "|" + f; (kidsF.get(fkk) || kidsF.set(fkk, []).get(fkk)).push(r); }
   };
   for (const r of rows) index(r);
   const coordOf = id => { for (let x = byId.get(id); x; x = byId.get(x.parent_id)) if (x.lat != null && x.lng != null) return x; return null; };
@@ -190,10 +206,12 @@ function resolver(stateId, stateName, planned, splits) {
     }
     return null;
   };
-  const placeInner = (chain, create, geo) => {
+  const placeInner = (rawChain, create, geo) => {
+    const chain = rawChain.map(stripSortPrefix);   // so a CREATED level is named without its label too
     let cur = stateId, skips = 0, created = false;
     for (let i = 0; i < chain.length; i++) {
-      let c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
+      let c = exact.get(cur + "|" + norm(rawChain[i])) || [];
+      if (c.length !== 1) c = kids.get(cur + "|" + areaNorm(chain[i])) || [];
       if (!c.length) c = kidsK.get(cur + "|" + ck(chain[i])) || [];
       if (!c.length) c = (kidsF.get(cur + "|" + fk(chain[i])) || []).filter(r => foldTwins(chain[i], r.name));
       if (c.length === 1) { cur = c[0].id; continue; }
@@ -333,7 +351,7 @@ async function runState(st) {
   const planned = [], splits = new Map();
   const mpName = r => decode(r.Route).replace(/\s*\|\s*\d+$/, ""); // " | 8010" is MP's disambiguation suffix
   const allNames = [];
-  for (const r of byUrl.values()) { allNames.push(mpName(r)); for (const a of String(r.Location || "").split(" > ")) allNames.push(a.trim()); }
+  for (const r of byUrl.values()) { allNames.push(mpName(r)); for (const a of String(r.Location || "").split(" > ")) allNames.push(a.trim(), stripSortPrefix(a)); }
   catalogKeys(allNames);
   const place = resolver(st.id, st.name, planned, splits);
   const refused = {}, matched = [], added = [], whereRefused = [];
@@ -430,9 +448,16 @@ async function runState(st) {
   for (const x of existing) (looseByArea.get(x.area_id) || looseByArea.set(x.area_id, []).get(x.area_id)).push({ xn: loose(x.name), name: x.name });
   const stateNames = new Map();
   for (const x of sql(`select r.name, catalog_key(r.name) as k, r.area_id from routes r join areas a on a.id = r.area_id where a.path <@ (select path from areas where id = ${q(st.id)}) and not route_name_is_placeholder(r.name)`)) (stateNames.get(x.k) || stateNames.set(x.k, []).get(x.k)).push(x);
+  // The export still carries the guidebook TOPO NUMBER ("(01) Chicken Crack"); our climbs were renamed
+  // without it (2026-10-07). Match the export's own name FIRST — a climb that kept its number because
+  // the number is all that tells it from a same-named neighbour ("4. Slab" / "5. Slab") — then the
+  // stripped one; a NEW climb is added without the label unless that would repeat a name in its area.
+  const letterSeries = letterSeriesAreas(cand.map(c => ({ name: mpName(c.r), area_id: c.areaId })));
   for (const { r, tk, areaId } of cand) {
-    const name = mpName(r);
-    const e = byKey.get(areaId + "|" + norm(name)) || byCk.get(areaId + "|" + ck(name));
+    const raw = mpName(r), bare = stripRouteTopoLabel(raw, { letterSeries: letterSeries.has(areaId) });
+    const find = n => byKey.get(areaId + "|" + norm(n)) || byCk.get(areaId + "|" + ck(n));
+    const e = find(raw) || (bare !== raw ? find(bare) : null);
+    const name = bare !== raw && !find(bare) && !seenNew.has(areaId + "|" + norm(bare)) ? bare : raw;
     if (e) {
       const p = {};
       if (tk.wi && e.ice_grade_num == null) { p.ice_grade_num = tk.wi.num; if (!e.ice_grade) p.ice_grade = tk.wi.tok; }

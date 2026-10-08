@@ -17,6 +17,10 @@
 //   * REWORDING every label must change nothing. Section 2 pins no phrasing -- its invariant is
 //     that a same-day tile and a next-day tile carry DIFFERENT labels and both carry one -- so a
 //     guard that went red here would forbid improving the copy.
+//
+// The last four cases edit lib/planTimes.js (a case's `file`), for the stored-legs section: a summit
+// leg that holds the way down must send its descent share DOWN (push, derived, and a multi-day
+// route's summit day from camp), and a single-day route's one-way climb must be left whole.
 import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
@@ -25,6 +29,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const RD = path.join(ROOT, "RouteDetail.jsx");
+const PLAN = path.join(ROOT, "lib", "planTimes.js");
 const GUARD = path.join(ROOT, "scripts", "check-return-leg.mjs");
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex").slice(0, 12);
 
@@ -163,6 +168,41 @@ const CASES = [
     }],
     expect: "pass",
   },
+  {
+    name: "push-descent-share-dropped-again",
+    file: PLAN,
+    why: "THE DEFECT THIS CALIBRATION FIXED, restored: a push climbs its 0.59 and DROPS the 0.41, " +
+         "so American Border Peak walked down in 2.9 hr against 7 online",
+    edits: [{ find: "const downH = Math.max((storedDescentH || 0) + legDownH, walkDownH + rapH);", repl: "const downH = Math.max(storedDescentH || 0, walkDownH + rapH);" }],
+    expect: "fail",
+    must: /DESCENT share \(0\.41\) is walked down/,
+  },
+  {
+    name: "camp-rule-on-single-day-routes",
+    file: PLAN,
+    why: "a single-day route whose walk in ~= walk out is a one-way climb; splitting it shortens the " +
+         "time UP, which the storm start counts back from",
+    edits: [{ find: " && isMultiDayOuting(route) && ", repl: " && " }],
+    expect: "fail",
+    must: /SINGLE-day route are a one-way climb/,
+  },
+  {
+    name: "derived-leg-not-split",
+    file: PLAN,
+    why: "total - approach with no stored descent is the climb AND the way down; read whole as the " +
+         "way up, Cutthroat South Buttress walked down in 2 hr against 4.8 online",
+    edits: [{ find: "  const derivedHoldsDescent = hasDerivedSummitH && d0 == null && a0 != null;", repl: "  const derivedHoldsDescent = false;" }],
+    expect: "fail",
+    must: /DERIVED leg \(total - approach\) holds the descent too/,
+  },
+  {
+    name: "SILENT-camp-tolerance-nudged",
+    file: PLAN,
+    why: "MUST STAY SILENT. The guard pins the behaviour on a clear camp shape, not the exact 35% " +
+         "tolerance, which a later measurement may move",
+    edits: [{ find: "export const CAMP_LEG_MATCH = 0.35;", repl: "export const CAMP_LEG_MATCH = 0.3;" }],
+    expect: "pass",
+  },
 ];
 
 const runGuard = () => {
@@ -194,8 +234,9 @@ if (clean.code !== 0) {
 
 let bad = 0;
 for (const c of CASES) {
-  const before = fs.readFileSync(RD, "utf8");
-  const beforeSum = sum(RD);
+  const F = c.file || RD;
+  const before = fs.readFileSync(F, "utf8");
+  const beforeSum = sum(F);
   let mutated = before;
   for (const e of c.edits) {
     if (mutated.split(e.find).length - 1 !== 1) {
@@ -209,18 +250,18 @@ for (const c of CASES) {
 
   let res;
   try {
-    fs.writeFileSync(RD, mutated);
-    if (sum(RD) === beforeSum) {
-      fs.writeFileSync(RD, before);
+    fs.writeFileSync(F, mutated);
+    if (sum(F) === beforeSum) {
+      fs.writeFileSync(F, before);
       console.log(`  EDIT NEVER LANDED              ${c.name}`);
       bad++;
       continue;
     }
     res = runGuard();
   } finally {
-    fs.writeFileSync(RD, before);
+    fs.writeFileSync(F, before);
   }
-  const restored = sum(RD) === beforeSum;
+  const restored = sum(F) === beforeSum;
   const failed = res.code !== 0;
   const wanted = c.expect === "fail";
   let verdict;
@@ -234,5 +275,5 @@ for (const c of CASES) {
 }
 
 console.log(`\n${CASES.length - bad}/${CASES.length} cases behaved as specified.`);
-if (!fs.readFileSync(RD, "utf8").length) { console.error("BROKEN: RouteDetail.jsx is empty."); process.exit(1); }
+for (const f of [RD, PLAN]) if (!fs.readFileSync(f, "utf8").length) { console.error("BROKEN: " + f + " is empty."); process.exit(1); }
 if (bad) process.exit(1);

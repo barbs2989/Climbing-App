@@ -101,7 +101,7 @@ export function UserReportQueue({ notify, onViewProfile }) {
               about, and `reported_name` is stored at report time so it survives a rename. */}
           <div style={{ fontSize: 12, color: C.textSub, marginTop: 4 }}>
             {"About "}
-            {r.reported_id && onViewProfile
+            {r.reported_id && onViewProfile && !String(r.reported_id).startsWith("group:")
               ? <span {...clickable(() => onViewProfile(r.reported_id))} style={{ color: C.blue, fontWeight: 700, cursor: "pointer" }}>{r.reported_name || "a climber"}</span>
               : <span style={{ fontWeight: 700 }}>{r.reported_name || "a climber"}</span>}
             {" · filed by " + (r.reporter_label || (r.reporter ? "a signed-in climber" : "someone signed out"))}
