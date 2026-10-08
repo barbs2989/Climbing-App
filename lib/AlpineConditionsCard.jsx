@@ -4,7 +4,7 @@
 // climber's own units. The crag score (ConditionsScoreCard) is a different card for different
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
-import { C, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
+import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread } from "./forecast.js";
 import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread } from "./alpineConditions.js";
 import { routeTerrain } from "./terrain.js";
@@ -155,7 +155,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
   const days = model.days, fc = model.fc;
   if (!days.length) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub }}>The forecast came back with no days ahead to read.</div></div>;
   const day = days[Math.min(dayI, days.length - 1)];
-  const dayName = function (d, i) { return i === 0 ? "Today" : new Date(d.date + "T12:00:00Z").toLocaleDateString(undefined, { weekday: "short", timeZone: "UTC" }); };
+  const dayName = function (d, i) { return i === 0 ? "Today" : new Date(d.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { weekday: "short", timeZone: "UTC" }); };
   const nWarn = function (d) { return d.flags.filter(function (f) { return f.level === "warn"; }).length; };
   const nCaution = function (d) { return d.flags.filter(function (f) { return f.level === "caution"; }).length; };
   const dot = function (col) { return <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: col, margin: "0 1.5px" }} />; };
@@ -267,7 +267,7 @@ function SnowSection({ pt }) {
   const stale = Date.now() - Date.parse(r.date + "T12:00:00Z") > 2.5 * 864e5;
   return <div>{head}
     <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5 }}><b>{uSnowfall(r.depth) + " on the ground"}</b>{[ch(r.d24, "in a day"), ch(r.d7, "in a week")].filter(Boolean).map(function (x) { return " · " + x; }).join("")}</div>
-    <div style={MUTED}>{where + "." + (stale ? " Last reported " + new Date(r.date + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }) + "." : "")}</div>
+    <div style={MUTED}>{where + "." + (stale ? " Last reported " + new Date(r.date + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }) + "." : "")}</div>
   </div>;
 }
 
@@ -285,7 +285,7 @@ function SeasonSection({ pt }) {
   if (!st) return <div aria-busy="true">{head}<div style={{ ...MUTED, color: C.textMuted }}>Loading the climate at the top…</div></div>;
   if (st.error) return <div>{head}<div style={{ ...MUTED, color: C.amber }}>Couldn’t load the climate. This says nothing about the season.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>;
   const m = st.m, now = new Date().getMonth();
-  const name = function (i) { return new Date(Date.UTC(2026, i, 15)).toLocaleDateString(undefined, { month: "short", timeZone: "UTC" }); };
+  const name = function (i) { return new Date(Date.UTC(2026, i, 15)).toLocaleDateString(DLOCALE, { month: "short", timeZone: "UTC" }); };
   return <div>{head}
     <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 4, marginBottom: 6 }}>{m.months.map(function (x, i) {
       const wet = x.snow != null && x.snow >= 1 ? uSnowfall(x.snow) + " snow" : Math.round(x.wetDays) + " wet d";
@@ -315,7 +315,7 @@ function OutcomesSection({ activity }) {
     <div style={{ fontSize: 12.5, color: C.text, marginBottom: 4 }}>{up + " of " + rows.length + " report" + (rows.length === 1 ? "" : "s") + " in the last 60 days summited."}</div>
     {rows.slice(0, 4).map(function (a, i) {
       const back = a.tickType !== "Summit", why = back && Array.isArray(a.outcomeReasons) && a.outcomeReasons.length ? " — " + a.outcomeReasons.join(", ") : "";
-      return <div key={(a._dbId || a.id || "") + "-" + i} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.45 }}>{new Date(String(a.date).slice(0, 10) + "T12:00:00Z").toLocaleDateString(undefined, { month: "short", day: "numeric", timeZone: "UTC" }) + " · "}<b style={{ color: back ? C.amber : C.green }}>{back ? a.tickType : "Summited"}</b>{why}{back && a.outcomeNote ? ": " + String(a.outcomeNote).slice(0, 140) : ""}</div>;
+      return <div key={(a._dbId || a.id || "") + "-" + i} style={{ fontSize: 12, color: C.textSub, lineHeight: 1.45 }}>{new Date(String(a.date).slice(0, 10) + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }) + " · "}<b style={{ color: back ? C.amber : C.green }}>{back ? a.tickType : "Summited"}</b>{why}{back && a.outcomeNote ? ": " + String(a.outcomeNote).slice(0, 140) : ""}</div>;
     })}
   </div>;
 }

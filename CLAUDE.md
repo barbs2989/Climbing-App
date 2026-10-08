@@ -111,6 +111,7 @@ npm run check:float-plan-persistence # a form on a sub-tab must survive leaving 
 
 # ── Units and formatting — notes: docs/guards/units-and-formatting.md ──
 npm run check:units # a surface renders in the climber's units, and a control that WRITES converts first (in build)
+npm run check:date-locale # every date or time on screen is formatted through the climber's date preference, never the device default (in build)
 
 # ── Seed data and identity — notes: docs/guards/seed-and-identity.md ──
 npm run check:seed-history # seed climbs must never be attributed to a real account (in build)
@@ -152,6 +153,7 @@ npm run check:pitch-discount # the climbing-time discount is bounded, and the pl
 npm run check:rappel-single-rope # the headline rappel count is the single-rope one (in build)
 npm run check:gain-floor-stated # a gain the route's own PINS contradict is stated (in build)
 npm run check:impossible-leg # ...and no leg prints a distance its own two pins make impossible (in build)
+npm run check:sun-times # the Calendar's sunrise and sunset match an ephemeris to the minute — longitude, equation of time and DST included (in build)
 npm run check:return-leg      # the walk is split at the summit, a route's stored legs win, the descent is the longer of stored and walked, and each red warning names the DAY it lands on (in build)
 npm run audit:gain         # is a route gaining LESS than its own waypoints demand?
 npm run check:rappel-lengths # can the rope a route describes actually reach the rappel it states?
