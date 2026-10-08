@@ -52,7 +52,7 @@ export function flagText(f) {
     case "ice-wind": return "Gusts to " + uWind(v.gust) + " — wind loading the slopes above";
     case "mixed-not-frozen": return "Only " + v.frozen + " of the last " + v.of + " days stayed below freezing — loose blocks and turf need weeks of cold to freeze in";
     case "thunder": return v.likely ? "Thunderstorms forecast" : "Thunderstorms possible";
-    case "no-refreeze": return "No overnight freeze at " + uElev(v.ft) + " — the snow starts soft and bridges are weak";
+    case "no-refreeze": return "No overnight freeze at " + uElev(v.ft) + " — the snow starts soft" + (v.glacier ? " and bridges are weak" : "");
     case "fl-above-night": return "Freezing level above the summit all night";
     case "fl-above": return "Freezing level " + uElev(Math.round(v.above / 100) * 100) + " above the summit by afternoon — expect rock and ice fall";
     case "verglas": return "Wet, then below freezing on the route — ice or snow on the holds";
@@ -179,6 +179,8 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
           <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{(legs.fromCamp ? "Leave camp by " : "Start by ") + clockOf(fc, st) + (daysEarly === 1 ? " the night before" : "")}</div>
           <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 2 }}>{why + ". Times are the Plan tab’s estimate at its own fitness and pack."}</div>
         </div>;
+    } else if (day.noFreeze && floor) {
+      startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"No start time from the snow: it didn’t freeze overnight at " + uElev(floor.ft) + ", so there is no frozen window to be back down in."}</div>;
     } else if (snowLegs && floor && day.softAt == null) {
       startEl = <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>{"The snow at " + uElev(floor.ft) + " stays below freezing all day — no softening deadline from the forecast."}</div>;
     }
@@ -285,7 +287,7 @@ function SeasonSection({ pt }) {
   const m = st.m, now = new Date().getMonth();
   const name = function (i) { return new Date(Date.UTC(2026, i, 15)).toLocaleDateString(undefined, { month: "short", timeZone: "UTC" }); };
   return <div>{head}
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(6, minmax(0, 1fr))", gap: 4, marginBottom: 6 }}>{m.months.map(function (x, i) {
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 4, marginBottom: 6 }}>{m.months.map(function (x, i) {
       const wet = x.snow != null && x.snow >= 1 ? uSnowfall(x.snow) + " snow" : Math.round(x.wetDays) + " wet d";
       return <div key={i} aria-current={i === now ? "date" : undefined} style={{ background: C.surface, border: "1px solid " + (i === now ? C.blue : "transparent"), borderRadius: 7, padding: "5px 4px", textAlign: "center", minWidth: 0 }}>
         <div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{name(i)}</div>

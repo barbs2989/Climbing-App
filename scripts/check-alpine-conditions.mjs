@@ -123,6 +123,10 @@ const floorR = run(forecast(thaw), { kind: "glacier", terrain: { snow: "yes" }, 
 eq("a Planner estimate that is only a FLOOR gives NO start (counting back from a minimum is too late)", floorR.start, null);
 const warm = run(forecast(() => ({ fl: 9000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("a night with the freezing level above the snow is flagged: no refreeze (warn)", keys(warm).includes("no-refreeze:warn"), true);
+eq("...and that day gets NO snow-anchored start: there is no frozen window to be back down in", [warm.start, warm.noFreeze], [null, true]);
+const nfText = (kind, terrain) => { const r = run(forecast(() => ({ fl: 9000 })), { kind, terrain, highFt: 10000, snowFt: 7000, legs: LEGS }); const f = r.flags.find((x) => x.key === "no-refreeze"); return f ? A.flagText(f) : null; };
+eq("'bridges are weak' only where there may be a glacier: yes on a glacier, no on a snow scramble with none", [/bridges/.test(nfText("glacier", { snow: "yes", glacier: "yes" }) || ""), /bridges/.test(nfText("scramble", { snow: "yes", glacier: "no" }) || "x bridges")], [true, false]);
+eq("...and the card says why, instead of a start beside a warning that the snow starts soft", /day\.noFreeze && floor\)[\s\S]{0,200}didn’t freeze overnight at[\s\S]{0,80}no frozen window to be back down in/.test(fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8")), true);
 const hot = run(forecast(() => ({ fl: 12000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
 eq("the freezing level above the SUMMIT all night is its own warning", has(hot, "fl-above-night"), true);
 const frozen = run(forecast(() => ({ fl: 4000 })), { kind: "glacier", terrain: { snow: "yes" }, highFt: 10000, snowFt: 7000, legs: LEGS });
@@ -305,7 +309,7 @@ eq("the card adds that flag only to a day the models disagree on, from a second 
 const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);
 
-const FLOOR = 85;
+const FLOOR = 105;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);

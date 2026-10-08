@@ -1469,7 +1469,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   `lib/alpineConditions.js`) reads each discipline's OWN conditions, counts its start time back from
   the Planner's own estimate (`lib/planTimes.js`), and never claims what it did not read. Static, so
   it sits in `npm run build`; injection suite `scripts/oneoff/inject-alpine-conditions-cases.mjs`
-  (21 cases, 20 caught + 1 silent).
+  (22 cases, 21 caught + 1 silent).
   - **OWNER DECISIONS, 2026-10-07:** its own Conditions tab; FLAGS, never stars (no published alpine
     go/no-go standard exists to score against); the start gets a party back DOWN off the snow before it
     softens ("going down is more dangerous"); and "mixed and ice climbing needs a check because they can
@@ -1500,6 +1500,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     a number); snow assumed down to HALFWAY up the gain when the route has no camp pin (the card says
     so). Not found anywhere, so not flagged: refreeze hours, bridge strength, rock drying time, a
     scramble wind limit, a whiteout visibility.
+  - **NO REFREEZE GIVES NO SNOW START.** Found live on Easton Glacier (2026-10-07): with the freezing
+    level above the snow all night, `softensAt()` returned the first daylight hour, so the card said
+    "be back down by 8:00 AM, when the snow starts to soften" beside its own warning that the snow
+    starts soft. A night with no refreeze now gives no snow-anchored start, and the card says there is
+    no frozen window. A storm deadline can still set one.
   - **A FLOOR GIVES NO START.** `planTimes().legsFloor` — part of the walk or the climb is not on
     file, so the Planner marks it "≥". A start counted back from a minimum is too LATE, the dangerous
     direction, so the card says why there is no start instead. That is ~11,989 of the 12,685
