@@ -450,9 +450,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       the FA, the other the pitches and length, and the grades drifted ("The Mordor Wall" 5.6 /
       5.7 A3). A placeholder with the SAME grade on both copies is one climb; with different grades
       it stays two (owner rule). The higher grade is kept.
-    - **Not paired yet**: a crag beside its own "X Bouldering" / "X Boulders" sibling under one
-      parent (the wide key; ~75 pairs on 2026-10-07). Some are one place, some a separate boulder
-      field ("Mount Morrison" / "Morrison Boulders") — read before folding.
+    - **Not paired** by the guard: a crag beside its own "X Bouldering" / "X Boulders" / "X Ice"
+      SECTION under one parent (the wide key). Not a duplicate — one place split by discipline. The
+      owner (2026-10-07): **NEST it** — the section goes inside the crag with its own name; a crag
+      listing its climbs flat first gets "<Crag> Routes"; two flat lists join; an empty twin goes.
+      0261 did 52 (The Trapps › Trapps Bouldering, Peterskill, Dierkes Lake…). A new one is not a
+      guard failure; nest it the same way. Bouldering-vs-ice sub-areas of one mountain stay apart.
+  - **0261 also folded** the guard's 2026-10-05 backlog under DIFFERENT parents: parallel trees'
+    copies (Camp 4 Boulders / Camp 4 Area, Mt. Willard (Ice) / Mt. Willard, Mount Blanca / Blanca
+    Peak 93 km off) fold; a copy whose shape differs nests. 18 generic face names on different
+    formations ("Main Face", "North Face", nothing shared) are LISTED as read.
   - **Cannot see** a copy under another parent over 3 km off, one with no coordinate, one holding no
     climbs yet, or a spelling the key does not fold. The trigger (0216/0218) refuses a same-key area
     within 1.5 km at insert; this sweeps what got past it. Long Hill Conservation Area was a copy of
