@@ -9,13 +9,17 @@
   "note": "lib/planTimes.js at the calculator defaults vs the first-pass online medians, 515 sampled routes, short = model < 0.8x online.",
   "timeToSummitShort": "6 -> 5 of 178",
   "descentShort": "13 -> 11 of 158",
+  "carToCarShort": "15 -> 14 of 191",
   "mountaineeringDescentShort": "8 -> 6 of 92"
  },
  "counts": {
-  "fixed": 3,
-  "left": 8
+  "fixed": 4,
+  "left": 7
  },
- "rollback": "scripts/rollback-timing-fixes-1791471192313.json",
+ "rollback": [
+  "scripts/rollback-timing-fixes-1791471192313.json",
+  "scripts/rollback-timing-fixes-1791476336710.json"
+ ],
  "routes": [
   {
    "id": "wa_sherpa_glacier",
@@ -127,6 +131,43 @@
     }
    },
    "published": "The Sherpa Glacier page above: summit to trailhead 7-8 hr and trailhead to camp 4 hr, for the descent and basin camp this route shares."
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "action": "fix",
+   "why": "The stored 3 hr approach (the White Salmon gate to the bivy at the foot of the face) is short: the guidebook's bushwhack is about 6 hr (as quoted by a 1997 party that took a shortcut and still needed 4), and the one party to use the standard line took 5.5 hr (2016). Approach set to 6; the 11 hr summit day (2016: 12 round trip from camp) and 5 hr hike out (about the published 6 reversed) are not short and stay. Total 19 -> 22 (the only complete trip: 24.5). With approach and hike out now within 35% the row reads as the camp shape, so the alpine start counts back the summit day from the bivy instead of the whole outing from the car.",
+   "timing": {
+    "before": {
+     "approach": 3,
+     "summit": 11,
+     "descent": 5,
+     "total": 19
+    },
+    "after": {
+     "approach": 6,
+     "summit": 11,
+     "descent": 5,
+     "total": 22
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": null,
+     "c2c": 24.5
+    },
+    "before": {
+     "sum": 14,
+     "c2c": 19,
+     "down": 5
+    },
+    "after": {
+     "sum": 12.5,
+     "c2c": 22,
+     "down": 9.5
+    }
+   },
+   "published": "The row's OWN trailhead (the White Salmon gate): the guidebook's bushwhack is about 6 hr, as quoted by a 1997 party that took a shortcut and still needed 4; the one standard-line report took 5.5. NOT the Mountaineers page's 8-12 hr summit to trailhead, which times the Fisher Chimneys way in."
   },
   {
    "id": "wa_mount_rainier_disappointment_cleaver",
@@ -281,28 +322,6 @@
     }
    },
    "why": "Extended search: no route page with a time table (SummitPost: 3-4 hr from a Colchuck Lake camp; Mazamas: car to car in two or more days). The one complete descent (summit shortly after noon, car a little after 7:30 pm in a winter trip with a road closure) is the same trip the first pass used. Left."
-  },
-  {
-   "id": "wa_mount_shuksan_north_face",
-   "action": "leave",
-   "planner": {
-    "online": {
-     "sum": null,
-     "down": null,
-     "c2c": 24.5
-    },
-    "before": {
-     "sum": 14,
-     "c2c": 19,
-     "down": 5
-    },
-    "after": {
-     "sum": 14,
-     "c2c": 19,
-     "down": 5
-    }
-   },
-   "why": "The route page times the Fisher Chimneys trailhead way in (camp to summit 6-8 hr, summit to trailhead 8-12, trailhead to camp blank). This row's own text is the White Salmon gate approach ('reverse the White Salmon Creek approach back to the car'), where the one complete trip took 5.5 hr in, 12 hr camp round trip and 7 hr out. A different trailhead, so the published range does not apply, and it is not copied across. Left, with the mismatch recorded."
   }
  ]
 }

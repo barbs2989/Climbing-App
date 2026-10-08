@@ -205,7 +205,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       within 20% of a guide itinerary's fit-party 36 hr, so it stays.
     - Flagged after three passes, below the bar: Elephant Butte's 3 hr summit leg against a 10 hr
       camp round trip in one 1998 report. The Ice Cliff Glacier row may leave out its walk out.
-      Shuksan's North Face has one trip from a camp (2016).
+      (Shuksan's North Face was in this list; a fourth search at its own trailhead settled it.)
   - **THE RESIDUAL (2026-10-08): 15 more rows, 9 changed, 6 left**
     (`audits/2026-10-08-route-timing-residual.json`). These are every route still > 20% short on ANY
     leg after the 27, plus The Perfect Crime, which shares Easy Getaway's descent. Most stored NO
@@ -245,13 +245,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **A PUBLISHED FIGURE APPLIES TO ITS OWN TRAILHEAD.** The Shuksan North Face page times the
       Fisher Chimneys way in (summit to trailhead 8-12 hr against the Planner's 5). The row's own
       text is the White Salmon gate approach, a different trailhead and camp, so the range was NOT
-      copied across. Read the row's section notes before borrowing a page's times.
+      copied across. Read the row's section notes before borrowing a page's times. Searched for
+      evidence at THAT trailhead instead, it found two that agree (the guidebook's bushwhack of
+      about 6 hr as a 1997 party quoted it, and the 2016 party's 5.5), so the stored 3 hr approach
+      became 6. With approach and hike out then within `CAMP_LEG_MATCH`, the row flipped into the
+      camp shape and the alpine start went from 18.6 to 11 hr: one-way-times-1.69 had been
+      over-counting a bivy route, and 11 is within 10% of the one complete trip's 12 hr round
+      trip from camp.
     - **THE DOME PATTERN DOES NOT GENERALISE, by reading.** 184 catalog rows read as the camp
       shape; 102 had online times (every short one is dealt with). Of the 82 that never did, 26
       have a summit leg shorter than BOTH walk legs, Dome's fingerprint. Each was read: their own
       text describes a light-pack day from camp ("return to camp", "and back", "reversing the
       descent"), not a one-way climb, and the first pass found no timed report for any of the 82.
       The fingerprint is a screen, not a defect list: nothing was written from it.
+    - **MULTI-DAY ROUTES WITH NO ITINERARY ARE A MEASURED NON-FINDING.** `isMultiDayOuting` is
+      decided by the itinerary's day count alone, so a row without days can never use the camp
+      shape and the alpine start counts back approach + climb + descent from the car. Of 162 rows
+      with stored legs read that way, 26 count back 18 hr or more (9 over 24: Jötnar's 168 hr,
+      West Face 33.8, Noyes 33.8, Dark Peak 23). It reads wrong but errs EARLY, and the card
+      already handles it: 2 or more days early says "Too long for one push… Plan a camp — see the
+      Plan tab" and 1 day says "the night before". Nothing was changed.
     - **TRAP in the writer: jsonb reorders keys.** `apply-timing-fixes.mjs` compared JSON text, so
       a row written with NEW keys read back as "not the intended timing" and reported REFUSED after
       a correct write (Shasta, Pyramid Peak). It now compares with keys sorted.
