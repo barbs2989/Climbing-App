@@ -31260,3 +31260,58 @@ EGRESS_BLOCKED) on every domain tried across all three agents, including Wikiped
 WebSearch snippets were again the sole working method.
 
 Pass 7 continues next run after `wa_eagle_rock_scramble`.
+
+---
+
+## 2026-10-08 — Pass 7, Batch 398
+
+Eight routes across six peaks: Earl Peak's Southwest Ridge and Standup Creek Route, Middle
+Peak's East Face (Gunsight Range, Glacier Peak Wilderness), Chimney Rock's East Face, East
+McMillan Spire's Northeast Buttress and West Ridge, Snowking Mountain's East Ridge, and Silver
+Star Mountain's East Ridge.
+
+**Zero confirmed errors** with a citable contradicting source — no SQL file this batch.
+
+**Clean, independently reconfirmed end-to-end:** Chimney Rock's area-level claims (summit
+elevations 7,727/7,634/7,440 ft, three glaciers, 1930 FA by Farr/Winder/Byington, 1940 second
+ascent by Crooks/Beckey) and its `wa_east_face_6` route, whose grade/pitch-count/length match
+Mountain Project's listing exactly. East McMillan Spire's Northeast Buttress ("Come Over to the
+Dark Side" — FA Kearney/Johnson, Sept 6–8 2008, 25 pitches, V 5.10-, ~2,400 ft) — worth noting the
+AAC's own publications page states 29 pitches, but two independent secondary sources (Alpinist,
+Northwest Mountain Journal) both agree with the stored 25, so this was resolved in the DB's favor
+rather than flagged.
+
+**Flagged for human review:** Both Earl Peak routes carry unusually specific 2026
+closure/reopening claims — a "Labor Mountain Fire closure order 06-17-03-2026-14" lifted per a
+September 25, 2026 Cle Elum Ranger District trail-crew report, and a September 8, 2026 road table
+listing FR-9737-112 and Standup Creek Road status. WebSearch could neither confirm nor deny these:
+the order-number format doesn't match the real Labor Mountain Fire's observed numbering convention
+(e.g. 06-17-03-25-30, a 2-digit year), and current-looking WTA snippets still show both trails
+closed with no visible reopening note — worth a human checking the live Forest Service alert page
+directly. `wa_east_face` (Middle Peak)'s elevation (8,185 ft) sits at near-identical coordinates to
+the USGS-named "Gunsight Peak" (8,198 ft) — worth checking whether these are the same summit —
+and separately, the route's own `high_point_ft` (8,200) doesn't match its area's `elevation_ft`
+(8,185), a 15 ft internal inconsistency visible in the data itself with no outside source to
+adjudicate which is right. `wa_east_mcmillan_spire_west_ridge`'s FA credit (Fred & Helmy Beckey,
+1940) is well-documented for the West/main summit specifically, but no source credits the FA of
+the East summit on its own; its prominence (314 ft) also wasn't independently found anywhere.
+`wa_east_ridge_2` (Snowking)'s FA (Hermann Ulrichs & Albert Heath, 1938) is plausible — Ulrichs is
+independently documented as an active 1930s North Cascades first-ascensionist — but no source
+names Albert Heath or a 1938 Snowking date. `wa_east_ridge_3` (Silver Star)'s "probable first
+complete ascent" label for the Childs/Goldie 2000 climb is in tension with the Northwest Mountain
+Journal's own text, which appears to credit a later, more complete Layton/Allen traverse instead;
+an earlier Beckey/Beckstead 1986 attempt detail (Northeast Spur, III 5.8) couldn't be independently
+confirmed beyond the general approach; and a commitment-grade question (V vs. VI) rested on a
+search snippet that may have been conflated with an unrelated route's page, so it wasn't trusted
+either way.
+
+Everything else checked this batch — approach chains, gain/distance figures, grades, coordinates,
+glacier/subsidiary-summit names, road and permit basics — matched independent sources with no
+discrepancy worth recording individually.
+
+**Tooling notes:** Delegated research to 3 parallel subagents (Earl Peak + Middle Peak; Chimney
+Rock + East McMillan Spire; Snowking + Silver Star). WebFetch was blocked (DNS/ENOTFOUND,
+consistent with EGRESS_BLOCKED) on every domain tried, including alpenglow.org/NWMJ and
+americanalpineclub.org; WebSearch snippets were again the sole working method.
+
+Pass 7 continues next run after `wa_east_ridge_3`.
