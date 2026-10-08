@@ -132,7 +132,7 @@ The table above is the state measured on 2026-10-07. Since then:
 ### What only the owner can do (each switches a built feature on)
 
 1. **Safety alert emails.** Create a Resend account and verify a sending domain, then run `npx supabase secrets set RESEND_API_KEY=… GPS_NOTIFY_FROM=… SAFETY_ALERT_EMAIL=you@…`.
-2. **AI text screening.** Create an Anthropic API key, run `npx supabase secrets set ANTHROPIC_API_KEY=…`, then wire the hook once: `insert into app_settings (key, value) values ('screen_hook_url', 'https://ofuofhojhbcrcahuotya.supabase.co/functions/v1/screen-content');`
+2. **AI text screening.** Create an Anthropic API key and run `npx supabase secrets set ANTHROPIC_API_KEY=…`. The hook is already wired: `app_settings.screen_hook_url` was set 2026-10-08, and the function answers `{"screened":false}` until a key exists.
 3. **Image screening.** Create an AWS IAM user with `rekognition:DetectModerationLabels` only, then set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_REGION` the same way.
 4. **A contact address** for Safety and Support. It goes in the Guidelines, Settings and both store listings.
 5. **Google Play Child Safety Standards:** a public web page (the Guidelines' "Children" section covers the content) and a named child-safety contact in Play Console.
@@ -295,6 +295,14 @@ What works, and is true once Part 3 exists:
   - the conditions consensus, the rankings and `report_content` honour it, while the leaderboard stays public-only.
 
   **Availability has no Friends tier yet.** Today it has no visibility setting at all (`profiles.availability` is readable as the profile is), so adding one is a separate decision.
+
+**Update 2026-10-08 (0272, 0273): trip reports are readable by everyone unless the climber changes that** (the owner's rule). Live probe `probe-trip-reports-default.mjs` 15/15.
+
+- **The setting:** Settings › Privacy & safety › "Who can read your trip reports" (Everyone / My friends / Just me), stored in `profiles.trip_reports_default`, default Everyone.
+  - Every new report starts from it, and the log form can still pick differently for one report.
+  - Changing it offers to apply it to earlier reports. A link stays under the setting while any earlier report differs.
+- **The database fallback:** a report written without a visibility now takes the author's setting. The 0037 column default `'crew'` is gone; with no crew, it had made a report readable by nobody.
+- **0273 fixes a regression from 0269.** Signed-out visitors could not read ANY trip report or route conditions: the read policy named `are_friends`, which they may not run, so every read returned 401. The policy now calls `is_my_friend()`, which answers only about the caller's own friendships. Signed-in climbers can no longer call `are_friends` on two other people, which had let anyone map friendships around "Show mutual friends".
 
 The original proposal follows. Items are ordered by safety value for an app whose friendships turn into meetups.
 
