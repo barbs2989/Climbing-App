@@ -524,6 +524,45 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - A pair is found by NAME, so a copy renamed by its import still hides: Duluth's "North Hartley" held
       exactly "Hartley"'s 10 problems, and "Casket Quarry (ICE/MIXED)" held the 30 climbs its empty twin
       "Casket Quarry ICE" lacked — both found only by their CLIMBS when the trees were laid side by side.
+      **Swept by 0278** the other way round: every two areas in one state sharing 3+ distinctive climb
+      names, whatever they are called — 115 pairs, all READ (`res/p3-verdicts-*.json`). Two kinds:
+      one place under two names or pins (Mission Gorge's two "Main Wall"s, 59 of 63 climbs, pins 37 km
+      apart; "Indian Wars Wall" / "Wars Wall"; a second import's Pemberton boulders on ONE placeholder pin)
+      — folded; and **one crag listing its climbs twice**, on the wall and again on a catch-all list
+      ("Rose Ledge Routes", "T-Wall West", "Winter-Spring (ice, snow, mixed)") — both areas stay, each
+      climb is one, the wall's copy kept. "Temp HP40" was a 98-problem holding list under the Alabama
+      root: its problems merged into Horse Pens 40's boulders, the rest went inside as "Horse Pens 40
+      Routes". LEFT, read: 7 Mile Rock / Coal Mt. Crag (27 climbs on both, which crag is unsettled);
+      Missouri's two boulders whose copies sit under "Closed Areas" (a fold could erase a closure).
+    - **The 16 pairs the sweeps LEFT were researched on the source and settled by 0279** (2026-10-08),
+      so nobody re-researches them. Merged: 7 Mile Rock's 27 routes (Coal Mt. Crag is a second crag that
+      listed them too); Marlow Profile = Bald Mountain Preserve (folded; Main Face's pin moved 100 km to
+      Marlow, approximate); The Cube's problems (Clamshell Cave, not Twisted Tree's Ice Cube); Walker Texas
+      Ranger's boulder (Buttermilks, not James River Park System's list); Blow-Hard Wall's three (not Main
+      Wall - West End's); Pawtuckaway's one Lower Cliff (the copy's ROCK climbs only — its two ice entries
+      sit on Stonehouse Pond's wrong pin and are not Pawtuckaway's). "High Bluffs" renamed "(South)".
+      Two places / climbs AT THE SOURCE, left apart: Boulder N / Pimp Juice Boulder; the two Lake of the
+      Woods; High Bluffs North / South; Lewis Creek's two Upper Falls (9 km); Montezuma Tower / White Twin;
+      Slicksides (a trad crack and a pothole boulder problem). Not settled: Missouri's Hide and Seek and
+      Hiker's boulders (the copies sit under "Closed Areas", one with a private-land notice); Tongue
+      River's Happy Trails / Snag Wall (the source itself lists the three routes on both); the empty
+      "Cone, The" (no page) — all three settled by 0281, below.
+    - **The source's own AREA TREE (the crawl's `catalog/_mp/_tree/<id>.json`) settles what its pages
+      cannot — 0281** (2026-10-08). Missouri's Hide and seek, Hiker's and Solus boulders are each ONE source
+      area id read twice: the park copy is an old crawl, and the source has since moved the same ids into
+      "EM: (closed)", a private area it calls not open yet. A same-name pair 52 km apart is not "two places"
+      when the ids match; read the tree before calling it. The park copies folded into the current ones, and
+      the park's PARKING was kept off them (generator `noPark`): a fold must not carry a trailhead onto an
+      area the source has closed. Happy Trails' pin was the source's own "best guess" (its page says "near
+      bridge"); Snag Wall is the guidebook's wall by the bridge, so the three shared climbs are Snag Wall's.
+      The empty "Cone, The" is the source's empty The Cone, gone. Joshua Tree's "Pinto Basin (aka Eastern
+      Territorries)" bouldering nested into Split Rocks and Jumbo Rock Area (pins line up), Cottonwood
+      Springs' into Cottonwood Area; Black Rock Canyon and Wonderland of Rocks North bouldering have no rock
+      twin and stay under "Joshua Tree Bouldering". Still two climbs, on purpose: Keystone Canyon Tunnel
+      Wall's M6–M8 mixed lines vs Valdez's Tunnel Wall rock routes of the same names.
+    - **A tie the grade parser cannot break**: `gradeNumFor` scores "5.9" and "5.9+" alike, so "keep
+      the HIGHER grade" needs a tie-break on the suffix ("+" over none over "-") or a fold quietly keeps
+      the lower-reading one. 0278's planner (`higher.mjs`) applies it.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …

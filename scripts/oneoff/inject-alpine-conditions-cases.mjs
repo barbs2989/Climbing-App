@@ -73,7 +73,7 @@ const CASES = [
     find: "{showScore||showAlpineCond?null:wxEl()}", repl: "{showScore?null:wxEl()}",
     expect: "fail", expectText: "the weather panel left Safety" },
   { name: "8. a flag hard-codes mph", file: CARD,
-    find: "case \"wind\": return \"Summit gusts to \" + uWind(v.gust);", repl: "case \"wind\": return \"Summit gusts to \" + Math.round(v.gust) + \" mph\";",
+    find: "case \"wind\": return \"Summit gusts to \" + uWind(v.gust) + \" in daylight\";", repl: "case \"wind\": return \"Summit gusts to \" + Math.round(v.gust) + \" mph in daylight\";",
     expect: "fail", expectText: "in metric units only" },
   { name: "9. a failed forecast no longer says it is not a reading", file: CARD,
     find: "Couldn’t load the forecast, so no flags are shown. This is not a reading of the conditions.", repl: "Couldn’t load the forecast.",

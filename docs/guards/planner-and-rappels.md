@@ -311,6 +311,32 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         but no rule can tell, so they are left as stored. Of the 101 alpine-type rows with walk
         data and no stored time, only 4 have such a count, so the "exact total with a wrong climb"
         state is nearly empty; the ice and mixed placeholders were all "≥" rows already.
+      - **THOSE COUNTS ABOVE 1 WERE MEASURED NEXT (2026-10-08,
+        `audits/2026-10-08-pitch-count-check.json`): THEY ARE NOT PLACEHOLDERS, NOTHING CHANGED.**
+        89 rows store a count above 1 beside more than 100 m per pitch; 31 have stored times, 58 are
+        modelled (46 ice, 4 mixed, 5 alpine, 3 mountaineering) and **54 of those 58 have no walk
+        data**, so their totals already read "≥". A pilot of the 24 highest-ratio modelled routes,
+        two Sonnet agents, found a published count for 17: **15 agree with the stored count within
+        one pitch, 2 differ, 7 publish none.** The stored count is the listing's own published
+        figure, and it usually counts the ROPED STEPS (the route's own text says so for the Trap
+        Dike, the North Face Right Gully and the Corridor Saint-Pierre route, and an
+        expedition report does for the Cheam Peak face) while the length beside it is the whole
+        relief including snow. That is the
+        reverse of the count-of-1 defect, which is a number that cannot be true.
+        - **Do not read the 15 agreements as confirmation.** 13 of them rest on the SAME listing the
+          row was most likely taken from (same count, same length); only Cheam Peak and Rexford
+          have a count from a second source, and both are roped-pitch counts that match.
+        - **The two differences were left, and why.** Athabasca North Face stores 4 (the listing's)
+          where four other sources say about 8 to 10, but they count simul-climbed ropelengths and
+          differ among themselves, the Planner prints 2.1 h of climbing at 4 and 4.2 h at 8, the row
+          is already "≥" (no walk data), and no timed report says which is closer. Mowich Face's
+          only other count (about 14) is the harder ice variation, from one author, on a face whose
+          standard line is largely soloed. A count changed without times cannot be shown to be
+          closer, and `pitches` also feeds the "lists N pitches, so M are not described" notice.
+        - **The other 34 modelled routes were not researched.** The pilot answers the question
+          (the stored count is the published one, not a stand-in); a re-run would only re-confirm
+          the listing against itself. Re-open this only with TIMED reports for a route whose
+          count is in doubt, since the repair target is the time, not the count.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)

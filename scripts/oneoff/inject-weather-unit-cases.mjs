@@ -67,6 +67,11 @@ const CASES = [
     all: true,
     find: "wxTempColor",
     repl: "wxTColour",
+    // BOTH helpers: the scan counts wxTempColor AND wxWindColor calls against a floor of 6. Renaming only
+    // the first blinded it while the wind helper had under six calls; the hourly boxes (2026-10-08) gave
+    // wxWindColor six of its own, so a one-name rename no longer proved anything -- a real blinding
+    // renames the pair, and so does this.
+    also: [["wxWindColor", "wxWColour"]],
     expect: "fail",
     must: /a broken scan, not a clean file/,
   },
@@ -96,8 +101,8 @@ const CASES = [
     why: "a display site goes back to appending the imperial unit itself, so that one reading " +
          "stays in mph while every other one on the panel converts",
     file: RD,
-    find: 'uWind(wm)+" "+',
-    repl: 'wm+" mph"+" "+',
+    find: '{uWind(wm)}</span><span style={daySub}>{"at "+clockHr(hh.hr)',
+    repl: '{wm+" mph"}</span><span style={daySub}>{"at "+clockHr(hh.hr)',
     expect: "fail",
     must: /still append " mph" directly/,
   },
@@ -210,7 +215,7 @@ for (const c of CASES) {
   const beforeSum = sum(c.file);
   let mutated;
   if (c.append) mutated = before + c.append;
-  else if (c.all) mutated = before.split(c.find).join(c.repl);
+  else if (c.all) { mutated = before.split(c.find).join(c.repl); for (const [f, r] of c.also || []) mutated = mutated.split(f).join(r); }
   else mutated = before.replace(c.find, c.repl);
 
   let out = "", code = 0;

@@ -18,7 +18,7 @@
 //   node scripts/pipeline/import-route-grades.mjs colorado            # dry run
 //   node scripts/pipeline/import-route-grades.mjs --all --apply       # write + read back
 import { execFileSync } from "node:child_process";
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { requireServiceKey, SUPABASE_URL } from "../lib/supabase-env.mjs";
 import { gradeNumFrom } from "../../lib/grade.js";
 import { stripSortPrefix } from "../lib/area-sort-prefix.mjs";
@@ -30,6 +30,9 @@ const APPLY = args.includes("--apply"), ALL = args.includes("--all"), SAMPLE = a
 // --snow: import ONLY the snow-only routes (tagged Snow, no roped type), which no export carries —
 // read from the area tree (fetch-area-tree.mjs) and each route's page (fetch-snow-routes.mjs).
 const SNOW = args.includes("--snow");
+// --map: also write catalog/_mp/_map/<state>[.snow].json, {export route id: our route id}, which the
+// route-page details pass reads to know which of our rows a fetched page describes.
+const MAP = args.includes("--map");
 const KEY = requireServiceKey();
 const H = { apikey: KEY, Authorization: "Bearer " + KEY, "Content-Type": "application/json" };
 const DIR = "catalog/_mp";
@@ -360,7 +363,7 @@ async function runState(st) {
   for (const r of byUrl.values()) { allNames.push(mpName(r)); for (const a of String(r.Location || "").split(" > ")) allNames.push(a.trim(), stripSortPrefix(a)); }
   catalogKeys(allNames);
   const place = resolver(st.id, st.name, planned, splits);
-  const refused = {}, matched = [], added = [], whereRefused = [];
+  const refused = {}, matched = [], added = [], whereRefused = [], mapRows = [];
   const cand = [];
   // Existing-area placements first, so an area CREATED for one route is never planned as a leaf
   // that an existing-area placement later needs to descend through.
@@ -474,6 +477,7 @@ async function runState(st) {
       if (tk.snow && e.snow_grade_num == null) p.snow_grade_num = tk.snow.num;
       if (Object.keys(p).length) patches.push({ id: e.id, p });
       matched.push(e.id);
+      mapRows.push([String(r.URL).split("/route/")[1]?.split("/")[0], e.id]);
       continue;
     }
     const k = areaId + "|" + norm(name);
@@ -497,6 +501,7 @@ async function runState(st) {
     const pnum = primary === "snow" ? null : tk[primary].num;
     let id = areaId + "_" + slug(name), n = 2; while (taken.has(id)) id = areaId + "_" + slug(name) + "_" + n++; taken.add(id);
     const types = String(r["Route Type"] || "").toLowerCase().split(",").map(s => s.trim());
+    mapRows.push([String(r.URL).split("/route/")[1]?.split("/")[0], id]);
     inserts.push({
       id, area_id: areaId, name, discipline: disc, grade: String(r.Rating).trim(), grade_system: primary, grade_num: pnum,
       ice_grade: (tk.wi || tk.m) ? (tk.wi || tk.m).tok : null, aid_grade: tk.aid ? tk.aid.tok : null,
@@ -582,6 +587,11 @@ async function runState(st) {
   }
   console.log(`${st.name}: ${byUrl.size} exported | matched ${matched.length} (${patches.length} gain a grade) | new ${inserts.length}` + (CREATE ? ` (${newAreas.length} new areas)` : "") + (effSplits.length ? ` (${effSplits.length} areas split into _climbs + sub-areas)` : "") + ` | refused ${nRef}` + (nRef ? " " + JSON.stringify(refused) : ""));
   if (SAMPLE) for (const { x, c } of effSplits.slice(0, 8)) console.log("  split " + x + " -> routes to " + c.id + ", new beside it: " + planned.filter(a => keep.has(a.id) && a.parent_id === x && a.id !== c.id).map(a => a.name).join(", "));
+  if (MAP) {
+    mkdirSync(DIR + "/_map", { recursive: true });
+    writeFileSync(`${DIR}/_map/${st.id}${SNOW ? ".snow" : ""}.json`, JSON.stringify(Object.fromEntries(mapRows.filter(([m]) => m))));
+    console.log(`  map: ${mapRows.length} routes -> ${DIR}/_map/${st.id}${SNOW ? ".snow" : ""}.json`);
+  }
   if (!APPLY) return { exported: byUrl.size, matched: matched.length, patched: patches.length, added: inserts.length, areas: newAreas.length, splits: effSplits.length, refused: nRef };
 
   // Splits first, one transaction each: the _climbs child is created BESIDE the area (the leaf-XOR
