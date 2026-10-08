@@ -1577,7 +1577,46 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       the top, and a 20 m radius stopped a pixel short: the top then took the midday sun off it
       (sun 7:23–11:13, 12:13–1:43, 2:43–6:32 on a pinnacle). Hence 30 m. Only the summit is snapped: beside a base or camp pin, a wall
       one pixel away is REAL shade, and the crag map has always read its pin's own pixel.
-    - **It moves no flag and no start time**, and the guard pins that `lib/alpineConditions.js` never
-      reads the terrain. Making the start count back from first sun on the route is a separate
-      decision for the owner: the pins are climbers' placements, and the dangerous slope is usually
-      ABOVE the pin, where no pin is.
+    - **The pins move no flag.** `lib/alpineConditions.js` IMPORTS no terrain (the guard reads its
+      import lines); since §10 the card hands it the face's sun times as plain numbers.
+  - **§10 — SUN ON THE FACE (2026-10-08; owner: "do what you recommend based on deep online
+    research").** Glacier and alpine-ice starts also count back from the sun on the face.
+    - **The rule, from the research:** be past a section before direct sun reaches the steep slopes
+      above it — Portland Mountain Rescue on Hood ("as soon as the sun hits the upper slopes"), the
+      AAC's Dead Dog (Torreys) and Whitehorn analyses, the Goûter couloir seismic record (Mourey et al.
+      2022). The lag runs from minutes to hours and depends on the refreeze, so NONE is counted. No
+      existing tool (CalTopo, ShadeMap, PeakVisor, FATMAP) turns sun into a start time.
+    - **Where the slopes are.** The research's answer is the ground that DRAINS ONTO the line. With 1
+      of ~935 snow/ice routes carrying a base pin (measured), the line is the fall line from 20 m
+      below the summit down the route's `aspect` (`faceBearing`: one direction or two neighbours,
+      else none), ended at the camp's height (else the trailhead's: lower, so it errs early). D8
+      steepest descent finds what sheds onto it and WHERE (`faceSunBands`); a source binds at its
+      ENTRY height, since debris entering below a party passes below it. The party is taken to gain
+      all its height on the climb, evenly (`sunClimbStart`): errs early.
+    - **Four measured corrections, each pinned by a test.** (1) A ±45° wedge seen from the summit took
+      in the top of Willis Wall beside Liberty Ridge, lit at sunrise: "leave camp 7:15 PM" for a 12 h
+      climb — hence drainage. (2) Terrain occlusion alone lit slopes turned AWAY from the sun (a
+      pyramid's west face read sunrise): direct sun now needs the slope to face it. (3) One NE-facing
+      ridge pixel beside a pyramid's top drained onto its NORTH line by a D8 tie: a height counts as
+      sunlit only once 8 sampled steep sources (~1,500 m²) feeding it are lit — the model's own floor,
+      NOT a published number. (4) On a 10 °F day the strict rule still read "7:45 PM": the sun sets
+      the hour on a warm day and does not make a cold one warm (Goûter: rockfall rose ~3 h after the
+      air at the top passed 0 °C; Dischma, 20 years: air temperature mattered, radiation did not), so
+      a height counts only if that day's freezing level rises above it.
+    - **Not counted, and said:** after a night that never froze (nothing frozen in place to begin
+      with); on RIDGE routes (78 of 325 by name — what sheds off a flank falls away from the crest;
+      a name that also says face, couloir, gully or glacier is read as that); on rock, scrambles and
+      waterfall ice. The card names what it could not read (no summit pin, no one-direction aspect,
+      no start height, no terrain) and carries the limits: fall line not a traced route, clear-sky
+      ~7 m terrain, misses cornices/seracs/narrow walls, shade isn't proof of frozen, no lag, sun can
+      shed rime on a cold day, and on a glacier that no timing reduces serac fall.
+    - **Adding a deadline can only make a start EARLIER**, never later: the start is the earliest of
+      snow, storm and sun. Seen live: Easton on a cold Saturday had no start before (snow frozen all
+      day) and now reads a latest start to be past the thawing ground above camp.
+  - **ICE-GRADED ALPINE ROUTES (2026-10-08).** `condKind` read every `discipline=alpine` route as
+    alpine rock, so 18 of 5,147 with AI/WI grades (Triple Couloirs, Chair Peak N Face, Liberty Ridge,
+    the Lane Peak couloirs, Cutthroat's Cauthorn-Wilson) got rock-dryness flags and the warm-rock sun
+    note — backwards on a couloir, where sun is the hazard (a Norman Clyde party found the couloir in
+    full sun by 11 AM). Researched route by route: all are snow/ice lines whose hazards are refreeze,
+    thaw, sun-released rock and ice and avalanche; the few with rock (Holsten-Hilden, Gerber-Sink,
+    Thread of Ice) are winter or couloir routes where dry rock is secondary. Now alpine ice.
