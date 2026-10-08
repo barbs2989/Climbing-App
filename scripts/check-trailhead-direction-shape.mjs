@@ -55,7 +55,19 @@ if (!failures) ok(`the detector agrees with all ${rows.length} reviewed values (
 // ── 2. the live catalog ────────────────────────────────────────────────────────────────────────
 if (LIVE) {
   const { selectAll, anonKey } = await import("./lib/supabase-env.mjs");
-  const all = await selectAll("routes", "id,approach_logistics", "approach_logistics=not.is.null", { key: anonKey(), pageSize: 1000 });
+  // A STATEMENT TIMEOUT (57014) IS THE DATABASE BEING COLD OR BUSY, NOT A FINDING. The first request of a
+  // CI run pays connection setup against the 3s anon timeout, and this daily scan died on it with no
+  // finding at all (2026-10-07), so the red said nothing about any trailhead. Retry a few times with a
+  // growing pause; a persistent failure still throws, so an unreadable catalog is never a pass.
+  let all;
+  for (let attempt = 1; ; attempt++) {
+    try { all = await selectAll("routes", "id,approach_logistics", "approach_logistics=not.is.null", { key: anonKey(), pageSize: 1000 }); break; }
+    catch (e) {
+      if (attempt === 4 || !/ -> 5\d\d /.test(String(e.message))) throw e;
+      console.log(`  read failed (${String(e.message).slice(0, 90)}), retry ${attempt} of 3 in ${attempt * 5}s`);
+      await new Promise(r => setTimeout(r, attempt * 5000));
+    }
+  }
   const withDir = all.filter(r => r.approach_logistics && typeof r.approach_logistics.trailheadDirection === "string" && r.approach_logistics.trailheadDirection.trim());
   // 829 rows / 718 with a direction after the 2026-09-24 repair. An anon read that RLS or an outage
   // empties would otherwise report a clean catalog.
