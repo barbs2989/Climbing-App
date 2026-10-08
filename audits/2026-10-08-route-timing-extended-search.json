@@ -1,0 +1,308 @@
+{
+ "date": "2026-10-08",
+ "what": "Rows re-decided after an EXTENDED-mode search. The standard search read several Mountaineers route pages as not timing a leg (or returned nothing); the extended search returned each page's full four-leg template. The lesson, recorded in docs/guards/planner-and-rappels.md: when a figure is not found, retry in extended mode before writing 'below the bar'.",
+ "rule": [
+  "As in audits/2026-10-08-route-timing-repairs.json: a published figure wins (inside a range, the timed reports' median clamped into it); a leg counts when its two ends match, whatever the party climbed.",
+  "A published figure applies only to the trailhead and camp the row itself uses: the Shuksan North Face page times a different trailhead from the row's, so it was not copied across."
+ ],
+ "measured": {
+  "note": "lib/planTimes.js at the calculator defaults vs the first-pass online medians, 515 sampled routes, short = model < 0.8x online.",
+  "timeToSummitShort": "6 -> 5 of 178",
+  "descentShort": "13 -> 11 of 158",
+  "mountaineeringDescentShort": "8 -> 6 of 92"
+ },
+ "counts": {
+  "fixed": 3,
+  "left": 8
+ },
+ "rollback": "scripts/rollback-timing-fixes-1791471192313.json",
+ "routes": [
+  {
+   "id": "wa_sherpa_glacier",
+   "action": "fix",
+   "why": "No times were stored, so the Planner walked it from distance and gain: 5.4 hr summit to car against 8.5 reported. The route's club page gives trailhead to camp 4 hr, camp to summit 6-8, and summit to trailhead 7-8 (17-20 hr moving; read from a search summary, the page itself is 403). Set to the page's figures, the reports clamped into its ranges: approach 4, climb 7 (a party that turned back below the summit took 7 hr round trip from camp; one took 4 to the top of the couloir), descent 8 (the one full descent, via the Sherpa couloir, took 8.5). Two timed approaches took 5.5 hr, longer than the page's 4; the screen already says stored legs are a fit party's times.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": 4,
+     "summit": 7,
+     "descent": 8,
+     "total": 19
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": 8.5,
+     "c2c": null
+    },
+    "before": {
+     "sum": 6.3,
+     "c2c": 11.7,
+     "down": 5.4
+    },
+    "after": {
+     "sum": 11,
+     "c2c": 19,
+     "down": 8
+    }
+   },
+   "published": "Mountaineers route page, Mount Stuart/Sherpa Glacier: trailhead to camp 4 hr (6.1 mi, 2,000 ft), camp to summit 6-8 hr (2.0 mi, 4,000 ft), summit to trailhead 7-8 hr (8.1 mi). Read from a search summary; the page is 403."
+  },
+  {
+   "id": "wa_dark_peak_dark_glacier_route",
+   "action": "fix",
+   "why": "No times were stored, so the Planner walked it: 8.5 hr to the summit against 14.5 reported. The route's club page gives trailhead to camp 3-4 hr, camp to summit 8-10, summit to camp 6-8 and camp to trailhead 3-4 (three days; read from a search summary, the page itself is 403), and a second route page agrees (7-9 up, 5-7 back). The one on-foot summit-day report (2006) took 9 hr up, 6.5 back to camp and 3.75 hr out, with 4.5 hr in (the page's 3-4, clamped to 4). Set to 4 / 9 / 10.25, total 23.25. The route has no itinerary on file, so the Planner reads it as one outing and an alpine start counts back the whole 23 hr -- early rather than late.",
+   "timing": {
+    "before": {
+     "approach": null,
+     "summit": null,
+     "descent": null,
+     "total": null
+    },
+    "after": {
+     "approach": 4,
+     "summit": 9,
+     "descent": 10.25,
+     "total": 23.25
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 14.5,
+     "down": null,
+     "c2c": null
+    },
+    "before": {
+     "sum": 8.5,
+     "c2c": 16,
+     "down": 7.5
+    },
+    "after": {
+     "sum": 13,
+     "c2c": 23.3,
+     "down": 10.3
+    }
+   },
+   "published": "Mountaineers route page, Dark Peak/Dark Glacier: trailhead to camp 3-4 hr (1,100 ft), camp to summit 8-10 hr (5,600 ft), summit to camp 6-8 hr, camp to trailhead 3-4 hr; three days. A second route page gives 7-9 up, 5-7 back. Read from a search summary; the page is 403."
+  },
+  {
+   "id": "wa_mount_stuart_ice_cliff_glacier",
+   "action": "fix",
+   "why": "The walk out was missing: the summit leg (14 hr, up the ice and down the Sherpa Glacier) left the Planner a derived 5.7 hr from the summit to the car, against 8.5 hr on the one complete trip. The Sherpa Glacier shares this descent and the same basin camp, and its club page gives summit to trailhead 7-8 hr and trailhead to camp 4 (read from a search summary). The one timed walk out was 4.5 hr (camp to car), within 20% of the page's 4. Descent set to 4.5, which turns the row into the camp shape: summit to car 10.2 hr (a 14 hr summit day split 59/41, plus the walk out), total 24.",
+   "timing": {
+    "before": {
+     "approach": 5.5,
+     "summit": 14,
+     "descent": null,
+     "total": 19.5
+    },
+    "after": {
+     "approach": 5.5,
+     "summit": 14,
+     "descent": 4.5,
+     "total": 24
+    }
+   },
+   "planner": {
+    "online": {
+     "sum": 11.5,
+     "down": 8.5,
+     "c2c": 21.5
+    },
+    "before": {
+     "sum": 13.8,
+     "c2c": 19.5,
+     "down": 5.7
+    },
+    "after": {
+     "sum": 13.8,
+     "c2c": 24,
+     "down": 10.2
+    }
+   },
+   "published": "The Sherpa Glacier page above: summit to trailhead 7-8 hr and trailhead to camp 4 hr, for the descent and basin camp this route shares."
+  },
+  {
+   "id": "wa_mount_rainier_disappointment_cleaver",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": 12,
+     "down": 9,
+     "c2c": 20
+    },
+    "before": {
+     "sum": 12.1,
+     "c2c": 19.1,
+     "down": 7
+    },
+    "after": {
+     "sum": 12.1,
+     "c2c": 19.1,
+     "down": 7
+    }
+   },
+   "why": "The extended search returned the route page's full template: Paradise to Camp Muir 6-8 hr, Muir to summit 5-8, summit to Muir 2-3, Muir to Paradise 2-3. That explains the conflicting readings earlier (the 2-3 / 2-3 reading was the descent legs). The Planner's summit to car of 7.0 hr is above the published 4-6 hr, and the stored 12 hr summit push (summit day plus the walk down) matches reports of about 10-11 hr up and down from Muir plus 2 hr out. Not short against the published figure; left."
+  },
+  {
+   "id": "wa_mount_formidable_south_face",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": 14.5,
+     "down": 17.5,
+     "c2c": 32
+    },
+    "before": {
+     "sum": 14.3,
+     "c2c": 26,
+     "down": 11.7
+    },
+    "after": {
+     "sum": 14.3,
+     "c2c": 26,
+     "down": 11.7
+    }
+   },
+   "why": "The route page gives trailhead to camp 5-6 hr, camp to summit 4-5, summit to trailhead 9-10 (one segment). The stored 6 / 14 / 6 is not short against it: the 14 hr summit day is above the published 8-10 hr round trip from camp, and the one 19 hr report was a slow party of five. Left."
+  },
+  {
+   "id": "wa_mount_challenger_challenger_glacier",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": 23.6,
+     "down": 15.1,
+     "c2c": 38.6
+    },
+    "before": {
+     "sum": 14,
+     "c2c": 26,
+     "down": 12
+    },
+    "after": {
+     "sum": 14,
+     "c2c": 26,
+     "down": 12
+    }
+   },
+   "why": "CORRECTS the third-pass note that nobody was found camped at Whatcom Pass and climbing Challenger. The extended search found one: a 2019 trip left the Whatcom Pass camp at 7 am, was at Perfect Pass 3 hr later, on the summit just before 1 pm, back at Perfect Pass by 3:30 and at camp about 6:15 pm, a summit day of about 11 hr (about 6 up, 5 back), matching the stored 11. With the 2022 report's 6 hr in and 6 hr out against the stored 7.5 and 7.5, none of the stored legs is short. Left; the compare-script 'short' flag comes from reports by another approach."
+  },
+  {
+   "id": "id_thompson_peak_south_couloir",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": 7,
+     "down": null,
+     "c2c": 12
+    },
+    "before": {
+     "sum": 4.5,
+     "c2c": 8.5,
+     "down": 3.9
+    },
+    "after": {
+     "sum": 4.5,
+     "c2c": 8.5,
+     "down": 3.9
+    }
+   },
+   "why": "The extended search found the evidence supports the Planner, not the earlier 'short' flag: two reports put car to summit at 4.5 and 5 hr, and day trips run 8-10 hr car to car (about 8 in two reports, 9 in a third; one snowy outlier took 12-13). The Planner's 4.5 hr to the summit and 8.5 hr car to car sit inside that. The first-pass 7 hr was one slow party. Left."
+  },
+  {
+   "id": "wa_elephant_butte_standard_route",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": null,
+     "c2c": 20
+    },
+    "before": {
+     "sum": 8,
+     "c2c": 15.7,
+     "down": 7.7
+    },
+    "after": {
+     "sum": 8,
+     "c2c": 15.7,
+     "down": 7.7
+    }
+   },
+   "why": "Extended search: still no published hours (the route page says a light party can do it in one very long day, about 10 miles each way) and no timed summit day from the Stetattle Ridge camp beyond the single 1998 report. The one other detailed account was a 30-mile loop at 10-12 hr each way with overnight packs. Below the bar after four passes."
+  },
+  {
+   "id": "wa_raven_ridge_southeast_ridge_crater_lake",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": null,
+     "c2c": 9.3
+    },
+    "before": {
+     "sum": 3.5,
+     "c2c": 6.5,
+     "down": 3
+    },
+    "after": {
+     "sum": 3.5,
+     "c2c": 6.5,
+     "down": 3
+    }
+   },
+   "why": "Extended search: nothing new. The two car-to-car times disagree (7.5 hr by the open south slope; 11 hr in deep snow off route), and no page gives hours for the ridge. Left."
+  },
+  {
+   "id": "wa_colchuck_peak_north_buttress_couloir",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": 6.8,
+     "c2c": 13
+    },
+    "before": {
+     "sum": 5.5,
+     "c2c": 10,
+     "down": 4.5
+    },
+    "after": {
+     "sum": 5.5,
+     "c2c": 10,
+     "down": 4.5
+    }
+   },
+   "why": "Extended search: no route page with a time table (SummitPost: 3-4 hr from a Colchuck Lake camp; Mazamas: car to car in two or more days). The one complete descent (summit shortly after noon, car a little after 7:30 pm in a winter trip with a road closure) is the same trip the first pass used. Left."
+  },
+  {
+   "id": "wa_mount_shuksan_north_face",
+   "action": "leave",
+   "planner": {
+    "online": {
+     "sum": null,
+     "down": null,
+     "c2c": 24.5
+    },
+    "before": {
+     "sum": 14,
+     "c2c": 19,
+     "down": 5
+    },
+    "after": {
+     "sum": 14,
+     "c2c": 19,
+     "down": 5
+    }
+   },
+   "why": "The route page times the Fisher Chimneys trailhead way in (camp to summit 6-8 hr, summit to trailhead 8-12, trailhead to camp blank). This row's own text is the White Salmon gate approach ('reverse the White Salmon Creek approach back to the car'), where the one complete trip took 5.5 hr in, 12 hr camp round trip and 7 hr out. A different trailhead, so the published range does not apply, and it is not copied across. Left, with the mismatch recorded."
+  }
+ ]
+}

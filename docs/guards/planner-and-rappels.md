@@ -227,6 +227,25 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       return, the extended one returned it. **When two searches disagree about whether a figure
       exists, search again before writing "none clears the bar".** Summit day set to 12; the start
       now counts back 12 hr.
+    - **EXTENDED-MODE SEARCH RETURNED THE ROUTE-PAGE TEMPLATES THE STANDARD ONE READ AS ABSENT**
+      (`audits/2026-10-08-route-timing-extended-search.json`). The Mountaineers route pages carry a
+      four-leg table (trailhead to camp, camp to summit, summit to camp, camp to trailhead); the
+      standard search returned fragments of it, or said it timed no return. Retried in extended
+      mode, three rows that "lacked evidence" were set: Sherpa Glacier 4 / 7 / 8 (the page's 4,
+      6-8, 7-8), Dark Peak 4 / 9 / 10.25 (3-4, 8-10, 6-8 + 3-4, and the one 2006 report agrees) and
+      Stuart's Ice Cliff Glacier, which shares the Sherpa descent and camp, gained its missing walk
+      out (4.5 hr) and became the camp shape, summit to car 5.7 -> 10.2 hr against 8.5 reported.
+      Disappointment Cleaver's page settles its "conflicting readings" (the 2-3 / 2-3 were the
+      descent legs) and Formidable's shows its stored day is not short, so both stay. The same
+      pass CORRECTED two earlier notes: a 2019 trip did camp at Whatcom Pass and climb Challenger
+      (summit day about 11 hr, matching the stored 11, so its legs are not short), and Thompson
+      Peak's Planner time (4.5 hr up, 8.5 car to car) sits inside what two reports and day-trip
+      figures say (4.5-5 up, 8-10 car to car); the earlier flag was one slow party. Elephant
+      Butte, Raven Ridge and Colchuck NBC still have nothing after an extended search.
+    - **A PUBLISHED FIGURE APPLIES TO ITS OWN TRAILHEAD.** The Shuksan North Face page times the
+      Fisher Chimneys way in (summit to trailhead 8-12 hr against the Planner's 5). The row's own
+      text is the White Salmon gate approach, a different trailhead and camp, so the range was NOT
+      copied across. Read the row's section notes before borrowing a page's times.
     - **THE DOME PATTERN DOES NOT GENERALISE, by reading.** 184 catalog rows read as the camp
       shape; 102 had online times (every short one is dealt with). Of the 82 that never did, 26
       have a summit leg shorter than BOTH walk legs, Dome's fingerprint. Each was read: their own
