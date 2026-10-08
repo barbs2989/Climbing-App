@@ -18,7 +18,7 @@ const STOP = new Set("parking park lot lots area areas trailhead trailheads trai
 // number names no particular place, so it can carry a match only when it is the lot's WHOLE name ("Lower Gorge Parking").
 const GENERIC = new Set("buttress buttresses face faces slab slabs tower towers dome domes cave caves arch arches pinnacle pinnacles cove point cliff cliffs ledge ledges bluff bluffs gorge pond ponds fork forks group right left side campus hall central inner outer east west first second third pullout".split(" "));
 const toks = (s) => new Set(String(s || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/['\u2019]/g, "").replace(/[^a-z0-9 ]+/g, " ").split(/\s+/).filter((w) => (/^\d+$/.test(w) || w.length >= 3) && !STOP.has(w)));
-const SOURCEY = /mountain ?project|\bMP\b|guide ?book|coalition|access fund|openstreetmap|\bOSM\b|according|per |source|website/i;
+const SOURCEY = /mountain ?project|\bMP\b|guide ?book|coalition|access fund|openstreetmap|\bOSM\b|according|\bper\b|source|website/i;
 const generic = (w) => GENERIC.has(w) || /^\d+$/.test(w);
 // The whole-name test reads the names with only the PARKING words taken out: STOP drops "gate", so under it
 // "Gate Buttress Parking Lot" would read as just "buttress" and fit "Coal Pit Buttress".
