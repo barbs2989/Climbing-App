@@ -27,6 +27,7 @@
 //   19 a failed climate read that no longer says it says nothing about the season
 //   20 a day the models disagree on goes unflagged
 //   21 ONE model answering read as the models agreeing
+//   22 a start counted back from a softening hour on a night that never froze
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
 import { execFileSync } from "child_process";
@@ -109,6 +110,9 @@ const CASES = [
   { name: "21. one model answering reads as the models agreeing", file: LOGIC,
     find: "return v.length >= 2 ? [Math.min.apply(null, v), Math.max.apply(null, v)] : null;", repl: "return v.length >= 1 ? [Math.min.apply(null, v), Math.max.apply(null, v)] : null;",
     expect: "fail", expectText: "ONE model answering is no comparison" },
+  { name: "22. a start counted back from 'softening' on a night that never froze", file: LOGIC,
+    find: "if (snowLegs && softAt != null && !noFreeze) {", repl: "if (snowLegs && softAt != null) {",
+    expect: "fail", expectText: "that day gets NO snow-anchored start" },
 ];
 
 const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST].map((f) => [f, fs.readFileSync(f, "utf8")]));
