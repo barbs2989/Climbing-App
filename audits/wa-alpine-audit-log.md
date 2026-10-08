@@ -31087,3 +31087,53 @@ confirmed-error bar — per the audit's own guardrails, a clean/flagged-only out
 rather than manufacturing a fix.
 
 Pass 7 continues next run after `wa_dark_side_of_liberty`.
+
+## Batch 395 (2026-10-08, pass 7)
+
+Continued from `wa_davis_peak_nc_north_face` through `wa_dolphin_chimney` (skipped
+`wa_doorway_flake`'s area `wa_south_face` — a crag, not a peak; already excluded as part of
+batch 394's range, no other non-peak areas fell in this range). Eight routes across seven peaks:
+Davis Peak's Northeast Face Couloir and Burdo/Cairns North Face; Dragontail Peak's Der Dihedral;
+Sloan Peak's Diamond In The Rough; Bear Mountain's Direct North Buttress; Dorado Needle's Direct
+Southwest Buttress; Pernod Spire's Direct West Face; South Early Winters Spire's Dolphin Chimney.
+
+**No confirmed errors this batch** — every specific, checkable claim that returned a clear answer
+came back corroborated, and no SQL file was produced. Notably: `wa_davis_peak_nc_north_face_burdo_cairns`'s
+FA (Burdo/Cairns, IV 5.10, ~4,000 ft) matched an AAC publication titled exactly "Davis Peak, North
+Face, Southern Pickets"; `wa_diamond_in_the_rough`'s FA (Workman/Roberts, 9/11/2011, Grade III, 9
+pitches) matched the original CascadeClimbers.com FA trip report verbatim, and Sloan Peak's
+elevation/coordinates matched Wikipedia/SummitPost almost exactly; `wa_direct_west_face`'s
+FA/grade/pitch-count (Peritore/Bentley, III/IV 5.10+, 8 pitches) matched an AAJ season report
+verbatim, and its SR-20 winter-closure claim (MP134 Ross Dam to Silver Star, closed 4 Dec 2025,
+reopened 14 Jun 2026) was independently confirmed. Also independently reconfirmed: Davis Peak's
+coordinates/elevation and the Stetattle Creek Trail closure status (still in effect); Dragontail
+Peak's and Sloan Peak's summit elevations; Bear Mountain's elevation and Direct North Buttress's
+length/grade/pitch-count plus its 1980 Kearney/Knight FA and the underlying 1967 Beckey/Fielding
+original line; Dorado Needle's elevation; South Early Winters Spire's elevation/coordinates.
+
+**Flagged for human review (unverifiable or in tension with a source, not contradicted):**
+`wa_davis_peak_nc_north_face`'s own FA year is a genuine three-way source conflict (SummitPost
+1972, a Burdo AAC note 1974, the DB's 1976) with no primary record reachable. `wa_der_dihedral`'s
+Stuart Lake Trailhead elevation (DB 3,400 ft) splits USFS (3,000 ft) and Mountaineers.org (3,400
+ft), and its "joins the 1972 Northeast Arete" line may conflate that route with Dragontail's
+separately-dated 1971 Northeast Buttress. `wa_direct_north_buttress`'s listed FFA party ("Bryan
+Burdo and Yann Merrand, 1985") has zero independent corroboration, and the only 1985-era
+free-ascent source found (a 1986 AAJ note by Mark Bebie) describes a different party freeing the
+original 1967 line, not necessarily the same ascent. `wa_direct_southwest_buttress`'s FA ("Mike
+Preiss and Mark Bunker, September 2006") remains uncorroborated (already self-flagged LOW
+confidence in the row's own `data_quality.gaps`), and its `pitches` field (8) is in tension with
+its own `rope_note` field citing ~13 pitches — an internal inconsistency rather than an external
+contradiction, worth a human look regardless of source corroboration. `wa_dolphin_chimney`'s FA
+("Fred Beckey and Jim Madsen, 1967") is likewise uncorroborated beyond Mountain Project and
+already self-flagged in the row's own `data_quality` field.
+
+**Tooling notes:** Delegated research to 4 parallel subagents, one per peak-group (Davis Peak;
+Dragontail+Sloan; Bear Mountain+Dorado Needle; Pernod Spire+South Early Winters Spire). WebFetch
+was blocked (EGRESS_BLOCKED) on every domain tried across all four agents (mountainproject.com,
+summitpost.org, publications.americanalpineclub.org, nps.gov, cascadeclimbers.com,
+ademiller.com), consistent with every recent batch; WebSearch snippets were the sole working
+method and were unusually effective this run, surfacing verbatim quoted text from Mountain
+Project route pages, an AAJ season report, and a CascadeClimbers.com FA trip report without
+needing a direct fetch.
+
+Pass 7 continues next run after `wa_dolphin_chimney`.
