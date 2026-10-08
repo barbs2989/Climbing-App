@@ -5,6 +5,8 @@
 // A spot is refused unless: the area exists; an OpenStreetMap lot or trailhead lies within 80 m
 // of the coordinate (a lot, not a guess); it is within 4 km of the crag; its name cites no source.
 // A lot serves its area and every area beneath it, so it is copied down the subtree. Assignments are
+// --allow-mp: an entry with lot:null and mp:true (basis quotes Mountain Project giving a parking coordinate or naming where
+// to park) needs no mapped lot, but must sit 0.015-2 km from the crag pin (never the pin itself, which is the crag).
 // written shallowest first, so a deeper (more specific) assignment wins. Fill-only by default: an area
 // whose parking is already set is left alone. Without --apply it writes the SQL and prints the plan.
 import fs from "node:fs";
@@ -43,7 +45,8 @@ for (const it of items) {
   if (!(Math.abs(it.lat) <= 90 && Math.abs(it.lng) <= 180) || (!fromBrief(it) && (!String(it.lat).includes(".") || String(it.lat).split(".")[1].length < 4))) why.push("bad coordinate");
   if (!it.name || SOURCEY.test(it.name) || it.name.length > 80) why.push("name: " + it.name);
   let d = null; if (a && a.lat != null) { d = km(a.lat, a.lng, it.lat, it.lng); if (d > 4) why.push(`${d.toFixed(1)} km from the crag`); }
-  let lots = []; if (!why.length) { lots = fromBrief(it) || (await new Promise((z) => setTimeout(z, 1500)), await lotNear(it.lat, it.lng)); if (!lots.length) why.push("no mapped parking within 80 m"); }
+  const mpOk = process.argv.includes("--allow-mp") && it.lot == null && it.mp === true && it.basis && (d == null || (d >= 0.015 && d <= 2));
+  let lots = []; if (!why.length && mpOk) lots = ["MP-stated parking (no mapped lot)"]; else if (!why.length) { lots = fromBrief(it) || (await new Promise((z) => setTimeout(z, 1500)), await lotNear(it.lat, it.lng)); if (!lots.length) why.push("no mapped parking within 80 m"); }
   (why.length ? refused : ok).push({ ...it, depth: a ? a.path.split(".").length : 0, areaName: a && a.name, km: d, lots, why });
 }
 ok.sort((x, y) => x.depth - y.depth);
