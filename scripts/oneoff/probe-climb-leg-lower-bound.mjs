@@ -112,6 +112,16 @@ const CASES = [
     climbing: /^8\.5hr$/, hedgedAggregates: false, climbCaveat: false, hedgedApproach: false,
   },
   {
+    name: "a pitch count of 1 on a 3,000 ft route (Slipstream) — a placeholder, so the climbing leg is unknown",
+    route: base({ pitches: 1, routeFt: 3000 }),
+    climbing: "N/A", hedgedAggregates: true, climbCaveat: true, hedgedApproach: false,
+  },
+  {
+    name: "a real single pitch (1 pitch, 200 ft) — a firm number, no hedge",
+    route: base({ pitches: 1, routeFt: 200 }),
+    climbing: /hr$/, hedgedAggregates: false, climbCaveat: false, hedgedApproach: false,
+  },
+  {
     name: "BOTH legs unknown — one hedge each, and the approach tile hedges too",
     route: base({ distKm: 8, gainM: null, lossM: null }),
     climbing: "N/A", hedgedAggregates: true, climbCaveat: true, hedgedApproach: true,

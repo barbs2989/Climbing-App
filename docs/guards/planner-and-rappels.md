@@ -276,6 +276,41 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       when numeric; `check:return-leg` renders that route's shape (with an anchor that the card
       showed), and the injection case `null-section-hours-printed` proves it fails when the guard is
       removed. A suppression that depends on two copies of a sentence matching is not a safety net.
+    - **ICE AND MIXED (2026-10-08, `audits/2026-10-08-ice-mixed-time-check.json`): MEASURED, NO
+      ROUTE REPAIRED, ONE STRUCTURAL DEFECT FIXED.** 60 routes (36 hand-picked, then 24 documented:
+      12 waterfall classics, 12 alpine-scale), two Sonnet agents, extended mode on a thin result.
+      The Planner computes every ice and mixed time (no ice row stores a timing leg), so this checks
+      the MODEL, and a repair would be a new FULL set of stored legs.
+      - **Direct climb times are rare:** 17 of 60 routes have one, 18 a car-to-car figure. Of
+        those, `techHrs` at the 35 m pitch convention ran 0.8x the online median (quartiles
+        0.5-1.1x, 35% within 0.8-1.25x, 8 short, 3 long); at the route's own length per pitch 1.4x
+        (24% within, 10 long). The truth is neither constant: the spread (0.1x to 2.8x) is route
+        STRUCTURE (multi-day, fly-in camp to camp, simul-climbed, a wrong pitch count), so no
+        constant was moved.
+      - **The descent model is long, the safe way:** 0.7 x climb ran 1.6x five rappel descents
+        online (4 long, 1 short). Nothing was changed.
+      - **No route clears the bar for a full set.** Slipstream's climb (7.5 hr, two reports) is
+        solid but its descent is one report; Ham & Eggs, Moonflower, Harvard, Kain Face and Robson
+        North Face are fly-in or multi-day, with figures camp to camp ("a published figure applies
+        only to its own trailhead"); Big Mac has one fully timed report; the rest have a
+        car-to-car figure with no leg split. Search snippets stood in for SummitPost (403) and
+        SuperTopo (refused connections), flagged per row.
+      - **THE SHORT CLUSTER WAS PARTLY ONE DEFECT: A PLACEHOLDER PITCH COUNT.** Slipstream stores
+        1 pitch on a 909 m route and Andromeda Strain 1 on 610 m, so the Planner printed
+        "Climbing 0.6 hr" against 7.5 and 10 online (0.08x and 0.07x): "unknown" counted as "none".
+        Measured on all ice and mixed rows with a count and a length (6,098): 61 m per pitch at the
+        90th percentile, 247 rows above 100 m, **197 of them a count of 1 with no stored time**
+        (175 ice, 22 mixed; aid adds 19). `realPitches()` in `lib/planTimes.js` reads a count of 1
+        beside more than 330 ft as NO count, exactly like a missing one: the Climbing tile reads N/A
+        and the totals carry the existing "≥" (the precedent in `grades.md`: a change that adds a
+        hedge and moves no number). `check:return-leg` renders it (10 assertions, 5 injection cases
+        incl. one for over-reach), and `probe-climb-leg-lower-bound` has two fixtures.
+      - **ONLY A COUNT OF 1.** A larger count beside a long length (p12 on 4,000 ft) can be right,
+        because a route's length includes the scrambling between pitches. Those counts may be
+        undercounts (about 50 ice and mixed rows; Bears Breast's two routes show p3 on 3,600 ft),
+        but no rule can tell, so they are left as stored. Of the 101 alpine-type rows with walk
+        data and no stored time, only 4 have such a count, so the "exact total with a wrong climb"
+        state is nearly empty; the ice and mixed placeholders were all "≥" rows already.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)
