@@ -6,9 +6,13 @@
 // Only fills an area that has NO rock yet (`where a.rock is null`), so a STATED rock — from the
 // area's own routes — is never overwritten by a mapped one. Prints how many rows it expects to
 // change; re-count afterwards (a clean exit from the SQL is not evidence any row changed).
+// A man-made wall (research-data/crag-aspects/audit/man-made.json) is never filled: the bedrock
+// under a concrete or synthetic wall is not what is climbed, and its rock was cleared on purpose.
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
+const MAN_MADE = JSON.parse(fs.readFileSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../research-data/crag-aspects/audit/man-made.json"), "utf8"));
 const [, , csvPath, cachePath, outDir] = process.argv;
 if (!outDir) { console.error("usage: apply-area-rock.mjs <areas.csv> <cache.jsonl> <outdir>"); process.exit(2); }
 const cell = (lat, lng) => `${(+lat).toFixed(3)},${(+lng).toFixed(3)}`;
@@ -20,7 +24,7 @@ let noAnswer = 0, notCrawled = 0;
 const crawled = new Set(fs.readFileSync(cachePath, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l).cell));
 for (const l of fs.readFileSync(csvPath, "utf8").trim().split("\n").slice(1)) {
   const [id, lat, lng] = l.split(",");
-  if (!lat || !lng) continue;
+  if (!lat || !lng || MAN_MADE[id]) continue;
   const c = cell(lat, lng);
   if (!crawled.has(c)) { notCrawled++; continue; }
   const rock = byCell.get(c);
