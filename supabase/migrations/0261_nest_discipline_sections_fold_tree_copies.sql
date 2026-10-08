@@ -18,7 +18,7 @@
 -- Every pair READ (job fold3/verdicts.json, each with its evidence; 5 more read after 0259 moved them).
 --   * 52 sections nested; 19 climbs filed in BOTH the crag and its section merged (same name, same
 --     grade; the copy beside its boulder kept). No contribution, log, photo, topo or list on any deleted one.
---   * 437 climbs moved, 119 sub-areas re-parented, 40 copies deleted, children first.
+--   * 435 climbs moved, 119 sub-areas re-parented, 39 copies deleted, children first.
 -- ABORTS if climber data points at a climb deleted, or if the live tree no longer matches the plan.
 -- Plan: the job's fold3/plan.mjs (log reviewed); rollback: scripts/data/area-discipline-nests-rollback.json.
 
@@ -86,8 +86,6 @@ insert into m_move values
   ('ca_a_swan_slab_psychopath', 'ca_a_swan_slab', 'ca_a_swan_slab_routes', false),
   ('ca_a_swan_slab_yose_university', 'ca_a_swan_slab', 'ca_a_swan_slab_routes', false),
   ('ca_a_swan_slab_cosmic_dance_of_the_flying_manzanitta', 'ca_a_swan_slab', 'ca_a_swan_slab_routes', false),
-  ('co_mount_blanca_rocky_mountain_hypergoulotte', 'co_mount_blanca', 'co_blanca_peak', false),
-  ('co_mount_blanca_gash_couloir', 'co_mount_blanca', 'co_blanca_peak', false),
   ('ny_village_idiot', 'ny_golden_wall_area', 'ny_s_the_golden_wall', false),
   ('ny_mad_lion', 'ny_golden_wall_area', 'ny_s_the_golden_wall', false),
   ('ny_golden_wall_area_piranha_head_soup', 'ny_golden_wall_area', 'ny_s_the_golden_wall', false),
@@ -616,44 +614,43 @@ create temp table m_drop_area(id text primary key, into_area text not null, ord 
 insert into m_drop_area values
   ('ca_camp_4_boulders', 'ca_d_camp_4_area', 0),
   ('ca_cathedral_boulders_2', 'ca_p_cathedral_area', 1),
-  ('co_mount_blanca', 'co_blanca_peak', 2),
-  ('co_redstone', 'co_redstone_area', 3),
-  ('il_a_devils_standtable', 'il_b_devils_standtable_area', 4),
-  ('mo_main_bluff_boulders_the', 'mo_a_main_bluff', 5),
-  ('ny_swath_boulders', 'ny_b_the_swath', 6),
-  ('ny_east_end_bouldering', 'ny_p_east_end', 7),
-  ('ny_golden_wall_area', 'ny_s_the_golden_wall', 8),
-  ('qc_l_aiguille_boulders', 'qc_b_l_aiguille', 9),
-  ('wi_old_sandstone_boulders', 'wi_1_old_sandstone', 10),
-  ('wi_new_sandstone_bouldering', 'wi_2_new_sandstone_area', 11),
-  ('ar_candy_mountain_boulders', 'ar_candy_mountain', 12),
-  ('ar_sex_boulder_bouldering', 'ar_sex_boulder_the', 13),
-  ('az_hualapai_park_bouldering', 'az_hualapai_mountain_park', 14),
-  ('ca_boy_scout_wall_bouldering', 'ca_boy_scout_wall_2', 15),
-  ('ca_crystal_lake_boulders', 'ca_crystal_lake_crag', 16),
-  ('ca_swallow_rock_2', 'ca_swallow_rock_boulders', 17),
-  ('co_atomic_energy_bouldering', 'co_atomic_energy_crag', 18),
-  ('co_campsite_10_bouldering_area', 'co_campsite_10', 19),
-  ('co_monkey_skull_boulders', 'co_monkey_skull_the', 20),
-  ('ma_rafe_s_chasm_bouldering', 'ma_rafe_s_chasm', 21),
-  ('md_acre_bouldering_the', 'md_the_acre', 22),
-  ('md_balcony_rock_boulders', 'md_balcony_rock', 23),
-  ('md_bloede_dam_crag', 'md_bloede_dam_boulders', 24),
-  ('mt_sagebrush_point_crag', 'mt_sagebrush_point_boulders', 25),
-  ('mt_sweathouse_creek_boulders', 'mt_sweathouse_creek_crags', 26),
-  ('nd_square_butte_bouldering', 'nd_square_butte', 27),
-  ('nm_questa_dome_bouldering', 'nm_questa_dome_2', 28),
-  ('nv_sport_wall_ice_mixed', 'nv_sport_wall', 29),
-  ('ok_01_backside_boulders', 'ok_02_backside', 30),
-  ('pa_brown_rocks_bouldering', 'pa_brown_rocks_2', 31),
-  ('sd_needles_eye_bouldering', 'sd_needle_s_eye', 32),
-  ('tx_dihedral_boulders', 'tx_dihedral_the', 33),
-  ('ut_little_mill_boulders', 'ut_little_mill_area', 34),
-  ('ut_moon_lake_boulders', 'ut_moon_lake', 35),
-  ('va_atkins_wall_bouldering', 'va_atkins_wall_2', 36),
-  ('va_summit_boulders', 'va_summit_crags', 37),
-  ('wa_middle_fork_boulders', 'wa_middle_fork_bouldering', 38),
-  ('wv_fern_point_boulders', 'wv_fern_point', 39);
+  ('co_redstone', 'co_redstone_area', 2),
+  ('il_a_devils_standtable', 'il_b_devils_standtable_area', 3),
+  ('mo_main_bluff_boulders_the', 'mo_a_main_bluff', 4),
+  ('ny_swath_boulders', 'ny_b_the_swath', 5),
+  ('ny_east_end_bouldering', 'ny_p_east_end', 6),
+  ('ny_golden_wall_area', 'ny_s_the_golden_wall', 7),
+  ('qc_l_aiguille_boulders', 'qc_b_l_aiguille', 8),
+  ('wi_old_sandstone_boulders', 'wi_1_old_sandstone', 9),
+  ('wi_new_sandstone_bouldering', 'wi_2_new_sandstone_area', 10),
+  ('ar_candy_mountain_boulders', 'ar_candy_mountain', 11),
+  ('ar_sex_boulder_bouldering', 'ar_sex_boulder_the', 12),
+  ('az_hualapai_park_bouldering', 'az_hualapai_mountain_park', 13),
+  ('ca_boy_scout_wall_bouldering', 'ca_boy_scout_wall_2', 14),
+  ('ca_crystal_lake_boulders', 'ca_crystal_lake_crag', 15),
+  ('ca_swallow_rock_2', 'ca_swallow_rock_boulders', 16),
+  ('co_atomic_energy_bouldering', 'co_atomic_energy_crag', 17),
+  ('co_campsite_10_bouldering_area', 'co_campsite_10', 18),
+  ('co_monkey_skull_boulders', 'co_monkey_skull_the', 19),
+  ('ma_rafe_s_chasm_bouldering', 'ma_rafe_s_chasm', 20),
+  ('md_acre_bouldering_the', 'md_the_acre', 21),
+  ('md_balcony_rock_boulders', 'md_balcony_rock', 22),
+  ('md_bloede_dam_crag', 'md_bloede_dam_boulders', 23),
+  ('mt_sagebrush_point_crag', 'mt_sagebrush_point_boulders', 24),
+  ('mt_sweathouse_creek_boulders', 'mt_sweathouse_creek_crags', 25),
+  ('nd_square_butte_bouldering', 'nd_square_butte', 26),
+  ('nm_questa_dome_bouldering', 'nm_questa_dome_2', 27),
+  ('nv_sport_wall_ice_mixed', 'nv_sport_wall', 28),
+  ('ok_01_backside_boulders', 'ok_02_backside', 29),
+  ('pa_brown_rocks_bouldering', 'pa_brown_rocks_2', 30),
+  ('sd_needles_eye_bouldering', 'sd_needle_s_eye', 31),
+  ('tx_dihedral_boulders', 'tx_dihedral_the', 32),
+  ('ut_little_mill_boulders', 'ut_little_mill_area', 33),
+  ('ut_moon_lake_boulders', 'ut_moon_lake', 34),
+  ('va_atkins_wall_bouldering', 'va_atkins_wall_2', 35),
+  ('va_summit_boulders', 'va_summit_crags', 36),
+  ('wa_middle_fork_boulders', 'wa_middle_fork_bouldering', 37),
+  ('wv_fern_point_boulders', 'wv_fern_point', 38);
 
 create temp table m_rename(id text primary key, from_name text not null, to_name text not null, bypass boolean not null) on commit drop;
 -- (m_rename: none in this plan)
@@ -691,16 +688,16 @@ create temp table m_rename_first(id text primary key, from_name text not null, t
 -- every ancestor of every touched area, read BEFORE anything moves (old and new ancestors both)
 create temp table m_recount on commit drop as
   select distinct a.id from areas a join areas t on a.path @> t.path
-   where t.id in ('ca_camp_4_boulders', 'ca_d_camp_4_area', 'ca_cathedral_boulders_2', 'ca_p_cathedral_area', 'co_mount_blanca', 'co_blanca_peak', 'co_redstone', 'co_redstone_area', 'il_a_devils_standtable', 'il_b_devils_standtable_area', 'mo_main_bluff_boulders_the', 'mo_a_main_bluff', 'ny_swath_boulders', 'ny_b_the_swath', 'ny_east_end_bouldering', 'ny_p_east_end', 'ny_golden_wall_area', 'ny_s_the_golden_wall', 'qc_l_aiguille_boulders', 'qc_b_l_aiguille', 'wi_old_sandstone_boulders', 'wi_1_old_sandstone', 'wi_new_sandstone_bouldering', 'wi_2_new_sandstone_area', 'ar_candy_mountain_boulders', 'ar_candy_mountain', 'ar_sex_boulder_bouldering', 'ar_sex_boulder_the', 'az_hualapai_park_bouldering', 'az_hualapai_mountain_park', 'ca_boy_scout_wall_bouldering', 'ca_boy_scout_wall_2', 'ca_crystal_lake_boulders', 'ca_crystal_lake_crag', 'ca_swallow_rock_2', 'ca_swallow_rock_boulders', 'co_atomic_energy_bouldering', 'co_atomic_energy_crag', 'co_campsite_10_bouldering_area', 'co_campsite_10', 'co_monkey_skull_boulders', 'co_monkey_skull_the', 'ma_rafe_s_chasm_bouldering', 'ma_rafe_s_chasm', 'md_acre_bouldering_the', 'md_the_acre', 'md_balcony_rock_boulders', 'md_balcony_rock', 'md_bloede_dam_crag', 'md_bloede_dam_boulders', 'mt_sagebrush_point_crag', 'mt_sagebrush_point_boulders', 'mt_sweathouse_creek_boulders', 'mt_sweathouse_creek_crags', 'nd_square_butte_bouldering', 'nd_square_butte', 'nm_questa_dome_bouldering', 'nm_questa_dome_2', 'nv_sport_wall_ice_mixed', 'nv_sport_wall', 'ok_01_backside_boulders', 'ok_02_backside', 'pa_brown_rocks_bouldering', 'pa_brown_rocks_2', 'sd_needles_eye_bouldering', 'sd_needle_s_eye', 'tx_dihedral_boulders', 'tx_dihedral_the', 'ut_little_mill_boulders', 'ut_little_mill_area', 'ut_moon_lake_boulders', 'ut_moon_lake', 'va_atkins_wall_bouldering', 'va_atkins_wall_2', 'va_summit_boulders', 'va_summit_crags', 'wa_middle_fork_boulders', 'wa_middle_fork_bouldering', 'wv_fern_point_boulders', 'wv_fern_point', 'ca_yosemite_valley_bouldering', 'ca_7_lower_cathedral_area', 'ca_slab_city_boulders', 'ca_a_slab_city', 'ca_a_swan_slab', 'nh_whitehorse_ice_climbs', 'nh_2_south_buttress', 'or_smith_rock_bouldering', 'or_u_red_wall', 'wa_central_region', 'wa_banks_lake', 'wi_g_dodge_ice', 'wi_1_box_canyon_boulders', 'ak_archangel_bouldering', 'ak_diamond_south', 'ak_sky_pilot_areas', 'ak_sky_pilot', 'ar_bigfoot_hollow', 'ar_area_51', 'az_queen_creek_canyon', 'az_oak_flat', 'ca_riverside_quarry', 'ca_castle_rock_area_2', 'ca_castle_rock_3', 'ca_highway_50_corridor', 'ca_desolation_wilderness', 'ca_fairview_mountain', 'ca_foreplay_area', 'ca_fairview_mountain_bouldering', 'ca_meadow_bouldering', 'ca_new_jack_city', 'ca_southern_canyon_crags', 'ca_sugarloaf_area', 'ca_sugarloaf', 'ca_santa_ana_mountains', 'ca_tenaja_falls', 'co_georgetown', 'co_curve_block', 'co_boulder_canyon', 'co_dome_the_2', 'id_castle_rocks', 'id_castle_rocks_2', 'id_twin_falls_and_the_snake_river_canyon', 'id_dierkes_lake', 'ma_hemlock_pool_at_middlesex_fells', 'ma_hangover_the', 'ma_north_side', 'ma_mt_ann', 'md_sugarloaf_mountain', 'md_white_rocks', 'me_a_western_mountains', 'me_bear_mountain_cliff', 'nc_latta_nature_preserve', 'nc_wash_rock', 'north_dakota', 'nd_sentinel_butte', 'nh_pawtuckaway', 'nh_devil_s_den_2', 'nh_goodwill_conservation_land_aka_richardson_pond', 'nh_main_cliff_the_3', 'nh_yellowjacket_area', 'nh_yellowjacket_crags', 'ny_the_gunks', 'ny_near_trapps_the', 'ny_peterskill', 'ny_the_trapps', 'ok_charon_s_gardens', 'ok_pear_and_apple', 'pa_northwest_the', 'pa_rim_rock', 'sd_iron_mountain', 'sd_1st_pigtail_bridge', 'sd_shadowlands', 'sd_delicacy_wall', 'sd_olton_s_shoulder', 'sd_oltons_shoulder', 'sd_visitor_center_the', 'sd_oval_office_the', 'sd_profile', 'sd_reardon_s_rock', 'sd_turtle_dome', 'tx_big_bend_national_park', 'tx_grapevine_hills', 'tx_palo_duro_canyon_state_park', 'tx_sorenson_point', 'tx_barton_creek_greenbelt', 'tx_urban_assault', 'texas', 'tx_wimberley', 'ut_oquirrh_mountains', 'ut_lake_point_crag', 'ut_lower_buckhorn', 'ut_pine_canyon', 'ut_smithfield_dry_canyon', 'ut_smithfield_dry_canyon_2', 'wy_cody', 'wy_cedar_mountain');
+   where t.id in ('ca_camp_4_boulders', 'ca_d_camp_4_area', 'ca_cathedral_boulders_2', 'ca_p_cathedral_area', 'co_redstone', 'co_redstone_area', 'il_a_devils_standtable', 'il_b_devils_standtable_area', 'mo_main_bluff_boulders_the', 'mo_a_main_bluff', 'ny_swath_boulders', 'ny_b_the_swath', 'ny_east_end_bouldering', 'ny_p_east_end', 'ny_golden_wall_area', 'ny_s_the_golden_wall', 'qc_l_aiguille_boulders', 'qc_b_l_aiguille', 'wi_old_sandstone_boulders', 'wi_1_old_sandstone', 'wi_new_sandstone_bouldering', 'wi_2_new_sandstone_area', 'ar_candy_mountain_boulders', 'ar_candy_mountain', 'ar_sex_boulder_bouldering', 'ar_sex_boulder_the', 'az_hualapai_park_bouldering', 'az_hualapai_mountain_park', 'ca_boy_scout_wall_bouldering', 'ca_boy_scout_wall_2', 'ca_crystal_lake_boulders', 'ca_crystal_lake_crag', 'ca_swallow_rock_2', 'ca_swallow_rock_boulders', 'co_atomic_energy_bouldering', 'co_atomic_energy_crag', 'co_campsite_10_bouldering_area', 'co_campsite_10', 'co_monkey_skull_boulders', 'co_monkey_skull_the', 'ma_rafe_s_chasm_bouldering', 'ma_rafe_s_chasm', 'md_acre_bouldering_the', 'md_the_acre', 'md_balcony_rock_boulders', 'md_balcony_rock', 'md_bloede_dam_crag', 'md_bloede_dam_boulders', 'mt_sagebrush_point_crag', 'mt_sagebrush_point_boulders', 'mt_sweathouse_creek_boulders', 'mt_sweathouse_creek_crags', 'nd_square_butte_bouldering', 'nd_square_butte', 'nm_questa_dome_bouldering', 'nm_questa_dome_2', 'nv_sport_wall_ice_mixed', 'nv_sport_wall', 'ok_01_backside_boulders', 'ok_02_backside', 'pa_brown_rocks_bouldering', 'pa_brown_rocks_2', 'sd_needles_eye_bouldering', 'sd_needle_s_eye', 'tx_dihedral_boulders', 'tx_dihedral_the', 'ut_little_mill_boulders', 'ut_little_mill_area', 'ut_moon_lake_boulders', 'ut_moon_lake', 'va_atkins_wall_bouldering', 'va_atkins_wall_2', 'va_summit_boulders', 'va_summit_crags', 'wa_middle_fork_boulders', 'wa_middle_fork_bouldering', 'wv_fern_point_boulders', 'wv_fern_point', 'ca_yosemite_valley_bouldering', 'ca_7_lower_cathedral_area', 'ca_slab_city_boulders', 'ca_a_slab_city', 'ca_a_swan_slab', 'nh_whitehorse_ice_climbs', 'nh_2_south_buttress', 'or_smith_rock_bouldering', 'or_u_red_wall', 'wa_central_region', 'wa_banks_lake', 'wi_g_dodge_ice', 'wi_1_box_canyon_boulders', 'ak_archangel_bouldering', 'ak_diamond_south', 'ak_sky_pilot_areas', 'ak_sky_pilot', 'ar_bigfoot_hollow', 'ar_area_51', 'az_queen_creek_canyon', 'az_oak_flat', 'ca_riverside_quarry', 'ca_castle_rock_area_2', 'ca_castle_rock_3', 'ca_highway_50_corridor', 'ca_desolation_wilderness', 'ca_fairview_mountain', 'ca_foreplay_area', 'ca_fairview_mountain_bouldering', 'ca_meadow_bouldering', 'ca_new_jack_city', 'ca_southern_canyon_crags', 'ca_sugarloaf_area', 'ca_sugarloaf', 'ca_santa_ana_mountains', 'ca_tenaja_falls', 'co_georgetown', 'co_curve_block', 'co_boulder_canyon', 'co_dome_the_2', 'id_castle_rocks', 'id_castle_rocks_2', 'id_twin_falls_and_the_snake_river_canyon', 'id_dierkes_lake', 'ma_hemlock_pool_at_middlesex_fells', 'ma_hangover_the', 'ma_north_side', 'ma_mt_ann', 'md_sugarloaf_mountain', 'md_white_rocks', 'me_a_western_mountains', 'me_bear_mountain_cliff', 'nc_latta_nature_preserve', 'nc_wash_rock', 'north_dakota', 'nd_sentinel_butte', 'nh_pawtuckaway', 'nh_devil_s_den_2', 'nh_goodwill_conservation_land_aka_richardson_pond', 'nh_main_cliff_the_3', 'nh_yellowjacket_area', 'nh_yellowjacket_crags', 'ny_the_gunks', 'ny_near_trapps_the', 'ny_peterskill', 'ny_the_trapps', 'ok_charon_s_gardens', 'ok_pear_and_apple', 'pa_northwest_the', 'pa_rim_rock', 'sd_iron_mountain', 'sd_1st_pigtail_bridge', 'sd_shadowlands', 'sd_delicacy_wall', 'sd_olton_s_shoulder', 'sd_oltons_shoulder', 'sd_visitor_center_the', 'sd_oval_office_the', 'sd_profile', 'sd_reardon_s_rock', 'sd_turtle_dome', 'tx_big_bend_national_park', 'tx_grapevine_hills', 'tx_palo_duro_canyon_state_park', 'tx_sorenson_point', 'tx_barton_creek_greenbelt', 'tx_urban_assault', 'texas', 'tx_wimberley', 'ut_oquirrh_mountains', 'ut_lake_point_crag', 'ut_lower_buckhorn', 'ut_pine_canyon', 'ut_smithfield_dry_canyon', 'ut_smithfield_dry_canyon_2', 'wy_cody', 'wy_cedar_mountain');
 
 do $$ declare n int; begin
   -- An EMPTY database (a Supabase preview, check:migration-replay) has no catalog: nothing to fold.
   select count(*) into n from areas where id in (select id from m_drop_area);
   if n = 0 then raise notice '0261: no catalog, nothing to fold'; return; end if;
-  if n <> 40 then raise exception '0261: expected 40 copy areas, found %', n; end if;
+  if n <> 39 then raise exception '0261: expected 39 copy areas, found %', n; end if;
   -- the tree must still be the one the plan read
   select count(*) into n from m_move m join routes r on r.id = m.id and r.area_id = m.from_area;
-  if n <> 438 then raise exception '0261: % of 438 climbs are where the plan found them', n; end if;
+  if n <> 436 then raise exception '0261: % of 436 climbs are where the plan found them', n; end if;
   select count(*) into n from m_merge m join routes k on k.id = m.keep join routes o on o.id = m.drop_id;
   if n <> 19 then raise exception '0261: % of 19 merge pairs still exist', n; end if;
   select count(*) into n from m_reparent m join areas a on a.id = m.id and a.parent_id = m.from_area;
@@ -945,7 +942,7 @@ do $$ declare n int; begin
   select count(*) into n from routes where id in (select drop_id from m_merge);
   if n > 0 then raise exception '0261: % merged climbs survived', n; end if;
   select count(*) into n from m_move m join routes r on r.id = m.id and r.area_id = m.to_area;
-  if n <> 438 then raise exception '0261: % of 438 climbs moved', n; end if;
+  if n <> 436 then raise exception '0261: % of 436 climbs moved', n; end if;
   select count(*) into n from m_rename m join areas a on a.id = m.id and a.name = m.to_name;
   if n <> 0 then raise exception '0261: % of 0 renames landed', n; end if;
   select count(*) into n from m_new_area m join areas a on a.id = m.id and a.parent_id = m.final_parent and a.route_count > 0;
