@@ -1434,3 +1434,23 @@ that they had none — on the one screen whose whole subject is who you climb wi
     the 44 lists survive minification). The guard reads source, not the bundle, and that is right —
     a dead writer wired up tomorrow must already refresh its readers — but a bundle marker for this
     change must not expect every list.
+
+- **Unbounded reads vs PostgREST `max_rows` — MEASURED 2026-10-08, a latent defect closed with no
+  guard.** The instance caps any unlimited read at **1000 rows** (an anon read of `routes` comes back
+  206 with `0-999/315735`) and the body says nothing about the rest, so a reader handed exactly 1000
+  rows cannot tell a full answer from a cut one. `scripts/oneoff/measure-unbounded-selects.mjs`
+  found 71 row reads in `lib/` with no `.limit/.range/.single`; all but two are bounded by their
+  filter (an `in()` on a caller's id list, a root-level `is null`, a search leg whose limit is applied
+  by a wrapper the census cannot see). The two a filter does not bound — `useAreaChildren`
+  (`parent_id = X`) and `useAreaRoutes` (`area_id = X`) — were measured against the whole catalog
+  (`probe-routes-per-area.mjs` pages 316 × 1000 rows; `probe-fanout-maxima.mjs`): the largest direct
+  fan-out is **356 routes** under one area and **134 children** under one parent, so **no screen is
+  cut today**. Both now read through `allRows(build)` in `lib/db.js`, which pages only when a request
+  comes back full — one request in every case that exists, correct when the import grows past the
+  cap. Verified live with PAGE=100 (`probe-all-rows-paging.mjs`, needs `node --experimental-websocket`
+  on Node 20): 356 rows in 4 requests and 134 in 2, order identical to the single request.
+  - **No guard, deliberately:** a build guard cannot see the live fan-out, and a daily DB guard for a
+    maximum at 36% of the cap would be a detector for a class of zero (see §2 of
+    `check:read-failures` for why this repo refuses those). The helper is the fix; the probe is the
+    measurement to re-run if the fan-out is ever in question. Every other table the app reads holds
+    under ten rows pre-launch, so nothing else can approach the cap before the catalog does.
