@@ -10,7 +10,7 @@ const has = (s) => { const m = YDS.exec(String(s || "")); return !!m && +m[1] <=
 
 /* Rows whose own grade says 5.x but whose research (2026-10-08) found no required rock pitch, or none usable.
    Held for the owner, not exempt: delete an id here once it is relabelled or its grade is corrected. */
-const HELD = new Set("wa_andersons_thumb_standard wa_austera_peak wa_burnt_boot_peak_north_ridge wa_dragontail_peak_r3 wa_inner_constance_northwest_buttress wa_lemah_two_goatshead_spire wa_mount_crowder_northeast_ridge wa_mount_redoubt_south_face wa_overcoat_peak_southeast_route wa_sahale_mountain_sahale_glacier wa_storm_king_north_face wa_tepeh_towers".split(" "));
+const HELD = new Set("wa_andersons_thumb_standard wa_burnt_boot_peak_north_ridge wa_dragontail_peak_r3 wa_inner_constance_northwest_buttress wa_lemah_two_goatshead_spire wa_mount_crowder_northeast_ridge wa_overcoat_peak_southeast_route wa_sahale_mountain_sahale_glacier wa_storm_king_north_face wa_tepeh_towers".split(" "));
 const rows = await selectAll("routes", "id,name,grade,rock_grade,alpine_grade", "discipline=eq.mountaineering", { pageSize: 500 });
 if (rows.length < 100) { console.error(`only ${rows.length} mountaineering rows read — a failed or RLS-empty read is not a pass`); process.exit(2); }
 const all = rows.filter((r) => has(r.grade) || has(r.rock_grade) || has(r.alpine_grade));
