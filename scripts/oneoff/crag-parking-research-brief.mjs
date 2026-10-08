@@ -4,11 +4,12 @@
 // destination's sub-areas two levels down (id, coordinate, crag routes beneath) and EVERY mapped parking lot and
 // trailhead in its box, named or not, each with an id. The researcher only decides WHICH lot each sub-area uses,
 // so every coordinate written is a mapped lot, never a guess; apply-crag-parking.mjs then re-checks each one.
-// Usage: node scripts/oneoff/crag-parking-research-brief.mjs <cacheDir> <outDir> <destination area_id>...
+// Usage: node scripts/oneoff/crag-parking-research-brief.mjs <cacheDir> <outDir> [--depth=2] <destination area_id>...
 import fs from "node:fs";
 import path from "node:path";
 
-const [dir, outDir, ...dests] = process.argv.slice(2);
+const args = process.argv.slice(2), DEPTH = +((args.find((a) => a.startsWith("--depth=")) || "--depth=2").split("=")[1]); // Mt Lemmon's pullouts sit a level deeper
+const [dir, outDir, ...dests] = args.filter((a) => !a.startsWith("--"));
 if (!dir || !outDir || !dests.length) { console.error("usage: crag-parking-research-brief.mjs <cacheDir> <outDir> <area_id>..."); process.exit(2); }
 const areas = JSON.parse(fs.readFileSync(path.join(dir, "areas.json"), "utf8")), crag = JSON.parse(fs.readFileSync(path.join(dir, "crag-area-ids.json"), "utf8"));
 const byId = new Map(areas.map((a) => [a.id, a]));
@@ -36,7 +37,7 @@ for (const id of dests) {
   const lots = els.map((e) => ({ lot: e.type[0] + e.id, lat: +(e.lat ?? e.center?.lat).toFixed(6), lng: +(e.lon ?? e.center?.lon).toFixed(6), kind: e.tags?.amenity === "parking" ? "parking" : "trailhead", name: e.tags?.name || null, access: e.tags?.access || null, fee: e.tags?.fee || null, capacity: e.tags?.capacity || null, surface: e.tags?.surface || null })).filter((l) => !Number.isNaN(l.lat))
     .filter((l) => pts.some((a) => km(+a.lat, +a.lng, l.lat, l.lng) <= 1.5)); // a reservation inside a suburb (Lynn Woods) has a thousand driveways in its box
   const depth = (a) => String(a.path).split(".").length - String(d.path).split(".").length;
-  const outline = sub.filter((a) => depth(a) <= 2 && below.get(a.id)).sort((x, y) => String(x.path).localeCompare(String(y.path)))
+  const outline = sub.filter((a) => depth(a) <= DEPTH && below.get(a.id)).sort((x, y) => String(x.path).localeCompare(String(y.path)))
     .map((a) => ({ area_id: a.id, name: a.name, depth: depth(a), lat: a.lat, lng: a.lng, crag_routes_beneath: below.get(a.id), has_parking: a.parking_lat != null ? a.parking_name : null, ...(stray.has(a.id) ? { stray_coordinate: true } : {}) }));
   fs.writeFileSync(path.join(outDir, id + ".brief.json"), JSON.stringify({ destination: { area_id: d.id, name: d.name, path: d.path }, outline, lots }, null, 1));
   console.log(`${id}: ${outline.length} sub-areas (${below.get(d.id)} crag routes), ${lots.length} mapped lots/trailheads (${lots.filter((l) => l.name).length} named)`);
