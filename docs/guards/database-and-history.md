@@ -567,7 +567,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     0259's `pg_temp.mv_area`).
   - **The guard caught its own regression within hours** (2026-10-08): the snow import, run with the
     importer from BEFORE #2265, added one climb (Potosi Peak's North Couloir) and re-created "CO Ice &
-    Mixed > Ouray (Ice/Mixed)" under their old ids to hold it. **0267** moved Potosi Peak beside Teakettle
+    Mixed > Ouray (Ice/Mixed)" under their old ids to hold it. **0268** moved Potosi Peak beside Teakettle
     Mountain (San Juans > Northern San Juans) and deleted the two buckets. Any import must run from a
     checkout that has `scripts/lib/generic-area-name.mjs`; a red here after an import means it did not.
 
