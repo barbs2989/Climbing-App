@@ -9,17 +9,20 @@
  ],
  "measured": {
   "note": "lib/planTimes.js at the calculator defaults vs the first-pass online medians, 515 sampled routes. short = model < 0.8x online. Whole-day rows have no modelled time to summit or descent, so they leave those two counts (Baring, Pyramid Peak, Big Snagtooth).",
-  "timeToSummitShort": "14 of 181 -> 7 of 178",
+  "timeToSummitShort": "14 of 181 -> 7 of 178 -> 6 of 178 (Dome Peak, set after a published summit-to-camp figure surfaced)",
   "descentShort": "18 of 161 -> 13 of 158",
   "carToCarShort": "20 of 191 -> 15 of 191",
   "alpine": "time to summit within 58% -> 62%; descent short 7 -> 5 of 32"
  },
  "counts": {
   "routes": 15,
-  "fixed": 9,
-  "left": 6
+  "fixed": 10,
+  "left": 5
  },
- "rollback": "scripts/rollback-timing-fixes-1791456669190.json",
+ "rollback": [
+  "scripts/rollback-timing-fixes-1791456669190.json",
+  "scripts/rollback-timing-fixes-1791470253356.json"
+ ],
  "routes": [
   {
    "id": "wa_the_perfect_crime_with_variations",
@@ -1895,9 +1898,22 @@
    "id": "wa_dome_peak_dome_glacier",
    "route": "Dome Glacier",
    "peak": "Dome Peak",
-   "action": "leave",
-   "why": "FLAGGED, dangerous direction. The stored 7 hr 'summit day' matches the published ONE-WAY camp-to-summit figure (6-8 hr), but approach 8.5 and hike out 7.5 make the row read as the camp shape, so the Planner and the alpine start treat 7 hr as the whole round trip from camp. One report (2003) took 14 hr camp to camp. No summit-to-camp figure clears the bar, so it is not rewritten: it needs that one leg.",
-   "timing": null,
+   "action": "fix",
+   "why": "The stored 7 hr summit day is the published ONE-WAY time from camp to the summit (6-8 hr), but approach 8.5 and hike out 7.5 make the row read as the camp shape, so the Planner and the alpine start treated 7 hr as the whole round trip from camp. The published figures add the way back: summit to camp 4-6 hr (route page, read from a search summary), so the round trip is 10-14 hr. A 2003 report took 14 hr camp to camp, and a 2006 party's 17 hr from camp to car implies a summit day of about 10-11.5. Summit day set to 12 (camp to summit about 7.3 in two reports + the published midpoint 5 back); approach 8.5 (published 9-11, reports 7-11, median about 9) and hike out 7.5 (published 6-8) kept. Total 23 -> 28.",
+   "timing": {
+    "before": {
+     "approach": 8.5,
+     "summit": 7,
+     "descent": 7.5,
+     "total": 23
+    },
+    "after": {
+     "approach": 8.5,
+     "summit": 12,
+     "descent": 7.5,
+     "total": 28
+    }
+   },
    "planner": {
     "online": {
      "sum": 16.2,
@@ -1910,9 +1926,9 @@
      "down": 10.4
     },
     "after": {
-     "sum": 12.6,
-     "c2c": 23,
-     "down": 10.4
+     "sum": 15.6,
+     "c2c": 28,
+     "down": 12.4
     }
    },
    "evidence": {
