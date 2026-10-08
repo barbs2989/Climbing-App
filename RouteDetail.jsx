@@ -1701,10 +1701,18 @@ function CampingPanel({route,onEdit}){
     {/* Capped HERE, around the sites only. It used to wrap the whole panel, and the intro plus the
         permit panel alone fill the 400px a capped block shows — so the first thing under "Show more"
         was every actual camp, and the section read as a permit and nothing else. */}
-    <Capped>{campGroups(sites).map(function(g,gi){return <div key={g.key} style={{marginTop:g.title&&gi?16:0}}>
-      {g.title?<div style={{marginBottom:9}}><div style={{fontSize:11.5,fontWeight:800,color:C.purple,letterSpacing:0.6}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
-      {g.sites.map(function(s,si){return <CampSite key={s.i} b={s.b} i={s.i} first={gi===0&&si===0}/>;})}
-    </div>;})}</Capped>
+    {(function(){
+      /* The FIRST site sits outside the cap entirely, so one camp is always shown whole — a cap
+         that slices through it (its Notes cut off, the next camp hidden) leaves the same doubt the
+         cap was moved to remove. Everything after it is capped. */
+      var groups=campGroups(sites);
+      var group=function(g,gi,from,to,head){var list=g.sites.slice(from,to);if(!list.length)return null;return <div key={g.key+from} style={{marginTop:head&&g.title&&gi?16:0}}>
+        {head&&g.title?<div style={{marginBottom:9}}><div style={{fontSize:11.5,fontWeight:800,color:C.purple,letterSpacing:0.6}}>{g.title+" · "+g.sites.length}</div><div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{g.blurb}</div></div>:null}
+        {list.map(function(x,si){return <CampSite key={x.i} b={x.b} i={x.i} first={gi===0&&from+si===0}/>;})}
+      </div>;};
+      var rest=[group(groups[0],0,1,undefined,false)].concat(groups.slice(1).map(function(g,k){return group(g,k+1,0,undefined,true);})).filter(Boolean);
+      return <>{group(groups[0],0,0,1,true)}{rest.length?<Capped>{rest}</Capped>:null}</>;
+    })()}
   </div>;
 }
 /* Where most parties sleep first, then other options. Grouping only happens once at least
