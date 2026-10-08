@@ -488,6 +488,30 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       keeper's old one, which left Unknown Shores (V7-8 at 7) and Spaceballs (5.11a at 10.75) out of
       their sort slot; 0274 fixed both. Aid and multi-system strings ("5.9 C2", "5.8 WI4 M5") disagree
       with the parser by convention, not by defect.
+  - **What the guard cannot see, MEASURED and swept by 0276** (2026-10-08): same-named areas in one
+    level-3 region that are not ancestor/descendant, kept when one side has no pin, or no climbs, or
+    sits 3–25 km off — 900 pairs; 386 not already listed were READ (`res/verdicts-*.json` in that job,
+    each with its evidence). Most were **parallel trees**, one place imported twice under two parents,
+    folded from the top: Grand Canyon / Grand Canyon National Park, Mount Charleston Ice (every falls an
+    empty copy) / Winter, Olympic / Olympic Peninsula Bouldering, Widgi Creek / Widgi Boulders, Mt. Evans /
+    Mt. Blue Sky Bouldering, Wyalusing Ice / State Park, the two Frenchman Coulees, the two Seattles,
+    Wayne's World, Banks Lake / Northrup Canyon, Castle Rock / Castle Rock and Sanborn, Tum Tum / Tumtum,
+    Sandia (West Side), Wine Country / Northeast Bay, La Madre Range / Area, Dumplingtown / Dumplington Hill;
+    Utah's San Juan / Grand County copies of Indian Creek, Potash Road, La Sal…; Montana's Kalispell /
+    Bozeman / Butte Area copies of Stone Hill, Gallatin, Hyalite… The copies share few climb NAMES (Banks
+    Lake 1 of 119, Dumplington 1 of 55): the two imports hold complementary halves of one place.
+    - Read, so nobody re-reads them: **The VC's Main Wall** climbs (Babushka Boy, Kabuki Mask…) were also
+      filed on Falling Rock's "Main Wall" — Mountain Project's VC page lists all 34; 20 merged, 12 moved,
+      Falling Rock kept its own 16. Corps Wall reopened 2024-11 (WMCC): its empty "(CLOSED TO CLIMBING)"
+      copy went. Everett Ruess Memorial Boulder: the source keeps only the "(CLOSED)" listing, so the
+      closed copy was the keeper. Carlton Peak's numbered climbs ("16") are the named "(aka #16)" ones.
+    - **LEFT**, read: Boulder N / Pimp Juice and Lake of the Woods (still unsure after the source),
+      Klettergarten / Gilly Monsters (two sub-areas at the source), Joshua Tree's Pinto Basin bouldering,
+      the empty "Cone, The" at Fairview (another sub-area), and every pair read DIFFERENT — named faces
+      ("(North Face)" / "(South Face)"), generic names on different formations.
+    - **The sweep's own blind spot**: it paired only inside one LEVEL-3 region, so a state whose trees
+      start at level 3 (Minnesota's "Duluth Area" / "Duluth Area (Rock and Ice)") never met itself.
+      Measured the same way across a whole state: **861 more pairs** (California 459) — the next round.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
