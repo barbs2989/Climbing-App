@@ -524,6 +524,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - A pair is found by NAME, so a copy renamed by its import still hides: Duluth's "North Hartley" held
       exactly "Hartley"'s 10 problems, and "Casket Quarry (ICE/MIXED)" held the 30 climbs its empty twin
       "Casket Quarry ICE" lacked — both found only by their CLIMBS when the trees were laid side by side.
+      **Swept by 0278** the other way round: every two areas in one state sharing 3+ distinctive climb
+      names, whatever they are called — 115 pairs, all READ (`res/p3-verdicts-*.json`). Two kinds:
+      one place under two names or pins (Mission Gorge's two "Main Wall"s, 59 of 63 climbs, pins 37 km
+      apart; "Indian Wars Wall" / "Wars Wall"; a second import's Pemberton boulders on ONE placeholder pin)
+      — folded; and **one crag listing its climbs twice**, on the wall and again on a catch-all list
+      ("Rose Ledge Routes", "T-Wall West", "Winter-Spring (ice, snow, mixed)") — both areas stay, each
+      climb is one, the wall's copy kept. "Temp HP40" was a 98-problem holding list under the Alabama
+      root: its problems merged into Horse Pens 40's boulders, the rest went inside as "Horse Pens 40
+      Routes". LEFT, read: 7 Mile Rock / Coal Mt. Crag (27 climbs on both, which crag is unsettled);
+      Missouri's two boulders whose copies sit under "Closed Areas" (a fold could erase a closure).
+    - **A tie the grade parser cannot break**: `gradeNumFor` scores "5.9" and "5.9+" alike, so "keep
+      the HIGHER grade" needs a tie-break on the suffix ("+" over none over "-") or a fold quietly keeps
+      the lower-reading one. 0278's planner (`higher.mjs`) applies it.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
