@@ -132,7 +132,7 @@ The table above is the state measured on 2026-10-07. Since then:
 ### What only the owner can do (each switches a built feature on)
 
 1. **Safety alert emails.** Create a Resend account and verify a sending domain, then run `npx supabase secrets set RESEND_API_KEY=… GPS_NOTIFY_FROM=… SAFETY_ALERT_EMAIL=you@…`.
-2. **AI text screening.** Create an Anthropic API key, run `npx supabase secrets set ANTHROPIC_API_KEY=…`, then wire the hook once: `insert into app_settings (key, value) values ('screen_hook_url', 'https://ofuofhojhbcrcahuotya.supabase.co/functions/v1/screen-content');`
+2. **AI text screening.** Create an Anthropic API key and run `npx supabase secrets set ANTHROPIC_API_KEY=…`. The hook is already wired: `app_settings.screen_hook_url` was set 2026-10-08, and the function answers `{"screened":false}` until a key exists.
 3. **Image screening.** Create an AWS IAM user with `rekognition:DetectModerationLabels` only, then set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_REGION` the same way.
 4. **A contact address** for Safety and Support. It goes in the Guidelines, Settings and both store listings.
 5. **Google Play Child Safety Standards:** a public web page (the Guidelines' "Children" section covers the content) and a named child-safety contact in Play Console.
