@@ -2,7 +2,7 @@
 // Writes researched crag PARKING (areas.parking_*, 0255) from per-destination research files, after
 // checking each spot mechanically. Usage: node scripts/oneoff/apply-crag-parking.mjs <dir> [--apply]
 // <dir>/*.json: [{ area_id, lat, lng, name, confidence: "high"|"medium", basis }]
-// A spot is refused unless: the area exists; an OpenStreetMap amenity=parking feature lies within 80 m
+// A spot is refused unless: the area exists; an OpenStreetMap lot or trailhead lies within 80 m
 // of the coordinate (a lot, not a guess); it is within 4 km of the crag; its name cites no source.
 // A lot serves its area and every area beneath it, so it is copied down the subtree. Assignments are
 // written shallowest first, so a deeper (more specific) assignment wins. Fill-only by default: an area
@@ -17,10 +17,12 @@ if (!dir) { console.error("usage: apply-crag-parking.mjs <dir> [--apply]"); proc
 const key = requireServiceKey();
 const q = async (p) => { for (let i = 0; ; i++) { try { const r = await fetch(SUPABASE_URL + "/rest/v1/" + p, { headers: headers(key) }); if (!r.ok) throw new Error(await r.text()); return await r.json(); } catch (e) { if (i >= 4) throw e; await new Promise((z) => setTimeout(z, 3000 * (i + 1))); } } };
 const km = (a, b, c, d) => { const R = 6371, x = (c - a) * Math.PI / 180, y = (d - b) * Math.PI / 180; const h = Math.sin(x / 2) ** 2 + Math.cos(a * Math.PI / 180) * Math.cos(c * Math.PI / 180) * Math.sin(y / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(h)); };
-const OVERPASS = ["https://overpass-api.de/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter"];
+const OVERPASS = ["https://overpass.private.coffee/api/interpreter", "https://overpass-api.de/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter"];
+// A mapped TRAILHEAD counts as well as a lot: the research briefs (crag-parking-research-brief.mjs) offer both,
+// and the name-matched tiers already write trailheads. Either way the point is on the map, not a guess.
 async function lotNear(lat, lng) {
-  const ql = `[out:json][timeout:25];nwr(around:80,${lat},${lng})[amenity=parking];out center 3;`;
-  for (let i = 0; i < 6; i++) { try { const r = await fetch(OVERPASS[i % 2] + "?data=" + encodeURIComponent(ql), { headers: { "User-Agent": "ClimbMatch-parking-check/1.0" } }); /* no UA = 406 */ if (r.ok) return (await r.json()).elements.map((e) => `${e.type} ${e.id}${e.tags && e.tags.name ? " " + e.tags.name : ""}`); console.error("overpass", r.status, lat, lng, (await r.text()).slice(0, 120)); } catch (e) { console.error("overpass", e.message); } await new Promise((z) => setTimeout(z, 4000 * (i + 1))); }
+  const ql = `[out:json][timeout:25];(nwr(around:80,${lat},${lng})[amenity=parking];nwr(around:80,${lat},${lng})[highway=trailhead];);out center 3;`;
+  for (let i = 0; i < 6; i++) { try { const r = await fetch(OVERPASS[i % 3] + "?data=" + encodeURIComponent(ql), { headers: { "User-Agent": "ClimbMatch-parking-check/1.0" } }); /* no UA = 406 */ if (r.ok) return (await r.json()).elements.map((e) => `${e.type} ${e.id}${e.tags && e.tags.name ? " " + e.tags.name : ""}`); console.error("overpass", r.status, lat, lng, (await r.text()).slice(0, 120)); } catch (e) { console.error("overpass", e.message); } await new Promise((z) => setTimeout(z, 4000 * (i + 1))); }
   throw new Error("overpass unreachable");
 }
 const SOURCEY = /mountain ?project|\bMP\b|guide ?book|coalition|access fund|openstreetmap|\bOSM\b|according|per |source|website/i;
