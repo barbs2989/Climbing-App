@@ -30833,3 +30833,57 @@ have handled it fine, but an unverifiable statement isn't one to hand over) — 
 semicolons as em-dashes so the file checks cleanly, with no change in meaning.
 
 Pass 7 continues next run after `wa_chimney_rock_east_face_direct`.
+
+## Batch 391 (2026-10-08, pass 7)
+
+Continued from `wa_chimney_rock_east_face_direct` through `wa_classic_route_2` (skipped several
+non-peak/non-alpine rows in between — crag/boulder/trad/sport routes and `wa_cinderella_peak_scramble`,
+which is scrambling, not alpine/mountaineering).
+
+**Fixed 1:** `wa_classic_route_2` (Classic Route, Unicorn Peak) — `access._raw.permit_cost` stated
+an $82/person Mount Rainier "Climbing Cost Recovery Fee" as a cost of this climb. That fee only
+applies above 10,000 ft or on a glacier (NPS); Unicorn Peak is 6,971 ft and non-glaciated. The row's
+own top-level `access.notes` field already said correctly that the fee does not apply here —
+`_raw.permit_cost` was silently contradicting its sibling field. Corrected to drop the inapplicable
+fee and keep only the overnight wilderness-permit costs that do apply.
+
+**Clean:** `wa_chimney_rock_west_face`'s FA (1930, Forest Farr/Art Winder/Laurence Byington) and
+three-summit elevations (central 7,727 / north 7,634 / south 7,440 ft), confirmed via Wikipedia;
+`wa_chiwawa_mountain_southwest`'s elevation (8,459 ft), 1921 FA (Lorenz A. Nelson/Mountaineers
+party), and approach trail numbers (Buck Creek #1513, Chiwawa River #1550, per USFS);
+`wa_chockstone_route`'s FA (Wesley Grande/Pete Schoening/Dick Widrig, 28 May 1950), grade/length
+(5.7, 6 pitches, 183m, per Mountain Project), elevation (7,760 ft) and trailhead geography (per
+SummitPost/Wikipedia/MP); `wa_classic_route_2`'s elevation (6,971 ft), approach (Snow Lake
+Trailhead) and rappel-anchor description (slung rock horn, not the old dead snag — corroborated by
+several Mountaineers.org trip reports); `wa_clark_mountain_west_ridge`'s elevation (8,602 ft,
+highest in the Dakobed Range), its Walrus/Clark Glacier dual naming (both real, per Wikipedia's
+Clark Glacier (Washington) page), its Little Giant Fire closure claim (order 06-17-07-2026-40,
+3 Sep–31 Oct 2026, matched verbatim against the live Okanogan-Wenatchee NF alert page — unlike the
+unverifiable closure date flagged on the nearby Chalangin Peak row in batch 390), and approach
+trail numbers (White River #1507, Boulder Creek #1562, per WTA).
+
+**Flagged, not fixed:** `wa_chimney_rock_north_ridge` / `_northeast_ridge` / `_northwest_ridge` /
+`_southeast_ridge` / `_southeast_shoulder` — none of these five named ridge/shoulder routes could
+be found by name in any source searched (SummitPost/Mountain Project/Mountaineers/trip reports),
+and one SummitPost summary states Chimney Rock has "no easy way up" and "every route involves some
+measure of Class 5," in tension with the Class 2/Class 3 grades stored on three of the five — not
+contradicted by a specific source, just unconfirmed either way; worth a human check against a
+physical Beckey guide. `wa_chiwawa_mountain_southwest`'s `access` field claims Glacier Peak
+Wilderness bans wood campfires "above 3,500 ft" wilderness-wide; a search-cache read of the
+Okanogan-Wenatchee NF wilderness page (direct fetch blocked) found only localized fire rules (near
+specific lakes, and 4,000 ft on Lime Ridge specifically), no wilderness-wide 3,500 ft threshold —
+moderate confidence only since the source was cached rather than fetched live, so flagging rather
+than fixing. `wa_clark_mountain_west_ridge`'s own `id` says "west_ridge" but its `name` is "Walrus
+Glacier" and it describes an east-side (aspect `E`) glacier climb — a real id/name/aspect mismatch
+worth a human's attention, though the underlying facts in the row are all clean.
+
+**Tooling note:** Delegated research to 5 parallel subagents (Chimney Rock's 6 routes; Chiwawa
+Mountain; Chockstone Route; Clark Mountain; Classic Route/Unicorn Peak) — same network-egress
+limits as batch 390 (WebFetch to the major climbing/government sites blocked, relied on WebSearch
+snippets). `node scripts/check-sql-targets.mjs` initially warned the one UPDATE had "no literal id
+predicate" because the replacement text's own semicolon (inside a quoted JSON string) fooled the
+checker's naive statement-splitter into treating it as two statements — same trap already recorded
+from batch 390's Chianti Spire fix; replaced the semicolon with a double-dash and it checked clean
+(confirmed the UPDATE's target id exists live).
+
+Pass 7 continues next run after `wa_classic_route_2`.
