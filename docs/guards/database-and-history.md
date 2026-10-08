@@ -516,6 +516,56 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
     set the order on screen and removing them lost no guidebook sequence.
 
+- **`check:generic-area-names`** asks whether any area is named only by DISCIPLINE — "Bouldering",
+  "Ice", "Misc", "Other Climbs", "Boulders, The", or a state bucket like "CO Ice & Mixed" (which reads
+  as just "Ice & Mixed" inside Colorado). Built 2026-10-07: the owner — *"an area will be just called
+  bouldering, ice climbing, mixed, etc. these are too generic. The climbs need to be in specific named
+  areas"*. Measured that day: **147** (37 named exactly "Bouldering"), seven state buckets ("CT
+  Bouldering" 1,823 climbs, "CO Ice & Mixed" 1,163), and Illinois' biggest ROCK area, Jackson Falls
+  (566 climbs), filed under "Illinois > Ice Climbing". **0259** folded every one; runs **daily** in
+  `area-count-drift.yml`, anon key, refuses a read under 40k rows.
+  - **ONE rule**, `scripts/lib/generic-area-name.mjs`, shared with the importer, which steps THROUGH a
+    generic level of the source's path instead of re-creating the bucket (a climb filed on the bucket
+    itself lands on the place above, or is refused if that place has sub-areas). NOT generic, on
+    purpose: a name that also names a place ("Smith Rock Bouldering" — 902 such areas, the importer's
+    own convention), a single feature ("Sport Wall", "Dry Wall", "Top Rock"), a name with a number. A
+    STATE counts only whole — "North Boulders" under North Dakota is the north end of Sentinel Butte.
+  - **Exempt**, listed with a reason each in `scripts/data/generic-area-names-exempt.json`: Dedham's
+    "The General" (among The Captain, The Colonel, The Major, The Private) and San Rafael Reef's
+    lettered "A Crags" … "N Crags". A stale entry (renamed or gone) is reported.
+  - **How 0259 was planned** — `scripts/oneoff/plan-generic-area-fold.mjs` simulates every step on the
+    live tree under the database's own rules and writes the migration; research decisions with their
+    evidence are in `audits/generic-area-names-2026-10-07/`. Five dry runs, each stopped by
+    `refuse_duplicate_area` on something real, each now a rule in the planner: a re-parented area with a
+    same-named TWIN deeper in the state folds into it (the ice tree's "“On the Rocks” Mixed Wall" vs
+    the one under North Cheyenne Canyon; two whole copies of Lake City); twins are found by the
+    DATABASE's `catalog_key` (it drops "ice", "climbing", "area" — "Ice Climbing by the Covered Bridge"
+    IS "By the Covered Bridge"); a match only inside the area's own line ("Hard boiled egg area" holds
+    "Hard boiled egg"; "Piatt Park Ice Climbs" under Piatt Park) runs that one statement with the bypass.
+  - **Research ceiling, measured**: 91 of 799 catch-all climbs could be placed on a named wall or
+    boulder (Index's Central Wall 18, The Mill 25, Mount Woodson's Cave Area 19, the Moonstone 9). The
+    rest are filed by every source only under the catch-all — a bouldering area's problems with no
+    boulder named — so they stay together, named for their place ("Yellow Bluff Bouldering", "Jockey
+    Cap Routes"), or "Other <place>" where the place is itself a boulder group. Do not re-research them
+    from the same sources; a new placement needs a source that names the boulder.
+  - **Climbs filed twice** surfaced by the folds: 11 merged (the copy already in the place kept, its
+    blanks filled from every `routes` column the catalog lists); Grand Ledge's "Hollywood" V4 vs
+    "Hollywood" 5.12a (11 such pairs) are bouldering vs top-rope — NOT merged; its two buckets became
+    "Grand Ledge (aka Oak Park) Bouldering" / "… Routes" rather than one area.
+  - Rollback: `scripts/rollback-generic-area-fold-<ms>.json` (every touched area's full row, every moved
+    climb's prior area, every merged-away climb's full row).
+  - **A name made of generic words can still be a PLACE** — owner, after 0259: *"if it actually names a
+    place then keep it"*. Every name 0259 removed that could be a proper name was researched
+    (`real-names.json`); **0262** put back the ones a source USES as a place: "The Crags" (Twin Sisters'
+    west face, 16 crags re-nested), "The Areas" (Main Elsewhere's right two-thirds), Table Rock's and
+    Fossil Rock's "The Boulders", Borderland's boulder "The General" — all now exempt. Left folded, no
+    source naming them: "The Boulders" at Boulder Mountain AZ, Puoux, Fork Run, Crag In The Clouds,
+    Salt Fork's "The General Boulders". The rule cannot tell these apart by spelling — **research, then
+    exempt; never widen the vocabulary to dodge one**.
+  - **Replay trap**: a Supabase preview runs every migration in ONE session, so a `pg_temp` helper two
+    migrations both define must be `create or replace` (`check:migration-replay` caught 0262 redefining
+    0259's `pg_temp.mv_area`).
+
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
   not in the build. `route_count` is maintained by a trigger on the **routes**

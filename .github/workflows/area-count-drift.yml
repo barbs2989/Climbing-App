@@ -80,3 +80,13 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: node scripts/check-area-sort-labels.mjs
+      # Fifth: is any area named only by DISCIPLINE ("Bouldering", "Other Climbs", "CO Ice & Mixed")?
+      # 0259 folded 147 of them into the places they are; the importer steps through such a level of
+      # the source's path rather than re-creating it. Real names the rule matches are listed in
+      # scripts/data/generic-area-names-exempt.json. Anon key, no DB link.
+      - name: Is any area named only by discipline?
+        if: always()
+        env:
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+        run: node scripts/check-generic-area-names.mjs
