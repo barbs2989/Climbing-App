@@ -1551,3 +1551,33 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     most ice and mixed material is Rockies, Colorado and Scotland); the card's runtime fetches (SSR
     renders only the loading state, so the fixtures exercise the logic directly, and the two feeds'
     live shapes were checked by hand on 2026-10-07, not by the build); which BAND a route is in.
+  - **§9 — SUN AND SHADE (2026-10-08).** The crag shade map (`lib/ShadeMap.jsx`, arithmetic in
+    `lib/terrainShade.js`) now renders under the alpine forecast too, on the route's OWN pins —
+    summit (or top-out), base, and the HIGHEST camp (`sunPins`), never the trailhead — with each
+    pin's sun hours for the selected day, and the terrain block centred on the climb (base, else top).
+    - **Why (online research, 2026-10-08):** rockfall, icefall and wet slides start when the sun
+      reaches the slopes ABOVE a party, so the advice everywhere is to work back from sun arrival —
+      the AAC's Torreys Peak couloir accident, the Goûter couloir monitoring on Mont Blanc (the safe
+      hour is specific to each couloir), Portland Mountain Rescue on Hood, a Devil's Kitchen report
+      where rime let go as the sun hit the walls. Wet loose snow follows the sun round the aspects
+      (east first, west in the warm afternoon), and centres put the slope that lets go at ~35°
+      (Utah: stay off and out from under slopes approaching 35° once the sun wets them). CalTopo's
+      sun-exposure layer and point chart are the tool climbers use for this today, by hand.
+    - **Each kind gets its own line** (`SUN_NOTE`): sun loosens what is above a glacier or an
+      alpine-ice line; it loosens waterfall ice and the snow above it even while you climb in shade;
+      it strips rime and softens turf on mixed ground; it DRIES a scramble; it WARMS alpine rock on a
+      cold day. Every one is called a rule of thumb on screen.
+    - **STEEP (35°+) AND IN SUN** is an overlay offered only where snow or ice is in play (glacier,
+      alpine ice, waterfall, mixed, or a kind with snow legs). The slope comes from the same ~7 m
+      heights, so a short steep step reads gentler than it is, and the card says so.
+    - **A SUMMIT is read at the model's own high point** (`highestNear`, within 30 m). Measured
+      live before it shipped: Colchuck Peak's summit pin sat one pixel off the model's top, 2 m
+      lower, so the top "shaded" it until the sun was ~17° up — first sun 8:30 AM against a 7:10
+      sunrise and a horizon under 2°. The Tooth's pin sits 20 m down its north face, 31 m below
+      the top, and a 20 m radius stopped a pixel short: the top then took the midday sun off it
+      (sun 7:23–11:13, 12:13–1:43, 2:43–6:32 on a pinnacle). Hence 30 m. Only the summit is snapped: beside a base or camp pin, a wall
+      one pixel away is REAL shade, and the crag map has always read its pin's own pixel.
+    - **It moves no flag and no start time**, and the guard pins that `lib/alpineConditions.js` never
+      reads the terrain. Making the start count back from first sun on the route is a separate
+      decision for the owner: the pins are climbers' placements, and the dangerous slope is usually
+      ABOVE the pin, where no pin is.

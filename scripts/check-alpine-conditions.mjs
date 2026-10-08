@@ -30,6 +30,9 @@
 //                  and every discipline on this tab can log a Turned around. The season is read at the
 //                  TOP of the climb, with snowfall, and says it is a guide, not a forecast.
 //                  A day the forecast MODELS disagree on gets a caution; one model is no comparison.
+//   9. SUN AND SHADE — the terrain's shadow on the route's OWN pins (summit, base, highest camp), a
+//                  line per kind on what the sun does there, steep-and-sunlit ground only where snow or
+//                  ice is in play — and none of it reaches the flags or the start time.
 // Thresholds and their research live in docs/guards/honesty-claims.md.
 import fs from "node:fs";
 import os from "node:os";
@@ -52,7 +55,7 @@ export { fetchAlpineClimate } from ${JSON.stringify(path.join(ROOT, "lib", "fore
 export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 export { inGeometry, zoneFor, avyReading, DANGER_NAME } from ${JSON.stringify(path.join(ROOT, "lib", "avalanche.js"))};
 export { nearestStation, kmBetween, snowReading } from ${JSON.stringify(path.join(ROOT, "lib", "snotel.js"))};
-export { recentOutcomes } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
+export { recentOutcomes, sunPins } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } });
 const noop = () => {};
 export function render(route, tab) {
@@ -310,7 +313,33 @@ eq("a start counted back from STORED legs says they are a fit party's times, so 
 const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);
 
-const FLOOR = 105;
+console.log("\n9. SUN AND SHADE — the terrain's shadow on the route's own pins");
+{
+  const W = (type, lat, lng, elev) => ({ type, lat, lng, elev });
+  const pins = A.sunPins({ waypoints: [W("trailhead", 46.85, -121.73, 5400), W("camp", 46.83, -121.73, 8000), W("camp", 46.82, -121.73, 10000), W("base", 46.81, -121.74, 10200), W("summit", 46.85, -121.76, 14400), W("topout", 46.85, -121.76, 14400), W("summit", "", "", null)] });
+  eq("the pins are the route's own: summit, base and the HIGHEST camp — never the trailhead, and a top-out beside a summit is not a second top", pins.map((p) => p.key + "@" + p.lat), ["Summit@46.85", "Base@46.81", "Campsite@46.82"]);
+  // A summit pin a pixel off the model's top read first sun 80 min late at Colchuck Peak (2026-10-07).
+  eq("only the SUMMIT is read at the terrain's high point beside it; a base or camp keeps its own pixel, where a wall beside it is real shade", pins.map((p) => p.key + ":" + p.top), ["Summit:true", "Base:false", "Campsite:false"]);
+  const shadeSrc = fs.readFileSync(path.join(ROOT, "lib", "ShadeMap.jsx"), "utf8");
+  eq("...and the map snaps exactly those pins", /return px && p\.top && d \? highestNear\(d\.E, grid\.W, grid\.H, px, Math\.round\(SUMMIT_SNAP_M \/ grid\.pxM\)\) : px;/.test(shadeSrc), true);
+  eq("a route with no placed pins has none (the map then falls back to the forecast point, said to be the area's)", A.sunPins({ waypoints: [W("summit", null, null, null)] }), []);
+  eq("...and the section tells an area pin from the route's own", /place=\{pins\.length \? "climb" : "area"\}/.test(card), true);
+  eq("every kind gets its OWN line on what the sun does there", Object.keys(A.KIND_LABEL).every((kk) => new RegExp("\\n  " + kk + ": \"").test(card.slice(card.indexOf("const SUN_NOTE")))), true);
+  eq("...each called a rule of thumb on screen", /SUN_NOTE\[kind\] \+ " A rule of thumb\."/.test(card), true);
+  eq("steep-and-sunlit ground is offered only where snow or ice is in play (not on a dry scramble or rock)", /const steep = kind === "glacier" \|\| kind === "alpineice" \|\| kind === "waterfall" \|\| kind === "cragmixed" \|\| hasSnowLegs\(kind, terrain\);/.test(card), true);
+  eq("the terrain is centred on the CLIMB (its base, else its top), not the trailhead", /p\.key === "Base"[\s\S]{0,120}p\.key === "Summit" \|\| p\.key === "Topout"/.test(card), true);
+  eq("it reads the SELECTED day's sunrise and sunset, and renders under the forecast", /<SunShadeSection route=\{route\} kind=\{kind\} terrain=\{terrain\} pt=\{pt\} fc=\{fc\} day=\{day\}/.test(card) && /day\.sunrise \* 1000, set = day\.sunset \* 1000/.test(card), true);
+  // The section reads day.sunrise, so the card's own day objects must CARRY it: they are rebuilt from
+  // localDays() with only the fields the card names, and the first draft dropped these two, which
+  // rendered the section for nobody while the line above passed.
+  eq("...and the card's day objects carry the sunrise and sunset that line reads", /out\.push\(Object\.assign\(\{ date: d\.date, sum: daySummary\(fc, d\), sunrise: d\.sunrise, sunset: d\.sunset \}/.test(card), true);
+  const fcSrc = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
+  eq("...which the alpine forecast fetch asks for", /export function fetchAlpineForecast[\s\S]{0,1200}daily=sunrise,sunset/.test(fcSrc), true);
+  const judge = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
+  eq("the shade reaches NO flag and NO start time: the judgement module never reads the terrain", /terrainShade|ShadeMap|steepMask|pinSunSpans/.test(judge), false);
+}
+
+const FLOOR = 124;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);
