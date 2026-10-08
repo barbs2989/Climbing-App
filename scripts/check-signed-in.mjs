@@ -328,6 +328,17 @@ try {
   log("crew with a real second member:");
   await reset();
   await tap("Crews");
+  /* WAIT FOR THE ROSTER, NOT JUST THE CARD. The crew row paints from one query and its members from a
+     second, and under a busy database (the 57014 storm of 2026-10-08, 14:50-15:10) the second landed
+     after this capture: "North Ridge" was listed but "CI" was not named and the chat would not open,
+     which read as the #569 regression. Same shape as the Group wait below. Waiting cannot mask a real
+     defect: the assertions are unchanged, so a roster that never renders still fails, just 15s later. */
+  const mateWait = fixture.mate.name.split(" ")[0].toLowerCase();
+  await page.waitForFunction(
+    (m) => document.body.innerText.toLowerCase().includes(m),
+    mateWait,
+    { timeout: 15000 },
+  ).catch(() => {});
   // The crew card renders expanded inline on this tab -- there is no separate detail
   // screen to open. Clicking the route name here does NOT drill into the crew, it
   // navigates to the ROUTE, which is how the first draft of this check "failed" on a
