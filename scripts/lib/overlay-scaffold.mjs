@@ -92,7 +92,10 @@ export const OVERLAY_PAYLOADS = {
   // renders one field per entry of `joinQuestions`, so the probe group carries one question of each
   // kind -- a written answer and a multiple choice -- and the payload is the shape groupJoinTap
   // builds. `groupReport` with no postId is the report-a-GROUP sheet; it needs only the group.
-  joinAsk: { prep: 'setCreatedGroups([{id:"__ov_qgroup",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",policy:"approval",ownerId:"__ov_owner",memberIds:[],moderatorIds:[],joinQuestions:[{prompt:"What do you climb?",type:"text",required:true},{prompt:"Highest lead grade?",type:"choice",options:["5.8","5.10"],required:false}]}]);', expr: '{groupId:"__ov_qgroup",answers:["",""],err:"",busy:false}' },
+  joinAsk: { prep: 'setCreatedGroups([{id:"__ov_qgroup",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",policy:"approval",ownerId:"__ov_owner",memberIds:[],moderatorIds:[],joinQuestions:[{prompt:"What do you climb?",type:"text",required:true},{prompt:"Highest lead grade?",type:"choice",options:["5.8","5.10"],required:false}],rules:[{title:"Helmets on",details:"At every crag."}]}]);', expr: '{mode:"request",groupId:"__ov_qgroup",answers:["",""],agreed:false,err:"",busy:false}' },
+  // 0260's remove/decline sheet. The REMOVE kind is the richer one (the ban checkbox and its reason
+  // field render only for a real group, so the probe group is `_db` and the target a uuid-shaped id).
+  memberAction: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[],_db:true}]);', expr: '{kind:"remove",groupId:"__ov_group",userId:"00000000-0000-4000-8000-000000000001",name:"Probe",targetIsMod:false,db:true,ban:true,reason:"",busy:false}' },
   groupReport: { prep: 'setCreatedGroups([{id:"__ov_group",name:"Overlay probe group",blurb:"",location:"",disciplines:["alpine"],visibility:"public",ownerId:0,memberIds:[0],moderatorIds:[],_db:true}]);', expr: '{groupId:"__ov_group"}' },
 
   // The group EVENT detail view, newly discovered once it gained role="dialog" (it is a
