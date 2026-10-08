@@ -279,10 +279,22 @@ What works, and is true once Part 3 exists:
 - **Item 4:**
   - an "X accepted your friend request" notification;
   - a Requests you've sent list with Withdraw (the confirmation names the 3-week wait).
-- **Item 5:** a real people-you-may-know RPC. It never suggests blocked or restricted accounts, or anyone closed to requests. Someone hidden from discovery is suggested only to people they've climbed or crewed with.
+- **Item 5:** a real people-you-may-know RPC. It never suggests blocked, suspended or banned accounts, or anyone closed to requests (and, since #2300, the app drops anyone you have Restricted). Someone hidden from discovery is suggested only to people they've climbed or crewed with.
 - **Item 6:** pending requests expire after 90 days.
 
-Items 7 (Restrict) and 8 (a Friends visibility tier) are not built.
+**Update 2026-10-08 (#2300): items 7 and 8 are built** (0269, 0270; live probes `probe-restrict-is-private.mjs` 10/10 and `probe-trip-reports-for-friends.mjs` 10/10):
+
+- **Item 7, Restrict:**
+  - a button on any real climber's profile, between Report and Block;
+  - their messages land under Message requests and never badge, and their friend requests stop badging;
+  - they cannot read that the row exists, and nothing refuses them, so nothing tells them;
+  - Settings › Safety lists everyone you have restricted, with Unrestrict.
+- **Item 8, the Friends tier, trip reports only:**
+  - "My friends" on a logged climb is enforced in the `climb_logs` read policy through `are_friends()`;
+  - unfriending revokes it;
+  - the conditions consensus, the rankings and `report_content` honour it, while the leaderboard stays public-only.
+
+  **Availability has no Friends tier yet.** Today it has no visibility setting at all (`profiles.availability` is readable as the profile is), so adding one is a separate decision.
 
 The original proposal follows. Items are ordered by safety value for an app whose friendships turn into meetups.
 

@@ -626,6 +626,12 @@
       "trad_grade",
       "username"
     ],
+    "restricted_users": [
+      "created_at",
+      "id",
+      "restricted",
+      "restrictor"
+    ],
     "reviews": [
       "climber_id",
       "created_at",
