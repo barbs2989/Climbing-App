@@ -28,6 +28,9 @@
 //   20 a day the models disagree on goes unflagged
 //   21 ONE model answering read as the models agreeing
 //   22 a start counted back from a softening hour on a night that never froze
+//   24-28 WHOLE-DAY rows: a glacier given a start from a total, the way up at half the day, a
+//         multi-day row counted as one push, a published total called "only a minimum", and an
+//         assumed split no longer said to be assumed
 //   23 a start from a fit party's stored legs that no longer says so
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
@@ -117,6 +120,21 @@ const CASES = [
   { name: "23. a start from a fit party's stored legs no longer says so", file: CARD,
     find: "P.legsStored ? \". Times are this route\u2019s published times for a fit party (Plan tab), so a slower party should start earlier.\" : ", repl: "false ? \"\" : ",
     expect: "fail", expectText: "says they are a fit party's times" },
+  { name: "24. a glacier given whole-day legs (a start with no sun deadline, later than the sun allows)", file: LOGIC,
+    find: "(kind !== \"scramble\" && kind !== \"alpinerock\")) return null;", repl: "false) return null;",
+    expect: "fail", expectText: "a glacier, alpine ice, waterfall ice and crag mixed get NO whole-day legs" },
+  { name: "25. the whole-day way up counted at half the day (a start too LATE for the storm)", file: LOGIC,
+    find: "wholeDayUpShare: 0.8,", repl: "wholeDayUpShare: 0.5,",
+    expect: "fail", expectText: "a scramble's whole-day 10 h is 8 h up + 2 h down" },
+  { name: "26. a multi-day whole-day row counted back as one push (the camp is not the car)", file: CARD,
+    find: "const wd = P.publishedIsWholeDay && !fromCamp ?", repl: "const wd = P.publishedIsWholeDay ?",
+    expect: "fail", expectText: "the card counts a whole-day row back only on a single day" },
+  { name: "27. a whole-day row told its estimate is 'only a minimum' (it is a published total)", file: CARD,
+    find: "No start time: this climb’s published time is one whole-day figure, with no split between the walk in and the climb", repl: "No start time: the Plan tab’s estimate for this climb is only a minimum figure",
+    expect: "fail", expectText: "a whole-day figure is not 'only a minimum'" },
+  { name: "28. a start from a whole-day total that stops saying the split is assumed", file: CARD,
+    find: "with no split, so the way up is counted as ", repl: "so the way up is counted as ",
+    expect: "fail", expectText: "says the split is ASSUMED" },
 ];
 
 const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST].map((f) => [f, fs.readFileSync(f, "utf8")]));

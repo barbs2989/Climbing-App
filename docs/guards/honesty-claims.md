@@ -1620,3 +1620,25 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     full sun by 11 AM). Researched route by route: all are snow/ice lines whose hazards are refreeze,
     thaw, sun-released rock and ice and avalanche; the few with rock (Holsten-Hilden, Gerber-Sink,
     Thread of Ice) are winter or couloir routes where dry rock is secondary. Now alpine ice.
+  - **§11 — WHOLE-DAY ROWS (2026-10-08; owner: "2 and 3" to the offer to look at it).** 188 rows
+    (81 alpine, 58 scrambling, 47 mountaineering, 2 ice) publish ONE car-to-car time and no split.
+    - **The card said something false.** It gave no start and told the climber the Plan tab's
+      estimate "is only a minimum (part of the approach or the climbing isn't on file)". A published
+      total is not a minimum. Whole-day rows now say what they are.
+    - **A start is possible where the kind needs only the way up and the whole day.** A scramble or
+      alpine rock route has two deadlines, the thunder noon (`noon - way up`) and, with snow, the
+      softening hour (`softening - (up + down)`, which IS the total). `wholeDayLegs` splits the total
+      at `LIMITS.wholeDayUpShare` = 0.8. The card says the split is assumed and that it errs early.
+    - **Why 0.8.** On the 311 catalog rows with all three legs stored, (approach + summit) / total is
+      0.72 at the median and 0.82 at the 90th percentile (0.80 on the 79 one-day rows that sum to
+      their total). 0.8 sits at that percentile: early enough for nine routes in ten, and early is
+      the safe error. Checked against an independent record: the clock start stored on 151 of these
+      rows implies a summit around noon (median 12.0, middle half 11.6-12.9) at the median share, and
+      `noon - 0.72 x total` lands on the guide's start at the median (0 h; middle 80% from 1.0 h
+      later to 1.6 h earlier). At 0.8 it is a median 1.0 h earlier, earlier than the guide's on 85%.
+    - **Left without a start, and said:** glacier and alpine ice (their sun deadline counts the walk
+      in and the climb separately, and a total cannot give it; a start missing a candidate could be
+      LATER than the sun allows), and a whole-day total on a multi-day itinerary (no summit day
+      from camp to count back from).
+    - **Do not re-derive:** `techH` IS the published total on a whole-day row (pinned by a test), so
+      the split is applied to the right number; the Plan tab's walk model is NOT added on top.
