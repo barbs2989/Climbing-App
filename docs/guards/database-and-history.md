@@ -438,9 +438,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     is `audits/area-pairs-2026-09-26/fold.mjs`) or a newly READ different place (`--write-baseline`).
   - **Proven to fail**: with Kraft Boulders / Kraft Crags removed from the list it exits 1 naming
     exactly that pair.
-  - **Cannot see** a copy over 3 km off, one with no coordinate, one holding no climbs yet, or a
-    spelling the key does not fold. The trigger (0216/0218) refuses a same-key area within 1.5 km
-    at insert; this sweeps what got past it.
+  - **SAME PARENT, second pass (0256, 2026-10-07)**: two children of one area under the plain
+    `catalog_key` pair at ANY distance, with or without a coordinate or climbs. The first pass skips
+    a shared parent, and 209 groups had collected there unseen — one import's "Pawn, The" beside
+    another's "The Pawn" at the same coordinate (The Needles of Rushmore 1,503 + 33 climbs, The
+    Tennessee Wall, The Callahans, The Near Trapps), "Mount X" / "Mt. X", "X" / "X Area", and an ICE
+    tree's copy of a crag ("Catskills (Ice)", Poke-O-Moonshine's copy with NO coordinate). 0256 folded
+    them (0251's planner, adapted). Read as different places and LISTED: Index / Mount Index, Baker
+    Crags / Mount Baker, Mount Wilson / Wilson Peak, Jump For Jesus / its Area (0251's reading).
+    - Across two copies of one wall the climbs pair up as ONE climb in halves: one import carries
+      the FA, the other the pitches and length, and the grades drifted ("The Mordor Wall" 5.6 /
+      5.7 A3). A placeholder with the SAME grade on both copies is one climb; with different grades
+      it stays two (owner rule). The higher grade is kept.
+    - **Not paired yet**: a crag beside its own "X Bouldering" / "X Boulders" sibling under one
+      parent (the wide key; ~75 pairs on 2026-10-07). Some are one place, some a separate boulder
+      field ("Mount Morrison" / "Morrison Boulders") — read before folding.
+  - **Cannot see** a copy under another parent over 3 km off, one with no coordinate, one holding no
+    climbs yet, or a spelling the key does not fold. The trigger (0216/0218) refuses a same-key area
+    within 1.5 km at insert; this sweeps what got past it. Long Hill Conservation Area was a copy of
+    Hidden in Plain Sight Boulders under another parent 4 km off with other boulder names — found by
+    its CLIMBS (Megaman V3, Dick Move V1-2, Party Foul V3+ on both), folded in 0256.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
