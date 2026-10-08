@@ -5,8 +5,8 @@
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
 import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
-import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread } from "./forecast.js";
-import { condKind, hasSnowLegs, localDays, localHour, windChillF, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
+import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir } from "./forecast.js";
+import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass } from "./HourTiles.jsx";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
@@ -16,7 +16,7 @@ import { fetchSnotelStations, nearestStation, fetchSnotelDepth, snowReading } fr
 import ShadeMap, { loadTerrain } from "./ShadeMap.jsx";
 import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands, faceBearing } from "./terrainShade.js";
 
-const _alpWx = {}, _alpSp = {};
+const _alpWx = {}, _alpSp = {}, _alpAir = {};
 const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
 const MUTED = { fontSize: 12.5, color: C.textSub, lineHeight: 1.55 };
 const RETRY = { marginTop: 6, background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" };
@@ -63,6 +63,7 @@ export function flagText(f) {
     case "showers": return v.pct + "% chance of rain — retreating or rappelling wet is where things go wrong";
     case "new-snow": return uSnowfall(v.inch) + " of new snow at the summit" + (v.scramble ? " — a snowed-up scramble is a winter climb" : "");
     case "wind": return "Summit gusts to " + uWind(v.gust) + " in daylight";
+    case "smoke": return "Smoke and air quality: US AQI up to " + Math.round(v.aqi) + " (" + aqiWord(v.aqi).toLowerCase() + ") — a forecast for the area, not a reading at the route; smoke aloft or pooled in a valley is not seen";
     case "models-disagree": return "Forecast models disagree on this day (" + [v.over.indexOf("gust") >= 0 ? "gusts " + uWind(v.gust[0]) + "–" + uWind(v.gust[1]) : null, v.over.indexOf("high") >= 0 ? "highs " + uTemp(v.high[0]) + "–" + uTemp(v.high[1]) : null, v.over.indexOf("fl") >= 0 ? "freezing level " + uElev(Math.round(v.fl[0] / 100) * 100) + "–" + uElev(Math.round(v.fl[1] / 100) * 100) : null].filter(Boolean).join(", ") + ") — read its flags as low confidence";
     case "wind-chill": return "Wind chill " + uTemp(v.chill) + " — frostbite on exposed skin in about 30 minutes";
     default: return f.key;
@@ -124,6 +125,16 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     fetchAlpineSpread(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpSp[ck] = j; if (live) setSp(j); }, function () { if (live) setSp(null); });
     return function () { live = false; };
   }, [ck, kind]);
+  // Air quality: a third, optional read. A failed one is "not measured" -- never "clean air".
+  const [air, setAir] = useState(function () { return ck && _alpAir[ck] ? { data: _alpAir[ck] } : null; });
+  const [airTries, setAirTries] = useState(0);
+  useEffect(function () {
+    if (!pt || !kind) return;
+    if (_alpAir[ck]) { setAir({ data: _alpAir[ck] }); return; }
+    let live = true; setAir(null);
+    fetchCragAir(pt.lat, pt.lng).then(function (j) { _alpAir[ck] = j; if (live) setAir({ data: j }); }, function () { if (live) setAir({ error: true }); });
+    return function () { live = false; };
+  }, [ck, kind, airTries]);
   useEffect(function () { setDayI(0); }, [route.id]);
 
   /* The legs the start counts back from: the Planner's own estimate, at the Planner's own inputs. A
@@ -157,10 +168,12 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       let r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs, sun: fs && fs.bands ? fs : null });
       const ms = sp ? modelSpread(sp, d.date) : null;
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
-      out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset }, r));
+      const aq = air && air.data ? airDay(air.data, d.date) : null, sf = smokeFlag(aq);
+      if (sf) r = Object.assign({}, r, { flags: r.flags.concat([sf]) });
+      out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset, aqi: aq }, r));
     });
     return { fc, days: out.slice(0, 7) };
-  }, [wx, sp, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]);
+  }, [wx, sp, air, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp, legs.tech, legs.hike, faceSun]);
   const selDay = model && model.days.length ? model.days[Math.min(dayI, model.days.length - 1)] : null;
   useEffect(function () {
     if (!face || face.missing || legs.floor || !selDay || selDay.sunrise == null || selDay.sunset == null || faceSun[selDay.date]) return;
@@ -265,6 +278,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     </div>
   </div>
   <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
+  <AirSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} air={air} onRetry={function () { setAirTries(airTries + 1); }} />
   <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
   </div>;
 }
@@ -338,6 +352,25 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
       </TileGrid>
     </div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by 10–18 °F. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
+  </div>;
+}
+
+/* AIR QUALITY for the selected day. The crag card has had this since the conditions score; the alpine card
+   had none, and wildfire smoke is a first-order reason to change a plan in the West. A day the forecast
+   does not reach says so; a failed read says "not measured" and offers a retry, never "clean air". */
+function AirSection({ day, dayLabel, air, onRetry }) {
+  const a = day.aqi;
+  const tone = a ? (a.max > LIMITS.aqiWarn ? C.red : a.max > LIMITS.aqiCaution ? C.amber : a.max > 50 ? C.yellow : C.green) : null;
+  return <div style={BOX}>
+    <CardHead style={{ marginBottom: 8 }}>{"AIR QUALITY · " + dayLabel.toUpperCase()}</CardHead>
+    {!air ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading air quality…</div>
+      : air.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load air quality, so smoke is not measured. This is not a clean-air reading.</div><button onClick={onRetry} style={RETRY}>Try again</button></div>
+      : !a ? <div style={MUTED}>The air-quality forecast does not reach this day (it runs about five days), so smoke is not measured for it.</div>
+      : <TileGrid>
+        <Tile label="Worst hour's US AQI" when={"around " + clockOf({ utc_offset_seconds: air.data.utc_offset_seconds || 0 }, a.at)} value={Math.round(a.max)} tone={tone} sub={aqiWord(a.max)} />
+        <Tile label="Fine smoke (PM2.5)" when="at that hour" value={a.pm != null ? Math.round(a.pm) + " µg/m³" : NOT_MEASURED} sub={a.pm != null ? "24-hour average basis" : null} />
+      </TileGrid>}
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A forecast for the whole area on a coarse grid (about 45 km, 11 km in Europe), not a reading at the route: smoke pooled in a valley or drifting above the route is not seen. Particles are averaged over the preceding 24 hours, so a plume’s arrival and clearing show up late. Look at the sky and a local air-quality station before you go. Flagged above AQI 100 (EPA: unhealthy for sensitive groups) and 150 (unhealthy for everyone).</div>
   </div>;
 }
 

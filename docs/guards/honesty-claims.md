@@ -1666,3 +1666,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       known mountain pattern, not our error.
     - **Not shipped, on research:** switching the wind flag to 700/500 hPa wind. No source verifies that
       free-air wind predicts summit wind (inversions, gust factor, rime on the anemometer break it).
+  - **SMOKE AND AIR QUALITY on the alpine card (2026-10-08, owner: "yes for smoke and air quality").** Section 13 of
+    the guard. The crag card had an AQI section; the alpine card had none. `airDay()` takes the worst hourly US
+    AQI of the LOCAL day (null, never 0, when the ~5-day forecast does not reach it); `smokeFlag()` flags above 100
+    (caution) and 150 (warning), the EPA's own bands (unhealthy for sensitive groups starts at 101, everyone at 151).
+    What the number is (Open-Meteo air-quality docs): PM is a rolling average over the PRECEDING 24 hours, so an
+    hour lags a plume's arrival and clearing; the grid is ~45 km global, ~11 km Europe; nothing is claimed for
+    mountains. So the flag and the section both say "a forecast for the area, not a reading at the route; smoke
+    aloft or pooled in a valley is not seen", and a failed read says "not measured", never "clean". Checked live on
+    Rainier, Wenatchee and Boulder (all Good today); the smoky case is covered by synthetic series, since October
+    is clean.

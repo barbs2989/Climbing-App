@@ -344,7 +344,7 @@ console.log("\n9. SUN AND SHADE — the terrain's shadow on the route's own pins
   // The section reads day.sunrise, so the card's own day objects must CARRY it: they are rebuilt from
   // localDays() with only the fields the card names, and the first draft dropped these two, which
   // rendered the section for nobody while the line above passed.
-  eq("...and the card's day objects carry the sunrise and sunset that line reads", /out\.push\(Object\.assign\(\{ date: d\.date, sum: daySummary\(fc, d\), sunrise: d\.sunrise, sunset: d\.sunset \}/.test(card), true);
+  eq("...and the card's day objects carry the sunrise and sunset that line reads", /out\.push\(Object\.assign\(\{ date: d\.date, sum: daySummary\(fc, d\), sunrise: d\.sunrise, sunset: d\.sunset, aqi: aq \}/.test(card), true);
   const fcSrc = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
   eq("...which the alpine forecast fetch asks for", /export function fetchAlpineForecast[\s\S]{0,1200}daily=sunrise,sunset/.test(fcSrc), true);
   const judge = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
@@ -451,7 +451,34 @@ console.log("\n12. HOUR BY HOUR — each box names its own period; the day's gus
   eq("the alpine forecast fetch asks for the wind direction the hour box prints", /export function fetchAlpineForecast[\s\S]{0,900}wind_direction_10m/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
 }
 
-const FLOOR = 177;
+/* ── 13. SMOKE AND AIR QUALITY — the alpine card read none; a smoke day must flag, an unread day must not claim ──
+   US AQI bands are the EPA's (101-150 sensitive groups, 151+ everyone). Open-Meteo's US AQI averages PM over
+   the PRECEDING 24 h and the grid is ~45 km (11 km in Europe): a number for the area, never for the route. */
+console.log("\n13. SMOKE AND AIR QUALITY — flagged on the EPA's bands, never read as clean when it was not read");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const off = -25200, base = Date.UTC(2026, 9, 8, 7, 0, 0) / 1000; // 00:00 local on 2026-10-08 at UTC-7
+  const air = (aqis) => ({ utc_offset_seconds: off, hourly: { time: aqis.map((_, i) => base + i * 3600), us_aqi: aqis, pm2_5: aqis.map((a) => a / 3) } });
+  const day1 = Array(24).fill(40), day2 = Array(24).fill(60);
+  day1[15] = 160; day2[3] = 120;
+  const a = air(day1.concat(day2));
+  eq("the worst hour of the LOCAL day is found (160 at 3 PM), not the other day's 120", A.airDay(a, "2026-10-08").max, 160);
+  eq("...and the next local day reads its own worst (120)", A.airDay(a, "2026-10-09").max, 120);
+  eq("a day the forecast does not reach is NULL, not 0 and not 'good'", A.airDay(a, "2026-10-12"), null);
+  eq("no series at all is NULL", A.airDay(null, "2026-10-08") === null && A.airDay({ hourly: {} }, "2026-10-08") === null, true);
+  eq("AQI 100 flags nothing (the EPA's 'moderate' band)", A.smokeFlag({ max: 100, at: 0, pm: 9 }), null);
+  eq("AQI 101-150 is a CAUTION", A.smokeFlag({ max: 120, at: 0, pm: 40 }).level, "caution");
+  eq("AQI above 150 is a WARNING", A.smokeFlag({ max: 160, at: 0, pm: 60 }).level, "warn");
+  eq("an unread day gets NO flag (no claim either way)", A.smokeFlag(null), null);
+  eq("the EPA's word for 101-150 and 151-200", [A.aqiWord(120), A.aqiWord(160)], ["Unhealthy for sensitive groups", "Unhealthy"]);
+  eq("the flag says it is the AREA's forecast and what it cannot see", /smoke aloft or pooled in a valley is not seen/.test(card), true);
+  eq("a failed air read says smoke is NOT MEASURED and is not a clean-air reading, with a retry", /Couldn’t load air quality, so smoke is not measured\. This is not a clean-air reading\./.test(card) && /onClick=\{onRetry\}/.test(card), true);
+  eq("a day beyond the forecast says smoke is not measured for it", /does not reach this day[^"]*so smoke is not measured for it/.test(card), true);
+  eq("the card states the 24-hour averaging and the grid, so a late or missing plume is understood", /averaged over the preceding 24 hours/.test(card) && /about 45 km/.test(card), true);
+  eq("the smoke flag joins the day's flags (and so the day chips' dots)", /if \(sf\) r = Object\.assign\(\{\}, r, \{ flags: r\.flags\.concat\(\[sf\]\) \}\);/.test(card), true);
+}
+
+const FLOOR = 191;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);
