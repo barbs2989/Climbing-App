@@ -82,7 +82,7 @@ for (const f of fs.readdirSync(path.join(dir, "_text"))) {
 for (const [id, r] of [...found]) if (r.how === "crag") for (const k of (tree.get(id) || {}).kids || []) if (!found.has(k)) found.set(k, { aspect: r.aspect, how: "crag" });
 
 // Ours: same name, nearest within 2 km.
-const ours = await selectAll("areas", "id,name,lat,lng,aspect", null, { pageSize: 1000 });
+const ours = await selectAll("areas", "id,name,lat,lng,aspect", null, { pageSize: 300 });
 const byName = new Map();
 for (const a of ours) { const k = norm(a.name); if (!byName.has(k)) byName.set(k, []); byName.get(k).push(a); }
 const out = []; let unmatched = 0;
