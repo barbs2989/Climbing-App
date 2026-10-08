@@ -219,13 +219,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       Boulder-Park Cleaver: 2 hr descent against a published 3 hr to camp alone).
     - Measured: time to summit short 14 -> 7 of 178, car to car 20 -> 15 of 191, descent 18 -> 13
       of 158. Three of the descent's five are the whole-day rows LEAVING that count, not fixed in it.
-    - **FLAGGED, the dangerous direction: Dome Peak.** Its 7 hr "summit day" is the published
-      ONE-WAY camp-to-summit time (6-8 hr). The approach and hike out are within `CAMP_LEG_MATCH`,
-      so the Planner reads the 7 as the whole round trip from camp. The alpine start counts back
-      7 hr where one report took 14. It needs one summit-to-camp figure; none clears the bar yet.
+    - **Dome Peak, the dangerous direction, SET after a second search.** Its 7 hr "summit day" was
+      the published ONE-WAY camp-to-summit time (6-8 hr). The approach and hike out are within
+      `CAMP_LEG_MATCH`, so the Planner read the 7 as the whole round trip from camp and the alpine
+      start counted back 7 hr where one report took 14. The missing leg was on the route page the
+      whole time (summit back to camp 4-6 hr); the first search read the page as not timing the
+      return, the extended one returned it. **When two searches disagree about whether a figure
+      exists, search again before writing "none clears the bar".** Summit day set to 12; the start
+      now counts back 12 hr.
+    - **THE DOME PATTERN DOES NOT GENERALISE, by reading.** 184 catalog rows read as the camp
+      shape; 102 had online times (every short one is dealt with). Of the 82 that never did, 26
+      have a summit leg shorter than BOTH walk legs, Dome's fingerprint. Each was read: their own
+      text describes a light-pack day from camp ("return to camp", "and back", "reversing the
+      descent"), not a one-way climb, and the first pass found no timed report for any of the 82.
+      The fingerprint is a screen, not a defect list: nothing was written from it.
     - **TRAP in the writer: jsonb reorders keys.** `apply-timing-fixes.mjs` compared JSON text, so
       a row written with NEW keys read back as "not the intended timing" and reported REFUSED after
       a correct write (Shasta, Pyramid Peak). It now compares with keys sorted.
+    - **A SECTION STORED WITHOUT HOURS PRINTED "null hr".** The Published Times card wrote
+      `s.hrs + " hr"` for every section. It hides the whole section list when the itinerary repeats
+      it word for word, so three of the four catalog rows with a null section `hrs` (Sitkum Glacier,
+      Fairchild, Dana) never showed it. Mount Seattle's South Route did: its itinerary note is
+      worded differently, so three of its five sections printed "null hr". Hours now print only
+      when numeric; `check:return-leg` renders that route's shape (with an anchor that the card
+      showed), and the injection case `null-section-hours-printed` proves it fails when the guard is
+      removed. A suppression that depends on two copies of a sentence matching is not a safety net.
   - **SECTION 2 IS THE SAME TILE'S OTHER HALF: THE TWO RED LABELS WERE COMPARED AGAINST A CLOCK
     HOUR AND `sumH`/`retH` ARE UNBOUNDED.** Both are absolute hours from midnight of the DEPARTURE
     day, so an estimate that crosses midnight passes **18.5** (6:30 PM) and **13** (1:00 PM)

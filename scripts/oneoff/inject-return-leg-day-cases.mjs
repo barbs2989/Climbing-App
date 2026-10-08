@@ -204,6 +204,14 @@ const CASES = [
     must: /FIT party's times, unscaled by fitness and pack/,
   },
   {
+    name: "null-section-hours-printed",
+    why: "the PUBLISHED TIMES card prints \"null hr\" beside every section stored without hours (Mount " +
+         "Seattle's South Route: three of five) whenever its itinerary does not repeat the section word for word",
+    edits: [{ find: "{typeof s.hrs===\"number\"?s.hrs+\" hr\":null}", repl: "{s.hrs+\" hr\"}" }],
+    expect: "fail",
+    must: /prints no "null hr"/,
+  },
+  {
     name: "SILENT-camp-tolerance-nudged",
     file: PLAN,
     why: "MUST STAY SILENT. The guard pins the behaviour on a clear camp shape, not the exact 35% " +

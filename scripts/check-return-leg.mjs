@@ -182,6 +182,15 @@ const fitLine = (r) => { const m = /data-fit-party="1"[^>]*>([^<]*)</.exec(rende
 eq("a route with a published approach and climb says they are a FIT party's times, unscaled by fitness and pack", /approach and climb are this route’s published times for a fit party, so fitness and pack don’t change them/.test(fitLine(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 4, totalHrs: 12 })) || ""), true);
 eq("...a published car-to-car day says the car-to-car time is", /car-to-car time is this route’s published time for a fit party/.test(fitLine(route({ distKm: null, timing: { summitTimeHrs: 9, totalHrs: 9 } })) || ""), true);
 eq("...and a route timed by the walk model alone makes no fit-party claim", fitLine(route({ gainM: 1000 / FT, lossM: 1000 / FT })), null);
+/* ...and a PUBLISHED TIMES section with no hours prints no hours. Three of the five sections of
+   Mount Seattle's South Route store `hrs: null` and its itinerary's notes differ in wording, so the
+   card's section list is NOT suppressed as a duplicate: it printed "null hr" three times (found
+   2026-10-08 reading the camp-shaped rows; 4 rows in the catalog store a non-numeric section hrs). */
+const nullHrsCard = text(render(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 4, totalHrs: 12, sectionBreakdown: [
+  { section: "Approach", fromTo: "Up the valley", hrs: null, note: "Follow the river trail to camp." },
+  { section: "Climb", fromTo: "Summit day", hrs: 5, note: "Go light from camp." } ] })));
+eq("ANCHOR: the PUBLISHED TIMES card rendered both of its sections", /PUBLISHED TIMES/.test(nullHrsCard) && /Up the valley/.test(nullHrsCard) && /Summit day/.test(nullHrsCard), true);
+eq("a section with no hours prints no \"null hr\" (nor \"undefined hr\"), while a numeric one still prints its hours", /\b(?:null|undefined) hr\b/.test(nullHrsCard) ? "prints a missing value" : (/\b5 hr\b/.test(nullHrsCard) ? "ok" : "lost the real hours"), "ok");
 const pitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }, { pitches: 8, grade: "5.8" }));
 const unpitchedStored = legs(T({ approachTimeHrs: 3, summitTimeHrs: 5, descentTimeHrs: 1, totalHrs: 9 }));
 eq("ANCHOR: pitched and unpitched stored-leg fixtures rendered", !!pitchedStored && !!unpitchedStored, true);
@@ -310,7 +319,7 @@ const box = md3Html.slice(iDiscl).split("</div>")[0];
 eq("the disclaimer names the section it points at", box.includes("Trip plan"), true);
 eq("...and no longer sends a reader to the tab they are already on", /use the .?Plan.? tab/.test(text(md3Html)), false);
 
-const FLOOR = 55;
+const FLOOR = 57;
 if (ran < FLOOR) {
   console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR} — this run proved less than it claims`);
   fail++;
