@@ -344,7 +344,7 @@ console.log("\n9. SUN AND SHADE — the terrain's shadow on the route's own pins
   // The section reads day.sunrise, so the card's own day objects must CARRY it: they are rebuilt from
   // localDays() with only the fields the card names, and the first draft dropped these two, which
   // rendered the section for nobody while the line above passed.
-  eq("...and the card's day objects carry the sunrise and sunset that line reads", /out\.push\(Object\.assign\(\{ date: d\.date, sum: daySummary\(fc, d\), sunrise: d\.sunrise, sunset: d\.sunset \}/.test(card), true);
+  eq("...and the card's day objects carry the sunrise and sunset that line reads", /out\.push\(Object\.assign\(\{ date: d\.date, sum: daySummary\(fc, d\), sunrise: d\.sunrise, sunset: d\.sunset, aqi: aq \}/.test(card), true);
   const fcSrc = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
   eq("...which the alpine forecast fetch asks for", /export function fetchAlpineForecast[\s\S]{0,1200}daily=sunrise,sunset/.test(fcSrc), true);
   const judge = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
@@ -426,7 +426,90 @@ console.log("\n11. WHOLE-DAY ROWS — one published total counts back where the 
   eq("...and does not print a way-up time the route never published ('(8 h up)')", /\(legs\.wholeDay \? "" : " \(" \+ hrs\(legs\.up\) \+ " up\)"\)/.test(card), true);
 }
 
-const FLOOR = 168;
+/* ── 12. HOUR BY HOUR: every box names its OWN period, and the day's gust is one number everywhere ──
+   Open-Meteo stamps hour T and means the reading AT T for temperature, wind and the freezing level, but
+   the sum/probability/maximum of the hour BEFORE T for rain, snow, chance of precipitation and gusts
+   (open-meteo.com/en/docs, 2026-10-08). One shared label would be wrong for half the boxes beside it.
+   And the top "Gusts" tile counted DAYLIGHT hours while the summit forecast below it counted all 24
+   (Rainier, live, 2026-10-08: 4 vs 13 mph and 17.7 vs 25.1 on two of seven days), so the owner saw two
+   numbers for one thing. */
+console.log("\n12. HOUR BY HOUR — each box names its own period; the day's gust is stated once, with its window");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const tiles = fs.readFileSync(path.join(ROOT, "lib", "HourTiles.jsx"), "utf8");
+  const day = { hours: [0, 1, 2] }, fc = { utc_offset_seconds: 0, hourly: { time: [0, 3600, 7200], temperature_2m: [30, 40, 50], freezing_level_height: [9000, 9000, 9000], wind_gusts_10m: [10, 50, 20], is_day: [1, 0, 1], snowfall: [0, 0, 0], precipitation: [0, 0, 0] } };
+  const sm = A.daySummary(fc, day);
+  eq("the day's gust counts EVERY hour of the day (the summit forecast's own window): 50, the night hour included", sm.gust, 50);
+  eq("...and the daylight maximum is kept beside it, so the card can state both: 20", sm.gustDay, 20);
+  eq("the top tile says which window it is and prints the daylight figure under it", /\["Gusts, any hour", s\.gust != null \? uWind\(s\.gust\) : "—", s\.gust != null && s\.gustDay != null \? "daylight hours: " \+ uWind\(s\.gustDay\) : null\]/.test(card), true);
+  eq("the wind FLAG says it is a daylight reading, because that is the window the flag is judged on", /case "wind": return "Summit gusts to " \+ uWind\(v\.gust\) \+ " in daylight";/.test(card), true);
+  eq("the hour boxes for gusts and rain/snow carry the hour BEFORE the stamp (spanEnding)", /label="Gusts" when=\{spanEnding\(hr\)\}/.test(card) && /when=\{spanEnding\(hr\)\} value=\{sn != null && sn > 0/.test(card), true);
+  eq("...and temperature, wind and the freezing level carry the reading AT the stamp", /label="Temperature" when=\{"at " \+ clockHr\(hr\)\}/.test(card) && /label="Wind" when=\{"at " \+ clockHr\(hr\)\}/.test(card) && /label="Freezing level" when=\{"at " \+ clockHr\(hr\)\}/.test(card), true);
+  eq("the hour before 1 PM is '12–1 PM', and across noon and midnight it names both halves", /11 AM–12 PM/.test(tiles) && /11 PM–12 AM/.test(tiles), true);
+  eq("no hour is ever labelled safe, and the card says so", !/label="[^"]*[Ss]afe/.test(card) && /no hour is marked safe/.test(card), true);
+  eq("the section is mounted for the SELECTED day (keyed, so a new day resets the hour)", /<HourByHour key=\{day\.date\} fc=\{fc\} day=\{day\}/.test(card), true);
+  eq("the alpine forecast fetch asks for the wind direction the hour box prints", /export function fetchAlpineForecast[\s\S]{0,900}wind_direction_10m/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
+}
+
+/* ── 13. SMOKE AND AIR QUALITY — the alpine card read none; a smoke day must flag, an unread day must not claim ──
+   US AQI bands are the EPA's (101-150 sensitive groups, 151+ everyone). Open-Meteo's US AQI averages PM over
+   the PRECEDING 24 h and the grid is ~45 km (11 km in Europe): a number for the area, never for the route. */
+console.log("\n13. SMOKE AND AIR QUALITY — flagged on the EPA's bands, never read as clean when it was not read");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const off = -25200, base = Date.UTC(2026, 9, 8, 7, 0, 0) / 1000; // 00:00 local on 2026-10-08 at UTC-7
+  const air = (aqis) => ({ utc_offset_seconds: off, hourly: { time: aqis.map((_, i) => base + i * 3600), us_aqi: aqis, pm2_5: aqis.map((a) => a / 3) } });
+  const day1 = Array(24).fill(40), day2 = Array(24).fill(60);
+  day1[15] = 160; day2[3] = 120;
+  const a = air(day1.concat(day2));
+  eq("the worst hour of the LOCAL day is found (160 at 3 PM), not the other day's 120", A.airDay(a, "2026-10-08").max, 160);
+  eq("...and the next local day reads its own worst (120)", A.airDay(a, "2026-10-09").max, 120);
+  eq("a day the forecast does not reach is NULL, not 0 and not 'good'", A.airDay(a, "2026-10-12"), null);
+  eq("no series at all is NULL", A.airDay(null, "2026-10-08") === null && A.airDay({ hourly: {} }, "2026-10-08") === null, true);
+  eq("AQI 100 flags nothing (the EPA's 'moderate' band)", A.smokeFlag({ max: 100, at: 0, pm: 9 }), null);
+  eq("AQI 101-150 is a CAUTION", A.smokeFlag({ max: 120, at: 0, pm: 40 }).level, "caution");
+  eq("AQI above 150 is a WARNING", A.smokeFlag({ max: 160, at: 0, pm: 60 }).level, "warn");
+  eq("an unread day gets NO flag (no claim either way)", A.smokeFlag(null), null);
+  eq("the EPA's word for 101-150 and 151-200", [A.aqiWord(120), A.aqiWord(160)], ["Unhealthy for sensitive groups", "Unhealthy"]);
+  eq("the flag says it is the AREA's forecast and what it cannot see", /smoke aloft or pooled in a valley is not seen/.test(card), true);
+  eq("a failed air read says smoke is NOT MEASURED and is not a clean-air reading, with a retry", /Couldn’t load air quality, so smoke is not measured\. This is not a clean-air reading\./.test(card) && /onClick=\{onRetry\}/.test(card), true);
+  eq("a day beyond the forecast says smoke is not measured for it", /does not reach this day[^"]*so smoke is not measured for it/.test(card), true);
+  eq("the card states the 24-hour averaging and the grid, so a late or missing plume is understood", /averaged over the preceding 24 hours/.test(card) && /about 45 km/.test(card), true);
+  eq("the smoke flag joins the day's flags (and so the day chips' dots)", /if \(sf\) r = Object\.assign\(\{\}, r, \{ flags: r\.flags\.concat\(\[sf\]\) \}\);/.test(card), true);
+}
+
+/* ── 14. WEATHER ALERTS — the alpine card had none; an alert must land on the right day, and "none" must never be claimed unread ──
+   Shapes below are the live response (api.weather.gov/alerts/active, 2026-10-08): a Blowing Dust Advisory had
+   expires 07:15 and ends 19:00 the next day -- the MESSAGE expires hours before the EVENT ends, because it is
+   due to be reissued. Reading `expires` would drop a live alert hours early. */
+console.log("\n14. WEATHER ALERTS — each on the right local day, by its event window; unread is never 'none'");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const fcSrc2 = fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8");
+  const feat = (event, severity, onset, ends, expires, description) => ({ id: "urn:" + event, properties: { event, severity, urgency: "Expected", certainty: "Likely", onset, effective: onset, ends, expires, description } });
+  const json = { features: [
+    feat("Blowing Dust Advisory", "Moderate", "2026-10-09T12:00:00-07:00", "2026-10-09T19:00:00-07:00", "2026-10-09T07:15:00-07:00", "* WHAT...Patchy blowing dust expected, with\nvisibility dropping to one-quarter mile.\nWinds 15 to 25 mph.\n\n* WHERE...Coulee City"),
+    feat("High Wind Warning", "Severe", "2026-10-08T15:00:00-07:00", "2026-10-09T05:00:00-07:00", "2026-10-09T05:00:00-07:00", null),
+  ] };
+  const al = A.normAlerts(json), off = -25200;
+  eq("both alerts are read, and the WHAT line is kept whole across its line breaks, in the issuer's words", al[0].what, "Patchy blowing dust expected, with visibility dropping to one-quarter mile. Winds 15 to 25 mph.");
+  eq("an alert with no description has no WHAT (nothing invented)", al[1].what, null);
+  eq("the event window ends at `ends`, NOT at the earlier message `expires` (19:00 local, not 07:15)", al[0].end, Date.parse("2026-10-09T19:00:00-07:00"));
+  eq("a day the event touches lists it: the dust advisory on 10-09", A.alertsForDay(al, "2026-10-09", off).map((a) => a.event).includes("Blowing Dust Advisory"), true);
+  eq("...and a day it does not touch does not: 10-08 has only the wind warning", A.alertsForDay(al, "2026-10-08", off).map((a) => a.event), ["High Wind Warning"]);
+  eq("the 07:15 expiry would have missed an afternoon query on 10-09 -- the event window does not", A.alertsForDay(al, "2026-10-09", off).length, 2);
+  eq("most severe first", A.alertsForDay(al, "2026-10-09", off)[0].event, "High Wind Warning");
+  eq("Severe is a WARNING; Moderate is a CAUTION; Minor and Unknown are cautions", [A.alertLevel({ severity: "Extreme" }), A.alertLevel({ severity: "Severe" }), A.alertLevel({ severity: "Moderate" }), A.alertLevel({ severity: "Minor" }), A.alertLevel({ severity: "Unknown" })], ["warn", "warn", "caution", "caution", "caution"]);
+  eq("no alerts and no response are both []", [A.normAlerts({ features: [] }).length, A.normAlerts(null).length], [0, 0]);
+  eq("outside the US the fetch resolves {outside:true} (HTTP 400), which the card words as NOT CHECKED", /r\.status === 400\) return \{ outside: true \}/.test(fcSrc2) && /Weather alerts are only checked for places in the United States\. Nothing was checked for this route\./.test(card), true);
+  eq("a failed read is 'not measured' with a retry, never 'none'", /Couldn’t load weather alerts, so they are not measured\. This is not a report of none\./.test(card), true);
+  eq("a quiet day says none is NOT an all-clear and that an alert covers a zone, not the route", /a day with none is not an all-clear/.test(card) && /covers a whole forecast zone, which can be much larger than the route/.test(card), true);
+  eq("the alerts are cached for minutes, not the session (they are issued and cancelled within the hour)", /ALERT_TTL = 10 \* 60 \* 1000/.test(card), true);
+  eq("each alert joins the day's flags, so the day chips show it", /key: "alert", level: alertLevel\(a\)/.test(card), true);
+  eq("the card prints the alert's own prose verbatim and says so, in the units issued", /"As issued: " \+ a\.what/.test(card), true);
+}
+
+const FLOOR = 205;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);

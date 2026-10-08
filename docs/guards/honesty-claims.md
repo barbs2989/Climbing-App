@@ -1642,3 +1642,52 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       from camp to count back from).
     - **Do not re-derive:** `techH` IS the published total on a whole-day row (pinned by a test), so
       the split is applied to the right number; the Plan tab's walk model is NOT added on top.
+  - **HOUR BY HOUR + THE GUST WINDOW (2026-10-08, owner: "clear and exact and accurate science").**
+    Section 12 of the guard. Three things it holds, each measured, not assumed:
+    - **Every box names its OWN period.** Open-Meteo (open-meteo.com/en/docs) stamps hour T and means the
+      reading AT T for temperature, wind speed, cloud and the freezing level, but the sum / probability /
+      maximum of the hour BEFORE T for rain, snow, the chance of precipitation and the 10 m gust. The
+      boxes in `lib/HourTiles.jsx` carry `at(T)` or `spanEnding(T)` and never share one hour label.
+      The crag chart's old sentence ("rain in the hour before") was the same fact, said once for a
+      whole sentence of numbers.
+    - **The day's gust is ONE number with its window stated.** The alpine card's top "Gusts" tile counted
+      DAYLIGHT hours; the summit forecast under it counted all 24. Same API, same variable, same point
+      (live at Rainier: 4 vs 13 mph and 17.7 vs 25.1 on two of seven days), so a climber saw two numbers
+      for one thing. The tile now reads "Gusts, any hour" with the daylight figure under it, and the
+      wind FLAG says "in daylight", because daylight is the window its 30/50 mph cuts are judged on.
+    - **No hour is ever marked safe.** NWS publishes no CAPE cut and calls the noon rule nothing; mountain
+      models run low in strong wind (HRRR over Wyoming and Colorado: large negative bias at the strongest
+      speeds). Thunder hours say "forecast" or "possible"; a quiet hour carries the caveat.
+    - **Verified against independent sources (2026-10-08, one route per discipline, same 24-hour window):**
+      sunrise/sunset within 1–2 min of the NOAA solar-calculator equations; the freezing level within
+      ~75–630 ft of the level implied by MET Norway's temperature at the same height; highs agree with
+      NWS once its grid height is lapse-corrected; winds agree with NWS (Rainier 31 mph sustained / 58 gust
+      vs NWS 44) and MET Norway runs low on wind everywhere (9–13 mph where NWS says 20–44), which is the
+      known mountain pattern, not our error.
+    - **Not shipped, on research:** switching the wind flag to 700/500 hPa wind. No source verifies that
+      free-air wind predicts summit wind (inversions, gust factor, rime on the anemometer break it).
+  - **SMOKE AND AIR QUALITY on the alpine card (2026-10-08, owner: "yes for smoke and air quality").** Section 13 of
+    the guard. The crag card had an AQI section; the alpine card had none. `airDay()` takes the worst hourly US
+    AQI of the LOCAL day (null, never 0, when the ~5-day forecast does not reach it); `smokeFlag()` flags above 100
+    (caution) and 150 (warning), the EPA's own bands (unhealthy for sensitive groups starts at 101, everyone at 151).
+    What the number is (Open-Meteo air-quality docs): PM is a rolling average over the PRECEDING 24 hours, so an
+    hour lags a plume's arrival and clearing; the grid is ~45 km global, ~11 km Europe; nothing is claimed for
+    mountains. So the flag and the section both say "a forecast for the area, not a reading at the route; smoke
+    aloft or pooled in a valley is not seen", and a failed read says "not measured", never "clean". Checked live on
+    Rainier, Wenatchee and Boulder (all Good today); the smoky case is covered by synthetic series, since October
+    is clean.
+  - **WEATHER ALERTS on the alpine card (2026-10-08, owner: "do weather alerts").** Section 14 of the guard. Active
+    watches, warnings and advisories at the route's point (api.weather.gov/alerts/active?point=, US only, open to
+    the browser). Each alert is shown AS ISSUED: its event name, severity, urgency, certainty, window, and its
+    `WHAT...` line verbatim (in the units it was issued in; a paraphrase of a wind speed is a wrong wind speed).
+    Extreme/Severe flag as a warning, everything else issued as a caution, and the flag joins the day chips.
+    - **Use `ends`, never `expires`, for the event window.** A live Blowing Dust Advisory had `expires` 07:15 and
+      `ends` 19:00: the MESSAGE expires hours before the EVENT ends, because it is due to be reissued. Reading
+      `expires` drops a live alert hours early. Pinned by a test built on that shape.
+    - **Outside the US the service answers HTTP 400 "out of bounds"**: that reads "not checked", never "none". A
+      failed read is "not measured" with a retry. A quiet day says none is NOT an all-clear (alerts are issued a
+      day or two ahead) and that an alert covers a forecast ZONE, far larger than a route and across very
+      different heights. Cached for 10 minutes, not the session: alerts are issued and cancelled within the hour.
+    - **The alert's own `headline` is NOT printed**: it ends "...by NWS <office>", which names the issuer and
+      would break `check:no-sources`' rule that no screen names a provider.
+    - **Not shown, on research:** WSDOT pass status (needs an access code; unauthenticated request is HTTP 401).
