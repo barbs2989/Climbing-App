@@ -24,13 +24,14 @@ async function getJSON(url, init) {
 const FIELDS = new Set(["overview", "name", "grade", "rock_grade", "ice_grade", "alpine_grade", "aid_grade", "commitment", "pitches", "length_m", "fa", "aspect", "face", "gain_ft",
   "descent", "gear", "detailed_rack", "stars", "prot_rating", "season", "rock", "start_type", "landing", "pads", "crux", "max_angle", "rope_length_m",
   "bolts", "guide_stars", "alt_names", "variations", "ffa", "fwa", "anchor", "features", "location",
-  "rack_items", "sun", "wet", "rock_quality", "fixed_gear"]);
+  "rack_items", "sun", "wet", "rock_quality", "fixed_gear", "beta"]);
 // A grade proposed with a protection suffix ("5.10a R") is split: the grade keeps the difficulty, prot_rating takes the suffix.
 const PROT = /^(.*\S)\s+(PG-?13|R|X)$/i;
 const [file, flag] = process.argv.slice(2);
 const APPLY = flag === "--apply";
 const key = requireServiceKey();
-const fixes = JSON.parse(fs.readFileSync(file, "utf8")).flatMap((f) => {
+// `routes.beta` is a text column (the reader wraps a string into one entry): a list of beta entries is stored as one string, a blank line between them.
+const fixes = JSON.parse(fs.readFileSync(file, "utf8")).map((f) => (f.field === "beta" && Array.isArray(f.to) ? { ...f, to: f.to.join("\n\n") } : f)).flatMap((f) => {
   const m = f.field === "grade" && typeof f.to === "string" && f.to.match(PROT);
   return m ? [{ ...f, to: m[1] }, { id: f.id, field: "prot_rating", from: f.prot_from ?? null, to: m[2].toUpperCase().replace("PG13", "PG13"), why: f.why, soft: true }] : [f];
 });
@@ -49,6 +50,7 @@ for (const [id, fs_] of byId) {
   const rows = await getJSON(`${SUPABASE_URL}/rest/v1/routes?id=eq.${encodeURIComponent(id)}&select=${sel}`, { headers: headers(key) });
   if (!Array.isArray(rows) || rows.length !== 1) { console.log(`REFUSED ${id}: not exactly one row`); refused++; continue; }
   const row = rows[0];
+  if (Array.isArray(row.beta) && !row.beta.length) row.beta = null; // an empty list is "no beta yet", the same as null
   for (let i = fs_.length - 1; i >= 0; i--) if (fs_[i].soft && !same(row[fs_[i].field], fs_[i].from)) fs_.splice(i, 1); // a split-off prot_rating never overwrites one already set
   for (let i = fs_.length - 1; i >= 0; i--) if (!same(row[fs_[i].field], fs_[i].from) && same(row[fs_[i].field], fs_[i].to)) fs_.splice(i, 1); // already written by an earlier run
   if (!fs_.length) { console.log(`ALREADY ${id}`); continue; }
