@@ -1,0 +1,5 @@
+begin;
+create temp table _had_parking on commit drop as select id from public.areas where parking_lat is not null;
+update public.areas set parking_lat=47.599736, parking_lng=-120.713852, parking_name='Castle Rock Trailhead lot on US-2 in Tumwater Canyon' where path <@ (select path from public.areas where id='wa_midnight_and_noontime') and id not in (select id from _had_parking) and (lat is null or lng is null or 12742 * asin(sqrt(power(sin(radians(lat - 47.599736) / 2), 2) + cos(radians(47.599736)) * cos(radians(lat)) * power(sin(radians(lng - -120.713852) / 2), 2))) <= 4);
+update public.areas set parking_lat=47.587331, parking_lng=-120.707621, parking_name='Penstock Trailhead pullout by the river beach on US-2 (Tumwater Canyon)' where path <@ (select path from public.areas where id='wa_karma_crags') and id not in (select id from _had_parking) and (lat is null or lng is null or 12742 * asin(sqrt(power(sin(radians(lat - 47.587331) / 2), 2) + cos(radians(47.587331)) * cos(radians(lat)) * power(sin(radians(lng - -120.707621) / 2), 2))) <= 4);
+commit;
