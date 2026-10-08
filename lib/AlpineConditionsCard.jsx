@@ -5,15 +5,15 @@
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
 import { C, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
-import { fetchAlpineForecast, fetchAlpineClimate } from "./forecast.js";
-import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS } from "./alpineConditions.js";
+import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread } from "./forecast.js";
+import { condKind, hasSnowLegs, localDays, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread } from "./alpineConditions.js";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
 import { isMultiDayOuting } from "./outing.js";
 import { fetchAvyMap, zoneFor, fetchAvyProduct, avyReading, DANGER_NAME } from "./avalanche.js";
 import { fetchSnotelStations, nearestStation, fetchSnotelDepth, snowReading } from "./snotel.js";
 
-const _alpWx = {};
+const _alpWx = {}, _alpSp = {};
 const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
 const MUTED = { fontSize: 12.5, color: C.textSub, lineHeight: 1.55 };
 const RETRY = { marginTop: 6, background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" };
@@ -60,6 +60,7 @@ export function flagText(f) {
     case "showers": return v.pct + "% chance of rain — retreating or rappelling wet is where things go wrong";
     case "new-snow": return uSnowfall(v.inch) + " of new snow at the summit" + (v.scramble ? " — a snowed-up scramble is a winter climb" : "");
     case "wind": return "Summit gusts to " + uWind(v.gust);
+    case "models-disagree": return "Forecast models disagree on this day (" + [v.over.indexOf("gust") >= 0 ? "gusts " + uWind(v.gust[0]) + "–" + uWind(v.gust[1]) : null, v.over.indexOf("high") >= 0 ? "highs " + uTemp(v.high[0]) + "–" + uTemp(v.high[1]) : null, v.over.indexOf("fl") >= 0 ? "freezing level " + uElev(Math.round(v.fl[0] / 100) * 100) + "–" + uElev(Math.round(v.fl[1] / 100) * 100) : null].filter(Boolean).join(", ") + ") — read its flags as low confidence";
     case "wind-chill": return "Wind chill " + uTemp(v.chill) + " — frostbite on exposed skin in about 30 minutes";
     default: return f.key;
   }
@@ -111,6 +112,15 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     fetchAlpineForecast(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpWx[ck] = j; if (live) setWx({ data: j }); }, function () { if (live) setWx({ error: true }); });
     return function () { live = false; };
   }, [ck, tries, kind]);
+  // The models' spread: a second, optional read. Failing, it adds nothing -- never "they agree".
+  const [sp, setSp] = useState(function () { return ck && _alpSp[ck] ? _alpSp[ck] : null; });
+  useEffect(function () {
+    if (!pt || !kind) return;
+    if (_alpSp[ck]) { setSp(_alpSp[ck]); return; }
+    let live = true; setSp(null);
+    fetchAlpineSpread(pt.lat, pt.lng, pt.elevFt).then(function (j) { _alpSp[ck] = j; if (live) setSp(j); }, function () { if (live) setSp(null); });
+    return function () { live = false; };
+  }, [ck, kind]);
   useEffect(function () { setDayI(0); }, [route.id]);
 
   /* The legs the start counts back from: the Planner's own estimate, at the Planner's own inputs. A
@@ -128,11 +138,13 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     const out = [];
     days.forEach(function (d, k) {
       if (d.date < today) return;
-      const r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs });
+      let r = dayFlags(fc, days, k, { kind, terrain, highFt: pt.elevFt, snowFt: floor ? floor.ft : null, legs });
+      const ms = sp ? modelSpread(sp, d.date) : null;
+      if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       out.push(Object.assign({ date: d.date, sum: daySummary(fc, d) }, r));
     });
     return { fc, days: out.slice(0, 7) };
-  }, [wx, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp]);
+  }, [wx, sp, kind, ck, floor && floor.ft, legs.up, legs.down, legs.floor, legs.fromCamp]);
 
   if (!kind) return null;
   const box = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
