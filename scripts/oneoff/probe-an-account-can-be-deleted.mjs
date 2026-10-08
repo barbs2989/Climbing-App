@@ -44,6 +44,9 @@ async function main() {
   if (!crewId) console.log("  note: could not create a crew (" + crew.status + " " + JSON.stringify(crew.body).slice(0, 140) + ") — the crews.created_by case is not exercised");
   const cm = await api("/rest/v1/comments", { method: "POST", headers: { ...J, Prefer: "return=representation" }, body: JSON.stringify({ target_id: "probe-delete-route", user_id: U.id, text: "delete me" }) }, anonKey(), U.jwt);
   const ctr = await api("/rest/v1/contributions", { method: "POST", headers: { ...J, Prefer: "return=representation" }, body: JSON.stringify({ route_id: "wa_mount_baker_north_ridge", contributor: U.id, kind: "photo", field: "photo", value: { url: SUPABASE_URL + "/storage/v1/object/public/topo-photos/" + path } }) }, anonKey(), U.jwt);
+  // A PENDING FRIEND REQUEST: 0267 first shipped a logger that made exactly this account undeletable.
+  const fr = await api("/rest/v1/connections", { method: "POST", headers: J, body: JSON.stringify({ requester: U.id, addressee: O.id }) }, anonKey(), U.jwt);
+  if (fr.status >= 300) throw new Error("CONTROL FAILED: U could not send O a friend request (" + fr.status + ")");
   const dm = await api("/rest/v1/messages", { method: "POST", headers: { ...J, Prefer: "return=representation" }, body: JSON.stringify({ sender_id: U.id, recipient_id: O.id, body: "bye" }) }, anonKey(), U.jwt);
   const cmId = Array.isArray(cm.body) && cm.body[0] && cm.body[0].id, dmId = Array.isArray(dm.body) && dm.body[0] && dm.body[0].id;
   const ctrOk = Array.isArray(ctr.body) && ctr.body[0];

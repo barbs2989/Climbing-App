@@ -269,7 +269,22 @@ What works, and is true once Part 3 exists:
 
 ## Part 5 — Friends: what Facebook and LinkedIn do that is worth copying
 
-Proposed, not built. Ordered by safety value for an app whose friendships turn into meetups.
+**Update 2026-10-08: items 1–6 are built** (0267; live probe `probe-friend-request-limits.mjs` 19/19):
+
+- **Item 1:**
+  - a 21-day per-pair cooldown after a withdrawal or decline (the decliner is exempt);
+  - 50 requests a week.
+- **Item 2:** the "Who can send you friend requests" setting (Everyone / Friends of friends / Nobody), enforced in the insert guard.
+- **Item 3:** a stranger's DM may carry a photo only once you're friends, crewmates, or they've replied.
+- **Item 4:**
+  - an "X accepted your friend request" notification;
+  - a Requests you've sent list with Withdraw (the confirmation names the 3-week wait).
+- **Item 5:** a real people-you-may-know RPC. It never suggests blocked or restricted accounts, or anyone closed to requests. Someone hidden from discovery is suggested only to people they've climbed or crewed with.
+- **Item 6:** pending requests expire after 90 days.
+
+Items 7 (Restrict) and 8 (a Friends visibility tier) are not built.
+
+The original proposal follows. Items are ordered by safety value for an app whose friendships turn into meetups.
 
 1. **Request limits:**
    - a weekly cap on outgoing requests;
