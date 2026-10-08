@@ -124,8 +124,18 @@ The table above is the state measured on 2026-10-07. Since then:
 | Eject the user | **PRESENT** | `set_account_standing()` (0264). **Suspend** leaves the account read-only for N days; it can still sign in to see why and appeal. **Ban** stops sign-in (`auth.users.banned_until`) and removes everything they posted. A restrictive write gate closes the hour an old token would otherwise live. Terms §8/§10 ("we may suspend") are now backed. |
 | Statement of reasons + appeal | **PRESENT** | A restricted account sees the reason and end date on every tab. Removed content is labelled for its author. One-tap appeal for both; the reviewer reverses or keeps the decision. |
 | Block | **PRESENT** | Plus group invites since 0260 (#2277). Crew chat and existing content are still not hidden from the blocker. |
-| Filter | **MISSING** | Phase 3 (needs an AI API key). |
-| Terms "I agree", contact, deletion | **PARTIAL / MISSING** | Phase 4. |
+| Filter | **PRESENT (term floor), AI layer ready** | 0265: every new or edited post, message, comment, trip report (once not private), group, topo and list is checked against `screening_terms` inside the write. A match is held and queued as "Automatic screening". Live probe: 13/13 (climbing jargon passes; word boundaries hold). The `screen-content` function (Claude Haiku 5.5 for text, AWS Rekognition for images) is deployed but **inert until keys are set** (see below). |
+| Terms "I agree" (zero tolerance) | **PRESENT** | Community Guidelines added, with an explicit zero-tolerance clause and part of the Terms. A **required "I agree" checkbox** at sign-up, gated on both the email and Google paths. `POLICY_VERSION` 2026-10-08, so existing users get the update notice. |
+| In-app account deletion | **PRESENT** | 0266 + `delete-account`: files, then contributions, then the auth user (everything else cascades; nine blocking foreign keys fixed). Live probe: 12/12, including the file's public URL going dead. Terms and Privacy updated to match. |
+| Published contact info | **MISSING — needs your address** | Nothing lists a contact yet, deliberately: only an address someone actually reads should be published. |
+
+### What only the owner can do (each switches a built feature on)
+
+1. **Safety alert emails.** Create a Resend account and verify a sending domain, then run `npx supabase secrets set RESEND_API_KEY=… GPS_NOTIFY_FROM=… SAFETY_ALERT_EMAIL=you@…`.
+2. **AI text screening.** Create an Anthropic API key, run `npx supabase secrets set ANTHROPIC_API_KEY=…`, then wire the hook once: `insert into app_settings (key, value) values ('screen_hook_url', 'https://ofuofhojhbcrcahuotya.supabase.co/functions/v1/screen-content');`
+3. **Image screening.** Create an AWS IAM user with `rekognition:DetectModerationLabels` only, then set `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_REGION` the same way.
+4. **A contact address** for Safety and Support. It goes in the Guidelines, Settings and both store listings.
+5. **Google Play Child Safety Standards:** a public web page (the Guidelines' "Children" section covers the content) and a named child-safety contact in Play Console.
 
 Also found and closed on the way: a DM **recipient could rewrite the sender's message** (UPDATE policy with no WITH CHECK). Live probes: `probe-reports-reach-the-content.mjs` 29/29, `probe-suspend-ban-and-appeal.mjs` 28/28.
 
