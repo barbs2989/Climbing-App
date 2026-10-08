@@ -27,7 +27,8 @@
 //                  outside every zone and a failed read are four answers and none is "Low"; the snow
 //                  station is the nearest within 30 km and says how far and how much lower; outcomes
 //                  are the last 60 days of Summit / Attempt / Turned around reports, nothing inferred,
-//                  and every discipline on this tab can log a Turned around.
+//                  and every discipline on this tab can log a Turned around. The season is read at the
+//                  TOP of the climb, with snowfall, and says it is a guide, not a forecast.
 // Thresholds and their research live in docs/guards/honesty-claims.md.
 import fs from "node:fs";
 import os from "node:os";
@@ -45,7 +46,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import RouteDetail from ${JSON.stringify(path.join(ROOT, "RouteDetail.jsx"))};
 export * from ${JSON.stringify(path.join(ROOT, "lib", "alpineConditions.js"))};
 export { flagText, forecastPoint, KIND_LABEL } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
-export { CRAG_SCORE_DISCIPLINES } from ${JSON.stringify(path.join(ROOT, "lib", "conditionsScore.js"))};
+export { CRAG_SCORE_DISCIPLINES, monthlyClimate } from ${JSON.stringify(path.join(ROOT, "lib", "conditionsScore.js"))};
+export { fetchAlpineClimate } from ${JSON.stringify(path.join(ROOT, "lib", "forecast.js"))};
 export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 export { inGeometry, zoneFor, avyReading, DANGER_NAME } from ${JSON.stringify(path.join(ROOT, "lib", "avalanche.js"))};
 export { nearestStation, kmBetween, snowReading } from ${JSON.stringify(path.join(ROOT, "lib", "snotel.js"))};
@@ -261,6 +263,22 @@ eq("a failed avalanche read says it is not a rating", /st\.error\) return[\s\S]{
 eq("...off season, no rating and outside every zone each say 'That is not a rating'", (card.match(/That is not a rating/g) || []).length, 3);
 eq("a failed snow-station read says it says nothing about the snow", /st\.error\) return[\s\S]{0,300}Couldn’t load the snow station\. This says nothing about the snow\./.test(card), true);
 eq("the snow station's distance AND height below the climb are worded every time", /" away at " \+ uElev\(s\.elevFt\)[\s\S]{0,120}below the top of this climb/.test(card), true);
+// SEASON AT THE TOP. A year of synthetic archive days: snow falls only in January.
+const ARCH = { daily: { time: [], temperature_2m_max: [], temperature_2m_min: [], precipitation_sum: [], snowfall_sum: [] } };
+for (let t = Date.UTC(2025, 0, 1); t < Date.UTC(2026, 0, 1); t += 864e5) { const d = new Date(t); ARCH.daily.time.push(d.toISOString().slice(0, 10)); ARCH.daily.temperature_2m_max.push(30); ARCH.daily.temperature_2m_min.push(20); ARCH.daily.precipitation_sum.push(0.1); ARCH.daily.snowfall_sum.push(d.getUTCMonth() === 0 ? 0.5 : 0); }
+const climSnow = A.monthlyClimate(ARCH), climCrag = A.monthlyClimate({ daily: Object.assign({}, ARCH.daily, { snowfall_sum: undefined }) });
+eq("the season reading carries each month's snowfall when it was asked for (January 0.5 in/day = 15.5 in)", climSnow && [Math.round(climSnow.months[0].snow * 10) / 10, climSnow.months[6].snow], [15.5, 0]);
+eq("...and a crag's reading, which never asks, has no snow key at all (its output is unchanged)", climCrag && "snow" in climCrag.months[0], false);
+const realFetch = globalThis.fetch; const asked = [];
+globalThis.fetch = (u) => { asked.push(String(u)); return Promise.reject(new Error("probe")); };
+await A.fetchAlpineClimate(48.7768, -121.8144, 10781).catch(() => null);
+await A.fetchAlpineClimate(48.7768, -121.8144, null).catch(() => null);
+globalThis.fetch = realFetch;
+eq("the season is read at the TOP of the climb: 10,781 ft asks the archive for 3,286 m, with snowfall", [/&elevation=3286&/.test(asked[0] || ""), /snowfall_sum/.test(asked[0] || "")], [true, true]);
+eq("...and with no height on file it asks for none, rather than inventing one", /elevation=/.test(asked[1] || "elevation="), false);
+eq("a snow route mounts the season section", /Season at the top/.test(glHtml), true);
+eq("a failed climate read says it says nothing about the season", /st\.error\) return[\s\S]{0,300}Couldn’t load the climate\. This says nothing about the season\./.test(card), true);
+eq("...and the season says where it was read and that it is a guide, not a forecast", /"Averages for " \+ m\.years \+ " at "[\s\S]{0,160}a guide to the season, not a forecast\./.test(card), true);
 const code = card.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/.*$/gm, "$1");
 eq("no provider is named on screen (comments aside)", code.match(/NWAC|avalanche\.org|SNOTEL|NRCS|CAIC|USDA/g), null);
 

@@ -23,6 +23,8 @@
 //   15 outcomes from any date, not the last 60 days
 //   16 the alpine tick list loses Turned around again
 //   17 a zone named after its forecasting centre printed on screen ("CAIC zone")
+//   18 the season read at the grid cell's own height, not the top of the climb
+//   19 a failed climate read that no longer says it says nothing about the season
 //
 // DO NOT COMMIT WHILE THIS RUNS — it edits the app source in place (#1190).
 import { execFileSync } from "child_process";
@@ -38,6 +40,7 @@ const CARD = path.join(ROOT, "lib", "AlpineConditionsCard.jsx");
 const AVY = path.join(ROOT, "lib", "avalanche.js");
 const SNOTEL = path.join(ROOT, "lib", "snotel.js");
 const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+const FORECAST = path.join(ROOT, "lib", "forecast.js");
 const sum = (s) => crypto.createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 const CASES = [
@@ -92,9 +95,15 @@ const CASES = [
   { name: "17. a zone named after its forecasting centre is printed", file: AVY,
     find: "const base = { zone: zoneName(p),", repl: "const base = { zone: p.name || null,",
     expect: "fail", expectText: "a zone named after its forecasting centre is not printed" },
+  { name: "18. the season is read at the grid cell's height, not the top", file: FORECAST,
+    find: '(em != null ? "&elevation=" + em : "")', repl: '""',
+    expect: "fail", expectText: "the season is read at the TOP of the climb" },
+  { name: "19. a failed climate read no longer says it says nothing about the season", file: CARD,
+    find: "Couldn’t load the climate. This says nothing about the season.", repl: "Couldn’t load the climate.",
+    expect: "fail", expectText: "a failed climate read says it says nothing about the season" },
 ];
 
-const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE].map((f) => [f, fs.readFileSync(f, "utf8")]));
+const SNAP = new Map([FILE, LOGIC, CARD, AVY, SNOTEL, CORE, FORECAST].map((f) => [f, fs.readFileSync(f, "utf8")]));
 const restoreAll = () => { for (const pair of SNAP) fs.writeFileSync(pair[0], pair[1]); };
 const treeOk = () => [...SNAP].every((pair) => sum(fs.readFileSync(pair[0], "utf8")) === sum(pair[1]));
 let bad = 0;
