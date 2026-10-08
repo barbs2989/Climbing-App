@@ -790,6 +790,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     Injection-tested **3/3** (`scripts/oneoff/inject-trailhead-direction-shape-cases.mjs`): a walk
     labelled drive FAILS, good directions labelled walk FAIL, a correct row PASSES; each edit proven
     landed by checksum, corpus restored byte-identically.
+  - **The daily scan was red for 12+ days and the emails said "deploy failed" (2026-10-08).** Two
+    causes stacked, so fixing one still left it red. (1) **15 live rows** the repair never reached
+    (the scan had been timing out on some days, which hid them): 12 were drive-plus-walk and were
+    cut back to the drive part (the walk was already in each row's `approach`); **3 were the detector
+    being wrong** — `trail` with no trailing `\b` matched inside *Trailhead* ("1.25 miles on gravel FR
+    5400 to the Robinson Creek **Trailhead**"), *"about a mile east of Galena"* is where to park, and
+    *"to Harts Pass"* is the end of a road, not a pass crossed. All 15 old and new values now sit in
+    the corpus with their verdicts, so the rule is held to them in both directions. (2) **The first
+    request of a CI run is cold**: 2.6s against the 3s anon `statement_timeout` is a measured first
+    call, and `--live` now retries a 5xx (4 tries, growing pause) and still throws if it never reads.
+    Locally the retry absorbed two 57014s before reading all 681 directions.
 - **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
   nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
   `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
