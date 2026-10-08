@@ -149,6 +149,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **A rappel floor** (walk down + 0.7 × the modelled climb) on stored-leg pitched routes. Short
       alpine descents went 9 -> 6 of 22, but the upper quartile reached 2.0x and the within share
       fell from 32% to 23%, because it charges rappels on walk-off routes (Serpentine Arête).
+    - **Overwriting stored times with trip-report medians: REFUSED.** It was the obvious per-route
+      repair for the residual below. But `timing` is defined by the contribute form as "published
+      times for a fit party in good conditions — the guidebook figure", and guidebooks are the
+      owner's source of truth. A median of trip reports is neither published nor a fit party's day.
+      A scan for rows that misstate their own figure found ONE single leg over 36 hours in 970
+      rows: Jötnar's 168. That is the first ascent's seven days, and it matches the catalog's
+      ELAPSED convention for multi-day routes. It is the only published figure for a barely repeated
+      VI A3+ wall, so it stays. Nulling it would model the wall as a one-day free climb.
+  - **A STORED LEG IS A FIT PARTY'S DAY, AND THE SCREEN SAYS SO** (`P.legsStored`). Fitness and pack
+    scale only the walk model, so on a row with stored legs those inputs barely move the estimate.
+    The Planner said "Or estimate for your party" above them regardless. Now, when legs are stored,
+    the Planner names what is a fit party's published time and says to allow more for a slower party.
+    The alpine start says a slower party should start earlier. Section 1 holds the line, and the
+    injection suite's `fit-party-line-removed` case proves it.
     - Alpine descents remain the open residual (0.9x, 13 of 33 short). The cause is short STORED
       totals on technical routes: Forbidden's West Ridge stores 15 hr, against about 20 hr car to
       car online. That calls for per-route repairs (guidebook or report), not a formula.
