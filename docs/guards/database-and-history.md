@@ -546,7 +546,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       Slicksides (a trad crack and a pothole boulder problem). Not settled: Missouri's Hide and Seek and
       Hiker's boulders (the copies sit under "Closed Areas", one with a private-land notice); Tongue
       River's Happy Trails / Snag Wall (the source itself lists the three routes on both); the empty
-      "Cone, The" (no page).
+      "Cone, The" (no page) — all three settled by 0281, below.
+    - **The source's own AREA TREE (the crawl's `catalog/_mp/_tree/<id>.json`) settles what its pages
+      cannot — 0281** (2026-10-08). Missouri's Hide and seek, Hiker's and Solus boulders are each ONE source
+      area id read twice: the park copy is an old crawl, and the source has since moved the same ids into
+      "EM: (closed)", a private area it calls not open yet. A same-name pair 52 km apart is not "two places"
+      when the ids match; read the tree before calling it. The park copies folded into the current ones, and
+      the park's PARKING was kept off them (generator `noPark`): a fold must not carry a trailhead onto an
+      area the source has closed. Happy Trails' pin was the source's own "best guess" (its page says "near
+      bridge"); Snag Wall is the guidebook's wall by the bridge, so the three shared climbs are Snag Wall's.
+      The empty "Cone, The" is the source's empty The Cone, gone. Joshua Tree's "Pinto Basin (aka Eastern
+      Territorries)" bouldering nested into Split Rocks and Jumbo Rock Area (pins line up), Cottonwood
+      Springs' into Cottonwood Area; Black Rock Canyon and Wonderland of Rocks North bouldering have no rock
+      twin and stay under "Joshua Tree Bouldering". Still two climbs, on purpose: Keystone Canyon Tunnel
+      Wall's M6–M8 mixed lines vs Valdez's Tunnel Wall rock routes of the same names.
     - **A tie the grade parser cannot break**: `gradeNumFor` scores "5.9" and "5.9+" alike, so "keep
       the HIGHER grade" needs a tie-break on the suffix ("+" over none over "-") or a fold quietly keeps
       the lower-reading one. 0278's planner (`higher.mjs`) applies it.
