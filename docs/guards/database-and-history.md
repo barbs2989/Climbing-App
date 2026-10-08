@@ -412,6 +412,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     5.4 / WI3 and Percolator 5.7 / WI3+ (Rumney's Parking Lot Wall), The Sundial 5.12a / Sundial V0.
     Different climbs, listed as READ. The fold kept every cross-discipline same-name pair apart for
     the same reason; only same-discipline twins were merged.
+  - **The area folds left 13 more (2026-10-08).** Folding two copies of one wall (0251, 0256, 0261)
+    brought both imports' row for each climb into one area — one row the FA, the other the pitches
+    and length. 0271 merged 10 (higher grade kept); listed as READ: Discord 5.8 trad / WI4+ ice,
+    Headless Horseman 5.10b / V7, "Unknown Left" 5.10c/d / 5.10b (placeholder, different grades). A
+    future fold should expect this guard to name its leftovers.
   - **catalog_key is recomputed in JS** (`lib/search.js` `searchCanon` + 0214's stoplist). In SQL
     it does not finish over 211k routes: measured `57014` at the default timeout, then a gateway
     **524** with `statement_timeout = 300s`. `check:search-norm` keeps the JS and SQL tables one.
