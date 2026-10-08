@@ -1,9 +1,41 @@
 {
  "about": "Areas scripts/lib/generic-area-name.mjs calls generic that are, on reading, the place's real name. Read by check:generic-area-names; an entry whose name changed is reported as stale.",
  "exempt": {
-  "me_the_general": { "name": "The General", "why": "a boulder: its siblings under Deadham Railroad are The Captain, The Colonel, The Major and The Private" },
-  "me_the_general_boulders": { "name": "The General Boulders", "why": "the boulder group named for The General (above) — not 'general' as in miscellaneous" },
-  "ut_a_crags": { "name": "A Crags", "why": "San Rafael Reef's lettered crags, A through N (B Crags = Spotted Wolf Canyon, E Crags = DBC Canyon) — the letter is the name" },
-  "ut_n_crags": { "name": "N Crags", "why": "San Rafael Reef's lettered crags, A through N — the letter is the name" }
+  "me_the_general": {
+   "name": "The General",
+   "why": "a boulder: its siblings under Deadham Railroad are The Captain, The Colonel, The Major and The Private"
+  },
+  "me_the_general_boulders": {
+   "name": "The General Boulders",
+   "why": "the boulder group named for The General (above) — not 'general' as in miscellaneous"
+  },
+  "ut_a_crags": {
+   "name": "A Crags",
+   "why": "San Rafael Reef's lettered crags, A through N (B Crags = Spotted Wolf Canyon, E Crags = DBC Canyon) — the letter is the name"
+  },
+  "ut_n_crags": {
+   "name": "N Crags",
+   "why": "San Rafael Reef's lettered crags, A through N — the letter is the name"
+  },
+  "co_crags_the": {
+   "name": "The Crags",
+   "why": "a real place name, not a bucket (researched 2026-10-07): Mountain Project has an area 'The Crags' (west face of Twin Sisters, Hwy 7 south of Estes Park) containing Sharksfin, Pinpoint, Castaway Crag, Enos Mills spire, Great Face, Highlander Crag, Wizard's Gate; a climber trip "
+  },
+  "id_boulders_the": {
+   "name": "The Boulders",
+   "why": "a real place name, not a bucket (researched 2026-10-07): rockclimbing.com lists 'The Boulders' as a named Table Rock section (23 climbs) alongside The Quarry and The Fortress; Mountain Project describes the boulders as a sandstone outcrop beside the trail up Table Rock. https:"
+  },
+  "wa_boulders_the": {
+   "name": "The Boulders",
+   "why": "a real place name, not a bucket (researched 2026-10-07): The Fossil Rock trail guide on MP names 'The Boulders', 'The Hideout' and 'Madrona Gully' as backside zones reached by the Savannah Trail, so it is a locally used name, but no climbs documented. https://www.mountainproje"
+  },
+  "ca_the_areas": {
+   "name": "The Areas",
+   "why": "a real place name, not a bucket (researched 2026-10-07): MP Main Elsewhere: 'its right two-thirds is called The Areas', divided into five sections (Area Five, Area Three have MP pages); guidebook A Climber's Guide to the Sonora Pass Highway. https://www.mountainproject.com/are"
+  },
+  "ma_general_the": {
+   "name": "The General",
+   "why": "a real place name, not a bucket (researched 2026-10-07): a 10 ft boulder at Borderland State Park called The General; its V10+ project is on the face right of its arête (leaf research, batch 4a)"
+  }
  }
 }

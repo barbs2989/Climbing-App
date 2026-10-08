@@ -21,34 +21,34 @@
 
 begin;
 
-create function pg_temp.mk(p_id text, p_name text, p_parent text, p_lat float8, p_lng float8, p_type text, p_region text) returns void language plpgsql as $f$
+create or replace function pg_temp.mk(p_id text, p_name text, p_parent text, p_lat float8, p_lng float8, p_type text, p_region text) returns void language plpgsql as $f$
 begin
   if exists (select 1 from areas where id = p_id) then raise exception '0259: % already exists', p_id; end if;
   insert into areas (id, name, parent_id, area_type, region, lat, lng) values (p_id, p_name, p_parent, p_type, p_region, p_lat, p_lng);
 end $f$;
-create function pg_temp.mv_area(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
+create or replace function pg_temp.mv_area(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
 begin
   update areas set parent_id = p_to where id = p_id and parent_id = p_from;
   if not found then raise exception '0259: % is not under % (re-parent to %)', p_id, p_from, p_to; end if;
 end $f$;
-create function pg_temp.mv_all(p_from text, p_to text, p_n int) returns void language plpgsql as $f$
+create or replace function pg_temp.mv_all(p_from text, p_to text, p_n int) returns void language plpgsql as $f$
 declare k int;
 begin
   select count(*) into k from routes where area_id = p_from;
   if k <> p_n then raise exception '0259: % holds % climbs, the plan read %', p_from, k, p_n; end if;
   update routes set area_id = p_to where area_id = p_from;
 end $f$;
-create function pg_temp.mv_one(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
+create or replace function pg_temp.mv_one(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
 begin
   update routes set area_id = p_to where id = p_id and area_id = p_from;
   if not found then raise exception '0259: climb % is not on %', p_id, p_from; end if;
 end $f$;
-create function pg_temp.ren(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
+create or replace function pg_temp.ren(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
 begin
   update areas set name = p_to where id = p_id and name = p_from;
   if not found then raise exception '0259: % is not named "%"', p_id, p_from; end if;
 end $f$;
-create function pg_temp.typ(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
+create or replace function pg_temp.typ(p_id text, p_from text, p_to text) returns void language plpgsql as $f$
 begin
   update areas set area_type = p_to where id = p_id and area_type is not distinct from p_from;
   if not found then raise exception '0259: % is not a %', p_id, p_from; end if;
@@ -56,7 +56,7 @@ end $f$;
 -- ONE climb filed twice, now in one area: the keeper fills each BLANK column from the copy (every column
 -- the table has, read from the catalog, so a column added later is not silently skipped), then the copy
 -- goes. Aborts if any climber row points at the copy — nothing of anybody's is cascaded away.
-create function pg_temp.merge_route(p_keep text, p_drop text) returns void language plpgsql as $f$
+create or replace function pg_temp.merge_route(p_keep text, p_drop text) returns void language plpgsql as $f$
 declare c record; sets text := ''; k int;
 begin
   if (select area_id from routes where id = p_keep) is distinct from (select area_id from routes where id = p_drop) then
@@ -82,7 +82,7 @@ begin
   if not found then raise exception '0259: copy % was not there to delete', p_drop; end if;
 end $f$;
 -- the importer's SPLIT_SUFFIX: a place's own climbs, moved beside its new sub-areas, are named by what they are
-create function pg_temp.namesplit(p_id text, p_base text) returns void language plpgsql as $f$
+create or replace function pg_temp.namesplit(p_id text, p_base text) returns void language plpgsql as $f$
 begin
   update areas set name = p_base || (select case when bool_and(discipline = 'bouldering') then ' Bouldering'
     when bool_and(discipline in ('ice', 'mixed')) then ' Ice Climbs' else ' Routes' end from routes where area_id = p_id)
@@ -90,7 +90,7 @@ begin
   if not found then raise exception '0259: split child % missing', p_id; end if;
 end $f$;
 -- delete an emptied area; a climber's photo/note on it moves to its keeper; a FOLD fills the keeper's blanks
-create function pg_temp.del(p_id text, p_into text, p_fill boolean) returns void language plpgsql as $f$
+create or replace function pg_temp.del(p_id text, p_into text, p_fill boolean) returns void language plpgsql as $f$
 begin
   if exists (select 1 from areas where parent_id = p_id) then raise exception '0259: % still has sub-areas', p_id; end if;
   if exists (select 1 from routes where area_id = p_id) then raise exception '0259: % still holds climbs', p_id; end if;

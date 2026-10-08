@@ -537,6 +537,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     "Grand Ledge (aka Oak Park) Bouldering" / "… Routes" rather than one area.
   - Rollback: `scripts/rollback-generic-area-fold-<ms>.json` (every touched area's full row, every moved
     climb's prior area, every merged-away climb's full row).
+  - **A name made of generic words can still be a PLACE** — owner, after 0259: *"if it actually names a
+    place then keep it"*. Every name 0259 removed that could be a proper name was researched
+    (`real-names.json`); **0262** put back the ones a source USES as a place: "The Crags" (Twin Sisters'
+    west face, 16 crags re-nested), "The Areas" (Main Elsewhere's right two-thirds), Table Rock's and
+    Fossil Rock's "The Boulders", Borderland's boulder "The General" — all now exempt. Left folded, no
+    source naming them: "The Boulders" at Boulder Mountain AZ, Puoux, Fork Run, Crag In The Clouds,
+    Salt Fork's "The General Boulders". The rule cannot tell these apart by spelling — **research, then
+    exempt; never widen the vocabulary to dodge one**.
+  - **Replay trap**: a Supabase preview runs every migration in ONE session, so a `pg_temp` helper two
+    migrations both define must be `create or replace` (`check:migration-replay` caught 0262 redefining
+    0259's `pg_temp.mv_area`).
 
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
