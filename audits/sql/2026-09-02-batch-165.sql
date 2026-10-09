@@ -1,0 +1,12 @@
+-- WA alpine audit — batch 165 (pass 3)
+-- wa_south_early_winter_spire_east_buttress: dist_km stored as 6.6, a ~2.7x outlier
+-- against its own peak. Two sibling routes on the same buttress/basin
+-- (wa_south_early_winter_spire_direct_east_buttress, wa_south_early_winter_spire_passenger)
+-- both store 2.4 km via essentially the same Blue Lake basin / Spire Gully approach to the
+-- NEWS-SEWS notch, and this row's own approach text is near-verbatim the same route to the
+-- same buttress base. External corroboration (aggregated route-guide search results):
+-- "follow the main trail about one and a half miles to the well-worn climber's trail and
+-- climb it into the basin. From there, scramble to the base of the tower" — consistent with
+-- ~2-2.5 mi (3.2-4 km) one-way, nowhere near 6.6 km. Setting to match the sibling route that
+-- shares this exact approach and buttress.
+UPDATE routes SET dist_km = 2.4 WHERE id = 'wa_south_early_winter_spire_east_buttress';

@@ -1,0 +1,113 @@
+-- WA alpine audit, pass 7, batch 386 (2026-10-07)
+-- Routes checked: wa_booker_mountain_northeast_face, wa_boston_peak_southeast_face,
+-- wa_boving_christensen, wa_boving_roofs, wa_bryant_peak_north_route,
+-- wa_bryant_peak_west_face, wa_buckner_mountain_north_face,
+-- wa_buckner_mountain_southwest_face
+
+BEGIN;
+
+-- wa_bryant_peak (areas row): stored prominence_ft (346) matches no source
+-- found. Wikipedia's "Bryant Peak" infobox gives 321 ft (98 m), with parent
+-- peak Chair Peak (6,238 ft, 0.65 mi away) -- consistent with the area's own
+-- elevation (5,801 ft, independently confirmed) and parent-peak text. Checked
+-- twice independently (two separate websearch passes); no source anywhere
+-- (Wikipedia, SummitPost, or any other hit) gives 346 ft for this peak.
+UPDATE areas
+SET prominence_ft = 321
+WHERE id = 'wa_bryant_peak'
+  AND prominence_ft = 346;
+
+COMMIT;
+
+-- Flagged for human review, not fixed this batch:
+--
+-- wa_bryant_peak_north_route: a near-empty stub row (id/area_id/name/
+-- discipline/name_search only -- no grade, FA, approach, or any other
+-- content). No source found (SummitPost, Mountaineers.org, climberkyle.com's
+-- survey of newer Snoqualmie-area lines, general web search) names a "North
+-- Route" on Bryant Peak at all. Documented named lines on this peak are only
+-- the standard scramble and a "Northeast Face" ice route (WI3, FA 1994,
+-- Hatfield et al.). This looks weaker than a typical "awaiting enrichment"
+-- stub -- recommend a human check a physical copy of Beckey's Cascade Alpine
+-- Guide Vol. 1 (not indexed online) before investing more enrichment here, or
+-- else retire the row if it cannot be substantiated.
+--
+-- wa_bryant_peak_west_face: grade (5.2 YDS) and fa ("Ray Clough and Charles
+-- Kirschner, July 10, 1938") are the only two fields populated. No source
+-- found confirms this FA. Weak counter-evidence: a 2019-2020 climber's blog
+-- (climberkyle.com) describing a new ice line specifically on Bryant Peak's
+-- west side states the party "could find nothing about these routes in the
+-- Beckey Guide, WA Ice book, or online" before treating their January 2020
+-- line as a first ascent on that face -- i.e. a modern party who researched
+-- this exact face found no prior route record. (Ray Clough himself is a real,
+-- independently-confirmed 1938 WA climber -- he's credited on this same
+-- database's wa_boston_peak 1938 FA alongside Bressler/Cox/Myers -- so his
+-- name being attached to another 1938 ascent is plausible on its own; that
+-- doesn't confirm this specific claim.) Needs a human with physical guidebook
+-- access (Beckey Vol. 1) rather than a further websearch pass.
+--
+-- wa_booker_mountain (areas row): prominence_ft (992) -- no single
+-- authoritative figure found; estimates range from ~960 ft (Peakery) to
+-- ~1,000 ft (PeakVisor). 992 falls inside that range but isn't independently
+-- pinned down either way -- not a confident fix.
+--
+-- wa_boston_peak_southeast_face: descent_text describes rappelling the SE/E
+-- face to snow at the head of the *Boston Glacier*, then reversing a glacier
+-- traverse to the Sahale-Boston col before descending the Quien Sabe Glacier.
+-- Mountaineers.org and countryhighpoints.com instead describe the rappels
+-- landing directly on the *Quien Sabe* side, without a Boston Glacier
+-- crossing. Could be an error, or a legitimate variant -- needs a human to
+-- check a primary route description (Beckey guide or a detailed trip report)
+-- before touching this field.
+--
+-- wa_boving_christensen (Prusik Peak): route's existence is corroborated (a
+-- Stephen Abegg trip report lists it among "all the main routes on Prusik"),
+-- and pitch count/length (4 pitches, ~450 ft = 137 m) match on file exactly.
+-- But the FA credit (Paul Boving and Matt Christensen) has no independent
+-- source confirming it -- it isn't on Mountain Project's indexed Prusik route
+-- list, though an MP photo caption references the name. Also the route's own
+-- `descent` field ("two rappels to the West Ridge base, or finish the West
+-- Ridge") and `descent_text` field (one 60m rappel down the north side,
+-- shared with Solid Gold/Energizer Bunny) read as two different descents, not
+-- obviously the same one described two ways -- needs a human with Mountain
+-- Project or Beckey/guidebook access (both blocked by this session's network
+-- egress) to confirm the FA and reconcile the two descent descriptions.
+--
+-- wa_boving_roofs (South Early Winters Spire): route and FA (Paul Boving and
+-- Steve Pollock, 5.10b, 3 pitches, 220 ft = 67 m) are corroborated by Mountain
+-- Project. But the route's `approach` field also names an alternate approach
+-- via a "Northwest Face/Boving-Pollock line" -- no source found for a
+-- separately-named "Boving-Pollock" route on this peak; the only other
+-- "Boving" feature found is "Boving Roof," a belay-point landmark on the
+-- Southwest Rib's own pitch 3 (presumably the same feature this route is
+-- named for), not a distinct named line. The area's own prominence_ft (647)
+-- is also unconfirmed -- the only figure found (Wikipedia) covers the
+-- combined "Early Winters Spires," not the South spire individually. Needs a
+-- human with direct Mountain Project / guidebook access to sort out the
+-- "Boving-Pollock" reference and the SEWS-specific prominence.
+--
+-- wa_buckner_mountain_north_face: `season` ("Jul-Sep") and `best_season`
+-- ("Late May through early July") read as contradictory for an ice/snow
+-- route, where typically the earlier window is correct (ice/snow routes
+-- thin out by late summer). A subagent's search leaned toward best_season
+-- being right and season being wrong, but an independent re-check here found
+-- mixed signal -- Mountaineers.org club trips for this route have run in
+-- July in multiple years, which cuts against writing it off as impossible.
+-- Not confident enough to fix; needs a human to check what `season` vs.
+-- `best_season` are each meant to encode for this route before touching
+-- either field.
+-- Separately: the route's descent_text places the Davenport Mine at
+-- 6,200-6,400 ft, but the only outside source found for the mine itself
+-- (Mindat, Western Mining History) puts it around 7,598 ft. The mine's
+-- existence/location (upper Horseshoe Basin) checks out; the specific
+-- elevation band in the descent text does not match that one source -- flag,
+-- don't fix, since the descent text may be describing where the *traverse*
+-- passes near the mine rather than the mine's own benchmark elevation.
+--
+-- wa_buckner_mountain_southwest_face: fa ("Lewis Ryan, August 1, 1901") is
+-- CONFIRMED by two independent sources (Wikipedia, SummitPost) -- an
+-- unusually early date, but plausible for Buckner's non-technical standard
+-- route, and not an error. Elevation (9114), prominence (3034), and the "3rd
+-- highest in NCNP / 14th highest in WA / 11th on the Bulger list" ranking
+-- claims on the area row also all check out against multiple independent
+-- sources. No fix needed for this route or area.
