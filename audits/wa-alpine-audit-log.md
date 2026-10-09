@@ -31315,3 +31315,54 @@ consistent with EGRESS_BLOCKED) on every domain tried, including alpenglow.org/N
 americanalpineclub.org; WebSearch snippets were again the sole working method.
 
 Pass 7 continues next run after `wa_east_ridge_3`.
+
+## 2026-10-09 — Pass 7, Batch 399
+
+Ten routes across six peaks: Inspiration Peak's East Ridge, East Twin Needle's North Buttress
+("Thread of Gneiss"), South Route and Thread of Ice, Eldorado Peak's East Ridge, Northwest
+Couloir/Eldorado Glacier and North Ridge, Pinnacle Peak (Tatoosh)'s East Ridge, Ingalls Peak's
+East Ridge, and Primus Peak's East Slope.
+
+**One confirmed fix, but not from an external source** — see `audits/sql/2026-10-09-batch-399.sql`.
+`wa_eldorado_peak_eldorado_glacier_nw`'s `fa` field named "Dan Cauthorn and Bill Pilling," but the
+same row's own `data_quality.gaps` already states "No confirmed first-ascent party/date found," and
+no source checked (AAJ, SummitPost, Mountain Project, alpinedave.com, climberkyle.com,
+turns-all-year.com) credits that pair with this route. Clearing the field rather than guessing a
+replacement.
+
+**Clean, independently reconfirmed end-to-end:** Eldorado Peak's East Ridge (FA Blair/Grigg/
+Winder/Wilson, Aug 27 1933; Class 2; NPS fee structure; approach/descent narrative) matched
+Wikipedia, Mountain Project, WTA and NPS exactly. East Twin Needle's North Buttress (FA Wehrly/
+Boyce, July 31 2022, naming history back to John Roper's 1981 "Thread of Gneiss"/"Thread of Ice")
+and Thread of Ice (FA Abegg/Wallace, June 27 2009) both matched AAJ/AAC writeups and Steph Abegg's
+own trip report exactly. Pinnacle Peak's East Ridge and Ingalls Peak's East Ridge (grade, FA,
+elevation, coordinates, permit/land-manager scoping) matched Mountaineers.org, SummitPost and
+Wikipedia. Primus Peak's elevation and the SR 20 road-closure/reopening note (Dec 2025 washout,
+March 2026 rockslide, June 14 2026 full reopening) were independently confirmed via WSDOT/news
+coverage.
+
+**Flagged for human review:** Eldorado's North Ridge grade (stored 5.7) vs. Mountain Project's
+consensus 5.8 — sources split, one trip report's own estimate ("about 5.6/7") sits closer to the
+stored value, so not treated as a confirmed error. The same Northwest Couloir route's `length_m`
+(480 m ≈ 1,574 ft) sits oddly against its own overview/beta text, which repeatedly describes the
+technical section as "~1,000 ft" — an internal mismatch, not externally sourced either way — and
+its `rappels` field appears to describe a rappel used on the approach into the couloir rather than
+the actual summit descent, which the row's own `descent_text` says is a walk-off. Primus Peak's
+stored longitude (-121.092) is contradicted by one Wikipedia-snippet citation (-120.09) but
+corroborated by two other independent sources plus the route's own approach geometry, so the
+stored value is very likely correct and was left alone pending a direct check of Wikipedia's raw
+infobox. Pinnacle Peak's East Ridge grade (5.5 vs. a Beckey-cited 5.6 in one source) and season
+window (DB's Jul–Sep vs. Mountaineers.org's Jun–Sep) are genuine cross-source splits. Ingalls
+Peak's pitch count (DB's 6 vs. SummitPost/Nelson-Potterfield's 5) is likely just a differing
+pitch-counting convention on low-angle terrain, not an error.
+
+Everything else checked this batch — coordinates, gain/distance figures, grades, permit/fee
+structures, approach narratives — matched independent sources with no discrepancy worth recording
+individually.
+
+**Tooling notes:** Delegated research to 3 parallel subagents (Inspiration Peak + East Twin
+Needle; Eldorado Peak's three routes; Pinnacle Peak + Ingalls Peak + Primus Peak). WebFetch was
+blocked (DNS/ENOTFOUND, consistent with EGRESS_BLOCKED) on every domain tried; WebSearch snippets
+were the sole working method, as in prior batches.
+
+Pass 7 continues next run after `wa_eldorado_peak_north_ridge`.
