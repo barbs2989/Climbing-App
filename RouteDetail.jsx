@@ -3848,11 +3848,12 @@ function HourChartCard({all,week,selIdx,title,series,lo,hi,axisFmt,bars,extra,re
   return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 12px",marginTop:12}}>
     <div style={{fontSize:14.5,fontWeight:800,color:C.text}}>{title}</div>
     <div aria-live="polite" style={{marginTop:6}}>
-      <div style={{fontSize:12.5,fontWeight:700,color:C.textSub,marginBottom:5}}>{(week?wkDay(a.date)+" · ":"")+clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>
+      <div style={{fontSize:12.5,fontWeight:700,color:C.textSub,marginBottom:5}}>{(week?wkDay(a.date)+" · ":"")+clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{marginLeft:10,padding:"2px 9px",borderRadius:20,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+(week?wkDay(all[selIdx].date)+" · ":"")+clockHr(all[selIdx].hr)}</button>:null}</div>
       <TileGrid min={104}>{readout(a)}</TileGrid>
     </div>
     <svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block",touchAction:"pan-y",marginTop:8}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+(week?" through the week":" through the day")+"; drag along it to read each hour"}>
-      {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderLight} opacity={0.45}/>:null}
+      {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderHi} opacity={0.35}/>:null}
+      {lastPast>=0&&x(lastPast)-L>40?<text x={L+4} y={PH-4} fontSize="10.5" fill={C.textMuted}>already past</text>:null}
       <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
       {mids.map(function(i){return <line key={"m"+i} x1={x(i)} x2={x(i)} y1={0} y2={PH} stroke={C.borderHi} strokeDasharray="2 3"/>;})}
       <text x={L-4} y={y(hi)+4} fontSize="11" fill={C.textMuted} textAnchor="end">{axisFmt(hi)}</text><text x={L-4} y={y(lo)+4} fontSize="11" fill={C.textMuted} textAnchor="end">{axisFmt(lo)}</text>
@@ -3868,10 +3869,13 @@ function HourChartCard({all,week,selIdx,title,series,lo,hi,axisFmt,bars,extra,re
 }
 function HourlyChart({all,selUtc,week}){
   const [pin,setPin]=useState(null);useEffect(function(){setPin(null);},[selUtc,week]);
-  if(!all||all.length<2)return null;
-  const n=all.length;
-  const sel=all.findIndex(function(h){return h.utc===selUtc;});
+  const chipsRef=useRef(null);
+  const n=all?all.length:0;
+  const sel=all?all.findIndex(function(h){return h.utc===selUtc;}):-1;
   const selIdx=pin!=null&&pin<n?pin:(sel>=0?sel:0);
+  // The chip row opens on the picked hour, not on midnight: scroll the ROW (never the page) so it sits in the middle.
+  useEffect(function(){const row=chipsRef.current,b=row&&row.children[selIdx];if(b)row.scrollLeft+=b.getBoundingClientRect().left-row.getBoundingClientRect().left-(row.clientWidth-b.offsetWidth)/2;},[selIdx,n,week]);
+  if(!all||all.length<2)return null;
   const W=340,L=34,R=58,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
   const T=all.map(function(h){return uTempN(h.temp);}),F=all.map(function(h){return uTempN(h.feels);}),D=all.map(function(h){return uTempN(h.dew);});
   const tv=T.concat(F,D).filter(function(v){return v!=null;});
@@ -3886,8 +3890,8 @@ function HourlyChart({all,selUtc,week}){
   const spanOf=function(h){return spanEnding(h.hr);},atOf=function(h){return "at "+clockHr(h.hr);};
   const card=function(key,title,series,lo,hi,axisFmt,bars,extra,readout){return <HourChartCard key={key} all={all} week={week} selIdx={selIdx} title={title} series={series} lo={lo} hi={hi} axisFmt={axisFmt} bars={bars} extra={extra} readout={readout}/>;};
   return <div>
-    {!week?<div role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>:null}
-    <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>At 2 PM</b>{": the reading at that moment (temperature, wind, humidity, cloud)."}</div><div style={{marginTop:2}}><b>During 1–2 PM</b>{": a total or peak over the hour just before (rain, chance of rain, gusts)."}</div><div style={{marginTop:2}}>Each chart below has its own readout. Drag along a chart, or tap an hour above, to read it.</div></div>
+    {!week?<div ref={chipsRef} role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>:null}
+    <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>At 2 PM</b>{": the reading at that moment (temperature, wind, humidity, cloud)."}</div><div style={{marginTop:2}}><b>During 1–2 PM</b>{": a total or peak over the hour just before (rain, chance of rain, gusts)."}</div><div style={{marginTop:2}}>{"Each chart below has its own readout. Drag along a chart"+(week?"":", or tap an hour above")+", to read it."}</div></div>
     {tv.length?card("t","Temperature",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";},null,null,function(h){const damp=h.temp!=null&&h.dew!=null&&h.temp-h.dew<5;return [
       <Tile key="t" label="Temperature" when={atOf(h)} value={h.temp!=null?uTemp(h.temp):NOT_MEASURED} tone={h.temp!=null?wxTempColor(h.temp):null}/>,
       <Tile key="f" label="Feels like" when={atOf(h)} value={h.feels!=null?uTemp(h.feels):NOT_MEASURED}/>,
