@@ -146,6 +146,7 @@ import { assertDbReachable } from "./lib/db-preflight.mjs";
 import { SPINNER_RE } from "./lib/render-settle.mjs";
 import { tapByName } from "./lib/tap-by-name.mjs";
 import { tapByText } from "./lib/tap-by-text.mjs";
+import { tapMenuItem } from "./lib/menu-screens.mjs";
 
 const claim = (start) => new Promise((res, rej) => {
   let p = start;
@@ -534,7 +535,7 @@ async function walk(browser, base, session, fail) {
   if (!(await tapByName(page, "Crews"))) out.__navFail = (out.__navFail || []).concat("Crews (for sub-views)");
   await settle(page);
   for (const sub of CREW_SUBS) {
-    if (await tapByName(page, sub)) out["Crew:" + sub] = await waitOutFetch(page, fail);
+    if (await tapMenuItem(page, sub)) out["Crew:" + sub] = await waitOutFetch(page, fail);
     else {
       // A sub-tab click that does not land leaves the PREVIOUS view on screen, and that reads
       // as a clean twin of the healthy run rather than as a miss -- a false pass on a screen

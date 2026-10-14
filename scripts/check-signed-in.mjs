@@ -60,7 +60,7 @@ import { createFixture, sessionForStorage, STORAGE_KEY } from "./lib/ui-fixture.
 import { durableFixture, durableCredsPresent } from "./lib/durable-fixture.mjs";
 import { NEEDS_EXTRA_STATE, assertKnownOverlays } from "./lib/overlay-scaffold.mjs";
 import { settledText, looksLikeSpinner } from "./lib/render-settle.mjs";
-import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
+import { MENU_SCREENS, openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -399,11 +399,11 @@ try {
   log("a group the signed-in account owns:");
   await reset();
   await tap("Crews");
-  // Groups are a sub-tab of Crew, not of Partners. Its label carries a count ("Groups1"),
-  // which clickText's trailing-digits allowance handles.
-  const toGroups = await clickText("Groups");
+  // Groups open from the Menu's "Yours" tiles; the Crew tab is crews only (it used to be a
+  // Crew sub-tab whose label carried a count, "Groups1").
+  const toGroups = await tapMenuItem(page, "Groups");
   asserted++;
-  if (!toGroups) fail("Group:detail", "could not find the Groups sub-tab on the Crew screen");
+  if (!toGroups) fail("Group:detail", "could not find the Groups tile in the Menu");
   await page.waitForTimeout(2000);
   // THIS run's group, by name, not a constant. In CI the accounts are durable and shared, so
   // a hardcoded name meant every concurrent run opened the same group and asserted on state

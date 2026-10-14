@@ -11,7 +11,11 @@ import { C } from "../ClimbMatchCore.jsx";
    Each handle is a real slider (role="slider", focusable, arrow keys, Home/End, PageUp/PageDown) with its
    own name, so a screen reader hears "Ideal temperature, lowest 45°". Pointer events with capture, and
    touch-action:none on the handles, so dragging on a phone moves the handle and does not scroll the page. */
-const THUMB = 28;
+/* THUMB is the circle you SEE; HIT is the area that takes the touch. Apple's guideline for a touch target is
+   44 pt (WCAG 2.2 AA asks 24 px), and a 28 px circle is a poor mark for a thumb, so the handle is a 44 px
+   transparent button around the same circle. Two handles at the narrowest range sit 11 px apart, so their
+   hit areas overlap; the high one is on top, and each handle's OUTER edge stays its own. */
+const THUMB = 28, HIT = 44;
 export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, snap, step }) {
   const box = useRef(null);
   const [lo, hi] = value;
@@ -40,17 +44,19 @@ export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, sna
       onKeyDown={key}
       onPointerDown={function (e) { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (x) { /* no capture: the move events still arrive over the thumb */ } e.preventDefault(); e.currentTarget.focus(); }}
       onPointerMove={function (e) { let cap = false; try { cap = e.currentTarget.hasPointerCapture(e.pointerId); } catch (x) { cap = false; } if (!cap) return; const raw = fromPointer(e); if (raw != null) move(which, raw); }}
-      style={{ position: "absolute", top: 0, left: "calc(" + pos(v) + "% - " + THUMB / 2 + "px)", width: THUMB, height: THUMB, borderRadius: "50%", background: C.green, border: "3px solid " + C.surface, boxShadow: "0 0 0 1px " + C.green + ", 0 1px 4px rgba(0,0,0,0.4)", cursor: "grab", touchAction: "none", outlineOffset: 3, zIndex: which === "lo" ? 2 : 3 }} />;
+      style={{ position: "absolute", top: 0, left: "calc(" + pos(v) + "% - " + HIT / 2 + "px)", width: HIT, height: HIT, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", cursor: "grab", touchAction: "none", outlineOffset: -2, zIndex: which === "lo" ? 2 : 3 }}>
+      <span aria-hidden="true" style={{ width: THUMB, height: THUMB, borderRadius: "50%", background: C.green, border: "3px solid " + C.surface, boxShadow: "0 0 0 1px " + C.green + ", 0 1px 4px rgba(0,0,0,0.4)", pointerEvents: "none", boxSizing: "content-box" }} />
+    </div>;
   };
   return <div>
     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 6 }}>
       <span style={{ fontSize: 15, fontWeight: 800, color: C.green }}>{fmt(lo)} <span style={{ color: C.textMuted, fontWeight: 600 }}>to</span> {fmt(hi)}</span>
     </div>
-    <div style={{ padding: "0 " + THUMB / 2 + "px" }}>
-      <div ref={box} style={{ position: "relative", height: THUMB, touchAction: "none" }}
+    <div style={{ padding: "0 " + HIT / 2 + "px" }}>
+      <div ref={box} style={{ position: "relative", height: HIT, touchAction: "none" }}
         onPointerDown={function (e) { if (e.target !== e.currentTarget) return; const raw = fromPointer(e); if (raw == null) return; move(Math.abs(raw - lo) <= Math.abs(raw - hi) ? "lo" : "hi", raw); }}>
-        <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, top: THUMB / 2 - 3, height: 6, borderRadius: 3, background: C.border, pointerEvents: "none" }} />
-        <div aria-hidden="true" style={{ position: "absolute", left: pos(lo) + "%", width: (pos(hi) - pos(lo)) + "%", top: THUMB / 2 - 3, height: 6, borderRadius: 3, background: C.green, pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", left: 0, right: 0, top: HIT / 2 - 3, height: 6, borderRadius: 3, background: C.border, pointerEvents: "none" }} />
+        <div aria-hidden="true" style={{ position: "absolute", left: pos(lo) + "%", width: (pos(hi) - pos(lo)) + "%", top: HIT / 2 - 3, height: 6, borderRadius: 3, background: C.green, pointerEvents: "none" }} />
         {thumb("lo", lo, "lowest")}
         {thumb("hi", hi, "highest")}
       </div>
