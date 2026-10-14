@@ -31655,3 +31655,95 @@ primary method; WebFetch to mountainproject.com/summitpost.org again failed with
 errors in at least one subagent, consistent with prior batches.
 
 Pass 7 continues next run after `wa_glacier_peak_cool_glacier_gerdine`.
+
+## 2026-10-14 — Pass 7, Batch 404
+
+Continued from `wa_glacier_peak_cool_glacier_gerdine` through `wa_goat_mountain_southeast_face`.
+Nine routes across two peaks: Glacier Peak's Frostbite Ridge, Gerdine Ridge/Cool Glacier,
+Kennedy Glacier, Sitkum Glacier, South Tahoma Headwall and Tahoma Cleaver; Goat Mountain's
+(Mt. Baker Wilderness) Eastern Route, South Ridge and Southeast Face.
+
+**No confirmed errors this batch — no SQL file.** Everything found was either internally
+consistent with sourced facts, or a genuine cross-source conflict / unconfirmable claim with
+no single clear authoritative value to fix to. Per audit guardrails, nothing below was
+corrected without a citable contradiction.
+
+**Most notable finding (flagged, not fixed — likely misfiled Mount Rainier routes):**
+`wa_glacier_peak_south_tahoma_headwall` and `wa_glacier_peak_tahoma_cleaver` are, with strong
+multi-source evidence, Mount Rainier features stored under Glacier Peak's `area_id`. "Tahoma"
+is Mount Rainier's Native name and is never used for Glacier Peak terrain — Glacier Peak's own
+glaciers (Kennedy, Scimitar, Vista, Chocolate, Cool, Sitkum, Ermine, Gerdine, Dusty, Suiattle,
+Columbia, per USGS/MyTopo and SummitPost) include no "Tahoma" anything. "South Tahoma Glacier"
+and its headwall, and "Tahoma Cleaver" (the rock rib bounding the Tahoma Glacier's right side),
+are independently documented Rainier west-side features (Wikipedia's Tahoma Glacier article,
+ski-mountaineering trip reports via Camp Muir). Both rows are near-empty stubs and are the only
+two in this batch marked `auto_generated: false` (the other four are `true`), consistent with
+stray/mis-tagged imports rather than the normal enrichment pipeline. South Tahoma Headwall's
+only other populated field, `fa: "Steve Marts and Fred Beckey on July 12, 1963"`, could not be
+independently corroborated but is plausible for Beckey's west-side Rainier activity in that era
+— nothing about it suggests Glacier Peak. Flagged for a human to confirm and either delete both
+rows or re-file them under Mount Rainier's area_id; this audit has no authority to reassign or
+delete rows.
+
+**Second notable finding (flagged, not fixed — likely fabricated route):** Goat Mountain's
+`wa_goat_mountain_southeast_face` has no grade, pitches, length, coordinates or description —
+only an FA claim ("Pete Doorish and Ross Guffey, September 1985") that could not be corroborated
+anywhere (no AAJ archive hit, no Mountain Project/SummitPost route, no Cascade Alpine Guide
+reference, no cascadeclimbers.com thread, no hit for either climber's name on any Washington
+peak). Every source describing this peak's climbing in any depth (SummitPost, Mountaineers.org,
+Seattle Met, WTA, Wikipedia) treats it as exclusively a Class 2 trail/scramble peak (heather and
+talus to both the West and East summits) with no technical rock face documented anywhere — the
+consistent silence across well-documented sources is itself evidence against this row, not just
+thin documentation. Also flagged: `wa_goat_mountain_eastern_route` is an entirely empty stub
+whose only content (East Peak) duplicates what `wa_goat_mountain_south_ridge` already covers in
+full (route-finding, waypoints, GPX, and a gain/mileage match to Mountaineers.org's own "Goat
+Mountain East Peak" scramble listing: 11.0 mi / 5,000 ft gain vs. this app's 10.5 mi / 5,000 ft)
+— no source names a second, distinct "Eastern Route." Neither row was touched; both are for a
+human to decide on removal/merge.
+
+**Clean, independently corroborated:** Goat Mountain's peak identity (trailhead
+48.8976/-121.6462, summit ~48.928/-121.626) confirmed as the Skagit Range peak between Mt.
+Larrabee and Mt. Shuksan, not the Dark Divide or Index peaks of the same name — via Wikipedia,
+USFS Trail #673, and SummitPost. South Ridge's trailhead access (FS-32 off SR 542, Northwest
+Forest Pass, $5 day fee), maintained-trail terminus (~5,600 ft) and unmaintained boot path to
+the West Peak, and Mt. Baker Wilderness group-size/no-campfire rules all match USFS, WTA and
+Mountaineers.org exactly. Frostbite Ridge's summit elevation (10,541 ft, USGS), the "Rabbit
+Ears" gendarme downclimb, Grade II commitment, and Sitkum Glacier descent all match
+Mountaineers.org, SummitPost and Alpine Institute. Gerdine Ridge/Cool Glacier's identity as the
+current standard, easiest route up the peak matches SummitPost and Mountain Project. Kennedy
+Glacier's full route beta (bergschrund, snow dome, ~40° headwall, crater-rim crossing) matches
+SummitPost's route page almost verbatim, as does its recommended Frostbite-Ridge/Vista-Glacier
+descent. Sitkum Glacier's status as the most popular route on the peak, its approach via North
+Fork Sauk/PCT/Red Pass/Boulder Basin, and its Class 2-3 summit chute all match multiple
+independent trip reports and guides.
+
+**Flagged for human review (no citable contradiction, just unresolved or conflicting):**
+Goat Mountain South Ridge's high point (stored 6,891 ft) sits inside a genuinely conflicting
+source set (6,820-6,891 ft across SummitPost, Wikipedia/PeakVisor, Mountaineers.org, and a 2003
+trip report) with no consensus on which of the two summits is taller — a human should pick one
+convention rather than treat either figure as settled; also its `season`/`best_season` fields
+disagree with each other, and its stored `gpx` track stops well short of the stored `waypoints`,
+an internal completeness gap. Frostbite Ridge's `alpine_grade: "AD-/PD+"` (no source rates it on
+that scale, only commitment Grade II) and its White Chuck Road/FR 23 closure end-date, which
+doesn't match the one USFS order found (Dec 31 2025, not open-ended) — may reflect a later
+renewal not visible to search. Kennedy Glacier's `grade: "Class 3"` on a route every source
+describes as pure glacier/snow terrain, with no source giving an explicit alternate grade to fix
+to; its `length_m` (1311) is an exact, to-the-meter duplicate of Frostbite Ridge's `length_m`
+despite the two routes having different gain and pitch counts — looks like a copy-paste/
+placeholder artifact worth a human checking across the pipeline, not just this one pair; and a
+~5-week start-date mismatch on the Suiattle River Road closure order. Sitkum Glacier's FA
+(1897 USGS survey party) is a real, citable Mountain Project claim, but Wikipedia and Mazamas
+give conflicting years (1898, 1889) and no source confirms the historic party actually climbed
+this side of the mountain rather than the south-side Gerdine/Cool line — both the date and the
+route attribution are unverified, not just the date. Its `commitment`/`alpine_grade: "III"`
+matches Mountain Project but conflicts with SummitPost's own Grade I-II rating for this same
+route — a genuine cross-source disagreement. Its `gain_ft` is null while `loss_ft` (8,300) is
+populated, though the route's own day-by-day itinerary is symmetric for this out-and-back climb
+— looks like a data-entry gap, not a geographic fact to guess at.
+
+**Tooling notes:** Delegated research to 2 parallel subagents, one per peak (Glacier Peak's 6
+routes; Goat Mountain's 3 routes). WebSearch was the primary method; WebFetch failed with DNS
+resolution errors on every domain tested (including example.com) in at least one subagent,
+consistent with prior batches.
+
+Pass 7 continues next run after `wa_goat_mountain_southeast_face`.

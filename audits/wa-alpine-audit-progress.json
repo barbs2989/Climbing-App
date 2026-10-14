@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_glacier_peak_cool_glacier_gerdine",
+  "last_processed_id": "wa_goat_mountain_southeast_face",
   "total_in_scope_last_count": 747,
   "total_wa_alpine_or_mountaineering_tagged": 843,
-  "pass_note": "Batch 403: 1 confirmed error fixed (Gilbert Peak West Route grade Class 4 -> Class 3, contradicted by SummitPost) across 8 routes (Garfield Mountain x3, Ghost Peak, Gilbert Peak x3, Glacier Peak). Notable: wa_garfield_mountain_southeast_face is an unconfirmable route (no source corroborates it, FA does not match Doorish's known ascents), same shape as the East Rib stub flagged in batch 402. wa_garfield_mountain_southwest_ledges shows stronger evidence of conflation: its route name belongs to a different peak (Ingalls Peak), its credited FA pair's real joint FA is an unrelated crag route, and its 'Infinite Peak' summit name/elevation (4804 ft) does not match the only sourced elevation for Garfield's West Peak (4896 ft) -- the same Infinite Peak/4804ft/Martin-Windham naming pattern already flagged unresolved on Infinite Bliss in batch 402, suggesting a systematic issue across multiple Garfield rows rather than one-off. wa_glacier_peak_cool_glacier_gerdine looks like a duplicate of the separately-stored wa_glacier_peak_gerdine_ridge_cool_glacier row (FKT and SummitPost both describe them as the same line/variation, not two routes). None of these three were fixed or deleted -- flagged for human review per audit guardrails (no delete/merge authority). 1 row clean (Gilbert Peak Conrad Glacier), several other items flagged for human review (mostly unconfirmable details and a stale-looking road-washout claim); see wa-alpine-audit-log.md. Tooling notes: delegated to 4 parallel subagents, one per peak. WebSearch was the primary method; WebFetch to mountainproject.com/summitpost.org again failed with DNS errors in at least one subagent. Pass 7 continues next run after wa_glacier_peak_cool_glacier_gerdine.",
+  "pass_note": "No confirmed errors (no SQL file this batch). Most notable: wa_glacier_peak_south_tahoma_headwall and wa_glacier_peak_tahoma_cleaver show strong multi-source evidence of being misfiled Mount Rainier routes stored under Glacier Peak's area_id ('Tahoma' is Mount Rainier's name, never used for Glacier Peak terrain; both are near-empty stubs and the only two routes in this batch marked auto_generated:false) -- flagged for human reassignment/deletion, no authority to act taken here. wa_goat_mountain_southeast_face looks likely fabricated: an uncorroborated FA claim with no grade/pitches/coordinates, on a peak every source treats as exclusively Class 2 scrambling with no technical face documented anywhere. wa_goat_mountain_eastern_route is an empty stub that looks like a duplicate of wa_goat_mountain_south_ridge's already-documented East Peak line. Also flagged: Kennedy Glacier's length_m is an exact duplicate of Frostbite Ridge's length_m despite differing routes -- possible copy-paste artifact worth checking across the pipeline. Several genuine cross-source conflicts (Goat Mountain high point 6820-6891ft across sources; Sitkum Glacier FA year 1897/1898/1889 and III vs I-II commitment grade) left as flagged, not resolved, per guardrails. Tooling: delegated to 2 parallel subagents, one per peak. WebFetch to mountainproject.com/summitpost.org again failed with DNS errors in at least one subagent.",
   "batches": [
     {
       "batch_number": 1,
@@ -8071,6 +8071,25 @@
       "flagged_for_human_review": 13,
       "clean": 1,
       "note": "One confirmed fix: Gilbert Peak West Route grade corrected from Class 4 to Class 3 (SummitPost explicitly rates it Class 3; no source supports Class 4). Most notable findings, flagged but not fixed (no delete/merge authority): Garfield Mountain Southeast Face is unconfirmable as a real route (FA does not match Doorish's known ascents, same near-empty-stub shape as the East Rib flagged in batch 402); Garfield Mountain Southwest Ledges shows conflation -- its name belongs to Ingalls Peak, its credited FA pair's real joint FA is an unrelated Exit 38 crag route, and its 'Infinite Peak' name/elevation (4804 ft) contradicts the sourced West Peak elevation (4896 ft), echoing an unresolved flag on Infinite Bliss from batch 402; Glacier Peak's Disappointment Peak Cleaver/Gerdine-Cool Glacier row looks like a duplicate of a separately-stored row for the same real-world route. See wa-alpine-audit-log.md for full detail on all 8 routes."
+    },
+    {
+      "batch_number": 404,
+      "date": "2026-10-14",
+      "route_ids": [
+        "wa_glacier_peak_frostbite_ridge",
+        "wa_glacier_peak_gerdine_ridge_cool_glacier",
+        "wa_glacier_peak_kennedy_glacier",
+        "wa_glacier_peak_sitkum_glacier",
+        "wa_glacier_peak_south_tahoma_headwall",
+        "wa_glacier_peak_tahoma_cleaver",
+        "wa_goat_mountain_eastern_route",
+        "wa_goat_mountain_south_ridge",
+        "wa_goat_mountain_southeast_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 15,
+      "clean": 4,
+      "note": "No confirmed errors (no SQL file this batch). Most notable: wa_glacier_peak_south_tahoma_headwall and wa_glacier_peak_tahoma_cleaver show strong multi-source evidence of being misfiled Mount Rainier routes stored under Glacier Peak's area_id ('Tahoma' is Mount Rainier's name, never used for Glacier Peak terrain; both are near-empty stubs and the only two routes in this batch marked auto_generated:false) -- flagged for human reassignment/deletion, no authority to act taken here. wa_goat_mountain_southeast_face looks likely fabricated: an uncorroborated FA claim with no grade/pitches/coordinates, on a peak every source treats as exclusively Class 2 scrambling with no technical face documented anywhere. wa_goat_mountain_eastern_route is an empty stub that looks like a duplicate of wa_goat_mountain_south_ridge's already-documented East Peak line. Also flagged: Kennedy Glacier's length_m is an exact duplicate of Frostbite Ridge's length_m despite differing routes -- possible copy-paste artifact worth checking across the pipeline. Several genuine cross-source conflicts (Goat Mountain high point 6820-6891ft across sources; Sitkum Glacier FA year 1897/1898/1889 and III vs I-II commitment grade) left as flagged, not resolved, per guardrails. Tooling: delegated to 2 parallel subagents, one per peak. WebFetch to mountainproject.com/summitpost.org again failed with DNS errors in at least one subagent."
     }
   ]
 }
