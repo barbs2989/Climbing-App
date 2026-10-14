@@ -1602,7 +1602,8 @@ function campSites(route){
      Researched per route (enrichment-wip/camping-roles), because one corridor-wide list had been
      handed to every route in it — 799 routes shared 174 lists, up to 16 camps each. A Campsite
      pin is on the route's own track by definition, so an unmatched pin is "route". A site with no
-     role (a contribution from before the field existed) is null and renders under OTHER SITES. */
+     role (a contribution from before the field existed, or one marked "Not sure") is null and renders
+     under NOT YET SORTED (campGroups). */
   const ROLE={main:"main",route:"route"};
   return bivy.map(b=>{const p=pinOf(b);const el=campElevFt(b)!=null?campElevFt(b):(p?campElevFt(p):null);return {name:b&&b.name,elev:el,gainFt:gainOf(el),distMi:p?_campMi(p):null,kind:(b&&TYPE[String(b.type||"").toLowerCase()])||null,capacity:b&&b.capacity,water:b&&b.water,permit:b&&b.permit,notes:b&&b.notes,onTrack:!!p,role:(b&&ROLE[String(b.role||"").toLowerCase()])||null,sorted:!!(b&&ROLE[String(b.role||"").toLowerCase()])};})
     .concat(wps.map(w=>({name:w&&w.name,elev:campElevFt(w),gainFt:gainOf(campElevFt(w)),distMi:_campMi(w),kind:null,notes:(w&&w.directions)||"",onTrack:true,role:"route"})));
@@ -1734,13 +1735,17 @@ function CampingPanel({route,onEdit}){
 export function campGroups(sites){
   const all=(sites||[]).map(function(b,i){return {b:b,i:i};});
   if(!all.some(function(s){return s.b&&s.b.sorted;}))return [{key:"all",title:null,blurb:null,sites:all}];
-  /* TWO groups, not three. "Main camps" over "On the route" read as a geography claim and was often
-     false: a main camp can sit ABOVE a site on the route's own line. The split is about USE — where
-     most parties sleep, then the rest for a slower pace, bad weather or an emergency — so the
-     route-role and unsorted sites share the second group, in stored order. */
+  /* "Main camps" over "On the route" read as a geography claim and was often false: a main camp can
+     sit ABOVE a site on the route's own line. The split is about USE — where most parties sleep, then
+     the rest for a slower pace, bad weather or an emergency.
+     A site with NO role keeps its own small group, last. It was filed under OTHER OPTIONS for a while,
+     whose blurb is a researched claim about the `route` role only — so a site nobody had sorted was
+     presented as a researched fallback for a slow day or an emergency. The blurb says nothing about
+     who added it either: "added by climbers" is a provenance the row does not carry. */
   return [
     {key:"main",title:"WHERE MOST PARTIES SLEEP",blurb:"The camps and bivies most parties on this route actually use.",sites:all.filter(function(s){return s.b.role==="main";})},
-    {key:"other",title:"OTHER OPTIONS",blurb:"Further sites for a slower pace, bad weather or an emergency.",sites:all.filter(function(s){return s.b.role!=="main";})}
+    {key:"other",title:"OTHER OPTIONS",blurb:"Further sites for a slower pace, bad weather or an emergency.",sites:all.filter(function(s){return s.b.role==="route";})},
+    {key:"unsorted",title:"NOT YET SORTED",blurb:"Nobody has said yet how parties on this route use these.",sites:all.filter(function(s){return s.b.role!=="main"&&s.b.role!=="route";})}
   ].filter(function(g){return g.sites.length;});
 }
 /* WHERE TO GET THE OVERNIGHT PERMIT for the zone this route sleeps in. `access.permit` answers the
@@ -3069,7 +3074,7 @@ rack:(boulder||cat==="sport"),protRating:!(cat==="trad"||cat==="sport"),/* `draw
           <option value="camp">{"Camp"}</option><option value="bivy">{"Bivy"}</option><option value="hut">{"Hut"}</option>
         </select>
         <select aria-label={"Site "+(idx+1)+" role"} value={b.role||""} onChange={function(e){setBivy(idx,"role",e.target.value);}} style={Object.assign({},fld,{flex:1,marginBottom:0})}>
-          <option value="">{"Not sure"}</option><option value="main">{"Main camp"}</option><option value="route">{"On the route"}</option>
+          <option value="">{"Not sure"}</option><option value="main">{"Where most parties sleep"}</option><option value="route">{"Other option (slow day, weather, emergency)"}</option>
         </select>
         <input aria-label={"Site "+(idx+1)+" elevation"} inputMode="numeric" value={b.elev} onChange={function(e){setBivy(idx,"elev",e.target.value);}} placeholder={uImp()?"Elevation (ft)":"Elevation (m)"} style={Object.assign({},fld,{flex:1,marginBottom:0})}/>
       </div>

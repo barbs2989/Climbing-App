@@ -47,6 +47,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       field as serialising to a string, so a new builder type must be added to its `STRUCTURED`
       set; until `bivy` was, it correctly reported *"reader discards a string, and CONV has no
       `bivy` entry"*. Keyed on the TYPE, so the next builder field is exempt automatically.
+    - **A SITE WITH NO ROLE GETS ITS OWN GROUP, AND THE FORM SPEAKS THE PAGE'S WORDS (2026-10-14).**
+      #2339 cut the groups to WHERE MOST PARTIES SLEEP / OTHER OPTIONS and filed every unsorted site
+      (a pre-role contribution, or the form's *Not sure*) under OTHER OPTIONS, whose blurb — *"a slower
+      pace, bad weather or an emergency"* — was researched for the `route` role only. So a site nobody
+      had sorted read as a researched fallback. It now sits last under **NOT YET SORTED**, with a blurb
+      that claims neither a use nor a provenance ("added by climbers" is not on the row). The form's
+      role options read *Where most parties sleep* / *Other option (slow day, weather, emergency)* /
+      *Not sure*; they read *Main camp* / *On the route* before, a second vocabulary for the same
+      choice. Sections 12 and 12a pin both, 12a by reading the `<select>` from source (the form is a
+      modal a static render does not open) and matching each option against the group `campGroups`
+      actually files that role under. Proven against the pre-fix file: 5 failures.
     - The guard asserts the **contributed shape** renders, which is NOT the enrichment shape:
       `structuredVal` emits every text key as a string (empty when left blank) where enrichment
       omits keys it has nothing for. It also asserts blank strings do not become empty chips —
