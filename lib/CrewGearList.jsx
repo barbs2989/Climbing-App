@@ -2,14 +2,16 @@
 // bringing it -- yourself with one tap, or any other confirmed crewmate through "Assign". Nothing is
 // derived from the route; the route page already shows the gear a climb takes. Stored on the crew
 // as `gearExtras` (the typed items) and `gearClaims` ({item: [climber ids]}). For a signed-in crew
-// both are per-member columns: every claim, yours or a crewmate's, is written one item at a time
-// through assign_crew_gear (0286/0287), the items you added through set_my_crew_gear_extras (0287),
-// and you can only remove an item you added (`_myGearExtras`).
+// both are per-member columns, and every write is ONE item (0289): add_crew_gear_item,
+// remove_crew_gear_item (off the list for the whole crew), and assign_crew_gear for any member's
+// claim. You can only remove an item you added (`_myGearExtras`), in any capitals. The list stays
+// live: a crewmate's write pings this crew's channel and the card refetches (useCrewGearSync).
 import { useEffect, useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
+import { useCrewGearSync } from "./db";
 import { POP_REMOVE } from "./popupChrome.js";
 
-const MAX_ITEM = 80; // assign_crew_gear / set_my_crew_gear_extras refuse anything longer
+const MAX_ITEM = 80; // the crew-gear functions refuse anything longer
 
 export default function CrewGearList({ crew, roster, onUpdateCrew }) {
   const [newItem, setNewItem] = useState("");
@@ -20,6 +22,7 @@ export default function CrewGearList({ crew, roster, onUpdateCrew }) {
   const claims = crew.gearClaims || {};
   const mineToRemove = crew._myGearExtras;
   const others = (roster || []).filter(p => !p._me && (!p._status || p._status === "confirmed"));
+  useCrewGearSync(crew._dbId);
   useEffect(() => {
     if (!undo) return undefined;
     const t = setTimeout(() => setUndo(null), 8000);
@@ -49,7 +52,7 @@ export default function CrewGearList({ crew, roster, onUpdateCrew }) {
     gc[g] = arr;
     update({ gearClaims: gc });
   };
-  const canRemove = g => !mineToRemove || mineToRemove.indexOf(g) >= 0;
+  const canRemove = g => !mineToRemove || mineToRemove.some(x => String(x).toLowerCase() === g.toLowerCase());
   const remove = g => {
     const gc = Object.assign({}, claims);
     delete gc[g];
