@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_flycatcher_buttress",
+  "last_processed_id": "wa_fortune_peak_east_slope",
   "total_in_scope_last_count": 747,
   "total_wa_alpine_or_mountaineering_tagged": 843,
-  "pass_note": "Pass 7, batch 400 (2026-10-14) continued from wa_eldorado_peak_northeast_face through wa_flycatcher_buttress. Ten routes across nine peaks: Eldorado Peak (Northeast Face, West Arete), Elephant Butte (Standard Route), Prusik Peak (Energizer Bunny), Esmeralda Peaks (Southwest Slope), Fifth of July Mountain (Standard Scramble), Sloan Peak (Fire on the Mountain), Vesper Peak (Fish & Whistle), Flora Mountain (Southwest Slope), North Early Winters Spire (Flycatcher Buttress). Two fixes applied via SQL (audits/sql/2026-10-14-batch-400.sql): corrected Esmeralda Peaks' prose/waypoint/pitch_detail text, which described the West Summit as 6,776 ft against the row's own (correct) high_point_ft of 6,765 ft -- an internal contradiction, not an external-source error; and corrected Flora Mountain's high_point_ft from 8,323 ft to 8,325 ft per Wikipedia/WTA, matching a fix the row's own corrections field already recommended. Seven items flagged for human review (see wa-alpine-audit-log.md): Eldorado NE Face elevation/commitment-grade source conflicts, Eldorado West Arete pitch-count/FA conflicts, Elephant Butte trail-reopening date, Fifth of July Mountain fire-scar/naming claims, Fire on the Mountain pitch count, Fish & Whistle FA, Flora Mountain fire-closure order/shuttle fare, Flycatcher Buttress pitch count/length. Tooling notes: delegated to 3 parallel subagents (Eldorado x2 + Elephant Butte; Prusik + Esmeralda + Fifth of July; Sloan + Vesper + Flora + North Early Winters Spire). WebSearch was the sole working method (WebFetch blocked by DNS in this environment, consistent with prior batches). Pass 7 continues next run after wa_flycatcher_buttress.",
+  "pass_note": "Five fixes applied via SQL (audits/sql/2026-10-14-batch-401.sql): two pitch-count corrections on Forbidden Peak (East Ridge Direct 6->8, West Ridge 8->6) where the top-level pitches column disagreed with the row's own pitch_detail array length (and, for East Ridge Direct, its own beta text plus external corroboration); an ice_grade self-contradiction on Northeast Face (AI3 vs AI2 agreed by 3 other fields); a gain_ft correction on North Ridge (4500->6340) derived by summing the route's own waypoint elevation profile; and on Fortress Mountain's Northeast Face/Ridge row, both an unapplied rename already decided in the row's own corrections field (name/face -> 'Northeast Ridge') and a wrong ranger-district phone/address (Chelan -> Wenatchee River Ranger District). Thirteen items flagged for human review (see wa-alpine-audit-log.md), most notably Forbidden Peak Northeast Face's FA attribution to 'Ed Cooper and Stuart Ferguson, 1961' which could not be corroborated by any source -- the route's existence as a standalone climb distinct from the NE Ledge descent traverse is itself in question. Tooling notes: delegated to 3 parallel subagents (East Ledges + East Ridge Direct + North Ridge; Northeast Face + Northwest Face + West Ridge; Fortress Mountain x3 + Fortune Peak). WebSearch was the sole working method. Pass 7 continues next run after wa_fortune_peak_east_slope.",
   "batches": [
     {
       "batch_number": 1,
@@ -8013,6 +8013,26 @@
       "flagged_for_human_review": 7,
       "clean": 4,
       "note": "Two elevation fixes: Esmeralda Peaks' prose/waypoint/pitch_detail text corrected from 6,776 ft to match the row's own already-correct high_point_ft (6,765 ft); Flora Mountain's high_point_ft corrected from 8,323 ft to 8,325 ft per Wikipedia/WTA, matching the row's own corrections-field recommendation. See pass_note / wa-alpine-audit-log.md for the full list of items flagged for human review (Eldorado Peak x2, Elephant Butte, Fifth of July Mountain, Fire on the Mountain, Fish & Whistle, Flora Mountain fire-closure, Flycatcher Buttress)."
+    },
+    {
+      "batch_number": 401,
+      "date": "2026-10-14",
+      "route_ids": [
+        "wa_forbidden_peak_east_ledges",
+        "wa_forbidden_peak_east_ridge",
+        "wa_forbidden_peak_north_ridge",
+        "wa_forbidden_peak_northeast_face",
+        "wa_forbidden_peak_northwest_face",
+        "wa_forbidden_peak_west_ridge",
+        "wa_fortress_mountain_east_ridge",
+        "wa_fortress_mountain_northeast_face",
+        "wa_fortress_mountain_southwest_face",
+        "wa_fortune_peak_east_slope"
+      ],
+      "confirmed_errors_fixed": 5,
+      "flagged_for_human_review": 13,
+      "clean": 2,
+      "note": "Five fixes applied via SQL (audits/sql/2026-10-14-batch-401.sql): two pitch-count corrections on Forbidden Peak (East Ridge Direct 6->8, West Ridge 8->6) where the top-level pitches column disagreed with the row's own pitch_detail array length (and, for East Ridge Direct, its own beta text plus external corroboration); an ice_grade self-contradiction on Northeast Face (AI3 vs AI2 agreed by 3 other fields); a gain_ft correction on North Ridge (4500->6340) derived by summing the route's own waypoint elevation profile; and on Fortress Mountain's Northeast Face/Ridge row, both an unapplied rename already decided in the row's own corrections field (name/face -> 'Northeast Ridge') and a wrong ranger-district phone/address (Chelan -> Wenatchee River Ranger District). Thirteen items flagged for human review (see wa-alpine-audit-log.md), most notably Forbidden Peak Northeast Face's FA attribution to 'Ed Cooper and Stuart Ferguson, 1961' which could not be corroborated by any source -- the route's existence as a standalone climb distinct from the NE Ledge descent traverse is itself in question. Tooling notes: delegated to 3 parallel subagents (East Ledges + East Ridge Direct + North Ridge; Northeast Face + Northwest Face + West Ridge; Fortress Mountain x3 + Fortune Peak). WebSearch was the sole working method. Pass 7 continues next run after wa_fortune_peak_east_slope."
     }
   ]
 }

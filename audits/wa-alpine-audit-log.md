@@ -31417,3 +31417,84 @@ Butte; Prusik + Esmeralda + Fifth of July; Sloan + Vesper + Flora + North Early 
 Spire). WebSearch was the working method throughout, as in prior batches.
 
 Pass 7 continues next run after `wa_flycatcher_buttress`.
+
+## 2026-10-14 — Pass 7, Batch 401
+
+Ten routes across 3 peaks (Forbidden Peak ×6, Fortress Mountain ×3, Fortune Peak ×1):
+East Ledges, East Ridge Direct, North Ridge, Northeast Face, Northwest Face, West Ridge
+(Forbidden Peak); East Ridge, Northeast Face/Ridge, Southwest Face (Fortress Mountain);
+East Slope Route / Headlight Basin (Fortune Peak).
+
+**Five confirmed errors fixed**, in `audits/sql/2026-10-14-batch-401.sql`:
+- Forbidden Peak East Ridge Direct: `pitches` (6) disagreed with the row's own
+  `pitch_detail` array (8 entries) and its own `beta` text ("6-8 pitches"); the 1959 AAJ
+  report and SummitPost both describe multiple gendarmes consistent with 8. Corrected to 8.
+- Forbidden Peak West Ridge: `pitches` (8) disagreed with the row's own `pitch_detail`
+  array (6 entries) and its own waypoint directions ("about six pitches of low fifth
+  class"); Mountain Project lists 7 pitches and Mountaineers.org calls it 4 — external
+  sources cluster well below 8. Corrected to 6.
+- Forbidden Peak Northeast Face: `ice_grade` ("AI3") disagreed with `grade` ("AI2"),
+  `grade_num` (2) and `ice_grade_num` (2) — a 3-vs-1 internal contradiction. Corrected
+  `ice_grade` to AI2.
+- Forbidden Peak North Ridge: `gain_ft` (4,500) undercounted the route's own waypoint
+  profile. Unlike East Ridge Direct's simple ridge climb (gain_ft 5,615 = exact
+  trailhead-to-summit delta), North Ridge's own waypoints show a glacier approach with
+  real ups and downs (3200→6400→7725→7570→7000→8100→8815 ft); summing the positive
+  segments on the row's own data gives 6,340 ft. Corrected gain_ft to 6,340.
+- Fortress Mountain's "Northeast Face" row: two issues. (1) The row's own `corrections`
+  field already documented a 2026-07-29 decision to rename this to "Northeast Ridge"
+  (every source found — SummitPost, CascadeClimbers, Country Highpoints — describes it as
+  a ridge used as a descent/connector, not a standalone face route) but the `name`/`face`
+  columns were never actually updated to match. (2) `emergency.rangerStation` listed
+  "Chelan Ranger District" — a real, current office, but the wrong one for this peak; the
+  Trinity Trailhead/Chiwawa River drainage is served by the Wenatchee River Ranger
+  District, confirmed via the official USFS office page and matching this peak's other two
+  rows. Fixed both.
+
+**Clean, independently corroborated:** East Ledges' NPS permit/fee structure and group
+limit; East Ridge Direct's FA (Beckey/Hieb/Cooper/Claunch, 1958, per 1959 AAJ) and grade;
+North Ridge's grade, Sharkfin Col description, and Beckey-1952 FA year (partners
+unconfirmed, see below); Northwest Face's FA (Beckey/Cooper, July 15 1959), grade, length
+and pitch count — all exact matches on Mountain Project; West Ridge's FA (the 5-person
+1940 party, also the peak's first ascent), Fifty-Classics status, grade and length — exact
+matches on Wikipedia/Mountain Project; all three fatal-accident citations on West Ridge
+(2018, 2013, 2017) independently confirmed via AAC/NPS incident reports. Fortress
+Mountain's Little Giant Fire closure order number/dates, Glacier Peak Wilderness framing,
+and the honest self-caveat already in its `corrections` field on the peak's conflicting
+summit elevation (8,679 vs 8,760 ft — no new authoritative figure found either way).
+Fortune Peak's elevation, coordinates, trailhead, and wilderness-permit/fee framing — all
+confirmed via Wikipedia/PeakVisor/USFS.
+
+**Flagged for human review:** Forbidden Peak Northeast Face's FA attribution to "Ed Cooper
+and Stuart Ferguson, September 15 1961" — extensive search found zero corroboration
+anywhere (no AAJ/AAC report, no Mountain Project/SummitPost page, no record of a climber
+named Stuart Ferguson partnering with Cooper in the Cascades), and no source documents a
+standalone technical "Northeast Face" ice route on this peak distinct from the NE Ledge
+descent traverse at all — this route's existence as captured may itself need verification
+against a physical copy of Beckey's Cascade Alpine Guide. Also on that row: a `max_angle`
+of 50° vs two narrative fields stating 55°, and `season` ("Jul-Sep") contradicting both
+`best_season` ("late spring to early summer") and the row's own month-by-month breakdown.
+Northwest Face's itinerary day-by-day gain/loss figures appear copy-pasted from the
+Northeast Face row and don't sum to its own top-level gain_ft/loss_ft. North Ridge's FA
+partners (Schwabland/Wilde) unconfirmed; three slightly different summit coordinates
+within the row family; a GPX track segment that runs well past the described line (already
+self-disclosed as a synthetic/estimated track). East Ledges' 1975 fatality — general fact
+corroborated (SummitPost), but the specific name/age/date/fall-distance could not be
+verified. East Ridge Direct's 2026 Cascade River Road closure specifics (the general
+Eldorado-Creek-gate phenomenon is real and NPS-documented; the exact 2026 dating wasn't
+independently reached). West Ridge's Boston Basin high-camp elevation (6,200 ft on this row
+vs 6,400 ft on its NE/NW Face siblings for presumably the same camp — genuine source split,
+not a fabrication). Fortress Mountain East Ridge/Southwest Face's `dist_km` (14.5 km,
+identical on both routes despite different trailhead-to-summit paths, and too short for
+either route's own described mileage) — not fixed per this project's standing rule against
+bulk-normalizing dist_km; needs a human with the right convention. Fortress Mountain's
+sheriff-dispatch number (inconsistent across its own three rows) and its discipline tag
+("alpine" on the Northeast Ridge row vs "mountaineering" on its siblings) — a judgment call,
+not an error. Fortress Mountain closure-order numbers that corroborate in substance but
+not in the specific order-number text.
+
+**Tooling notes:** Delegated research to 3 parallel subagents (East Ledges + East Ridge
+Direct + North Ridge; Northeast Face + Northwest Face + West Ridge; Fortress Mountain ×3 +
+Fortune Peak). WebSearch was the sole working method, as in prior batches.
+
+Pass 7 continues next run after `wa_fortune_peak_east_slope`.
