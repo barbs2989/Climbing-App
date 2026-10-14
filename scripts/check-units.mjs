@@ -380,6 +380,10 @@ async function runWeather() {
     // non-boundary case beside it so the suite is not only testing a rounding tie.
     ["uPrecip", 0.25, '0.25"', "6.3 mm"],
     ["uPrecip", 0.5, '0.50"', "12.7 mm"],
+    // A drizzle the score counts as rain once printed "Rain in the past hour (0.00\")" -- a real amount
+    // that rounds to zero must say it is under the smallest step, never read as none.
+    ["uPrecip", 0.001, 'under 0.01"', "under 0.1 mm"],
+    ["uPrecip", 0, '0.00"', "0.0 mm"],
     ["uSnowfall", 6, '6.0"', "15.2 cm"],
   ];
   for (const [fn, input, imp, met] of CASES) {

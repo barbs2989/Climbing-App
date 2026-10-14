@@ -1424,7 +1424,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
     not modelled — seepage is only a risk from recent rain — and the card says so.
-  - **Home tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, above *Jump back in*) is the SAME
+  - **Menu tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, opened from Menu › Plan & log; it left Home 2026-10-14) is the SAME
     `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
     nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an
     unlocated climb as "No score: …" rather than dropping it. At most 8 crags are fetched, and it says so.
@@ -1772,3 +1772,27 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
   breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
   Home/End, `touch-action:none`). TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
   `innerWidth` 0) in an automation session, which makes screenshots fail with "0 width"; a NEW tab got a real size.
+
+- **The two "Your conditions" builds, MERGED (2026-10-14).** The drag-both-ends ranges above and the
+  per-discipline / account-saved store were built in parallel. One store now: `lib/CondPrefs.jsx`
+  (`climbmatch-cond-prefs-v2`, saved to `profile_condition_prefs`), whose every temperature scope (all, each crag
+  discipline, alpine, ice & mixed) and whose wind are `RangeSlider`s. Wind is a RANGE in the store (`wind: [lo, hi]`).
+  The single-range keys above (`climbmatch-cond-temp`, `-wind`) and the old preset key are READ ONCE, when the v2
+  key is absent, and become the all-climbing range and the wind range, so a climber who set either keeps it. The
+  scorer still takes the older shapes (`tempRange`, reported as bandKey `custom`; `windRange`; `windMax` read as
+  calm to that limit), and `check:conditions-score` holds each.
+
+  - **YOUR TEMPERATURE RANGE ON ALPINE, ICE AND MIXED (2026-10-14, owner: "alpine would be a different
+    discipline that only affects alpine routes"; "do what you recommend based on your online research").**
+    Researched twice, the second time in extended mode: **no published temperature range exists for
+    alpine, mountaineering, scrambling, ice or mixed.** Ice guidance is qualitative (sustained cold keeps
+    it in; a thaw is the hazard, which `iceWarmNight` and friends already flag); the only numbers are one
+    regional forum's "chewy at about -5 to -15 C" and "brittle at -26 C" (single source, Celsius, one range);
+    mixed on turf wants frozen ground, and dry-tooling works at any temperature; alpine summits are simply
+    mostly below freezing and the comfort figures on offer are Everest/Denali frostbite reports. So:
+    the ranges are the climber's OWN, there is **no preset and no default** (an unset range shows no line),
+    and the result is ONE neutral sentence under the day's flags (`RangeLine`, `rangeNote`). Two scopes,
+    **Alpine** (alpine, mountaineering, scrambling) and **Ice & mixed**, neither inheriting the
+    all-climbing range. It never reaches `dayFlags`, a flag level, a day-tab dot, a count or a start time,
+    and uses no red or amber. `check:alpine-conditions` section 17 holds each of those. Do not add a
+    default range or a preset here without a source that states one.

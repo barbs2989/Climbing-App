@@ -1,6 +1,6 @@
 {
   "note": "Generated from the live database by scripts/refresh-schema-snapshot.mjs. Do not hand-edit.",
-  "generatedAt": "2026-10-08",
+  "generatedAt": "2026-10-14",
   "tables": {
     "account_standing": [
       "reason",
@@ -580,6 +580,11 @@
     "objectives": [
       "created_at",
       "route_id",
+      "user_id"
+    ],
+    "profile_condition_prefs": [
+      "prefs",
+      "updated_at",
       "user_id"
     ],
     "profile_emergency_contacts": [
