@@ -510,8 +510,7 @@ async function walk(browser, base, session, fail) {
   // ZERO times anywhere in the app, so a third of the alternation had never matched once.
   //
   // "saved searches" is unique app-wide — 0 occurrences outside this region, in either app file.
-  // "trip pack" also heads two cards on the PROFILE tab, which a Logbook capture cannot contain;
-  // it is kept as a second landmark so a single rename fails CLOSED rather than silently.
+  // (There is no per-route trip pack any more, so "saved searches" is the only landmark.)
   //
   // The `/i` is NOT what made the old landmark vacuous, and it would be the tempting thing to
   // remove instead: the HEADINGS are uppercased in CSS but the header PROSE is not, so a
@@ -522,7 +521,7 @@ async function walk(browser, base, session, fail) {
   // says "Saved searches". A case-sensitive match reported this stop as never landing while the
   // dump showed it landing perfectly — the same trap check:ui records for `PEOPLE YOU’VE CLIMBED
   // WITH`. Matching either case also survives someone dropping the text-transform later.
-  out[SUBTAB2] = /saved searches|trip pack/i.test(areasText)
+  out[SUBTAB2] = /saved searches/i.test(areasText)
     ? areasText : "SUBTAB CLICK DID NOT LAND -- this is not the Logbook's Saved view\n" + areasText;
   // The three Crew sub-views. Reached by ACCESSIBLE NAME, never by text: the badge count renders
   // inside the button, so textContent is "Friends2". The count is in the aria-label too, and an
