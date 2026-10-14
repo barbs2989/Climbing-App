@@ -1778,7 +1778,10 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
   range. Wind had no preference before: it was the fixed rule full at 10 mph, nothing at 35. Unchosen it is still
   that rule EXACTLY (range [0,10], fade 25 mph above), pinned in `check:conditions-score`; a climber who wants a
   breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
-  Home/End, `touch-action:none`). TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
+  Home/End, `touch-action:none`). WHICH HANDLE IS ON TOP where their 44 px hit areas overlap: the LOW one once the
+  range sits past the middle of the track, the high one before it (pinned in `check:conditions-score`). A fixed
+  "high on top" stranded the low handle at the top of the scale: every touch landed on the high handle, which
+  cannot go further right, so the range could not be widened again. TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
   `innerWidth` 0) in an automation session, which makes screenshots fail with "0 width"; a NEW tab got a real size.
 
 - **The two "Your conditions" builds, MERGED (2026-10-14).** The drag-both-ends ranges above and the
