@@ -31366,3 +31366,54 @@ blocked (DNS/ENOTFOUND, consistent with EGRESS_BLOCKED) on every domain tried; W
 were the sole working method, as in prior batches.
 
 Pass 7 continues next run after `wa_eldorado_peak_north_ridge`.
+
+## 2026-10-14 — Pass 7, Batch 400
+
+Ten routes across 9 peaks (Eldorado Peak ×2, Elephant Butte, Prusik Peak, Esmeralda Peaks,
+Fifth of July Mountain, Sloan Peak, Vesper Peak, Flora Mountain, North Early Winters Spire):
+Northeast Face + West Arete (Eldorado); Standard Route/Stetattle-Sourdough Ridge (Elephant
+Butte); Energizer Bunny (Prusik); Southwest Slope/De Roux Creek (Esmeralda Peaks); Standard
+Scramble (Fifth of July Mountain); Fire on the Mountain (Sloan); Fish & Whistle (Vesper);
+Southwest Slope/Standard Route (Flora Mountain); Flycatcher Buttress (North Early Winters
+Spire).
+
+**Two confirmed errors fixed**, both elevation corrections, in
+`audits/sql/2026-10-14-batch-400.sql`:
+- Esmeralda Peaks' Southwest Slope: the row's own `high_point_ft` (6,765 ft) was already
+  correct and matched Wikipedia, SummitPost and a 2022 Mountaineers.org trip report, but its
+  `beta`, `waypoints` and `pitch_detail` text all separately described the same West Summit
+  as 6,776 ft — an internal contradiction. Corrected the three prose/structured fields to
+  match the column that was already right.
+- Flora Mountain's Southwest Slope: `high_point_ft` was 8,323 ft against Wikipedia's and
+  WTA's 8,325 ft (the 8,323 figure traces to one lidar resurvey the other sources don't
+  share). The row's own `corrections` field already recommended 8,325 ft; applied that and
+  synced the summit waypoint to match.
+
+**Clean, independently reconfirmed:** Energizer Bunny's grade/length (450 ft, 5.10+ A0, per
+an AAC trip report by Steph Abegg) and Enchantment lottery fee structure; Elephant Butte's
+elevation and coordinates (Wikipedia/SummitPost); Flycatcher Buttress's FA/FFA, grade and
+descent beta (word-for-word match on Mountain Project); Fire on the Mountain's FA (Herrington/
+Roberts, 2009, per stephabegg.com).
+
+**Flagged for human review:** Eldorado NE Face's elevation (8,872 ft stored vs. The
+Mountaineers' 8,868 ft, which the row's own `corrections` field calls a mislabeled benchmark —
+genuine source conflict) and its commitment grade (II per SummitPost vs. III per The
+Mountaineers). Eldorado West Arete's pitch count (19 stored vs. 10 on Mountain Project vs.
+25+ in another trip report cited in the row's own `corrections`) and its unconfirmed FA
+(Emerson/Gove, 1969 — no source found either way). Elephant Butte's Sourdough Mountain Trail
+reopening date (stored May 12, 2026 — general 2026 reopening confirmed, exact date not
+independently verified). Fifth of July Mountain's 2020 fire-scar attribution and its naming
+story (USFS surveyor Albert H. Sylvester) — both plausible, neither sourced. Fire on the
+Mountain's pitch count (8 stored vs. 7 on mountaineers.org — already self-flagged in the row).
+Fish & Whistle's FA (Darin Berdinka, Sept 11 2017 — no corroborating or contradicting source
+found). Flora Mountain's Sisi Fire trail-closure order number and dates (a 2026 Sisi Fire is
+real; the specific order text wasn't independently reached) and its Stehekin shuttle fare
+(stored $5 one-way vs. a $10 third-party reseller listing — likely fee drift, not an error).
+Flycatcher Buttress's pitch count/length (10 pitches/335 m stored vs. a SuperTopo page citing
+11 pitches/~800 ft from an older, possibly differently-split topo).
+
+**Tooling notes:** Delegated research to 3 parallel subagents (Eldorado Peak ×2 + Elephant
+Butte; Prusik + Esmeralda + Fifth of July; Sloan + Vesper + Flora + North Early Winters
+Spire). WebSearch was the working method throughout, as in prior batches.
+
+Pass 7 continues next run after `wa_flycatcher_buttress`.

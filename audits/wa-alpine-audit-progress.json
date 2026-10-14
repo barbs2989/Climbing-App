@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_eldorado_peak_north_ridge",
+  "last_processed_id": "wa_flycatcher_buttress",
   "total_in_scope_last_count": 747,
   "total_wa_alpine_or_mountaineering_tagged": 843,
-  "pass_note": "Pass 7, batch 399 (2026-10-09) continued from wa_east_ridge_4 through wa_eldorado_peak_north_ridge. Ten routes across six peaks: Inspiration Peak East Ridge, East Twin Needle North Buttress/South Route/Thread of Ice, Eldorado Peak East Ridge/Northwest Couloir-Eldorado Glacier/North Ridge, Pinnacle Peak (Tatoosh) East Ridge, Ingalls Peak East Ridge, Primus Peak East Slope. One fix applied via SQL (audits/sql/2026-10-09-batch-399.sql): cleared wa_eldorado_peak_eldorado_glacier_nw.fa, which named a specific FA party that the same row's own data_quality.gaps note already says is unconfirmed, and which no external source corroborated. Zero errors confirmed against an external authoritative source across all ten routes. Flagged for human review: Eldorado North Ridge grade (5.7 stored vs Mountain Project 5.8); Eldorado Northwest Couloir length_m (480m) vs its own prose (~1,000ft) and a rappels field that may describe the approach rather than the descent; Primus Peak longitude (one conflicting Wikipedia-snippet citation against two corroborating sources + route geometry, left as-is); Pinnacle Peak grade (5.5 vs a Beckey-cited 5.6) and season window (Jul-Sep vs Mountaineers.org Jun-Sep); Ingalls Peak pitch count (6 vs SummitPost/Nelson-Potterfield 5, likely just a counting convention difference). Tooling notes: delegated to 3 parallel subagents (Inspiration Peak + East Twin Needle; Eldorado Peak x3; Pinnacle + Ingalls + Primus). WebFetch was blocked (DNS/ENOTFOUND) on every domain tried; WebSearch snippets were the sole working method. Pass 7 continues next run after wa_eldorado_peak_north_ridge.",
+  "pass_note": "Pass 7, batch 400 (2026-10-14) continued from wa_eldorado_peak_northeast_face through wa_flycatcher_buttress. Ten routes across nine peaks: Eldorado Peak (Northeast Face, West Arete), Elephant Butte (Standard Route), Prusik Peak (Energizer Bunny), Esmeralda Peaks (Southwest Slope), Fifth of July Mountain (Standard Scramble), Sloan Peak (Fire on the Mountain), Vesper Peak (Fish & Whistle), Flora Mountain (Southwest Slope), North Early Winters Spire (Flycatcher Buttress). Two fixes applied via SQL (audits/sql/2026-10-14-batch-400.sql): corrected Esmeralda Peaks' prose/waypoint/pitch_detail text, which described the West Summit as 6,776 ft against the row's own (correct) high_point_ft of 6,765 ft -- an internal contradiction, not an external-source error; and corrected Flora Mountain's high_point_ft from 8,323 ft to 8,325 ft per Wikipedia/WTA, matching a fix the row's own corrections field already recommended. Seven items flagged for human review (see wa-alpine-audit-log.md): Eldorado NE Face elevation/commitment-grade source conflicts, Eldorado West Arete pitch-count/FA conflicts, Elephant Butte trail-reopening date, Fifth of July Mountain fire-scar/naming claims, Fire on the Mountain pitch count, Fish & Whistle FA, Flora Mountain fire-closure order/shuttle fare, Flycatcher Buttress pitch count/length. Tooling notes: delegated to 3 parallel subagents (Eldorado x2 + Elephant Butte; Prusik + Esmeralda + Fifth of July; Sloan + Vesper + Flora + North Early Winters Spire). WebSearch was the sole working method (WebFetch blocked by DNS in this environment, consistent with prior batches). Pass 7 continues next run after wa_flycatcher_buttress.",
   "batches": [
     {
       "batch_number": 1,
@@ -7993,6 +7993,26 @@
       "flagged_for_human_review": 7,
       "clean": 8,
       "note": "One fix (not externally sourced): cleared an fa credit on wa_eldorado_peak_eldorado_glacier_nw that contradicted the row's own data_quality.gaps note admitting no FA is confirmed, and that no external source corroborated. Zero errors confirmed against an external authoritative source across all ten routes. See pass_note for the full list of items flagged for human review (Eldorado North Ridge grade, Eldorado NW Couloir length_m/rappels internal mismatch, Primus Peak longitude, Pinnacle Peak grade/season, Ingalls Peak pitch count)."
+    },
+    {
+      "batch_number": 400,
+      "date": "2026-10-14",
+      "route_ids": [
+        "wa_eldorado_peak_northeast_face",
+        "wa_eldorado_peak_west_arete",
+        "wa_elephant_butte_standard_route",
+        "wa_energizer_bunny",
+        "wa_esmeralda_peaks_scramble",
+        "wa_fifth_of_july_mountain_scramble",
+        "wa_fire_on_the_mountain",
+        "wa_fish_whistle",
+        "wa_flora_mountain_southwest_slope",
+        "wa_flycatcher_buttress"
+      ],
+      "confirmed_errors_fixed": 2,
+      "flagged_for_human_review": 7,
+      "clean": 4,
+      "note": "Two elevation fixes: Esmeralda Peaks' prose/waypoint/pitch_detail text corrected from 6,776 ft to match the row's own already-correct high_point_ft (6,765 ft); Flora Mountain's high_point_ft corrected from 8,323 ft to 8,325 ft per Wikipedia/WTA, matching the row's own corrections-field recommendation. See pass_note / wa-alpine-audit-log.md for the full list of items flagged for human review (Eldorado Peak x2, Elephant Butte, Fifth of July Mountain, Fire on the Mountain, Fish & Whistle, Flora Mountain fire-closure, Flycatcher Buttress)."
     }
   ]
 }
