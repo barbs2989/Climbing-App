@@ -1,5 +1,6 @@
-// VERIFY 0286 + 0287 AS TWO REAL CLIMBERS: a crewmate can mark you as bringing an item, and your own
-// next tap does not erase it.
+// VERIFY 0286 + 0287 + 0289 + 0290 AS TWO REAL CLIMBERS: a crewmate can mark you as bringing an item,
+// your own next tap does not erase it, and (0290) only a confirmed member can be put down for an item,
+// only for an item that is on the crew's list.
 //
 // THE BUG 0287 EXISTS FOR, run as a CONTROL first. 0209's set_my_crew_gear REPLACES your whole claim
 // list with what your screen holds. Once 0286 let a crewmate write your row, a screen loaded before
@@ -9,7 +10,7 @@
 // Every read and write goes through the anon key plus that climber's own JWT (an RLS decision is
 // invisible to the service role). The service key creates the two accounts and nothing else.
 //
-// HAND-RUN, LOCAL ONLY, after 0287 is applied:
+// HAND-RUN, LOCAL ONLY, after 0290 is applied (against 0289 the 0290 assertions fail, and say so):
 //   node scripts/oneoff/verify-crew-gear-assign.mjs
 import { SUPABASE_URL, anonKey } from "../lib/supabase-env.mjs";
 import { createFixture } from "../lib/ui-fixture.mjs";
@@ -65,6 +66,8 @@ try {
 
   console.log("\n— the clobber 0287 removes —");
   await rpc(b, "set_my_crew_gear", { p_crew_id: crewId, p_claims: [], p_extras: [] });
+  // 0290: a claim needs its item on the crew's list, so A lists what this section claims.
+  for (const it of ["Rope", "Stove", "Fuel"]) await rpc(a, "add_crew_gear_item", { p_crew_id: crewId, p_item: it });
   const s1 = await assign(a, crewId, B.id, "Rope", true);
   ok("A marks B as bringing the rope (0286)", s1.status < 300, `${s1.status} ${s1.text.slice(0, 200)}`);
   ok("...and B's row holds it", same((await row(b, crewId, B.id)).gear_claims, ["Rope"]));
@@ -87,11 +90,22 @@ try {
 
   console.log("\n— the cap raises (0287), not a silent 200 —");
   const hundred = Array.from({ length: 100 }, (_, i) => "Item " + i);
+  await rpc(a, "add_crew_gear_item", { p_crew_id: crewId, p_item: "One too many" });
   await rpc(b, "set_my_crew_gear", { p_crew_id: crewId, p_claims: hundred, p_extras: [] });
   const cap = await assign(a, crewId, B.id, "One too many", true);
   ok("a 101st claim is REFUSED", cap.status >= 400 && /too many/.test(cap.text), `${cap.status} ${cap.text.slice(0, 160)}`);
   const capSame = await assign(a, crewId, B.id, "Item 7", true);
   ok("...but re-claiming one already held at the cap is still a no-op", capSame.status < 300, `${capSame.status} ${capSame.text.slice(0, 160)}`);
+
+  console.log("\n— a claim needs its item on the list (0290) —");
+  await rpc(b, "set_my_crew_gear", { p_crew_id: crewId, p_claims: [], p_extras: [] });
+  const unl = await assign(a, crewId, B.id, "Kayak", true);
+  ok("claiming an item NOT on the crew's list is REFUSED", unl.status >= 400 && /not on this crew's gear list/.test(unl.text) && same((await row(a, crewId, B.id)).gear_claims, []), `${unl.status} ${unl.text.slice(0, 160)}`);
+  const unlCaps = await assign(a, crewId, B.id, "ROPE", true);
+  ok("...a listed item in other capitals is still on the list", unlCaps.status < 300 && same((await row(a, crewId, B.id)).gear_claims, ["ROPE"]), `${unlCaps.status} ${unlCaps.text.slice(0, 160)}`);
+  await rpc(b, "set_my_crew_gear", { p_crew_id: crewId, p_claims: ["Kayak"], p_extras: [] });
+  const unlOff = await assign(a, crewId, B.id, "Kayak", false);
+  ok("...and a claim on an unlisted item can still be CLEARED", unlOff.status < 300 && same((await row(a, crewId, B.id)).gear_claims, []), `${unlOff.status} ${unlOff.text.slice(0, 160)}`);
   await rpc(b, "set_my_crew_gear", { p_crew_id: crewId, p_claims: [], p_extras: [] });
 
   console.log("\n— one item whatever its capitals (0289) —");
@@ -127,13 +141,17 @@ try {
   await a("crew_members", { method: "POST", body: JSON.stringify({ crew_id: reqCrewId, user_id: A.id, status: "confirmed", invited_by: A.id }) });
   const ask = await b("crew_members", { method: "POST", body: JSON.stringify({ crew_id: reqCrewId, user_id: B.id, status: "pending", invited_by: B.id }) });
   if (ask.status >= 300) dead(`B could not ask to join (${ask.status}) ${ask.text.slice(0, 200)}`);
+  // A pending member may add to the list (0289); 0290 needs the items listed before they are claimed.
+  await rpc(b, "add_crew_gear_item", { p_crew_id: reqCrewId, p_item: "Rack" });
+  await rpc(a, "add_crew_gear_item", { p_crew_id: reqCrewId, p_item: "Stove" });
   const p1 = await assign(b, reqCrewId, B.id, "Rack", true);
   ok("a pending member may claim for THEMSELVES (as set_my_crew_gear always let them)", p1.status < 300, `${p1.status} ${p1.text.slice(0, 200)}`);
   const p2 = await assign(b, reqCrewId, A.id, "Rope", true);
   ok("...but may NOT assign the organiser", p2.status >= 400 && /not in this crew/.test(p2.text), `${p2.status} ${p2.text.slice(0, 160)}`);
   ok("...and the organiser's row is untouched", !(await row(a, reqCrewId, A.id)).gear_claims?.includes("Rope"));
   const p3 = await assign(a, reqCrewId, B.id, "Stove", true);
-  ok("the confirmed organiser may assign the pending member", p3.status < 300 && same((await row(a, reqCrewId, B.id)).gear_claims, ["Rack", "Stove"]), `${p3.status} ${p3.text.slice(0, 160)}`);
+  // 0290 turned this around: before it, the organiser could put a climber they had not let in down for gear.
+  ok("the organiser may NOT put a pending requester down for gear (0290)", p3.status >= 400 && /not been confirmed/.test(p3.text) && same((await row(a, reqCrewId, B.id)).gear_claims, ["Rack"]), `${p3.status} ${p3.text.slice(0, 160)}`);
 
   console.log("\n— refusals —");
   const outsider = await assign(a, "00000000-0000-4000-8000-000000000000", B.id, "Rope", true);
@@ -173,6 +191,6 @@ try {
   else console.log("\nteardown: both fixture accounts removed");
 }
 
-if (ran < 33) { console.error(`only ${ran} assertions ran — this run proved less than it claims`); fail++; }
-console.log(fail ? `\n${fail} problem(s).` : `\nok — 0286, 0287 and 0289 behave as the app assumes (${ran} assertions)`);
+if (ran < 36) { console.error(`only ${ran} assertions ran — this run proved less than it claims`); fail++; }
+console.log(fail ? `\n${fail} problem(s).` : `\nok — 0286, 0287, 0289 and 0290 behave as the app assumes (${ran} assertions)`);
 process.exit(fail ? 1 : 0);
