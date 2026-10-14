@@ -41,13 +41,10 @@
  * audit:silent-reverts says in its own closing caveat that it cannot see that.
  */
 
-import { parse } from "@babel/parser";
-import _traverse from "@babel/traverse";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 
@@ -56,11 +53,10 @@ const ok = (m) => { ran++; console.log("  ok   " + m); };
 const fail = (m) => { ran++; bad++; console.log("  FAIL " + m); };
 const dead = (m) => { console.error("FAIL: " + m); process.exit(1); };
 
-let cm, rd, db, off, tiles, kit, sw;
+let cm, db, off;
 try {
-  cm = read("ClimbMatch.jsx"); rd = read("RouteDetail.jsx");
+  cm = read("ClimbMatch.jsx");
   db = read("lib/db.js"); off = read("lib/offline.js");
-  tiles = read("lib/offlineTiles.js"); kit = read("lib/mapKit.jsx"); sw = read("public/sw.js");
 } catch (e) { dead("could not read a source file — nothing was checked. " + e.message); }
 
 /* Comments are stripped before every source test. Three checkers in this repo have been fooled by
@@ -68,33 +64,7 @@ try {
  * every symbol below. Block comments only for the wiring tests: a `//` strip has already eaten
  * real code here once (check:dead-flag-gates) and these are single-expression matches. */
 const strip = (s) => s.replace(/\/\*[\s\S]*?\*\//g, " ");
-const cmS = strip(cm), rdS = strip(rd), dbS = strip(db), offS = strip(off), tilesS = strip(tiles), kitS = strip(kit), swS = strip(sw);
-
-/* ── 1. THE WRITE: packing a route really puts its row on the device. ────────────────────────
- * Without this the pack is back to being a list of ids, and every sentence promising the beta is
- * saved is a lie a climber can only discover somewhere they cannot check. */
-console.log("1. THE WRITE — packing a climb stores its row:");
-if (/export async function packRouteOffline\s*\(/.test(offS)) ok("lib/offline.js defines packRouteOffline()");
-else fail("lib/offline.js no longer defines packRouteOffline() — nothing writes a route to the device");
-if (/idbPutAll\("pack",/.test(offS)) ok("...and it writes into the `pack` object store");
-else fail("packRouteOffline() writes into no `pack` store — the route is not saved anywhere");
-if (/export async function unpackRouteOffline\s*\(/.test(offS) && /idbDelete\("pack",/.test(offS))
-  ok("...and unpackRouteOffline() takes it back off, so the storage is reclaimable");
-else fail("unpackRouteOffline() is gone or no longer deletes — a packed route could never be removed");
-/* WORD-BOUNDED, and the injection is what found this: `unpackRouteOffline(` CONTAINS the string
- * `packRouteOffline(`, so a bare substring test could never fail while the removal path existed.
- * The `write-gone` case deleted the write and the guard reported it green. A needle that one of
- * its own siblings satisfies is a dead branch, and dead branches here read as coverage. */
-/* The button goes through lib/db.js packRouteWithSnapshot (the row, THEN the reports/corrections
- * snapshot — §10), so the write is a TWO-LINK chain and both links are asserted: ClimbMatch calls
- * the wrapper, and the wrapper still calls the row write. Either one missing and nothing is stored. */
-if (/(?<![A-Za-z0-9_$])packRouteWithSnapshot\(/.test(cmS)) ok("ClimbMatch.jsx calls packRouteWithSnapshot() when a climb is packed");
-else fail("ClimbMatch.jsx never calls packRouteWithSnapshot() — the pack button writes nothing again");
-const packWrap = dbS.match(/export async function packRouteWithSnapshot[\s\S]*?\n}/);
-if (packWrap && /(?<![A-Za-z0-9_$])packRouteOffline\(/.test(packWrap[0])) ok("...and packRouteWithSnapshot() still calls packRouteOffline() for the row");
-else fail("packRouteWithSnapshot() no longer calls packRouteOffline() — the snapshot is saved beside a route row that never is");
-if (/unpackRouteOffline\(/.test(cmS)) ok("...and calls unpackRouteOffline() when one is removed");
-else fail("ClimbMatch.jsx never calls unpackRouteOffline() — removing leaves the row on the device");
+const cmS = strip(cm), dbS = strip(db), offS = strip(off);
 
 /* ── 2. THE READ: the stored row reaches the screen. ─────────────────────────────────────────
  * THE SILENT HALF. Every route the pack, the wishlist and the logbook resolve comes through
@@ -111,141 +81,6 @@ if (/offlineRoutesByIds\(/.test(hook[0])) ok("...with offlineRoutesByIds as its 
 else fail("useRoutesByIds' fallback is not offlineRoutesByIds — packed rows are written and never read");
 if (/export async function offlineRoutesByIds\s*\(/.test(offS)) ok("...which lib/offline.js still defines");
 else fail("lib/offline.js no longer defines offlineRoutesByIds()");
-
-/* ── 3. THE HYDRATION, AND ITS ORDER. ────────────────────────────────────────────────────────
- * The pack list is a mirror of the store, so without this read it is empty on every load and the
- * write is invisible however well it worked. The ORDER is asserted separately and is the half
- * that would break silently: effects run in declaration order, and the sign-in reset clears
- * `offline` on every uid transition — so a hydration declared ABOVE it fills the list and is
- * wiped microseconds later, leaving a signed-in climber with an empty pack that is on disk.
- * That is exactly the defect check:verification-fallback exists for, and no render can see it. */
-console.log("\n3. THE HYDRATION — the pack survives a reload, and is not wiped by the sign-in reset:");
-const hyd = cmS.indexOf("packedRouteIds(");
-if (hyd >= 0) ok("ClimbMatch.jsx hydrates the pack from packedRouteIds()");
-else fail("ClimbMatch.jsx never calls packedRouteIds() — the pack is empty after every reload");
-const reset = cmS.indexOf("setOffline([])");
-/* A FAILURE, not a fatal, and the distinction is load-bearing: only the ORDERING claim below is
- * unchecked when this anchor moves, so exiting here would take §5's per-file floors with it —
- * and §5 is what catches the trip-pack vocabulary being renamed wholesale. Measured: the
- * `renamed-cm` injection died on THIS line and never reached the floor it was written to pin, so
- * the guard's right answer arrived by the wrong route. Whichever block exits first is the only
- * one anyone reads, which this repo records for check:clickable and check:field-renders. */
-if (reset < 0) fail("ANCHOR LOST: the sign-in reset no longer clears `offline`. The ordering rule below\n"
-  + "       could not be checked — a hydration wiped by the reset would now be invisible.");
-else if (hyd >= 0 && hyd > reset) ok("...and that hydration is declared BELOW the sign-in reset, so it is not wiped");
-else if (hyd >= 0 && reset >= 0) fail("the pack hydration is declared ABOVE the sign-in reset that clears `offline`.\n"
-  + "       Effects run in declaration order, so it fills the list and the reset empties it on the\n"
-  + "       same uid transition. The screen shows an empty pack while the routes are on disk.");
-if (/export async function packedRouteIds\s*\(/.test(offS)) ok("...and lib/offline.js still defines packedRouteIds()");
-else fail("lib/offline.js no longer defines packedRouteIds()");
-
-/* ── 4. WHAT IS NOT SAVED IS STILL SAID. ─────────────────────────────────────────────────────
- * THE LOAD-BEARING COUNTERWEIGHT, and the reason sections 1-3 cannot stand alone: a guard that
- * only ever demands the mechanism exists is satisfied by claiming EVERYTHING is on the device.
- * The route row is; photos and topo images live in `contributions`/`topos` plus storage, other
- * climbers' condition reports live in `contributions`/`climb_logs`, and map tiles are
- * cross-origin and deliberately not touched by the service worker. None of those is packed, so
- * the surface that promises the rest must keep saying which. Positive form, so it needs no
- * vocabulary of absence — check:outage's own design rule. */
-console.log("\n4. THE DISCLAIMER — the surfaces still name what is NOT on the device:");
-/* Other climbers' REPORTS came off this list when the pack began saving the latest of them (§10
- * asserts that save and its reader), and MAP TILES came off it when the pack began saving the
- * approach's map (§11). Photos and topo images still are not stored -- and the map is only the
- * ground around the approach, so the card must say THAT, or "map" reads as the whole map. */
-if (/Photos and topo images are not/.test(rdS) && /saved map covers only the ground around the approach/.test(rdS))
-  ok("the Plan-tab pack card still names photos and topo images as not saved, and bounds the saved map");
-else fail("the Plan-tab pack card no longer says what is NOT saved. Packing stores the route's own\n"
-  + "       row and nothing else — a card listing what you have with no mention of what you do not\n"
-  + "       is the over-claim this guard has always existed to prevent, in its new form.");
-if (/anything newer needs a connection/.test(rdS)) ok("...and that anything newer than the saved copy needs a connection");
-else fail("the pack card stopped saying that anything newer needs a connection — a saved snapshot of reports\n"
-  + "       and forecast would read as current, which is the over-claim a climber cannot check.");
-
-/* ── 5. A NARROW, LIVE DENY-LIST. ────────────────────────────────────────────────────────────
- * Scoped structurally, as before: the regions are the innermost function or JSX element around a
- * reference to the trip-pack state, so this asks about the feature's own surfaces rather than
- * about the file. What it forbids is now only the things that are genuinely still NOT stored —
- * photos, topo images, other climbers' reports. "works with no signal" is a TRUE claim about a
- * packed route today and is deliberately not a needle any more.
- *
- * It is a deny-list and will be short again one day; that is stated rather than hidden. Its
- * shelf life is tied to §4, which is the positive assertion doing the real work. */
-const TRIGGERS = new Set(["offline", "setOffline", "offlineSaved", "onToggleOffline", "packBusy", "offlinePending"]);
-/* `trip reports` and `other climbers` came OFF this list with the snapshot (§10): the pack now saves
- * the latest reports, and a surface saying so is true — §10 is what keeps it true. */
-const NOT_STORED = /\b(?:photos?|topo images?|conditions snapshot)\b/i;
-/* `to this device` as well as `on this device`: the natural way to write this claim is
- * "Saves the beta and every photo TO this device", and a needle wanting only `on` missed it —
- * caught by the `claims-photos` injection, not by reading the rule. A deny-list is beaten by one
- * more preposition just as readily as by one more adjective. */
-const STORED = /\b(?:cached|saved (?:to|on) (?:this|your) device|(?:on|to) (?:this|your) device|bundled|downloaded|offline)\b/i;
-/* Strip the no-signal idioms BEFORE testing for negation. Leaving them in is what made two of the
- * old guard's six needles unreachable: "works with no signal" contains the word "no", so every
- * sentence the rule most wanted to catch excused itself. */
-const NEGATED = /\b(?:not|no|nothing|never|isn’t|isn't|doesn’t|doesn't|still need|still needs)\b/i;
-const deIdiom = (s) => s.replace(/\bno[- ](?:signal|service|cell|reception)\b/gi, " ");
-
-function regionsFor(src) {
-  const ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
-  const ranges = [];
-  traverse(ast, {
-    Identifier(p) {
-      if (!TRIGGERS.has(p.node.name)) return;
-      if (p.parentPath.isObjectProperty() && p.parentPath.parentPath.isObjectPattern()) return;
-      if (p.parentPath.isVariableDeclarator()) return;
-      // Innermost enclosing function OR JSX element -- whichever comes first walking up. Taking
-      // the JSX element unconditionally lands on <RouteDetail/>, one element carrying 59 props.
-      const host = p.findParent((a) => a.isJSXElement() || a.isArrowFunctionExpression() || a.isFunctionExpression());
-      if (!host || host.node.start == null) return;
-      ranges.push([host.node.start, host.node.end]);
-    },
-  });
-  const strings = [];
-  traverse(ast, {
-    "StringLiteral|JSXText"(p) {
-      const n = p.node;
-      if (n.start == null) return;
-      const v = (n.value || "").trim();
-      if (v.length < 4) return;
-      if (ranges.some(([a, b]) => n.start >= a && n.end <= b)) strings.push({ v, at: n.start });
-    },
-  });
-  return { ranges, strings };
-}
-
-/* PER FILE, never a global total. A global floor is satisfied by the OTHER file: renaming the
- * trigger in RouteDetail.jsx alone leaves ClimbMatch's regions standing, so the guard would
- * report a clean sweep having inspected one file of two — the check:control-names defect, whose
- * floor was "at least one" and which a PARTIAL restyle left checking 1 of 9. */
-const FLOOR = { regions: 6, strings: 15 };
-console.log("\n5. NO SURFACE CLAIMS THE THINGS THAT ARE STILL NOT STORED:");
-let regions = 0, examined = 0;
-const findings = [];
-for (const [f, src] of [["ClimbMatch.jsx", cm], ["RouteDetail.jsx", rd]]) {
-  let got;
-  try { got = regionsFor(src); } catch (e) { dead("could not parse " + f + " — nothing was checked. " + e.message); }
-  if (got.ranges.length < FLOOR.regions || got.strings.length < FLOOR.strings)
-    dead(f + " yielded only " + got.ranges.length + " trip-pack region(s) and " + got.strings.length
-      + " string(s) (floor " + FLOOR.regions + "/" + FLOOR.strings + ").\n"
-      + "  The trip-pack state was renamed in that file, or the scan broke. Its surfaces went\n"
-      + "  UNCHECKED — and the other file's regions would otherwise have carried the run to a pass.");
-  regions += got.ranges.length;
-  for (const s of got.strings) {
-    examined++;
-    for (const raw of s.v.split(/(?<=[.!?])\s+|\s+[—–]\s+/)) {
-      const sentence = deIdiom(raw);
-      if (NEGATED.test(sentence)) continue;
-      if (NOT_STORED.test(sentence) && STORED.test(sentence))
-        findings.push({ f, at: s.at, sentence: raw.trim() });
-    }
-  }
-}
-if (findings.length) {
-  for (const x of findings)
-    fail(x.f + " @" + x.at + " claims something is on the device that packing does not store:\n       “"
-      + x.sentence.slice(0, 130) + "”");
-} else ok("no trip-pack surface claims photos, topo images or others' reports are stored ("
-  + regions + " regions, " + examined + " strings)");
 
 /* ── 6. THE STATE DOWNLOAD'S OWN CLAIMS SURVIVE. ─────────────────────────────────────────────
  * Kept verbatim from the old guard. A downloaded state IS on the device, so that promise is true
@@ -343,76 +178,9 @@ else fail("useAreaNamesByIds does not fall back through orOfflineExact/offlineAr
   + "       with no signal every area name degrades to its placeholder.");
 
 
-/* ── 10. WHAT RIDES WITH THE PACK IS BACKED, AND DATED. ──────────────────────────────────────
- * The pack stores more than the route row now: the latest trip reports and their authors'
- * public names, the community's corrections, a forecast, and — keyed by account — the climber's
- * own plan. Each is a promise the card makes ("Latest 3 trip reports", "Forecast · 2 hr ago"),
- * so each needs the same chain §1-§3 demand of the row: WRITTEN, READ BACK through the query the
- * page already uses, and SAID TO BE OLD. The third link is the one a render cannot see: drop the
- * stamp and the saved copy renders exactly like a live one, which is the over-claim in its most
- * dangerous form — last Tuesday's "firm snow" read as today's. */
-console.log("\n10. THE SNAPSHOT — reports, corrections, forecast and your plan are written, read back, and dated:");
-const hookBody = (name) => { const m = dbS.match(new RegExp("export function " + name + "[\\s\\S]*?\\n}")); if (!m) dead("ANCHOR LOST: " + name + " is gone from lib/db.js"); return m[0]; };
-const SNAP = [
-  [packWrap && /savePackSnapshot\([\s\S]*reports/.test(packWrap[0]) && /contribs/.test(packWrap[0]),
-    "packRouteWithSnapshot saves the reports and corrections with the row",
-    "packRouteWithSnapshot no longer saves reports + corrections — the card's chips describe nothing stored"],
-  [packWrap && /kind\s*!==\s*"photo"/.test(packWrap[0]),
-    "...and leaves PHOTOS out of the saved corrections",
-    "the snapshot no longer filters out photo rows — offline they render as broken tiles, or as an empty gallery"],
-  [/offlinePackReports\(/.test(hookBody("useRouteTripReports")) && /structuralSharing:\s*false/.test(hookBody("useRouteTripReports")),
-    "useRouteTripReports falls back to the saved reports, with the `_packedAt` stamp kept",
-    "useRouteTripReports lost its pack fallback or its structuralSharing:false — reports vanish offline, or render undated"],
-  [/offlinePackContribs\(/.test(hookBody("useRouteContributions")) && /structuralSharing:\s*false/.test(hookBody("useRouteContributions")),
-    "useRouteContributions falls back to the saved corrections, with the stamp kept",
-    "useRouteContributions lost its pack fallback or its stamp — agreed corrections silently revert offline"],
-  [/offlinePackProfiles\(/.test(hookBody("useProfilesByIds")),
-    "useProfilesByIds names the saved reports' authors from the pack",
-    "useProfilesByIds has no pack fallback — every saved report reads as an anonymous climber offline"],
-  [/cacheItineraries\(/.test(hookBody("useMyItineraries")) && /cachedItineraries\(/.test(hookBody("useMyItineraries")),
-    "useMyItineraries mirrors the plan to the device and reads it back",
-    "useMyItineraries no longer mirrors/reads the device copy — the climber's own plan is gone at the trailhead"],
-  [/packForecast\(/.test(rdS) && /snapshotPackForecast\(/.test(rdS),
-    "the route page takes the forecast snapshot and WeatherPanel falls back to it",
-    "the forecast snapshot is no longer taken or no longer read — the Safety tab has no forecast offline"],
-  [/reportsPackedAt/.test(rdS) && (rdS.match(/saved with your trip pack/g) || []).length >= 2,
-    "the page SAYS a saved report or forecast is the pack's copy, and how old",
-    "the page stopped dating the saved reports/forecast — an old snapshot now reads as live"],
-  [/_packedAt/.test(cmS.match(/var photosUnavailable=[^;]*;/) ? cmS.match(/var photosUnavailable=[^;]*;/)[0] : ""),
-    "a pack-served (photo-less) contributions list reads as photos-unavailable, not 'no photos'",
-    "photosUnavailable ignores the pack stamp — a packed route claims it has NO photos when it is offline"],
-];
-for (const [cond, good, why] of SNAP) { if (cond) ok(good); else fail(why); }
-
-/* ── 11. THE MAP IN THE PACK IS BACKED, BOUNDED, AND REACHES THE SCREEN. ─────────────────────
- * Packing saves map tiles for the ground from the trailhead to the climb (lib/offlineTiles.js).
- * The card's "Map" chip and the toast's "and the map" are promises, so the chain §10 demands:
- * WRITTEN by the pack, READ BACK by the map (a failed tile falls back to the saved one), counted
- * on the card from what is really stored, and REMOVED with the climb. Plus the two links that are
- * easy to lose: Leaflet itself must be reachable offline, and the tiles must not live in Cache
- * Storage, where the service worker's activate handler deletes them. */
-console.log("\n11. THE PACK'S MAP — saved, served offline, counted honestly, removed with the climb:");
-const MAP = [
-  [/saveRouteMapOffline\(/.test((packWrap || [""])[0]), "packRouteWithSnapshot saves the route's map",
-    "packRouteWithSnapshot no longer calls saveRouteMapOffline — the card's Map chip would promise tiles nobody wrote"],
-  [/indexedDB\.open\(/.test(tilesS) && !/caches\.open\(/.test(tilesS), "offline tiles live in IndexedDB, not Cache Storage",
-    "lib/offlineTiles.js stores tiles in Cache Storage (or not in IndexedDB) — public/sw.js's activate deletes every cache but the shell, so a worker update would wipe every saved map"],
-  [/offlineTileUrl\(/.test(kitS) && /createTile\(/.test(kitS), "the map's tile layer falls back to the saved tile when a tile fails",
-    "lib/mapKit.jsx no longer reads saved tiles — the pack saves a map that no map ever shows"],
-  [/removeRouteMapOffline\(/.test(offS.match(/export async function unpackRouteOffline[^\n]*/) ? offS.match(/export async function unpackRouteOffline[^\n]*/)[0] : ""),
-    "unpacking a climb removes its map", "unpackRouteOffline no longer removes the map — 'Removed from your trip pack' would leave megabytes behind"],
-  [/routeMapInfo\(/.test(offS) && /mapTiles/.test(offS) && /_pm&&_pm\.mapTiles/.test(rdS), "the Map chip is counted from the tiles actually stored",
-    "the pack card's Map chip is not read from the stored tile count — it would claim a map whether or not one downloaded"],
-  [/ajax\/libs\/leaflet\//.test(swS) && /warmLeafletOffline\(/.test(cmS), "Leaflet itself is cached for offline, and packing fetches it",
-    "public/sw.js no longer caches Leaflet, or packing no longer fetches it — a packed map could not open with no signal at all"],
-  [/packMapNote\(/.test(cmS) && /m\.missing/.test(cmS), "the toast says how much of the map landed",
-    "the pack toast no longer distinguishes a full, partial or failed map download"],
-];
-for (const [cond, good, why] of MAP) { if (cond) ok(good); else fail(why); }
-
 /* Fail closed on a run that quietly stopped asking. Raise this when you add an assertion; never
  * lower it to make a run pass. */
-const EXPECTED = 51;
+const EXPECTED = 23;
 if (ran < EXPECTED)
   dead("only " + ran + " assertion(s) RAN, expected " + EXPECTED
     + " — this guard stopped asking half its questions and still exited 0.");
@@ -423,6 +191,5 @@ if (bad) {
     + "the app actually stores. Over-claiming is the direction a climber cannot check.");
   process.exit(1);
 }
-console.log("\ncheck:offline-claims: ok — the trip pack really writes, reads and survives a reload, a\n"
-  + "downloaded state is searchable as well as browsable (" + ran + " assertions), and the surfaces\n"
-  + "still say what is NOT on the device.");
+console.log("\ncheck:offline-claims: ok — a downloaded state is browsable and searchable offline\n"
+  + "(" + ran + " assertions). There is no per-route trip pack: the state download is the offline feature.");
