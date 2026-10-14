@@ -585,6 +585,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       the SQL is quick (a 524 says nothing about commit — read `schema_migrations`); and a child named
       for its parent ("Blue River Bend" › "WM: Blue River Bend") cannot hand its climbs UP while it
       exists (`routes_require_leaf`) — the child takes the parent's place instead (0284 step 5c).
+    - **Pairs sharing ONE or TWO climbs — 0285** (2026-10-14). 0278 read every pair sharing three or more;
+      the tail under 2 km was 266 pairs, each shared climb's two copies set beside the source tree's entry
+      or entries and both rows' FA, length and description, then read (four Sonnet readers, their flagged
+      blocks re-read): 157 merged — most where the SOURCE lists one climb on two walls itself (Pentecost on
+      Down Under and Outback Wall, one FA) — 154 kept apart (rock vs ice or boulder, different FAs, grades
+      far apart, and everything unsure), 6 places folded. Kept apart on a judgement worth knowing: Missouri's
+      closed Hiker's Boulder beside the park's Planet Express (Seymour, Ankylosaurus — no source entry says
+      which boulder); Interstate Park's roped "The Pit" beside its bouldering tree's "Pit (AKA Arm Pit)".
+      Cupids Bower's old copy named its climbs "BA", "Master Degree", "PHD" with the same "5.9" on all three:
+      merged into the current names WITHOUT the higher-grade rule, because a uniform grade is not a reading.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
