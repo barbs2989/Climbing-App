@@ -1759,3 +1759,16 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       up to N, most often reading too cold") rather than correcting for it. CAVEAT: a snow station stands in a clearing
       or basin, so a ridge or summit may differ from it in either direction; the figures describe stations, not summits.
       The first five-station run (all autumn) was too optimistic to state alone.
+
+- **Ideal temperature and wind are RANGES, not presets (2026-10-14, owner's request).** The four chips (Default / Cool /
+  Mild / Warm) were exclusive, so a climber happy from cool to warm could not say so. Both are now a two-handle
+  slider (`lib/RangeSlider.jsx`): drag either end, so a wide range is one choice. Cool / Mild / Warm stay as
+  SHORTCUTS that set a range. Stored in deg F and mph (`defineRangePref` in lib/prefs.js, keys `climbmatch-cond-temp`
+  and `-wind`, validated on read: two finite numbers in bounds at least 4 F / 3 mph apart, anything else reads as
+  "nothing chosen"), so a change of display units never moves the choice; the handles SNAP to a number the climber
+  can see (whole degrees C when metric) through `uTempIn(uTempN())`. A band saved in the old chips is the starting
+  range. Wind had no preference before: it was the fixed rule full at 10 mph, nothing at 35. Unchosen it is still
+  that rule EXACTLY (range [0,10], fade 25 mph above), pinned in `check:conditions-score`; a climber who wants a
+  breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
+  Home/End, `touch-action:none`). TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
+  `innerWidth` 0) in an automation session, which makes screenshots fail with "0 width"; a NEW tab got a real size.
