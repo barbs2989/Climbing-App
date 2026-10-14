@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_fortune_peak_east_slope",
+  "last_processed_id": "wa_garfield_mountain_preiss_route",
   "total_in_scope_last_count": 747,
   "total_wa_alpine_or_mountaineering_tagged": 843,
-  "pass_note": "Five fixes applied via SQL (audits/sql/2026-10-14-batch-401.sql): two pitch-count corrections on Forbidden Peak (East Ridge Direct 6->8, West Ridge 8->6) where the top-level pitches column disagreed with the row's own pitch_detail array length (and, for East Ridge Direct, its own beta text plus external corroboration); an ice_grade self-contradiction on Northeast Face (AI3 vs AI2 agreed by 3 other fields); a gain_ft correction on North Ridge (4500->6340) derived by summing the route's own waypoint elevation profile; and on Fortress Mountain's Northeast Face/Ridge row, both an unapplied rename already decided in the row's own corrections field (name/face -> 'Northeast Ridge') and a wrong ranger-district phone/address (Chelan -> Wenatchee River Ranger District). Thirteen items flagged for human review (see wa-alpine-audit-log.md), most notably Forbidden Peak Northeast Face's FA attribution to 'Ed Cooper and Stuart Ferguson, 1961' which could not be corroborated by any source -- the route's existence as a standalone climb distinct from the NE Ledge descent traverse is itself in question. Tooling notes: delegated to 3 parallel subagents (East Ledges + East Ridge Direct + North Ridge; Northeast Face + Northwest Face + West Ridge; Fortress Mountain x3 + Fortune Peak). WebSearch was the sole working method. Pass 7 continues next run after wa_fortune_peak_east_slope.",
+  "pass_note": "Batch 402: zero confirmed errors across 10 routes (Fortune Peak, Four Brothers, Free Mojo on South Early Winters Spire, Frenzel Spitz, Full Tilt on Colchuck Balanced Rock, and Garfield Mountain x5 -- East Rib, Infinite Bliss, Leaning Spire West Route, North Route, Preiss Route). Notable: wa_garfield_mountain_east_rib is a near-empty stub (id/name/discipline/pitches only) that no source -- including this project's own prior Garfield research -- corroborates as a real named route; flagged for human review rather than fixed, since this audit has no delete/write authority. 17 other items flagged for human review, mostly unconfirmable FA attributions and small elevation discrepancies against secondary sources (SummitPost/PeakVisor/Wikipedia); see wa-alpine-audit-log.md. Tooling notes: delegated to 4 parallel subagents (Fortune Peak+Four Brothers+Free Mojo; Frenzel Spitz+Full Tilt; Garfield East Rib+Infinite Bliss+Leaning Spire; Garfield North Route+Preiss Route). WebSearch was the sole working method; one subagent noted WebFetch to mountainproject.com/summitpost.org failed with DNS errors, so it relied on WebSearch snippets only. Pass 7 continues next run after wa_garfield_mountain_preiss_route.",
   "batches": [
     {
       "batch_number": 1,
@@ -8033,6 +8033,26 @@
       "flagged_for_human_review": 13,
       "clean": 2,
       "note": "Five fixes applied via SQL (audits/sql/2026-10-14-batch-401.sql): two pitch-count corrections on Forbidden Peak (East Ridge Direct 6->8, West Ridge 8->6) where the top-level pitches column disagreed with the row's own pitch_detail array length (and, for East Ridge Direct, its own beta text plus external corroboration); an ice_grade self-contradiction on Northeast Face (AI3 vs AI2 agreed by 3 other fields); a gain_ft correction on North Ridge (4500->6340) derived by summing the route's own waypoint elevation profile; and on Fortress Mountain's Northeast Face/Ridge row, both an unapplied rename already decided in the row's own corrections field (name/face -> 'Northeast Ridge') and a wrong ranger-district phone/address (Chelan -> Wenatchee River Ranger District). Thirteen items flagged for human review (see wa-alpine-audit-log.md), most notably Forbidden Peak Northeast Face's FA attribution to 'Ed Cooper and Stuart Ferguson, 1961' which could not be corroborated by any source -- the route's existence as a standalone climb distinct from the NE Ledge descent traverse is itself in question. Tooling notes: delegated to 3 parallel subagents (East Ledges + East Ridge Direct + North Ridge; Northeast Face + Northwest Face + West Ridge; Fortress Mountain x3 + Fortune Peak). WebSearch was the sole working method. Pass 7 continues next run after wa_fortune_peak_east_slope."
+    },
+    {
+      "batch_number": 402,
+      "date": "2026-10-14",
+      "route_ids": [
+        "wa_fortune_peak_standard_route",
+        "wa_four_brothers_southwest_route",
+        "wa_free_mojo",
+        "wa_frenzel_spitz_south_route",
+        "wa_full_tilt_tempest_wall_free_version",
+        "wa_garfield_mountain_east_rib",
+        "wa_garfield_mountain_infinite_bliss",
+        "wa_garfield_mountain_leaning_spire_west_route",
+        "wa_garfield_mountain_north_route",
+        "wa_garfield_mountain_preiss_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 17,
+      "clean": 3,
+      "note": "Zero confirmed errors with a citable contradicting source across all 10 routes (Fortune Peak, Four Brothers, South Early Winters Spire's Free Mojo, Frenzel Spitz, Colchuck Balanced Rock's Full Tilt, Garfield Mountain x5) -- no SQL file this batch. Most notable finding: wa_garfield_mountain_east_rib has almost no populated fields (no grade/FA/description/coordinates) and could not be corroborated as an existing named route on Garfield Mountain by any source, including this project's own prior Garfield enrichment research, which lists only 4 other routes there -- flagged as a possible unverified/fabricated stub rather than fixed (no delete authority here). See pass_note for the full list of 17 items flagged for human review (a trailhead-elevation discrepancy on Fortune Peak, a stale internal grade note on Four Brothers, a gain_ft undercount on Free Mojo, a county-boundary and grading-system question on Frenzel Spitz, an unconfirmed FA roster on Full Tilt, and on Garfield Mountain: the East Rib existence question, Infinite Bliss's grade/high_point_ft/FA, Leaning Spire's high_point_ft/FA, North Route's FA, and Preiss Route's FA/high_point_ft/road-status)."
     }
   ]
 }

@@ -31498,3 +31498,75 @@ Direct + North Ridge; Northeast Face + Northwest Face + West Ridge; Fortress Mou
 Fortune Peak). WebSearch was the sole working method, as in prior batches.
 
 Pass 7 continues next run after `wa_fortune_peak_east_slope`.
+
+---
+
+## 2026-10-14 — Pass 7, Batch 402
+
+Ten routes across 6 peaks (Fortune Peak, Four Brothers, South Early Winters Spire, Frenzel
+Spitz, Colchuck Balanced Rock, Garfield Mountain ×5): Standard Route (Fortune Peak);
+Southwest Route (Four Brothers); Free Mojo (South Early Winters Spire); South Route
+(Frenzel Spitz); Full Tilt / Tempest Wall Free Version (Colchuck Balanced Rock); East Rib,
+Infinite Bliss, Leaning Spire West Route, North Route, Preiss Route (Garfield Mountain).
+
+**Zero confirmed errors** — no SQL file this batch. Nothing found rose to a citable,
+external-source contradiction of a stored value.
+
+**Most notable finding (flagged, not fixed):** `wa_garfield_mountain_east_rib` is close to
+an empty stub — only `id`/`name`/`discipline`/`pitches` (3) are populated, with no grade,
+FA, description, or coordinates at all. No source (Mountain Project, SummitPost, the
+Washington Climbers Coalition, Beckey references, trip reports) names an "East Rib" route
+on Garfield Mountain, and this project's own prior Garfield enrichment research
+(`research/crag-merges/garfield-pre-merge.json`) lists only four routes there — Infinite
+Bliss, Leaning Spire West Route, Preiss Route, and a Multi-Summit Scramble — not East Rib.
+This audit has no delete/write authority and the instructions bar flagging/fixing anything
+unverifiable, so it is left as-is and flagged for a human to check against a physical copy
+of Beckey's Cascade Alpine Guide or the row's original import provenance.
+
+**Clean, independently corroborated:** Fortune Peak's high point (7,382 ft), summit
+coordinates, Esmeralda Basin Trail #1394 approach, and permit/land-manager framing
+(Okanogan-Wenatchee NF, Cle Elum Ranger District) via Wikipedia/SummitPost/WTA. Frenzel
+Spitz's elevation (7,440 ft), FA party and date (Cooper/Denny/Firey×2/Whitmore, Sept 10
+1961), Southern Pickets location, and summit coordinates via Wikipedia's Picket Range
+table and an AAC Publications reprint; its own gain_ft (7,700) and dist_km (14.48 km) are
+internally self-consistent with its day-by-day waypoints. Full Tilt's grade/pitches/length
+(Grade III, 5.12, 5 pitches, ~1,200 ft) and Colchuck Balanced Rock's 8,240 ft summit via
+Mountain Project/Wikipedia; its pitch_detail lengths sum to within rounding of length_m.
+Free Mojo's identity, grade and FA (Herrington & Zimmerman) via Mountain Project and
+Herrington's own 2013 trip report, matching pitches/length/pitch-by-pitch grades exactly.
+Infinite Bliss's 2014 fatality, rockfall-damaged anchors, and length (2,600 ft/23p) via
+Seattle Mountain Rescue's blog and news coverage.
+
+**Flagged for human review:** Fortune Peak's Esmeralda Trailhead elevation (4,269 ft
+stored vs 4,243 ft on SummitPost — within likely GPS-source variance). Four Brothers'
+stale internal `data_quality.gaps` note referencing an "on-file Class 3" grade that no
+longer matches the current `grade` field ("Class 2"); its gain_ft given an already
+self-flagged prominence disagreement in the same metadata block. Free Mojo's gain_ft
+(2,200 ft) looking low against its own trailhead/summit waypoint delta (2,407 ft) and a
+Mountaineers guide figure (~2,600 ft) for an overlapping approach — not called a confirmed
+error since trailhead-elevation conventions vary. Frenzel Spitz's Whatcom-vs-Skagit county
+dispatch note (only secondary corroboration found) and an alpine_grade/commitment pairing
+that couldn't be cross-checked against a named source. Full Tilt's specific 9-person FA
+roster and May 2013 date, which standard sources discuss only for the Tempest Wall's 2008
+aid FA, not this free line. On Garfield Mountain: Infinite Bliss's grade split between
+5.10b (Washington Climbers Coalition, a contemporaneous 2004 trip report) and 5.10c (a 2009
+trip report, a 2026 Mountain Project log) — unresolved; its high_point_ft (4,804 ft,
+"Infinite Peak") against two sources giving the West Peak at 4,896 ft; its FA party
+(Windham & Martin, Aug 2003) found nowhere, though not contradicted either. Leaning Spire's
+high_point_ft (5,169 ft vs ~5,040+ ft on two secondary sources) and its FA attribution
+(Beckey/Graham/Varney, Nov 9 1941 — Varney's documented Beckey partnership traces to 1942,
+and no source mentions a "Lois Graham"). North Route's FA (Berge & Schoening, 1950/51 —
+real climbers, but their documented joint climb found in search is Mount Baring's North
+Face, not Garfield). Preiss Route's FA/name (Mike Preiss, solo, July 1999 — zero hits found
+anywhere despite other Garfield routes from the same era being well documented), its
+high_point_ft (4,804 ft sub-summit, plausible but unconfirmed against West Peak's
+documented 4,896 ft), and a time-sensitive 2026 road-washout claim that couldn't be checked
+against a current USFS/WTA status page.
+
+**Tooling notes:** Delegated research to 4 parallel subagents (Fortune Peak + Four Brothers
++ Free Mojo; Frenzel Spitz + Full Tilt; Garfield East Rib + Infinite Bliss + Leaning Spire;
+Garfield North Route + Preiss Route). WebSearch was the sole working method; one subagent
+reported WebFetch to mountainproject.com/summitpost.org failing with DNS errors and relied
+on WebSearch snippets only.
+
+Pass 7 continues next run after `wa_garfield_mountain_preiss_route`.
