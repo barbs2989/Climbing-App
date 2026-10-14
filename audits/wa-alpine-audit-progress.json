@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_garfield_mountain_preiss_route",
+  "last_processed_id": "wa_glacier_peak_cool_glacier_gerdine",
   "total_in_scope_last_count": 747,
   "total_wa_alpine_or_mountaineering_tagged": 843,
-  "pass_note": "Batch 402: zero confirmed errors across 10 routes (Fortune Peak, Four Brothers, Free Mojo on South Early Winters Spire, Frenzel Spitz, Full Tilt on Colchuck Balanced Rock, and Garfield Mountain x5 -- East Rib, Infinite Bliss, Leaning Spire West Route, North Route, Preiss Route). Notable: wa_garfield_mountain_east_rib is a near-empty stub (id/name/discipline/pitches only) that no source -- including this project's own prior Garfield research -- corroborates as a real named route; flagged for human review rather than fixed, since this audit has no delete/write authority. 17 other items flagged for human review, mostly unconfirmable FA attributions and small elevation discrepancies against secondary sources (SummitPost/PeakVisor/Wikipedia); see wa-alpine-audit-log.md. Tooling notes: delegated to 4 parallel subagents (Fortune Peak+Four Brothers+Free Mojo; Frenzel Spitz+Full Tilt; Garfield East Rib+Infinite Bliss+Leaning Spire; Garfield North Route+Preiss Route). WebSearch was the sole working method; one subagent noted WebFetch to mountainproject.com/summitpost.org failed with DNS errors, so it relied on WebSearch snippets only. Pass 7 continues next run after wa_garfield_mountain_preiss_route.",
+  "pass_note": "Batch 403: 1 confirmed error fixed (Gilbert Peak West Route grade Class 4 -> Class 3, contradicted by SummitPost) across 8 routes (Garfield Mountain x3, Ghost Peak, Gilbert Peak x3, Glacier Peak). Notable: wa_garfield_mountain_southeast_face is an unconfirmable route (no source corroborates it, FA does not match Doorish's known ascents), same shape as the East Rib stub flagged in batch 402. wa_garfield_mountain_southwest_ledges shows stronger evidence of conflation: its route name belongs to a different peak (Ingalls Peak), its credited FA pair's real joint FA is an unrelated crag route, and its 'Infinite Peak' summit name/elevation (4804 ft) does not match the only sourced elevation for Garfield's West Peak (4896 ft) -- the same Infinite Peak/4804ft/Martin-Windham naming pattern already flagged unresolved on Infinite Bliss in batch 402, suggesting a systematic issue across multiple Garfield rows rather than one-off. wa_glacier_peak_cool_glacier_gerdine looks like a duplicate of the separately-stored wa_glacier_peak_gerdine_ridge_cool_glacier row (FKT and SummitPost both describe them as the same line/variation, not two routes). None of these three were fixed or deleted -- flagged for human review per audit guardrails (no delete/merge authority). 1 row clean (Gilbert Peak Conrad Glacier), several other items flagged for human review (mostly unconfirmable details and a stale-looking road-washout claim); see wa-alpine-audit-log.md. Tooling notes: delegated to 4 parallel subagents, one per peak. WebSearch was the primary method; WebFetch to mountainproject.com/summitpost.org again failed with DNS errors in at least one subagent. Pass 7 continues next run after wa_glacier_peak_cool_glacier_gerdine.",
   "batches": [
     {
       "batch_number": 1,
@@ -8053,6 +8053,24 @@
       "flagged_for_human_review": 17,
       "clean": 3,
       "note": "Zero confirmed errors with a citable contradicting source across all 10 routes (Fortune Peak, Four Brothers, South Early Winters Spire's Free Mojo, Frenzel Spitz, Colchuck Balanced Rock's Full Tilt, Garfield Mountain x5) -- no SQL file this batch. Most notable finding: wa_garfield_mountain_east_rib has almost no populated fields (no grade/FA/description/coordinates) and could not be corroborated as an existing named route on Garfield Mountain by any source, including this project's own prior Garfield enrichment research, which lists only 4 other routes there -- flagged as a possible unverified/fabricated stub rather than fixed (no delete authority here). See pass_note for the full list of 17 items flagged for human review (a trailhead-elevation discrepancy on Fortune Peak, a stale internal grade note on Four Brothers, a gain_ft undercount on Free Mojo, a county-boundary and grading-system question on Frenzel Spitz, an unconfirmed FA roster on Full Tilt, and on Garfield Mountain: the East Rib existence question, Infinite Bliss's grade/high_point_ft/FA, Leaning Spire's high_point_ft/FA, North Route's FA, and Preiss Route's FA/high_point_ft/road-status)."
+    },
+    {
+      "batch_number": 403,
+      "date": "2026-10-14",
+      "route_ids": [
+        "wa_garfield_mountain_south_route",
+        "wa_garfield_mountain_southeast_face",
+        "wa_garfield_mountain_southwest_ledges",
+        "wa_ghost_peak_south_route",
+        "wa_gilbert_peak_conrad_glacier",
+        "wa_gilbert_peak_meade_glacier",
+        "wa_gilbert_peak_west_route",
+        "wa_glacier_peak_cool_glacier_gerdine"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 13,
+      "clean": 1,
+      "note": "One confirmed fix: Gilbert Peak West Route grade corrected from Class 4 to Class 3 (SummitPost explicitly rates it Class 3; no source supports Class 4). Most notable findings, flagged but not fixed (no delete/merge authority): Garfield Mountain Southeast Face is unconfirmable as a real route (FA does not match Doorish's known ascents, same near-empty-stub shape as the East Rib flagged in batch 402); Garfield Mountain Southwest Ledges shows conflation -- its name belongs to Ingalls Peak, its credited FA pair's real joint FA is an unrelated Exit 38 crag route, and its 'Infinite Peak' name/elevation (4804 ft) contradicts the sourced West Peak elevation (4896 ft), echoing an unresolved flag on Infinite Bliss from batch 402; Glacier Peak's Disappointment Peak Cleaver/Gerdine-Cool Glacier row looks like a duplicate of a separately-stored row for the same real-world route. See wa-alpine-audit-log.md for full detail on all 8 routes."
     }
   ]
 }

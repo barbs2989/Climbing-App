@@ -31570,3 +31570,88 @@ reported WebFetch to mountainproject.com/summitpost.org failing with DNS errors 
 on WebSearch snippets only.
 
 Pass 7 continues next run after `wa_garfield_mountain_preiss_route`.
+
+## 2026-10-14 — Pass 7, Batch 403
+
+Eight routes across 4 peaks (Garfield Mountain ×3, Ghost Peak, Gilbert Peak ×3, Glacier
+Peak): South Route (Main Peak), Southeast Face, Southwest Ledges (Garfield); South Route
+(Ghost Peak); Conrad Glacier, Meade Glacier, West Route (Gilbert Peak); Disappointment Peak
+Cleaver / Gerdine Ridge / Cool Glacier (Glacier Peak).
+
+**One confirmed fix:** Gilbert Peak's West Route stored `grade`/`grade_num` as Class 4.
+SummitPost's dedicated West Route page explicitly rates the line "Class 3 rock, moderate
+scramble," and no other source found (Mountain Project area page, Mazamas) rates any
+segment Class 4. Corrected to Class 3 in `audits/sql/2026-10-14-batch-403.sql`.
+
+**Most notable findings (flagged, not fixed — two likely-fabricated/conflated routes):**
+- `wa_garfield_mountain_southeast_face` could not be corroborated by any source (Mountain
+  Project, SummitPost, AAJ, trip reports) as an existing named route on Garfield Mountain.
+  Its stored FA (Pete Doorish, solo, September 1989) doesn't match either of Doorish's two
+  verifiable WA first ascents found (North Norwegian Buttress on Mt. Index, and "DWI" at
+  Little Si with Bryan Burdo) — neither is on Garfield. The row itself is nearly empty (no
+  coordinates, no description, no approach/descent text), the same shape as
+  `wa_garfield_mountain_east_rib`, flagged as a likely-fabricated stub in Batch 402.
+- `wa_garfield_mountain_southwest_ledges` shows stronger evidence of conflation than a
+  simple factual slip: "Southwest Ledges" is a real, documented route name, but on Ingalls
+  Peak, not Garfield (SummitPost). Its stored FA pair, Steve Martin & Leland Windham
+  (September 2002), are real WA climbers, but their documented joint FA is AtaxiCrack
+  (5.11c trad) at Exit 38 near North Bend in 2001 — an unrelated crag route, wrong year.
+  Its stated summit, "Infinite Peak" at 4,804 ft, could not be found under that name
+  anywhere, and the area's own blurb lists Garfield's five summits as Main/East, West,
+  North, and Leaning Spire — no "Infinite Peak." The only sourced elevation for the
+  summit this row actually means (the West Peak) is 4,896 ft (SummitPost), not 4,804 ft.
+  Note this exact "Infinite Peak"/4,804 ft/Martin-Windham-2002-2003 pattern already
+  surfaced in Batch 402 as an unresolved flag on `wa_garfield_mountain_infinite_bliss`
+  (FA there given as "Windham & Martin, Aug 2003") — this looks like a systematic naming
+  confusion across multiple Garfield rows, not an isolated error on one route, and is worth
+  a human reviewing all Garfield Mountain rows together rather than row by row.
+- `wa_glacier_peak_cool_glacier_gerdine` ("Disappointment Peak Cleaver (Gerdine Ridge /
+  Cool Glacier)") looks like a duplicate of the separately-stored
+  `wa_glacier_peak_gerdine_ridge_cool_glacier` rather than a distinct real-world line.
+  FastestKnownTime's route table lists "Disappointment Peak Cleaver/Gerdine Ridge" as one
+  combined route, and SummitPost's own description calls the Gerdine/Cool Glacier crossing
+  "a variation of the Disappointment Peak route" already described elsewhere on the same
+  page — not an independent line. Flagged for a human to diff the two rows' waypoints/GPX
+  and decide on a merge; this audit has no authority to delete or merge rows.
+
+**Clean, independently corroborated:** Garfield Mountain's South Route FA (Jim Crooks &
+Judson Nelson, August 27 1940) via Wikipedia, SummitPost (mirror snippet) and a UW geology
+profile of Crooks, with SummitPost's own caveat that the exact original line may differ
+slightly from today's South Route — not treated as an error. Ghost Peak's high_point_ft
+(8,000 ft) against both the stored area elevation and a 2022 AAJ Phantom Peak report.
+Gilbert Peak's elevation handling: the row's own `corrections` field (8,184 ft current
+USGS/topo value vs. 8,201 ft, a legacy 1904 benchmark figure still echoed by some sources)
+confirmed accurate as written, no change needed. Conrad Glacier's and Meade Glacier's
+approach descriptions (Conrad Meadows/South Fork Tieton Trailhead, Trail #1120, the
+~7,200 ft saddle, Surprise Lake loop) via Mazamas, Mountaineers.org and the Oregon Hikers
+Field Guide. Glacier Peak's gain_ft (9,400 ft) via matching WTA and SummitPost trip
+reports, and the White Chuck Road washout history/North Fork Sauk as the current standard
+approach via USFS, Mountaineers.org and FastestKnownTime.
+
+**Flagged for human review (no citable contradiction, just unresolved):** Garfield South
+Route's "fixed ring piton in #2 Gully" detail and documented 6:45am-11:05pm car-to-car
+time, neither found in any source searched. Garfield South Route's "FSR 56 washout at MP
+17.3" road note — likely stale (a Trailforks condition report dated July 5 2026 says the
+road is clear; no source corroborates an MP 17.3 washout specifically), but a time-
+sensitive road-status claim isn't being hand-corrected without a clearer current source.
+Ghost Peak's route name "South Route" against the one documented easiest-route name found
+in secondary sources, "West Face" (Wikipedia/Peakbagger) — may be the same line under a
+different name, or a naming mismatch; and its "Carpetbaggers Traverse"/11-day-duration
+detail, not found in any source (may be an unindexed local nickname). Gilbert Peak West
+Route's gain_ft (4,000 ft) and approach framing, which traces to the row's own
+`corrections` field borrowing Mazamas' Klickton Divide figure (a different, geographically
+opposite South Fork Tieton approach) rather than the actual Snowgrass Flat/Cispus Basin
+line SummitPost describes — the `corrections` note itself should not be treated as
+resolved. Glacier Peak's 1897 vs. 1898 FA-year split between Mountain Project and
+Wikipedia/Grokipedia, and the stored "Disappointment Peak summited first in fog" detail,
+not found in any source; also its FR 23 closure "no end date given" wording, which the
+actual June 2025 USFS closure order contradicts (it specified an end date of December 31,
+2025) — WTA shows the closure persisting into 2026, so it was likely extended, but the
+specific "updated June 30, 2026" alert text could not be independently located.
+
+**Tooling notes:** Delegated research to 4 parallel subagents, one per peak (Garfield
+Mountain's 3 routes; Ghost Peak; Gilbert Peak's 3 routes; Glacier Peak). WebSearch was the
+primary method; WebFetch to mountainproject.com/summitpost.org again failed with DNS
+errors in at least one subagent, consistent with prior batches.
+
+Pass 7 continues next run after `wa_glacier_peak_cool_glacier_gerdine`.
