@@ -249,7 +249,8 @@ const uTemp=f=>{const n=uTempN(f);return n===null?NOVAL:n+"\u00b0";};
 const uTempDelta=d=>{const n=_uNum(d);return n===null?null:(uImp()?Math.round(n):Math.round(n*5/9));};
 const uWindN=mph=>{const n=_uNum(mph);return n===null?null:(uImp()?Math.round(n):Math.round(n*1.60934));};
 const uWind=mph=>{const n=uWindN(mph);return n===null?NOVAL:n+(uImp()?" mph":" km/h");};
-const uPrecip=inch=>{const n=_uNum(inch);return n===null?NOVAL:(uImp()?n.toFixed(2)+"\"":(n*25.4).toFixed(1)+" mm");};
+/* A real but tiny amount (a 0.1 mm drizzle the score counts as rain) must not round to "0.00\"", which reads as none. */
+const uPrecip=inch=>{const n=_uNum(inch);if(n===null)return NOVAL;if(uImp())return n>0&&n<0.005?"under 0.01\"":n.toFixed(2)+"\"";const mm=n*25.4;return mm>0&&mm<0.05?"under 0.1 mm":mm.toFixed(1)+" mm";};
 /* The forecast is a PROVIDER reading; the two below are a CLIMBER's own. uTempU keeps the
    scale letter because its chip is labelled only "Temp" -- dropping it would lose something
    the imperial reader has today. uTempIn is the INVERSE, and the only one of these that runs
