@@ -396,7 +396,7 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
         <Tile label="Freezing level" when={"at " + clockHr(hr)} value={fl != null ? uElev(Math.round(fl / 100) * 100) : NOT_MEASURED} sub={fl == null || tops == null ? null : "Air at " + uElev(tops) + " is " + (fl > tops ? "above" : "below") + " 0 °C" + (snowLegs && floor ? "; at the lowest snow you cross (" + uElev(floor.ft) + ") it is " + (fl > floor.ft ? "above" : "below") + " 0 °C" : "")} wide />
       </TileGrid>
     </div>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by 10–18 °F. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height above, not a reading on the mountain; no hour is marked safe. Wind chill uses the 10 m wind and assumes no sun.</div>
   </div>;
 }
 
@@ -418,7 +418,7 @@ function SnowfallSection({ fc, day, dayLabel }) {
       <Tile label={"Snow in " + (hist ? hist.days : 14) + " days"} when="modelled total" value={hist ? uSnowfall(hist.totalIn) : NOT_MEASURED} />
       <Tile label="Snow level this day" when={lvl ? "over " + lvl.wetHours + " wet hour" + (lvl.wetHours === 1 ? "" : "s") : "no precipitation forecast"} value={lvl ? uElev(Math.round(lvl.snowLo / 100) * 100) + " – " + uElev(Math.round(lvl.snowHi / 100) * 100) : "Not applicable"} sub={lvl ? "where precipitation falls as snow, from the freezing level (" + uElev(Math.round(lvl.flLo / 100) * 100) + " – " + uElev(Math.round(lvl.flHi / 100) * 100) + ") less 500 to 1,500 ft" : "a dry day has no snow line to read"} wide />
     </TileGrid>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>The history is the forecast’s own past hours at the forecast point, not a measurement on the route, and a day counts only at 0.1 in or more (the weather service’s “measurable”). How long ago it snowed does not tell you how stable the snow is: that depends on the layers beneath it, for days to weeks. The snow level is a rule of thumb, lower in heavy precipitation, and falls where it is raining or snowing only.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>The history is the forecast’s own past hours, not a measurement on the route; a day counts at 0.1 in or more. Stability depends on the layers beneath it, not how long ago it snowed. The snow level is a rule of thumb.</div>
   </div>;
 }
 
@@ -455,7 +455,7 @@ function StreamsSection({ pt, base }) {
             <Tile label="Lowest, last 24 h" when={f.lo.day + " at " + f.lo.clock} value={flowText(f.lo.v, f.kind)} />
           </TileGrid>}
       </div>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"A gauge reads the stream at the gauge, which may be a different stream from the one you cross, and it cannot see the depth or speed at your crossing. Whether a person can stand in water depends on depth times speed: adults lose their footing at about " + (uImp() ? "10 to 20 ft²/s" : "0.9 to 1.9 m²/s") + ", and no flow figure is safe for every crossing. Streams fed by snow melt rise in the warm hours and drop overnight, so cross early, and check it yourself before you commit."}</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"A gauge may be a different stream from the one you cross. Footing depends on depth times speed: adults lose it at about " + (uImp() ? "10 to 20 ft²/s" : "0.9 to 1.9 m²/s") + ". Snowmelt streams rise in the warm hours, so cross early and check it yourself."}</div>
   </div>;
 }
 
@@ -497,7 +497,7 @@ function AlertsSection({ day, dayLabel, alerts, fc, onRetry }) {
           {a.what ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 5 }}>{"As issued: " + a.what}</div> : null}
         </div>;
       })}</div>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>An alert covers a whole forecast zone, which can be much larger than the route and span very different heights, so it may not describe the route itself. Alerts are issued only a day or two ahead: a day with none is not an all-clear.{list.length ? " The wording above is kept in the units it was issued in." : ""}</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>An alert covers a whole forecast zone, which can be much larger than the route; a day with none is not an all-clear.{list.length ? " The wording above is kept in the units it was issued in." : ""}</div>
   </div>;
 }
 
@@ -516,7 +516,7 @@ function AirSection({ day, dayLabel, air, onRetry }) {
         <Tile label="Worst hour's US AQI" when={"around " + clockOf({ utc_offset_seconds: air.data.utc_offset_seconds || 0 }, a.at)} value={Math.round(a.max)} tone={tone} sub={aqiWord(a.max)} />
         <Tile label="Fine smoke (PM2.5)" when="at that hour" value={a.pm != null ? Math.round(a.pm) + " µg/m³" : NOT_MEASURED} sub={a.pm != null ? "24-hour average basis" : null} />
       </TileGrid>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A forecast for the whole area on a coarse grid (about 45 km, 11 km in Europe), not a reading at the route: smoke pooled in a valley or drifting above the route is not seen. Particles are averaged over the preceding 24 hours, so a plume’s arrival and clearing show up late. Look at the sky and a local air-quality station before you go. Flagged above AQI 100 (EPA: unhealthy for sensitive groups) and 150 (unhealthy for everyone).</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A forecast for the whole area on a coarse grid (about 45 km), not a reading at the route. Particles are averaged over the preceding 24 hours, so a plume shows up late. Check the sky and a local air-quality station. Flagged above AQI 100 and 150.</div>
   </div>;
 }
 
