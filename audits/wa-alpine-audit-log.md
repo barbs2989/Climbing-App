@@ -31747,3 +31747,50 @@ resolution errors on every domain tested (including example.com) in at least one
 consistent with prior batches.
 
 Pass 7 continues next run after `wa_goat_mountain_southeast_face`.
+
+## 2026-10-14 — Pass 7, batch 405
+
+Checked 6 WA alpine/mountaineering routes: 2 remaining stub rows on Goat Mountain
+(`wa_goat_mountain_southeast_route`, `wa_goat_mountain_southwest_route`) and all 4 routes
+on Golden Horn (`wa_golden_horn_east_face`, `wa_golden_horn_north_face`,
+`wa_golden_horn_northeast_arete`, `wa_golden_horn_southwest_route`).
+
+**Golden Horn — clean, no SQL needed.** Cross-checked all four routes against Alpinist's
+FA writeup, the 1959 AAJ (Beckey's own trip report), skisickness.com's FA note, Mazamas,
+Mountaineers.org and Wikipedia:
+- East Face ("F*ck the Pain Away"): FA (Joe Sambataro & Jason Schilling), 11 pitches,
+  ~1,000 ft / 305m, and the "Pitch of Terror" / rotten "kitty litter" rock all confirmed
+  against the primary Alpinist account. The stored `grade` of plain "5.10+" looked at
+  first like it had dropped the "R" (runout) rating every source attaches to this climb —
+  but the route's own `rock_grade` field already carries "5.10+ R (also cited as 5.10 R)",
+  so nothing was missing. Exact FA year (2015) and commitment grade (IV) are plausible but
+  not independently nailed down by any source reachable this run — left alone.
+- North Face: FA (Fred Beckey & Roe "Duke" Watson) confirmed via the 1959 AAJ report
+  itself, which describes the exact gully/chockstone-traverse line stored. The peak's
+  8,366 ft elevation (vs. Mountain Project's reported 7,639 ft, called out in this route's
+  own `corrections` field as an MP outlier) is independently corroborated by five other
+  sources; MP itself couldn't be loaded this run but nothing contradicts the outlier call.
+- Northeast Arête: FA (Gordy Skoog & Jim Walseth, Aug 8 1979), 5 pitches, 5.8, and the
+  "shaky despite classic appearance" flake characterization all confirmed via
+  skisickness.com and a secondary citation of Beckey's guide.
+- Southwest Route: matches Mazamas' and Mountaineers.org's description of the standard
+  line almost exactly ("easy low 5th class" summit block). The stored ~40 ft summit rappel
+  sits a bit long against trip reports citing 10–33 ft, but not clearly wrong — different
+  parties, different anchors. The FA's third climber's surname (Welsh vs. Walsh) is
+  genuinely disputed across sources; left alone rather than guessed.
+
+**Goat Mountain — 2 more rows flagged, not fixed.** `wa_goat_mountain_southeast_route` and
+`wa_goat_mountain_southwest_route` are both empty stubs (name and discipline only, every
+other field null). No source — SummitPost, Mountaineers.org, WTA, cascadeclimbers.com,
+guidebook citations — names a distinct "Southeast Route" or "Southwest Route" on this
+peak; every source still describes exactly one standard line (Trail #673 to the summit
+ridge, forking only by which of the two summits). This matches the pattern of the two
+rows already flagged last pass on this same peak (`wa_goat_mountain_eastern_route`,
+`wa_goat_mountain_southeast_face`) — Goat Mountain now has 4 of its 5 DB-stored routes
+looking like padding/fabrication around the one real route (South Ridge). Flagged for a
+human to review and likely delete; this audit has no authority to do so itself.
+
+**Tooling notes:** Delegated to 2 parallel subagents, one per peak. No WebFetch DNS
+failures this run (WebSearch was still the primary method).
+
+Pass 7 continues next run after `wa_golden_horn_southwest_route`.

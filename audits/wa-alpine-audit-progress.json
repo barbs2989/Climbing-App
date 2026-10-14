@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_goat_mountain_southeast_face",
+  "last_processed_id": "wa_golden_horn_southwest_route",
   "total_in_scope_last_count": 747,
   "total_wa_alpine_or_mountaineering_tagged": 843,
-  "pass_note": "No confirmed errors (no SQL file this batch). Most notable: wa_glacier_peak_south_tahoma_headwall and wa_glacier_peak_tahoma_cleaver show strong multi-source evidence of being misfiled Mount Rainier routes stored under Glacier Peak's area_id ('Tahoma' is Mount Rainier's name, never used for Glacier Peak terrain; both are near-empty stubs and the only two routes in this batch marked auto_generated:false) -- flagged for human reassignment/deletion, no authority to act taken here. wa_goat_mountain_southeast_face looks likely fabricated: an uncorroborated FA claim with no grade/pitches/coordinates, on a peak every source treats as exclusively Class 2 scrambling with no technical face documented anywhere. wa_goat_mountain_eastern_route is an empty stub that looks like a duplicate of wa_goat_mountain_south_ridge's already-documented East Peak line. Also flagged: Kennedy Glacier's length_m is an exact duplicate of Frostbite Ridge's length_m despite differing routes -- possible copy-paste artifact worth checking across the pipeline. Several genuine cross-source conflicts (Goat Mountain high point 6820-6891ft across sources; Sitkum Glacier FA year 1897/1898/1889 and III vs I-II commitment grade) left as flagged, not resolved, per guardrails. Tooling: delegated to 2 parallel subagents, one per peak. WebFetch to mountainproject.com/summitpost.org again failed with DNS errors in at least one subagent.",
+  "pass_note": "No confirmed errors (no SQL file this batch). Checked Golden Horn's four routes (East Face, North Face, Northeast Arete, Southwest Route) against Alpinist/AAJ/skisickness.com FA records, Mazamas, Mountaineers.org and Wikipedia -- every FA party, date, pitch count, grade and approach detail already in the DB held up; the one apparent gap (East Face's 5.10+ lacking the 'R' runout-protection suffix every source attaches) turned out to already be captured in that route's own rock_grade field ('5.10+ R'), so no fix needed. Two more Goat Mountain rows -- wa_goat_mountain_southeast_route and wa_goat_mountain_southwest_route -- are empty stubs (name only, every other field null) with no source anywhere naming a distinct Southeast or Southwest Route on this peak; consistent with the two fabricated-looking rows already flagged on this same peak last pass (wa_goat_mountain_eastern_route, wa_goat_mountain_southeast_face), every authoritative source still describes Goat Mountain as having exactly one standard route (Trail #673 to the summit ridge, forking only by which summit). Flagged for human review/removal, no authority to delete taken here. Tooling: delegated to 2 parallel subagents, one per peak; no WebFetch DNS failures this run.",
   "batches": [
     {
       "batch_number": 1,
@@ -8090,6 +8090,22 @@
       "flagged_for_human_review": 15,
       "clean": 4,
       "note": "No confirmed errors (no SQL file this batch). Most notable: wa_glacier_peak_south_tahoma_headwall and wa_glacier_peak_tahoma_cleaver show strong multi-source evidence of being misfiled Mount Rainier routes stored under Glacier Peak's area_id ('Tahoma' is Mount Rainier's name, never used for Glacier Peak terrain; both are near-empty stubs and the only two routes in this batch marked auto_generated:false) -- flagged for human reassignment/deletion, no authority to act taken here. wa_goat_mountain_southeast_face looks likely fabricated: an uncorroborated FA claim with no grade/pitches/coordinates, on a peak every source treats as exclusively Class 2 scrambling with no technical face documented anywhere. wa_goat_mountain_eastern_route is an empty stub that looks like a duplicate of wa_goat_mountain_south_ridge's already-documented East Peak line. Also flagged: Kennedy Glacier's length_m is an exact duplicate of Frostbite Ridge's length_m despite differing routes -- possible copy-paste artifact worth checking across the pipeline. Several genuine cross-source conflicts (Goat Mountain high point 6820-6891ft across sources; Sitkum Glacier FA year 1897/1898/1889 and III vs I-II commitment grade) left as flagged, not resolved, per guardrails. Tooling: delegated to 2 parallel subagents, one per peak. WebFetch to mountainproject.com/summitpost.org again failed with DNS errors in at least one subagent."
+    },
+    {
+      "batch_number": 405,
+      "date": "2026-10-14",
+      "route_ids": [
+        "wa_goat_mountain_southeast_route",
+        "wa_goat_mountain_southwest_route",
+        "wa_golden_horn_east_face",
+        "wa_golden_horn_north_face",
+        "wa_golden_horn_northeast_arete",
+        "wa_golden_horn_southwest_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 2,
+      "clean": 4,
+      "note": "No confirmed errors (no SQL file this batch). Checked Golden Horn's four routes (East Face, North Face, Northeast Arete, Southwest Route) against Alpinist/AAJ/skisickness.com FA records, Mazamas, Mountaineers.org and Wikipedia -- every FA party, date, pitch count, grade and approach detail already in the DB held up; the one apparent gap (East Face's 5.10+ lacking the 'R' runout-protection suffix every source attaches) turned out to already be captured in that route's own rock_grade field ('5.10+ R'), so no fix needed. Two more Goat Mountain rows -- wa_goat_mountain_southeast_route and wa_goat_mountain_southwest_route -- are empty stubs (name only, every other field null) with no source anywhere naming a distinct Southeast or Southwest Route on this peak; consistent with the two fabricated-looking rows already flagged on this same peak last pass (wa_goat_mountain_eastern_route, wa_goat_mountain_southeast_face), every authoritative source still describes Goat Mountain as having exactly one standard route (Trail #673 to the summit ridge, forking only by which summit). Flagged for human review/removal, no authority to delete taken here. Tooling: delegated to 2 parallel subagents, one per peak; no WebFetch DNS failures this run."
     }
   ]
 }
