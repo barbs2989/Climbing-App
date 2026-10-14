@@ -3885,8 +3885,8 @@ function HourlyChart({all,selUtc,week}){
   const wv=Wd.concat(G).filter(function(v){return v!=null;});
   // A wet hour's scale: never below 0.04" (1 mm), so a trace of drizzle reads as a trace.
   const prTop=Math.max(uImp()?0.04:1,prMax);
-  const arrowStep=week?12:2;
-  const windArrows=function(y){return all.map(function(h,i){if(i%arrowStep!==0||h.windDir==null||Wd[i]==null)return null;return <g key={"a"+i} transform={"translate("+x(i).toFixed(1)+","+y(Wd[i]).toFixed(1)+") rotate("+Math.round(h.windDir+180)+")"}><path d="M0,-7 L5,4.5 L0,2 L-5,4.5 Z" fill={C.text} stroke={C.indigo} strokeWidth="1"/></g>;});};
+  const arrowStep=week?24:3;
+  const windArrows=function(y){return all.map(function(h,i){if(i%arrowStep!==0||h.windDir==null||Wd[i]==null)return null;return <g key={"a"+i} transform={"translate("+x(i).toFixed(1)+","+y(Wd[i]).toFixed(1)+") rotate("+Math.round(h.windDir+180)+") scale(.75)"} opacity=".8"><path d="M0,-7 L5,4.5 L0,2 L-5,4.5 Z" fill={C.text} stroke={C.indigo} strokeWidth="1"/></g>;});};
   const spanOf=function(h){return spanEnding(h.hr);},atOf=function(h){return "at "+clockHr(h.hr);};
   const card=function(key,title,series,lo,hi,axisFmt,bars,extra,readout){return <HourChartCard key={key} all={all} week={week} selIdx={selIdx} title={title} series={series} lo={lo} hi={hi} axisFmt={axisFmt} bars={bars} extra={extra} readout={readout}/>;};
   return <div>
