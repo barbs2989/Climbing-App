@@ -565,7 +565,30 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   eq("report freshness with none on file says nothing recent is known, and a failed read is not 'none'", /so nothing recent is known about its conditions/.test(card) && /This is not a report that there are none\./.test(card), true);
 }
 
-const FLOOR = 238;
+// 12. YOUR RANGE (owner, 2026-10-14: "alpine would be a different discipline that only affects alpine
+//     routes"; researched 2026-10-14, extended search, twice: NO published temperature range exists for
+//     alpine, ice or mixed -- the guidance is qualitative and the one hazard with a number, a thaw, is
+//     already a flag). So the range is the climber's OWN, has no preset and no default, and adds ONE
+//     neutral sentence. It must never become a flag, a count, a colour or a start time.
+{
+  const card2 = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const alpSrc = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
+  const prefsSrc = fs.readFileSync(path.join(ROOT, "lib", "CondPrefs.jsx"), "utf8");
+  eq("rangeNote: a day wholly under, wholly over and wholly inside the range", [A.rangeNote([15, 50], 8, -5).rel, A.rangeNote([15, 50], 70, 55).rel, A.rangeNote([15, 50], 40, 20).rel], ["below", "above", "within"]);
+  eq("rangeNote: a day that crosses one edge, and one that crosses both", [A.rangeNote([15, 50], 40, 5).rel, A.rangeNote([15, 50], 60, 30).rel, A.rangeNote([15, 50], 70, 5).rel], ["partly-below", "partly-above", "both"]);
+  eq("rangeNote says nothing without a range or a reading (never 'inside')", [A.rangeNote(null, 40, 20), A.rangeNote([15, 50], null, 20), A.rangeNote([15, 50], 40, null)], [null, null, null]);
+  const call = (card2.match(/dayFlags\(fc, days, k, \{[^}]*\}\)/) || [""])[0];
+  eq("the range is not an input to dayFlags: its call carries no preference", call.length > 20 && !/range|pref|temp\b|cond/i.test(call.replace(/tempera/gi, "")), true);
+  eq("alpineConditions.js never imports the preferences (a flag cannot read them)", !/CondPrefs|useCondPrefs|scorePrefs/.test(alpSrc), true);
+  const rl = (card2.match(/function RangeLine[\s\S]*?\nexport default function AlpineConditionsCard/) || [""])[0];
+  eq("the range line is neutral: no red, amber or warning words", rl.length > 200 && !/C\.red|C\.amber|Warning|Caution/.test(rl), true);
+  eq("the line mounts once, after the day's flags, from that day's own summary", (card2.match(/<RangeLine route=\{route\} sum=\{day\.sum\} \/>/g) || []).length === 1 && /Nothing in the forecast flags this day\.<\/div>\}\s*<\/div>\s*<RangeLine/.test(card2), true);
+  eq("alpine and ice/mixed are their own scopes with no preset and no inherited default", /RANGE_ONLY = \{ alpine:/.test(prefsSrc) && /ice: "Ice & mixed"/.test(prefsSrc) && /ownOnly \? \(p\.temp\[scope\] \|\| null\)/.test(prefsSrc) && /scopeForDiscipline/.test(card2), true);
+  const fnText = (prefsSrc.match(/export function scopeForDiscipline[\s\S]*?\n}/) || [""])[0];
+  eq("alpine, mountaineering and scrambling map to the alpine scope; ice and mixed to ice; crag disciplines to themselves", /d === "alpine" \|\| d === "mountaineering" \|\| d === "scrambling"\) return "alpine"/.test(fnText) && /d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
+}
+
+const FLOOR = 247;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);

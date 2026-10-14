@@ -12,9 +12,16 @@ import { DISC_LABELS } from "./discLabels.js";
    A RANGE, NOT A PRESET. The climber says "30° to 90° is good for me" and anything inside it scores
    full marks on temperature; outside it the score fades (25°F below, 20°F above). Cool, Mild and
    Warm are shortcuts that fill the range in. Sport, trad, top-rope and bouldering can each have
-   their own range, because bouldering wants it cooler than a sport day. ALPINE, ICE, MIXED and
-   SCRAMBLING are not in the list: their conditions are safety flags, not a score
-   (lib/alpineConditions.js), and a preference there would change nothing on screen.
+   their own range, because bouldering wants it cooler than a sport day.
+
+   ALPINE and ICE ARE TWO MORE, SEPARATE SCOPES, and they work differently. "Alpine" covers alpine,
+   mountaineering and scrambling; "Ice & mixed" covers ice and mixed. Neither inherits the
+   all-climbing range (alpine is always colder, and ice wants cold). They have NO presets and NO
+   default: no published temperature range exists for either (the guidance is qualitative, and the
+   one hazard with a number, a thaw, is already a flag), so an unset range means no line at all.
+   When set it adds ONE plain line to the route's Conditions tab saying whether the forecast
+   temperatures fall inside it. It never touches a warning, a caution or a start time: those are
+   safety flags, not a score (lib/alpineConditions.js).
 
    OPTIONAL EXTRAS, none of which has to be set (a climber who sets none gets the score they always
    had): the humidity they accept, whether they want the wall in sun or shade, how sensitive they are
@@ -30,8 +37,17 @@ import { DISC_LABELS } from "./discLabels.js";
    defaults, never handing one climber's choices to another. The in-memory value stands for the
    session when storage is blocked (private mode), so the control still works there. */
 export const COND_DISCS = ["sport", "trad", "toprope", "bouldering"];
+// The two scopes that are the climber's own range and nothing else.
+export const RANGE_ONLY = { alpine: "Alpine & mountaineering", ice: "Ice & mixed" };
+// The scope a route's discipline belongs to ("all" when it has none of its own).
+export function scopeForDiscipline(d) {
+  if (COND_DISCS.indexOf(d) >= 0) return d;
+  if (d === "alpine" || d === "mountaineering" || d === "scrambling") return "alpine";
+  if (d === "ice" || d === "mixed") return "ice";
+  return "all";
+}
 const DISC_NAME = DISC_LABELS;
-const TEMP_MIN = -20, TEMP_MAX = 115, MIN_SPAN = 5, WIND_MIN = 5, WIND_MAX = 40, RH_MIN = 30, RH_MAX = 85, WIN_MIN_SPAN = 3;
+const TEMP_MIN = -40, TEMP_MAX = 115, MIN_SPAN = 5, WIND_MIN = 5, WIND_MAX = 40, RH_MIN = 30, RH_MAX = 85, WIN_MIN_SPAN = 3;
 const SUN_CHOICES = ["sun", "shade", "either"], AQ_CHOICES = ["sensitive", "relaxed"];
 const KEY = "climbmatch-cond-prefs-v2", OWNER_KEY = "climbmatch-cond-owner";
 const DEFAULTS = { rain: "normal", temp: {}, windMax: null, rhMax: null, sun: null, aq: null, window: null };
@@ -42,7 +58,7 @@ export function cleanPrefs(o) {
   if (!o || typeof o !== "object") return out;
   if (o.rain === "cautious") out.rain = "cautious";
   const t = o.temp && typeof o.temp === "object" ? o.temp : {};
-  ["all"].concat(COND_DISCS).forEach(function (k) {
+  ["all"].concat(COND_DISCS).concat(Object.keys(RANGE_ONLY)).forEach(function (k) {
     const r = t[k];
     if (!Array.isArray(r) || r.length !== 2) return;
     const lo = Math.round(+r[0]), hi = Math.round(+r[1]);
@@ -154,13 +170,15 @@ const SYNC_TEXT = {
 
 /* The controls. `disc` is the route's discipline when shown on a route (so it opens on that
    discipline's range); in Settings and the Menu there is none, so it opens on All climbing. */
-export function CondPrefsControls({ disc }) {
+export function CondPrefsControls({ disc, only }) {
   const p = useCondPrefs();
   const sync = useCondSync();
-  const [scope, setScope] = useState(COND_DISCS.indexOf(disc) >= 0 ? disc : "all");
+  const [scope, setScope] = useState(scopeForDiscipline(disc));
+  const ownOnly = !!RANGE_ONLY[scope];
+  const full = only !== "temp";
   const chip = function (on, label, onClick, key) { return <button key={key} onClick={onClick} aria-pressed={on} style={{ padding: "6px 10px", borderRadius: 8, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : "transparent", color: on ? C.green : C.textSub, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{label}</button>; };
   const own = scope !== "all" && !!p.temp[scope];
-  const eff = scope === "all" ? (p.temp.all || TEMP_BANDS.standard) : resolveRange(scorePrefs(p), scope).range;
+  const eff = scope === "all" ? (p.temp.all || TEMP_BANDS.standard) : ownOnly ? (p.temp[scope] || null) : resolveRange(scorePrefs(p), scope).range;
   const setRange = function (r) { updateCondPrefs(function (x) { x.temp[scope] = r; return x; }); };
   const clearRange = function () { updateCondPrefs(function (x) { delete x.temp[scope]; return x; }); };
   const dMin = uTempN(TEMP_MIN), dMax = uTempN(TEMP_MAX);
@@ -168,7 +186,7 @@ export function CondPrefsControls({ disc }) {
     return <label style={{ display: "block", marginBottom: 8 }}><div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, color: C.textSub, fontWeight: 600, marginBottom: 2 }}><span>{label}</span><span style={{ color: C.text, fontWeight: 800 }}>{text}</span></div>
       <input type="range" aria-label={label} aria-valuetext={text} min={min} max={max} step={1} value={val} onChange={function (e) { onChange(+e.target.value); }} style={{ width: "100%", accentColor: C.green }} /></label>;
   };
-  const scopeName = scope === "all" ? "all climbing" : DISC_NAME[scope];
+  const scopeName = scope === "all" ? "all climbing" : ownOnly ? RANGE_ONLY[scope] : DISC_NAME[scope];
   const windMph = p.windMax == null ? WIND_FULL_MPH : p.windMax;
   const [more, setMore] = useState(hasExtras(p));
   const rh = p.rhMax == null ? RH_FULL_PCT : p.rhMax;
@@ -178,16 +196,22 @@ export function CondPrefsControls({ disc }) {
     <div>
       <div style={LBL}>Temperatures that suit you</div>
       <div role="group" aria-label="Which climbing the temperature range is for" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
-        {[["all", "All climbing"]].concat(COND_DISCS.map(function (k) { return [k, DISC_NAME[k]]; })).map(function (d) { return chip(scope === d[0], d[0] !== "all" && p.temp[d[0]] ? d[1] + " ·" : d[1], function () { setScope(d[0]); }, d[0]); })}
+        {[["all", "All climbing"]].concat(COND_DISCS.map(function (k) { return [k, DISC_NAME[k]]; })).concat(Object.keys(RANGE_ONLY).map(function (k) { return [k, RANGE_ONLY[k]]; })).map(function (d) { return chip(scope === d[0], d[0] !== "all" && p.temp[d[0]] ? d[1] + " ·" : d[1], function () { setScope(d[0]); }, d[0]); })}
       </div>
-      <div role="group" aria-label={"Quick ranges for " + scopeName} style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
-        {chip(scope === "all" ? !p.temp.all : !own, scope === "all" ? "Default (Mild " + rangeText(TEMP_BANDS.standard) + ", Cool for bouldering)" : "Same as all climbing", scope === "all" ? function () { clearRange(); } : clearRange, "d")}
+      {ownOnly ? <div role="group" aria-label={"Range for " + scopeName} style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
+        {chip(!own, "Not set", clearRange, "ns")}
+        {chip(own, own ? "My range" : "Set a range", function () { if (!own) setRange(scope === "ice" ? [5, 30] : [20, 50]); }, "sr")}
+      </div> : <div role="group" aria-label={"Quick ranges for " + scopeName} style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>
+        {chip(scope === "all" ? !p.temp.all : !own, scope === "all" ? "Default (Mild " + rangeText(TEMP_BANDS.standard) + ", Cool for bouldering)" : "Same as all climbing", clearRange, "d")}
         {["cool", "standard", "warm"].map(function (k) { return chip(scope === "all" ? same(p.temp.all, TEMP_BANDS[k]) : same(p.temp[scope], TEMP_BANDS[k]), NAME[k] + " " + rangeText(TEMP_BANDS[k]), function () { setRange(TEMP_BANDS[k].slice()); }, k); })}
-      </div>
-      {slider("Coldest I’ll climb", uTempN(eff[0]), dMin, dMax, function (v) { const f = uTempIn(v); setRange([Math.min(f, eff[1] - MIN_SPAN), eff[1]]); }, uTemp(eff[0]))}
-      {slider("Hottest I’ll climb", uTempN(eff[1]), dMin, dMax, function (v) { const f = uTempIn(v); setRange([eff[0], Math.max(f, eff[0] + MIN_SPAN)]); }, uTemp(eff[1]))}
-      <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>{"Anything from " + rangeText(eff) + " scores full marks for " + scopeName + (scope === "all" ? ", unless a discipline has its own range (marked ·)." : own ? "." : ", from your all-climbing range.") + " Alpine, ice and mixed conditions are safety flags, so they don’t use this."}</div>
+      </div>}
+      {eff ? slider(ownOnly ? "Coldest I like" : "Coldest I’ll climb", uTempN(eff[0]), dMin, dMax, function (v) { const f = uTempIn(v); setRange([Math.min(f, eff[1] - MIN_SPAN), eff[1]]); }, uTemp(eff[0])) : null}
+      {eff ? slider(ownOnly ? "Warmest I like" : "Hottest I’ll climb", uTempN(eff[1]), dMin, dMax, function (v) { const f = uTempIn(v); setRange([eff[0], Math.max(f, eff[0] + MIN_SPAN)]); }, uTemp(eff[1])) : null}
+      <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5 }}>{ownOnly
+        ? (own ? "Each day on the Conditions tab of " + scopeName.toLowerCase() + " routes says whether the forecast temperatures fall in " + rangeText(eff) + ". The slider start is only a place to begin; set yours." : "Not set, so " + scopeName.toLowerCase() + " routes show no temperature line. There are no suggested ranges for these: set the temperatures you like.") + " Warnings about wind, snow, thunder and thaw never change."
+        : "Anything from " + rangeText(eff) + " scores full marks for " + scopeName + (scope === "all" ? ", unless a discipline has its own range (marked ·)." : own ? "." : ", from your all-climbing range.") + " Alpine and ice have their own ranges, set above."}</div>
     </div>
+    {full ? <>
     <div>
       <div style={LBL}>Wind you’re fine with</div>
       <div role="group" aria-label="Wind you’re fine with" style={{ display: "flex", gap: 6, flexWrap: "wrap", marginBottom: 8 }}>{chip(p.windMax == null, "Default (up to " + uWind(WIND_FULL_MPH) + ")", function () { updateCondPrefs(function (x) { x.windMax = null; return x; }); }, "w")}</div>
@@ -223,6 +247,7 @@ export function CondPrefsControls({ disc }) {
       </div>
     </div> : null}
     <div><div style={LBL}>After rain</div><div role="group" aria-label="After rain" style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>{chip(p.rain === "normal", "Usual drying time", function () { updateCondPrefs(function (x) { x.rain = "normal"; return x; }); }, "n")}{chip(p.rain === "cautious", "Give it longer", function () { updateCondPrefs(function (x) { x.rain = "cautious"; return x; }); }, "c")}</div></div>
+    </> : null}
     <div role="status" style={{ fontSize: 11.5, color: sync === "failed" ? C.amber : C.textMuted, lineHeight: 1.5 }}>{SYNC_TEXT[sync] || SYNC_TEXT.local}</div>
   </div>;
 }

@@ -1726,3 +1726,18 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       right shape. The section now looks the raw local day up by date, and the guard pins both the lookup and that
       a shape without `hours` throws. LESSON: a card that mounts only after a fetch resolves is invisible to the
       static render walks. Open it on a real route in Chrome before calling it done.
+
+  - **YOUR TEMPERATURE RANGE ON ALPINE, ICE AND MIXED (2026-10-14, owner: "alpine would be a different
+    discipline that only affects alpine routes"; "do what you recommend based on your online research").**
+    Researched twice, the second time in extended mode: **no published temperature range exists for
+    alpine, mountaineering, scrambling, ice or mixed.** Ice guidance is qualitative (sustained cold keeps
+    it in; a thaw is the hazard, which `iceWarmNight` and friends already flag); the only numbers are one
+    regional forum's "chewy at about -5 to -15 C" and "brittle at -26 C" (single source, Celsius, one range);
+    mixed on turf wants frozen ground, and dry-tooling works at any temperature; alpine summits are simply
+    mostly below freezing and the comfort figures on offer are Everest/Denali frostbite reports. So:
+    the ranges are the climber's OWN, there is **no preset and no default** (an unset range shows no line),
+    and the result is ONE neutral sentence under the day's flags (`RangeLine`, `rangeNote`). Two scopes,
+    **Alpine** (alpine, mountaineering, scrambling) and **Ice & mixed**, neither inheriting the
+    all-climbing range. It never reaches `dayFlags`, a flag level, a day-tab dot, a count or a start time,
+    and uses no red or amber. `check:alpine-conditions` section 12 holds each of those. Do not add a
+    default range or a preset here without a source that states one.

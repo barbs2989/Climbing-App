@@ -7,8 +7,9 @@ import { useState, useEffect, useMemo } from "react";
 import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts, fetchGaugeSites, fetchGaugeFlow } from "./forecast.js";
 import { parseSites, nearestGauge, flowReading } from "./streams.js";
-import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, fogHours, snowHistory, snowLevel, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
+import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, fogHours, snowHistory, snowLevel, dayFlags, daySummary, rangeNote, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass } from "./HourTiles.jsx";
+import { useCondPrefs, CondPrefsControls, scopeForDiscipline } from "./CondPrefs.jsx";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
 import { isMultiDayOuting } from "./outing.js";
@@ -104,6 +105,30 @@ export function forecastPoint(route, mtn) {
   const lng = top ? +top.lng : area.lng != null ? +area.lng : mtn && mtn.lng != null ? +mtn.lng : null;
   if (lat == null || lng == null || !isFinite(lat) || !isFinite(lng)) return null;
   return { lat, lng, elevFt: elev != null && isFinite(elev) ? elev : null, campFt, name: top ? (top.name || "the summit") : (area.name || "the area"), pinned: !!top };
+}
+
+/* "Your range": ONE plain line saying whether the day's forecast temperatures fall inside the range the
+   climber set for alpine, or for ice and mixed. Neutral colour on purpose: it is a preference, not a
+   hazard, so it never reads like a warning and never feeds the flags above it (rangeNote). Without a
+   range it shows only the way to set one. */
+function RangeLine({ route, sum }) {
+  const p = useCondPrefs();
+  const [open, setOpen] = useState(false);
+  const disc = catOf(route), scope = scopeForDiscipline(disc);
+  const range = p.temp[scope] || null;
+  const n = range && sum ? rangeNote(range, sum.hi, sum.lo) : null;
+  const r = range ? uTemp(range[0]) + "–" + uTemp(range[1]) : "";
+  const text = !n ? null : n.rel === "within" ? "Inside your " + r + " range for the whole day (" + uTemp(sum.lo) + " to " + uTemp(sum.hi) + ")."
+    : n.rel === "below" ? "Colder than your " + r + " range for the whole day (high " + uTemp(sum.hi) + ")."
+    : n.rel === "above" ? "Warmer than your " + r + " range for the whole day (low " + uTemp(sum.lo) + ")."
+    : n.rel === "partly-below" ? "Part of the day is colder than your " + r + " range (down to " + uTemp(sum.lo) + ")."
+    : n.rel === "partly-above" ? "Part of the day is warmer than your " + r + " range (up to " + uTemp(sum.hi) + ")."
+    : "Both colder and warmer than your " + r + " range at times (" + uTemp(sum.lo) + " to " + uTemp(sum.hi) + ").";
+  return <div style={{ marginBottom: 10 }}>
+    {text ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginBottom: 4 }}>{text}</div> : null}
+    <button onClick={function () { setOpen(!open); }} aria-expanded={open} style={{ background: "none", border: "none", padding: 0, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Hide your temperature range" : range ? "Change your temperature range" : "Set a temperature range you like"}</button>
+    {open ? <div style={{ background: C.surface, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginTop: 6 }}><CondPrefsControls disc={disc} only="temp" /></div> : null}
+  </div>;
 }
 
 export default function AlpineConditionsCard({ route, mtn, calc, activity, reportsUnavailable }) {
@@ -312,6 +337,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       {day.flags.length ? day.flags.map(function (f, i) { const col = f.level === "warn" ? C.red : C.amber; return <div key={f.key + i} style={{ display: "flex", gap: 8, alignItems: "flex-start", fontSize: 12.5, color: C.text, lineHeight: 1.45 }}><span aria-hidden="true" style={{ flexShrink: 0, marginTop: 5, width: 8, height: 8, borderRadius: "50%", background: col }} /><span><b style={{ color: col }}>{f.level === "warn" ? "Warning: " : "Caution: "}</b>{flagText(f)}</span></div>; })
         : <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5 }}>Nothing in the forecast flags this day.</div>}
     </div>
+    <RangeLine route={route} sum={day.sum} />
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
       {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
