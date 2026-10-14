@@ -224,6 +224,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     **silently**, so a caller that ignored it went on clicking whatever was on screen. Six
     attempts failed that way before the cause was clear. `tapByName()` clicks by **accessible
     name** instead, which is authored (`aria-label`) and so does not move when the count does.
+    **Since the Menu restructure (2026-10-14) Friends, Groups and Requests are no longer on a Crew
+    sub-tab bar: they open from the Menu's "Yours" tiles (`tapMenuItem`, which also accepts a tile
+    that carries a count, "Requests · 3"), still render as `crewView`s, and return through a
+    "← Crews" row. The Crew tab itself is crews only; tapping the Crews nav resets `crewView`.**
     Crews is *not* captured: `crewView` defaults to it, so it is the `Crew` screen already
     captured, and that equality is asserted as a round-trip rather than dodged.
     `Crew:Friends` landmarks **`PEOPLE YOU’VE CLIMBED WITH`** — the surface #713 revived onto
