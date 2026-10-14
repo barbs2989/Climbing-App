@@ -63,12 +63,15 @@ let ROUTE = argOf("--route") || (USE_DB ? "North Ridge (Complete)" : "West Slabs
 let STATE = argOf("--state") || (USE_DB ? "Washington" : "Utah");
 
 // A screen with less text than this rendered nothing useful -- the blank-screen signal.
-// "Crew:Groups" is legitimately the shortest screen in the app: the demo has joined no
-// groups, so it is a heading, one explanatory line and two CTAs -- a correct and complete
-// empty state, measured at 353 chars. The floor is set just under that rather than at the
-// 400 default, which would fail a working screen. It stays a real floor: the nav chrome
-// alone is ~90 chars, so a blank content area still trips it.
-const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, "Crew:Groups": 300 };
+// The GROUPS screen and its tabs are legitimately short: the demo has joined no groups, so a
+// tab can be its header, the tab strip and one explanatory line -- a correct and complete
+// empty state. (When Groups was a Crew sub-view it measured 353 chars.) The floor is set under
+// that rather than at the 400 default, which would fail a working screen. It is a weak floor
+// on its own -- the header and strip alone are ~250 -- so every tab but For you also carries a
+// LANDMARK below that only its own body renders, and the twin rule catches a tab that
+// silently renders a sibling.
+const MIN_CHARS = { default: 400, "route:Photos": 120, Home: 300, Groups: 300,
+  "Groups:Your groups": 300, "Groups:Your activity": 300, "Groups:Discover": 300, "Groups:Events": 300 };
 
 // Text that should never reach a user. Tuned to the bugs above; each entry is a
 // regex plus a note on the shape it catches.
@@ -108,7 +111,14 @@ const LANDMARKS = {
   "Crew:Friends": ["PEOPLE YOU’VE CLIMBED WITH", "FRIENDS’ RECENT ACTIVITY"],
   // Descriptive lines rather than counts: "CREW INVITES (1)" moves with the seed data and
   // would rot into a false failure the first time somebody adds an invite.
-  "Crew:Groups": ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
+  // The Groups screen (Menu → Groups). Its header line renders on every tab, so it proves only
+  // that the SCREEN opened; each other tab is proved by a heading only its own body renders
+  // (uppercase: innerText returns the CSS-transformed text).
+  Groups: ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
+  "Groups:Your groups": ["ALL YOUR GROUPS"],
+  "Groups:Your activity": ["EVENTS YOU’RE GOING TO", "YOUR POSTS"],
+  "Groups:Discover": ["GROUPS TO JOIN"],
+  "Groups:Events": ["UPCOMING IN YOUR GROUPS"],
   "Crew:Requests": ["Friend requests, crew invites, and group activity waiting on you."],
 };
 
@@ -415,7 +425,7 @@ try {
   await page.waitForTimeout(2500);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -730,9 +740,10 @@ try {
     // Crew screen already captured in the main walk -- capturing it again would be a
     // byte-identical twin and fail for being correct. That equality is worth asserting
     // rather than dodging, so it becomes the round-trip check at the end.
-    for (const sub of ["Friends", "Groups", "Requests"]) {
-      // Friends, Groups and Requests left the Crew tab's bar: they open from the Menu now, and the
-      // Crew tab is crews only. Each still renders as a crewView, with a "← Crews" row to return.
+    for (const sub of ["Friends", "Requests"]) {
+      // Friends and Requests left the Crew tab's bar: they open from the Menu now, and the Crew tab
+      // is crews only. Each still renders as a crewView, with a "← Crews" row to return. Groups
+      // left the Crew tab altogether -- it is its own screen, walked in the main loop and below.
       if (!(await tapMenuItem(page, sub))) throw new Error(`the Menu tile ${JSON.stringify(sub)} is not present`);
       // capture() settles the screen, records it into --snapshot, and applies the same
       // min-length / FORBIDDEN / LANDMARKS / identical-twin rules every other screen gets.
@@ -744,6 +755,23 @@ try {
     const back = await settledText(page, { min: 30, timeout: 45000 });
     if (screens.Crew && back !== screens.Crew) {
       throw new Error("returning to the Crews sub-tab did not restore the Crew screen -- the bar navigates one way only");
+    }
+  });
+
+  // THE GROUPS SCREEN'S OWN TABS (Menu → Groups: For you · Your groups · Your activity · Discover ·
+  // Events). The main walk captures the first; each of the others is captured here under the same
+  // min-length / FORBIDDEN / LANDMARKS / twin rules, so a tab that renders nothing, or silently
+  // renders a sibling, fails. For you is tapped last so the screen is left where a visit starts.
+  await flow("groups-tabs-switch", async () => {
+    if (!(await tap("Groups"))) throw new Error("the Menu's Groups tile is not present");
+    for (const sub of ["Your groups", "Your activity", "Discover", "Events"]) {
+      if (!(await tap(sub))) throw new Error(`the Groups tab ${JSON.stringify(sub)} is not present`);
+      await capture("Groups:" + sub);
+    }
+    if (!(await tap("For you"))) throw new Error("the Groups tab \"For you\" is not present");
+    const back = await settledText(page, { min: 30, timeout: 45000 });
+    if (screens.Groups && back !== screens.Groups) {
+      throw new Error("returning to For you did not restore the Groups screen -- the tab strip navigates one way only");
     }
   });
 

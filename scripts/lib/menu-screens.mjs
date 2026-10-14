@@ -7,8 +7,10 @@
 // walk routes those labels through here instead -- one implementation, so the walks cannot
 // drift on how the Menu is opened.
 
-// label a walk asks for -> accessible-name prefix of the control inside the Menu
-export const MENU_SCREENS = { Profile: "Your profile" };
+// label a walk asks for -> accessible-name prefix of the control inside the Menu.
+// Groups joined Profile on 2026-10-14: a NAV screen marked `bar:false`, opened by the Menu's
+// "Groups" tile. A tile carries no aria-label, so its name is its text.
+export const MENU_SCREENS = { Profile: "Your profile", Groups: "Groups" };
 
 async function openMenu(page) {
   const ok = await page.evaluate(() => {
@@ -29,7 +31,7 @@ export async function openFromMenu(page, label, settleMs = 1600) {
   if (!(await openMenu(page))) return false;
   const ok = await page.evaluate((c) => {
     const b = [...document.querySelectorAll('[role="dialog"][aria-label="Menu"] button')]
-      .find((e) => (e.getAttribute("aria-label") || "").startsWith(c));
+      .find((e) => (e.getAttribute("aria-label") || (e.innerText || "").trim().split("\n")[0].trim()).startsWith(c));
     if (!b) return false;
     b.click();
     return true;
