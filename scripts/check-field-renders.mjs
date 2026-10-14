@@ -304,7 +304,7 @@ async function rowWith(col) {
 }
 
 // Two bases, because whole sections are discipline-gated: RouteGearCheck (and the essentials
-// box it owns) render only when cragOnly is true, and the Plan/Safety tabs behave differently
+// box it owns) render only when cragOnly is FALSE, CragRack only when it is true, and the Plan/Safety tabs behave differently
 // either side of that line. Probing alpine alone reported crag-only sections as dead — the
 // same blind spot that let #655 hide the crag safety advice.
 const BASES = {

@@ -250,9 +250,11 @@ for (const d of [...CRAG, "alpine"]) {
 }
 
 /* ── a SPORT route must be able to say it needs natural gear ─────────────────────────────────
-   RouteGearCheck takes an early branch for `sport` and renders a computed quickdraw note
+   RouteGearCheck used to take an early branch for `sport` and render a computed quickdraw note
    instead of the RACK box. That is right for a pure sport line — the rack IS draws — and it
-   meant a sport route with one unbolted pitch had nowhere to say so.
+   meant a sport route with one unbolted pitch had nowhere to say so. (That branch is deleted:
+   RouteGearCheck is mounted only off CRAG_CATS, so once crag routes moved to CragRack it could
+   never run. CragRack's rackItems are what carry the natural gear now, asserted below.)
    `wa_technicians_of_the_sacred` is a 6-pitch 5.12c whose own pitch 6 reads "Hand crack,
    natural gear; only unbolted pitch"; a party racking off that page brings draws and arrives
    with nothing to place. Measured: 3 of 2,714 WA sport routes are in that position.
@@ -284,6 +286,33 @@ for (const d of [...CRAG, "alpine"]) {
       fail(`rack: a ${d} route with no rack of its own shows no placeholder to add one`);
     else ok(`rack: a ${d} route with no rack of its own shows an add-the-rack placeholder and no stock kit`);
   }
+}
+
+/* ── GEAR BETA reaches the rack card on every roped discipline ─────────────────────────────────
+   What a climber BROUGHT (a logged ascent's `gearBeta`) renders as "Rack beta" at the foot of the
+   rack card, and nowhere else: #2363 took it out of CLIMBER BETA so one fact was not two boxes.
+   But the only other copy for a crag route sat in a `sport` branch of RouteGearCheck, which is
+   mounted only OFF CRAG_CATS — so on trad, sport, toprope and aid it reached NO screen, and nothing
+   here noticed, because a bare route carries no activity. RackBetaList is now the one list, under
+   RouteRackBox (alpine, on Plan) and CragRack (crag, on Overview). Bouldering is excluded on
+   purpose: the log form asks for gear beta on a roped climb only.
+   Both cases carry the beta with NO rack of their own, the shape most routes have, so the list
+   must ride on the placeholder card too. */
+{
+  const GB = "ZZGEARBETAZZ doubles in the hand sizes";
+  const act = [{ user: "Probe Climber", date: "2026-06-01", gearBeta: GB }];
+  for (const [d, tab] of [["trad", "overview"], ["sport", "overview"], ["toprope", "overview"], ["aid", "overview"], ["alpine", "planner"]]) {
+    const t = text(render({ ...bare(d, "5.9"), activity: act }, tab));
+    const n = t.split("ZZGEARBETAZZ").length - 1;
+    if (!/RACK/.test(t)) fail(`ANCHOR LOST: a bare ${d} route renders no RACK card on ${tab} — this check read nothing`);
+    else if (n === 0) fail(`gear beta: a ${d} climber's logged gear beta reaches no screen (rack card on ${tab})`);
+    else if (n > 1) fail(`gear beta: a ${d} climber's gear beta renders ${n} times on ${tab} — one fact, one box`);
+    else if (!/Rack beta/.test(t)) fail(`gear beta: on a ${d} route it renders, but not under the rack card's "Rack beta"`);
+    else ok(`gear beta: a ${d} route shows a climber's gear beta once, under the rack (${tab})`);
+  }
+  const tb = text(render({ ...bare("bouldering", "V4"), activity: act }, "overview"));
+  if (tb.includes("ZZGEARBETAZZ")) fail("gear beta: a boulder problem renders gear beta — the log form never asks for it there");
+  else ok("gear beta: not on a boulder problem");
 }
 
 // 6. ROUTE FACTS — one set of guidebook facts on every crag discipline.
