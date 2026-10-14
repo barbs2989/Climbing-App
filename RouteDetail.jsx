@@ -4023,7 +4023,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     </div>,true):null}
     {sec("Best time to climb",<div style={box}>{head}
     {showPrefs?<div style={{background:C.surface,border:"1px solid "+C.border,borderRadius:10,padding:"10px 12px",marginBottom:10}}>
-      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>Saved on this device. They change the score on every crag route and on Home. Also in Settings.</div>
+      <div style={{fontSize:11.5,color:C.textSub,lineHeight:1.5,marginBottom:8}}>They change the score on every crag route and in the Best day to climb view. Also in the Menu and Settings.</div>
       <CondPrefsControls disc={disc}/>
     </div>:null}
     <div role="group" aria-label="Day" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:10}}>{days.map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")} style={{flex:"0 0 auto",minWidth:52,padding:"6px 4px",borderRadius:9,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:11.5,fontWeight:700}}>{dayName(d,i)}</div><div style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</div><div style={{fontSize:10.5,color:C.textMuted}}>{d.hi!=null?uTemp(d.hi)+"/"+uTemp(d.lo):""}</div></button>;})}</div>

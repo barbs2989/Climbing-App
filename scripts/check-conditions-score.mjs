@@ -234,6 +234,16 @@ console.log("check:conditions-score");
   const warm = at(scoreForecast(fixture({ temp: 75 }), WALL, { band: "warm" }, NOW), 12), std = at(scoreForecast(fixture({ temp: 75 }), WALL, { band: "standard" }, NOW), 12);
   if (warm.factors.temp.pts === WEIGHTS.temp && std.factors.temp.pts < WEIGHTS.temp) ok("a 'warm' band scores 75° as ideal; 'standard' does not");
   else fail(`the temperature band pref does not reach the score: warm ${warm.factors.temp.pts}, standard ${std.factors.temp.pts}`);
+  // A RANGE the climber sets (30-90) makes 85 ideal; their sport-only range (40-60) does not touch bouldering.
+  const wide = at(scoreForecast(fixture({ temp: 85 }), WALL, { temp: { all: [30, 90] } }, NOW), 12);
+  const sportOwn = at(scoreForecast(fixture({ temp: 85 }), WALL, { temp: { all: [30, 90], sport: [40, 60] } }, NOW), 12);
+  const boulderAll = at(scoreForecast(fixture({ temp: 85 }), { ...WALL, discipline: "bouldering" }, { temp: { all: [30, 90], sport: [40, 60] } }, NOW), 12);
+  if (wide.factors.temp.pts === WEIGHTS.temp && sportOwn.factors.temp.pts < WEIGHTS.temp && boulderAll.factors.temp.pts === WEIGHTS.temp) ok("a set range 30-90 scores 85 as ideal; a sport-only range overrides sport and leaves bouldering on the all-climbing range");
+  else fail(`the temperature range does not reach the score per discipline: wide ${wide.factors.temp.pts}, sport-own ${sportOwn.factors.temp.pts}, bouldering ${boulderAll.factors.temp.pts}`);
+  // The wind ceiling the climber sets moves where the wind factor is full.
+  const w20 = at(scoreForecast(fixture({ wind: 20, gust: 20 }), WALL, {}, NOW), 12), w20ok = at(scoreForecast(fixture({ wind: 20, gust: 20 }), WALL, { windMax: 25 }, NOW), 12);
+  if (w20.factors.wind.pts < WEIGHTS.wind && w20ok.factors.wind.pts === WEIGHTS.wind) ok("a wind limit of 25 mph makes 20 mph full marks; the default 10 mph limit does not");
+  else fail(`the wind limit does not reach the score: default ${w20.factors.wind.pts}, limit 25 ${w20ok.factors.wind.pts}`);
   const fx = fixture({ rainAt: [66] });
   // A limestone wall (24 h): granite dries in 12 h now, which would leave BOTH settings fully dry here.
   const LIME = { ...WALL, family: "limestone" };
@@ -280,11 +290,17 @@ console.log("check:conditions-score");
   const prefs = fs.readFileSync(path.join(ROOT, "lib/CondPrefs.jsx"), "utf8");
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
-  if (/\["auto", "cool", "standard", "warm"\]\.map\(/.test(prefs) && !/\.filter\(function \(k\) \{ return k === "auto" \|\|/.test(prefs)) ok("all four temperature choices are offered, so exactly one is always pressed");
-  else fail("the band chips filter a choice out again — a saved band equal to the default would press nothing");
-  if (/useCondPrefs\(\)/.test(tile) && !/BAND_PREF\.load\(\)/.test(tile) && /useCondPrefs\(\)/.test(card) && /setCondPref\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card and Home read ONE prefs store that broadcasts changes");
+  if (/\["cool", "standard", "warm"\]\.map\(/.test(prefs) && /type="range"/.test(prefs) && /Coldest I.ll climb/.test(prefs) && /Hottest I.ll climb/.test(prefs) && /uTempIn\(v\)/.test(prefs) && /uWindIn\(v\)/.test(prefs)) ok("the temperature range has presets, a lowest and a highest slider, and converts back from the climber's units");
+  else fail("Your conditions no longer offers a temperature range (presets + coldest/hottest sliders) that converts back from the climber's units");
+  const covered = (fs.readFileSync(path.join(ROOT, "lib/conditionsScore.js"), "utf8").match(/CRAG_SCORE_DISCIPLINES = (\[[^\]]*\])/) || [])[1];
+  const offered = (prefs.match(/COND_DISCS = (\[[^\]]*\])/) || [])[1];
+  if (covered && offered && covered.replace(/\s/g, "") === offered.replace(/\s/g, "")) ok("the per-discipline ranges are exactly the disciplines the score covers (alpine and ice are flags and are not offered a range they would ignore)");
+  else fail(`the disciplines offered a range (${offered}) differ from the ones the conditions score covers (${covered})`);
+  if (/saveMyCondPrefs\(/.test(prefs) && /useMyCondPrefs\(/.test(prefs) && /useCondPrefsAccount\(uid\)/.test(app)) ok("Your conditions is saved to the account and read back on sign-in");
+  else fail("Your conditions no longer reaches the account");
+  if (/useCondPrefs\(\)/.test(tile) && !/BAND_PREF\.load\(\)/.test(tile) && /useCondPrefs\(\)/.test(card) && /updateCondPrefs\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card and Home read ONE prefs store that broadcasts changes");
   else fail("a prefs reader loads storage on its own again, so Home can go stale after a change on a route");
-  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /onPrefs=\{\(\)=>\{setBestDayOpen\(false\);setSettingsOpen\(true\);\}\}/.test(app)) ok("Settings has a Your conditions section, and the Best day tile links to it");
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /onPrefs=\{\(\)=>\{setBestDayOpen\(false\);setCondsOpen\(true\);\}\}/.test(app) && /\["snowflake","Your conditions",\(\)=>setCondsOpen\(true\)\]/.test(app) && /\{condsOpen&&<div[\s\S]{0,260}aria-label="Your conditions"[\s\S]{0,1400}<CondPrefsControls\/>/.test(app)) ok("Your conditions is in Settings, in the Menu, and the Best day view links to it");
   else fail("Your conditions is no longer reachable from Settings (menu and profile) or the Best day tile");
 }
 
