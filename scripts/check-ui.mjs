@@ -113,7 +113,9 @@ const LANDMARKS = {
   // would rot into a false failure the first time somebody adds an invite.
   // The Groups screen (Menu → Groups). Its header line renders on every tab, so it proves only
   // that the SCREEN opened; each other tab is proved by a heading only its own body renders
-  // (uppercase: innerText returns the CSS-transformed text).
+  // (uppercase: innerText returns the CSS-transformed text). Those headings carry their count
+  // ("ALL YOUR GROUPS · 3"), so capture() also matches a line with a trailing " · N" removed,
+  // and the landmark stays the descriptive part the rule above asks for.
   Groups: ["Standing communities with their own calendar, events, and members. Search, join, or start your own."],
   "Groups:Your groups": ["ALL YOUR GROUPS"],
   "Groups:Your activity": ["EVENTS YOU’RE GOING TO", "YOUR POSTS"],
@@ -392,7 +394,9 @@ async function capture(name) {
   const min = MIN_CHARS[name] ?? MIN_CHARS.default;
   if (text.length < min) fail(name, `rendered only ${text.length} chars (min ${min}) — blank or broken screen`);
   for (const [re, why] of FORBIDDEN) { const m = text.match(re); if (m) fail(name, `${why} — found ${JSON.stringify(m[0])}`); }
-  const lines = new Set(text.split("\n").map((l) => l.trim()));
+  // Each line, plus the same line without a trailing " · N" count (a heading that counts its
+  // list is still that heading). Additive: every line that matched before still does.
+  const lines = new Set(text.split("\n").map((l) => l.trim()).flatMap((l) => [l, l.replace(/ · \d+$/, "")]));
   for (const want of LANDMARKS[name] || []) { if (!lines.has(want)) fail(name, `expected section ${JSON.stringify(want)} is missing`); }
   for (const e of pageErrors) fail(name, `uncaught page error: ${e}`);
   const twin = Object.keys(screens).find((k) => k !== name && screens[k] === text);

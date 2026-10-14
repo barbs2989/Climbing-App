@@ -239,7 +239,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     heading landmark only its own body renders (`ALL YOUR GROUPS`, `EVENTS YOU’RE GOING TO`,
     `GROUPS TO JOIN`, `UPCOMING IN YOUR GROUPS`); For you is the main walk's `Groups` capture and
     the round-trip target. The 300 floor is **weak on its own** — the header and tab strip are ~250
-    — which is why the landmarks carry the proof.
+    — which is why the landmarks carry the proof. **Those headings carry their count on the same
+    line** ("ALL YOUR GROUPS · 0"), and the landmark test was an exact whole-line match, so all
+    five failed in CI on the first push, which I had not walked locally. `capture()` now also
+    matches each line with a trailing " · N" removed. That is additive: replayed over CI's own
+    `ui-screens.json`, it moved those 5 to found and left the other 10 landmarks found.
     `Crew:Friends` landmarks **`PEOPLE YOU’VE CLIMBED WITH`** — the surface #713 revived onto
     real `logs`, which until now nothing rendered in any guard (`check:dead-flag-gates` proves
     the constant feeding it is not dead, a different question from whether it reaches a
