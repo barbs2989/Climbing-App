@@ -313,7 +313,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
     </div>
     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 6, marginBottom: 8 }}>{readout.map(function (r) { return <div key={r[0]} style={{ background: C.surface, borderRadius: 8, padding: "6px 8px" }}><div style={{ fontSize: 10.5, color: C.textMuted, fontWeight: 700 }}>{r[0]}</div><div style={{ fontSize: 12.5, color: C.text, fontWeight: 700 }}>{r[1]}</div>{r[2] ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{r[2]}</div> : null}</div>; })}</div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5 }}>
-      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " Flags are rules of thumb, not a go/no-go. " + BLIND[kind]}
+      {"Read at " + (pt.elevFt != null ? uElev(pt.elevFt) : "the area’s height") + (pt.pinned ? " at " + pt.name : " over " + pt.name) + "." + (floor && floor.basis === "halfway" ? " Snow is assumed to reach down to " + uElev(floor.ft) + ", halfway up the climb." : floor && floor.basis === "camp" ? " Snow is read down to high camp, " + uElev(floor.ft) + "." : "") + " " + BLIND[kind]}
     </div>
   </div>
   <AlertsSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} alerts={alerts} fc={fc} onRetry={function () { setAlertTries(alertTries + 1); }} />
@@ -371,7 +371,7 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
   const marks = marksIn(T);
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 8 }}>{"HOUR BY HOUR · " + dayLabel.toUpperCase()}</CardHead>
-    <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{"Key times for this day, then each hour at " + (tops != null ? uElev(tops) : "the forecast point") + ". Tap an hour."}</div>
+    <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{"Each hour at " + (tops != null ? uElev(tops) : "the forecast point") + ". Tap an hour."}</div>
     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>{kt.map(function (k, j) { return <span key={j} style={{ fontSize: 12, fontWeight: 700, color: C.text, background: C.surface, border: "1px solid " + k.tone + "99", borderRadius: 20, padding: "4px 10px", lineHeight: 1.3 }}>{k.label + " " + clockOf(fc, k.at) + (k.after || "")}</span>; })}</div>
     <div role="group" aria-label="Pick an hour" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 6, marginBottom: 8 }}>{idx.map(function (i) {
       const on = i === cur, sv = sev(i), mk = marksIn(h.time[i]).length;
@@ -384,7 +384,6 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
       <div style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{dayLabel + " · " + clockHr(hr)}{cl != null ? <span style={{ fontSize: 12, fontWeight: 600, color: C.textMuted }}>{"  ·  cloud " + Math.round(cl) + "%"}</span> : null}</div>
       {marks.length ? <div style={{ fontSize: 12, color: C.text, marginTop: 3 }}>{marks.map(function (k) { return k.label + " " + clockOf(fc, k.at) + (k.after || ""); }).join(" · ")}</div> : null}
       {code != null && code >= 95 ? <div style={{ fontSize: 12.5, fontWeight: 700, color: C.red, marginTop: 3 }}>Thunderstorms in the forecast this hour</div> : null}
-      <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.45, margin: "3px 0 8px" }}>{"Temperature, wind and the freezing level are the reading at " + clockHr(hr) + ". Gusts, rain, snow and chance of precipitation cover the hour before it, " + spanEnding(hr) + "."}</div>
       <TileGrid>
         <Tile label="Temperature" when={"at " + clockHr(hr)} value={t != null ? uTemp(t) : NOT_MEASURED} sub={chilled ? "Wind chill " + uTemp(wc) : null} tone={wc != null && wc <= LIMITS.windChillWarn ? C.red : null} />
         <Tile label="Wind" when={"at " + clockHr(hr)} value={w != null ? uWind(w) : NOT_MEASURED} sub={dir != null ? "from the " + compass(dir) : null} />
