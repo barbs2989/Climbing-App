@@ -43,7 +43,7 @@ import { routeTags } from "./lib/routeTags";
 import { planTimes, realPitches } from "./lib/planTimes";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
 import { ALPINE_COND_DISCIPLINES } from "./lib/alpineConditions.js";
-import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass } from "./lib/HourTiles.jsx";
+import { Tile, TileGrid, TileGroup, NOT_MEASURED, clockHr, spanEnding, compass } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
 import {parseGpxText,DbClimbPicker,RealClimberRow,CardHead,SectionJumps,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,SL,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,GearTiers,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,Comments,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,trustTier,reporterTrust,reporterWeightTrust,rappelReportsOf,sunReadout} from "./ClimbMatchCore.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
@@ -3818,9 +3818,9 @@ const condRow=function(k,v,tone,key){return <div key={key||k} style={{display:"g
 const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
 const condNote={fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:8};
 const dayBox={display:"block",background:C.surface,border:"1px solid "+C.border,borderRadius:9,padding:"6px 8px",minWidth:0};
-const dayLbl={display:"block",fontSize:10.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4};
-const dayVal={display:"block",fontSize:14,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"anywhere"};
-const daySub={display:"block",fontSize:11,color:C.textSub,marginTop:1,lineHeight:1.35};
+const dayLbl={display:"block",fontSize:11.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4};
+const dayVal={display:"block",fontSize:16,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"anywhere"};
+const daySub={display:"block",fontSize:11.5,color:C.textSub,marginTop:1,lineHeight:1.35};
 // Sky cover in the National Weather Service's words for eighths of sky (0-1, 2, 3-5, 6-7, 8 oktas).
 const skyWord=function(pct){return pct<=12?"Clear":pct<=37?"Mostly clear":pct<=62?"Partly cloudy":pct<=87?"Mostly cloudy":"Overcast";};
 const aqiTone=function(a){return a==null?C.textMuted:a<=50?C.green:a<=100?C.amber:a<=150?C.orange:C.red;};
@@ -3888,10 +3888,12 @@ function HourlyChart({all,selUtc,week}){
   return <div>
     {!week?<div role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===at;return <button key={h.utc} onClick={function(){setHv(null);setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>:null}
     <div aria-live="polite" style={{marginBottom:8}}>
-      <div style={{fontSize:15,fontWeight:800,color:C.text}}>{(week?wkDay(a.date)+" · ":"")+atTxt}{a.past?<span style={{fontSize:12,fontWeight:700,color:C.textMuted}}>{"  ·  already past"}</span>:null}</div>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{"Temperature, wind, humidity and cloud are the reading at "+atTxt+". Rain, chance of rain and gusts cover the hour before it, "+spanTxt+"."}</div>
+      <div style={{fontSize:20,fontWeight:800,color:C.text}}>{(week?wkDay(a.date)+" · ":"")+atTxt}{a.past?<span style={{fontSize:12,fontWeight:700,color:C.textMuted}}>{"  ·  already past"}</span>:null}</div>
+      <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginTop:4,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>{"At "+atTxt}</b>{": temperature, wind, humidity and cloud are the reading at that moment."}</div><div style={{marginTop:2}}><b>{"During "+spanTxt}</b>{": rain, chance of rain and gusts cover the hour just before "+atTxt+"."}</div></div>
     </div>
-    <TileGrid>{tiles}</TileGrid>
+    <TileGroup title="Temperature">{[tiles[0],tiles[1],tiles[2]]}</TileGroup>
+    <TileGroup title="Wind">{[tiles[7],tiles[8]]}</TileGroup>
+    <TileGroup title="Rain and sky">{[tiles[3],tiles[4],tiles[5],tiles[6]]}</TileGroup>
     {tv.length?panel("t","Temperature, feels like and dew point",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";}):null}
     {panel("r","Rain ("+(uImp()?"inches":"mm")+")",[],0,prTop,function(v){return v===0?"0":uImp()?v.toFixed(2):v.toFixed(1);},{name:"Rain",vals:PR,color:C.blue})}
     {panel("p","Chance of rain and cloud cover",[{name:"Cloud",vals:CL,color:C.textSub}],0,100,function(v){return v+"%";},{name:"Chance",vals:POP,color:C.blue})}
@@ -4320,13 +4322,14 @@ function WeatherPanel({waypoints,showPlan,packId,fallback}){
           {dy.hours&&dy.hours.length?<div style={{marginTop:"auto",paddingTop:10}}>
           <button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} style={{width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ▴":"Hourly forecast ▾"}</button>
           {isExpanded?<div>
-            <div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:8,marginBottom:5}}>Temperature and wind are the reading at the time shown. Gusts and chance of rain cover the hour before it.</div>
+            <div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:8,marginBottom:5}}>"At" boxes are the reading at that time. "During" boxes cover the hour just before it.</div>
             <div style={{maxHeight:380,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=Math.round(hh.tempF),wm=Math.round(hh.windMph),gm=hh.gustMph!=null?Math.round(hh.gustMph):null;return <div key={hi} style={{padding:"8px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none"}}>
-              <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:52,flexShrink:0,fontSize:13,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span><span style={{fontSize:14,fontWeight:800,color:wxTempColor(t),flexShrink:0}}>{uTemp(t)}</span></div>
-              <div style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:4}}>
-                <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{fontSize:12.5,color:wxWindColor(wm)})}>{uWind(wm)}</span><span style={daySub}>{"at "+clockHr(hh.hr)+(compass(hh.dir)?", from the "+compass(hh.dir):"")}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Gusts</span><span style={Object.assign({},dayVal,{fontSize:12.5,color:gm!=null?wxWindColor(gm):C.textMuted})}>{gm!=null?uWind(gm):"Not measured"}</span><span style={daySub}>{spanEnding(hh.hr)}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{fontSize:12.5,color:hh.pop>=50?C.blue:C.text})}>{hh.pop!=null?hh.pop+"%":"Not measured"}</span><span style={daySub}>{spanEnding(hh.hr)}</span></span>
+              <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:62,flexShrink:0,fontSize:15,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span></div>
+              <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:5}}>
+                <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:wxTempColor(t)})}>{uTemp(t)}</span><span style={daySub}>{"At "+clockHr(hh.hr)}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:wxWindColor(wm)})}>{uWind(wm)}</span><span style={daySub}>{"At "+clockHr(hh.hr)+(compass(hh.dir)?", from the "+compass(hh.dir):"")}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Gusts</span><span style={Object.assign({},dayVal,{color:gm!=null?wxWindColor(gm):C.textMuted})}>{gm!=null?uWind(gm):"Not measured"}</span><span style={daySub}>{"During "+spanEnding(hh.hr)}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:hh.pop>=50?C.blue:C.text})}>{hh.pop!=null?hh.pop+"% chance":"Not measured"}</span><span style={daySub}>{(hh.precipIn!=null&&hh.precipIn>0?uPrecip(hh.precipIn)+", ":"")+"during "+spanEnding(hh.hr)}</span></span>
               </div></div>;})}</div></div>:null}
           </div>:null}
         </div>;
