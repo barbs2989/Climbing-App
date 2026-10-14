@@ -263,8 +263,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       : day.sunCold ? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day — on a cold day the sun alone sets no deadline."
       : !day.sun ? "Under a clear sky the sun doesn’t reach the steep ground shedding onto the line above " + uElev(Math.round(face.fromFt / 100) * 100) + " all day."
       : "";
-    const caveat = fs && fs.bands && !noFrz ? "The line is the fall line down the " + faceDir + " side from the summit, not a traced route — on a ridge it reads one flank. Clear-sky terrain shade from heights about 7 m apart: it misses cornices, seracs and narrow walls, and shade isn’t proof the snow is frozen. Rock and ice can start moving minutes or hours after first sun — no lag is counted — and sun can still shed rime on a cold day." + (kind === "glacier" ? " No timing reduces serac fall." : "") : "";
-    if (line || caveat) sunEl = <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: startEl ? 6 : 0 }}>{line}{line && caveat ? " " : ""}{caveat}</div>;
+    if (line) sunEl = <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: startEl ? 6 : 0 }}>{line}</div>;
   }
   if (kind !== "waterfall" && kind !== "cragmixed") {
     if (legs.floor) {
@@ -396,7 +395,7 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
         <Tile label="Freezing level" when={"at " + clockHr(hr)} value={fl != null ? uElev(Math.round(fl / 100) * 100) : NOT_MEASURED} sub={fl == null || tops == null ? null : "Air at " + uElev(tops) + " is " + (fl > tops ? "above" : "below") + " 0 °C" + (snowLegs && floor ? "; at the lowest snow you cross (" + uElev(floor.ft) + ") it is " + (fl > floor.ft ? "above" : "below") + " 0 °C" : "")} wide />
       </TileGrid>
     </div>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by 10–18 °F. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height above, not a reading on the mountain; no hour is marked safe.</div>
   </div>;
 }
 
@@ -418,7 +417,7 @@ function SnowfallSection({ fc, day, dayLabel }) {
       <Tile label={"Snow in " + (hist ? hist.days : 14) + " days"} when="modelled total" value={hist ? uSnowfall(hist.totalIn) : NOT_MEASURED} />
       <Tile label="Snow level this day" when={lvl ? "over " + lvl.wetHours + " wet hour" + (lvl.wetHours === 1 ? "" : "s") : "no precipitation forecast"} value={lvl ? uElev(Math.round(lvl.snowLo / 100) * 100) + " – " + uElev(Math.round(lvl.snowHi / 100) * 100) : "Not applicable"} sub={lvl ? "where precipitation falls as snow, from the freezing level (" + uElev(Math.round(lvl.flLo / 100) * 100) + " – " + uElev(Math.round(lvl.flHi / 100) * 100) + ") less 500 to 1,500 ft" : "a dry day has no snow line to read"} wide />
     </TileGrid>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>The history is the forecast’s own past hours at the forecast point, not a measurement on the route, and a day counts only at 0.1 in or more (the weather service’s “measurable”). How long ago it snowed does not tell you how stable the snow is: that depends on the layers beneath it, for days to weeks. The snow level is a rule of thumb, lower in heavy precipitation, and falls where it is raining or snowing only.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Past hours from the forecast, not a measurement on the route. Stability depends on the layers beneath it.</div>
   </div>;
 }
 
@@ -455,7 +454,7 @@ function StreamsSection({ pt, base }) {
             <Tile label="Lowest, last 24 h" when={f.lo.day + " at " + f.lo.clock} value={flowText(f.lo.v, f.kind)} />
           </TileGrid>}
       </div>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"A gauge reads the stream at the gauge, which may be a different stream from the one you cross, and it cannot see the depth or speed at your crossing. Whether a person can stand in water depends on depth times speed: adults lose their footing at about " + (uImp() ? "10 to 20 ft²/s" : "0.9 to 1.9 m²/s") + ", and no flow figure is safe for every crossing. Streams fed by snow melt rise in the warm hours and drop overnight, so cross early, and check it yourself before you commit."}</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"A gauge may be a different stream from the one you cross. Footing depends on depth times speed. Snowmelt streams rise in the warm hours, so cross early."}</div>
   </div>;
 }
 
@@ -497,7 +496,7 @@ function AlertsSection({ day, dayLabel, alerts, fc, onRetry }) {
           {a.what ? <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginTop: 5 }}>{"As issued: " + a.what}</div> : null}
         </div>;
       })}</div>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>An alert covers a whole forecast zone, which can be much larger than the route and span very different heights, so it may not describe the route itself. Alerts are issued only a day or two ahead: a day with none is not an all-clear.{list.length ? " The wording above is kept in the units it was issued in." : ""}</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>An alert covers a whole forecast zone, which can be much larger than the route; a day with none is not an all-clear.</div>
   </div>;
 }
 
@@ -516,7 +515,7 @@ function AirSection({ day, dayLabel, air, onRetry }) {
         <Tile label="Worst hour's US AQI" when={"around " + clockOf({ utc_offset_seconds: air.data.utc_offset_seconds || 0 }, a.at)} value={Math.round(a.max)} tone={tone} sub={aqiWord(a.max)} />
         <Tile label="Fine smoke (PM2.5)" when="at that hour" value={a.pm != null ? Math.round(a.pm) + " µg/m³" : NOT_MEASURED} sub={a.pm != null ? "24-hour average basis" : null} />
       </TileGrid>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A forecast for the whole area on a coarse grid (about 45 km, 11 km in Europe), not a reading at the route: smoke pooled in a valley or drifting above the route is not seen. Particles are averaged over the preceding 24 hours, so a plume’s arrival and clearing show up late. Look at the sky and a local air-quality station before you go. Flagged above AQI 100 (EPA: unhealthy for sensitive groups) and 150 (unhealthy for everyone).</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A forecast for the whole area on a coarse grid (about 45 km), not a reading at the route, averaged over the preceding 24 hours, so a plume shows up late.</div>
   </div>;
 }
 
@@ -584,7 +583,7 @@ function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday }) {
   const steep = kind === "glacier" || kind === "alpineice" || kind === "waterfall" || kind === "cragmixed" || hasSnowLegs(kind, terrain);
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 6 }}>SUN AND SHADE</CardHead>
-    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 8 }}>{SUN_NOTE[kind] + " A rule of thumb."}</div>
+    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 8 }}>{SUN_NOTE[kind]}</div>
     <ShadeMap lat={ctr.lat} lng={ctr.lng} pins={pins.length ? pins : null} steep={steep} place={pins.length ? "climb" : "area"} rise={rise} set={set} at0={at0} dayKey={day.date} clock={function (u) { return clockOf(fc, Math.round(u / 1000)); }} C={C} />
   </div>;
 }

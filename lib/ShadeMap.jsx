@@ -158,7 +158,6 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
   const spans = useMemo(function () { return d ? pts.map(function (p, k) { return pxs[k] ? pinSunSpans(d, grid, lat, lng, rise, set, 10, pxs[k]) : undefined; }) : null; }, [terr, grid.key, ptsKey, rise, set]);
   const sun = sunPosition(lat, lng, t);
   const shAt = function (k) { return d && pxs[k] ? pointShaded(d.E, grid.W, grid.H, grid.pxM, pxs[k].c, pxs[k].r, sun.az, sun.alt, d.emax) : undefined; };
-  const reachKm = Math.round(Math.min(grid.pin.c, grid.W - grid.pin.c, grid.pin.r, grid.H - grid.pin.r) * grid.pxM / 100) / 10;
   const sunLine = sun.alt <= 0 ? "Sun below the horizon" : "Sun " + Math.round(sun.alt) + "° up in the " + DIR8[Math.round(sun.az / 45) % 8];
   const spanText = function (sp) {
     const hrs = sp.reduce(function (a, s) { return a + (s[1] - s[0]); }, 0) / 3600e3;
@@ -201,8 +200,5 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: C.textMuted, marginTop: 2 }}><span>{"Sunrise " + clock(rise)}</span><span>{"Sunset " + clock(set)}</span></div>
     </div>
     {spanEl}
-    <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{named
-      ? "Shadows the terrain casts under a clear sky, from heights about " + Math.round(grid.pxM) + " m apart: ridges, faces and gullies — not trees, cornices, or a step of rock steeper than the model can see. Times are for the route’s own pins. Ground more than about " + reachKm + " km from the climb isn’t counted, which matters only when the sun is very low." + (steep ? " Steep ground is read from the same heights, so a short steep step can read gentler than it is." : "") + (d && d.partial ? " Some ground near the climb has no height on file and is drawn without shade." : "")
-      : "Shadows the terrain casts under a clear sky, from heights about " + Math.round(grid.pxM) + " m apart: ridges, canyon walls and slopes — not trees, overhangs, or which way one face of the rock points. The pin is the " + (place || "crag") + "’s location on file, not a particular wall. Ground more than about " + reachKm + " km away isn’t counted, which matters only when the sun is very low." + (d && d.partial ? " Some ground near the " + (place || "crag") + " has no height on file and is drawn without shade." : "")}</div>
   </div>;
 }

@@ -4074,7 +4074,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       {cur&&cur.dryFrac!=null?condRow("Rock now",cur.dryFrac>=1?(cur.factors.dry&&cur.factors.dry.damp?"Dried out from rain, but the air is at its dew point — shaded rock may be damp":"Likely dry"):"Likely wet — about "+Math.round(cur.dryFrac*100)+"% dried",cur.dryFrac>=1?C.green:C.amber):null}
       {dryLine?condRow("Likely dry from",dryLine):null}
       {score.seep?condRow("Seepage risk",<span><b style={{color:score.seep.risk==="high"?C.red:score.seep.risk==="moderate"?C.amber:C.green}}>{score.seep.risk==="high"?"High":score.seep.risk==="moderate"?"Moderate":"Low"}</b>{" · "+uPrecip(score.seep.rain7)+" of rain in 7 days, "+uPrecip(score.seep.rain14)+" in "+(score.seep.short?"the days on record":"14 days")}</span>):null}
-      <div style={condNote}>Seepage is a risk from recent rain, not a reading: cracks, seams and overhangs can stay wet for days after the face is dry. Drying times are rules of thumb for the rock type.</div>
+      <div style={condNote}>Seepage is a risk, not a reading: cracks and seams can stay wet for days. Drying times are rules of thumb.</div>
     </div>)}
     {sec("Sun on the wall",<div style={condBox}>
       {day.sun?condRow("Sunrise",clockAt(score,day.sun.rise)):null}
@@ -4096,7 +4096,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     {sec("Season",<div style={condBox}>
       {!clim?<div style={{fontSize:12.5,color:C.textMuted}}>Loading the climate history…</div>:clim.error?<div><div style={{fontSize:12.5,color:C.amber,lineHeight:1.5,marginBottom:8}}>Couldn’t load the climate history for this crag. This says nothing about its season.</div><button onClick={function(){setClimTries(climTries+1);}} style={{background:C.surface,color:C.blue,border:"1px solid "+C.border,borderRadius:8,padding:"7px 12px",fontSize:12.5,fontWeight:700,cursor:"pointer"}}>Try again</button></div>:<SeasonChart clim={clim.data} band={score.band}/>}
     </div>)}
-    <div style={{fontSize:11,color:C.textMuted,marginTop:10,lineHeight:1.5}}>A forecast for the crag, not a promise about the rock. Wet cracks and how a particular wall holds water are for your own eyes.</div>
+    <div style={{fontSize:11,color:C.textMuted,marginTop:10,lineHeight:1.5}}>A forecast for the crag, not a promise about the rock.</div>
   </div>;
 }
 function pickForecastWaypoints(waypoints){
@@ -4267,7 +4267,7 @@ function WeatherPanel({waypoints,showPlan,packId,fallback}){
      Reads from the shared WP_STYLE now, like everything else. */
   return <div style={{marginBottom:14}}>
     <SL>Forecast at key points</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Elevation-aware forecast, broken into AM/PM/Night with an hourly view on tap, with the NWS and MET forecasts beside each day for comparison. Read it yourself: mountain terrain can differ sharply from the forecast, and forecasts can legitimately disagree. The wind figure is the modelled ridge-level (~80 m) speed; gusts, and the NWS and MET winds beside each day, are surface (10 m) figures — so they are not measured at the same height.</div>
+    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Elevation-aware, by AM/PM/Night; tap a day for hourly. Mountain terrain can differ from any forecast. Wind is ridge-level (~80 m); gusts and NWS/MET winds are surface (10 m).</div>
     <div style={{display:"flex",flexDirection:"column",gap:10}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
