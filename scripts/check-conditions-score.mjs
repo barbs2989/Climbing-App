@@ -158,14 +158,14 @@ console.log("check:conditions-score");
   else fail(`${sites.length} place(s) render routeRock but only ${marked} say "(mapped)"`);
 }
 
-// 6. HOME — the "Best day to climb" tile (lib/BestDayTile.jsx) is the SAME score over the saved crag
+// 6. MENU — the "Best day to climb" tile (moved off Home) (lib/BestDayTile.jsx) is the SAME score over the saved crag
 //    climbs, so its number and the Conditions tab's must come from one function, under one gate.
 {
   const tile = fs.readFileSync(path.join(ROOT, "lib/BestDayTile.jsx"), "utf8");
   const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
-  if (/<BestDayTile ids=\{wishlist\} routeById=\{routeById\} onOpen=/.test(app) && /<BestDayTile[\s\S]{0,320}<div><div style=\{hd\}>\{"Jump back in"\}/.test(app)) ok("the Best day tile is mounted on Home, over the saved climbs");
-  else fail("the Best day tile is no longer mounted on Home over the saved climbs");
+  if (/<BestDayTile ids=\{wishlist\} routeById=\{routeById\} onOpen=/.test(app) && /\{bestDayOpen&&<div[\s\S]{0,260}aria-label="Best day to climb"[\s\S]{0,1200}<BestDayTile/.test(app) && /\["calendar","Best day to climb",\(\)=>setBestDayOpen\(true\)\]/.test(app) && (app.match(/<BestDayTile\b/g) || []).length === 1) ok("the Best day tile is opened from the Menu (Plan & log), over the saved climbs, and no longer sits on Home");
+  else fail("the Best day tile is no longer reachable from the Menu over the saved climbs, or is mounted on Home again");
   // With no saved crag climb the tile says how to get one, and prints no number: it rates nothing.
   const empty = (tile.match(/if \(!crag\.length\) return [^\n]*/) || [""])[0];
   if (/scoreForecast\(/.test(tile) && /CRAG_SCORE_DISCIPLINES\.includes\(catOf\(r\)\)/.test(tile) && /Save a sport, trad, top-rope or bouldering climb/.test(empty) && /onClick=\{onExplore\}/.test(empty) && !/toFixed|stars/.test(empty)) ok("the tile scores with scoreForecast, crag climbs only, and with none saved shows how to save one, with no number");
@@ -284,8 +284,8 @@ console.log("check:conditions-score");
   else fail("the band chips filter a choice out again — a saved band equal to the default would press nothing");
   if (/useCondPrefs\(\)/.test(tile) && !/BAND_PREF\.load\(\)/.test(tile) && /useCondPrefs\(\)/.test(card) && /setCondPref\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card and Home read ONE prefs store that broadcasts changes");
   else fail("a prefs reader loads storage on its own again, so Home can go stale after a change on a route");
-  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /onPrefs=\{\(\)=>setSettingsOpen\(true\)\}/.test(app)) ok("Settings has a Your conditions section, and the Home tile links to it");
-  else fail("Your conditions is no longer reachable from Settings (menu and profile) or the Home tile");
+  if (/<SL>Your conditions<\/SL>[\s\S]{0,400}<CondPrefsControls\/>/.test(app) && /onPrefs=\{\(\)=>\{setBestDayOpen\(false\);setSettingsOpen\(true\);\}\}/.test(app)) ok("Settings has a Your conditions section, and the Best day tile links to it");
+  else fail("Your conditions is no longer reachable from Settings (menu and profile) or the Best day tile");
 }
 
 // 8. THE WEATHER BESIDE THE SCORE (Climbit's crag page, 2026-10-07) — rain hour by hour and day by

@@ -1424,7 +1424,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **What it cannot see**: the drying hours per rock family (`DRY_HOURS`) are rules of thumb, not
     measurements, and the card says which rock it assumed. How a particular wall holds water is
     not modelled — seepage is only a risk from recent rain — and the card says so.
-  - **Home tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, above *Jump back in*) is the SAME
+  - **Menu tile (§6)**: *Best day to climb* (`lib/BestDayTile.jsx`, opened from Menu › Plan & log; it left Home 2026-10-14) is the SAME
     `scoreForecast` over the saved crag climbs, with a compare table of each one's 7 days. It renders
     nothing with no saved crag climb, says "not a rating" when the forecast fails, and lists an
     unlocated climb as "No score: …" rather than dropping it. At most 8 crags are fetched, and it says so.
