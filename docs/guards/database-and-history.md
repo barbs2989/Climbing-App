@@ -592,9 +592,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       Down Under and Outback Wall, one FA) — 154 kept apart (rock vs ice or boulder, different FAs, grades
       far apart, and everything unsure), 6 places folded. Kept apart on a judgement worth knowing: Missouri's
       closed Hiker's Boulder beside the park's Planet Express (Seymour, Ankylosaurus — no source entry says
-      which boulder); Interstate Park's roped "The Pit" beside its bouldering tree's "Pit (AKA Arm Pit)".
+      which boulder — settled by their pages in 0286); Interstate Park's roped "The Pit" beside its bouldering tree's "Pit (AKA Arm Pit)".
       Cupids Bower's old copy named its climbs "BA", "Master Degree", "PHD" with the same "5.9" on all three:
       merged into the current names WITHOUT the higher-grade rule, because a uniform grade is not a reading.
+    - **The 34 0285 left unsure, settled from their own PAGES — 0286** (2026-10-14). The tree says where a
+      climb is FILED; only its route page says where it IS. Each copy's page (description, location, FA,
+      height) and the area page above it were read: 6 merged, 27 two climbs, 1 unsettled (South West
+      Overhang — nothing describes the V3-4 copy on High Ball Boulder). Seymour and Ankylosaurus went to the
+      PARK boulders: the source now files both under the closed Hiker's Boulder, but their own pages start
+      one beside The Last Samurai and put the other on the Lost World boulder. Traps met: the agents' WebFetch
+      cannot open those pages but a plain `fetch` from node can (and the local crawl's `_routes/` holds some);
+      and a sort number on the SOURCE's own climb names ("4. Super Collider") hid an entry from the name
+      match — read the area's list, not just the route ids the match returned.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
