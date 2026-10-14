@@ -51,5 +51,7 @@ export function TileGroup({ title, children, min }) {
 export const NOT_MEASURED = <span style={{ color: C.textMuted, fontSize: 13, fontWeight: 600 }}>Not measured</span>;
 
 export function TileGrid({ children, min }) {
-  return <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(" + (min || 130) + "px,1fr))", gap: 6 }}>{children}</div>;
+  // A lone tile keeps a tile's width instead of stretching across the whole card.
+  const lone = [children].flat(Infinity).filter(Boolean).length === 1;
+  return <div style={{ display: "grid", gridTemplateColumns: lone ? "minmax(" + (min || 130) + "px,220px)" : "repeat(auto-fit,minmax(" + (min || 130) + "px,1fr))", gap: 6 }}>{children}</div>;
 }
