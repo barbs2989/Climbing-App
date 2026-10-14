@@ -374,12 +374,12 @@ console.log("check:conditions-score");
   // The card and the fetch.
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
-  const chart = (rd.match(/function HourlyChart\([\s\S]*?\n}\n/) || [""])[0];
+  const chart = (rd.match(/function HourChartCard\([\s\S]*?\n}\n/) || [""])[0] + (rd.match(/function HourlyChart\([\s\S]*?\n}\n/) || [""])[0];
   const need = ["Day by day", "Hour by hour", "All 7 days", "Shade map", "<ShadeMap ", "Cloud cover", "feels like ", " from the ", "Rain not measured", "A trace of rain"];
   const lost = need.filter((s) => !card.includes(s));
   if (!lost.length) ok(`the card renders day by day, hour by hour (a day or all 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
   else fail(`the card lost: ${lost.join(" | ")}`);
-  const chartNeed = ['"Rain ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "week"];
+  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "week"];
   const cLost = chartNeed.filter((s) => !chart.includes(s));
   if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for a day or the week");
   else fail(`the hourly chart lost: ${cLost.join(" | ")}`);
