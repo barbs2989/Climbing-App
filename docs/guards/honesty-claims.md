@@ -1726,3 +1726,27 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       right shape. The section now looks the raw local day up by date, and the guard pins both the lookup and that
       a shape without `hours` throws. LESSON: a card that mounts only after a fetch resolves is invisible to the
       static render walks. Open it on a real route in Chrome before calling it done.
+    - **TEMPERATURE GAPS (guard section 16, measured 2026-10-14):** a temperature is for ONE height, and a screen that
+      sets two numbers side by side has to say whose. (1) The NWS grid cell under a summit sits 150 to 850 m BELOW
+      it (Rainier: cell 3,890 m, pin 4,392 m), so its raw temperatures read up to 9 F warmer than the
+      height-adjusted Open-Meteo and MET Norway series beside them, and the weather panel's "differs" flag fired
+      on a difference of height, not of forecast. `nwsHeightShiftF()` (lib/forecast.js) shifts them by the standard
+      lapse rate (6.5 C per km, an average: inversions break it) and the row says "adjusted N° colder for this
+      height". An unknown height shifts nothing and is never guessed. (2) The "Open-Meteo reads cold at summits"
+      suspicion is NOT supported: against five SNOTEL stations (4,900 to 11,310 ft, 121 hours each) its bias was
+      -3.7 to +1.9 F with a typical hourly error of 3.3 to 4.8 F, about -1 F at 11,300 ft. Services still differ
+      by 2 to 4 C at a summit in BOTH directions (Open-Meteo minus MET Norway: -3.8 C Rainier, +2.0 C Hood), so the
+      card states the typical error and that services can differ by more. NOT MEASURABLE: which service is right
+      at a summit itself, since no station sits on one. MET Norway has no past series, so only Open-Meteo was
+      checked against stations.
+      RESEARCH (2026-10-14, what the lapse rate can and cannot claim): 6.5 C/km is the standard atmosphere's global
+      annual AVERAGE for free air. Measured slope rates differ: Mount Washington's own record averages 5.5 C/km
+      (3.0 F per 1,000 ft), agreeing with earlier New England studies, and 6.5 fit poorly in every season, worst in
+      winter; maximum-temperature rates run steeper than minimum, and summer steeper than winter (Himalaya and
+      Tianshan studies agree it varies by season and slope). Over Rainier's 1,650 ft cell-to-pin gap the two figures
+      differ by about 1 F (5.9 vs 5.0), inside the 3 to 5 F typical hourly error, so the standard 6.5 stays
+      (it is what weather services use) and the row says "adjusted", never "corrected". Open-Meteo's docs say its
+      `elevation` parameter does "statistical downscaling" (default: a 90 m terrain model) but publish no method
+      or lapse rate, so what it does between cell and pin is UNVERIFIED beyond the station check above.
+      NWS publishes no lapse rate for its own cell either (gridded MOS adjusts for elevation in passes of
+      varying strength).

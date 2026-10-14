@@ -60,7 +60,7 @@ export * from ${JSON.stringify(path.join(ROOT, "lib", "alpineConditions.js"))};
 export { flagText, forecastPoint, KIND_LABEL } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 export { planTimes } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
 export { CRAG_SCORE_DISCIPLINES, monthlyClimate } from ${JSON.stringify(path.join(ROOT, "lib", "conditionsScore.js"))};
-export { fetchAlpineClimate } from ${JSON.stringify(path.join(ROOT, "lib", "forecast.js"))};
+export { fetchAlpineClimate, nwsHeightShiftF } from ${JSON.stringify(path.join(ROOT, "lib", "forecast.js"))};
 export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 export { inGeometry, zoneFor, avyReading, DANGER_NAME } from ${JSON.stringify(path.join(ROOT, "lib", "avalanche.js"))};
 export { nearestStation, kmBetween, snowReading } from ${JSON.stringify(path.join(ROOT, "lib", "snotel.js"))};
@@ -565,7 +565,29 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   eq("report freshness with none on file says nothing recent is known, and a failed read is not 'none'", /so nothing recent is known about its conditions/.test(card) && /This is not a report that there are none\./.test(card), true);
 }
 
-const FLOOR = 238;
+/* ── 16. TEMPERATURE GAPS — a number is for ONE height, and the screen says whose ──
+   Measured 2026-10-14: the NWS grid cell under a summit sits 150-850 m below it (Rainier: cell 3,890 m, pin 4,392 m),
+   so its raw temperatures read up to 9 F warmer than the height-adjusted series beside them. The panel lapse-shifts
+   them (6.5 C/km, the standard atmosphere) and says so. Open-Meteo against five SNOTEL stations (4,900-11,310 ft,
+   121 hours each): bias -3.7 to +1.9 F, typical hourly error 3.3-4.8 F, so no summit-cold bias exists to correct. */
+console.log("\n16. TEMPERATURE GAPS — shifted to the pin's height, stated, unknown heights never guessed");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const cell = { properties: { elevation: { unitCode: "wmoUnit:m", value: 3889.8576 } } };
+  const up = A.nwsHeightShiftF(cell, 14411);
+  eq("a summit 1,650 ft above its cell reads colder: Rainier 14,411 ft vs the 3,890 m cell is about -5.9 F", Math.round(up * 10) / 10, -5.9);
+  eq("a point at the cell's own height shifts nothing", Math.abs(A.nwsHeightShiftF(cell, 3889.8576 * 3.28084)) < 1e-9, true);
+  eq("a point BELOW its cell reads warmer (positive shift)", A.nwsHeightShiftF(cell, 3000) > 0, true);
+  eq("an unknown point height shifts nothing (never guessed)", [A.nwsHeightShiftF(cell, null), A.nwsHeightShiftF(cell, undefined), A.nwsHeightShiftF(cell, NaN)], [0, 0, 0]);
+  eq("an unknown or non-metre cell height shifts nothing", [A.nwsHeightShiftF(null, 9000), A.nwsHeightShiftF({}, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:ft", value: 3000 } } }, 9000), A.nwsHeightShiftF({ properties: { elevation: { unitCode: "wmoUnit:m", value: null } } }, 9000)], [0, 0, 0, 0]);
+  eq("the weather panel applies the shift to every NWS temperature it reads", /const nwsShift=nwsHeightShiftF\(nwsJson,w\.elev\);[\s\S]{0,400}push\(v\.value\*9\/5\+32\+nwsShift\)/.test(rd), true);
+  eq("...and says how far it adjusted, in the climber's units, when that is a degree or more", /Math\.abs\(dy\.nws\.adj\)>=1\?" · adjusted "\+uTempDelta\(Math\.abs\(dy\.nws\.adj\)\)\+"° "/.test(rd), true);
+  eq("the alpine card states the measured station error through the unit helper, not a fixed Fahrenheit figure", /typically off by \{uTempDelta\(3\)\}–\{uTempDelta\(5\)\}°/.test(card) && !/off by 3–5 ?°F/.test(card), true);
+  eq("...and that services can differ by more at a summit", /forecasts from different services can differ by more at a summit/.test(card), true);
+}
+
+const FLOOR = 247;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);
