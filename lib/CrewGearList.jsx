@@ -2,13 +2,14 @@
 // bringing it -- yourself with one tap, or any other confirmed crewmate through "Assign". Nothing is
 // derived from the route; the route page already shows the gear a climb takes. Stored on the crew
 // as `gearExtras` (the typed items) and `gearClaims` ({item: [climber ids]}). For a signed-in crew
-// both are per-member columns: your own claims go through set_my_crew_gear (0209), a crewmate's
-// through assign_crew_gear (0286), and you can only remove an item you added (`_myGearExtras`).
+// both are per-member columns: every claim, yours or a crewmate's, is written one item at a time
+// through assign_crew_gear (0286/0287), the items you added through set_my_crew_gear_extras (0287),
+// and you can only remove an item you added (`_myGearExtras`).
 import { useEffect, useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { POP_REMOVE } from "./popupChrome.js";
 
-const MAX_ITEM = 80; // assign_crew_gear / set_my_crew_gear refuse anything longer
+const MAX_ITEM = 80; // assign_crew_gear / set_my_crew_gear_extras refuse anything longer
 
 export default function CrewGearList({ crew, roster, onUpdateCrew }) {
   const [newItem, setNewItem] = useState("");
