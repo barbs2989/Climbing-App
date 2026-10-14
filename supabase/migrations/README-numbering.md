@@ -21,9 +21,16 @@ or a data update that a later session has since corrected:
 
 ```sql
 insert into supabase_migrations.schema_migrations (version, name)
-values ('0225', 'declare_four_hand_built_indexes')   -- number, and the file name after it
-on conflict (version) do nothing;
+values ('0225', 'declare_four_hand_built_indexes');  -- number, and the file name after it
 ```
+
+**No `on conflict (version) do nothing`.** This page used to say to add it, and on 2026-10-14 it
+hid a collision: 0286 was applied by hand while another PR had already merged its own 0286, so the
+record line found the number taken, did nothing, and the apply reported success, leaving the change
+recorded under nobody's name (it was renumbered 0288 and recorded then). A plain insert fails on a
+taken number. Put it before the file's `commit;` and the whole apply rolls back; then renumber and
+re-run. After an apply, check the NAME as well as the version:
+`select name from supabase_migrations.schema_migrations where version = '0225'`.
 
 `npx supabase migration list --linked` shows local and recorded versions side by side; every file
 on `main` should have both columns filled.
