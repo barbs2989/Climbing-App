@@ -4090,7 +4090,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
         {condRow("Now",aqNow!=null?"AQI "+Math.round(aqNow)+" · "+aqCat.label:"Not measured",aqNow!=null?aqiTone(aqNow):C.textMuted)}
         {condRow(dayI===0?"Worst today":"Worst "+dayName(day,dayI),day.aqiMax!=null?"AQI "+Math.round(day.aqiMax)+" · "+dayAqCat.label:"No air-quality forecast this far ahead",day.aqiMax!=null?aqiTone(day.aqiMax):C.textMuted)}
         {cur&&cur.pm25!=null?condRow("Fine smoke",Math.round(cur.pm25)+" µg/m³ of PM2.5 now"):null}
-        <div style={condNote}>Above AQI 150 the score is held to 2 ★, above 200 to 1 ★ — smoke makes hard breathing the day’s real hazard.</div>
+        <div style={condNote}>{"Above AQI "+score.aqLimits[0]+" the score is held to 2 ★, above "+score.aqLimits[1]+" to 1 ★ — smoke makes hard breathing the day’s real hazard."+(cp.aq?" (Your air-quality setting.)":"")}</div>
       </div>}
     </div>)}
     {sec("Season",<div style={condBox}>

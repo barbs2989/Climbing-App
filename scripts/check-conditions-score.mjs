@@ -240,6 +240,23 @@ console.log("check:conditions-score");
   const boulderAll = at(scoreForecast(fixture({ temp: 85 }), { ...WALL, discipline: "bouldering" }, { temp: { all: [30, 90], sport: [40, 60] } }, NOW), 12);
   if (wide.factors.temp.pts === WEIGHTS.temp && sportOwn.factors.temp.pts < WEIGHTS.temp && boulderAll.factors.temp.pts === WEIGHTS.temp) ok("a set range 30-90 scores 85 as ideal; a sport-only range overrides sport and leaves bouldering on the all-climbing range");
   else fail(`the temperature range does not reach the score per discipline: wide ${wide.factors.temp.pts}, sport-own ${sportOwn.factors.temp.pts}, bouldering ${boulderAll.factors.temp.pts}`);
+  // OPTIONAL extras: each one set moves the score, and none set changes nothing.
+  const humDef = at(scoreForecast(fixture({ rh: 60 }), WALL, {}, NOW), 12), humOk = at(scoreForecast(fixture({ rh: 60 }), WALL, { rhMax: 70 }, NOW), 12);
+  if (humDef.factors.humidity.pts < WEIGHTS.humidity && humOk.factors.humidity.pts === WEIGHTS.humidity) ok("a humidity ceiling of 70% makes 60% full marks; the default 40% does not");
+  else fail(`the humidity ceiling does not reach the score: default ${humDef.factors.humidity.pts}, ceiling 70 ${humOk.factors.humidity.pts}`);
+  const sunAuto = at(scoreForecast(fixture({ temp: 85 }), WALL, {}, NOW), 12), sunWant = at(scoreForecast(fixture({ temp: 85 }), WALL, { sun: "sun" }, NOW), 12), sunEither = at(scoreForecast(fixture({ temp: 85 }), WALL, { sun: "either" }, NOW), 12);
+  if (sunAuto.factors.sun && sunAuto.factors.sun.want === "shade" && sunAuto.factors.sun.pts < WEIGHTS.sun && sunWant.factors.sun.pts === WEIGHTS.sun && sunWant.factors.sun.want === "sun" && sunEither.factors.sun.pts === WEIGHTS.sun) ok("a hot lit wall wants shade by default; 'I want sun' and 'don't mind' score it full");
+  else fail("the sun/shade preference does not reach the score");
+  const dayAll = scoreForecast(fixture(), WALL, {}, NOW).days[0], dayWin = scoreForecast(fixture(), WALL, { window: [14, 19] }, NOW).days[0];
+  if (dayWin.best && dayWin.best.start >= 14 && dayWin.best.end <= 19 && dayWin.hours.length === dayAll.hours.length) ok("a 2 PM-7 PM window picks the best window inside it and still lists every daylight hour");
+  else fail(`the daylight window does not bound the best window or hides hours: ${JSON.stringify(dayWin.best && [dayWin.best.start, dayWin.best.end])}`);
+  const noRoom = scoreForecast(fixture(), WALL, { window: [14, 16] }, NOW).days[0];
+  if (noRoom.best && noRoom.best.start === dayAll.best.start) ok("a window shorter than three hours is ignored rather than leaving no best window");
+  else fail("a too-short daylight window is not ignored");
+  const mkAir = (v) => { const a = { utc_offset_seconds: 0, hourly: { time: [], us_aqi: [], pm2_5: [] } }; for (let i = 0; i < 240; i++) { a.hourly.time.push(new Date(Date.parse("2026-06-07T00:00:00Z") + i * 3600e3).toISOString().slice(0, 16)); a.hourly.us_aqi.push(v); a.hourly.pm2_5.push(20); } return a; };
+  const capOf = (aqi, aq) => at(scoreForecast(fixture(), WALL, aq ? { aq } : {}, NOW, mkAir(aqi)), 12);
+  if (capOf(120).caps.length === 0 && capOf(120, "sensitive").stars <= 2 && capOf(180, "relaxed").caps.length === 0 && capOf(250, "relaxed").stars <= 2 && capOf(350, "relaxed").stars <= 1 && capOf(180).stars <= 2) ok("air quality: standard holds at 150/200, 'sensitive' at 100/150, 'relaxed' at 200/300, and hazardous air is held to 1 star whatever is picked");
+  else fail("the air-quality sensitivity does not move the caps as stated");
   // The wind ceiling the climber sets moves where the wind factor is full.
   const w20 = at(scoreForecast(fixture({ wind: 20, gust: 20 }), WALL, {}, NOW), 12), w20ok = at(scoreForecast(fixture({ wind: 20, gust: 20 }), WALL, { windMax: 25 }, NOW), 12);
   if (w20.factors.wind.pts < WEIGHTS.wind && w20ok.factors.wind.pts === WEIGHTS.wind) ok("a wind limit of 25 mph makes 20 mph full marks; the default 10 mph limit does not");
