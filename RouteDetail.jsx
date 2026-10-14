@@ -21,7 +21,7 @@ import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
 import ShadeMap from "./lib/ShadeMap";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, packForecast, savedAgo } from "./lib/offline";
-import { fetchForecastRaw, snapshotPackForecast, fetchCragForecast, fetchCragAir, fetchCragClimate } from "./lib/forecast";
+import { nwsHeightShiftF, fetchForecastRaw, snapshotPackForecast, fetchCragForecast, fetchCragAir, fetchCragClimate } from "./lib/forecast";
 import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
@@ -4215,9 +4215,13 @@ function WeatherPanel({waypoints,showPlan,packId,fallback}){
         // Secondary-source extras (wind + one weather label per day) — a
         // lighter read than Open-Meteo's per-part/hourly breakdown, by design.
         const nwsByDay={},nwsWindByDay={},nwsWxByDay={};
+        /* NWS temperatures are for THEIR grid cell's own height, not this point's. Raw, they read warmer than the
+           height-adjusted series beside them at every summit (Rainier: cell 3,890 m, pin 4,392 m) and tripped
+           "differs" on a difference of height, not of forecast. Shifted by the standard lapse rate, stated. */
+        const nwsShift=nwsHeightShiftF(nwsJson,w.elev);
         if(nwsJson&&nwsJson.properties){
           const tvals=nwsJson.properties.temperature&&nwsJson.properties.temperature.values;
-          if(tvals)tvals.forEach(function(v){if(typeof v.value!=="number")return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsByDay[day])nwsByDay[day]=[];nwsByDay[day].push(v.value*9/5+32);});
+          if(tvals)tvals.forEach(function(v){if(typeof v.value!=="number")return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsByDay[day])nwsByDay[day]=[];nwsByDay[day].push(v.value*9/5+32+nwsShift);});
           const wvals=nwsJson.properties.windSpeed&&nwsJson.properties.windSpeed.values;
           if(wvals)wvals.forEach(function(v){if(typeof v.value!=="number")return;const day=toLocalDay(v.validTime.split("/")[0]);if(!nwsWindByDay[day])nwsWindByDay[day]=[];nwsWindByDay[day].push(v.value*0.621371);});
           const xvals=nwsJson.properties.weather&&nwsJson.properties.weather.values;
@@ -4246,7 +4250,7 @@ function WeatherPanel({waypoints,showPlan,packId,fallback}){
           const d=byDay[date];
           const parts=[buildPart("AM",date+"_am"),buildPart("PM",date+"_pm"),buildPart("Night",date+"_night")].filter(Boolean);
           const nd=nwsByDay[date];
-          const nws=(nd&&nd.length>=3)?{lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd)),wind:nwsWindByDay[date]?Math.round(Math.max.apply(null,nwsWindByDay[date])):null,wx:nwsWxLabel(modeOf(nwsWxByDay[date]))}:null;
+          const nws=(nd&&nd.length>=3)?{adj:nwsShift,lo:Math.round(Math.min.apply(null,nd)),hi:Math.round(Math.max.apply(null,nd)),wind:nwsWindByDay[date]?Math.round(Math.max.apply(null,nwsWindByDay[date])):null,wx:nwsWxLabel(modeOf(nwsWxByDay[date]))}:null;
           const md=metByDay[date];
           const met=(md&&md.length>=3)?{lo:Math.round(Math.min.apply(null,md)),hi:Math.round(Math.max.apply(null,md)),wind:metWindByDay[date]?Math.round(Math.max.apply(null,metWindByDay[date])):null,wx:metWxLabel(modeOf(metWxByDay[date]))}:null;
           const wxCode=modeOf(d.codes);
@@ -4313,7 +4317,7 @@ function WeatherPanel({waypoints,showPlan,packId,fallback}){
             {hasSnow?<div style={{gridColumn:"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>Snow expected</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{uSnowfall(dy.snowIn)}</div></div>:null}
           </div>
           {dy.nws||dy.met?<div style={{display:"flex",flexDirection:"column",gap:5}}>
-            {dy.nws?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>NWS</span><span style={{color:diverges?C.amber:C.textSub,lineHeight:1.4}}>{"High "+uTemp(dy.nws.hi)+" · Low "+uTemp(dy.nws.lo)+(dy.nws.wind!=null?" · Wind "+uWind(dy.nws.wind):"")+(dy.nws.wx?" · "+dy.nws.wx:"")+(diverges?" — differs "+uTempDelta(Math.abs(nwsMid-omMid))+"°":"")}</span></div>:null}
+            {dy.nws?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>NWS</span><span style={{color:diverges?C.amber:C.textSub,lineHeight:1.4}}>{"High "+uTemp(dy.nws.hi)+" · Low "+uTemp(dy.nws.lo)+(dy.nws.wind!=null?" · Wind "+uWind(dy.nws.wind):"")+(dy.nws.wx?" · "+dy.nws.wx:"")+(Math.abs(dy.nws.adj)>=1?" · adjusted "+uTempDelta(Math.abs(dy.nws.adj))+"° "+(dy.nws.adj<0?"colder":"warmer")+" for this height":"")+(diverges?" — differs "+uTempDelta(Math.abs(nwsMid-omMid))+"°":"")}</span></div>:null}
             {dy.met?<div style={{display:"flex",alignItems:"flex-start",gap:6,fontSize:10.5}}><span style={{flexShrink:0,fontSize:9,fontWeight:800,color:C.textMuted,background:C.card,border:"1px solid "+C.border,borderRadius:5,padding:"1.5px 5px",marginTop:1}}>MET</span><span style={{color:metDiverges?C.amber:C.textSub,lineHeight:1.4}}>{"High "+uTemp(dy.met.hi)+" · Low "+uTemp(dy.met.lo)+(dy.met.wind!=null?" · Wind "+uWind(dy.met.wind):"")+(dy.met.wx?" · "+dy.met.wx:"")+(metDiverges?" — differs "+uTempDelta(Math.abs(metMid-omMid))+"°":"")}</span></div>:null}
           </div>:null}
           </div>
