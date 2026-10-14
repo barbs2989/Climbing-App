@@ -801,31 +801,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     request of a CI run is cold**: 2.6s against the 3s anon `statement_timeout` is a measured first
     call, and `--live` now retries a 5xx (4 tries, growing pause) and still throws if it never reads.
     Locally the retry absorbed two 57014s before reading all 681 directions.
-- **`check:crew-gear`** asserts that a crew's "what to bring" reaches a **real** route, and that
-  nothing invents a priority the data does not carry. `CrewCard` gated its gear section on
-  `route.gearTiers` — carried by **14 hand-seeded routes** and by a climber's own contribution,
-  never mapped by `dbRouteToCamel`, never written by any enrichment JSON. So the entire
-  who's-bringing-what feature rendered on the demo and on **no real Washington route**. Static
-  (it imports `lib/rack.js`, which imports nothing), so it sits in `npm run build`.
-  - **Every layer reviewed as finished**, which is why this survived: the component existed, the
-    props were wired, and the seed route rendered it correctly. Only the data said otherwise —
-    the same shape as `descent_text` populated on 1,021 routes and rendered on none, and as
-    `approve_new_route` writing six columns nothing filled.
-  - **The honesty rule is the second half.** `Required`/`Recommended`/`Optional` is a real
-    ranking on a seed route and on a contribution; the DB carries a rack, not a priority order.
-    Painting a derived list red as REQUIRED is a safety-adjacent claim nothing in the row
-    supports, so derived gear renders as **neutral groups** and the guard fails if
-    `required`/`recommended`/`optional` ever appear on a derived result.
-  - **The generic table is a last resort and says so.** Measured 2026-08-14 against 8,366 WA
-    routes: `detailed_rack` 957, `pro_needs` 990, `what_to_bring` 1028 — so the route's *own*
-    rack answers for ~12% and `DISC_RACK` answers for the rest. A stock list is labelled
-    *"Typical … rack — not this route's own"*, and a route that has its own rack must never get
-    one stapled underneath it; both are asserted.
-  - It also pins the crew card as a **third reader of the rack correction rivalry**
-    (`check:correction-readers`): a climber's agreed rack must reach the crew card, not the
-    value they replaced. That is where this would silently diverge from the RACK box.
-  - Comments are stripped before the structural scan, because `CrewCard` now *explains* the bug
-    in prose naming `route.gearTiers` — the same trap `check:ci-cancel` records.
+- **`check:crew-gear` was REMOVED (2026-10-14) with the thing it guarded.** The crew card used to
+  derive a "what to bring" list from the route (`crewGearFor`, `GearTiers`); the route page already
+  shows the gear a climb takes, so the card now holds the crew's OWN typed list, and each member
+  marks what they bring (`lib/CrewGearList.jsx`, on `gearExtras`/`gearClaims`, saved per member by
+  0209 -- so a member claims for themselves only). Nothing is derived, so there is no ranking to
+  invent and no stock list to staple under a route's own rack.
   - `rackFromText`/`_rackEdited`/`contribRack`/`routeRackFor`/`DISC_RACK` moved to **`lib/rack.js`**
     for this: core cannot import `RouteDetail.jsx` (lazy-loaded, and it already imports *from*
     core, so a static import both cycles and drags the route page into the main bundle). Same
