@@ -388,8 +388,8 @@ console.log("check:conditions-score");
   if (/apparent_temperature/.test(crag) && /wind_direction_10m/.test(crag)) ok("the crag fetch asks for feels-like and wind direction, which the card reads");
   else fail("the crag fetch no longer asks for feels-like or wind direction");
   const sm = fs.readFileSync(path.join(ROOT, "lib/ShadeMap.jsx"), "utf8");
-  if (/IntersectionObserver/.test(sm) && /under a clear sky/.test(sm) && /not trees, overhangs/.test(sm) && /isn’t counted/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, says it is a clear-sky terrain shadow (not trees or one face), how far it reaches, and when it failed");
-  else fail("the shade map lost a caveat, its lazy load, its failure state or its slider's name");
+  if (/IntersectionObserver/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen and says when it failed (its long footnote was removed on purpose, 2026-10-14)");
+  else fail("the shade map lost its lazy load, its failure state or its slider's name");
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 

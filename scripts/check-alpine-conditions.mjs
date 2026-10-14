@@ -340,7 +340,7 @@ console.log("\n9. SUN AND SHADE — the terrain's shadow on the route's own pins
   eq("a route with no placed pins has none (the map then falls back to the forecast point, said to be the area's)", A.sunPins({ waypoints: [W("summit", null, null, null)] }), []);
   eq("...and the section tells an area pin from the route's own", /place=\{pins\.length \? "climb" : "area"\}/.test(card), true);
   eq("every kind gets its OWN line on what the sun does there", Object.keys(A.KIND_LABEL).every((kk) => new RegExp("\\n  " + kk + ": \"").test(card.slice(card.indexOf("const SUN_NOTE")))), true);
-  eq("...each called a rule of thumb on screen", /SUN_NOTE\[kind\] \+ " A rule of thumb\."/.test(card), true);
+  eq("...and printed as it is, with no caveat after it", /\{SUN_NOTE\[kind\]\}/.test(card), true);
   eq("steep-and-sunlit ground is offered only where snow or ice is in play (not on a dry scramble or rock)", /const steep = kind === "glacier" \|\| kind === "alpineice" \|\| kind === "waterfall" \|\| kind === "cragmixed" \|\| hasSnowLegs\(kind, terrain\);/.test(card), true);
   eq("the terrain is centred on the CLIMB (its base, else its top), not the trailhead", /p\.key === "Base"[\s\S]{0,120}p\.key === "Summit" \|\| p\.key === "Topout"/.test(card), true);
   eq("it reads the SELECTED day's sunrise and sunset, and renders under the forecast", /<SunShadeSection route=\{route\} kind=\{kind\} terrain=\{terrain\} pt=\{pt\} fc=\{fc\} day=\{day\}/.test(card) && /day\.sunrise \* 1000, set = day\.sunset \* 1000/.test(card), true);
@@ -394,9 +394,7 @@ console.log("\n10. SUN ON THE FACE — be above each height of the face before t
 
   eq("the card hands the day's face reading to the judgement, and only a COMPUTED one", /sun: fs && fs\.bands \? fs : null/.test(card), true);
   eq("a start the sun decided says so, with the height and the hour", /day\.start\.why === "sun" \?[^\n]*" and be above " \+ uElev\(Math\.ceil\(day\.start\.sun\.ft \/ 50\) \* 50\) \+ " by "[^\n]*when the sun reaches steep ground that sheds onto the line above that height/.test(card), true);
-  eq("...and says the line is the fall line from the summit, not a traced route, and reads one flank on a ridge", /The line is the fall line down the " \+ faceDir \+ " side from the summit, not a traced route — on a ridge it reads one flank\./.test(card), true);
-  eq("the model's limits are said beside it — no lag counted, shade isn't frozen, cornices, seracs, narrow walls", /no lag is counted/.test(card) && /shade isn’t proof the snow is frozen/.test(card) && /misses cornices, seracs and narrow walls/.test(card), true);
-  eq("...and on a glacier, that no timing reduces serac fall", /kind === "glacier" \? " No timing reduces serac fall\." : ""/.test(card), true);
+  eq("the sun line carries no caveat paragraph (removed on purpose, 2026-10-14)", /const caveat/.test(card), false);
   eq("a night that never froze says the sun gives no deadline", /The sun gives no deadline today: with nothing frozen overnight/.test(card), true);
   eq("...and so does a day too cold for the sun to matter", /day\.sunCold \? "The sun reaches steep ground shedding onto the line, but the air there stays below freezing all day/.test(card), true);
   eq("what the start could not read is said, every time (no aspect, no summit pin, no start height, no terrain)", /This start doesn’t count in sun on the face: /.test(card) && /Couldn’t load the terrain, so this start doesn’t count in sun on the face\./.test(card), true);
