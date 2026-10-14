@@ -54,8 +54,8 @@ const CASES = [
          "Fahrenheit, so 10°C scores as below freezing and every reading is mis-coloured — and " +
          "nothing about the screen looks broken",
     file: RD,
-    find: "color:wxTempColor(t),flexShrink:0",
-    repl: "color:wxTempColor(uTempN(t)),flexShrink:0",
+    find: "color:wxTempColor(t)})}>{uTemp(t)}",
+    repl: "color:wxTempColor(uTempN(t))})}>{uTemp(t)}",
     expect: "fail",
     must: /is handed a CONVERTED value/,
   },
@@ -101,8 +101,8 @@ const CASES = [
     why: "a display site goes back to appending the imperial unit itself, so that one reading " +
          "stays in mph while every other one on the panel converts",
     file: RD,
-    find: '{uWind(wm)}</span><span style={daySub}>{"at "+clockHr(hh.hr)',
-    repl: '{wm+" mph"}</span><span style={daySub}>{"at "+clockHr(hh.hr)',
+    find: '{uWind(wm)}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
+    repl: '{wm+" mph"}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
     expect: "fail",
     must: /still append " mph" directly/,
   },

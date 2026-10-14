@@ -3818,9 +3818,9 @@ const condRow=function(k,v,tone,key){return <div key={key||k} style={{display:"g
 const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"10px 14px"};
 const condNote={fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:8};
 const dayBox={display:"block",background:C.surface,border:"1px solid "+C.border,borderRadius:9,padding:"6px 8px",minWidth:0};
-const dayLbl={display:"block",fontSize:10.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4};
-const dayVal={display:"block",fontSize:14,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"anywhere"};
-const daySub={display:"block",fontSize:11,color:C.textSub,marginTop:1,lineHeight:1.35};
+const dayLbl={display:"block",fontSize:11.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4};
+const dayVal={display:"block",fontSize:16,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"anywhere"};
+const daySub={display:"block",fontSize:11.5,color:C.textSub,marginTop:1,lineHeight:1.35};
 // Sky cover in the National Weather Service's words for eighths of sky (0-1, 2, 3-5, 6-7, 8 oktas).
 const skyWord=function(pct){return pct<=12?"Clear":pct<=37?"Mostly clear":pct<=62?"Partly cloudy":pct<=87?"Mostly cloudy":"Overcast";};
 const aqiTone=function(a){return a==null?C.textMuted:a<=50?C.green:a<=100?C.amber:a<=150?C.orange:C.red;};
@@ -3832,37 +3832,53 @@ const aqiTone=function(a){return a==null?C.textMuted:a<=50?C.green:a<=100?C.ambe
    time stamp, which is the hour they describe. */
 const wkDay=function(date){return new Date(date+"T12:00:00Z").toLocaleDateString(DLOCALE,{weekday:"short",timeZone:"UTC"});};
 const rainN=function(inch){return inch==null?null:uImp()?inch:inch*25.4;};
-function HourlyChart({all,selUtc,week}){
+/* One hourly chart, in its OWN card with its OWN scrubber: its readout (the boxes for the hour under your finger)
+   sits directly ABOVE the line it describes, so dragging a chart never moves a number somewhere off screen.
+   `selIdx` is the hour picked in the chips; a chart follows it until you drag that chart, and snaps back when the
+   chips move. */
+function HourChartCard({all,week,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout}){
   const [hv,setHv]=useState(null);
-  const [pin,setPin]=useState(null);useEffect(function(){setPin(null);},[selUtc,week]);
-  if(!all||all.length<2)return null;
-  const W=340,PH=62,L=34,R=56,n=all.length,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
-  const sel=all.findIndex(function(h){return h.utc===selUtc;});
-  const at=hv!=null&&hv<n?hv:(pin!=null&&pin<n?pin:(sel>=0?sel:0));const a=all[at];
-  const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;setHv(Math.max(0,Math.min(n-1,Math.round((px-L)/xw))));};
+  const [pin,setPin]=useState(null);useEffect(function(){setPin(null);setHv(null);},[selIdx,week]);
+  const W=340,PH=130,L=34,R=58,n=all.length,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
+  const at=hv!=null&&hv<n?hv:(pin!=null&&pin<n?pin:(selIdx>=0?selIdx:0));const a=all[at];
+  const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;const i=Math.max(0,Math.min(n-1,Math.round((px-L)/xw)));setHv(i);if(e.type==="pointerdown")setPin(i);};
   const lastPast=all.reduce(function(m,h,i){return h.past?i:m;},-1);
   const mids=week?all.map(function(h,i){return h.hr===0&&i>0?i:-1;}).filter(function(i){return i>=0;}):[];
   const path=function(vals,y){var d="",pen=false;vals.forEach(function(v,i){if(v==null){pen=false;return;}d+=(pen?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1);pen=true;});return d;};
-  const panel=function(key,title,series,lo,hi,axisFmt,bars,extra){
-    if(hi-lo<1e-9)hi=lo+1;
-    const y=function(v){return 6+(1-(v-lo)/(hi-lo))*(PH-12);};
-    const ends=series.map(function(s){var li=-1;s.vals.forEach(function(v,i){if(v!=null)li=i;});return li<0?null:{s:s,y:y(s.vals[li])};}).filter(Boolean).concat(bars?[{s:{name:bars.name},y:PH-6}]:[]).sort(function(p,q){return p.y-q.y;});
-    for(var k=1;k<ends.length;k++)if(ends[k].y-ends[k-1].y<12)ends[k].y=ends[k-1].y+12;
-    for(var k2=ends.length-1;k2>=0;k2--)ends[k2].y=Math.min(ends[k2].y,k2===ends.length-1?PH-6:ends[k2+1].y-12);
-    return <div key={key} style={{marginTop:12}}><div style={{fontSize:12.5,color:C.text,fontWeight:700,marginBottom:3}}>{title}</div>
-      <svg width="100%" viewBox={"0 0 "+W+" "+PH} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+(week?" through the week":" through the day")}>
-        {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderLight} opacity={0.45}/>:null}
-        <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
-        {mids.map(function(i){return <line key={"m"+i} x1={x(i)} x2={x(i)} y1={0} y2={PH} stroke={C.borderHi} strokeDasharray="2 3"/>;})}
-        <text x={L-4} y={y(hi)+4} fontSize="10.5" fill={C.textMuted} textAnchor="end">{axisFmt(hi)}</text><text x={L-4} y={y(lo)+4} fontSize="10.5" fill={C.textMuted} textAnchor="end">{axisFmt(lo)}</text>
-        {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v)),x0=Math.max(L,x(i)-xw*0.85),x1=Math.max(L,x(i)-xw*0.15);if(x1<=x0)return null;return <rect key={i} x={x0} y={top} width={Math.max(0.8,x1-x0)} height={Math.max(0.8,y(lo)-top)} rx={week?0:2} fill={bars.color} opacity={0.6}/>;}):null}
-        {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth={week?1.5:2} strokeDasharray={s.dash||undefined} strokeLinejoin="round"/>;})}
-        {extra?extra(y):null}
-        <line x1={x(at)} x2={x(at)} y1={0} y2={PH} stroke={C.textSub} strokeWidth="1"/>
-        {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={x(at)} cy={y(v)} r={3.5} fill={s.color} stroke={C.card} strokeWidth="1.5"/>;})}
-        {ends.map(function(e){return <text key={e.s.name} x={W-R+5} y={e.y+3} fontSize="11" fill={C.textSub}>{e.s.name}</text>;})}
-      </svg></div>;
-  };
+  if(hi-lo<1e-9)hi=lo+1;
+  const y=function(v){return 8+(1-(v-lo)/(hi-lo))*(PH-16);};
+  const ends=series.map(function(s){var li=-1;s.vals.forEach(function(v,i){if(v!=null)li=i;});return li<0?null:{s:s,y:y(s.vals[li])};}).filter(Boolean).concat(bars?[{s:{name:bars.name},y:PH-8}]:[]).sort(function(p,q){return p.y-q.y;});
+  for(var k=1;k<ends.length;k++)if(ends[k].y-ends[k-1].y<14)ends[k].y=ends[k-1].y+14;
+  for(var k2=ends.length-1;k2>=0;k2--)ends[k2].y=Math.min(ends[k2].y,k2===ends.length-1?PH-8:ends[k2+1].y-14);
+  const axis=all.map(function(h,i){if(week)return h.hr===12?<text key={i} x={x(i)} y={PH+14} fontSize="11" fill={C.textMuted} textAnchor="middle">{wkDay(h.date)}</text>:null;return h.hr%3===0?<text key={i} x={x(i)} y={PH+14} fontSize="11" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;});
+  return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 12px",marginTop:12}}>
+    <div style={{fontSize:14.5,fontWeight:800,color:C.text}}>{title}</div>
+    <div aria-live="polite" style={{marginTop:6}}>
+      <div style={{fontSize:12.5,fontWeight:700,color:C.textSub,marginBottom:5}}>{(week?wkDay(a.date)+" · ":"")+clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>
+      <TileGrid min={104}>{readout(a)}</TileGrid>
+    </div>
+    <svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block",touchAction:"pan-y",marginTop:8}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+(week?" through the week":" through the day")+"; drag along it to read each hour"}>
+      {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderLight} opacity={0.45}/>:null}
+      <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
+      {mids.map(function(i){return <line key={"m"+i} x1={x(i)} x2={x(i)} y1={0} y2={PH} stroke={C.borderHi} strokeDasharray="2 3"/>;})}
+      <text x={L-4} y={y(hi)+4} fontSize="11" fill={C.textMuted} textAnchor="end">{axisFmt(hi)}</text><text x={L-4} y={y(lo)+4} fontSize="11" fill={C.textMuted} textAnchor="end">{axisFmt(lo)}</text>
+      {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v)),x0=Math.max(L,x(i)-xw*0.85),x1=Math.max(L,x(i)-xw*0.15);if(x1<=x0)return null;return <rect key={i} x={x0} y={top} width={Math.max(0.8,x1-x0)} height={Math.max(0.8,y(lo)-top)} rx={week?0:2} fill={bars.color} opacity={0.65}/>;}):null}
+      {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth={week?1.75:2.5} strokeDasharray={s.dash||undefined} strokeLinejoin="round"/>;})}
+      {extra?extra(y):null}
+      <line x1={x(at)} x2={x(at)} y1={0} y2={PH} stroke={C.text} strokeWidth="1.25"/>
+      {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={x(at)} cy={y(v)} r={4.5} fill={s.color} stroke={C.card} strokeWidth="2"/>;})}
+      {ends.map(function(e){return <text key={e.s.name} x={W-R+6} y={e.y+4} fontSize="11.5" fill={C.textSub}>{e.s.name}</text>;})}
+      {axis}
+    </svg>
+  </div>;
+}
+function HourlyChart({all,selUtc,week}){
+  const [pin,setPin]=useState(null);useEffect(function(){setPin(null);},[selUtc,week]);
+  if(!all||all.length<2)return null;
+  const n=all.length;
+  const sel=all.findIndex(function(h){return h.utc===selUtc;});
+  const selIdx=pin!=null&&pin<n?pin:(sel>=0?sel:0);
+  const W=340,L=34,R=58,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
   const T=all.map(function(h){return uTempN(h.temp);}),F=all.map(function(h){return uTempN(h.feels);}),D=all.map(function(h){return uTempN(h.dew);});
   const tv=T.concat(F,D).filter(function(v){return v!=null;});
   const PR=all.map(function(h){return rainN(h.precip);}),prMax=Math.max.apply(null,PR.map(function(v){return v||0;}));
@@ -3872,33 +3888,27 @@ function HourlyChart({all,selUtc,week}){
   // A wet hour's scale: never below 0.04" (1 mm), so a trace of drizzle reads as a trace.
   const prTop=Math.max(uImp()?0.04:1,prMax);
   const arrowStep=week?12:2;
-  const windArrows=function(y){return all.map(function(h,i){if(i%arrowStep!==0||h.windDir==null||Wd[i]==null)return null;return <g key={"a"+i} transform={"translate("+x(i).toFixed(1)+","+y(Wd[i]).toFixed(1)+") rotate("+Math.round(h.windDir+180)+")"}><path d="M0,-6 L4,3.5 L0,1.5 L-4,3.5 Z" fill={C.text} stroke={C.indigo} strokeWidth="1"/></g>;});};
-  const spanTxt=spanEnding(a.hr),atTxt=clockHr(a.hr),trace=a.precip!=null&&a.precip>0&&uImp()&&a.precip<0.005,damp=a.temp!=null&&a.dew!=null&&a.temp-a.dew<5;
-  const tiles=[
-    <Tile key="t" label="Temperature" when={"at "+atTxt} value={a.temp!=null?uTemp(a.temp):NOT_MEASURED} tone={a.temp!=null?wxTempColor(a.temp):null}/>,
-    <Tile key="f" label="Feels like" when={"at "+atTxt} value={a.feels!=null?uTemp(a.feels):NOT_MEASURED}/>,
-    <Tile key="d" label="Dew point" when={"at "+atTxt} value={a.dew!=null?uTemp(a.dew):NOT_MEASURED} tone={damp?C.amber:null} sub={a.temp!=null&&a.dew!=null?(damp?"Air within "+uTempDelta(a.temp-a.dew)+"° of it: damp":"Air "+uTempDelta(a.temp-a.dew)+"° above it"):null}/>,
-    <Tile key="r" label="Rain" when={spanTxt} value={a.precip==null?NOT_MEASURED:a.precip===0?"None":trace?"Trace":uPrecip(a.precip)} tone={a.precip>0?C.blue:null} sub={trace?"under 0.01 in":null}/>,
-    <Tile key="p" label="Chance of rain" when={spanTxt} value={a.pop==null?NOT_MEASURED:a.pop+"%"} tone={a.pop>=50?C.blue:null} sub={a.pop==null?null:"of measurable rain"}/>,
-    <Tile key="c" label="Cloud" when={"at "+atTxt} value={a.cloud==null?NOT_MEASURED:Math.round(a.cloud)+"%"} sub={a.cloud==null?null:skyWord(a.cloud)}/>,
-    <Tile key="h" label="Humidity" when={"at "+atTxt} value={a.rh==null?NOT_MEASURED:Math.round(a.rh)+"%"}/>,
-    <Tile key="w" label="Wind" when={"at "+atTxt} value={a.wind==null?NOT_MEASURED:uWind(a.wind)} tone={a.wind!=null?wxWindColor(a.wind):null} sub={a.windDir!=null?"from the "+compass(a.windDir):null}/>,
-    <Tile key="g" label="Gusts" when={spanTxt} value={a.gust==null?NOT_MEASURED:uWind(a.gust)} tone={a.gust!=null?wxWindColor(a.gust):null} sub={a.gust==null?null:(a.wind!=null&&uWindN(a.gust)<=uWindN(a.wind)?"no stronger than the wind":"strongest moment in that hour")}/>
-  ];
+  const windArrows=function(y){return all.map(function(h,i){if(i%arrowStep!==0||h.windDir==null||Wd[i]==null)return null;return <g key={"a"+i} transform={"translate("+x(i).toFixed(1)+","+y(Wd[i]).toFixed(1)+") rotate("+Math.round(h.windDir+180)+")"}><path d="M0,-7 L5,4.5 L0,2 L-5,4.5 Z" fill={C.text} stroke={C.indigo} strokeWidth="1"/></g>;});};
+  const spanOf=function(h){return spanEnding(h.hr);},atOf=function(h){return "at "+clockHr(h.hr);};
+  const card=function(key,title,series,lo,hi,axisFmt,bars,extra,readout){return <HourChartCard key={key} all={all} week={week} selIdx={selIdx} title={title} series={series} lo={lo} hi={hi} axisFmt={axisFmt} bars={bars} extra={extra} readout={readout}/>;};
   return <div>
-    {!week?<div role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===at;return <button key={h.utc} onClick={function(){setHv(null);setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>:null}
-    <div aria-live="polite" style={{marginBottom:8}}>
-      <div style={{fontSize:15,fontWeight:800,color:C.text}}>{(week?wkDay(a.date)+" · ":"")+atTxt}{a.past?<span style={{fontSize:12,fontWeight:700,color:C.textMuted}}>{"  ·  already past"}</span>:null}</div>
-      <div style={{fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:2}}>{"Temperature, wind, humidity and cloud are the reading at "+atTxt+". Rain, chance of rain and gusts cover the hour before it, "+spanTxt+"."}</div>
-    </div>
-    <TileGrid>{tiles}</TileGrid>
-    {tv.length?panel("t","Temperature, feels like and dew point",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";}):null}
-    {panel("r","Rain ("+(uImp()?"inches":"mm")+")",[],0,prTop,function(v){return v===0?"0":uImp()?v.toFixed(2):v.toFixed(1);},{name:"Rain",vals:PR,color:C.blue})}
-    {panel("p","Chance of rain and cloud cover",[{name:"Cloud",vals:CL,color:C.textSub}],0,100,function(v){return v+"%";},{name:"Chance",vals:POP,color:C.blue})}
-    {panel("h","Humidity",[{name:"Humidity",vals:RH,color:C.teal}],0,100,function(v){return v+"%";})}
-    {wv.length?panel("w","Wind and gusts",[{name:"Wind",vals:Wd,color:C.indigo},{name:"Gusts",vals:G,color:C.indigo,dash:"4 3"}],0,Math.max(10,Math.ceil(Math.max.apply(null,wv))),function(v){return String(v);},null,windArrows):null}
-    <svg width="100%" viewBox={"0 0 "+W+" 15"} style={{display:"block"}} aria-hidden="true">{all.map(function(h,i){if(week)return h.hr===12?<text key={i} x={x(i)} y={12} fontSize="11" fill={C.textMuted} textAnchor="middle">{wkDay(h.date)}</text>:null;return h.hr%6===0?<text key={i} x={x(i)} y={12} fontSize="11" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;})}</svg>
-    <div style={condNote}>{"Wind and gusts are measured 10 m above the ground, in "+(uImp()?"mph":"km/h")+"; arrows point the way it blows. Mountain forecasts tend to run low in strong wind, so a calm hour here is not a promise. Shaded: hours already gone. Tap an hour above, or move along a chart, to read it."}</div>
+    {!week?<div role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>:null}
+    <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>At 2 PM</b>{": the reading at that moment (temperature, wind, humidity, cloud)."}</div><div style={{marginTop:2}}><b>During 1–2 PM</b>{": a total or peak over the hour just before (rain, chance of rain, gusts)."}</div><div style={{marginTop:2}}>Each chart below has its own readout. Drag along a chart, or tap an hour above, to read it.</div></div>
+    {tv.length?card("t","Temperature",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";},null,null,function(h){const damp=h.temp!=null&&h.dew!=null&&h.temp-h.dew<5;return [
+      <Tile key="t" label="Temperature" when={atOf(h)} value={h.temp!=null?uTemp(h.temp):NOT_MEASURED} tone={h.temp!=null?wxTempColor(h.temp):null}/>,
+      <Tile key="f" label="Feels like" when={atOf(h)} value={h.feels!=null?uTemp(h.feels):NOT_MEASURED}/>,
+      <Tile key="d" label="Dew point" when={atOf(h)} value={h.dew!=null?uTemp(h.dew):NOT_MEASURED} tone={damp?C.amber:null} sub={h.temp!=null&&h.dew!=null?(damp?"Air within "+uTempDelta(h.temp-h.dew)+"° of it: damp":"Air "+uTempDelta(h.temp-h.dew)+"° above it"):null}/>];}):null}
+    {wv.length?card("w","Wind and gusts",[{name:"Wind",vals:Wd,color:C.indigo},{name:"Gusts",vals:G,color:C.indigo,dash:"4 3"}],0,Math.max(10,Math.ceil(Math.max.apply(null,wv))),function(v){return String(v);},null,windArrows,function(h){return [
+      <Tile key="w" label="Wind" when={atOf(h)} value={h.wind==null?NOT_MEASURED:uWind(h.wind)} tone={h.wind!=null?wxWindColor(h.wind):null} sub={h.windDir!=null?"from the "+compass(h.windDir):null}/>,
+      <Tile key="g" label="Gusts" when={spanOf(h)} value={h.gust==null?NOT_MEASURED:uWind(h.gust)} tone={h.gust!=null?wxWindColor(h.gust):null} sub={h.gust==null?null:(h.wind!=null&&uWindN(h.gust)<=uWindN(h.wind)?"no stronger than the wind":"strongest moment in that hour")}/>];}):null}
+    {card("r","Rain amount ("+(uImp()?"inches":"mm")+")",[],0,prTop,function(v){return v===0?"0":uImp()?v.toFixed(2):v.toFixed(1);},{name:"Rain",vals:PR,color:C.blue},null,function(h){const trace=h.precip!=null&&h.precip>0&&uImp()&&h.precip<0.005;return [
+      <Tile key="r" label="Rain" when={spanOf(h)} value={h.precip==null?NOT_MEASURED:h.precip===0?"None":trace?"Trace":uPrecip(h.precip)} tone={h.precip>0?C.blue:null} sub={trace?"under 0.01 in":null}/>];})}
+    {card("p","Chance of rain and cloud cover",[{name:"Cloud",vals:CL,color:C.textSub}],0,100,function(v){return v+"%";},{name:"Chance",vals:POP,color:C.blue},null,function(h){return [
+      <Tile key="p" label="Chance of rain" when={spanOf(h)} value={h.pop==null?NOT_MEASURED:h.pop+"%"} tone={h.pop>=50?C.blue:null} sub={h.pop==null?null:"of measurable rain"}/>,
+      <Tile key="c" label="Cloud" when={atOf(h)} value={h.cloud==null?NOT_MEASURED:Math.round(h.cloud)+"%"} sub={h.cloud==null?null:skyWord(h.cloud)}/>];})}
+    {card("h","Humidity",[{name:"Humidity",vals:RH,color:C.teal}],0,100,function(v){return v+"%";},null,null,function(h){return [
+      <Tile key="h" label="Humidity" when={atOf(h)} value={h.rh==null?NOT_MEASURED:Math.round(h.rh)+"%"}/>];})}
+    <div style={condNote}>{"Wind and gusts are measured 10 m above the ground, in "+(uImp()?"mph":"km/h")+"; arrows point the way it blows. Mountain forecasts tend to run low in strong wind, so a calm hour here is not a promise. Shaded: hours already gone."}</div>
   </div>;
 }
 /* SEASON — twelve months of average high and low at the crag, from the last five years. A bar is
@@ -4324,13 +4334,14 @@ function WeatherPanel({waypoints,showPlan,packId,fallback}){
           {dy.hours&&dy.hours.length?<div style={{marginTop:"auto",paddingTop:10}}>
           <button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} style={{width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ▴":"Hourly forecast ▾"}</button>
           {isExpanded?<div>
-            <div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:8,marginBottom:5}}>Temperature and wind are the reading at the time shown. Gusts and chance of rain cover the hour before it.</div>
+            <div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:8,marginBottom:5}}>"At" boxes are the reading at that time. "During" boxes cover the hour just before it.</div>
             <div style={{maxHeight:380,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=Math.round(hh.tempF),wm=Math.round(hh.windMph),gm=hh.gustMph!=null?Math.round(hh.gustMph):null;return <div key={hi} style={{padding:"8px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none"}}>
-              <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:52,flexShrink:0,fontSize:13,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span><span style={{fontSize:14,fontWeight:800,color:wxTempColor(t),flexShrink:0}}>{uTemp(t)}</span></div>
-              <div style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:4}}>
-                <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{fontSize:12.5,color:wxWindColor(wm)})}>{uWind(wm)}</span><span style={daySub}>{"at "+clockHr(hh.hr)+(compass(hh.dir)?", from the "+compass(hh.dir):"")}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Gusts</span><span style={Object.assign({},dayVal,{fontSize:12.5,color:gm!=null?wxWindColor(gm):C.textMuted})}>{gm!=null?uWind(gm):"Not measured"}</span><span style={daySub}>{spanEnding(hh.hr)}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{fontSize:12.5,color:hh.pop>=50?C.blue:C.text})}>{hh.pop!=null?hh.pop+"%":"Not measured"}</span><span style={daySub}>{spanEnding(hh.hr)}</span></span>
+              <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:62,flexShrink:0,fontSize:15,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span></div>
+              <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:5}}>
+                <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:wxTempColor(t)})}>{uTemp(t)}</span><span style={daySub}>{"At "+clockHr(hh.hr)}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:wxWindColor(wm)})}>{uWind(wm)}</span><span style={daySub}>{"At "+clockHr(hh.hr)+(compass(hh.dir)?", from the "+compass(hh.dir):"")}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Gusts</span><span style={Object.assign({},dayVal,{color:gm!=null?wxWindColor(gm):C.textMuted})}>{gm!=null?uWind(gm):"Not measured"}</span><span style={daySub}>{"During "+spanEnding(hh.hr)}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:hh.pop>=50?C.blue:C.text})}>{hh.pop!=null?hh.pop+"% chance":"Not measured"}</span><span style={daySub}>{(hh.precipIn!=null&&hh.precipIn>0?uPrecip(hh.precipIn)+", ":"")+"during "+spanEnding(hh.hr)}</span></span>
               </div></div>;})}</div></div>:null}
           </div>:null}
         </div>;
