@@ -115,14 +115,17 @@ try {
   const stranger = await assign(a, crewId, "00000000-0000-4000-8000-000000000001", "Rope", true);
   ok("a climber who is not in the crew cannot be assigned", stranger.status >= 400 && /not in this crew/.test(stranger.text), `${stranger.status} ${stranger.text.slice(0, 160)}`);
   const long = await assign(a, crewId, B.id, "x".repeat(81), true);
-  ok("an item over 80 characters is REFUSED", long.status >= 400, `${long.status} ${long.text.slice(0, 160)}`);
+  // Match the function's OWN message: a missing function is a 404 too, and once passed this vacuously.
+  ok("an item over 80 characters is REFUSED", long.status >= 400 && /1-80 characters/.test(long.text), `${long.status} ${long.text.slice(0, 160)}`);
   const longEx = await rpc(b, "set_my_crew_gear_extras", { p_crew_id: crewId, p_extras: ["x".repeat(81)] });
-  ok("...by the extras write too", longEx.status >= 400, `${longEx.status} ${longEx.text.slice(0, 160)}`);
+  ok("...by the extras write too", longEx.status >= 400 && /1-80 characters/.test(longEx.text), `${longEx.status} ${longEx.text.slice(0, 160)}`);
   for (const fn of ["assign_crew_gear", "set_my_crew_gear_extras"]) {
     const anonCall = await fetch(`${URL}/rest/v1/rpc/${fn}`, { method: "POST",
       headers: { apikey: ANON, Authorization: `Bearer ${ANON}`, "Content-Type": "application/json" },
       body: JSON.stringify(fn === "assign_crew_gear" ? { p_crew_id: crewId, p_user_id: B.id, p_item: "Rope", p_on: true } : { p_crew_id: crewId, p_extras: [] }) });
-    ok(`a signed-out caller cannot run ${fn}`, anonCall.status >= 400, String(anonCall.status));
+    const anonText = await anonCall.text();
+    // PGRST202 is "no such function": a refusal of nothing, so it does not count.
+    ok(`a signed-out caller cannot run ${fn}`, anonCall.status >= 400 && !/PGRST202/.test(anonText), `${anonCall.status} ${anonText.slice(0, 160)}`);
   }
 } catch (e) {
   console.error("\n" + (e && e.message || e));
