@@ -1976,10 +1976,11 @@ function Calculator({route,activity,fit:fitProp,setFit:setFitProp,calc,onCalc}){
       <div><div style={{...SUB_LABEL,marginBottom:3}}>DEPART</div><select aria-label="Departure time" value={depart} onChange={e=>setDepart(Number(e.target.value))} style={{width:"100%",padding:"7px 8px",borderRadius:8,border:`1px solid ${C.border}`,background:C.surface,color:C.text,fontSize:13}}>{Array.from({length:25},(_,i)=>2+i*0.5).map(h=><option key={h} value={h}>{fmt(h)}</option>)}</select></div>
     </div>
     <div style={{background:C.surface,borderRadius:10,padding:"12px 14px",marginBottom:10}}>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:8,marginBottom:10,textAlign:"center"}}>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:8,marginBottom:10,textAlign:"center"}}>
         <div><div style={{fontSize:17,fontWeight:700,color:C.green}}>{publishedIsWholeDay?"incl.":(hasHikeInputs||storedApproachH!=null)?(walkInKnown?"":"≥")+hikeH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Approach</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{climbKnown?techH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>{publishedIsWholeDay?"Car-to-car":"Climbing"}</div></div>
-        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{publishedIsWholeDay?"incl.":hasAnyEstimate?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
+        {/* N/A, like the Approach tile beside it, when nothing describes the way down: no stored descent, no walk out (distance or gain) and no rappels (#2336 printed "≥0.0hr"). */}
+        <div><div style={{fontSize:17,fontWeight:700,color:C.blue}}>{publishedIsWholeDay?"incl.":hasAnyEstimate&&(P.downH>0||P.storedDescentH!=null)?((walkOutKnown||P.storedDescentH!=null)?"":"≥")+P.downH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Descent</div></div>
         <div><div style={{fontSize:17,fontWeight:700,color:C.amber}}>{hasAnyEstimate?(lowerBound?"≥":"")+P.tripH.toFixed(1)+"hr":"N/A"}</div><div style={{fontSize:12,color:C.textMuted}}>Total trip</div></div>
       </div>
       <Hr/>
@@ -3798,7 +3799,6 @@ function wxCondColor(code){if(code==null)return C.blue;if(code>=95)return C.red;
 function wxUvColor(uv){return uv>=11?C.purple:uv>=8?C.red:uv>=6?C.amber:uv>=3?C.yellow||C.amber:C.green;}
 function wxUvLabel(uv){return uv>=11?"Extreme":uv>=8?"Very High":uv>=6?"High":uv>=3?"Moderate":"Low";}
 const FROSTBITE_WINDCHILL_F=-19;
-function hourLabel(hr){const h12=hr%12===0?12:hr%12;return h12+(hr<12?" AM":" PM");}
 function metWxLabel(code){
   if(!code)return null;
   const s=code.replace(/_(day|night|polartwilight)$/,"");
@@ -3826,7 +3826,7 @@ const condBox={background:C.card,border:"1px solid "+C.border,borderRadius:12,pa
 const condNote={fontSize:11.5,color:C.textMuted,lineHeight:1.5,marginTop:8};
 const dayBox={display:"block",background:C.surface,border:"1px solid "+C.border,borderRadius:9,padding:"6px 8px",minWidth:0,minHeight:68,boxSizing:"border-box"};
 const dayLbl={display:"block",fontSize:11.5,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4};
-const dayVal={display:"block",fontSize:16,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"anywhere"};
+const dayVal={display:"block",fontSize:14,fontWeight:800,marginTop:2,lineHeight:1.25,overflowWrap:"normal"};
 const daySub={display:"block",fontSize:11.5,color:C.textSub,marginTop:1,lineHeight:1.35};
 // Sky cover in the National Weather Service's words for eighths of sky (0-1, 2, 3-5, 6-7, 8 oktas).
 const skyWord=function(pct){return pct<=12?"Clear":pct<=37?"Mostly clear":pct<=62?"Partly cloudy":pct<=87?"Mostly cloudy":"Overcast";};
@@ -3845,9 +3845,17 @@ const rainN=function(inch){return inch==null?null:uImp()?inch:inch*25.4;};
 function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout}){
   const [hv,setHv]=useState(null);
   const [pin,setPin]=useState(null);useEffect(function(){setPin(null);setHv(null);},[selIdx]);
+  const downRef=useRef(null);
   const W=340,PH=130,L=34,R=58,n=all.length,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
   const at=hv!=null&&hv<n?hv:(pin!=null&&pin<n?pin:(selIdx>=0?selIdx:0));const a=all[at];
-  const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;const i=Math.max(0,Math.min(n-1,Math.round((px-L)/xw)));setHv(i);if(e.type==="pointerdown")setPin(i);};
+  const idxAt=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return null;const px=(e.clientX-r.left)/r.width*W;return Math.max(0,Math.min(n-1,Math.round((px-L)/xw)));};
+  /* A POINTER DOWN ONLY REMEMBERS WHERE IT STARTED. Pinning the hour there (#2357) moved the readout under every thumb
+     that was only scrolling the page past a chart. A finger moving mostly up or down is a scroll (the browser takes it
+     and sends pointercancel); one moving ACROSS at least 8 px scrubs; a tap (under 8 px) or a released scrub pins its
+     hour. A mouse still reads by hovering. */
+  const down=function(e){downRef.current={x:e.clientX,y:e.clientY,scrub:false};if(e.pointerType==="mouse"){const i=idxAt(e);if(i!=null)setHv(i);}};
+  const move=function(e){const d=downRef.current;if(d&&!d.scrub){const dx=Math.abs(e.clientX-d.x),dy=Math.abs(e.clientY-d.y);if(dx>=8&&dx>dy)d.scrub=true;}if(e.pointerType!=="mouse"&&!(d&&d.scrub))return;const i=idxAt(e);if(i!=null)setHv(i);};
+  const up=function(e){const d=downRef.current;downRef.current=null;if(!d)return;if(d.scrub||(Math.abs(e.clientX-d.x)<8&&Math.abs(e.clientY-d.y)<8)){const i=idxAt(e);if(i!=null){setPin(i);setHv(null);}}};
   const lastPast=all.reduce(function(m,h,i){return h.past?i:m;},-1);
   const path=function(vals,y){var d="",pen=false;vals.forEach(function(v,i){if(v==null){pen=false;return;}d+=(pen?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1);pen=true;});return d;};
   if(hi-lo<1e-9)hi=lo+1;
@@ -3858,11 +3866,11 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
   const axis=all.map(function(h,i){return h.hr%3===0?<text key={i} x={x(i)} y={PH+14} fontSize="11" fill={C.textMuted} textAnchor="middle">{h.hr===0?"12A":h.hr===12?"12P":(h.hr%12)+(h.hr<12?"A":"P")}</text>:null;});
   return <div style={{background:C.card,border:"1px solid "+C.border,borderRadius:12,padding:"11px 12px",marginTop:12}}>
     <div style={{fontSize:14.5,fontWeight:800,color:C.text}}>{title}</div>
-    <div aria-live="polite" style={{marginTop:6}}>
-      <div style={{fontSize:12.5,fontWeight:700,color:C.textSub,marginBottom:5}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{marginLeft:10,padding:"2px 9px",borderRadius:20,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>
+    <div style={{marginTop:2}}>
+      <div style={{display:"flex",alignItems:"center",gap:8,minHeight:44,marginBottom:3}}><div style={{flex:1,minWidth:0,fontSize:12.5,fontWeight:700,color:C.textSub,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{flexShrink:0,minHeight:44,padding:"0 12px",borderRadius:22,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>
       <TileGrid min={104}>{readout(a)}</TileGrid>
     </div>
-    <svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block",touchAction:"pan-y",marginTop:8}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+" through the day; drag along it to read each hour"}>
+    <svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block",touchAction:"pan-y",marginTop:8}} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={function(){downRef.current=null;setHv(null);}} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+" through the day; drag along it to read each hour"}>
       {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderHi} opacity={0.35}/>:null}
       {lastPast>=0&&x(lastPast)-L>40?<text x={L+4} y={PH-4} fontSize="10.5" fill={C.textMuted}>already past</text>:null}
       <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
@@ -3900,7 +3908,7 @@ function HourlyChart({all,selUtc}){
   const spanOf=function(h){return spanEnding(h.hr);},atOf=function(h){return "at "+clockHr(h.hr);};
   const card=function(key,title,series,lo,hi,axisFmt,bars,extra,readout){return <HourChartCard key={key} all={all} selIdx={selIdx} title={title} series={series} lo={lo} hi={hi} axisFmt={axisFmt} bars={bars} extra={extra} readout={readout}/>;};
   return <div>
-    <div ref={chipsRef} role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>
+    <div ref={chipsRef} role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,minHeight:44,boxSizing:"border-box",padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>
     <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>At 2 PM</b>{": the reading at that moment (temperature, wind, humidity, cloud)."}</div><div style={{marginTop:2}}><b>During 1–2 PM</b>{": a total or peak over the hour just before (rain, chance of rain, gusts)."}</div><div style={{marginTop:2}}>{"Each chart below has its own readout. Drag along a chart, or tap an hour above, to read it."}</div></div>
     {tv.length?card("t","Temperature",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";},null,null,function(h){const damp=h.temp!=null&&h.dew!=null&&h.temp-h.dew<5;return [
       <Tile key="t" label="Temperature" when={atOf(h)} value={h.temp!=null?uTemp(h.temp):NOT_MEASURED} tone={h.temp!=null?wxTempColor(h.temp):null}/>,
@@ -3916,7 +3924,7 @@ function HourlyChart({all,selUtc}){
       <Tile key="c" label="Cloud" when={atOf(h)} value={h.cloud==null?NOT_MEASURED:Math.round(h.cloud)+"%"} sub={h.cloud==null?null:skyWord(h.cloud)}/>];})}
     {card("h","Humidity",[{name:"Humidity",vals:RH,color:C.teal}],0,100,function(v){return v+"%";},null,null,function(h){return [
       <Tile key="h" label="Humidity" when={atOf(h)} value={h.rh==null?NOT_MEASURED:Math.round(h.rh)+"%"}/>];})}
-    <div style={condNote}>{"Wind and gusts are measured 10 m above the ground, in "+(uImp()?"mph":"km/h")+"; arrows point the way it blows. Mountain forecasts tend to run low in strong wind, so a calm hour here is not a promise. Shaded: hours already gone."}</div>
+    <div style={condNote}>{"Wind and gusts are modelled for 10 m above the ground (a forecast, not a measurement), in "+(uImp()?"mph":"km/h")+"; arrows point the way it blows"+". Mountain forecasts tend to run low in strong wind, so a calm hour here is not a promise. Shaded: hours already gone."}</div>
   </div>;
 }
 /* SEASON — twelve months of average high and low at the crag, from the last five years. A bar is
@@ -4001,7 +4009,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const starRow=function(s){var out=[];for(var i=1;i<=5;i++)out.push(<span key={i} style={{color:s!=null&&s>=i-0.25?col(s):C.borderHi}}>★</span>);return out;};
   const dayName=function(d,i){if(i===0)return "Today";return new Date(d.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{weekday:"short",timeZone:"UTC"});};
   const dayDate=function(d){return new Date(d.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{month:"short",day:"numeric",timeZone:"UTC"});};
-  const whenOf=function(x){var i=days.findIndex(function(d){return d.date===x.date;});return (i===0?"today":i===1?"tomorrow":i>0?dayName(days[i],i):x.date)+" "+hourLabel(x.hr);};
+  const whenOf=function(x){var i=days.findIndex(function(d){return d.date===x.date;});return (i===0?"today":i===1?"tomorrow":i>0?dayName(days[i],i):x.date)+" "+clockHr(x.hr);};
   const hrs=day.hours;const selI=hrI!=null&&hrI<hrs.length?hrI:(day.best?day.best.i+1:0);const h=hrs[selI];
   const top=h?h.stars:day.stars;const lbl=starsLabel(top);const lblCol=col(top);
   const shadeAt=(function(){if(!day.sun||day.sun.set==null)return null;var r=day.sun.rise,st=day.sun.set,n=Date.now();if(n>=r&&n<=st)return n;var bh=day.best?day.hours[day.best.i]:null;return bh&&bh.utc>=r&&bh.utc<=st?bh.utc:Math.round((r+st)/2);})();
@@ -4030,7 +4038,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   return <div data-conditions-score="1">
     {cur?sec("Right now",<div style={condBox}>
       {wetSand?sandWarn:null}
-      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+hourLabel(cur.hr)}</div></div></div>
+      <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+clockHr(cur.hr)}</div></div></div>
       {cur.caps.length?condRow("Held down by",cur.caps.map(function(c){return c.why;}).join(" · "),C.amber):null}
       {condRow("Temperature",cur.temp!=null?uTemp(cur.temp)+(cur.feels!=null&&uTempN(cur.feels)!==uTempN(cur.temp)?" · feels like "+uTemp(cur.feels):""):"Not measured")}
       {condRow("Friction",cur.friction?cur.friction.label:"Not measured",cur.friction?(cur.friction.key==="crisp"?C.green:cur.friction.key==="ok"?C.text:C.amber):C.textMuted)}
@@ -4046,16 +4054,16 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       <CondPrefsControls disc={disc}/>
     </div>:null}
     <div role="group" aria-label="Day" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:10}}>{days.map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")} style={{flex:"0 0 58px",width:58,boxSizing:"border-box",minHeight:58,padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.green:C.border),background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:11.5,fontWeight:700}}>{dayName(d,i)}</div><div style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</div><div style={{fontSize:10.5,color:C.textMuted}}>{d.hi!=null?uTemp(d.hi)+"/"+uTemp(d.lo):""}</div></button>;})}</div>
-    <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}><div style={{fontSize:34,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(top)}</div><div><div aria-hidden="true" style={{fontSize:19,letterSpacing:1.5,lineHeight:1.1}}>{starRow(top)}</div><span style={{display:"inline-block",marginTop:3,padding:"2px 9px",borderRadius:20,fontSize:11.5,fontWeight:800,color:lblCol,background:top>=4?C.greenBg:top>=2.5?C.amberBg:C.redBg}}>{lbl}</span>{h?<div style={{fontSize:11,color:C.textMuted,marginTop:3}}>{"At "+hourLabel(h.hr)+" · tap another hour below"}</div>:null}</div></div>
-    <div style={{fontSize:13,color:C.text,marginBottom:day.capWhy.length?4:10}}>{day.best?<span>{"Best 3 hours "}<b>{hourLabel(day.best.start)+" – "+hourLabel(day.best.end)}</b>{" · "}<b style={{color:col(day.stars)}}>{fmt(day.stars)+" ★"}</b><span style={{color:C.textMuted}}>{" (the day’s score)"}</span></span>:(dayI===0?"Fewer than three daylight hours left to score":"Fewer than three daylight hours to score")}</div>
+    <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:6}}><div style={{fontSize:34,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(top)}</div><div><div aria-hidden="true" style={{fontSize:19,letterSpacing:1.5,lineHeight:1.1}}>{starRow(top)}</div><span style={{display:"inline-block",marginTop:3,padding:"2px 9px",borderRadius:20,fontSize:11.5,fontWeight:800,color:lblCol,background:top>=4?C.greenBg:top>=2.5?C.amberBg:C.redBg}}>{lbl}</span>{h?<div style={{fontSize:11,color:C.textMuted,marginTop:3}}>{"At "+clockHr(h.hr)+" · tap another hour below"}</div>:null}</div></div>
+    <div style={{fontSize:13,color:C.text,marginBottom:day.capWhy.length?4:10}}>{day.best?<span>{"Best 3 hours "}<b>{clockHr(day.best.start)+" – "+clockHr(day.best.end)}</b>{" · "}<b style={{color:col(day.stars)}}>{fmt(day.stars)+" ★"}</b><span style={{color:C.textMuted}}>{" (the day’s score)"}</span></span>:(dayI===0?"Fewer than three daylight hours left to score":"Fewer than three daylight hours to score")}</div>
     {day.capWhy.length?<div style={{fontSize:12,color:C.amber,lineHeight:1.45,marginBottom:10}}>{"Held down by: "+day.capWhy.join(" · ")}</div>:null}
     {hrs.length?<div style={{marginBottom:10}}>
       <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:5}}>{dayI===0?"Score by hour, rest of today ":"Score by hour "}<span style={{textTransform:"none",letterSpacing:0,fontWeight:500}}>(tap one)</span></div>
-      <div style={{display:"grid",gridTemplateColumns:"repeat("+hrs.length+",minmax(0,1fr))",gap:3}}>{hrs.map(function(x,i){var inBest=day.best&&i>=day.best.i&&i<day.best.i+3;return <button key={x.time} onClick={function(){setHrI(i);}} aria-pressed={i===selI} aria-label={hourLabel(x.hr)+", "+fmt(x.stars)+" stars"} style={{height:38,padding:0,borderRadius:5,cursor:"pointer",background:col(x.stars),opacity:0.6+(x.stars||0)/5*0.4,border:i===selI?"2px solid "+C.text:"none",boxShadow:inBest?"0 -3px 0 "+C.green:"none"}}/>;})}</div>
-      <div style={{display:"grid",gridTemplateColumns:"repeat("+hrs.length+",minmax(0,1fr))",gap:3,marginTop:3}}>{hrs.map(function(x,i){return <div key={x.time} style={{fontSize:9.5,color:C.textMuted,textAlign:"center",whiteSpace:"nowrap"}}>{i%3===0?hourLabel(x.hr).replace(" ",""):""}{score.bearing!=null?<div aria-hidden="true" style={{fontSize:10,color:x.lit?C.yellow:C.textMuted}}>{x.lit?"☀":"▪"}</div>:null}</div>;})}</div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat("+hrs.length+",minmax(0,1fr))",gap:3}}>{hrs.map(function(x,i){var inBest=day.best&&i>=day.best.i&&i<day.best.i+3;return <button key={x.time} onClick={function(){setHrI(i);}} aria-pressed={i===selI} aria-label={clockHr(x.hr)+", "+fmt(x.stars)+" stars"} style={{height:44,padding:0,borderRadius:5,cursor:"pointer",background:col(x.stars),opacity:0.6+(x.stars||0)/5*0.4,border:i===selI?"2px solid "+C.text:"none",boxShadow:inBest?"0 -3px 0 "+C.green:"none"}}/>;})}</div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat("+hrs.length+",minmax(0,1fr))",gap:3,marginTop:3}}>{hrs.map(function(x,i){return <div key={x.time} style={{fontSize:9.5,color:C.textMuted,textAlign:"center",whiteSpace:"nowrap"}}>{i%3===0?clockHr(x.hr).replace(" ",""):""}{score.bearing!=null?<div aria-hidden="true" style={{fontSize:10,color:x.lit?C.yellow:C.textMuted}}>{x.lit?"☀":"▪"}</div>:null}</div>;})}</div>
     </div>:null}
     {h?<div>
-      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:6}}>{"Why "+hourLabel(h.hr)+" scores "+fmt(h.stars)+" · "+h.pts+" of "+h.max+" points"}</div>
+      <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:6}}>{"Why "+clockHr(h.hr)+" scores "+fmt(h.stars)+" · "+h.pts+" of "+h.max+" points"}</div>
       <div style={{display:"flex",flexDirection:"column",gap:7}}>{facKeys.filter(function(k){return h.factors[k];}).map(function(k){var f=h.factors[k],pc=f.pts/WEIGHTS[k];var fc=pc>=0.75?C.green:pc>=0.45?C.amber:C.red;return <div key={k} data-factor={k}>
         <div style={{display:"grid",gridTemplateColumns:"92px minmax(0,1fr) 44px",gap:8,alignItems:"center",fontSize:12.5}}><span style={{color:C.text}}>{FACTOR_LABEL[k]}</span><div style={{height:7,background:C.borderLight,borderRadius:4,overflow:"hidden"}}><div style={{width:Math.round(pc*100)+"%",height:"100%",background:fc}}/></div><span style={{textAlign:"right",color:C.textSub,fontVariantNumeric:"tabular-nums"}}>{f.pts+"/"+WEIGHTS[k]}</span></div>
         <div style={{fontSize:11.5,color:C.textMuted,marginLeft:100,lineHeight:1.45}}>{facNote(k,f)}</div>
@@ -4069,13 +4077,16 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
         var tLine=d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo)+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):"Temperature not measured";
         var rLine=(d.rain==null?"Rain not measured":d.rain===0?"No rain":trace?"A trace of rain (under 0.01\") over "+d.rainHrs+" h":uPrecip(d.rain)+" of rain over "+d.rainHrs+" h")+(d.popMax?" · up to "+d.popMax+"% chance":"");
         var wLine=[d.windMax!=null?"Wind to "+uWind(d.windMax)+(d.gustMax!=null&&uWindN(d.gustMax)>uWindN(d.windMax)?", gusts "+uWind(d.gustMax):""):"Wind not measured",d.rhMin!=null?"humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg).toLowerCase()+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ");
-        return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")+". "+tLine+". "+rLine+". "+wLine+"."} style={{display:"grid",gridTemplateColumns:"50px minmax(0,1fr)",gap:10,alignItems:"start",width:"100%",textAlign:"left",padding:"8px 6px",margin:0,border:"none",borderTop:i?"1px solid "+C.borderLight:"none",borderRadius:on?8:0,background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",font:"inherit"}}>
-          <span><span style={{display:"block",fontSize:12.5,fontWeight:800}}>{dayName(d,i)}</span><span style={{display:"block",fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</span></span>
+        /* The day name and its stars sit on their OWN line above the boxes: beside them, at 390 px, three boxes
+           shared what was left of a 50 px column and broke "52° / 38°" mid-number. A missing value is "—" here
+           (the row's spoken label still says "not measured"); "Not measured" did not fit a third of a phone. */
+        return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+(d.stars==null?"no score":fmt(d.stars)+" stars")+". "+tLine+". "+rLine+". "+wLine+"."} style={{display:"block",width:"100%",textAlign:"left",padding:"8px 6px",margin:0,border:"none",borderTop:i?"1px solid "+C.borderLight:"none",borderRadius:on?8:0,background:on?C.greenBg:"transparent",color:C.text,cursor:"pointer",font:"inherit"}}>
+          <span style={{display:"flex",alignItems:"baseline",gap:8,marginBottom:5}}><span style={{fontSize:12.5,fontWeight:800}}>{dayName(d,i)}</span><span style={{fontSize:12,fontWeight:800,color:col(d.stars)}}>{fmt(d.stars)+" ★"}</span></span>
           <span style={{minWidth:0,display:"block"}}>
             <span style={{display:"grid",gridTemplateColumns:"repeat(3,minmax(0,1fr))",gap:5}}>
-              <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:d.hi!=null?wxTempColor(d.hi):C.textMuted})}>{d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo):"Not measured"}</span><span style={daySub}>{d.hi!=null?"high / low"+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):""}</span></span>
-              <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:d.rain>0?C.blue:C.text})}>{d.rain==null?"Not measured":d.rain===0?"None":trace?"Trace":uPrecip(d.rain)}</span><span style={daySub}>{(d.rain>0?"over "+d.rainHrs+" h":"")+(d.rain>0&&d.popMax?", ":"")+(d.popMax?"up to "+d.popMax+"% chance":"")}</span></span>
-              <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:d.windMax!=null?wxWindColor(d.windMax):C.textMuted})}>{d.windMax!=null?"to "+uWind(d.windMax):"Not measured"}</span><span style={daySub}>{d.gustMax!=null&&d.windMax!=null&&uWindN(d.gustMax)>uWindN(d.windMax)?"gusts to "+uWind(d.gustMax):""}</span></span>
+              <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:d.hi!=null?wxTempColor(d.hi):C.textMuted})}>{d.hi!=null?uTemp(d.hi)+" / "+uTemp(d.lo):"—"}</span><span style={daySub}>{d.hi!=null?"high / low"+(d.feelsHi!=null?", feels "+uTemp(d.feelsHi)+" / "+uTemp(d.feelsLo):""):""}</span></span>
+              <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:d.rain==null?C.textMuted:d.rain>0?C.blue:C.text})}>{d.rain==null?"—":d.rain===0?"None":trace?"Trace":uPrecip(d.rain)}</span><span style={daySub}>{(d.rain>0?"over "+d.rainHrs+" h":"")+(d.rain>0&&d.popMax?", ":"")+(d.popMax?"up to "+d.popMax+"% chance":"")}</span></span>
+              <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:d.windMax!=null?wxWindColor(d.windMax):C.textMuted})}>{d.windMax!=null?"to "+uWind(d.windMax):"—"}</span><span style={daySub}>{d.gustMax!=null&&d.windMax!=null&&uWindN(d.gustMax)>uWindN(d.windMax)?"gusts to "+uWind(d.gustMax):""}</span></span>
             </span>
             <span style={{display:"block",fontSize:11.5,color:C.textMuted,lineHeight:1.45,marginTop:4}}>{[d.rhMin!=null?"Humidity "+Math.round(d.rhMin)+"–"+Math.round(d.rhMax)+"%":null,d.cloudAvg!=null?skyWord(d.cloudAvg)+" ("+Math.round(d.cloudAvg)+"% cloud)":null].filter(Boolean).join(" · ")}</span>
           </span>
@@ -4083,7 +4094,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
       <div style={condNote}>Temperature and rain cover the whole day; wind, humidity and cloud its daylight hours. Tap a day to open it above and in the charts.</div>
     </div>)}
     {sec("Hour by hour",<div style={condBox}>
-      <div role="group" aria-label="Day for the hourly charts" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:4}}>{days.slice(0,7).map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+dayDate(d)} style={{flex:"0 0 58px",width:58,boxSizing:"border-box",padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:12,fontWeight:on?800:700}}>{dayName(d,i)}</div><div style={{fontSize:10.5,color:on?C.blue:C.textMuted}}>{dayDate(d)}</div></button>;})}</div>
+      <div role="group" aria-label="Day for the hourly charts" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:4,marginBottom:4}}>{days.slice(0,7).map(function(d,i){var on=i===Math.min(dayI,days.length-1);return <button key={d.date} onClick={function(){setDayI(i);setHrI(null);}} aria-pressed={on} aria-label={dayName(d,i)+", "+dayDate(d)} style={{flex:"0 0 58px",width:58,minHeight:44,boxSizing:"border-box",padding:"6px 2px",borderRadius:9,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,cursor:"pointer",textAlign:"center"}}><div style={{fontSize:12,fontWeight:on?800:700}}>{dayName(d,i)}</div><div style={{fontSize:10.5,color:on?C.blue:C.textMuted}}>{dayDate(d)}</div></button>;})}</div>
       <HourlyChart all={day.all} selUtc={h?h.utc:null}/>
     </div>)}
     {sec("Rock & drying",<div style={condBox}>
@@ -4216,7 +4227,11 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
           dd.snows.push(h.snowfall[i]);
           dd.fz.push(h.freezing_level_height[i]);
           dd.uvs.push(h.uv_index[i]);
-          dd.hours.push({hr:hr,tempF:h.temperature_2m[i],code:h.weather_code[i],windMph:h.wind_speed_80m[i],dir:h.wind_direction_80m[i],pop:h.precipitation_probability[i],gustMph:h.wind_gusts_10m[i],precipIn:h.precipitation[i]});
+          /* The HOURLY rows pair the wind with the gust beside it, and the only gust published is at 10 m -- so the hour's
+             wind (and its direction) is the 10 m one too. The 80 m figure in that box read a calm-looking 10 m gust as
+             weaker than its own wind. The day tile's headline stays at 80 m (check:units says why). An older saved
+             forecast without the 10 m series shows "Not measured", never an 80 m figure under a 10 m label. */
+          dd.hours.push({hr:hr,tempF:h.temperature_2m[i],code:h.weather_code[i],windMph:h.wind_speed_10m?h.wind_speed_10m[i]:null,dir:h.wind_direction_10m?h.wind_direction_10m[i]:null,pop:h.precipitation_probability[i],gustMph:h.wind_gusts_10m[i],precipIn:h.precipitation[i]});
           const partKey=hr<6?"night":hr<12?"am":hr<18?"pm":"night";
           const partDate=hr<6?prevDayStr(date):date;
           const pk=partDate+"_"+partKey;
@@ -4287,7 +4302,7 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
      Reads from the shared WP_STYLE now, like everything else. */
   return <div style={{marginBottom:ROUTE_GAP}}>
     <SL>{crag?"Forecast at the crag":"Forecast at key points"}</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>{crag?"Forecast for the crag":"Elevation-aware forecast"}, broken into AM/PM/Night with an hourly view on tap, with the NWS and MET forecasts beside each day for comparison. Read it yourself: {crag?"a wall can hold its own weather":"mountain terrain can differ sharply from the forecast"}, and forecasts can legitimately disagree. The wind figure is the modelled ridge-level (~80 m) speed; gusts, and the NWS and MET winds beside each day, are surface (10 m) figures — so they are not measured at the same height.</div>
+    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>{crag?"Forecast for the crag":"Elevation-aware forecast"}, broken into AM/PM/Night with an hourly view on tap, with the NWS and MET forecasts beside each day for comparison. Read it yourself: {crag?"a wall can hold its own weather":"mountain terrain can differ sharply from the forecast"}, and forecasts can legitimately disagree. The day’s wind figure is the modelled ridge-level (~80 m) speed; gusts, the hourly view’s wind, and the NWS and MET winds beside each day are surface (10 m) figures — so the day’s wind and its gusts are not at the same height.</div>
     <div style={{display:"flex",flexDirection:"column",gap:ROUTE_GAP}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
@@ -4326,7 +4341,7 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
             <div style={{fontSize:9,fontWeight:600,color:wxWindColor(p.wind),marginTop:2}}>{uWind(p.wind)+(p.dir?" "+p.dir:"")}</div>
           </div>;})}</div>:null}
           <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:dy.nws||dy.met?10:0}}>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWindN(dy.gustMax)+", any hour"}</div>:null}</div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWind(dy.gustMax)+", any hour"}</div>:null}</div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.popMax>=50?C.blue:C.text}}>{dy.popMax+"%"}</div>{hasRain?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{uPrecip(dy.precipIn)+" expected"}</div>:null}</div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>UV index</div><div style={{fontSize:13,fontWeight:800,color:wxUvColor(dy.uvMax)}}>{dy.uvMax}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{wxUvLabel(dy.uvMax)}</div></div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{uElev(dy.freezeMax)}</div></div>
@@ -4341,11 +4356,11 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
           <button onClick={function(){setExpandedDay(function(p){const o=Object.assign({},p);o[k]=isExpanded?null:dy.date;return o;});}} style={{width:"100%",padding:"8px",borderRadius:9,border:"1px solid "+C.blueDim,background:isExpanded?C.blueBg:C.card,color:C.blue,fontSize:11,fontWeight:700,cursor:"pointer"}}>{isExpanded?"Hide hourly ▴":"Hourly forecast ▾"}</button>
           {isExpanded?<div>
             <div style={{fontSize:11,color:C.textMuted,lineHeight:1.45,marginTop:8,marginBottom:5}}>"At" boxes are the reading at that time. "During" boxes cover the hour just before it.</div>
-            <div style={{maxHeight:380,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=Math.round(hh.tempF),wm=Math.round(hh.windMph),gm=hh.gustMph!=null?Math.round(hh.gustMph):null;return <div key={hi} style={{padding:"8px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none"}}>
+            <div style={{maxHeight:380,overflowY:"auto",overscrollBehavior:"contain",border:"1px solid "+C.border,borderRadius:9}}>{dy.hours.map(function(hh,hi){const t=typeof hh.tempF==="number"?Math.round(hh.tempF):null,wm=typeof hh.windMph==="number"?Math.round(hh.windMph):null,gm=typeof hh.gustMph==="number"?Math.round(hh.gustMph):null;return <div key={hi} style={{padding:"8px 9px",background:hi%2?"transparent":C.card,borderBottom:hi<dy.hours.length-1?"1px solid "+C.borderLight:"none"}}>
               <div style={{display:"flex",alignItems:"center",gap:7,marginBottom:5}}><span style={{width:62,flexShrink:0,fontSize:15,fontWeight:800,color:C.text}}>{clockHr(hh.hr)}</span><span style={{flex:1,minWidth:0,display:"flex",alignItems:"center",gap:5,fontSize:12,color:C.textSub,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={hh.code} color={C.textMuted} size={14}/>{WX_CODE_LABEL[hh.code]||"—"}</span></div>
               <div style={{display:"grid",gridTemplateColumns:"repeat(2,minmax(0,1fr))",gap:5}}>
-                <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:wxTempColor(t)})}>{uTemp(t)}</span><span style={daySub}>{"At "+clockHr(hh.hr)}</span></span>
-                <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:wxWindColor(wm)})}>{uWind(wm)}</span><span style={daySub}>{"At "+clockHr(hh.hr)+(compass(hh.dir)?", from the "+compass(hh.dir):"")}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Temp</span><span style={Object.assign({},dayVal,{color:t!=null?wxTempColor(t):C.textMuted})}>{t!=null?uTemp(t):"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)}</span></span>
+                <span style={dayBox}><span style={dayLbl}>Wind</span><span style={Object.assign({},dayVal,{color:wm!=null?wxWindColor(wm):C.textMuted})}>{wm!=null?uWind(wm):"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)+", 10 m up"+(wm!=null&&compass(hh.dir)?", from the "+compass(hh.dir):"")}</span></span>
                 <span style={dayBox}><span style={dayLbl}>Gusts</span><span style={Object.assign({},dayVal,{color:gm!=null?wxWindColor(gm):C.textMuted})}>{gm!=null?uWind(gm):"Not measured"}</span><span style={daySub}>{"During "+spanEnding(hh.hr)}</span></span>
                 <span style={dayBox}><span style={dayLbl}>Rain</span><span style={Object.assign({},dayVal,{color:hh.pop>=50?C.blue:C.text})}>{hh.pop!=null?hh.pop+"% chance":"Not measured"}</span><span style={daySub}>{(hh.precipIn!=null&&hh.precipIn>0?uPrecip(hh.precipIn)+", ":"")+"during "+spanEnding(hh.hr)}</span></span>
               </div></div>;})}</div></div>:null}
