@@ -13,7 +13,8 @@
 // The rule is ONE function, scripts/lib/generic-area-name.mjs, shared with the importer (which steps
 // THROUGH a generic level of the source's path rather than re-creating it). What it deliberately does
 // NOT call generic is written there: a name that also names a place ("Smith Rock Bouldering"), a single
-// feature ("Sport Wall", "Dry Wall"), a name with a number ("Boulder 3").
+// feature ("Sport Wall", "Dry Wall"), a name with a number ("Boulder 3") — except the source's placeholder
+// for a sub-area nobody named, "New Sub-Area 1" / "Sub-Area 3" (2026-10-14: 18 of them, 0290).
 //
 // EXEMPT, listed with a reason each: scripts/data/generic-area-names-exempt.json — names the rule
 // matches that are, on reading, the place's real name ("The General" at Dedham, beside The Captain,

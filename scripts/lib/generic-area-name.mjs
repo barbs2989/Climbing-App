@@ -15,7 +15,8 @@
 //     discounted, and only when that state is an ancestor (it is the level the bucket hangs under).
 //   * a single feature — "Sport Wall", "Dry Wall", "Top Rock", "Mother Boulder", "The Crag": one wall,
 //     rock or boulder, very often its real name. "wall", "rock", "boulder", "crag" are not bucket words.
-//   * a name with a number in it — "Boulder 3", "Area 51": the number is the identity.
+//   * a name with a number in it — "Boulder 3", "Area 51": the number is the identity. Except the source's
+//     placeholder "New Sub-Area 1" / "Sub-Area 3" (PLACEHOLDER below).
 //   * the ids in scripts/data/generic-area-names-exempt.json, each READ and researched: "The General"
 //     at Dedham sits among The Captain, The Colonel, The Major and The Private boulders.
 import { stripSortPrefix } from "./area-sort-prefix.mjs";
@@ -46,8 +47,14 @@ const words = s => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-�
 // The source's "Z.3 Ice Climbing" / "Z.1 Buildering" (Illinois) is a sort label stripSortPrefix keeps.
 const name0 = s => stripSortPrefix(s).replace(/^[A-Za-z]\.\d{1,2}\s+/, "");
 
+// The source's default for a sub-area nobody named: "New Sub-Area 1", "Sub-Area 3" — a placeholder, never a
+// place (0290 named or folded all 18; Rainbow Mountain's 53 problems sat in one beside the boulders the
+// source has since named). Tested BEFORE the number rule below, which reads "Boulder 3" as an identity.
+const PLACEHOLDER = /^(new )?sub area( \d+)?$/;
+
 // ancestorNames: the area's ancestors' names, any order. Returns null, or why the name is generic.
 export function genericAreaName(name, ancestorNames = []) {
+  if (PLACEHOLDER.test(words(name).join(" "))) return "the source's placeholder for a sub-area nobody named";
   const t = words(name0(name));
   if (!t.length || t.some(w => /\d/.test(w))) return null;
   const content = t.filter(w => !STOP.has(w));
