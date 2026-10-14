@@ -1750,3 +1750,12 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       or lapse rate, so what it does between cell and pin is UNVERIFIED beyond the station check above.
       NWS publishes no lapse rate for its own cell either (gridded MOS adjusts for elevation in passes of
       varying strength).
+      WIDER CHECK (2026-10-14, after the first five stations): Open-Meteo's ARCHIVED FORECASTS (not analysis) against
+      SNOTEL hourly air temperature at 53 distinct station-seasons (about 20 stations in WA, OR, CA, ID, MT, WY, UT, CO, NM, AK,
+      5,040 to 11,680 ft; 14 days in January, 14 in July, 13 in October). Median absolute error 3.3 F overall: 3.2 F
+      in summer and in autumn (90th percentile 4.8 and 4.4), but 4.6 F in WINTER with a 90th percentile of 8.5 F, and
+      14 of 17 winter stations read too COLD (median bias -1.9 F, to -7.2 F at Harts Pass, Leavitt Lake, Smiley Mountain,
+      Webster Flat, Look Eyrie). It is not removable: the bias runs -7 to +2 F by site. The card says so ("in winter by
+      up to N, most often reading too cold") rather than correcting for it. CAVEAT: a snow station stands in a clearing
+      or basin, so a ridge or summit may differ from it in either direction; the figures describe stations, not summits.
+      The first five-station run (all autumn) was too optimistic to state alone.
