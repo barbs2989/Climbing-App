@@ -4267,7 +4267,7 @@ function WeatherPanel({waypoints,showPlan,packId,fallback}){
      Reads from the shared WP_STYLE now, like everything else. */
   return <div style={{marginBottom:14}}>
     <SL>Forecast at key points</SL>
-    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Elevation-aware forecast, broken into AM/PM/Night with an hourly view on tap, with the NWS and MET forecasts beside each day for comparison. Read it yourself: mountain terrain can differ sharply from the forecast, and forecasts can legitimately disagree. The wind figure is the modelled ridge-level (~80 m) speed; gusts, and the NWS and MET winds beside each day, are surface (10 m) figures — so they are not measured at the same height.</div>
+    <div style={{fontSize:11.5,color:C.textMuted,margin:"-4px 0 9px",lineHeight:1.5}}>Elevation-aware, by AM/PM/Night; tap a day for hourly. Mountain terrain can differ from any forecast. Wind is ridge-level (~80 m); gusts and NWS/MET winds are surface (10 m).</div>
     <div style={{display:"flex",flexDirection:"column",gap:10}}>{points.map(function(w){const k=w.type+"_"+w.name;const d=data[k];const expDate=expandedDay[k];const _wty=wpType(w);const wCol=wpColor(_wty);return <div key={k} style={{background:C.card,border:"1px solid "+C.border,borderRadius:14,padding:"13px 14px"}}>
       <div style={{display:"flex",alignItems:"center",gap:9,marginBottom:10}}>
         <div style={{width:28,height:28,borderRadius:"50%",background:wCol+"22",border:"1.5px solid "+wCol,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:wCol,flexShrink:0}}>{wpGlyph(_wty)}</div>
