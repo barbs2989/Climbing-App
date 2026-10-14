@@ -3400,7 +3400,7 @@ function PairsWellWith({route,onOpenRoute,notify}){
   }
   if(!cards.length&&!uid&&!pairsUnavailable)return null;
   const btn={padding:"8px 12px",borderRadius:9,fontSize:12.5,fontWeight:700,cursor:busy?"default":"pointer"};
-  return <div style={{marginBottom:8}}><CardHead style={{marginBottom:7}}>PAIRS WELL WITH</CardHead>
+  return <div style={{marginTop:16,marginBottom:8}}><CardHead style={{marginBottom:7}}>PAIRS WELL WITH</CardHead>
     {pairsUnavailable?<div style={{fontSize:12,color:C.amber,lineHeight:1.5,marginBottom:7}}>Couldn’t load the suggested pairings — this is not a claim that there are none. Check your connection and try again.</div>:null}
     {!cards.length&&!pairsUnavailable?<div style={{fontSize:12,color:C.textSub,lineHeight:1.5,marginBottom:7}}>No pairings yet. Know a climb worth doing the same day? Suggest it and it shows here and on that climb.</div>:null}
     {cards.map(function(o){return <div key={o.kind+o.id} {...clickable(function(){onOpenRoute&&onOpenRoute(o.r2);})} style={{background:C.card,borderRadius:10,padding:"10px 12px",marginBottom:7,border:"1px solid "+C.border,cursor:"pointer"}}>
