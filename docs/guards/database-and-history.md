@@ -564,6 +564,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **A tie the grade parser cannot break**: `gradeNumFor` scores "5.9" and "5.9+" alike, so "keep
       the HIGHER grade" needs a tie-break on the suffix ("+" over none over "-") or a fold quietly keeps
       the lower-reading one. 0278's planner (`higher.mjs`) applies it.
+    - **The source's ROUTE ids find what no name key can — 0284** (2026-10-14). Every route was resolved
+      to the source route id it came from (the import CSVs' URLs: name + wall + the wall's parent, else
+      name + wall within 15 km — 292,741 of 314,917 resolve to exactly one). 82 ids were held twice: 77
+      on ONE wall — the source's own renames imported under both names ("Silt and Bone" / "Silt and
+      Stone", "Slim Harpo" / "De Sable"), spellings `route_name_key` keeps apart ("He Bro" / "HeBro"), and
+      same-grade placeholders — and 5 across walls, every one a PLACE filed twice. That led to a spelling
+      census of areas (names equal without spaces, or one or two letters apart on one pin), each pair read
+      against the source's area tree: ~55 folds ("Coal Pit" / "Coalpit Buttress", "Pywiak" / "Pywiack
+      Dome", "Haimovi" / "Hiamovi Tower", empty twins), DeMoisy Peak and Steamboat Pass copies pinned 75
+      and 49 km off, and four parallel PARENTS this guard could not pair because one copy had no pin
+      (Q'Emiln Park, Gunpowder Falls - Hereford Area, The Ribcage, Red River Gorge's Zoo — the source now
+      files it as "The Zoo (CLOSED)", so the old copy folded INTO the closed one, parking kept off).
+      Kept apart, read: ice beside rock on one wall (Orange Wall, Emperor Slab(s), Barton High Cliff(s)),
+      separate discipline trees (True Summit Block(s)), and pairs the source itself keeps as two places
+      (High / Higher Energy Crag, Shardwal / Shartwall, Doja / Dojo Boulder). Mount Olympus / Mt Olympus
+      left the read list: #2302 kept it apart only because the leaf rule stopped two couloirs moving
+      onto a mountain with sub-areas; 0284 NESTS them as "Mount Olympus Couloirs". Two traps for the next
+      fold: the CLI's own overhead was ~80 s a call that day, so a dry run can 524 at the gateway while
+      the SQL is quick (a 524 says nothing about commit — read `schema_migrations`); and a child named
+      for its parent ("Blue River Bend" › "WM: Blue River Bend") cannot hand its climbs UP while it
+      exists (`routes_require_leaf`) — the child takes the parent's place instead (0284 step 5c).
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
@@ -622,6 +643,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     NOT merged, on purpose: pairs that read as two climbs ("The Last / The Lost Gardener"), the
     UNSURE ones, and names whose grade or mark IS the difference ("The 5.7 / 5.7+ Corner"). Same-named
     placeholders with different grades ("Unnamed" 5.6 / 5.9) are different climbs, never candidates.
+  - **WIDENED by 0284** (2026-10-14): the rule needed a space after the label, so 66 labels sat in plain
+    sight with the guard green — 21 unspaced ("1.The Left Wall", "01.Entrance Boulder", "A.Trad Dad
+    Boulder", "D2.Renaissance"), 29 digit-dash series ("1-Upper Wall", Silver Lake's "0-Bachar" … "9-Secor"),
+    16 decimal guidebook numbers with a dash (Devil's Lake's "7.2.1 - Birthday Rocks") — plus 108 REGION
+    codes the source sorts a state by (Missouri's EM/CM/WM/SW/NM/XM/ZM, New Hampshire's "WM:" White
+    Mountains). Read and KEPT as names: "5-Mile Boulders", "12-Bar Boulder", "41-Minute Dome", "1-Bolt
+    Boulder", "20-Meter Freestyle Area", "3-Star", "4-H Nature Area", "7-11 Crag", "30-30 Rock", grade-named
+    walls ("5.10 Wall"), and a decimal with no dash — Safe Harbor's walls are named by TRAIL MILEAGE
+    ("1.0 Spectator Wall", "4.49 Cemetery Wall"), which tells a climber where the wall is. "EM: (closed)"
+    and "WM: (Closed) Kaysinger" keep their code: stripped, one would read as a bare "(closed)". Six
+    labels hid a sibling twin ("1.The Left Wall" beside a one-climb "The Left Wall"; three empty Missouri
+    copies) and were folded, not renamed. Devil's Lake's roped "7.1.1 - Railroad Amphitheater" and
+    "7.4 - Pony Barricade" meet same-named boulder fields of the source's separate BOULDERING tree once
+    stripped — two discipline trees of one place, listed in the area-duplicates read list like every
+    such pair.
   - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
     set the order on screen and removing them lost no guidebook sequence.
 
