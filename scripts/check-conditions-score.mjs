@@ -298,6 +298,8 @@ console.log("check:conditions-score");
   else fail("the ideal temperature or wind is no longer a range, or the shortcuts stopped setting one");
   if (/role="slider"/.test(slider) && /aria-label=\{label \+ ", " \+ name\}/.test(slider) && /aria-valuetext=\{fmt\(v\)\}/.test(slider) && /onKeyDown=\{key\}/.test(slider) && /touchAction: "none"/.test(slider) && /ArrowRight/.test(slider) && /"Home"/.test(slider)) ok("each handle is a named, keyboard-operable slider that reads its value in the climber's units, and does not scroll the page on touch");
   else fail("a range handle lost its name, its keyboard, or its touch-action");
+  if (/const THUMB = 28, HIT = 44;/.test(slider) && /width: HIT, height: HIT/.test(slider)) ok("each handle's touch target is 44 px (Apple's guideline; WCAG 2.2 AA asks 24) around a 28 px visible circle");
+  else fail("a range handle's touch target fell below 44 px");
   if (/const snapTemp = function \(f\) \{ return uTempIn\(uTempN\(f\)\); \}/.test(prefs) && /snapWind/.test(prefs) && /fmt=\{uTemp\}/.test(prefs) && /fmt=\{uWind\}/.test(prefs)) ok("the handles snap to a number the climber can SEE (whole degrees C when metric) and the stored value stays deg F / mph");
   else fail("a range handle no longer snaps through the unit helpers");
   if (/useCondPrefs\(\)/.test(tile) && !/BAND_PREF\.load\(\)/.test(tile) && /useCondPrefs\(\)/.test(card) && /setCondPref\(/.test(prefs) && /useSyncExternalStore/.test(prefs)) ok("the route card and Home read ONE prefs store that broadcasts changes");
