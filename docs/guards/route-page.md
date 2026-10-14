@@ -807,7 +807,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   marks what they bring (`lib/CrewGearList.jsx`, on `gearExtras`/`gearClaims`, stored per member by
   0209). Since 0286 a confirmed member can also put a CREWMATE down for an item; every write is ONE
   item (`assign_crew_gear`; 0287 stopped a whole-list write erasing assignments, 0289 made adding and
-  removing one item too and matched items ignoring case), and 0290 limits a claim to a confirmed
+  removing one item too and matched items ignoring case), and 0291 limits a claim to a confirmed
   target (or yourself) and to an item that is on the list. The client runs a crew's writes in order,
   one patch at a time (`queueCrewGear` in `ClimbMatch.jsx`), so an item is listed before it is
   claimed; `scripts/oneoff/verify-crew-gear-assign.mjs` checks the functions as two real climbers. It shows

@@ -4,7 +4,7 @@
 // as `gearExtras` (the typed items) and `gearClaims` ({item: [climber ids]}). For a signed-in crew
 // both are per-member columns, and every write is ONE item (0289): add_crew_gear_item,
 // remove_crew_gear_item (off the list for the whole crew), and assign_crew_gear for any member's
-// claim -- since 0290 only for a confirmed crewmate or yourself, and only on an item that is on the
+// claim -- since 0291 only for a confirmed crewmate or yourself, and only on an item that is on the
 // list. You can only remove an item you added (`_myGearExtras`), in any capitals. ClimbMatch runs a
 // crew's writes in order, one patch at a time, so an item reaches the list before anyone claims it.
 // The list stays live: a crewmate's write pings this crew's channel and the card refetches
