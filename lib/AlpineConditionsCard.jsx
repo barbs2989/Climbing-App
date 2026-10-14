@@ -4,9 +4,10 @@
 // climber's own units. The crag score (ConditionsScoreCard) is a different card for different
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
-import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
-import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts } from "./forecast.js";
-import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
+import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
+import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts, fetchGaugeSites, fetchGaugeFlow } from "./forecast.js";
+import { parseSites, nearestGauge, flowReading } from "./streams.js";
+import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, fogHours, snowHistory, snowLevel, dayFlags, daySummary, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
 import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass } from "./HourTiles.jsx";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
@@ -39,6 +40,16 @@ function clockOf(fc, unixS) {
   const hr = d.getUTCHours(), mn = d.getUTCMinutes(), h12 = hr % 12 || 12;
   return h12 + ":" + String(mn).padStart(2, "0") + (hr < 12 ? " AM" : " PM");
 }
+// Visibility in the climber's units: miles to a tenth, or kilometres to a tenth.
+// Capped at 10 mi / 16 km: the model can return 200 km, and a number that precise says nothing a climber can use.
+function visText(m) { return m >= 16093 ? (uImp() ? "10+ mi" : "16+ km") : uImp() ? (m / 1609.344).toFixed(1) + " mi" : (m / 1000).toFixed(1) + " km"; }
+// Stream flow in the climber's units (discharge ft³/s <-> m³/s; stage ft <-> m).
+function flowText(v, kind) {
+  if (kind === "stage") return uImp() ? v.toFixed(2) + " ft" : (v * 0.3048).toFixed(2) + " m";
+  if (uImp()) return Math.round(v).toLocaleString() + " ft³/s";
+  const m3 = v * 0.0283168; return m3.toFixed(m3 < 10 ? 2 : 1) + " m³/s";
+}
+const titleCase = function (s) { return String(s || "").toLowerCase().replace(/\b([a-z])/g, function (m) { return m.toUpperCase(); }); };
 // "until Thu 4:00 PM" / "from Thu 12:00 PM until Thu 7:00 PM": an alert's own event window, in the route's local time.
 function windowLabel(fc, a) {
   const st = function (ms) { const sh = new Date(ms + (fc.utc_offset_seconds || 0) * 1000); return sh.toLocaleDateString(DLOCALE, { weekday: "short", timeZone: "UTC" }) + " " + clockOf(fc, ms / 1000); };
@@ -72,6 +83,7 @@ export function flagText(f) {
     case "new-snow": return uSnowfall(v.inch) + " of new snow at the summit" + (v.scramble ? " — a snowed-up scramble is a winter climb" : "");
     case "wind": return "Summit gusts to " + uWind(v.gust) + " in daylight";
     case "alert": return "Weather alert: " + v.event + " (" + String(v.severity).toLowerCase() + " severity), " + v.when + " — covers a whole forecast zone, not just this route";
+    case "fog": return "Fog in the forecast: visibility under " + uDistMi(0.621371) + " for " + v.hours + " daylight hour" + (v.hours === 1 ? "" : "s") + " from " + v.from + " — a model estimate whose accuracy in the mountains is unchecked; no fog hour is not a clear day";
     case "smoke": return "Smoke and air quality: US AQI up to " + Math.round(v.aqi) + " (" + aqiWord(v.aqi).toLowerCase() + ") — a forecast for the area, not a reading at the route; smoke aloft or pooled in a valley is not seen";
     case "models-disagree": return "Forecast models disagree on this day (" + [v.over.indexOf("gust") >= 0 ? "gusts " + uWind(v.gust[0]) + "–" + uWind(v.gust[1]) : null, v.over.indexOf("high") >= 0 ? "highs " + uTemp(v.high[0]) + "–" + uTemp(v.high[1]) : null, v.over.indexOf("fl") >= 0 ? "freezing level " + uElev(Math.round(v.fl[0] / 100) * 100) + "–" + uElev(Math.round(v.fl[1] / 100) * 100) : null].filter(Boolean).join(", ") + ") — read its flags as low confidence";
     case "wind-chill": return "Wind chill " + uTemp(v.chill) + " — frostbite on exposed skin in about 30 minutes";
@@ -94,7 +106,7 @@ export function forecastPoint(route, mtn) {
   return { lat, lng, elevFt: elev != null && isFinite(elev) ? elev : null, campFt, name: top ? (top.name || "the summit") : (area.name || "the area"), pinned: !!top };
 }
 
-export default function AlpineConditionsCard({ route, mtn, calc, activity }) {
+export default function AlpineConditionsCard({ route, mtn, calc, activity, reportsUnavailable }) {
   const terrain = useMemo(function () { return routeTerrain(route); }, [route]);
   const kind = condKind(route, terrain, catOf(route));
   const pt = useMemo(function () { return forecastPoint(route, mtn); }, [route, mtn]);
@@ -102,12 +114,16 @@ export default function AlpineConditionsCard({ route, mtn, calc, activity }) {
   /* Avalanche danger unless the route's own data rules avalanche terrain out (terrain.avalanche
      "no": a dry rock scramble). "unknown" still shows it -- suppression needs evidence. */
   const avyOn = terrain.avalanche !== "no";
+  const th = pt ? (route.waypoints || []).filter(wpPlaced).find(function (w) { return wpIs(w, "Trailhead"); }) : null;
+  const trailhead = th ? { lat: +th.lat, lng: +th.lng, name: th.name || "the trailhead" } : pt ? { lat: pt.lat, lng: pt.lng, name: null } : null;
   return <div>
     <ForecastBox route={route} calc={calc} kind={kind} terrain={terrain} pt={pt} />
     {pt ? <div style={BOX}>
       {avyOn ? <AvalancheSection pt={pt} /> : null}
       <div style={{ marginTop: avyOn ? 14 : 0 }}><SnowSection pt={pt} /></div>
+      {kind !== "waterfall" && kind !== "cragmixed" ? <div style={{ marginBottom: 14 }}><StreamsSection pt={pt} base={trailhead} /></div> : null}
       <OutcomesSection activity={activity} />
+      <ReportFreshness activity={activity} unavailable={reportsUnavailable} />
       <div style={{ marginTop: 14 }}><SeasonSection pt={pt} /></div>
     </div> : null}
   </div>;
@@ -190,6 +206,8 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
       if (ms && ms.over.length) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "models-disagree", level: "caution", v: ms }]) });
       const al = alerts && alerts.data && !alerts.data.outside ? alertsForDay(normAlerts(alerts.data), d.date, fc.utc_offset_seconds) : [];
       if (al.length) r = Object.assign({}, r, { flags: r.flags.concat(al.map(function (a) { return { key: "alert", level: alertLevel(a), v: { event: a.event, severity: a.severity, when: windowLabel(fc, a) } }; })) });
+      const fg = fogHours(fc, d);
+      if (fg) r = Object.assign({}, r, { flags: r.flags.concat([{ key: "fog", level: "caution", v: { hours: fg.hours, from: clockOf(fc, fg.first), minM: fg.minM } }]) });
       const aq = air && air.data ? airDay(air.data, d.date) : null, sf = smokeFlag(aq);
       if (sf) r = Object.assign({}, r, { flags: r.flags.concat([sf]) });
       out.push(Object.assign({ date: d.date, sum: daySummary(fc, d), sunrise: d.sunrise, sunset: d.sunset, aqi: aq }, r));
@@ -301,6 +319,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
   </div>
   <AlertsSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} alerts={alerts} fc={fc} onRetry={function () { setAlertTries(alertTries + 1); }} />
   <HourByHour key={day.date} fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} pt={pt} floor={floor} legs={legs} snowLegs={snowLegs} />
+  <SnowfallSection fc={fc} day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} />
   <AirSection day={day} dayLabel={dayName(day, Math.min(dayI, days.length - 1))} air={air} onRetry={function () { setAirTries(airTries + 1); }} />
   <SunShadeSection route={route} kind={kind} terrain={terrain} pt={pt} fc={fc} day={day} isToday={Math.min(dayI, days.length - 1) === 0} />
   </div>;
@@ -346,6 +365,7 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
     return null;
   };
   const T = h.time[cur], hr = localHour(fc, cur), t = v("temperature_2m", cur), w = v("wind_speed_10m", cur), g = v("wind_gusts_10m", cur), dir = v("wind_direction_10m", cur);
+  const vis = v("visibility", cur), lowc = v("cloud_cover_low", cur);
   const pop = v("precipitation_probability", cur), pr = v("precipitation", cur), sn = v("snowfall", cur), fl = v("freezing_level_height", cur), cl = v("cloud_cover", cur), code = v("weather_code", cur);
   const wc = t != null && w != null ? windChillF(t, w) : null, chilled = wc != null && t != null && t - wc >= 5;
   const tops = pt.elevFt;
@@ -371,10 +391,88 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
         <Tile label="Wind" when={"at " + clockHr(hr)} value={w != null ? uWind(w) : NOT_MEASURED} sub={dir != null ? "from the " + compass(dir) : null} />
         <Tile label="Gusts" when={spanEnding(hr)} value={g != null ? uWind(g) : NOT_MEASURED} tone={g != null && g >= LIMITS.gustWarn ? C.red : g != null && g >= LIMITS.gustCaution ? C.amber : null} sub={g == null ? null : g >= LIMITS.gustWarn ? "past the " + uWind(LIMITS.gustWarn) + " warning line" : g >= LIMITS.gustCaution ? "past the " + uWind(LIMITS.gustCaution) + " caution line" : "strongest moment in that hour"} />
         <Tile label={sn != null && sn > 0 ? "Snow" : "Rain"} when={spanEnding(hr)} value={sn != null && sn > 0 ? uSnowfall(sn) : pr == null ? NOT_MEASURED : pr === 0 ? "None" : uPrecip(pr)} tone={(sn > 0 || pr > 0) ? C.blue : null} sub={pop != null ? pop + "% chance of precipitation" : null} />
+        <Tile label="Visibility" when={"at " + clockHr(hr)} value={vis != null ? visText(vis) : NOT_MEASURED} tone={vis != null && vis < LIMITS.fogM ? C.amber : null} sub={vis == null ? null : vis < LIMITS.fogM ? "Fog: under " + uDistMi(0.621371) : vis < 2000 ? "Mist range (about 1 to 2 km)" : null} />
+        <Tile label="Low cloud" when={"at " + clockHr(hr)} value={lowc != null ? Math.round(lowc) + "%" : NOT_MEASURED} sub={lowc == null ? null : "cloud in the layers up to about 3 km up; the route may sit in or above them"} />
         <Tile label="Freezing level" when={"at " + clockHr(hr)} value={fl != null ? uElev(Math.round(fl / 100) * 100) : NOT_MEASURED} sub={fl == null || tops == null ? null : "Air at " + uElev(tops) + " is " + (fl > tops ? "above" : "below") + " 0 °C" + (snowLegs && floor ? "; at the lowest snow you cross (" + uElev(floor.ft) + ") it is " + (fl > floor.ft ? "above" : "below") + " 0 °C" : "")} wide />
       </TileGrid>
     </div>
     <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by 10–18 °F. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
+  </div>;
+}
+
+/* SNOWFALL AND SNOW LEVEL for the selected day. History is the forecast model's own past hours at the forecast
+   point (modelled, not measured) and flags nothing: no validated "days since snowfall" cut exists, because
+   instability depends on the weak layers beneath new snow and can last days to weeks. The snow level is the
+   freezing level over the day's wet hours less the 500 to 1500 ft the NWS-cited studies put snow below the
+   0 C line; it is a rule of thumb with its range stated, and it needs precipitation to mean anything. */
+function SnowfallSection({ fc, day, dayLabel }) {
+  /* `day` is the card's per-day SUMMARY (flags, start, sunrise...): it carries no `hours`. The raw local day does, so
+     it is looked up by date -- passing the summary to snowLevel() crashed the whole route page (live, 2026-10-08). */
+  const raw = localDays(fc).find(function (d) { return d.date === day.date; });
+  const hist = snowHistory(fc, todayOf(fc)), lvl = raw ? snowLevel(fc, raw) : null;
+  const when = function (n) { return n === 0 ? "today" : n === 1 ? "yesterday" : n + " days ago"; };
+  return <div style={BOX}>
+    <CardHead style={{ marginBottom: 8 }}>{"SNOWFALL & SNOW LEVEL · " + dayLabel.toUpperCase()}</CardHead>
+    <TileGrid min={150}>
+      <Tile label="Last measurable snow" when="at the forecast point" value={!hist ? NOT_MEASURED : hist.none ? "None" : when(hist.daysAgo)} sub={!hist ? null : hist.none ? "none of the last " + hist.days + " days reached 0.1 in" : new Date(hist.lastDate + "T12:00:00Z").toLocaleDateString(DLOCALE, { month: "short", day: "numeric", timeZone: "UTC" }) + " · " + uSnowfall(hist.lastIn)} />
+      <Tile label={"Snow in " + (hist ? hist.days : 14) + " days"} when="modelled total" value={hist ? uSnowfall(hist.totalIn) : NOT_MEASURED} />
+      <Tile label="Snow level this day" when={lvl ? "over " + lvl.wetHours + " wet hour" + (lvl.wetHours === 1 ? "" : "s") : "no precipitation forecast"} value={lvl ? uElev(Math.round(lvl.snowLo / 100) * 100) + " – " + uElev(Math.round(lvl.snowHi / 100) * 100) : "Not applicable"} sub={lvl ? "where precipitation falls as snow, from the freezing level (" + uElev(Math.round(lvl.flLo / 100) * 100) + " – " + uElev(Math.round(lvl.flHi / 100) * 100) + ") less 500 to 1,500 ft" : "a dry day has no snow line to read"} wide />
+    </TileGrid>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>The history is the forecast’s own past hours at the forecast point, not a measurement on the route, and a day counts only at 0.1 in or more (the weather service’s “measurable”). How long ago it snowed does not tell you how stable the snow is: that depends on the layers beneath it, for days to weeks. The snow level is a rule of thumb, lower in heavy precipitation, and falls where it is raining or snowing only.</div>
+  </div>;
+}
+
+/* STREAM FLOW near the trailhead: what the nearest gauge measured in the last 24 hours, never a verdict.
+   (lib/streams.js has the limits: stage vs a fitted discharge, the cross-section at the gauge, the 10 to 20
+   ft²/s depth-times-speed range at which adults lose their footing, snowmelt peaking in the warm hours.) */
+function StreamsSection({ pt, base }) {
+  const [st, setSt] = useState(null), [tries, setTries] = useState(0);
+  const at = base || pt;
+  useEffect(function () {
+    let live = true; setSt(null);
+    fetchGaugeSites(at.lat, at.lng).then(function (rdb) {
+      const g = nearestGauge(parseSites(rdb), at.lat, at.lng, 25);
+      if (!g) return { none: true };
+      return fetchGaugeFlow(g.no).then(function (j) { return { g: g, f: flowReading(j) }; });
+    }).then(function (r) { if (live) setSt(r); }, function () { if (live) setSt({ error: true }); });
+    return function () { live = false; };
+  }, [at.lat, at.lng, tries]);
+  const where = base && base.name ? base.name : "the forecast point";
+  const f = st && st.f;
+  return <div>
+    <CardHead style={HEAD}>Stream flow near the approach</CardHead>
+    {!st ? <div style={{ fontSize: 12.5, color: C.textMuted }}>Loading stream flow…</div>
+      : st.error ? <div><div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load stream gauges, so stream flow is not measured. This is not a report that streams are low.</div><button onClick={function () { setTries(tries + 1); }} style={RETRY}>Try again</button></div>
+      : st.none ? <div style={MUTED}>{"No stream gauge within " + uDistMi(25 / 1.60934) + " of " + where + ", so stream flow is not measured here. This is not a report that streams are low."}</div>
+      : !f ? <div style={MUTED}>{"The nearest gauge, " + titleCase(st.g.name) + " (" + uDistMi(st.g.km / 1.60934) + " away), has no current reading."}</div>
+      : <div>
+        <div style={{ fontSize: 12.5, color: C.text, marginBottom: 6 }}>{titleCase(st.g.name) + " · " + uDistMi(st.g.km / 1.60934) + " from " + where}</div>
+        {f.flags.length ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>{"The gauge marks its current reading as " + f.flags.join(", ") + ", so no number is shown."}</div>
+          : <TileGrid min={150}>
+            <Tile label={f.kind === "stage" ? "Water level now" : "Flow now"} when={"at " + f.now.clock} value={flowText(f.now.v, f.kind)} sub={f.provisional ? "provisional: not yet reviewed" : null} />
+            <Tile label="Last 3 hours" when="trend" value={f.trend ? f.trend[0].toUpperCase() + f.trend.slice(1) : NOT_MEASURED} sub={f.pct != null ? (f.pct > 0 ? "+" : "") + Math.round(f.pct) + "% (under " + 10 + "% reads steady)" : null} />
+            <Tile label="Highest, last 24 h" when={f.hi.day + " at " + f.hi.clock} value={flowText(f.hi.v, f.kind)} />
+            <Tile label="Lowest, last 24 h" when={f.lo.day + " at " + f.lo.clock} value={flowText(f.lo.v, f.kind)} />
+          </TileGrid>}
+      </div>}
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{"A gauge reads the stream at the gauge, which may be a different stream from the one you cross, and it cannot see the depth or speed at your crossing. Whether a person can stand in water depends on depth times speed: adults lose their footing at about " + (uImp() ? "10 to 20 ft²/s" : "0.9 to 1.9 m²/s") + ", and no flow figure is safe for every crossing. Streams fed by snow melt rise in the warm hours and drop overnight, so cross early, and check it yourself before you commit."}</div>
+  </div>;
+}
+
+/* REPORT FRESHNESS: how recent the newest trip report here is. Conditions change, so the age of the latest word
+   is itself a fact worth stating. A failed read of the reports is not "no reports". */
+export function reportFreshness(activity, nowMs) {
+  const now = nowMs != null ? nowMs : Date.now();
+  const ds = (activity || []).map(function (a) { return a && a.date ? Date.parse(String(a.date).slice(0, 10) + "T12:00:00Z") : NaN; }).filter(function (t) { return isFinite(t); }).sort(function (a, b) { return b - a; });
+  if (!ds.length) return null;
+  return { newest: ds[0], daysAgo: Math.max(0, Math.round((now - ds[0]) / 864e5)), last14: ds.filter(function (t) { return t >= now - 14 * 864e5; }).length, total: ds.length };
+}
+function ReportFreshness({ activity, unavailable }) {
+  const fr = reportFreshness(activity);
+  return <div style={{ marginTop: 14 }}><CardHead style={HEAD}>How recent the reports are</CardHead>
+    {unavailable && !fr ? <div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.5 }}>Couldn’t load the trip reports, so how recent they are is not known. This is not a report that there are none.</div>
+      : !fr ? <div style={MUTED}>No trip report is on file for this climb, so nothing recent is known about its conditions.</div>
+      : <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5 }}>{"Newest report: " + new Date(fr.newest).toLocaleDateString(DLOCALE, { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) + " (" + (fr.daysAgo === 0 ? "today" : fr.daysAgo === 1 ? "yesterday" : fr.daysAgo + " days ago") + "). " + fr.last14 + " in the last 14 days, " + fr.total + " on file."}</div>}
   </div>;
 }
 

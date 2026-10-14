@@ -1700,3 +1700,29 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
     - **The alert's own `headline` is NOT printed**: it ends "...by NWS <office>", which names the issuer and
       would break `check:no-sources`' rule that no screen names a provider.
     - **Not shown, on research:** WSDOT pass status (needs an access code; unauthenticated request is HTTP 401).
+  - **FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS on the alpine card (2026-10-08, owner: "do the unbuilt
+    ideas now too, research online for scientifically correct information").** Section 15 of the guard. Each states
+    what it is and what it cannot see:
+    - **Fog:** a daylight hour whose model visibility is under 1 km (the published meteorological definition; the UK
+      public-forecast cut is 180 m). A CAUTION flag that says the model's accuracy in mountains is unchecked and that
+      no fog hour is not a clear day. No whiteout standard exists, so the card never says "whiteout". Visibility is
+      capped on screen at 10 mi / 16 km (the model returns 200+ km). Low cloud shows beside it.
+    - **Snowfall:** days since the last MEASURABLE snow (the NWS's 0.1 in/day; less is a trace) from the forecast model's
+      own past hours (modelled, not measured), plus the modelled total. It flags NOTHING: no validated
+      days-since-snowfall cut exists, and stability depends on the weak layers beneath new snow for days to weeks.
+    - **Snow level:** the freezing level over the day's WET hours less 500 to 1,500 ft (NWS-cited studies; "about
+      300 m" is the textbook rule), shown as a range; "not applicable" on a dry day. A rule of thumb, not a forecast.
+    - **Stream flow:** the nearest gauge within 25 km of the trailhead (else the forecast point), last 24 h, shown in
+      the GAUGE's own local clock. Provisional readings say so; a reading the gauge marks (ice-affected, equipment
+      malfunction...) shows NO number; the no-data sentinel (-999999) is never a reading. Trend is read over 3 h and
+      "steady" is under 10% (ours: no published cut). NO safe/unsafe verdict, because a gauge reads its own cross-section
+      (often another stream; the distance is stated), discharge is a fitted curve, and adults lose footing at depth x
+      speed of about 10 to 20 ft²/s (0.9 to 1.9 m²/s), which no gauge sees. The agency's name never prints.
+    - **Report freshness:** the age of the newest trip report and how many are in the last 14 days. A failed read of
+      the reports is "not known", never "none on file".
+    - **TRAP (found only by opening the page):** the Snowfall section was handed the card's per-day SUMMARY object, which
+      carries no `hours`, and `snowLevel()` crashed the whole route page ("Cannot read properties of undefined
+      (reading 'filter')"). Every static guard and the synthetic tests passed, because the tests built the day in the
+      right shape. The section now looks the raw local day up by date, and the guard pins both the lookup and that
+      a shape without `hours` throws. LESSON: a card that mounts only after a fetch resolves is invisible to the
+      static render walks. Open it on a real route in Chrome before calling it done.
