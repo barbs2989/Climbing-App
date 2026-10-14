@@ -804,9 +804,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 - **`check:crew-gear` was REMOVED (2026-10-14) with the thing it guarded.** The crew card used to
   derive a "what to bring" list from the route (`crewGearFor`, `GearTiers`); the route page already
   shows the gear a climb takes, so the card now holds the crew's OWN typed list, and each member
-  marks what they bring (`lib/CrewGearList.jsx`, on `gearExtras`/`gearClaims`, saved per member by
-  0209 -- so a member claims for themselves only). Nothing is derived, so there is no ranking to
-  invent and no stock list to staple under a route's own rack.
+  marks what they bring (`lib/CrewGearList.jsx`, on `gearExtras`/`gearClaims`, stored per member by
+  0209). Since 0286 a confirmed member can also put a CREWMATE down for an item; every write is ONE
+  item (`assign_crew_gear`; 0287 stopped a whole-list write erasing assignments, 0289 made adding and
+  removing one item too and matched items ignoring case), and 0290 limits a claim to a confirmed
+  target (or yourself) and to an item that is on the list. The client runs a crew's writes in order,
+  one patch at a time (`queueCrewGear` in `ClimbMatch.jsx`), so an item is listed before it is
+  claimed; `scripts/oneoff/verify-crew-gear-assign.mjs` checks the functions as two real climbers. It shows
+  for every discipline -- the bouldering gate went with the route-derived list. Nothing is derived,
+  so there is no ranking to invent and no stock list to staple under a route's own rack.
   - `rackFromText`/`_rackEdited`/`contribRack`/`routeRackFor`/`DISC_RACK` moved to **`lib/rack.js`**
     for this: core cannot import `RouteDetail.jsx` (lazy-loaded, and it already imports *from*
     core, so a static import both cycles and drags the route page into the main bundle). Same

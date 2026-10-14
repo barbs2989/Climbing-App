@@ -3205,7 +3205,16 @@ var _pv=(k[3]==="num")?(isFinite(parseFloat(v))?parseFloat(v):undefined):(k[3]==
    and approach are the plain else-branch of the ternary that renders them, so they need no helper.
    gapTrack keys on gpxPts, not gpx: dbRouteToCamel maps the `gpx` column onto `gpxPts`, so the old
    `!route.gpx` test was true for every DB-backed route, whether or not it had a track. */
-function gapGear(r){if(!r)return false;const roped=["trad","sport","alpine","ice","mixed","aid"].indexOf(catOf(r))>=0;return roped&&!((r.cams&&r.cams.length)||(r.rack&&r.rack.length)||(r.gearTiers&&(r.gearTiers.required||[]).length)||(r.gearBeta&&r.gearBeta.length));}
+/* gapGear asks the RACK box's own question -- routeRackFor, the chain the box renders (an agreed
+   correction, detailedRack, proNeeds, rack) -- so "No gear or rack listed" can never sit under a
+   rack the box is showing. It used to read `rack` and `gearTiers.required` instead. It missed
+   detailedRack: measured 2026-10-14, 2,610 routes hold their rack ONLY there (no rack, no gear), and
+   1,174 of them are stored alpine/ice/mixed, where this note renders -- each told "Nothing says what to
+   bring" above its own rack. And it counted gearTiers.required, which nothing renders since GearTiers
+   went (#2375): an agreed rack correction is written to `rack` as well, while a legacy `gear`
+   contribution lands in gearTiers.required ONLY, so counting it hid the gap on a route showing
+   nothing. The seed routes that carry gearTiers all carry `rack` too, so none of them changes. */
+function gapGear(r){if(!r)return false;const roped=["trad","sport","alpine","ice","mixed","aid"].indexOf(catOf(r))>=0;return roped&&!((r.cams&&r.cams.length)||routeRackFor(r)||(r.gearBeta&&r.gearBeta.length));}
 function gapSeason(r){return !!r&&!r.season&&!r.climate&&!["trad","sport"].includes(catOf(r));}
 function gapPitches(r){return !!r&&r.discipline!=="bouldering"&&(r.pitches>1)&&!(r.pitchDetail&&r.pitchDetail.length);}
 function gapTrack(r){return !!r&&!(r.gpxPts&&r.gpxPts.length>=3);}
