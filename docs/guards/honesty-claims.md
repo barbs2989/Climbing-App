@@ -1726,6 +1726,61 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       right shape. The section now looks the raw local day up by date, and the guard pins both the lookup and that
       a shape without `hours` throws. LESSON: a card that mounts only after a fetch resolves is invisible to the
       static render walks. Open it on a real route in Chrome before calling it done.
+    - **TEMPERATURE GAPS (guard section 16, measured 2026-10-14):** a temperature is for ONE height, and a screen that
+      sets two numbers side by side has to say whose. (1) The NWS grid cell under a summit sits 150 to 850 m BELOW
+      it (Rainier: cell 3,890 m, pin 4,392 m), so its raw temperatures read up to 9 F warmer than the
+      height-adjusted Open-Meteo and MET Norway series beside them, and the weather panel's "differs" flag fired
+      on a difference of height, not of forecast. `nwsHeightShiftF()` (lib/forecast.js) shifts them by the standard
+      lapse rate (6.5 C per km, an average: inversions break it) and the row says "adjusted N° colder for this
+      height". An unknown height shifts nothing and is never guessed. (2) The "Open-Meteo reads cold at summits"
+      suspicion is NOT supported: against five SNOTEL stations (4,900 to 11,310 ft, 121 hours each) its bias was
+      -3.7 to +1.9 F with a typical hourly error of 3.3 to 4.8 F, about -1 F at 11,300 ft. Services still differ
+      by 2 to 4 C at a summit in BOTH directions (Open-Meteo minus MET Norway: -3.8 C Rainier, +2.0 C Hood), so the
+      card states the typical error and that services can differ by more. NOT MEASURABLE: which service is right
+      at a summit itself, since no station sits on one. MET Norway has no past series, so only Open-Meteo was
+      checked against stations.
+      RESEARCH (2026-10-14, what the lapse rate can and cannot claim): 6.5 C/km is the standard atmosphere's global
+      annual AVERAGE for free air. Measured slope rates differ: Mount Washington's own record averages 5.5 C/km
+      (3.0 F per 1,000 ft), agreeing with earlier New England studies, and 6.5 fit poorly in every season, worst in
+      winter; maximum-temperature rates run steeper than minimum, and summer steeper than winter (Himalaya and
+      Tianshan studies agree it varies by season and slope). Over Rainier's 1,650 ft cell-to-pin gap the two figures
+      differ by about 1 F (5.9 vs 5.0), inside the 3 to 5 F typical hourly error, so the standard 6.5 stays
+      (it is what weather services use) and the row says "adjusted", never "corrected". Open-Meteo's docs say its
+      `elevation` parameter does "statistical downscaling" (default: a 90 m terrain model) but publish no method
+      or lapse rate, so what it does between cell and pin is UNVERIFIED beyond the station check above.
+      NWS publishes no lapse rate for its own cell either (gridded MOS adjusts for elevation in passes of
+      varying strength).
+      WIDER CHECK (2026-10-14, after the first five stations): Open-Meteo's ARCHIVED FORECASTS (not analysis) against
+      SNOTEL hourly air temperature at 53 distinct station-seasons (about 20 stations in WA, OR, CA, ID, MT, WY, UT, CO, NM, AK,
+      5,040 to 11,680 ft; 14 days in January, 14 in July, 13 in October). Median absolute error 3.3 F overall: 3.2 F
+      in summer and in autumn (90th percentile 4.8 and 4.4), but 4.6 F in WINTER with a 90th percentile of 8.5 F, and
+      14 of 17 winter stations read too COLD (median bias -1.9 F, to -7.2 F at Harts Pass, Leavitt Lake, Smiley Mountain,
+      Webster Flat, Look Eyrie). It is not removable: the bias runs -7 to +2 F by site. The card says so ("in winter by
+      up to N, most often reading too cold") rather than correcting for it. CAVEAT: a snow station stands in a clearing
+      or basin, so a ridge or summit may differ from it in either direction; the figures describe stations, not summits.
+      The first five-station run (all autumn) was too optimistic to state alone.
+
+- **Ideal temperature and wind are RANGES, not presets (2026-10-14, owner's request).** The four chips (Default / Cool /
+  Mild / Warm) were exclusive, so a climber happy from cool to warm could not say so. Both are now a two-handle
+  slider (`lib/RangeSlider.jsx`): drag either end, so a wide range is one choice. Cool / Mild / Warm stay as
+  SHORTCUTS that set a range. Stored in deg F and mph (`defineRangePref` in lib/prefs.js, keys `climbmatch-cond-temp`
+  and `-wind`, validated on read: two finite numbers in bounds at least 4 F / 3 mph apart, anything else reads as
+  "nothing chosen"), so a change of display units never moves the choice; the handles SNAP to a number the climber
+  can see (whole degrees C when metric) through `uTempIn(uTempN())`. A band saved in the old chips is the starting
+  range. Wind had no preference before: it was the fixed rule full at 10 mph, nothing at 35. Unchosen it is still
+  that rule EXACTLY (range [0,10], fade 25 mph above), pinned in `check:conditions-score`; a climber who wants a
+  breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
+  Home/End, `touch-action:none`). TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
+  `innerWidth` 0) in an automation session, which makes screenshots fail with "0 width"; a NEW tab got a real size.
+
+- **The two "Your conditions" builds, MERGED (2026-10-14).** The drag-both-ends ranges above and the
+  per-discipline / account-saved store were built in parallel. One store now: `lib/CondPrefs.jsx`
+  (`climbmatch-cond-prefs-v2`, saved to `profile_condition_prefs`), whose every temperature scope (all, each crag
+  discipline, alpine, ice & mixed) and whose wind are `RangeSlider`s. Wind is a RANGE in the store (`wind: [lo, hi]`).
+  The single-range keys above (`climbmatch-cond-temp`, `-wind`) and the old preset key are READ ONCE, when the v2
+  key is absent, and become the all-climbing range and the wind range, so a climber who set either keeps it. The
+  scorer still takes the older shapes (`tempRange`, reported as bandKey `custom`; `windRange`; `windMax` read as
+  calm to that limit), and `check:conditions-score` holds each.
 
   - **YOUR TEMPERATURE RANGE ON ALPINE, ICE AND MIXED (2026-10-14, owner: "alpine would be a different
     discipline that only affects alpine routes"; "do what you recommend based on your online research").**
@@ -1739,5 +1794,5 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
     and the result is ONE neutral sentence under the day's flags (`RangeLine`, `rangeNote`). Two scopes,
     **Alpine** (alpine, mountaineering, scrambling) and **Ice & mixed**, neither inheriting the
     all-climbing range. It never reaches `dayFlags`, a flag level, a day-tab dot, a count or a start time,
-    and uses no red or amber. `check:alpine-conditions` section 12 holds each of those. Do not add a
+    and uses no red or amber. `check:alpine-conditions` section 17 holds each of those. Do not add a
     default range or a preset here without a source that states one.

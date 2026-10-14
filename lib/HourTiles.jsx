@@ -25,17 +25,31 @@ export function spanEnding(endHr) {
 }
 
 // One reading. `tone` is a palette colour for the value (and a tinted edge); `wide` takes the full row.
+// `when` is said in words: "at 2 PM" reads "At 2 PM" (the reading at that moment), a bare span like
+// "1–2 PM" reads "During 1–2 PM" (the total or peak over that hour).
+export function whenText(when) {
+  if (!when) return null;
+  if (/^\d/.test(when)) return "During " + when;
+  return when.charAt(0).toUpperCase() + when.slice(1);
+}
 export function Tile({ label, when, value, sub, tone, wide }) {
-  return <div style={{ background: C.surface, border: "1px solid " + (tone ? tone + "77" : C.border), borderRadius: 10, padding: "8px 10px", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
-    <div style={{ fontSize: 11, fontWeight: 800, color: C.textMuted, textTransform: "uppercase", letterSpacing: 0.4 }}>{label}</div>
-    {when ? <div style={{ fontSize: 11, color: C.textMuted, marginTop: 1 }}>{when}</div> : null}
-    <div style={{ fontSize: 17, fontWeight: 800, color: tone || C.text, marginTop: 3, lineHeight: 1.2, overflowWrap: "anywhere" }}>{value}</div>
-    {sub ? <div style={{ fontSize: 11.5, color: C.textSub, marginTop: 2, lineHeight: 1.4 }}>{sub}</div> : null}
+  return <div style={{ background: C.surface, border: "1px solid " + (tone ? tone + "77" : C.border), borderLeft: "4px solid " + (tone || C.borderHi), borderRadius: 10, padding: "9px 11px", minWidth: 0, gridColumn: wide ? "1 / -1" : undefined }}>
+    <div style={{ fontSize: 12, fontWeight: 800, color: C.textSub, textTransform: "uppercase", letterSpacing: 0.5 }}>{label}</div>
+    {when ? <div style={{ display: "inline-block", fontSize: 11.5, fontWeight: 600, color: C.textMuted, background: C.card, border: "1px solid " + C.borderLight, borderRadius: 20, padding: "1px 8px", marginTop: 3 }}>{whenText(when)}</div> : null}
+    <div style={{ fontSize: 21, fontWeight: 800, color: tone || C.text, marginTop: 5, lineHeight: 1.15, overflowWrap: "anywhere" }}>{value}</div>
+    {sub ? <div style={{ fontSize: 12, color: C.textSub, marginTop: 3, lineHeight: 1.4 }}>{sub}</div> : null}
+  </div>;
+}
+// A titled group of tiles ("Temperature", "Wind", ...) so a dozen readings read as three small topics.
+export function TileGroup({ title, children, min }) {
+  return <div style={{ marginTop: 12 }}>
+    <div style={{ fontSize: 12.5, fontWeight: 800, color: C.text, margin: "0 0 6px", paddingBottom: 4, borderBottom: "1px solid " + C.borderLight }}>{title}</div>
+    <TileGrid min={min}>{children}</TileGrid>
   </div>;
 }
 // A reading the forecast did not carry: said, never a blank and never a zero.
 export const NOT_MEASURED = <span style={{ color: C.textMuted, fontSize: 13, fontWeight: 600 }}>Not measured</span>;
 
 export function TileGrid({ children, min }) {
-  return <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(" + (min || 104) + "px,1fr))", gap: 6 }}>{children}</div>;
+  return <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(" + (min || 130) + "px,1fr))", gap: 6 }}>{children}</div>;
 }

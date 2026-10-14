@@ -133,7 +133,6 @@ npm run check:trailhead-directions # ONE way to drive there, coordinates with it
 npm run check:trailhead-direction-shape # ...and those directions END AT THE TRAILHEAD, not a hike narrative (in build; --live daily)
 npm run check:approach-section # ONE approach section; the most-used way in is first, marked, and carries the paragraph (in build)
 npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
-npm run check:crew-gear    # the crew's gear list reaches a REAL route (in build)
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)

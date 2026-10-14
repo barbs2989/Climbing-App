@@ -10,7 +10,9 @@
 // miss every renamed area and mint a duplicate beside it.
 //
 // Deliberately NOT a label: a number that is part of the name ("19 Mile Wall", ".50 Cal Tower",
-// "$600 Boulder"), initials ("J. R. Wall"), "A- and B- Side Crack Boulder", "[Redacted] Tank".
+// "$600 Boulder", "5-Mile Boulders", "12-Bar Boulder", "7-11 Crag", "5.10 Wall"), a trail mileage with no
+// dash (Safe Harbor's "1.0 Spectator Wall"), initials ("J. R. Wall"), "A- and B- Side Crack Boulder", "[Redacted] Tank".
+// Idempotent over every area name and every export path segment (64,663, 2026-10-14).
 // Punctuation markers may stack ("* A. Foo"); the letter/number label comes off ONCE, so
 // "g. V3 - Middle Earth" keeps the "V3" that is part of its name.
 const MARKERS = [
@@ -27,7 +29,18 @@ const LABELS = [
   /^\d{1,3}[a-z]?\s*[-–—:]\s+(?=\S)/,           // "12 - ", "3: "
   /^[A-Za-z]\d{0,2}\s*:\s*(?:\d{1,2}\s*:\s*)?/, // "B: ", "A2: ", and the stacked "Z1:1: "
   /^[A-Za-z]\s+[-–—]\s+/,                       // "A - " (a space BOTH sides: "A- and B- Side" is a name;
-];                                              //  one letter only: "V3 - Middle Earth" is a name)
+                                                //  one letter only: "V3 - Middle Earth" is a name)
+  // The same labels with NO space after them (2026-10-14: 21 + 29 + 16 areas the spaced rules missed,
+  // among them "1.The Left Wall" beside its own copy "The Left Wall"):
+  /^\d{1,3}[.)](?=[A-Z])/,                      // "1.The Left Wall", "01.Entrance Boulder" — not "5.10 Wall"
+  /^[A-Za-z]\d{0,2}\.(?=[A-Z][a-z])/,           // "A.Trad Dad Boulder", "D2.Renaissance" — not initials "J.R."
+  /^\d{1,2}-(?!(?:Mile|Bar|Minute|Bolt|Meter|Star)\b)(?=[A-Z][a-z])/, // "1-Upper Wall", "0-Bachar" — not "5-Mile
+                                                //  Boulders", "12-Bar Boulder", "41-Minute Dome", "3-Star", "4-H"
+  /^[A-Z]{2}:\s+(?=[A-Za-z0-9])/,               // a REGION code the source sorts a state by: Missouri's "EM: Amidon",
+                                                //  "CM: Capen Park", "SW: Fair Grove"; New Hampshire's "WM: Crawford Notch"
+  /^\d{1,3}(?:\.\d{1,2}){1,2}\s*[-–—]\s+(?=\S)/, // a guidebook's decimal numbering: "5.1 - Ramsay's Pinnacle",
+];                                              //  "7.2.1 - Birthday Rocks". Without the dash a decimal is a
+                                                //  name or a mileage ("5.10 Wall", "1.0 Spectator Wall"), kept.
 
 // A letter that BEGINS a name — read, and the doubtful ones researched, 2026-10-07. Every other
 // lone "E." / "N." / "Y - " in the catalog is one step of a lettered series of walls; these are not:

@@ -38,7 +38,7 @@ import { settledText, spinnerCoverage, looksLikeSpinner } from "./lib/render-set
 import { assertDbReachable, probeDbLatency } from "./lib/db-preflight.mjs";
 import { tapByName as tapByNameOn } from "./lib/tap-by-name.mjs";
 import { checkScreenCounts } from "./lib/screen-counts.mjs";
-import { MENU_SCREENS, openFromMenu } from "./lib/menu-screens.mjs";
+import { MENU_SCREENS, openFromMenu, tapMenuItem } from "./lib/menu-screens.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const argv = process.argv.slice(2);
@@ -731,7 +731,9 @@ try {
     // byte-identical twin and fail for being correct. That equality is worth asserting
     // rather than dodging, so it becomes the round-trip check at the end.
     for (const sub of ["Friends", "Groups", "Requests"]) {
-      if (!(await tapByName(sub))) throw new Error(`the Crew sub-tab ${JSON.stringify(sub)} is not present, or has lost its aria-label`);
+      // Friends, Groups and Requests left the Crew tab's bar: they open from the Menu now, and the
+      // Crew tab is crews only. Each still renders as a crewView, with a "← Crews" row to return.
+      if (!(await tapMenuItem(page, sub))) throw new Error(`the Menu tile ${JSON.stringify(sub)} is not present`);
       // capture() settles the screen, records it into --snapshot, and applies the same
       // min-length / FORBIDDEN / LANDMARKS / identical-twin rules every other screen gets.
       // The twin check is global, so a sub-view that silently renders another screen fails

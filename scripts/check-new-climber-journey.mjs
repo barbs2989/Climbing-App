@@ -542,7 +542,7 @@ try {
   // BY ACCESSIBLE NAME, never by text: the Crew sub-tab buttons render their badge count INSIDE
   // the control, so textContent is "Friends1" and every exact-text strategy misses. tapByName's
   // `^label(,|$)` anchoring is what accepts both "Friends" and "Friends, 1".
-  if (!(await tapByName(page, "Friends"))) dead("no Friends sub-view on the Crew tab");
+  if (!(await tapMenuItem(page, "Friends"))) dead("no Friends sub-view on the Crew tab");
   await settledText(page);
   const friendsViewBefore = await page.evaluate(() => document.body.innerText || "");
   if (friendsViewBefore.length < 200) dead(`the Crew:Friends view rendered ${friendsViewBefore.length} chars — nothing below would mean anything`);
@@ -615,7 +615,7 @@ try {
   await settledText(page);
   if (!(await tapByName(page, "Crews"))) dead("no Crew tab after the reload");
   await settledText(page);
-  if (!(await tapByName(page, "Friends"))) dead("no Friends sub-view after the reload");
+  if (!(await tapMenuItem(page, "Friends"))) dead("no Friends sub-view after the reload");
   await settledText(page);
   const friendsViewAfter = await page.evaluate(() => document.body.innerText || "");
   // FAIL CLOSED: a screen that rendered nothing satisfies every "is absent" assertion below.

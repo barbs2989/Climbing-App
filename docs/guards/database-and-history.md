@@ -564,6 +564,46 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     - **A tie the grade parser cannot break**: `gradeNumFor` scores "5.9" and "5.9+" alike, so "keep
       the HIGHER grade" needs a tie-break on the suffix ("+" over none over "-") or a fold quietly keeps
       the lower-reading one. 0278's planner (`higher.mjs`) applies it.
+    - **The source's ROUTE ids find what no name key can — 0284** (2026-10-14). Every route was resolved
+      to the source route id it came from (the import CSVs' URLs: name + wall + the wall's parent, else
+      name + wall within 15 km — 292,741 of 314,917 resolve to exactly one). 82 ids were held twice: 77
+      on ONE wall — the source's own renames imported under both names ("Silt and Bone" / "Silt and
+      Stone", "Slim Harpo" / "De Sable"), spellings `route_name_key` keeps apart ("He Bro" / "HeBro"), and
+      same-grade placeholders — and 5 across walls, every one a PLACE filed twice. That led to a spelling
+      census of areas (names equal without spaces, or one or two letters apart on one pin), each pair read
+      against the source's area tree: ~55 folds ("Coal Pit" / "Coalpit Buttress", "Pywiak" / "Pywiack
+      Dome", "Haimovi" / "Hiamovi Tower", empty twins), DeMoisy Peak and Steamboat Pass copies pinned 75
+      and 49 km off, and four parallel PARENTS this guard could not pair because one copy had no pin
+      (Q'Emiln Park, Gunpowder Falls - Hereford Area, The Ribcage, Red River Gorge's Zoo — the source now
+      files it as "The Zoo (CLOSED)", so the old copy folded INTO the closed one, parking kept off).
+      Kept apart, read: ice beside rock on one wall (Orange Wall, Emperor Slab(s), Barton High Cliff(s)),
+      separate discipline trees (True Summit Block(s)), and pairs the source itself keeps as two places
+      (High / Higher Energy Crag, Shardwal / Shartwall, Doja / Dojo Boulder). Mount Olympus / Mt Olympus
+      left the read list: #2302 kept it apart only because the leaf rule stopped two couloirs moving
+      onto a mountain with sub-areas; 0284 NESTS them as "Mount Olympus Couloirs". Two traps for the next
+      fold: the CLI's own overhead was ~80 s a call that day, so a dry run can 524 at the gateway while
+      the SQL is quick (a 524 says nothing about commit — read `schema_migrations`); and a child named
+      for its parent ("Blue River Bend" › "WM: Blue River Bend") cannot hand its climbs UP while it
+      exists (`routes_require_leaf`) — the child takes the parent's place instead (0284 step 5c).
+    - **Pairs sharing ONE or TWO climbs — 0285** (2026-10-14). 0278 read every pair sharing three or more;
+      the tail under 2 km was 266 pairs, each shared climb's two copies set beside the source tree's entry
+      or entries and both rows' FA, length and description, then read (four Sonnet readers, their flagged
+      blocks re-read): 157 merged — most where the SOURCE lists one climb on two walls itself (Pentecost on
+      Down Under and Outback Wall, one FA) — 154 kept apart (rock vs ice or boulder, different FAs, grades
+      far apart, and everything unsure), 6 places folded. Kept apart on a judgement worth knowing: Missouri's
+      closed Hiker's Boulder beside the park's Planet Express (Seymour, Ankylosaurus — no source entry says
+      which boulder — settled by their pages in 0288); Interstate Park's roped "The Pit" beside its bouldering tree's "Pit (AKA Arm Pit)".
+      Cupids Bower's old copy named its climbs "BA", "Master Degree", "PHD" with the same "5.9" on all three:
+      merged into the current names WITHOUT the higher-grade rule, because a uniform grade is not a reading.
+    - **The 34 0285 left unsure, settled from their own PAGES — 0288** (2026-10-14). The tree says where a
+      climb is FILED; only its route page says where it IS. Each copy's page (description, location, FA,
+      height) and the area page above it were read: 6 merged, 27 two climbs, 1 unsettled (South West
+      Overhang — nothing describes the V3-4 copy on High Ball Boulder). Seymour and Ankylosaurus went to the
+      PARK boulders: the source now files both under the closed Hiker's Boulder, but their own pages start
+      one beside The Last Samurai and put the other on the Lost World boulder. Traps met: the agents' WebFetch
+      cannot open those pages but a plain `fetch` from node can (and the local crawl's `_routes/` holds some);
+      and a sort number on the SOURCE's own climb names ("4. Super Collider") hid an entry from the name
+      match — read the area's list, not just the route ids the match returned.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
@@ -622,6 +662,21 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     NOT merged, on purpose: pairs that read as two climbs ("The Last / The Lost Gardener"), the
     UNSURE ones, and names whose grade or mark IS the difference ("The 5.7 / 5.7+ Corner"). Same-named
     placeholders with different grades ("Unnamed" 5.6 / 5.9) are different climbs, never candidates.
+  - **WIDENED by 0284** (2026-10-14): the rule needed a space after the label, so 66 labels sat in plain
+    sight with the guard green — 21 unspaced ("1.The Left Wall", "01.Entrance Boulder", "A.Trad Dad
+    Boulder", "D2.Renaissance"), 29 digit-dash series ("1-Upper Wall", Silver Lake's "0-Bachar" … "9-Secor"),
+    16 decimal guidebook numbers with a dash (Devil's Lake's "7.2.1 - Birthday Rocks") — plus 108 REGION
+    codes the source sorts a state by (Missouri's EM/CM/WM/SW/NM/XM/ZM, New Hampshire's "WM:" White
+    Mountains). Read and KEPT as names: "5-Mile Boulders", "12-Bar Boulder", "41-Minute Dome", "1-Bolt
+    Boulder", "20-Meter Freestyle Area", "3-Star", "4-H Nature Area", "7-11 Crag", "30-30 Rock", grade-named
+    walls ("5.10 Wall"), and a decimal with no dash — Safe Harbor's walls are named by TRAIL MILEAGE
+    ("1.0 Spectator Wall", "4.49 Cemetery Wall"), which tells a climber where the wall is. "EM: (closed)"
+    and "WM: (Closed) Kaysinger" keep their code: stripped, one would read as a bare "(closed)". Six
+    labels hid a sibling twin ("1.The Left Wall" beside a one-climb "The Left Wall"; three empty Missouri
+    copies) and were folded, not renamed. Devil's Lake's roped "7.1.1 - Railroad Amphitheater" and
+    "7.4 - Pony Barricade" meet same-named boulder fields of the source's separate BOULDERING tree once
+    stripped — two discipline trees of one place, listed in the area-duplicates read list like every
+    such pair.
   - Area children are ordered by `route_count`, then name (`useAreaChildren`), so the labels never
     set the order on screen and removing them lost no guidebook sequence.
 
@@ -1227,7 +1282,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
 
 Owner rule: a peak route with rock-climbing pitches (5th class and above) is **alpine**; mountaineering is a true walk-up or glacier/snow slog with no required rock pitch. Eldorado's East Ridge (5.7 at the top) was filed mountaineering. Three layers keep it so: migration **0280** (a BEFORE trigger turns mountaineering into alpine when `grade`, `rock_grade` or `alpine_grade` carries a YDS 5.x, keeping the row's other disciplines), `catOf` in `ClimbMatchCore.jsx` (same test on read, `hasFifthClassGrade`), and this audit (reads every `discipline=mountaineering` row; refuses fewer than 100 rows read, so an RLS-empty read is not a pass). Needs the anon key only. Not in build (it reads the database).
 
-- **Only the grade columns decide.** A 5.x in `pitch_detail`, `overview` or `gear` is NOT counted: the 2026-10-08 sweep of 157 candidates found stray pitch 5.x on Class 3-4 rows belonging to a different route on the same peak (Pandora's Box, Klawatti, Fury, Snowfield). Those were researched one by one (4 agents, 22 routes each), and 99 were relabelled (69 with a 5.x grade/pitch, 28 on a high/medium "alpine" verdict). A "5.2 miles" is a distance, not a grade (the regex excludes unit words).
+- **Only the grade columns decide.** A 5.x in `pitch_detail`, `overview` or `gear` is NOT counted: the 2026-10-08 sweep of 157 candidates found stray pitch 5.x on Class 3-4 rows belonging to a different route on the same peak (Pandora's Box, Klawatti, Fury, Snowfield). Those were researched one by one (4 agents, 22 routes each), and 106 were relabelled (69 with a 5.x grade/pitch, 28 on a high/medium "alpine" verdict). A "5.2 miles" is a distance, not a grade (the regex excludes unit words).
 - **Glacier crossing alone stays mountaineering** (see `glacier-means-mountaineering`): glacier + a REQUIRED 5th-class pitch or technical ice is alpine; the conditions card keeps the glacier flags for those (`condKind`).
-- **`HELD` list.** 10 rows whose own grade says 5.x but whose research found no required rock (Sahale Glacier, Storm King North Face, Tepeh Towers …). They are not exempt: relabel them or correct their grade, then delete the id. Note the trigger will flip any of them on its next grade edit.
+- **`HELD` list: one row.** Dragontail's Pandora's Box West Route (Class 3 snow couloir; its 5.6 is an optional summit-pinnacle pitch in `rock_grade`). The other nine rows held on 2026-10-08 were settled by reading each row, not its fingerprint: seven carry their own 5th-class evidence (`rock_grade` "low 5th"/"Easy 5th", a rack, a rope for pitched climbing, a pitch count) and went alpine (Anderson's Thumb, Burnt Boot N Ridge, Inner Constance NW Buttress, Goatshead Spire, Crowder NE Ridge, Storm King N Face, Tepeh Towers); Sahale Glacier and Overcoat East Face had a STALE 5.x (sources: glacier plus Class 3-4, a low-5th move only possible on the summit block) and were regraded to Class 4, staying mountaineering. `scripts/oneoff/fix-held-mountaineering-grades.mjs` did it.
 - Scrambling verdicts from the research (Ellinor, North Gardner, Plummer, Tricouni SW, Windy Peak) were NOT applied: moving mountaineering to scrambling was not part of the ask.

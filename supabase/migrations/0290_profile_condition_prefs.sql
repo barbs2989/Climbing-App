@@ -11,8 +11,9 @@
 -- prefs is the app's own object, validated in the client (lib/CondPrefs.jsx cleanPrefs) and bounded
 -- here so a bad write cannot store anything large or of the wrong kind:
 --   {"rain":"normal"|"cautious",
---    "temp":{"all":[lo,hi],"sport":[lo,hi],"trad":[lo,hi],"toprope":[lo,hi],"bouldering":[lo,hi]},
---    "windMax":<mph>}
+--    "temp":{"all":[lo,hi],"sport":[lo,hi],"trad":[lo,hi],"toprope":[lo,hi],"bouldering":[lo,hi],"alpine":[lo,hi],"ice":[lo,hi]},
+--    "wind":[lo,hi], "rhMax":<%>, "sun":"sun"|"shade"|"either", "aq":"sensitive"|"relaxed", "window":[startHr,endHr]}
+-- (Numbered 0290: written as 0284, renumbered when main took 0284 first. Applied by hand 2026-10-14.)
 -- Temperatures are degrees F and wind is mph whatever units the climber reads them in. Every key is
 -- optional: a missing one means "use the default", never zero.
 create table if not exists public.profile_condition_prefs (
