@@ -15,6 +15,7 @@ database tables · connections to other areas · the guards that protect it · k
 | Route page | [docs/features/route-page.md](docs/features/route-page.md) | `RouteDetail.jsx`: loading a route, sub-tabs, stars/ratings, crowd counts, contributions, photos, Planner |
 | Maps & area browser | [docs/features/maps-and-area-browser.md](docs/features/maps-and-area-browser.md) | Climbs tab: area tree, area map, place search, filters, search normalisation, route map |
 | Profile & settings | [docs/features/profile-and-settings.md](docs/features/profile-and-settings.md) | Profile, résumé, trust/verification, photos, units/date/visibility/notification settings |
+| Route quality control | [docs/features/route-quality-control.md](docs/features/route-quality-control.md) | Held edits and owner review, per-field confidence and locks, strikes and contribution standing, flags, notices |
 | Logbook, crews & Home | [docs/features/logbook-crews-home.md](docs/features/logbook-crews-home.md) | Objectives, logged climbs, crews and their Ready state, messaging, the Home dashboard |
 
 Not yet documented here (add a doc when you next work in one): Groups, moderation/safety,
@@ -24,6 +25,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Route quality control, step 1** (0307–0309): every field edit is held for the owner; per-field confidence levels with a server-side lock on high; rejection strikes → warned/restricted/banned; route flags; in-app notices; `check:contrib-field-columns`.
 - **Trip report shows only what the reporter entered**, sectioned like the log form; the route's grade/gain/distance tiles and its GPS line are gone from it, a reporter's own track is read on open (`useLogTrack`), the route page's *Recently climbed* row opens the whole report, and the log form offers *Add topo photo* (`lib/TripReport.jsx`, `lib/LogAscent.jsx`).
 - **Real climbers, batch 3**: real names stay private everywhere (comments, mentions, crew chips, contributors, presence, résumé, share card, guides' reviews); real friends' objectives, ✓, activity feed and kudos work.
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).

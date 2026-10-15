@@ -42,7 +42,8 @@
       "region",
       "rock",
       "rock_basis",
-      "route_count"
+      "route_count",
+      "season_months"
     ],
     "belay_catches": [
       "belayer_id",
@@ -205,7 +206,25 @@
       "route_id",
       "status"
     ],
+    "contribution_fields": [
+      "column_name",
+      "form_key",
+      "is_gear",
+      "is_prose",
+      "label"
+    ],
+    "contribution_standing": [
+      "last_strike_at",
+      "reason",
+      "set_at",
+      "set_by",
+      "status",
+      "strikes",
+      "until",
+      "user_id"
+    ],
     "contributions": [
+      "applied_value",
       "area_id",
       "contributor",
       "created_at",
@@ -699,6 +718,26 @@
       "route_ids",
       "route_name"
     ],
+    "route_field_confidence": [
+      "field",
+      "level",
+      "reason",
+      "route_id",
+      "set_at",
+      "set_by"
+    ],
+    "route_flags": [
+      "created_at",
+      "field",
+      "id",
+      "note",
+      "reporter",
+      "resolution_note",
+      "resolved_at",
+      "resolved_by",
+      "route_id",
+      "status"
+    ],
     "route_ratings": [
       "created_at",
       "route_id",
@@ -873,6 +912,16 @@
       "name",
       "route_ids",
       "shared",
+      "user_id"
+    ],
+    "user_notices": [
+      "body",
+      "created_at",
+      "id",
+      "kind",
+      "link",
+      "read_at",
+      "title",
       "user_id"
     ],
     "user_reports": [
