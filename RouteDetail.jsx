@@ -21,7 +21,7 @@ import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
 import ShadeMap from "./lib/ShadeMap";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, savedAgo } from "./lib/offline";
-import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecast, fetchCragAir, fetchCragClimate } from "./lib/forecast";
+import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCragAir, fetchCragClimate } from "./lib/forecast";
 import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
@@ -3983,7 +3983,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     if(!hasPt||!on)return;
     if(_cragWx[ck]){setWx({data:_cragWx[ck]});return;}
     let live=true;setWx(null);
-    fetchCragForecast(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
+    fetchCragForecastMeasured(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
     return function(){live=false;};
   },[ck,tries]);
   useEffect(function(){
@@ -4122,6 +4122,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     {sec("Rock & drying",<div style={condBox}>
       {condRow("Rock",rockLbl,rk?C.text:C.textMuted)}
       {condRow("Drying time","About "+score.dryNeed+" h after a typical rain"+(cp.rain==="cautious"?" (you give it longer)":"")+"; less after a drizzle, longer after a soaking")}
+      {condRow("Past rain",score.rainMeasured?(function(){var t=score.rainMeasured.through,l=score.local(t);return "Measured up to "+clockAt(score,t)+(l.date===days[0].date?" today":" "+new Date(l.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{weekday:"long",timeZone:"UTC"}))+"; forecast after that";})():"Modelled — no rain measurements reach this crag",score.rainMeasured?C.text:C.textMuted)}
       {curF?condRow("Last rain",curF.raining?"In the past hour":curF.atLeast?"None in the past 14 days":agoH(curF.val)+" · "+uPrecip(curF.rain24)+" in the day before it stopped"):null}
       {cur&&cur.dryFrac!=null?condRow("Rock now",cur.dryFrac>=1?(cur.factors.dry&&cur.factors.dry.damp?"Dried out from rain, but the air is at its dew point — shaded rock may be damp":"Likely dry"):"Likely wet — about "+Math.round(cur.dryFrac*100)+"% dried",cur.dryFrac>=1?C.green:C.amber):null}
       {dryLine?condRow("Likely dry from",dryLine):null}
