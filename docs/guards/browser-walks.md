@@ -224,18 +224,32 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     **silently**, so a caller that ignored it went on clicking whatever was on screen. Six
     attempts failed that way before the cause was clear. `tapByName()` clicks by **accessible
     name** instead, which is authored (`aria-label`) and so does not move when the count does.
-    **Since the Menu restructure (2026-10-14) Friends, Groups and Requests are no longer on a Crew
+    **Since the Menu restructure (2026-10-14) Friends and Requests are no longer on a Crew
     sub-tab bar: they open from the Menu's "Yours" tiles (`tapMenuItem`, which also accepts a tile
     that carries a count, "Requests · 3"), still render as `crewView`s, and return through a
     "← Crews" row. The Crew tab itself is crews only; tapping the Crews nav resets `crewView`.**
     Crews is *not* captured: `crewView` defaults to it, so it is the `Crew` screen already
     captured, and that equality is asserted as a round-trip rather than dodged.
+  - **GROUPS IS A SCREEN OF ITS OWN (2026-10-14, Step 2 of the Facebook-style groups plan): NAV id
+    `groups`, `bar:false` like Profile, opened by the Menu's "Groups" tile.** So it is in every
+    guard's tab list (`check:screen-lists` demanded all twelve), and `MENU_SCREENS` maps it —
+    `openFromMenu` now matches a tile by its first line of text when the control has no
+    `aria-label`, which the tiles do not. Its five tabs (For you · Your groups · Your activity ·
+    Discover · Events) are captured by the `groups-tabs-switch` flow, each with a 300 floor and a
+    heading landmark only its own body renders (`ALL YOUR GROUPS`, `EVENTS YOU’RE GOING TO`,
+    `GROUPS TO JOIN`, `UPCOMING IN YOUR GROUPS`); For you is the main walk's `Groups` capture and
+    the round-trip target. The 300 floor is **weak on its own** — the header and tab strip are ~250
+    — which is why the landmarks carry the proof. **Those headings carry their count on the same
+    line** ("ALL YOUR GROUPS · 0"), and the landmark test was an exact whole-line match, so all
+    five failed in CI on the first push, which I had not walked locally. `capture()` now also
+    matches each line with a trailing " · N" removed. That is additive: replayed over CI's own
+    `ui-screens.json`, it moved those 5 to found and left the other 10 landmarks found.
     `Crew:Friends` landmarks **`PEOPLE YOU’VE CLIMBED WITH`** — the surface #713 revived onto
     real `logs`, which until now nothing rendered in any guard (`check:dead-flag-gates` proves
     the constant feeding it is not dead, a different question from whether it reaches a
     screen). Uppercase with a curly apostrophe because `innerText` returns the CSS-transformed
-    text, not the source string. `Crew:Groups` gets a 300-char floor: at 353 it is the app's
-    shortest screen and a **correct** empty state, so the 400 default would fail working code.
+    text, not the source string. `Crew:Groups` got a 300-char floor (at 353 it was the app's
+    shortest screen and a **correct** empty state); the floor moved to the Groups screen with it.
     Injection-tested: removing the aria-label fails naming the sub-tab, and neutering the
     revived block fails naming the missing landmark.
 - **`check:zero`** walks all six tabs and every overlay the app declares (49 today) as a
@@ -359,7 +373,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
     - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
-      screen. FIXED — the landmark is `/saved searches|trip pack/i` now.** It led with `saved
+      screen. FIXED — the landmark is `/saved searches/i` now.** It led with `saved
       areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
       on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
       — all in one place."* One alternative matching is enough, so a capture that never left the
@@ -376,12 +390,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         `SAVED SEARCHES` for the card heading, so without `/i` the *new* landmark would miss.
       - **`offline library` appeared ZERO times anywhere in the app**, so a third of the alternation
         had never matched once and could only ever report a false miss.
-      - Both survivors are `<MeH>` headings rendered **unconditionally** inside the
-        `logbookTab==="lists"` region, so neither moves with the data or with the outage — which is
-        the rule the comment states and the old landmark broke. `saved searches` is unique
-        app-wide; `trip pack` also heads two cards on the **Profile** tab, which a Logbook capture
-        cannot contain, and is kept as a second landmark so a single rename fails CLOSED rather
-        than silently.
+      - The survivor is a `<MeH>` heading rendered **unconditionally** inside the
+        `logbookTab==="lists"` region, so it does not move with the data or with the outage — which
+        is the rule the comment states and the old landmark broke. `saved searches` is unique
+        app-wide. There used to be a second alternative, `trip pack`, which also headed two cards
+        on the **Profile** tab; #2368 removed the trip pack and the term with it, so it is gone from
+        the landmark too (an alternative that matches nothing is the `offline library` defect
+        above). A rename of the one remaining heading now leaves the landmark matching nothing,
+        which `check:outage-landmark` reports at build time.
       - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
         two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
         changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own

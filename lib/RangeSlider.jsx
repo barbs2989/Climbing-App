@@ -14,13 +14,18 @@ import { C } from "../ClimbMatchCore.jsx";
 /* THUMB is the circle you SEE; HIT is the area that takes the touch. Apple's guideline for a touch target is
    44 pt (WCAG 2.2 AA asks 24 px), and a 28 px circle is a poor mark for a thumb, so the handle is a 44 px
    transparent button around the same circle. Two handles at the narrowest range sit 11 px apart, so their
-   hit areas overlap; the high one is on top, and each handle's OUTER edge stays its own. */
+   hit areas overlap, and each handle's OUTER edge stays its own. WHICH ONE IS ON TOP: the low handle once the
+   range sits past the middle of the track, the high one before it. A fixed "high on top" stranded the low
+   handle at the top of the scale: pushed together at the max, every touch landed on the high handle, which
+   cannot go further right, so the range could not be widened again. Past the middle the free direction is
+   left, which is the low handle's; before it, right, the high one's. */
 const THUMB = 28, HIT = 44;
 export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, snap, step }) {
   const box = useRef(null);
   const [lo, hi] = value;
   const clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
   const pos = function (v) { return ((v - min) / (max - min)) * 100; };
+  const loOnTop = (pos(lo) + pos(hi)) / 2 > 50;
   const move = function (which, raw) {
     const v = snap(clamp(raw, min, max));
     if (which === "lo") { const n = Math.min(v, hi - minGap); if (n !== lo) onChange([clamp(n, min, hi - minGap), hi]); }
@@ -44,7 +49,7 @@ export function RangeSlider({ label, min, max, minGap, value, onChange, fmt, sna
       onKeyDown={key}
       onPointerDown={function (e) { try { e.currentTarget.setPointerCapture(e.pointerId); } catch (x) { /* no capture: the move events still arrive over the thumb */ } e.preventDefault(); e.currentTarget.focus(); }}
       onPointerMove={function (e) { let cap = false; try { cap = e.currentTarget.hasPointerCapture(e.pointerId); } catch (x) { cap = false; } if (!cap) return; const raw = fromPointer(e); if (raw != null) move(which, raw); }}
-      style={{ position: "absolute", top: 0, left: "calc(" + pos(v) + "% - " + HIT / 2 + "px)", width: HIT, height: HIT, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", cursor: "grab", touchAction: "none", outlineOffset: -2, zIndex: which === "lo" ? 2 : 3 }}>
+      style={{ position: "absolute", top: 0, left: "calc(" + pos(v) + "% - " + HIT / 2 + "px)", width: HIT, height: HIT, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", cursor: "grab", touchAction: "none", outlineOffset: -2, zIndex: which === "lo" ? (loOnTop ? 4 : 2) : 3 }}>
       <span aria-hidden="true" style={{ width: THUMB, height: THUMB, borderRadius: "50%", background: C.green, border: "3px solid " + C.surface, boxShadow: "0 0 0 1px " + C.green + ", 0 1px 4px rgba(0,0,0,0.4)", pointerEvents: "none", boxSizing: "content-box" }} />
     </div>;
   };

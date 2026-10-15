@@ -218,7 +218,7 @@ if (refFindings.length) {
   console.error("`.map(cById)` is a REFERENCE, not a call, so section 1's `cById(` pattern walks past it");
   console.error("-- which is how a real group's card came to draw zero avatars under a header saying");
   console.error("\"7 members\". A DB roster carries uuids and cById searches seed CLIMBERS by integer id.");
-  console.error("Resolve through the group's profiles query (see _asCardMember), or declare it in");
+  console.error("Resolve through the group's profiles query (see groupMemberFromRow), or declare it in");
   console.error("ALLOW_REF with a measured reason.");
   process.exit(1);
 }

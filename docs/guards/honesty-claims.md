@@ -513,9 +513,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       judged on FAIL lines only; the harness refuses any expectation already present in the green
       run. Case 1 is the real caption restored **verbatim**. **Two must stay SILENT** — a different
       honest wording, and *"logged"* once the branch really is fed logs.
-- **`check:offline-claims`** asserts that **an offline promise is backed by the write that makes it
-  true**. Static (Babel over the two app files plus a source read of `lib/db.js` and
-  `lib/offline.js`), so it sits in `npm run build`, at **1.34x `check:policy-claims`**.
+- **`check:offline-claims`** asserts that **an offline promise is backed by the mechanism that makes
+  it true**. The offline feature is the **state download** (Home's Pinned states, Manage areas);
+  there has been **no per-route trip pack since #2368**. Static (Babel over `ClimbMatch.jsx`,
+  `ClimbMatchCore.jsx` and `lib/Help.jsx`, plus source reads of `RouteDetail.jsx`, `lib/db.js`,
+  `lib/offline.js` and `scripts/build-state-snapshots.mjs`), so it sits in `npm run build`. The
+  last timing on record, before the 2026-10-14 restore, was **1.34x `check:policy-claims`**.
   - **QUOTED AS A RATIO, NOT A CLOCK, and that is not hedging.** Taken back to back with
     `check:policy-claims` on one box, best of three. A wall-clock figure from this machine is
     fiction — the three readings for this guard alone were **30.5s, 40.9s and 45.6s** while it
@@ -524,93 +527,85 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     same minute.**
     - **THE RATIO IS MORE ROBUST THAN THE CLOCK AND IS NOT LOAD-PROOF EITHER**, which is worth
       knowing before treating one as a fact. The pre-rewrite guard was recorded at **1.65x** by the
-      same method; this one measures **1.34x** having gained two source reads and lost nothing.
-      Some of that gap is real and some is contention, and the measurement cannot separate them.
-      Read a ratio as an order of magnitude, not a regression.
-  - **THIS GUARD NOW ASSERTS THE OPPOSITE OF WHAT IT USED TO, AND THE REVERSAL IS THE ENTRY.** Its
-    subject was *"a route is never on the device; only a downloaded state is"*, because the app had
-    two things called offline and one was a lie: `downloadStateOffline()` writes a state's whole
-    subtree to IndexedDB and four `lib/db.js` hooks read it back, while `offline` in
-    `ClimbMatch.jsx` was `useState([])` — a list of route ids, never persisted, cleared by the
-    sign-in reset, with **nothing about the route stored**. #1585 rewrote twelve strings to say so.
-    **The trip pack is a real download now**, so the copy that guard protected became false in the
-    other direction and a rule still forbidding those claims would forbid the fix. Same shape as
-    `check:policy-claims` §3, where gating a control made a policy sentence true and un-gating it
-    made the replacement false again: **a promise is only true relative to a build**, and a guard
-    pinning one has to move with it. The old assertions were *removed*, not reworded — an
-    assertion kept past the fact it describes is stale bookkeeping, including inside a guard.
-  - **WHAT PACKING ACTUALLY STORES, measured rather than described.** `packRouteOffline()` fetches
-    the route's own row with the same `areas` embed `useRoutesByIds` asks for and puts it in an
-    IndexedDB `pack` store: description, beta, approach, descent, pitch-by-pitch, gear, hazards,
-    waypoints, grades and the GPX track. **NOT** photos or topo images (`contributions`/`topos` plus
-    storage), **not** other climbers' condition reports (`contributions`/`climb_logs`), and **not**
-    map tiles — the service worker deliberately does not touch cross-origin requests. So the card
-    that lists what you have must keep naming what you do not, which is §4 and is the load-bearing
-    half: **a guard that only ever demands the mechanism EXISTS is satisfied by claiming
-    everything.**
-  - **...AND THE PACK CARRIES A SNAPSHOT NOW (2026-09-24, user-approved), SO §4 AND §5 MOVED AGAIN
-    AND §10 WAS ADDED.** `packRouteWithSnapshot()` (lib/db.js) stores, beside the row, the latest
-    **20 trip reports** with their authors' public profile fields, the route's **contributions
-    minus photos**, and — taken by the route page while a packed route is open online, kept under
-    3 h old — the **raw forecast responses** (`lib/forecast.js`, shared with WeatherPanel so one
-    parser processes live and saved data). The climber's **own itineraries** are mirrored per
-    account in `meta`. Each reader falls back through `orOfflineExact`, and the two array readers
-    return a `_packedAt` stamp that survives only because their hooks set
-    **`structuralSharing: false`** — drop that and the saved copy renders exactly like a live one,
-    the over-claim in its worst form. §10 asserts write + read + stamp + dated copy for each; the
-    `stamp-lost`, `reports-fallback-gone`, `photos-in-snapshot` and `row-write-gone` injection
-    cases prove it fires. "Other climbers' reports" came OFF the §4 disclaimer and the §5 deny-list
-    for the same reason reports came off the not-stored list: they are stored. Photos, topo images
-    and map tiles still are not. Verified end to end as a real signed-in climber with the data
-    network cut by `scripts/oneoff/verify-trip-pack-offline.mjs`.
+      same method; the pack-era one measured **1.34x** having gained two source reads and lost
+      nothing. Some of that gap is real and some is contention, and the measurement cannot
+      separate them. Read a ratio as an order of magnitude, not a regression.
+  - **THIS GUARD HAS MOVED FOUR TIMES, AND EACH MOVE IS THE LESSON.** (1) Its subject was *"a route
+    is never on the device; only a downloaded state is"*: `offline` in `ClimbMatch.jsx` was
+    `useState([])`, a list of route ids with **nothing about the route stored**, and #1585 rewrote
+    twelve strings to say so. (2) The TRIP PACK then became a real download, so that copy became
+    false in the other direction and the guard reversed — **a promise is only true relative to a
+    build**, the shape `check:policy-claims` §3 records. (3) #2368 removed the trip pack from every
+    screen and cut this guard to the state download's own sections — and cut too much. (4) The
+    2026-10-14 restore, below.
+  - **WHEN A FEATURE IS REMOVED, ASK WHICH ASSERTIONS BELONGED TO IT AND WHICH TO THE MACHINERY IT
+    SHARED.** #2368 deleted §4 (say what is NOT saved), §5 (claim nothing that is not) and §10 (the
+    saved copy is read back and dated) along with the pack. But the readers §10 guarded —
+    `offlinePackReports` / `offlinePackContribs` / `offlinePackProfiles`, the `_packedAt` stamp the
+    two array hooks keep alive with **`structuralSharing: false`**, and `photosUnavailable` reading
+    that stamp — are **named for the pack and are not its property**: `lib/offline.js`
+    `savedForRoute` serves a downloaded state's reports, corrections and reporter names through the
+    same functions. So the state download's promise *"plus recent trip reports and corrections"* had
+    lost its only guard while every check stayed green. Restored, minus the pack's own links (the
+    snapshot write and its photo filter, the forecast snapshot, the map's tiles and Leaflet):
+    - **§10 (8 assertions)**: the reports, corrections and names hooks still fall back to the device
+      with the stamp kept; `useMyItineraries` still mirrors the climber's plans; `lib/offline.js`
+      still stamps the STATE copy; the route page dates the saved reports in both places it shows
+      them (`savedAgo(reportsPackedAt)`); `photosUnavailable` reads the stamp; and the download
+      stores **no photo rows**, on the live path AND in the nightly state file (`kind=neq.photo`).
+    - **§4 (2 assertions)**: both Help surfaces that explain the download — the FAQ (`lib/Help.jsx`)
+      and the tour (`HELP_FEATS`) — still say **photos and map tiles are not saved**. Asserted as a
+      FACT (a negated sentence naming both), never as one wording.
+    - **§5 (1 assertion)**: the deny-list, now scanning the **state-download screens**: the Manage
+      areas dialog (found by its aria-label, because its intro paragraph references none of the
+      download state), every region of `ClimbMatch.jsx` around `downloadedStates` / `myPins` /
+      `dlBusy` / the download, remove and pin handlers (Home's Pinned states card, the setup
+      checklist's download item, the toasts), the whole Help FAQ and the Help tour. It forbids a
+      sentence naming photos, topo images or map tiles beside a word saying they are stored.
+      Measured 2026-10-14: ClimbMatch 31 regions / 202 strings, FAQ 124, tour 75.
+  - **WHAT THE TRIP PACK STORED, for the record, because its readers outlived it.** `packRouteOffline`
+    put the route row in an IndexedDB `pack` store; `packRouteWithSnapshot` added the latest 20
+    reports with their authors, the non-photo contributions and, separately, a raw forecast; from
+    2026-10-07 it also saved USGS map tiles for the approach (`lib/offlineTiles.js`). Those writers
+    are now **uncalled** and were deliberately left in place: a device that packed a route before
+    #2368 still holds that row, snapshot and tiles, and `offlineRoutesByIds`, the readers above and
+    `baseTileLayer`'s saved-tile fallback still read them. Whether to delete the writers and clear
+    the stores is an owner decision, not a cleanup.
     - **The fresher ROW wins, not the pack (2026-09-25).** `offlineRoutesByIds` used to serve a
       packed row unconditionally, so a June pack hid a September state download. It now compares the
       pack's `refreshedAt` (else `packedAt`) with the state's COMPLETED `savedAt`; ties, unknown times
       and incomplete downloads keep the pack. `scripts/oneoff/verify-pack-vs-state-freshness.mjs`
       runs the real module against real IndexedDB in 8 cases, and fails exactly the two newer-state
-      cases against the old code.
-  - **...AND THE PACK CARRIES A MAP NOW (2026-10-07, user-requested), SO §4 MOVED A THIRD TIME AND
-    §11 WAS ADDED.** `packRouteWithSnapshot()` calls `saveRouteMapOffline()` (`lib/offlineTiles.js`):
-    USGS topo + imagery tiles (public domain — OSM, Esri and OpenTopoMap terms forbid bulk offline
-    download) for a 1 km corridor along the route's own track/waypoints/logistics trailhead/area
-    point, or a 2 km circle round a single-point crag, zooms 8-16, capped at 1,500 a layer. Measured:
-    ~168 tiles a layer for an Index crag, 785 for Buck Mountain's South Ridge. Tiles are in their OWN
-    IndexedDB, never Cache Storage — `public/sw.js`'s `activate` deletes every cache but the shell.
-    `baseTileLayer` (lib/mapKit.jsx) falls back tile-by-tile to the saved copy when a tile fails, and
-    crops the z16 ancestor past 16. The service worker's one cross-origin exception caches the pinned
-    Leaflet files, which packing pre-fetches. §4 now demands "Photos and topo images are not" AND
-    that the card BOUNDS the map ("covers only the ground around the approach"); §11 asserts write,
-    IndexedDB storage, the map's fallback read, removal on unpack, a chip counted from stored tiles,
-    Leaflet offline, and a toast that distinguishes full / partial / failed.
+      cases against the old code. Still live: an old device's pack rows are still compared.
   - **THE EMBED SHAPE IS EXPORTED FROM `lib/offline.js` AND IMPORTED BY `lib/db.js`**, not written
-    twice. A pack carrying fewer area fields than the network select renders **"undefined"** where
-    the peak name goes — `dbRouteToCamel` builds `_dbArea` from `r.areas` whenever it is TRUTHY, so
-    a thin embed both prints the word and suppresses `openRoute`'s backfill. That is a defect this
-    repo has already shipped once from exactly this kind of drift, recorded under
+    twice. A stored row carrying fewer area fields than the network select renders **"undefined"**
+    where the peak name goes — `dbRouteToCamel` builds `_dbArea` from `r.areas` whenever it is
+    TRUTHY, so a thin embed both prints the word and suppresses `openRoute`'s backfill. That is a
+    defect this repo has already shipped once from exactly this kind of drift, recorded under
     `check:area-name-embed`.
-  - **§2 IS THE SILENT HALF AND IS WHY THIS IS A GATE.** Every route the pack, the wishlist and the
-    logbook resolve comes through `useRoutesByIds`, which had **no offline fallback** — so with no
-    signal it threw, `dbRouteById` was empty, `routeById()` returned undefined for every packed
-    climb, and the list dropped the rows. Remove that one fallback and the write still works, the
-    copy still reads correctly, nothing renders differently, **no identifier moves** — and the pack
-    empties at the trailhead. `audit:silent-reverts` says in its own closing caveat that it cannot
-    see a change of that shape.
-  - **§3 ASSERTS AN ORDER, NOT A CALL.** The pack list is a mirror of the store, and the sign-in
-    reset clears `offline` on every `uid` transition — so a hydration effect declared **above** that
-    reset fills the list and is wiped microseconds later, leaving a signed-in climber with an empty
-    pack whose routes are on disk. That is precisely the defect `check:verification-fallback`
-    exists for, arriving on a second feature, and no render can see it. It is also why the effect is
-    keyed on `[uid]` rather than `[]`: the reset fires on the transition, so a mount-only hydration
-    loses the race by construction.
+  - **§2 IS THE SILENT HALF AND IS WHY THIS IS A GATE.** Every route the wishlist, the logbook and a
+    downloaded state's lists resolve by id comes through `useRoutesByIds`, which had **no offline
+    fallback** — so with no signal it threw, `dbRouteById` was empty, `routeById()` returned
+    undefined for every one, and the lists dropped the rows. Remove that one fallback and the write
+    still works, the copy still reads correctly, nothing renders differently, **no identifier
+    moves** — and the lists empty at the trailhead. `audit:silent-reverts` says in its own closing
+    caveat that it cannot see a change of that shape.
+  - **§1 and §3 went with the pack and are not coming back.** §1 asserted the pack's write; §3
+    asserted that the pack list's hydration was declared BELOW the sign-in reset that clears
+    `offline` (effects run in declaration order, so a hydration above it is wiped on the same `uid`
+    transition — the `check:verification-fallback` defect on a second feature). Neither has a
+    subject now. The ORDER rule itself still applies to anything hydrated on `[uid]`.
   - **TWO OF THE OLD GUARD'S SIX NEEDLES WERE DEAD, and it went unnoticed for the life of the
     rule.** It excused any sentence matching `\b(?:not|no|nothing|never|…)\b` as negated — and its
     own `with no signal` and `no-signal days` needles **cannot match a sentence that does not
     contain the word "no"**. Every claim phrased the most natural way excused itself, and a clean
     run looked identical to a working one. Found by the guard passing on copy it should have caught,
     not by reading it. §5 strips the no-signal idioms **before** testing for negation so the same
-    trap cannot return, and the surviving deny-list is narrowed to the things that genuinely are
-    still not stored. *A dead branch in a guard reads as coverage*, which this file records for
-    `check:policy-claims` and `check:screen-lists` and which arrives here a third time.
+    trap cannot return. *A dead branch in a guard reads as coverage*, which this file records for
+    `check:policy-claims` and `check:screen-lists` and which arrives here a third time. The
+    negation list now includes *aren't*, because the Help copy's own disclaimer reads *"Photos and
+    map tiles aren’t saved"* and a list without it would have scanned the disclaimer as a claim the
+    moment a `downloaded` landed in the same sentence.
   - **`indexedDB.open` WENT 1 → 2 AND THE UPGRADE IS IDEMPOTENT PER STORE, which is not
     defensiveness.** Installs in the wild hold v1 (`areas`/`routes`/`meta`) and a fresh one starts
     at 0, so a bare `createObjectStore` for the v1 set throws `ConstraintError` on the upgrade path
@@ -637,34 +632,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     which is exactly how the persistence would have ended up on one of them. `savedAreaIds()`
     returns **null** for "nothing was ever stored" as distinct from an empty list, or a bookmark you
     had deliberately removed comes back on the next load.
-  - **The demo pack entry came OUT**, on the argument the `downloadedStates` comment beside it
-    already makes: now that packing really writes, a seeded entry claims a climb is on the device
-    when nothing is, and it is the one claim a climber cannot check until they are somewhere with
-    no signal.
-  - **A packed id the app cannot resolve now RENDERS**, rather than being dropped by
-    `if(!r)return null`. The heading counts `offline.length`; a filtered list under it is one fact
-    derived two ways on one screen, the defect recorded under the group roster. The placeholder row
-    stays removable, or an unreadable entry is stuck in the pack forever.
-  - Fails **closed**: an unreadable or unparseable source, a missing `useRoutesByIds` (`ANCHOR
-    LOST`), a sign-in reset that no longer clears `offline` (which would make the ordering test
-    vacuous), per-file region/string floors, and fewer than **18 assertions RUN** — a guard that
-    quietly stops asking half its questions still exits 0. That floor caught its own author
-    miscounting on the first run.
-  - **The floors are PER FILE.** A global floor is satisfied by the other file: renaming the trigger
-    in `RouteDetail.jsx` alone leaves ClimbMatch's regions standing, so the guard would report a
-    clean sweep having inspected one file of two — the `check:control-names` defect, whose floor was
-    *"at least one"* and which a **partial** restyle left checking 1 of 9.
-  - Injection-tested **15/15** (`scripts/oneoff/inject-offline-claim-cases.mjs`), each case proving
-    its edit landed **by checksum**, restoring the file byte-identically, and **naming the text its
-    own failure must carry** — a case judged on the exit code alone is satisfied by a run that died
-    for an unrelated reason. Expectations are matched against **FAIL lines only**, never against the
+  - Fails **closed**: an unreadable or unparseable source; `ANCHOR LOST` for a missing
+    `useRoutesByIds`, any §10 hook, `HELP_FEATS`, or the Manage areas dialog's aria-label; a
+    **per-surface** region/string floor in §5; and fewer than **34 assertions RUN** — a guard that
+    quietly stops asking half its questions still exits 0.
+  - **The floors are PER SURFACE.** A global floor is satisfied by the other surface: renaming the
+    download state in `ClimbMatch.jsx` alone leaves the Help strings standing, so the guard would
+    report a clean sweep having inspected one surface of three — the `check:control-names` defect,
+    whose floor was *"at least one"* and which a **partial** restyle left checking 1 of 9.
+  - Injection-tested (`scripts/oneoff/inject-offline-claim-cases.mjs`), each case proving its edit
+    landed **by checksum**, restoring the file byte-identically, and **naming the text its own
+    failure must carry** — a case judged on the exit code alone is satisfied by a run that died for
+    an unrelated reason. Expectations are matched against **FAIL lines only**, never against the
     text an assertion prints when it passes, which is a mistake this repo has made twice.
-    **`honest-claim` must stay SILENT and is the case the rewrite turns on**: before the pack was
-    real that sentence was the defect and now it is the feature, so a guard still firing on it would
-    tell an author to delete a true statement. `disclaimer-reworded` must stay silent too — §4 asks
-    whether the fact is stated, and a guard pinned to one phrasing forbids improving it.
-    `read-gone` is the one to keep: it leaves write, copy and hydration intact and removes only the
-    fallback.
+    **22/22** after the 2026-10-14 restore (5 kept from #2368, 17 back): seven §10 links one at a
+    time, both §4 disclaimers, one §5 claim per surface (Manage areas, Home's card, the FAQ), and
+    three renames that must fail CLOSED (the Manage areas aria-label, the download state, and
+    `HELP_FEATS`). `check:injection-anchors` covers their anchors.
+    **Two must stay SILENT**: `disclaimer-reworded` (§4 asks whether the fact is stated, and its
+    reworded sentence says *"not saved to this device"*, which §5 must read as the denial it is)
+    and `honest-claim` (a true claim about the catalog in the no-signal idiom). `read-gone` is the
+    one to keep: it removes only the fallback.
   - **§8 — A DOWNLOADED CATALOG YOU COULD BROWSE AND NOT SEARCH.** The browse chain (states ->
     children -> an area's own routes) has had an offline fallback since the state download
     shipped. **Search had none**: `useSubtreeRoutes`, `useSubtreeRouteCount` and `useAreaSearch`
@@ -1726,6 +1714,26 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       right shape. The section now looks the raw local day up by date, and the guard pins both the lookup and that
       a shape without `hours` throws. LESSON: a card that mounts only after a fetch resolves is invisible to the
       static render walks. Open it on a real route in Chrome before calling it done.
+    - **VISIBILITY ARRIVES IN FEET (fixed 2026-10-14).** `precipitation_unit=inch` switches EVERY length Open-Meteo
+      returns to feet -- the freezing level (known) and visibility with it (`hourly_units.visibility` is `"ft"`,
+      checked live). The card read it as metres, so a 3,000 ft (914 m) fog hour read as 3 km and never flagged, and
+      every visibility on screen was 3.3x too long. `visibilityInMetres()` (lib/forecast.js) converts at fetch BY THE
+      UNIT THE RESPONSE STATES and drops a series in an unstated or unknown unit (the tile then reads "Not measured").
+      TRAP: the section 15 fixture fed metres with no `hourly_units`, the same assumption as the code, so it passed
+      the bug; it is now shaped like the live response (feet + unit) and goes through the conversion. LESSON: a fixture
+      written from the code's assumptions cannot test them -- build it from a live response's units block.
+    - **A CLOCK CHANGE MID-SERIES (guard section 17, fixed 2026-10-14).** The alpine card read all 21 days (14 past +
+      7 ahead) through ONE `utc_offset_seconds` -- the offset at fetch time -- so across 2025-11-02 the Nov 2 sunrise
+      (6:51 AM PST) read 7:51, local days were cut at 1 AM, and "today" turned over at 11 PM; from late October and
+      in March every series crosses a change. It now reads local time through the crag card's zone-aware `localFn`
+      (lib/conditionsScore.js) via `localAt` / `localDays` / `dayStartMs` (an alert's day is 23-25 h). Fixtures with no
+      `timezone` keep their fixed offset. The same section pins #2342: the start's days-early is counted ONCE per day
+      (`day.daysEarly`), so the hour strip no longer prints "Start by 7 PM (the night before)" under a box that says
+      the push is too long for one day.
+    - **STREAMS (2026-10-14):** a WATER LEVEL's trend is read in feet (`STEADY_STAGE_FT`, 0.1 ft in 3 h, ours), never as a
+      percent of a height above an arbitrary datum; a "now" reading more than 2 h old says how old; gauge names spell
+      out the naming abbreviations (R, CR, NR, BL, AB, NF/SF/MF...) and keep the state code in capitals (`gaugeName`).
+      Report freshness counts CALENDAR days on this device (a report dated today read "yesterday" from 5 PM Pacific).
     - **TEMPERATURE GAPS (guard section 16, measured 2026-10-14):** a temperature is for ONE height, and a screen that
       sets two numbers side by side has to say whose. (1) The NWS grid cell under a summit sits 150 to 850 m BELOW
       it (Rainier: cell 3,890 m, pin 4,392 m), so its raw temperatures read up to 9 F warmer than the
@@ -1770,7 +1778,10 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
   range. Wind had no preference before: it was the fixed rule full at 10 mph, nothing at 35. Unchosen it is still
   that rule EXACTLY (range [0,10], fade 25 mph above), pinned in `check:conditions-score`; a climber who wants a
   breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
-  Home/End, `touch-action:none`). TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
+  Home/End, `touch-action:none`). WHICH HANDLE IS ON TOP where their 44 px hit areas overlap: the LOW one once the
+  range sits past the middle of the track, the high one before it (pinned in `check:conditions-score`). A fixed
+  "high on top" stranded the low handle at the top of the scale: every touch landed on the high handle, which
+  cannot go further right, so the range could not be widened again. TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
   `innerWidth` 0) in an automation session, which makes screenshots fail with "0 width"; a NEW tab got a real size.
 
 - **The two "Your conditions" builds, MERGED (2026-10-14).** The drag-both-ends ranges above and the

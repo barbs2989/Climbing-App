@@ -235,7 +235,7 @@ npm run check:counts# does every areas.route_count still match the truth?
 npm run check:catalog-duplicates # can a duplicate route land again (triggers live on INSERT+UPDATE), and has one?
 npm run check:area-duplicates # is any PLACE filed twice? (same-name areas < 3 km, vs a READ list; daily)
 npm run check:area-sort-labels # no area is named with the source's sort label ("a1. The Uberfall"); daily
-npm run check:generic-area-names # no area is named only by discipline ("Bouldering", "CO Ice & Mixed"); daily
+npm run check:generic-area-names # no area is named only by discipline ("Bouldering", "CO Ice & Mixed") or by the source's placeholder ("New Sub-Area 1"); daily
 npm run check:function-columns # does every column a stored FUNCTION writes still exist?
 npm run check:function-drift # is the LIVE function the one the migrations describe?
 npm run check:column-drift # ...and is the LIVE TABLE? (a column git has never seen)
@@ -303,7 +303,8 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
     reads this bullet and fails on a foreign or missing id. Keep the list on ONE line — the check reads that line, and
     prose naming the absent id would fail on its own explanation.
 - `discover` — find partners, crews **or guides** (`partnersMode` is `"partners"` / `"crews"` / `"guides"`, whose controls read *Find partners* / *Join a crew* / *Hire a guide*). Only the first two are tested with `partnersMode===`; **`guides` is the else branch**, so grepping for the comparison finds two of three.
-- `crew` — your crews and direct/crew messaging (`crewView`).
+- `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
+- `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, like `me`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
 - `me` — profile, verification, trust score. **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the **Menu** (the avatar button at the top left, `menuOpen`), whose "You" card leads here. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 

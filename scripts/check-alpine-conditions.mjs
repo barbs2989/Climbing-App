@@ -60,7 +60,8 @@ export * from ${JSON.stringify(path.join(ROOT, "lib", "alpineConditions.js"))};
 export { flagText, forecastPoint, KIND_LABEL } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 export { planTimes } from ${JSON.stringify(path.join(ROOT, "lib", "planTimes.js"))};
 export { CRAG_SCORE_DISCIPLINES, monthlyClimate } from ${JSON.stringify(path.join(ROOT, "lib", "conditionsScore.js"))};
-export { fetchAlpineClimate, nwsHeightShiftF } from ${JSON.stringify(path.join(ROOT, "lib", "forecast.js"))};
+export { fetchAlpineClimate, nwsHeightShiftF, visibilityInMetres } from ${JSON.stringify(path.join(ROOT, "lib", "forecast.js"))};
+export { clockOf } from ${JSON.stringify(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"))};
 export { __set_UNITS, tickTypesFor, NONCOMPLETION_TICKS } from ${JSON.stringify(path.join(ROOT, "ClimbMatchCore.jsx"))};
 export { inGeometry, zoneFor, avyReading, DANGER_NAME } from ${JSON.stringify(path.join(ROOT, "lib", "avalanche.js"))};
 export { nearestStation, kmBetween, snowReading } from ${JSON.stringify(path.join(ROOT, "lib", "snotel.js"))};
@@ -222,6 +223,13 @@ for (const disc of ["mountaineering", "scrambling", "alpine", "ice", "mixed"]) {
 }
 const sportHtml = A.render(Object.assign({}, BASE, { discipline: "sport", grade: "5.10a" }), "forecast");
 eq("a sport route keeps the STAR score, not the alpine flags", [/CONDITIONS SCORE/.test(sportHtml), /CONDITIONS · /.test(sportHtml)], [true, false]);
+// A crag route has no trailhead-to-summit line, so its forecast is ONE point at the crag (owner, 2026-10-14),
+// even when it carries pins -- a parking pin is not where you climb.
+// The area is typed a CRAG: trad filed on a PEAK is alpine by catOf's rule, and would rightly keep its key points.
+const cragPinned = A.render(Object.assign({}, BASE, { discipline: "trad", grade: "5.9", _dbArea: Object.assign({}, BASE._dbArea, { name: "Probe Crag", areaType: "crag" }), waypoints: [{ type: "Trailhead", name: "Lot", lat: 47.4, lng: -121.4, elev: 2000 }, { type: "Summit", name: "Top", lat: 47.5, lng: -121.5, elev: 9000 }] }), "forecast");
+eq("a crag route's forecast is headed 'at the crag', not 'at key points', and forecasts none of its pins", [/Forecast at the crag/.test(cragPinned), /Forecast at key points/.test(cragPinned), />Lot · /.test(cragPinned), />Top · /.test(cragPinned)], [true, false, false, false]);
+const alpPinned = A.render(Object.assign({}, BASE, { discipline: "alpine", grade: "5.6" }), "forecast");
+eq("...while an alpine route keeps 'Forecast at key points'", /Forecast at key points/.test(alpPinned), true);
 const safetyAlp = A.render(Object.assign({}, BASE, { discipline: "mountaineering" }), "safety");
 const safetyHike = A.render(Object.assign({}, BASE, { discipline: "hiking" }), "safety");
 eq("the weather panel left Safety on an alpine route (it lives on Conditions now)", /Weather &amp; mountain forecasts/.test(safetyAlp), false);
@@ -522,7 +530,12 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   const ST = await import(pathToFileURL(path.join(ROOT, "lib", "streams.js")).href);
   const off = 0, t0 = Date.UTC(2026, 9, 1) / 1000;
   const mk = (n, f) => Array.from({ length: n }, (_, i) => f(i));
-  const fc = { utc_offset_seconds: off, hourly: { time: mk(24 * 8, (i) => t0 + i * 3600), snowfall: mk(24 * 8, (i) => (i === 24 * 2 + 5 ? 0.3 : i === 24 * 6 + 3 ? 0.04 : 0)), precipitation: mk(24 * 8, (i) => (i >= 24 * 7 + 2 && i < 24 * 7 + 5 ? 0.05 : 0)), freezing_level_height: mk(24 * 8, () => 8000), is_day: mk(24 * 8, (i) => (i % 24 >= 7 && i % 24 < 18 ? 1 : 0)), visibility: mk(24 * 8, (i) => (i === 24 * 7 + 9 ? 400 : i === 24 * 7 + 3 ? 100 : 20000)) } };
+  /* VISIBILITY ARRIVES IN FEET. The card asks for precipitation_unit=inch, and Open-Meteo then sends every length in
+     feet -- visibility included (hourly_units.visibility "ft", live 2026-10-14). The first fixture fed metres with no
+     unit, the same assumption as the code, so it passed while a 3,000 ft (914 m) fog hour read as 3 km and never
+     flagged. This one is shaped like the live response and goes through the fetch's own conversion. */
+  const fcFt = { utc_offset_seconds: off, hourly_units: { visibility: "ft" }, hourly: { time: mk(24 * 8, (i) => t0 + i * 3600), snowfall: mk(24 * 8, (i) => (i === 24 * 2 + 5 ? 0.3 : i === 24 * 6 + 3 ? 0.04 : 0)), precipitation: mk(24 * 8, (i) => (i >= 24 * 7 + 2 && i < 24 * 7 + 5 ? 0.05 : 0)), freezing_level_height: mk(24 * 8, () => 8000), is_day: mk(24 * 8, (i) => (i % 24 >= 7 && i % 24 < 18 ? 1 : 0)), visibility: mk(24 * 8, (i) => (i === 24 * 7 + 9 ? 1312 : i === 24 * 7 + 10 ? 3000 : i === 24 * 7 + 3 ? 328 : 65617)) } };
+  const fc = A.visibilityInMetres(fcFt);
   const days = A.localDays(fc), nowS = t0 + 24 * 7 * 3600 + 12 * 3600;
   const sh = A.snowHistory(fc, "2026-10-08", nowS);
   eq("the last MEASURABLE snow day is Oct 3 (0.3 in), not Oct 7's 0.04 in trace", [sh.lastDate, sh.daysAgo, Math.round(sh.lastIn * 10) / 10], ["2026-10-03", 5, 0.3]);
@@ -532,12 +545,26 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   eq("snow level = the freezing level over the WET hours less 1500 and 500 ft (8000 -> 6500 to 7500)", [sl.snowLo, sl.snowHi, sl.wetHours], [6500, 7500, 3]);
   eq("a dry day has NO snow level (null), never a number", A.snowLevel(fc, days[3]), null);
   const fg = A.fogHours(fc, days[7]);
-  eq("fog counts DAYLIGHT hours under 1 km only: 1 (the 9 AM 400 m), not the 3 AM 100 m", [fg.hours, fg.minM], [1, 400]);
+  eq("visibility in FEET is converted to metres by the response's own unit: 1,312 ft is 400 m, and the unit now says m", [Math.round(fc.hourly.visibility[24 * 7 + 9]), fc.hourly_units.visibility], [400, "m"]);
+  eq("fog counts DAYLIGHT hours under 1 km only: 2 (9 AM at 1,312 ft and 10 AM at 3,000 ft -- 914 m, which read as 3 km unconverted), not the 3 AM one", [fg.hours, fg.first], [2, t0 + (24 * 7 + 9) * 3600]);
+  eq("...and converting twice does nothing (the unit is metres after the first)", Math.round(A.visibilityInMetres(fc).hourly.visibility[24 * 7 + 9]), 400);
+  eq("a visibility series in a unit the response does not state is DROPPED (not measured), never read as metres", (() => { const j = { hourly: { time: [0], visibility: [3000] } }; A.visibilityInMetres(j); return j.hourly.visibility; })(), undefined);
+  eq("...and metres pass through untouched", A.visibilityInMetres({ hourly_units: { visibility: "m" }, hourly: { time: [0], visibility: [3000] } }).hourly.visibility, [3000]);
+  eq("the alpine forecast fetch converts its visibility before anything reads it", /export function fetchAlpineForecast[\s\S]{0,1200}return visibilityInMetres\(j\);/.test(fs.readFileSync(path.join(ROOT, "lib", "forecast.js"), "utf8")), true);
   eq("a clear day has no fog hours (null)", A.fogHours(fc, days[3]), null);
   const iv = (vals, q) => ({ value: { timeSeries: [{ variable: { variableCode: [{ value: "00060" }], noDataValue: -999999 }, sourceInfo: { siteName: "TEST RIVER" }, values: [{ value: vals.map((v, i) => ({ value: String(v), qualifiers: q || ["P"], dateTime: new Date(Date.UTC(2026, 9, 7, 23, 0) + i * 3 * 3600e3).toISOString().replace("Z", "").slice(0, 19) + ".000-07:00" })) }] }] } });
   const f = ST.flowReading(iv([100, 100, 110, 130, 200]));
   eq("the trend is read over 3 h against the 10% line: 130 -> 200 is rising", [f.trend, Math.round(f.pct)], ["rising", 54]);
   eq("under 10% reads steady", ST.flowReading(iv([100, 100, 105])).trend, "steady");
+  // STAGE is a height above the gauge's own datum: a percent of it means nothing (0.3 ft is 15% of 2 ft and 1.5% of 20 ft).
+  const ivStage = (vals) => { const j = iv(vals); j.value.timeSeries[0].variable.variableCode[0].value = "00065"; return j; };
+  eq("a WATER LEVEL's trend is read in feet, not percent: +0.3 ft in 3 h on a 20 ft stage is rising (1.5% would have read steady)", [ST.flowReading(ivStage([20, 20.3])).trend, ST.flowReading(ivStage([20, 20.3])).pct], ["rising", null]);
+  eq("...and under " + ST.STEADY_STAGE_FT + " ft reads steady however low the stage (0.05 ft on a 0.5 ft stage is 10%)", ST.flowReading(ivStage([0.5, 0.55])).trend, "steady");
+  eq("...with the change itself carried for the card to print", Math.round(ST.flowReading(ivStage([20, 20.3])).delta * 100) / 100, 0.3);
+  eq("the card prints a stage change in length units with its own steady line, and a discharge change in percent", /f\.kind === "stage" \? \(f\.delta != null \? sgn\(f\.delta\) \+ flowText\(Math\.abs\(f\.delta\), "stage"\)/.test(card) && /"% \(under " \+ STEADY_PCT \+ "% reads steady\)"/.test(card), true);
+  eq("a 'now' reading more than 2 h old says how old it is", /when=\{"at " \+ f\.now\.clock \+ \(ageH != null && ageH > 2 \? " \(" \+ Math\.round\(ageH\) \+ " h ago\)" : ""\)\}/.test(card), true);
+  eq("gauge names read as people say them: abbreviations spelled out, the state code kept in capitals", [ST.gaugeName("SAUK R AB WHITECHUCK R NR DARRINGTON, WA"), ST.gaugeName("NF NOOKSACK R BL CASCADE CR NR GLACIER, WA"), ST.gaugeName("THUNDER CREEK NEAR NEWHALEM, WA")], ["Sauk River above Whitechuck River near Darrington, WA", "North Fork Nooksack River below Cascade Creek near Glacier, WA", "Thunder Creek near Newhalem, WA"]);
+  eq("...and the card prints that name, not a bare title case ('Nr Darrington, Wa')", /gaugeName\(st\.g\.name\) \+ " · "/.test(card) && !/titleCase/.test(card), true);
   eq("the high and low of the 24 h are the series' own", [f.hi.v, f.lo.v], [200, 100]);
   eq("the no-data sentinel (-999999) is not a reading, and an all-sentinel series is NULL, never 0", ST.flowReading(iv([-999999, -999999])), null);
   eq("an ice-affected reading is flagged in plain words (and the card then shows no number)", ST.flowReading(iv([100, 120], ["Ice"])).flags, ["ice-affected"]);
@@ -558,9 +585,11 @@ console.log("\n15. FOG, SNOWFALL, SNOW LEVEL, STREAM FLOW, REPORT FRESHNESS — 
   eq("the snow section hands snowLevel the RAW local day (it has `hours`); the card's per-day summary has none and crashed the route page", /const raw = localDays\(fc\)\.find\(function \(d\) \{ return d\.date === day\.date; \}\);[\s\S]{0,120}lvl = raw \? snowLevel\(fc, raw\) : null/.test(card), true);
   eq("...and snowLevel on a day shape WITHOUT hours would throw, which is why it must not be handed one", (() => { try { A.snowLevel(fc, { date: "2026-10-08" }); return false; } catch (e) { return true; } })(), true);
   eq("the snow section says the history is modelled, flags nothing, and that stability depends on the layers beneath", /not a measurement on the route/.test(card) && /depends on the layers beneath it/.test(card), true);
-  const now = Date.UTC(2026, 9, 8, 18);
+  // Built in THIS machine's local time, as the card reads today's date from the device: the assertions hold in any zone.
+  const now = new Date(2026, 9, 8, 18).getTime();
   const rfr = A.reportFreshness([{ date: "2026-10-03" }, { date: "2026-09-01T10:00" }, { date: "2026-10-07" }, { date: null }, {}], now);
   eq("report freshness: the newest is Oct 7 (1 day ago), 2 of the 3 dated reports are within 14 days", [rfr.daysAgo, rfr.last14, rfr.total], [1, 2, 3]);
+  eq("...counted between CALENDAR dates: a report dated today is 'today' at 11:30 PM (it read 'yesterday' from 5 PM in the Pacific), and yesterday's is 1 just after midnight", [A.reportFreshness([{ date: "2026-10-08" }], new Date(2026, 9, 8, 23, 30).getTime()).daysAgo, A.reportFreshness([{ date: "2026-10-07" }], new Date(2026, 9, 8, 0, 15).getTime()).daysAgo], [0, 1]);
   eq("no dated report is NULL (the card then says none is on file), never 'today'", [A.reportFreshness([], now), A.reportFreshness([{ date: null }], now)], [null, null]);
   eq("report freshness with none on file says nothing recent is known, and a failed read is not 'none'", /so nothing recent is known about its conditions/.test(card) && /This is not a report that there are none\./.test(card), true);
 }
@@ -613,7 +642,41 @@ console.log("\n17. YOUR RANGE — the climber's own, one neutral line, never a f
   eq("alpine, mountaineering and scrambling map to the alpine scope; ice and mixed to ice; crag disciplines to themselves", /d === "alpine" \|\| d === "mountaineering" \|\| d === "scrambling"\) return "alpine"/.test(fnText) && /d === "ice" \|\| d === "mixed"\) return "ice"/.test(fnText) && /COND_DISCS\.indexOf\(d\) >= 0\) return d/.test(fnText), true);
 }
 
-const FLOOR = 257;
+
+/* ── 18. A CLOCK CHANGE MID-SERIES — every local hour, sunrise and start in the forecast's own zone ──
+   The card read all 21 days (14 past + 7 ahead) through ONE utc_offset_seconds, the offset at fetch time. A series
+   fetched before the clocks go back on 2025-11-02 then put every hour after it an hour late: the Nov 2 sunrise
+   (6:51 AM PST) read 7:51, local days were cut at 1 AM, and "today" turned over at 11 PM. The crag card had been
+   fixed for this (lib/conditionsScore.js localFn); the alpine card now reads its local time through the same one.
+   Shaped like the live response: unixtime, `timezone`, and the offset that was current when it was fetched. */
+console.log("\n18. A CLOCK CHANGE — local days, sunrise and today read in the forecast's own zone across DST");
+{
+  const card = fs.readFileSync(path.join(ROOT, "lib", "AlpineConditionsCard.jsx"), "utf8");
+  const judge = fs.readFileSync(path.join(ROOT, "lib", "alpineConditions.js"), "utf8");
+  const t0 = Date.UTC(2025, 9, 31, 7) / 1000, t1 = Date.UTC(2025, 10, 4, 8) / 1000; // 00:00 PDT Oct 31 .. 00:00 PST Nov 4
+  const time = []; for (let t = t0; t < t1; t += 3600) time.push(t);
+  const mids = [Date.UTC(2025, 9, 31, 7), Date.UTC(2025, 10, 1, 7), Date.UTC(2025, 10, 2, 7), Date.UTC(2025, 10, 3, 8)].map((m) => m / 1000);
+  const rises = [Date.UTC(2025, 9, 31, 14, 47), Date.UTC(2025, 10, 1, 14, 49), Date.UTC(2025, 10, 2, 14, 51), Date.UTC(2025, 10, 3, 14, 52)].map((m) => m / 1000);
+  const fc = { timezone: "America/Los_Angeles", utc_offset_seconds: -25200, hourly: { time, temperature_2m: time.map(() => 30), freezing_level_height: time.map(() => 5000), is_day: time.map(() => 1) }, daily: { time: mids, sunrise: rises, sunset: rises.map((r) => r + 10 * 3600) } };
+  const days = A.localDays(fc), nov2 = days.find((d) => d.date === "2025-11-02");
+  eq("four local days, each opening at local MIDNIGHT, and Nov 2 is 25 hours long (it was cut at 1 AM, 24 h each)", days.map((d) => d.date + ":" + d.hours.length + ":" + A.localHour(fc, d.hours[0])), ["2025-10-31:24:0", "2025-11-01:24:0", "2025-11-02:25:0", "2025-11-03:24:0"]);
+  eq("the Nov 2 sunrise attaches to Nov 2 and reads 6:51 AM, not 7:51", nov2 && A.clockOf(fc, nov2.sunrise), "6:51 AM");
+  eq("...and Oct 31's, before the change, still reads in daylight time: 7:47 AM", A.clockOf(fc, rises[0]), "7:47 AM");
+  eq("'today' at 11:30 PM PST on Nov 2 is still Nov 2 (one fixed offset said Nov 3)", A.todayOf(fc, Date.UTC(2025, 10, 3, 7, 30)), "2025-11-02");
+  eq("a day's alert window runs local midnight to local midnight: Nov 2 is 07:00Z to 08:00Z the next day", [A.dayStartMs(fc, "2025-11-02"), A.dayStartMs(fc, "2025-11-03")], [Date.UTC(2025, 10, 2, 7), Date.UTC(2025, 10, 3, 8)]);
+  eq("...so an alert from 11:30 PM PST Nov 2 lands on Nov 2 and not on Nov 3", [A.alertsForDay([{ event: "X", severity: "Minor", start: Date.UTC(2025, 10, 3, 7, 30), end: Date.UTC(2025, 10, 3, 7, 50) }], "2025-11-02", fc).length, A.alertsForDay([{ event: "X", severity: "Minor", start: Date.UTC(2025, 10, 3, 7, 30), end: Date.UTC(2025, 10, 3, 7, 50) }], "2025-11-03", fc).length], [1, 0]);
+  eq("a fixture with NO zone keeps its fixed offset (every older section above relies on it)", A.localDays({ utc_offset_seconds: 0, hourly: { time: [0, 3600, 86400] } }).map((d) => d.date + ":" + d.hours.length), ["1970-01-01:2", "1970-01-02:1"]);
+  eq("nothing in the card or the judgement adds utc_offset_seconds to an instant itself any more (every local time goes through localAt / localFn)", [/utc_offset_seconds \|\| 0\) \* 1000\)\.(toISOString|getUTC)/.test(card + judge), /\+ \(fc\.utc_offset_seconds/.test(card), /new Date\([^)]*utc_offset_seconds/.test(card + judge)], [false, false, false]);
+  eq("the judgement reads local time through the crag card's zone-aware localFn", /import \{ localFn \} from "\.\/conditionsScore\.js";/.test(judge), true);
+
+  /* ── ...and the start's "days early" is counted ONCE (#2342): the start box said "Too long for one push" for a start
+     two or more days early, while the hour strip below still printed "Start by 7:00 PM (the night before)". */
+  eq("the card counts the start's days early once, per day, from the forecast's own zone", /const daysEarly = r\.start \? Math\.round\(\(Date\.parse\(d\.date\) - Date\.parse\(localAt\(fc, floorQ\(r\.start\.at\)\)\.date\)\) \/ 864e5\) : null;/.test(card) && /, r, \{ daysEarly: daysEarly \}\)\);/.test(card), true);
+  eq("...the start box reads that count", /const st = floorQ\(day\.start\.at\), daysEarly = day\.daysEarly;/.test(card) && /startEl = daysEarly >= 2/.test(card), true);
+  eq("...and the hour strip shows NO start key time when it is 2+ days early, and 'the night before' only at exactly 1", /const startOn = day\.start && !\(legs && legs\.floor\) && !\(day\.daysEarly >= 2\);/.test(card) && /after: day\.daysEarly === 1 \? " \(the night before\)" : ""/.test(card) && /const startI = startOn \?/.test(card), true);
+}
+
+const FLOOR = 285;
 if (ran < FLOOR) { console.log(`\nFAIL  only ${ran} assertion(s) ran against a floor of ${FLOOR}`); fail++; }
 fs.rmSync(path.dirname(out), { recursive: true, force: true });
 console.log(fail ? `\ncheck:alpine-conditions: ${fail} FAILURE(S)` : `\ncheck:alpine-conditions: ok — each discipline reads its own conditions, the start counts back from the Planner, and nothing claims what it did not read (${ran} assertions).`);

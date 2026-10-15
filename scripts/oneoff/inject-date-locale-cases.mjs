@@ -17,10 +17,11 @@ const RD = "RouteDetail.jsx", ALP = "lib/AlpineConditionsCard.jsx", CAL = "lib/C
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
 
 const CASES = [
-  // The route page's weekday label back on the device default — the shape found on 2026-10-07.
+  // The route page's day label back on the device default — the shape found on 2026-10-07 (then on the
+  // week chart's `wkDay`, removed 2026-10-14 with the "All 7 days" view; now the hourly day picker's date).
   { name: "weekday-back-to-device-default", file: RD, expect: "fail",
-    find: 'const wkDay=function(date){return new Date(date+"T12:00:00Z").toLocaleDateString(DLOCALE,{weekday:"short",timeZone:"UTC"});};',
-    repl: 'const wkDay=function(date){return new Date(date+"T12:00:00Z").toLocaleDateString(undefined,{weekday:"short",timeZone:"UTC"});};',
+    find: 'const dayDate=function(d){return new Date(d.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{month:"short",day:"numeric",timeZone:"UTC"});};',
+    repl: 'const dayDate=function(d){return new Date(d.date+"T12:00:00Z").toLocaleDateString(undefined,{month:"short",day:"numeric",timeZone:"UTC"});};',
     says: /RouteDetail\.jsx:\d+: \.toLocaleDateString\(undefined/ },
   // A hard-coded locale is the other way to ignore the preference.
   { name: "alpine-card-hardcodes-us", file: ALP, expect: "fail",

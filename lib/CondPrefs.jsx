@@ -192,7 +192,7 @@ export function CondPrefsControls({ disc, only }) {
   const [scope, setScope] = useState(scopeForDiscipline(disc));
   const ownOnly = !!RANGE_ONLY[scope];
   const full = only !== "temp";
-  const chip = function (on, label, onClick, key) { return <button key={key} onClick={onClick} aria-pressed={on} style={{ padding: "6px 10px", borderRadius: 8, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : "transparent", color: on ? C.green : C.textSub, fontSize: 12, fontWeight: on ? 800 : 600, cursor: "pointer" }}>{label}</button>; };
+  const chip = function (on, label, onClick, key) { return <button key={key} onClick={onClick} aria-pressed={on} style={{ minHeight: 44, padding: "6px 12px", borderRadius: 8, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : "transparent", color: on ? C.green : C.textSub, fontSize: 12, fontWeight: on ? 800 : 600, cursor: "pointer" }}>{label}</button>; };
   const own = scope !== "all" && !!p.temp[scope];
   const eff = scope === "all" ? (p.temp.all || TEMP_BANDS.standard) : ownOnly ? (p.temp[scope] || null) : resolveRange(scorePrefs(p), scope).range;
   const span = ownOnly ? COLD_SPAN : CRAG_SPAN;

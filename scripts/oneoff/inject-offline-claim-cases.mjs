@@ -1,17 +1,22 @@
 #!/usr/bin/env node
-/* Injection suite for check:offline-claims, rewritten when the trip pack became a real download.
+/* Injection suite for check:offline-claims.
  *
- * The old suite reproduced the twelve claims #1585 removed. Those cases are gone because the
- * world they describe is: packing a climb now writes its row to IndexedDB, so "saved on this
- * device" is TRUE and a case demanding the guard fire on it would be pinning a defect as the
- * contract. `honest-claim` is what replaces them, and it MUST STAY SILENT — the single case that
- * proves the reversal actually happened rather than the guard simply going quiet.
+ * Rewritten twice. The first suite reproduced the twelve claims #1585 removed; the second took the
+ * TRIP PACK apart link by link once packing became a real download. #2368 removed the pack and cut
+ * this suite to five state-download cases, which also dropped the cases proving the readers the
+ * state download still shares with the old pack (offlinePackReports / Contribs / Profiles and the
+ * `_packedAt` stamp) and the "say what is NOT saved" copy rules. Those are back (§4, §5, §10),
+ * pointed at the screens that describe the state download: Manage areas, Home's Pinned states card
+ * and the Help FAQ and tour.
  *
- * The cases now take the chain apart one link at a time, because the guard must not be able to
- * pass on the strength of its neighbours. `read-gone` is the most important: it leaves the write,
- * the copy and the hydration all intact and removes only the fallback, which is the shape that
- * fails SILENTLY — the rows sit in IndexedDB, correctly written, and the pack still empties at
- * the trailhead with every copy assertion green.
+ * The cases take the chain apart one link at a time, because the guard must not be able to pass on
+ * the strength of its neighbours. `read-gone` is the most important: it removes only the fallback,
+ * which is the shape that fails SILENTLY — the rows sit in IndexedDB, correctly written, and every
+ * list by id still empties at the trailhead with every copy assertion green.
+ *
+ * Two cases MUST STAY SILENT: `disclaimer-reworded` (§4 asks whether the fact is stated, not for one
+ * wording of it, and a negated "not saved to this device" must not trip §5) and `honest-claim` (a
+ * true claim about the catalog, phrased with the no-signal idiom that once excused every sentence).
  *
  * Each case names the text ITS OWN failure must carry. A case judged on the exit code alone is
  * satisfied by a run that died for an unrelated reason, and this repo has read one as the other
@@ -60,7 +65,7 @@ const unlock = () => { try { fs.unlinkSync(LOCK); } catch (e) { /* already gone 
 process.on("exit", unlock);
 for (const sig of ["SIGINT", "SIGTERM"]) process.on(sig, () => { unlock(); process.exit(130); });
 
-const CM = "ClimbMatch.jsx", DB = "lib/db.js", OFF = "lib/offline.js";
+const CM = "ClimbMatch.jsx", RD = "RouteDetail.jsx", CORE = "ClimbMatchCore.jsx", HELP = "lib/Help.jsx", DB = "lib/db.js", OFF = "lib/offline.js";
 
 const CASES = [
   /* THE SILENT HALF. Write, copy and hydration all stay; only the fallback goes. Nothing renders
@@ -88,6 +93,77 @@ const CASES = [
   { name: "bookmarks-gone", file: CM, must: "fail", expect: "nothing calls saveAreaIds",
     why: "§7 — saved areas go back to being lost on every reload",
     find: "saveAreaIds(uid,next)", repl: "Promise.resolve(next)" },
+
+  /* §10 — the readers a downloaded state's reports, corrections and names come back through. Each
+   * edit leaves every render and every name intact online; the loss shows only with no signal. */
+  { name: "reports-fallback-gone", file: DB, must: "fail", expect: "useRouteTripReports lost its device fallback",
+    why: "§10 — a state's reports are downloaded and never read back",
+    find: "() => offlinePackReports(routeId)", repl: "() => undefined" },
+  { name: "stamp-lost", file: DB, must: "fail", expect: "useRouteContributions lost its device fallback or its structuralSharing",
+    why: "§10 — structural sharing strips `_packedAt`, so saved corrections render undated",
+    find: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId,\n    structuralSharing: false,",
+    repl: "    queryKey: [\"contributions\", routeId],\n    enabled: !!supabase && !!routeId," },
+  { name: "names-fallback-gone", file: DB, must: "fail", expect: "useProfilesByIds has no device fallback",
+    why: "§10 — every saved report reads as an anonymous climber offline",
+    find: "() => offlinePackProfiles(ids)", repl: "() => undefined" },
+  { name: "plan-mirror-gone", file: DB, must: "fail", expect: "useMyItineraries no longer mirrors",
+    why: "§10 — the climber's own plan is not on the device at the trailhead",
+    find: "cacheItineraries(userId, out).catch(() => {});", repl: "" },
+  { name: "undated-reports", file: RD, must: "fail", expect: "stopped dating the saved reports",
+    why: "§10 — a saved copy of the reports reads as live",
+    find: "savedAgo(reportsPackedAt)", repl: "\"\"", all: true },
+  { name: "photos-ignore-stamp", file: CM, must: "fail", expect: "photosUnavailable ignores the `_packedAt` stamp",
+    why: "§10 — a route served from the device claims it has no photos",
+    find: "(dbContribs.data&&dbContribs.data._packedAt)", repl: "false" },
+  { name: "state-saves-photo-rows", file: OFF, must: "fail", expect: "the state download now stores photo rows",
+    why: "§10 — photo rows are stored without their images",
+    find: ".filter((c) => inPage.has(c.route_id) && c.kind !== \"photo\");", repl: ".filter((c) => inPage.has(c.route_id));" },
+
+  /* §4 — both Help surfaces keep naming what a download does NOT save. */
+  { name: "disclaimer-gone", file: HELP, must: "fail", expect: "the Help FAQ no longer says photos and map tiles are NOT saved",
+    why: "§4 — the FAQ lists what a download saves and stops naming what it does not",
+    find: "Photos and map tiles aren’t saved. ", repl: "" },
+  { name: "tour-disclaimer-gone", file: CORE, must: "fail", expect: "the Help tour (HELP_FEATS) no longer says",
+    why: "§4 — the Help tour stops naming what a download does not save",
+    find: "Only climbs work offline — photos and map tiles aren’t saved.", repl: "Only climbs work offline." },
+  /* MUST STAY SILENT, twice over: §4 is about the FACT, so a rewording passes; and the reworded
+   * sentence says "to this device" in the negative, which §5 must read as the denial it is. */
+  { name: "disclaimer-reworded", file: HELP, must: "pass",
+    why: "MUST PASS — §4 is about the fact, and a negated device claim is not a claim",
+    find: "Photos and map tiles aren’t saved. ", repl: "Photos and map tiles are not saved to this device. " },
+
+  /* §5 — one live claim per scanned surface. */
+  { name: "claims-photos-manage", file: CM, must: "fail", expect: "claims something is on the device",
+    why: "§5 — Manage areas promises photos and map tiles the download never stores",
+    find: "\" downloads it: the full catalog — areas,", repl: "\" downloads it with every photo and map tile to this device: the full catalog — areas," },
+  { name: "claims-photos-home", file: CM, must: "fail", expect: "claims something is on the device",
+    why: "§5 — Home's Pinned states card promises photos",
+    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" downloads its climbs and their photos to this device so they open with no signal" },
+  { name: "claims-topos-help", file: HELP, must: "fail", expect: "claims something is on the device",
+    why: "§5 — the Help FAQ promises topos",
+    find: "its climbs, areas, gear and beta.", repl: "its climbs, areas, gear, beta and topos, all saved to your phone." },
+  /* MUST STAY SILENT: a true claim about the CATALOG, in the no-signal idiom. */
+  { name: "honest-claim", file: CM, must: "pass",
+    why: "MUST PASS — the catalog really is on the device and opens with no signal",
+    find: "\" downloads its climbs to this device so they open with no signal", repl: "\" saves its climbs on this device, so they open with no signal" },
+
+  /* Fail closed — a rename blinds a surface. The Manage areas dialog is found by its aria-label,
+   * and the trigger regions alone would keep ClimbMatch's floor satisfied without it. */
+  { name: "manage-areas-renamed", file: CM, must: "fail", expect: "state-download dialog(s) by aria-label",
+    why: "fail closed — Manage areas' own copy would drop out of the scan",
+    find: "aria-label=\"Manage areas\"", repl: "aria-label=\"Your areas\"" },
+  { name: "download-state-renamed", file: CM, must: "fail", expect: "region(s) and",
+    why: "fail closed — ClimbMatch's state-download triggers renamed, so Home's card goes unscanned",
+    rx: [[/(?<![A-Za-z0-9_$])downloadedStates(?![A-Za-z0-9_$])/g, "dlStates"],
+         [/(?<![A-Za-z0-9_$])setDownloadedStates(?![A-Za-z0-9_$])/g, "setDlStates"],
+         [/(?<![A-Za-z0-9_$])myPins(?![A-Za-z0-9_$])/g, "pinsMine"],
+         [/(?<![A-Za-z0-9_$])dlBusy(?![A-Za-z0-9_$])/g, "dlPending"],
+         [/(?<![A-Za-z0-9_$])downloadState(?![A-Za-z0-9_$])/g, "fetchState"],
+         [/(?<![A-Za-z0-9_$])removeState(?![A-Za-z0-9_$])/g, "dropState"],
+         [/(?<![A-Za-z0-9_$])pinState(?![A-Za-z0-9_$])/g, "togglePin"]] },
+  { name: "help-tour-renamed", file: CORE, must: "fail", expect: "ANCHOR LOST: HELP_FEATS",
+    why: "fail closed — the Help tour drops out of §4 and §5",
+    find: "HELP_FEATS", repl: "HELP_TOUR", all: true },
 ];
 
 /* stdio MUST name stderr explicitly. execFileSync defaults to ["pipe","pipe","INHERIT"], so a
@@ -138,14 +214,14 @@ for (const c of CASES) {
   let next;
   if (c.move) {
     next = c.move(orig);
-    if (!next || next === orig) { console.log("  " + c.name.padEnd(22) + "HARNESS BUG — the move did not apply"); fail++; continue; }
+    if (!next || next === orig) { console.log("  " + c.name.padEnd(24) + "HARNESS BUG — the move did not apply"); fail++; continue; }
   } else if (c.rx) {
     next = c.rx.reduce((s, [re, r]) => s.replace(re, r), orig);
-    if (next === orig) { console.log("  " + c.name.padEnd(22) + "HARNESS BUG — no regex matched"); fail++; continue; }
+    if (next === orig) { console.log("  " + c.name.padEnd(24) + "HARNESS BUG — no regex matched"); fail++; continue; }
   } else {
     const n = orig.split(c.find).length - 1;
     if (n === 0 || (!c.all && n !== 1)) {
-      console.log("  " + c.name.padEnd(22) + "HARNESS BUG — " + n + " matches for its find string");
+      console.log("  " + c.name.padEnd(24) + "HARNESS BUG — " + n + " matches for its find string");
       fail++; continue;
     }
     next = c.all ? orig.split(c.find).join(c.repl) : orig.replace(c.find, c.repl);
@@ -160,7 +236,7 @@ for (const c of CASES) {
   const wanted = c.must === "fail" ? !r.ok : r.ok;
   const named = c.must !== "fail" || !c.expect || failText(r).includes(c.expect);
   const good = landed && restored && wanted && named;
-  console.log("  " + c.name.padEnd(22) + (good ? "OK   " : "BAD  ")
+  console.log("  " + c.name.padEnd(24) + (good ? "OK   " : "BAD  ")
     + "(landed: " + landed + ", restored: " + restored + ", guard " + (r.ok ? "passed" : "failed")
     + ", wanted " + c.must + (c.expect ? ", named its own defect: " + named : "") + ")\n"
     + "        " + c.why);

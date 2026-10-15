@@ -49,7 +49,7 @@ const argv = process.argv.slice(2);
 const argOf = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
 const DUMP = argOf("--dump");
 const PORT = 5230;
-const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me"];
+const TABS = ["today", "routes", "discover", "crew", "logbook", "ranks", "me", "groups"];
 
 // Text that must never reach a user. The first five mirror check:ui; the rest are the
 // shapes that only appear once every field behind them is empty.
@@ -327,7 +327,7 @@ if (!overlays.length) {
 // NAME in NEEDS_EXTRA_STATE, each recording its real gate, and a name there that stops
 // being an overlay fails, so the exemption list cannot rot in silence.
 const _maskDigits = (l) => String(l).replace(/\d+/g, "#");
-const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks"];
+const OVERLAY_TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"];
 assertKnownOverlays(overlays, fail);
 const noPayload = new Set();
 for (const name of overlays) {
