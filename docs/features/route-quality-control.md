@@ -48,7 +48,7 @@ How climber edits to route pages are held, checked, locked and flagged. Decided 
 - **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
   onFlag}) around `RouteDetail`; the shared heading components `SL` and `CardHead` (core) map their
   text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
-  Low, with a ⚑ Flag button); `ConfidenceLegend` explains the three levels once under the
+  Low — no ⚑ Flag button on the headings, removed from the route page's scroll view 2026-10-15); `ConfidenceLegend` explains the three levels once under the
   verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
   field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
   chip and a HIGH row cannot be opened.
