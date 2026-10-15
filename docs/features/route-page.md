@@ -32,6 +32,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `GPXMap`, `ElevChart` |
 | `lib/db.js` | `useAreaRoutes`, `fetchRouteRow`, `dbRouteToCamel`, `useRouteContributions`, `useRouteDifficultyRatings`, `useMyRouteRating`, `useRouteStarSummary`, `setRouteRating`, `submitRoutePhoto`, `reportPhoto`, `submitContribution` |
 | `lib/planTimes.js` | `planTimes`, `realPitches` |
+| `lib/rack.js` | `routeRackFor`, `rackLeftovers`, `isRackEntry`, `isNonRackGear`, `DISC_RACK` — what the RACK card prints (rack only) and what moves to GEAR & ESSENTIALS |
 | `lib/FireNearRoute.jsx` | Nearby-fire panel (Safety tab) |
 | `lib/PhotoReports.jsx` | Photo report queue |
 | `EnrichmentPanels.jsx` | Panels for enriched route columns |
@@ -59,10 +60,10 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 ## 6. Guards
 
-`check:bare` (route with no enrichment, every discipline x sub-tab), `check:field-renders`, `check:token-boxes`, `check:pitch-split`, `check:approach-section`, `check:approach-overlay`, `check:trailhead-directions`, `check:trailhead-direction-shape`, `check:access-checked-line`, `check:fire`, `check:summit-briefing`, `check:photo-contract`, `check:crew-gear`, `check:camping`, `check:correction-readers`, `check:return-leg`, `check:write-readers` (rating writes refresh both cached readers), `check:schema`, `check:rls`, `check:migration-replay`, `check:ui`, `check:zero`, `check:overflow`. Notes: `docs/guards/route-page.md`.
+`check:bare` (route with no enrichment, every discipline x sub-tab), `check:field-renders`, `check:token-boxes`, `check:pitch-split`, `check:approach-section`, `check:approach-overlay`, `check:trailhead-directions`, `check:trailhead-direction-shape`, `check:access-checked-line`, `check:fire`, `check:summit-briefing`, `check:photo-contract`, `check:crew-gear`, `check:camping`, `check:correction-readers`, `check:return-leg`, `check:write-readers` (rating writes refresh both cached readers), `check:schema`, `check:rls`, `check:migration-replay`, `check:ui`, `check:zero`, `check:overflow`. Notes: `docs/guards/route-page.md`. `audit:rack-items` (hand-run: no rack column files non-rack gear).
 
 ## 7. Last significant change
-#2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
+The RACK card is rack-only: `detailed_rack`/`pro_needs`/`rack` re-homed on ~400 WA routes (ice axe, crampons, helmet, boots moved to `what_to_bring`), `DISC_RACK` stripped to protection and ropes, and `routeRackFor` splits every source (`rackLeftovers` to GEAR & ESSENTIALS). Before that: #2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
 
 ## 8. Known gaps / open decisions
 

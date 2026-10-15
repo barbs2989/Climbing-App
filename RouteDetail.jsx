@@ -11,7 +11,7 @@ import { DISC_LABELS as DL } from "./lib/discLabels";
 /* rackFromText / _rackEdited / contribRack / routeRackFor / DISC_RACK moved to lib/rack.js so
    the crew card can answer the same question without core importing this lazy-loaded file.
    Moved verbatim; the correction-precedence rule and its history live beside them there. */
-import { rackFromText, _rackEdited, _ropeEdited, contribRack, routeRackFor, DISC_RACK } from "./lib/rack";
+import { rackFromText, _rackEdited, _ropeEdited, contribRack, routeRackFor, rackLeftovers, DISC_RACK } from "./lib/rack";
 import { trackIsJustTheWaypoints, WAYPOINT_LINE_CAVEAT, waypointCaveat, trackCoverage, trackCoverageCaveat, trackStubCaveat } from "./lib/track";
 import { accessCheckedLine } from "./lib/road";
 import { trailheadDirectionProblem } from "./lib/trailheadDirectionShape";
@@ -705,7 +705,10 @@ function RopeworkBox({route,onEdit}){
 }
   /* One SECTION heading over the group: RACK, ROPEWORK and GEAR & ESSENTIALS are card titles, and
      without it the three cards ran on from WAYPOINTS above as if they were part of it. */
-  return <><SL>GEAR</SL><RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/><RopeworkBox route={route} onEdit={onEditRopeNote}/><RouteGearEssentialsBox route={route} essentials={essentials} onEdit={onEditEssentials}/></>;
+  /* rackLeftovers: what the rack sources name that is NOT rack (an ice axe filed in detailed_rack, a
+     helmet in gear). routeRackFor keeps it out of RACK; it joins the packing list here so a route
+     never loses something it states. mergeGearList dedupes it against the standard kit by item. */
+  return <><SL>GEAR</SL><RouteRackBox route={route} activity={activity} onEditRack={onEditRack} rack={rack} onSeeReports={onSeeReports} rackGeneric={rackGeneric}/><RopeworkBox route={route} onEdit={onEditRopeNote}/><RouteGearEssentialsBox route={route} essentials={(essentials||[]).concat(rackLeftovers(route))} onEdit={onEditEssentials}/></>;
 }
 const EditIconButton=({onClick,title})=><button onClick={onClick} title={title} aria-label={title} style={{display:"inline-flex",alignItems:"center",gap:5,padding:"8px 12px",borderRadius:8,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11,fontWeight:700,cursor:"pointer",flexShrink:0,whiteSpace:"nowrap"}}>{"✎ Edit"}</button>;
 function weatherIconKind(code){if(code==null)return null;if(code===0||code===1)return "sun";if(code===2)return "cloudSun";if(code===3)return "cloud";if(code===45||code===48)return "fog";if(code===95||code===96||code===99)return "storm";if([71,73,75,77,85,86].indexOf(code)>=0)return "snow";if([51,53,55,56,57,61,63,65,66,67,80,81,82].indexOf(code)>=0)return "rain";return "cloud";}

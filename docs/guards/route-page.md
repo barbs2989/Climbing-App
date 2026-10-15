@@ -1026,3 +1026,47 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **Cannot see:** whether a variant's linked data is TRUE — that is `audit:multi-approach` and
     research. Nor a panel that reads a field outside `APPROACH_OWNED_KEYS` that is in fact
     approach-specific; add the key there, not a special case in the panel.
+
+- **`audit:rack-items`** — **the RACK card showed an ice axe**, and three columns and one table put it
+  there. Measured 2026-10-15 over **14,200 WA routes**: 1,275 rendered a rack of their own and
+  **386** of those printed non-rack gear under RACK — 331 through `detailed_rack` (158 whole
+  sentences such as *"Carry an ice axe if snow lingers."* and 226 mixing both: *"A 60m rope and a
+  medium alpine rack; light crampons and a light ice axe are recommended into early summer."*),
+  33 through `gear` (95 entries — "Helmet", "Sturdy boots that edge well" — reached because db.js
+  falls back `rack -> gear` and `routeRackFor` printed whatever came), 22 through `pro_needs`
+  (a *"no protection"* statement that goes on to advise an axe), plus 52 `rack` arrays holding
+  *"Ice axe and crampons (glacier approach)"*. The other 12,925 routes rendered `DISC_RACK`, whose
+  alpine, mountaineering, ice, mixed and scrambling rows carried ice axe, crampons, layers,
+  navigation and food — so the generic card did it too.
+  - **Two halves, data and reader.** `scripts/oneoff/fix-rack-non-rack-items.mjs` rewrote the data
+    (**379 rows** in the first pass, **~20** in the second): the rack half of each sentence stays in
+    `detailed_rack`, the non-rack half becomes a `what_to_bring` entry in *"item — qualifier"* form so
+    `mergeGearList` folds it into GEAR & ESSENTIALS by item; `pro_needs` keeps the protection
+    statement; `rack` arrays keep only rack. The 403 sentence rewrites live in
+    `scripts/oneoff/rack-rewrites.json`, keyed by id **and** the exact stored sentence, so a row
+    edited since is skipped rather than half-repaired; the script re-reads and reconciles after
+    writing (379 of 379 exact). Two routes went rackless after the split and were **researched**
+    rather than left to the generic table: Lane Peak's Zipper (pickets, 1–2 screws only with ice, a
+    rope to rappel — Mountaineers route page and 2017–2025 trip reports) got a sentence restating the
+    rack already in its `rack`/`gear` columns; Mount Adams South Climb's `pro_needs` keeps *"rope and
+    glacier gear are not needed"* (Gifford Pinchot NF summit page).
+    - The reader half is `isRackEntry` / `isNonRackGear` / `splitRackEntries` in **`lib/rack.js`**:
+      `routeRackFor` now returns only the rack-shaped entries of whatever source it answered from, and
+      **`rackLeftovers`** hands the entries that NAME non-rack gear to `RouteGearEssentialsBox`, so a
+      future import that files a helmet under rack cannot put it back on the card and loses nothing.
+      An entry that is neither ("Terrain includes sections of loose boulders.") stays where it is —
+      GEAR & ESSENTIALS would be the wrong card for it too — and the audit lists it separately. A
+      sentence saying **no** rack is needed is rack information and stays (`unroped`, `non-technical`,
+      `no rock gear` are in the rack regex for that reason). `DISC_RACK` is rack-only now; the kit it
+      lost is `DISC_ASSUMED`'s and renders there already.
+  - **Every state, not just Washington (owner, same day: "make this a general rule for all states").**
+    Catalog-wide the three columns are populated on **6,177** routes; the WA pass left **141** of them
+    filing non-rack gear — 136 through `detailed_rack` (CA 41, CO 32, WY 23, BC 13, AK 12, UT 10, AB 5)
+    and 7 `rack` entries — and the same rewrite ran over them (fourth pass). The audit now reads the whole
+    catalog by default and `--state wa` narrows it.
+  - **What it cannot see.** It reads `detailed_rack`, `pro_needs` and `rack`; **`gear` is not a
+    finding** — it is the whole gear list by name and the reader splits it. The classifier is two
+    regexes: a sentence naming gear it does not know ("portaledge" was added when met) is reported
+    as *neither* rather than as non-rack, so a new kind of kit shows up in the second list, not the
+    first. It is a WA audit by scope (`--state`), hand-run, exit 1 on any finding; `--selftest`
+    asserts `DISC_RACK` and eight classifier cases with no database.
