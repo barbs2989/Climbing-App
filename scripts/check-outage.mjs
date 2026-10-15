@@ -161,7 +161,7 @@ const claim = (start) => new Promise((res, rej) => {
 });
 
 // The labels are `NAV[].label` verbatim, which are also the buttons' aria-labels.
-const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"];
+const TABS = ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"];
 const ONLY = (process.env.ONLY || "").trim();
 const SUBTAB = "Logbook:Completed";
 // `isError` is FALSE while react-query is still retrying -- the property that makes an
@@ -181,7 +181,9 @@ const REVISIT = "Home:revisited";
 // the query by an effect, so a failed read simply leaves the initial value -- loaded-and-empty
 // and never-loaded are the same screen. This is the shape #734 already shipped once on the
 // Requests view for a different root cause: a real invite under the words "No crew invites".
-const CREW_SUBS = ["Friends", "Groups", "Requests"];
+// GROUPS LEFT THE CREW TAB on 2026-10-14: it is a screen of its own (Menu → Groups, NAV "groups",
+// `bar:false`), so it is walked from TABS above, and its For you tab is the view captured there.
+const CREW_SUBS = ["Friends", "Requests"];
 const ROUTE = "RouteDetail";
 // The PHOTOS sub-tab. IT WAS ADDED FOR THE WRONG REASON and is kept because of what that found,
 // which is the more useful record of the two.
@@ -330,8 +332,11 @@ const ABSENCE_NOUNS = ["climb", "crew", "route", "area", "objective", "friend", 
 const ABSENCE_VERBS = ["logged", "joined", "confirmed"];
 const _plural = (n) => n + (/(?:ch|sh|s|x)$/.test(n) ? "(?:es)?" : "s?");
 const _NOUNS = ABSENCE_NOUNS.map(_plural).join("|");
+// A SIXTH, met by asking the question above when the Groups screen was added (2026-10-14): it
+// calls its emptiness "You haven’t joined a group yet" -- no "no", no zero, so neither branch
+// could spell it, and a failed read of your groups behind that sentence would have walked past.
 const CLAIMS_NONE_RE = new RegExp(
-  "no .* yet|nothing here|none yet|no results" +
+  "no .* yet|nothing here|none yet|no results|haven[’']t joined" +
   `|\\bno(?: \\w+){0,2} (?:${_NOUNS})\\b` +
   `|\\b0 (?:${_NOUNS}|${ABSENCE_VERBS.join("|")})\\b`, "i");
 // EVERY PHRASING THIS GUARD HAS EVER MISSED, as an executable assertion rather than as the
@@ -339,7 +344,7 @@ const CLAIMS_NONE_RE = new RegExp(
 // somebody widened the pattern by hand; a comment recording them rots, and this repo has the
 // scar to prove it. A rewrite that drops one fails here, before a browser is started.
 const MUST_SPELL = ["0 routes", "0 crews", "0 climbs to go", "0 logged", "0 joined",
-  "No crew invites", "No custom lists", "no friends yet", "No groups yet"];
+  "No crew invites", "No custom lists", "no friends yet", "No groups yet", "You haven’t joined a group yet"];
 for (const phrase of MUST_SPELL) {
   if (!CLAIMS_NONE_RE.test(phrase)) {
     console.error(`check:outage: rule 2's vocabulary can no longer spell ${JSON.stringify(phrase)},`

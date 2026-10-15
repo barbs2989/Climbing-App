@@ -316,7 +316,7 @@ try {
   log(`signed in as the fixture owner (${fixture.owner.id.slice(0, 8)}), real auth gate live`);
 
   log("main tabs:");
-  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile"]) {
+  for (const tab of ["Home", "Climbs", "Partners", "Crews", "Logbook", "Ranks", "Profile", "Groups"]) {
     if (!(await tap(tab))) { fail(tab, "tab is not reachable"); continue; }
     await capture(tab);
   }
@@ -398,9 +398,9 @@ try {
   // must appear on the roster. Before #680 both were false and the screen looked fine.
   log("a group the signed-in account owns:");
   await reset();
-  await tap("Crews");
-  // Groups open from the Menu's "Yours" tiles; the Crew tab is crews only (it used to be a
-  // Crew sub-tab whose label carried a count, "Groups1").
+  // Groups is a screen of its own, opened from the Menu's "Groups" tile (it used to be a Crew
+  // sub-tab whose label carried a count, "Groups1"). It opens on For you, which leads with a tile
+  // per group you are in -- so this run's group is one tap away by name.
   const toGroups = await tapMenuItem(page, "Groups");
   asserted++;
   if (!toGroups) fail("Group:detail", "could not find the Groups tile in the Menu");
@@ -531,7 +531,7 @@ try {
   // certifies a modal nobody looked at, which is strictly worse than asking for a second
   // distinguishing line -- and `render-settle` already masks digits for exactly this reason.
   const lineKey = (l) => l.trim().replace(/\d+/g, "#");
-  const TABS = ["me", "today", "crew", "routes", "logbook", "discover", "ranks"];
+  const TABS = ["me", "today", "crew", "routes", "logbook", "discover", "ranks", "groups"];
   const baselines = {};
   for (const t of TABS) {
     await page.goto(`${base}?zt=${t}`, { waitUntil: "domcontentloaded", timeout: 180000 });

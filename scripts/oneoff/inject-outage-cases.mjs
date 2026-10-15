@@ -20,8 +20,9 @@
 //                  naming Logbook:Completed.
 //   4. friends   — revert the Crew:Friends fix.                                    MUST FAIL,
 //                  naming Crew:Friends.
-//   5. groups    — revert the Crew:Groups fix.                                     MUST FAIL,
-//                  naming Crew:Groups.
+//   5. groups    — revert the Groups screen's fix: For you stops checking         MUST FAIL,
+//                  groupsUnavailable. Naming Groups. (It was Crew:Groups and reverted the
+//                  "0 joined" header until Groups became its own screen, 2026-10-14.)
 //   6. invites   — revert the crew-invites heading.                                MUST FAIL,
 //                  naming Crew:Requests. It expected a PASS until the fixture gained a
 //                  pending invite; that PASS was a stale-bookkeeping alarm and it fired.
@@ -93,10 +94,14 @@ const CASES = {
   },
   groups: {
     file: "ClimbMatch.jsx",
-    from: '{groupsUnavailable?"couldn’t load":myGroupsNow().length+" joined"}',
-    to: '{myGroupsNow().length+" joined"}',
+    // For you is the tab the walk lands on. Neutralise the CONDITION, as friends does, so the JSX
+    // stays balanced; the same flag guards the other four tabs, which the walk never opens.
+    from: '{groupsTab==="foryou"?<div>{groupsUnavailable?note(notLoaded):mine.length?',
+    to: '{groupsTab==="foryou"?<div>{false?note(notLoaded):mine.length?',
     expect: "fail",
-    names: /Crew:Groups/,
+    // The FINDING line, not the word: every run prints a table naming every screen, so a bare
+    // /Groups/ would match a failure about any screen at all.
+    names: /^ {2}Groups — /m,
   },
   // THE ALARM FIRED AND THIS CASE CHANGED BECAUSE OF IT.
   //

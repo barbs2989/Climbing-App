@@ -94,6 +94,8 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     its own unflagged query, and each asserts absence in its own words: *"No friends yet"*,
     *"0 joined"* / *"No groups yet"*, and **"No crew invites"** — which is the very sentence #734
     already shipped over a real invite, arrived at from the read side this time.
+    - (Groups has since left the Crew tab for a screen of its own, walked from `TABS`; the Crew
+      sub-views walked are Friends and Requests.)
     - All three fail the same way and it is the shape this file keeps recording: the state is
       hydrated by an effect that **returns early on a miss** (`if(accepted.length)`,
       `if(!uid||!myGroupsQ.data)return;`) or read through a `||[]`, and sign-in clears it — so a
@@ -265,6 +267,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     [[a-deny-list-detector-is-defeated-by-one-more-adjective]] shape and it fails as a *shorter
     worklist*, silently — nothing about a quiet run looks wrong. It is still a deny-list and will
     be short again; when a screen is added, check what its emptiness is CALLED.
+    - **And it was, for the Groups screen (2026-10-14):** *"You haven’t joined a group yet"* has no
+      `no` and no zero, so neither branch could spell it. `haven’t joined` is in the vocabulary and
+      the phrase is in `MUST_SPELL`. Groups is walked from `TABS` now (it left the Crew tab), and the
+      injection suite's `groups` case neutralises For you's `groupsUnavailable` test and names the
+      FINDING line (`/^ {2}Groups — /m`) — every run prints a table naming every screen, so a bare
+      `/Groups/` would match a failure about any screen at all.
   - **THE STALE-BOOKKEEPING ALARM FIRED, AND CLOSING IT TOOK TWO FIXES, NOT ONE.** The
     crew-invites heading used to be unmeasurable: `"No crew invites"` was on screen in the
     **healthy** run too, because the fixture's mate JOINS the crew rather than staying invited, so

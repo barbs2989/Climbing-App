@@ -165,7 +165,7 @@ const load = async (qs, settle) => {
   await page.waitForTimeout(settle);
 };
 
-const TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks"];
+const TABS = ["me", "today", "crew", "logbook", "routes", "discover", "ranks", "groups"];
 const seen = new Map();       // overlay name -> finding rows
 const notReached = [];        // changed NOTHING on any tab — a real failure to open
 const notFixed = [];          // opened, but is not a fixed overlay — out of this guard's subject
