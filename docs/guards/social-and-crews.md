@@ -596,3 +596,42 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **The onboarding sheet wrote an AREA ID into `profiles.location`** (`homeArea:home`, e.g. `lcc`),
     which partner rows print as the climber's city. It now sends what the box shows, falling back to
     the existing value so an untouched box never blanks it.
+
+- **CRAG PARTNERS ARE FOUND BY AREA, BOTH WAYS UP THE TREE; A CRAG-ROUTE OBJECTIVE IS A TICK LIST,
+  NOT A MATCH SIGNAL (`0300`, `check:partner-areas`).** Owner decision 2026-10-15. Partner finding
+  keyed on individual saved routes, which for sport, trad, top-rope and bouldering is far too
+  granular — two climbers who both climb at Hellgate every weekend never matched unless they had
+  saved the SAME route. `partner_areas` lets a climber list themselves at an area at any depth
+  (crag, wall, canyon, range, region, state — never a peak), with the crag types they want and ONE
+  optional date window. Alpine, mountaineering, scrambling, ice and mixed stay route-based.
+  - **REACHABILITY IS TWO-WAY on the ltree path.** Searching T finds a listing at L when
+    `L.path <@ T.path` (inside) OR `L.path @> T.path` (an ancestor). Each direction alone reads as a
+    sensible single rule and hides half the climbers — "listed at Wasatch" from a Hellgate search, or
+    "listed at Hellgate" from a Wasatch search. Ancestor matches carry `listed_above=true` and sort
+    last, so a card says "listed across Utah" rather than "listed here". The guard demands both
+    operators in every reader (`partners_in_area`, `partners_for_my_areas`, `partner_area_counts`).
+  - **The table is OWNER-ONLY, unlike `objectives` (public-read).** Every cross-climber read is a
+    `SECURITY DEFINER` that refuses a signed-out caller and applies `discoverable` plus
+    `profile_owner_blocked_me`, byte-for-byte `partners_near`'s rule. The guard refuses a
+    `using (true)` select policy on the table. `partner_areas_of_users` is the
+    `useObjectivesOfUsers` analogue: one read gives every row on screen its listing line.
+  - **Which objectives still count is ONE SQL rule, pinned:** a route counts when its discipline is
+    not crag-family, OR it is filed on a PEAK (trad that climbs a peak is alpine — `catOf`'s rule). A
+    seed id the catalog does not hold does not count. `match_objectives_of_users` holds it now;
+    `partners_by_objective` is re-created with it in the step that replaces crag objectives on
+    screen (a behaviour change, so it ships with its UI, not here). The crag list exists in THREE
+    places — the table CHECK, the match rule and the app's `CRAG_CATS` — and the guard demands they
+    are one set.
+  - **An expired window reads back as NO window, never as no listing**: the RPCs null `free_from`
+    and `free_to` once `free_to` is past; the row stays. One window per (climber, area) in v1.
+  - **Proven with five real accounts on their own JWTs** —
+    `scripts/oneoff/probe-partner-areas.mjs`, 45 assertions: owner-only table reads and writes, the
+    peak/country refusal, the discipline CHECK, the 30-listing cap, every function's signed-out
+    refusal, both reach directions and their ordering, the live and the expired window, the
+    unlisted climber, the caller, the block (and the count dropping with it), Near-my-areas empty for
+    a caller with no listings, `shared_count`/`via_area_names`, and the alpine-kept/sport-dropped
+    objective rule. The service key creates and deletes accounts and nothing else.
+  - **Trap met building it:** the trigger function came back with `EXECUTE` granted to PUBLIC and
+    `anon` (Postgres' default for a new function), which the partner RPCs' explicit `revoke` lines
+    do not cover. Read `routine_privileges` for EVERY function a migration creates, not just the
+    ones it grants on. Injection suite: `scripts/oneoff/inject-partner-areas-cases.mjs` (7 cases).
