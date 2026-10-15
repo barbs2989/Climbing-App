@@ -54,8 +54,8 @@ const CASES = [
          "Fahrenheit, so 10°C scores as below freezing and every reading is mis-coloured — and " +
          "nothing about the screen looks broken",
     file: RD,
-    find: "color:wxTempColor(t)})}>{uTemp(t)}",
-    repl: "color:wxTempColor(uTempN(t))})}>{uTemp(t)}",
+    find: "color:t!=null?wxTempColor(t):C.textMuted})}>{t!=null?uTemp(t):",
+    repl: "color:t!=null?wxTempColor(uTempN(t)):C.textMuted})}>{t!=null?uTemp(t):",
     expect: "fail",
     must: /is handed a CONVERTED value/,
   },
@@ -101,8 +101,8 @@ const CASES = [
     why: "a display site goes back to appending the imperial unit itself, so that one reading " +
          "stays in mph while every other one on the panel converts",
     file: RD,
-    find: '{uWind(wm)}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
-    repl: '{wm+" mph"}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
+    find: '{wm!=null?uWind(wm):"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
+    repl: '{wm!=null?wm+" mph":"Not measured"}</span><span style={daySub}>{"At "+clockHr(hh.hr)',
     expect: "fail",
     must: /still append " mph" directly/,
   },
@@ -154,8 +154,8 @@ const CASES = [
     why: "the gate keeps its shape and loses its input — wind10Max is null every day, so the " +
          "gust shows unconditionally and the same-height comparison is not happening at all",
     file: FX,
-    find: "weather_code,wind_speed_10m,wind_speed_80m,",
-    repl: "weather_code,wind_speed_80m,",
+    find: "weather_code,wind_speed_10m,wind_direction_10m,wind_speed_80m,",
+    repl: "weather_code,wind_direction_10m,wind_speed_80m,",
     expect: "fail",
     must: /no longer asks for wind_speed_10m/,
   },
@@ -196,15 +196,6 @@ const CASES = [
     file: RD,
     find: "function gustWorthShowing(dy){",
     repl: "// the gate used to read dy.gustMax>dy.windMax, which spanned 70 m of altitude\nfunction gustWorthShowing(dy){",
-    expect: "pass",
-  },
-  {
-    name: "caption-reworded",
-    why: "MUST STAY SILENT — the caption must NAME the two heights, not use one phrasing. A " +
-         "guard pinned to a sentence forbids improving the copy",
-    file: RD,
-    find: "gusts, and the NWS and MET winds beside each day, are surface (10 m) figures — so they are not measured at the same height.",
-    repl: "the gust, and the NWS and MET winds beside each day, are surface (10 m) readings taken at a different height.",
     expect: "pass",
   },
 ];

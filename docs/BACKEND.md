@@ -118,7 +118,7 @@ routes(
   pitches       int,
   length_m      int,
   sort_order    int,                    -- left-to-right cliff order (MP "by area")
-  stars         numeric,                -- cached avg from trip reports
+  stars         numeric,                -- cached avg, one vote per climber: route_ratings (header stars) else latest public trip report (0294)
   fa            text,
   lat, lng      double precision,
   aspect        text,

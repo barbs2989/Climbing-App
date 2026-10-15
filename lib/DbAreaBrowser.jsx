@@ -5,7 +5,7 @@
 // just fetched on demand from Supabase instead of walking the in-memory
 // MOUNTAINS/ROUTES arrays, since the DB catalog (47k+ areas / 200k+ routes) is
 // far too large to hold in memory. Rendered only when USE_DB is on.
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { useRecentRouteIds } from "./recent";
@@ -26,6 +26,14 @@ import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
 // a bare NCCS roman numeral on 30 routes. An area list is where a wrong grade is read fastest:
 // every row carries one.
 function rowGrade(r) { return displayGrade(r) || "—"; }
+
+// THE CLIMBER, for the panels that personalise this browser. `wishlist`, `profile`,
+// `completedIds`, `rankSuggested` and `discSlots` come from App and are read only by
+// DbSuggestedClimbs and ObjectivesPanel — two and three components below the browser — so
+// DbAreaBrowser provides them once instead of AreaPage carrying five props it never reads.
+// Local to this file on purpose: everything app-wide is either the react-query cache or App's
+// own state (ARCHITECTURE.md).
+const ClimberCtx = createContext({ wishlist: [], profile: null, completedIds: new Set(), rankSuggested: () => [], discSlots: null });
 
 const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
@@ -90,8 +98,9 @@ function RouteRow({ r, onOpen, C, areaName }) {
 // — same layout/copy, but sourced from useScopedWishlistRoutes/useSubtreeRoutes
 // instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
-// this file doesn't import — see its own header comment on why) and passed down.
-function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, discSlots, C }) {
+// this file doesn't import — see its own header comment on why) and read from ClimberCtx.
+function DbSuggestedClimbs({ area, onOpen, C }) {
+  const { profile, completedIds, wishlist, rankSuggested, discSlots } = useContext(ClimberCtx);
   // Collapsed until the climber opens it — the user's call (2026-09-30): the rows are one tap
   // away behind the "Suggested climbs · N" header, never spread across the area page by default.
   const [open, setOpen] = useState(false);
@@ -485,7 +494,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb, TopContributors, onFireMap}) {
+function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -619,7 +628,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 
       {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
 
-      <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} discSlots={discSlots} C={C} />
+      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
     </div>
   );
 }
@@ -912,7 +921,8 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
 }
 
 // ── Objectives: your wishlisted routes that fall within the current area ──
-function ObjectivesPanel({ area, wishlist, onOpen, C }) {
+function ObjectivesPanel({ area, onOpen, C }) {
+  const { wishlist } = useContext(ClimberCtx);
   const { data, isLoading, error } = useScopedWishlistRoutes(area, wishlist);
   return (
     <div>
@@ -950,7 +960,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [center, setCenter] = useState(center0 || null);
   const [baseLayer, setBaseLayer] = useState("street");
   const [sel, setSel] = useState(null);
-  // Go to a town, county or zip. `alts` are the other matches, offered as "Not it?".
+  // Go to a town, county, or zip/postal code (US and Canada). `alts` are the other matches, offered as "Not it?".
   const [placeQ, setPlaceQ] = useState("");
   const [place, setPlace] = useState({ busy: false, err: "", alts: [] });
   const [fullscreen, setFullscreen] = useState(false);
@@ -999,10 +1009,24 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       map.on("moveend", () => readBounds(map));
       map.on("movestart", () => setSel(null));
       setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
+      // ...and again whenever the map's box really changes size. On a slow phone the box can still
+      // be unlaid-out at 150ms: the query then asked for a near-zero box, got no areas, and the
+      // map said "No climbs in view" over a whole state until the climber panned.
+      if (typeof ResizeObserver !== "undefined") {
+        let last = "";
+        ro = new ResizeObserver(([e]) => {
+          const k = Math.round(e.contentRect.width) + "x" + Math.round(e.contentRect.height);
+          if (k === last || !mapRef.current) return;
+          last = k;
+          try { map.invalidateSize(); readBounds(map); } catch (err) {}
+        });
+        ro.observe(mapDiv.current);
+      }
     };
+    let ro = null;
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
-    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
+    return () => { cancelled = true; clearTimeout(ft); if (ro) ro.disconnect(); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
   }, []);
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
@@ -1090,7 +1114,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     if (!q || place.busy) return;
     setPlace({ busy: true, err: "", alts: [] });
     searchPlaces(q, bounds).then(rows => {
-      if (!rows.length) { setPlace({ busy: false, err: "No town, county or zip code called “" + q + "” found.", alts: [] }); return; }
+      if (!rows.length) { setPlace({ busy: false, err: "No town, county or zip/postal code called “" + q + "” found.", alts: [] }); return; }
       goToPlace(rows[0]);
       setPlace({ busy: false, err: "", alts: rows.slice(1, 4) });
     }, () => setPlace({ busy: false, err: "Couldn't search places just now — check your connection and try again.", alts: [] }));
@@ -1118,7 +1142,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
         </>
       ) : null}
       <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
-        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip code" aria-label="Go to a town, county or zip code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
+        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
         <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
       </form>
       {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
@@ -1339,6 +1363,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
   const [treeOpen, setTreeOpen] = useState(false);
+  const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   const handledJumpId = useRef(null);
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
@@ -1413,6 +1438,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   }, [jumpToAreaReq, jumpAreaRowQ.data]);
 
   return (
+    <ClimberCtx.Provider value={climber}>
     <div>
       {/* Breadcrumb + Back. Sticky, and rendered on EVERY sub-screen — not just "areas".
           Two reports drove both halves. It used to scroll away on a long area page, so on
@@ -1456,15 +1482,16 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ) : screen === "finder" ? (
         <RouteFinderPanel scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} />
       ) : screen === "objectives" ? (
-        <ObjectivesPanel area={current} wishlist={wishlist} onOpen={onOpenRoute} C={C} />
+        <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
         <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
       ) : null}
     </div>
+    </ClimberCtx.Provider>
   );
 }

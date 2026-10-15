@@ -281,6 +281,9 @@ export function applyBaseLayer(map, tileRef, baseLayer) {
   // itself, which its BSD licence does not require), so the tile credit gets its own control,
   // once per map. Leaflet then shows the ACTIVE layer's credit and swaps it with the layer.
   if (!map.__cmCredit) map.__cmCredit = L.control.attribution({ prefix: false, position: "bottomright" }).addTo(map);
+  // BaseLayerToggle's row sits at top-left (top:10, ~38px tall), exactly where Leaflet puts its
+  // +/- by default: the + was hidden under the first layer button. Drop the zoom below the row.
+  if (map.zoomControl && !map.__cmZoomMoved) { map.__cmZoomMoved = true; try { map.zoomControl.getContainer().style.marginTop = "56px"; } catch (e) {} }
   if (tileRef.current) { try { map.removeLayer(tileRef.current); } catch (e) {} }
   tileRef.current = baseTileLayer(L, baseLayer).addTo(map);
   fitZoomToLayer(map, baseLayer);
@@ -467,7 +470,9 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
     if (hookedRef.current !== map) { hookedRef.current = map; dotRef.current = null; ringRef.current = null; map.on("dragstart", () => { autoRef.current = false; }); }
     const ll = [fix.lat, fix.lng], r = Number.isFinite(fix.acc) ? fix.acc : 50;
     if (dotRef.current) dotRef.current.setLatLng(ll);
-    else dotRef.current = L.circleMarker(ll, { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
+    // An HTML marker lifted above every other marker, not a circleMarker: vector shapes draw in the
+    // overlay pane UNDER all markers, so on the area map a cluster bubble over a city hid the dot.
+    else dotRef.current = L.marker(ll, { icon: L.divIcon({ html: "<div style='width:14px;height:14px;border-radius:50%;background:" + C.green + ";border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.6);'></div>", className: "", iconSize: [20, 20], iconAnchor: [10, 10] }), zIndexOffset: 5000, keyboard: false }).addTo(map).bindTooltip("You are here", { direction: "top" });
     if (ringRef.current) ringRef.current.setLatLng(ll).setRadius(r);
     else ringRef.current = L.circle(ll, { radius: r, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12, interactive: false }).addTo(map);
     if (first) map.setView(ll, Math.max(map.getZoom(), zoom));
@@ -542,7 +547,7 @@ export function locateLabel(st, idle) {
   return idle;
 }
 
-// "Where is Moab?" -- a town, county, city or zip code typed into a map, answered by
+// "Where is Moab?" -- a town, county, city, zip or Canadian postal code typed into a map, answered by
 // OpenStreetMap's place index. Run on submit only (its usage policy forbids per-keystroke
 // lookups). `bounds` ({minLat,maxLat,minLng,maxLng}) ranks places in the current view first, so
 // "Springdale" on a Utah map is the Zion one. Resolves to [] for no match; rejects on a failed read,
@@ -550,14 +555,14 @@ export function locateLabel(st, idle) {
 export function searchPlaces(q, bounds) {
   const t = String(q || "").trim();
   if (!t) return Promise.resolve([]);
-  let url = "https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=us&limit=5&dedupe=1&" + (/^\d{5}$/.test(t) ? "postalcode=" : "q=") + encodeURIComponent(t);
+  let url = "https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=us,ca&limit=5&dedupe=1&" + (/^\d{5}$/.test(t) ? "postalcode=" : "q=") + encodeURIComponent(t);
   if (bounds && Number.isFinite(bounds.minLat)) url += "&viewbox=" + [bounds.minLng, bounds.maxLat, bounds.maxLng, bounds.minLat].map((n) => n.toFixed(4)).join(",");
   return fetch(url, { headers: { Accept: "application/json" } }).then((r) => {
     if (!r.ok) throw new Error("place search " + r.status);
     return r.json();
   }).then((rows) => (Array.isArray(rows) ? rows : []).map((r) => {
-    const parts = String(r.display_name || "").split(", ").filter((x) => x !== "United States");
+    const parts = String(r.display_name || "").split(", ").filter((x) => x !== "United States" && x !== "Canada");
     const bb = (r.boundingbox || []).map(Number);
-    return { name: parts[0] || t, sub: parts.slice(1).filter((x) => !/^\d{5}$/.test(x)).join(", "), lat: Number(r.lat), lng: Number(r.lon), bbox: bb.length === 4 && bb.every(Number.isFinite) ? [[bb[0], bb[2]], [bb[1], bb[3]]] : null };
+    return { name: parts[0] || t, sub: parts.slice(1).filter((x) => !/^(\d{5}|[A-Z]\d[A-Z] ?\d[A-Z]\d)$/i.test(x)).join(", "), lat: Number(r.lat), lng: Number(r.lon), bbox: bb.length === 4 && bb.every(Number.isFinite) ? [[bb[0], bb[2]], [bb[1], bb[3]]] : null };
   }).filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng)));
 }

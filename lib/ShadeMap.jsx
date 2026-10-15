@@ -158,25 +158,29 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
   const spans = useMemo(function () { return d ? pts.map(function (p, k) { return pxs[k] ? pinSunSpans(d, grid, lat, lng, rise, set, 10, pxs[k]) : undefined; }) : null; }, [terr, grid.key, ptsKey, rise, set]);
   const sun = sunPosition(lat, lng, t);
   const shAt = function (k) { return d && pxs[k] ? pointShaded(d.E, grid.W, grid.H, grid.pxM, pxs[k].c, pxs[k].r, sun.az, sun.alt, d.emax) : undefined; };
-  const reachKm = Math.round(Math.min(grid.pin.c, grid.W - grid.pin.c, grid.pin.r, grid.H - grid.pin.r) * grid.pxM / 100) / 10;
   const sunLine = sun.alt <= 0 ? "Sun below the horizon" : "Sun " + Math.round(sun.alt) + "° up in the " + DIR8[Math.round(sun.az / 45) % 8];
   const spanText = function (sp) {
     const hrs = sp.reduce(function (a, s) { return a + (s[1] - s[0]); }, 0) / 3600e3;
     return sp.map(function (s) { return clock(s[0]) + " – " + clock(s[1]); }).join(", ") + " (about " + (Math.round(hrs * 2) / 2) + " h)";
   };
+  /* The line under the clock adds only what the badges beside the clock do not say: a pin with no height, or off
+     the map. It used to repeat each pin's "in sun" / "in shade" (and "Sun below the horizon") right under the
+     badge that already said it (#2334). */
   let pinLine = "", spanEl = null;
   if (!named) {
     const pinSh = shAt(0), sp0 = spans ? spans[0] : null;
-    pinLine = pinSh === undefined ? "" : pinSh === null ? " · no height on file at the pin" : sun.alt <= 0 ? "" : pinSh ? " · pin in the terrain’s shade" : " · pin in sun";
+    pinLine = pinSh === null ? " · no height on file at the pin" : "";
     if (sp0) spanEl = <div style={{ fontSize: 12.5, color: sp0.length ? C.yellow : C.textSub, lineHeight: 1.5, marginTop: 4 }}>{sp0.length ? "Sun reaches the pin " + spanText(sp0) : "The terrain keeps the pin in shade from sunrise to sunset"}</div>;
   } else {
-    if (d && sun.alt > 0) pinLine = " · " + pts.map(function (p, k) { const s = shAt(k); return p.label + (s === undefined ? " off the map" : s === null ? " unknown" : s ? " in shade" : " in sun"); }).join(" · ");
+    if (d && sun.alt > 0) pinLine = pts.map(function (p, k) { const s = shAt(k); return s === undefined ? " · " + p.label + " off the map" : s === null ? " · " + p.label + " unknown" : ""; }).join("");
     if (spans) spanEl = <div style={{ marginTop: 6 }}>{pts.map(function (p, k) {
       const sp = spans[k];
       const txt = sp === undefined ? "Too far from the climb for the terrain here" : sp === null ? "No height on file at this pin" : sp.length ? "Sun " + spanText(sp) : "In the terrain’s shade from sunrise to sunset";
       return <div key={p.key} style={{ display: "grid", gridTemplateColumns: "104px minmax(0,1fr)", gap: 10, padding: "6px 0", borderTop: "1px solid " + C.borderLight, fontSize: 12.5, lineHeight: 1.45 }}><span style={{ color: C.textMuted, fontSize: 12 }}>{p.label}</span><span style={{ color: sp && sp.length ? C.yellow : C.textSub }}>{txt}</span></div>;
     })}</div>;
   }
+  /* The badges beside the clock. The slider's aria-valuetext says the time AND these, so a screen reader hears one
+     short summary as it moves; an aria-live region around the clock and badges read them all again on every step. */
   const readouts = sun.alt <= 0 ? [{ key: "night", text: "Sun below the horizon", col: C.textSub, bg: C.surface }] : !d ? [] : (named ? pts : pts.slice(0, 1)).map(function (p, k) { const sh = shAt(k); if (sh === undefined || sh === null) return null; return { key: p.key || k, text: (named ? p.label + ": " : "") + (sh ? "In shade" : "In sun"), col: sh ? C.blue : C.yellow, bg: sh ? C.blueBg : C.amberBg }; }).filter(Boolean);
   const btn = { background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" };
   const sw = function (col) { return <span aria-hidden="true" style={{ display: "inline-block", width: 10, height: 10, borderRadius: 2, background: col, marginRight: 5, verticalAlign: "-1px" }} />; };
@@ -191,18 +195,15 @@ export default function ShadeMap({ lat, lng, rise, set, at0, dayKey, clock, C, p
       <span>{sw("rgba(12,18,40,0.75)")}Shade</span>
       <button onClick={function () { setSteepOn(!steepOn); }} aria-pressed={steepOn} style={{ padding: "4px 9px", borderRadius: 8, border: "1px solid " + (steepOn ? C.orange : C.border), background: steepOn ? C.orangeBg : "transparent", color: steepOn ? C.orange : C.textSub, fontSize: 11.5, fontWeight: 700, cursor: "pointer" }}>{sw("rgba(240,136,62,0.85)")}{"Steep (" + STEEP_DEG + "°+) and in sun"}</button>
     </div> : null}
-    <div aria-live="polite" style={{ marginTop: 10, display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: "4px 12px" }}>
+    <div style={{ marginTop: 10, display: "flex", flexWrap: "wrap", alignItems: "baseline", gap: "4px 12px" }}>
       <span style={{ fontSize: 26, fontWeight: 800, color: C.text, letterSpacing: -0.3, lineHeight: 1.1 }}>{clock(t)}</span>
       {readouts.map(function (r) { return <span key={r.key} style={{ fontSize: 14, fontWeight: 800, color: r.col, background: r.bg, border: "1px solid " + r.col + "55", borderRadius: 8, padding: "3px 10px" }}>{r.text}</span>; })}
     </div>
-    <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginTop: 3 }}>{sunLine + pinLine}</div>
+    {sun.alt > 0 || pinLine ? <div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.5, marginTop: 3 }}>{(sun.alt > 0 ? sunLine : "") + (sun.alt > 0 ? pinLine : pinLine.replace(/^ · /, ""))}</div> : null}
     <div style={{ marginTop: 8 }}>
-      <input type="range" min={rise} max={set} step={STEP} value={t} onChange={function (e) { setT(+e.target.value); }} aria-label="Time of day for the shade" aria-valuetext={clock(t)} style={{ width: "100%", accentColor: C.yellow, margin: 0 }} />
+      <input type="range" min={rise} max={set} step={STEP} value={t} onChange={function (e) { setT(+e.target.value); }} aria-label="Time of day for the shade" aria-valuetext={clock(t) + (readouts.length ? ", " + readouts.map(function (r) { return r.text; }).join(", ") : "")} style={{ width: "100%", accentColor: C.yellow, margin: 0 }} />
       <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: C.textMuted, marginTop: 2 }}><span>{"Sunrise " + clock(rise)}</span><span>{"Sunset " + clock(set)}</span></div>
     </div>
     {spanEl}
-    <div style={{ fontSize: 11.5, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>{named
-      ? "Shadows the terrain casts under a clear sky, from heights about " + Math.round(grid.pxM) + " m apart: ridges, faces and gullies — not trees, cornices, or a step of rock steeper than the model can see. Times are for the route’s own pins. Ground more than about " + reachKm + " km from the climb isn’t counted, which matters only when the sun is very low." + (steep ? " Steep ground is read from the same heights, so a short steep step can read gentler than it is." : "") + (d && d.partial ? " Some ground near the climb has no height on file and is drawn without shade." : "")
-      : "Shadows the terrain casts under a clear sky, from heights about " + Math.round(grid.pxM) + " m apart: ridges, canyon walls and slopes — not trees, overhangs, or which way one face of the rock points. The pin is the " + (place || "crag") + "’s location on file, not a particular wall. Ground more than about " + reachKm + " km away isn’t counted, which matters only when the sun is very low." + (d && d.partial ? " Some ground near the " + (place || "crag") + " has no height on file and is drawn without shade." : "")}</div>
   </div>;
 }

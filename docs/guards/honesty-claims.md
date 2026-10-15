@@ -1364,6 +1364,31 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     ("Fair"), because temperature, wind and sun still scored. Rain in the past hour, rock under 30%
     dried, ANY wet sandstone (not conglomerate — see below), and AQI > 200 cap the hour at 1 ★; air
     within 5°F of its dew point and AQI > 150 cap it at 2 ★.
+  - **...and DRYING rock is held down until it is dry (`WET_BANDS`, 2026-10-15)**: under 30% dry 1 ★,
+    under 70% 2 ★, under 100% 3.5 ★. One cap at 30% was the whole rule before, and Dry rock is only 25
+    of 100 points, so the hour the card itself called "about 50% dry" scored 4.3 ★ "Good" in green beside
+    a red morning (Exit 38 the day after 0.2" of rain: 11 not-yet-dry hours at 3.0–4.7 ★, day 4.6 ★
+    Good; after: 3.5 ★ Fair). Measured on live forecasts for 12 crags: dry days are unchanged. The
+    guard walks 12 rain fixtures and fails if any hour 30–99% dry exceeds its band or reads "Good";
+    reverting the bands to the single 30% cap fails it (75% dry -> 4.6 ★).
+  - **...and the rock DRIES FASTER (`DRY_RATE`, same day, owner: "probably speed it up")**: the dew point
+    gave NO drying, night 0.6 and 90% RH 0.3, so a Northwest night after rain dried almost nothing.
+    Now dew point 0.6, night 1, 90% RH 0.6, 75% RH 0.9. Fitted to CragReport's hourly surface dryness
+    (Index, Exit 38, Mt Erie, Squamish; 169 hours, one storm): mean error 0.21 -> 0.12, bias -0.16 ->
+    -0.05. Sunday after the storm now scores 4.0–4.9 ★, matching Climbit (~3.5–4.6) and CragReport
+    (81–95). A full fit wants night faster than day — not physical, refused; `DRY_HOURS` is untouched.
+    The guard pins only the ORDER (dew point ≤ 90% ≤ 75% ≤ 1, night ≤ day, dew point > 0).
+  - **...and the PAST rain is MEASURED where a measurement reaches (`mergeMeasuredRain`, 2026-10-15)**:
+    `lib/forecast.js fetchMeasuredRain` tries a 6-h radar-and-gauge analysis (HRDPA; northern US + Canada:
+    WA, OR, KY, WV, WI, NY answer; the South, Southwest, CA and CO return no feature), then an hourly one
+    (Stage IV via Iowa State) ONLY east of 104°W — west of it the hours are split from 6-h totals and put
+    the 2026-10-09 Index storm 18 h late — else null, and the score keeps the model. Both crag readers
+    (Conditions card, Home tile) go through `fetchCragForecastMeasured`, so they cannot disagree. Measured
+    on 2026-10-15: RRG's past 96 h 3.46" modelled vs 2.34" measured, Gunks 0.98" vs 1.48". A time not yet
+    analysed is an XML error, a point outside the analysis is `{}`: both are "not measured", never zero.
+    The guard pins the merge (amount from the measurement, timing from the model inside a window, gaps keep
+    the model, a measured dry window dries a modelled soaking). The two crag-fetch URL checks now match
+    `fetchCragForecast\(` exactly — `fetchCragForecastMeasured` shares the prefix and was read in its place.
   - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
     on feel:
     - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).
@@ -1551,13 +1576,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (east first, west in the warm afternoon), and centres put the slope that lets go at ~35°
       (Utah: stay off and out from under slopes approaching 35° once the sun wets them). CalTopo's
       sun-exposure layer and point chart are the tool climbers use for this today, by hand.
-    - **Each kind gets its own line** (`SUN_NOTE`): sun loosens what is above a glacier or an
-      alpine-ice line; it loosens waterfall ice and the snow above it even while you climb in shade;
-      it strips rime and softens turf on mixed ground; it DRIES a scramble; it WARMS alpine rock on a
-      cold day. Every one is called a rule of thumb on screen.
+    - **No per-kind sun line, and no caveat footer under the map** (removed 2026-10-15 at the owner's
+      request, with the forecast, smoke and hourly-wind caveat footers): the section is the map and
+      its readouts only. Do not re-add them as a guard requirement.
     - **STEEP (35°+) AND IN SUN** is an overlay offered only where snow or ice is in play (glacier,
       alpine ice, waterfall, mixed, or a kind with snow legs). The slope comes from the same ~7 m
-      heights, so a short steep step reads gentler than it is, and the card says so.
+      heights, so a short steep step reads gentler than it is.
     - **A SUMMIT is read at the model's own high point** (`highestNear`, within 30 m). Measured
       live before it shipped: Colchuck Peak's summit pin sat one pixel off the model's top, 2 m
       lower, so the top "shaded" it until the sun was ~17° up — first sun 8:30 AM against a 7:10
@@ -1714,6 +1738,26 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       right shape. The section now looks the raw local day up by date, and the guard pins both the lookup and that
       a shape without `hours` throws. LESSON: a card that mounts only after a fetch resolves is invisible to the
       static render walks. Open it on a real route in Chrome before calling it done.
+    - **VISIBILITY ARRIVES IN FEET (fixed 2026-10-14).** `precipitation_unit=inch` switches EVERY length Open-Meteo
+      returns to feet -- the freezing level (known) and visibility with it (`hourly_units.visibility` is `"ft"`,
+      checked live). The card read it as metres, so a 3,000 ft (914 m) fog hour read as 3 km and never flagged, and
+      every visibility on screen was 3.3x too long. `visibilityInMetres()` (lib/forecast.js) converts at fetch BY THE
+      UNIT THE RESPONSE STATES and drops a series in an unstated or unknown unit (the tile then reads "Not measured").
+      TRAP: the section 15 fixture fed metres with no `hourly_units`, the same assumption as the code, so it passed
+      the bug; it is now shaped like the live response (feet + unit) and goes through the conversion. LESSON: a fixture
+      written from the code's assumptions cannot test them -- build it from a live response's units block.
+    - **A CLOCK CHANGE MID-SERIES (guard section 17, fixed 2026-10-14).** The alpine card read all 21 days (14 past +
+      7 ahead) through ONE `utc_offset_seconds` -- the offset at fetch time -- so across 2025-11-02 the Nov 2 sunrise
+      (6:51 AM PST) read 7:51, local days were cut at 1 AM, and "today" turned over at 11 PM; from late October and
+      in March every series crosses a change. It now reads local time through the crag card's zone-aware `localFn`
+      (lib/conditionsScore.js) via `localAt` / `localDays` / `dayStartMs` (an alert's day is 23-25 h). Fixtures with no
+      `timezone` keep their fixed offset. The same section pins #2342: the start's days-early is counted ONCE per day
+      (`day.daysEarly`), so the hour strip no longer prints "Start by 7 PM (the night before)" under a box that says
+      the push is too long for one day.
+    - **STREAMS (2026-10-14):** a WATER LEVEL's trend is read in feet (`STEADY_STAGE_FT`, 0.1 ft in 3 h, ours), never as a
+      percent of a height above an arbitrary datum; a "now" reading more than 2 h old says how old; gauge names spell
+      out the naming abbreviations (R, CR, NR, BL, AB, NF/SF/MF...) and keep the state code in capitals (`gaugeName`).
+      Report freshness counts CALENDAR days on this device (a report dated today read "yesterday" from 5 PM Pacific).
     - **TEMPERATURE GAPS (guard section 16, measured 2026-10-14):** a temperature is for ONE height, and a screen that
       sets two numbers side by side has to say whose. (1) The NWS grid cell under a summit sits 150 to 850 m BELOW
       it (Rainier: cell 3,890 m, pin 4,392 m), so its raw temperatures read up to 9 F warmer than the
@@ -1758,7 +1802,10 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
   range. Wind had no preference before: it was the fixed rule full at 10 mph, nothing at 35. Unchosen it is still
   that rule EXACTLY (range [0,10], fade 25 mph above), pinned in `check:conditions-score`; a climber who wants a
   breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
-  Home/End, `touch-action:none`). TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
+  Home/End, `touch-action:none`). WHICH HANDLE IS ON TOP where their 44 px hit areas overlap: the LOW one once the
+  range sits past the middle of the track, the high one before it (pinned in `check:conditions-score`). A fixed
+  "high on top" stranded the low handle at the top of the scale: every touch landed on the high handle, which
+  cannot go further right, so the range could not be widened again. TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
   `innerWidth` 0) in an automation session, which makes screenshots fail with "0 width"; a NEW tab got a real size.
 
 - **The two "Your conditions" builds, MERGED (2026-10-14).** The drag-both-ends ranges above and the
