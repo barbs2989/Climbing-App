@@ -99,7 +99,17 @@ try {
   const ping = (ch) => ch.send({ type: "broadcast", event: "changed", payload: {} });
   const rows = async () => { const { data } = await mateNode.from("crew_members").select("user_id,gear_claims,gear_extras").eq("crew_id", crewId); return Object.fromEntries((data || []).map((r) => [r.user_id === fx.owner.id ? "owner" : r.user_id === fx.mate.id ? "mate" : r.user_id, r])); };
 
-  const tapCrews = (page) => page.evaluate(() => { const b = [...document.querySelectorAll("button")].find((e) => /^Crews\d*$/.test((e.textContent || "").trim())); if (b) b.click(); });
+  // The bar button's BADGE renders BEFORE its label, so with any unread its text reads "2Crews" -- and the
+  // fixture always gives the owner one. The first live run matched /^Crews\d*$/, found nothing, and both
+  // browsers sat on Home ("the card never rendered"). Match the aria-label; re-tap until a card exists,
+  // since a tap that lands while sign-in is still settling is undone by the sign-in reset.
+  const tapCrews = async (page) => {
+    for (let i = 0; i < 40; i++) {
+      await page.evaluate(() => { const b = [...document.querySelectorAll("button")].find((e) => e.getAttribute("aria-label") === "Crews"); if (b) b.click(); }).catch(() => {});
+      await sleep(3000);
+      if (await page.evaluate(() => !!document.querySelector('[id^="crewcard-"]')).catch(() => false)) return;
+    }
+  };
   const open = async (who, session) => {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
     await ctx.addInitScript(({ key, value }) => { try { window.localStorage.setItem(key, value); } catch {} }, { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(session)) });
