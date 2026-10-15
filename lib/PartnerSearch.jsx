@@ -5,7 +5,7 @@ import { clickable } from "./clickable";
 import { ROUTE_PICK_LIM, dbRouteToCamel, useAreaSearch, useDiscoverableProfiles, useMatchObjectivesOfUsers, useMyZip, useObjectiveCounts, usePartnerAreasOfUsers, usePartnersForMyAreas, usePartnersInArea, useVerifiedUsers, usePartnerSignals, usePartnersByObjective, usePartnersNear,useProfileSearch, useRouteSearch, useRoutesByIds } from "./db";
 import { useRecentRouteIds } from "./recent";
 import { Fragment, useEffect, useMemo, useState } from "react";
-import { ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, ActionIcon, AreaRegionSelect, Av, C, CAT, DB_UID, DbClimbPicker, PlaceMatches, DLOCALE, Pill, DiscIcon, ME, MOUNTAINS, ROUTES, RealClimberRow, SZ6, areaPathNames, availFits, availLabel, availMatch, availOf, catOf, compat, crewPlace, condRep, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, rDiscs, uApproxDist, uDistMi, uDistMiUnitLong, uRate, vScore } from "../ClimbMatchCore.jsx";
+import { ALL_CLIMBERS, AVAIL_FILTER_OPTS, CRAG_CATS, ActionIcon, AreaRegionSelect, Av, C, CAT, DB_UID, DbClimbPicker, PlaceMatches, DLOCALE, DiscIcon, ME, MOUNTAINS, ROUTES, RealClimberRow, SZ6, areaPathNames, availFits, availLabel, availMatch, availOf, catOf, compat, crewPlace, condRep, crewAskedToJoin, crewSize, distMiles, fuzzyMatchAny, haveMyLoc, inArea, mutualCount, mutualFirstNames, mutualLabel, paceOf, pubName, rDiscs, uApproxDist, uDistMi, uDistMiUnitLong, uRate, vScore } from "../ClimbMatchCore.jsx";
 import Lbl from "../src/components/Lbl.tsx";
 import TrustBadge from "../src/components/TrustBadge.tsx";
 import DiscBadge from "../src/components/DiscBadge.tsx";
