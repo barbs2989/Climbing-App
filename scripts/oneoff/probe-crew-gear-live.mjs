@@ -22,9 +22,11 @@
 //   * The dev server serves hundreds of unbundled modules; on a loaded box the card never rendered in
 //     3 minutes. --live targets the deployed site instead (bundled, what climbers run, same database).
 //
-// STATUS AT COMMIT (2026-10-15): written and partly run, NOT yet run to the end. Every attempt hit a box
-// at 100-244x load per core, or was stopped by Claude Code for low memory before launching. The one
-// partial run at 5.5x found only the probe's own wrong-card bug (fixed above). Run it on a quiet box.
+// STATUS: RUN TO THE END on 2026-10-15 against the live site on a quiet box (1.4x): ok, 30 assertions.
+// An owner's item reached the mate's open card in 514 ms, a claim came back the other way in 515 ms,
+// a removal reached the other screen in 515 ms and every DB copy. Three earlier runs died on the
+// probe's own locators (the badge prefixes the Crews label; the claim button is "I'll bring it: X";
+// the open Assign button is "Done assigning X" and the chips sit beside its row) -- all fixed above.
 //
 //   node scripts/oneoff/probe-crew-gear-live.mjs --live                # deployed site
 //   node scripts/oneoff/probe-crew-gear-live.mjs                       # local dev server of this checkout
