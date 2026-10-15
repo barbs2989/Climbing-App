@@ -9,14 +9,14 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - Your header stars persist. Tapping another star changes your rating; tapping your own star again withdraws it. Signed out, it asks you to sign in rather than pretending to save.
 - Every figure built from several climbers' input states how many climbers it comes from and over what window (e.g. "avg of N ratings", "N climbers logged it", "N in the last 45 days", "N of 3 suggested").
 - Planner (alpine layout) has a **Full Trip Time** card: Approach, Climbing, Descent, Total trip (approach + climb + descent).
-- Climbers can edit/correct route fields through edit pencils; three agreeing climbers make a correction stick.
+- Climbers can edit/correct route fields through edit pencils; every edit is held until the owner approves it (see [route-quality-control.md](route-quality-control.md)).
 - Photos tab: route photos, lightbox, likes, report.
 
 ## 2. How it works
 
 1. **Open.** `openRoute(x)` in `ClimbMatch.jsx` sets `routeFrom`, `selRoute` and `tab="routes"`. `App` renders `RouteDetail` (a lazy screen).
 2. **Load (DB path, `USE_DB`).** `useAreaRoutes` (lib/db.js) backs the area browser's route list from `areas`/`routes`; `fetchRouteRow` fetches a single full row. `dbRouteToCamel()` converts a snake_case row to the camelCase shape the page reads. Seed `ROUTES` are only the fallback/demo set.
-3. **Overlay of climber input.** `App` merges contributions onto the route inside its route memo: `useRouteContributions` supplies accepted/pending corrections, producing `_contribFields` (accepted, incl. database-accepted fields), `_pendingEdits` (other climbers' suggestions with fewer than 3 votes, shown as "N of 3 suggested") and `_contribAgreed` (drives "✓ N climbers agreed" in the edit form). `useRouteDifficultyRatings` feeds the difficulty breakdown.
+3. **Overlay of climber input.** `App` merges contributions onto the route inside its route memo: `useRouteContributions` supplies the route's contribution rows; only `status='approved'` rows are applied (value = `applied_value` else `value`), producing `_contribFields` (approved fields), `_pendingEdits` (the caller's OWN pending suggestions, shown as "Awaiting review") and `_contribAgreed` (how many climbers submitted the approved value; drives "✓ N climbers, checked" in the edit form). `useRouteDifficultyRatings` feeds the difficulty breakdown.
 4. **Stars.** `useMyRouteRating(routeId, userId)` reads your `route_ratings` row into `myStars` (a failed read never clears the stars). `setRouteRating(userId, routeId, stars)` upserts, or deletes when `stars` is null, then invalidates `route-rating-mine` and `route-star-summary`. `useRouteStarSummary(routeId)` calls RPC `route_star_summary` for the shared average and rater count shown in the ★ cell.
 5. **Sub-tabs** are rendered by `RouteDetail.jsx` off its `tab` state. Overview carries the consensus (`buildConsensus` over `route.activity`), hazard flags, route breakdown, approach/descent, social chips (`useRoutePairings`, `useRouteLoggedWith`). `FireNearRoute` is the first section of Safety on every route.
 6. **Planner.** Time estimates come from `scarfHrs(...)` (Naismith-style approach by fitness tier and pack weight) and `techHrs(...)` (pitch-by-pitch climbing, exponential slowdown by grade); `lib/planTimes.js` (`planTimes`, `realPitches`) assembles the stage totals. A route's stored legs win over computed ones (`check:return-leg`).
@@ -43,7 +43,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - **`routes`** (thousands of rows; `dbRouteToCamel` reads it). `routes.stars` is a cache kept by triggers on `route_ratings` and `climb_logs`; the Climbs list, min-stars filter and stars sort read it.
 - **`route_ratings`** (0294): PK `(route_id, user_id)`, `stars` 1-5, RLS own-row read/insert/update/delete. Nothing renders who rated what.
 - **`route_star_summary(p_route_id)`**: average of one vote per climber: header rating, else their most recent public, visible trip report's stars; returns `stars` and `raters`.
-- **`contributions`**: corrections (accepted at three agreeing climbers) and route photos (kind `photo`). **`climb_logs`**: trip reports/stars.
+- **`contributions`**: corrections (held `pending` until the owner approves; 0307–0309) and route photos (kind `photo`). **`climb_logs`**: trip reports/stars.
 - **Still seed/in-memory:** `ROUTES` fallback set and demo trip reports when not on the DB path.
 
 ## 5. Connections

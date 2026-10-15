@@ -94,8 +94,29 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:contrib-field-columns`** asserts that the database's list of editable route fields
+  (`contribution_fields`, migration 0307) is the FORM's list: every `FIELDS` key in
+  `RouteDetail.jsx` and every `SS` key in `ClimbMatch.jsx` has a row, every row names a `routes`
+  column the schema snapshot has (or is declared in `NO_COLUMN` with a reason), and every row is
+  a key some form offers (or is declared in `EXTRA`). The confidence rule (`route_field_level`,
+  0308) reads the row to test whether a field is EMPTY on a route, and the insert guard refuses an
+  edit to a field at 'high' — so a key with no row reads as 'medium' forever, and a row naming a
+  column that does not exist reads every route as empty, i.e. 'low', i.e. always editable. Both
+  are silent. Static; reads every migration's `insert into contribution_fields` block in file
+  order, latest value per key wins. Found `ascender` (in `SS`, not in the form) missing from the
+  first draft of 0307. Fails closed on fewer than 40 keys, no rows, or no snapshot.
+  - **Why the form key, not the column.** The unit a climber edits is the form key (`rap`,
+    `gain`, `pitchCount`); the app's `M` renames it to the camelCase route PROPERTY and
+    `dbRouteToCamel` renames the column to that property, so neither map gives the column. This
+    table is the one place the column is stated, which is why a guard has to hold it to the form.
 - **`check:consensus-clustering`** asserts that three climbers who agree can actually be **counted**
-  as agreeing. The merge gate is `win.n>=3||wasEmpty`, so for a field that already holds a value
+  as agreeing. **Since 2026-10-15 (0307–0309, the owner's route quality control) the merge no
+  longer applies a value on agreement**: every field edit is held `pending` until the owner
+  approves it, the merge applies `status='approved'` rows only (value = `applied_value` else
+  `value`), and clustering serves the owner's queue ("3 climbers suggested X") rather than a
+  threshold. The guard still matters for exactly that reason — a cluster that cannot form is three
+  agreeing climbers the owner never sees as agreeing. The paragraph below describes the gate as it
+  was. The merge gate was `win.n>=3||wasEmpty`, so for a field that already holds a value
   three contributors must land in the same cluster or the correction sits pending **forever** —
   which makes `sameEditValue`, not the form or `SS`, the thing that decides whether a correction can
   ever go live. It was **exact for everything except numbers**. Static (bundles core and executes the
