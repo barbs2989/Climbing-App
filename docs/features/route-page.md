@@ -52,7 +52,8 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - **Crews:** crew gear list reaches a real route (`check:crew-gear`); crews are built around a `routeId`.
 - **Logbook:** logging a climb (`climb_logs`) feeds trip reports, consensus and, as fallback vote, the rating.
 - **Partners:** the `partners` sub-tab; `useRoutePairings` / `useRouteLoggedWith` show who logged it. On a crag route (0300) the sub-tab is "Climbers at <crag>":
-  `usePartnersInArea` on the route's area, List me at <crag> (`onListMe`, into the My listed areas sheet), See all (`onFindPartnersInArea`), and the seed example cards are off.
+  `usePartnersInArea` on the route's area, List me at <crag> (`onListMe`, into the My listed areas sheet), See all (`onFindPartnersInArea`), and the seed example cards are off;
+  "Sessions at <crag>" lists open crews bound to exactly this route's area (`dbCrews` rows with an `areaId`), joinable like a route crew.
   On an alpine route it is still the climbers who saved it (`usePartnersByObjective`, match objectives only since 0303).
 - **Conditions:** see [conditions.md](conditions.md).
 

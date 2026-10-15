@@ -725,3 +725,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   in both function bodies, demands `ME.matchObjectiveIds` is derived with the imported `CRAG_CATS`,
   and refuses the raw hook's return (10 injections). Probe: `partners_by_objective` finds B through
   the alpine objective and not through the sport one (47 assertions).
+
+- **AREA CREWS CAN BE STARTED, FOUND AND JOINED (0302, Step 7).** `lib/StartCrewSheet.jsx` collects what the
+  database demands of an area crew (the area, the session's discipline) and what a session needs to be
+  joinable (a day, a size); `formCrew` takes a route id OR a place `{kind:"area",id,disc}` and mints
+  `crew_a_<area>_<ts>`. Entry points: the area page's "Start a crew here" / "Crews here · N" (Join a crew, By
+  Area preset), the Crews tab's "+ Create a crew → At an area — a crag session…" (and a plain button when
+  there is no saved climb to pick), a past crew's picker. The finder's first mode is "My climbs & areas":
+  a crew at an area I listed, or inside one (`inMyAreas` over `useAreaPaths`), is mine to find, badged
+  "★ In an area you’re listed in". A crag route's Partners sub-tab lists "Sessions at <crag>". One seed
+  example (`open_hellgate_session`) in `OPEN_CREWS` so the demo finder and area page show the shape.
+  - **A lazy sheet that is born lazy still goes in `MOVED["ClimbMatchCore.jsx"]`** — overlay discovery
+    only recognises a dialog COMPONENT it can see in the stitched core source, so an unregistered
+    payload overlay reads as "no longer renders a dialog". And the stitch is ONE module: two sheets each
+    declaring `const TYPE_LABEL` broke every guard that parses core ("already been declared"). Prefix
+    module-level names in a lazy file.
+  - The recap alert for an area crew carries `crew:cr.id` beside `crewlog`, so a tap opens the crew card
+    (there is no route to log from the alert).
