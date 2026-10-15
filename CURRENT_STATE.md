@@ -24,6 +24,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Groups Step 6** One palette on the event page and the group invite card: neutral date tile in the climber’s date format, no 📍, one accent on RSVP and capacity (red stays only on Cancel event). “Who’s going” names show to the event’s host only; everyone else sees the count.
 - **Groups Step 5** Events: one event row everywhere (date tile, when · where, going), a tap opens the event; a group’s Events tab shows Upcoming then Past (3, “See all”); the hub’s Events tab puts “You’re going” first. “Form a crew” left the group page.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
 - **PR3** `DiscBadge` extracted to `src/components/DiscBadge.tsx` (core imports it back for `DiscBadges`; the guard stitch drops a parent's own import of a moved file).
