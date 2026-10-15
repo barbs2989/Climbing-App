@@ -31794,3 +31794,74 @@ human to review and likely delete; this audit has no authority to do so itself.
 failures this run (WebSearch was still the primary method).
 
 Pass 7 continues next run after `wa_golden_horn_southwest_route`.
+
+## 2026-10-15 — Pass 7, batch 406
+
+Checked 6 WA alpine/mountaineering routes across 4 peaks: Mount Goode's three
+(`wa_goode_mountain_megalodon_ridge`, `wa_goode_mountain_northeast_face`,
+`wa_goode_mountain_southwest_couloir`), Mount Stuart's `wa_gorillas_direct`,
+Gray Wolf Ridge's `wa_gray_wolf_ridge_se_slopes`, and Gunnshy Peak's
+`wa_gunnshy_peak_standard_route`.
+
+**Two confirmed errors, fixed.** Southwest Couloir's `fa` text misspells one of the
+1936 first-ascent party as "Philip Dickert" — Wikipedia's Goode Mountain article (and
+its mirrors) consistently give "Philip Dickett"; the same typo repeats verbatim in Mount
+Goode's own area `blurb`, and turned up a third time, independently, on an unrelated
+peak's FA row (`wa_mount_challenger_challenger_glacier`) via the same name search — not
+a full audit of that route this pass, just the same confirmed correction applied where
+the same error recurred. Separately, Gunnshy Peak's own `access.notes` claims "Mount
+Persis, Gunn Peak, Baring Mountain area sit outside designated wilderness," which
+contradicts the SAME row's `permit` field and multiple sources (SummitPost, Wikipedia's
+Wild Sky Wilderness article) naming Gunn Peak — 0.7 mi from Gunnshy on the same massif —
+as that wilderness's own highest point. Removed the false claim rather than inventing
+replacement prose.
+
+**Mount Goode — mostly held up, several open questions left to a human.** Megalodon
+Ridge's FA, grade/commitment, line, and every stored hazard matched the AAC's own 2008
+"New Climbs" trip report almost verbatim (icy moat near the final gendarmes, the
+overhanging 5.10 pitch above the Goode Glacier, the exposed bivy bench). Northeast
+Face is murkier: the stored two-person FA (Beckey & Parrott, 1954) has only
+circumstantial photo-caption support, and a separate AAC snippet describes what may be
+the same era's climb as a five-person ascent via a different line (northwest
+notch/north summit) — left as "needs human verification" rather than guessed at; the
+route's own data_quality claim of a "2011 ski-mountaineering ascent" source also
+couldn't be pinned to any specific trip report found. Southwest Couloir's `dist_km`
+(59.5 km) looks like a likely outlier against its two sibling routes on the same
+trailhead (18 km, 25.7 km) — it suspiciously matches the sum of two very different
+one-way legs quoted for the separate Northeast Buttress route, suggesting it may have
+been copied from that route's loop-trip mileage rather than computed for this
+there-and-back — but no sourced replacement figure was found, so left flagged, not
+fixed. The peak's own elevation also has real source disagreement (GNIS: 8,989 ft vs.
+the stored/majority 9,220 ft); 9,220 is the more commonly cited figure but not
+undisputed.
+
+**Gorillas Direct (Mount Stuart) — FA confirmed, grade genuinely unsettled.** The
+stored FA (Sol Wertkin, Jens Holsten & Mark Westman, 2011) checks out cleanly against
+the AAC's own 2012 Cascades activity summary, which is the single highest-value fact
+here given how easily this route is confused with its sister line "Gorillas in the
+Mist." The stored grade (5.10d) conflicts with the AAC's own account of the same 2011
+ascent ("IV 5.11-") and with some Mountain Project area-table entries — flagged for a
+human with a working Mountain Project fetch to resolve (ours hit DNS failures), not
+fixed by guesswork.
+
+**Gray Wolf Ridge SE Slopes — clean.** Every fact checked (FA credit to Leigh B. Lint
+1928, elevation 7,218 ft, the Gray Wolf River bridge washout, the Olympic NP permit
+rule, the Baldy approach) confirmed against WTA, NPS, and Wikipedia. The two open gaps
+already disclosed in the row's own `data_quality` field (prominence sourcing, and a
+mileage/gain figure that doesn't cleanly match any single source) remain unresolved —
+not new findings, just confirmation that the existing hedge is the right call.
+
+**Gunnshy Peak — sparse but not wrong, beyond the wilderness-status fix above.** Name,
+FA (correctly left blank — no source documents one), driving directions, and the
+widely-reported "confused with Gunn Peak" note all confirmed against WTA/SummitPost.
+One currency note for a human, not a factual error in the row as written: WTA's current
+page says the Barclay Creek log crossing described in the stored approach text has
+since been removed for safety.
+
+**Tooling notes:** Delegated to 4 parallel subagents, one per peak/route-group.
+WebFetch failed with DNS errors on every domain attempted in at least one subagent
+(mountainproject.com, summitpost.org, americanalpineclub.org, wikipedia.org) — all
+findings came from WebSearch snippets. `npm run check:sql -- fix.sql` run against both
+the `routes` and `areas` write targets in this batch's SQL file; both pass clean.
+
+Pass 7 continues next run after `wa_gunnshy_peak_standard_route`.
