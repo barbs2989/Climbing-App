@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { C, DLOCALE, MOUNTAINS, catOf } from "../ClimbMatchCore.jsx";
-import { fetchCragForecast } from "./forecast";
+import { fetchCragForecastMeasured } from "./forecast";
 import { scoreForecast, starsLabel, CRAG_SCORE_DISCIPLINES, OPEN_DAY } from "./conditionsScore.js";
 import { useCondPrefs, scorePrefs } from "./CondPrefs.jsx";
 import { routeRock } from "./rockType.js";
@@ -46,7 +46,7 @@ export default function BestDayTile({ ids, routeById, onOpen, onPrefs, onExplore
     for (const k of keys) {
       if (_wx[k]) continue;
       const p = k.split(",");
-      fetchCragForecast(+p[0], +p[1]).then(function (j) { _wx[k] = j; if (live) setWx(function (o) { return Object.assign({}, o, { [k]: { data: j } }); }); },
+      fetchCragForecastMeasured(+p[0], +p[1]).then(function (j) { _wx[k] = j; if (live) setWx(function (o) { return Object.assign({}, o, { [k]: { data: j } }); }); },
         function () { if (live) setWx(function (o) { return Object.assign({}, o, { [k]: { error: true } }); }); });
     }
     return function () { live = false; };

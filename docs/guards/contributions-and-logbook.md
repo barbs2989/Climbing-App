@@ -167,6 +167,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   correction displayed **nothing**) and `rack` (#907, the RACK box read `gearTiers.required`
   while the form writes `rack`, so the box the climber edited kept the value they had
   replaced). Fixing one never found the next; **do not assume a third looks like either.**
+  - **`_contribFields` used to hold only THIS SESSION's local edits** (`routeEdits`), never what
+    the DB merge accepted. So on the signed-in path a rack/rope/descent correction three OTHER
+    climbers had agreed was written to the route and then out-voted by the enrichment for every
+    reader but its author — the same rivalry, reached through the second merge path. Fixed
+    2026-10-15 (PR #2403): the DB merge records what it accepted (`_dbAcc`) and unions it in, and
+    also feeds `_pendingEdits` (other climbers' 1–2-of-3 suggestions were invisible) and
+    `_contribAgreed` (distinct-contributor count, rendered as "✓ N climbers agreed" in the form).
+    This guard checks the READERS; it cannot see which keys the writer puts in the list.
   - **It was widened because `rack` was guarded only by a `scripts/oneoff/` probe, and nothing
     runs those.** The general rule was enforced nowhere, so a third instance would have shipped
     in silence. That is the gap it closes, and it is why this is a build gate rather than a

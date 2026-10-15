@@ -950,7 +950,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
   const [center, setCenter] = useState(center0 || null);
   const [baseLayer, setBaseLayer] = useState("street");
   const [sel, setSel] = useState(null);
-  // Go to a town, county or zip. `alts` are the other matches, offered as "Not it?".
+  // Go to a town, county, or zip/postal code (US and Canada). `alts` are the other matches, offered as "Not it?".
   const [placeQ, setPlaceQ] = useState("");
   const [place, setPlace] = useState({ busy: false, err: "", alts: [] });
   const [fullscreen, setFullscreen] = useState(false);
@@ -999,10 +999,24 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       map.on("moveend", () => readBounds(map));
       map.on("movestart", () => setSel(null));
       setTimeout(() => { try { map.invalidateSize(); readBounds(map); } catch (e) {} }, 150);
+      // ...and again whenever the map's box really changes size. On a slow phone the box can still
+      // be unlaid-out at 150ms: the query then asked for a near-zero box, got no areas, and the
+      // map said "No climbs in view" over a whole state until the climber panned.
+      if (typeof ResizeObserver !== "undefined") {
+        let last = "";
+        ro = new ResizeObserver(([e]) => {
+          const k = Math.round(e.contentRect.width) + "x" + Math.round(e.contentRect.height);
+          if (k === last || !mapRef.current) return;
+          last = k;
+          try { map.invalidateSize(); readBounds(map); } catch (err) {}
+        });
+        ro.observe(mapDiv.current);
+      }
     };
+    let ro = null;
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
-    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
+    return () => { cancelled = true; clearTimeout(ft); if (ro) ro.disconnect(); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
   }, []);
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
@@ -1090,7 +1104,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     if (!q || place.busy) return;
     setPlace({ busy: true, err: "", alts: [] });
     searchPlaces(q, bounds).then(rows => {
-      if (!rows.length) { setPlace({ busy: false, err: "No town, county or zip code called “" + q + "” found.", alts: [] }); return; }
+      if (!rows.length) { setPlace({ busy: false, err: "No town, county or zip/postal code called “" + q + "” found.", alts: [] }); return; }
       goToPlace(rows[0]);
       setPlace({ busy: false, err: "", alts: rows.slice(1, 4) });
     }, () => setPlace({ busy: false, err: "Couldn't search places just now — check your connection and try again.", alts: [] }));
@@ -1118,7 +1132,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
         </>
       ) : null}
       <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
-        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip code" aria-label="Go to a town, county or zip code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
+        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip/postal code" aria-label="Go to a town, county or zip/postal code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
         <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
       </form>
       {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}

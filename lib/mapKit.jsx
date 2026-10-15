@@ -547,7 +547,7 @@ export function locateLabel(st, idle) {
   return idle;
 }
 
-// "Where is Moab?" -- a town, county, city or zip code typed into a map, answered by
+// "Where is Moab?" -- a town, county, city, zip or Canadian postal code typed into a map, answered by
 // OpenStreetMap's place index. Run on submit only (its usage policy forbids per-keystroke
 // lookups). `bounds` ({minLat,maxLat,minLng,maxLng}) ranks places in the current view first, so
 // "Springdale" on a Utah map is the Zion one. Resolves to [] for no match; rejects on a failed read,
@@ -555,14 +555,14 @@ export function locateLabel(st, idle) {
 export function searchPlaces(q, bounds) {
   const t = String(q || "").trim();
   if (!t) return Promise.resolve([]);
-  let url = "https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=us&limit=5&dedupe=1&" + (/^\d{5}$/.test(t) ? "postalcode=" : "q=") + encodeURIComponent(t);
+  let url = "https://nominatim.openstreetmap.org/search?format=jsonv2&countrycodes=us,ca&limit=5&dedupe=1&" + (/^\d{5}$/.test(t) ? "postalcode=" : "q=") + encodeURIComponent(t);
   if (bounds && Number.isFinite(bounds.minLat)) url += "&viewbox=" + [bounds.minLng, bounds.maxLat, bounds.maxLng, bounds.minLat].map((n) => n.toFixed(4)).join(",");
   return fetch(url, { headers: { Accept: "application/json" } }).then((r) => {
     if (!r.ok) throw new Error("place search " + r.status);
     return r.json();
   }).then((rows) => (Array.isArray(rows) ? rows : []).map((r) => {
-    const parts = String(r.display_name || "").split(", ").filter((x) => x !== "United States");
+    const parts = String(r.display_name || "").split(", ").filter((x) => x !== "United States" && x !== "Canada");
     const bb = (r.boundingbox || []).map(Number);
-    return { name: parts[0] || t, sub: parts.slice(1).filter((x) => !/^\d{5}$/.test(x)).join(", "), lat: Number(r.lat), lng: Number(r.lon), bbox: bb.length === 4 && bb.every(Number.isFinite) ? [[bb[0], bb[2]], [bb[1], bb[3]]] : null };
+    return { name: parts[0] || t, sub: parts.slice(1).filter((x) => !/^(\d{5}|[A-Z]\d[A-Z] ?\d[A-Z]\d)$/i.test(x)).join(", "), lat: Number(r.lat), lng: Number(r.lon), bbox: bb.length === 4 && bb.every(Number.isFinite) ? [[bb[0], bb[2]], [bb[1], bb[3]]] : null };
   }).filter((p) => Number.isFinite(p.lat) && Number.isFinite(p.lng)));
 }
