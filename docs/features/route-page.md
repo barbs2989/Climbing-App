@@ -10,7 +10,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - Every figure built from several climbers' input states how many climbers it comes from and over what window (e.g. "avg of N ratings", "N climbers logged it", "N in the last 45 days", "N of 3 suggested").
 - Planner (alpine layout) has a **Full Trip Time** card: Approach, Climbing, Descent, Total trip (approach + climb + descent).
 - Climbers can edit/correct route fields through edit pencils; every edit is held until the owner approves it (see [route-quality-control.md](route-quality-control.md)).
-- Photos tab: route photos, lightbox, likes, report.
+- Photos tab: route photos, lightbox, likes, report. Its `TopoDrawer` is exported for the log form (`lib/LogAscent.jsx`), so a topo can be drawn while logging a climb.
 
 ## 2. How it works
 
