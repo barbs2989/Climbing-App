@@ -1,4 +1,4 @@
--- 0290: the source's "New Sub-Area N" placeholders, each named for what it is or folded into where its climbs belong.
+-- 0291: the source's "New Sub-Area N" placeholders, each named for what it is or folded into where its climbs belong.
 --
 -- Asked: "do what you recommend" (2026-10-14), after 0288 found Rainbow Mountain filed as a catch-all list plus an
 -- unnamed "New Sub-Area 1" while the source now names its boulders. 18 areas carried that placeholder name
@@ -184,37 +184,37 @@ create temp table m_recount on commit drop as
 do $$ declare n int; begin
   -- An EMPTY database (a Supabase preview, check:migration-replay) has no catalog: nothing to fold.
   select count(*) into n from areas where id in (select id from m_drop_area);
-  if n = 0 then raise notice '0290: no catalog, nothing to fold'; return; end if;
-  if n <> 13 then raise exception '0290: expected 13 copy areas, found %', n; end if;
+  if n = 0 then raise notice '0291: no catalog, nothing to fold'; return; end if;
+  if n <> 13 then raise exception '0291: expected 13 copy areas, found %', n; end if;
   -- the tree must still be the one the plan read
   select count(*) into n from m_move m join routes r on r.id = m.id and r.area_id = m.from_area;
-  if n <> 71 then raise exception '0290: % of 71 climbs are where the plan found them', n; end if;
+  if n <> 71 then raise exception '0291: % of 71 climbs are where the plan found them', n; end if;
   select count(*) into n from m_merge m join routes k on k.id = m.keep join routes o on o.id = m.drop_id;
-  if n <> 7 then raise exception '0290: % of 7 merge pairs still exist', n; end if;
+  if n <> 7 then raise exception '0291: % of 7 merge pairs still exist', n; end if;
   select count(*) into n from m_reparent m join areas a on a.id = m.id and a.parent_id = m.from_area;
-  if n <> 1 then raise exception '0290: % of 1 sub-areas are where the plan found them', n; end if;
+  if n <> 1 then raise exception '0291: % of 1 sub-areas are where the plan found them', n; end if;
   select count(*) into n from m_rename m join areas a on a.id = m.id and a.name = m.from_name;
-  if n <> 6 then raise exception '0290: % of 6 renames still carry the planned name', n; end if;
+  if n <> 6 then raise exception '0291: % of 6 renames still carry the planned name', n; end if;
   select count(*) into n from m_route_rename m join routes r on r.id = m.id and r.name = m.from_name;
-  if n <> 0 then raise exception '0290: % of 0 climb renames still carry the planned name', n; end if;
+  if n <> 0 then raise exception '0291: % of 0 climb renames still carry the planned name', n; end if;
   select count(*) into n from areas where id in (select id from m_new_area);
-  if n > 0 then raise exception '0290: % of the new areas already exist', n; end if;
+  if n > 0 then raise exception '0291: % of the new areas already exist', n; end if;
   select count(*) into n from m_pin m join areas a on a.id = m.id
    where a.lat is not distinct from m.from_lat and a.lng is not distinct from m.from_lng;
-  if n <> 1 then raise exception '0290: % of 1 pins are where the plan read them', n; end if;
+  if n <> 1 then raise exception '0291: % of 1 pins are where the plan read them', n; end if;
   select count(*) into n from m_junk j join routes r on r.id = j.id and r.area_id = j.area_id and r.name = j.name;
-  if n <> 0 then raise exception '0290: % of 0 junk rows are where they were read', n; end if;
+  if n <> 0 then raise exception '0291: % of 0 junk rows are where they were read', n; end if;
   select count(*) into n from m_lift l join areas a on a.id = l.id and a.parent_id = l.from_parent where l.id in (select id from m_drop_area);
-  if n <> 2 then raise exception '0290: % of 2 placeholders to lift are where the plan read them (and are deleted)', n; end if;
+  if n <> 2 then raise exception '0291: % of 2 placeholders to lift are where the plan read them (and are deleted)', n; end if;
   select count(*) into n from m_retype t join areas a on a.id = t.id and a.area_type = t.from_type;
-  if n <> 1 then raise exception '0290: % of 1 areas to retype have the type the plan read', n; end if;
+  if n <> 1 then raise exception '0291: % of 1 areas to retype have the type the plan read', n; end if;
   -- every climb on a copy is accounted for
   select count(*) into n from routes r join m_drop_area d on d.id = r.area_id
    where r.id not in (select id from m_move) and r.id not in (select drop_id from m_merge);
-  if n > 0 then raise exception '0290: % climbs on a copy are not in the plan', n; end if;
+  if n > 0 then raise exception '0291: % climbs on a copy are not in the plan', n; end if;
   select count(*) into n from areas a join m_drop_area d on d.id = a.parent_id
    where a.id not in (select id from m_reparent) and a.id not in (select id from m_drop_area);
-  if n > 0 then raise exception '0290: % sub-areas of a copy are not in the plan', n; end if;
+  if n > 0 then raise exception '0291: % sub-areas of a copy are not in the plan', n; end if;
   -- refuse to cascade-delete anybody's data
   select (select count(*) from contributions where route_id in (select drop_id from m_merge union select id from m_junk))
        + (select count(*) from topo_lines where route_id in (select drop_id from m_merge union select id from m_junk))
@@ -229,7 +229,7 @@ do $$ declare n int; begin
        + (select count(*) from crews where route_id in (select drop_id from m_merge union select id from m_junk))
        + (select count(*) from user_lists where route_ids && (select array_agg(x) from (select drop_id x from m_merge union select id from m_junk) s))
     into n;
-  if n > 0 then raise exception '0290: % climber rows point at a row this deletes — stop and repoint them', n; end if;
+  if n > 0 then raise exception '0291: % climber rows point at a row this deletes — stop and repoint them', n; end if;
 end $$;
 
 -- 1. one climb stored twice: the keeper fills its blanks from the copy (its grade only when the copy's
@@ -378,7 +378,7 @@ update contributions c set area_id = d.into_area from m_drop_area d where c.area
 do $$ declare n int; begin
   select (select count(*) from topos where area_id in (select id from m_drop_area))
        + (select count(*) from contributions where area_id in (select id from m_drop_area)) into n;
-  if n > 0 then raise exception '0290: % climber rows still point at a copy', n; end if;
+  if n > 0 then raise exception '0291: % climber rows still point at a copy', n; end if;
 end $$;
 
 -- 4. the keeper fills its blank columns from each copy, then the copies go, children first
@@ -446,29 +446,29 @@ do $$ declare n int; begin
   -- the empty preview database: nothing was there to fold
   if not exists (select 1 from routes where id in (select keep from m_merge)) then return; end if;
   select count(*) into n from areas where id in (select id from m_drop_area);
-  if n > 0 then raise exception '0290: % copy areas were not emptied', n; end if;
+  if n > 0 then raise exception '0291: % copy areas were not emptied', n; end if;
   select count(*) into n from routes where id in (select drop_id from m_merge union select id from m_junk);
-  if n > 0 then raise exception '0290: % merged or junk climbs survived', n; end if;
+  if n > 0 then raise exception '0291: % merged or junk climbs survived', n; end if;
   select count(*) into n from m_move m join routes r on r.id = m.id and r.area_id = m.to_area;
-  if n <> 71 then raise exception '0290: % of 71 climbs moved', n; end if;
+  if n <> 71 then raise exception '0291: % of 71 climbs moved', n; end if;
   select count(*) into n from m_rename m join areas a on a.id = m.id and a.name = m.to_name;
-  if n <> 6 then raise exception '0290: % of 6 renames landed', n; end if;
+  if n <> 6 then raise exception '0291: % of 6 renames landed', n; end if;
   select count(*) into n from m_new_area m join areas a on a.id = m.id and a.parent_id = m.final_parent and a.route_count > 0;
-  if n <> 13 then raise exception '0290: % of 13 new areas are in place, holding their climbs', n; end if;
+  if n <> 13 then raise exception '0291: % of 13 new areas are in place, holding their climbs', n; end if;
   select count(*) into n from m_reparent m join areas a on a.id = m.id and a.parent_id = m.to_area;
-  if n <> 1 then raise exception '0290: % of 1 sub-areas re-parented', n; end if;
+  if n <> 1 then raise exception '0291: % of 1 sub-areas re-parented', n; end if;
   select count(*) into n from m_route_rename m join routes r on r.id = m.id and r.name = m.to_name;
-  if n <> 0 then raise exception '0290: % of 0 climb renames landed', n; end if;
+  if n <> 0 then raise exception '0291: % of 0 climb renames landed', n; end if;
   select count(*) into n from m_merge m join routes k on k.id = m.keep where m.grade is not null and (k.grade <> m.grade or k.grade_num is distinct from m.grade_num);
-  if n > 0 then raise exception '0290: % merged grades or grade_nums did not land', n; end if;
+  if n > 0 then raise exception '0291: % merged grades or grade_nums did not land', n; end if;
   select count(*) into n from m_pin m join areas a on a.id = m.id and a.lat = m.lat and a.lng = m.lng and a.coords_approx = m.approx;
-  if n <> 1 then raise exception '0290: % of 1 pins landed', n; end if;
+  if n <> 1 then raise exception '0291: % of 1 pins landed', n; end if;
   select count(*) into n from m_retype t join areas a on a.id = t.id and a.area_type = t.to_type;
-  if n <> 1 then raise exception '0290: % of 1 retypes landed', n; end if;
+  if n <> 1 then raise exception '0291: % of 1 retypes landed', n; end if;
   -- no area holds climbs AND sub-areas
   select count(*) into n from areas a where a.id in (select id from m_recount)
      and exists (select 1 from routes r where r.area_id = a.id) and exists (select 1 from areas s where s.parent_id = a.id);
-  if n > 0 then raise exception '0290: % areas hold climbs and sub-areas', n; end if;
+  if n > 0 then raise exception '0291: % areas hold climbs and sub-areas', n; end if;
 end $$;
 
 commit;
