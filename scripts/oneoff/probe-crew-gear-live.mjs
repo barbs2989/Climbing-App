@@ -22,9 +22,13 @@
 //   * The dev server serves hundreds of unbundled modules; on a loaded box the card never rendered in
 //     3 minutes. --live targets the deployed site instead (bundled, what climbers run, same database).
 //
-// STATUS AT COMMIT (2026-10-15): written and partly run, NOT yet run to the end. Every attempt hit a box
-// at 100-244x load per core, or was stopped by Claude Code for low memory before launching. The one
-// partial run at 5.5x found only the probe's own wrong-card bug (fixed above). Run it on a quiet box.
+//   * The Crews tab carries a count badge BEFORE its label ("2Crews"), so match /^\d*\s*Crews\s*\d*$/,
+//     and RETRY the tap until a crew card is on screen.
+//   * Labels move: #2395 made the claim button "I'll bring it: <item>" and the open Assign toggle
+//     "Done assigning <item>", with the chips under that row.
+//
+// FIRST FULL PASS 2026-10-15, --live at 2.6x load: 30/30. A crewmate's change reached the other browser
+// in ~260-285 ms with no reload.
 //
 //   node scripts/oneoff/probe-crew-gear-live.mjs --live                # deployed site
 //   node scripts/oneoff/probe-crew-gear-live.mjs                       # local dev server of this checkout
@@ -99,7 +103,16 @@ try {
   const ping = (ch) => ch.send({ type: "broadcast", event: "changed", payload: {} });
   const rows = async () => { const { data } = await mateNode.from("crew_members").select("user_id,gear_claims,gear_extras").eq("crew_id", crewId); return Object.fromEntries((data || []).map((r) => [r.user_id === fx.owner.id ? "owner" : r.user_id === fx.mate.id ? "mate" : r.user_id, r])); };
 
-  const tapCrews = (page) => page.evaluate(() => { const b = [...document.querySelectorAll("button")].find((e) => /^Crews\d*$/.test((e.textContent || "").trim())); if (b) b.click(); });
+  // RETRY until a crew card is on screen. One tap landed while sign-in was still settling, and the
+  // sign-in reset put the tab back to Home: both browsers sat on Home and the card "never rendered".
+  const tapCrews = async (page) => {
+    for (let i = 0; i < 60; i++) {
+      await page.evaluate(() => { const b = [...document.querySelectorAll("button")].find((e) => /^\d*\s*Crews\s*\d*$/.test((e.textContent || "").trim())); if (b) b.click(); }).catch(() => {});
+      await sleep(3000);
+      if (await page.evaluate(() => !!document.querySelector('[id^="crewcard-"]')).catch(() => false)) return true;
+    }
+    return false;
+  };
   const open = async (who, session) => {
     const ctx = await browser.newContext({ viewport: { width: 390, height: 900 }, deviceScaleFactor: 2 });
     await ctx.addInitScript(({ key, value }) => { try { window.localStorage.setItem(key, value); } catch {} }, { key: STORAGE_KEY, value: JSON.stringify(sessionForStorage(session)) });
@@ -145,7 +158,7 @@ try {
   let ms = await until(async () => (await status(B, "Rope")).length > 0);
   ok("...and appears in the MATE's browser with no reload", ms >= 0, ms >= 0 ? `${ms} ms` : (await cardText(B)).slice(-400));
   ok("...because the owner's browser pinged the crew channel", pings > p0, `${pings - p0} ping(s)`);
-  await card(B).getByRole("button", { name: "I'm bringing Rope" }).click();
+  await card(B).getByRole("button", { name: "I'll bring it: Rope" }).click();
   ok("mate taps I'll bring it: their own row says Bringing: You", (await until(async () => (await status(B, "Rope")).some((s) => /Bringing: You/.test(s)), 8000)) >= 0, JSON.stringify(await status(B, "Rope")));
   ms = await until(async () => (await status(A, "Rope")).some((s) => /Bringing: Robin/.test(s)));
   ok("...and the OWNER's browser shows Bringing: Robin, no reload", ms >= 0, ms >= 0 ? `${ms} ms` : JSON.stringify(await status(A, "Rope")));
@@ -155,7 +168,8 @@ try {
   await inputIn(A).press("Enter");
   await until(async () => (await status(A, "Stove")).length > 0, 8000);
   await card(A).getByRole("button", { name: "Assign Stove to a crewmate" }).click();
-  const chip = card(A).getByRole("button", { name: "Assign Stove to a crewmate" }).locator("xpath=following-sibling::div[1]").getByRole("button", { name: "Robin" });
+  // Once open, the toggle relabels to "Done assigning <item>" and the chips sit under its row (#2395).
+  const chip = card(A).getByRole("button", { name: "Done assigning Stove" }).locator("xpath=../following-sibling::div[1]").getByRole("button", { name: "Robin" });
   ok("the Assign panel offers Robin as a chip", (await chip.count()) === 1, `${await chip.count()} chip(s)`);
   await chip.click();
   ok("...tapping it shows Bringing: Robin on the owner's screen", (await until(async () => (await status(A, "Stove")).some((s) => /Bringing: Robin/.test(s)), 8000)) >= 0, JSON.stringify(await status(A, "Stove")));
