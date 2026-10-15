@@ -79,8 +79,10 @@ for (const name of ["partners_in_area", "partners_for_my_areas", "partner_area_c
 }
 
 // ── rule 2: which objectives still COUNT — not crag-family, or filed on a peak ──
+// Both the per-row read (0300) and the SEARCH itself (0303): a search that kept matching crag objectives
+// while the rows said otherwise would return a climber the row then scored as sharing nothing.
 const CRAG_SQL = /\(\s*'trad'\s*,\s*'sport'\s*,\s*'toprope'\s*,\s*'aid'\s*,\s*'bouldering'\s*\)/;
-for (const name of ["match_objectives_of_users"]) {
+for (const name of ["match_objectives_of_users", "partners_by_objective"]) {
   const f = need(name); if (!f) continue;
   const joins = /join\s+routes\b/i.test(f.body) && /join\s+areas\b/i.test(f.body);
   const rule = /discipline\s+not\s+in\s*\(/.test(f.body) && CRAG_SQL.test(f.body) && /area_type\s*=\s*'peak'/.test(f.body);
@@ -139,6 +141,17 @@ for (const name of ["match_objectives_of_users"]) {
     (new RegExp(`export (?:async )?function ${h}\\b`).test(db) ? ok : fail)(`lib/db.js exports ${h}`);
   }
   (/objectiveReaders\s*=[^\n]*"match-objectives-of-users"/.test(db) ? ok : fail)("saving or removing an objective refreshes match-objectives-of-users, so a match % cannot read a stale list");
+  // The SOURCE half (0303): the viewer's side of every score is the match list, and no screen can feed
+  // compat() the raw objectives — the raw per-user read no longer exists.
+  const app = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
+  (/ME\.matchObjectiveIds=wishlist\.filter\(/.test(app) ? ok : fail)("App derives ME.matchObjectiveIds from the wishlist (the viewer's side of every match)");
+  (/\bCRAG_CATS\.includes\(catOf\(r\)\)/.test(app) ? ok : fail)("...and excludes crag-family routes with the imported CRAG_CATS + catOf, the same rule as the SQL");
+  const raw = /export (?:async )?function useObjectivesOfUsers\b/.test(db);
+  (!raw ? ok : fail)("lib/db.js no longer exports useObjectivesOfUsers — a raw objectives list cannot reach compat() by any path");
+  const feeders = ["lib/PartnerSearch.jsx", "RouteDetail.jsx"].map((f) => [f, fs.readFileSync(path.join(ROOT, f), "utf8")]);
+  for (const [f, src] of feeders) {
+    ((/\bcompat\(|<RealClimberRow\b/.test(src) && /\buseMatchObjectivesOfUsers\b/.test(src) && !/\buseObjectivesOfUsers\b/.test(src)) ? ok : fail)(`${f} scores real rows from useMatchObjectivesOfUsers`);
+  }
 }
 
 console.log(`\ncheck:partner-areas: ${bad ? "FAILED — " + bad + " of " + ran : "ok — " + ran + " assertion(s)"}`);
