@@ -37,8 +37,8 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | File | What lives there |
 |---|---|
 | `lib/PartnerSearch.jsx` | `PartnerSearch` (modes, filters, near/objective/browse lists, example cards, route picker) |
-| `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides`; `PARTNER_NUMBERS` |
-| `ClimbMatchCore.jsx` | `compat`, `CMAX_*`/`COMPAT_*`, `RealClimberRow`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf` |
+| `ClimbMatch.jsx` | `partnersMode` state and mode switch, hero/help copy, mounts `PartnerSearch`, `CrewFinder`, `DbGuides`/`Guides` |
+| `ClimbMatchCore.jsx` | `compat`, `CMAX_*`/`COMPAT_*`, `RealClimberRow`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useObjectivesOfUsers`, `useVerifiedUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin) |
 | `supabase/migrations/0189, 0211, 0232, 0295` | RPCs and tables below |
