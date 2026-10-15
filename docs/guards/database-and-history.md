@@ -665,7 +665,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       anywhere (source, web), still there. Planner: junk rows now come from `extra.json`, and a climb cannot be
       moved onto a place that has walls (`routes_require_leaf`), so a list there nests as "<Place> Routes".
       Rollback: `scripts/data/holding-bins-rollback.json`.
-    - **Places the source WITHHOLDS for access, withdrawn — 0300** (2026-10-15, owner: "do what you
+    - **Places the source WITHHOLDS for access, withdrawn — 0301** (2026-10-15, owner: "do what you
       recommend based on online research"). The rule: follow the source's own practice. What it HIDES (WA's
       closed crags under initials, the Rumney Pound's boulders kept "for history ... Don't climb here", Bunyan
       Mountain's "respect the landowner's request", a Maine spire on hotel land named in disguise) is deleted:
