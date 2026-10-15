@@ -48,6 +48,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
+import { componentFiles } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -98,7 +99,7 @@ const SEED_ONLY = {
 // half of the Climbs tab lives, so omitting it would report every DB counterpart as absent
 // and every seed component as irreplaceable.
 const FILES = ["main.jsx", "ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
-  .concat(fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.jsx$/.test(f)).map((f) => "lib/" + f))
+  .concat(componentFiles(ROOT, { guard: "check:seed-only-surfaces" }))
   .filter((f) => fs.existsSync(path.join(ROOT, f)));
 
 const dead = (what) => {
@@ -148,7 +149,7 @@ const pending = [];
 for (const f of FILES) {
   const src = fs.readFileSync(path.join(ROOT, f), "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { dead(`${f} did not parse (${String(e.message).slice(0, 120)})`); }
 
   traverse(ast, {

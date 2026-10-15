@@ -153,7 +153,7 @@ const AST_CACHE = {};
 function astOf(f) {
   if (AST_CACHE[f]) return AST_CACHE[f];
   try {
-    AST_CACHE[f] = parse(raw[f], { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
+    AST_CACHE[f] = parse(raw[f], { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false });
   } catch (e) {
     console.error(`\n${GUARD} FAILED — could not parse ${f}: ${e.message}`);
     console.error("Nothing below was checked for this file.\n");

@@ -43,7 +43,7 @@ const walk = (dir, out = []) => {
     // otherwise kill this walk — the guards now run concurrently.
     const p = join(dir, name);
     if (statSync(p).isDirectory()) walk(p, out);
-    else if (/\.jsx$/.test(name)) out.push(p);
+    else if (/\.[jt]sx$/.test(name)) out.push(p);
   }
   return out;
 };

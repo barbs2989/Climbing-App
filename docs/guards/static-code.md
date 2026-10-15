@@ -8,6 +8,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   an enclosing scope — the bug that blank-screened production in #317 and #359.
   It runs inside `npm run build`, so it gates CI too. Keep
   `scripts/undefined-refs-baseline.json` empty.
+  - **TypeScript (2026-10-15):** it parses with the `typescript` plugin and skips an identifier whose
+    nearest enclosing TS node is a *type* (`Record<K,V>`, `: RiskBadgeProps`) — erased before anything
+    runs, so never a ReferenceError; `check:types` answers whether it resolves. An identifier inside
+    `x as T`, `x!` or `x satisfies T` is still checked: those wrap a value, and a bare unbound name
+    there is a real runtime read.
 - **`check:boot`** compares the inline boot placeholder in `index.html` (the app
   shell painted while the bundle loads) against the real `NAV` array. It is a
   hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome

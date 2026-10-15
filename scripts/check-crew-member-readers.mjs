@@ -27,7 +27,7 @@
 //   node scripts/check-crew-member-readers.mjs
 import fs from "node:fs";
 import path from "node:path";
-import { appSources, readAppFile } from "./lib/guard-sources.mjs";
+import { appSources, componentFiles, readAppFile } from "./lib/guard-sources.mjs";
 
 const GUARD = "check:crew-member-readers";
 const ROOT = process.cwd();
@@ -40,7 +40,7 @@ const ROOT = process.cwd();
 // call whose own text names climberId. That shape stays a blind spot; walking the screen found it.
 const all = appSources(ROOT, GUARD);
 const CORE_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx"];
-const FILES = [...CORE_FILES, ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => f.endsWith(".jsx")).sort().map((f) => "lib/" + f)];
+const FILES = [...CORE_FILES, ...componentFiles(ROOT, { guard: "check:crew-member-readers" })];
 for (const f of CORE_FILES) {
   if (!all.some((p) => path.basename(p) === f)) {
     console.error(`${GUARD} FAILED — ${f} was not among the app sources, so nothing was scanned.`);
