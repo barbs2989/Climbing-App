@@ -676,3 +676,28 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - `useAreaCardsByIds` now also returns `lat`, `lng`, `parentId` and `parentName` (one hook, every
     caller benefits; the offline branch has no parent name).
   - Injection suite: `scripts/oneoff/inject-crew-place-cases.mjs` (8 cases).
+
+- **THE PARTNERS TAB OPENS ON "NEAR MY AREAS", AND THE MATCH % BLENDS LISTED AREAS (0300, Step 4).**
+  The screens half of the area decision: `lib/MyPartnerAreas.jsx` (the sheet where a climber lists
+  the areas they climb — crag types, one date window, a note; peaks refused with the server's own
+  reason), a `Near my areas` mode that is the signed-in default and shows the one-tap "List me here"
+  banner over the nearest-by-zip list until there is a listing, a listing-based `By Area` with a
+  search box so any crag, canyon or range inside the chosen state is pickable, and a crag route
+  picked under `By Route` redirecting to its area. Every real row carries one `Listed at Hellgate ·
+  Sport · free Oct 18–19` line from `partner_areas_of_users` (or its own `listed_*` columns).
+  - **`compat()` gained `CMAX_AREA=14`** — the weight of ONE shared objective — as a yes/no term
+    over `partnerAreaPaths` (`areaPathsOverlap`, the client form of the ltree reach), and **the
+    viewer's side of the score is `ME.matchObjectiveIds`**: a crag-route objective stays on the
+    tick list and leaves matching, so the real rows read `useMatchObjectivesOfUsers`.
+    `compatUnknown` folds objectives-or-areas into ONE signal. `check:match-percent` now demands
+    the term moves the number and the copy names it ("shared objectives and listed areas"); its
+    lifted `_cand` builder takes `listing` as a fourth argument.
+  - **Trap:** `check:match-percent` lifts `_cand` with a lazy `\{([\s\S]*?)\};` — an IIFE inside
+    the object literal ends the match early and the guard dies with "Unexpected end of input".
+    Keep `_cand` free of `};`.
+  - **`check:clickable` counts a dialog's backdrop**, so a NEW sheet file needs its one-line
+    baseline entry beside the other dialogs — not `--update`, which rewrites every count.
+  - The Privacy Policy "What others can see" gained the listed-areas sentence; the opt-out is the
+    existing Partners-list switch (every RPC filters on `discoverable`), so no new control.
+  - The example (seed) list stands down under Near my areas: seed climbers list no areas, and a
+    "0 climbers found" header under a real list would be the seed path showing through.
