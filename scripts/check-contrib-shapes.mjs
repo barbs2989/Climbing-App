@@ -127,7 +127,9 @@ const STRUCTURED = new Set(["waypoints", "pitches", "itinerary", "road", "access
   "crowds", "partnerRequirements", "seasonalGuidance", "emergency", "approachLogistics",
   // `sections` builds the {n,label,class,notes} array ClimbingRouteTable reads, exactly as
   // `pitches` builds pitchDetail's — structuredVal emits the shape, so no CONV applies.
-  "sections", "variants", "difficulty", "climate", "seasonalHazards"]);
+  "sections", "variants", "difficulty", "climate", "seasonalHazards",
+  // `rappels` builds rappel_detail's [{n,lengthM,anchor,station?,hazards?,notes}] the way `pitches` builds pitch_detail.
+  "rappels"]);
 
 const readers = stripComments(RD + "\n" + CORE);
 // The stripper's own failure mode is silent: desynchronise on an apostrophe and it eats real

@@ -11,6 +11,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - Planner (alpine layout) has a **Full Trip Time** card: Approach, Climbing, Descent, Total trip (approach + climb + descent).
 - Climbers can edit/correct route fields through edit pencils; every edit is held until the owner approves it (see [route-quality-control.md](route-quality-control.md)).
 - Crag routes show `CragLocationCard` (crag + parking coordinates, Google/Apple Maps). Its *Add parking*, *Add the pin* and the pencil on a parking pin open the `waypoints` pin editor (map picker + lat/lng). That editor is offered on every crag discipline. On a crag it is labelled *Parking & key points*, its types are `WP_TYPES_CRAG`, and the stored `Trailhead` type is shown as *Parking* (`wpTypeLbl`). `trailheadPoint()` reads that pin before the crag-wide `areas.parking_*` pin.
+- **Base of the climb** (`BaseCheckinPanel`, 0188) sits directly under the route map (ROUTE TRACK: Plan on alpine, Overview on crags). A climber standing at the start taps *I’m at the base — check in*; the phone takes a steady GPS fix and `check_in_at_route_base()` decides whether it is at this climb (within 500 m of a crag, 5 km of a peak, or 600 m of a Base/Start pin). Accepted check-ins are stored per ROUTE, one per climber, and clustered into spots (`clusterBasePoints`). Those spots are drawn ON the map as ringed Base pins (`GPXMap`'s `baseSpots`), and *How far am I from the base?* gives a live distance and compass direction from the phone to the most-confirmed spot, else the route's own Base/Start pin, else (crags only) the crag's coordinate, labelled as such (`baseGuide` in `lib/baseCheckin.js`). Inside GPS error it says you are there and shows the route's `location` note, which is what tells neighbouring lines apart.
 - Photos tab: route photos, lightbox, likes, report. Its `TopoDrawer` is exported for the log form (`lib/LogAscent.jsx`), so a topo can be drawn while logging a climb. A line can be named (`topo_lines.label`, optional); the name is the line's chip in `TopoPhotoModal` and a caption on `TopoThumb`.
 
 ## 2. How it works
@@ -34,6 +35,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 | `lib/db.js` | `useAreaRoutes`, `fetchRouteRow`, `dbRouteToCamel`, `useRouteContributions`, `useRouteDifficultyRatings`, `useMyRouteRating`, `useRouteStarSummary`, `setRouteRating`, `submitRoutePhoto`, `reportPhoto`, `submitContribution` |
 | `lib/planTimes.js` | `planTimes`, `realPitches` |
 | `lib/rack.js` | `routeRackFor`, `rackLeftovers`, `isRackEntry`, `isNonRackGear`, `DISC_RACK` — what the RACK card prints (rack only) and what moves to GEAR & ESSENTIALS |
+| `lib/baseCheckin.js` | `acquireBaseFix`, `clusterBasePoints`, `baseCheckinMessage`, `baseGuide`, `bearingDeg`: the base check-in's GPS rules and the find-the-base readout |
 | `lib/FireNearRoute.jsx` | Nearby-fire panel (Safety tab) |
 | `lib/PhotoReports.jsx` | Photo report queue |
 | `EnrichmentPanels.jsx` | Panels for enriched route columns |
@@ -45,6 +47,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - **`routes`** (thousands of rows; `dbRouteToCamel` reads it). `routes.stars` is a cache kept by triggers on `route_ratings` and `climb_logs`; the Climbs list, min-stars filter and stars sort read it.
 - **`route_ratings`** (0294): PK `(route_id, user_id)`, `stars` 1-5, RLS own-row read/insert/update/delete. Nothing renders who rated what.
 - **`route_star_summary(p_route_id)`**: average of one vote per climber: header rating, else their most recent public, visible trip report's stars; returns `stars` and `raters`.
+- **`route_base_checkins`** (0188): one row per climber per route, written only through `check_in_at_route_base()`; others read unattributed points through `route_base_checkin_points()` (`useRouteBaseCheckins`, read once in `RouteDetail` and shared by the map and the panel).
 - **`contributions`**: corrections (held `pending` until the owner approves; 0307–0309) and route photos (kind `photo`). **`climb_logs`**: trip reports/stars.
 - **Still seed/in-memory:** `ROUTES` fallback set and demo trip reports when not on the DB path.
 
@@ -68,6 +71,8 @@ Real climbers, batch 3: comment authors are public names (`publicNameOf`, commen
 The RACK card is rack-only: `detailed_rack`/`pro_needs`/`rack` re-homed on ~400 WA routes (ice axe, crampons, helmet, boots moved to `what_to_bring`), `DISC_RACK` stripped to protection and ropes, and `routeRackFor` splits every source (`rackLeftovers` to GEAR & ESSENTIALS). Before that: #2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
 
 ## 8. Known gaps / open decisions
+
+- A base check-in at a CRAG is judged against the crag's coordinate (500 m), so the server cannot tell which of two neighbouring lines a climber stood under; a spot is trustworthy only as far as several climbers agree on it. The find-the-base readout says so by handing over to the `location` note inside GPS error.
 
 - #2403 states the corrections merge sits inside App's route memo and was not exercised against live contributions; only build guards cover it. It also records a database-path gap in `docs/guards/contributions-and-logbook.md`.
 - #2336 did not run `check:ui` or `check:overflow` after the Total row grew from 3 to 4 tiles.
