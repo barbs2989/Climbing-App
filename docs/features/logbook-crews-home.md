@@ -11,7 +11,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
   `TripReport` the trip-report form, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
 - **Logbook > Challenges**: named tick-lists from `lib/lists.js` (`LISTS`, `routeInList`, `listPeaks`, `peakClimbed`).
-- **Crew**: your crews around a `routeId` with members, proposed dates, per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`).
+- **Crew**: your crews around ONE PLACE — a `routeId`, or since 0302 an `areaId` + `discipline` (a crag session; no screen creates one yet) — with members, proposed dates,
+  per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`). Every surface that names a crew resolves its place through `crewPlace` (`placeTrip`, `placeCap`,
+  `placeLabel`, `placeSub`, `placeMatchesLog`), wrapped by App as `placeOf`; `check:crew-place` holds every reader on it.
   Each crew renders as `CrewCard`: members, invite (by profile or email), itinerary, `CrewGearList` (who brings what), meet time/place, float plan.
   Crew chat and direct messages (`useCrewMessages`, `useDirectMessages`); unread counts via `countCrewUnread`; `Inbox` and `NotifPanel` surface them.
 - **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
@@ -39,8 +41,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | File | Key symbols |
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
-| `ClimbMatchCore.jsx` | `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor` |
-| `lib/ListsManager.jsx` | Objectives/Saved UI, Sport/Trad/Scrambling filter chips |
+| `ClimbMatchCore.jsx` | `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
+| `lib/ListsManager.jsx` | Objectives/Saved UI, Sport/Trad/Scrambling filter chips; a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed` (Challenges) |
 | `lib/CrewCard.jsx`, `lib/CrewGearList.jsx`, `lib/CrewFinder.jsx` | Crew card, gear list, crew discovery |
@@ -54,13 +56,15 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   `crew_email_invites`, `crew_listings`, `crew_reads`, `crews_messages`, `messages`, `vouches`, `user_lists`, `user_itineraries`, `saved_searches`, `profiles` (`pinned_states`).
 - **RPCs**: `add_crew_gear_item`, `assign_crew_gear`, `remove_crew_gear_item`, `claim_my_crew_email_invites`, `share_crew_itinerary`, `log_tags_for_me`, `respond_to_log_tag`, `route_logged_with`, `state_trip_reports`.
 - **Migrations**: 0031 objectives, 0036 crews, 0037/00400/00540/00730/0121 climb logs, 0038/0238 vouches, 00420 messaging, 0075 crew locked day, 0086/0227 invite rules,
-  0187 pinned states, 0199 itineraries, 0209 crew gear, 0286/0287/0289/0291 `assign_crew_gear` and gear claims, 0092 `user_lists`.
+  0187 pinned states, 0199 itineraries, 0209 crew gear, 0286/0287/0289/0291 `assign_crew_gear` and gear claims, 0092 `user_lists`,
+  0302 `crews.area_id` + `crews.discipline` (exactly one of route/area; `crew_listings` appends both; an area fold must repoint `crews.area_id`).
 - **Device-only**: Archive/Clear of a past crew (React state `archived`, lost on reload); offline downloads (browser storage via `lib/offline.js`).
 - **Seed**: `ROUTES`/`CLIMBERS` fallbacks and `DEMO_FILLERS` sample crews/logs exist for the non-DB path; with `USE_DB` on, the lists above come from Supabase.
 
 ## 5. Connections
 - Route page (`RouteDetail.jsx`): saving an objective, logging a climb, opening a crew's route via `openRoute`; Planner reads logged times (`check:logged-times`).
-- Partners (Discover): `partners_by_objective` reads objectives; `onInvite` and `crews` feed crew invites (`docs/features/partners.md`).
+- Partners (Discover): `partners_by_objective` reads the objectives that still count (0303: not crag-family, or a peak); `onInvite` and `crews` feed crew invites (`docs/features/partners.md`).
+  Saving a crag route stays a tick list; it no longer feeds the match %.
 - Profile/trust: vouches and logs feed trust score and the résumé; Menu opens Friends/Requests views and Settings.
 - Offline: pinned states and route packs (`packRouteOffline`) are what Home's pinned card lists.
 
@@ -72,6 +76,7 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
+#2441 / #2443 (0302): a crew has one place, a route or an area; `crewPlace()` is the one resolver for every surface that names a crew. Before that
 #2395: Crews audit: past-crew vouching, honest Archive/Clear, serialized gear writes, migration 0291 tightens `assign_crew_gear`.
 
 ## 8. Known gaps (verified)
