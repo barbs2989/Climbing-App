@@ -61,9 +61,21 @@ App → DbAreaBrowser → AreaPage → DbSuggestedClimbs / RouteRow
       onOpenRoute, wishlist, profile, completedIds, rankSuggested, discSlots, uDistMi
 ```
 
-`DbAreaBrowser` and `AreaPage` (`lib/DbAreaBrowser.jsx`) carry these seven props for their
-grandchildren. The rest are single-hop forwards of a callback group: the six `onComment*`
-handlers through `RouteDetail` and `TripReport` to `Comments`.
+`DbAreaBrowser` and `AreaPage` (`lib/DbAreaBrowser.jsx`) carried these seven props for their
+grandchildren. The rest were single-hop forwards of a callback group: the six `onComment*`
+handlers through `RouteDetail` and `TripReport` to `Comments`. Both were fixed in proportion,
+without an app-wide store:
+
+- **`ClimberCtx`**, a context local to `lib/DbAreaBrowser.jsx`. `DbAreaBrowser` provides
+  `{ wishlist, profile, completedIds, rankSuggested, discSlots }`; `DbSuggestedClimbs` and
+  `ObjectivesPanel` read it with `useContext`. `AreaPage` no longer carries five props it never
+  read. `onOpenRoute` and `uDistMi` stay props: `AreaPage` itself hands them to five children.
+- **`commentApi`**, one object prop `{ onAdd, onEdit, onDelete, onLike, onReply }` (plus
+  `onReact` for trip reports) built at `App`'s two call sites and handed to `RouteDetail` and
+  `TripReport`, which spread it onto `Comments` / `RouteBreakdown`. `Comments` keeps its own
+  separate `onAdd`/`onEdit`/… props, because groups and other screens render it directly.
+
+A new value for those panels goes into `ClimberCtx`; a new comment action goes into `commentApi`.
 
 ## Why there is no global client store
 
@@ -76,9 +88,6 @@ handlers through `RouteDetail` and `TripReport` to `Comments`.
   others) along with it. Nobody using the app would see a difference.
 - **A context re-renders every consumer on every change of its value.** Today an `App` render
   already re-renders its subtree, so a store would not make anything faster.
-
-**If the Climbs-browser cluster ever gets in the way**, the fix in proportion is one small
-context local to `lib/DbAreaBrowser.jsx`, provided by `DbAreaBrowser` and read by the
-`DbSuggestedClimbs` and `RouteRow` call sites. It replaces about 20 pass-through props and does
-not need an app-wide store. The comment handlers would collapse into one `commentApi` object
-prop, which is a smaller change than a context.
+- **A local context is the ceiling.** When a cluster of values drills through components that
+  never read them, give that subtree its own context, as `ClimberCtx` does, rather than promoting
+  the values to an app-wide store.

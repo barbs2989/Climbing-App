@@ -5,7 +5,7 @@
 // just fetched on demand from Supabase instead of walking the in-memory
 // MOUNTAINS/ROUTES arrays, since the DB catalog (47k+ areas / 200k+ routes) is
 // far too large to hold in memory. Rendered only when USE_DB is on.
-import { useEffect, useMemo, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { useRecentRouteIds } from "./recent";
@@ -26,6 +26,14 @@ import { BTN, BTN_LG, BTN_SM, BTN_LINK, CHIP } from "./buttonStyles.js";
 // a bare NCCS roman numeral on 30 routes. An area list is where a wrong grade is read fastest:
 // every row carries one.
 function rowGrade(r) { return displayGrade(r) || "—"; }
+
+// THE CLIMBER, for the panels that personalise this browser. `wishlist`, `profile`,
+// `completedIds`, `rankSuggested` and `discSlots` come from App and are read only by
+// DbSuggestedClimbs and ObjectivesPanel — two and three components below the browser — so
+// DbAreaBrowser provides them once instead of AreaPage carrying five props it never reads.
+// Local to this file on purpose: everything app-wide is either the react-query cache or App's
+// own state (ARCHITECTURE.md).
+const ClimberCtx = createContext({ wishlist: [], profile: null, completedIds: new Set(), rankSuggested: () => [], discSlots: null });
 
 const HERO_BG = "linear-gradient(160deg,#0a0e16,#142a47)";
 const HERO_SHEEN = "inset 0 1px 0 rgba(255,255,255,0.07)";
@@ -90,8 +98,9 @@ function RouteRow({ r, onOpen, C, areaName }) {
 // — same layout/copy, but sourced from useScopedWishlistRoutes/useSubtreeRoutes
 // instead of the in-memory ROUTES array. `profile`/`completedIds`/`rankSuggested`
 // are computed once in App (grade/gain scoring lives in ClimbMatch.jsx, which
-// this file doesn't import — see its own header comment on why) and passed down.
-function DbSuggestedClimbs({ area, profile, completedIds, wishlist, onOpen, rankSuggested, discSlots, C }) {
+// this file doesn't import — see its own header comment on why) and read from ClimberCtx.
+function DbSuggestedClimbs({ area, onOpen, C }) {
+  const { profile, completedIds, wishlist, rankSuggested, discSlots } = useContext(ClimberCtx);
   // Collapsed until the climber opens it — the user's call (2026-09-30): the rows are one tap
   // away behind the "Suggested climbs · N" header, never spread across the area page by default.
   const [open, setOpen] = useState(false);
@@ -485,7 +494,7 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, wishlist, profile, completedIds, rankSuggested, discSlots , onAddClimb, TopContributors, onFireMap}) {
+function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -619,7 +628,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
 
       {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
 
-      <DbSuggestedClimbs area={area} profile={profile} completedIds={completedIds} wishlist={wishlist} onOpen={onOpenRoute} rankSuggested={rankSuggested} discSlots={discSlots} C={C} />
+      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
     </div>
   );
 }
@@ -912,7 +921,8 @@ function RouteFinderPanel({ scope, onOpen, onJumpToArea, C, uElevN, uElevUnit })
 }
 
 // ── Objectives: your wishlisted routes that fall within the current area ──
-function ObjectivesPanel({ area, wishlist, onOpen, C }) {
+function ObjectivesPanel({ area, onOpen, C }) {
+  const { wishlist } = useContext(ClimberCtx);
   const { data, isLoading, error } = useScopedWishlistRoutes(area, wishlist);
   return (
     <div>
@@ -1353,6 +1363,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
   const [treeOpen, setTreeOpen] = useState(false);
+  const climber = useMemo(() => ({ wishlist, profile, completedIds, rankSuggested, discSlots }), [wishlist, profile, completedIds, rankSuggested, discSlots]);
   const handledJumpId = useRef(null);
 
   const current = stack.length ? stack[stack.length - 1] : stateNode;
@@ -1427,6 +1438,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   }, [jumpToAreaReq, jumpAreaRowQ.data]);
 
   return (
+    <ClimberCtx.Provider value={climber}>
     <div>
       {/* Breadcrumb + Back. Sticky, and rendered on EVERY sub-screen — not just "areas".
           Two reports drove both halves. It used to scroll away on a long area page, so on
@@ -1470,15 +1482,16 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ) : screen === "finder" ? (
         <RouteFinderPanel scope={current} onOpen={onOpenRoute} onJumpToArea={jumpToArea} C={C} uElevN={uElevN} uElevUnit={uElevUnit} />
       ) : screen === "objectives" ? (
-        <ObjectivesPanel area={current} wishlist={wishlist} onOpen={onOpenRoute} C={C} />
+        <ObjectivesPanel area={current} onOpen={onOpenRoute} C={C} />
       ) : screen === "near" ? (
         <NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} />
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} wishlist={wishlist} profile={profile} completedIds={completedIds} rankSuggested={rankSuggested} discSlots={discSlots} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
       ) : null}
     </div>
+    </ClimberCtx.Provider>
   );
 }
