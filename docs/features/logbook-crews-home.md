@@ -10,7 +10,14 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   mountaineering and aid are each their own chip rather than folded into Alpine or Trad (#2409, then this split). Saved no longer repeats a "Pinned states" card;
   Home already shows it (#2408).
 - **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
-  `TripReport` the trip-report form, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
+  `TripReport` the opened trip report, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
+  `TripReport` shows ONLY what the reporter entered, in the form's own sections (the climb, getting there, on the route,
+  hazards, the descent, the write-up, recorded track, climbed with); a section with nothing in it is not drawn, and no
+  route fact (grade, gain, distance, the route's GPS line) stands in for the reporter's. The reporter's own track is read
+  on open through `useLogTrack` (`lib/db.js`), since the route page's report read leaves `gpx_track` out.
+  `LogAscent` also offers *Add topo photo* (signed in, DB on): the climber draws the route line with the route page's
+  `TopoDrawer` (lazy import from `RouteDetail.jsx`) and on save App's `addLogTopo` files the photo under the climb's
+  area (`uploadTopoPhoto`) and the line on the route (`submitTopoLine`), so it reaches the Photos tab for everyone.
 - **Logbook > Challenges**: named tick-lists from `lib/lists.js` (`LISTS`, `routeInList`, `listPeaks`, `peakClimbed`).
 - **Crew**: your crews around ONE PLACE — a `routeId`, or since 0302 an `areaId` + `discipline` (a crag session: started from the area page's "Start a crew here",
   the Crews tab's "+ Create a crew → At an area…", or a past crew's picker, through `StartCrewSheet`; `formCrew` takes a route id or a place) — with members, proposed dates,
