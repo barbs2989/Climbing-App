@@ -755,7 +755,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     column was populated, so `check:field-renders` and every coverage audit read it as done.
     `check:trailhead-directions` asks how many drive CONTROLS a screen has, not what the prose says.
   - **THE ORIGIN IS THE HAND-WRITTEN SQL, and `check:sql` now refuses it.** 31 of the 48 values
-    the committed `.sql` files write fail the test, most of them from `alpine_trailhead_enrichment.sql`
+    the committed `.sql` files write fail the test, most of them from `docs/archive/root-2026-07/alpine_trailhead_enrichment.sql`
     (*"North-northeast via glacier traversals"*). `scripts/lib/trailhead-direction-sql.mjs` reads
     the three shapes those files use (a `jsonb_set` JSON string, `to_jsonb('…')`, a whole JSON object)
     and `check:sql` exits before any DB read if one fails. The `wa-enrich-batch` workflow does NOT
