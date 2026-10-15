@@ -630,7 +630,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       unread). Kept apart on reading: 7 UNSURE and the common names ("Front Left", "Perfect Route"). Also
       found, NOT fixed: whole catch-alls the source has re-filed ("Forest Hill Park Bouldering" 32, "A and B
       Blocks" 22) — the Rainbow Mountain pattern. Rollback: `scripts/data/far-twins-rollback.json`.
-    - **Lists the source has re-filed onto boulders we already have — 0295** (2026-10-15). The Rainbow
+    - **Lists the source has re-filed onto boulders we already have — 0296** (2026-10-15). The Rainbow
       Mountain pattern swept catalog-wide: for every area, how many of its climbs the source still files
       under that area vs another. **1,157** lists file most of theirs elsewhere (13,693 climbs). A climb
       MOVES only when the source lists its name ONCE in the state, under an area of ours that shares the
