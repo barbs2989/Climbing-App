@@ -6,7 +6,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 
 ## 1. What it does today
 - **Logbook > Objectives / Saved**: `ListsManager` (`lib/ListsManager.jsx`) holds the objectives (wishlist) and saved lists. The Objectives filter
-  splits disciplines into **Sport** and **Trad** chips plus **Scrambling** (not "Other") (#2409). Saved no longer repeats a "Pinned states" card;
+  chips, in order: **Alpine, Mountaineering, Sport, Trad, Aid, Ice & Mixed, Boulder, Scrambling** — Alpine leads, and alpine,
+  mountaineering and aid are each their own chip rather than folded into Alpine or Trad (#2409, then this split). Saved no longer repeats a "Pinned states" card;
   Home already shows it (#2408).
 - **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
   `TripReport` the trip-report form, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
@@ -42,7 +43,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 |---|---|
 | `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
 | `ClimbMatchCore.jsx` | `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor`, `crewPlace`, `placeTrip`, `placeCap`, `placeLabel`, `placeSub`, `placeMatchesLog` |
-| `lib/ListsManager.jsx` | Objectives/Saved UI, Sport/Trad/Scrambling filter chips; a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
+| `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed` (Challenges) |
 | `lib/CrewCard.jsx`, `lib/CrewGearList.jsx`, `lib/CrewFinder.jsx` | Crew card, gear list, crew discovery |
