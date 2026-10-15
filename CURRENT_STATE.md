@@ -25,6 +25,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Crag map section is TRAIL TO THE CRAG**: on sport/trad/bouldering/aid/top-rope routes the map section (was ROUTE TRACK) says the GPX line is the walk from parking to the base of the crag (on to this climb if it sits apart), invites *Add the trail*, and the submit sheet says where to start and stop recording. Crags carry no waypoints: the pin editor there is *Parking spot* only.
 - **Listed areas in the Menu**: a *Listed areas · N* tile under Yours; the My listed areas sheet became a full screen with search first (home state pre-set), one-tap suggestions from your own crag climbs and saved areas, This weekend / Next weekend date presets, and an ended window flagged on its card. See `docs/features/partners.md`.
 - **No ⚑ Flag button on the route page's section headings**: `SL`/`CardHead` show only the confidence level now; flagging stays on a locked field's pencil and on the *Add or fix info* sheet's rows (`ClimbMatchCore.jsx`).
 - **Base of the climb sits under the route map**: the check-in card moved from far down Overview to right under ROUTE TRACK; check-in spots are drawn on the map as ringed Base pins; *How far am I from the base?* gives a live distance and direction to the start, and the route's location note once you are there (`lib/baseCheckin.js` `baseGuide`).
