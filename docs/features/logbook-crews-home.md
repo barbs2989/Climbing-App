@@ -28,6 +28,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
   Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`) only hide the crew
   on this device until reload and say so in the toast ("Crew archived on this device until you reload").
+- **Crew safety check** (`SafetyTab`, 0314): the pre-climb questionnaire and "mark me safety-ready" are stored per crew for real crews (`saveCrewSafetyAnswers`, `markCrewSafetyReady`) in `crew_safety_answers`, readable by their owner alone. The crew's Team Alignment comes from `crew_alignment()` (`useCrewAlignment` → `alignmentFromServer`): counts per risk level and per flag, never anyone's answers, as the questionnaire promises. Flags are anonymous on every path (`alignmentFromCounts`). The crew card's per-member "reviewed the safety plan" mark reads `crew_ready_ids()` (`useCrewReadyIds`). Example crews keep the local path.
 - **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
 - **Home (`today`)**: greeting; **Finish setting up** checklist (`gaps`, shows 2 until `showSetupAll`); alerts; **Unfinished business** (`unfinishedOpen`);
   **Best day to climb** (`BestDayTile`); **Jump back in** tiles; **Recent condition reports**; recent friend activity; the pinned/downloaded states card.
@@ -58,6 +59,7 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | `lib/CrewFinder.jsx` | Crew discovery (`inMyAreas`: "My climbs & areas" also matches a crew at an area you listed; `initialArea` from the area page's "Crews here") |
 | `lib/StartCrewSheet.jsx` | `StartCrewSheet` — start a crew at an AREA: the place, the session's discipline, a day, a size, a note; hands `formCrew` a place |
 | `lib/FloatPlans.jsx`, `lib/GiveVouch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx` | Float plans, vouch sheet, messages, notifications |
+| `lib/SafetyTab.jsx` | `SafetyTab` — crew safety check: Team Alignment (server counts for a real crew) and the float plan |
 | `lib/BestDayTile.jsx` | Home "Best day to climb" |
 | `lib/offline.js` | Pinned/downloaded states and route packs |
 | `lib/db.js` | All hooks and writes named above |
@@ -87,7 +89,7 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
-Real climbers, batch 3: crew roster, plan, nudge and invite chips name members by `pubFirst`; the invite list treats a real friend as real (server trust, sorted by it); Home's unread line, past crews and the itinerary message use public names; `FriendsFeed` and FriendsList's activity include real friends' shared logs (`realFriendFeed`) with real kudos (`giveKudos` + log target); MyAscents never matches a real log's typed partner name to an example climber.
+Real climbers, batch 4 (0314): a real crew's safety questionnaire and safety-ready marks persist; alignment is computed server-side from owner-only answers and every flag is anonymous. Real climbers, batch 3: crew roster, plan, nudge and invite chips name members by `pubFirst`; the invite list treats a real friend as real (server trust, sorted by it); Home's unread line, past crews and the itinerary message use public names; `FriendsFeed` and FriendsList's activity include real friends' shared logs (`realFriendFeed`) with real kudos (`giveKudos` + log target); MyAscents never matches a real log's typed partner name to an example climber.
 #2441 / #2443 / Step 7 (0302): a crew has one place, a route or an area; `crewPlace()` is the one resolver for every surface that names a crew; area crews
 (crag sessions) are started from the area page, the Crews tab and a past crew, found under "My climbs & areas" / By Area, and listed on a crag route's Partners sub-tab. Before that
 #2395: Crews audit: past-crew vouching, honest Archive/Clear, serialized gear writes, migration 0291 tightens `assign_crew_gear`.
