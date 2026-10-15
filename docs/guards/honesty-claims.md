@@ -1364,6 +1364,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     ("Fair"), because temperature, wind and sun still scored. Rain in the past hour, rock under 30%
     dried, ANY wet sandstone (not conglomerate — see below), and AQI > 200 cap the hour at 1 ★; air
     within 5°F of its dew point and AQI > 150 cap it at 2 ★.
+  - **...and DRYING rock is held down until it is dry (`WET_BANDS`, 2026-10-15)**: under 30% dry 1 ★,
+    under 70% 2 ★, under 100% 3.5 ★. One cap at 30% was the whole rule before, and Dry rock is only 25
+    of 100 points, so the hour the card itself called "about 50% dry" scored 4.3 ★ "Good" in green beside
+    a red morning (Exit 38 the day after 0.2" of rain: 11 not-yet-dry hours at 3.0–4.7 ★, day 4.6 ★
+    Good; after: 3.5 ★ Fair). Measured on live forecasts for 12 crags: dry days are unchanged. The
+    guard walks 12 rain fixtures and fails if any hour 30–99% dry exceeds its band or reads "Good";
+    reverting the bands to the single 30% cap fails it (75% dry -> 4.6 ★).
+  - **...and the rock DRIES FASTER (`DRY_RATE`, same day, owner: "probably speed it up")**: the dew point
+    gave NO drying, night 0.6 and 90% RH 0.3, so a Northwest night after rain dried almost nothing.
+    Now dew point 0.6, night 1, 90% RH 0.6, 75% RH 0.9. Fitted to CragReport's hourly surface dryness
+    (Index, Exit 38, Mt Erie, Squamish; 169 hours, one storm): mean error 0.21 -> 0.12, bias -0.16 ->
+    -0.05. Sunday after the storm now scores 4.0–4.9 ★, matching Climbit (~3.5–4.6) and CragReport
+    (81–95). A full fit wants night faster than day — not physical, refused; `DRY_HOURS` is untouched.
+    The guard pins only the ORDER (dew point ≤ 90% ≤ 75% ≤ 1, night ≤ day, dew point > 0).
   - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
     on feel:
     - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).
