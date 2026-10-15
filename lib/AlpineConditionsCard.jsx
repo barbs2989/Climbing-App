@@ -8,7 +8,7 @@ import { C, DLOCALE, CardHead, ROUTE_GAP, uTemp, uTempDelta, uWind, uSnowfall, u
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts, fetchGaugeSites, fetchGaugeFlow } from "./forecast.js";
 import { parseSites, nearestGauge, flowReading, gaugeName, STEADY_PCT, STEADY_STAGE_FT } from "./streams.js";
 import { condKind, hasSnowLegs, localDays, localHour, localAt, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, fogHours, snowHistory, snowLevel, dayFlags, daySummary, rangeNote, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
-import { Tile, TileGrid, TileGroup, NOT_MEASURED, clockHr, spanEnding, compass } from "./HourTiles.jsx";
+import { Tile, TileGrid, TileGroup, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./HourTiles.jsx";
 import { useCondPrefs, CondPrefsControls, scopeForDiscipline } from "./CondPrefs.jsx";
 import { routeTerrain } from "./terrain.js";
 import { planTimes } from "./planTimes.js";
@@ -400,15 +400,15 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
   const marks = marksIn(T);
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 8 }}>{"HOUR BY HOUR · " + dayLabel.toUpperCase()}</CardHead>
-    <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{"Key times for this day, then each hour at " + (tops != null ? uElev(tops) : "the forecast point") + ". Tap an hour."}</div>
+    <div style={{ fontSize: 12, color: C.textSub, lineHeight: 1.5, marginBottom: 8 }}>{"Key times for this day, then each hour at " + (tops != null ? uElev(tops) : "the forecast point") + ". Tap an hour, or step with ‹ ›."}</div>
     <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 10 }}>{kt.map(function (k, j) { return <span key={j} style={{ fontSize: 12, fontWeight: 700, color: C.text, background: C.surface, border: "1px solid " + k.tone + "99", borderRadius: 20, padding: "4px 10px", lineHeight: 1.3 }}>{k.label + " " + clockOf(fc, k.at) + (k.after || "")}</span>; })}</div>
-    <div role="group" aria-label="Pick an hour" style={{ display: "flex", gap: 5, overflowX: "auto", paddingBottom: 6, marginBottom: 8 }}>{idx.map(function (i) {
+    <div style={{ marginBottom: 8 }}><HourStepper index={idx.indexOf(cur)} count={idx.length} onPick={function (j) { setSel(idx[j]); }} label={function (j) { return clockHr(localHour(fc, idx[j])); }}>{idx.map(function (i) {
       const on = i === cur, sv = sev(i), mk = marksIn(h.time[i]).length;
       return <button key={h.time[i]} onClick={function () { setSel(i); }} aria-pressed={on} aria-label={clockHr(localHour(fc, i)) + (sv === C.red ? ", strong wind or thunderstorm in the forecast" : sv ? ", caution" : "") + (mk ? ", a key time falls in this hour" : "")} style={{ flex: "0 0 auto", minWidth: 58, minHeight: 44, boxSizing: "border-box", padding: "8px 8px 6px", borderRadius: 8, border: "1px solid " + (on ? C.blue : C.border), background: on ? C.blueBg : "transparent", color: on ? C.blue : C.textSub, fontSize: 12, fontWeight: on ? 800 : 600, cursor: "pointer" }}>
         {clockHr(localHour(fc, i))}
         <span style={{ display: "block", height: 8, lineHeight: "8px", marginTop: 2 }}>{sv ? <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: "50%", background: sv, margin: "0 1.5px" }} /> : null}{mk ? <span style={{ display: "inline-block", width: 7, height: 7, borderRadius: 2, background: C.blue, margin: "0 1.5px" }} /> : null}</span>
       </button>;
-    })}</div>
+    })}</HourStepper></div>
     <div>
       <div aria-live="polite" style={{ fontSize: 15, fontWeight: 800, color: C.text }}>{dayLabel + " · " + clockHr(hr)}{cl != null ? <span style={{ fontSize: 12, fontWeight: 600, color: C.textMuted }}>{"  ·  cloud " + Math.round(cl) + "%"}</span> : null}</div>
       {marks.length ? <div style={{ fontSize: 12, color: C.text, marginTop: 3 }}>{marks.map(function (k) { return k.label + " " + clockOf(fc, k.at) + (k.after || ""); }).join(" · ")}</div> : null}
@@ -422,7 +422,7 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
         <Tile label="Low cloud" when={"at " + clockHr(hr)} value={lowc != null ? Math.round(lowc) + "%" : NOT_MEASURED} sub={lowc == null ? null : "cloud in the layers up to about " + (uImp() ? "10,000 ft" : "3 km") + " up; the route may sit in or above them"} />
         <Tile label="Freezing level" when={"at " + clockHr(hr)} value={fl != null ? uElev(Math.round(fl / 100) * 100) : NOT_MEASURED} sub={fl == null || tops == null ? null : "Air at " + uElev(tops) + " is " + (fl > tops ? "above" : "below") + " 0 °C" + (snowLegs && floor ? "; at the lowest snow you cross (" + uElev(floor.ft) + ") it is " + (fl > floor.ft ? "above" : "below") + " 0 °C" : "")} wide /></TileGroup>
     </div>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by {uTempDelta(10)}–{uTempDelta(18)}°. Temperatures are modelled for that height: checked against mountain weather stations, an hour’s value was typically off by {uTempDelta(3)}–{uTempDelta(5)}°, and in winter by up to {uTempDelta(9)}°, most often reading too cold. Forecasts from different services can differ by more at a summit. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Temperatures are modelled for the height named above: checked against mountain weather stations, an hour’s value was typically off by {uTempDelta(3)}–{uTempDelta(5)}°, and in winter by up to {uTempDelta(9)}°, most often reading too cold. Forecasts from different services can differ by more at a summit.</div>
   </div>;
 }
 
@@ -547,7 +547,6 @@ function AirSection({ day, dayLabel, air, onRetry }) {
         <Tile label="Worst hour's US AQI" when={"around " + clockOf(air.data, a.at)} value={Math.round(a.max)} tone={tone} sub={aqiWord(a.max)} />
         <Tile label="Fine smoke (PM2.5)" when="at that hour" value={a.pm != null ? Math.round(a.pm) + " µg/m³" : NOT_MEASURED} sub={a.pm != null ? "24-hour average basis" : null} />
       </TileGrid>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A forecast for the whole area on a coarse grid ({uImp() ? "about 28 mi, 7 mi in Europe" : "about 45 km, 11 km in Europe"}), not a reading at the route: smoke pooled in a valley or drifting above the route is not seen. Particles are averaged over the preceding 24 hours, so a plume’s arrival and clearing show up late. Look at the sky and a local air-quality station before you go. Flagged above AQI 100 (EPA: unhealthy for sensitive groups) and 150 (unhealthy for everyone).</div>
   </div>;
 }
 
@@ -557,17 +556,8 @@ function AirSection({ day, dayLabel, air, onRetry }) {
    AAC; Mont Blanc's Goûter couloir monitoring, where the safe hour is specific to each couloir;
    Portland Mountain Rescue; a Devil's Kitchen report where rime let go as the sun hit the walls).
    Wet loose snow follows the sun round the aspects — east first, west in the warm afternoon — and
-   centres put the slope that lets go at about 35° (STEEP_DEG). What the sun does differs by kind,
-   so each gets its own line; every one is a rule of thumb. Not scored, and it moves no start time:
+   centres put the slope that lets go at about 35° (STEEP_DEG). Not scored, and it moves no start time:
    the start stays the Planner's, counted back from the snow and the storms. */
-const SUN_NOTE = {
-  glacier: "Rock, ice and wet snow start to move once the sun reaches the slopes above you, not just where you stand — be past steep sunlit ground before the sun gets to it.",
-  alpineice: "Ice and rock let go once the sun reaches the face and the slopes above it — be off the line before the sun gets there.",
-  waterfall: "Sun on the ice, or on snow above it, loosens both — even while you climb in shade.",
-  cragmixed: "Sun strips rime and softens turf; mixed ground in shade keeps its ice longer.",
-  scramble: "Sun dries wet rock and melts thin ice; rock in shade stays wet or icy longer.",
-  alpinerock: "On a cold day a face in sun is warmer to climb; one in shade stays cold, and keeps any verglas.",
-};
 const SUN_PINS = [["Summit", "Summit"], ["Topout", "Top"], ["Base", "Base"], ["Campsite", "High camp"]];
 export function sunPins(route) {
   const wps = (route.waypoints || []).filter(wpPlaced), out = [];
@@ -615,7 +605,6 @@ function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday }) {
   const steep = kind === "glacier" || kind === "alpineice" || kind === "waterfall" || kind === "cragmixed" || hasSnowLegs(kind, terrain);
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 6 }}>SUN AND SHADE</CardHead>
-    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 8 }}>{SUN_NOTE[kind] + " A rule of thumb."}</div>
     <ShadeMap lat={ctr.lat} lng={ctr.lng} pins={pins.length ? pins : null} steep={steep} place={pins.length ? "climb" : "area"} rise={rise} set={set} at0={at0} dayKey={day.date} clock={function (u) { return clockOf(fc, Math.round(u / 1000)); }} C={C} />
   </div>;
 }

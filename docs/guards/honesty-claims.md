@@ -1378,6 +1378,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     -0.05. Sunday after the storm now scores 4.0–4.9 ★, matching Climbit (~3.5–4.6) and CragReport
     (81–95). A full fit wants night faster than day — not physical, refused; `DRY_HOURS` is untouched.
     The guard pins only the ORDER (dew point ≤ 90% ≤ 75% ≤ 1, night ≤ day, dew point > 0).
+  - **...and the PAST rain is MEASURED where a measurement reaches (`mergeMeasuredRain`, 2026-10-15)**:
+    `lib/forecast.js fetchMeasuredRain` tries a 6-h radar-and-gauge analysis (HRDPA; northern US + Canada:
+    WA, OR, KY, WV, WI, NY answer; the South, Southwest, CA and CO return no feature), then an hourly one
+    (Stage IV via Iowa State) ONLY east of 104°W — west of it the hours are split from 6-h totals and put
+    the 2026-10-09 Index storm 18 h late — else null, and the score keeps the model. Both crag readers
+    (Conditions card, Home tile) go through `fetchCragForecastMeasured`, so they cannot disagree. Measured
+    on 2026-10-15: RRG's past 96 h 3.46" modelled vs 2.34" measured, Gunks 0.98" vs 1.48". A time not yet
+    analysed is an XML error, a point outside the analysis is `{}`: both are "not measured", never zero.
+    The guard pins the merge (amount from the measurement, timing from the model inside a window, gaps keep
+    the model, a measured dry window dries a modelled soaking). The two crag-fetch URL checks now match
+    `fetchCragForecast\(` exactly — `fetchCragForecastMeasured` shares the prefix and was read in its place.
   - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
     on feel:
     - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).
@@ -1565,13 +1576,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (east first, west in the warm afternoon), and centres put the slope that lets go at ~35°
       (Utah: stay off and out from under slopes approaching 35° once the sun wets them). CalTopo's
       sun-exposure layer and point chart are the tool climbers use for this today, by hand.
-    - **Each kind gets its own line** (`SUN_NOTE`): sun loosens what is above a glacier or an
-      alpine-ice line; it loosens waterfall ice and the snow above it even while you climb in shade;
-      it strips rime and softens turf on mixed ground; it DRIES a scramble; it WARMS alpine rock on a
-      cold day. Every one is called a rule of thumb on screen.
+    - **No per-kind sun line, and no caveat footer under the map** (removed 2026-10-15 at the owner's
+      request, with the forecast, smoke and hourly-wind caveat footers): the section is the map and
+      its readouts only. Do not re-add them as a guard requirement.
     - **STEEP (35°+) AND IN SUN** is an overlay offered only where snow or ice is in play (glacier,
       alpine ice, waterfall, mixed, or a kind with snow legs). The slope comes from the same ~7 m
-      heights, so a short steep step reads gentler than it is, and the card says so.
+      heights, so a short steep step reads gentler than it is.
     - **A SUMMIT is read at the model's own high point** (`highestNear`, within 30 m). Measured
       live before it shipped: Colchuck Peak's summit pin sat one pixel off the model's top, 2 m
       lower, so the top "shaded" it until the sun was ~17° up — first sun 8:30 AM against a 7:10

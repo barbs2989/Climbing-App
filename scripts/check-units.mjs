@@ -574,18 +574,6 @@ async function runWeather() {
   else ok("the 10 m series feeds the gust gate only, never the headline or its colour");
   if (/wxWindColor\(dy\.windMax\)/.test(mask)) ok("the colour threshold still reads the 80 m sustained");
   else fail("wxWindColor no longer reads dy.windMax — the amber/red banding has moved off the ridge-level figure");
-
-  // AND THE PANEL SAYS SO. A tile can now legitimately read "22 mph" above "gusts to 22", and the
-  // NWS/MET winds beside each day are surface figures against an 80 m headline -- on the seeded
-  // capture that is 36 mph against NWS's 10. Without a sentence naming the heights the reader
-  // sees a 3.6x disagreement between forecasters that is not one.
-  const capt = /Elevation-aware forecast[\s\S]{0,900}?<\/div>/.exec(mask);
-  if (!capt) fail("ANCHOR LOST: the forecast panel caption moved — the height caveat cannot be checked");
-  else {
-    const c = capt[0];
-    if (/80\s*m/.test(c) && /10\s*m/.test(c)) ok("the panel caption names BOTH heights");
-    else fail("the forecast caption no longer names the two wind heights — the tile shows a gust equal to its sustained, and NWS's wind beside it, with nothing saying why");
-  }
 }
 
 // =======================================================================================
