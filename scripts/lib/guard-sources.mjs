@@ -139,6 +139,7 @@ export const MOVED = {
     "src/components/TrustBadge.tsx",
     "src/components/Lbl.tsx",
     "src/components/CountUp.tsx",
+    "src/components/Pill.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
