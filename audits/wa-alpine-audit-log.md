@@ -32310,3 +32310,72 @@ closure access gap flagged separately above (safety-relevant, time-
 sensitive, but not resolvable to a specific SQL fix from search alone).
 
 Pass 7 continues next run after `wa_iron_cap_mountain_south_route_2`.
+
+## Batch 414 — 2026-10-15 (pass 7)
+
+**Klawatti Peak — North Ridge, Southeast Face/Klawatti Glacier, SW
+Buttress.** All three share the peak's 8485ft elevation and summit
+coordinates (48.5544, -121.1044) — both an exact match to Wikipedia's
+infobox. The Southeast Face and SW Buttress rows' shared FA (Lloyd
+Anderson, Karl Boyer, Tom Gorton — July 7, 1940) is an exact match to
+Wikipedia's first-ascent credit for the peak overall; the Southeast Face
+row's own `corrections` field already discloses that this specific line's
+FA isn't separately documented, so this isn't a fresh gap. The North
+Ridge's hazard/route description (exposed knife-edge sections,
+routefinding to stay at 3rd class, a loose ledge traverse near The
+Smokestack) matches an independent Lemke Climbs trip report closely.
+Clean.
+
+**Kyes Peak — Glaciated Scramble (Standard), Northeast Ridge.** Both share
+7280ft, matching Wikipedia/SummitPost (Mountain Project and Mountaineers
+give 7284-7288ft — the same small spread the app's own routes don't flag,
+too minor to action). The Northeast Ridge's FA (Mike Heath, September 14,
+1968) is an exact match to the American Alpine Journal's own article on
+the route. The Glaciated Scramble's road-access claim (Index-Galena Road
+closed between mileposts 10 and 14 since December 2025 flood damage, no
+repair timeline) is independently confirmed by a Snohomish County public
+notice from December 29, 2025 — still accurate as of this search, no
+newer reopening found either way. Clean.
+
+**Kimtah Peak — Southwest Slopes/Gully.** FA (John Roper and Jerry
+Swanson, June 1970) is only partly corroborated: SummitPost independently
+credits "the Roper party" with a first ascent on June 6, 1970 under the
+proposed name "Gendarmes Peak" — an exact match on person, month, year
+and the proposed name — but no source names Jerry Swanson as the second
+climber. The row's stored elevation (8649ft) sits inside, but isn't
+independently pinned down by, the "8,600+ ft" figure every indexed source
+(Wikipedia, SummitPost, PeakVisor) gives for an unsurveyed summit. Neither
+is a contradiction; both flagged for human review rather than touched.
+
+**Mount Stuart — King Kong / Gorillas Direct Direct.** Elevation (9415ft)
+and area placement are correct for Mount Stuart's true summit. The row's
+own `data_quality` note already discloses the FA is single-source (the
+climber's own account); search corroborates the broader context (Jens
+Holsten, Mark Westman and Sol Wertkin did add direct variations to the
+neighboring Gorillas in the Mist route on Stuart's West Face Wall) but
+found no independent page under the specific names "King Kong" or
+"Gorillas Direct Direct." Flagged, not fixed — the row is already exactly
+as honest about this as the available sources allow.
+
+**Kangaroo Temple — Koala Krack.** No independent corroboration found for
+the route name, FA (William Kamens and Andrea Bedlington, July 2020), or
+grade — the same gap the row's own `corrections` field already discloses.
+Flagged, not newly contradicted.
+
+**Kololo Peaks — Standard Route.** Gain (6150ft) is an exact match to one
+of several Mountaineers.org trip listings for this route (figures across
+different trips/years for the same climb range 6,150-10,500ft depending
+on exact line and conditions, so this isn't a cherry-picked match).
+Elevation (8240ft) is softer: Wikipedia gives a rounded 8200ft for the
+peak overall, while a SummitPost route report gives 8230ft for the higher
+of its two summits — sources don't agree with each other to begin with on
+which sub-summit is higher or by how much, so 8240ft isn't contradicted
+by any one of them, just not matched exactly either. Flagged for human
+review, not fixed.
+
+**Confirmed errors this batch: 0.** No SQL file. 5 routes (Klawatti's
+three, Kyes's two) clean outright; 4 (Kimtah, King Kong, Koala Krack,
+Kololo) have FA-partner-name or elevation-precision items flagged for
+human review, none contradicted by any source found.
+
+Pass 7 continues next run after `wa_kyes_peak_northeast_ridge`.
