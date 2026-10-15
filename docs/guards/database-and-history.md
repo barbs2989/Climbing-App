@@ -689,6 +689,19 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       parent), and the places dropped as not-new or unnamed (Turtle Rock, Mordor, S.B.R. Block, "E. Macy Park").
       Planner: a new area's parent may be another new one (`insertUnder`), and "left empty" counts its subtree.
       Rollback: `scripts/data/boulders-created-rollback.json` (folded lists) and the migration's own `m_move`.
+      **REVERTED by 0316** — see the next entry.
+    - **0310 reverted exactly — 0316** (2026-10-15). After 0310, `check:area-duplicates` failed on 17 pairs and
+      `check:summit-briefing` on its fixture: Mount Baker had lost 7 of its routes to a new "Mt. Baker" under the
+      source's North Cascades. 0310's "does this place exist?" test matched names EXACTLY within 1.5 km; a wider read
+      (state-wide, Mt./Mount, spellings, labels, our `_2` ids) found ~60 places re-created: Stone Fort's whole tree a
+      second time, Chuckwalla / Chuckawalla Wall, Ellesmere / Ellsmere Island, "(.3) Cougar's Den" / "Cougar's Den",
+      peaks under a second parent. Fixing pair by pair was a redo, so 0316 puts 0310 back from its own rollback: the
+      91 lists re-created (id, name, parent, every column), the 2,056 moves reversed, its 417 areas folded away, the
+      keeper fill undone. Dry runs: part 1 in full, and an Oregon subset end to end. **For the redo, "is this place
+      ours already?" must search the WHOLE STATE**, under the planner's match plus Mt./Mount, spelling distance,
+      sort labels and `(aka …)` qualifiers, read every hit, and treat a peak's own route list as the place, never a
+      catch-all. A guard that names a FIXTURE (`check:summit-briefing`'s Mount Baker) is a free tripwire: run the
+      route-page guards after any catalog fold, not only the catalog ones.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
