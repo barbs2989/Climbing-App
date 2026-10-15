@@ -7,7 +7,8 @@
 // What must hold (the 0300 header, as assertions):
 //   * a listing is readable and writable by its owner and by NOBODY else through the table;
 //   * a listing at a PEAK is refused; at world/country too;
-//   * REACHABILITY IS TWO-WAY: listed at the canyon surfaces at a crag inside it (listed_above=true);
+//   * REACHABILITY IS TWO-WAY, CAPPED AT THE STATE (0311): a state listing answers a search at the state only;
+//   * listed at the canyon surfaces at a crag inside it (listed_above=true);
 //     listed at the crag surfaces at the canyon and the range above it (listed_above=false);
 //   * the caller is never returned; an UNLISTED (discoverable=false) climber is never returned;
 //     a climber who blocked the caller is never returned;
@@ -25,7 +26,7 @@
 import { SUPABASE_URL, anonKey, requireServiceKey } from "../lib/supabase-env.mjs";
 
 const DOMAIN = "climbmatch-qa.invalid";
-const CRAG = "ut_hellgate_cliffs", CANYON = "ut_little_cottonwood_canyon", RANGE = "ut_wasatch_range";
+const CRAG = "ut_hellgate_cliffs", CANYON = "ut_little_cottonwood_canyon", RANGE = "ut_wasatch_range", STATE = "utah";
 let pass = 0, fail = 0;
 const ok = (l) => { pass++; console.log("  ok   " + l); };
 const bad = (l, d) => { fail++; console.log("  FAIL " + l + (d ? "  -- " + d : "")); };
@@ -77,8 +78,8 @@ async function main() {
   const ALPINE = alpineRow.body && alpineRow.body[0] && alpineRow.body[0].id, SPORT = cragRow.body && cragRow.body[0] && cragRow.body[0].id;
   if (!ALPINE || !SPORT) throw new Error("need one alpine and one sport route in the catalog");
 
-  const A = await createUser("searcher"), B = await createUser("canyon"), C = await createUser("crag"), D = await createUser("unlisted"), E = await createUser("elsewhere");
-  for (const u of [A, B, C, E]) await setDiscoverable(u, true);
+  const A = await createUser("searcher"), B = await createUser("canyon"), C = await createUser("crag"), D = await createUser("unlisted"), E = await createUser("elsewhere"), F = await createUser("statewide");
+  for (const u of [A, B, C, E, F]) await setDiscoverable(u, true);
   await setDiscoverable(D, false);
 
   // ---- the table is the owner's alone
@@ -90,6 +91,8 @@ async function main() {
   check(dl.status < 300, "an unlisted (discoverable=false) climber can still hold a listing row", JSON.stringify(dl.body));
   const el = await listAt(E, "ut_hellgate_condos", { free_from: "2020-01-01", free_to: "2020-01-02" });
   check(el.status < 300, "a listing with an EXPIRED window is accepted", JSON.stringify(el.body));
+  const fl = await listAt(F, STATE, {});
+  check(fl.status < 300, "a listing at the STATE is accepted (a state is not a peak, world or country)", JSON.stringify(fl.body));
   const peek = await as(A, "/rest/v1/partner_areas?select=user_id");
   check(Array.isArray(peek.body) && peek.body.length === 0, "another climber reads NOTHING of the table directly", JSON.stringify(peek.body));
   const forge = await as(A, "/rest/v1/partner_areas", { method: "POST", body: JSON.stringify({ user_id: C.id, area_id: RANGE }) });
@@ -114,6 +117,7 @@ async function main() {
   check(ids(atCrag).includes(B.id), "listed at the CANYON above surfaces when searching the crag (ancestor reach)");
   check(ids(atCrag).includes(E.id), "listed at a sub-area INSIDE the crag surfaces when searching the crag (descendant reach)");
   check(!ids(atCrag).includes(D.id), "an UNLISTED climber is never returned");
+  check(!ids(atCrag).includes(F.id), "listed at the STATE does NOT surface at a crag inside it — ancestor reach stops at the state (0311)");
   check(!ids(atCrag).includes(A.id), "the caller is never returned to themselves");
   const cR = row(atCrag, C.id), bR = row(atCrag, B.id), eR = row(atCrag, E.id);
   check(cR && cR.listed_above === false && bR && bR.listed_above === true, "listed_above is false for the crag listing and true for the canyon one", JSON.stringify([cR && cR.listed_above, bR && bR.listed_above]));
@@ -127,6 +131,10 @@ async function main() {
   check(ids(atRange).includes(C.id) && ids(atRange).includes(B.id) && ids(atRange).includes(E.id), "searching the RANGE reaches the canyon, crag and sub-area listings (descendant reach)");
   const rC = row(atRange, C.id);
   check(rC && rC.listed_above === false, "from the range, the crag listing is inside it, not above it");
+  check(!ids(atRange).includes(F.id), "...nor at the range (0311)");
+  const atState = await rpc(A, "partners_in_area", { p_area_id: STATE });
+  const fS = row(atState, F.id);
+  check(fS && fS.listed_above === false && ids(atState).includes(C.id) && ids(atState).includes(B.id), "searching the STATE itself still finds the state listing (not \"above\") and everything inside it", JSON.stringify(ids(atState)));
   const unknown = await rpc(A, "partners_in_area", { p_area_id: "no_such_area_xyz" });
   check(unknown.status >= 400, "an unknown area is refused");
 
@@ -137,14 +145,16 @@ async function main() {
   if (al.status >= 300) bad("A lists at the crag", JSON.stringify(al.body));
   const mine = await rpc(A, "partners_for_my_areas", {});
   check(ids(mine).includes(B.id) && ids(mine).includes(C.id) && ids(mine).includes(E.id) && !ids(mine).includes(D.id) && !ids(mine).includes(A.id), "Near my areas reaches the canyon, crag and sub-area climbers and nobody else", JSON.stringify(ids(mine)));
+  check(!ids(mine).includes(F.id), "Near my areas (listed at the crag) does not reach the STATE listing either (0311)", JSON.stringify(ids(mine)));
   const mB = row(mine, B.id);
   check(mB && mB.shared_count === 1 && Array.isArray(mB.via_area_names) && mB.via_area_names.length === 1, "each row says how many areas matched and via which of MINE", JSON.stringify(mB && [mB.shared_count, mB.via_area_names]));
 
   // ---- counts
-  const counts = await rpc(A, "partner_area_counts", { p_area_ids: [CRAG, RANGE, CANYON] });
+  const counts = await rpc(A, "partner_area_counts", { p_area_ids: [CRAG, RANGE, CANYON, STATE] });
   const cnt = Object.fromEntries((counts.body || []).map((r) => [r.area_id, r.listed_count]));
   check(cnt[CRAG] === 3, "the crag counts the crag, canyon and sub-area climbers (3), not the unlisted one or the caller", JSON.stringify(cnt));
-  check(cnt[RANGE] === 3 && cnt[CANYON] === 3, "the range and canyon count the same three", JSON.stringify(cnt));
+  check(cnt[RANGE] === 3 && cnt[CANYON] === 3, "the range and canyon count the same three — the state listing is not among them (0311)", JSON.stringify(cnt));
+  check(cnt[STATE] === 4, "the STATE counts those three plus the state listing (4)", JSON.stringify(cnt));
 
   // ---- listings of the climbers on screen
   const of = await rpc(A, "partner_areas_of_users", { p_ids: [B.id, C.id, D.id, A.id] });

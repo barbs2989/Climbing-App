@@ -1,34 +1,36 @@
 // Injection-test check:partner-areas — prove each rule can FAIL, and prove the edit landed before
 // believing what the guard says about it. The guard replays supabase/migrations/ end-state, so the
-// cases edit the migration that creates the objects (0300) and lib/db.js, run the guard, and restore.
+// cases edit the migration that creates the objects (0300), the one that last re-creates the three
+// readers (0311) and lib/db.js, run the guard, and restore.
 import fs from "fs";
 import { execSync } from "child_process";
 
-const MIG = "supabase/migrations/0300_partner_areas.sql";
+const MIG = "supabase/migrations/0311_partner_area_reach_stops_at_the_state.sql"; // the readers' FINAL bodies live here since 0311
+const MIG0 = "supabase/migrations/0300_partner_areas.sql";
 const MIG2 = "supabase/migrations/0303_partners_by_objective_alpine_only.sql";
 const DB = "lib/db.js";
 const APP = "ClimbMatch.jsx";
-const files = { [MIG]: fs.readFileSync(MIG, "utf8"), [MIG2]: fs.readFileSync(MIG2, "utf8"), [DB]: fs.readFileSync(DB, "utf8"), [APP]: fs.readFileSync(APP, "utf8") };
+const files = { [MIG]: fs.readFileSync(MIG, "utf8"), [MIG0]: fs.readFileSync(MIG0, "utf8"), [MIG2]: fs.readFileSync(MIG2, "utf8"), [DB]: fs.readFileSync(DB, "utf8"), [APP]: fs.readFileSync(APP, "utf8") };
 
 const CASES = [
   {
     name: "1. partners_in_area keeps only the INSIDE direction (ancestor reach dropped)",
-    file: MIG, expect: "partners_in_area (0300_partner_areas.sql)",
-    edit: (s) => s.replace("where pa.user_id <> auth.uid() and (la.path <@ tp or la.path @> tp)", "where pa.user_id <> auth.uid() and (la.path <@ tp)"),
+    file: MIG, expect: "partners_in_area (0311_partner_area_reach_stops_at_the_state.sql)",
+    edit: (s) => s.replace("where pa.user_id <> auth.uid() and (la.path <@ tp or (la.path @> tp and la.area_type <> 'state'))", "where pa.user_id <> auth.uid() and (la.path <@ tp)"),
   },
   {
     name: "2. match_objectives_of_users forgets the PEAK clause (trad on a peak stops counting)",
-    file: MIG, expect: "match_objectives_of_users (0300_partner_areas.sql)",
+    file: MIG0, expect: "match_objectives_of_users (0300_partner_areas.sql)",
     edit: (s) => s.replace("and (rt.discipline not in ('trad','sport','toprope','aid','bouldering') or a.area_type = 'peak')", "and (rt.discipline not in ('trad','sport','toprope','aid','bouldering'))"),
   },
   {
     name: "3. the crag list forks — `aid` added to the table CHECK only",
-    file: MIG, expect: "crag list has forked",
+    file: MIG0, expect: "crag list has forked",
     edit: (s) => s.replace("check (disciplines <@ array['trad','sport','toprope','aid','bouldering']::text[])", "check (disciplines <@ array['trad','sport','toprope','bouldering']::text[])"),
   },
   {
     name: "4. a PUBLIC read policy on partner_areas (the opt-out and blocks walked around)",
-    file: MIG, expect: "partner_areas",
+    file: MIG0, expect: "partner_areas",
     edit: (s) => s.replace('create policy "owner reads own partner areas" on public.partner_areas\n  for select using (auth.uid() = user_id);', 'create policy "anyone reads partner areas" on public.partner_areas\n  for select using (true);'),
   },
   {
@@ -38,7 +40,7 @@ const CASES = [
   },
   {
     name: "6. the validate trigger stops refusing a peak",
-    file: MIG, expect: "partner_areas_validate refuses",
+    file: MIG0, expect: "partner_areas_validate refuses",
     edit: (s) => s.replace("if t in ('peak', 'world', 'country') then", "if t in ('world', 'country') then"),
   },
   {
