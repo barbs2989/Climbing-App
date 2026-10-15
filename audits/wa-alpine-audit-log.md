@@ -32191,3 +32191,65 @@ snippets only, never a directly-fetched page; re-verify directly once network ac
 to those domains is restored.
 
 Pass 7 continues next run after `wa_ingalls_peak_east_route`.
+
+## Batch 412 — 2026-10-15 (pass 7)
+
+**Ingalls Peak — South Ridge, Friends In High Places, North Peak Southwest
+Face.** South Ridge's elevation, grade, 1941 FA, approach/descent and current
+permit fees all held up against Mountaineers.org and SummitPost; one real
+nuance: Mountaineers-linked sources spell the FA partner "Keith Rankin," but
+Wikipedia gives "Keith Lankin" — genuinely unresolved, flagged for human
+review against Beckey's guide rather than guessed at. Friends In High
+Places' 2024 FA (Sackett/Angell/Everly) turned up on no indexed climbing
+site at all — not proof it's wrong (brand-new 2-pitch routes on obscure
+peaks often aren't indexed), but not confirmable either; flagged. Its
+stored 2026 Three Queens Fire closure order (06-17-03-2026-36, Aug 24–Oct 31)
+matched the live USFS alert page exactly. North Peak Southwest Face, a bare
+stub with only id/name/discipline populated, turned out to be a real,
+separately-named line — SummitPost documents it directly as a distinct
+Grade I/Class 4 route, distinct from South Ridge and East Ridge — so its
+existence is confirmed even though no other fields are populated yet.
+
+**Inner Constance — Northwest Buttress, Sean's Route/Second Wind, Standard
+Route.** The area's "5th-highest in the Olympics," 0.9 mi to Mount
+Constance, pillow-basalt rock, and Daniel J. Evans Wilderness naming all
+confirmed. The area's own elevation/prominence (7672ft/1162ft) run a hair
+above Wikipedia's 7670ft/1150ft — notably, the routes' own `high_point_ft`
+already use 7670, so this is the area row trailing a correction the routes
+already carry, not a fresh error; too small and single-sourced to action
+alone, flagged for a human to reconcile the area row against its own
+routes. Northwest Buttress's 1983 Hardee/Coffey FA and Sean's Route's 2021
+Allen/Darragh FA both turned up zero hits anywhere searched (AAC, Mountain
+Project, SummitPost) — same undocumented-but-plausible ambiguity as
+Ingalls' new route above, flagged rather than touched. Standard Route's 1939
+David Harrah FA and the "Dosewallips Road closed to vehicles since the 2002
+washout" claim both confirmed directly (Wikipedia; NPS road-conditions page
+updated Apr 2026). The route's own `corrections` field reads as if the
+`name` column still said "via Crystal Pass" — re-checked the live row
+directly rather than trust that framing, and the `name` column already
+reads "Standard Route (Northeast summit via South Gully and East Ridge)";
+the corrections text is just explaining *why* that correction was made, not
+describing a live mismatch. No SQL needed — correctly already fixed.
+
+**Iron Cap Mountain — Northeast Shoulder, South Route.** Both are bare
+stubs (only id/name/discipline/area_id). The area's elevation (6347ft),
+prominence (787ft), and 1925 Joe Hazard-led FA all confirmed against
+Wikipedia. Neither stub route name is independently documented anywhere,
+but both are geographically and gradewise plausible (a NE-trending
+shoulder and a Class-3 south line match the peak's known N/NE/W approach
+lines and the area's own south-draining-basin description) and are clearly
+distinct from each other — nothing to fix, nothing contradicted.
+
+**Confirmed errors this batch: 0.** No SQL file. 2 routes clean outright
+(North Peak Southwest Face's existence; Standard Route's name/corrections
+self-consistency resolved), 7 items flagged for human review, none
+fabricated or contradicted.
+
+**Tooling notes:** Delegated to 4 parallel subagents, one per peak/group.
+WebSearch worked normally. Direct WebFetch/curl to research-site domains
+hit a 403 policy denial from the outbound proxy this run (`CONNECT tunnel
+failed, response 403` against en.wikipedia.org) rather than the DNS
+failures logged in recent prior runs — still effectively no direct-fetch
+access; every finding above rests on WebSearch snippets only.
+
+Pass 7 continues next run after `wa_iron_cap_mountain_south_route_2`.
