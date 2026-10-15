@@ -3365,7 +3365,7 @@ function OverviewMap({onOpenClimb,onOpenArea,disc,filters,wishlist,scope}){useEf
   const [mapDisc,setMapDisc]=useState(null);
   const [mapZoom,setMapZoom]=useState(4);
   const [mapBounds,setMapBounds]=useState(null);
-  const mapDiv=useRef(null),mapRef=useRef(null),markRef=useRef(null),searchMarkRef=useRef(null),tileRef=useRef(null);const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false);const me=useFollowMe(mapRef,{C,zoom:14}),locate=me.locate,geoErr=me.err;const [baseLayer,setBaseLayer]=useState("sat");
+  const mapDiv=useRef(null),mapRef=useRef(null),markRef=useRef(null),searchMarkRef=useRef(null),tileRef=useRef(null);const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false);const me=useFollowMe(mapRef,{C,zoom:14}),locate=me.locate,geoErr=me.err;const [baseLayer,setBaseLayer]=useState("street");
   const coordOf=r=>{const w=(r.waypoints||[]).find(x=>wpIs(x,"Trailhead"))||(r.waypoints||[])[0];if(wpPlaced(w))return [w.lat,w.lng];if(r.gpxPts&&r.gpxPts.length)return r.gpxPts[0];const m=MOUNTAINS.find(x=>x.id===r.mountainId);return m&&m.lat!=null?[m.lat,m.lng]:null;};
   const labelOf=r=>{let m=MOUNTAINS.find(x=>x.id===r.mountainId),g=0;while(m&&m.parentId&&["crag","wall"].includes(m.type)&&g<4){m=MOUNTAINS.find(x=>x.id===m.parentId);g++;}return m?m.name:"";};
   const clusterLabel=climbs=>{if(!climbs.length)return "";const chains=climbs.map(r=>{const out=[];let m=MOUNTAINS.find(x=>x.id===r.mountainId),g=0;while(m&&g<9){out.push(m.id);m=m.parentId?MOUNTAINS.find(x=>x.id===m.parentId):null;g++;}return out;});const first=chains[0];for(let qi=0;qi<first.length;qi++){const id=first[qi];if(chains.every(ch=>ch.indexOf(id)>=0)){const mm=MOUNTAINS.find(x=>x.id===id);if(mm)return mm.name;}}return labelOf(climbs[0]);};
