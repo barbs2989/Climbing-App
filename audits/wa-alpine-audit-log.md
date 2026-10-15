@@ -31865,3 +31865,83 @@ findings came from WebSearch snippets. `npm run check:sql -- fix.sql` run agains
 the `routes` and `areas` write targets in this batch's SQL file; both pass clean.
 
 Pass 7 continues next run after `wa_gunnshy_peak_standard_route`.
+
+## Batch 407 (pass 7) — 2026-10-15
+
+Checked: Gunrunner & Gunsight Peak Standard Route (Gunsight Range/Middle Peak), Guye
+Peak's four routes (Improbable Traverse, West Face, North Route "Hidden Ridge",
+Southeast Gully), Hadley Peak's two routes (Cougar Divide, Skyline Divide).
+
+**1 confirmed fix.** The glacier west of Gunsight Peak is spelled "Chikamin" (missing
+the second g) throughout most of `wa_gunsight_peak_standard`'s prose/JSON fields and
+once more in `wa_gunrunner`'s own `bail` field. USGS/GNIS, Wikipedia, and the AAC's
+account of Gunrunner itself all consistently spell it "Chickamin" — fixed by
+mechanical replace across every affected column on both rows (SQL file:
+`audits/sql/2026-10-15-batch-407.sql`).
+
+**Gunrunner — otherwise confirmed clean, three numeric flags.** FA (Blake Herrington
+& Dan Hilden, July 9, 2007), IV 5.10 A1, 18 pitches, and the four-summit
+traverse/Chickamin-Blue Glacier descent narrative all confirmed near-verbatim against
+the 2008 AAJ report and Alpinist's 2007 Newswire piece. Flagged, not fixed:
+`high_point_ft` (8200) has no independent confirmation; `gain_ft` (5000) doesn't match
+the route's own on-file itinerary math (~7,200 ft); `dist_km` (16.1) looks like it may
+be swapped with the sibling route's 27.35 km, since the row's own waypoint note gives
+17 mi (≈27.35 km) to the summit area, not 10 mi.
+
+**Gunsight Peak Standard Route.** `high_point_ft` (8198) confirmed via
+Wikipedia/Peakbagger. `gain_ft` (14000) turns out to be the cumulative gain+loss of a
+6-day, two-peak (Gunsight + Sinister) loop itinerary rather than this route alone — a
+scope/definition question for a human, not a numeric error. `prominence_ft` (546)
+still conflicts with Wikipedia's 518 ft; already disclosed in the row's own
+`data_quality.gaps`, independently reconfirmed (518 is the sourced figure; 546 has no
+source found), not resolved. Both routes' filing under Middle Peak / The Gunsight
+Range was confirmed correct — coordinates match the real "Gunsight Peak" in the
+Glacier Peak Wilderness near Dome/Sinister Peaks, not a Snoqualmie-area feature.
+
+**Guye Peak.** Improbable Traverse's November 2021 rockfall hazard text (the 30x40ft
+section, the 5.9-5.10 downclimb from an old piton) confirmed near-verbatim against a
+Mountain Project condition update and a CascadeClimbers.com trip report; its FA
+(Hiser/Borghoff, 1960) and first winter ascent (Kit Lewis, 1975) could not be
+corroborated or contradicted by any reachable source — flagged, not guessed at. The
+shared 2021 Alpental private-road access-dispute text (all four routes' `access.notes`)
+confirmed current via a 2026 trip report. West Face's 1-ft high-point discrepancy
+(5168 vs. 5169 on the other three routes) is already self-caveated in its own
+`descent_text` as summit-register-vs-GPS ambiguity between the south and north
+summits — not an error, and the one fully clean route this batch. North Route's
+1912 peak-FA credit (Hazlehurst/Abel/Dubuar/Hard) is well-documented (Wikipedia,
+PeakVisor) and — importantly — correctly hedged on this row ("first ascent of the
+peak") rather than misapplied as if it were this specific gully/ridge line's own FA.
+Southeast Gully's FA ("Julien Bacon and Lukas Speckhardt") is this batch's most
+concerning finding: neither name turns up anywhere in any searchable climbing record,
+and a 1973 AAJ account describes a 20-person party ascending "a small gully on the
+peak's southeast side" over 50 years earlier — very likely the same line given the
+aspect and the absence of any other named SE-facing gully on this peak, but not
+independently pinned down as definitively identical, so flagged for human review
+rather than overwritten (no delete/correction authority taken on an unconfirmed
+identity match).
+
+**Hadley Peak.** Trail numbers (#601 Cougar Divide, #678 Skyline Divide) and Skyline
+Divide's trail-high-point figure (6,563 ft) confirmed against WTA. The headline
+question — whether the stored FS Road 37 washout/closure claim (closed since 2021, no
+repair date given) is stale — came back confirmed **still accurate** as of today via a
+May 2026 USFS project-status page and a June 2026 WTA note, so the app is right to
+keep warning climbers rather than this being outdated copy. One minor note: WTA cites
+the washout ~9.6 mi before the trailhead while the DB/USFS project page cites milepost
+3.1 — possibly the original washout point vs. the current gate point, not necessarily
+a DB error, but worth a human double-check. Exact FS Road 33 seasonal-gate dates,
+Mount Baker Wilderness party-size/campfire/human-waste rule numbers, and both routes'
+trailhead-to-summit gain/distance figures beyond the maintained-trail segment couldn't
+be independently confirmed this run and are flagged for a human with working access to
+the live USFS alerts pages.
+
+**Tooling notes:** Delegated to 3 parallel subagents, one per peak/route-group.
+WebFetch failed with DNS errors on every domain attempted in all three subagents
+(mountainproject.com, cascadeclimbers.com, americanalpineclub.org/publications,
+fs.usda.gov, wta.org); web.archive.org was blocked outright. All findings came from
+WebSearch snippets of the same pages — re-verify directly once network access to
+those domains is restored. `npm run check:sql -- fix.sql` could not be run this batch
+(node_modules not installed in this worktree); the two UPDATE statements' WHERE
+clauses were instead verified directly against the live table via REST `LIKE` queries
+before being written, confirming each matches exactly the intended row.
+
+Pass 7 continues next run after `wa_hadley_peak_skyline_divide`.
