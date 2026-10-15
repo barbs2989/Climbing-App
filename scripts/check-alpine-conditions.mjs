@@ -222,6 +222,13 @@ for (const disc of ["mountaineering", "scrambling", "alpine", "ice", "mixed"]) {
 }
 const sportHtml = A.render(Object.assign({}, BASE, { discipline: "sport", grade: "5.10a" }), "forecast");
 eq("a sport route keeps the STAR score, not the alpine flags", [/CONDITIONS SCORE/.test(sportHtml), /CONDITIONS · /.test(sportHtml)], [true, false]);
+// A crag route has no trailhead-to-summit line, so its forecast is ONE point at the crag (owner, 2026-10-14),
+// even when it carries pins -- a parking pin is not where you climb.
+// The area is typed a CRAG: trad filed on a PEAK is alpine by catOf's rule, and would rightly keep its key points.
+const cragPinned = A.render(Object.assign({}, BASE, { discipline: "trad", grade: "5.9", _dbArea: Object.assign({}, BASE._dbArea, { name: "Probe Crag", areaType: "crag" }), waypoints: [{ type: "Trailhead", name: "Lot", lat: 47.4, lng: -121.4, elev: 2000 }, { type: "Summit", name: "Top", lat: 47.5, lng: -121.5, elev: 9000 }] }), "forecast");
+eq("a crag route's forecast is headed 'at the crag', not 'at key points', and forecasts none of its pins", [/Forecast at the crag/.test(cragPinned), /Forecast at key points/.test(cragPinned), />Lot · /.test(cragPinned), />Top · /.test(cragPinned)], [true, false, false, false]);
+const alpPinned = A.render(Object.assign({}, BASE, { discipline: "alpine", grade: "5.6" }), "forecast");
+eq("...while an alpine route keeps 'Forecast at key points'", /Forecast at key points/.test(alpPinned), true);
 const safetyAlp = A.render(Object.assign({}, BASE, { discipline: "mountaineering" }), "safety");
 const safetyHike = A.render(Object.assign({}, BASE, { discipline: "hiking" }), "safety");
 eq("the weather panel left Safety on an alpine route (it lives on Conditions now)", /Weather &amp; mountain forecasts/.test(safetyAlp), false);
