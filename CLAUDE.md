@@ -291,7 +291,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 ### The single `App` component
 
-`export default function App()` (near the bottom, ~line 2208) holds **~100 `useState` hooks** and every screen. Navigation is driven by a single `tab` state string. Main tabs:
+`export default function App()` (~line 214 of `ClimbMatch.jsx`) holds **~250 `useState` hooks** and every screen — where each kind of state lives, and why there is no global store, is in [ARCHITECTURE.md](ARCHITECTURE.md). Navigation is driven by a single `tab` state string. Main tabs:
 
 - `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Best day to climb* (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
