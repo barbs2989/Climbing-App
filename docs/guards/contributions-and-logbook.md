@@ -400,7 +400,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     more, where the text disagrees with itself, were left alone. No guard can see this class.
 
 - **`check:area-edit-fields`** asserts that the seven AREA fields a climber may suggest an edit to
-  are **one list, read four ways**: `AREA_EDIT_FIELDS` in `lib/areaFields.js`, the check
+  are **one list, read five ways** (since 0319: the constraint in 0304; `apply_approved_area_field`'s
+  allow-list and `update areas set` targets and `approve_field_contribution`'s area branch in 0319;
+  the editor; the page; the owner's queue labels). It also refuses an `after insert` applier trigger
+  coming back and requires the `after update of status … when approved` shape. The threshold rule
+  ("N of 3") is gone with the rule it tested: area edits are held for the owner. Original wording: `AREA_EDIT_FIELDS` in `lib/areaFields.js`, the check
   constraint `contributions_area_field_ck` and the applier `apply_agreed_area_field()` in the
   `0304` migration (both its allow-list and the columns its `update areas set` statements write),
   the rows `lib/AreaSuggestFix.jsx` offers, and the values the area page renders
