@@ -338,6 +338,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       fetch explains `forecast_days` and the freezing-level unit in detail and says nothing about
       wind height. **This is the only weather fetch in the app**, so there was no internal
       inconsistency to trip over either.
+    - **THE HOURLY ROWS ARE 10 m (2026-10-14).** The day tile's headline stays at 80 m, but the expanded hourly
+      list printed the 80 m wind (and 80 m direction) in a box beside the 10 m gust, so an hour could read "wind
+      22, gusts 18". Each hourly row now reads `wind_speed_10m` / `wind_direction_10m` (the fetch asks for the
+      direction too), and an older saved forecast without them reads "Not measured", never an 80 m figure under a
+      10 m label; a missing temperature or wind no longer rounds `null` to "0". The URL pins are now read off
+      **`fetchForecastRaw`'s own `const omUrl =` line**: the crag and alpine fetches in the same file also ask for
+      `wind_speed_10m`, so the whole-file search stayed green with the panel's request no longer asking for it
+      (the `fetch-drops-the-10m-series` injection case could not fail).
     - **A GATE rather than a probe**, and folded into `check:units` rather than given its own file:
       the fix changes a URL field, a comparison and a string, so reverting the gate to
       `dy.gustMax>dy.windMax` moves **no identifier** and `audit:silent-reverts` is blind to it by

@@ -616,6 +616,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       version, the whole apply rolled back, nothing landed, and it was renumbered. The old `on conflict do
       nothing` would have reported success and recorded nothing. 0291 was then claimed by an open crew PR
       (#2395) too, neither applied; this one moved again, to 0292, because regenerating costs it nothing.
+    - **The same climb on two areas 2 km+ apart — 0293** (2026-10-15). 0285 read only pairs under 2 km. Of the
+      3,573 farther pairs sharing 1-2 climb names, 3,390 are names the SOURCE lists twice in the state (two
+      climbs; not read again). Of the 183 left, 49 differ in description or FA (two). 134 read by two Sonnet
+      readers from pre-fetched source pages, then every ONE re-read: **50 pairs, 68 climbs merged**, 7 emptied
+      areas folded (same place under two names, or a placeholder/catch-all). The signal that decides most:
+      for each side, how many of the AREA's climbs the source still files under that area's name — a side
+      the source files 0 of its climbs under is a stale copy (a dissolved catch-all, a holding pen). Distance
+      decides nothing: pins inherited from a parent made one pair look 232 km apart. Traps: a name match
+      across the state (Rumbling Bald's "The Pit" received Moore's Wall's Pit Area problems; Leavenworth's
+      "Upper Castle" a Rainier crag's route); a WA guidebook import that hung 11 hard sport routes on Burge
+      Mountain's beginner ledge (3 merged into Marcus/China Bend; **the other 8 are still there**, origin
+      unread). Kept apart on reading: 7 UNSURE and the common names ("Front Left", "Perfect Route"). Also
+      found, NOT fixed: whole catch-alls the source has re-filed ("Forest Hill Park Bouldering" 32, "A and B
+      Blocks" 22) — the Rainbow Mountain pattern. Rollback: `scripts/data/far-twins-rollback.json`.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
