@@ -6,6 +6,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 
 | Read this | Before you… |
 |---|---|
+| [CURRENT_STATE.md](CURRENT_STATE.md) → `docs/features/*.md` | work on any area of the app: what it does now, its files, tables and connections. **A PR that changes how an area works updates that area's doc in the same PR**, and adds a line to CURRENT_STATE.md's recent changes |
 | [docs/guards/README.md](docs/guards/README.md) | change, remove, reason about, or add any `check:` / `audit:` script (one notes file per area) |
 | [docs/codebase/supabase-scripts.md](docs/codebase/supabase-scripts.md) | write a script that reads or writes Supabase, or run a DB guard from a worktree |
 | [docs/codebase/hand-written-sql.md](docs/codebase/hand-written-sql.md) | hand the user SQL to paste into the Supabase SQL Editor |
@@ -55,6 +56,7 @@ npm run check:flex-scroll # no scroll pane in a flex column that cannot actually
 npm run check:dialog-dismiss # every dialog can be left without guessing (in build)
 npm run check:popup-chrome # ...and every ✕, ← Back and remove-✕ in the app look the SAME — lib/popupChrome.js (in build)
 npm run check:doc-paths # every file path this document names still EXISTS (in build)
+npm run check:feature-docs # every docs/features doc names files and SYMBOLS that exist, and CURRENT_STATE.md indexes them all (in build)
 npm run check:injection-anchors # every INJECTION CASE still LANDS, so a guard's proof cannot rot (in build)
 npm run check:zindex # the toast stays above every overlay, so an error can be read (in build)
 npm run check:scroll-containment # every scroll pane contains its overscroll, so a sheet never reads as STUCK (in build)
@@ -293,7 +295,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 
 `export default function App()` (~line 214 of `ClimbMatch.jsx`) holds **~250 `useState` hooks** and every screen — where each kind of state lives, and why there is no global store, is in [ARCHITECTURE.md](ARCHITECTURE.md). Navigation is driven by a single `tab` state string. Main tabs:
 
-- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Best day to climb* (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`), *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
+- `today` — home dashboard (greeting, a setup checklist, alerts, *Unfinished business*, *Jump back in* tiles, recent condition reports, recent friend activity). **Not suggestions** — the only suggestion surface is `DbSuggestedClimbs` (*More climbs in this area*), which takes an `area` and renders inside the Climbs area browser.
 - `routes` — explore climbs by area, and (when `selRoute` is set) the route detail screen. Route detail has its own sub-`tab` state: `overview`, `planner`, `forecast`, `conditions`, `safety`, `partners`, `photos`.
   - **`forecast` is labelled "Conditions"**: the crag conditions score on sport/trad/top-rope/bouldering, and FLAGS plus a start time (no stars) on alpine/mountaineering/scrambling/ice/mixed; `conditions` is
     labelled "Reports" / "Send Reports" and holds what climbers reported. Two tabs on purpose: they show different things.
@@ -306,7 +308,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 - `crew` — your crews and direct/crew messaging (`crewView`). Friends and Requests are `crewView`s opened from the Menu's tiles; the tab's own view is crews only.
 - `groups` — the Groups screen, Facebook-style: For you · Your groups · Your activity · Discover · Events (`groupsTab`). **Not on the bottom bar**: NAV marks it `bar:false`, like `me`, and it opens from the Menu's Groups tile. A group opens as the `openGroupId` overlay over it.
 - `logbook` — your objectives, completed climbs, trip reports.
-- `me` — profile, verification, trust score. **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the **Menu** (the avatar button at the top left, `menuOpen`), whose "You" card leads here. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
+- `me` — profile, verification, trust score. **Not on the bottom bar**: NAV marks it `bar:false`, and it opens from the **Menu** (the avatar button at the top left, `menuOpen`), whose "You" card leads here. The Menu also holds what used to be the footer strip (How ClimbMatch works, Feedback, Rate app, Settings, Privacy, About us), shortcut tiles and sign in/out. One tile, *Best day to climb*, opens the `bestDayOpen` overlay (the conditions score over saved crag climbs, `lib/BestDayTile.jsx`) — it is not on Home. Browser walks reach Profile and Menu rows through `scripts/lib/menu-screens.mjs`.
 
 `openRoute(x)` is the standard way to navigate into a route (sets `routeFrom`, `selRoute`, and `tab="routes"`).
 
@@ -315,7 +317,7 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — small functions like `DiscBadge`, `TrustBadge`, `VerifyBadge`, `RiskBadge`, `ProvenancePanel`, `RouteGearCheck`, `ElevChart`, `GPXMap`, `DiffRadar`, plus icon components (`DiscIcon`, `ActionIcon`).
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — small functions like `DiscBadge`, `TrustBadge`, `VerifyBadge`, `RiskBadge`, `ProvenancePanel`, `RouteGearCheck`, `ElevChart`, `GPXMap`, plus icon components (`DiscIcon`, `ActionIcon`).
 3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic and the big inline-JSX render tree, gated by `tab===...` and `selRoute`.
 
 ### Domain concepts to know

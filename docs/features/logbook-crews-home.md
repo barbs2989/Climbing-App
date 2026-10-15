@@ -1,0 +1,79 @@
+# Logbook, Crews and Home — `logbook`, `crew`, `today` tabs
+
+Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"`, `tab==="logbook"`).
+`logbook` is split by `logbookTab` (`useState("objectives")`: `objectives`, `lists`, `completed`, `challenges`);
+`crew` by `crewView` (`crews`, `friends`, `requests`; Friends and Requests open from the Menu tiles).
+
+## 1. What it does today
+- **Logbook > Objectives / Saved**: `ListsManager` (`lib/ListsManager.jsx`) holds the objectives (wishlist) and saved lists. The Objectives filter
+  splits disciplines into **Sport** and **Trad** chips plus **Scrambling** (not "Other") (#2409). Saved no longer repeats a "Pinned states" card;
+  Home already shows it (#2408).
+- **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
+  `TripReport` the trip-report form, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
+- **Logbook > Challenges**: named tick-lists from `lib/lists.js` (`LISTS`, `routeInList`, `listPeaks`, `peakClimbed`).
+- **Crew**: your crews around a `routeId` with members, proposed dates, per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`).
+  Each crew renders as `CrewCard`: members, invite (by profile or email), itinerary, `CrewGearList` (who brings what), meet time/place, float plan.
+  Crew chat and direct messages (`useCrewMessages`, `useDirectMessages`); unread counts via `countCrewUnread`; `Inbox` and `NotifPanel` surface them.
+- **Past crews** (#2395): a crew whose day has passed, that has a log tied to it, or that was dismissed counts as past (`isArchivedCrew`).
+  Past-crew members can be vouched for (`GiveVouch`, `givenVouches`). **Archive** and **Clear** (`archiveCrew`, `clearPastCrew`) only hide the crew
+  on this device until reload and say so in the toast ("Crew archived on this device until you reload").
+- **Float plans**: `FloatPlans` (`lib/FloatPlans.jsx`) lists plans for `activeCrews`; the plan text is stored on the crew (`createCrew({floatPlan})`).
+- **Home (`today`)**: greeting; **Finish setting up** checklist (`gaps`, shows 2 until `showSetupAll`); alerts; **Unfinished business** (`unfinishedOpen`);
+  **Best day to climb** (`BestDayTile`); **Jump back in** tiles; **Recent condition reports**; recent friend activity; the pinned/downloaded states card.
+
+## 2. How it works
+1. `App` reads server state through React Query hooks in `lib/db.js`: `useMyObjectives`, `useUserLogs`, `useMyCrews`, `useMyItineraries`,
+   `useMyCrewInvites`, `useMyObjectiveSavedAt`. Writes are `saveObjective`/`removeObjective`, `createClimbLog`/`updateClimbLog`/`deleteClimbLog`,
+   `createCrew`/`updateCrewRow`/`deleteCrewRow`, `addCrewMember`/`updateCrewMemberStatus`/`removeCrewMember`, `ackCrewDay`/`unackCrewDay`.
+2. **Ready state**: `datesAgreed(c)` / `agreedDate(c)` in `ClimbMatchCore.jsx`: a crew is Ready only when every confirmed member (ME included)
+   has acked the same proposed day (`dayAcks`, persisted in `crew_day_acks`). `isArchivedCrew(c,logs)` in the same file decides "past".
+3. **Crew gear**: `CrewGearList` calls `addCrewGearItem`, `assignCrewGear`, `removeCrewGearItem` (RPCs `add_crew_gear_item`, `assign_crew_gear`, `remove_crew_gear_item`);
+   `useCrewGearSync` and `pingCrewGear` refresh other members. #2395 serialized gear writes and migration 0291 made `assign_crew_gear` accept only confirmed, listed members.
+4. **Messaging**: `sendCrewMessage`/`fetchCrewMessages`/`fetchOlderCrewMessages`, `sendDirectMessage`/`fetchMyDirectMessages`, read markers via `markCrewRead`/`fetchCrewLastReads`/`markMessageAsRead`.
+5. **Pinned states** follow the account (0187): `pinnedStates` state in `App`, saved by `savePinnedStates` (`profiles.pinned_states`). Offline downloads stay on the device
+   (`downloadedStates`, `dlLoaded`, `lib/offline.js`: `downloadStateOffline`, `removeStateOffline`, `packRouteOffline`).
+6. **Logs**: a log can name partners (`saveLogPartnerNames`, `useMyLogPartnerNames`); tagged climbers answer with `respondToLogTag` (RPC `respond_to_log_tag`, `useLogTagsForMe`).
+7. **Vouches**: `giveVouch`, `updateVouch`, `revokeVouch`; read with `useClimberVouches`, `useUserVouches`.
+
+## 3. Files
+| File | Key symbols |
+|---|---|
+| `ClimbMatch.jsx` | `tab` branches for `today`/`crew`/`logbook`, `logbookTab`, `crewView`, `pinnedStates`, `archiveCrew`, `clearPastCrew`, `givenVouches`, `activeCrews`, setup `gaps`, `unfinishedOpen`, `renderObjectives` |
+| `ClimbMatchCore.jsx` | `datesAgreed`, `agreedDate`, `isArchivedCrew`, `CrewInviteModal`, `ItineraryEditor` |
+| `lib/ListsManager.jsx` | Objectives/Saved UI, Sport/Trad/Scrambling filter chips |
+| `lib/MyAscents.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
+| `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed` (Challenges) |
+| `lib/CrewCard.jsx`, `lib/CrewGearList.jsx`, `lib/CrewFinder.jsx` | Crew card, gear list, crew discovery |
+| `lib/FloatPlans.jsx`, `lib/GiveVouch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx` | Float plans, vouch sheet, messages, notifications |
+| `lib/BestDayTile.jsx` | Home "Best day to climb" |
+| `lib/offline.js` | Pinned/downloaded states and route packs |
+| `lib/db.js` | All hooks and writes named above |
+
+## 4. Data
+- **Supabase tables read/written in `lib/db.js`**: `objectives`, `climb_logs`, `climb_log_partner_names`, `crews`, `crew_members`, `crew_day_acks`,
+  `crew_email_invites`, `crew_listings`, `crew_reads`, `crews_messages`, `messages`, `vouches`, `user_lists`, `user_itineraries`, `saved_searches`, `profiles` (`pinned_states`).
+- **RPCs**: `add_crew_gear_item`, `assign_crew_gear`, `remove_crew_gear_item`, `claim_my_crew_email_invites`, `share_crew_itinerary`, `log_tags_for_me`, `respond_to_log_tag`, `route_logged_with`, `state_trip_reports`.
+- **Migrations**: 0031 objectives, 0036 crews, 0037/00400/00540/00730/0121 climb logs, 0038/0238 vouches, 00420 messaging, 0075 crew locked day, 0086/0227 invite rules,
+  0187 pinned states, 0199 itineraries, 0209 crew gear, 0286/0287/0289/0291 `assign_crew_gear` and gear claims, 0092 `user_lists`.
+- **Device-only**: Archive/Clear of a past crew (React state `archived`, lost on reload); offline downloads (browser storage via `lib/offline.js`).
+- **Seed**: `ROUTES`/`CLIMBERS` fallbacks and `DEMO_FILLERS` sample crews/logs exist for the non-DB path; with `USE_DB` on, the lists above come from Supabase.
+
+## 5. Connections
+- Route page (`RouteDetail.jsx`): saving an objective, logging a climb, opening a crew's route via `openRoute`; Planner reads logged times (`check:logged-times`).
+- Partners (Discover): `partners_by_objective` reads objectives; `onInvite` and `crews` feed crew invites (`docs/features/partners.md`).
+- Profile/trust: vouches and logs feed trust score and the résumé; Menu opens Friends/Requests views and Settings.
+- Offline: pinned states and route packs (`packRouteOffline`) are what Home's pinned card lists.
+
+## 6. Guards
+All verified present in `package.json`: `check:crew`, `check:crew-member-readers`, `check:log`, `check:logged-times`, `check:challenge-rows`,
+`check:count-matches-its-list`, `check:claims`, `check:writes`, `check:write-readers`, `check:offline-claims`, `check:float-plan-persistence`,
+`check:read-failures`, `check:outage-flag-reach`, `check:seed-only-surfaces`, `check:dead-flag-gates`, `check:schema`, `check:rls`, `check:toast-reachable`.
+Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `honesty-claims.md`, `outage-and-read-failures.md`.
+(Matched by name; not re-run.)
+
+## 7. Last significant change
+#2395: Crews audit: past-crew vouching, honest Archive/Clear, serialized gear writes, migration 0291 tightens `assign_crew_gear`.
+
+## 8. Known gaps (verified)
+- Archive and Clear of a past crew are not persisted; the code comment in `archiveCrew` calls per-member persistence a follow-up.
+- `docs/guards` and CLAUDE.md describe crews as in-memory seed; `lib/db.js` shows they are DB-backed, so that older claim is stale.

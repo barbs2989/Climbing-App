@@ -540,6 +540,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     useful to a reader than a placeholder. The failure message says so.
   - Fails **closed** on a pattern that parses fewer than 80 paths: a doc scan matching nothing
     prints the same clean result as a correct one.
+- **`check:feature-docs`** asserts that the area docs in `docs/features/` (indexed by
+  `CURRENT_STATE.md`) still describe code that exists: every row of a doc's **Files** table names a
+  real file (or real migration numbers), every backticked identifier in that row occurs as a whole
+  word in that file, every backticked path in the doc exists (a bare name resolves against the root,
+  `lib/` and the docs folders), and the index and the folder agree in both directions. Static,
+  milliseconds, in `npm run build`.
+  - **It exists because the owner asked for these docs to stay current ALL the time** (2026-10-15),
+    and the next session TRUSTS them — a doc naming a renamed function is worse than no doc. It
+    catches the rename/move/delete half. **It cannot tell whether a description is still TRUE**;
+    that half is the CLAUDE.md rule that a PR changing an area edits its doc in the same PR.
+  - **Its first run found a stale line in CLAUDE.md itself**: `DiffRadar` was listed as a
+    `ClimbMatchCore.jsx` component; it lives in `RouteDetail.jsx`. The route-page doc had copied it.
+  - Injection-tested (renamed symbol, a doc dropped from the index, a missing file in a Files
+    table, a renamed Files heading) — all four fail, the clean tree passes. Fails **closed** under
+    40 parsed symbols or 4 docs.
+  - **Wildcards and expressions are skipped on purpose** (`CMAX_*`, `profile.zip`): only a plain
+    identifier is checked, so a doc can still describe a family of names in prose.
 - **`check:injection-anchors`** asks whether every **injection case still LANDS**. A suite is the
   PROOF that a guard can fail, so a case whose anchor no longer occurs in its target file proves
   nothing: the harness reports *"edit never landed"* or `HARNESS BUG`, **nothing runs
