@@ -715,3 +715,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   core, so the row component arrives as the `PartnerRow` prop (the `TopContributors` pattern).
   - **Trap:** `cragOnly` in RouteDetail is declared ~40 lines BELOW the partner queries; a query that
     read it threw at render. The queries use their own `_isCragR`.
+
+- **THE SEARCH APPLIES THE MATCH RULE TOO (`0303`, Step 6).** `partners_by_objective` (My Objectives /
+  By Route) is re-created with the rule 0300 wrote for the per-row read: an objective counts only when
+  its route is not crag-family or is filed on a PEAK, and a route the catalog does not hold no longer
+  matches by string. Same signature, columns, visibility and distance as 0211. The raw per-user read
+  `useObjectivesOfUsers` is REMOVED from lib/db.js — every match reads `useMatchObjectivesOfUsers`,
+  so a crag-route objective cannot reach `compat()` by any path. `check:partner-areas` pins the rule
+  in both function bodies, demands `ME.matchObjectiveIds` is derived with the imported `CRAG_CATS`,
+  and refuses the raw hook's return (10 injections). Probe: `partners_by_objective` finds B through
+  the alpine objective and not through the sport one (47 assertions).

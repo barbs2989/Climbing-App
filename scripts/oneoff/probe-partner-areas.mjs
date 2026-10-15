@@ -164,6 +164,11 @@ async function main() {
   check(kept.includes(ALPINE), "an alpine objective still counts for matching", JSON.stringify(kept));
   check(!kept.includes(SPORT), "a SPORT objective has left matching (it stays a tick list)", JSON.stringify(kept));
   check(!kept.includes("seed_route_not_in_catalog"), "a route the catalog does not hold does not count", JSON.stringify(kept));
+  // ---- the SEARCH applies the same rule (0303)
+  const byAlpine = await rpc(A, "partners_by_objective", { p_route_ids: [ALPINE] });
+  check(ids(byAlpine).includes(B.id), "partners_by_objective finds B through the ALPINE objective", JSON.stringify(ids(byAlpine)));
+  const bySport = await rpc(A, "partners_by_objective", { p_route_ids: [SPORT] });
+  check(bySport.status < 300 && !ids(bySport).includes(B.id), "partners_by_objective does NOT find B through the SPORT objective — crag partners are found by area", JSON.stringify(ids(bySport)));
 
   // ---- a block hides the blocker from the blocked
   const blk = await as(C, "/rest/v1/blocked_users", { method: "POST", body: JSON.stringify({ blocker: C.id, blocked: A.id }) });

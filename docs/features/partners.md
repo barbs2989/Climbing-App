@@ -53,7 +53,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | `ClimbMatchCore.jsx` | `compat`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `RealClimberRow`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin) |
-| `supabase/migrations/0189, 0211, 0232, 0295, 0300` | RPCs and tables below |
+| `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303` | RPCs and tables below |
 | `docs/codebase/algorithms.md` | `compat()` design history |
 
 ## 4. Data
