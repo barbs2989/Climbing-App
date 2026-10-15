@@ -164,6 +164,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       total-minus-completed. They coincide today only because nothing in the seed demo is completed,
       so the rule is `to go == active` and `routes >= active` — the day a climber ticks an objective,
       a three-way equality fires on working code.
+    - **The friends pair measured the WRONG number for weeks, and agreed.** Its "Friends badge" read
+      (`/Friends\s*\n?\s*(\d+)/`) was written when the box had a count beside its title; #1881
+      removed the badge and the regex silently re-attached to the ← Crews row's repeated "Friends"
+      followed by *"2 online now"* — the ONLINE count, equal to the friend count only because every
+      fixture friend is online. #2430 dropped that repeated title and the read went unmeasured
+      (CI red). It now COUNTS the friend rows (one *Message* per row) between *"See all friends
+      (N)"* and *"Find more friends"*, capped at the list's five (`listCap`). A `count` read whose
+      section is missing is ABSENT, never zero rows. Lesson: a regex that still matches after its
+      target was deleted is worse than one that fails — check what it matched, not that it did.
     - **Scope a read by SECTION, never by a character window.** The Logbook renders a *"1 climb to
       go"* badge per CUSTOM LIST, so an unanchored read compares a different list. A `{0,400}` window
       was tried and silently stopped finding the badge on the one snapshot carrying the defect —
