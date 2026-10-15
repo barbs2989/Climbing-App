@@ -24,6 +24,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Groups Step 5** Events: one event row everywhere (date tile, when · where, going), a tap opens the event; a group’s Events tab shows Upcoming then Past (3, “See all”); the hub’s Events tab puts “You’re going” first. “Form a crew” left the group page.
 - **#2427** TypeScript + `src/components/`: strict `tsconfig`, `check:types` in the build, guards made TS-aware, `measure:guard-reach`; first extraction `RiskBadge` (procedure: `docs/refactor-progress.md`).
 - **#2415** Résumé Experience: Sport and Trad groups; Scrambling replaces Other.
 - **#2416** Area map place search covers Canada: provinces, towns, postal codes.
