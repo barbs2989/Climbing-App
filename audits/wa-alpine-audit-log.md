@@ -31945,3 +31945,58 @@ clauses were instead verified directly against the live table via REST `LIKE` qu
 before being written, confirming each matches exactly the intended row.
 
 Pass 7 continues next run after `wa_hadley_peak_skyline_divide`.
+
+## Batch 408 (pass 7) — 2026-10-15
+
+Checked: Hagan Mountain (South Slopes), Half Moon (North Ridge), Helmet Butte Standard
+Route, Hibox Mountain's five routes (East Route, Northwest Ridge, South Route,
+Southeast Ridge, Southeast Shoulder).
+
+**0 confirmed errors — no SQL file this batch.**
+
+**Helmet Butte — fully clean.** Coordinates (48.149525, -120.955365) and 7,400ft summit
+elevation matched Wikipedia almost exactly. Buck Creek Trail #1513 and Buck Creek Pass
+Trail #789 are both real, correctly-numbered trails converging at Buck Creek Pass. The
+stored road-closure claim (Chiwawa River Road/FR 6200 closed past Atkinson Flat
+Campground to Trinity) is independently confirmed still current today via a live USFS
+Little Giant Fire closure order (active through Oct 31, 2026) layered on top of the
+older storm-damage closure WTA and the Leavenworth Echo reported — the net claim ("road
+to Trinity is currently impassable") holds.
+
+**Hagan Mountain South Slopes — mostly held up, one likely conflation flagged.**
+7,080ft high point, Hagan's position relative to Blum (~1.8mi N) and Bacon (~4.5mi S),
+the NPS backcountry party-size cap (6, confirmed — Hagan isn't in one of the 12-cap
+zones), and the FR 1107 washout-prone status all confirmed. But the approach text names
+both "Baker River Trailhead" (which accesses an unrelated drainage, Baker River Trail
+#606 toward Sulphide Camp) and "Watson Lakes Trailhead" (the real corridor into
+Noisy-Diobsud Wilderness toward Hagan) as if they were the same route's single start —
+flagged for a human to resolve rather than guessed at, since WebFetch DNS-failed on
+every target this run and no primary source could be pulled to confirm which trailhead's
+prose is the error; fixing it means rewriting approach prose, not a one-line SQL edit.
+Also flagged: the "straddles the NP/wilderness boundary" claim looks like an
+overstatement (sources place the peak inside NCNP proper, with Noisy-Diobsud merely
+adjacent), and the cited "Labor Day 2020" trip report couldn't be located under that
+description.
+
+**Half Moon North Ridge — confirmed clean on every item checked, two optional notes.**
+FA (Helmy & Fred Beckey, Walt Varney, June 17 1942), 7,960ft high point, the Kangaroo
+Ridge/Washington Pass location, and the route's own grade/pitch count all confirmed.
+One very specific, independently checkable claim — that 2026's SR 20 reopening was
+delayed to June 14, tying 1974 for latest-ever — came back confirmed exactly via WSDOT
+advisories and news coverage. Left unfixed as optional/non-urgent: a newer LiDAR survey
+puts Half Moon's true high point nearer 7,991ft (essentially tied with neighboring
+Wallaby) rather than the stored classic 7,960ft figure, and the permit sentence doesn't
+mention that a Northwest Forest Pass is still needed to park at the trailhead.
+
+**Hibox Mountain — still bare stubs, nothing to contradict.** All five routes carry
+only name/grade, no enrichment. The peak's own elevation (6,548ft) and coordinates
+matched Wikipedia/SummitPost closely, but none of the five route names could be
+independently corroborated against Mountain Project/Peakbagger/SummitPost — not
+contradicted, just unverified, so flagged rather than assumed correct.
+
+**Tooling notes:** Delegated to 3 parallel subagents, one per peak/group. WebFetch
+DNS-failed on every target domain (Wikipedia, SummitPost, Mountaineers.org, NPS.gov) in
+two of the three subagents again this run; findings there rest on WebSearch snippets
+only — re-verify directly once network access to those domains is restored.
+
+Pass 7 continues next run after `wa_hibox_mountain_southeast_shoulder`.
