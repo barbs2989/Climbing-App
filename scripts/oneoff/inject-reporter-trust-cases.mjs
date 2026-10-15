@@ -44,9 +44,9 @@ const CASES = [
     name: "historical-shadow",
     why: "THE REAL DEFECT: buildConsensus scores an unknown reporter at a literal 50 and renders it",
     file: "core",
-    find: "const wOf=it=>{const base=0.45+0.55*(reporterWeightTrust(it.user)/100);",
+    find: "const wOf=it=>{const base=0.45+0.55*(reporterWeightTrust(it.user,it._authorId)/100);",
     repl: SHADOW + "const wOf=it=>{const base=0.45+0.55*(trustOf(it.user)/100);",
-    also: [["trust:reporterTrust(a.user)", "trust:trustOf(a.user)"]],
+    also: [["trust:reporterTrust(a.user,a._authorId)", "trust:trustOf(a.user)"]],
     expect: "hazard row carries trust 50",
   },
   {
@@ -55,7 +55,7 @@ const CASES = [
     file: "rd",
     find: "const out={};const nowY=",
     repl: SHADOW + "const out={};const nowY=",
-    also: [["trust:reporterTrust(r.user)", "trust:trustOf(r.user)"]],
+    also: [["trust:reporterTrust(r.user,r._authorId)", "trust:trustOf(r.user)"]],
     expect: "shadowed copies remain",
   },
   {
@@ -70,16 +70,16 @@ const CASES = [
     name: "suppress-everything",
     why: "OVER-REACH: a rule that only ever suppresses is satisfied by deleting the feature",
     file: "core",
-    find: "export function reporterTrust(n){var a=seedAuthor(n);return a?vScore(a):null;}",
-    repl: "export function reporterTrust(n){return n?null:null;}",
+    find: "export function reporterTrust(n,aid){var ra=realAuthor(aid);if(ra&&ra.trust!=null)return ra.trust;if(aid)return null;var a=seedAuthor(n);return a?vScore(a):null;}",
+    repl: "export function reporterTrust(n,aid){return n?null:null;}",
     expect: "seed reporter lost their trust number",
   },
   {
     name: "prior-becomes-zero",
     why: "the WEIGHTING moves — an unscoreable author drops to 0 instead of the neutral prior",
     file: "core",
-    find: "export function reporterWeightTrust(n){var t=reporterTrust(n);return t==null?TRUST_PRIOR:t;}",
-    repl: "export function reporterWeightTrust(n){var t=reporterTrust(n);return t==null?0:t;}",
+    find: "export function reporterWeightTrust(n,aid){var t=reporterTrust(n,aid);return t==null?TRUST_PRIOR:t;}",
+    repl: "export function reporterWeightTrust(n,aid){var t=reporterTrust(n,aid);return t==null?0:t;}",
     expect: "the weighting MOVED",
   },
   {
@@ -104,8 +104,8 @@ const CASES = [
     why: "the same rule written longhand is correct work; a probe pinned to one spelling forbids it",
     file: "core",
     silent: true,
-    find: "export function reporterTrust(n){var a=seedAuthor(n);return a?vScore(a):null;}",
-    repl: "export function reporterTrust(n){var a=seedAuthor(n);if(!a)return null;return vScore(a);}",
+    find: "export function reporterTrust(n,aid){var ra=realAuthor(aid);if(ra&&ra.trust!=null)return ra.trust;if(aid)return null;var a=seedAuthor(n);return a?vScore(a):null;}",
+    repl: "export function reporterTrust(n,aid){var ra=realAuthor(aid);if(ra&&ra.trust!=null)return ra.trust;if(aid)return null;var a=seedAuthor(n);if(!a)return null;return vScore(a);}",
   },
 ];
 
