@@ -32379,3 +32379,67 @@ Kololo) have FA-partner-name or elevation-precision items flagged for
 human review, none contradicted by any source found.
 
 Pass 7 continues next run after `wa_kyes_peak_northeast_ridge`.
+
+## Batch 415 — 2026-10-15 (pass 7)
+
+**Lake Mountain (Pasayten) — Standard Scramble.** Confirmed error: the row's own
+`high_point_ft` (8371) is the value independent sources agree on (SummitPost, a
+Country High Points trip report both give 8,371 ft; no source found gives 8,377),
+but the route's `overview` prose and its own summit waypoint both separately say
+8,377 ft — an internal inconsistency, not just a sources-disagree case. Fixed both
+to 8,371 ft in `audits/sql/2026-10-15-batch-415.sql` (checked clean by
+`check:sql`).
+
+**Lane Peak — Fly The / The Zipper / The Fly / Lover's Lane.** Likely catalog
+duplicate, not fixed: `wa_lane_peak_fly_the` ("Fly, The", grade "Mod. Snow", thin
+data) and `wa_lane_peak_r2` ("The Fly (couloir)", grade AI1, full enrichment) both
+describe the same route — the westernmost, broadest, gentlest of Lane Peak's three
+north-face couloirs, same mountain, same approach. This reads as the same couloir
+imported twice under two different id schemes rather than two different lines.
+Flagged for a human to decide which id is canonical and resolve per
+docs/codebase/route-identity.md — deleting/merging rows is outside this audit's
+guardrails. The Zipper (`r1`) and Lover's Lane (`r3`) are each one-off, not
+duplicated. Lane Peak's own elevation (6,012 ft) is an exact match across
+Wikipedia, Mountain Project and the Mountaineers — clean.
+
+**Le Conte Mountain — Northern Aspect.** FA party (Calder Bressler, Ray Clough,
+Bill Cox, Tom Myers) and year (1938) confirmed independently: this is the real
+1938 Ptarmigan Traverse party, which made first ascents of multiple peaks along
+its 13-day route (Le Conte, Spire Point, Dome Peak, and — per the prior batch —
+Johannesburg) in the same July. The specific day (July 23) isn't independently
+pinned down by any source found, same caveat as the Johannesburg entry two
+batches back. Elevation (7762 ft) and the row's own `corrections` note both match
+Wikipedia/Peakbagger/ListsOfJohn exactly. Flagged (date only), otherwise clean.
+
+**Colchuck Balanced Rock — Leche La Vaca, Let it Burn.** Both clean/corroborated,
+nothing fixed. Leche La Vaca's FA (Tom Ramier, Abe Traven, Craig Rankin) is
+partly independently confirmed: a 2010 CascadeClimbers trip report names two of
+the three (Rankin, Traven) alongside its anonymous poster putting up this exact
+route; the third name is uncorroborated but not contradicted. Let it Burn's FA
+climber Max Hasson is confirmed as a real Cascades climber (paired with Jens
+Holsten on a separate documented FA) — the "Max Hesson" spelling that turned up
+in one Alpinist snippet looks like that outlet's own typo, not evidence against
+our row. The stored grade/pitch count (5.12-, 9p) is an exact match to
+Stephabegg's trip report; a different AAI write-up about an unrelated linkup
+cites 5.12a for the route, but that's sources disagreeing with each other, not
+with us. Colchuck Balanced Rock's own elevation (8240 ft) matches
+Wikipedia/PeakVisor exactly (Mountain Project's 7790 ft looks like the outlier).
+
+**Lemah Mountain — East Route (Main Peak), Lemah Two — Goatshead Spire.** FA
+year/party for the main peak (Wallace Burr and party, 1923) confirmed by
+Wikipedia and SummitPost; the July 7 exact date isn't independently pinned down.
+The route's own summit waypoint (7519 ft) is 7 ft off its own `high_point_ft`
+(7512 ft, which matches Wikipedia exactly) — too small a delta to action given
+this project's own precedent on sub-10ft internal spreads, flagged rather than
+touched. Goatshead Spire's name/location is confirmed (a Beckey-guide quote on
+SummitPost places it as the lower of two towers on Lemah Mountain's SE spur), but
+its FA (Donald Goodman & John Mason, Aug 8 1982) is unconfirmed by any source
+found — flagged for human review per the "don't fix what you can't verify" rule.
+
+**Confirmed errors this batch: 1** (Lake Mountain's elevation-prose/waypoint
+mismatch, both fixed). 4 routes clean outright (Lane Peak's Zipper/Lover's
+Lane/elevation, Let it Burn, Colchuck Balanced Rock's own elevation); 6 items
+flagged for human review (the Lane Peak duplicate, two FA-exact-date gaps, one
+small internal elevation spread, two under-corroborated FA credits).
+
+Pass 7 continues next run after `wa_let_it_burn`.

@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_kyes_peak_northeast_ridge",
+  "last_processed_id": "wa_let_it_burn",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
-  "pass_note": "Kimtah Peak, King Kong/Gorillas Direct Direct on Mount Stuart, Klawatti's three routes, Koala Krack, Kololo Peaks' Standard Route, and Kyes Peak's two routes all checked out or came back thin-sourced rather than contradicted. Strong independent matches: Klawatti's shared 8485ft and summit coordinates (exact match, Wikipedia), its shared 1940 FA (Anderson/Boyer/Gorton -- exact match to Wikipedia), Kyes Peak's shared 7280ft, and the Northeast Ridge's FA (Mike Heath, Sept 14 1968 -- exact match to the AAJ's own article on the route). Flagged, not fixed: Kimtah's FA partner (Jerry Swanson, unconfirmed -- SummitPost independently credits only 'the Roper party', June 6 1970, under the proposed name Gendarmes Peak); King Kong's single-source FA (already self-disclosed in the row); Koala Krack's uncorroborated FA/name (already self-disclosed); and Kololo Peaks' elevation (8240ft vs. sources that don't agree with each other -- Wikipedia's rounded 8200ft vs. a SummitPost route report's 8230ft for the higher of its two summits).",
+  "pass_note": "Lake Mountain's Standard Scramble had a confirmed, fixed error: its overview prose and summit waypoint both said 8,377 ft while the row's own high_point_ft (8371) matches external sources (SummitPost, Country High Points) exactly -- both corrected in audits/sql/2026-10-15-batch-415.sql (checked clean by check:sql). Flagged, not fixed: Lane Peak's wa_lane_peak_fly_the and wa_lane_peak_r2 look like the same couloir (The Fly) catalogued twice under different id schemes with different grades (Mod. Snow vs AI1) -- a dedupe decision for a human, not an in-scope SQL fix; Le Conte Mountain's FA exact day (July 23 1938) isn't independently pinned down, though the party/year is confirmed as the real 1938 Ptarmigan Traverse team that also climbed Johannesburg that same July; Lemah Mountain East Route's summit waypoint (7519ft) is 7ft off its own high_point_ft (7512ft, which matches Wikipedia) -- too small a delta to action per this project's own precedent; Lemah Two's Goatshead Spire FA (Goodman & Mason, Aug 8 1982) is unconfirmed by any source found, though the route name itself is corroborated via a Beckey-guide quote; Leche La Vaca's FA is only partly corroborated (2 of 3 names independently confirmed via a 2010 trip report). Clean: Lane Peak's own elevation (6012ft), The Zipper, Lover's Lane, Let it Burn (grade/pitch count match Stephabegg exactly; FA climber Max Hasson confirmed as a real climber), and Colchuck Balanced Rock's own elevation (8240ft, matches Wikipedia/PeakVisor).",
   "batches": [
     {
       "batch_number": 1,
@@ -8272,6 +8272,26 @@
       "flagged_for_human_review": 4,
       "clean": 5,
       "note": "Klawatti Peak's North Ridge, Southeast Face/Klawatti Glacier and SW Buttress, and Kyes Peak's Glaciated Scramble and Northeast Ridge all checked out clean against external sources. Strong matches: Klawatti's shared 8485ft elevation and summit coordinates (48.5544,-121.1044), both exact to Wikipedia's infobox; Klawatti's shared 1940 FA (Lloyd Anderson, Karl Boyer, Tom Gorton -- exact match to Wikipedia, which credits the same party as the peak's own first ascent, matching the Southeast Face row's own corrections note that this specific line's FA isn't separately documented); Kyes Peak's shared 7280ft; the Northeast Ridge's FA (Mike Heath, September 14 1968 -- exact match to the American Alpine Journal's own article on the route); and the Glaciated Scramble's Index-Galena Road closure claim (MP 10-14, closed since Dec 2025 flood damage, no repair timeline), independently confirmed by a Snohomish County public notice as still accurate. Nothing fixed: Kimtah Peak's FA (Roper & Swanson, June 1970) is only partly corroborated -- SummitPost independently credits 'the Roper party' with a June 6 1970 first ascent under the proposed name Gendarmes Peak, an exact match on person/month/year/name, but Jerry Swanson as the second climber is unconfirmed anywhere; Kimtah's own 8649ft sits inside, but isn't independently pinned down by, the 8,600+ft figure every source gives. King Kong/Gorillas Direct Direct on Mount Stuart remains single-source exactly as the row's own data_quality note already discloses -- search corroborates the broader context (Holsten/Westman/Wertkin direct variations on the neighboring Gorillas in the Mist route) but found no independent page under this specific route name. Koala Krack's FA/name stay uncorroborated, same gap the row's own corrections field already discloses. Kololo Peaks' Standard Route gain (6150ft) is an exact match to one of several Mountaineers.org trip listings for this route (which range 6,150-10,500ft by exact line/conditions); its elevation (8240ft) is softer -- Wikipedia gives a rounded 8200ft for the peak overall while a SummitPost route report gives 8230ft for the higher of its two summits, so sources don't even agree with each other, and 8240ft isn't contradicted by any one of them."
+    },
+    {
+      "batch_number": 415,
+      "date": "2026-10-15",
+      "route_ids": [
+        "wa_lake_mountain_pasayten_scramble",
+        "wa_lane_peak_fly_the",
+        "wa_lane_peak_r1",
+        "wa_lane_peak_r2",
+        "wa_lane_peak_r3",
+        "wa_le_conte_mountain_northern_aspect",
+        "wa_leche_la_vaca",
+        "wa_lemah_mountain_east_route",
+        "wa_lemah_two_goatshead_spire",
+        "wa_let_it_burn"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 6,
+      "clean": 4,
+      "note": "Lake Mountain's Standard Scramble had a confirmed, fixed error: its overview prose and summit waypoint both said 8,377 ft while the row's own high_point_ft (8371) matches external sources (SummitPost, Country High Points) exactly -- both corrected in audits/sql/2026-10-15-batch-415.sql (checked clean by check:sql). Flagged, not fixed: Lane Peak's wa_lane_peak_fly_the and wa_lane_peak_r2 look like the same couloir (The Fly) catalogued twice under different id schemes with different grades (Mod. Snow vs AI1) -- a dedupe decision for a human, not an in-scope SQL fix; Le Conte Mountain's FA exact day (July 23 1938) isn't independently pinned down, though the party/year is confirmed as the real 1938 Ptarmigan Traverse team that also climbed Johannesburg that same July; Lemah Mountain East Route's summit waypoint (7519ft) is 7ft off its own high_point_ft (7512ft, which matches Wikipedia) -- too small a delta to action per this project's own precedent; Lemah Two's Goatshead Spire FA (Goodman & Mason, Aug 8 1982) is unconfirmed by any source found, though the route name itself is corroborated via a Beckey-guide quote; Leche La Vaca's FA is only partly corroborated (2 of 3 names independently confirmed via a 2010 trip report). Clean: Lane Peak's own elevation (6012ft), The Zipper, Lover's Lane, Let it Burn (grade/pitch count match Stephabegg exactly; FA climber Max Hasson confirmed as a real climber), and Colchuck Balanced Rock's own elevation (8240ft, matches Wikipedia/PeakVisor)."
     }
   ]
 }
