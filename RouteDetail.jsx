@@ -43,7 +43,7 @@ import { routeTags } from "./lib/routeTags";
 import { planTimes, realPitches } from "./lib/planTimes";
 import AlpineConditionsCard, { forecastPoint } from "./lib/AlpineConditionsCard.jsx";
 import { ALPINE_COND_DISCIPLINES } from "./lib/alpineConditions.js";
-import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass } from "./lib/HourTiles.jsx";
+import { Tile, TileGrid, NOT_MEASURED, clockHr, spanEnding, compass, HourStepper } from "./lib/HourTiles.jsx";
 import { usableFa } from "./lib/fa";
 import {parseGpxText,DbClimbPicker,RealClimberRow,CardHead,SectionJumps,SUB_LABEL,shareOrCopy,printSheet,itinShareText,itinSheetHtml,climbsAPeak,photoAlt,photoAltsOf,PhotoAltField,PhotoDescribeBox,wpType,wpIs,wpPlaced,legMi,cumMi,trailheadPoint,uImp,_uNum,NOVAL,catOf,DISC_GEAR,C,Av,DISC,Pill,ActionIcon,CAT,ME,Bar,routeAscentFt,gainBelowOwnPins,uElev,uDist,uDistMi,CountUp,normTag,CLIMBERS,ago,scarfHrs,techHrs,pitchedFraction,loggedTimeStats,fmtDurMin,gn,Hr,vScore,seedAuthor,roadReportOf,isRoadTag,buildConsensus,SZ3,Stars,MONTHS,MOUNTAINS,Lbl,enrichRoute,onImgErr,FALLBACK_COVER,getAvailableItineraries,itinDaysToDraft,blankItinDay,itinDraftToStructured,itinToText,uMass,ItineraryEditor,RSL as SL,ROUTE_GAP,DLOCALE,shortDate,MAX_WAYPOINTS,MAX_BIVY,ADDR_GRADES,ADDR_HAZ,ADDR_STYLE,ADDR_YDS,ADDR_AIDS,gradeGroups,distMiles,intOnly,WaypointMapPicker,WP_SINGLE_TYPES,WP_TYPES,WP_STYLE,wpColor,wpGlyph,mtnOf,StartLocationForm,ALL_CLIMBERS,ROUTES,isHazardTag,DiscIcon,gradeLabel,protOf,OPEN_CREWS,FALLBACK_AV,GPXMap,isRecent,RECENT_DAYS,ElevChart,rxOf,condRep,uTemp,uTempN,uTempDelta,uTempU,uWind,uWindN,uPrecip,uSnowfall,ReportStats,renderMD,compat,pubName,uRate,gpxDownload,missingFacts,Comments,shapeOf,gainCoversWholeOuting,itinDraftVal,itinStoreVal,uElevUnit,uDistMiUnit,uLenUnit,uLenN,uLenIn,trustTier,reporterTrust,reporterWeightTrust,rappelReportsOf,sunReadout} from "./ClimbMatchCore.jsx";
 import { recShapeOf, effDistIsWholeTrip, effDistKm, isMultiDayOuting, itinDayCount } from "./lib/outing.js";
@@ -3862,9 +3862,19 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
      that was only scrolling the page past a chart. A finger moving mostly up or down is a scroll (the browser takes it
      and sends pointercancel); one moving ACROSS at least 8 px scrubs; a tap (under 8 px) or a released scrub pins its
      hour. A mouse still reads by hovering. */
-  const down=function(e){downRef.current={x:e.clientX,y:e.clientY,scrub:false};if(e.pointerType==="mouse"){const i=idxAt(e);if(i!=null)setHv(i);}};
-  const move=function(e){const d=downRef.current;if(d&&!d.scrub){const dx=Math.abs(e.clientX-d.x),dy=Math.abs(e.clientY-d.y);if(dx>=8&&dx>dy)d.scrub=true;}if(e.pointerType!=="mouse"&&!(d&&d.scrub))return;const i=idxAt(e);if(i!=null)setHv(i);};
+  /* ...AND A SCRUB HOLDS ON (owner, 2026-10-15: the wind and humidity charts "don't scroll nicely"). Once a drag is a
+     scrub the pointer is CAPTURED, so it keeps reading when a finger or mouse runs off the chart's edge instead of
+     dropping back to the picked hour; it starts after 6 px, not 8; the axis text can no longer be selected by the drag;
+     and the readout above never SHRINKS mid-drag (a shorter tile pulled the chart up under the finger). */
+  const cap=function(e){try{e.currentTarget.setPointerCapture(e.pointerId);}catch(_){}};
+  const down=function(e){downRef.current={x:e.clientX,y:e.clientY,scrub:false};if(e.pointerType==="mouse"){cap(e);const i=idxAt(e);if(i!=null)setHv(i);}};
+  const move=function(e){const d=downRef.current;if(d&&!d.scrub){const dx=Math.abs(e.clientX-d.x),dy=Math.abs(e.clientY-d.y);if(dx>=6&&dx>dy){d.scrub=true;cap(e);}}if(e.pointerType!=="mouse"&&!(d&&d.scrub))return;const i=idxAt(e);if(i!=null)setHv(i);};
   const up=function(e){const d=downRef.current;downRef.current=null;if(!d)return;if(d.scrub||(Math.abs(e.clientX-d.x)<8&&Math.abs(e.clientY-d.y)<8)){const i=idxAt(e);if(i!=null){setPin(i);setHv(null);}}};
+  const readRef=useRef(null),readMax=useRef(0);
+  useLayoutEffect(function(){readMax.current=0;if(readRef.current)readRef.current.style.minHeight="";},[all]);
+  useLayoutEffect(function(){const el=readRef.current;if(!el)return;const h=el.offsetHeight;if(h>readMax.current){readMax.current=h;el.style.minHeight=h+"px";}});
+  // The cursor and its dots GLIDE to the next hour rather than teleport; the values themselves stay whole hours.
+  const glide={transition:"transform .12s ease-out"};
   const lastPast=all.reduce(function(m,h,i){return h.past?i:m;},-1);
   const path=function(vals,y){var d="",pen=false;vals.forEach(function(v,i){if(v==null){pen=false;return;}d+=(pen?"L":"M")+x(i).toFixed(1)+","+y(v).toFixed(1);pen=true;});return d;};
   if(hi-lo<1e-9)hi=lo+1;
@@ -3877,9 +3887,9 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
     <div style={{fontSize:14.5,fontWeight:800,color:C.text}}>{title}</div>
     <div style={{marginTop:2}}>
       <div style={{display:"flex",alignItems:"center",gap:8,minHeight:44,marginBottom:3}}><div style={{flex:1,minWidth:0,fontSize:12.5,fontWeight:700,color:C.textSub,whiteSpace:"nowrap",overflow:"hidden",textOverflow:"ellipsis"}}>{clockHr(a.hr)}{a.past?<span style={{color:C.textMuted,fontWeight:600}}>{"  ·  already past"}</span>:null}</div>{at!==selIdx&&selIdx>=0?<button onClick={function(){setPin(null);setHv(null);}} style={{flexShrink:0,minHeight:44,padding:"0 12px",borderRadius:22,border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue,fontSize:11.5,fontWeight:700,cursor:"pointer"}}>{"Back to "+clockHr(all[selIdx].hr)}</button>:null}</div>
-      <TileGrid min={104}>{readout(a)}</TileGrid>
+      <div ref={readRef}><TileGrid min={104}>{readout(a)}</TileGrid></div>
     </div>
-    <svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block",touchAction:"pan-y",marginTop:8}} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={function(){downRef.current=null;setHv(null);}} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+" through the day; drag along it to read each hour"}>
+    <svg width="100%" viewBox={"0 0 "+W+" "+(PH+20)} style={{display:"block",touchAction:"pan-y",marginTop:8,userSelect:"none",WebkitUserSelect:"none",WebkitTapHighlightColor:"transparent",cursor:"ew-resize"}} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={function(){downRef.current=null;setHv(null);}} onPointerLeave={function(){setHv(null);}} role="img" aria-label={title+" through the day; drag along it to read each hour"}>
       {lastPast>=0?<rect x={L} y={0} width={Math.max(0,x(lastPast)-L)} height={PH} fill={C.borderHi} opacity={0.35}/>:null}
       {lastPast>=0&&x(lastPast)-L>40?<text x={L+4} y={PH-4} fontSize="10.5" fill={C.textMuted}>already past</text>:null}
       <line x1={L} x2={W-R} y1={y(lo)} y2={y(lo)} stroke={C.borderLight}/><line x1={L} x2={W-R} y1={y(hi)} y2={y(hi)} stroke={C.borderLight}/>
@@ -3887,8 +3897,8 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
       {bars?bars.vals.map(function(v,i){if(v==null||v<=0)return null;var top=y(Math.min(hi,v)),x0=Math.max(L,x(i)-xw*0.85),x1=Math.max(L,x(i)-xw*0.15);if(x1<=x0)return null;return <rect key={i} x={x0} y={top} width={Math.max(0.8,x1-x0)} height={Math.max(0.8,y(lo)-top)} rx={2} fill={bars.color} opacity={0.65}/>;}):null}
       {series.map(function(s){return <path key={s.name} d={path(s.vals,y)} fill="none" stroke={s.color} strokeWidth={2.5} strokeDasharray={s.dash||undefined} strokeLinejoin="round"/>;})}
       {extra?extra(y):null}
-      <line x1={x(at)} x2={x(at)} y1={0} y2={PH} stroke={C.text} strokeWidth="1.25"/>
-      {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={x(at)} cy={y(v)} r={4.5} fill={s.color} stroke={C.card} strokeWidth="2"/>;})}
+      <line x1={0} x2={0} y1={0} y2={PH} stroke={C.text} strokeWidth="1.25" style={Object.assign({transform:"translate("+x(at).toFixed(1)+"px,0px)"},glide)}/>
+      {series.map(function(s){var v=s.vals[at];return v==null?null:<circle key={s.name} cx={0} cy={0} r={4.5} fill={s.color} stroke={C.card} strokeWidth="2" style={Object.assign({transform:"translate("+x(at).toFixed(1)+"px,"+y(v).toFixed(1)+"px)"},glide)}/>;})}
       {ends.map(function(e){return <text key={e.s.name} x={W-R+6} y={e.y+4} fontSize="11.5" fill={C.textSub}>{e.s.name}</text>;})}
       {axis}
     </svg>
@@ -3896,12 +3906,10 @@ function HourChartCard({all,selIdx,title,series,lo,hi,axisFmt,bars,extra,readout
 }
 function HourlyChart({all,selUtc}){
   const [pin,setPin]=useState(null);useEffect(function(){setPin(null);},[selUtc]);
-  const chipsRef=useRef(null);
   const n=all?all.length:0;
   const sel=all?all.findIndex(function(h){return h.utc===selUtc;}):-1;
   const selIdx=pin!=null&&pin<n?pin:(sel>=0?sel:0);
-  // The chip row opens on the picked hour, not on midnight: scroll the ROW (never the page) so it sits in the middle.
-  useEffect(function(){const row=chipsRef.current,b=row&&row.children[selIdx];if(b)row.scrollLeft+=b.getBoundingClientRect().left-row.getBoundingClientRect().left-(row.clientWidth-b.offsetWidth)/2;},[selIdx,n]);
+  // The chip row opens on the picked hour, not on midnight; HourStepper scrolls the ROW (never the page) to keep it in view.
   if(!all||all.length<2)return null;
   const W=340,L=34,R=58,xw=(W-L-R)/(n-1),x=function(i){return L+i*xw;};
   const T=all.map(function(h){return uTempN(h.temp);}),F=all.map(function(h){return uTempN(h.feels);}),D=all.map(function(h){return uTempN(h.dew);});
@@ -3917,8 +3925,8 @@ function HourlyChart({all,selUtc}){
   const spanOf=function(h){return spanEnding(h.hr);},atOf=function(h){return "at "+clockHr(h.hr);};
   const card=function(key,title,series,lo,hi,axisFmt,bars,extra,readout){return <HourChartCard key={key} all={all} selIdx={selIdx} title={title} series={series} lo={lo} hi={hi} axisFmt={axisFmt} bars={bars} extra={extra} readout={readout}/>;};
   return <div>
-    <div ref={chipsRef} role="group" aria-label="Pick an hour" style={{display:"flex",gap:5,overflowX:"auto",paddingBottom:6,marginBottom:6}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,minHeight:44,boxSizing:"border-box",padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</div>
-    <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>At 2 PM</b>{": the reading at that moment (temperature, wind, humidity, cloud)."}</div><div style={{marginTop:2}}><b>During 1–2 PM</b>{": a total or peak over the hour just before (rain, chance of rain, gusts)."}</div><div style={{marginTop:2}}>{"Each chart below has its own readout. Drag along a chart, or tap an hour above, to read it."}</div></div>
+    <div style={{marginBottom:6}}><HourStepper index={selIdx} count={n} onPick={setPin} label={function(i){return clockHr(all[i].hr);}}>{all.map(function(h,i){const on=i===selIdx;return <button key={h.utc} onClick={function(){setPin(i);}} aria-pressed={on} aria-label={clockHr(h.hr)+(h.past?", already past":"")} style={{flex:"0 0 auto",minWidth:58,minHeight:44,boxSizing:"border-box",padding:"8px 8px",borderRadius:8,border:"1px solid "+(on?C.blue:C.border),background:on?C.blueBg:"transparent",color:on?C.blue:C.textSub,fontSize:12,fontWeight:on?800:600,cursor:"pointer",opacity:h.past?0.6:1}}>{clockHr(h.hr)}</button>;})}</HourStepper></div>
+    <div style={{fontSize:12,color:C.textSub,lineHeight:1.5,background:C.surface,border:"1px solid "+C.borderLight,borderRadius:9,padding:"7px 10px"}}><div><b>At 2 PM</b>{": the reading at that moment (temperature, wind, humidity, cloud)."}</div><div style={{marginTop:2}}><b>During 1–2 PM</b>{": a total or peak over the hour just before (rain, chance of rain, gusts)."}</div><div style={{marginTop:2}}>{"Each chart below has its own readout. Drag along a chart, or tap an hour or ‹ › above, to read it."}</div></div>
     {tv.length?card("t","Temperature",[{name:"Temp",vals:T,color:C.orange},{name:"Feels",vals:F,color:C.yellow,dash:"2 3"},{name:"Dew pt",vals:D,color:C.cyan,dash:"4 3"}],Math.floor(Math.min.apply(null,tv)),Math.ceil(Math.max.apply(null,tv)),function(v){return v+"°";},null,null,function(h){const damp=h.temp!=null&&h.dew!=null&&h.temp-h.dew<5;return [
       <Tile key="t" label="Temperature" when={atOf(h)} value={h.temp!=null?uTemp(h.temp):NOT_MEASURED} tone={h.temp!=null?wxTempColor(h.temp):null}/>,
       <Tile key="f" label="Feels like" when={atOf(h)} value={h.feels!=null?uTemp(h.feels):NOT_MEASURED}/>,

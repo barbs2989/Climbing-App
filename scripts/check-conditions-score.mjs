@@ -457,7 +457,7 @@ console.log("check:conditions-score");
   if (card.includes("All 7 days")) fail("the hourly charts offer an \"All 7 days\" view again (owner, 2026-10-14: pick ONE day of the next 7, its hours below)");
   if (!lost.length) ok(`the card renders day by day, hour by hour (one picked day of the 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
   else fail(`the card lost: ${lost.join(" | ")}`);
-  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "Pick an hour"];
+  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "<HourStepper"]; // the hour picker (its "Pick an hour" group lives in lib/HourTiles.jsx)
   const cLost = chartNeed.filter((s) => !chart.includes(s));
   if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for the picked day");
   else fail(`the hourly chart lost: ${cLost.join(" | ")}`);
