@@ -24,6 +24,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Groups Step 6** One palette on the event page and the group invite card: neutral date tile in the climber’s date format, no 📍, one accent on RSVP and capacity (red stays only on Cancel event). “Who’s going” names show to the event’s host only; everyone else sees the count.
+- **Groups Step 5** Events: one event row everywhere (date tile, when · where, going), a tap opens the event; a group’s Events tab shows Upcoming then Past (3, “See all”); the hub’s Events tab puts “You’re going” first. “Form a crew” left the group page.
 - **Trip report shows only what the reporter entered**, sectioned like the log form; the route's grade/gain/distance tiles and its GPS line are gone from it, a reporter's own track is read on open (`useLogTrack`), the route page's *Recently climbed* row opens the whole report, and the log form offers *Add topo photo* (`lib/TripReport.jsx`, `lib/LogAscent.jsx`).
 - **Real climbers, batch 3**: real names stay private everywhere (comments, mentions, crew chips, contributors, presence, résumé, share card, guides' reviews); real friends' objectives, ✓, activity feed and kudos work.
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
