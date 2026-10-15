@@ -15,6 +15,7 @@ import {
 } from "./db";
 import { POP_BACK } from "./popupChrome.js";
 import { askConfirm } from "./ConfirmSheet.jsx";
+import { photoThumb } from "./photoThumb";
 
 const DISCLAIMER_TEXT = "ClimbMatch is a directory connecting me with independent, self-employed guides. ClimbMatch is not a party to any guiding agreement, does not supervise or guarantee the guide's services, and assumes no liability for injury, loss, or damage arising from a guided trip.";
 
@@ -34,7 +35,7 @@ function GuideCard({ g, verified, onOpen, C }) {
   return (
     <div {...clickable(onOpen)} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 13px", marginBottom: 10, cursor: "pointer" }}>
       <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-        {g.avatar ? <img src={g.avatar} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
+        {g.avatar ? <img src={photoThumb(g.avatar, 46)} alt="" style={{ width: 46, height: 46, borderRadius: "50%", objectFit: "cover", flexShrink: 0 }} /> : null}
         <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
             <span style={{ fontSize: 14.5, fontWeight: 700, color: C.text }}>{g.name}</span>
@@ -133,7 +134,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
       </div>
       <div style={{ maxWidth: 560, margin: "0 auto", padding: "14px 16px 44px" }}>
         <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          {guide.avatar ? <img src={guide.avatar} alt="" style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
+          {guide.avatar ? <img src={photoThumb(guide.avatar, 56)} alt="" style={{ width: 56, height: 56, borderRadius: "50%", objectFit: "cover" }} /> : null}
           <div>
             <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
               <span style={{ fontSize: 17, fontWeight: 700, color: C.text }}>{guide.name}</span>
