@@ -130,6 +130,9 @@ export const MOVED = {
     "lib/Help.jsx", "lib/LegalView.jsx", "lib/Calendar.jsx", "lib/FriendsList.jsx", "lib/Inbox.jsx",
     "lib/GiveVouch.jsx", "lib/Onboarding.jsx", "lib/ShareCard.jsx", "lib/NotifPanel.jsx",
     "lib/MyAscents.jsx", "lib/SafetyTab.jsx",
+    // Not moved OUT of core — born lazy (0300/0302) — but registered the same way so every guard that
+    // reads "core" (overlay discovery, absence copy, real-profile rows, popup chrome) sees them.
+    "lib/MyPartnerAreas.jsx", "lib/StartCrewSheet.jsx",
     "src/components/RiskBadge.tsx",
     "src/components/DiscBadge.tsx",
   ],
