@@ -20,7 +20,9 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const APP = path.join(ROOT, "ClimbMatch.jsx");
-const CORE = path.join(ROOT, "ClimbMatchCore.jsx");
+// TrustBadge and its tooltip live in src/components/TrustBadge.tsx since PR5 of the component
+// extraction; the guard still reads them through the stitched core (MOVED in guard-sources.mjs).
+const BADGE = path.join(ROOT, "src", "components", "TrustBadge.tsx");
 const SQL = path.join(ROOT, "supabase", "migrations", "0038_trust_vouches.sql");
 const GUARD = path.join(ROOT, "scripts", "check-profile-claims.mjs");
 const sum = (f) => crypto.createHash("sha1").update(fs.readFileSync(f)).digest("hex");
@@ -69,7 +71,7 @@ end; $$;` },
     from: '[["Log a route",()=>setLogPickOpen(true)]', to: '[["Log a route",()=>setLogPickOpen(true),!verified]' },
 
   /* The badge tooltip's own half of the same defect, restored. */
-  { name: "tooltip-names-certifications", file: CORE, expect: "fail",
+  { name: "tooltip-names-certifications", file: BADGE, expect: "fail",
     why: "the tooltip names certifications as what builds the score, and nothing can verify one",
     says: /names certifications as what builds the score/,
     from: TIP_NOW,
@@ -77,14 +79,14 @@ end; $$;` },
 
   /* NON-VACUITY. Every "must not name" assertion above is satisfied by an empty tooltip, so a
      rewrite that stops over-claiming by saying nothing has to fail too. */
-  { name: "tooltip-emptied", file: CORE, expect: "fail",
+  { name: "tooltip-emptied", file: BADGE, expect: "fail",
     why: "the tooltip stops naming anything a climber can move — corrected by deletion",
     says: /emptied rather than corrected/,
     from: TIP_NOW, to: 'title="Trust score. Higher means more proven."' },
 
   /* A hand-typed scale bound is a hand-copy: the model caps at 99 and only 84 of its 104 points can
      be earned, so any literal range here is a number nobody re-derives. */
-  { name: "tooltip-hardcoded-range", file: CORE, expect: "fail",
+  { name: "tooltip-hardcoded-range", file: BADGE, expect: "fail",
     why: "the tooltip states a literal range again",
     says: /states a hardcoded range/,
     from: 'title="Trust score: built from', to: 'title="Trust score (0-99): built from' },
@@ -92,7 +94,7 @@ end; $$;` },
   /* MUST STAY SILENT. Section 4 asks whether the tooltip names an unreachable input and whether it
      still names reachable ones — not whether it is phrased one particular way. A guard pinned to
      today's sentence would forbid improving it. */
-  { name: "tooltip-reworded", file: CORE, expect: "pass",
+  { name: "tooltip-reworded", file: BADGE, expect: "pass",
     why: "a differently-worded tooltip naming the same earnable inputs is ordinary editorial work",
     from: TIP_NOW,
     to: 'title="Your trust score grows with vouches from partners, belay catches you log, the climbs and conditions you record, and a confirmed email."' },
