@@ -382,3 +382,33 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     backup beside it) — a chip taken from the NAME ("Notta Slab" is vertical), from a
     NEIGHBOURING line on the same peak, or a rock-feature chip on a Class 2-4 scramble. Six
     more, where the text disagrees with itself, were left alone. No guard can see this class.
+
+- **`check:area-edit-fields`** asserts that the seven AREA fields a climber may suggest an edit to
+  are **one list, read four ways**: `AREA_EDIT_FIELDS` in `lib/areaFields.js`, the check
+  constraint `contributions_area_field_ck` and the applier `apply_agreed_area_field()` in the
+  `0304` migration (both its allow-list and the columns its `update areas set` statements write),
+  the rows `lib/AreaSuggestFix.jsx` offers, and the values the area page renders
+  (`lib/DbAreaBrowser.jsx`, `lib/AreaPageSections.jsx`). Static, in the build. Injection suite:
+  `scripts/oneoff/inject-area-edit-fields-cases.mjs` (a field dropped from the SQL, a field added
+  to the JS alone, a summary printing an object).
+  - **Why it exists.** Area edits are `contributions` rows with `area_id` and no `route_id`
+    (the column dates from 0002; Ranks and Top Contributors already counted such rows), applied
+    by a trigger as 0210 applies grades. `areas` has no client write path, so the four readers of
+    the field list can only agree by discipline — and the route page's four contribute guards are
+    anchored on RouteDetail's `const FIELDS=[{k:` and ClimbMatch's `SS`, so they **cannot see this
+    table at all**. This guard carries their three rules for it: shape (a months set clusters
+    order-free, as SQL `area_field_norm()` does), summary (every `cur(area)` is a string — its
+    first run caught the `text()` helper printing `[object Object]` for an object value), and
+    threshold (the banner's "N of 3" is the applier's `win.n >= 3`).
+  - **What it cannot see.** Whether the LIVE function matches the file (`check:function-drift`),
+    whether the trigger actually fires (hand-run: suggest `aspect` on a crag with none and watch
+    the row), and whether a renderer reads a field only to print nothing.
+- **`check:area-page-honest`** asserts three things about the area page's new sections
+  (2026-10-15): every `facts.push` in `AreaFactsCard` sits on a line gated `if (area.<col>` (a
+  fact nobody stored is not printed — `check:untracked-factors`' rule); the CLIMBS HERE chart's
+  headline is the sum of the bars it draws, and a remainder is said in words (`total > sum`) —
+  `check:count-matches-its-list`' rule, on one card; and `lib/DbAreaBrowser.jsx` offers
+  `maps/dir` exactly once (the GETTING THERE card replaced the bare `Directions` button, and two
+  drive controls means one of them is the un-captioned one). Static, in the build; same injection
+  suite. Its first run caught a code COMMENT containing the `maps/dir` literal — the rule is on
+  the file, not the markup, and a comment counts; the comment was reworded rather than the rule.

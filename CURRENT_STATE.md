@@ -25,6 +25,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Area pages** (0304): ABOUT, AREA FACTS, CLIMBS HERE (climbs per discipline, over the subtree) + GRADE SPREAD, GETTING THERE, TOP RATED, and **Suggest an edit** on crags/peaks/walls — seven fields, applied by trigger, counted by Ranks (`lib/AreaPageSections.jsx`, `lib/AreaSuggestFix.jsx`, `lib/areaFields.js`).
 - **Crag parking can be added and edited**: on sport/trad/bouldering/aid/top-rope routes, *Add parking* used to open a text-only section with no pin. It now opens the pin editor (map + lat/lng, the Trailhead type shown as *Parking*), and a parking pin already on file gets an edit pencil.
 - **Route quality control, step 1** (0307–0309): every field edit is held for the owner; per-field confidence levels with a server-side lock on high; rejection strikes → warned/restricted/banned; route flags; in-app notices; `check:contrib-field-columns`.
 - **Trip report shows only what the reporter entered**, sectioned like the log form; the route's grade/gain/distance tiles and its GPS line are gone from it, a reporter's own track is read on open (`useLogTrack`), the route page's *Recently climbed* row opens the whole report, and the log form offers *Add topo photo* (`lib/TripReport.jsx`, `lib/LogAscent.jsx`).

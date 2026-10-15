@@ -94,8 +94,11 @@ if (!/maps\/dir/.test(browser)) {
   problems.push("the area Directions link is gone from lib/DbAreaBrowser.jsx — a climber cannot navigate to a crag again (RouteDetail's links are trailhead-level, a different question).");
 } else {
   ok("the area page offers directions");
-  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\][\s\S]{0,120}maps\/dir|maps\/dir[\s\S]{0,400}/.test(browser)
-    && /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)/.test(browser);
+  // Since 2026-10-15 the drive links live in AreaGettingThere (the GETTING THERE card), and the
+  // gate is on its MOUNT — so the test is that the mount is written `["crag","peak","wall"].includes(area.area_type) ? <AreaGettingThere`.
+  // The older shape (gate within 120 chars of the href) is accepted too, so the card can move.
+  const gated = /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)\s*\?\s*<AreaGettingThere/.test(browser)
+    || /\[\s*"crag",\s*"peak",\s*"wall"\s*\]\.includes\(area\.area_type\)[\s\S]{0,120}maps\/dir/.test(browser);
   if (!gated) {
     problems.push('the Directions link is no longer gated on area_type in ["crag","peak","wall"] — every area has a coordinate, so this offers to route a climber to a state or country centroid.');
   } else {
