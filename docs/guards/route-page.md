@@ -1059,6 +1059,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       sentence saying **no** rack is needed is rack information and stays (`unroped`, `non-technical`,
       `no rock gear` are in the rack regex for that reason). `DISC_RACK` is rack-only now; the kit it
       lost is `DISC_ASSUMED`'s and renders there already.
+  - **Every state, not just Washington (owner, same day: "make this a general rule for all states").**
+    Catalog-wide the three columns are populated on **6,177** routes; the WA pass left **141** of them
+    filing non-rack gear — 136 through `detailed_rack` (CA 41, CO 32, WY 23, BC 13, AK 12, UT 10, AB 5)
+    and 7 `rack` entries — and the same rewrite ran over them (fourth pass). The audit now reads the whole
+    catalog by default and `--state wa` narrows it.
   - **What it cannot see.** It reads `detailed_rack`, `pro_needs` and `rack`; **`gear` is not a
     finding** — it is the whole gear list by name and the reader splits it. The classifier is two
     regexes: a sentence naming gear it does not know ("portaledge" was added when met) is reported

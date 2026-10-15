@@ -15,13 +15,14 @@
 //
 // Also asserts, with no database, that DISC_RACK (the per-discipline fallback) is rack-only.
 //
-//   node scripts/audit-rack-items.mjs [--state wa] [--list 40] [--selftest]
+//   node scripts/audit-rack-items.mjs [--state wa] [--list 40] [--selftest]   (whole catalog by default)
 import { SUPABASE_URL, headers, anonKey, requireServiceKey } from "./lib/supabase-env.mjs";
 import { isRackEntry, isNonRackGear, rackFromText, DISC_RACK } from "../lib/rack.js";
 
 const argv = process.argv.slice(2);
 const arg = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? (argv[i + 1] ?? true) : d; };
-const STATE = String(arg("--state", "wa")).toLowerCase();
+/* Whole catalog by default (owner 2026-10-15: "a general rule for all states"); --state wa narrows. */
+const STATE = arg("--state", null) ? String(arg("--state")).toLowerCase() : null;
 const LIST = +arg("--list", 40);
 
 // 1. The fallback table, with no database.
@@ -53,13 +54,18 @@ async function page(table, select, filter) {
   }
   return out;
 }
-const areas = new Set((await page("areas", "id", `id=gte.${STATE}_&id=lt.${STATE}%60`)).map(a => a.id));
-if (!areas.size) { console.error(`FAIL — read 0 areas for state "${STATE}". A broken query, not a clean catalog.`); process.exit(1); }
 const sel = "id,name,discipline,detailed_rack,pro_needs,rack";
-const bulk = await page("routes", sel, `id=gte.${STATE}_&id=lt.${STATE}%60`);
-const legacy = (await page("routes", sel, `id=not.like.${STATE}_*&area_id=like.${STATE}_*`)).filter(r => areas.has(r.area_id) || true);
-const routes = bulk.concat(legacy);
-if (!routes.length) { console.error(`FAIL — read 0 routes for state "${STATE}".`); process.exit(1); }
+let routes;
+if (STATE) {
+  const bulk = await page("routes", sel, `id=gte.${STATE}_&id=lt.${STATE}%60`);
+  const legacy = await page("routes", sel, `id=not.like.${STATE}_*&area_id=like.${STATE}_*`);
+  routes = bulk.concat(legacy);
+} else {
+  // Only rows that carry one of the three columns: the rest cannot file anything anywhere.
+  routes = await page("routes", sel, "or=(detailed_rack.not.is.null,pro_needs.not.is.null,rack.not.is.null)");
+}
+if (!routes.length) { console.error(`FAIL — read 0 routes${STATE ? ` for state "${STATE}"` : ""}. A broken query, not a clean catalog.`); process.exit(1); }
+const SCOPE = STATE ? STATE.toUpperCase() : "catalog";
 
 // pro_needs is a protection STATEMENT, not a list, so it is not split by sentence; it is a
 // finding only when a clause advises carrying non-rack gear.
@@ -80,7 +86,7 @@ for (const r of routes) {
   if (n.length) neither.push({ id: r.id, name: r.name, discipline: r.discipline, f: n });
 }
 const byCol = {}; for (const x of findings) for (const [c] of x.f) byCol[c] = (byCol[c] || 0) + 1;
-console.log(`${routes.length} ${STATE.toUpperCase()} routes read (${withOwn} with a rack of their own); ${findings.length} routes file non-rack gear in a rack column${findings.length ? ` — entries by column: ${JSON.stringify(byCol)}` : "."}`);
+console.log(`${routes.length} ${SCOPE} routes read (${withOwn} with a rack of their own); ${findings.length} routes file non-rack gear in a rack column${findings.length ? ` — entries by column: ${JSON.stringify(byCol)}` : "."}`);
 for (const x of findings.slice(0, LIST)) { console.log(`\n${x.id}  (${x.discipline})  ${x.name}`); for (const [c, s] of x.f) console.log(`   ${c}: ${s.length > 180 ? s.slice(0, 177) + "..." : s}`); }
 if (findings.length > LIST) console.log(`\n… ${findings.length - LIST} more (--list N)`);
 console.log(`\n${neither.length} routes carry a rack entry that names neither rack nor gear (left on the card; fix the row):`);

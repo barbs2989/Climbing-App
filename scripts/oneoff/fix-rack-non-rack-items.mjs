@@ -1,4 +1,5 @@
-// The RACK card showed an ice axe. Re-home every non-rack item out of the rack columns.
+// The RACK card showed an ice axe. Re-home every non-rack item out of the rack columns — every state
+// (the first three passes were WA; the fourth ran the same rewrite over the rest of the catalog).
 //
 // Measured 2026-10-15 over 14,200 WA routes (audit:rack-items): 386 of the 1,275 routes with a
 // rack of their own rendered non-rack gear — ice axe, crampons, helmet, boots, poles, a crevasse-
@@ -24,7 +25,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { SUPABASE_URL, headers, requireServiceKey, patchRow } from "../lib/supabase-env.mjs";
-import { rackFromText, isRackEntry } from "../../lib/rack.js";
+import { rackFromText, isRackEntry, isNonRackGear } from "../../lib/rack.js";
 
 const APPLY = process.argv.includes("--apply");
 const here = path.dirname(new URL(import.meta.url).pathname);
@@ -108,7 +109,9 @@ async function fetchRows(filter) {
   }
   return out;
 }
-const rackRows = (await fetchRows("rack=not.is.null&id=gte.wa_&id=lt.wa%60")).filter(r => toArr(r.rack).some(e => !isRackEntry(e)));
+// Whole catalog (owner 2026-10-15: "a general rule for all states"); the WA pass ran the same way scoped to wa_.
+// `rack=not.is.null` alone times out catalog-wide; the three-column OR the audit uses does not.
+const rackRows = (await fetchRows("or=(detailed_rack.not.is.null,pro_needs.not.is.null,rack.not.is.null)")).filter(r => toArr(r.rack).some(e => !isRackEntry(e) && isNonRackGear(e)));
 for (const r of rackRows) ids.add(r.id);
 const idList = [...ids];
 const rows = new Map();
@@ -138,8 +141,8 @@ for (const id of idList) {
     if (String(r.pro_needs).trim() !== p.keep) { patch.pro_needs = p.keep; why.push("pro_needs"); adds = adds.concat(p.add); }
   }
   if (Array.isArray(r.rack)) {
-    const rack = toArr(r.rack); const moved = rack.filter(e => !isRackEntry(e));
-    if (moved.length) { patch.rack = rack.filter(e => isRackEntry(e)); if (!patch.rack.length) patch.rack = null; adds = adds.concat(moved); why.push(`rack -${moved.length}`); }
+    const rack = toArr(r.rack); const moved = rack.filter(e => !isRackEntry(e) && isNonRackGear(e));
+    if (moved.length) { patch.rack = rack.filter(e => !moved.includes(e)); if (!patch.rack.length) patch.rack = null; adds = adds.concat(moved); why.push(`rack -${moved.length}`); }
   }
   if (betaAdds.length) { const b = r.beta == null ? "" : (Array.isArray(r.beta) ? r.beta.join(" ") : String(r.beta)); patch.beta = (b ? b.replace(/\s+$/, "") + " " : "") + betaAdds.join(" "); why.push(`beta +${betaAdds.length} sentence(s)`); }
   const wtb = toArr(r.what_to_bring); const nextWtb = addEntries(wtb, adds);
