@@ -61,6 +61,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 `check:bare` (route with no enrichment, every discipline x sub-tab), `check:field-renders`, `check:token-boxes`, `check:pitch-split`, `check:approach-section`, `check:approach-overlay`, `check:trailhead-directions`, `check:trailhead-direction-shape`, `check:access-checked-line`, `check:fire`, `check:summit-briefing`, `check:photo-contract`, `check:crew-gear`, `check:camping`, `check:correction-readers`, `check:return-leg`, `check:write-readers` (rating writes refresh both cached readers), `check:schema`, `check:rls`, `check:migration-replay`, `check:ui`, `check:zero`, `check:overflow`. Notes: `docs/guards/route-page.md`.
 
 ## 7. Last significant change
+Real climbers, batch 3: comment authors are public names (`publicNameOf`, comments select `show_name`); @mention chips, matching and insertion use `mentionName`/`mentionToken`; TOP CONTRIBUTORS names real contributors by `pubName` and opens their profile; "viewing now" broadcasts your public name and opens a real viewer's own profile; Share → Send to a partner names real friends publicly without a client-made score.
 #2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
 
 ## 8. Known gaps / open decisions

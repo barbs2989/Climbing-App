@@ -3,7 +3,7 @@
 import { DISC_LABELS as DL } from "./discLabels";
 import { clickable } from "./clickable";
 import { useState } from "react";
-import { useLeaderboard, useTopClimbs, useAreaChildren, useAreaPath, dbRouteToCamel } from "./db";
+import { useLeaderboard, useTopClimbs, useAreaChildren, useAreaPath, dbRouteToCamel, useVerifiedUsers } from "./db";
 import { Av, C, CAT, CLIMBERS, CountUp, DEMO_FILLERS, DiscIcon, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, SZ1, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev, vScore } from "../ClimbMatchCore.jsx";
 
 // Two populations. Signed in with the DB on, every row is a REAL climber from leaderboard()
@@ -75,9 +75,10 @@ export default function Leaderboards({myTrust,meLive,onView,onClimb,logs,connect
   const atAllCountries=real&&scope==="area"&&!areaId;
   const areaKidsQ=useAreaChildren(areaId||null,{enabled:real&&scope==="area"});
   const lbRows=real?(lbQ.data||[]):[];
+  /* The ✓ for real rows (0232/0306): the RPC returns no verified column, so it read as seed-only. Unknown reads as no ✓. */const lbVerQ=useVerifiedUsers(lbRows.filter(r=>!r.is_me).map(r=>r.user_id));
   const noOrigin=real&&scope==="near"&&lbRows.some(x=>x.no_origin);
   const rowToPP=row=>{const all=(row.stats&&row.stats.all)||{};const s=(row.stats&&row.stats[backedOnly?"backed":"all"])||{};const base=row.is_me?{...(meLive||ME),id:0}:{id:row.user_id,name:row.name||"",username:row.username||"",showName:!!row.show_name,avatar:row.avatar||"",disciplines:Array.isArray(row.disciplines)?row.disciplines:[]};
-    return {...base,_real:!row.is_me,_uid:row.user_id,location:row.dist_mi!=null?(uDistMi(row.dist_mi)+" away"):(row.is_me?(base.location||row.location||""):(row.location||"")),_home:row.location||"",routesLogged:s.logged||0,vertYr:s.vertYr||0,daysYr:s.daysYr||0,classics:s.classics||0,stats:{sends:s.sends||{},peaks:s.peaks||{life:0,yr:0},onsights:s.onsights||{}},_pts:s.points||{},_osPts:s.onsightPts||{},_trust:row.trust||0,_catches:row.catches||0,_vouches:row.vouches||0,_contribs:row.contribs||0,_backed:all.backed||0,_logged:all.logged||0};};
+    return {...base,_real:!row.is_me,...(row.is_me?{}:{verified:!!(lbVerQ.data&&lbVerQ.data.has(row.user_id))}),_uid:row.user_id,location:row.dist_mi!=null?(uDistMi(row.dist_mi)+" away"):(row.is_me?(base.location||row.location||""):(row.location||"")),_home:row.location||"",routesLogged:s.logged||0,vertYr:s.vertYr||0,daysYr:s.daysYr||0,classics:s.classics||0,stats:{sends:s.sends||{},peaks:s.peaks||{life:0,yr:0},onsights:s.onsights||{}},_pts:s.points||{},_osPts:s.onsightPts||{},_trust:row.trust||0,_catches:row.catches||0,_vouches:row.vouches||0,_contribs:row.contribs||0,_backed:all.backed||0,_logged:all.logged||0};};
   const ALL=real?lbRows.map(rowToPP).filter(pp=>(pp.id!==0||showOnRanks)&&!(blocked&&blocked.some(b=>b.id===pp._uid))):[...CLIMBERS,...(showOnRanks?[me]:[]),...(DEMO_FILLERS?FILLER_CLIMBERS:[])].filter(pp=>!(blocked&&blocked.some(b=>b.id===pp.id)));
   const acount=id=>ROUTES.filter(r=>inArea(r.mountainId,id)).length;const aCur=real?(atAllCountries?{id:"",name:"All countries"}:((areaPathQ.data||[]).slice(-1)[0]||{})):(MOUNTAINS.find(m=>m.id===areaId)||{});const aChain=real?[{id:"",name:"All countries"}].concat(atAllCountries?[]:(areaPathQ.data||[])):(()=>{const out=[];let cur=MOUNTAINS.find(m=>m.id===areaId);let g=0;while(cur&&g++<10){out.unshift(cur);if(cur.id==="usa"||!cur.parentId||cur.parentId==="world")break;cur=MOUNTAINS.find(m=>m.id===cur.parentId);}return out;})();const aKids=real?(areaKidsQ.data||[]).filter(a=>(a.route_count||0)>0).map(a=>({id:a.id,name:a.name,n:a.route_count})):MOUNTAINS.filter(m=>m.parentId===areaId&&acount(m.id)>0).map(m=>({id:m.id,name:m.name,n:acount(m.id)}));
   const personInArea=(pp,aid)=>!!(pp.objectiveIds&&pp.objectiveIds.some(id=>{const r=ROUTES.find(x=>x.id===id);return r&&inArea(r.mountainId,aid);}));
