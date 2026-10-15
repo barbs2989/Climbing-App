@@ -4,7 +4,7 @@
 // climber's own units. The crag score (ConditionsScoreCard) is a different card for different
 // disciplines -- the two never render on one route.
 import { useState, useEffect, useMemo } from "react";
-import { C, DLOCALE, CardHead, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
+import { C, DLOCALE, CardHead, ROUTE_GAP, uTemp, uTempDelta, uWind, uSnowfall, uPrecip, uElev, uImp, uDistMi, wpIs, wpPlaced, catOf } from "../ClimbMatchCore.jsx";
 import { fetchAlpineForecast, fetchAlpineClimate, fetchAlpineSpread, fetchCragAir, fetchPointAlerts, fetchGaugeSites, fetchGaugeFlow } from "./forecast.js";
 import { parseSites, nearestGauge, flowReading } from "./streams.js";
 import { condKind, hasSnowLegs, localDays, localHour, windChillF, airDay, aqiWord, smokeFlag, normAlerts, alertsForDay, alertLevel, fogHours, snowHistory, snowLevel, dayFlags, daySummary, rangeNote, todayOf, snowFloorFt, LIMITS, modelSpread, wholeDayLegs } from "./alpineConditions.js";
@@ -20,7 +20,7 @@ import { shadeGrid, gridPx, highestNear, SUMMIT_SNAP_M, faceSunBands, faceBearin
 
 const _alpWx = {}, _alpSp = {}, _alpAir = {}, _alpAlerts = {};
 const ALERT_TTL = 10 * 60 * 1000; // alerts are issued and cancelled within the hour: a session-long cache would hide a new one
-const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
+const BOX = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: ROUTE_GAP };
 const MUTED = { fontSize: 12.5, color: C.textSub, lineHeight: 1.55 };
 const RETRY = { marginTop: 6, background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" };
 
@@ -145,8 +145,8 @@ export default function AlpineConditionsCard({ route, mtn, calc, activity, repor
     <ForecastBox route={route} calc={calc} kind={kind} terrain={terrain} pt={pt} />
     {pt ? <div style={BOX}>
       {avyOn ? <AvalancheSection pt={pt} /> : null}
-      <div style={{ marginTop: avyOn ? 14 : 0 }}><SnowSection pt={pt} /></div>
-      {kind !== "waterfall" && kind !== "cragmixed" ? <div style={{ marginBottom: 14 }}><StreamsSection pt={pt} base={trailhead} /></div> : null}
+      <div style={{ marginTop: avyOn ? ROUTE_GAP : 0 }}><SnowSection pt={pt} /></div>
+      {kind !== "waterfall" && kind !== "cragmixed" ? <div style={{ marginBottom: ROUTE_GAP }}><StreamsSection pt={pt} base={trailhead} /></div> : null}
       <OutcomesSection activity={activity} />
       <ReportFreshness activity={activity} unavailable={reportsUnavailable} />
       <div style={{ marginTop: 14 }}><SeasonSection pt={pt} /></div>
@@ -260,7 +260,7 @@ function ForecastBox({ route, calc, kind, terrain, pt }) {
   }, [face, legs.floor, selDay && selDay.date]);
 
   if (!kind) return null;
-  const box = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: 14 };
+  const box = { background: C.card, border: "1px solid " + C.border, borderRadius: 12, padding: "12px 14px", marginBottom: ROUTE_GAP };
   const head = <CardHead style={{ marginBottom: 8 }}>{"CONDITIONS · " + KIND_LABEL[kind].toUpperCase()}</CardHead>;
   if (!pt) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.textSub, lineHeight: 1.55 }}>No conditions for this climb: neither it nor the area it is on has a location on file, so there is no forecast to read.</div></div>;
   if (wx && wx.error) return <div style={box}>{head}<div style={{ fontSize: 12.5, color: C.amber, lineHeight: 1.55, marginBottom: 8 }}>Couldn’t load the forecast, so no flags are shown. This is not a reading of the conditions.</div><button onClick={function () { setTries(tries + 1); }} style={{ background: C.surface, color: C.blue, border: "1px solid " + C.border, borderRadius: 8, padding: "7px 12px", fontSize: 12.5, fontWeight: 700, cursor: "pointer" }}>Try again</button></div>;

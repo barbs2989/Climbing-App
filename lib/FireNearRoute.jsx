@@ -41,7 +41,7 @@ export default function FireNearRoute({ coord, C, ActionIcon, uDistMi = mi => Ma
 
   const fires = (q.data && q.data.fires) || [];
   const radiusMi = Math.round(NEAR_ROUTE_KM * MI_PER_KM);
-  const wrap = { border: "1px solid " + C.border, background: C.surface, borderRadius: 12, padding: "12px 13px", marginBottom: 14 };
+  const wrap = { border: "1px solid " + C.border, background: C.surface, borderRadius: 12, padding: "12px 13px", marginBottom: 12 }; // the route page's ROUTE_GAP
   /* = core's CardHead look (12/800, tracked, a 3px bar), so the first card on Safety reads as one of
      the route page's card titles. The fire-level heading below keeps its tone on text and bar. */
   const hd = { fontSize: 12, fontWeight: 800, letterSpacing: 0.5, textTransform: "uppercase", color: C.text, marginBottom: 8, borderLeft: "3px solid " + C.blueSolid, paddingLeft: 7, lineHeight: 1.1 };
