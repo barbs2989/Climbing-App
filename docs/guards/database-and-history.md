@@ -673,6 +673,35 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       reopens. What it SHOWS with a closure banner (Pickledish, "Pound (closed), The") stays. Also South West
       Overhang back to the source's V1+: keep-the-higher is for old guidebooks graded low, not a misfiled copy's
       grade (Dishpan Hands keeps V8: the source's "V0-1" is a placeholder on an "unfinished brutal highball").
+    - **The source's boulders we lacked, created, and their climbs filed on them — 0310** (2026-10-15). 0296's
+      5,644 "no area of ours" climbs. 5,481 passed 0296's rules (one home in the state, inside the list's crag,
+      ≤ 3 km). **2,289 were already home**: with the name read clean, the LIST itself is the home — the sweep's
+      key missed a sort label ("1. Upper Wall"). Placed: **2,056 climbs onto 417 new areas** (and existing levels
+      reused), 91 emptied lists folded. Applied in parts (`apply-fold-in-parts.mjs`); dry runs: part 1 in full,
+      and an Oregon subset end to end. Traps, each caught before it shipped: (1) the source's page HEADING
+      appends the area type on a new line ("Middle Marker\n Rock Climbing") and HIDES a leading initial ("T.
+      Barnum Wall" for "P.T. Barnum Wall"): the real name is the BREADCRUMB's; (2) the export's stored names had
+      the same cut; (3) a name matched exactly where the planner matches without stop-words ("Middle Marker" vs
+      "Middle Marker Area"): match siblings the PLANNER's way; (4) the "duplicates" found were each climb paired
+      with ITSELF (the list was the home) — 2,099 merges that would have deleted every one; (5) a new area under
+      one that holds climbs is MIXED (`routes_require_leaf`). Left: 491 whose chain has a generic level
+      ("Bouldering", "Top Rope"), 282 whose home has a same-named area within 1.5 km (likely ours under another
+      parent), and the places dropped as not-new or unnamed (Turtle Rock, Mordor, S.B.R. Block, "E. Macy Park").
+      Planner: a new area's parent may be another new one (`insertUnder`), and "left empty" counts its subtree.
+      Rollback: `scripts/data/boulders-created-rollback.json` (folded lists) and the migration's own `m_move`.
+      **REVERTED by 0316** — see the next entry.
+    - **0310 reverted exactly — 0316** (2026-10-15). After 0310, `check:area-duplicates` failed on 17 pairs and
+      `check:summit-briefing` on its fixture: Mount Baker had lost 7 of its routes to a new "Mt. Baker" under the
+      source's North Cascades. 0310's "does this place exist?" test matched names EXACTLY within 1.5 km; a wider read
+      (state-wide, Mt./Mount, spellings, labels, our `_2` ids) found ~60 places re-created: Stone Fort's whole tree a
+      second time, Chuckwalla / Chuckawalla Wall, Ellesmere / Ellsmere Island, "(.3) Cougar's Den" / "Cougar's Den",
+      peaks under a second parent. Fixing pair by pair was a redo, so 0316 puts 0310 back from its own rollback: the
+      91 lists re-created (id, name, parent, every column), the 2,056 moves reversed, its 417 areas folded away, the
+      keeper fill undone. Dry runs: part 1 in full, and an Oregon subset end to end. **For the redo, "is this place
+      ours already?" must search the WHOLE STATE**, under the planner's match plus Mt./Mount, spelling distance,
+      sort labels and `(aka …)` qualifiers, read every hit, and treat a peak's own route list as the place, never a
+      catch-all. A guard that names a FIXTURE (`check:summit-briefing`'s Mount Baker) is a free tripwire: run the
+      route-page guards after any catalog fold, not only the catalog ones.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
