@@ -21,7 +21,7 @@ import { fetchTrustScore } from "./lib/feedbackLoop";
 import FireNearRoute from "./lib/FireNearRoute";
 import ShadeMap from "./lib/ShadeMap";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, savedAgo } from "./lib/offline";
-import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecast, fetchCragAir, fetchCragClimate } from "./lib/forecast";
+import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCragAir, fetchCragClimate } from "./lib/forecast";
 import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
@@ -3803,6 +3803,10 @@ function wxWindColor(mph){return mph>=30?C.red:mph>=15?C.amber:C.green;}
    under-warning direction on a safety panel.
    With no 10 m series at all (a partial response) it SHOWS the gust rather than hiding it:
    withholding a gust figure is the dangerous way for this to fail. */
+/* WHEN a day's rain falls, Mountain-Forecast style: " · mostly at night" when one part of the day holds 60% or more of
+   the rain its parts carry. The parts' night runs on to 6 AM, so this names a part, never a share of the day total. */
+const RAIN_PART_WORD={AM:"in the morning",PM:"in the afternoon",Night:"at night"};
+function rainMostly(dy){var ps=(dy.parts||[]).filter(function(p){return p.rain>0;});var tot=ps.reduce(function(a,p){return a+p.rain;},0);if(!(dy.precipIn>0)||!ps.length||tot<0.01)return "";var top=ps.reduce(function(a,p){return p.rain>a.rain?p:a;});return top.rain>=0.6*tot&&RAIN_PART_WORD[top.label]?" · mostly "+RAIN_PART_WORD[top.label]:"";}
 function gustWorthShowing(dy){const surf=dy.wind10Max;return !(typeof surf==="number"&&isFinite(surf))||dy.gustMax>surf;}
 function wxCondColor(code){if(code==null)return C.blue;if(code>=95)return C.red;if(code===0||code===1)return C.green;if(code===2||code===3||code===45||code===48)return C.textSub;return C.blue;}
 function wxUvColor(uv){return uv>=11?C.purple:uv>=8?C.red:uv>=6?C.amber:uv>=3?C.yellow||C.amber:C.green;}
@@ -3987,7 +3991,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     if(!hasPt||!on)return;
     if(_cragWx[ck]){setWx({data:_cragWx[ck]});return;}
     let live=true;setWx(null);
-    fetchCragForecast(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
+    fetchCragForecastMeasured(lat,lng).then(function(j){_cragWx[ck]=j;if(live)setWx({data:j});},function(){if(live)setWx({error:true});});
     return function(){live=false;};
   },[ck,tries]);
   useEffect(function(){
@@ -4047,6 +4051,13 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const cur=score.now;
   const wetSand=score.sandstone&&cur&&cur.dryFrac!=null&&cur.dryFrac<1;
   const dryLine=score.dryFrom?whenOf(score.dryFrom):score.dryBeyond?"Not within the 7-day forecast":null;
+  /* WHEN WILL IT BE DRY — for any hour: the first later hour the drying model calls dry, or null when none does inside
+     the forecast. The countdown chip and the tapped hour both read it, so they cannot disagree with "Likely dry from". */
+  const dryAfter=function(x){if(!x||x.dryFrac==null||x.dryFrac>=1)return null;for(const d of days)for(const y of d.all)if(y.utc>x.utc&&y.dryFrac!=null&&y.dryFrac>=1)return y;return null;};
+  const dryChip=(function(){if(!cur||cur.dryFrac==null||cur.dryFrac>=1||wetSand)return null;var y=dryAfter(cur),hrs=y?Math.max(1,Math.round((y.utc-Date.now())/3600e3)):null;
+    var txt=cur.factors.dry&&cur.factors.dry.raining?"Raining — rock is wet":"Rock drying · about "+Math.round(cur.dryFrac*100)+"% dry";
+    var when=y?(hrs<=36?"Dry in about "+hrs+" h ("+whenOf(y)+")":"Dry by "+whenOf(y)):"Not dry within the 7-day forecast";
+    return <div data-dry-countdown="1" style={{background:C.amberBg,border:"1px solid "+C.amber,borderRadius:10,padding:"8px 12px",marginBottom:8}}><div style={{fontSize:13,fontWeight:800,color:C.amber}}>{txt}</div><div style={{fontSize:12.5,color:C.text,marginTop:2}}>{when}</div></div>;})();
   const sec=function(title,body,first){return <div key={title}><SL first={first}>{title}</SL>{body}</div>;};
   const aqNow=aq&&aq.data&&cur&&cur.aqi!=null?cur.aqi:null;const aqCat=aqiCategory(aqNow);
   const dayAqCat=aqiCategory(day.aqiMax);
@@ -4054,7 +4065,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
   const sandWarn=<div role="alert" style={{background:C.redBg,border:"1px solid "+C.red,borderRadius:10,padding:"9px 12px",marginBottom:8}}><div style={{fontSize:13,fontWeight:800,color:C.red}}>Wet sandstone is weak — holds can break. Stay off it until it’s dry</div><div style={{fontSize:12.5,color:C.text,marginTop:3,lineHeight:1.45}}>{dryLine?"Likely dry from "+dryLine+".":"Can’t tell yet when it will be dry."}</div></div>;
   return <div data-conditions-score="1">
     {cur?sec("Right now",<div style={condBox}>
-      {wetSand?sandWarn:null}
+      {wetSand?sandWarn:dryChip}
       <div style={{display:"flex",alignItems:"center",gap:10,paddingBottom:6}}><div style={{fontSize:26,fontWeight:800,lineHeight:1,color:C.text}}>{fmt(cur.stars)}</div><div><div aria-hidden="true" style={{fontSize:15,letterSpacing:1.2}}>{starRow(cur.stars)}</div><div style={{fontSize:12,color:col(cur.stars),fontWeight:800}}>{starsLabel(cur.stars)+" · "+clockHr(cur.hr)}</div></div></div>
       {cur.caps.length?condRow("Held down by",cur.caps.map(function(c){return c.why;}).join(" · "),C.amber):null}
       {condRow("Temperature",cur.temp!=null?uTemp(cur.temp)+(cur.feels!=null&&uTempN(cur.feels)!==uTempN(cur.temp)?" · feels like "+uTemp(cur.feels):""):"Not measured")}
@@ -4081,6 +4092,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     </div>:null}
     {h?<div>
       <div style={{fontSize:10.5,fontWeight:800,color:C.textMuted,letterSpacing:0.5,textTransform:"uppercase",marginBottom:6}}>{"Why "+clockHr(h.hr)+" scores "+fmt(h.stars)+" · "+h.pts+" of "+h.max+" points"}</div>
+      {h.dryFrac!=null&&h.dryFrac<1?(function(){var y=dryAfter(h);return <div data-hour-dry="1" style={{fontSize:12.5,color:C.amber,fontWeight:700,marginBottom:8}}>{(h.factors.dry&&h.factors.dry.raining?"Raining at "+clockHr(h.hr):"Rock about "+Math.round(h.dryFrac*100)+"% dry at "+clockHr(h.hr))+" · "+(y?"likely dry from "+whenOf(y):"not dry within the 7-day forecast")}</div>;})():null}
       <div style={{display:"flex",flexDirection:"column",gap:7}}>{facKeys.filter(function(k){return h.factors[k];}).map(function(k){var f=h.factors[k],pc=f.pts/WEIGHTS[k];var fc=pc>=0.75?C.green:pc>=0.45?C.amber:C.red;return <div key={k} data-factor={k}>
         <div style={{display:"grid",gridTemplateColumns:"92px minmax(0,1fr) 44px",gap:8,alignItems:"center",fontSize:12.5}}><span style={{color:C.text}}>{FACTOR_LABEL[k]}</span><div style={{height:7,background:C.borderLight,borderRadius:4,overflow:"hidden"}}><div style={{width:Math.round(pc*100)+"%",height:"100%",background:fc}}/></div><span style={{textAlign:"right",color:C.textSub,fontVariantNumeric:"tabular-nums"}}>{f.pts+"/"+WEIGHTS[k]}</span></div>
         <div style={{fontSize:11.5,color:C.textMuted,marginLeft:100,lineHeight:1.45}}>{facNote(k,f)}</div>
@@ -4118,6 +4130,7 @@ function ConditionsScoreCard({route,mtn,onAddAspect}){
     {sec("Rock & drying",<div style={condBox}>
       {condRow("Rock",rockLbl,rk?C.text:C.textMuted)}
       {condRow("Drying time","About "+score.dryNeed+" h after a typical rain"+(cp.rain==="cautious"?" (you give it longer)":"")+"; less after a drizzle, longer after a soaking")}
+      {condRow("Past rain",score.rainMeasured?(function(){var t=score.rainMeasured.through,l=score.local(t);return "Measured up to "+clockAt(score,t)+(l.date===days[0].date?" today":" "+new Date(l.date+"T12:00:00Z").toLocaleDateString(DLOCALE,{weekday:"long",timeZone:"UTC"}))+"; forecast after that";})():"Modelled — no rain measurements reach this crag",score.rainMeasured?C.text:C.textMuted)}
       {curF?condRow("Last rain",curF.raining?"In the past hour":curF.atLeast?"None in the past 14 days":agoH(curF.val)+" · "+uPrecip(curF.rain24)+" in the day before it stopped"):null}
       {cur&&cur.dryFrac!=null?condRow("Rock now",cur.dryFrac>=1?(cur.factors.dry&&cur.factors.dry.damp?"Dried out from rain, but the air is at its dew point — shaded rock may be damp":"Likely dry"):"Likely wet — about "+Math.round(cur.dryFrac*100)+"% dried",cur.dryFrac>=1?C.green:C.amber):null}
       {dryLine?condRow("Likely dry from",dryLine):null}
@@ -4253,7 +4266,14 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
           const partKey=hr<6?"night":hr<12?"am":hr<18?"pm":"night";
           const partDate=hr<6?prevDayStr(date):date;
           const pk=partDate+"_"+partKey;
-          if(!byPart[pk])byPart[pk]={temps:[],codes:[],winds:[],dirs:[]};
+          if(!byPart[pk])byPart[pk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[]};
+          /* RAIN BY PART OF THE DAY. precipitation[T] is the rain of the hour BEFORE T, so it belongs to the part that
+             hour BEGAN in: the 6 AM value is the night's, the noon value the morning's. */
+          const bHr=hr===0?23:hr-1,bDate=hr===0?prevDayStr(date):date;
+          const rk=(bHr<6?prevDayStr(bDate):bDate)+"_"+(bHr<6?"night":bHr<12?"am":bHr<18?"pm":"night");
+          if(!byPart[rk])byPart[rk]={temps:[],codes:[],winds:[],dirs:[],precips:[],pops:[]};
+          if(h.precipitation[i]!=null)byPart[rk].precips.push(h.precipitation[i]);
+          if(h.precipitation_probability[i]!=null)byPart[rk].pops.push(h.precipitation_probability[i]);
           byPart[pk].temps.push(h.temperature_2m[i]);
           byPart[pk].codes.push(h.weather_code[i]);
           byPart[pk].winds.push(h.wind_speed_80m[i]);
@@ -4261,7 +4281,7 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
         });
         const sum=function(arr){return arr.reduce(function(s,v){return s+(v||0);},0);};
         const avg=function(arr){return arr.length?sum(arr)/arr.length:0;};
-        const buildPart=function(label,pk){const b=byPart[pk];if(!b||!b.temps.length)return null;const pCode=modeOf(b.codes);return {label:label,temp:Math.round(avg(b.temps)),wx:WX_CODE_LABEL[pCode]||null,wxCode:pCode,wind:Math.round(avg(b.winds)),dir:degToCompass(circMeanDeg(b.dirs))};};
+        const buildPart=function(label,pk){const b=byPart[pk];if(!b||!b.temps.length)return null;const pCode=modeOf(b.codes);return {label:label,temp:Math.round(avg(b.temps)),wx:WX_CODE_LABEL[pCode]||null,wxCode:pCode,wind:Math.round(avg(b.winds)),dir:degToCompass(circMeanDeg(b.dirs)),rain:b.precips.length?Math.round(sum(b.precips)*1000)/1000:null,pop:b.pops.length?Math.round(Math.max.apply(null,b.pops)):null};};
         // Secondary-source extras (wind + one weather label per day) — a
         // lighter read than Open-Meteo's per-part/hourly breakdown, by design.
         const nwsByDay={},nwsWindByDay={},nwsWxByDay={};
@@ -4356,10 +4376,11 @@ function WeatherPanel({waypoints,showPlan,fallback,crag}){
             <div style={{display:"flex",alignItems:"center",gap:3,fontSize:9.5,color:C.textSub,marginBottom:5,minHeight:11,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}><WeatherIcon code={p.wxCode} color={C.textMuted} size={11}/>{p.wx||"—"}</div>
             <div style={{fontSize:13.5,fontWeight:800,color:wxTempColor(p.temp)}}>{uTemp(p.temp)}</div>
             <div style={{fontSize:9,fontWeight:600,color:wxWindColor(p.wind),marginTop:2}}>{uWind(p.wind)+(p.dir?" "+p.dir:"")}</div>
+            <div style={{fontSize:9.5,fontWeight:700,color:p.rain>0?C.blue:C.textMuted,marginTop:3}}>{p.rain==null?"Rain —":p.rain>0?"💧 "+uPrecip(p.rain)+(p.pop!=null?" · "+p.pop+"%":""):"No rain"+(p.pop?" · "+p.pop+"%":"")}</div>
           </div>;})}</div>:null}
           <div style={{display:"grid",gridTemplateColumns:"repeat(2,1fr)",gap:6,marginBottom:dy.nws||dy.met?10:0}}>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Wind</div><div style={{fontSize:13,fontWeight:800,color:wxWindColor(dy.windMax)}}>{uWind(dy.windMax)}</div>{gustWorthShowing(dy)?<div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{"gusts to "+uWind(dy.gustMax)+", any hour"}</div>:null}</div>
-            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.precipIn>0?C.blue:C.text}}>{dy.precipIn>0?uPrecip(dy.precipIn):"None"}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{dy.popMax+"% chance"}</div></div>
+            <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Precip</div><div style={{fontSize:13,fontWeight:800,color:dy.precipIn>0?C.blue:C.text}}>{dy.precipIn>0?uPrecip(dy.precipIn):"None"}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{dy.popMax+"% chance"+rainMostly(dy)}</div></div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>UV index</div><div style={{fontSize:13,fontWeight:800,color:wxUvColor(dy.uvMax)}}>{dy.uvMax}</div><div style={{fontSize:9.5,color:C.textMuted,marginTop:1}}>{wxUvLabel(dy.uvMax)}</div></div>
             <div style={{background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4,marginBottom:2}}>Freezing level</div><div style={{fontSize:13,fontWeight:800,color:C.text}}>{uElev(dy.freezeMax)}</div></div>
             {hasSnow?<div style={{gridColumn:"span 2",background:C.card,borderRadius:9,padding:"7px 9px",border:"1px solid "+C.border,display:"flex",alignItems:"center",justifyContent:"space-between",gap:8}}><div style={{fontSize:9,fontWeight:800,color:C.textMuted,textTransform:"uppercase",letterSpacing:0.4}}>Snow expected</div><div style={{fontSize:13,fontWeight:800,color:C.blue}}>{uSnowfall(dy.snowIn)}</div></div>:null}

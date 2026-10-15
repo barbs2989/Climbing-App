@@ -1378,6 +1378,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     -0.05. Sunday after the storm now scores 4.0–4.9 ★, matching Climbit (~3.5–4.6) and CragReport
     (81–95). A full fit wants night faster than day — not physical, refused; `DRY_HOURS` is untouched.
     The guard pins only the ORDER (dew point ≤ 90% ≤ 75% ≤ 1, night ≤ day, dew point > 0).
+  - **...and the PAST rain is MEASURED where a measurement reaches (`mergeMeasuredRain`, 2026-10-15)**:
+    `lib/forecast.js fetchMeasuredRain` tries a 6-h radar-and-gauge analysis (HRDPA; northern US + Canada:
+    WA, OR, KY, WV, WI, NY answer; the South, Southwest, CA and CO return no feature), then an hourly one
+    (Stage IV via Iowa State) ONLY east of 104°W — west of it the hours are split from 6-h totals and put
+    the 2026-10-09 Index storm 18 h late — else null, and the score keeps the model. Both crag readers
+    (Conditions card, Home tile) go through `fetchCragForecastMeasured`, so they cannot disagree. Measured
+    on 2026-10-15: RRG's past 96 h 3.46" modelled vs 2.34" measured, Gunks 0.98" vs 1.48". A time not yet
+    analysed is an XML error, a point outside the analysis is `{}`: both are "not measured", never zero.
+    The guard pins the merge (amount from the measurement, timing from the model inside a window, gaps keep
+    the model, a measured dry window dries a modelled soaking). The two crag-fetch URL checks now match
+    `fetchCragForecast\(` exactly — `fetchCragForecastMeasured` shares the prefix and was read in its place.
   - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
     on feel:
     - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).
