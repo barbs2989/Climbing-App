@@ -630,6 +630,24 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       unread). Kept apart on reading: 7 UNSURE and the common names ("Front Left", "Perfect Route"). Also
       found, NOT fixed: whole catch-alls the source has re-filed ("Forest Hill Park Bouldering" 32, "A and B
       Blocks" 22) — the Rainbow Mountain pattern. Rollback: `scripts/data/far-twins-rollback.json`.
+    - **Lists the source has re-filed onto boulders we already have — 0295** (2026-10-15). The Rainbow
+      Mountain pattern swept catalog-wide: for every area, how many of its climbs the source still files
+      under that area vs another. **1,157** lists file most of theirs elsewhere (13,693 climbs). A climb
+      MOVES only when the source lists its name ONCE in the state, under an area of ours that shares the
+      list's parent or grandparent, within 3 km, a leaf, lacking the climb, and the name is not generic
+      ("Project", "V0", "Traverse" — 162 held back): **4,174 moved**, 3 merged, 62 emptied lists folded
+      (50 were an older copy of ONE area: the Gunks' "Moe (closure) to Harvest Moon" = "Closure to Harvest
+      Moon"). 40 drawn at random checked against the live pages: 40 agree. The likely cause: a newer import
+      created the named boulders, and `refuse_duplicate_route` refused each climb because the old flat list
+      already held it nearby — so the boulders exist with a few climbs each and the list keeps the rest.
+      **Left, measured:** 5,644 climbs whose source home we do not have (an area to create, Rainbow-style),
+      2,103 whose name the source lists more than once, 1,435 whose home is the list's own parent (the
+      catalog's "<Crag> Routes" convention — fine). **Applied in parts**
+      (`scripts/oneoff/apply-fold-in-parts.mjs`, 0251's method made generic): 4,174 moves at ~60 ms of
+      triggers each outlast the ~100 s gateway. Two generator costs found timing it: the ancestor set read by
+      a self-join on `@>` (now read off the path's labels — each IS an id) and a recount that re-scanned
+      whole states per ancestor (now one pass). Rollback: `scripts/data/catch-alls-rollback.json` (merges)
+      and the migration's own `m_move` (every move's from and to).
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
