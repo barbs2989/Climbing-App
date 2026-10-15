@@ -610,6 +610,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     "listed at Hellgate" from a Wasatch search. Ancestor matches carry `listed_above=true` and sort
     last, so a card says "listed across Utah" rather than "listed here". The guard demands both
     operators in every reader (`partners_in_area`, `partners_for_my_areas`, `partner_area_counts`).
+  - **...CAPPED AT THE STATE (`0311`).** 0300's header named the thing to cap if it flooded: taken to the
+    top, "listed at Utah" was a row on EVERY Utah crag, canyon and range — sorted last, but still there.
+    0311 re-creates the three readers with the predicate `(L.path <@ T or (L.path @> T and
+    L.area_type <> 'state'))`: an ancestor listing reaches down only from BELOW the state. A state
+    listing still answers a search AT the state (the `<@` half, equal paths). The guard pins that
+    exact predicate shape — not "both operators appear somewhere", because `@>` also computes
+    `listed_above`, so a reader that dropped the ancestor half from its WHERE would still contain it.
+    The injection suite (`scripts/oneoff/inject-partner-areas-cases.mjs`) edits 0311 for the readers
+    and 0300 for the table, policy and trigger; `probe-partner-areas.mjs` lists a sixth account at
+    `utah` and asserts it is absent from the crag, the range, Near my areas and the crag count, and
+    present (with `listed_above=false`) at the state. 53 assertions, 2026-10-15.
   - **The table is OWNER-ONLY, unlike `objectives` (public-read).** Every cross-climber read is a
     `SECURITY DEFINER` that refuses a signed-out caller and applies `discoverable` plus
     `profile_owner_blocked_me`, byte-for-byte `partners_near`'s rule. The guard refuses a

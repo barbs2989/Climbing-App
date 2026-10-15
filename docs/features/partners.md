@@ -7,7 +7,9 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 ## 1. What it does today
 - **Crag partners are found by AREA** (owner decision 2026-10-15; 0300): a climber lists themselves at the crags, canyons or
   ranges they climb (`lib/MyPartnerAreas.jsx` — crag types, one optional date window, a note; a peak is refused), and others
-  find them under any area that contains, equals or sits inside those (two-way ltree reach). Alpine, mountaineering,
+  find them under any area that contains, equals or sits inside those (two-way ltree reach, with an ancestor listing
+  reaching down only from below the state since 0311). Under Near my areas and By Area a listed climber's row carries
+  *Plan a session at <area>*, which opens the Start-a-crew sheet at that area with them invited. Alpine, mountaineering,
   scrambling, ice and mixed stay route-based through saved objectives. A crag-route objective is a tick list, not a match signal.
 - **Find someone by name** (DB only): a search box (min 2 chars) over real profiles.
 - **Search for partners by** five modes: **Near my areas** (the signed-in default — climbers whose listings overlap yours, most
@@ -53,7 +55,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 | `ClimbMatchCore.jsx` | `compat`, `CMAX_*`/`COMPAT_*`, `CMAX_AREA`, `areaPathsOverlap`, `CRAG_CATS`, `RealClimberRow`, `AVAIL_OPTS`, `AVAIL_FILTER_OPTS`, `weekOf`, `availFits`, `availMatch`, `availOf`, `ALL_CLIMBERS`/`CLIMBERS`, `ME`, `distMiles`, `paceOf`, `PARTNER_NUMBERS` (also read by `lib/Help.jsx`) |
 | `lib/db.js` | `PARTNER_COLS`, `useDiscoverableProfiles`, `useProfileSearch`, `useMyZip`, `usePartnersNear`, `usePartnersByObjective`, `usePartnerSignals`, `useMatchObjectivesOfUsers`, `useVerifiedUsers`, `useMyPartnerAreas`, `savePartnerArea`, `removePartnerArea`, `usePartnersInArea`, `usePartnersForMyAreas`, `usePartnerAreaCounts`, `usePartnerAreasOfUsers`, zip save/delete |
 | `lib/EditProfileScreen.jsx` | Zip code field (owner-only, feeds the origin) |
-| `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303` | RPCs and tables below |
+| `supabase/migrations/0189, 0211, 0232, 0295, 0300, 0303, 0311` | RPCs and tables below |
 | `docs/codebase/algorithms.md` | `compat()` design history |
 
 ## 4. Data
@@ -63,7 +65,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
   owner-only RLS; a trigger refuses peak/world/country and caps 30 per climber. An expired window reads back as no window.
 - **RPCs**: `partners_near` (0189; SECURITY DEFINER, distance rounded up to next 5 mi, radius floor 10 mi, only discoverable, never self, never users who blocked the caller);
   `partners_by_objective` (0211, re-created 0303 with the match rule); `partner_signals(uuid[])` (0295; returns `level`, `trust_score` via `compute_trust_score`, max 200 rows, authenticated only);
-  `partners_in_area`, `partners_for_my_areas`, `partner_area_counts`, `partner_areas_of_users`, `match_objectives_of_users` (0300; same visibility rule as `partners_near`; reach is `path <@ T or path @> T`).
+  `partners_in_area`, `partners_for_my_areas`, `partner_area_counts`, `partner_areas_of_users`, `match_objectives_of_users` (0300; same visibility rule as `partners_near`; reach is `path <@ T or (path @> T and the listing is below the state)` since 0311 — a state listing answers a search at the state only).
 - **Still seed / in-memory**: `ALL_CLIMBERS` example profiles (`CLIMBERS`/`FILLER_CLIMBERS`, gated by `DEMO_FILLERS`); mode, filters, radius and origin are component state (not persisted).
   Production has `FILLER_CLIMBERS` off, so real climbers are the only people there.
 
@@ -84,6 +86,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 (Matched by grep of `docs/guards/` for PartnerSearch/partners_near/match-percent; not individually re-run.)
 
 ## 7. Last significant change
+Partner-area reach stops at the state (0311): a listing at Utah no longer appears on every Utah crag; *Plan a session at <area>* on listed climbers' rows under Near my areas / By Area; the new-climber journey asserts friend removal against the Friends rows, not the whole page.
 Real climbers, batch 3: real friends carry their match objectives and ✓ (`useMatchObjectivesOfUsers` / `useVerifiedUsers` in App's connections hydration), so shared-objective counts, "You both want", the DM banner and suggested crews work for them; Leaderboards shows a real row's ✓; the signed-in header counts "example climbers" and the real-list copy says the filters narrow it.
 #2437 / #2444 / #2445 / #2446 (0300, 0303) — crag partners are found by AREA: `partner_areas` listings, the My listed areas sheet, Near my areas as the signed-in default,
 listing-based By Area, the area page's Partners here card, crag route pages and Logbook rows pointing at the crag, `CMAX_AREA` in the match %, and crag-route objectives
