@@ -135,6 +135,7 @@ export const MOVED = {
     "lib/MyPartnerAreas.jsx", "lib/StartCrewSheet.jsx",
     "src/components/RiskBadge.tsx",
     "src/components/DiscBadge.tsx",
+    "src/components/DiscBadges.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
