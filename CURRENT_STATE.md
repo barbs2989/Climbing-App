@@ -25,6 +25,8 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
 - **PR3** `DiscBadge` extracted to `src/components/DiscBadge.tsx` (core imports it back for `DiscBadges`; the guard stitch drops a parent's own import of a moved file).
+- **Email verification** ✓ needs an emailed code (or the link in it), checked server-side (0306); the 2 autoconfirm ✓s were reset.
+- **#2437 → #2446** Crag partners are found by AREA (0300, 0302, 0303): `partner_areas` listings and the My listed areas sheet; Partners opens on Near my areas; listing-based By Area; the area page's Partners here card; crag route pages and Logbook rows point at the crag; `CMAX_AREA` in the match %; crag-route objectives leave matching; a crew has one place (route or area) through `crewPlace()`.
 - **#2427** TypeScript + `src/components/`: strict `tsconfig`, `check:types` in the build, guards made TS-aware, `measure:guard-reach`; first extraction `RiskBadge` (procedure: `docs/refactor-progress.md`).
 - **#2415** Résumé Experience: Sport and Trad groups; Scrambling replaces Other.
 - **#2416** Area map place search covers Canada: provinces, towns, postal codes.
