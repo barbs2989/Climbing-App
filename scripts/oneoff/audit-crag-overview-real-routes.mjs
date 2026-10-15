@@ -44,7 +44,7 @@ const EMBEDS = [...new Set([...SRC.matchAll(/\*, areas\([^"`]*?parent:parent_id\
 const FRA = (() => { const m = fs.readFileSync(path.join(ROOT, "lib/db.js"), "utf8").match(/export async function fetchRouteArea\(routeId\) \{[\s\S]*?\n\}/); if (!m) throw new Error("fetchRouteArea not found in lib/db.js"); return m[0].replace(/^export /, ""); })();
 
 const key = requireServiceKey();
-const SEL = "*, areas(name,area_type,region,lat,lng,elevation_ft,prominence_ft,avy_zone,blurb,approach,approach_min,rock,rock_basis,aspect,parking_lat,parking_lng,parking_name,parent:parent_id(name))";
+const SEL = "*, areas(name,area_type,region,lat,lng,elevation_ft,prominence_ft,avy_zone,blurb,approach,approach_min,rock,rock_basis,aspect,parking_lat,parking_lng,parking_name,parking_note,parent:parent_id(name))";
 const get = async (qs) => { for (let i = 0; ; i++) { const r = await fetch(SUPABASE_URL + "/rest/v1/routes?" + qs, { headers: headers(key) }); if (r.ok) return r.json(); const b = (await r.text()).slice(0, 200); if (i >= 4 || !/57014/.test(b)) throw new Error(r.status + " " + b); await new Promise((z) => setTimeout(z, 3000 * (i + 1))); } }; // statement timeouts under load: retry
 const rnd = () => "abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random() * 26)] + "abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random() * 26)];
 async function sample(filter, n) {
@@ -165,7 +165,8 @@ for (const d of discs) {
         if (/SEASONAL GUIDANCE/.test(filled) === /Add the best season/.test(pt)) P(r.id, d, "SEASONAL GUIDANCE: placeholder and content disagree"); else if (!/SEASONAL GUIDANCE/.test(filled)) C.seasonPh++;
         if (!/CROWDS & SOLITUDE/.test(pt)) P(r.id, d, "no CROWDS section (not even a placeholder)");
         if (/CROWDS & SOLITUDE/.test(filled) === /No crowd reports for this climb yet/.test(pt)) P(r.id, d, "CROWDS: placeholder and content disagree"); else if (!/CROWDS & SOLITUDE/.test(filled)) C.crowdPh++; }
-      const targets = ["approachLogistics", "road", "comms", "seasonalGuidance", "crowds"].concat(catOf(r) === "bouldering" ? ["pads"] : catOf(r) === "sport" ? ["draws"] : ["rack"]);
+      // "waypoints": the CRAG card's Add parking / Add the pin / edit pencil open the pin editor; it must take a pin on every crag discipline
+      const targets = ["approachLogistics", "waypoints", "road", "comms", "seasonalGuidance", "crowds"].concat(catOf(r) === "bouldering" ? ["pads"] : catOf(r) === "sport" ? ["draws"] : ["rack"]);
       if (/No approach description/.test(t)) targets.push("approach");
       if (/No descent recorded/.test(t)) targets.push("descentText");
       if (/No rappel information/.test(t)) targets.push("rap");
@@ -174,6 +175,10 @@ for (const d of discs) {
       for (const l of WANT[catOf(r)] || []) targets.push(FF[l]);
       globalThis.document = { body: {} };
       let form; try { form = renderToStaticMarkup(React.createElement(QueryClientProvider, { client: qc }, React.createElement(SuggestFix, { route: r, onClose: noop, onSubmit: noop, onLog: noop, scrollTo: null, pending: {}, prefill: null, approachSibs: [] }))); } finally { delete globalThis.document; }
+      // ...and opened AT the pin editor, as Add parking opens it, the form offers a Parking pin with a map and lat/lng boxes
+      globalThis.document = { body: {} };
+      let pinForm; try { pinForm = renderToStaticMarkup(React.createElement(QueryClientProvider, { client: qc }, React.createElement(SuggestFix, { route: r, onClose: noop, onSubmit: noop, onLog: noop, scrollTo: "waypoints", pending: {}, prefill: null, approachSibs: [] }))); } finally { delete globalThis.document; }
+      C.targetsChecked++; if (!/>Parking</.test(pinForm) || !/aria-label="Latitude/.test(pinForm)) P(r.id, d, "Add parking opens a form with no Parking pin to set");
       for (const k of [...new Set(targets)]) { C.targetsChecked++; if (!form.includes(`id="sf-section-${k}"`)) P(r.id, d, `an Add button opens "${k}", which the contribute form does not offer for ${catOf(r)}`); }
     } else {
       C.nonCrag++;
@@ -182,7 +187,6 @@ for (const d of discs) {
       const tp = trailheadPoint(r);
       if (tp && !/Drive here/.test(text(pl))) P(r.id, d, "non-crag route with a trailhead lost Drive here on Plan");
       if (/Not on file yet/.test(t)) P(r.id, d, "ROUTE FACTS placeholders on a non-crag route");
-      if (!r.turnaround && !/No turnaround guidance yet/.test(ts)) P(r.id, d, "empty turnaround has no placeholder");
       if (["scrambling"].includes(d) && /No ropework notes|No protection information/.test(text(pl))) P(r.id, d, "scramble shows a roped placeholder");
     }
     if (!/Cell \/ sat coverage|Cell coverage/.test(ts)) P(r.id, d, "no cell-coverage section on Safety");

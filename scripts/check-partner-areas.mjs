@@ -66,12 +66,13 @@ const need = (name) => { const f = fns.get(name); if (!f) fail(`${name} is never
 // ── rule 1: every reader of partner_areas reaches a listing BOTH ways on the area tree ──
 for (const name of ["partners_in_area", "partners_for_my_areas", "partner_area_counts"]) {
   const f = need(name); if (!f) continue;
-  // The REACHABILITY PREDICATE itself: `(x.path <@ T or x.path @> T)`. Not "both operators appear
-  // somewhere" — `@>` also computes listed_above, so a reader that dropped the ancestor direction
-  // from its WHERE would still contain it.
-  const both = /\(\s*\w+\.path\s*<@\s*[\w.]+\s+or\s+\w+\.path\s*@>\s*[\w.]+\s*\)/.test(f.body);
-  if (both) ok(`${name} (${f.file}) matches a listing inside the area (<@) OR across an area that contains it (@>) in one predicate`);
-  else fail(`${name} (${f.file}) reaches one way only — no "(x.path <@ T or x.path @> T)" predicate. "Listed at Wasatch" must surface at Hellgate and "listed at Hellgate" at Wasatch.`);
+  // The REACHABILITY PREDICATE itself: `(x.path <@ T or (x.path @> T and x.area_type <> 'state'))`
+  // (0311: the ancestor half stops at the state, so "listed at Utah" does not flood every Utah crag).
+  // Not "both operators appear somewhere" — `@>` also computes listed_above, so a reader that dropped
+  // the ancestor direction from its WHERE would still contain it.
+  const both = /\(\s*\w+\.path\s*<@\s*[\w.]+\s+or\s+\(\s*\w+\.path\s*@>\s*[\w.]+\s+and\s+\w+\.area_type\s*<>\s*'state'\s*\)\s*\)/.test(f.body);
+  if (both) ok(`${name} (${f.file}) matches a listing inside the area (<@) OR across an area below the state that contains it (@>) in one predicate`);
+  else fail(`${name} (${f.file}) does not carry the reach predicate "(x.path <@ T or (x.path @> T and x.area_type <> 'state'))" — "listed at Wasatch" must surface at Hellgate, "listed at Hellgate" at Wasatch, and "listed at Utah" at Utah only.`);
 }
 {
   const f = need("partners_in_area");
