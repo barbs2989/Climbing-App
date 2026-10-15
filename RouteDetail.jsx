@@ -2277,6 +2277,7 @@ const DRAW_MIN_STEP = 1.5;    // % of frame between sampled points while draggin
 export function TopoDrawer({initial,onCancel,onSubmit}){
   const [points,setPoints]=useState((initial&&initial.points)||[]);const [pins,setPins]=useState((initial&&initial.pins)||[]);const [ar,arOnLoad]=useImgAspect();
   const [mode,setMode]=useState("line");const [pinCat,setPinCat]=useState(PIN_CATEGORIES[0][0]);
+  const [label,setLabel]=useState((initial&&initial.label)||"");  // optional: which line this is, when a wall holds several
   const [sel,setSel]=useState(null);      // {kind:"point"|"pin", i} — the handle under edit
   const [loupe,setLoupe]=useState(null);  // {x,y} while a drag is in flight
   const frameRef=useRef(null);
@@ -2380,9 +2381,11 @@ export function TopoDrawer({initial,onCancel,onSubmit}){
       <button onClick={function(){var _clr=function(){setPoints([]);setPins([]);setSel(null);};if(!points.length&&!pins.length)return _clr();askConfirm({title:"Clear the whole topo?",body:"Every point and marker you have drawn is removed.",confirmLabel:"Clear all"}).then(function(ok){if(ok)_clr();});}} style={btn}>Clear all</button>
     </div>
     {pins.length?<div style={{marginBottom:9}}>{pins.map(function(pn,i){return <div key={i} style={{display:"flex",gap:6,alignItems:"center",marginBottom:6}}><PinNum n={i+1}/><PinIcon cat={pn.category} size={18}/><input aria-label={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} value={pn.note} onChange={function(e){var v=e.target.value;setPins(function(p){return p.map(function(x,xi){return xi===i?Object.assign({},x,{note:v}):x;});});}} onFocus={function(){setSel({kind:"pin",i:i});}} placeholder={(PIN_CATEGORIES.find(function(c){return c[0]===pn.category;})||[])[1]+" — note (optional)"} style={{flex:1,padding:"6px 9px",borderRadius:8,border:"1px solid "+((sel&&sel.kind==="pin"&&sel.i===i)?C.blue:C.border),background:C.surface,color:C.text,fontSize:12,boxSizing:"border-box",outline:"none"}}/></div>;})}</div>:null}
+    {/* Two topos of one wall used to be "Latest" and "Alt 1": nothing said which drew the direct start and which the ramp. Optional, 60 characters, stored in topo_lines.label, shown on the thumbnail and as the line's chip in the viewer. */}
+    <input aria-label="Name this line (optional)" value={label} maxLength={60} onChange={function(e){setLabel(e.target.value);}} placeholder="Name this line (optional) — e.g. direct start, left-hand variation" style={{width:"100%",boxSizing:"border-box",padding:"8px 10px",borderRadius:8,border:"1px solid "+C.border,background:C.card,color:C.text,fontSize:13,outline:"none",marginBottom:10}}/>
     <div style={{display:"flex",gap:12}}>
       <button onClick={onCancel} style={{flex:1,padding:9,background:C.surface,color:C.textSub,border:"1px solid "+C.border,borderRadius:9,fontSize:13,cursor:"pointer"}}>Cancel</button>
-      <button disabled={points.length<2&&!pins.length} onClick={function(){onSubmit({points:points,pins:pins});}} style={{flex:2,padding:9,background:(points.length<2&&!pins.length)?C.border:C.blueSolid,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
+      <button disabled={points.length<2&&!pins.length} onClick={function(){onSubmit({points:points,pins:pins,label:label.trim()||null});}} style={{flex:2,padding:9,background:(points.length<2&&!pins.length)?C.border:C.blueSolid,color:"#fff",border:"none",borderRadius:9,fontSize:13,fontWeight:700,cursor:"pointer"}}>Save topo</button>
     </div>
   </div>;
 }
@@ -2543,13 +2546,13 @@ export function TopoSection({route}){
   const submitLine=function(photo,data){
     setErr(null);
     if(photo.db){
-      submitTopoLine(photo.id,route.id,data.points,data.pins,null).then(function(){
+      submitTopoLine(photo.id,route.id,data.points,data.pins,data.label||null).then(function(){
         dbTopos.refetch();setDrawFor(null);
       }).catch(function(e){setErr((e&&e.message)||"Couldn't save that line.");});
     } else {
       setLocalLines(function(m){
         const o=Object.assign({},m);
-        o[photo.id]=(o[photo.id]||[]).concat([{id:"line_"+Date.now(),points:data.points,pins:data.pins,ts:Date.now()}]);
+        o[photo.id]=(o[photo.id]||[]).concat([{id:"line_"+Date.now(),points:data.points,pins:data.pins,label:data.label||null,ts:Date.now()}]);
         return o;
       });
       setDrawFor(null);
@@ -2612,6 +2615,7 @@ function TopoThumb({p,onOpen}){
     {canonical?<TopoLineOverlay points={canonical.points} pins={canonical.pins} pinSize={12}/>:null}
     {!canonical?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.45)",color:"#fff",fontSize:11,fontWeight:700,textAlign:"center",padding:8}}>No line drawn</div>:null}
     {p.lines.length>1?<span style={{position:"absolute",top:5,right:5,background:"rgba(0,0,0,0.65)",color:"#fff",fontSize:10,fontWeight:700,borderRadius:10,padding:"2px 6px"}}>{p.lines.length+" lines"}</span>:null}
+    {canonical&&canonical.label?<span style={{position:"absolute",left:5,right:5,bottom:5,background:"rgba(0,0,0,0.65)",color:"#fff",fontSize:10,fontWeight:700,borderRadius:6,padding:"2px 6px",overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{canonical.label}</span>:null}
   </div>;
 }
 function TopoPhotoModal({photo,onClose,onDraw,onDescribe}){
@@ -2640,7 +2644,8 @@ function TopoPhotoModal({photo,onClose,onDraw,onDescribe}){
         {active?<TopoPinKey pins={active.pins}/>:null}
         {(active&&active.pins&&active.pins.length)?<TopoPinLegend style={{paddingTop:9,marginBottom:12,borderTop:"1px solid "+C.border}}/>:null}
         {!photo.lines.length?<div style={{fontSize:12.5,color:C.textMuted,marginBottom:10}}>No one has drawn this route's line on this photo yet.</div>:null}
-        {photo.lines.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{photo.lines.map(function(l,i){return <button key={l.id||i} onClick={function(){setAltIdx(i);}} aria-current={i===altIdx?"true":undefined} style={{...CHIP,border:"1px solid "+(i===altIdx?C.blue:C.border),background:i===altIdx?C.blueBg:C.surface,color:i===altIdx?C.blue:C.textSub}}>{i===0?"Latest":"Alt "+i}</button>;})}</div>:null}
+        {photo.lines.length>1?<div style={{display:"flex",gap:6,flexWrap:"wrap",marginBottom:10}}>{photo.lines.map(function(l,i){return <button key={l.id||i} onClick={function(){setAltIdx(i);}} aria-current={i===altIdx?"true":undefined} style={{...CHIP,border:"1px solid "+(i===altIdx?C.blue:C.border),background:i===altIdx?C.blueBg:C.surface,color:i===altIdx?C.blue:C.textSub}}>{l.label||(i===0?"Latest":"Alt "+i)}</button>;})}</div>:null}
+        {(active&&active.label&&photo.lines.length<2)?<div style={{fontSize:12.5,color:C.textSub,marginBottom:10}}>{active.label}</div>:null}
         <button onClick={function(){onDraw(photo);}} style={{...BTN,width:"100%",border:"1px solid "+C.blueDim,background:C.blueBg,color:C.blue}}>{photo.lines.length?"Draw your own line":"Draw this route's line"}</button>
       </div>
     </div>
