@@ -665,6 +665,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       anywhere (source, web), still there. Planner: junk rows now come from `extra.json`, and a climb cannot be
       moved onto a place that has walls (`routes_require_leaf`), so a list there nests as "<Place> Routes".
       Rollback: `scripts/data/holding-bins-rollback.json`.
+    - **Places the source WITHHOLDS for access, withdrawn — 0301** (2026-10-15, owner: "do what you
+      recommend based on online research"). The rule: follow the source's own practice. What it HIDES (WA's
+      closed crags under initials, the Rumney Pound's boulders kept "for history ... Don't climb here", Bunyan
+      Mountain's "respect the landowner's request", a Maine spire on hotel land named in disguise) is deleted:
+      227 climbs, 48 areas, every row whole in `scripts/data/closed-places-rollback.json` to restore if access
+      reopens. What it SHOWS with a closure banner (Pickledish, "Pound (closed), The") stays. Also South West
+      Overhang back to the source's V1+: keep-the-higher is for old guidebooks graded low, not a misfiled copy's
+      grade (Dishpan Hands keeps V8: the source's "V0-1" is a placeholder on an "unfinished brutal highball").
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …

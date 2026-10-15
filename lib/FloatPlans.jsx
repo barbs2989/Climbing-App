@@ -10,7 +10,7 @@ import { useState, useEffect, useRef } from "react";
 import { C, SL, FloatPlan, floatPlanState } from "../ClimbMatchCore.jsx";
 import { listFloatPlans, saveFloatPlan, deleteFloatPlan } from "./offline";
 
-export default function FloatPlans({who,crews,routeById,focus,onFocusDone,onFiledCrew}){
+export default function FloatPlans({who,crews,placeOf,focus,onFocusDone,onFiledCrew}){
   const [rows,setRows]=useState(null),[readErr,setReadErr]=useState(false);
   const [open,setOpen]=useState(null),[openSt,setOpenSt]=useState(null),[confirmDel,setConfirmDel]=useState(null);
   const boxRef=useRef(null);
@@ -25,7 +25,7 @@ export default function FloatPlans({who,crews,routeById,focus,onFocusDone,onFile
   useEffect(function(){if(!focus||rows===null||readErr)return;var hit=rows.find(function(r){return r.scope===focus.scope;});if(hit){if(open!==hit.scope)openPlan(hit);}else create(focus.scope,focus.defaults);if(onFocusDone)onFocusDone();/* Twice: arriving from another tab, App resets the scroll to the top after this first runs. */[60,450].forEach(function(ms){setTimeout(function(){if(boxRef.current&&boxRef.current.scrollIntoView)boxRef.current.scrollIntoView({behavior:ms<100?"auto":"smooth",block:"start"});},ms);});},[focus,rows===null,readErr]);
   const remove=function(scope){if(confirmDel!==scope){setConfirmDel(scope);return;}deleteFloatPlan(who,scope).then(function(){setRows(function(rs){return (rs||[]).filter(function(x){return x.scope!==scope;});});if(open===scope){setOpen(null);setOpenSt(null);}setConfirmDel(null);}).catch(function(){setConfirmDel(null);});};
   const crewOf=function(scope){if(!/^crew:/.test(scope))return null;var id=scope.slice(5);return (crews||[]).find(function(c){return String(c.id)===id;})||null;};
-  const kind=function(scope){var cr=crewOf(scope);if(cr){var r=routeById&&routeById(cr.routeId);return "Crew"+(r&&r.name?" · "+r.name:"");}return /^crew:/.test(scope)?"Crew":"No crew";};
+  const kind=function(scope){var cr=crewOf(scope);if(cr){/* ONE place, a route or an area (0302): the label names either. */var r=placeOf&&placeOf(cr);return "Crew"+(r&&r.name?" · "+r.name:"");}return /^crew:/.test(scope)?"Crew":"No crew";};
   const when=function(f){var a=(f.depart||"").trim(),b=(f.ret||"").trim();return a&&b?a+" → back by "+b:b?"Back by "+b:a?"Leaving "+a:"No times yet";};
   return <div ref={boxRef} id="float-plans" style={{marginTop:18,marginBottom:14,scrollMarginTop:150}}>{/* clears the sticky header + nav (~141px) when a link scrolls here */}
     <SL>Float plans</SL>

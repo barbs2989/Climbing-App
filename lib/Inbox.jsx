@@ -4,14 +4,14 @@ import { clickable } from "./clickable";
 import { searchMatches } from "./search";
 import { useProfilesByIds } from "./db";
 import { useState } from "react";
-import { ActionIcon, Av, C, CLIMBERS, ME, ROUTES, SZ5, SwipeRow, crewSize, pubFirst, pubName, useTrustLookup } from "../ClimbMatchCore.jsx";
+import { ActionIcon, Av, C, CLIMBERS, ME, ROUTES, SZ5, SwipeRow, crewPlace, crewSize, pubFirst, pubName, useTrustLookup } from "../ClimbMatchCore.jsx";
 import { POP_BACK } from "./popupChrome.js";
 
-export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,routeById}){
+export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,placeOf}){
   const [itab,setItab]=useState("friends");const [msgQ,setMsgQ]=useState("");const mqOk=str=>!msgQ.trim()||(str||"").toLowerCase().includes(msgQ.trim().toLowerCase());
   const dmIds=Object.keys(msgs||{}).filter(id=>(msgs[id]||[]).length>0);
   const _realDmIds=dmIds.filter(id=>!/^\d+$/.test(id));const dmProfilesQ=useProfilesByIds(_realDmIds);
-  const dmThreads=dmIds.map(id=>{const c=/^\d+$/.test(id)?(+id===0?ME:CLIMBERS.find(x=>x.id===+id)):((dmProfilesQ.data||[]).find(p=>p.id===id));const arr=msgs[id]||[];return c?{c:c,last:arr[arr.length-1]}:null;}).filter(Boolean).sort((a,b)=>((b.last&&b.last.ts)||0)-((a.last&&a.last.ts)||0));  const crewThreads=(crews||[]).map(cr=>{const r=(routeById?routeById(cr.routeId):ROUTES.find(x=>x.id===cr.routeId))||{};const arr=(crewMsgs&&crewMsgs[cr.id])||[];return {cr:cr,r:r,last:arr.length?arr[arr.length-1]:null,count:arr.length,un:(crewUnread&&crewUnread[cr.id])||0};}).filter(t=>t.count||t.un).sort((a,b)=>(b.un-a.un)||(((b.last&&b.last.ts)||0)-((a.last&&a.last.ts)||0)));
+  const dmThreads=dmIds.map(id=>{const c=/^\d+$/.test(id)?(+id===0?ME:CLIMBERS.find(x=>x.id===+id)):((dmProfilesQ.data||[]).find(p=>p.id===id));const arr=msgs[id]||[];return c?{c:c,last:arr[arr.length-1]}:null;}).filter(Boolean).sort((a,b)=>((b.last&&b.last.ts)||0)-((a.last&&a.last.ts)||0));  const crewThreads=(crews||[]).map(cr=>{/* ONE place, a route or an area (0302): the thread is named for either. */const r=(placeOf?placeOf(cr):crewPlace(cr,{}))||{};const arr=(crewMsgs&&crewMsgs[cr.id])||[];return {cr:cr,r:r,last:arr.length?arr[arr.length-1]:null,count:arr.length,un:(crewUnread&&crewUnread[cr.id])||0};}).filter(t=>t.count||t.un).sort((a,b)=>(b.un-a.un)||(((b.last&&b.last.ts)||0)-((a.last&&a.last.ts)||0)));
   /* One trust read for every thread: a real climber's is the server score, the same one their profile and the thread show. */const trustOf=useTrustLookup(dmThreads.map(t=>t.c));
   const friendsNoDM=(connections||[]).filter(f=>dmIds.indexOf(String(f.id))<0);
   const lastTxt=m=>m?((m.from==="me"?"You: ":"")+(m.image?"Photo":m.text)):null;

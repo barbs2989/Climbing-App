@@ -235,12 +235,14 @@
       "note"
     ],
     "crew_listings": [
+      "area_id",
       "cap",
       "confirmed_count",
       "confirmed_member_ids",
       "created_at",
       "created_by",
       "dates",
+      "discipline",
       "id",
       "route_id"
     ],
@@ -261,11 +263,13 @@
     ],
     "crews": [
       "agreed_date",
+      "area_id",
       "cap",
       "created_at",
       "created_by",
       "date_forced",
       "dates",
+      "discipline",
       "dismissed",
       "float_plan",
       "id",
@@ -581,6 +585,17 @@
     "objectives": [
       "created_at",
       "route_id",
+      "user_id"
+    ],
+    "partner_areas": [
+      "area_id",
+      "created_at",
+      "disciplines",
+      "free_from",
+      "free_to",
+      "id",
+      "note",
+      "updated_at",
       "user_id"
     ],
     "profile_condition_prefs": [

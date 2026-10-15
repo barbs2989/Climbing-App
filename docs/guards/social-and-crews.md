@@ -680,3 +680,108 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   - **The onboarding sheet wrote an AREA ID into `profiles.location`** (`homeArea:home`, e.g. `lcc`),
     which partner rows print as the climber's city. It now sends what the box shows, falling back to
     the existing value so an untouched box never blanks it.
+
+- **CRAG PARTNERS ARE FOUND BY AREA, BOTH WAYS UP THE TREE; A CRAG-ROUTE OBJECTIVE IS A TICK LIST,
+  NOT A MATCH SIGNAL (`0300`, `check:partner-areas`).** Owner decision 2026-10-15. Partner finding
+  keyed on individual saved routes, which for sport, trad, top-rope and bouldering is far too
+  granular — two climbers who both climb at Hellgate every weekend never matched unless they had
+  saved the SAME route. `partner_areas` lets a climber list themselves at an area at any depth
+  (crag, wall, canyon, range, region, state — never a peak), with the crag types they want and ONE
+  optional date window. Alpine, mountaineering, scrambling, ice and mixed stay route-based.
+  - **REACHABILITY IS TWO-WAY on the ltree path.** Searching T finds a listing at L when
+    `L.path <@ T.path` (inside) OR `L.path @> T.path` (an ancestor). Each direction alone reads as a
+    sensible single rule and hides half the climbers — "listed at Wasatch" from a Hellgate search, or
+    "listed at Hellgate" from a Wasatch search. Ancestor matches carry `listed_above=true` and sort
+    last, so a card says "listed across Utah" rather than "listed here". The guard demands both
+    operators in every reader (`partners_in_area`, `partners_for_my_areas`, `partner_area_counts`).
+  - **The table is OWNER-ONLY, unlike `objectives` (public-read).** Every cross-climber read is a
+    `SECURITY DEFINER` that refuses a signed-out caller and applies `discoverable` plus
+    `profile_owner_blocked_me`, byte-for-byte `partners_near`'s rule. The guard refuses a
+    `using (true)` select policy on the table. `partner_areas_of_users` is the
+    `useObjectivesOfUsers` analogue: one read gives every row on screen its listing line.
+  - **Which objectives still count is ONE SQL rule, pinned:** a route counts when its discipline is
+    not crag-family, OR it is filed on a PEAK (trad that climbs a peak is alpine — `catOf`'s rule). A
+    seed id the catalog does not hold does not count. `match_objectives_of_users` holds it now;
+    `partners_by_objective` is re-created with it in the step that replaces crag objectives on
+    screen (a behaviour change, so it ships with its UI, not here). The crag list exists in THREE
+    places — the table CHECK, the match rule and the app's `CRAG_CATS` — and the guard demands they
+    are one set.
+  - **An expired window reads back as NO window, never as no listing**: the RPCs null `free_from`
+    and `free_to` once `free_to` is past; the row stays. One window per (climber, area) in v1.
+  - **Proven with five real accounts on their own JWTs** —
+    `scripts/oneoff/probe-partner-areas.mjs`, 45 assertions: owner-only table reads and writes, the
+    peak/country refusal, the discipline CHECK, the 30-listing cap, every function's signed-out
+    refusal, both reach directions and their ordering, the live and the expired window, the
+    unlisted climber, the caller, the block (and the count dropping with it), Near-my-areas empty for
+    a caller with no listings, `shared_count`/`via_area_names`, and the alpine-kept/sport-dropped
+    objective rule. The service key creates and deletes accounts and nothing else.
+  - **Trap met building it:** the trigger function came back with `EXECUTE` granted to PUBLIC and
+    `anon` (Postgres' default for a new function), which the partner RPCs' explicit `revoke` lines
+    do not cover. Read `routine_privileges` for EVERY function a migration creates, not just the
+    ones it grants on. Injection suite: `scripts/oneoff/inject-partner-areas-cases.mjs` (7 cases).
+
+- **A CREW HAS ONE PLACE — A ROUTE OR AN AREA (`0302`).** The crews half of the 2026-10-15 decision:
+  a crag session ("Hellgate Saturday, sport") is the party, not a route. `crews.area_id` (FK to
+  `areas`, no cascade) + `crews.discipline` (stored, never inferred — `areas.disciplines` exists only
+  for peaks and crags, and a canyon-level crew has none); `route_id` is nullable and a CHECK demands
+  exactly one of the two. Alpine crews are unchanged. `crew_listings` APPENDS the two columns (0298's
+  shape) so every reader keeps its shape. `createCrew` takes `routeId` OR `areaId`+`discipline` and
+  refuses both/neither before the database does. `crewsReaders` now includes `crew-listings`: before
+  this a crew you started was invisible in Join a crew for a minute.
+  - **An area FOLD must REPOINT `crews.area_id` and `partner_areas.area_id`** beside topos and
+    contributions — README-numbering §3 records the four-line convention. The FK has no cascade on
+    purpose: a fold that forgot would fail on the delete rather than silently lose a session.
+  - Proven by a rolled-back DO block on the live table (both places / no place / area without
+    discipline / unknown area / unknown discipline all refused; an area crew lands and the view
+    carries `area_id` + `discipline`; a route crew is unchanged). The app still reads `crew.routeId`
+    everywhere — the `crewPlace()` seam that teaches every reader about area crews is the next step,
+    and `check:crew-place` lands with it.
+
+- **EVERY SURFACE THAT NAMES A CREW RESOLVES ITS PLACE THROUGH `crewPlace()` (`check:crew-place`).**
+  0302 let a crew bind to an AREA. Before the seam, ~25 readers each did their own
+  `routeById(crew.routeId)` and printed `.name` — the card, the finder row, the chat header, the Inbox
+  thread, the float-plan label, four Home rows, the profile modal, the past-crew list, the invite
+  modal, the email invite, the recap. Every one would have printed "undefined" for an area crew, and
+  CrewCard would have declared it "no longer available". `crewPlace(crew,{routeById,areaById})` in
+  core is the one resolver: `null` while an area card loads (a skeleton, `aria-busy`), `{kind:"missing"}`
+  once the read says the place is gone, else `{kind:"route"|"area", name, lat, lng, disc, discs, route,
+  area, grade, cover, parentName}`. `placeTrip`/`placeCap`/`placeLabel`/`placeSub`/`placeMatchesLog`
+  read it; App wraps it as `placeOf`, feeding one `useAreaCardsByIds` read of every crew's area.
+  - **The guard found three readers the hand sweep missed** on its first run — the recap modal and
+    two seed-invite shapes. That is the argument for a static guard over a careful sweep, again.
+  - **The allowlist is the route-only set by nature**, each with the reason an area crew is fine
+    there: logging THIS crew's climb, finding partners for THIS crew's route, seed invites, a belay
+    catch that merely shares the identifier `c`. A stale entry (its text gone) FAILS, both directions.
+  - **Behaviour for route crews is identical** (check:crew's hydration slice is untouched — the new
+    fields sit BEFORE its `meetTime` end marker — and it gained an area-crew case). The log button is
+    absent on an area crew rather than opening a form with no climb; "Import from Plan" needs a
+    route and is absent too; the float plan is filed against a route-shaped stand-in carrying the
+    area's name and coordinate. No area crew can be created from the app yet (next step).
+  - `useAreaCardsByIds` now also returns `lat`, `lng`, `parentId` and `parentName` (one hook, every
+    caller benefits; the offline branch has no parent name).
+  - Injection suite: `scripts/oneoff/inject-crew-place-cases.mjs` (8 cases).
+
+- **THE PARTNERS TAB OPENS ON "NEAR MY AREAS", AND THE MATCH % BLENDS LISTED AREAS (0300, Step 4).**
+  The screens half of the area decision: `lib/MyPartnerAreas.jsx` (the sheet where a climber lists
+  the areas they climb — crag types, one date window, a note; peaks refused with the server's own
+  reason), a `Near my areas` mode that is the signed-in default and shows the one-tap "List me here"
+  banner over the nearest-by-zip list until there is a listing, a listing-based `By Area` with a
+  search box so any crag, canyon or range inside the chosen state is pickable, and a crag route
+  picked under `By Route` redirecting to its area. Every real row carries one `Listed at Hellgate ·
+  Sport · free Oct 18–19` line from `partner_areas_of_users` (or its own `listed_*` columns).
+  - **`compat()` gained `CMAX_AREA=14`** — the weight of ONE shared objective — as a yes/no term
+    over `partnerAreaPaths` (`areaPathsOverlap`, the client form of the ltree reach), and **the
+    viewer's side of the score is `ME.matchObjectiveIds`**: a crag-route objective stays on the
+    tick list and leaves matching, so the real rows read `useMatchObjectivesOfUsers`.
+    `compatUnknown` folds objectives-or-areas into ONE signal. `check:match-percent` now demands
+    the term moves the number and the copy names it ("shared objectives and listed areas"); its
+    lifted `_cand` builder takes `listing` as a fourth argument.
+  - **Trap:** `check:match-percent` lifts `_cand` with a lazy `\{([\s\S]*?)\};` — an IIFE inside
+    the object literal ends the match early and the guard dies with "Unexpected end of input".
+    Keep `_cand` free of `};`.
+  - **`check:clickable` counts a dialog's backdrop**, so a NEW sheet file needs its one-line
+    baseline entry beside the other dialogs — not `--update`, which rewrites every count.
+  - The Privacy Policy "What others can see" gained the listed-areas sentence; the opt-out is the
+    existing Partners-list switch (every RPC filters on `discoverable`), so no new control.
+  - The example (seed) list stands down under Near my areas: seed climbers list no areas, and a
+    "0 climbers found" header under a real list would be the seed path showing through.
