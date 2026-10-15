@@ -398,6 +398,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         the landmark too (an alternative that matches nothing is the `offline library` defect
         above). A rename of the one remaining heading now leaves the landmark matching nothing,
         which `check:outage-landmark` reports at build time.
+      - **2026-10-15: the Logbook header became a per-sub-tab `<ScreenHero>`** (title and line follow
+        `logbookTab`; the fixed *"…all in one place."* prose is gone). Two of the probe's anchors
+        moved with it: the header check now looks for `<ScreenHero`, and the Saved-view carve
+        anchors on `logbookTab==="lists"?<div`, because the header's title ternary tests
+        `logbookTab==="lists"` FIRST and a bare-needle carve lifted 122 chars of it.
       - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
         two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
         changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own
