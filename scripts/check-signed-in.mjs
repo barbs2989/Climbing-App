@@ -343,10 +343,31 @@ try {
   // screen to open. Clicking the route name here does NOT drill into the crew, it
   // navigates to the ROUTE, which is how the first draft of this check "failed" on a
   // perfectly good roster.
+  /* The AREA crew's name arrives from a THIRD query (the area card, keyed off the invites read), so wait for
+     it the way the roster is waited for; the assertion below is unchanged, so a name that never renders
+     still fails, just 15s later. */
+  await page.waitForFunction(
+    (n) => document.body.innerText.includes(n),
+    fixture.areaCrew.areaName,
+    { timeout: 15000 },
+  ).catch(() => {});
   const crewText = await capture("Crew:detail");
   asserted++;
   if (!crewText.includes("North Ridge")) {
     fail("Crew:detail", "the fixture's crew is not listed — the signed-in crew query returned nothing");
+  }
+  // THE AREA CREW (0302). The fixture also seats the owner in a crag SESSION at World Wall, a crew
+  // with no route, so it renders as a crew CARD here. The card must name the crag -- before
+  // crewPlace() every reader resolved crew.routeId, and an area crew would have been declared "no
+  // longer available" at best and printed "undefined" at worst.
+  asserted++;
+  if (!crewText.includes(fixture.areaCrew.areaName)) {
+    const crewLines = crewText.split("\n").filter((l) => /crew|session|no longer available|Loading/i.test(l)).slice(0, 8).join(" | ");
+    fail("Crew:detail", `the fixture's AREA crew at ${JSON.stringify(fixture.areaCrew.areaName)} is not named on the Crew tab — an area crew's card resolves to nothing (the 0302 shape of #569). Crew lines seen: ${crewLines || "(none)"}`);
+  }
+  asserted++;
+  if (/\bundefined\b/.test(crewText)) {
+    fail("Crew:detail", "the Crew tab prints the word undefined — a crew's place resolved against the wrong store");
   }
   asserted++;
   // First name only, deliberately: the app renders members through pubFirst/pubName, so

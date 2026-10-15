@@ -742,3 +742,10 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     module-level names in a lazy file.
   - The recap alert for an area crew carries `crew:cr.id` beside `crewlog`, so a tap opens the crew card
     (there is no route to log from the alert).
+
+- **THE FIXTURES CARRY AN AREA CREW (0302, Step 8).** `durable-fixture.mjs` creates, beside the North
+  Ridge invite crew, a crag SESSION at World Wall (`wa_world_wall`, sport) owned by the mate with the owner
+  invited — swept by `area_id` on the same 45-minute rule, deleted in `cleanup()`, returned as `areaCrew`.
+  `check:signed-in` asserts the Crew tab names "World Wall" and prints no `undefined`;
+  `check:new-climber-journey` opens an area crew as the owner and the mate must find "World Wall" under
+  Any Crew. Both walk the second shape of a crew through the real app, which no static guard can.
