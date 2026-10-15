@@ -3,7 +3,8 @@
 import { createPortal } from "react-dom";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { readPhotoFacts, photoFingerprint, photoEvidence } from "./photoEvidence";
-import { Av, C, COND_ENUMS, GPXMap, ItineraryEditor, Lbl, MAX_WAYPOINTS, ME, RichEditor, caretToEnd, NONCOMPLETION_TICKS, OUTCOME_REASONS, PhotoAltField, ROAD_ISSUES, ROAD_LEGACY, ROAD_STATUS, ROAD_VEHICLE, StartLocationForm, WP_SINGLE_TYPES, WP_TYPES, blankItinDay, catOf, condGroupsFor, condMetricsFor, intOnly, isRoadTag, isHazardTag, itinDaysToDraft, itinDraftToStructured, parseGpxText, photoAlt, pubFirst, pubNameRow, realProfileId, tickTypesFor, uLenIn, uLenN, uLenUnit, uElevIn, uElevN, uElevUnit, uImp, uTempIn, uTempN } from "../ClimbMatchCore.jsx";
+import { Av, C, COND_ENUMS, GPXMap, ItineraryEditor, MAX_WAYPOINTS, ME, RichEditor, caretToEnd, NONCOMPLETION_TICKS, OUTCOME_REASONS, PhotoAltField, ROAD_ISSUES, ROAD_LEGACY, ROAD_STATUS, ROAD_VEHICLE, StartLocationForm, WP_SINGLE_TYPES, WP_TYPES, blankItinDay, catOf, condGroupsFor, condMetricsFor, intOnly, isRoadTag, isHazardTag, itinDaysToDraft, itinDraftToStructured, parseGpxText, photoAlt, pubFirst, pubNameRow, realProfileId, tickTypesFor, uLenIn, uLenN, uLenUnit, uElevIn, uElevN, uElevUnit, uImp, uTempIn, uTempN } from "../ClimbMatchCore.jsx";
+import Lbl from "../src/components/Lbl.tsx";
 import { POP_CLOSE, POP_REMOVE, POP_REMOVE_MEDIA } from "./popupChrome.js";
 import { useProfileSearch } from "./db";
 import { USE_DB } from "./supabase";
