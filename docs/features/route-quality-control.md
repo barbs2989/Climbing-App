@@ -34,9 +34,44 @@ How climber edits to route pages are held, checked, locked and flagged. Decided 
 - **Your contributions** (Menu → Profile) shows each edit as Awaiting review / Added — live /
   Not applied with the owner's reason.
 
-Not built yet (planned, in order): the owner's in-app queues (held edits, flags, contributor
-standing), the confidence chips and flag control on the route page, per-pitch and rappel-table
-editors, parity of the three forms with every rendered column, CAPTCHA on sign-up.
+- **The owner's queues** (Me tab, admin block; `lib/RouteQualityQueues.jsx`): *Route edits to review*
+  clusters pending rows by route, field and `sameEditValue` so three climbers who sent the same value
+  are one card; shows the page's current value beside the proposed one with a row-by-row diff for
+  pitch / rappel / waypoint tables; Approve, Edit &amp; approve (the owner's value becomes
+  `applied_value`), Turn down (reason ≥10 chars, canned reasons, "honest mistake" skips the strike),
+  Keep &amp; lock (field locked high, edit turned down without a strike), Open route. *Flagged route
+  details*: fixed / no change needed, with a note to the reporter. *Contributor standing*: reset,
+  warn, restrict 90 days, ban, each with a reason.
+- **The climber's standing on the edit sheet** (`ContributionStandingNotice` in `lib/SafetyNotices.jsx`):
+  warned / restricted-until / banned with the reason and an Appeal button (kind `contributing`).
+
+- **The level on the page** (`lib/confidence.jsx`): App provides `ConfidenceCtx` ({levels, routeId,
+  onFlag}) around `RouteDetail`; the shared heading components `SL` and `CardHead` (core) map their
+  text to a form key through `headKey` / `HEAD_KEYS` and render `ConfChip` (High · locked / Medium /
+  Low, with a ⚑ Flag button); `ConfidenceLegend` explains the three levels once under the
+  verification note. Every pencil on the page goes through `openFix` in `RouteDetail.jsx`: a HIGH
+  field's pencil opens the flag sheet instead of the editor. In `SuggestFix` each field row shows its
+  chip and a HIGH row cannot be opened.
+- **The flag sheet** (`lib/FlagRouteInfo.jsx`, `FlagRouteSheet`, mounted by App beside the appeal
+  sheet): a note of 5–1000 characters on one field or the whole route → `fileRouteFlag`; refusals show
+  the database's sentence.
+
+- **Pitches and rappels** (`SuggestFix`): each ROUTE BREAKDOWN row has its own "✎ Edit this pitch",
+  which opens the sheet scrolled to that pitch (`focusPitch`); pitches can be moved up and down;
+  clustering compares every pitch key (grade, gear, length, note, anchor, bolts, crux). The rappel
+  table has an editor at last — `rappelDetail`, type `rappels`: one row per station with length (in
+  the climber's units, stored in metres), anchor, how to find the station, hazards one per line and
+  notes; rows are prefilled from `rappel_detail`, can be added, removed and reordered, and the queue
+  shows them row by row.
+
+- **Everything a climber can see, a climber can correct** (`check:editable-coverage`): seven
+  columns that rendered with no editor — alternative names, variations, first free and first winter
+  ascent, high point, sun, pro tips — have edit-sheet entries and `contribution_fields` rows (0317);
+  every other column is either editable or declared with a reason. The log form offers "⚑ Something
+  on this route page is wrong?", which opens the flag sheet through `openFlag` (`lib/reportBus.js`).
+
+Deferred by the owner (2026-10-15): CAPTCHA on sign-up. Not done: the add-a-climb form does not yet
+ask for the seven new fields (approve_new_route would need the columns too).
 
 ## 2. How it works
 
@@ -67,12 +102,19 @@ editors, parity of the three forms with every rendered column, CAPTCHA on sign-u
 | File | What lives there |
 |---|---|
 | `ClimbMatch.jsx` | `onContribute` (submit + toast), the route memo's approved-only merge (`_contribFields`, `_pendingEdits`), `mergedNotifs` with notices |
-| `RouteDetail.jsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line |
+| `RouteDetail.jsx` | `SuggestFix`: the edit sheet, `FIELDS`, the "Awaiting review" line, the standing notice; `openFix` |
+| `lib/RouteQualityQueues.jsx` | `FieldContributionQueue`, `RouteFlagQueue`, `ContributorStandingQueue` |
+| `lib/confidence.jsx` | `ConfidenceCtx`, `HEAD_KEYS`, `headKey`, `ConfChip`, `ConfidenceLegend` |
+| `lib/FlagRouteInfo.jsx` | `FlagRouteSheet` |
+| `ClimbMatchCore.jsx` | `SL`, `CardHead` (render the chip on a route page) |
+| `lib/SafetyNotices.jsx` | `ContributionStandingNotice`, `AppealSheet` |
 | `ClimbMatchCore.jsx` | `sameEditValue` (clustering), the "Your contributions" ledger (`ST` statuses) |
-| `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts` |
+| `lib/db.js` | `submitContribution`, `useRouteContributions`, `useRouteFieldConfidence`, `setRouteFieldConfidence`, `useFieldContributions`, `approveFieldContribution`, `rejectFieldContribution`, `useMyContributionStanding`, `useContributionStandings`, `setContributionStanding`, `fileRouteFlag`, `useMyRouteFlags`, `useOpenRouteFlags`, `resolveRouteFlag`, `useMyNotices`, `markNoticeRead`, `useAdminQueueCounts`, `useContributionFields`, `useRouteRowsByIds` |
 | `scripts/check-contrib-field-columns.mjs` | the guard that keeps `contribution_fields` equal to the form |
 | `supabase/migrations/0307_route_quality_control_tables.sql` | `contribution_fields`, `route_field_confidence`, `contribution_standing`, `route_flags`, `user_notices`, `applied_value` |
 | `supabase/migrations/0308_field_confidence_and_edit_guards.sql` | `route_field_level`, `route_field_confidence_map`, `can_contribute_fields`, `can_flag`, `guard_field_contribution` |
+| `scripts/check-editable-coverage.mjs` | the guard that keeps every rendered column editable or explained |
+| `supabase/migrations/0317_seven_more_editable_fields.sql` | the seven field rows |
 | `supabase/migrations/0309_field_contribution_review.sql` | `approve_field_contribution`, `reject_field_contribution`, `set_contribution_standing`, `set_route_field_confidence`, `file_route_flag`, `resolve_route_flag`, `apply_agreed_grade`, `file_appeal`, `decide_appeal` |
 
 ## 4. Data
@@ -105,8 +147,9 @@ editors, parity of the three forms with every rendered column, CAPTCHA on sign-u
 
 ## 7. Last significant change
 
-Shipped the hold-for-review gate, the computed confidence rule with the server-side lock, strikes
-and standing, flags, and notices (0307–0309). The owner's queues and the page chips follow.
+Steps 2–5: the owner's three queues, the climber's standing notice, the confidence chips and the flag sheet on the route page, per-pitch editing and the rappel-table editor. Step 1 shipped
+the hold-for-review gate, the computed confidence rule with the server-side lock, strikes and
+standing, flags, and notices (0307–0309). The page chips follow.
 
 ## 8. Known gaps / open decisions
 
