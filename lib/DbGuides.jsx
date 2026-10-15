@@ -11,7 +11,7 @@ import { searchMatches } from "./search";
 import {
   useGuides, useGuideCredentials, useGuideReviews, useMyInquiriesWithGuide,
   submitInquiry, submitReview, withdrawInquiry,
-  dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS,
+  dbGuideToCamel, isGuideVerified, CERT_TRACK_LABELS, DISCIPLINE_LABELS, publicNameOf,
 } from "./db";
 import { POP_BACK } from "./popupChrome.js";
 import { askConfirm } from "./ConfirmSheet.jsx";
@@ -163,7 +163,7 @@ function GuideDetail({ guide, onClose, onDash, notify, C }) {
         {(reviews || []).length ? reviews.map(r => (
           <div key={r.id} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "10px 12px", marginBottom: 8 }}>
             <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12.5, fontWeight: 700, color: C.text }}>
-              <span>{r.profiles && r.profiles.name || "Climber"}</span><span>{"★".repeat(r.rating)}</span>
+              <span>{publicNameOf(r.profiles)}</span><span>{"★".repeat(r.rating)}</span>
             </div>
             <div style={{ fontSize: 13, color: C.textSub, marginTop: 4 }}>{r.text}</div>
             {r.guide_reply ? <div style={{ marginTop: 8, background: C.surface, borderLeft: "2px solid " + C.blue, borderRadius: "0 8px 8px 0", padding: "7px 10px" }}>
