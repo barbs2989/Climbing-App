@@ -84,6 +84,7 @@ This doc covers the partners mode (`lib/PartnerSearch.jsx`); crews and guides ar
 (Matched by grep of `docs/guards/` for PartnerSearch/partners_near/match-percent; not individually re-run.)
 
 ## 7. Last significant change
+Real climbers, batch 3: real friends carry their match objectives and ✓ (`useMatchObjectivesOfUsers` / `useVerifiedUsers` in App's connections hydration), so shared-objective counts, "You both want", the DM banner and suggested crews work for them; Leaderboards shows a real row's ✓; the signed-in header counts "example climbers" and the real-list copy says the filters narrow it.
 #2437 / #2444 / #2445 / #2446 (0300, 0303) — crag partners are found by AREA: `partner_areas` listings, the My listed areas sheet, Near my areas as the signed-in default,
 listing-based By Area, the area page's Partners here card, crag route pages and Logbook rows pointing at the crag, `CMAX_AREA` in the match %, and crag-route objectives
 leaving matching. Before that #2413 — every partner filter narrows the real lists; the ✓ Verified filter was removed (0295).

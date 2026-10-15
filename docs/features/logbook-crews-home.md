@@ -12,7 +12,8 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 - **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
   `TripReport` the trip-report form, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
 - **Logbook > Challenges**: named tick-lists from `lib/lists.js` (`LISTS`, `routeInList`, `listPeaks`, `peakClimbed`).
-- **Crew**: your crews around ONE PLACE — a `routeId`, or since 0302 an `areaId` + `discipline` (a crag session; no screen creates one yet) — with members, proposed dates,
+- **Crew**: your crews around ONE PLACE — a `routeId`, or since 0302 an `areaId` + `discipline` (a crag session: started from the area page's "Start a crew here",
+  the Crews tab's "+ Create a crew → At an area…", or a past crew's picker, through `StartCrewSheet`; `formCrew` takes a route id or a place) — with members, proposed dates,
   per-member day acks and a "Ready" state (`datesAgreed`/`agreedDate`). Every surface that names a crew resolves its place through `crewPlace` (`placeTrip`, `placeCap`,
   `placeLabel`, `placeSub`, `placeMatchesLog`), wrapped by App as `placeOf`; `check:crew-place` holds every reader on it.
   Each crew renders as `CrewCard`: members, invite (by profile or email), itinerary, `CrewGearList` (who brings what), meet time/place, float plan.
@@ -46,7 +47,9 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
 | `lib/ListsManager.jsx` | Objectives/Saved UI, per-discipline filter chips (Alpine first; Mountaineering and Aid separate); a crag row's Find partners goes to the crag (`onFindPartnersInArea`) |
 | `lib/MyAscents.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`, `lib/tripReportRow.js`, `lib/LogTagConfirmations.jsx` | Completed climbs, logging, trip reports, partner tag confirmation |
 | `lib/lists.js` | `LISTS`, `routeInList`, `listPeaks`, `peakClimbed` (Challenges) |
-| `lib/CrewCard.jsx`, `lib/CrewGearList.jsx`, `lib/CrewFinder.jsx` | Crew card, gear list, crew discovery |
+| `lib/CrewCard.jsx`, `lib/CrewGearList.jsx` | Crew card, gear list |
+| `lib/CrewFinder.jsx` | Crew discovery (`inMyAreas`: "My climbs & areas" also matches a crew at an area you listed; `initialArea` from the area page's "Crews here") |
+| `lib/StartCrewSheet.jsx` | `StartCrewSheet` — start a crew at an AREA: the place, the session's discipline, a day, a size, a note; hands `formCrew` a place |
 | `lib/FloatPlans.jsx`, `lib/GiveVouch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx` | Float plans, vouch sheet, messages, notifications |
 | `lib/BestDayTile.jsx` | Home "Best day to climb" |
 | `lib/offline.js` | Pinned/downloaded states and route packs |
@@ -77,7 +80,9 @@ Notes: `docs/guards/social-and-crews.md`, `contributions-and-logbook.md`, `hones
 (Matched by name; not re-run.)
 
 ## 7. Last significant change
-#2441 / #2443 (0302): a crew has one place, a route or an area; `crewPlace()` is the one resolver for every surface that names a crew. Before that
+Real climbers, batch 3: crew roster, plan, nudge and invite chips name members by `pubFirst`; the invite list treats a real friend as real (server trust, sorted by it); Home's unread line, past crews and the itinerary message use public names; `FriendsFeed` and FriendsList's activity include real friends' shared logs (`realFriendFeed`) with real kudos (`giveKudos` + log target); MyAscents never matches a real log's typed partner name to an example climber.
+#2441 / #2443 / Step 7 (0302): a crew has one place, a route or an area; `crewPlace()` is the one resolver for every surface that names a crew; area crews
+(crag sessions) are started from the area page, the Crews tab and a past crew, found under "My climbs & areas" / By Area, and listed on a crag route's Partners sub-tab. Before that
 #2395: Crews audit: past-crew vouching, honest Archive/Clear, serialized gear writes, migration 0291 tightens `assign_crew_gear`.
 
 ## 8. Known gaps (verified)

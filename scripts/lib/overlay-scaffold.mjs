@@ -166,6 +166,9 @@ export const OVERLAY_PAYLOADS = {
 
   // Composites, copied from the setter call sites verbatim.
   invitePrompt: { expr: "{climber:CLIMBERS[0],route:ROUTES[0]}" },
+  // Start a crew at an AREA (0302): the sheet renders for any payload; the lifted shape is what the area
+  // page's "Start a crew here" builds, on a seed area so it resolves without the database.
+  startCrew: { expr: '{mode:"area",area:{id:"lcc_hellgate",name:"Hellgate",areaType:"crag",disciplines:["sport"]},partners:[]}' },
   quickLogFor: { expr: "{route:ROUTES[0],crewId:undefined,partners:[]}" },
 
   // Blank drafts — exactly what the "create" buttons open.

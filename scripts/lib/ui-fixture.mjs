@@ -38,6 +38,8 @@ import { POLICY_VERSION } from "../../lib/policy.js";
 // resolve, so a stray confirmation mail cannot reach a real inbox.
 const DOMAIN = "climbmatch-qa.invalid";
 const ROUTE_ID = "wa_mount_baker_north_ridge";
+// The AREA crew's crag (0302): World Wall, Little Si — in the live catalog, a crag, sport.
+const AREA_CREW_AREA_ID = "wa_world_wall";
 
 // Resolved on FIRST USE, not at import. scripts/lib/durable-fixture.mjs re-exports
 // sessionForStorage and STORAGE_KEY from here so the two fixture modes cannot disagree about
@@ -269,6 +271,26 @@ export async function createFixture(log = () => {}) {
     await insert("crew_members", { crew_id: inviteCrew.id, user_id: owner.id, status: "invited", invited_by: mate.id });
     log(`  crew ${inviteCrew.id.slice(0, 8)} owned by the mate, with the owner INVITED and not confirmed`);
 
+    // AN AREA CREW TOO (0302): a crag SESSION bound to a crag, not a route, so the walk proves the
+    // second shape of a crew renders — the invite card names the crag, nothing prints "undefined".
+    // Same owner, same seating, torn down by `track`. World Wall (Little Si) is in the live catalog.
+    const areaCrew = await insert("crews", {
+      created_by: mate.id,
+      route_id: null,
+      area_id: AREA_CREW_AREA_ID,
+      discipline: "sport",
+      dates: ["2026-10-05"],
+      meet_place: "Lower lot",
+      meet_time: "09:00",
+      cap: 3,
+    });
+    track("crews", `id=eq.${areaCrew.id}`);
+    // Both CONFIRMED, so the session renders as a crew CARD on the Crews view — the surface that
+    // prints the place name, the Session steps and the roster — rather than as an invite under Requests.
+    await insert("crew_members", { crew_id: areaCrew.id, user_id: mate.id, status: "confirmed", invited_by: mate.id });
+    await insert("crew_members", { crew_id: areaCrew.id, user_id: owner.id, status: "confirmed", invited_by: mate.id });
+    log(`  AREA crew ${areaCrew.id.slice(0, 8)} at ${AREA_CREW_AREA_ID} (sport) owned by the mate, both CONFIRMED`);
+
     // A group the owner OWNS, with a uuid member -- the state #680 fixed. Without the
     // member row the roster is a single self-row and the per-member controls never render,
     // so the interesting half of that fix would go unwalked.
@@ -345,6 +367,7 @@ export async function createFixture(log = () => {}) {
 
     return {
       owner, mate, crew, group, session,
+      areaCrew: { id: areaCrew.id, areaId: AREA_CREW_AREA_ID, areaName: "World Wall", discipline: "sport" },
       // Delete the seeded rows explicitly rather than trusting FK cascades. Whether a
       // cascade fires is a property of the schema, not of this script, and a fixture that
       // leaks rows into a production project on a schema change is worse than one that is
