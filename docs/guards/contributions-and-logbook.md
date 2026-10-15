@@ -94,6 +94,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:contrib-fields` reads pencils as `openFix("key")` since the confidence lock (0307–0309).**
+  Every pencil on the route page goes through `openFix`, which opens the flag sheet for a field at
+  HIGH confidence instead of the editor; the guard counts both spellings as pencils and FAILS on a
+  bare `setFixOpenSection("key")`, because that is a pencil that skips the lock. The first run after
+  the rewrite reported "found only 0 edit pencil(s) — the scan broke", which is the fail-closed
+  shape working as intended.
+- **`check:editable-coverage`** asserts that every `routes` column in the schema snapshot either has
+  an editor (a `contribution_fields` row names it as a `column_name`) or is declared in the script's
+  `NEVER` map with a reason a reviewer can check (identity, derived numbers, owner-curated lists,
+  never-writable bookkeeping, enrichment stubs whose editable twin is another column). A new column
+  with neither FAILS; a NEVER entry for a column that gained an editor or left the schema FAILS as
+  stale. It is the owner's 2026-10-15 rule — everything a climber can see, a climber can correct —
+  made checkable. Measured when written: 113 columns, 70 editable, 36 declared; the seven that
+  rendered with no editor (alt_names, variations, ffa, fwa, high_point_ft, sun, pro_tips) got a
+  FIELDS entry, an `SS` key and a `contribution_fields` row (0317) in the same PR. What it cannot
+  see: whether the editor's VALUE SHAPE matches the reader — that is `check:contrib-shapes`.
 - **`check:contrib-field-columns`** asserts that the database's list of editable route fields
   (`contribution_fields`, migration 0307) is the FORM's list: every `FIELDS` key in
   `RouteDetail.jsx` and every `SS` key in `ClimbMatch.jsx` has a row, every row names a `routes`
@@ -382,3 +398,33 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     backup beside it) — a chip taken from the NAME ("Notta Slab" is vertical), from a
     NEIGHBOURING line on the same peak, or a rock-feature chip on a Class 2-4 scramble. Six
     more, where the text disagrees with itself, were left alone. No guard can see this class.
+
+- **`check:area-edit-fields`** asserts that the seven AREA fields a climber may suggest an edit to
+  are **one list, read four ways**: `AREA_EDIT_FIELDS` in `lib/areaFields.js`, the check
+  constraint `contributions_area_field_ck` and the applier `apply_agreed_area_field()` in the
+  `0304` migration (both its allow-list and the columns its `update areas set` statements write),
+  the rows `lib/AreaSuggestFix.jsx` offers, and the values the area page renders
+  (`lib/DbAreaBrowser.jsx`, `lib/AreaPageSections.jsx`). Static, in the build. Injection suite:
+  `scripts/oneoff/inject-area-edit-fields-cases.mjs` (a field dropped from the SQL, a field added
+  to the JS alone, a summary printing an object).
+  - **Why it exists.** Area edits are `contributions` rows with `area_id` and no `route_id`
+    (the column dates from 0002; Ranks and Top Contributors already counted such rows), applied
+    by a trigger as 0210 applies grades. `areas` has no client write path, so the four readers of
+    the field list can only agree by discipline — and the route page's four contribute guards are
+    anchored on RouteDetail's `const FIELDS=[{k:` and ClimbMatch's `SS`, so they **cannot see this
+    table at all**. This guard carries their three rules for it: shape (a months set clusters
+    order-free, as SQL `area_field_norm()` does), summary (every `cur(area)` is a string — its
+    first run caught the `text()` helper printing `[object Object]` for an object value), and
+    threshold (the banner's "N of 3" is the applier's `win.n >= 3`).
+  - **What it cannot see.** Whether the LIVE function matches the file (`check:function-drift`),
+    whether the trigger actually fires (hand-run: suggest `aspect` on a crag with none and watch
+    the row), and whether a renderer reads a field only to print nothing.
+- **`check:area-page-honest`** asserts three things about the area page's new sections
+  (2026-10-15): every `facts.push` in `AreaFactsCard` sits on a line gated `if (area.<col>` (a
+  fact nobody stored is not printed — `check:untracked-factors`' rule); the CLIMBS HERE chart's
+  headline is the sum of the bars it draws, and a remainder is said in words (`total > sum`) —
+  `check:count-matches-its-list`' rule, on one card; and `lib/DbAreaBrowser.jsx` offers
+  `maps/dir` exactly once (the GETTING THERE card replaced the bare `Directions` button, and two
+  drive controls means one of them is the un-captioned one). Static, in the build; same injection
+  suite. Its first run caught a code COMMENT containing the `maps/dir` literal — the rule is on
+  the file, not the markup, and a comment counts; the comment was reworded rather than the rule.

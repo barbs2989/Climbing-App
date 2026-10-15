@@ -8,7 +8,8 @@ import CrewGearList from "./CrewGearList.jsx";
 import { fetchTrustScore } from "./feedbackLoop";
 import { useCrewEmailInvites, useProfileSearch, useProfilesByIds } from "./db";
 import { useEffect, useState } from "react";
-import { ActionIcon, Av, C, CLIMBERS, DLOCALE, DOW, DiscIcon, FALLBACK_AV, FALLBACK_COVER, ItineraryEditor, Lbl, ME, MiniCalendar, agreedDate, blankItinDay, crewPlace, datesAgreed, fuzzyMatchAny, getAvailableItineraries, haptic, hasSlot, hoursNum, isReady, itinDraftToStructured, onImgErr, placeLabel, placeSub, placeTrip, pubFirst, pubName, realProfileId, seedIdentity, vScore, weekOf } from "../ClimbMatchCore.jsx";
+import { ActionIcon, Av, C, CLIMBERS, DLOCALE, DOW, DiscIcon, FALLBACK_AV, FALLBACK_COVER, ItineraryEditor, ME, MiniCalendar, agreedDate, blankItinDay, crewPlace, datesAgreed, fuzzyMatchAny, getAvailableItineraries, haptic, hasSlot, hoursNum, isReady, itinDraftToStructured, onImgErr, placeLabel, placeSub, placeTrip, pubFirst, pubName, realProfileId, seedIdentity, vScore, weekOf } from "../ClimbMatchCore.jsx";
+import Lbl from "../src/components/Lbl.tsx";
 import TrustBadge from "../src/components/TrustBadge.tsx";
 
 export default function CrewCard({blocked,crew,areaById,onOpenArea,onDisband,onLeave,onDismiss,onOpenClimb,onLog,onMessage,onInviteMember,connections,onSafety,onViewMember,onRemoveMember,onSetDate,onForceDate,onSetFloatPlan,onUpdateCrew,onMeRank,joinReqs,onAcceptJoin,onDeclineJoin,meRisk,collapsed:collapsedProp,onToggle,accordion,logged,onFindPartners,onNudge,hasMessages,onAdoptItinerary,routeById,onInviteByEmail,onReshareEmailInvite,onRemoveEmailInvite,meOrganizer,onWithdrawInvite}){var dtL=function(v){var a=Array.isArray(v)?v:(v?[v]:[]);return a.join(" / ");};

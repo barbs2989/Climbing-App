@@ -5,7 +5,8 @@ import { USE_DB } from "./supabase";
 import { POP_REMOVE } from "./popupChrome.js";
 import { removeProfileAvatar, uploadProfilePhoto } from "./db";
 import { useState } from "react";
-import { Av, C, DiscIcon, DOW, Lbl, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, PROFILE_GRADES, CLIMB_ROLES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, profileGradeRows, roleLabel } from "../ClimbMatchCore.jsx";
+import { Av, C, DiscIcon, DOW, US_CITIES, US_ST, CA_PROV, hasVulgarity, SKILLS, SKILL_GROUPS, PROFILE_GRADES, CLIMB_ROLES, BELAY_DEVICES, BELAY_LEVELS, certExpiryInfo, profileGradeRows, roleLabel } from "../ClimbMatchCore.jsx";
+import Lbl from "../src/components/Lbl.tsx";
 
 export default function EditProfileScreen({draft,setDraft,onSave,onCancel,uid,zipNow,zipReady,ecNow,ecReady}){
   /* The avatar used to be `set("avatar",URL.createObjectURL(f))`, and saveEdit PATCHes that

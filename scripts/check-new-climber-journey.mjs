@@ -636,8 +636,17 @@ try {
   const friendsViewAfter = await page.evaluate(() => document.body.innerText || "");
   // FAIL CLOSED: a screen that rendered nothing satisfies every "is absent" assertion below.
   if (friendsViewAfter.length < 200) dead(`the Crew:Friends view rendered ${friendsViewAfter.length} chars after the reload — its silence is not evidence`);
-  if (!friendsViewAfter.includes(friendName)) ok(`after a reload ${friendName} is no longer in the friends list`);
-  else bad(`after a reload ${friendName} is back in the friends list — the removal did not survive`);
+  // A FRIEND ROW, not the page. The Crew:Friends view also renders "People you may know", and a climber
+  // you just unfriended is exactly who that section suggests next (shared crews, mutuals) -- so a
+  // whole-page text search read a correct suggestion as "the removal did not survive" (2026-10-15).
+  // The friend list's own rows carry a Remove control (the overlay) or sit under "See all"; neither
+  // may name them. The "See all" absence is asserted below as well.
+  const friendRowsAfter = await page.evaluate(() => [...document.querySelectorAll("button")]
+    .filter((b) => (b.innerText || "").trim() === "Remove")
+    .map((b) => { const row = b.parentElement; const lines = ((row && row.innerText) || "").split("\n").map((s) => s.trim()).filter(Boolean); return lines[0] || ""; }));
+  const seeAllAfter = await page.evaluate(() => [...document.querySelectorAll("button")].some((b) => /^See all\b/.test((b.innerText || "").trim())));
+  if (!friendRowsAfter.includes(friendName) && !seeAllAfter) ok(`after a reload ${friendName} is no longer a friend — no friend row names them and there is no friends list to open (a "People you may know" suggestion may still show them)`);
+  else bad(`after a reload ${friendName} is back in the friends list — the removal did not survive (friend rows: ${JSON.stringify(friendRowsAfter)}, See all: ${seeAllAfter})`);
   // THE OPENER IS THE FALSIFIABLE TEST HERE, AND A REMOVE-CONTROL COUNT IS NOT.
   // "See all (N)" renders only on `connections.length > 0`, so its absence is a direct
   // consequence of the removal having stuck. Counting Remove controls instead passes

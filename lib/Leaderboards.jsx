@@ -4,7 +4,8 @@ import { DISC_LABELS as DL } from "./discLabels";
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { useLeaderboard, useTopClimbs, useAreaChildren, useAreaPath, dbRouteToCamel, useVerifiedUsers } from "./db";
-import { Av, C, CAT, CLIMBERS, CountUp, DEMO_FILLERS, DiscIcon, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, SZ1, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev, vScore } from "../ClimbMatchCore.jsx";
+import { Av, C, CAT, CLIMBERS, DEMO_FILLERS, DiscIcon, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, SZ1, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev, vScore } from "../ClimbMatchCore.jsx";
+import CountUp from "../src/components/CountUp.tsx";
 
 // Two populations. Signed in with the DB on, every row is a REAL climber from leaderboard()
 // (0194), which counts on the server under anti-padding rules the ranked climber cannot edit.
@@ -129,7 +130,7 @@ export default function Leaderboards({myTrust,meLive,onView,onClimb,logs,connect
     onsight:{id:"onsight",icon:"⚡",label:"Onsight pts",val:pp=>onsightPts(pp),disp:pp=>onsightPts(pp).toLocaleString(),suffix:disc==="bouldering"?"flash pts":"onsight pts",note:"A cumulative score for first-try sends — onsights and flashes across every climb, weighted by grade. Rewards depth, not just your single hardest first-try."},
     days:{id:"days",icon:"📅",label:"Days 1yr",val:pp=>daysOf(pp),suffix:"days out · 12mo",note:"Days on rock or in the mountains over the last 12 months. Rewards showing up."},
     climbs:{id:"climbs",icon:"🔥",label:"Top climbs",routes:true,note:real?"The climbs the most climbers have shared a public trip report for in this scope, then the highest rated.":"The most-logged and highest-rated climbs in this scope."},
-    contribs:{id:"contribs",icon:"🧭",label:"Contributions",val:pp=>pp._contribs||0,suffix:"contributions",note:"What a climber has added to the catalog that stuck: corrections another climber agreed with, approved new climbs, and route photos. Refining the same fact again counts once."},classics_b:{id:"classics_b",icon:"🏛️",label:"Classic climbs",val:pp=>real?(pp.classics||0):new Set(seedHistoryFor(pp).filter(t=>t.route.classic).map(t=>t.route.id)).size+(pp.classics||0),suffix:"classics",note:"Distinct regional classic climbs logged — the must-do lines. Repeating one does not count twice."}
+    contribs:{id:"contribs",icon:"🧭",label:"Contributions",val:pp=>pp._contribs||0,suffix:"contributions",note:"What a climber has added to the catalog that stuck: corrections and area details another climber agreed with or that filled a blank, approved new climbs, and route photos. Refining the same fact again counts once."},classics_b:{id:"classics_b",icon:"🏛️",label:"Classic climbs",val:pp=>real?(pp.classics||0):new Set(seedHistoryFor(pp).filter(t=>t.route.classic).map(t=>t.route.id)).size+(pp.classics||0),suffix:"classics",note:"Distinct regional classic climbs logged — the must-do lines. Repeating one does not count twice."}
   };
   let ids;
   const ROPED=disc!=="bouldering"&&disc!=="scrambling"&&disc!=="hiking";

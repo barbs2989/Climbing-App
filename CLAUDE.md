@@ -141,6 +141,8 @@ npm run check:trailhead-direction-shape # ...and those directions END AT THE TRA
 npm run check:approach-section # ONE approach section; the most-used way in is first, marked, and carries the paragraph (in build)
 npm run check:area-name-embed # an areas() embed missing `name` prints "undefined" at a climber (in build)
 npm run check:area-surfaces # a climber can DISCUSS an area and NAVIGATE to a crag (in build)
+npm run check:area-edit-fields # the seven editable AREA fields are ONE list — constraint, applier, editor and page agree (in build)
+npm run check:area-page-honest # the area page prints only STORED facts, its chart headline is the sum of its bars, and it drives there ONCE (in build)
 npm run check:photo-contract # route photos keep their ordering, refusal and gating promises (in build)
 npm run check:fire # the wildfire surfaces cannot claim what they don't know (in build)
 npm run check:field-renders # every enriched route column actually reaches a screen
@@ -230,6 +232,7 @@ npm run check:contrib-shapes # what the contribute form SUBMITS is the shape its
 npm run check:consensus-clustering # three climbers who agree must be COUNTED as agreeing (in build)
 npm run check:add-route-fields # add-a-climb asks what the discipline needs, and nothing unstorable (in build)
 npm run check:contrib-field-columns # every editable field has a DB row naming the routes column its confidence is computed from (in build)
+npm run check:editable-coverage # every routes column a climber can SEE has an editor, or a written reason it has none (in build)
 npm run audit:fifty-classics # which Fifty Classics does the catalog hold, and are they tagged?
 npm run audit:list-coverage # how full is each named tick-list against the total it advertises?
 

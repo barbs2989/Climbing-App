@@ -183,7 +183,13 @@ function readsSubKey(corpus, field, key) {
    "pitchDetail" — a section that exists but edits a DIFFERENT column, so the correction landed
    under ROUTE BETA while CLIMBING ROUTE kept its old text. This catches the first shape; only
    reading the reader catches the second. */
-const pencilIds = [...rd.matchAll(/setFixOpenSection\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+/* Since 0307–0309 every pencil calls openFix(id), which checks the field's confidence level and opens the flag sheet for a locked (high) field before falling through to setFixOpenSection(id). Both spellings count; a pencil that bypasses openFix would skip the lock, so the raw call is also reported below. */
+const pencilIds = [...rd.matchAll(/(?:openFix|setFixOpenSection)\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+const rawPencils = [...rd.matchAll(/setFixOpenSection\("([A-Za-z0-9_]+)"\)/g)].map((m) => m[1]);
+if (rawPencils.length) {
+  console.error(`check:contrib-fields: ${rawPencils.length} pencil(s) call setFixOpenSection directly and skip the confidence lock (openFix): ${[...new Set(rawPencils)].join(", ")}`);
+  process.exit(1);
+}
 if (pencilIds.length < 10) {
   console.error(`check:contrib-fields: found only ${pencilIds.length} edit pencil(s) — the scan broke.`);
   process.exit(1);

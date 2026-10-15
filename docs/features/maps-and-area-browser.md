@@ -10,6 +10,16 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   (`SummitBriefing` on peaks, its children or its routes, then — in this order — *Don’t see a climb? Add it*, `DbSuggestedClimbs`
   "More climbs in this area", `NearbyPeaks`, Top contributors; App mounts the area Discussion straight after, so it ends the page).
   `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
+- **Area page sections** (0304, `lib/AreaPageSections.jsx`): on a crag, peak or wall — **ABOUT** (`areas.blurb`, or an invitation to write one),
+  **AREA FACTS** (rock, which way it faces, elevation, walk-in minutes, parking name, and a 12-month **Season** strip from `areas.season_months`;
+  a fact that is not stored is not printed), **CLIMBS HERE** (`ClimbsChart`: one bar per discipline over the whole subtree via the
+  `area_climb_stats` RPC, headline = the sum of its bars; a bar opens the Route finder preset to that discipline) with **GRADE SPREAD**
+  (`GradeSpread`: columns over the area's main grading scale, saying how many climbs it left out), **GETTING THERE** (`AreaGettingThere`:
+  `parking_note` + the parking pin, `approach` + `approach_min`, Google/Apple Maps links — the page's ONE drive control), **TOP RATED HERE**
+  (up to five routes by `stars`), and **Suggest an edit** (`lib/AreaSuggestFix.jsx`: seven fields from `AREA_EDIT_FIELDS` in `lib/areaFields.js`,
+  each one a `contributions` row with `area_id`; a fill of an empty field goes live at once, a change to a filled one waits for 3 climbers;
+  the pending banner `PendingAreaEdits` shows "N of 3" with *I see this too*). The chart also runs on states, ranges and regions; not on
+  world/country (the whole catalog in one call is ~2 s). Access stays on the route page (owner, 2026-10-04 / 2026-10-15).
 - **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
 - **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
   min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
@@ -47,15 +57,24 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 |---|---|
 | `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PartnersHereCard`, `PARTNER_CARD_TYPES`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
-| `lib/db.js` | `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
+| `lib/AreaPageSections.jsx` | `AboutCard`, `AreaFactsCard`, `ClimbsChart`, `GradeSpread`, `MonthStrip`, `PendingAreaEdits`, `bucketLabel` |
+| `lib/AreaSuggestFix.jsx` | default export `AreaSuggestFix` (mounted by App from its areaFixOpen / areaFixArea / areaFixField state in `ClimbMatch.jsx`) |
+| `lib/areaFields.js` | `AREA_EDIT_FIELDS`, `AREA_EDIT_KEYS`, `AREA_EDIT_NEED`, `ASPECTS`, `MONTH_ABBR`, `monthsLabel`, `areaEditNorm`, `areaEditClusters` |
+| `lib/areaChrome.jsx` | `EditIconButton`, `CopyCoordButton` (shared with `RouteDetail.jsx`), `NO_PARKING_PIN_LINE` |
+| `lib/db.js` | `useAreaClimbStats`, `useAreaContributions`, `useArea`, `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
 | `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
 | `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
 | `ClimbMatchCore.jsx` | `GPXMap`, `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
 | `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
 
 ## 4. Data
-- Supabase tables `areas` (parent_id, `path` ltree set by trigger, `area_type`, lat/lng, `route_count`; 0001) and `routes`.
-- RPCs: `routes_in_subtree`, `routes_in_subtree_count`, `areas_in_subtree`, `search_names_fuzzy`; SQL `search_norm()` (0190, 0200, 0201).
+- Supabase tables `areas` (parent_id, `path` ltree set by trigger, `area_type`, lat/lng, `route_count`; 0001; `blurb`; `approach`, `approach_min` (0247); `rock`, `rock_basis` (0248);
+  `aspect` (0249); `parking_lat/lng/name` (0255), `parking_note` (0282); `season_months smallint[]` (0304)) and `routes`.
+- Area edits: `contributions` rows with `area_id` and `route_id null`, `kind = 'field'`, `field` constrained to the seven editable columns
+  (`contributions_area_field_ck`, 0304); `apply_agreed_area_field()` runs AFTER INSERT, writes the area column when the field was empty or
+  3 distinct climbers agree, and marks the rows `approved` (through the `catalog.applier` GUC in `guard_contribution_status`), which is what
+  makes `leaderboard()` (0235) count them.
+- RPCs: `area_climb_stats` (0304; `{ total, graded, by_disc, by_grade }` over the subtree, one grouped scan), `routes_in_subtree`, `routes_in_subtree_count`, `areas_in_subtree`, `search_names_fuzzy`; SQL `search_norm()` (0190, 0200, 0201).
 - `catalog_directory` view and `catalog_find_area` / `catalog_find_route` (0214) - a browse-outline and duplicate lookup used by data work, not by this UI.
 - External: OpenStreetMap, ArcGIS World_Imagery and OpenTopoMap tiles (`MAP_TILE_URLS`); NASA GIBS for snow layers; USGS basemap tiles for offline (`OFFLINE_TILE_URLS`);
   Nominatim for place search (no key). Tile credits live in `TILE_CREDIT`.
@@ -77,14 +96,18 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 6. Guards
 `check:search-norm`, `check:list-row-columns`, `check:schema`, `check:counts` (`areas.route_count`), `check:area-surfaces`, `check:area-name-embed`,
 `check:area-duplicates`, `check:area-sort-labels`, `check:generic-area-names`, `check:wp-styles`, `check:waypoint-placement`, `check:waypoint-dedupe`,
-`check:track-caveat`, `check:gpx-caveats`, `check:waypoint-caveat`, `check:bottom-panels`, `check:overlays`, `check:overflow`, `check:ui`, `check:zero`.
+`check:track-caveat`, `check:gpx-caveats`, `check:waypoint-caveat`, `check:bottom-panels`, `check:overlays`, `check:overflow`, `check:ui`, `check:zero`,
+`check:area-edit-fields` (the seven editable fields are one list), `check:area-page-honest` (gated facts, chart headline = its bars, one drive control), `check:write-readers`.
 Notes: `docs/guards/README.md`.
 
 ## 7. Last significant change
-#2416 - area map place search covers Canada (provinces, towns, postal codes); #2411 just before it fixed hidden zoom buttons and the buried location dot.
+Area pages (0304): ABOUT, AREA FACTS, CLIMBS HERE + GRADE SPREAD, GETTING THERE, TOP RATED and Suggest an edit, after an audit of Mountain Project's and theCrag's area pages (Castleton Tower was the model).
+#2416 before it - area map place search covers Canada (provinces, towns, postal codes); #2411 just before it fixed hidden zoom buttons and the buried location dot.
 
 ## 8. Known gaps
 - `searchPlaces` depends on public Nominatim with no key or fallback; a non-OK response throws "place search <status>".
 - The area bubbles query is capped at 500 rows (`limit(500)`), so a zoomed-out view shows only the highest route counts; the UI is told via `total`.
 - Place search is restricted to `us,ca`; anywhere else returns nothing.
+- 462 of 67,276 areas carry a `blurb`, 529 an `approach`, 9,637 a parking pin (2026-10-15); the sections invite the edit on the rest, and a research pass fills the busiest areas first.
+- The chart runs on the area's stored `discipline`; a route filed with none is counted in the headline's "+N filed with no type" line, not in a bar.
 - Only 5-digit values are sent as `postalcode=`; Canadian postal codes go through the free-text `q=` path.
