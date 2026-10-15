@@ -701,3 +701,17 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     existing Partners-list switch (every RPC filters on `discoverable`), so no new control.
   - The example (seed) list stands down under Near my areas: seed climbers list no areas, and a
     "0 climbers found" header under a real list would be the seed path showing through.
+
+- **THE AREA PAGE, THE CRAG ROUTE PAGE AND THE LOGBOOK ALL REACH THE LISTING (0300, Step 5).**
+  `PartnersHereCard` on every crag-family area page and its ancestors below the state ("12 climbers
+  listed here or nearby", up to three rows, a one-tap **List me here / Listed ✓** that writes THIS
+  area's listing, "Add dates or types" into the sheet, "See all →" into the Partners tab on that
+  area); never on a peak (matched by route) or a state. `check:area-surfaces` gained rule 3 for it:
+  defined, rendered, gated to `PARTNER_CARD_TYPES`, reading the count and rows for `area.id`, writing
+  `area.id`, and asking for sign-in rather than claiming nobody is listed (the count RPC refuses a
+  signed-out caller). A crag route's Partners sub-tab is "Climbers at <crag>" (`partners_in_area` on
+  the route's area) with List-me / See-all, and its seed example cards are off; the Logbook's crag
+  rows send "Find partners" to the crag, not the route. `DbAreaBrowser` deliberately does not import
+  core, so the row component arrives as the `PartnerRow` prop (the `TopContributors` pattern).
+  - **Trap:** `cragOnly` in RouteDetail is declared ~40 lines BELOW the partner queries; a query that
+    read it threw at render. The queries use their own `_isCragR`.

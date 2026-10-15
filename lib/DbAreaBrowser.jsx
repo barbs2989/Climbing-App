@@ -7,7 +7,7 @@
 // far too large to hold in memory. Rendered only when USE_DB is on.
 import { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
+import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb, usePartnerAreaCount, usePartnersInArea, savePartnerArea, removePartnerArea } from "./db";
 import { useRecentRouteIds } from "./recent";
 import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
@@ -486,7 +486,48 @@ function NearbyPeaks({ area, onJumpToArea, C, uDistMi }) {
     </div>
   );
 }
-function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap}) {
+// PARTNERS HERE (0300): who is listed as an available partner at this area, inside it, or across a wider
+// area that contains it — and the one-tap "List me here". Crag-family areas and their ancestors below the
+// state; NOT a peak (a peak's climbing is matched by route) and not a state (too broad to list from here;
+// the Partners tab's picker still allows it). The count and the rows are signed-in reads: the server
+// refuses a signed-out caller, so the card says "Sign in" rather than "nobody".
+const PARTNER_CARD_TYPES = ["region", "range", "canyon", "crag", "wall"];
+const CRAG_FAMILY = ["trad", "sport", "toprope", "aid", "bouldering"];
+function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, PartnerRow, notify }) {
+  const on = !!uid;
+  const countQ = usePartnerAreaCount(area.id, on);
+  const rowsQ = usePartnersInArea(area.id, null, null, on, 3);
+  const [busy, setBusy] = useState(false);
+  const listed = !!(myListings || []).find((l) => l && l.areaId === area.id);
+  const count = countQ.data;
+  const rows = (rowsQ.data || []).filter((p) => p && p.id && String(p.id) !== String(uid));
+  const toggle = async () => {
+    if (!on || busy) return;
+    setBusy(true);
+    try {
+      if (listed) await removePartnerArea(uid, area.id);
+      else await savePartnerArea(uid, { areaId: area.id, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) });
+    } catch (e) { notify && notify((listed ? "Couldn’t remove your listing — " : "Couldn’t list you here — ") + ((e && e.message) || "try again")); }
+    finally { setBusy(false); }
+  };
+  const openAll = () => onFindPartnersInArea && onFindPartnersInArea({ id: area.id, name: area.name, areaType: area.area_type });
+  return (
+    <div style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 14, padding: "12px 13px", marginBottom: 14 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 6 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontSize: 13, fontWeight: 800, color: C.text, letterSpacing: 0.4, textTransform: "uppercase" }}>Partners here</div>
+          <div style={{ fontSize: 12.5, color: C.textSub, marginTop: 2 }}>{!on ? "Sign in to see who climbs here." : countQ.isError ? "Couldn’t load who’s listed." : count == null ? "Counting…" : count === 0 ? "Nobody listed here yet — be the first." : count + " climber" + (count === 1 ? "" : "s") + " listed here or nearby"}</div>
+        </div>
+        {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + " — tap to remove" : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : C.blue, fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
+      </div>
+      {on && listed && onListMe ? <button onClick={() => onListMe({ areaId: area.id, name: area.name, areaType: area.area_type, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) })} style={{ ...BTN_LINK, padding: 0, marginBottom: 8, fontSize: 12 }}>Add dates or types</button> : null}
+      {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
+      {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK, padding: 0, fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
+    </div>
+  );
+}
+
+function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinder, onNear, onObjectives, onAllAreas, onOpenRoute, onJumpToArea, C, onAddClimb, TopContributors, onFireMap, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify}) {
   const [searchMode, setSearchMode] = useState("areas");
   const { data: children, isLoading: lc, error: ec } = useAreaChildren(area.id);
   const { data: routes, isLoading: lr, error: er } = useAreaRoutes(area.id);
@@ -563,6 +604,7 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
           >Directions</a>
         ) : null}
       </div>
+      {PARTNER_CARD_TYPES.includes(area.area_type) ? <PartnersHereCard area={area} C={C} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} PartnerRow={PartnerRow} notify={notify} /> : null}
       <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
@@ -1350,7 +1392,7 @@ function DbAreaTree({ stateRoot, current, ancestorIds, onNavigate, onClose, C })
   );
 }
 
-export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader }) {
+export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookmark, wishlist, profile, completedIds, rankSuggested, discSlots, jumpToStateReq, jumpToAreaReq, uElev, uElevN, uElevUnit, uDistMi, onAreaContext, onFireMap, onAddClimb, TopContributors, rootHeader, PartnerRow, uid, myListings, onListMe, onFindPartnersInArea, onViewProfile, notify }) {
   const [stateNode, setStateNode] = useState(null);
   const [stack, setStack] = useState([]); // drill path within the state; last entry is "current"
   const [screen, setScreen] = useState("areas"); // "areas" | "finder" | "near" | "objectives"
@@ -1482,7 +1524,7 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
       ) : screen === "near" ? (
         <><ScreenHero C={C} title={"Map" + (current ? " · " + current.name : "")} /><NearMePanel uDistMi={uDistMi} center0={current && current.lat != null ? { lat: current.lat, lng: current.lng } : null} areaType={current && current.area_type} onBack={() => setScreen("areas")} onOpenArea={jumpToArea} C={C} /></>
       ) : (
-        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
+        <AreaPage key={current.id} TopContributors={TopContributors} onFireMap={onFireMap}onAddClimb={onAddClimb} PartnerRow={PartnerRow} uid={uid} myListings={myListings} onListMe={onListMe} onFindPartnersInArea={onFindPartnersInArea} onViewProfile={onViewProfile} notify={notify} uElev={uElev} uDistMi={uDistMi} area={current} booked={bookmarks.includes(current.id)} onToggleSave={() => onToggleBookmark(current.id)} onDrill={drill} onFinder={() => setScreen("finder")} onNear={() => setScreen("near")} onObjectives={() => setScreen("objectives")} onAllAreas={() => setTreeOpen(true)} onOpenRoute={onOpenRoute} onJumpToArea={jumpToArea} C={C} />
       )}
       {treeOpen && stateNode ? (
         <DbAreaTree stateRoot={stateNode} current={current} ancestorIds={stack.map(a => a.id)} onNavigate={jumpToArea} onClose={() => setTreeOpen(false)} C={C} />
