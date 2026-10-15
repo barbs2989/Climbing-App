@@ -57,6 +57,7 @@
     "audit:misplaced-prose": "node scripts/audit-misplaced-prose.mjs",
     "audit:shouted-prose": "node scripts/audit-shouted-prose.mjs",
     "audit:rappels": "node scripts/audit-rappels.mjs",
+    "audit:rack-items": "node scripts/audit-rack-items.mjs",
     "audit:hazard-redundancy": "node scripts/audit-hazard-redundancy.mjs",
     "audit:fifty-classics": "node scripts/audit-fifty-classics.mjs",
     "audit:list-coverage": "node scripts/audit-list-coverage.mjs",
