@@ -132,6 +132,7 @@ export const MOVED = {
     "lib/MyAscents.jsx", "lib/SafetyTab.jsx",
     "src/components/RiskBadge.tsx",
     "src/components/DiscBadge.tsx",
+    "src/components/DiscBadges.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],

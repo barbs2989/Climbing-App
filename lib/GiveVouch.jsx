@@ -4,7 +4,8 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { useRouteSearch } from "./db";
 import { useState } from "react";
-import { ActionIcon, C, DiscBadges, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import { ActionIcon, C, ME, ROUTES, SKILLS, SKILL_GROUPS, VOUCH_RATINGS, VOUCH_RATINGS_RETIRED, areaPathNames, fuzzyMatchAny, mtnOf, shortDate } from "../ClimbMatchCore.jsx";
+import DiscBadges from "../src/components/DiscBadges.tsx";
 import { POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 
 /* `suggest` is the climber's OWN logbook, resolved to routes by App: [{route, date, together}], the

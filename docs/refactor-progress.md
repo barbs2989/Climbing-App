@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR4 | `DiscBadges` | `ClimbMatchCore.jsx` | consumers `lib/Calendar.jsx`, `lib/GiveVouch.jsx`; imports `DiscBadge` from its own folder; core does NOT use it, so no cycle this time |
 | PR3 | `DiscBadge` | `ClimbMatchCore.jsx` | consumers `ClimbMatch.jsx`, `lib/PartnerSearch.jsx` AND core itself (`DiscBadges`), so core imports it back; `DiscIcon` got its JSDoc seam; `readParentSource()` now drops a parent's own import of a moved file before stitching |
 
 ## Next
@@ -56,8 +57,9 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR3 — `DiscBadge`.** Next candidates, by the same measurement (small,
-pure, no guard names them): `DiscBadges` (consumers `lib/Calendar.jsx`, `lib/GiveVouch.jsx`, and core
-itself), `HelpDot` (`ClimbMatch.jsx`). A parent that still uses what it extracted imports the new
-file back — a cycle, and an accepted one: the parent's import is dropped by the stitch. `TrustBadge`, `Pill` and `ActionIcon` are named by 1–5 guards each — do them
+Last session stopped at: **PR4 — `DiscBadges`.** Next candidate, by the same measurement (small,
+pure, no guard names it): `HelpDot` (`ClimbMatch.jsx`). A parent that still uses what it extracted
+imports the new file back — a cycle, and an accepted one: the parent's import is dropped by the
+stitch, and the component reads the parent's exports at render time only. A component that renders
+another extracted component imports it from its own folder (`./DiscBadge.tsx`), not through the parent. `TrustBadge`, `Pill` and `ActionIcon` are named by 1–5 guards each — do them
 after the reach measurement has proven itself on the easy ones.
