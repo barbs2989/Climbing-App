@@ -11,7 +11,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   Includes the owner-only zip code (feeds partner search distance; others never see it).
 - **Résumé** (`Resume`): courses and training, plus an **Experience** list of notable climbs, most recent first, with a star for
   led/summited. Groups, in order: **Sport, Trad, Ice & Mixed, Alpine & Mountaineering, Bouldering, Scrambling**
-  (matches the Objectives filter). Sport = sport + top-rope; Trad = trad and everything that used to be "Crag";
+  (the Objectives filter uses the same split except that it leads with Alpine and keeps Alpine, Mountaineering and Aid as separate chips). Sport = sport + top-rope; Trad = trad and everything that used to be "Crag";
   Scrambling = scrambling + hiking. A `discipline:"rock"` route resolves to its `style`. Exportable via `exportResume`.
   Visible to others only when the climber's `resume_public` allows it.
 - **Trust score**: `TrustBadge` tier chip on the headline; a "what feeds your score" breakdown (`trustFactors`) that adds up to the headline.

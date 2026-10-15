@@ -25,6 +25,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
 - **Groups Step 5** Events: one event row everywhere (date tile, when · where, going), a tap opens the event; a group’s Events tab shows Upcoming then Past (3, “See all”); the hub’s Events tab puts “You’re going” first. “Form a crew” left the group page.
+- **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
 - **PR3** `DiscBadge` extracted to `src/components/DiscBadge.tsx` (core imports it back for `DiscBadges`; the guard stitch drops a parent's own import of a moved file).
 - **Email verification** ✓ needs an emailed code (or the link in it), checked server-side (0306); the 2 autoconfirm ✓s were reset.
 - **#2437 → #2446** Crag partners are found by AREA (0300, 0302, 0303): `partner_areas` listings and the My listed areas sheet; Partners opens on Near my areas; listing-based By Area; the area page's Partners here card; crag route pages and Logbook rows point at the crag; `CMAX_AREA` in the match %; crag-route objectives leave matching; a crew has one place (route or area) through `crewPlace()`.
