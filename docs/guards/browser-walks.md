@@ -311,6 +311,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     the 2026-08-05 `--signed-in` attempt was injection-tested, **missed**, and was reverted.
     Per-run rather than one permanent QA account, because a fake climber left in `profiles`
     surfaces in partner search for real users.
+  - **The group page is tabs** (see social-and-crews.md), so the group section taps two of them
+    with `tapGroupTab(groupName, label)`: **Members** for the roster assertions (`Group:detail`)
+    and **About** for *Make private/public* (`Group:about`). The tap is scoped to that group's
+    `role="dialog"` and matches the tab's whole label, because a page-wide *contains* would hit
+    "2 members" in the header first. A missing tab fails, rather than leaving its assertions
+    unchecked.
   - Emails are on the reserved `.invalid` domain, so a stray confirmation can never route.
     `sweepOrphans()` runs before each fixture and removes anything an earlier run left, so a
     killed process leaks at most until the next run — teardown retries are not enough on
