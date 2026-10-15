@@ -2,7 +2,8 @@
 // components — everything that used to sit above App in ClimbMatch.jsx (see
 // CLAUDE.md). Mechanically extracted; module-level bindings that App reassigns
 // are written through __set_* shims because ESM import bindings are read-only.
-import { useState, useEffect, useRef, useMemo, useCallback, useLayoutEffect, Suspense, lazy, memo } from "react";
+import { useState, useEffect, useRef, useMemo, useCallback, useLayoutEffect, useContext, Suspense, lazy, memo } from "react";
+import { ConfidenceCtx, headKey, ConfChip } from "./lib/confidence.jsx";
 import { createPortal } from "react-dom";
 import { HERO_BG, HERO_SHEEN } from "./lib/ScreenHero";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./lib/discLabels";
@@ -1622,14 +1623,14 @@ const VL=["V0-","V0","V0+","V1-","V1","V1+","V2-","V2","V2+","V3-","V3","V3+","V
    Its spacing is the route page's one rhythm: 12px from the header to the first card, as between any two cards (ROUTE_GAP);
    a FIRST header (the top of a sub-tab) takes no top margin, so the tab bar sits as far above it as above a card. */
 const ROUTE_GAP=12;
-const SL=({children,action,first,divider})=><div style={{display:"flex",alignItems:"center",gap:7,marginTop:first?(divider?0:2):(divider?30:18),marginBottom:divider?ROUTE_GAP:9,...(divider&&!first?{borderTop:"2px solid "+C.borderHi,paddingTop:16}:null)}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span role="heading" aria-level={2} style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span>{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;
+/* On a route page (ConfidenceCtx is provided by App around RouteDetail) a heading whose text names an editable field carries that field's confidence level and a ⚑ Flag control (0307–0309). Outside a route page the context is null and nothing is added. */const SL=({children,action,first,divider})=>{const _cx=useContext(ConfidenceCtx);const _k=_cx&&_cx.levels?headKey(children):null;const _lv=_k?_cx.levels[_k]:null;return <div style={{display:"flex",alignItems:"center",gap:7,marginTop:first?(divider?0:2):(divider?30:18),marginBottom:divider?ROUTE_GAP:9,...(divider&&!first?{borderTop:"2px solid "+C.borderHi,paddingTop:16}:null)}}><span style={{width:3,height:14,borderRadius:2,background:C.blueSolid,flexShrink:0}}/><span role="heading" aria-level={2} style={{fontSize:13,fontWeight:800,color:C.text,letterSpacing:0.4,textTransform:"uppercase"}}>{children}</span>{_lv?<ConfChip level={_lv} label={children} onFlag={_cx.onFlag?function(){_cx.onFlag(_k,children);}:null}/>:null}{action?<span style={{marginLeft:"auto",display:"inline-flex",alignItems:"center",flexShrink:0}}>{action}</span>:null}</div>;};
 /* ONE LOOK FOR A CARD'S TITLE AND ONE FOR A LABEL INSIDE IT. The route page had 20 card titles in six
    colours of blue/red/green/teal/purple text and 8 in-card labels in three greys at three sizes, so no two
    cards read as one system — and a label at #8b949e over copy at #99a3ad could not be told from it. The
    title is now SL's look one size down (white, tracked, uppercase, a coloured bar), and the colour a card
    used to carry in its text survives as `tone` on the bar, so KNOWN HAZARDS still reads red at a glance. */
 const RSL=(p)=><SL divider {...p}/>;
-export const CardHead=({tone,children,style})=><div role="heading" aria-level={3} style={Object.assign({display:"flex",alignItems:"center",gap:7,minWidth:0,fontSize:12,fontWeight:800,color:C.text,letterSpacing:0.5,textTransform:"uppercase"},style)}><span aria-hidden="true" style={{width:3,height:12,borderRadius:2,background:tone||C.blueSolid,flexShrink:0}}/><span style={{minWidth:0}}>{children}</span></div>;
+export const CardHead=({tone,children,style})=>{const _cx=useContext(ConfidenceCtx);const _k=_cx&&_cx.levels?headKey(children):null;const _lv=_k?_cx.levels[_k]:null;return <div role="heading" aria-level={3} style={Object.assign({display:"flex",alignItems:"center",gap:7,minWidth:0,fontSize:12,fontWeight:800,color:C.text,letterSpacing:0.5,textTransform:"uppercase"},style)}><span aria-hidden="true" style={{width:3,height:12,borderRadius:2,background:tone||C.blueSolid,flexShrink:0}}/><span style={{minWidth:0}}>{children}</span>{_lv?<ConfChip level={_lv} label={children} compact onFlag={_cx.onFlag?function(){_cx.onFlag(_k,children);}:null}/>:null}</div>;};
 /* JUMP LINKS: one button per section the open tab ACTUALLY rendered, so the row cannot name a section this
    route lacks. Read off the DOM rather than kept as a per-tab list: the headings already are the page's
    outline (SL = aria-level 2, CardHead = 3), and a list beside them would drift the first time a section is
@@ -2992,7 +2993,7 @@ function _agreeSet(v){
   if(!Array.isArray(v))return _agreeJson(v);
   return "["+v.map(_agreeJson).slice().sort().join(",")+"]";
 }
-function sameEditValue(k,a,b){if(k==="waypoints"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;return a.every(function(w,i){return wpClose(w,b[i]);});}if(k==="pitchDetail"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;return a.every(function(p,i){var q=b[i]||{};return normEditStr(p.grade||"")===normEditStr(q.grade||"")&&normEditStr(p.gear||"")===normEditStr(q.gear||"")&&numsClose(p.lengthM||0,q.lengthM||0,0.1,3);});}if(NUM_FIELD_TOL[k])return numsClose(a,b,NUM_FIELD_TOL[k][0],NUM_FIELD_TOL[k][1]);/* NESTED numbers compare EXACTLY through _agreeJson, because JSON.stringify(4.8) and
+function sameEditValue(k,a,b){if(k==="waypoints"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;return a.every(function(w,i){return wpClose(w,b[i]);});}if(k==="pitchDetail"){if(!Array.isArray(a)||!Array.isArray(b)||a.length!==b.length)return false;/* Every key the pitch editor collects, not just three: two climbers who agree on the grade, gear and length but describe a different anchor or crux are not sending the same table (0307–0309: the owner's queue clusters on this). */return a.every(function(p,i){var q=b[i]||{};return normEditStr(p.grade||"")===normEditStr(q.grade||"")&&normEditStr(p.gear||"")===normEditStr(q.gear||"")&&numsClose(p.lengthM||0,q.lengthM||0,0.1,3)&&normEditStr(p.note||p.notes||"")===normEditStr(q.note||q.notes||"")&&normEditStr(p.anchor||"")===normEditStr(q.anchor||"")&&Number(p.bolts||0)===Number(q.bolts||0)&&!!p.crux===!!q.crux;});}if(NUM_FIELD_TOL[k])return numsClose(a,b,NUM_FIELD_TOL[k][0],NUM_FIELD_TOL[k][1]);/* NESTED numbers compare EXACTLY through _agreeJson, because JSON.stringify(4.8) and
    JSON.stringify(4.9) are different strings. NUM_FIELD_TOL only reaches top-level field keys, so
    an approach variant measured at 4.8 and 4.9 miles was two clusters for one walk — the precise
    thing pitchDetail already solves one branch up with numsClose on lengthM. A distance and a gain

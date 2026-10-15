@@ -1,5 +1,6 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
+import { openFlag, canFlag } from "./reportBus.js";
 import { createPortal } from "react-dom";
 import { Suspense, lazy, useEffect, useRef, useState } from "react";
 import { readPhotoFacts, photoFingerprint, photoEvidence } from "./photoEvidence";
@@ -172,7 +173,7 @@ export default function LogAscent({route,onClose,onSave,connections,crewMates,me
           return secs.map(function(sc,i){return sectionShell(i+1,sc[0],sc[1],sc[2],sc[3].filter(Boolean),sc[0]==="writeup"?reportRef:sc[0]==="approach"?roadRef:undefined);});
         })()}
       </div>
-      <div style={{padding:"12px 16px",borderTop:`1px solid ${C.border}`}}><button onClick={save} style={{width:"100%",padding:12,background:C.green,color:C.bg,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:11,fontSize:15,cursor:"pointer",fontWeight:700}}>{scout?"Report conditions":focus==="report"?"✓ Save report":"✓ Log it"}</button>{existing&&existing._idx!=null?<button onClick={()=>{askConfirm({title:"Delete this trip report?",body:"This can't be undone.",confirmLabel:"Delete trip report"}).then(function(ok){if(!ok)return;onDelete&&onDelete(existing._idx);onClose();});}} style={{width:"100%",marginTop:18,padding:11,background:"transparent",color:C.red,border:"1px solid "+C.red,boxSizing:"border-box",borderRadius:11,fontSize:13.5,cursor:"pointer",fontWeight:700}}>Delete trip report</button>:null}</div>
+      <div style={{padding:"12px 16px",borderTop:`1px solid ${C.border}`}}>{route&&route.id&&canFlag()?<button onClick={function(){openFlag({routeId:route.id,routeName:route.name||""});}} style={{width:"100%",marginBottom:10,padding:"8px 10px",background:"transparent",color:C.textSub,border:"1px dashed "+C.border,borderRadius:10,fontSize:12.5,cursor:"pointer"}}>{"⚑ Something on this route page is wrong? Flag it for ClimbMatch"}</button>:null}<button onClick={save} style={{width:"100%",padding:12,background:C.green,color:C.bg,border:"1px solid rgba(0,0,0,0.22)",boxSizing:"border-box",borderRadius:11,fontSize:15,cursor:"pointer",fontWeight:700}}>{scout?"Report conditions":focus==="report"?"✓ Save report":"✓ Log it"}</button>{existing&&existing._idx!=null?<button onClick={()=>{askConfirm({title:"Delete this trip report?",body:"This can't be undone.",confirmLabel:"Delete trip report"}).then(function(ok){if(!ok)return;onDelete&&onDelete(existing._idx);onClose();});}} style={{width:"100%",marginTop:18,padding:11,background:"transparent",color:C.red,border:"1px solid "+C.red,boxSizing:"border-box",borderRadius:11,fontSize:13.5,cursor:"pointer",fontWeight:700}}>Delete trip report</button>:null}</div>
     </div>
   </div>,document.body);
 }
