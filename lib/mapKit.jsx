@@ -281,6 +281,9 @@ export function applyBaseLayer(map, tileRef, baseLayer) {
   // itself, which its BSD licence does not require), so the tile credit gets its own control,
   // once per map. Leaflet then shows the ACTIVE layer's credit and swaps it with the layer.
   if (!map.__cmCredit) map.__cmCredit = L.control.attribution({ prefix: false, position: "bottomright" }).addTo(map);
+  // BaseLayerToggle's row sits at top-left (top:10, ~38px tall), exactly where Leaflet puts its
+  // +/- by default: the + was hidden under the first layer button. Drop the zoom below the row.
+  if (map.zoomControl && !map.__cmZoomMoved) { map.__cmZoomMoved = true; try { map.zoomControl.getContainer().style.marginTop = "56px"; } catch (e) {} }
   if (tileRef.current) { try { map.removeLayer(tileRef.current); } catch (e) {} }
   tileRef.current = baseTileLayer(L, baseLayer).addTo(map);
   fitZoomToLayer(map, baseLayer);
@@ -467,7 +470,9 @@ export function useFollowMe(mapRef, { C, zoom = 15, onFix } = {}) {
     if (hookedRef.current !== map) { hookedRef.current = map; dotRef.current = null; ringRef.current = null; map.on("dragstart", () => { autoRef.current = false; }); }
     const ll = [fix.lat, fix.lng], r = Number.isFinite(fix.acc) ? fix.acc : 50;
     if (dotRef.current) dotRef.current.setLatLng(ll);
-    else dotRef.current = L.circleMarker(ll, { radius: 7, color: "#ffffff", weight: 3, fillColor: C.green, fillOpacity: 1 }).addTo(map).bindTooltip("You are here", { direction: "top" });
+    // An HTML marker lifted above every other marker, not a circleMarker: vector shapes draw in the
+    // overlay pane UNDER all markers, so on the area map a cluster bubble over a city hid the dot.
+    else dotRef.current = L.marker(ll, { icon: L.divIcon({ html: "<div style='width:14px;height:14px;border-radius:50%;background:" + C.green + ";border:3px solid #fff;box-shadow:0 1px 5px rgba(0,0,0,0.6);'></div>", className: "", iconSize: [20, 20], iconAnchor: [10, 10] }), zIndexOffset: 5000, keyboard: false }).addTo(map).bindTooltip("You are here", { direction: "top" });
     if (ringRef.current) ringRef.current.setLatLng(ll).setRadius(r);
     else ringRef.current = L.circle(ll, { radius: r, color: C.green, weight: 1, fillColor: C.green, fillOpacity: 0.12, interactive: false }).addTo(map);
     if (first) map.setView(ll, Math.max(map.getZoom(), zoom));
