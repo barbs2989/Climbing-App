@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_iron_cap_mountain_south_route_2",
+  "last_processed_id": "wa_kangaroo_temple_north_face",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
-  "pass_note": "Ingalls Peak's South Ridge, Friends In High Places and North Peak Southwest Face, Inner Constance's three routes, Inspiration Peak's West Ridge, and Iron Cap Mountain's two stub routes all checked out or came back thin-sourced rather than contradicted -- zero confirmed errors. Flagged for human review: South Ridge's FA partner name (Rankin vs. Lankin, sources disagree) and Friends In High Places' entirely unindexed 2024 FA (could be real and simply undocumented online, or could be wrong -- can't tell from search); Inner Constance's Northwest Buttress (Hardee/Coffey 1983) and Sean's Route (Allen/Darragh 2021) FAs, neither findable in any indexed source, same ambiguity; Inner Constance's own elevation/prominence (area row's 7672ft/1162ft vs. Wikipedia's 7670ft/1150ft, the smaller figures already matching the routes' own high_point_ft -- too small/single-source to action); Inspiration Peak's West Ridge exact FA date (Aug 29 1940 -- party/route/year confirmed, the specific day isn't) and a genuine 5.6-vs-5.7 grade split between Wikipedia and Mountain Project/SummitPost. One self-consistency check resolved rather than left open: Inner Constance Standard Route's `corrections` field describes a past routeName/description mismatch ('via Crystal Pass' vs. the actual South Gully-East Ridge line) -- verified the route's current `name` column already reads the corrected form, so no SQL is needed; the corrections text is accurate history, not a live discrepancy. Iron Cap Mountain's 1925 Joe Hazard FA, elevation and prominence all independently confirmed against Wikipedia. Delegated to 4 parallel subagents, one per peak/group. WebSearch worked normally this run; WebFetch/direct curl to research-site domains was blocked by the outbound proxy with a 403 policy denial (not a DNS failure like recent prior runs) -- all findings rest on WebSearch snippets only.",
+  "pass_note": "Iron Peak's Standard Scramble, Jack Mountain's five routes, Johannesburg's three, and Kangaroo Temple's North Face all checked out or came back thin-sourced/ambiguous rather than contradicted; a live USFS fire-closure order overlapping the Jack Mountain approaches was flagged for human verification (see batch 413 note), not written as a SQL fix since its exact trail-level boundary couldn't be confirmed.",
   "batches": [
     {
       "batch_number": 1,
@@ -8233,6 +8233,26 @@
       "clean": 2,
       "note": "Ingalls Peak's South Ridge, Friends In High Places and North Peak Southwest Face, Inner Constance's three routes, Inspiration Peak's West Ridge, and Iron Cap Mountain's two stub routes all checked out or came back thin-sourced rather than contradicted -- zero confirmed errors. Flagged for human review: South Ridge's FA partner name (Rankin vs. Lankin, sources disagree) and Friends In High Places' entirely unindexed 2024 FA (could be real and simply undocumented online, or could be wrong -- can't tell from search); Inner Constance's Northwest Buttress (Hardee/Coffey 1983) and Sean's Route (Allen/Darragh 2021) FAs, neither findable in any indexed source, same ambiguity; Inner Constance's own elevation/prominence (area row's 7672ft/1162ft vs. Wikipedia's 7670ft/1150ft, the smaller figures already matching the routes' own high_point_ft -- too small/single-source to action); Inspiration Peak's West Ridge exact FA date (Aug 29 1940 -- party/route/year confirmed, the specific day isn't) and a genuine 5.6-vs-5.7 grade split between Wikipedia and Mountain Project/SummitPost. One self-consistency check resolved rather than left open: Inner Constance Standard Route's `corrections` field describes a past routeName/description mismatch ('via Crystal Pass' vs. the actual South Gully-East Ridge line) -- verified the route's current `name` column already reads the corrected form, so no SQL is needed; the corrections text is accurate history, not a live discrepancy. Iron Cap Mountain's 1925 Joe Hazard FA, elevation and prominence all independently confirmed against Wikipedia.",
       "tooling_note": "Delegated to 4 parallel subagents, one per peak/group. WebSearch worked normally this run; WebFetch/direct curl to research-site domains was blocked by the outbound proxy with a 403 policy denial (not a DNS failure like recent prior runs) -- all findings rest on WebSearch snippets only."
+    },
+    {
+      "batch_number": 413,
+      "date": "2026-10-15",
+      "route_ids": [
+        "wa_iron_peak_teanaway_scramble",
+        "wa_jack_mountain_east_ridge",
+        "wa_jack_mountain_nohokomeen_headwall",
+        "wa_jack_mountain_northeast_glacier",
+        "wa_jack_mountain_south_face",
+        "wa_jack_mountain_southeast_ridge_direct",
+        "wa_johannesburg_mountain_cj_couloir",
+        "wa_johannesburg_mountain_northeast_buttress",
+        "wa_johannesburg_mountain_northeast_rib_1951_route",
+        "wa_kangaroo_temple_north_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 3,
+      "clean": 7,
+      "note": "Iron Peak's Standard Scramble, Jack Mountain's five routes (East Ridge, Nohokomeen Headwall, Northeast Glacier, South Face, Southeast Ridge Direct), Johannesburg's three (CJ Couloir, Northeast Buttress, Northeast Rib 1951), and Kangaroo Temple's North Face all checked out against external sources -- zero confirmed errors. Strong independent matches: Jack Mountain's shared 9075ft (exact match to Wikipedia's NAVD88 figure; the row's own data_quality note on the 9066-9075ft source split already flags this honestly), Johannesburg's shared 8200ft, Iron Peak's 6510ft (exact match, SummitPost/Mountaineers), the CJ Couloir's FA (Bressler/Cox/Clough/Myers, July 26 1938 -- exact match to Wikipedia, which also credits this as the peak's own first ascent, same as the row's annotation), and Kangaroo Temple North Face's FA (Crain/Gordon/McGowan/Miller, 1954 -- exact match to Mountain Project). One access-safety lead, not fixed: the USFS has an active Ptarmigan Fire closure order (Sept 9-Oct 31, 2026, ~20 Pasayten trails, reduced in scope once in September) overlapping the climbing season for all four Jack Mountain routes approached via Canyon Creek Trailhead/Jackita Ridge Trail #738 -- none of their access/road/closures fields mention it (only the older bridge-washout and winter SR-20 gate), and search couldn't confirm whether #738 itself falls inside the current (narrowed) closure boundary, so flagged for human verification against the live USFS alert page rather than guessed at. Also flagged, not fixed: the Northeast Glacier (Beckey/Kloke/Tindall, 1978) and Southeast Ridge Direct (Anderson/Kearney, 1977) FA attributions are specific and guidebook-plausible but unconfirmable in any indexed source; and Johannesburg's Northeast Buttress FA ('1957, party not recorded') has its year loosely corroborated but the Buttress-vs-Rib naming for that 1957 line is ambiguous against a source that reserves the 1951 route's own name for a different rib."
     }
   ]
 }

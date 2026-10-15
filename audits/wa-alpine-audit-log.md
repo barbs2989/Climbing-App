@@ -32252,4 +32252,61 @@ failed, response 403` against en.wikipedia.org) rather than the DNS
 failures logged in recent prior runs — still effectively no direct-fetch
 access; every finding above rests on WebSearch snippets only.
 
+---
+
+## Batch 413 — 2026-10-15 (pass 7)
+
+**Iron Peak (Teanaway) — Standard Scramble.** Elevation (6510ft) is an exact
+match to SummitPost and The Mountaineers; the row's own `corrections` note
+("straightforward non-technical scramble; no gear list published") matches
+how WTA/Mountaineers describe it. Clean.
+
+**Jack Mountain — East Ridge, Nohokomeen Glacier and Headwall, Northeast
+Glacier, South Face/Southeast Ridge, Southeast Ridge (Direct).** All five
+share the same stored summit elevation (9075ft) — an exact match to
+Wikipedia's NAVD88 figure (other sources cluster around 9066ft; the South
+Face route's own `data_quality.gaps` already discloses this split honestly,
+so not a fresh finding). East Ridge's FA (Carl & Gordon Skoog, July 16 1984)
+and South Face's SR-20/Pasayten/NPS permit structure both read as
+internally consistent and plausible but turned up no indexed corroboration
+either way. Northeast Glacier's FA (Beckey/Kloke/Tindall, 1978) and
+Southeast Ridge Direct's FA (Anderson/Kearney, 1977) are specific,
+guidebook-plausible, and unconfirmable in any source this search reached —
+flagged, not touched, same ambiguity as prior batches' undocumented new
+routes. One live access lead, not fixed: all four routes approached via the
+Canyon Creek Trailhead/Jackita Ridge Trail #738 cite only the (older,
+already-documented) destroyed bridge and the winter SR-20 gate — none
+mention the active USFS Ptarmigan Fire closure order (Sept 9–Oct 31, 2026,
+~20 Pasayten-area trails, narrowed once already in September). Search could
+not pin down whether #738 itself sits inside the current, reduced closure
+boundary, so this is flagged for a human to check the live Okanogan-
+Wenatchee alert page before anyone climbs these in the next two weeks,
+rather than guessed at either way.
+
+**Johannesburg Mountain — Cascade-Johannesburg Couloir (East Ridge),
+Northeast Buttress, Northeast Rib (1951 Route).** All three share 8200ft,
+matching Wikipedia/PeakVisor's "8,200+ ft" figure. The CJ Couloir's FA
+(Calder Bressler, Bill Cox, Ray Clough, Tom Myers — July 26, 1938) is an
+exact match to Wikipedia, which credits the same party/date as the
+mountain's own first ascent — exactly what the row's own annotation
+("also the peak's first ascent") claims. Northeast Buttress's FA ("1957,
+party not recorded") has its year loosely corroborated by an AAC article
+distinguishing a "1957 Northeast Rib" from the 1951 route, but naming is
+ambiguous across sources (a Stephabegg trip report reserves "1951 Route"
+as the title for the *other* rib specifically) — flagged for a human with
+Beckey's guide in hand, not treated as a contradiction since the row
+already separates the two routes correctly.
+
+**Kangaroo Temple — North Face.** FA (Crain, Gordon, McGowan & Miller,
+1954) is an exact match to Mountain Project. Rappel count/anchors (3 raps,
+chain stations) match Mountaineers.org/SummitPost's general description.
+Clean; summit elevation (7572ft) has only a single community source
+(SummitPost) backing it, no official survey found — too thin to action
+either way.
+
+**Confirmed errors this batch: 0.** No SQL file. 7 routes clean outright,
+3 FA/naming items flagged for human review, plus the Jack Mountain fire-
+closure access gap flagged separately above (safety-relevant, time-
+sensitive, but not resolvable to a specific SQL fix from search alone).
+
 Pass 7 continues next run after `wa_iron_cap_mountain_south_route_2`.
