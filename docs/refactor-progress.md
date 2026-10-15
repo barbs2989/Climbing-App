@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR5 | `TrustBadge` | `ClimbMatchCore.jsx` | consumers `ClimbMatch.jsx`, `lib/CrewCard.jsx`, `lib/PartnerSearch.jsx`, `lib/ShareCard.jsx`, `lib/TripReport.jsx` AND core itself (`FullProfile`, `Resume`), so core imports it back; `check:profile-claims` reads its tooltip through the stitch, so the title stays a plain string beside the function keyword |
 | PR4 | `DiscBadges` | `ClimbMatchCore.jsx` | consumers `lib/Calendar.jsx`, `lib/GiveVouch.jsx`; imports `DiscBadge` from its own folder; core does NOT use it, so no cycle this time |
 | PR3 | `DiscBadge` | `ClimbMatchCore.jsx` | consumers `ClimbMatch.jsx`, `lib/PartnerSearch.jsx` AND core itself (`DiscBadges`), so core imports it back; `DiscIcon` got its JSDoc seam; `readParentSource()` now drops a parent's own import of a moved file before stitching |
 
@@ -57,9 +58,17 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR4 — `DiscBadges`.** Next candidate, by the same measurement (small,
-pure, no guard names it): `HelpDot` (`ClimbMatch.jsx`). A parent that still uses what it extracted
+Last session stopped at: **PR5 — `TrustBadge`.** (`HelpDot`, named here before, no longer exists: the
+"?" buttons went in #2430. **Grep for the definition before starting a candidate.**) Next candidates,
+by the same census (top-level definition in core band 2; `<Name` uses per file; guards naming it):
+`Lbl` (one line, 11 consumers, 2 guards), `CountUp` (8 lines, 4 consumers, 5 guards incl.
+`scripts/lib/render-settle.mjs`). `Pill` (30 uses across 9 files, two of them already `.tsx`) and
+`ActionIcon` (6 KB, 5 guards) are the big ones — last. A parent that still uses what it extracted
 imports the new file back — a cycle, and an accepted one: the parent's import is dropped by the
 stitch, and the component reads the parent's exports at render time only. A component that renders
-another extracted component imports it from its own folder (`./DiscBadge.tsx`), not through the parent. `TrustBadge`, `Pill` and `ActionIcon` are named by 1–5 guards each — do them
-after the reach measurement has proven itself on the easy ones.
+another extracted component imports it from its own folder (`./DiscBadge.tsx`), not through the parent.
+A guard that matches the component's TEXT (`check:profile-claims` on `TrustBadge`'s tooltip) still sees
+it through the stitch, but only if the moved body keeps the shape the regex expects — read the guard,
+and do NOT quote its anchor in the component's JSDoc: the regex matched the comment before the code
+(PR5 caught `title="…"` as the tooltip). Oneoff probes that bundle core and destructure the moved
+export off it break too (`probe-trust-tiers-onscreen.mjs`, PR5) — grep `scripts/oneoff` for the name.

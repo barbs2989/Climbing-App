@@ -1,7 +1,8 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { useState } from "react";
-import { Av, C, HERO_BG, HERO_SHEEN, TrustBadge, pubName, useRealTrustScore, vScore } from "../ClimbMatchCore.jsx";
+import { Av, C, HERO_BG, HERO_SHEEN, pubName, useRealTrustScore, vScore } from "../ClimbMatchCore.jsx";
+import TrustBadge from "../src/components/TrustBadge.tsx";
 import { POP_CLOSE } from "./popupChrome.js";
 
 export default function ShareCard({climber,selfUid,onClose,logsUnavailable,catchesUnavailable}){

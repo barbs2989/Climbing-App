@@ -20,24 +20,28 @@ import { renderToStaticMarkup } from "react-dom/server";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const out = path.join(ROOT, `.trusttierprobe-${process.pid}.mjs`);
-const clean = () => fs.rmSync(out, { force: true });
+// TrustBadge lives in src/components/ since PR5 of the component extraction (core imports it back),
+// so the bundle entry re-exports core AND the component — bundling core alone no longer exports it.
+const entry = path.join(ROOT, `.trusttierprobe-entry-${process.pid}.mjs`);
+const clean = () => { fs.rmSync(out, { force: true }); fs.rmSync(entry, { force: true }); };
 
 let failures = 0, cases = 0;
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { console.log("  FAIL  " + m); failures++; };
 const dead = (what) => { console.error(`\nprobe FAILED — ${what}. Nothing below was checked.\n`); clean(); process.exit(1); };
 
+fs.writeFileSync(entry, 'export * from "./ClimbMatchCore.jsx";\nexport { default as TrustBadge } from "./src/components/TrustBadge.tsx";\n');
 try {
-  execFileSync("npx", ["esbuild", path.join(ROOT, "ClimbMatchCore.jsx"),
+  execFileSync("npx", ["esbuild", entry,
     "--bundle", "--format=esm", "--platform=node", "--jsx=automatic",
     "--define:import.meta.env={}",
     "--external:react", "--external:react-dom", "--external:@tanstack/react-query",
     "--log-level=error", "--outfile=" + out], { cwd: ROOT, stdio: ["ignore", "ignore", "inherit"] });
-} catch { dead("esbuild could not bundle ClimbMatchCore.jsx"); }
+} catch { dead("esbuild could not bundle ClimbMatchCore.jsx + src/components/TrustBadge.tsx"); }
 
 const mod = await import(out + "?t=" + Date.now());
 const { TrustBadge, TRUST_TIERS, TRUST_GOAL, SERVER_TRUST_EARNABLE, serverTrustScore } = mod;
-if (typeof TrustBadge !== "function") dead("ClimbMatchCore.jsx does not export TrustBadge — ANCHOR LOST");
+if (typeof TrustBadge !== "function") dead("src/components/TrustBadge.tsx has no default export TrustBadge — ANCHOR LOST");
 if (!Array.isArray(TRUST_TIERS) || TRUST_TIERS.length < 3) dead("TRUST_TIERS did not load");
 
 const draw = (score) => renderToStaticMarkup(React.createElement(TrustBadge, { score }));
@@ -96,8 +100,13 @@ else {
 // it is asserted as SOURCE rather than rendered — stated rather than implied, because the AST test
 // in check:trust-breakdown proves no second ladder exists and this proves this site reads the first.
 cases++;
+// The body of FullProfile runs from its declaration to the next top-level declaration; the literal
+// `_tt=trustTier(ts),tcol=...` this used to match was re-shaped into inline `trustTier(ts).color`
+// calls, and this probe sat red on main until PR5 of the component extraction re-ran it.
 const core = fs.readFileSync(path.join(ROOT, "ClimbMatchCore.jsx"), "utf8");
-if (!/_tt=trustTier\(ts\),tcol=_tt\.color,tlbl=_tt\.label/.test(core)) {
+const fpStart = core.search(/^function FullProfile\(/m);
+const fpBody = fpStart < 0 ? "" : core.slice(fpStart).split("\n").slice(1).reduce((acc, l) => acc.done ? acc : (/^(function|const|let|export) /.test(l) ? { ...acc, done: true } : { ...acc, s: acc.s + "\n" + l }), { s: core.slice(fpStart).split("\n")[0], done: false }).s;
+if (fpStart < 0 || !/\btrustTier\(ts\)/.test(fpBody)) {
   fail("FullProfile does not resolve its tier through trustTier — it used to carry a second copy of the ladder");
 } else ok("FullProfile reads the shared ladder");
 
