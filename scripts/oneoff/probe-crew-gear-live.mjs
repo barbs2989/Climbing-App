@@ -155,7 +155,7 @@ try {
   let ms = await until(async () => (await status(B, "Rope")).length > 0);
   ok("...and appears in the MATE's browser with no reload", ms >= 0, ms >= 0 ? `${ms} ms` : (await cardText(B)).slice(-400));
   ok("...because the owner's browser pinged the crew channel", pings > p0, `${pings - p0} ping(s)`);
-  await card(B).getByRole("button", { name: "I'm bringing Rope" }).click();
+  await card(B).getByRole("button", { name: "I'll bring it: Rope" }).click(); // the label lib/CrewGearList.jsx gives the claim button
   ok("mate taps I'll bring it: their own row says Bringing: You", (await until(async () => (await status(B, "Rope")).some((s) => /Bringing: You/.test(s)), 8000)) >= 0, JSON.stringify(await status(B, "Rope")));
   ms = await until(async () => (await status(A, "Rope")).some((s) => /Bringing: Robin/.test(s)));
   ok("...and the OWNER's browser shows Bringing: Robin, no reload", ms >= 0, ms >= 0 ? `${ms} ms` : JSON.stringify(await status(A, "Rope")));
