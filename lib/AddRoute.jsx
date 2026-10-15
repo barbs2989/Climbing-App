@@ -6,7 +6,8 @@ import { clickable } from "./clickable";
 import { submitContribution, useAreaChildren, useRouteSearch } from "./db";
 import { searchMatches } from "./search";
 import { useCallback, useMemo, useState } from "react";
-import { ADDR_COMMIT, ADDR_GRADES, ADDR_HAZ, ADDR_STYLE, C, CAT, DISC, DbAreaPicker, DiscIcon, ItineraryEditor, Lbl, MOUNTAINS, ROUTES, areaPathNames, blankItinDay, fuzzyMatch, hlMatch, itinDraftToStructured, seedRoutesOn, uImp } from "../ClimbMatchCore.jsx";
+import { ADDR_COMMIT, ADDR_GRADES, ADDR_HAZ, ADDR_STYLE, C, CAT, DISC, DbAreaPicker, DiscIcon, ItineraryEditor, MOUNTAINS, ROUTES, areaPathNames, blankItinDay, fuzzyMatch, hlMatch, itinDraftToStructured, seedRoutesOn, uImp } from "../ClimbMatchCore.jsx";
+import Lbl from "../src/components/Lbl.tsx";
 import { POP_CLOSE, POP_REMOVE_MEDIA } from "./popupChrome.js";
 
 export default function AddRoute({onClose,defaultArea,defaultAreaName,dbAreaId,session,onSubmit,onAddRoute}){
