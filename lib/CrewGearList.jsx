@@ -4,8 +4,11 @@
 // as `gearExtras` (the typed items) and `gearClaims` ({item: [climber ids]}). For a signed-in crew
 // both are per-member columns, and every write is ONE item (0289): add_crew_gear_item,
 // remove_crew_gear_item (off the list for the whole crew), and assign_crew_gear for any member's
-// claim. You can only remove an item you added (`_myGearExtras`), in any capitals. The list stays
-// live: a crewmate's write pings this crew's channel and the card refetches (useCrewGearSync).
+// claim -- since 0291 only for a confirmed crewmate or yourself, and only on an item that is on the
+// list. You can only remove an item you added (`_myGearExtras`), in any capitals. ClimbMatch runs a
+// crew's writes in order, one patch at a time, so an item reaches the list before anyone claims it.
+// The list stays live: a crewmate's write pings this crew's channel and the card refetches
+// (useCrewGearSync).
 import { useEffect, useState } from "react";
 import { C } from "../ClimbMatchCore.jsx";
 import { useCrewGearSync } from "./db";
@@ -79,27 +82,26 @@ export default function CrewGearList({ crew, roster, onUpdateCrew }) {
       const names = who(g);
       const my = has(g, 0);
       const open = assigning === g;
+      /* One row: the item and who is bringing it, then the row's controls side by side -- "I'll bring it",
+         Assign (only when there is a confirmed crewmate to assign it to) and remove. "Nobody yet" is said
+         HERE and nowhere else; the header's "N of M covered" is the count, so no footer repeats it. */
       return <div key={g} style={{ padding: "6px 0", borderTop: "1px solid " + C.borderLight }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: 13, color: C.text, overflowWrap: "anywhere" }}>{g}</div>
-            <div style={{ fontSize: 11.5, color: names.length ? C.green : C.amber, fontWeight: 700 }}>{names.length ? "Bringing: " + names.join(", ") : "Nobody yet"}{canRemove(g) ? null : <span style={{ color: C.textMuted, fontWeight: 400 }}>{" · added by a crewmate"}</span>}</div>
+            <div style={{ fontSize: 11.5, color: names.length ? C.green : C.textMuted, fontWeight: names.length ? 700 : 400 }}>{names.length ? "Bringing: " + names.join(", ") : "Nobody yet"}{canRemove(g) ? null : <span style={{ color: C.textMuted, fontWeight: 400 }}>{" · added by a crewmate"}</span>}</div>
           </div>
-          <button onClick={() => toggle(g, 0)} aria-pressed={my} aria-label={"I'm bringing " + g} style={{ flexShrink: 0, minHeight: 44, padding: "8px 11px", borderRadius: 9, border: "1px solid " + (my ? C.green : C.border), background: my ? C.greenBg : C.surface, color: my ? C.green : C.textSub, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{my ? <span aria-hidden="true">{"✓ "}</span> : null}{"I'll bring it"}</button>
+          <button onClick={() => toggle(g, 0)} aria-pressed={my} aria-label={"I'll bring it: " + g} style={{ flexShrink: 0, minHeight: 44, padding: "8px 10px", borderRadius: 9, border: "1px solid " + (my ? C.green : C.border), background: my ? C.greenBg : C.surface, color: my ? C.green : C.textSub, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{my ? <span aria-hidden="true">{"✓ "}</span> : null}{"I'll bring it"}</button>
+          {others.length ? <button onClick={() => setAssigning(open ? null : g)} aria-expanded={open} aria-label={open ? "Done assigning " + g : "Assign " + g + " to a crewmate"} style={{ flexShrink: 0, minHeight: 44, padding: "8px 10px", borderRadius: 9, border: "1px solid " + (open ? C.blueDim : C.border), background: open ? C.blueBg : C.surface, color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Done" : "Assign"}</button> : null}
           {canRemove(g) ? <button onClick={() => remove(g)} aria-label={"Remove " + g} title={"Remove " + g} style={POP_REMOVE}>✕</button> : null}
         </div>
-        {others.length ? <div style={{ marginTop: 2 }}>
-          <button onClick={() => setAssigning(open ? null : g)} aria-expanded={open} aria-label={"Assign " + g + " to a crewmate"} style={{ minHeight: 32, padding: "4px 0", background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{open ? "Done assigning" : "Assign to a crewmate"}</button>
-          {open ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, padding: "2px 0 4px" }}>{others.map(p => {
-            const on = has(g, p.id);
-            return <button key={String(p.id)} onClick={() => toggle(g, p.id)} aria-pressed={on} style={{ minHeight: 36, padding: "6px 11px", borderRadius: 18, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : C.surface, color: on ? C.green : C.textSub, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{on ? <span aria-hidden="true">{"✓ "}</span> : null}{nameOf(p.id)}</button>;
-          })}</div> : null}
-        </div> : null}
+        {open ? <div style={{ display: "flex", flexWrap: "wrap", gap: 6, padding: "6px 0 2px" }}>{others.map(p => {
+          const on = has(g, p.id);
+          return <button key={String(p.id)} onClick={() => toggle(g, p.id)} aria-pressed={on} style={{ minHeight: 44, padding: "6px 13px", borderRadius: 22, border: "1px solid " + (on ? C.green : C.border), background: on ? C.greenBg : C.surface, color: on ? C.green : C.textSub, fontSize: 12, fontWeight: 700, cursor: "pointer" }}>{on ? <span aria-hidden="true">{"✓ "}</span> : null}{nameOf(p.id)}</button>;
+        })}</div> : null}
       </div>;
     })}
-    {items.length && !unclaimed ? <div style={{ fontSize: 11.5, fontWeight: 700, color: C.green, margin: "8px 0 2px" }}>Everything on the list has someone bringing it.</div> : null}
-    {unclaimed ? <div style={{ fontSize: 11.5, fontWeight: 700, color: C.amber, margin: "8px 0 2px" }}>{unclaimed + (unclaimed === 1 ? " item has" : " items have") + " nobody bringing it yet."}</div> : null}
-    {undo ? <div role="status" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, fontSize: 12, color: C.textSub, margin: "8px 0 2px" }}><span style={{ overflowWrap: "anywhere" }}>{"Removed “" + undo.item + "”."}</span><button onClick={restore} style={{ minHeight: 36, padding: "4px 10px", background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Undo</button></div> : null}
+    {undo ? <div role="status" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, fontSize: 12, color: C.textSub, margin: "8px 0 2px" }}><span style={{ overflowWrap: "anywhere" }}>{"Removed “" + undo.item + "”."}</span><button onClick={restore} style={{ minHeight: 44, padding: "4px 12px", background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>Undo</button></div> : null}
     <div style={{ display: "flex", gap: 6, marginTop: 10 }}>
       <input aria-label="Add a gear item for this crew" value={newItem} maxLength={MAX_ITEM} enterKeyHint="done" onChange={e => { setNewItem(e.target.value); if (note) setNote(""); }} onKeyDown={e => { if (e.key === "Enter") add(); }} placeholder="Add an item…" style={{ flex: 1, minWidth: 0, boxSizing: "border-box", minHeight: 44, padding: "8px 10px", borderRadius: 8, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16, outline: "none" }} />
       <button onClick={add} disabled={!newItem.trim()} style={{ minHeight: 44, padding: "8px 14px", borderRadius: 8, border: "1px solid " + (newItem.trim() ? C.blueDim : C.border), background: newItem.trim() ? C.blueBg : C.surface, color: newItem.trim() ? C.blue : C.textMuted, fontSize: 12.5, fontWeight: 700, cursor: newItem.trim() ? "pointer" : "default" }}>Add</button>

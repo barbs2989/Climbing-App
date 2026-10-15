@@ -409,18 +409,48 @@ else fail("a Campsite waypoint does not reach CAMPING & BIVY — the two stores 
     { name: "Side Bivy", role: "route" }, { name: "Base Camp Alpha", role: "main" }, { name: "Loose Site" },
   ];
   const t = text(render(route("alpine", { bivy: sorted }), "planner"));
-  const iM = t.indexOf("WHERE MOST PARTIES SLEEP"), iO = t.indexOf("OTHER OPTIONS");
-  if (iM >= 0 && iO > iM) ok("sorted sites render WHERE MOST PARTIES SLEEP, then OTHER OPTIONS");
-  else fail(`group headings missing or out of order (main ${iM}, other ${iO})`);
+  const iM = t.indexOf("WHERE MOST PARTIES SLEEP"), iO = t.indexOf("OTHER OPTIONS"), iU = t.indexOf("NOT YET SORTED");
+  if (iM >= 0 && iO > iM && iU > iO) ok("sorted sites render WHERE MOST PARTIES SLEEP, then OTHER OPTIONS, then NOT YET SORTED");
+  else fail(`group headings missing or out of order (main ${iM}, other ${iO}, unsorted ${iU})`);
+  /* A site with NO role must not sit under OTHER OPTIONS: that group's blurb ("a slower pace, bad
+     weather or an emergency") is a researched claim about the `route` role, and #2339 briefly filed
+     every unsorted site under it. */
   const a = t.indexOf("Base Camp Alpha"), b = t.indexOf("Side Bivy"), c = t.indexOf("Loose Site");
-  if (a > iM && a < iO && b > iO && c > iO) ok("each site renders under its own group");
-  else fail("a site rendered under the wrong group");
+  if (a > iM && a < iO && b > iO && b < iU && c > iU) ok("each site renders under its own group, an unsorted one under NOT YET SORTED");
+  else fail("a site rendered under the wrong group (an unsorted site under OTHER OPTIONS reads as a researched fallback)");
+  const g3 = campGroups([{ name: "Main", role: "main", sorted: true }, { name: "Loose" }]);
+  if (g3.length === 2 && g3[1].key === "unsorted" && !/weather|emergency|slower/i.test(g3[1].blurb)) ok("the unsorted group's blurb claims no use the row does not record");
+  else fail("an unsorted site is grouped with, or described like, the researched fallbacks: " + JSON.stringify(g3.map((x) => [x.key, x.blurb])));
   const flat = text(render(route("alpine", { bivy: [SITE, { name: "Other Place" }] }), "planner"));
-  if (!/WHERE MOST PARTIES SLEEP|OTHER OPTIONS/.test(flat)) ok("an unsorted list renders flat, with no group headings");
+  if (!/WHERE MOST PARTIES SLEEP|OTHER OPTIONS|NOT YET SORTED/.test(flat)) ok("an unsorted list renders flat, with no group headings");
   else fail("an unsorted list was given group headings");
   const g = campGroups([{ name: "Pin", role: "route", onTrack: true }]);
   if (g.length === 1 && g[0].title === null) ok("a Campsite pin's default role alone does not trigger grouping");
   else fail("a pin's default role triggered grouping on an unsorted route");
+}
+
+// ── 12a. The contribute form's ROLE options name the groups a site will land in. They read "Main
+//    camp" / "On the route" while the page said WHERE MOST PARTIES SLEEP / OTHER OPTIONS, so a
+//    climber chose one vocabulary and found their camp filed under another. Read from the source:
+//    the form is a modal a static render of the route page does not open.
+{
+  const src = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
+  const sel = src.match(/aria-label=\{"Site "\+\(idx\+1\)\+" role"\}[\s\S]*?<\/select>/);
+  if (!sel) { fail("ANCHOR LOST: the camping form's role <select> is gone or renamed — its labels were not checked"); }
+  else {
+    const opts = Object.fromEntries([...sel[0].matchAll(/<option value="([^"]*)">\{"([^"]*)"\}<\/option>/g)].map((m) => [m[1], m[2]]));
+    const titleOf = (role) => { const gs = campGroups([{ name: "x", role, sorted: !!role }, { name: "y", role: "main", sorted: true }]); const hit = gs.find((x) => x.sites.some((s) => s.b.name === "x")); return hit ? hit.title : null; };
+    const stems = (s) => String(s || "").toLowerCase().match(/[a-z]+/g).map((w) => w.replace(/s$/, ""));
+    for (const role of ["main", "route"]) {
+      const title = titleOf(role), label = opts[role];
+      if (!label) fail(`the camping form offers no "${role}" role option`);
+      else if (!title) fail(`campGroups files a "${role}" site under no group`);
+      else if (stems(title).every((w) => stems(label).includes(w))) ok(`the form's "${role}" option ("${label}") names the group it lands in (${title})`);
+      else fail(`the form's "${role}" option reads "${label}" but the site is shown under ${title}`);
+    }
+    if (opts[""] != null) ok(`the form keeps an unsorted choice ("${opts[""]}"), shown under ${titleOf("")}`);
+    else fail("the camping form lost its unsorted / not-sure role option");
+  }
 }
 
 // ── 12b. A role:"hidden" stub hides the same-named Campsite PIN from the list, and itself.

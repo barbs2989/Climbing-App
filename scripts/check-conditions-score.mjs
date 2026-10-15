@@ -30,7 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk } from "../lib/conditionsScore.js";
+import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -197,6 +197,26 @@ console.log("check:conditions-score");
   const hW = at(sW, 12);
   if (hW && hW.dryFrac < 0.3 && hW.stars <= 1 && hW.caps.some((c) => /wet/i.test(c.why))) ok(`an hour after a soaking the rock is ${Math.round(hW.dryFrac * 100)}% dried and the hour is capped at 1 star`);
   else fail(`still-wet rock was not capped: dryFrac ${hW && hW.dryFrac}, stars ${hW && hW.stars}`);
+  // ...and rock that is drying but NOT yet dry can never read "Good". One cap at 30% was the whole
+  // rule, so the hour the card called "about 50% dry" scored 4.3 stars in green (Exit 38, 2026-10-18).
+  {
+    const drying = [];
+    for (const amt of [0.02, 0.2, 0.8]) for (const at0 of [60, 66, 72, 78]) for (const x of scoreForecast(fixture({ rainAt: [at0], rainAmt: amt }), WALL, null, NOW).days.flatMap(function (d) { return d.all; })) if (!x.factors.dry || !x.factors.dry.raining) drying.push(x);
+    const band = function (f) { for (const b of WET_BANDS) if (f < b[0]) return b; return null; };
+    const bad = drying.filter(function (x) { const b = x.dryFrac == null ? null : band(x.dryFrac); return b && !x.factors.dry.atLeast && (x.stars > b[1] + 1e-9 || starsLabel(x.stars) === "Good" || !x.caps.some((c) => /rock .*(wet|drying|damp)/i.test(c.why))); });
+    const mid = drying.filter(function (x) { return x.dryFrac >= 0.3 && x.dryFrac < 1; });
+    const dry = drying.filter(function (x) { return x.dryFrac === 1; });
+    if (!bad.length && mid.length >= 10 && dry.some((x) => starsLabel(x.stars) === "Good")) ok(`${mid.length} hours of drying rock (30–99% dry) are held to ${WET_BANDS[1][1]} / ${WET_BANDS[2][1]} stars, none reads Good; dry rock still can`);
+    else fail(`drying rock read too high: ${bad.slice(0, 3).map((x) => Math.round(x.dryFrac * 100) + "% dry -> " + x.stars.toFixed(2) + " " + x.caps.map((c) => c.why)).join("; ")} (mid ${mid.length}, dry Good ${dry.some((x) => starsLabel(x.stars) === "Good")})`);
+  }
+  // DRY_RATE (sped up 2026-10-15, fitted to CragReport): a damp or humid hour dries SLOWER than a plain
+  // one but never stops (0 at the dew point stalled a whole Northwest night), and night is never faster
+  // than day — the fit wanted that, and it is not physical.
+  {
+    const k = DRY_RATE;
+    if (k.damp > 0 && k.damp <= k.rh90 && k.rh90 <= k.rh75 && k.rh75 <= 1 && k.night <= 1 && k.rhDry >= 1 && k.sun >= 1 && k.wind >= 1) ok(`drying rates are ordered: dew point ${k.damp} ≤ 90% RH ${k.rh90} ≤ 75% RH ${k.rh75} ≤ 1, night ${k.night} ≤ day`);
+    else fail(`drying rates out of order: ${JSON.stringify(k)}`);
+  }
   // Drizzle: Open-Meteo reports 0.1 mm steps (0.004"); `>= 0.01` used to throw it away.
   const sD = scoreForecast(fixture({ rainAt: [84], rainAmt: 0.004 }), WALL, null, NOW);
   const hD = at(sD, 12);
@@ -327,6 +347,10 @@ console.log("check:conditions-score");
   else fail("a range handle lost its name, its keyboard, or its touch-action");
   if (/const THUMB = 28, HIT = 44;/.test(slider) && /width: HIT, height: HIT/.test(slider)) ok("each handle's touch target is 44 px (Apple's guideline; WCAG 2.2 AA asks 24) around a 28 px visible circle");
   else fail("a range handle's touch target fell below 44 px");
+  // Pushed together at the top of the scale, a fixed "high on top" left every touch on the high handle, which
+  // cannot go further right: the low one was stuck and the range could not be widened again.
+  if (/const loOnTop = \(pos\(lo\) \+ pos\(hi\)\) \/ 2 > 50;/.test(slider) && /zIndex: which === "lo" \? \(loOnTop \? 4 : 2\) : 3/.test(slider)) ok("two handles pushed together stay movable: past the middle the LOW handle is on top (its free direction is left)");
+  else fail("the range handles no longer swap which is on top past the middle — two handles pushed together at the top of the scale strand the low one");
   if (/const snapTemp = function \(f\) \{ return uTempIn\(uTempN\(f\)\); \}/.test(prefs) && /snapWind/.test(prefs) && /fmt=\{uTemp\}/.test(prefs) && /fmt=\{uWind\}/.test(prefs)) ok("the handles snap to a number the climber can SEE (whole degrees C when metric) and the stored value stays deg F / mph");
   else fail("a range handle no longer snaps through the unit helpers");
   const covered = (fs.readFileSync(path.join(ROOT, "lib/conditionsScore.js"), "utf8").match(/CRAG_SCORE_DISCIPLINES = (\[[^\]]*\])/) || [])[1];
@@ -428,13 +452,14 @@ console.log("check:conditions-score");
   const rd = fs.readFileSync(path.join(ROOT, "RouteDetail.jsx"), "utf8");
   const card = (rd.replace(/\/\*[\s\S]*?\*\//g, "").match(/function ConditionsScoreCard\([\s\S]*?\n}\n/) || [""])[0];
   const chart = (rd.match(/function HourChartCard\([\s\S]*?\n}\n/) || [""])[0] + (rd.match(/function HourlyChart\([\s\S]*?\n}\n/) || [""])[0];
-  const need = ["Day by day", "Hour by hour", "All 7 days", "Shade map", "<ShadeMap ", "Cloud cover", "feels like ", " from the ", "Rain not measured", "A trace of rain"];
+  const need = ["Day by day", "Hour by hour", "Day for the hourly charts", "Shade map", "<ShadeMap ", "Cloud cover", "feels like ", " from the ", "Rain not measured", "A trace of rain"];
   const lost = need.filter((s) => !card.includes(s));
-  if (!lost.length) ok(`the card renders day by day, hour by hour (a day or all 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
+  if (card.includes("All 7 days")) fail("the hourly charts offer an \"All 7 days\" view again (owner, 2026-10-14: pick ONE day of the next 7, its hours below)");
+  if (!lost.length) ok(`the card renders day by day, hour by hour (one picked day of the 7), cloud cover, feels-like, wind direction and the shade map (${need.length} anchors)`);
   else fail(`the card lost: ${lost.join(" | ")}`);
-  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "week"];
+  const chartNeed = ['"Rain amount ("', '"Chance of rain and cloud cover"', '"Humidity"', '"Wind and gusts"', "name:\"Feels\"", "windArrows", "Pick an hour"];
   const cLost = chartNeed.filter((s) => !chart.includes(s));
-  if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for a day or the week");
+  if (!cLost.length) ok("the hourly chart draws rain AMOUNT, chance with cloud, humidity, feels-like and wind direction, for the picked day");
   else fail(`the hourly chart lost: ${cLost.join(" | ")}`);
   const fc = fs.readFileSync(path.join(ROOT, "lib/forecast.js"), "utf8");
   const crag = (fc.match(/export function fetchCragForecast[\s\S]*?\n}\n/) || [""])[0];
