@@ -373,7 +373,7 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       that only one mode sets is a permanent CI/local disagreement waiting for the first thing to
       read it. When adding a fixture property, ask which mode gets it.
     - **AND `check:outage`'s LANDING CHECK FOR THAT SUB-TAB WAS VACUOUS, so the red named the wrong
-      screen. FIXED — the landmark is `/saved searches|trip pack/i` now.** It led with `saved
+      screen. FIXED — the landmark is `/saved searches/i` now.** It led with `saved
       areas`, and the Logbook's **header** — which sits ABOVE the sub-tab bar and therefore renders
       on all four sub-tabs — reads *"Your objectives, completed climbs, challenges and saved areas
       — all in one place."* One alternative matching is enough, so a capture that never left the
@@ -390,12 +390,14 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         `SAVED SEARCHES` for the card heading, so without `/i` the *new* landmark would miss.
       - **`offline library` appeared ZERO times anywhere in the app**, so a third of the alternation
         had never matched once and could only ever report a false miss.
-      - Both survivors are `<MeH>` headings rendered **unconditionally** inside the
-        `logbookTab==="lists"` region, so neither moves with the data or with the outage — which is
-        the rule the comment states and the old landmark broke. `saved searches` is unique
-        app-wide; `trip pack` also heads two cards on the **Profile** tab, which a Logbook capture
-        cannot contain, and is kept as a second landmark so a single rename fails CLOSED rather
-        than silently.
+      - The survivor is a `<MeH>` heading rendered **unconditionally** inside the
+        `logbookTab==="lists"` region, so it does not move with the data or with the outage — which
+        is the rule the comment states and the old landmark broke. `saved searches` is unique
+        app-wide. There used to be a second alternative, `trip pack`, which also headed two cards
+        on the **Profile** tab; #2368 removed the trip pack and the term with it, so it is gone from
+        the landmark too (an alternative that matches nothing is the `offline library` defect
+        above). A rename of the one remaining heading now leaves the landmark matching nothing,
+        which `check:outage-landmark` reports at build time.
       - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
         two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
         changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own

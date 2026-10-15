@@ -433,8 +433,8 @@ async function runWeather() {
   // walks the AST and an AST does not see comments.
   const mask = src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:])\/\/[^\n]*/g, "$1");
 
-  // THE FETCH MOVED to lib/forecast.js (fetchForecastRaw), shared with the trip pack, which saves
-  // its raw responses. So the URL pins are read THERE, and the panel is asserted to still call it —
+  // THE FETCH MOVED to lib/forecast.js (fetchForecastRaw); it was shared with the trip pack until
+  // #2368 removed the pack. So the URL pins are read THERE, and the panel is asserted to still call it —
   // otherwise the pinned fetch could be one nothing uses while the panel fetched raw metric data.
   const FX_PATH = path.join(ROOT, "lib", "forecast.js");
   if (!fs.existsSync(FX_PATH)) dead("ANCHOR LOST: lib/forecast.js is gone — the forecast fetch's unit pins are unchecked");
