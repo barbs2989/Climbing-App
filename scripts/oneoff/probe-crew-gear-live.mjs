@@ -165,7 +165,9 @@ try {
   await inputIn(A).press("Enter");
   await until(async () => (await status(A, "Stove")).length > 0, 8000);
   await card(A).getByRole("button", { name: "Assign Stove to a crewmate" }).click();
-  const chip = card(A).getByRole("button", { name: "Assign Stove to a crewmate" }).locator("xpath=following-sibling::div[1]").getByRole("button", { name: "Robin" });
+  // Once open the button is named "Done assigning Stove", and the chip panel is the sibling of the
+  // button's ROW (the flex div), not of the button -- see lib/CrewGearList.jsx.
+  const chip = card(A).getByRole("button", { name: "Done assigning Stove" }).locator("xpath=../following-sibling::div[1]").getByRole("button", { name: "Robin" });
   ok("the Assign panel offers Robin as a chip", (await chip.count()) === 1, `${await chip.count()} chip(s)`);
   await chip.click();
   ok("...tapping it shows Bringing: Robin on the owner's screen", (await until(async () => (await status(A, "Stove")).some((s) => /Bringing: Robin/.test(s)), 8000)) >= 0, JSON.stringify(await status(A, "Stove")));
