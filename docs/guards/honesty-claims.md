@@ -1364,6 +1364,13 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     ("Fair"), because temperature, wind and sun still scored. Rain in the past hour, rock under 30%
     dried, ANY wet sandstone (not conglomerate — see below), and AQI > 200 cap the hour at 1 ★; air
     within 5°F of its dew point and AQI > 150 cap it at 2 ★.
+  - **...and DRYING rock is held down until it is dry (`WET_BANDS`, 2026-10-15)**: under 30% dry 1 ★,
+    under 70% 2 ★, under 100% 3.5 ★. One cap at 30% was the whole rule before, and Dry rock is only 25
+    of 100 points, so the hour the card itself called "about 50% dry" scored 4.3 ★ "Good" in green beside
+    a red morning (Exit 38 the day after 0.2" of rain: 11 not-yet-dry hours at 3.0–4.7 ★, day 4.6 ★
+    Good; after: 3.5 ★ Fair). Measured on live forecasts for 12 crags: dry days are unchanged. The
+    guard walks 12 rain fixtures and fails if any hour 30–99% dry exceeds its band or reads "Good";
+    reverting the bands to the single 30% cap fails it (75% dry -> 4.6 ★).
   - **The thresholds were checked against published guidance (2026-10-07)**, so do not re-tune them
     on feel:
     - DAMP_SPREAD 5°F is the 3 °C surface-condensation margin (ISO 8502-4).

@@ -30,7 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk } from "../lib/conditionsScore.js";
+import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -197,6 +197,18 @@ console.log("check:conditions-score");
   const hW = at(sW, 12);
   if (hW && hW.dryFrac < 0.3 && hW.stars <= 1 && hW.caps.some((c) => /wet/i.test(c.why))) ok(`an hour after a soaking the rock is ${Math.round(hW.dryFrac * 100)}% dried and the hour is capped at 1 star`);
   else fail(`still-wet rock was not capped: dryFrac ${hW && hW.dryFrac}, stars ${hW && hW.stars}`);
+  // ...and rock that is drying but NOT yet dry can never read "Good". One cap at 30% was the whole
+  // rule, so the hour the card called "about 50% dry" scored 4.3 stars in green (Exit 38, 2026-10-18).
+  {
+    const drying = [];
+    for (const amt of [0.02, 0.2, 0.8]) for (const at0 of [60, 66, 72, 78]) for (const x of scoreForecast(fixture({ rainAt: [at0], rainAmt: amt }), WALL, null, NOW).days.flatMap(function (d) { return d.all; })) if (!x.factors.dry || !x.factors.dry.raining) drying.push(x);
+    const band = function (f) { for (const b of WET_BANDS) if (f < b[0]) return b; return null; };
+    const bad = drying.filter(function (x) { const b = x.dryFrac == null ? null : band(x.dryFrac); return b && !x.factors.dry.atLeast && (x.stars > b[1] + 1e-9 || starsLabel(x.stars) === "Good" || !x.caps.some((c) => /rock .*(wet|drying|damp)/i.test(c.why))); });
+    const mid = drying.filter(function (x) { return x.dryFrac >= 0.3 && x.dryFrac < 1; });
+    const dry = drying.filter(function (x) { return x.dryFrac === 1; });
+    if (!bad.length && mid.length >= 10 && dry.some((x) => starsLabel(x.stars) === "Good")) ok(`${mid.length} hours of drying rock (30–99% dry) are held to ${WET_BANDS[1][1]} / ${WET_BANDS[2][1]} stars, none reads Good; dry rock still can`);
+    else fail(`drying rock read too high: ${bad.slice(0, 3).map((x) => Math.round(x.dryFrac * 100) + "% dry -> " + x.stars.toFixed(2) + " " + x.caps.map((c) => c.why)).join("; ")} (mid ${mid.length}, dry Good ${dry.some((x) => starsLabel(x.stars) === "Good")})`);
+  }
   // Drizzle: Open-Meteo reports 0.1 mm steps (0.004"); `>= 0.01` used to throw it away.
   const sD = scoreForecast(fixture({ rainAt: [84], rainAmt: 0.004 }), WALL, null, NOW);
   const hD = at(sD, 12);
