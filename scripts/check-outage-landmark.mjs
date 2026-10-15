@@ -85,7 +85,8 @@ const app = rd("ClimbMatch.jsx");
 let logbook, lists;
 try {
   logbook = region(app, 'tab==="logbook"', "the Logbook tab");
-  lists = region(app, 'logbookTab==="lists"', "the Logbook's Areas sub-view");
+  // `?<div`, not the bare test: the header's title ternary tests logbookTab==="lists" first.
+  lists = region(app, 'logbookTab==="lists"?<div', "the Logbook's Areas sub-view");
 } catch (e) {
   console.log("FAIL-CLOSED: " + e.message);
   console.log("  Regions that cannot be carved make every assertion below vacuous.");
@@ -121,9 +122,11 @@ if (REST.length < 800) {
               "tests would pass against almost no text.");
   process.exit(1);
 }
-if (!REST.includes("all in one place")) {
-  console.log("FAIL-CLOSED: rest-of-Logbook does not contain the shared header prose, so the carve " +
-              "is not separating the header from the Areas view -- which is the whole question.");
+// The header is a <ScreenHero> since 2026-10-15, its title and line chosen per sub-tab -- the old
+// fixed prose ("...all in one place.") is gone, so the anchor is the header element itself.
+if (!REST.includes("<screenhero")) {
+  console.log("FAIL-CLOSED: rest-of-Logbook does not contain the Logbook's header (<ScreenHero>), so the " +
+              "carve is not separating the header from the Areas view -- which is the whole question.");
   process.exit(1);
 }
 const AREAS = lists.text.toLowerCase();
@@ -159,9 +162,11 @@ for (const alt of ALTS) {
 // Saved (2026-09-24): it now reads "...challenges and everything you've saved — all in one place."
 // Same trap, new word: a landmark on bare "saved" would match that header on every sub-tab. So
 // assert the header still carries it (the reason section 1's exclusion test matters) and that no
-// alternative is that bare word or the old vacuous phrase.
+// alternative is that bare word or the old vacuous phrase. Since 2026-10-15 the header's line is
+// per sub-tab and the Saved one reads "Everything you've saved — routes, peaks, …": it sits in the
+// header, OUTSIDE the lists region, so a bare "saved" landmark would still match it there.
 if (REST.includes("you\u2019ve saved") || REST.includes("you've saved")) {
-  ok('the header prose says "everything you\u2019ve saved" on every sub-tab, so a landmark on bare ' +
+  ok('the Logbook header (outside the Saved view) says "everything you\u2019ve saved", so a landmark on bare ' +
      '"saved" would be vacuous -- section 1 is what keeps the alternatives off it');
 } else {
   bad('the Logbook header no longer says "everything you\u2019ve saved". Re-read the header prose ' +
