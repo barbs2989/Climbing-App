@@ -520,9 +520,24 @@ function PartnersHereCard({ area, C, uid, myListings, onListMe, onFindPartnersIn
         </div>
         {on ? <button onClick={toggle} disabled={busy} aria-pressed={listed} aria-label={listed ? "Listed at " + area.name + " — tap to remove" : "List me at " + area.name} style={{ flexShrink: 0, minHeight: 40, padding: "0 13px", borderRadius: 10, border: "1px solid " + (listed ? C.green : C.blueDim), background: listed ? C.greenBg : C.blueBg, color: listed ? C.green : C.blue, fontSize: 12.5, fontWeight: 800, cursor: busy ? "default" : "pointer", opacity: busy ? 0.6 : 1 }}>{listed ? "Listed ✓" : "List me here"}</button> : null}
       </div>
-      {on && listed && onListMe ? <button onClick={() => onListMe({ areaId: area.id, name: area.name, areaType: area.area_type, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) })} style={{ ...BTN_LINK, padding: 0, marginBottom: 8, fontSize: 12 }}>Add dates or types</button> : null}
+      {/* Once listed, the follow-up — when you can climb here and what — is a real, full-width
+          control, not a bare word. It and "See all" used to spread `BTN_LINK` as an object; it is a
+          FUNCTION of C, so both rendered as the browser's default grey button: tiny, hard to see,
+          and the owner's first complaint about this card. */}
+      {on && listed && onListMe ? (
+        <button onClick={() => onListMe({ areaId: area.id, name: area.name, areaType: area.area_type, disciplines: (area.disciplines || []).filter((d) => CRAG_FAMILY.includes(d)) })} aria-label={"Add the dates and climbing types for your listing at " + area.name} style={{ width: "100%", boxSizing: "border-box", display: "flex", alignItems: "center", gap: 10, marginTop: 8, marginBottom: 4, padding: "10px 12px", borderRadius: 11, border: "1px solid " + C.border, background: C.surface, color: C.text, cursor: "pointer", textAlign: "left" }}>
+          <span aria-hidden="true" style={{ width: 32, height: 32, borderRadius: 9, background: C.blueBg, border: "1px solid " + C.blueDim, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={C.blue} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M16 3v4M8 3v4M3 11h18" /></svg>
+          </span>
+          <span style={{ flex: 1, minWidth: 0 }}>
+            <span style={{ display: "block", fontSize: 13.5, fontWeight: 800, color: C.text }}>Add dates or climbing types</span>
+            <span style={{ display: "block", fontSize: 11.5, color: C.textMuted, marginTop: 2, lineHeight: 1.4 }}>When you can climb here, and what — so the right partners find you.</span>
+          </span>
+          <span aria-hidden="true" style={{ color: C.textMuted, fontSize: 17, flexShrink: 0 }}>›</span>
+        </button>
+      ) : null}
       {on && rows.length && PartnerRow ? <div style={{ marginTop: 6 }}>{rows.map((p) => <PartnerRow key={p.id} p={p} onOpen={onViewProfile} />)}</div> : null}
-      {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK, padding: 0, fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
+      {on && (count > 0 || rows.length) ? <button onClick={openAll} style={{ ...BTN_LINK(C), padding: "6px 0 0", fontSize: 12.5 }}>{"See all at " + area.name + " →"}</button> : null}
     </div>
   );
 }
@@ -608,19 +623,6 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
       <button onClick={onAllAreas} style={{ ...BTN_LG, width: "100%", border: "1px solid " + C.blue, background: C.blueBg, color: C.blue, marginBottom: 14 }}>All areas</button>
       {!loading && (!error || (children && children.length > 0)) && isLeaf === false ? <DbSearchSplit scope={area} onJumpToArea={onJumpToArea} onOpenRoute={onOpenRoute} C={C} onModeChange={setSearchMode} /> : null}
 
-      {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
-          behind `selArea`, which is null under USE_DB — so on every real area page the
-          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
-          It sits directly BELOW the Areas/Routes search rather than above it: the moment a
-          climber knows a route is missing is the moment a search for it came back empty, so
-          this is the next thing under their thumb. It is NOT gated on the search rendering —
-          a leaf crag has no DbSearchSplit and is exactly where a missing route is likeliest. */}
-      {onAddClimb ? (
-        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 4, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
-          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
-        </button>
-      ) : null}
-
       {/* Sits directly above the route rows it summarises, so the page reads: this is the
           mountain, this is what is true of every way up it, here are the ways up. It renders
           nothing at all unless the routes support it — see SummitBriefing's own gates. */}
@@ -658,11 +660,26 @@ function AreaPage({ area, uElev, uDistMi, booked, onToggleSave, onDrill, onFinde
           : !error ? <div style={{ color: C.textMuted, fontSize: 12 }}>No routes in this crag yet.</div> : null
       )}
 
+      {/* The seed browser has had "Don't see a climb? Add it" since forever, but it lives
+          behind `selArea`, which is null under USE_DB — so on every real area page the
+          affordance did not exist. Opens the same AddRoute sheet with THIS area filled in.
+          It sits DIRECTLY UNDER the areas/climbs list (owner, 2026-10-15): a climber who has just
+          read to the end of the list and not found their climb is the one who adds it. It is NOT
+          gated on the list rendering — an empty crag is exactly where a missing route is likeliest. */}
+      {onAddClimb ? (
+        <button onClick={() => onAddClimb(area)} style={{ ...BTN_LG, width: "100%", border: "1px dashed " + C.border, background: C.surface, color: C.blue, marginBottom: 14, marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", gap: 7 }}>
+          {"Don’t see a climb here? Add it to " + area.name}<span style={{ fontSize: 15 }}>{"→"}</span>
+        </button>
+      ) : null}
+
+      {/* Tail order is the owner's (2026-10-15): suggested climbs right under "Don't see a climb",
+          then nearby peaks, then Top contributors LAST — App mounts the area Discussion directly
+          after this component, so Top contributors sits right above it and Discussion ends the page. */}
+      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
+
       <NearbyPeaks area={area} onJumpToArea={onJumpToArea} C={C} uDistMi={uDistMi} />
 
       {TopContributors ? <TopContributors areaId={area.id} mb={8}/> : null}
-
-      <DbSuggestedClimbs area={area} onOpen={onOpenRoute} C={C} />
     </div>
   );
 }
@@ -1412,8 +1429,12 @@ export default function DbAreaBrowser({ onOpenRoute, C, bookmarks, onToggleBookm
   // consumer cannot come to depend on the DB shape.
   useEffect(() => {
     if (!onAreaContext) return;
-    onAreaContext(current && current.lat != null && current.lng != null
-      ? { id: current.id, name: current.name, lat: current.lat, lng: current.lng, areaType: current.area_type }
+    // Reported WHETHER OR NOT the area has a coordinate. It used to be null without one, and
+    // the only consumer left (area Discussion) then never rendered on an area such as Florida's
+    // "Artificial Boulders" (fl_artificial_boulders: 30 climbs, lat/lng null). A consumer that
+    // needs a position checks lat/lng itself.
+    onAreaContext(current
+      ? { id: current.id, name: current.name, lat: current.lat != null ? current.lat : null, lng: current.lng != null ? current.lng : null, areaType: current.area_type }
       : null);
   }, [onAreaContext, current && current.id, current && current.lat, current && current.lng]);
 
