@@ -9,7 +9,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { fetchArea, useArea, useAreaChildren, useAreaRoutes, useStates, useCountries, useSubtreeRoutes, useSubtreeRouteCount, useNearbyAreas, useNearbyPeaks, useScopedWishlistRoutes, useRoutesByIds, useAreaSearch, areaSearchTotal, useAreaNamesByIds, fetchAreaBreadcrumb } from "./db";
 import { useRecentRouteIds } from "./recent";
-import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel } from "./mapKit";
+import { loadLeaflet, applyBaseLayer, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel, searchPlaces } from "./mapKit";
 import { discIconMarkup, DISC_COLORS } from "./disciplines";
 import { DISC_LABELS as DL, DISC_SHORT as DS } from "./discLabels";
 import { shortGrade, gradeNumFrom, displayGrade, gradeSystemForDiscipline } from "./grade";
@@ -943,13 +943,16 @@ function ObjectivesPanel({ area, wishlist, onOpen, C }) {
 // point at the same zoom used for a crag.
 const ZOOM_BY_AREA_TYPE = { world: 2, country: 3, state: 6, range: 8, region: 8, canyon: 10, peak: 12, crag: 13, wall: 14 };
 function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
-  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null);
+  const mapDiv = useRef(null), mapRef = useRef(null), markRef = useRef(null), tileRef = useRef(null), placeMarkRef = useRef(null);
   const [ready, setReady] = useState(false);
   const [mapFail, setMapFail] = useState(false);
   const [bounds, setBounds] = useState(null);
   const [center, setCenter] = useState(center0 || null);
-  const [baseLayer, setBaseLayer] = useState("sat");
+  const [baseLayer, setBaseLayer] = useState("street");
   const [sel, setSel] = useState(null);
+  // Go to a town, county or zip. `alts` are the other matches, offered as "Not it?".
+  const [placeQ, setPlaceQ] = useState("");
+  const [place, setPlace] = useState({ busy: false, err: "", alts: [] });
   const [fullscreen, setFullscreen] = useState(false);
   // Type-of-climbing filter over what is in view. Matches EVERY type an area holds
   // (`disciplines`, 0198: any type with at least one climb; on a peak, crag types count as
@@ -999,7 +1002,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     };
     loadLeaflet(init, () => setMapFail(true));
     const ft = setTimeout(() => { if (!cancelled && !mapRef.current) setMapFail(true); }, 9000);
-    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; } };
+    return () => { cancelled = true; clearTimeout(ft); if (mapRef.current) { try { mapRef.current.remove(); } catch (e) {} mapRef.current = null; markRef.current = null; tileRef.current = null; placeMarkRef.current = null; } };
   }, []);
   useEffect(() => { if (!mapRef.current) return; applyBaseLayer(mapRef.current, tileRef, baseLayer); }, [baseLayer]);
 
@@ -1066,6 +1069,32 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
     if (map) setTimeout(() => readBounds(map), 350); // after the pan/zoom animation settles
   } });
   const locate = me.locate, locating = me.locating, geoErr = me.err;
+  // Your dot is on the map from the start when location is already allowed -- without moving the
+  // map off the area you opened it on. Never asks: the button above does that.
+  useEffect(() => { if (ready) me.showDot(); }, [ready]);
+
+  const goToPlace = p => {
+    const L = window.L, map = mapRef.current;
+    if (!L || !map || !p) return;
+    me.release();
+    try {
+      if (p.bbox) map.fitBounds(p.bbox, { maxZoom: 13 }); else map.setView([p.lat, p.lng], 12);
+      if (placeMarkRef.current) map.removeLayer(placeMarkRef.current);
+      const html = "<div style='width:16px;height:16px;border-radius:50%;background:" + C.blueSolid + ";border:3px solid #fff;box-shadow:0 0 0 4px " + C.blueSolid + "55,0 2px 7px rgba(0,0,0,0.6);'></div>";
+      placeMarkRef.current = L.marker([p.lat, p.lng], { icon: L.divIcon({ html, className: "", iconSize: [16, 16], iconAnchor: [8, 8] }), zIndexOffset: 1000 }).bindTooltip(p.name, { direction: "top", permanent: true }).addTo(map);
+    } catch (e) {}
+  };
+  const findPlace = e => {
+    if (e) e.preventDefault();
+    const q = placeQ.trim();
+    if (!q || place.busy) return;
+    setPlace({ busy: true, err: "", alts: [] });
+    searchPlaces(q, bounds).then(rows => {
+      if (!rows.length) { setPlace({ busy: false, err: "No town, county or zip code called “" + q + "” found.", alts: [] }); return; }
+      goToPlace(rows[0]);
+      setPlace({ busy: false, err: "", alts: rows.slice(1, 4) });
+    }, () => setPlace({ busy: false, err: "Couldn't search places just now — check your connection and try again.", alts: [] }));
+  };
 
   // Sort the list by distance from the CURRENT viewport center, not the fixed
   // point the map opened at — otherwise, once you've panned somewhere else, the
@@ -1088,8 +1117,19 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
           {geoErr ? <div style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{geoErr}</div> : null}
         </>
       ) : null}
+      <form onSubmit={findPlace} role="search" style={{ display: "flex", gap: 6, marginBottom: place.err || place.alts.length ? 4 : 8 }}>
+        <input type="search" value={placeQ} onChange={e => setPlaceQ(e.target.value)} placeholder="Go to a town, county or zip code" aria-label="Go to a town, county or zip code" enterKeyHint="search" style={{ flex: 1, minWidth: 0, padding: "10px 12px", borderRadius: 10, border: "1px solid " + C.border, background: C.surface, color: C.text, fontSize: 16 }} />
+        <button type="submit" disabled={!placeQ.trim() || place.busy} style={{ ...BTN, background: C.blueSolid, color: "#fff", border: "none", flexShrink: 0, opacity: !placeQ.trim() || place.busy ? 0.6 : 1 }}>{place.busy ? "Finding…" : "Go"}</button>
+      </form>
+      {place.err ? <div role="status" style={{ color: C.red, fontSize: 12, marginBottom: 8 }}>{place.err}</div> : null}
+      {place.alts.length ? (
+        <div role="group" aria-label="Other places with that name" style={{ display: "flex", gap: 6, overflowX: "auto", alignItems: "center", marginBottom: 8, paddingBottom: 2 }}>
+          <span style={{ fontSize: 11.5, color: C.textMuted, flexShrink: 0 }}>Not it?</span>
+          {place.alts.map((p, i) => <button key={i} onClick={() => { goToPlace(p); setPlace(s => ({ ...s, alts: s.alts.filter(x => x !== p) })); }} style={{ ...CHIP, border: "1px solid " + C.border, background: C.surface, color: C.textSub, fontSize: 12, fontWeight: 600, cursor: "pointer", whiteSpace: "nowrap", flexShrink: 0 }}>{p.name + (p.sub ? ", " + p.sub.split(", ").slice(-1)[0] : "")}</button>)}
+        </div>
+      ) : null}
       <div style={{ position: "relative", marginBottom: fullscreen ? 0 : 8 }}>
-        <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 210px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
+        <div ref={mapDiv} style={{ width: "100%", height: fullscreen ? "calc(100vh - 262px)" : 260, borderRadius: fullscreen ? 0 : 12, overflow: "hidden", background: C.surface, transition: "height 0.2s" }} />
         {!ready ? <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", color: C.textMuted, fontSize: 12.5, pointerEvents: "none", textAlign: "center", padding: 16 }}>{mapFail ? "Map couldn't load — the nearest areas are listed below." : "Loading map…"}</div> : null}
         <BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={center} />
         <button onClick={() => setFullscreen(f => !f)} aria-label={fullscreen ? "Exit full screen" : "Full screen"} title={fullscreen ? "Exit full screen" : "Full screen"} style={Object.assign({}, POP_CLOSE_MEDIA, { position: "absolute", top: 10, right: 10, zIndex: 1000 })}>{fullscreen ? "✕" : "⤢"}</button>
@@ -1106,7 +1146,7 @@ function NearMePanel({ center0, areaType, onBack, onOpenArea, C, uDistMi }) {
       </div>
       {!fullscreen ? (
         <>
-          <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>Pan or zoom the map to see areas anywhere else.</div>
+          <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 8 }}>{"Pan or zoom the map, or type a town above, to see areas anywhere else." + (me.acc != null ? " The green dot is you." : "")}</div>
           {!center && !bounds ? <div style={{ color: C.textMuted, fontSize: 12.5, marginBottom: 8 }}>{'Tap "Use my location" to find climbs near you.'}</div> : null}
           {error && !sorted.length ? <div style={{ color: C.red, fontSize: 12.5 }}>Couldn't load nearby areas — check your connection and try again.</div> : null}
           {error && sorted.length ? <div style={{ color: C.textMuted, fontSize: 12.5 }}>Couldn't refresh just now — showing the areas from your last load.</div> : null}
