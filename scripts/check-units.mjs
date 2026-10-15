@@ -549,8 +549,15 @@ async function runWeather() {
   // tile still calls it, or whether the 10 m series it reads is still fetched and bucketed. A
   // stale-base squash takes exactly that half and moves NO identifier, which audit:silent-reverts
   // says in its own closing caveat it cannot see.
-  if (fxMask.includes("wind_speed_10m,")) ok("the forecast fetch asks for wind_speed_10m — the gate has a same-height figure to compare against");
+  // Read off THIS fetch's own URL: the crag and alpine fetches in the same file ask for wind_speed_10m too, so a
+  // whole-file search stayed green with the panel's own request no longer asking for it.
+  const omUrl = (/const omUrl = [^\n]*/.exec(fxMask) || [""])[0];
+  if (!omUrl) fail("ANCHOR LOST: fetchForecastRaw's `const omUrl = ` line moved — the panel's own request cannot be read");
+  else if (/[=,]wind_speed_10m,/.test(omUrl)) ok("the forecast fetch asks for wind_speed_10m — the gate has a same-height figure to compare against");
   else fail("the forecast fetch no longer asks for wind_speed_10m — wind10Max is null on every day and the gate degrades to always-show");
+  // The HOURLY rows pair the hour's wind with the 10 m gust beside it, so that wind and its direction are 10 m too.
+  if (/[=,]wind_direction_10m,/.test(omUrl) && /windMph:h\.wind_speed_10m\?h\.wind_speed_10m\[i\]:null,dir:h\.wind_direction_10m\?h\.wind_direction_10m\[i\]:null/.test(mask)) ok("the hourly rows read the 10 m wind and direction, at the height of the gust beside them");
+  else fail("the hourly rows no longer read the 10 m wind and its direction — an 80 m wind beside a 10 m gust reads the gust as weaker than the wind");
   if (/if\(h\.wind_speed_10m\)dd\.winds10\.push\(h\.wind_speed_10m\[i\]\);/.test(mask)) ok("the hourly loop buckets the 10 m series");
   else fail("the hourly loop no longer buckets wind_speed_10m into winds10 — the fetched field reaches nothing");
   if (/wind10Max:d\.winds10\.length\?Math\.round\(Math\.max\.apply\(null,d\.winds10\)\):null/.test(mask)) ok("wind10Max is null on an absent series, never -Infinity");

@@ -327,6 +327,10 @@ console.log("check:conditions-score");
   else fail("a range handle lost its name, its keyboard, or its touch-action");
   if (/const THUMB = 28, HIT = 44;/.test(slider) && /width: HIT, height: HIT/.test(slider)) ok("each handle's touch target is 44 px (Apple's guideline; WCAG 2.2 AA asks 24) around a 28 px visible circle");
   else fail("a range handle's touch target fell below 44 px");
+  // Pushed together at the top of the scale, a fixed "high on top" left every touch on the high handle, which
+  // cannot go further right: the low one was stuck and the range could not be widened again.
+  if (/const loOnTop = \(pos\(lo\) \+ pos\(hi\)\) \/ 2 > 50;/.test(slider) && /zIndex: which === "lo" \? \(loOnTop \? 4 : 2\) : 3/.test(slider)) ok("two handles pushed together stay movable: past the middle the LOW handle is on top (its free direction is left)");
+  else fail("the range handles no longer swap which is on top past the middle — two handles pushed together at the top of the scale strand the low one");
   if (/const snapTemp = function \(f\) \{ return uTempIn\(uTempN\(f\)\); \}/.test(prefs) && /snapWind/.test(prefs) && /fmt=\{uTemp\}/.test(prefs) && /fmt=\{uWind\}/.test(prefs)) ok("the handles snap to a number the climber can SEE (whole degrees C when metric) and the stored value stays deg F / mph");
   else fail("a range handle no longer snaps through the unit helpers");
   const covered = (fs.readFileSync(path.join(ROOT, "lib/conditionsScore.js"), "utf8").match(/CRAG_SCORE_DISCIPLINES = (\[[^\]]*\])/) || [])[1];

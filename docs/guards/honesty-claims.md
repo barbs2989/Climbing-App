@@ -1714,6 +1714,26 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
       right shape. The section now looks the raw local day up by date, and the guard pins both the lookup and that
       a shape without `hours` throws. LESSON: a card that mounts only after a fetch resolves is invisible to the
       static render walks. Open it on a real route in Chrome before calling it done.
+    - **VISIBILITY ARRIVES IN FEET (fixed 2026-10-14).** `precipitation_unit=inch` switches EVERY length Open-Meteo
+      returns to feet -- the freezing level (known) and visibility with it (`hourly_units.visibility` is `"ft"`,
+      checked live). The card read it as metres, so a 3,000 ft (914 m) fog hour read as 3 km and never flagged, and
+      every visibility on screen was 3.3x too long. `visibilityInMetres()` (lib/forecast.js) converts at fetch BY THE
+      UNIT THE RESPONSE STATES and drops a series in an unstated or unknown unit (the tile then reads "Not measured").
+      TRAP: the section 15 fixture fed metres with no `hourly_units`, the same assumption as the code, so it passed
+      the bug; it is now shaped like the live response (feet + unit) and goes through the conversion. LESSON: a fixture
+      written from the code's assumptions cannot test them -- build it from a live response's units block.
+    - **A CLOCK CHANGE MID-SERIES (guard section 17, fixed 2026-10-14).** The alpine card read all 21 days (14 past +
+      7 ahead) through ONE `utc_offset_seconds` -- the offset at fetch time -- so across 2025-11-02 the Nov 2 sunrise
+      (6:51 AM PST) read 7:51, local days were cut at 1 AM, and "today" turned over at 11 PM; from late October and
+      in March every series crosses a change. It now reads local time through the crag card's zone-aware `localFn`
+      (lib/conditionsScore.js) via `localAt` / `localDays` / `dayStartMs` (an alert's day is 23-25 h). Fixtures with no
+      `timezone` keep their fixed offset. The same section pins #2342: the start's days-early is counted ONCE per day
+      (`day.daysEarly`), so the hour strip no longer prints "Start by 7 PM (the night before)" under a box that says
+      the push is too long for one day.
+    - **STREAMS (2026-10-14):** a WATER LEVEL's trend is read in feet (`STEADY_STAGE_FT`, 0.1 ft in 3 h, ours), never as a
+      percent of a height above an arbitrary datum; a "now" reading more than 2 h old says how old; gauge names spell
+      out the naming abbreviations (R, CR, NR, BL, AB, NF/SF/MF...) and keep the state code in capitals (`gaugeName`).
+      Report freshness counts CALENDAR days on this device (a report dated today read "yesterday" from 5 PM Pacific).
     - **TEMPERATURE GAPS (guard section 16, measured 2026-10-14):** a temperature is for ONE height, and a screen that
       sets two numbers side by side has to say whose. (1) The NWS grid cell under a summit sits 150 to 850 m BELOW
       it (Rainier: cell 3,890 m, pin 4,392 m), so its raw temperatures read up to 9 F warmer than the
@@ -1758,7 +1778,10 @@ on it. The evidence is the terrain read, never the discipline. `check:alpine-con
   range. Wind had no preference before: it was the fixed rule full at 10 mph, nothing at 35. Unchosen it is still
   that rule EXACTLY (range [0,10], fade 25 mph above), pinned in `check:conditions-score`; a climber who wants a
   breeze can raise the bottom (fades over 10 mph below). Each handle is a real slider (named, arrow keys,
-  Home/End, `touch-action:none`). TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
+  Home/End, `touch-action:none`). WHICH HANDLE IS ON TOP where their 44 px hit areas overlap: the LOW one once the
+  range sits past the middle of the track, the high one before it (pinned in `check:conditions-score`). A fixed
+  "high on top" stranded the low handle at the top of the scale: every touch landed on the high handle, which
+  cannot go further right, so the range could not be widened again. TRAP: the Conditions browser window may be hidden (`visibilityState` hidden,
   `innerWidth` 0) in an automation session, which makes screenshots fail with "0 width"; a NEW tab got a real size.
 
 - **The two "Your conditions" builds, MERGED (2026-10-14).** The drag-both-ends ranges above and the
