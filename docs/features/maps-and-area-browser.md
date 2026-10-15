@@ -44,7 +44,7 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 ## 3. Files
 | File | Key symbols |
 |---|---|
-| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
+| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `PartnersHereCard`, `PARTNER_CARD_TYPES`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
 | `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
 | `lib/db.js` | `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
 | `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
@@ -65,7 +65,11 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
 - `jumpToState` and `onAreaContext` let other screens deep-link to or read the current area.
 - Conditions score, alpine flags and fire layers use the same Leaflet kit (`FireMap`, `ShadeMap`).
 - Units: distances and elevations render through `uDistMi` / `uElev` (`check:units`).
-- Partners: By Area search picks an area from the same tree (see `docs/features/partners.md`).
+- Partners: By Area search picks an area from the same tree (see `docs/features/partners.md`). **Partners here** (0300): every crag-family area page and its
+  ancestors below the state (`PARTNER_CARD_TYPES` — never a peak or a state) draws `PartnersHereCard`: how many climbers are listed here or nearby, up to three rows
+  (the row component arrives from App as the `PartnerRow` prop — this file does not import core), a one-tap **List me here / Listed ✓** that writes this area's listing,
+  "Add dates or types" into the My listed areas sheet (`onListMe`), and "See all →" into the Partners tab on this area (`onFindPartnersInArea`). Signed out it asks for sign-in.
+  `check:area-surfaces` rule 3 pins it.
 
 ## 6. Guards
 `check:search-norm`, `check:list-row-columns`, `check:schema`, `check:counts` (`areas.route_count`), `check:area-surfaces`, `check:area-name-embed`,

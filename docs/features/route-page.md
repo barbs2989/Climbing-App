@@ -27,7 +27,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 
 | File | What lives there |
 |---|---|
-| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS`, `showPlan`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, `DiffRadar` |
+| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS` (imported from core since 0300), `showPlan`, `cragOnly`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, `DiffRadar`, the crag Partners sub-tab (`usePartnersInArea`, `areaPartners`) |
 | `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
 | `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `GPXMap`, `ElevChart` |
 | `lib/db.js` | `useAreaRoutes`, `fetchRouteRow`, `dbRouteToCamel`, `useRouteContributions`, `useRouteDifficultyRatings`, `useMyRouteRating`, `useRouteStarSummary`, `setRouteRating`, `submitRoutePhoto`, `reportPhoto`, `submitContribution` |
@@ -51,7 +51,9 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - **Climbs browser:** `lib/DbAreaBrowser.jsx` and `openRoute` are the entry; the list's stars come from `routes.stars`.
 - **Crews:** crew gear list reaches a real route (`check:crew-gear`); crews are built around a `routeId`.
 - **Logbook:** logging a climb (`climb_logs`) feeds trip reports, consensus and, as fallback vote, the rating.
-- **Partners:** the `partners` sub-tab; `useRoutePairings` / `useRouteLoggedWith` show who logged it.
+- **Partners:** the `partners` sub-tab; `useRoutePairings` / `useRouteLoggedWith` show who logged it. On a crag route (0300) the sub-tab is "Climbers at <crag>":
+  `usePartnersInArea` on the route's area, List me at <crag> (`onListMe`, into the My listed areas sheet), See all (`onFindPartnersInArea`), and the seed example cards are off.
+  On an alpine route it is still the climbers who saved it (`usePartnersByObjective`, match objectives only since 0303).
 - **Conditions:** see [conditions.md](conditions.md).
 
 ## 6. Guards

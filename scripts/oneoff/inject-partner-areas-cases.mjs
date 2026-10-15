@@ -5,8 +5,10 @@ import fs from "fs";
 import { execSync } from "child_process";
 
 const MIG = "supabase/migrations/0300_partner_areas.sql";
+const MIG2 = "supabase/migrations/0303_partners_by_objective_alpine_only.sql";
 const DB = "lib/db.js";
-const files = { [MIG]: fs.readFileSync(MIG, "utf8"), [DB]: fs.readFileSync(DB, "utf8") };
+const APP = "ClimbMatch.jsx";
+const files = { [MIG]: fs.readFileSync(MIG, "utf8"), [MIG2]: fs.readFileSync(MIG2, "utf8"), [DB]: fs.readFileSync(DB, "utf8"), [APP]: fs.readFileSync(APP, "utf8") };
 
 const CASES = [
   {
@@ -38,6 +40,21 @@ const CASES = [
     name: "6. the validate trigger stops refusing a peak",
     file: MIG, expect: "partner_areas_validate refuses",
     edit: (s) => s.replace("if t in ('peak', 'world', 'country') then", "if t in ('world', 'country') then"),
+  },
+  {
+    name: "8. the SEARCH (0303) forgets the match rule — crag objectives match again",
+    file: MIG2, expect: "partners_by_objective (0303_partners_by_objective_alpine_only.sql)",
+    edit: (s) => s.replace("        and (rt.discipline not in ('trad','sport','toprope','aid','bouldering') or a.area_type = 'peak')\n", ""),
+  },
+  {
+    name: "9. App scores the viewer from the raw wishlist again",
+    file: APP, expect: "ME.matchObjectiveIds",
+    edit: (s) => s.replace("ME.matchObjectiveIds=wishlist.filter(function(id){var r=routeById(id);return !!r&&!CRAG_CATS.includes(catOf(r));});", "ME.matchObjectiveIds=wishlist;"),
+  },
+  {
+    name: "10. the raw per-user objectives read comes back",
+    file: DB, expect: "no longer exports useObjectivesOfUsers",
+    edit: (s) => s.replace("export function useMatchObjectivesOfUsers(userIds) {", "export function useObjectivesOfUsers(userIds) { return useMatchObjectivesOfUsers(userIds); }\nexport function useMatchObjectivesOfUsers(userIds) {"),
   },
   {
     name: "7. an objective write no longer refreshes the match reader",

@@ -131,6 +131,7 @@ export const MOVED = {
     "lib/GiveVouch.jsx", "lib/Onboarding.jsx", "lib/ShareCard.jsx", "lib/NotifPanel.jsx",
     "lib/MyAscents.jsx", "lib/SafetyTab.jsx",
     "src/components/RiskBadge.tsx",
+    "src/components/DiscBadge.tsx",
   ],
   "ClimbMatch.jsx": [],
   "RouteDetail.jsx": [],
@@ -181,6 +182,10 @@ export function readParentSource(root = OWN_ROOT, parent = "ClimbMatchCore.jsx",
   for (const f of MOVED[parent]) {
     const p = path.join(root, f);
     if (!fs.existsSync(p)) bail(guard, `${f} (a component moved out of ${parent}) is missing, so it would go unscanned`);
+    // A parent that still USES what it extracted imports it back (core imports DiscBadge for
+    // DiscBadges). Stitched verbatim, that import plus the moved body is a duplicate declaration
+    // and Babel refuses the whole file — so the parent's own import of each moved file is dropped.
+    out = out.replace(new RegExp(`^import [^\\n]* from "[^"\\n]*/${path.basename(f).replace(/\./g, "\\.")}";?\\n`, "m"), "");
     out += "\n" + movedAsParentText(fs.readFileSync(p, "utf8"), f);
   }
   return out;

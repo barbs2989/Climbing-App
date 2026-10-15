@@ -259,7 +259,8 @@ else {
 
 // The precedent this rests on: Home's setup checklist gates its own verify row. If that stops
 // being true, the argument for section 3 moves and somebody should know.
-if (/if\(!ME\.verified\)gaps\.push\(/.test(appSrc))
+// 0306 added `&&!verificationUnavailable` (a failed read hides the prompt); further conjuncts keep the gate.
+if (/if\(!ME\.verified(&&[^)]*)?\)gaps\.push\(/.test(appSrc))
   ok("CONTROL — Home's setup checklist still gates its verify row on !ME.verified");
 else fail("CONTROL — Home no longer gates its verify row; re-check which surface is right");
 
