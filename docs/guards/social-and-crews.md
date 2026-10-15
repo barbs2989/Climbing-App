@@ -635,3 +635,20 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     `anon` (Postgres' default for a new function), which the partner RPCs' explicit `revoke` lines
     do not cover. Read `routine_privileges` for EVERY function a migration creates, not just the
     ones it grants on. Injection suite: `scripts/oneoff/inject-partner-areas-cases.mjs` (7 cases).
+
+- **A CREW HAS ONE PLACE — A ROUTE OR AN AREA (`0302`).** The crews half of the 2026-10-15 decision:
+  a crag session ("Hellgate Saturday, sport") is the party, not a route. `crews.area_id` (FK to
+  `areas`, no cascade) + `crews.discipline` (stored, never inferred — `areas.disciplines` exists only
+  for peaks and crags, and a canyon-level crew has none); `route_id` is nullable and a CHECK demands
+  exactly one of the two. Alpine crews are unchanged. `crew_listings` APPENDS the two columns (0298's
+  shape) so every reader keeps its shape. `createCrew` takes `routeId` OR `areaId`+`discipline` and
+  refuses both/neither before the database does. `crewsReaders` now includes `crew-listings`: before
+  this a crew you started was invisible in Join a crew for a minute.
+  - **An area FOLD must REPOINT `crews.area_id` and `partner_areas.area_id`** beside topos and
+    contributions — README-numbering §3 records the four-line convention. The FK has no cascade on
+    purpose: a fold that forgot would fail on the delete rather than silently lose a session.
+  - Proven by a rolled-back DO block on the live table (both places / no place / area without
+    discipline / unknown area / unknown discipline all refused; an area crew lands and the view
+    carries `area_id` + `discipline`; a route crew is unchanged). The app still reads `crew.routeId`
+    everywhere — the `crewPlace()` seam that teaches every reader about area crews is the next step,
+    and `check:crew-place` lands with it.
