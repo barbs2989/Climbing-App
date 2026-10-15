@@ -94,6 +94,22 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     or `var SS={` is renamed — an empty set on either side would make every comparison pass
     vacuously, which is the failure mode `guard-sources.mjs` exists to stop.
   - Injection-tested; the 4 cases are named at the bottom of the script.
+- **`check:contrib-fields` reads pencils as `openFix("key")` since the confidence lock (0307–0309).**
+  Every pencil on the route page goes through `openFix`, which opens the flag sheet for a field at
+  HIGH confidence instead of the editor; the guard counts both spellings as pencils and FAILS on a
+  bare `setFixOpenSection("key")`, because that is a pencil that skips the lock. The first run after
+  the rewrite reported "found only 0 edit pencil(s) — the scan broke", which is the fail-closed
+  shape working as intended.
+- **`check:editable-coverage`** asserts that every `routes` column in the schema snapshot either has
+  an editor (a `contribution_fields` row names it as a `column_name`) or is declared in the script's
+  `NEVER` map with a reason a reviewer can check (identity, derived numbers, owner-curated lists,
+  never-writable bookkeeping, enrichment stubs whose editable twin is another column). A new column
+  with neither FAILS; a NEVER entry for a column that gained an editor or left the schema FAILS as
+  stale. It is the owner's 2026-10-15 rule — everything a climber can see, a climber can correct —
+  made checkable. Measured when written: 113 columns, 70 editable, 36 declared; the seven that
+  rendered with no editor (alt_names, variations, ffa, fwa, high_point_ft, sun, pro_tips) got a
+  FIELDS entry, an `SS` key and a `contribution_fields` row (0317) in the same PR. What it cannot
+  see: whether the editor's VALUE SHAPE matches the reader — that is `check:contrib-shapes`.
 - **`check:contrib-field-columns`** asserts that the database's list of editable route fields
   (`contribution_fields`, migration 0307) is the FORM's list: every `FIELDS` key in
   `RouteDetail.jsx` and every `SS` key in `ClimbMatch.jsx` has a row, every row names a `routes`

@@ -34,9 +34,7 @@ const read = (f) => fs.readFileSync(path.join(ROOT, f), "utf8");
 const dead = (m) => { console.error(`check:contrib-field-columns FAILED — ${m}. Nothing was checked.`); process.exit(1); };
 
 // Rows for keys no form offers yet, each with the reason it is allowed to exist.
-const EXTRA = {
-  rappelDetail: "the station-by-station rappel editor ships in the pitch/rappel PR; the column row is ready for it",
-};
+const EXTRA = {};
 // Rows whose key has no routes column, each with the reason (the level is computed as 'low' when
 // nothing is stored, which for these means: until the owner approves something).
 const NO_COLUMN = {
