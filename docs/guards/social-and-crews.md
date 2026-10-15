@@ -652,3 +652,27 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     carries `area_id` + `discipline`; a route crew is unchanged). The app still reads `crew.routeId`
     everywhere — the `crewPlace()` seam that teaches every reader about area crews is the next step,
     and `check:crew-place` lands with it.
+
+- **EVERY SURFACE THAT NAMES A CREW RESOLVES ITS PLACE THROUGH `crewPlace()` (`check:crew-place`).**
+  0302 let a crew bind to an AREA. Before the seam, ~25 readers each did their own
+  `routeById(crew.routeId)` and printed `.name` — the card, the finder row, the chat header, the Inbox
+  thread, the float-plan label, four Home rows, the profile modal, the past-crew list, the invite
+  modal, the email invite, the recap. Every one would have printed "undefined" for an area crew, and
+  CrewCard would have declared it "no longer available". `crewPlace(crew,{routeById,areaById})` in
+  core is the one resolver: `null` while an area card loads (a skeleton, `aria-busy`), `{kind:"missing"}`
+  once the read says the place is gone, else `{kind:"route"|"area", name, lat, lng, disc, discs, route,
+  area, grade, cover, parentName}`. `placeTrip`/`placeCap`/`placeLabel`/`placeSub`/`placeMatchesLog`
+  read it; App wraps it as `placeOf`, feeding one `useAreaCardsByIds` read of every crew's area.
+  - **The guard found three readers the hand sweep missed** on its first run — the recap modal and
+    two seed-invite shapes. That is the argument for a static guard over a careful sweep, again.
+  - **The allowlist is the route-only set by nature**, each with the reason an area crew is fine
+    there: logging THIS crew's climb, finding partners for THIS crew's route, seed invites, a belay
+    catch that merely shares the identifier `c`. A stale entry (its text gone) FAILS, both directions.
+  - **Behaviour for route crews is identical** (check:crew's hydration slice is untouched — the new
+    fields sit BEFORE its `meetTime` end marker — and it gained an area-crew case). The log button is
+    absent on an area crew rather than opening a form with no climb; "Import from Plan" needs a
+    route and is absent too; the float plan is filed against a route-shaped stand-in carrying the
+    area's name and coordinate. No area crew can be created from the app yet (next step).
+  - `useAreaCardsByIds` now also returns `lat`, `lng`, `parentId` and `parentName` (one hook, every
+    caller benefits; the offline branch has no parent name).
+  - Injection suite: `scripts/oneoff/inject-crew-place-cases.mjs` (8 cases).
