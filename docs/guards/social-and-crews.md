@@ -373,6 +373,26 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     tab, For you, Your activity and the unread count — through `groupPostByBlocked`. They stay in
     the page's own `posts`, because the Reported queue reads that list to tell a removed post from
     a live one. Their **comments** are not filtered yet: that is the Comments redesign's job.
+- **A SHARED POST IS A LINK, NOT ITS WORDS (2026-10-15).** The card's third action, **Share**, opens
+  `sharePostFor`: *Copy link*, *Send to a friend* (`connections`, through `sendMsg`) and *Send to a
+  crew* (`activeCrews`, through `sendCrewMsg`). The owner chose in-app sending only.
+  - **The message is "Shared a post from <group>: <link>" and nothing else.** A real group's posts are
+    members-only (0230); putting the post's text in a direct message would hand it to someone the
+    group never admitted. The sheet says so.
+  - **The link is `?group=<id>&post=<id>` (`groupPostLink` in core)**, read once at load beside
+    `?route=` and `?list=` and then removed from the address bar. It sets `groupLink`, which **waits**
+    for a session and then for `myGroupsQ`. A group missing from that list is private or gone; RLS
+    cannot tell the two apart, so the toast names both and never says "deleted" alone. A group you
+    are not in opens on About and asks you to join (or says your request is waiting).
+  - **Only a feed read AFTER the link was opened may say the post is gone** (`dataUpdatedAt >= at`,
+    after a `refetch`): the cached feed predates a post shared a minute ago. A found post is
+    scrolled to (`scrollMarginTop` clears the sticky header) and outlined for 2.6s (`groupPostLit`).
+  - **In a chat, only this app's own links are tappable** (`chatText` in core, used by
+    `MessageRow`): chat text is climber-written, and a tappable link to anywhere else is what a
+    phishing message needs. A group link shows as *View the post ›*; App catches the tap through
+    `data-cm-applink` and opens it in place, while the href alone would still load it.
+  - **The sheet is registered in `scripts/lib/overlay-scaffold.mjs`** with the same `prep` as
+    `postMenuFor`: it lives inside the group view and looks its post up in that view's `posts`.
 - **`check:mutual-friends`** asserts that a mutual friend is **real**, **named the way they asked**,
   and **counted as the list that renders**. Static (one esbuild bundle of core plus two Babel
   parses — no browser, no database), so it sits in `npm run build`.
