@@ -1,0 +1,83 @@
+# Maps and the Climbs area browser
+
+The `routes` tab before a route is selected (`selRoute` empty), plus the maps the app draws.
+On the DB path the browser is `lib/DbAreaBrowser.jsx` (default export `DbAreaBrowser`, lazy-imported in `ClimbMatchCore.jsx`);
+the seed path (in-memory `MOUNTAINS`/`ROUTES`) is the fallback and uses `OverviewMap` in `ClimbMatchCore.jsx`.
+Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/features/route-page.md`.
+
+## 1. What it does today
+- **Area browser**: world > country > state > range > crag/peak drill-down. `StatePicker` is the entry; `AreaPage` shows one area
+  (its children, its routes, `NearbyPeaks`, `DbSuggestedClimbs` "More climbs in this area", `SummitBriefing` on peaks).
+  `DbAreaTree` / `DbAreaTreeNode` / `DbAreaTreeRoots` give an expandable tree to jump around.
+- **Search** (`DbSearchSplit`): finds areas and routes under the current scope; typing "mt baker" finds Mount Baker.
+- **Route finder** (`RouteFinderPanel`): filters over the area's whole subtree - discipline, grade (system + low/high),
+  min stars, min pitches, length band, sort (`DEF = { disc, sortBy, minStars, minPitches, len, gSys, gLo, gHi }`). Active filters show as chips.
+  Mirrors Mountain Project's set, nothing extra (standing decision).
+- **Near me / area map** (`NearMePanel`): Leaflet map of peak/crag area bubbles with route counts, list/map toggle (`ViewToggle`),
+  Street / Satellite / Topo / snow base layers (`BaseLayerToggle`), a live location dot, and a place search box
+  ("Go to a town, county or zip/postal code") covering the US and Canada (provinces, towns, US zip, Canadian postal codes).
+- **Objectives panel** (`ObjectivesPanel`): wishlisted routes under the current area.
+- **Route page map** (`GPXMap`, `ClimbMatchCore.jsx`): track + waypoints + peak coordinate on the same base layers; a line
+  drawn between waypoints carries a "sketch" caveat rather than posing as GPS.
+
+## 2. How it works
+1. `App` mounts `DbAreaBrowser` (props include `onOpenRoute`, `bookmarks`, `wishlist`, `completedIds`, `jumpToState`) when `USE_DB`; otherwise the seed tree.
+2. Areas: `useCountries`, `useStates`, `useAreaChildren(parentId)`, `useArea(id)` / `fetchArea`, `useAreaPath(s)` (breadcrumb) in `lib/db.js`.
+   Routes for one area: `useAreaRoutes(areaId, { full })` (thin row by default; `check:list-row-columns` guards the columns).
+3. Subtree queries use RPCs: `routes_in_subtree` (`useSubtreeRoutes`, paged, 40 per page), `routes_in_subtree_count` (`useSubtreeRouteCount`),
+   `areas_in_subtree` (`useAreaSearch(rootId, q, lim)`). Subtree membership rides the `areas.path` ltree.
+4. Map bubbles: `useNearbyAreas(bounds)` selects `areas` where lat/lng fall in the live bounds box, `area_type` in (peak, crag),
+   ordered by `route_count` desc, limit 500, and returns `{ rows, total }` so the UI can say it is capped. Refetches on pan/zoom. `useNearbyPeaks(bounds)` backs `NearbyPeaks`.
+5. Search spelling: `lib/search.js` (`SEARCH_FORMS`, `SEARCH_COMPOUND`, `searchNorm`, `searchCanon`, `searchMatches`, `searchBare`) is the JS twin of SQL `search_norm()`
+   (0190/0200/0201): every word is replaced by all its forms ("Mt Baker" -> "mount mt baker"). `check:search-norm` fails if the two diverge.
+   Fuzzy fallback: RPC `search_names_fuzzy`.
+6. Map kit (`lib/mapKit.jsx`): `loadLeaflet` (lazy, with `warmLeafletOffline`), `baseTileLayer` (street/sat/topo from `MAP_TILE_URLS`, or a NASA GIBS snow layer via `isSnowLayer`),
+   `applyBaseLayer` (swaps the layer and drops Leaflet's zoom control 56px below the layer row so "+" is not hidden - #2411),
+   `fitZoomToLayer`/`layerSharpZoom` (zoom limits per layer), `pinHtml` (bubble markup).
+7. Location dot: `useFollowMe(mapRef, { C, zoom, onFix })` watches geolocation, `acceptFix` discards stale/worse fixes (`FIX_STALE_MS`, `FIX_LOST_MS`),
+   `fmtFixAcc`/`locateLabel` word the status. The dot is an HTML marker lifted above all other markers; the accuracy ring stays under them (#2411).
+   `NearMePanel` re-centres only on the first fix.
+8. Place search: `searchPlaces(q, bounds)` calls Nominatim with `countrycodes=us,ca&limit=5&dedupe=1`, `postalcode=` for a 5-digit zip else `q=`, and a `viewbox` from the map bounds.
+   It returns `{ name, sub, lat, lng, bbox }`; `NearMePanel` flies the map there.
+9. Offline: `lib/offlineTiles.js` (`saveRouteMapOffline`, `routeTileKeys`, `OFFLINE_MAX_Z`) caches tiles along a route's way in (USGS layers); `offlineFallbackLayer` in the kit falls back to the cache.
+
+## 3. Files
+| File | Key symbols |
+|---|---|
+| `lib/DbAreaBrowser.jsx` | `DbAreaBrowser`, `AreaPage`, `StatePicker`, `DbSearchSplit`, `RouteFinderPanel`, `NearMePanel`, `NearbyPeaks`, `ObjectivesPanel`, `DbAreaTree`, `DbSuggestedClimbs`, `SummitBriefing`, `nearbyPeaksBounds` |
+| `lib/mapKit.jsx` | `MAP_TILE_URLS`, `TILE_CREDIT`, `loadLeaflet`, `baseTileLayer`, `applyBaseLayer`, `BaseLayerToggle`, `ViewToggle`, `pinHtml`, `useFollowMe`, `acceptFix`, `searchPlaces` |
+| `lib/db.js` | `useAreaRoutes`, `useAreaChildren`, `useNearbyAreas`, `useNearbyPeaks`, `useSubtreeRoutes`, `useSubtreeRouteCount`, `useAreaSearch`, `useStates`, `useCountries`, `useAreaPath` |
+| `lib/search.js` | `SEARCH_FORMS`, `searchNorm`, `searchCanon`, `searchMatches` |
+| `lib/offlineTiles.js` | `saveRouteMapOffline`, `removeRouteMapOffline`, `routeMapLines` |
+| `ClimbMatchCore.jsx` | `GPXMap`, `OverviewMap` (seed/overview map), lazy `DbAreaBrowser` import |
+| `RouteDetail.jsx` | imports the kit (`loadLeaflet`, `applyBaseLayer`, `BaseLayerToggle`) for the route and waypoint-picker maps |
+
+## 4. Data
+- Supabase tables `areas` (parent_id, `path` ltree set by trigger, `area_type`, lat/lng, `route_count`; 0001) and `routes`.
+- RPCs: `routes_in_subtree`, `routes_in_subtree_count`, `areas_in_subtree`, `search_names_fuzzy`; SQL `search_norm()` (0190, 0200, 0201).
+- `catalog_directory` view and `catalog_find_area` / `catalog_find_route` (0214) - a browse-outline and duplicate lookup used by data work, not by this UI.
+- External: OpenStreetMap, ArcGIS World_Imagery and OpenTopoMap tiles (`MAP_TILE_URLS`); NASA GIBS for snow layers; USGS basemap tiles for offline (`OFFLINE_TILE_URLS`);
+  Nominatim for place search (no key). Tile credits live in `TILE_CREDIT`.
+- Seed: `MOUNTAINS` / `ROUTES` fallback when `USE_DB` is off.
+
+## 5. Connections
+- `openRoute(x)` / `onOpenRoute` hand a route to the route page; `wishlist`, `bookmarks`, `completedIds` flow in from `App` (objectives, saved, done).
+- `jumpToState` and `onAreaContext` let other screens deep-link to or read the current area.
+- Conditions score, alpine flags and fire layers use the same Leaflet kit (`FireMap`, `ShadeMap`).
+- Units: distances and elevations render through `uDistMi` / `uElev` (`check:units`).
+- Partners: By Area search picks an area from the same tree (see `docs/features/partners.md`).
+
+## 6. Guards
+`check:search-norm`, `check:list-row-columns`, `check:schema`, `check:counts` (`areas.route_count`), `check:area-surfaces`, `check:area-name-embed`,
+`check:area-duplicates`, `check:area-sort-labels`, `check:generic-area-names`, `check:wp-styles`, `check:waypoint-placement`, `check:waypoint-dedupe`,
+`check:track-caveat`, `check:gpx-caveats`, `check:waypoint-caveat`, `check:bottom-panels`, `check:overlays`, `check:overflow`, `check:ui`, `check:zero`.
+Notes: `docs/guards/README.md`.
+
+## 7. Last significant change
+#2416 - area map place search covers Canada (provinces, towns, postal codes); #2411 just before it fixed hidden zoom buttons and the buried location dot.
+
+## 8. Known gaps
+- `searchPlaces` depends on public Nominatim with no key or fallback; a non-OK response throws "place search <status>".
+- The area bubbles query is capped at 500 rows (`limit(500)`), so a zoomed-out view shows only the highest route counts; the UI is told via `total`.
+- Place search is restricted to `us,ca`; anywhere else returns nothing.
+- Only 5-digit values are sent as `postalcode=`; Canadian postal codes go through the free-text `q=` path.

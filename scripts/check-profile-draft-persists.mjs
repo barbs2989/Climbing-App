@@ -76,7 +76,8 @@ ok(`openEdit's draft carries ${draftKeys.length} fields`);
 // username are appended only when non-blank, so a literal-only scan would call them unsent.
 const si = app.indexOf("saveEdit=");
 if (si < 0) dead("ANCHOR LOST: `saveEdit=` could not be found");
-const saveEdit = app.slice(si, si + 2200);
+// The window must reach `saveProfile(uid,f)`: 2200 stopped short once saveEdit validated climbing_since (0299).
+const saveEdit = app.slice(si, si + 3200);
 const payM = saveEdit.match(/var f=\{([\s\S]*?)\};/);
 if (!payM) dead("ANCHOR LOST: saveEdit's DB payload literal could not be lifted");
 const sent = new Set();

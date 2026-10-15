@@ -53,7 +53,7 @@ const CASES = [
     want: r => r.some(x => x.kind === "disagree" && /LESS than/.test(x.msg)) },
 
   { name: "two counts of the friends list disagreeing on one screen",
-    build: () => { const s = clone(after); s["Crew:Friends"] = s["Crew:Friends"].replace("See all (2)", "See all (5)"); return s; },
+    build: () => { const s = clone(after); s["Crew:Friends"] = s["Crew:Friends"].replace("See all friends (2)", "See all friends (5)"); return s; },
     want: r => r.some(x => x.group === "friends" && x.kind === "disagree") },
 ];
 
