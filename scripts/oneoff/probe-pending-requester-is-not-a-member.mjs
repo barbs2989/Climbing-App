@@ -140,7 +140,7 @@ console.log("\n5. what deliberately keeps the whole roster\n");
 const keep = [
   ["the weekly-availability GRID ROWS — seeing when a requester is free is how you decide", /\{roster\.map\(m=><div key=\{m\.id\}/],
   ["name resolution in the day chips", /roster\.find\(function\(p\)\{return p\.id===id;\}\)/],
-  ["name resolution inside GearTiers", /roster=\{roster\}/],
+  ["name resolution inside CrewGearList (its Assign chips filter to confirmed on their own)", /<CrewGearList [^>]*roster=\{roster\}/],
   ["the itinerary numerator, which counts who HAS one rather than measuring against the crew", /var _n=roster\.filter\(function\(p\)\{var st=_mi\[p\.id\]/],
 ];
 for (const [what, re] of keep) {
