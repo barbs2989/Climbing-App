@@ -1,0 +1,68 @@
+# The route page
+
+Part of the current-state docs. The Conditions tab has its own doc: [conditions.md](conditions.md).
+
+## 1. What it does today
+
+- Tapping a climb anywhere in the app opens its page (`tab="routes"` with `selRoute` set). The header carries the five rating stars, a ★ cell with "★ N rated", grade, discipline and save/log actions.
+- Sub-tabs: `overview`, `planner`, `forecast` (labelled "Conditions"), `conditions` ("Reports" / "Send Reports"), `safety`, `partners`, `photos`. **Crag routes have no Plan tab** (see `CRAG_CATS`, `showPlan`); the Safety tab is unconditional.
+- Your header stars persist. Tapping another star changes your rating; tapping your own star again withdraws it. Signed out, it asks you to sign in rather than pretending to save.
+- Every figure built from several climbers' input states how many climbers it comes from and over what window (e.g. "avg of N ratings", "N climbers logged it", "N in the last 45 days", "N of 3 suggested").
+- Planner (alpine layout) has a **Full Trip Time** card: Approach, Climbing, Descent, Total trip (approach + climb + descent).
+- Climbers can edit/correct route fields through edit pencils; three agreeing climbers make a correction stick.
+- Photos tab: route photos, lightbox, likes, report.
+
+## 2. How it works
+
+1. **Open.** `openRoute(x)` in `ClimbMatch.jsx` sets `routeFrom`, `selRoute` and `tab="routes"`. `App` renders `RouteDetail` (a lazy screen).
+2. **Load (DB path, `USE_DB`).** `useAreaRoutes` (lib/db.js) backs the area browser's route list from `areas`/`routes`; `fetchRouteRow` fetches a single full row. `dbRouteToCamel()` converts a snake_case row to the camelCase shape the page reads. Seed `ROUTES` are only the fallback/demo set.
+3. **Overlay of climber input.** `App` merges contributions onto the route inside its route memo: `useRouteContributions` supplies accepted/pending corrections, producing `_contribFields` (accepted, incl. database-accepted fields), `_pendingEdits` (other climbers' suggestions with fewer than 3 votes, shown as "N of 3 suggested") and `_contribAgreed` (drives "✓ N climbers agreed" in the edit form). `useRouteDifficultyRatings` feeds the difficulty breakdown.
+4. **Stars.** `useMyRouteRating(routeId, userId)` reads your `route_ratings` row into `myStars` (a failed read never clears the stars). `setRouteRating(userId, routeId, stars)` upserts, or deletes when `stars` is null, then invalidates `route-rating-mine` and `route-star-summary`. `useRouteStarSummary(routeId)` calls RPC `route_star_summary` for the shared average and rater count shown in the ★ cell.
+5. **Sub-tabs** are rendered by `RouteDetail.jsx` off its `tab` state. Overview carries the consensus (`buildConsensus` over `route.activity`), hazard flags, route breakdown, approach/descent, social chips (`useRoutePairings`, `useRouteLoggedWith`). `FireNearRoute` is the first section of Safety on every route.
+6. **Planner.** Time estimates come from `scarfHrs(...)` (Naismith-style approach by fitness tier and pack weight) and `techHrs(...)` (pitch-by-pitch climbing, exponential slowdown by grade); `lib/planTimes.js` (`planTimes`, `realPitches`) assembles the stage totals. A route's stored legs win over computed ones (`check:return-leg`).
+7. **Glacier terrain.** Alpine routes whose terrain read says glacier get the glacier conditions card plus the rock-weather flags (#2336).
+8. **Photos.** `submitRoutePhoto` writes a `contributions` row of kind `photo`; `reportPhoto` reports one; `lib/PhotoReports.jsx` holds the moderation queue; `lib/photoPrivacy.js` / `lib/photoEvidence.js` support gating.
+
+## 3. Files
+
+| File | What lives there |
+|---|---|
+| `RouteDetail.jsx` | The page: sub-tabs, `CRAG_CATS`, `showPlan`, header stars UI, planner, photos tab and `photoLightbox`, edit pencils, `DiffRadar` |
+| `ClimbMatch.jsx` | `openRoute`, `selRoute`, `myStars`/`myRateQ`, route memo that merges `_contribFields`/`_pendingEdits`/`_contribAgreed` |
+| `ClimbMatchCore.jsx` | `scarfHrs`, `techHrs`, `buildConsensus`, `catOf`, `GPXMap`, `ElevChart` |
+| `lib/db.js` | `useAreaRoutes`, `fetchRouteRow`, `dbRouteToCamel`, `useRouteContributions`, `useRouteDifficultyRatings`, `useMyRouteRating`, `useRouteStarSummary`, `setRouteRating`, `submitRoutePhoto`, `reportPhoto`, `submitContribution` |
+| `lib/planTimes.js` | `planTimes`, `realPitches` |
+| `lib/FireNearRoute.jsx` | Nearby-fire panel (Safety tab) |
+| `lib/PhotoReports.jsx` | Photo report queue |
+| `EnrichmentPanels.jsx` | Panels for enriched route columns |
+| `lib/DbAreaBrowser.jsx` | The Climbs area browser that opens routes |
+| `supabase/migrations/0294_route_star_ratings_persist.sql` | `route_ratings`, `route_star_summary`, triggers |
+
+## 4. Data
+
+- **`routes`** (thousands of rows; `dbRouteToCamel` reads it). `routes.stars` is a cache kept by triggers on `route_ratings` and `climb_logs`; the Climbs list, min-stars filter and stars sort read it.
+- **`route_ratings`** (0294): PK `(route_id, user_id)`, `stars` 1-5, RLS own-row read/insert/update/delete. Nothing renders who rated what.
+- **`route_star_summary(p_route_id)`**: average of one vote per climber: header rating, else their most recent public, visible trip report's stars; returns `stars` and `raters`.
+- **`contributions`**: corrections (accepted at three agreeing climbers) and route photos (kind `photo`). **`climb_logs`**: trip reports/stars.
+- **Still seed/in-memory:** `ROUTES` fallback set and demo trip reports when not on the DB path.
+
+## 5. Connections
+
+- **Climbs browser:** `lib/DbAreaBrowser.jsx` and `openRoute` are the entry; the list's stars come from `routes.stars`.
+- **Crews:** crew gear list reaches a real route (`check:crew-gear`); crews are built around a `routeId`.
+- **Logbook:** logging a climb (`climb_logs`) feeds trip reports, consensus and, as fallback vote, the rating.
+- **Partners:** the `partners` sub-tab; `useRoutePairings` / `useRouteLoggedWith` show who logged it.
+- **Conditions:** see [conditions.md](conditions.md).
+
+## 6. Guards
+
+`check:bare` (route with no enrichment, every discipline x sub-tab), `check:field-renders`, `check:token-boxes`, `check:pitch-split`, `check:approach-section`, `check:approach-overlay`, `check:trailhead-directions`, `check:trailhead-direction-shape`, `check:access-checked-line`, `check:fire`, `check:summit-briefing`, `check:photo-contract`, `check:crew-gear`, `check:camping`, `check:correction-readers`, `check:return-leg`, `check:write-readers` (rating writes refresh both cached readers), `check:schema`, `check:rls`, `check:migration-replay`, `check:ui`, `check:zero`, `check:overflow`. Notes: `docs/guards/route-page.md`.
+
+## 7. Last significant change
+#2407 — header stars persist, count once per climber and feed the route rating (0294). Full history is in the PRs and the commit log for the files above.
+
+## 8. Known gaps / open decisions
+
+- #2403 states the corrections merge sits inside App's route memo and was not exercised against live contributions; only build guards cover it. It also records a database-path gap in `docs/guards/contributions-and-logbook.md`.
+- #2336 did not run `check:ui` or `check:overflow` after the Total row grew from 3 to 4 tiles.
+- Only 5 of 314,599 routes held a `stars` value when 0294 was written; a route's value is replaced only when a climber votes (per migration comment).
