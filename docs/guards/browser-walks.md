@@ -164,6 +164,15 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       total-minus-completed. They coincide today only because nothing in the seed demo is completed,
       so the rule is `to go == active` and `routes >= active` — the day a climber ticks an objective,
       a three-way equality fires on working code.
+    - **The friends pair measured the WRONG number for weeks, and agreed.** Its "Friends badge" read
+      (`/Friends\s*\n?\s*(\d+)/`) was written when the box had a count beside its title; #1881
+      removed the badge and the regex silently re-attached to the ← Crews row's repeated "Friends"
+      followed by *"2 online now"* — the ONLINE count, equal to the friend count only because every
+      fixture friend is online. #2430 dropped that repeated title and the read went unmeasured
+      (CI red). It now COUNTS the friend rows (one *Message* per row) between *"See all friends
+      (N)"* and *"Find more friends"*, capped at the list's five (`listCap`). A `count` read whose
+      section is missing is ABSENT, never zero rows. Lesson: a regex that still matches after its
+      target was deleted is worse than one that fails — check what it matched, not that it did.
     - **Scope a read by SECTION, never by a character window.** The Logbook renders a *"1 climb to
       go"* badge per CUSTOM LIST, so an unanchored read compares a different list. A `{0,400}` window
       was tried and silently stopped finding the badge on the one snapshot carrying the defect —
@@ -404,6 +413,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
         the landmark too (an alternative that matches nothing is the `offline library` defect
         above). A rename of the one remaining heading now leaves the landmark matching nothing,
         which `check:outage-landmark` reports at build time.
+      - **2026-10-15: the Logbook header became a per-sub-tab `<ScreenHero>`** (title and line follow
+        `logbookTab`; the fixed *"…all in one place."* prose is gone). Two of the probe's anchors
+        moved with it: the header check now looks for `<ScreenHero`, and the Saved-view carve
+        anchors on `logbookTab==="lists"?<div`, because the header's title ternary tests
+        `logbookTab==="lists"` FIRST and a bare-needle carve lifted 122 chars of it.
       - Proven by **`check:outage-landmark`**, which is **a BUILD GATE rather than a probe** on the
         two grounds `check:waypoint-dedupe` records for a class of one. *Anti-revert*: the repair
         changes a REGEX and **no identifier**, so `audit:silent-reverts` is blind to it by its own

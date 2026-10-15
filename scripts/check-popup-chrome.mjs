@@ -49,7 +49,7 @@ import url from "url";
 import { appSources } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), "..");
-const files = appSources(ROOT, "check:popup-chrome").filter(f => f.endsWith(".jsx"));
+const files = appSources(ROOT, "check:popup-chrome").filter(f => /\.[jt]sx$/.test(f));
 
 // End of an opening tag, skipping quoted strings and {…} expressions (a style object or an
 // arrow function in onClick holds ">" characters that are not the tag's end).

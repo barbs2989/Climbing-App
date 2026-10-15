@@ -27,7 +27,7 @@
 //   node scripts/check-crew-member-readers.mjs
 import fs from "node:fs";
 import path from "node:path";
-import { appSources, readAppFile } from "./lib/guard-sources.mjs";
+import { appSources, componentFiles, readAppFile } from "./lib/guard-sources.mjs";
 
 const GUARD = "check:crew-member-readers";
 const ROOT = process.cwd();
@@ -40,7 +40,7 @@ const ROOT = process.cwd();
 // call whose own text names climberId. That shape stays a blind spot; walking the screen found it.
 const all = appSources(ROOT, GUARD);
 const CORE_FILES = ["ClimbMatch.jsx", "ClimbMatchCore.jsx"];
-const FILES = [...CORE_FILES, ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => f.endsWith(".jsx")).sort().map((f) => "lib/" + f)];
+const FILES = [...CORE_FILES, ...componentFiles(ROOT, { guard: "check:crew-member-readers" })];
 for (const f of CORE_FILES) {
   if (!all.some((p) => path.basename(p) === f)) {
     console.error(`${GUARD} FAILED — ${f} was not among the app sources, so nothing was scanned.`);
@@ -87,9 +87,7 @@ const FALLBACK = /ProfilesQ|profs\.find|memberProfilesQ|crewMemberById/;
 const ALLOW = [
   { key: "x.id===ci.climberId", why: "crewReqIn is the SEED invite list; real invites render from myCrewInvitesQ (#734), so these ids are always seed integers" },
   { key: "x.id===jr.climberId", why: "crewJoinIn is seeded and never written from the DB — no join request ever carries a uuid" },
-  { key: "x.id===jq.climberId", why: "same crewJoinIn list, read again for the unfinished-business dropdown" },
   { key: "c.id===q.climberId", why: "GuideDashboard is the seed dashboard — DbGuideDashboard is the DB-backed one and resolves separately" },
-  { key: "x.id===_t.climberId", why: "a notification's climberId, reached through notifTarget() so the affordance and the click cannot disagree (#1716); the descriptor deliberately keeps the field NAMED climberId so this lookup stays visible to this guard. The result is still guarded by `if(c)`, so a miss opens nothing rather than showing the wrong person" },
 ];
 const used = new Set();
 

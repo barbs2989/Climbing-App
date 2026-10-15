@@ -22,10 +22,11 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { componentFiles } from "./lib/guard-sources.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const APP = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx", "EnrichmentPanels.jsx",
-  ...fs.readdirSync(path.join(ROOT, "lib")).filter((f) => f.endsWith(".jsx")).map((f) => "lib/" + f)];
+  ...componentFiles(ROOT, { guard: "check:preview-claims" })];
 let failures = 0;
 const ok = (m) => console.log("  ok    " + m);
 const fail = (m) => { failures++; console.log("  FAIL  " + m); };

@@ -51,7 +51,7 @@ const problems = [];
 const asts = {}, fns = {}, consts = {};
 for (const rel of FILES) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
-  const ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: true });
+  const ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: true });
   asts[rel] = ast;
   traverse(ast, {
     FunctionDeclaration(p) { if (p.node.id) reg(rel, p.node.id.name, p); },

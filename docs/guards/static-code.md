@@ -8,6 +8,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   an enclosing scope — the bug that blank-screened production in #317 and #359.
   It runs inside `npm run build`, so it gates CI too. Keep
   `scripts/undefined-refs-baseline.json` empty.
+  - **TypeScript (2026-10-15):** it parses with the `typescript` plugin and skips an identifier whose
+    nearest enclosing TS node is a *type* (`Record<K,V>`, `: RiskBadgeProps`) — erased before anything
+    runs, so never a ReferenceError; `check:types` answers whether it resolves. An identifier inside
+    `x as T`, `x!` or `x satisfies T` is still checked: those wrap a value, and a bare unbound name
+    there is a real runtime read.
 - **`check:boot`** compares the inline boot placeholder in `index.html` (the app
   shell painted while the bundle loads) against the real `NAV` array. It is a
   hand-copy, so a renamed or reordered tab would otherwise flicker stale chrome
@@ -540,6 +545,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     useful to a reader than a placeholder. The failure message says so.
   - Fails **closed** on a pattern that parses fewer than 80 paths: a doc scan matching nothing
     prints the same clean result as a correct one.
+- **`check:feature-docs`** asserts that the area docs in `docs/features/` (indexed by
+  `CURRENT_STATE.md`) still describe code that exists: every row of a doc's **Files** table names a
+  real file (or real migration numbers), every backticked identifier in that row occurs as a whole
+  word in that file, every backticked path in the doc exists (a bare name resolves against the root,
+  `lib/` and the docs folders), and the index and the folder agree in both directions. Static,
+  milliseconds, in `npm run build`.
+  - **It exists because the owner asked for these docs to stay current ALL the time** (2026-10-15),
+    and the next session TRUSTS them — a doc naming a renamed function is worse than no doc. It
+    catches the rename/move/delete half. **It cannot tell whether a description is still TRUE**;
+    that half is the CLAUDE.md rule that a PR changing an area edits its doc in the same PR.
+  - **Its first run found a stale line in CLAUDE.md itself**: `DiffRadar` was listed as a
+    `ClimbMatchCore.jsx` component; it lives in `RouteDetail.jsx`. The route-page doc had copied it.
+  - Injection-tested (renamed symbol, a doc dropped from the index, a missing file in a Files
+    table, a renamed Files heading) — all four fail, the clean tree passes. Fails **closed** under
+    40 parsed symbols or 4 docs.
+  - **Wildcards and expressions are skipped on purpose** (`CMAX_*`, `profile.zip`): only a plain
+    identifier is checked, so a doc can still describe a family of names in prose.
 - **`check:injection-anchors`** asks whether every **injection case still LANDS**. A suite is the
   PROOF that a guard can fail, so a case whose anchor no longer occurs in its target file proves
   nothing: the harness reports *"edit never landed"* or `HARNESS BUG`, **nothing runs

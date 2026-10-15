@@ -95,7 +95,7 @@ for (const f of files) {
   const src = readFileSync(f, "utf8");
   let ast;
   try {
-    ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+    ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   } catch (e) {
     console.error("check:control-names FAILED — could not parse " + f + ": " + e.message);
     console.error("Nothing was checked. This is a coverage failure, not a clean tree.");

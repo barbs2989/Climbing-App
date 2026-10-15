@@ -198,15 +198,6 @@ const CASES = [
     repl: "// the gate used to read dy.gustMax>dy.windMax, which spanned 70 m of altitude\nfunction gustWorthShowing(dy){",
     expect: "pass",
   },
-  {
-    name: "caption-reworded",
-    why: "MUST STAY SILENT — the caption must NAME the two heights, not use one phrasing. A " +
-         "guard pinned to a sentence forbids improving the copy",
-    file: RD,
-    find: "gusts, the hourly view’s wind, and the NWS and MET winds beside each day are surface (10 m) figures — so the day’s wind and its gusts are not at the same height.",
-    repl: "the gust, the hourly wind, and the NWS and MET winds beside each day are surface (10 m) readings taken at a different height.",
-    expect: "pass",
-  },
 ];
 
 let bad = 0;

@@ -1,11 +1,14 @@
 // Moved out of ClimbMatchCore.jsx verbatim so it can load lazily, off the first-paint
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { useState } from "react";
-import { Av, C, HERO_BG, HERO_SHEEN, TrustBadge, vScore } from "../ClimbMatchCore.jsx";
+import { Av, C, HERO_BG, HERO_SHEEN, TrustBadge, useRealTrustScore, vScore } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE } from "./popupChrome.js";
 
-export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavailable}){
+export default function ShareCard({climber,selfUid,onClose,logsUnavailable,catchesUnavailable}){
   const [copied,setCopied]=useState("");
+  /* A signed-in climber's trust is the SERVER score, the one their Profile and every other viewer see; vScore is the
+     client model and printed a different number on the card they share. Nothing renders until that score arrives. */
+  const _srvTrust=useRealTrustScore(selfUid);const shareTs=selfUid?_srvTrust:vScore(climber);
   const slug=climber.name.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/(^-|-$)/g,"");
   const link="climbmatch.app/climber/"+slug;
   const grades=[["Sport",climber.sportGrade],["Trad",climber.tradGrade],["Boulder",climber.boulderGrade]].filter(g=>g[1]&&g[1]!=="N/A").map(g=>g[0]+" "+g[1]).join(" · ");
@@ -16,7 +19,7 @@ export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavai
   const idLine=[climber.level?climber.level+" climber":"",climber.location||""].filter(Boolean).join(" · ");
   const expLine=[climber.years?climber.years+" yrs climbing":"",grades].filter(Boolean).join(" · ");
   const _slLogged=climber.routesLogged||0,_slCaught=(climber.catchLedger&&climber.catchLedger.totalCatches)||0;
-  const _slParts=[(climber._real||climber._conn||climber._profile||typeof climber.id==="string")?null:("Trust "+vScore(climber))];if(!logsUnavailable)_slParts.push(_slLogged+" climb"+(_slLogged===1?"":"s")+" logged");if(!catchesUnavailable)_slParts.push(_slCaught+" catch"+(_slCaught===1?"":"es")+" caught");const statLine=_slParts.filter(Boolean).join(" · ");
+  const _slParts=[(climber._conn||climber._profile||(typeof climber.id==="string"&&!selfUid)||shareTs==null)?null:("Trust "+shareTs)];if(!logsUnavailable)_slParts.push(_slLogged+" climb"+(_slLogged===1?"":"s")+" logged");if(!catchesUnavailable)_slParts.push(_slCaught+" catch"+(_slCaught===1?"":"es")+" caught");const statLine=_slParts.filter(Boolean).join(" · ");
   const summary=[climber.name+(idLine?" — "+idLine:""),expLine,statLine].filter(Boolean).join("\n")+(hl?"\n\n"+hl:"")+"\n\nMy ClimbMatch profile → https://"+link;
   const copy=async(text,what)=>{try{await navigator.clipboard.writeText(text);setCopied(what);}catch(e){setCopied("fail:"+what);}setTimeout(()=>setCopied(""),2400);};
   const mailto="mailto:?subject="+encodeURIComponent(climber.name+" — ClimbMatch profile")+"&body="+encodeURIComponent(summary);
@@ -27,7 +30,7 @@ export default function ShareCard({climber,onClose,logsUnavailable,catchesUnavai
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"14px 16px",borderBottom:`1px solid ${C.border}`}}><div style={{fontSize:16,fontWeight:700}}>Share your climbing profile</div><button onClick={onClose} aria-label="Close" style={POP_CLOSE}>✕</button></div>
       <div style={{padding:16}}>
         <div style={{background:HERO_BG,boxShadow:HERO_SHEEN,borderRadius:14,padding:16,marginBottom:14,border:`1px solid ${C.border}`}}>
-          <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:12}}><Av src={climber.avatar} size={56}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:17,fontWeight:700}}>{climber.name}</div><div style={{fontSize:12,color:C.textSub}}>{idLine||"Add your level and home area to fill this in"}</div><div style={{marginTop:4}}><TrustBadge score={vScore(climber)}/></div></div></div>
+          <div style={{display:"flex",gap:12,alignItems:"center",marginBottom:12}}><Av src={climber.avatar} size={56}/><div style={{flex:1,minWidth:0}}><div style={{fontSize:17,fontWeight:700}}>{climber.name}</div><div style={{fontSize:12,color:C.textSub}}>{idLine||"Add your level and home area to fill this in"}</div>{shareTs!=null?<div style={{marginTop:4}}><TrustBadge score={shareTs}/></div>:null}</div></div>
           {grades?<div style={{fontSize:13,color:C.textSub,marginBottom:10}}>{grades}</div>:null}
           <div style={{display:"flex",gap:7}}>{[["Years",climber.years||"—"],["Logged",logsUnavailable?"—":climber.routesLogged],["Catches",catchesUnavailable?"—":climber.catchLedger.totalCatches]].map(x=><div key={x[0]} style={{flex:1,background:"rgba(255,255,255,0.06)",borderRadius:9,padding:"7px 4px",textAlign:"center"}}><div style={{fontSize:16,fontWeight:700,color:C.blue}}>{x[1]}</div><div style={{fontSize:12,color:C.textMuted}}>{x[0]}</div></div>)}</div>
         </div>

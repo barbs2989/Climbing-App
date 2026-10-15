@@ -238,6 +238,49 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     the missing file and its own file count; breaking the `db.js` vocabulary regex fails
     `check:writes`. The file counts differ legitimately (15 for the `.jsx`-only walkers, 65 for
     `check:zindex`) because the guards have different `SKIP` sets — do not "normalise" them.
+  - **Components live in TWO folders since 2026-10-15** — `lib/` (the 2026-09 lazy-load moves) and
+    `src/components/` (the single-job TypeScript extractions, `docs/refactor-progress.md`) — and
+    the #547 shape was one directory away from recurring: **11 guards enumerated `lib/` by hand**
+    and **19 filtered on `.jsx`**, so a `.tsx` in the new folder was invisible to all of them, and
+    **44 parsed with Babel `plugins:["jsx"]`**, which THROWS on a `.tsx` (loud, at least). Now one
+    list, `componentFiles(root, { js })`, feeds `appSources()` and every hand-rolled walker, every
+    parse carries the `typescript` plugin, and `MOVED` is keyed by parent file so a component
+    extracted from `ClimbMatch.jsx` or `RouteDetail.jsx` is stitched back like one from core
+    (`readParentSource()`; `readCoreSource()`/`MOVED_FROM_CORE` kept as aliases for 21 importers).
+    Measured before the plugin went in: parsing every existing `.js/.jsx` with and without
+    `typescript` gives **identical ASTs** apart from `importKind`/`exportKind: "value"` on
+    import/export nodes, which no guard reads. `check:refs` skips identifiers in TS *type*
+    positions (`Record<K,V>`, `: Props`) — erased before anything runs — but not inside `x as T`,
+    which wraps a value.
+- **`check:types`** runs `tsc --noEmit` over `tsconfig.json` (strict, `allowJs` so a component can
+  import the three JS app files with inferred types). It exists because **Vite compiles `.tsx`
+  with esbuild, which strips types and checks nothing**, so without it a type error ships. It is a
+  `node scripts/check-types.mjs` entry, not a bare `tsc`, because `run-build-guards.mjs` parses the
+  chain for exactly that shape and would silently skip anything else. Fails closed on zero
+  TypeScript files under `src/` (a layout move, not a pass). ~7 s CPU: `tsc` follows the imports
+  into the 2.3 MB of JSX; the wall time on a loaded box is much longer and is not a defect.
+  - **Trap, met on the first component:** a JS function's destructured parameter
+    (`const Pill=({label,color,bg,sm,icon})=>`) is inferred as an object with every property
+    REQUIRED, so a `.tsx` that omits `icon` fails TS2741. Type the seam on the JS side with a
+    JSDoc `@param {{label?: …}}` — one line, no runtime change, and every later component
+    benefits — rather than casting in the component.
+- **`measure:guard-reach`** is the blindness detector the 2026-09 moves recorded and nobody had
+  built: run every build guard, record its exit code and **every integer it printed**, then run
+  again after a move with `--compare` and fail on a guard that passed before and fails now, prints
+  fewer numbers, or has a count that fell to **zero**. A changed count is listed, not failed — a
+  move legitimately shifts a file count by one. Hand-run around every extraction
+  (`docs/refactor-progress.md` step 2 and 4), never in the chain: it IS the chain, run twice.
+  Its first use, the `RiskBadge` extraction, is the measurement that this entry's claims rest on:
+  110 guards, 25 with changed counts — every one the new `.tsx` being SEEN (a file count up by one in
+  ten guards, the chain and the doc citations up by the new scripts) — and no drop.
+  - **Its first run also produced two false positives and the fix is in the tool:** `check:return-leg`
+    and `check:pitch-discount` "lost" 60 numbers each. Both blocks were Node's own
+    `(node:85793) ExperimentalWarning` text plus stack frames — pids and line numbers that appear or
+    not with the box's load — printed in the baseline and not after, while the guards' own counts were
+    identical to the last digit. Those lines are stripped before counting now. The lesson generalises:
+    **a count taken from a guard's output must come from what the guard SAID, not from what the
+    runtime said around it.** And run it without piping through `tail`: the pipe hides the exit code.
+
 **Can the database even answer, before a guard spends half an hour finding out?**
 `scripts/lib/db-preflight.mjs` asks once, up front, and is used by `check:ui`, `check:zero`
 and `check:overflow` (#865). `check:field-renders` answers the same question its own way,
