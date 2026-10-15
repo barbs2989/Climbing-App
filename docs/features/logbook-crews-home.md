@@ -11,10 +11,12 @@ Three top-level `tab` values in `ClimbMatch.jsx` (`tab==="today"`, `tab==="crew"
   Home already shows it (#2408).
 - **Logbook > Completed**: `MyAscents` (`lib/MyAscents.jsx`) lists logged climbs (`climb_logs`); `LogAscent` is the logging form,
   `TripReport` the opened trip report, `LogTagConfirmations` lets a tagged partner confirm or decline being named on a log.
-  `TripReport` shows ONLY what the reporter entered, in the form's own sections (the climb, getting there, on the route,
-  hazards, the descent, the write-up, recorded track, climbed with); a section with nothing in it is not drawn, and no
+  `TripReport` shows ONLY what the reporter entered, in the form's own seven sections and order (The climb, Getting there, On the route,
+  Hazards, The descent, The write-up, Climbed with — plus the recorded track); a section with nothing in it is not drawn, and no
   route fact (grade, gain, distance, the route's GPS line) stands in for the reporter's. The reporter's own track is read
-  on open through `useLogTrack` (`lib/db.js`), since the route page's report read leaves `gpx_track` out.
+  on open through `useLogTrack` (`lib/db.js`), since the route page's report read leaves `gpx_track` out. The descent section draws
+  the three logged legs as a proportional bar with the total; an avalanche rating below Considerable files under On the route as a
+  reading, Considerable and above under Hazards. The form says, under typed partner names, that a typed name cannot confirm the climb.
   `LogAscent` also offers *Add topo photo* (signed in, DB on): the climber draws the route line with the route page's
   `TopoDrawer` (lazy import from `RouteDetail.jsx`) and on save App's `addLogTopo` files the photo under the climb's
   area (`uploadTopoPhoto`) and the line on the route (`submitTopoLine`), so it reaches the Photos tab for everyone.

@@ -11,7 +11,7 @@ Part of the current-state docs. The Conditions tab has its own doc: [conditions.
 - Planner (alpine layout) has a **Full Trip Time** card: Approach, Climbing, Descent, Total trip (approach + climb + descent).
 - Climbers can edit/correct route fields through edit pencils; every edit is held until the owner approves it (see [route-quality-control.md](route-quality-control.md)).
 - Crag routes show `CragLocationCard` (crag + parking coordinates, Google/Apple Maps). Its *Add parking*, *Add the pin* and the pencil on a parking pin open the `waypoints` pin editor (map picker + lat/lng). That editor is offered on every crag discipline. On a crag it is labelled *Parking & key points*, its types are `WP_TYPES_CRAG`, and the stored `Trailhead` type is shown as *Parking* (`wpTypeLbl`). `trailheadPoint()` reads that pin before the crag-wide `areas.parking_*` pin.
-- Photos tab: route photos, lightbox, likes, report. Its `TopoDrawer` is exported for the log form (`lib/LogAscent.jsx`), so a topo can be drawn while logging a climb.
+- Photos tab: route photos, lightbox, likes, report. Its `TopoDrawer` is exported for the log form (`lib/LogAscent.jsx`), so a topo can be drawn while logging a climb. A line can be named (`topo_lines.label`, optional); the name is the line's chip in `TopoPhotoModal` and a caption on `TopoThumb`.
 
 ## 2. How it works
 
