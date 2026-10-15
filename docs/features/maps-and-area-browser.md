@@ -71,7 +71,8 @@ Shared map plumbing is `lib/mapKit.jsx`. The route page is documented in `docs/f
   ancestors below the state (`PARTNER_CARD_TYPES` — never a peak or a state) draws `PartnersHereCard`: how many climbers are listed here or nearby, up to three rows
   (the row component arrives from App as the `PartnerRow` prop — this file does not import core), a one-tap **List me here / Listed ✓** that writes this area's listing,
   "Add dates or climbing types" (a full-width card button, shown once listed) into the My listed areas sheet (`onListMe`), and "See all →" into the Partners tab on this area (`onFindPartnersInArea`). Signed out it asks for sign-in.
-  `check:area-surfaces` rule 3 pins it.
+  `check:area-surfaces` rule 3 pins it. Its crews row (0302): **Start a crew here** (`onStartCrew` → `StartCrewSheet` prefilled with this area) and **Crews here · N**
+  (`onCrewsHere` → Join a crew, By Area preset to this area; `openCrewCountAt` counts open crews bound to exactly this area).
 
 ## 6. Guards
 `check:search-norm`, `check:list-row-columns`, `check:schema`, `check:counts` (`areas.route_count`), `check:area-surfaces`, `check:area-name-embed`,
