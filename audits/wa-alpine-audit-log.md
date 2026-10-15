@@ -32066,3 +32066,50 @@ never a directly-fetched page; re-verify directly once network access to those d
 is restored.
 
 Pass 7 continues next run after `wa_hourglass_gully_winter`.
+
+## Batch 410 (pass 7) — 2026-10-15
+
+Checked: Hozomeen Mountain's five routes (North Ridge, Southeast Buttress, Southwest
+Route — all South Peak; Southwest Buttress, West Face — North Peak), and Huckleberry
+Mountain's three routes (East Ridge, North Route, North Spur).
+
+**0 confirmed errors — no SQL file this batch.**
+
+**Hozomeen Mountain — held up well across the board, two routes independently
+corroborated beyond Wikipedia.** Coordinates, both summits' elevations (North Peak
+8,071ft, South Peak 8,003ft), the "metavolcanic"/greenstone rock type (USGS), all five
+first-ascent parties/dates, the current NPS backcountry permit fees ($10/person + $6
+reservation fee), and the "steepest peak in Washington" (42.62°) claim all confirmed.
+The Southeast Buttress (Adams/Goodman/Johnson/Petroske, 1988) and Southwest Route
+(Beckey's party, 1947) FAs were each independently matched against an American Alpine
+Journal account, not just a single Wikipedia line. Flagged rather than fixed: the
+stored prominence (3,938ft) is 6ft off Wikipedia's 3,932ft — real but single-source,
+with peakbagger/listsofjohn unreachable this run to triple-check, and too small to act
+on alone; the West Face's "Grade IV"/R-X protection rating, while plausible given the
+described unprotectable rock, couldn't be independently pinned down beyond its
+corroborated 12-pitch/5.9 core; and the "closed to both vehicle and foot traffic since
+2020" border-crossing line looks imprecise for the 2020–2024 window specifically (some
+sources describe foot traffic as having been allowed then), though the current
+2025–2026 fully-closed state matches.
+
+**Huckleberry Mountain East Ridge — clean on every item checked.** The historic 1915
+Hazlehurst/Acheson first-ascent line, elevation/prominence (6,320ft/720ft, matching
+Wikipedia and PeakVisor), the PCT approach via Kendall Katwalk to Huckleberry Flats,
+Alpine Lakes Wilderness permit/pass requirements, the Class 3/4 ridge-to-notch-to-5.3
+summit-block description, and the two-rappel descent (independently matched down to
+the "tat-covered rock pile" anchor in a 2024 trip report) all corroborated. One
+unresolvable minor note, not flagged as an error: SummitPost's lone 6,230ft figure for
+the peak reads as a probable digit transposition of 6,320, not a real second data
+point.
+
+**Huckleberry's North Route and North Spur — still bare stubs.** Both carry nothing
+but id/name/discipline, so there was nothing to fact-check; flagged as unverified
+route names (not contradicted) since neither could be independently corroborated
+against any source.
+
+**Tooling notes:** Delegated to 2 parallel subagents, one per peak. WebFetch
+DNS-failed on every domain tried in both subagents again this run — every finding
+above rests on WebSearch snippets only, never a directly-fetched page; re-verify
+directly once network access to those domains is restored.
+
+Pass 7 continues next run after `wa_huckleberry_mountain_north_spur`.
