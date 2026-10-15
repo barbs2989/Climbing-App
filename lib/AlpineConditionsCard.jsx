@@ -422,7 +422,7 @@ function HourByHour({ fc, day, dayLabel, pt, floor, legs, snowLegs }) {
         <Tile label="Low cloud" when={"at " + clockHr(hr)} value={lowc != null ? Math.round(lowc) + "%" : NOT_MEASURED} sub={lowc == null ? null : "cloud in the layers up to about " + (uImp() ? "10,000 ft" : "3 km") + " up; the route may sit in or above them"} />
         <Tile label="Freezing level" when={"at " + clockHr(hr)} value={fl != null ? uElev(Math.round(fl / 100) * 100) : NOT_MEASURED} sub={fl == null || tops == null ? null : "Air at " + uElev(tops) + " is " + (fl > tops ? "above" : "below") + " 0 °C" + (snowLegs && floor ? "; at the lowest snow you cross (" + uElev(floor.ft) + ") it is " + (fl > floor.ft ? "above" : "below") + " 0 °C" : "")} wide /></TileGroup>
     </div>
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Forecast for the point and height named above, not a reading on the mountain. Mountain forecasts tend to run low in strong wind, so a quiet hour is not a promise. Wind chill uses the 10 m wind and assumes no sun; direct sun can offset it by {uTempDelta(10)}–{uTempDelta(18)}°. Temperatures are modelled for that height: checked against mountain weather stations, an hour’s value was typically off by {uTempDelta(3)}–{uTempDelta(5)}°, and in winter by up to {uTempDelta(9)}°, most often reading too cold. Forecasts from different services can differ by more at a summit. A thunderstorm hour is the forecast’s, and no hour is marked safe.</div>
+    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>Temperatures are modelled for the height named above: checked against mountain weather stations, an hour’s value was typically off by {uTempDelta(3)}–{uTempDelta(5)}°, and in winter by up to {uTempDelta(9)}°, most often reading too cold. Forecasts from different services can differ by more at a summit.</div>
   </div>;
 }
 
@@ -547,7 +547,6 @@ function AirSection({ day, dayLabel, air, onRetry }) {
         <Tile label="Worst hour's US AQI" when={"around " + clockOf(air.data, a.at)} value={Math.round(a.max)} tone={tone} sub={aqiWord(a.max)} />
         <Tile label="Fine smoke (PM2.5)" when="at that hour" value={a.pm != null ? Math.round(a.pm) + " µg/m³" : NOT_MEASURED} sub={a.pm != null ? "24-hour average basis" : null} />
       </TileGrid>}
-    <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, marginTop: 8 }}>A forecast for the whole area on a coarse grid ({uImp() ? "about 28 mi, 7 mi in Europe" : "about 45 km, 11 km in Europe"}), not a reading at the route: smoke pooled in a valley or drifting above the route is not seen. Particles are averaged over the preceding 24 hours, so a plume’s arrival and clearing show up late. Look at the sky and a local air-quality station before you go. Flagged above AQI 100 (EPA: unhealthy for sensitive groups) and 150 (unhealthy for everyone).</div>
   </div>;
 }
 
@@ -557,17 +556,8 @@ function AirSection({ day, dayLabel, air, onRetry }) {
    AAC; Mont Blanc's Goûter couloir monitoring, where the safe hour is specific to each couloir;
    Portland Mountain Rescue; a Devil's Kitchen report where rime let go as the sun hit the walls).
    Wet loose snow follows the sun round the aspects — east first, west in the warm afternoon — and
-   centres put the slope that lets go at about 35° (STEEP_DEG). What the sun does differs by kind,
-   so each gets its own line; every one is a rule of thumb. Not scored, and it moves no start time:
+   centres put the slope that lets go at about 35° (STEEP_DEG). Not scored, and it moves no start time:
    the start stays the Planner's, counted back from the snow and the storms. */
-const SUN_NOTE = {
-  glacier: "Rock, ice and wet snow start to move once the sun reaches the slopes above you, not just where you stand — be past steep sunlit ground before the sun gets to it.",
-  alpineice: "Ice and rock let go once the sun reaches the face and the slopes above it — be off the line before the sun gets there.",
-  waterfall: "Sun on the ice, or on snow above it, loosens both — even while you climb in shade.",
-  cragmixed: "Sun strips rime and softens turf; mixed ground in shade keeps its ice longer.",
-  scramble: "Sun dries wet rock and melts thin ice; rock in shade stays wet or icy longer.",
-  alpinerock: "On a cold day a face in sun is warmer to climb; one in shade stays cold, and keeps any verglas.",
-};
 const SUN_PINS = [["Summit", "Summit"], ["Topout", "Top"], ["Base", "Base"], ["Campsite", "High camp"]];
 export function sunPins(route) {
   const wps = (route.waypoints || []).filter(wpPlaced), out = [];
@@ -615,7 +605,6 @@ function SunShadeSection({ route, kind, terrain, pt, fc, day, isToday }) {
   const steep = kind === "glacier" || kind === "alpineice" || kind === "waterfall" || kind === "cragmixed" || hasSnowLegs(kind, terrain);
   return <div style={BOX}>
     <CardHead style={{ marginBottom: 6 }}>SUN AND SHADE</CardHead>
-    <div style={{ fontSize: 12.5, color: C.text, lineHeight: 1.5, marginBottom: 8 }}>{SUN_NOTE[kind] + " A rule of thumb."}</div>
     <ShadeMap lat={ctr.lat} lng={ctr.lng} pins={pins.length ? pins : null} steep={steep} place={pins.length ? "climb" : "area"} rise={rise} set={set} at0={at0} dayKey={day.date} clock={function (u) { return clockOf(fc, Math.round(u / 1000)); }} C={C} />
   </div>;
 }

@@ -1565,13 +1565,12 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       (east first, west in the warm afternoon), and centres put the slope that lets go at ~35°
       (Utah: stay off and out from under slopes approaching 35° once the sun wets them). CalTopo's
       sun-exposure layer and point chart are the tool climbers use for this today, by hand.
-    - **Each kind gets its own line** (`SUN_NOTE`): sun loosens what is above a glacier or an
-      alpine-ice line; it loosens waterfall ice and the snow above it even while you climb in shade;
-      it strips rime and softens turf on mixed ground; it DRIES a scramble; it WARMS alpine rock on a
-      cold day. Every one is called a rule of thumb on screen.
+    - **No per-kind sun line, and no caveat footer under the map** (removed 2026-10-15 at the owner's
+      request, with the forecast, smoke and hourly-wind caveat footers): the section is the map and
+      its readouts only. Do not re-add them as a guard requirement.
     - **STEEP (35°+) AND IN SUN** is an overlay offered only where snow or ice is in play (glacier,
       alpine ice, waterfall, mixed, or a kind with snow legs). The slope comes from the same ~7 m
-      heights, so a short steep step reads gentler than it is, and the card says so.
+      heights, so a short steep step reads gentler than it is.
     - **A SUMMIT is read at the model's own high point** (`highestNear`, within 30 m). Measured
       live before it shipped: Colchuck Peak's summit pin sat one pixel off the model's top, 2 m
       lower, so the top "shaded" it until the sun was ~17° up — first sun 8:30 AM against a 7:10
