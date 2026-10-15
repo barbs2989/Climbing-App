@@ -38,10 +38,11 @@ const CASES = [
     why: "the route-card gain chip, the same conversion a fourth way",
     find: 'Math.round(r.gainM*3.28084).toLocaleString()+" ft"', repl: 'Math.round(r.gainM*3.281).toLocaleString()+" ft"',
     expect: /lib\/CrewFinder\.jsx @\d+: 3\.281 —/ },
-  { name: "ascent-gain-tile", file: "lib/TripReport.jsx",
-    why: "the ascent card's Gain tile, whose neighbouring Distance tile already used the shared uDist()",
-    find: '["Gain",uElev(Math.round(r.gainM*3.28084))]', repl: '["Gain",uElev(Math.round(r.gainM*3.28))]',
-    expect: /lib\/TripReport\.jsx @\d+: 3\.28 —/ },
+  // "ascent-gain-tile" (lib/TripReport.jsx) was the fifth case until 2026-10-15: the trip report no
+  // longer prints the ROUTE's gain at all -- an opened report shows only what its reporter entered
+  // (owner decision; the tile was gone with the grade and distance tiles and the route's GPS line).
+  // Nothing replaced the conversion, so there is no edit to revert; the property is still proven by
+  // the four cases above, each a different conversion site.
 
   { name: "comment-naming-the-constants", file: "ClimbMatchCore.jsx", mustPass: true,
     why: "a COMMENT naming 3.281 and 0.621 is documentation; flagging it would forbid the probe's own explanation",

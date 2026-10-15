@@ -928,7 +928,7 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
   const ccEff = cc.slice(cc.indexOf("const [realTrust,setRealTrust]=useState({})"));
   const ccEffEnd = ccEff.indexOf("]);");
   const idsExpr = ccEffEnd > 0 ? ccEff.slice(0, ccEffEnd) : "";
-  if (/joinReqs/.test(idsExpr) && /\[realInvSearch\.data,joinReqs\]/.test(ccEff.slice(0, ccEffEnd + 3)))
+  if (/joinReqs/.test(idsExpr) && /\[realInvSearch\.data,joinReqs[,\]]/.test(ccEff.slice(0, ccEffEnd + 3)) /* further deps allowed: batch 3 added showAdd,connections (friends in the invite list) */)
     ok("CrewCard's batched fetch covers the join requests, and re-runs when they change");
   else
     fail("CrewCard's realTrust fetch no longer covers joinReqs (or no longer depends on them) — the badge would be gated on a score that never arrives, showing nothing forever");
