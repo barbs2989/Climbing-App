@@ -24,6 +24,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **PR3** `DiscBadge` extracted to `src/components/DiscBadge.tsx` (core imports it back for `DiscBadges`; the guard stitch drops a parent's own import of a moved file).
 - **#2427** TypeScript + `src/components/`: strict `tsconfig`, `check:types` in the build, guards made TS-aware, `measure:guard-reach`; first extraction `RiskBadge` (procedure: `docs/refactor-progress.md`).
 - **#2415** Résumé Experience: Sport and Trad groups; Scrambling replaces Other.
 - **#2416** Area map place search covers Canada: provinces, towns, postal codes.

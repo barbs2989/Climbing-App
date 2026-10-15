@@ -22,6 +22,12 @@ extraction.** No guard reads this file; keeping it true is on the author.
 - A JS function the component calls has its destructured params inferred as **required** props
   (`Pill` failed TS2741 on a call without `icon`). Type the seam on the JS side with one JSDoc line —
   `/** @param {{label?: …, icon?: …}} p */` above the function — never with casts in the component.
+- **Read the parent's exports at render time, never at module scope.** A parent that still uses what
+  it extracted imports the file back, so the component module evaluates *inside* the parent's own
+  evaluation and every binding it imported from the parent is still uninitialised. `DiscBadge` (PR3)
+  did `const META = CAT` at the top of the file; `check:units` and `check:seed-history` both rendered
+  the profile and threw `Cannot read properties of undefined` — caught by `measure-guard-reach`'s
+  passed-before/fails-now rule, not by `check:types`. Look things up inside the function body.
 
 ## Procedure (per PR)
 
@@ -40,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR3 | `DiscBadge` | `ClimbMatchCore.jsx` | consumers `ClimbMatch.jsx`, `lib/PartnerSearch.jsx` AND core itself (`DiscBadges`), so core imports it back; `DiscIcon` got its JSDoc seam; `readParentSource()` now drops a parent's own import of a moved file before stitching |
 
 ## Next
 
@@ -49,8 +56,8 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR1 — infrastructure + `RiskBadge`.** Next candidates, by the same
-measurement (small, pure, no guard names them): `DiscBadge` (consumers `ClimbMatch.jsx`,
-`lib/PartnerSearch.jsx`), `DiscBadges` (`lib/Calendar.jsx`, `lib/GiveVouch.jsx`), `HelpDot`
-(`ClimbMatch.jsx`). `TrustBadge`, `Pill` and `ActionIcon` are named by 1–5 guards each — do them
+Last session stopped at: **PR3 — `DiscBadge`.** Next candidates, by the same measurement (small,
+pure, no guard names them): `DiscBadges` (consumers `lib/Calendar.jsx`, `lib/GiveVouch.jsx`, and core
+itself), `HelpDot` (`ClimbMatch.jsx`). A parent that still uses what it extracted imports the new
+file back — a cycle, and an accepted one: the parent's import is dropped by the stitch. `TrustBadge`, `Pill` and `ActionIcon` are named by 1–5 guards each — do them
 after the reach measurement has proven itself on the easy ones.

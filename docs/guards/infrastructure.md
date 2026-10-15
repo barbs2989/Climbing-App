@@ -252,6 +252,11 @@ name their inputs, `assertCovered()` for the ones that walk the tree.
     import/export nodes, which no guard reads. `check:refs` skips identifiers in TS *type*
     positions (`Record<K,V>`, `: Props`) — erased before anything runs — but not inside `x as T`,
     which wraps a value.
+  - **A parent that still USES what it extracted imports it back** (`DiscBadge`, PR3: core's own
+    `DiscBadges` renders it). Stitched verbatim, that import line plus the moved body is a duplicate
+    declaration and Babel refuses the WHOLE stitched file — every text guard on core would have gone
+    red at once, not blind. `readParentSource()` drops the parent's own import of each moved file
+    before appending it; the stitch probe (one def, zero leftover imports, parses) is the check.
 - **`check:types`** runs `tsc --noEmit` over `tsconfig.json` (strict, `allowJs` so a component can
   import the three JS app files with inferred types). It exists because **Vite compiles `.tsx`
   with esbuild, which strips types and checks nothing**, so without it a type error ships. It is a
