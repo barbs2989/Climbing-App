@@ -38,14 +38,16 @@ console.log("baseline: check:clickable is green (0 inert controls)");
 console.log("judging on whether the INERT section fires, not on exit code -- these edits");
 console.log("also perturb the mouse-only count, which is a different check.\n");
 
-const REACTION = '{...clickable(()=>setReactFor(c.id))}';
+// 2026-10-15: the reaction chip became a real <button> in the Comments redesign; the mention chip is the
+// clickable() span left in that component, and the property the cases prove is the same.
+const REACTION = '{...clickable(()=>pick(cand))}';
 
 const CASES = [
   {
     name: "1. the real defect: role + tabIndex, NO key handler (announced, reachable, inert)",
     file: "ClimbMatchCore.jsx",
     find: REACTION,
-    repl: 'role="button" tabIndex={0} onClick={()=>setReactFor(c.id)}',
+    repl: 'role="button" tabIndex={0} onClick={()=>pick(cand)}',
     expect: "fail",
     need: /role="button"/,
     why: "this is exactly what shipped — a screen reader names it and Enter does nothing",
@@ -54,7 +56,7 @@ const CASES = [
     name: "2. an interactive role with NO tab stop (announced, unreachable)",
     file: "ClimbMatchCore.jsx",
     find: REACTION,
-    repl: 'role="button" onClick={()=>setReactFor(c.id)}',
+    repl: 'role="button" onClick={()=>pick(cand)}',
     expect: "fail",
     need: /no tab stop/,
     why: "announced as a button a keyboard can never reach",
@@ -63,7 +65,7 @@ const CASES = [
     name: "3. role=\"dialog\" without a tab stop must NOT be flagged",
     file: "ClimbMatchCore.jsx",
     find: REACTION,
-    repl: 'role="dialog" onClick={()=>setReactFor(c.id)}',
+    repl: 'role="dialog" onClick={()=>pick(cand)}',
     expect: "pass",
     why: "a modal container needs neither a tab stop nor a key handler; flagging it would break correct markup",
   },
@@ -71,7 +73,7 @@ const CASES = [
     name: "4. the helper spread stays clean",
     file: "ClimbMatchCore.jsx",
     find: REACTION,
-    repl: '{...clickable(()=>setReactFor(c.id), { role: "checkbox" })} aria-checked={false}',
+    repl: '{...clickable(()=>pick(cand), { role: "checkbox" })} aria-checked={false}',
     expect: "pass",
     why: "clickable() supplies all three, whatever role it is given",
   },
