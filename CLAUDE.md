@@ -13,6 +13,7 @@ the architecture, and the working rules. The detail lives in `docs/`:
 | [docs/codebase/enrichment-prose.md](docs/codebase/enrichment-prose.md) | write researched text into any existing `routes` column |
 | [docs/codebase/deploy-and-icons.md](docs/codebase/deploy-and-icons.md) | touch `public/`, the manifest, the icons, or the Pages base path |
 | [docs/codebase/algorithms.md](docs/codebase/algorithms.md) | change the partner match score (`compat()`) |
+| [docs/refactor-progress.md](docs/refactor-progress.md) | extract a component into `src/components/`, or touch one that already lives there (conventions, the per-PR procedure, and where the last session stopped) |
 | [docs/BACKEND.md](docs/BACKEND.md) | work on the schema or the catalog pipeline (its "still simulated" lists run stale — re-derive from `lib/db.js`) |
 
 ## Commands
@@ -32,6 +33,8 @@ npm run check:ci-cancel # can a guard running on main be cancelled by the next m
 npm run check:quiet-box-wiring # every BROWSER probe refuses an oversubscribed box BEFORE launching one (in build)
 npm run check:guard-wiring # every guard RUNS, is named here, and this file agrees about its CREDENTIAL (in build)
 npm run check:action-versions # no workflow pins an action below the version we moved to (in build)
+npm run check:types # every TypeScript file under src/ type-checks, strict — Vite strips types and checks nothing (in build)
+npm run measure:guard-reach -- --out before.json # ...then --out after.json --compare before.json: did moving code make a guard go BLIND? (hand-run around every extraction)
 
 # ── Static code guards — notes: docs/guards/static-code.md ──
 npm run check:refs # identifiers referenced but never bound (runs in build + CI)
@@ -250,9 +253,9 @@ npm run check:migration-replay # does supabase/migrations rebuild an EMPTY datab
 npm run check:rls   # policies bind the right column; definer fns pin pg_temp; every table has RLS (in build)
 ```
 
-There is no unit test suite, linter, or type checker. The `check:` scripts are what
-stands in for one, and they target the failure mode this codebase actually ships: not
-a build error, but a screen that renders wrong or not at all.
+There is no unit test suite or linter; `check:types` type-checks `src/` (strict TypeScript) and
+the other `check:` scripts stand in for the rest. They target the failure mode this codebase
+actually ships: not a build error, but a screen that renders wrong or not at all.
 
 **Per-guard notes live in `docs/guards/`**, one file per area, indexed by
 [docs/guards/README.md](docs/guards/README.md) — deliberately NOT loaded every session. Before
@@ -315,8 +318,9 @@ Everything else — crews, messages, connections, vouches, logs, trip reports, a
 Read it in three bands:
 
 1. **`ClimbMatchCore.jsx`, top: constants + pure helpers.** The `C` object is the shared dark-theme color palette used everywhere via inline styles (there are no CSS files or Tailwind). Domain helpers live here: `catOf`/`tripOf` (discipline categorization), `compat` (partner compatibility scoring), `scarfHrs`/`techHrs` (time estimates), `sunReadout`/`aspectDirs` (sun/shade by wall aspect and time of day), `buildConsensus` (aggregates trip reports into conditions consensus weighted by `trustScore`), `gpxDownload`, `passesFilters`, `distMiles`, `fuzzyMatch`.
-2. **`ClimbMatchCore.jsx`, bottom: presentational components** — small functions like `DiscBadge`, `TrustBadge`, `VerifyBadge`, `RiskBadge`, `ProvenancePanel`, `RouteGearCheck`, `ElevChart`, `GPXMap`, `DiffRadar`, plus icon components (`DiscIcon`, `ActionIcon`).
+2. **`ClimbMatchCore.jsx`, bottom: presentational components** — small functions like `DiscBadge`, `TrustBadge`, `VerifyBadge`, `ProvenancePanel`, `RouteGearCheck`, `ElevChart`, `GPXMap`, `DiffRadar`, plus icon components (`DiscIcon`, `ActionIcon`).
 3. **`ClimbMatch.jsx`: `App`** — all stateful screen logic and the big inline-JSX render tree, gated by `tab===...` and `selRoute`.
+4. **`src/components/<Name>.tsx`: single-job components being extracted from the three files above** (since 2026-10; first: `RiskBadge`). Strict TypeScript, one `export default function` each, props declared as an `interface`. The guards still see each one as its parent file's code — every move is registered in `MOVED` in `scripts/lib/guard-sources.mjs`, or the text-reading guards go blind to it. Conventions and the per-PR procedure: [docs/refactor-progress.md](docs/refactor-progress.md). A JS function's destructured params are inferred as REQUIRED props; type the seam with a JSDoc `@param` on the JS side (as `Pill` has), not with casts in the component.
 
 ### Domain concepts to know
 

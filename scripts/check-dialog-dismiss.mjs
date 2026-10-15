@@ -19,7 +19,7 @@ const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), ".."
 // .jsx only. lib/dialogA11y.js is the central focus-trap/Escape helper and mentions
 // role="dialog" in prose and in a querySelector string; those are not dialogs, and treating
 // them as unclosable ones is noise. Dialogs are authored in JSX.
-const files = appSources(ROOT, "check:dialog-dismiss").filter(f => f.endsWith(".jsx")).map(f => path.join(ROOT, f));
+const files = appSources(ROOT, "check:dialog-dismiss").filter(f => /\.[jt]sx$/.test(f)).map(f => path.join(ROOT, f));
 
 // The region must be THIS dialog's subtree and nothing else. A fixed character window is not
 // good enough, and that is not a theoretical objection: the first draft took 60,000 characters

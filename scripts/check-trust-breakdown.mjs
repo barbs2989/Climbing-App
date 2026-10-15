@@ -64,7 +64,7 @@ const _asts = new Map();
 const astOf = (name, code) => {
   if (_asts.has(name)) return _asts.get(name);
   let ast;
-  try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+  try { ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false }); }
   catch (e) { dead(`${name} does not parse (${e && e.message}) — a file that did not parse yields no findings and must never read clean`); }
   _asts.set(name, ast);
   return ast;
@@ -732,7 +732,7 @@ if (!sMarkup.includes("+" + serverRows.find((f) => f.label === "Peer vouches").p
     const found = [];
     for (const [name, code] of [["ClimbMatchCore.jsx", core], ["ClimbMatch.jsx", app], ["RouteDetail.jsx", rd]]) {
       let ast;
-      try { ast = parse(code, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+      try { ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false }); }
       catch (e) { dead(`${name} does not parse (${e && e.message}) — a shadowed reporter score cannot be counted in a file that did not parse`); }
       const seen = new Set();
       (function walk(n) {

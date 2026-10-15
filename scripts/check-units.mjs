@@ -54,7 +54,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { parse } from "@babel/parser";
 import _traverse from "@babel/traverse";
-import { readCoreSource, MOVED_FROM_CORE } from "./lib/guard-sources.mjs";
+import { componentFiles, readCoreSource, MOVED_FROM_CORE } from "./lib/guard-sources.mjs";
 
 const traverse = _traverse.default || _traverse;
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -136,7 +136,7 @@ function rawImperialUnits() {
   for (const f of RAW_FILES) {
     const src = fs.readFileSync(path.join(ROOT, f), "utf8");
     let ast;
-    try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+    try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
     catch (e) { dead(`${f} did not parse while scanning for hard-coded units: ` + (e && e.message)); }
     traverse(ast, {
       StringLiteral(p) {
@@ -404,7 +404,7 @@ async function runWeather() {
   // Nothing about the screen would look broken.
   const src = fs.readFileSync(RD_PATH, "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { dead("RouteDetail.jsx did not parse: " + (e && e.message)); }
   let colourCalls = 0, helperCalls = 0;
   traverse(ast, {
@@ -665,7 +665,7 @@ async function runReports() {
   // perfectly while the form went back to storing whatever was typed.
   const CORE = readCoreSource();
   let ast;
-  try { ast = parse(CORE, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(CORE, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { dead("ClimbMatchCore.jsx did not parse: " + (e && e.message)); }
   let sawIn = false, sawSeed = false;
   traverse(ast, {
@@ -1298,7 +1298,7 @@ async function runProfile() {
   //    rendered immediately before a literal distance unit cannot convert, whatever the setting
   //    says. Measured across every app + lib source: exactly these three, and zero today.
   const files = ["ClimbMatch.jsx", "ClimbMatchCore.jsx", "RouteDetail.jsx"]
-    .concat(fs.readdirSync(path.join(ROOT, "lib")).filter((f) => /\.jsx$/.test(f)).map((f) => "lib/" + f))
+    .concat(componentFiles(ROOT, { guard: "check:units" }))
     .filter((f) => fs.existsSync(path.join(ROOT, f)));
   if (files.length >= 10) ok(`${files.length} source files walked for hardcoded units`);
   else fail(`only ${files.length} source file(s) found — the sweep below would be vacuous`);

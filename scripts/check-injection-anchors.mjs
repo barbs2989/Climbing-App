@@ -87,7 +87,7 @@ for (const f of files) {
   const src = fs.readFileSync(path.join(DIR, f), "utf8");
   let ast;
   try {
-    ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+    ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   } catch (e) {
     unparsed.push(`${f} — does not parse: ${e.message.slice(0, 80)}`);
     continue;

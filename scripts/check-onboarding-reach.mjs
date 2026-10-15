@@ -46,7 +46,7 @@ if (raw.length < 100000) dead(`ClimbMatch.jsx read as ${raw.length} chars — to
    RANGES, and masking them IN PLACE preserves every offset — which the placement check below
    depends on, since it compares positions. */
 let ast;
-try { ast = parse(raw, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+try { ast = parse(raw, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false }); }
 catch (e) { dead("could not parse ClimbMatch.jsx: " + e.message); }
 const comments = ast.comments || [];
 // Fail closed: zero comments in a file of this repo's prose density means the parse returned

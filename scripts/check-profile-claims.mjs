@@ -181,7 +181,7 @@ else ok("no control offers to mark your own credential verified");
 
 console.log('\n--- "Raise it with:" does not offer a step already done ---');
 
-const ast = parse(appSrc, { sourceType: "module", plugins: ["jsx"], errorRecovery: false });
+const ast = parse(appSrc, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false });
 
 let arr = null, filtered = false, arrays = 0;
 (function walk(n, parent) {
