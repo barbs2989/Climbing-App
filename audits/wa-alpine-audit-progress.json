@@ -2,7 +2,7 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_huckleberry_mountain_north_spur",
+  "last_processed_id": "wa_ingalls_peak_east_route",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
   "pass_note": "0 confirmed errors (no SQL file this batch). Hozomeen Mountain's five routes (North Ridge/Southeast Buttress/Southwest Route on the South Peak, Southwest Buttress/West Face on the North Peak) held up well: coordinates, both summits' elevations (8,071ft/8,003ft), the 'metavolcanic'/greenstone rock type, all five first-ascent parties and dates, the current NPS backcountry permit fee structure ($10/person + $6 reservation fee), and the 'steepest peak in Washington' (42.62 degree) claim all confirmed -- the Southeast Buttress and Southwest Route FAs each independently corroborated by an AAJ account, not just Wikipedia. Two items flagged rather than fixed: the stored prominence (3,938ft) is 6ft off Wikipedia's 3,932ft, a real but single-source, un-cross-checked (peakbagger/listsofjohn unreachable this run) discrepancy too small to action; and the West Face's 'Grade IV' commitment and R/X protection rating, while plausible given the described unprotectable rock, couldn't be pinned to an independently retrievable source beyond the pitch count/5.9 grade that a trip report did corroborate. Also flagged: the stored 'closed to both vehicle and foot traffic since 2020' line for the Silver-Skagit border crossing looks imprecise for 2020-2024 specifically (some sources describe foot traffic as having been allowed then, with the full foot+vehicle closure dating from a 2025 NPS page) though the current 2025-2026 state matches. Huckleberry Mountain's East Ridge route (the historic 1915 Hazlehurst/Acheson line) held up on every item checked: elevation/prominence, the approach via the PCT past Kendall Katwalk to Huckleberry Flats, Alpine Lakes Wilderness permit/pass requirements, the Class 3/4 ridge-to-notch-to-5.3-dihedral description, and the two-rappel descent (one independently matched down to the 'tat-covered rock pile' anchor in a 2024 trip report) all corroborated. Huckleberry's other two routes (North Route, North Spur) are bare stubs with no fields beyond id/name/discipline -- flagged as unverified (not contradicted) since the route names themselves couldn't be independently corroborated. Tooling: delegated to 2 parallel subagents, one per peak; WebFetch DNS-failed on every domain tried in both subagents again this run -- every finding above rests on WebSearch snippets only, never a directly-fetched page; re-verify directly once network access to those domains is restored.",
@@ -8194,6 +8194,25 @@
       "flagged_for_human_review": 5,
       "clean": 5,
       "note": "Hozomeen's five routes and Huckleberry's East Ridge all confirmed on first ascent, elevation, access/permit and route-description facts, two of them (Southeast Buttress, Southwest Route) independently against an AAJ account rather than Wikipedia alone. Flagged, not fixed: Hozomeen's stored prominence (3,938ft) is 6ft off Wikipedia's 3,932ft (single source, peakbagger/listsofjohn unreachable this run); the West Face's Grade IV/R-X rating couldn't be independently pinned down beyond its corroborated pitch count and 5.9 grade; and the 'closed to both vehicle and foot traffic since 2020' border-crossing line looks imprecise for the 2020-2024 window specifically (current 2025-2026 state matches). Huckleberry's North Route and North Spur are still bare stubs -- flagged as unverified route names, not contradicted."
+    },
+    {
+      "batch_number": 411,
+      "date": "2026-10-15",
+      "route_ids": [
+        "wa_huckleberry_mountain_south_face",
+        "wa_huckleberry_mountain_southwest_slope",
+        "wa_hurry_up_peak_south_ridge",
+        "wa_icy_peak_ruth_icy_traverse",
+        "wa_icy_peak_southwest_route",
+        "wa_indian_head_peak_southwest_slopes",
+        "wa_indian_mountain_baker_scramble",
+        "wa_ingalls_peak_east_ne_ridge_route",
+        "wa_ingalls_peak_east_route"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 6,
+      "clean": 3,
+      "note": "Huckleberry's South Face/Southwest Slope, Hurry-Up Peak's South Ridge, Icy Peak's two routes, Indian Head Peak's Southwest Slopes, Indian Mountain's Scramble, and Ingalls Peak East's two routes all checked out or came back thin-sourced rather than contradicted. One real lead, not fixed: SummitPost (twice, independently) describes Icy Peak as having three summits, not the two the app states, and sources actively disagree which summit (NW vs SE) is the true high point -- flagged for human review pending Beckey's guide text rather than resolved outright. Also flagged: Huckleberry South Face's FA (Mark Bunker & Mike Press, 1998) and the bare Southwest Slope stub's route name, both uncorroborated anywhere; Hurry-Up Peak's stale (3-months-old) Cascade River Road open-status claim; and a nuance on Ingalls East's Southwest Face FA attribution (tied to the peak generally, not confirmed for that specific line)."
     }
   ]
 }

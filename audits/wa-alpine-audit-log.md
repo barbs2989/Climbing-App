@@ -32113,3 +32113,81 @@ above rests on WebSearch snippets only, never a directly-fetched page; re-verify
 directly once network access to those domains is restored.
 
 Pass 7 continues next run after `wa_huckleberry_mountain_north_spur`.
+
+## Batch 411 (pass 7) — 2026-10-15
+
+Checked: Huckleberry Mountain's South Face and Southwest Slope, Hurry-Up Peak's South
+Ridge, Icy Peak's Ruth-Icy Traverse and Southwest Route, Indian Head Peak's Southwest
+Slopes, Indian Mountain's (Baker-area id) Scramble, and Ingalls Peak East's two routes
+(Northeast Ridge to East Face, Southwest Face/Low Fifth Class).
+
+**0 confirmed errors — no SQL file this batch.**
+
+**Huckleberry Mountain's South Face and Southwest Slope — thin sources, nothing
+contradicted.** A Mountaineers trip report (paraphrasing Beckey) independently
+corroborates loose, chossy south-side terrain as a real named feature, and the shared
+PCT/Joe Lake approach matches other Huckleberry routes already verified. But the FA
+("Mark Bunker & Mike Press, 1998") could not be corroborated anywhere, and the
+Southwest Slope stub (Class 2, nothing else stored) has no source naming that line at
+all. Both flagged as unverified route/FA claims, not contradicted.
+
+**Hurry-Up Peak South Ridge — held up well.** Elevation (7,821ft), the Skagit-Chelan
+county line location, and Spider Mountain as line parent all match Wikipedia exactly.
+NPS backcountry permit fees ($10/person + $6 reservation fee, free under 16) match the
+current 2026 schedule precisely. A Mountaineers.org route page corroborates the
+Kool-Aid Lake-to-south-ridge line as a genuine, separately-named scramble (not the
+same as a ski-mountaineering "South Couloir"), addressing the route's own prior
+data_quality flag. Flagged, not fixed: trailhead elevation has minor cross-source
+spread (3,600 vs. 3,660ft), and the stored Cascade River Road open-status claim was
+last confirmed by NPS on July 3, 2026 — three months stale as of this run, worth a
+fresh check rather than trusted as current.
+
+**Icy Peak's two routes — mostly solid, one real lead.** Elevation (7,073ft) and
+summit coordinates both check out against Wikipedia/Peakbagger/LOC. The "Hannegan
+Caldera" origin is confirmed by USGS, though more precisely Icy Peak is an intrusive
+pluton that invaded the caldera's margin rather than literally volcanic remnant —
+worth tightening the wording, not a factual error. The one genuine lead: SummitPost
+(independently, twice) describes Icy Peak as having three summits, not the two the
+app states, and sources actively disagree on whether the NW or SE summit is the true
+high point — the app's "two summits, SE is true" framing is contradicted by at least
+one source, but given the live dispute over which summit is actually highest, this is
+flagged for human review (pending Beckey's guide text) rather than fixed outright.
+First ascent remains unverifiable from any source, as the route's own data already
+admits.
+
+**Indian Head Peak's Southwest Slopes — clean across the board.** The unusual 1870
+Linsley/Tennant railroad-survey FA claim is corroborated for this specific peak (not
+confused with another), though it traces to what looks like a single original source
+repeated across derivative pages. Elevation (7,447 vs. Wikipedia/PeakVisor's 7,448ft),
+the 15-40ft false-vs-true-summit gap (matched almost verbatim by a SummitPost
+commenter), the "corkscrew" move terminology, and the schist rock type (Wikipedia,
+corroborated by regional USGS geology as likely Chiwaukum Schist) all held up.
+
+**Indian Mountain (wa_indian_mountain_baker) — confirmed real and correctly placed,
+despite its own self-flagged naming ambiguity.** Wikipedia's "Indian Mountain
+(Washington)" entry matches this row's elevation (7,133ft) and location (Skagit
+Range, Whatcom County, ~7mi south of the Canadian border) exactly, and a distinct
+second "Indian Mountain" in Pend Oreille County confirms the app's own disambiguation
+note was warranted — the "_baker" area_id suffix is a naming quirk, not evidence of a
+misfiled peak. The Chilliwack River cable car crossing and the 2021/2022 wildfire
+closures on this corridor (Bear Creek Fire, Chilliwack Complex) are independently
+confirmed. No source anywhere describes a specific summit route for this peak, which
+corroborates rather than contradicts the row's own "corrections" admission that the
+route description is inferred, not sourced.
+
+**Ingalls Peak East's two routes — clean.** East Peak's elevation (7,480ft), its
+status as the lowest/last-climbed of Ingalls' three summits, and the November 1952
+Prater/Prater/Butchart first ascent are each independently confirmed by two sources
+(Wikipedia and SummitPost agree on the FA, Mountain Project corroborates the NE
+Ridge's 5.6 X grade and "horrible" rock almost verbatim, and both MP and SummitPost
+describe the same 3-rappel/natural-anchor descent shared by both DB rows). One
+unresolved nuance, not an error: no source explicitly ties the 1952 FA to the
+Southwest Face line specifically rather than the peak in general.
+
+**Tooling notes:** Delegated to 6 parallel subagents, one per peak/group. WebFetch
+DNS-failed on every common domain tried (Wikipedia, SummitPost, Mountain Project, NPS,
+WTA) across every subagent again this run — every finding above rests on WebSearch
+snippets only, never a directly-fetched page; re-verify directly once network access
+to those domains is restored.
+
+Pass 7 continues next run after `wa_ingalls_peak_east_route`.
