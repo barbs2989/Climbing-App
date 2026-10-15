@@ -3,24 +3,32 @@
 import { clickable } from "./clickable";
 import { createPortal } from "react-dom";
 import { useState } from "react";
-import { DB_UID, Av, C, CAT, CLIMBERS, Comments, DiscIcon, ElevChart, FALLBACK_COVER, GPXMap, PhotoStrip, Pill, ReportStats, Stars, renderMD, TrustBadge, catOf, isRoadTag, roadReportOf, climberLine, gpxDownload, onImgErr, pubName, seedAuthor, shortDate, uDist, uDistMi, uElev, uMass, vScore } from "../ClimbMatchCore.jsx";
+import { useProfilesByIds } from "./db";
+import { DB_UID, Av, C, CAT, CLIMBERS, Comments, DiscIcon, ElevChart, FALLBACK_COVER, GPXMap, PhotoStrip, Pill, ReportStats, Stars, renderMD, TrustBadge, catOf, isRoadTag, roadReportOf, climberLine, gpxDownload, onImgErr, pubName, realAuthor, seedAuthor, shortDate, useRealAuthors, uDist, uDistMi, uElev, uMass, vScore } from "../ClimbMatchCore.jsx";
 import { POP_CLOSE, POP_CLOSE_MEDIA } from "./popupChrome.js";
 import { openContentReport, canReportContent, isDbRowId } from "./reportBus";
 
 export default function TripReport({ascent,onClose,onViewClimber,onOpenRoute,onShare,onConnect,friendStateOf,comments,commentApi={},connections}){
   const [showShare,setShowShare]=useState(false);
+  /* A REAL author and REAL partners. seedAuthor matches example climbers by name, so a real author's report had no
+     trust badge, no ✓ and no tappable name, and its partners (uuids, carried as partnerUids) were never shown. Both
+     reads run before the early return so the hook order never changes. */
+  useRealAuthors([ascent&&ascent._authorId]);const partnerQ=useProfilesByIds((ascent&&ascent.partnerUids)||[]);
   if(!ascent)return null;
   const r=ascent.route,mtn=ascent.mtn||{};
-  const author=seedAuthor(ascent.user);
-  const ts=author?vScore(author):null,verified=author?author.verified:false;
+  const _ra=realAuthor(ascent._authorId);
+  const author=ascent._authorId&&ascent._authorId!==DB_UID?{id:ascent._authorId,name:ascent.user,avatar:ascent.avatar||"",_real:true}:seedAuthor(ascent.user);
+  const ts=author&&author._real?(_ra&&_ra.trust!=null?_ra.trust:null):(author?vScore(author):null),verified=author&&author._real?!!(_ra&&_ra.verified===true):(author?author.verified:false);
   const isSummit=/summit/i.test(ascent.tickType||""),isAttempt=/attempt|bail|retreat|turn/i.test(ascent.tickType||"");
   const cat=CAT[catOf(r)]||{};
-  const partners=(ascent.partners||[]).map(pn=>typeof pn==="string"?pn:(pn&&pn.name)||"").filter(Boolean);
-  const matchClimber=nm=>{if(ascent.partnerIds!=null)return CLIMBERS.find(c=>c.name===nm&&ascent.partnerIds.includes(c.id))||null;const parts=String(nm||"").replace(/\./g,"").trim().split(/\s+/);const f=(parts[0]||"").toLowerCase();const li=(parts[1]||"").charAt(0).toLowerCase();if(!f)return null;return CLIMBERS.find(c=>{const cp=c.name.split(/\s+/);return cp[0].toLowerCase()===f&&(!li||(cp[1]||"").charAt(0).toLowerCase()===li);})||null;};
+  const _realPartners=((partnerQ&&partnerQ.data)||[]).filter(p=>(ascent.partnerUids||[]).includes(p.id)&&p.id!==ascent._authorId).map(p=>({id:p.id,name:p.name||"Climber",avatar:p.avatar||"",username:p.username||"",showName:!!p.showName,_real:true}));
+  const _realByName={};_realPartners.forEach(p=>{_realByName[pubName(p)]=p;});
+  const partners=(ascent.partners||[]).map(pn=>typeof pn==="string"?pn:(pn&&pn.name)||"").filter(Boolean).concat(_realPartners.map(p=>pubName(p)));
+  const matchClimber=nm=>{if(_realByName[nm])return _realByName[nm];if(ascent.partnerIds!=null)return CLIMBERS.find(c=>c.name===nm&&ascent.partnerIds.includes(c.id))||null;const parts=String(nm||"").replace(/\./g,"").trim().split(/\s+/);const f=(parts[0]||"").toLowerCase();const li=(parts[1]||"").charAt(0).toLowerCase();if(!f)return null;return CLIMBERS.find(c=>{const cp=c.name.split(/\s+/);return cp[0].toLowerCase()===f&&(!li||(cp[1]||"").charAt(0).toLowerCase()===li);})||null;};
   // A partner is a person, not a field of this report: their own showName decides
   // whether their full name is publishable. Free text we cannot resolve to an account
   // carries no preference at all, so it degrades to a first name.
-  const partnerLabel=(pc,pn)=>{if(pc&&pc.showName&&pc.name)return pc.name;var raw=(pc&&pc.name)||pn||"";var first=String(raw).trim().split(/\s+/)[0];return first||"Climber";};
+  const partnerLabel=(pc,pn)=>{if(pc&&pc._real)return pubName(pc);if(pc&&pc.showName&&pc.name)return pc.name;var raw=(pc&&pc.name)||pn||"";var first=String(raw).trim().split(/\s+/)[0];return first||"Climber";};
   const crewMates=(()=>{const out=[],seen={};partners.forEach(pn=>{const m=matchClimber(pn);if(m&&!seen[m.id]){seen[m.id]=1;out.push(m);}});return out;})();
   const commentTargetId="tr_"+(ascent._dbId||(ascent.routeId+"_"+ascent.date+"_"+(ascent.user||"")));
   const shareUrl=(typeof window!=="undefined"?window.location.origin+window.location.pathname:"")+"?debugRoute="+r.id;

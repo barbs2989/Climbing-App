@@ -26,8 +26,9 @@ const PROBE = ["node", ["scripts/oneoff/probe-full-profile-distance-honours-unit
 const GUARD = ["node", ["scripts/check-units.mjs", "--only=profile"]];
 const sum = (f) => crypto.createHash("sha256").update(fs.readFileSync(f)).digest("hex");
 
-const HEADER = '<span style={{color:C.blue}}>{uDistMi(+dist.toFixed(1))+" away"}</span>';
-const CARD = '{score>=80?"Excellent match":score>=60?"Good match":"Limited overlap"} · {uDistMi(+dist.toFixed(1))+" away"}';
+// A REAL climber's distance prints approximately ("~X" / "under 5"); the seed path still prints uDistMi to 1dp.
+const HEADER = '<span style={{color:C.blue}}>{(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away"}</span>';
+const CARD = '"Limited overlap")+(_unkN?" · based on limited info":"")+(dist!=null&&isFinite(dist)?" · "+(climber._real?(dist<=5?"under "+uApproxDist(5):"~"+uApproxDist(dist)):uDistMi(+dist.toFixed(1)))+" away":"")';
 const FIRELINE = "and {fires.length - 4} more within {uDistMi(radiusMi)}";
 
 const CASES = [
@@ -42,8 +43,10 @@ const CASES = [
     name: "2-compatibility-card-prints-bare-miles",
     why: "REAL DEFECT: the card read `{dist.toFixed(1)} miles away`",
     file: CORE, find: CARD,
-    repl: '{score>=80?"Excellent match":score>=60?"Good match":"Limited overlap"} · {dist.toFixed(1)} miles away',
-    targets: { guard: /hardcoded unit/, probe: /hardcoded unit|metric still renders miles/ },
+    repl: '"Limited overlap")+(_unkN?" · based on limited info":"")+(dist!=null&&isFinite(dist)?" · "+dist.toFixed(1)+" miles away":"")',
+    // The card is ONE string expression now, which the hardcoded-unit TEXT scan cannot read; the helper
+    // count and the rendered readouts still see it.
+    targets: { guard: /hardcoded unit|FullProfile calls uDistMi 1 time|metric readouts read/, probe: /hardcoded unit|metric still renders miles|not converting/ },
   },
   {
     name: "3-fire-panel-radius-prints-bare-miles",
