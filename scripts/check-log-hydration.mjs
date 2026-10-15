@@ -223,8 +223,11 @@ if (rdRead.size < 10) fail(`RouteDetail's hydration parsed to only ${rdRead.size
 //                 against seed INTEGER ids. Feeding it uuids takes that branch and returns
 //                 null for EVERY partner, which is worse than the name fallback it uses
 //                 today. The class check:crew-member-readers exists for.
-//   gpx_track   — TripReport's Download GPX uses the ROUTE's track, gpxDownload(r); nothing
-//                 reads a report's own track on this surface.
+//   gpx_track   — deliberately NOT in TRIP_REPORT_COLS (500 points a row). TripReport reads
+//                 the reporter's own track lazily through useLogTrack(_dbId) when the report
+//                 opens, so nothing on this surface needs the column hydrated. (Until
+//                 2026-10-15 TripReport drew the ROUTE's line under a GPS TRACK heading
+//                 instead, which read as the reporter's own recording.)
 const ROUTE_THIN = new Map([
   ["trip_report_visibility", "RLS (0081) decides which rows come back; the page never re-filters"],
   ["crew_id", "the log<->crew link is never set on save, and a report card is not crew-scoped"],
