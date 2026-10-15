@@ -48,7 +48,7 @@ const words = s => String(s ?? "").toLowerCase().normalize("NFD").replace(/[̀-�
 const name0 = s => stripSortPrefix(s).replace(/^[A-Za-z]\.\d{1,2}\s+/, "");
 
 // The source's default for a sub-area nobody named: "New Sub-Area 1", "Sub-Area 3" — a placeholder, never a
-// place (0291 named or folded all 18; Rainbow Mountain's 53 problems sat in one beside the boulders the
+// place (0292 named or folded all 18; Rainbow Mountain's 53 problems sat in one beside the boulders the
 // source has since named). Tested BEFORE the number rule below, which reads "Boulder 3" as an identity.
 const PLACEHOLDER = /^(new )?sub area( \d+)?$/;
 
