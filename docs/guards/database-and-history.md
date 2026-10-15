@@ -648,6 +648,23 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       a self-join on `@>` (now read off the path's labels — each IS an id) and a recount that re-scanned
       whole states per ancestor (now one pass). Rollback: `scripts/data/catch-alls-rollback.json` (merges)
       and the migration's own `m_move` (every move's from and to).
+    - **The source's holding bins, each climb filed by its own page — 0297** (2026-10-15). Areas named as a
+      bin ("ZZTemp Holding", "temp holding", "(Placeholder)"): the source STILL files every climb in them in
+      its own bin, so no name match places one; each climb's page (Location, Description) and the bin's pin
+      did. The pin is the strongest signal: the Rumney Pound's 12 boulders sit 0-31 m from our "Pound
+      (closed), The". Merged: Oliverian Notch's 5 routes "added twice" (Big Wall holds each), Spanish Fly,
+      South West Overhang (one on the source, on Southern Boulder). Placed: two boulders the pages name
+      (Cottonwood Springs' Crossfit boulder, Hillbilly Highball Boulder), a bin renamed for the boulder it is
+      (Warm-up Boulder), two nests (Beaver Pond Road Cut Ice, North Fork of Taylor Routes). 16 empty bins and
+      the source's 2 test routes deleted. Name twins of a bin's climbs elsewhere in the state were 50-171 km
+      away, with other grades: none was the same climb. **Left for the owner, an ACCESS decision:** WA's
+      closed areas filed under initials ("2C (Placeholder)", 105 climbs), the Pound ("Currently closed per the
+      owners … Don't climb here"), Bunyan Mountain (landowner asks people not to use it), Pickledish's temp
+      holding (closed by the landowners), Maine's "Rockporxxt Harboxxr Hotel". Left unplaced: 6 Maine climbs
+      and 7 Hillbilly problems whose pages name no crag or boulder. Burge's 8 Ledge routes: no record found
+      anywhere (source, web), still there. Planner: junk rows now come from `extra.json`, and a climb cannot be
+      moved onto a place that has walls (`routes_require_leaf`), so a list there nests as "<Place> Routes".
+      Rollback: `scripts/data/holding-bins-rollback.json`.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
