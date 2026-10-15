@@ -30,7 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS } from "../lib/conditionsScore.js";
+import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -208,6 +208,14 @@ console.log("check:conditions-score");
     const dry = drying.filter(function (x) { return x.dryFrac === 1; });
     if (!bad.length && mid.length >= 10 && dry.some((x) => starsLabel(x.stars) === "Good")) ok(`${mid.length} hours of drying rock (30–99% dry) are held to ${WET_BANDS[1][1]} / ${WET_BANDS[2][1]} stars, none reads Good; dry rock still can`);
     else fail(`drying rock read too high: ${bad.slice(0, 3).map((x) => Math.round(x.dryFrac * 100) + "% dry -> " + x.stars.toFixed(2) + " " + x.caps.map((c) => c.why)).join("; ")} (mid ${mid.length}, dry Good ${dry.some((x) => starsLabel(x.stars) === "Good")})`);
+  }
+  // DRY_RATE (sped up 2026-10-15, fitted to CragReport): a damp or humid hour dries SLOWER than a plain
+  // one but never stops (0 at the dew point stalled a whole Northwest night), and night is never faster
+  // than day — the fit wanted that, and it is not physical.
+  {
+    const k = DRY_RATE;
+    if (k.damp > 0 && k.damp <= k.rh90 && k.rh90 <= k.rh75 && k.rh75 <= 1 && k.night <= 1 && k.rhDry >= 1 && k.sun >= 1 && k.wind >= 1) ok(`drying rates are ordered: dew point ${k.damp} ≤ 90% RH ${k.rh90} ≤ 75% RH ${k.rh75} ≤ 1, night ${k.night} ≤ day`);
+    else fail(`drying rates out of order: ${JSON.stringify(k)}`);
   }
   // Drizzle: Open-Meteo reports 0.1 mm steps (0.004"); `>= 0.01` used to throw it away.
   const sD = scoreForecast(fixture({ rainAt: [84], rainAmt: 0.004 }), WALL, null, NOW);
