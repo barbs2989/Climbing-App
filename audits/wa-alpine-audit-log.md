@@ -32000,3 +32000,69 @@ two of the three subagents again this run; findings there rest on WebSearch snip
 only — re-verify directly once network access to those domains is restored.
 
 Pass 7 continues next run after `wa_hibox_mountain_southeast_shoulder`.
+
+## Batch 409 (pass 7) — 2026-10-15
+
+Checked: Himmelhorn's three routes (Standard Route, Stonehenge, Wild Hair Crack), Mount
+Deception's Honeymoon Route, Hoodoo Peak Sawtooth's two routes (Raven Ridge Traverse,
+Standard Scramble), Horseshoe Peak Standard Scramble, Mount Index Hourglass Gully
+(Winter).
+
+**0 confirmed errors — no SQL file this batch.**
+
+**Himmelhorn — mostly held up, one naming flag.** Elevation (7,880ft), prominence
+(120ft), the peak's 1961 FA party (Cooper, Denny, the Fireys, Whitmore), and the
+original name "Himmelgeisterhorn" all confirmed. Stonehenge's 2015 FA (Schilling &
+Halder), 8 pitches, 5.10-, south face all corroborated against the AAJ account. Wild
+Hair Crack's 1981 FA party (Wild, Kroeker, Roper) and northwest aspect also
+corroborated, though its pitch count/length/crack-width and the Roper "finest climb"
+quote couldn't be pinned down either way. One inconsistency flagged rather than fixed:
+`wa_himmelhorn_southeast_route`'s own `face`/`aspect` fields say Northwest, and research
+repeatedly describes the standard route as being on the NW aspect — the row's own
+id/name ("southeast_route") looks like the actual error, not its data fields, but
+renaming an id is a human call per `route-identity.md`, not a field patch. Also flagged:
+the row's own `corrections` field claims a better-documented "East Ridge/North Face (II
+5.10+)" line exists on Himmelhorn — no source found corroborates this route at all, so
+that self-caveat may itself be unreliable.
+
+**Mount Deception Honeymoon Route — no errors, one notable confirmation.** The hazards
+field's very specific claim — "Recent documented incident (May 2026): a climber took a
+300 ft fall and required a helicopter rescue" — is a REAL documented incident (Memorial
+Day weekend 2026, satellite SOS, a short-haul rescue of four climbers), corroborated
+across several news sources, though sources disagree on exactly who fell how far and
+which couloir. Flagged, not fixed: the 1965 Arnie & Diane Bloomer FA couldn't be found
+anywhere; the stored Class 3 grade may undersell what multiple sources describe as a
+sustained 45–50° snow/ice couloir; and the #833.2/#832 trail numbers are unconfirmed.
+
+**Hoodoo Peak (both routes) — real and well-documented, elevation figures disputed.**
+The Raven Ridge Traverse and Standard Scramble are both corroborated by independent
+trip reports. The claim that Raven Ridge is Hoodoo's "parent peak" holds up as standard
+peakbagging usage (nearest higher neighbor), not a garbled relationship. But Hoodoo's
+own elevation (8,475 vs. 8,464 ft) and Raven Ridge's (8,590 vs. 8,572/8,580 ft) have
+real disagreement across reputable sources, and one source claims a Northwest Forest
+Pass is required at the Libby Lake trailhead against the row's "no fee" claim — all
+three flagged rather than resolved, per genuine source conflict rather than a clear
+error.
+
+**Horseshoe Peak Standard Scramble — held up well, one unconfirmable name.** Its
+unusual claim that the USGS peak label is cartographically misplaced from the "real,"
+double-summited Horseshoe formation over Horseshoe Basin was independently
+corroborated. But the specific "Lick of Flame" spire name along Ripsaw Ridge could not
+be corroborated by any source at all — the strongest open item this batch, worth a
+human with access to a print guidebook.
+
+**Mount Index Hourglass Gully (Winter) — held up best of the eight.** Its FA (Jim
+Pritchard, Stan Jensen & Cecil Bailey, 1963) and Lake Serene Trail #1068 were found
+verbatim on primary sources (Mountain Project, USFS). Only its elevation (5,991 vs.
+5,979/5,948 ft across sources, likely datum differences), the Index Batholith's 29 Ma
+lower age bound (other sources cluster 33–35 Ma only), and the trail's one-way mileage
+(4.1 mi vs. a more commonly cited 3.5–3.6 mi) are flagged, all on conflicting-source
+grounds.
+
+**Tooling notes:** Delegated to 4 parallel subagents, one per peak/group. WebFetch
+failed with DNS/ENOTFOUND errors on every domain in every subagent this run (Wikipedia,
+AAC, SummitPost, WTA, USFS, NPS) — every finding above rests on WebSearch snippets only,
+never a directly-fetched page; re-verify directly once network access to those domains
+is restored.
+
+Pass 7 continues next run after `wa_hourglass_gully_winter`.
