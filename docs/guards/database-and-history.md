@@ -604,6 +604,18 @@ Part of the guard notes — see [README.md](README.md) for the full index.
       cannot open those pages but a plain `fetch` from node can (and the local crawl's `_routes/` holds some);
       and a sort number on the SOURCE's own climb names ("4. Super Collider") hid an entry from the name
       match — read the area's list, not just the route ids the match returned.
+    - **The source's "New Sub-Area N" placeholders, named or folded — 0292** (2026-10-14). 18 areas; see
+      `check:generic-area-names` for what they were. Two new planner steps: `newAreas` (a boulder the source
+      names and we lack, created at the source's pin before its climbs move in) and `lift` (a placeholder
+      steps OUT of the area its climbs move into first — `routes_require_leaf` refuses a climb on an area with
+      sub-areas, and the planner moves climbs before it deletes areas; the first dry run stopped exactly
+      there). An area that starts holding climbs is retyped `region` → `crag`: every one of the 52,383
+      climb-holding leaves is a crag or a peak. Rollback: `scripts/data/placeholder-sub-areas-rollback.json`.
+      Numbered 0290 first: `check:migration-claims` was clean, then another PR merged its own 0290 and recorded
+      it before the apply ran. The PLAIN record insert (the README fix of 0288's day) failed on the taken
+      version, the whole apply rolled back, nothing landed, and it was renumbered. The old `on conflict do
+      nothing` would have reported success and recorded nothing. 0291 was then claimed by an open crew PR
+      (#2395) too, neither applied; this one moved again, to 0292, because regenerating costs it nothing.
 
 - **`check:area-sort-labels`** asks whether any area NAME still carries the source export's sort
   label. Built 2026-10-07: the owner found the Trapps' walls named "a1. The Uberfall - left" …
@@ -738,6 +750,16 @@ Part of the guard notes — see [README.md](README.md) for the full index.
     finds it next time. Any import must run from a checkout that has `scripts/lib/generic-area-name.mjs`;
     a red here after an import means it did not. Fold a re-created bucket by hand: move what it holds to
     its geographic home (`catalog_find_area` first), keep the child's own name, delete the bucket.
+  - **The source's PLACEHOLDER counts too** (2026-10-14, **0292**): "New Sub-Area 1", "Sub-Area 3" — the
+    source's default for a sub-area nobody named. The number rule ("Boulder 3" is an identity) let all 18
+    through, so the placeholder is tested FIRST. What they were: Rainbow Mountain's 53 problems in one beside
+    the 15 boulders the source has since named; Shady Corridor's main list, held twice; one-problem walls;
+    seven empty. The importer now steps THROUGH such a level, so a re-import does not re-create one beside
+    the area 0292 named. A placeholder the SOURCE never named is not researched again: its climbs' own pages
+    were read (Stone Fort's said "On the Potato Boulder"; the rest name no boulder), so it took the catalog's
+    "<Place> Routes / Bouldering", or the name of its only problem. Not covered, deliberately: the holding
+    bins ("ZZTemp Holding", 110 climbs in NH; Washington's "(Placeholder)" walls under "ZZ Holding Spot for
+    Temporarily Closed Areas"), which park closed or unplaced climbs and need each climb researched first.
 
 - **`check:counts`** asks whether every `areas.route_count` still matches a fresh
   count of its subtree, and runs daily (`.github/workflows/area-count-drift.yml`),
