@@ -51,7 +51,7 @@ const files = [];
     if (entry === "node_modules" || entry === "dist" || entry.startsWith(".")) continue;
     const p = join(dir, entry);
     if (statSync(p).isDirectory()) walk(p);
-    else if (p.endsWith(".jsx")) files.push(p);
+    else if (/\.[jt]sx$/.test(p)) files.push(p);
   }
 })(ROOT);
 assertCovered(files, ROOT, "check:dead-props");
@@ -60,7 +60,7 @@ const asts = [];
 for (const file of files) {
   const rel = relative(ROOT, file);
   try {
-    asts.push([rel, parse(readFileSync(file, "utf8"), { sourceType: "module", plugins: ["jsx"] })]);
+    asts.push([rel, parse(readFileSync(file, "utf8"), { sourceType: "module", plugins: ["jsx", "typescript"] })]);
   } catch (e) {
     console.error(`check:dead-props — could not parse ${rel}: ${e.message}`);
     process.exit(1);

@@ -38,7 +38,7 @@ function sources(dir, acc = []) {
     if (e.name === "node_modules" || e.name === "dist" || e.name.startsWith(".")) continue;
     const p = path.join(dir, e.name);
     if (e.isDirectory()) { if (!/^(scripts|catalog|supabase|enrichment-wip|docs|research)$/.test(e.name)) sources(p, acc); }
-    else if (/\.jsx?$/.test(e.name)) acc.push(path.relative(ROOT, p));
+    else if (/\.[jt]sx?$/.test(e.name)) acc.push(path.relative(ROOT, p));
   }
   return acc;
 }
@@ -61,7 +61,7 @@ function scan() {
     const code = fs.readFileSync(path.join(ROOT, rel), "utf8");
     if (!code.includes("showToast")) continue;
     let ast;
-    try { ast = parse(code, { sourceType: "module", plugins: ["jsx"] }); }
+    try { ast = parse(code, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
     catch (e) { console.error(`\n  Could not parse ${rel}: ${e.message}\n`); process.exit(1); }
 
     // helpers that bail out without a session: function(){ if(!uid)return; ... }

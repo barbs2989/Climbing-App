@@ -54,7 +54,7 @@ for (const rel of files) {
   const src = fs.readFileSync(abs, "utf8");
   let ast;
   try {
-    ast = parse(src, { sourceType: "module", plugins: ["jsx"] });
+    ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] });
   } catch (e) {
     console.log(`${GUARD}: FAILED to parse ${rel} — ${e.message}`);
     console.log(`  A guard that cannot read a file has not checked it. Failing closed.`);

@@ -41,7 +41,7 @@ import { overlayStates } from "./lib/overlay-scaffold.mjs";
 const traverse = _traverse.default || _traverse;
 
 import { fileURLToPath } from "node:url";
-import { readCoreSource } from "./lib/guard-sources.mjs";
+import { componentFiles, readCoreSource } from "./lib/guard-sources.mjs";
 // scripts/, not scripts/oneoff/ — one level up since the promotion.
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const appRaw = fs.readFileSync(path.join(ROOT, "ClimbMatch.jsx"), "utf8");
@@ -62,9 +62,8 @@ const core = maskComments(coreRaw, "ClimbMatchCore.jsx");
    copy that stays TRUE during an outage ("No areas match."), a fallback label, a statement about a
    row's own data, or a comment. So this adds coverage without adding findings — which is the
    result, not a disappointment. */
-const libSrc = fs.readdirSync(path.join(ROOT, "lib"))
-  .filter((f) => /\.jsx$/.test(f))
-  .map((f) => maskComments(fs.readFileSync(path.join(ROOT, "lib", f), "utf8"), "lib/" + f, 1));
+const libSrc = componentFiles(ROOT, { guard: "check:overlay-absence" })
+  .map((rel) => maskComments(fs.readFileSync(path.join(ROOT, rel), "utf8"), rel, 1));
 
 /* lib/ SPELLS ITS GATE DIFFERENTLY, and following these bodies without knowing that would report
    correctly-gated components as ungated — the guard-flags-correct-work failure, introduced by the
@@ -93,7 +92,7 @@ const FLAGS = [...new Set([...(app + core).matchAll(/([A-Za-z_$][\w$]*Unavailabl
    Position is the whole question — masking answers it, set-membership cannot. */
 function maskComments(src, label, minComments = 50) {
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false }); }
   catch (e) { console.error(`FAIL — could not parse ${label}: ${e.message}`); process.exit(1); }
   const cs = ast.comments || [];
   /* Fail closed. Zero comments in a 400kB file of this repo's prose density means the parse

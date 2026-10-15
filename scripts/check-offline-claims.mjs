@@ -124,7 +124,7 @@ function stringsIn(ast, ranges) {
   });
   return out;
 }
-const parseOr = (f, src) => { try { return parse(src, { sourceType: "module", plugins: ["jsx"], errorRecovery: false }); } catch (e) { return dead("could not parse " + f + " — nothing was checked. " + e.message); } };
+const parseOr = (f, src) => { try { return parse(src, { sourceType: "module", plugins: ["jsx", "typescript"], errorRecovery: false }); } catch (e) { return dead("could not parse " + f + " — nothing was checked. " + e.message); } };
 const helpAst = parseOr("lib/Help.jsx", help), coreAst = parseOr("ClimbMatchCore.jsx", core), cmAst = parseOr("ClimbMatch.jsx", cm);
 
 /* The Help TOUR is the HELP_FEATS table in ClimbMatchCore.jsx; the Help FAQ is lib/Help.jsx, whose

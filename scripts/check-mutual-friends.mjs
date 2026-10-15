@@ -53,7 +53,7 @@ const read = (rel) => {
 // on the short ones. The file this scan SELECTS still goes through read().
 const readRaw = (rel) => readAppFile(path.join(ROOT, rel));
 const ast = (src, file) => {
-  try { return parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { return parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { return dead("could not parse " + file + ": " + e.message); }
 };
 

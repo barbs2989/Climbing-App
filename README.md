@@ -17,13 +17,16 @@ the app is put together. The short version:
   helpers and presentational components; `ClimbMatch.jsx` holds the `App` component and every
   screen; `RouteDetail.jsx` is the route page. `ClimbMatch.jsx` alone is **23% of the app**, so
   anything that walks "the source" must name all three — a guard that named only the entry
-  files once read a quarter of the codebase for a week (#547).
+  files once read a quarter of the codebase for a week (#547). Since 2026-10 the three are being
+  broken into single-job TypeScript components under `src/components/`, one per PR; the
+  conventions and where the last session stopped are in `docs/refactor-progress.md`.
 - **A national catalog behind a `USE_DB` flag.** Supabase holds **205,543 routes across 52
   states**; the deep *enrichment* (approach, descent, gear, waypoints) is Washington-alpine
   focused, which is why coverage is quoted as a WA-alpine percentage and never catalog-wide.
-- **`npm run build` is the test suite.** There is no unit test, linter or type checker: ~94
-  `check:` scripts stand in for one, and most of them run inside the build. They target the
-  failure this app actually ships — not a build error, but a screen that renders wrong.
+- **`npm run build` is the test suite.** There is no unit test or linter; `check:types` type-checks
+  `src/` (strict TypeScript), and over a hundred `check:` scripts stand in for the rest, most of them
+  inside the build. They target the failure this app actually ships — not a build error, but a
+  screen that renders wrong.
 
 ## Deploying
 

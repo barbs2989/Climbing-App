@@ -47,7 +47,7 @@ const libFiles = fs.readdirSync(LIB).filter((f) => /\.(js|jsx)$/.test(f)).sort()
 function load(rel) {
   const src = fs.readFileSync(path.join(ROOT, rel), "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); }
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); }
   catch (e) { console.error(`check:read-failures — could not parse ${rel}: ${e.message}`); process.exit(1); }
   return { rel, src, ast };
 }

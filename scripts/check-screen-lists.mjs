@@ -125,7 +125,7 @@ let classified = 0;
 for (const f of files) {
   const src = readFileSync(f, "utf8");
   let ast;
-  try { ast = parse(src, { sourceType: "module", plugins: ["jsx"] }); } catch (e) {
+  try { ast = parse(src, { sourceType: "module", plugins: ["jsx", "typescript"] }); } catch (e) {
     fail(`${rel(f)} did not parse (${e.message.slice(0, 80)}) — it was NOT checked`);
     continue;
   }
