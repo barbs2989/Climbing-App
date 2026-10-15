@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_let_it_burn",
+  "last_processed_id": "wa_liberty_bell_nw_face",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
-  "pass_note": "Lake Mountain's Standard Scramble had a confirmed, fixed error: its overview prose and summit waypoint both said 8,377 ft while the row's own high_point_ft (8371) matches external sources (SummitPost, Country High Points) exactly -- both corrected in audits/sql/2026-10-15-batch-415.sql (checked clean by check:sql). Flagged, not fixed: Lane Peak's wa_lane_peak_fly_the and wa_lane_peak_r2 look like the same couloir (The Fly) catalogued twice under different id schemes with different grades (Mod. Snow vs AI1) -- a dedupe decision for a human, not an in-scope SQL fix; Le Conte Mountain's FA exact day (July 23 1938) isn't independently pinned down, though the party/year is confirmed as the real 1938 Ptarmigan Traverse team that also climbed Johannesburg that same July; Lemah Mountain East Route's summit waypoint (7519ft) is 7ft off its own high_point_ft (7512ft, which matches Wikipedia) -- too small a delta to action per this project's own precedent; Lemah Two's Goatshead Spire FA (Goodman & Mason, Aug 8 1982) is unconfirmed by any source found, though the route name itself is corroborated via a Beckey-guide quote; Leche La Vaca's FA is only partly corroborated (2 of 3 names independently confirmed via a 2010 trip report). Clean: Lane Peak's own elevation (6012ft), The Zipper, Lover's Lane, Let it Burn (grade/pitch count match Stephabegg exactly; FA climber Max Hasson confirmed as a real climber), and Colchuck Balanced Rock's own elevation (8240ft, matches Wikipedia/PeakVisor).",
+  "pass_note": "All eight Liberty Bell-area routes checked out clean or merely under-documented; zero confirmed errors. Clean/confirmed: Lexington Tower East Face's FA (Steve Marts & Don McPherson, 1966) and elevation (7560ft) both match SummitPost/Wikipedia/Mountain-Forecast exactly; Liberty and Injustice for All's FA (Mikey Schaefer, 2014, rope-soloed) and grade (5.12b) match Mountain Project/Climbing.com exactly; the Beckey Route's FA (Fred Beckey, Jerry O'Neil & Charles Welsh, Sept 27 1946) matches Wikipedia and the 1948 AAJ account exactly, and Liberty Bell's 7720ft summit (shared by Beckey Route, Girl Next Door, Independence Route and NW Face) matches Wikipedia/SummitPost/Westside Seattle exactly; Freedom or Death's FA credit (Eli Helmuth) matches Mountain Project; Freedom Rider's FA (Burdo & Risse, 1988) matches SuperTopo/Climbing.com (the Brian/Bryan spelling variance is a cross-source artifact, not ours). Flagged, not fixed: the Independence Route's FFA year (1991) is inferred from an AAJ volume-year convention rather than stated outright in the 1992 Risse-authored report found; the Girl Next Door's FA credit (Goldie & Butler, 2011) is uncorroborated by any route-specific source, though Larry Goldie and Paul Butler are real, active North Cascades guides, so the names aren't implausible; the Northwest Face's FA (Hans Kraus & John Rupley, 1956) and separate Free FA (Sandy Bill, Ron Burgner, Ian Martin & Frank Tarver, 1966) are both unconfirmed by any source found beyond a single photo caption placing Kraus near Liberty Bell's north face in 1956 -- no source connects Rupley or the free-ascent party to this route.",
   "batches": [
     {
       "batch_number": 1,
@@ -8292,6 +8292,24 @@
       "flagged_for_human_review": 6,
       "clean": 4,
       "note": "Lake Mountain's Standard Scramble had a confirmed, fixed error: its overview prose and summit waypoint both said 8,377 ft while the row's own high_point_ft (8371) matches external sources (SummitPost, Country High Points) exactly -- both corrected in audits/sql/2026-10-15-batch-415.sql (checked clean by check:sql). Flagged, not fixed: Lane Peak's wa_lane_peak_fly_the and wa_lane_peak_r2 look like the same couloir (The Fly) catalogued twice under different id schemes with different grades (Mod. Snow vs AI1) -- a dedupe decision for a human, not an in-scope SQL fix; Le Conte Mountain's FA exact day (July 23 1938) isn't independently pinned down, though the party/year is confirmed as the real 1938 Ptarmigan Traverse team that also climbed Johannesburg that same July; Lemah Mountain East Route's summit waypoint (7519ft) is 7ft off its own high_point_ft (7512ft, which matches Wikipedia) -- too small a delta to action per this project's own precedent; Lemah Two's Goatshead Spire FA (Goodman & Mason, Aug 8 1982) is unconfirmed by any source found, though the route name itself is corroborated via a Beckey-guide quote; Leche La Vaca's FA is only partly corroborated (2 of 3 names independently confirmed via a 2010 trip report). Clean: Lane Peak's own elevation (6012ft), The Zipper, Lover's Lane, Let it Burn (grade/pitch count match Stephabegg exactly; FA climber Max Hasson confirmed as a real climber), and Colchuck Balanced Rock's own elevation (8240ft, matches Wikipedia/PeakVisor)."
+    },
+    {
+      "batch_number": 416,
+      "date": "2026-10-15",
+      "route_ids": [
+        "wa_lexington_tower_east_face",
+        "wa_liberty_and_injustice_for_all",
+        "wa_liberty_bell_beckey_route",
+        "wa_liberty_bell_freedom_or_death",
+        "wa_liberty_bell_freedom_rider",
+        "wa_liberty_bell_girl_next_door",
+        "wa_liberty_bell_independence_route",
+        "wa_liberty_bell_nw_face"
+      ],
+      "confirmed_errors_fixed": 0,
+      "flagged_for_human_review": 3,
+      "clean": 5,
+      "note": "All eight routes sit on or around Liberty Bell Mountain / Lexington Tower at Washington Pass. Clean/confirmed: Lexington Tower East Face's FA (Marts & McPherson, 1966) and elevation (7560ft, exact match Wikipedia/SummitPost/Mountain-Forecast); Liberty and Injustice for All's FA (Schaefer, 2014 rope-solo) and grade (5.12b, exact match Mountain Project); the Beckey Route's FA (Beckey, O'Neil & Welsh, Sept 27 1946, exact match Wikipedia and the 1948 AAJ account) and Liberty Bell's shared 7720ft summit (exact match Wikipedia/SummitPost/Westside Seattle, also carried correctly by Girl Next Door, Independence Route and NW Face); Freedom or Death's FA (Eli Helmuth, matches Mountain Project); Freedom Rider's FA (Burdo & Risse, 1988, matches SuperTopo/Climbing.com -- the Brian/Bryan spelling split is cross-source, not ours). Flagged, not fixed: Independence Route's FFA year (1991) is inferred from AAJ volume-year convention, not stated outright in the Risse-authored report found; Girl Next Door's FA (Goldie & Butler, 2011) is uncorroborated by a route-specific source, though Larry Goldie/Paul Butler are real North Cascades guides; Northwest Face's FA (Kraus & Rupley, 1956) and separate Free FA (Bill, Burgner, Martin & Tarver, 1966) are both unconfirmed beyond a photo caption placing Kraus near Liberty Bell's north face in 1956 -- no source ties Rupley or the free-ascent party to this specific route."
     }
   ]
 }

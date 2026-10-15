@@ -32443,3 +32443,56 @@ flagged for human review (the Lane Peak duplicate, two FA-exact-date gaps, one
 small internal elevation spread, two under-corroborated FA credits).
 
 Pass 7 continues next run after `wa_let_it_burn`.
+
+## Batch 416 — 2026-10-15 (pass 7)
+
+**Lexington Tower — East Face.** FA (Steve Marts & Don McPherson, 1966) and elevation
+(7,560 ft) both confirmed exactly: SummitPost independently credits the same pair in June
+1966, and Wikipedia/SummitPost/Mountain-Forecast all give 7,560 ft (Mountain-Forecast's 7,559
+ft is rounding noise). Clean.
+
+**Liberty Bell — Liberty and Injustice for All.** FA (Mikey Schaefer, 2014, rope-soloed to make
+the inspection-free style harder) and grade (5.12b) both confirmed exactly via Mountain Project
+and a Climbing.com piece on Schaefer's later Liberty Bell routes. Clean.
+
+**Liberty Bell — Beckey Route (Southwest Face).** FA (Fred Beckey, Jerry O'Neil, Charles Welsh,
+September 27 1946) matches Wikipedia and the original 1948 AAJ account exactly — this is the
+peak's own first ascent. Liberty Bell's 7,720 ft summit elevation, carried by this row and three
+others in the batch, is an exact match across Wikipedia, SummitPost and a local news piece citing
+the Washington Pass overlook view. Clean.
+
+**Liberty Bell — Freedom or Death.** FA credit (Eli Helmuth) confirmed via Mountain Project; no
+year is stored or claimed, so there's nothing to contradict. A pitch-grade discrepancy between
+Mountain Project (P2 5.11c/P3 5.12a) and an AAC piece (first three pitches 5.10/5.11/5.11) is
+sources disagreeing with each other, not with this row. Clean.
+
+**Liberty Bell — Freedom Rider.** FA (Steve Risse and Brian/Bryan Burdo, August 1988) confirmed
+via SuperTopo and a Climbing.com piece; the Brian/Bryan spelling splits across sources themselves,
+not something to fix here. The row's 14-pitch count matches Mountain Project and SuperTopo (one
+Climbing.com piece says 10, but 14 is the more widely corroborated figure). Clean.
+
+**Liberty Bell — The Girl Next Door.** FA (Goldie & Butler, 2011) not corroborated by any
+route-specific source found, but Larry Goldie and Paul Butler are real, currently active North
+Cascades climbing guides — the names aren't implausible, just unconfirmed for this specific route.
+Flagged for human review, not fixed.
+
+**Liberty Bell — The Independence Route.** FA (Alex Bertulis & Don McPherson, 1966, wall-style
+aid) matches a 2018 AAC article's listing exactly. The FFA (Steve Risse & Keith Hertel) is
+confirmed by Risse's own 1992 AAJ report describing their August 16–17 free ascent, but that
+report doesn't spell out the year in the snippet found — 1991 is the standard AAJ-volume-year
+inference (the 1992 AAJ covers the 1991 season), not an independently stated date. Flagged
+(date provenance only), not fixed.
+
+**Liberty Bell — Northwest Face.** Neither the stored FA (Hans Kraus & John Rupley, 1956) nor
+the separate Free FA (Sandy Bill, Ron Burgner, Ian Martin & Frank Tarver, 1966) turned up in any
+source beyond a single photo caption placing Kraus "at camp below North Face of Liberty Bell,
+1956" — suggestive but not a route-specific confirmation, and no source connects Rupley or the
+four-person free-ascent party to this line at all. Flagged for human review; not fixed per the
+"don't fix what you can't verify" rule.
+
+**Confirmed errors this batch: 0.** No SQL file. 5 routes (Lexington Tower East Face, Liberty
+and Injustice for All, Beckey Route, Freedom or Death, Freedom Rider) clean outright; 3 (Girl
+Next Door, Independence Route, Northwest Face) have FA-credit or FA-year items flagged for human
+review, none contradicted by any source found.
+
+Pass 7 continues next run after `wa_liberty_bell_nw_face`.
