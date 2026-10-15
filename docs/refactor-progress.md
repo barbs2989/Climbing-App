@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR7 | `CountUp` | `ClimbMatchCore.jsx` | the animated counter; consumers `ClimbMatch.jsx`, `RouteDetail.jsx`, `lib/Leaderboards.jsx` AND core itself (one use), so core imports it back; it reads NOTHING from core (only React), so there is no seam to type; five guards and nine probes name it only in comments ("never assert on a CountUp number under SSR"), one probe matches a call site in `RouteDetail.jsx`, which did not move |
 | PR6 | `Lbl` | `ClimbMatchCore.jsx` | the emoji-to-icon label; ten consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, eight `lib/` files) AND core itself (20 uses), so core imports it back; the seam is typed on the JS side with a JSDoc `@type {Record<string, string>}` on `EMOJI_ICON`, not a cast; `check:control-names` and `check:popup-chrome` match `<Lbl` at the CALL SITES, which did not move |
 | PR5 | `TrustBadge` | `ClimbMatchCore.jsx` | consumers `ClimbMatch.jsx`, `lib/CrewCard.jsx`, `lib/PartnerSearch.jsx`, `lib/ShareCard.jsx`, `lib/TripReport.jsx` AND core itself (`FullProfile`, `Resume`), so core imports it back; `check:profile-claims` reads its tooltip through the stitch, so the title stays a plain string beside the function keyword |
 | PR4 | `DiscBadges` | `ClimbMatchCore.jsx` | consumers `lib/Calendar.jsx`, `lib/GiveVouch.jsx`; imports `DiscBadge` from its own folder; core does NOT use it, so no cycle this time |
@@ -59,12 +60,13 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR6 — `Lbl`.** (**Grep for the definition before starting a candidate**: the
-PR4 hand-off named `HelpDot`, which #2430 had already deleted.) Next candidates, by the same census
-(top-level definition in core band 2; `<Name` uses per file; guards and `scripts/oneoff` probes naming
-it): `CountUp` (8 lines, 4 consumers, 5 guards incl. `scripts/lib/render-settle.mjs` — read how each
-names it first). `Pill` (30 uses across 9 files, two of them already `.tsx`) and `ActionIcon` (6 KB,
-5 guards) are the big ones — last. A parent that still uses what it extracted
+Last session stopped at: **PR7 — `CountUp`.** (**Grep for the definition before starting a candidate**: the
+PR4 hand-off named `HelpDot`, which #2430 had already deleted.) The small leaves of core band 2 are done;
+what is left, by the same census (top-level definition; `<Name` uses per file; guards and `scripts/oneoff`
+probes naming it), are the two primitives everything else renders through: `Pill` (30 uses across 9 files,
+two of them already `.tsx`; has the JSDoc `@param` seam) and `ActionIcon` (6 KB of SVG paths, ~100 uses,
+5 guards). Each is one PR; read every guard that names it first, and expect the measurement to move more
+than one count. A parent that still uses what it extracted
 imports the new file back — a cycle, and an accepted one: the parent's import is dropped by the
 stitch, and the component reads the parent's exports at render time only. A component that renders
 another extracted component imports it from its own folder (`./DiscBadge.tsx`), not through the parent.
