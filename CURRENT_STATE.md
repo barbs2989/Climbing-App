@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Profile photo sticks**: "Change photo" saves the avatar as soon as it uploads, so Cancel or a greyed Save (no username yet, every new account) no longer loses it; the editor says why Save is greyed. See `docs/features/profile-and-settings.md`.
 - **Best day to climb scores saved areas**: a saved crag, or a saved region where crag climbs are at least half of what it holds, is scored at its own location beside your saved crag climbs; tapping it opens the area. See `docs/features/conditions.md`.
 - **Emergency & rescue is the climb's own county**: the Safety tab card names the county the climb sits in (Castleton Tower → Grand County, Utah) and shows only that county's sheriff line, not every Utah county; it has an Edit pencil into *Add or fix info*; every route-page pencil crashed the screen since #2467 (`openFix` called itself) and is fixed (`lib/rescueCounty.js`).
 - **Challenges count honestly, and other climbers' show**: *Climb 100 pitches* and the *50 pitches* badge (`pitchesClimbed`) no longer add a pitch for a turned-around attempt, a boulder, a walk-up or a route that has not loaded; another climber's profile now shows *Their challenges* (climbs this year, pitches, conditions, streak) from the logs you may read, beside their lists and badges; the vouch and catch rows show only where they were measured; *Bulger bagger* uses the peak roster like The Bulgers card.
