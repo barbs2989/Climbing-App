@@ -26,9 +26,10 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Quick log**: the route page offers *✓ Quick log* beside *Full log* — pick a style or outcome, the date, an optional rating, save. The rest can be added later from the logbook. A crew quick log no longer writes two `climb_logs` rows. See `docs/features/logbook-crews-home.md`.
+- **Route edits: an empty field fills at once, two climbers agreeing change a filled one** (0325): the database approves the edit itself; the edit sheet shows other climbers' waiting suggestions with an Agree button; anything else still waits for the owner. Area edits are still held.
 - **Best day on Home again + Menu tiles**: Home shows the Best day to climb tile right under Jump back in (it also stays in the Menu). The Menu's Plan & log adds **Downloads** (scrolls Home to the pinned/downloaded states card, `#pinned-downloads`) and **Hire a guide** (Partners in guides mode).
 - Route page: the duplicate *+ Add start location* button on Safety is gone; start of climb is filed from Add or fix info and the log form, shown on Overview.
-- **Quick log**: the route page offers *✓ Quick log* beside *Full log* — pick a style or outcome, the date, an optional rating, save. The rest can be added later from the logbook. A crew quick log no longer writes two `climb_logs` rows. See `docs/features/logbook-crews-home.md`.
 - **Profile tabs** The Profile screen splits under its header into Profile · Activity · Review (admins): one long scroll became three short views; jumps into a section open its tab.
 - **Résumé past climbs: style fits the discipline**: *Add a past climb* on the résumé offered Lead / Follow / Sent / Summit / Top rope / Solo for every discipline; it now lists Mountain Project's styles for the chosen discipline (`RESUME_STYLES`) — a scramble offers Summit / Completed / Solo, a boulder Send / Flash.
 - **`npm run lint` + `npm run type-check`** (tooling, no screen changes): ESLint (`eslint.config.js`) holds unused variables, `any` and hook dependency arrays at zero for new code, in the build; findings already in the code are held in `eslint-suppressions.json`, which only shrinks. TypeScript strict gained `noUnusedParameters`. Run both before finalizing any feature.
@@ -55,7 +56,8 @@ Newest first. Keep about 15 lines; older entries live in the PRs and the commit 
 - **Area page order**: areas/climbs list → *Don’t see a climb?* → suggested climbs → nearby peaks → Top contributors → Discussion. Discussion now renders on areas with no coordinate (Florida’s Artificial Boulders); *Partners here*’s dates/types control is a real card button (it had no style at all).
 - **RACK is rack-only, every state** — ~400 WA + ~140 other-state routes re-homed (ice axe, crampons, helmet, boots out of `detailed_rack`/`pro_needs`/`rack` into `what_to_bring`), `DISC_RACK` stripped to protection and ropes, `routeRackFor` splits every source and `rackLeftovers` feeds GEAR & ESSENTIALS; `audit:rack-items`.
 - **Objectives chips** Alpine is the left-most discipline chip; Mountaineering and Aid are their own chips instead of folding into Alpine and Trad (`lib/ListsManager.jsx`).
-- **PR12** `Av` extracted to `src/components/Av.tsx` (fifteen consumers plus core itself, which imports it back).
+- **PR13** `GPXMap` extracted to `src/components/GPXMap.tsx` (three consumers; core never rendered it, so no import back; Leaflet's `window.L` declared once in `src/types/`).
+- **#2490** `Av` extracted to `src/components/Av.tsx` (fifteen consumers plus core itself, which imports it back).
 - **#2489** `DiscIcon` extracted to `src/components/DiscIcon.tsx` (thirteen consumers plus core itself, which imports it back).
 - **#2484** `ElevChart` extracted to `src/components/ElevChart.tsx` (one consumer; core never rendered it, so no import back); CLAUDE.md's band-2 list brought up to date.
 - **#2478** `ActionIcon` extracted to `src/components/ActionIcon.tsx` (fifteen consumers plus core itself, which imports it back; `check:field-renders` now imports the file).
