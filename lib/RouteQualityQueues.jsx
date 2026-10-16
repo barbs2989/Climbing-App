@@ -20,6 +20,14 @@ import {
   useContributionStandings, setContributionStanding, fetchProfilesByIds,
 } from "./db";
 import { C, DLOCALE, sameEditValue, pubNameRow } from "../ClimbMatchCore";
+import { AREA_EDIT_FIELDS, monthsLabel } from "./areaFields";
+import { useAreaCardsByIds } from "./db";
+
+// An AREA edit (0319): area_id set, route_id null. Its field label and current value come from
+// lib/areaFields.js (the one list the constraint, applier, sheet and page share), not from
+// contribution_fields, which maps ROUTE columns.
+const isAreaRow = (r) => !!(r && r.area_id && !r.route_id);
+const areaField = (k) => AREA_EDIT_FIELDS.find((f) => f.k === k) || null;
 
 const REASONS = [
   "Doesn’t match the guidebook or the climbers who logged it",
@@ -113,6 +121,8 @@ export function FieldContributionQueue({ onOpenRoute }) {
   const rows = q.data || [];
   const routeIds = useMemo(() => Array.from(new Set(rows.map((r) => r.route_id).filter(Boolean))), [rows]);
   const routesQ = useRouteRowsByIds(routeIds);
+  const areaIds = useMemo(() => Array.from(new Set(rows.filter(isAreaRow).map((r) => r.area_id))), [rows]);
+  const areasQ = useAreaCardsByIds(areaIds);
   const names = useNames(rows.map((r) => r.contributor));
   const [busy, setBusy] = useState(null);
   const [msg, setMsg] = useState(null);
@@ -123,14 +133,14 @@ export function FieldContributionQueue({ onOpenRoute }) {
 
   const clusters = useMemo(function () {
     const by = {};
-    rows.forEach(function (r) { const k = r.route_id + "\u0000" + r.field; (by[k] || (by[k] = [])).push(r); });
+    rows.forEach(function (r) { const k = (r.route_id || "area:" + r.area_id) + "\u0000" + r.field; (by[k] || (by[k] = [])).push(r); });
     const out = [];
     Object.keys(by).forEach(function (k) {
       const gs = [];
       by[k].forEach(function (r) {
         let g = null;
         for (let i = 0; i < gs.length; i++) if (sameEditValue(r.field, gs[i].rows[0].value, r.value)) { g = gs[i]; break; }
-        if (!g) { g = { key: k + "\u0000" + gs.length, route_id: r.route_id, field: r.field, rows: [] }; gs.push(g); }
+        if (!g) { g = { key: k + "\u0000" + gs.length, route_id: r.route_id, area_id: isAreaRow(r) ? r.area_id : null, field: r.field, rows: [] }; gs.push(g); }
         g.rows.push(r);
       });
       gs.forEach(function (g) { g.who = Array.from(new Set(g.rows.map((r) => r.contributor))); out.push(g); });
@@ -149,7 +159,7 @@ export function FieldContributionQueue({ onOpenRoute }) {
     const v0 = g.rows[0].value;
     if (typeof v0 === "number") { const n = Number(text); if (!Number.isFinite(n)) throw new Error("Enter a number."); return n; }
     if (typeof v0 === "string" || v0 == null) return String(text);
-    if (Array.isArray(v0) && (!v0.length || isPrim(v0[0]))) return String(text).split(",").map((s) => s.trim()).filter(Boolean);
+    if (Array.isArray(v0) && (!v0.length || isPrim(v0[0]))) { const parts = String(text).split(",").map((s) => s.trim()).filter(Boolean); /* a months set (0319) is numbers, and the applier refuses strings */ return typeof v0[0] === "number" ? parts.map((p) => Number(p)).filter(Number.isFinite) : parts; }
     try { return JSON.parse(text); } catch (_e) { throw new Error("The edited value must be valid JSON for this field."); }
   };
   const draftText = (g) => { const v = g.rows[0].value; return isPrim(v) ? String(v == null ? "" : v) : (Array.isArray(v) && (!v.length || isPrim(v[0]))) ? v.join(", ") : JSON.stringify(v, null, 1); };
@@ -159,27 +169,33 @@ export function FieldContributionQueue({ onOpenRoute }) {
 
   return <div>
     <Msg msg={msg} />
-    {!clusters.length ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.6, padding: "4px 0" }}>No route edits are waiting for review.</div>
+    {!clusters.length ? <div style={{ fontSize: 12.5, color: C.textMuted, lineHeight: 1.6, padding: "4px 0" }}>No route or area edits are waiting for review.</div>
       : clusters.map(function (g) {
         const r0 = g.rows[0];
-        const f = (fieldsQ.data || {})[g.field];
-        const label = (f && f.label) || g.field;
+        const area = g.area_id ? areaField(g.field) : null;
+        const f = g.area_id ? null : (fieldsQ.data || {})[g.field];
+        const label = g.area_id ? ((area && area.label) || g.field) : ((f && f.label) || g.field);
         const routeRow = (routesQ.data || {})[g.route_id];
-        const cur = f && f.column_name && routeRow ? routeRow[f.column_name] : undefined;
-        const name = (r0.routes && r0.routes.name) || g.route_id;
+        const areaRow = g.area_id ? (areasQ.data || {})[g.area_id] : null;
+        // An area's current value is the column the page renders (lib/areaFields.js `cur`), shown
+        // the way the sheet shows it; the proposed months read as "Mar–May" rather than [3,4,5].
+        const cur = g.area_id ? (areaRow && area ? (area.cur(areaRow) || undefined) : undefined) : (f && f.column_name && routeRow ? routeRow[f.column_name] : undefined);
+        const proposed = g.area_id && area && area.type === "months" ? monthsLabel(r0.value) : r0.value;
+        const name = g.area_id ? ((r0.areas && r0.areas.name) || (areaRow && areaRow.name) || g.area_id) : ((r0.routes && r0.routes.name) || g.route_id);
         const isBusy = busy === g.key;
         const m = mode[g.key];
         const also = g.rows.slice(1).map((r) => r.id);
         return <div key={g.key} style={{ background: C.card, border: "1px solid " + C.border, borderRadius: 10, padding: "11px 12px", marginBottom: 9 }}>
           <div style={{ display: "flex", justifyContent: "space-between", gap: 8, alignItems: "baseline" }}>
             <div style={{ fontSize: 14, fontWeight: 700, color: C.text }}>{name}</div>
-            <button onClick={() => onOpenRoute && onOpenRoute(g.route_id, name)} style={{ background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", padding: 0 }}>Open route →</button>
+            {g.area_id ? <span style={{ fontSize: 11.5, color: C.textMuted, fontWeight: 700 }}>{"Area" + (r0.areas && r0.areas.area_type ? " · " + r0.areas.area_type : "")}</span>
+              : <button onClick={() => onOpenRoute && onOpenRoute(g.route_id, name)} style={{ background: "none", border: "none", color: C.blue, fontSize: 12, fontWeight: 700, cursor: "pointer", padding: 0 }}>Open route →</button>}
           </div>
           <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 2 }}>{[r0.routes && r0.routes.discipline, "sent " + when(r0.created_at), g.who.length > 1 ? g.who.length + " climbers suggested this" : "by " + (names[r0.contributor] || String(r0.contributor || "").slice(0, 8))].filter(Boolean).join(" · ")}</div>
           <div style={{ marginTop: 8, fontSize: 12.5, fontWeight: 700, color: C.text }}>{label}</div>
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
             <div><div style={{ fontSize: 11, color: C.textMuted, fontWeight: 700, marginTop: 4 }}>{isEmpty(cur) ? "ON THE PAGE NOW: nothing" : "ON THE PAGE NOW"}</div>{!isEmpty(cur) ? <Val v={cur} /> : null}</div>
-            <div><div style={{ fontSize: 11, color: C.green, fontWeight: 700, marginTop: 4 }}>PROPOSED</div><Val v={r0.value} tone="new" /></div>
+            <div><div style={{ fontSize: 11, color: C.green, fontWeight: 700, marginTop: 4 }}>PROPOSED</div><Val v={proposed} tone="new" /></div>
           </div>
           <RowDiff cur={cur} nxt={r0.value} />
           {m === "edit" ? <div style={{ marginTop: 9 }}>
@@ -197,10 +213,10 @@ export function FieldContributionQueue({ onOpenRoute }) {
               <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: null }))}>Cancel</button>
             </div>
           </div> : <div style={{ display: "flex", gap: 6, marginTop: 9, flexWrap: "wrap" }}>
-            <button disabled={isBusy} style={btn("ok", isBusy)} onClick={() => act(g.key, () => approveFieldContribution(r0.id, null, also), "Approved — it is on the page and the field is now high confidence.")}>{isBusy ? "Working…" : "Approve"}</button>
+            <button disabled={isBusy} style={btn("ok", isBusy)} onClick={() => act(g.key, () => approveFieldContribution(r0.id, null, also), g.area_id ? "Approved — it is on the area page." : "Approved — it is on the page and the field is now high confidence.")}>{isBusy ? "Working…" : "Approve"}</button>
             <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: "edit" }))}>Edit &amp; approve</button>
             <button disabled={isBusy} style={btn("bad", isBusy)} onClick={() => setMode((x) => ({ ...x, [g.key]: "reject" }))}>Turn down</button>
-            <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => act(g.key, async () => { await setRouteFieldConfidence(g.route_id, g.field, "high", "Locked by ClimbMatch as stored"); await rejectFieldContribution(r0.id, "The value on the page was checked and locked at high confidence; this edit was not applied.", also, false); }, "Locked as stored; the edit was turned down without a strike.")}>Keep &amp; lock</button>
+            {g.area_id ? null : <button disabled={isBusy} style={btn("plain", isBusy)} onClick={() => act(g.key, async () => { await setRouteFieldConfidence(g.route_id, g.field, "high", "Locked by ClimbMatch as stored"); await rejectFieldContribution(r0.id, "The value on the page was checked and locked at high confidence; this edit was not applied.", also, false); }, "Locked as stored; the edit was turned down without a strike.")}>Keep &amp; lock</button>}
           </div>}
         </div>;
       })}

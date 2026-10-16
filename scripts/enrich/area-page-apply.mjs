@@ -35,7 +35,8 @@ const batch = JSON.parse(fs.readFileSync(from, "utf8"));
 const FIELDS = ["blurb", "approach", "approach_min", "parking_note", "rock", "aspect", "season_months"];
 const ASPECTS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW", "varies"];
 // Words that mean a sentence is pointing at somebody else's text rather than describing the place.
-const CITES = /\b(mountain ?project|summitpost|openbeta|the ?crag|27crags|guidebook|according to|per the|as described (by|in)|source[sd]?)\b/i;
+// "the crag" as two words is ordinary English ("the crag is busy"); only the site's own spelling counts.
+const CITES = /\b(mountain ?project|summitpost|openbeta|thecrag|27crags|guidebook|according to|per the|as described (by|in)|source[sd]?)\b|thecrag\.com/i;
 
 function validate(id, e) {
   const bad = [];

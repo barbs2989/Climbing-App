@@ -5,6 +5,7 @@ How climber edits to route pages are held, checked, locked and flagged. Decided 
 
 ## 1. What it does today
 
+- **Every field edit is held for review — on routes and, since 0319, on areas.** An area edit (About, Walk in, Walk-in time, Drive & park, Rock, Faces, Season; `lib/areaFields.js`) is a `contributions` row with `area_id` and no `route_id`; the same queue, approve/reject functions, notices and strikes apply. One difference: an approved AREA value is written to its `areas` column by `apply_approved_area_field` (there is no client overlay for area pages), and area rows get no confidence lock.
 - **Every field edit is held for review.** A climber's edit on the route page's "Add or fix info"
   sheet is written to `contributions` (kind `field`) with status `pending` and shows nowhere until
   the owner approves it. The sheet says "Sent for review — you’ll be told when it’s checked" and
