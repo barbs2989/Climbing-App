@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR14 | `SwipeRow` | `ClimbMatchCore.jsx` | the swipe-left-to-act row; 3 consumers (`ClimbMatch.jsx`, `lib/Inbox.jsx`, `lib/NotifPanel.jsx`), core never rendered it — no cycle; reads `C` only; its comment block moved with it as the JSDoc; touch handlers typed `TouchEvent<HTMLDivElement>`; no guard, probe or feature doc names it |
 | PR13 | `GPXMap` | `ClimbMatchCore.jsx` | the route map (145 lines, moved by SCRIPT from core's body with asserted substitutions); 3 consumers (`RouteDetail.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`), core never rendered it — no cycle; Leaflet is CDN-loaded and untyped, so `window.L` is declared `any` once in `src/types/leaflet-global.d.ts`; TypeScript cannot narrow through a boolean, so `track`/`pk` stand in for `pts`/`peakCoord` and `placed` is a type predicate over core's `wpPlaced()`; `check:waypoint-placement` reads it through the stitch (signature spelling kept) and `inject-waypoint-placement-cases.mjs` edits the `.tsx`; seams typed on the JS side: `useFollowMe` opts (JSDoc) and the seven `POP_*` styles (`CSSProperties`); core now exports `wpDivIcon` (`WP_COLORS` and `wpIs` already were); feature-doc rows moved in two docs |
 | PR12 | `Av` | `ClimbMatchCore.jsx` | the round avatar with its online dot; 15 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 13 `lib/` files) AND core itself (16 uses), so core imports it back; reads `C`, `FALLBACK_AV`, `onImgErr` from core and `photoThumb` from `lib/photoThumb` at render time; only comments name it (`check:control-names`, four oneoff probes: an icon-only control is not NAMED by an `<Av/>`) |
 | PR11 | `DiscIcon` | `ClimbMatchCore.jsx` | the discipline glyph (13 SVG groups, moved verbatim by script); 13 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 11 `lib/` files, `DiscBadge.tsx` via `./DiscIcon.tsx`) AND core itself (13 uses), so core imports it back; `CAT` is read at render time through a `Record` annotation, as `DiscBadge` does; `d` is optional because callers pass a place's `disc`, which can be unset — an unknown key drew the rock icon before and still does; no guard, probe or feature doc names it |
@@ -66,13 +67,14 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR13 — `GPXMap`.** Core band 2 is now: constants, seed data, pure helpers, and the LARGE
-stateful panels (`SwipeRow`, `FullProfile`, `Resume`, `ChatComposer`, `OverviewMap`, `ItineraryEditor`, …). Every small
-component and primitive is in `src/components/` (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`,
-`CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `GPXMap`). Next, by the same census (definition span;
-`<Name` uses per file; guards and `scripts/oneoff` probes naming it; any guard that IMPORTS it by path): census
-`SwipeRow` (gesture row; `check:a11y-*`/`check:clickable` may name it), `ChatComposer`, `OverviewMap` (Leaflet again —
-reuse `src/types/leaflet-global.d.ts`), then the profile panels. **Grep for the definition before starting a
+Last session stopped at: **PR14 — `SwipeRow`.** Core band 2 is now: constants, seed data, pure helpers, and the LARGE
+stateful panels (`FullProfile`, `Resume`, `ChatComposer`, `OverviewMap`, `ItineraryEditor`, …). Every small component
+and primitive is in `src/components/` (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`,
+`ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `GPXMap`, `SwipeRow`). Next, by the census of 2026-10-16 (definition span;
+`<Name` uses per file; guards and `scripts/oneoff` probes naming it; any guard that IMPORTS it by path): `ChatComposer`
+(one 3.2 KB line, one consumer `ClimbMatch.jsx`, no guard names it — generate it from core's line), then `OverviewMap`
+(38 lines, one consumer, `check:seed-only-surfaces` and `check:units` name it — read both; Leaflet again, reuse
+`src/types/leaflet-global.d.ts` and the GPXMap generator's shape), then the profile panels. **Grep for the definition before starting a
 candidate** (`ProvenancePanel`, `RouteGearCheck`, `HelpDot` were all named by hand-offs after they had left core).
 Conventions that held through PR5–PR13: a parent that still uses what it extracted imports the new file back (the
 stitch drops that import; the component reads the parent's exports at render time only); a component another
