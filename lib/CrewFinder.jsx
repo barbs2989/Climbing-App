@@ -4,7 +4,8 @@ import { USE_DB } from "./supabase";
 import { clickable } from "./clickable";
 import { ROUTE_PICK_LIM, useAreaPaths, useMyZip, usePartnerSignals, useRouteSearch } from "./db";
 import { useEffect, useState } from "react";
-import { AreaRegionSelect, Av, C, CAT, CLIMBERS, DB_UID, DLOCALE, PlaceMatches, DiscIcon, FALLBACK_AV, FALLBACK_COVER, ME, MOUNTAINS, OPEN_CREWS, ROUTES, areaPathNames, catOf, climberLine, crewPlace, distMiles, fuzzyMatchAny, haveMyLoc, inArea, onImgErr, placeSub, placeTrip, pubFirst, rDiscs, seedRoutesOn, tripOf, uDistMi, uDistMiUnitLong, uImp, vScore } from "../ClimbMatchCore.jsx";
+import { AreaRegionSelect, Av, C, CAT, CLIMBERS, DB_UID, DLOCALE, PlaceMatches, FALLBACK_AV, FALLBACK_COVER, ME, MOUNTAINS, OPEN_CREWS, ROUTES, areaPathNames, catOf, climberLine, crewPlace, distMiles, fuzzyMatchAny, haveMyLoc, inArea, onImgErr, placeSub, placeTrip, pubFirst, rDiscs, seedRoutesOn, tripOf, uDistMi, uDistMiUnitLong, uImp, vScore } from "../ClimbMatchCore.jsx";
+import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 
 export default function CrewFinder({onRequestJoin,requested,onViewProfile,connections,onOpenRoute,onOpenArea,routeById,areaById,dbCrews,dbCrewsUnavailable,initialArea,onConsumeInitialArea,myAreas}){
