@@ -32566,3 +32566,64 @@ identity). 3 routes clean outright (Serpentine Crack, Liberty Traverse, Lichtenb
 Route).
 
 Pass 7 continues next run after `wa_lichtenberg_mountain_se_route`.
+
+## Batch 418 — 2026-10-16 (pass 7)
+
+**Lichtenberg Mountain — Southeast Ridge (from Lichtenwasser Lake).** Clean. `high_point_ft`
+5,844 matches the area's own row and Wikipedia exactly. No `fa` field is stored, but the
+`best_season` prose's claim that "the 1975 first documented ascent of the line" fell on
+"20-21 September" is confirmed to the day by Jim Brisbine's trip report (trailcatjim.com),
+which dates this exact Lichtenwasser Lake → Southeast Ridge → summit → West Ridge descent trip
+to September 20–21, 1975.
+
+**Lichtenberg Mountain — West Face.** Confirmed error: `grade`/`grade_num` store `5.9+`/9, and
+the route's own `overview` field repeats "Reported at 5.9+". The only documented ascent of this
+face — Alex Bertulis' account in AAC Publications (1995 American Alpine Journal) of climbing it
+with his son Nik when it was "previously unclimbed" — rates it (II, 5.8): a 5.7 friction slab on
+pitch one, a 5.8 overhanging move on pitch three as the crux, six pitches total. No source found
+gives 5.9 for this face, and SummitPost's rundown of the mountain's three established routes
+(southwest gully scramble, northeast-ridge winter route, west face) names no harder variant.
+Fixed: grade 5.9+ → 5.8, grade_num 9 → 8, and the `overview` string's "Reported at 5.9+" → "Reported
+at 5.8". The route's `name` field, "West Face (5.9+ rock route)", also bakes in the old grade —
+left untouched (a rename is outside a fact-audit's scope) but worth a human's attention alongside
+this fix.
+
+**Lichtenberg Mountain — West Face / West Rib (Lichtenhorn / West Peak).** Clean. Both narrative
+claims check out exactly: the same Jim Brisbine's second trip report dates this Lichtenberg
+Pass → West Face → West Rib climb to October 21, 1978 — matching the row's `best_season` text
+("the original ascent of this line was on 21 October") precisely — and his descent via the
+Northeast Slope matches the row's `descent_text` ("The 1978 party descended the Northeast Slope")
+word for word.
+
+**Lincoln Peak — Wilkes-Booth (Northwest Face).** Clean. `fa` ("Daniel Coltrane and Michal
+Rynkiewicz, March 13, 2015") is confirmed by the AAC Publications article itself, written by
+Coltrane, describing the March 13, 2015 new route with Rynkiewicz up the northwest face in an
+18.5-hour car-to-car push from the Heliotrope Ridge trailhead. A Lemke Climbs history entry
+independently corroborates the same four facts (names, route, date, face). `high_point_ft` 9,085
+is not contradicted — Wikipedia's "9,080+ ft" (citing Peakbagger) is a rounded figure from an
+older contour map, consistent with a more precise 9,085 rather than conflicting with it.
+
+**Lincoln Peak — X Couloir (Southwest Face) / Standard Route.** Clean. `fa` (Fred Beckey, Wesley
+Grande, Herb Staley, John Rupley, July 22, 1956) is independently corroborated by a Lemke Climbs
+history page giving the same four-person July 1956 first ascent of Lincoln Peak; the exact July
+22 date is only semi-corroborated (an AAC 1957 note describes the same four climbers' July 22
+climb of "West Black Butte of Mount Lincoln," a related but not clearly identical feature) —
+not contradicted, so left as is.
+
+**Little Annapurna — Boola Boola Buttress, Northeast Face, Northwest Buttress.** All three rows
+carry very little stored data (no `fa`, `approach`, or `descent`; Northeast Face and Northwest
+Buttress have only a bare grade, 5.8 and 5.7 respectively, neither confirmed nor contradicted by
+any source found). One item flagged for human review, not fixed: Boola Boola Buttress is filed
+under Little Annapurna (`area_id = wa_little_annapurna`), but a 2005 CascadeClimbers trip report
+("Thank You Baby Jesus") describes the buttress as "hidden below the Dragontail plateau, across
+from Little Annapurna" — suggestive that its true parent may be Dragontail Peak rather than
+Little Annapurna itself, but no source states its official area filing outright, so left unmoved
+per the area-identity rule (read the catalog, don't guess from one trip report).
+
+**Confirmed errors this batch: 1** (Lichtenberg Mountain West Face's grade/overview) — SQL in
+`audits/sql/2026-10-16-batch-418.sql`, pre-flighted with `check:sql`. 1 item flagged for human
+review (Boola Boola Buttress's area filing). 6 routes clean outright (Southeast Ridge, West
+Face/West Rib, both Lincoln Peak routes, and Little Annapurna's Northeast Face and Northwest
+Buttress, the latter two simply having nothing to contradict).
+
+Pass 7 continues next run after `wa_little_annapurna_northwest_buttress`.

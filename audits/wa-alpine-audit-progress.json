@@ -2,10 +2,10 @@
   "scope_definition": "routes.discipline IN ('alpine','mountaineering') AND routes.id LIKE 'wa_%' AND routes.area_id IN (SELECT id FROM areas WHERE area_type = 'peak'), ordered by routes.id ASC",
   "scope_note": "area_type = 'peak' excludes crags/walls (e.g. The Dikes, Summertime Crag) that carry an alpine/mountaineering discipline tag but are actually short cragging routes, not mountaineering objectives \u2014 out of scope per audit instructions.",
   "pass": 7,
-  "last_processed_id": "wa_lichtenberg_mountain_se_route",
+  "last_processed_id": "wa_little_annapurna_northwest_buttress",
   "total_in_scope_last_count": 739,
   "total_wa_alpine_or_mountaineering_tagged": 833,
-  "pass_note": "Batch 417: Liberty Bell's remaining routes (Overexposure, Serpentine Crack, Sidewinder, Thin Red Line, Liberty Crack, Liberty Crack (Free), Liberty Traverse), both Liberty Cap finish routes (via Liberty Ridge, via Ptarmigan Ridge), and Lichtenberg Mountain's Southeast Slopes Scramble. 5 confirmed errors fixed (see audits/sql/2026-10-16-batch-417.sql): Liberty Crack's high_point_ft (7746, 26ft above the mountain's real 7720ft summit -- the lone outlier among 8 Liberty-Bell-area routes checked across this batch and the two prior ones, including its own free sibling which already had 7720 right); both Liberty Cap routes' high_point_ft (14112, the stale pre-resurvey figure, contradicting the peak's own area row which already holds 14097, in line with the Aug 2025 Gilbertson-team resurvey); Liberty Crack (Free)'s fa field dating its current bolted variation to 2016 instead of 2017 (Mountain Project, and the row's own data_quality.gaps note, both place the four-person Schaefer/Lee/Herrington/Hadley team's new variation in 2017, distinct from a separate 2016 Herrington/Hadley redpoint of the original line); and Thin Red Line's fa field crediting the 2008 FFA to 'Kate Rutherford & Mikey Schaefer' when every source found credits Schaefer alone -- Rutherford's real documented FA with Schaefer is an unrelated 2011 Patagonia climb ('Washington Route', Fitz Roy), a plausible source of the mix-up. 2 items flagged for human review: Liberty Ridge's FA third climber's first name splits between primary/institutional sources ('Will Borrow') and the standard guidebook ('Jim Borrow'), contradicted either way; and Sidewinder's FA (Doorish & Nason, 1969; Burdo variation, 1991) and even its existence under this name could not be corroborated by any source reachable this run (Mountain Project itself was unreachable in this environment). 3 routes clean outright: Serpentine Crack (no FA claimed, elevation matches), Liberty Traverse (no FA claimed, nothing to contradict), and Lichtenberg Mountain's Southeast Slopes Scramble (no FA claimed, prior-pass prominence correction already self-documented).",
+  "pass_note": "Batch 418: Lichtenberg Mountain (SE Ridge, West Face, West Face/West Rib), Lincoln Peak (Wilkes-Booth NW Face, X Couloir), Little Annapurna (Boola Boola Buttress, Northeast Face, Northwest Buttress). Next run continues after wa_little_annapurna_northwest_buttress.",
   "batches": [
     {
       "batch_number": 1,
@@ -8330,6 +8330,24 @@
       "flagged_for_human_review": 2,
       "clean": 3,
       "note": "Batch 417: Liberty Bell's remaining routes (Overexposure, Serpentine Crack, Sidewinder, Thin Red Line, Liberty Crack, Liberty Crack (Free), Liberty Traverse), both Liberty Cap finish routes (via Liberty Ridge, via Ptarmigan Ridge), and Lichtenberg Mountain's Southeast Slopes Scramble. 5 confirmed errors fixed (see audits/sql/2026-10-16-batch-417.sql): Liberty Crack's high_point_ft (7746, 26ft above the mountain's real 7720ft summit -- the lone outlier among 8 Liberty-Bell-area routes checked across this batch and the two prior ones, including its own free sibling which already had 7720 right); both Liberty Cap routes' high_point_ft (14112, the stale pre-resurvey figure, contradicting the peak's own area row which already holds 14097, in line with the Aug 2025 Gilbertson-team resurvey); Liberty Crack (Free)'s fa field dating its current bolted variation to 2016 instead of 2017 (Mountain Project, and the row's own data_quality.gaps note, both place the four-person Schaefer/Lee/Herrington/Hadley team's new variation in 2017, distinct from a separate 2016 Herrington/Hadley redpoint of the original line); and Thin Red Line's fa field crediting the 2008 FFA to 'Kate Rutherford & Mikey Schaefer' when every source found credits Schaefer alone -- Rutherford's real documented FA with Schaefer is an unrelated 2011 Patagonia climb ('Washington Route', Fitz Roy), a plausible source of the mix-up. 2 items flagged for human review: Liberty Ridge's FA third climber's first name splits between primary/institutional sources ('Will Borrow') and the standard guidebook ('Jim Borrow'), contradicted either way; and Sidewinder's FA (Doorish & Nason, 1969; Burdo variation, 1991) and even its existence under this name could not be corroborated by any source reachable this run (Mountain Project itself was unreachable in this environment). 3 routes clean outright: Serpentine Crack (no FA claimed, elevation matches), Liberty Traverse (no FA claimed, nothing to contradict), and Lichtenberg Mountain's Southeast Slopes Scramble (no FA claimed, prior-pass prominence correction already self-documented)."
+    },
+    {
+      "batch_number": 418,
+      "date": "2026-10-16",
+      "route_ids": [
+        "wa_lichtenberg_mountain_southeast_ridge",
+        "wa_lichtenberg_mountain_west_face",
+        "wa_lichtenberg_mountain_west_face_west_rib",
+        "wa_lincoln_peak_north_ridge",
+        "wa_lincoln_peak_standard",
+        "wa_little_annapurna_boola_boola_buttress",
+        "wa_little_annapurna_northeast_face",
+        "wa_little_annapurna_northwest_buttress"
+      ],
+      "confirmed_errors_fixed": 1,
+      "flagged_for_human_review": 1,
+      "clean": 6,
+      "note": "Batch 418: Lichtenberg Mountain's remaining three routes (Southeast Ridge, West Face, West Face/West Rib), Lincoln Peak's two routes (Wilkes-Booth NW Face, X Couloir/Standard), and Little Annapurna's first three routes (Boola Boola Buttress, Northeast Face, Northwest Buttress). 1 confirmed error fixed (see audits/sql/2026-10-16-batch-418.sql): West Face's grade/grade_num (5.9+ / 9) and its own overview text both contradict the only documented ascent -- Alex Bertulis' AAC Publications account (1995 AAJ) of climbing the then-unclimbed face with his son Nik, rated (II, 5.8) with a 5.8 crux move on pitch three -- no source found supports a 5.9. 1 item flagged for human review: Boola Boola Buttress is filed under Little Annapurna, but a 2005 CascadeClimbers trip report describes it as 'hidden below the Dragontail plateau, across from Little Annapurna' -- suggestive it may actually belong under Dragontail Peak, but no source states its official parent outright, so left unmoved per the area-identity rule (read the catalog, don't guess). 6 routes clean: Southeast Ridge and West Face/West Rib both had their FA dates independently confirmed to the day -- Jim Brisbine's trip reports place them at Sept 20-21 1975 and Oct 21 1978 respectively, exactly matching this app's own prose, descent included; both Lincoln Peak routes' fa fields matched independent sources (AAC Publications for Wilkes-Booth, Lemke Climbs for X Couloir); and Little Annapurna's Northeast Face (5.8) and Northwest Buttress (5.7) carry grades no source confirmed or contradicted, so left as is."
     }
   ]
 }
