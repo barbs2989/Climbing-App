@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR11 | `DiscIcon` | `ClimbMatchCore.jsx` | the discipline glyph (13 SVG groups, moved verbatim by script); 13 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 11 `lib/` files, `DiscBadge.tsx` via `./DiscIcon.tsx`) AND core itself (13 uses), so core imports it back; `CAT` is read at render time through a `Record` annotation, as `DiscBadge` does; `d` is optional because callers pass a place's `disc`, which can be unset — an unknown key drew the rock icon before and still does; no guard, probe or feature doc names it |
 | PR10 | `ElevChart` | `ClimbMatchCore.jsx` | the elevation profile under the route map; a `memo` component (kept); ONE consumer (`RouteDetail.jsx`) and core never rendered it, so core does NOT import it back — the first move since PR4 with no cycle; reads `C` and `uElev` from core at render time; `docs/features/route-page.md` listed it under core and `check:feature-docs` asserts a symbol in the file its row names, so the row moved too |
 | PR9 | `ActionIcon` | `ClimbMatchCore.jsx` | the line-icon set (6 KB of SVG, moved verbatim by script); 15 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 10 `lib/` files, 3 `.tsx` components via `./ActionIcon.tsx`) AND core itself (13 uses), so core imports it back; `EnrichmentPanels.jsx`, `lib/FireMap.jsx` and `lib/FireNearRoute.jsx` take it as a PROP and did not change; `check:field-renders` imported it from core by path and now imports the `.tsx`; the if-chain body is unchanged — add an icon by adding a case |
 | PR8 | `Pill` | `ClimbMatchCore.jsx` | the rounded tag every badge is drawn with; its JSDoc `@param` seam became the interface; consumers `ClimbMatch.jsx`, `RouteDetail.jsx`, `lib/SafetyTab.jsx`, `lib/TripReport.jsx`, the three earlier `.tsx` components (now `./Pill.tsx`, not through core) AND core itself (7 uses), so core imports it back; `lib/PartnerSearch.jsx` imported it and never rendered it — import dropped; `lib/DbAreaBrowser.jsx` keeps a LOCAL copy (pre-existing duplicate, not touched) |
@@ -63,21 +64,22 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR10 — `ElevChart`.** Core band 2's small components and primitives are all out
-(`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`). What
-remains in band 2, by census on 2026-10-15 (definition span; `<Name` uses per file; guards and `scripts/oneoff`
-probes naming it; any guard that IMPORTS it by path, as `check:field-renders` did `ActionIcon`): `DiscIcon`
-(18 lines, JSDoc seam, 8 consumers + 14 uses in core, NO guard names it) → next; then `Av` (1 line, ~10 consumers
-+ 16 uses in core, reads `photoThumb`/`FALLBACK_AV`/`onImgErr`/`C`, one guard comment); then `GPXMap` (3
-consumers, 6 guards and audits name it — read each first). `ProvenancePanel` and `RouteGearCheck`, which
-CLAUDE.md listed here, are NOT in core (`RouteGearCheck` lives in `RouteDetail.jsx`) — **grep for the definition
-before starting a candidate**. Conventions that held through PR5–PR10: a parent that still uses what it
-extracted imports the new file back (the stitch drops that import; the component reads the parent's exports at
-render time only); a component another extracted component renders is imported from its own folder
-(`./Pill.tsx`), never through core; a guard that IMPORTS a moved symbol from core by path is repointed in the
-same PR; a guard that matches the component's TEXT still sees it through the stitch only if the body keeps the
-shape — and never quote that anchor in the component's JSDoc; explain any measured count that DROPS
-(`check:chunk-reload` was counting JSDoc `import("react")` types); a feature doc that lists the symbol under
+Last session stopped at: **PR11 — `DiscIcon`.** Core band 2's small components and primitives are all out
+(`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`,
+`DiscIcon`). What remains in band 2, by census on 2026-10-16 (definition span; `<Name` uses per file; guards and
+`scripts/oneoff` probes naming it; any guard that IMPORTS it by path, as `check:field-renders` did `ActionIcon`):
+`Av` (1 line, ~10 consumers + 16 uses in core, reads `photoThumb`/`FALLBACK_AV`/`onImgErr`/`C` at render time, one
+guard comment in `check:control-names`) → next; then `GPXMap` (3 consumers, 6 guards and audits name it — read each
+first). `ProvenancePanel` and `RouteGearCheck`, which CLAUDE.md once listed here, are NOT in core (`RouteGearCheck`
+lives in `RouteDetail.jsx`) — **grep for the definition before starting a candidate**. Conventions that held through
+PR5–PR11: a parent that still uses what it extracted imports the new file back (the stitch drops that import; the
+component reads the parent's exports at render time only); a component another extracted component renders is
+imported from its own folder (`./Pill.tsx`), never through core; a guard that IMPORTS a moved symbol from core by
+path is repointed in the same PR; a guard that matches the component's TEXT still sees it through the stitch only if
+the body keeps the shape — and never quote that anchor in the component's JSDoc; explain any measured count that
+DROPS (`check:chunk-reload` was counting JSDoc `import("react")` types); a feature doc that lists the symbol under
 its old file must move it, or `check:feature-docs` fails; the stitch (`movedAsParentText`) requires exactly ONE
 `export default function` per moved file, so a `memo(...)` component becomes an inner implementation wrapped in
-`memo` behind an exported function (`ElevChart`, PR10).
+`memo` behind an exported function (`ElevChart`, PR10); and after EVERY merge of `origin/main` into the branch,
+grep the tree again for `import … Name … from "…ClimbMatchCore.jsx"` — a consumer can land on main between the
+census and the merge, and CI builds the PR merged with main (`MyPartnerAreas.jsx`, PR9).

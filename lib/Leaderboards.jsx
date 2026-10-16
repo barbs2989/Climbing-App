@@ -4,7 +4,8 @@ import { DISC_LABELS as DL } from "./discLabels";
 import { clickable } from "./clickable";
 import { useState } from "react";
 import { useLeaderboard, useTopClimbs, useAreaChildren, useAreaPath, dbRouteToCamel, useVerifiedUsers } from "./db";
-import { Av, C, CAT, CLIMBERS, DEMO_FILLERS, DiscIcon, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, SZ1, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev, vScore } from "../ClimbMatchCore.jsx";
+import { Av, C, CAT, CLIMBERS, DEMO_FILLERS, FILLER_CLIMBERS, ME, MOUNTAINS, NONCOMPLETION_TICKS, ROUTES, SZ1, catOf, distMiles, haveMyLoc, inArea, lbRowName, pubName, routeAscentFt, seedHistoryFor, uDistMi, uDistMiUnitLong, uElev, vScore } from "../ClimbMatchCore.jsx";
+import DiscIcon from "../src/components/DiscIcon.tsx";
 import CountUp from "../src/components/CountUp.tsx";
 
 // Two populations. Signed in with the DB on, every row is a REAL climber from leaderboard()

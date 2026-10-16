@@ -2,7 +2,8 @@
 // bundle. It is rendered only from App (ClimbMatch.jsx) behind React.lazy + Suspense.
 import { clickable } from "./clickable";
 import { useEffect, useState } from "react";
-import { C, CAT, CLIMBERS, DiscIcon, ROUTES, catOf, gradeLabel, mtnOf, pubFirst, renderMD, routeLoc, routeLocText } from "../ClimbMatchCore.jsx";
+import { C, CAT, CLIMBERS, ROUTES, catOf, gradeLabel, mtnOf, pubFirst, renderMD, routeLoc, routeLocText } from "../ClimbMatchCore.jsx";
+import DiscIcon from "../src/components/DiscIcon.tsx";
 import ActionIcon from "../src/components/ActionIcon.tsx";
 
 export default function MyAscents({logs,onOpen,onReport,onVouch,onView,focusId,routeById,condReports,onReportCond,logsUnavailable,climberFor}){
