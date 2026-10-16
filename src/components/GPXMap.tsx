@@ -38,7 +38,7 @@ export interface GPXMapProps {
 }
 interface WpStyle { color: string; glyph: string }
 /** One drawn pin: its position and the card every layer that draws it opens. */
-interface Pin { ll: any; html: string }
+interface Pin { ll: LeafletAny; html: string }
 // Named so it cannot collide with core's own `escHtml` when the guard stitch pastes this body into
 // core; this one deliberately keeps GPXMap's original four-character set (no apostrophe).
 const ESC_PIN: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
@@ -60,13 +60,13 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
   const colors: Record<string, string> = WP_COLORS;
   const track = pts && pts.length >= 2 ? pts : null;
   const pk = peakCoord && peakCoord.lat != null && peakCoord.lng != null ? peakCoord : null;
-  const mapDiv=useRef<HTMLDivElement | null>(null),mapRef=useRef<any>(null),tileRef=useRef<any>(null);
+  const mapDiv=useRef<HTMLDivElement | null>(null),mapRef=useRef<LeafletAny>(null),tileRef=useRef<LeafletAny>(null);
   /* Keyed by the waypoint's index in the ORIGINAL `waypoints` array — the same index the
      list below the map renders — so tapping a row can open that row's own pin. Pins with no
      coordinate are never added here, and the list is what tells the climber so; a row that
      silently did nothing was indistinguishable from a broken map. */
   const markersRef=useRef<Record<number, Pin>>({}),openPinsRef=useRef<((p: Pin, z?: number) => void) | null>(null);
-  const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false),[locatedOnce,setLocatedOnce]=useState(false),[fullscreen,setFullscreen]=useState(false);const boundsRef=useRef<any>(null);
+  const [ready,setReady]=useState(false),[mapFail,setMapFail]=useState(false),[locatedOnce,setLocatedOnce]=useState(false),[fullscreen,setFullscreen]=useState(false);const boundsRef=useRef<LeafletAny>(null);
   /* Counts map builds. `ready` turns true once and stays true, so a layer drawn AFTER the build (the
      base check-ins below) needs this to know a rebuild — fullscreen, a new route — wiped it. */
   const [mapGen,setMapGen]=useState(0);
@@ -83,7 +83,7 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
      here a route whose only change is that coordinate would keep the previous route's map. */
   const dtSig=derivedTrailhead&&derivedTrailhead.lat!=null?("t"+derivedTrailhead.lat+","+derivedTrailhead.lng):"";
   const sig=(track?(track.length+":"+track[0][0]+","+track[0][1]):((waypoints&&waypoints.length)?("w"+waypoints.length):(hasPeak&&pk?("p"+pk.lat+","+pk.lng):"none")))+dtSig;
-  useEffect(()=>{let cancelled=false;const init=()=>{if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;const L: any=window.L;const map=L.map(mapDiv.current,{attributionControl:false});if(map.zoomControl)map.zoomControl.getContainer().style.marginTop="46px";tileRef.current=baseTileLayer(L,baseLayer).addTo(map);let b: any=null;
+  useEffect(()=>{let cancelled=false;const init=()=>{if(cancelled||!mapDiv.current||mapRef.current||!window.L)return;const L: LeafletAny=window.L;const map=L.map(mapDiv.current,{attributionControl:false});if(map.zoomControl)map.zoomControl.getContainer().style.marginTop="46px";tileRef.current=baseTileLayer(L,baseLayer).addTo(map);let b: LeafletAny=null;
     /* ONE POPUP FOR EVERY PIN, and it lists every pin within a fingertip of the one tapped.
        Each pin used to carry its own popup AND a tooltip — on two layers, the icon and a hit
        circle under it — and Leaflet opens a bound tooltip on CLICK as well as hover, so a tap
@@ -104,7 +104,7 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
       const html=near.length===1?p.html:'<div style="font-size:11.5px;opacity:0.75;margin-bottom:6px">'+near.length+' waypoints here — zoom in to separate them</div>'+near.map((q,i)=>'<div style="'+(i?'border-top:1px solid rgba(127,127,127,0.35);margin-top:8px;padding-top:8px':'')+'">'+q.html+'</div>').join("");
       pinPopup.setLatLng(p.ll).setContent(html).openOn(map);};
     /* `layers` are every Leaflet layer that draws this one pin; they all open the same card. */
-    const addPin=(layers: any[],ll: any,html: string): Pin=>{const p: Pin={ll:L.latLng(ll),html};pins.push(p);layers.forEach(m=>m.on("click",()=>openPins(p)).addTo(map));return p;};
+    const addPin=(layers: LeafletAny[],ll: LeafletAny,html: string): Pin=>{const p: Pin={ll:L.latLng(ll),html};pins.push(p);layers.forEach(m=>m.on("click",()=>openPins(p)).addTo(map));return p;};
     const pinHead=(name: string,type?: string)=>'<div style="font-weight:700;margin-bottom:2px">'+name+'</div>'+(type?'<div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">'+type+'</div>':"");
     openPinsRef.current=openPins;
     if(track){const ll=track.map(p=>[p[0],p[1]]);const line=L.polyline(ll,{color:C.blue,weight:4,opacity:0.9}).addTo(map);b=line.getBounds();const nearWp=(pt: readonly number[])=>(waypoints||[]).some(w=>placed(w)&&Math.hypot(pt[0]-w.lat,pt[1]-w.lng)<0.0015);
@@ -172,18 +172,20 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
       addPin([L.marker(dll,{icon:wpDivIcon(L,"Trailhead",22,null,true),keyboard:false})],dll,dHtml);
       if(!b){b=L.latLngBounds([dll]);}else{b.extend(dll);}
     }
-    if(b&&b.isValid()){map.fitBounds(b.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});}else if(hasPeak&&pk){L.marker([pk.lat,pk.lng],{icon:wpDivIcon(L,"Summit",24,null,true),keyboard:false}).addTo(map).bindTooltip(pk.name||"Peak location",{direction:"top"});map.setView([pk.lat,pk.lng],12);}else{map.setView([39.5,-98.5],4);}fitZoomToLayer(map,baseLayer);boundsRef.current=b;mapRef.current=map;setReady(true);setMapGen(g=>g+1);setTimeout(()=>{try{map.invalidateSize();}catch(e){}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch(e){}mapRef.current=null;tileRef.current=null;openPinsRef.current=null;}};},[sig,fullscreen]);
+    if(b&&b.isValid()){map.fitBounds(b.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});}else if(hasPeak&&pk){L.marker([pk.lat,pk.lng],{icon:wpDivIcon(L,"Summit",24,null,true),keyboard:false}).addTo(map).bindTooltip(pk.name||"Peak location",{direction:"top"});map.setView([pk.lat,pk.lng],12);}else{map.setView([39.5,-98.5],4);}fitZoomToLayer(map,baseLayer);boundsRef.current=b;mapRef.current=map;setReady(true);setMapGen(g=>g+1);setTimeout(()=>{try{map.invalidateSize();}catch{/* the map is already gone */}},150);};loadLeaflet(init,()=>setMapFail(true));const ft=setTimeout(()=>{if(!cancelled&&!mapRef.current)setMapFail(true);},9000);return ()=>{cancelled=true;clearTimeout(ft);if(mapRef.current){try{mapRef.current.remove();}catch{/* the map is already gone */}mapRef.current=null;tileRef.current=null;openPinsRef.current=null;}};
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- the map is rebuilt on `sig` (route identity incl. the derived trailhead) and `fullscreen` ONLY, by design: every other value is read at build time, and re-running on them would re-fit the view (see the comments above)
+  },[sig,fullscreen]);
   /* The base layer is swapped IN PLACE rather than rebuilding the map (it used to sit in the deps above).
      The Snow layer's day stepper changes it once per tap, and a rebuild re-fitted the route every time. */
   useEffect(()=>{if(!mapRef.current)return;applyBaseLayer(mapRef.current,tileRef,baseLayer);},[baseLayer]);
-  const me=useFollowMe(mapRef,{C,zoom:16,onFix:(f,first)=>{if(first)setLocatedOnce(true);}}),locate=me.locate,geoErr=me.err;
-  useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch(e){}},220);return ()=>clearTimeout(t);},[fullscreen]);
+  const me=useFollowMe(mapRef,{C,zoom:16,onFix:(_f,first)=>{if(first)setLocatedOnce(true);}}),locate=me.locate,geoErr=me.err;
+  useEffect(()=>{if(!mapRef.current)return;const t=setTimeout(()=>{try{mapRef.current.invalidateSize();}catch{/* the map is already gone */}},220);return ()=>clearTimeout(t);},[fullscreen]);
   /* Tapping a waypoint row below the map pans to that pin and opens its popup. `focusWp`
      carries a nonce as well as the index so that tapping the SAME row twice re-fires — an
      index alone is unchanged on the second tap and the effect would not run, which reads as
      the row having stopped working. `ready` is a dependency because a tap can land before
      Leaflet has finished loading, and the markers do not exist until it has. */
-  useEffect(()=>{if(!focusWp||focusWp.i==null)return;const map=mapRef.current;if(!map)return;const p=markersRef.current[focusWp.i];if(!p||!openPinsRef.current)return;try{const z=Math.max(map.getZoom()||0,14);map.setView(p.ll,z,{animate:true});openPinsRef.current(p,z);}catch(e){}},[focusWp,ready]);
+  useEffect(()=>{if(!focusWp||focusWp.i==null)return;const map=mapRef.current;if(!map)return;const p=markersRef.current[focusWp.i];if(!p||!openPinsRef.current)return;try{const z=Math.max(map.getZoom()||0,14);map.setView(p.ll,z,{animate:true});openPinsRef.current(p,z);}catch{/* the map is already gone */}},[focusWp,ready]);
   /* WHERE CLIMBERS CHECKED IN AT THE BASE (0188), drawn on the map they are looking at. The spots
      used to be a coordinate pair in a card elsewhere on the page, so a climber standing at the crag
      had to copy numbers into another app to see where the start was. A spot is a cluster of on-site
@@ -193,12 +195,14 @@ export default function GPXMap({pts,waypoints,peakCoord,endpointLabels,focusWp,d
      nothing but the peak/crag coordinate to show. Keyed on the spots' content, so a refetch that
      returns the same points redraws nothing. */
   const baseSig=(baseSpots||[]).map(function(b){return b.lat.toFixed(6)+","+b.lng.toFixed(6)+":"+b.n+(b.mine?"m":"");}).join("|");
-  useEffect(()=>{const map=mapRef.current;if(!mapGen||!map||!window.L||!baseSig)return;const L: any=window.L;const grp=L.layerGroup().addTo(map);
+  useEffect(()=>{const map=mapRef.current;if(!mapGen||!map||!window.L||!baseSig)return;const L: LeafletAny=window.L;const grp=L.layerGroup().addTo(map);
     (baseSpots||[]).forEach(function(b,i){const html='<div style="font-size:13px;line-height:1.45"><div style="font-weight:700;margin-bottom:2px">'+(i===0?"Base of the climb":"Another reported base")+'</div><div style="font-size:11.5px;font-weight:700;letter-spacing:0.4px;text-transform:uppercase;opacity:0.7">Climber check-in</div><div style="font-size:12px;opacity:0.8;margin-top:3px">Checked in on-site by '+b.n+' climber'+(b.n!==1?"s":"")+(b.mine?", including you":"")+'</div></div>';
       L.circleMarker([b.lat,b.lng],{radius:14,stroke:false,fillOpacity:0,interactive:true,bubblingMouseEvents:false}).addTo(grp).bindPopup(html);
       L.marker([b.lat,b.lng],{icon:wpDivIcon(L,"Base",i===0?24:20,true),keyboard:false,zIndexOffset:i===0?500:0}).addTo(grp).bindPopup(html);});
-    if(!boundsRef.current&&hasPeak&&pk){try{const fb=L.latLngBounds([[pk.lat,pk.lng]]);(baseSpots||[]).forEach(function(b){fb.extend([b.lat,b.lng]);});map.fitBounds(fb.pad(0.4),{maxZoom:Math.min(17,layerSharpZoom(baseLayer))});}catch(e){}}
-    return ()=>{try{grp.remove();}catch(e){}};},[mapGen,baseSig]);
+    if(!boundsRef.current&&hasPeak&&pk){try{const fb=L.latLngBounds([[pk.lat,pk.lng]]);(baseSpots||[]).forEach(function(b){fb.extend([b.lat,b.lng]);});map.fitBounds(fb.pad(0.4),{maxZoom:Math.min(17,layerSharpZoom(baseLayer))});}catch{/* the map is already gone */}}
+    return ()=>{try{grp.remove();}catch{/* the map is already gone */}};
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- redrawn when the map is rebuilt (`mapGen`) or the spots' CONTENT changes (`baseSig`), by design; a refetch returning the same points must redraw nothing
+  },[mapGen,baseSig]);
   if(!hasPts&&!(waypoints&&waypoints.length)&&!hasPeak)return null;
   const resetView=()=>{const map=mapRef.current;if(!map)return;me.release();if(boundsRef.current&&boundsRef.current.isValid())map.fitBounds(boundsRef.current.pad(0.25),{maxZoom:layerSharpZoom(baseLayer)});else if(hasPeak&&pk)map.setView([pk.lat,pk.lng],12);else map.setView([39.5,-98.5],4);};
   const mapUI=<div style={fullscreen?{position:"fixed",inset:0,zIndex:9700,background:C.bg,padding:12,display:"flex",flexDirection:"column"}:{position:"relative"}} role={fullscreen?"dialog":undefined} aria-modal={fullscreen?"true":undefined} aria-label={fullscreen?"Route map":undefined}>{fullscreen?<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:9}}><span style={{fontSize:14,fontWeight:700,color:C.text}}>Route map</span><button onClick={()=>setFullscreen(false)} aria-label="Close full-screen map" style={POP_CLOSE}>✕</button></div>:null}<div style={{position:"relative",flex:fullscreen?1:"none"}}><div ref={mapDiv} style={{height:fullscreen?"100%":300,borderRadius:9,border:`1px solid ${C.border}`,overflow:"hidden",background:"#0a0f1a"}}/>{!ready?<div style={{position:"absolute",inset:0,display:"flex",alignItems:"center",justifyContent:"center",color:C.textMuted,fontSize:12,pointerEvents:"none",textAlign:"center",padding:16}}>{mapFail?"Map couldn’t load — see waypoints below.":"Loading map…"}</div>:null}<BaseLayerToggle baseLayer={baseLayer} setBaseLayer={setBaseLayer} C={C} snow snowAt={snowAt}/>{fullscreen?null:<button onClick={()=>setFullscreen(true)} aria-label="Full screen" title="Full screen" style={{...POP_CLOSE_MEDIA,position:"absolute",top:10,right:10,zIndex:1000}}>⤢</button>}{locatedOnce?<button onClick={resetView} style={{position:"absolute",bottom:26,left:10,zIndex:1000,background:C.surface,color:C.text,border:"1px solid "+C.border,borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>↺ Reset view</button>:null}<button onClick={locate} style={{position:"absolute",bottom:26,right:10,zIndex:1000,background:C.blueSolid,color:"#ffffff",border:"none",borderRadius:9,padding:"7px 11px",fontSize:12,fontWeight:700,cursor:"pointer",boxShadow:"0 2px 8px rgba(0,0,0,0.4)"}}>{<Lbl s={"📍 "+locateLabel(me,"Me")}/>}</button></div>{geoErr?<div style={{fontSize:11.5,color:C.amber,marginTop:6}}>{geoErr}</div>:null}<div style={{padding:"7px 2px 0",display:"flex",gap:5,flexWrap:"wrap"}}>{/* A legend describes THE MAP ABOVE IT, so it lists only the types this route actually uses. It used to print all of WP_STYLE unconditionally, which was already listing types the map did not draw; at 13 styled types that becomes a wall of pills that is mostly about other routes. Normalise before comparing — a raw "lake" must light the Water row. */Object.keys(WP_STYLE).filter(function(k){return (waypoints||[]).some(function(w){return wpType(w)===k;});}).map(k=><span key={k} style={{display:"inline-flex",alignItems:"center",gap:5,fontSize:11.5,padding:"3px 8px",borderRadius:999,background:C.surface,border:"1px solid "+C.border,whiteSpace:"nowrap"}}><span aria-hidden="true" style={{color:styles[k].color,fontSize:12.5,lineHeight:1}}>{styles[k].glyph}</span><span style={{color:C.textSub}}>{k}</span></span>)}</div></div>;

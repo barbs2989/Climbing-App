@@ -27,7 +27,7 @@ import { useRoutePresence } from "./lib/presence";
 import AuthModal from "./lib/AuthModal";
 import { PeakMetadataPanel, SeasonalGuidancePanel, CrowdsPanel, PartnerRequirementsPanel, splitParagraphs, monthRank, seasonWindowMonths } from "./EnrichmentPanels";
 import { renderToStaticMarkup } from "react-dom/server";
-import { loadLeaflet, applyBaseLayer, baseTileLayer, fitZoomToLayer, layerSharpZoom, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel } from "./lib/mapKit";
+import { loadLeaflet, applyBaseLayer, layerSharpZoom, BaseLayerToggle, ViewToggle, pinHtml, useFollowMe, locateLabel } from "./lib/mapKit";
 import { shortGrade, gradeDetail, displayGrade, gradeSources } from "./lib/grade";
 import { useRecentRouteIds } from "./lib/recent";
 import { POP_BACK, POP_CLOSE, POP_CLOSE_MEDIA, POP_REMOVE, POP_CHIP_X } from "./lib/popupChrome.js";
