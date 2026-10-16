@@ -23,7 +23,7 @@ import FireNearRoute from "./lib/FireNearRoute";
 import ShadeMap from "./lib/ShadeMap";
 import { downloadStateOffline, offlineDownloads, removeStateOffline, savedAgo } from "./lib/offline";
 import { nwsHeightShiftF, fetchForecastRaw, fetchCragForecastMeasured, fetchCragAir, fetchCragClimate } from "./lib/forecast";
-import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit } from "./lib/conditionsScore";
+import { scoreForecast, starsLabel, WEIGHTS, FACTOR_LABEL, CRAG_SCORE_DISCIPLINES, OPEN_DAY, aqiCategory, clockAt, monthFit, hoursInRange } from "./lib/conditionsScore";
 import { useCondPrefs, scorePrefs, CondPrefsControls } from "./lib/CondPrefs.jsx";
 import { routeRock, ROCK_OPTIONS } from "./lib/rockType";
 import { EditIconButton as AreaEditIconButton, CopyCoordButton as AreaCopyCoordButton } from "./lib/areaChrome";
@@ -4039,8 +4039,9 @@ function HourlyChart({all,selUtc}){
   </div>;
 }
 /* SEASON — twelve months of average high and low at the crag, from the last five years. A bar is
-   one month's range; green months are PRIME for you (average high in your ideal band and under 12
-   wet days), amber GOOD (within a few degrees and under 16). Historical averages, never a forecast. */
+   one month's range; green months are PRIME for you (an average day has a 4-hour session in your
+   range, under 15 wet days), amber GOOD (a session within 6° colder or 10° warmer, under 18) —
+   monthFit. Historical averages, never a forecast. */
 function SeasonChart({clim,band}){
   const [hv,setHv]=useState(null);
   const ms=clim.months;const W=340,H=104,L=28,R=6,cw=(W-L-R)/12;
@@ -4054,15 +4055,15 @@ function SeasonChart({clim,band}){
   const move=function(e){const r=e.currentTarget.getBoundingClientRect();if(!r.width)return;const px=(e.clientX-r.left)/r.width*W;setHv(Math.max(0,Math.min(11,Math.floor((px-L)/cw))));};
   const m=hv!=null?ms[hv]:null;
   return <div>
-    {condRow("Prime months",prime.length?prime.join(", "):"None — no month averages a high in your range with under 12 wet days",prime.length?C.green:C.textSub)}
+    {condRow("Prime months",prime.length?prime.join(", "):"None — no month has a 4-hour session in your range on an average day, with under 15 wet days",prime.length?C.green:C.textSub)}
     {good.length?condRow("Good months",good.join(", "),C.amber):null}
     <div style={{marginTop:8}}><svg width="100%" viewBox={"0 0 "+W+" "+(H+14)} style={{display:"block",touchAction:"pan-y"}} onPointerMove={move} onPointerDown={move} onPointerLeave={function(){setHv(null);}} role="img" aria-label={"Average high and low by month. Prime: "+(prime.join(", ")||"none")+". Good: "+(good.join(", ")||"none")+"."}>
       <rect x={L} y={y(uTempN(band[1]))} width={W-L-R} height={Math.max(0,y(uTempN(band[0]))-y(uTempN(band[1])))} fill={C.green} opacity={0.1}/>
       <text x={L-4} y={y(uTempN(band[1]))+3} fontSize="9" fill={C.textMuted} textAnchor="end">{uTempN(band[1])+"°"}</text><text x={L-4} y={y(uTempN(band[0]))+3} fontSize="9" fill={C.textMuted} textAnchor="end">{uTempN(band[0])+"°"}</text>
       {ms.map(function(mo,i){var cx=L+cw*i+cw/2,t=y(uTempN(mo.hi)),b=y(uTempN(mo.lo));return <g key={i}><rect x={cx-6} y={t} width={12} height={Math.max(2,b-t)} rx={4} fill={fitCol[fits[i]]} opacity={hv==null||hv===i?1:0.55}/><text x={cx} y={H+11} fontSize="9.5" fill={i===curM?C.text:C.textMuted} fontWeight={i===curM?800:400} textAnchor="middle">{NAMES[i][0]}</text></g>;})}
     </svg></div>
-    <div aria-live="polite" style={{fontSize:12.5,color:C.text,minHeight:19,marginTop:4}}>{m?<span><b>{NAMES[hv]}</b>{" · high "+uTemp(m.hi)+", low "+uTemp(m.lo)+" · "+Math.round(m.wetDays)+" wet days · "+uPrecip(m.rain)+" rain"}</span>:<span style={{color:C.textMuted}}>Move along the chart to read a month.</span>}</div>
-    <div style={{display:"flex",flexWrap:"wrap",gap:"4px 12px",fontSize:11.5,color:C.textSub,marginTop:6}}>{[["prime","Prime"],["good","Good"],["off","Off season"]].map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5}}><span aria-hidden="true" style={{width:9,height:9,borderRadius:3,background:fitCol[p[0]]}}/>{p[1]}</span>;})}<span>Shaded band: your ideal temperature</span></div>
+    <div aria-live="polite" style={{fontSize:12.5,color:C.text,minHeight:19,marginTop:4}}>{m?<span><b>{NAMES[hv]}</b>{" · high "+uTemp(m.hi)+", low "+uTemp(m.lo)+" · about "+Math.round(hoursInRange(m,band[0],band[1]))+" h in your range · "+Math.round(m.wetDays)+" wet days · "+uPrecip(m.rain)+" rain"}</span>:<span style={{color:C.textMuted}}>Move along the chart to read a month.</span>}</div>
+    <div style={{display:"flex",flexWrap:"wrap",gap:"4px 12px",fontSize:11.5,color:C.textSub,marginTop:6}}>{[["prime","Prime"],["good","Good"],["off","Off season"]].map(function(p){return <span key={p[0]} style={{display:"inline-flex",alignItems:"center",gap:5}}><span aria-hidden="true" style={{width:9,height:9,borderRadius:3,background:fitCol[p[0]]}}/>{p[1]}</span>;})}<span>Shaded band: your ideal temperature. Prime: a 4-hour session in it, morning or evening</span></div>
     <div style={condNote}>{"Averages for "+clim.years+" at the crag — a guide to the season, not a forecast."}</div>
   </div>;
 }

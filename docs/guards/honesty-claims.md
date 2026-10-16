@@ -1357,6 +1357,11 @@ Part of the guard notes — see [README.md](README.md) for the full index.
   trad / top-rope / bouldering only — `lib/conditionsScore.js`, card `ConditionsScoreCard` in
   `RouteDetail.jsx`) **adds up, leaves out what it did not measure, and is offered nowhere it cannot
   judge**. Static, no network, no credentials; in `npm run build`.
+  - **Season verdicts** (`monthFit`): pinned on three real five-year averages — Squamish July
+    (79/56°F) is Prime for sport and Good for bouldering, Red Rock July (98/75) is off for both, a wet
+    Squamish January is off. The rule used to compare only the month's average HIGH with the range,
+    and called every Canadian summer off season (owner, 2026-10-15). The calibration was 16 crags;
+    a month is judged by hours of an average day in range (`hoursInRange`), not by one temperature.
   - **Arithmetic**: each factor is rounded to whole points BEFORE summing, so the "x of y points"
     line is exactly the sum of the rows printed under it, and stars are exactly 5 × points / measured
     points. There is **no clamp** anywhere — the same lesson as `compat()` (docs/codebase/algorithms.md).

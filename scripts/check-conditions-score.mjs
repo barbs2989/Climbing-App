@@ -30,7 +30,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE, mergeMeasuredRain } from "../lib/conditionsScore.js";
+import { scoreForecast, WEIGHTS, CRAG_SCORE_DISCIPLINES, aspectBearing, sunPosition, starsLabel, frictionOf, aqiCategory, seepRisk, WET_BANDS, DRY_RATE, mergeMeasuredRain, monthFit, TEMP_BANDS } from "../lib/conditionsScore.js";
 import { routeRock, DRY_HOURS } from "../lib/rockType.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -493,6 +493,17 @@ console.log("check:conditions-score");
   const sm = fs.readFileSync(path.join(ROOT, "lib/ShadeMap.jsx"), "utf8");
   if (/IntersectionObserver/.test(sm) && /Couldn’t load the terrain/.test(sm) && /aria-label="Time of day for the shade"/.test(sm)) ok("the shade map loads only near the screen, and says when it failed");
   else fail("the shade map lost its lazy load, its failure state or its slider's name");
+}
+// SEASON: a month is judged by the hours a climber is out, not by its average high alone. Five-year
+// archive averages (2021–2025): Squamish July 79/56°F with 4 wet days is prime for sport and good for
+// bouldering, though its HIGH sits above both ranges; Red Rock July 98/75 is off for either; a
+// Squamish January, 42/27 with 19 wet days, is off.
+{
+  const sqJul = { hi: 79, lo: 56, wetDays: 4 }, rrJul = { hi: 98, lo: 75, wetDays: 2 }, sqJan = { hi: 42, lo: 27, wetDays: 19 };
+  const got = [monthFit(sqJul, TEMP_BANDS.standard), monthFit(sqJul, TEMP_BANDS.cool), monthFit(rrJul, TEMP_BANDS.standard), monthFit(rrJul, TEMP_BANDS.cool), monthFit(sqJan, TEMP_BANDS.standard)];
+  const want = ["prime", "good", "off", "off", "off"];
+  if (got.join() === want.join()) ok("the season chart reads a warm-afternoon summer (Squamish July) as climbable and a desert summer as off");
+  else fail(`season verdicts ${got.join(", ")}, want ${want.join(", ")} (Squamish Jul sport/boulder, Red Rock Jul sport/boulder, Squamish Jan)`);
 }
 function sN0() { return scoreForecast(fixture(), WALL, null, NOW); }
 
