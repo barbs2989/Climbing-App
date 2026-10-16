@@ -6,7 +6,7 @@
 profile can also open as `FullProfile` and `Resume` overlays from anywhere (partner rows, crews, leaderboards).
 
 ## 1. What it does today
-- **Profile (`me`)**: your header, trust score, verification, vouches, photo strip, availability and a link into edit.
+- **Profile (`me`)**: your header (trust score, verification, photo strip, résumé and public-profile buttons) stays on top; under it, tabs (`meTab`, read as `meTabOn`): **Profile** (At a glance, availability, speed, certifications, vouches you’ve given, Edit profile) · **Activity** (Year in Climbing banner, Your Logbook, sends by grade, Belay & Catch Record, reports you’ve filed) · **Review** (admins only: the eight safety and catalog queues). A catch notification opens Activity, Home’s availability gap opens Profile, and the admin banner and the Menu card (when items wait) open Review. Walks reach a tab with `?mt=` (overlay scaffold).
 - **Edit profile**: `lib/EditProfileScreen.jsx` over the `editDraft` state; `saveEdit` writes the draft back (see 2).
   Includes the owner-only zip code (feeds partner search distance; others never see it).
 - **Résumé** (`Resume`): courses and training, plus an **Experience** list of notable climbs, most recent first, with a star for
@@ -14,6 +14,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
   (the Objectives filter uses the same split except that it leads with Alpine and keeps Alpine, Mountaineering and Aid as separate chips). Sport = sport + top-rope; Trad = trad and everything that used to be "Crag";
   Scrambling = scrambling + hiking. A `discipline:"rock"` route resolves to its `style`. Exportable via `exportResume`.
   Visible to others only when the climber's `resume_public` allows it.
+  *Edit résumé › Add a past climb* asks how you climbed it from a list per discipline (`RESUME_STYLES`): routes offer Lead / Onsight / Flash / Redpoint / Follow / Top-rope (trad and ice add Solo; alpine and ice add Swapped leads), boulders Send / Flash, mountaineering Summit / Lead / Follow / Solo, scrambling Summit / Completed / Solo. Changing the discipline resets a style the new one lacks.
 - **Trust score**: `TrustBadge` tier chip on the headline; a "what feeds your score" breakdown (`trustFactors`) that adds up to the headline.
   The authoritative number is the server's `compute_trust_score`; the highest earnable score is 84.
 - **Verification** (0306): ✓ means you proved you read your inbox. Sign-up's autoconfirm no longer counts. `VerifyEmailPanel` on Profile emails a one-time code (`sendEmailCode`), you type it (`confirmEmailCode`) or tap the link in the same email, and `verifyMyEmail` writes the record; the server's `verify_my_email()` accepts only a session whose `amr` shows a code, link or reset link from the last 30 minutes. Your own ✓ comes from the record (`useVerificationRecords`), never the session; a failed read decides nothing and hides the "Verify" prompts (`verificationUnavailable`). Until a mail provider (SMTP) is connected, Supabase's built-in mailer only delivers to the project's team, and the panel says so.
@@ -78,6 +79,7 @@ All present in `package.json`: `check:profile-edit-gate`, `check:profile-draft-p
 Notes: `docs/guards/settings-and-persistence.md`, `honesty-claims.md`, `units-and-formatting.md`, `seed-and-identity.md`, `outage-and-read-failures.md`.
 
 ## 7. Last significant change
+- **Résumé past-climb style per discipline** — a scramble no longer offers Lead or Top rope (`RESUME_STYLES`).
 - **Real climbers, batch 4** (0315) — another real climber's belay record reaches their profile.
 Real climbers, batch 3: the résumé header, export title and "hasn't shared" lines, and the share card (`ShareCard`), name a real climber — you included — by `pubName`; `meLive` carries `showName` when signed in.
 - **#2415** — Résumé Experience groups now Sport · Trad · Ice & Mixed · Alpine & Mountaineering · Bouldering · Scrambling (was Crag … Other); seed ticks re-tagged (`ClimbMatchCore.jsx` only).
