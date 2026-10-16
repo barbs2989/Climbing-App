@@ -1,4 +1,5 @@
-import { ActionIcon, Pill, trustTier } from "../../ClimbMatchCore.jsx";
+import { ActionIcon, trustTier } from "../../ClimbMatchCore.jsx";
+import Pill from "./Pill.tsx";
 
 export interface TrustBadgeProps {
   /** The climber's trust score, 0–100; the tier (colour and label) is read off `trustTier`. */

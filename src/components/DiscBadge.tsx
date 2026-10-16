@@ -1,4 +1,5 @@
-import { CAT, DiscIcon, Pill } from "../../ClimbMatchCore.jsx";
+import { CAT, DiscIcon } from "../../ClimbMatchCore.jsx";
+import Pill from "./Pill.tsx";
 
 /** What a discipline or category entry carries that this badge reads. */
 interface DiscMeta {
