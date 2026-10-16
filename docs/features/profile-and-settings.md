@@ -68,7 +68,7 @@ profile can also open as `FullProfile` and `Resume` overlays from anywhere (part
 - **Partners**: `discoverable`, zip, `avail_week`, `hiking_speed_ft_hr` and verification feed `lib/PartnerSearch.jsx` and `compat()`.
 - **Logbook**: résumé Experience is built from logged climbs; trip-report visibility is set here.
 - **Crews / social**: `FullProfile` actions (connect, message, form crew, vouch); blocks hide profiles; emergency contact feeds float plans.
-- **Leaderboards**: `lib/Leaderboards.jsx` reads `meLive`; ranking visibility (0177).
+- **Leaderboards**: `lib/Leaderboards.jsx` reads `meLive`; ranking visibility (0177). How Ranks scores: `docs/features/ranks.md`.
 - **Whole app**: `UNITS`/`DLOCALE` change every distance, elevation and date formatter.
 
 ## 6. Guards
