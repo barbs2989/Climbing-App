@@ -57,11 +57,13 @@ export const COUNT_GROUPS = [
       // one snapshot that carries the defect this guard exists for.
       { screen: "Logbook", label: "N climbs to go", section: [/MY OBJECTIVES/i, /CUSTOM LISTS/i],
         re: /(\d+)\s+climbs?\s+to\s+go\b/i },
-      { screen: "Profile", label: "N active",       re: /My objectives\s*\n\s*(\d+)\s+active\b/i },
+      // "My objectives · N active" sits in Your Logbook, on the Profile screen's ACTIVITY tab since the
+      // screen split into Profile · Activity · Review; check:ui captures that tab as "Profile:Activity".
+      { screen: "Profile:Activity", label: "N active",       re: /My objectives\s*\n\s*(\d+)\s+active\b/i },
     ],
     // Only the pair that answers the SAME question is required equal.
-    equal: ["Logbook", "Profile"],
-    atLeast: [["Home", "Profile"]],
+    equal: ["Logbook", "Profile:Activity"],
+    atLeast: [["Home", "Profile:Activity"]],
   },
   {
     name: "friends",
