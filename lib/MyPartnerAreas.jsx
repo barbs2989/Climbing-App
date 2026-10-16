@@ -19,7 +19,8 @@ import { USE_DB } from "./supabase";
 import { POP_BACK, POP_CLOSE, POP_REMOVE } from "./popupChrome.js";
 import { removePartnerArea, savePartnerArea, useAreaCardsByIds, useAreaSearch, useMyHomeStatePaths, useStates } from "./db";
 import { discLabel } from "./discLabels.js";
-import { ActionIcon, C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
+import { C, CRAG_CATS, DLOCALE, SL, haptic, localYmd } from "../ClimbMatchCore.jsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 
 const TYPE_LABEL = { state: "State", region: "Region", range: "Range", canyon: "Canyon", crag: "Crag", wall: "Wall", peak: "Peak" };
 const NO_LISTING = new Set(["peak", "world", "country"]);

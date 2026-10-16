@@ -4,7 +4,8 @@ import { clickable } from "./clickable";
 import { searchMatches } from "./search";
 import { useProfilesByIds } from "./db";
 import { useState } from "react";
-import { ActionIcon, Av, C, CLIMBERS, ME, ROUTES, SZ5, SwipeRow, crewPlace, crewSize, pubFirst, pubName, useTrustLookup } from "../ClimbMatchCore.jsx";
+import { Av, C, CLIMBERS, ME, ROUTES, SZ5, SwipeRow, crewPlace, crewSize, pubFirst, pubName, useTrustLookup } from "../ClimbMatchCore.jsx";
+import ActionIcon from "../src/components/ActionIcon.tsx";
 import { POP_BACK } from "./popupChrome.js";
 
 export default function Inbox({restrictedIds,dmUnavailable,crewUnavailable,dmLoading,msgs,crews,crewMsgs,connections,onOpenDM,onOpenCrew,onClose,onDeleteDM,onDeleteCrew,msgFrom,onAcceptReq,crewUnread,dmUnread,placeOf,routeById}){

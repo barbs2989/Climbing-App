@@ -1,4 +1,5 @@
-import { ActionIcon, C, RISK_LEVELS } from "../../ClimbMatchCore.jsx";
+import { C, RISK_LEVELS } from "../../ClimbMatchCore.jsx";
+import ActionIcon from "./ActionIcon.tsx";
 import Pill from "./Pill.tsx";
 
 /** The three answers the safety questionnaire offers for risk tolerance. */
