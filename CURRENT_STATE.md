@@ -26,6 +26,7 @@ the catalog import pipeline (see [docs/BACKEND.md](docs/BACKEND.md)).
 
 Newest first. Keep about 15 lines; older entries live in the PRs and the commit log.
 
+- **Open in navigation app opens AT the climb**: Gaia GPS opens the installed app at the route (it used to go to Gaia's download page); CalTopo, Google Maps and Apple Maps all land on the route's map area; AllTrails/USGS (home-page-only links) dropped (`lib/navLinks.js`).
 - **Quick log**: the route page offers *✓ Quick log* beside *Full log* — pick a style or outcome, the date, an optional rating, save. The rest can be added later from the logbook. A crew quick log no longer writes two `climb_logs` rows. See `docs/features/logbook-crews-home.md`.
 - **Route edits: an empty field fills at once, two climbers agreeing change a filled one** (0325): the database approves the edit itself; the edit sheet shows other climbers' waiting suggestions with an Agree button; anything else still waits for the owner. Area edits are still held.
 - Route page: the *Brought different gear? Suggest a gear update* box sits directly under the RACK card (alpine GEAR section, before ROPEWORK and GEAR & ESSENTIALS; crag Overview, under its RACK card) instead of at the end of the gear section or the page.
