@@ -12,7 +12,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 
 const ROOT = new URL("../..", import.meta.url).pathname;
-const FILES = { core: ROOT + "ClimbMatchCore.jsx", rd: ROOT + "RouteDetail.jsx" };
+const FILES = { core: ROOT + "ClimbMatchCore.jsx", rd: ROOT + "RouteDetail.jsx", gpx: ROOT + "src/components/GPXMap.tsx" };
 const ORIG = Object.fromEntries(Object.entries(FILES).map(([k, p]) => [k, readFileSync(p, "utf8")]));
 const sum = (s) => createHash("sha1").update(s).digest("hex").slice(0, 12);
 
@@ -49,8 +49,10 @@ const CASES = [
   },
   {
     name: "GPXMap re-inlines a bare lat-null test alongside the helper",
-    file: "core",
-    edit: (s) => s.replace("const wpPts=(waypoints||[]).filter(w=>wpPlaced(w));", "const wpPts=(waypoints||[]).filter(w=>w&&w.lat!=null);"),
+    // GPXMap lives in src/components/GPXMap.tsx since PR13 of the component extraction; the guard still
+    // reads it through the stitch. Its filter goes through `placed`, the typed predicate over wpPlaced().
+    file: "gpx",
+    edit: (s) => s.replace("const wpPts=(waypoints||[]).filter(placed);", "const wpPts=(waypoints||[]).filter(w=>w&&w.lat!=null);"),
     expect: "fail",
   },
   /* Section 1b: a placement test born OUTSIDE GPXMap. Case 8 is the real historical defect —

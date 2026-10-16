@@ -46,6 +46,7 @@ extraction.** No guard reads this file; keeping it true is on the author.
 |---|---|---|---|
 | PR1 | `RiskBadge` | `ClimbMatchCore.jsx` | the smoke test for the pipeline; consumer `lib/SafetyTab.jsx`; `Pill` got its JSDoc seam |
 | PR1 | _infrastructure_ | — | `src/components/`, `tsconfig.json`, `check:types`, TS-aware guards, `measure-guard-reach` |
+| PR13 | `GPXMap` | `ClimbMatchCore.jsx` | the route map (145 lines, moved by SCRIPT from core's body with asserted substitutions); 3 consumers (`RouteDetail.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`), core never rendered it — no cycle; Leaflet is CDN-loaded and untyped, so `window.L` is declared `any` once in `src/types/leaflet-global.d.ts`; TypeScript cannot narrow through a boolean, so `track`/`pk` stand in for `pts`/`peakCoord` and `placed` is a type predicate over core's `wpPlaced()`; `check:waypoint-placement` reads it through the stitch (signature spelling kept) and `inject-waypoint-placement-cases.mjs` edits the `.tsx`; seams typed on the JS side: `useFollowMe` opts (JSDoc) and the seven `POP_*` styles (`CSSProperties`); core now exports `wpDivIcon` (`WP_COLORS` and `wpIs` already were); feature-doc rows moved in two docs |
 | PR12 | `Av` | `ClimbMatchCore.jsx` | the round avatar with its online dot; 15 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 13 `lib/` files) AND core itself (16 uses), so core imports it back; reads `C`, `FALLBACK_AV`, `onImgErr` from core and `photoThumb` from `lib/photoThumb` at render time; only comments name it (`check:control-names`, four oneoff probes: an icon-only control is not NAMED by an `<Av/>`) |
 | PR11 | `DiscIcon` | `ClimbMatchCore.jsx` | the discipline glyph (13 SVG groups, moved verbatim by script); 13 consumers (`ClimbMatch.jsx`, `RouteDetail.jsx`, 11 `lib/` files, `DiscBadge.tsx` via `./DiscIcon.tsx`) AND core itself (13 uses), so core imports it back; `CAT` is read at render time through a `Record` annotation, as `DiscBadge` does; `d` is optional because callers pass a place's `disc`, which can be unset — an unknown key drew the rock icon before and still does; no guard, probe or feature doc names it |
 | PR10 | `ElevChart` | `ClimbMatchCore.jsx` | the elevation profile under the route map; a `memo` component (kept); ONE consumer (`RouteDetail.jsx`) and core never rendered it, so core does NOT import it back — the first move since PR4 with no cycle; reads `C` and `uElev` from core at render time; `docs/features/route-page.md` listed it under core and `check:feature-docs` asserts a symbol in the file its row names, so the row moved too |
@@ -65,28 +66,36 @@ the pipeline. Then the `App` render tree in `ClimbMatch.jsx`, which has **no inn
 every piece lifted out of it needs its props enumerated from the ~100 `useState` hooks it closes over.
 Take the leaves first (a card, a row, a header strip), never a whole tab in one PR.
 
-Last session stopped at: **PR12 — `Av`.** Core band 2's small components and primitives are all out (`RiskBadge`,
-`DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`, `CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`). What
-remains in band 2, by census on 2026-10-16 (definition span; `<Name` uses per file; guards and `scripts/oneoff` probes
-naming it; any guard that IMPORTS it by path, as `check:field-renders` did `ActionIcon`): `GPXMap` (3 consumers:
-`RouteDetail.jsx`, `lib/LogAscent.jsx`, `lib/TripReport.jsx`; core does NOT render it, so no cycle; 150 lines, six
-`useState`/`useRef`, five `useEffect`, Leaflet through `loadLeaflet` as an untyped `L` that strict TypeScript will need
-a type for; `check:waypoint-placement` reads core THROUGH THE STITCH and anchors on the literal
-`function GPXMap({pts,waypoints` — keep that exact destructuring, no spaces — then scopes to the body and requires
-`wpPlaced(` calls and no bare `lat != null` test; `inject-waypoint-placement-cases.mjs` has seven cases editing
-`ClimbMatchCore.jsx` by text and must be repointed at the `.tsx` for the GPXMap ones (as PR5 did for TrustBadge);
-`docs/features/route-page.md` and `docs/features/maps-and-area-browser.md` list it under core — move the rows; the
-other guards and nine oneoff probes name it only in comments), then the larger panels (`SwipeRow`, `FullProfile`,
-`Resume`, `ChatComposer`), each censused first. `ProvenancePanel` and `RouteGearCheck`, which CLAUDE.md once listed here, are NOT in core (`RouteGearCheck`
-lives in `RouteDetail.jsx`) — **grep for the definition before starting a candidate**. Conventions that held through
-PR5–PR12: a parent that still uses what it extracted imports the new file back (the stitch drops that import; the
-component reads the parent's exports at render time only); a component another extracted component renders is
-imported from its own folder (`./Pill.tsx`), never through core; a guard that IMPORTS a moved symbol from core by
-path is repointed in the same PR; a guard that matches the component's TEXT still sees it through the stitch only if
-the body keeps the shape — and never quote that anchor in the component's JSDoc; explain any measured count that
-DROPS (`check:chunk-reload` was counting JSDoc `import("react")` types); a feature doc that lists the symbol under
-its old file must move it, or `check:feature-docs` fails; the stitch (`movedAsParentText`) requires exactly ONE
-`export default function` per moved file, so a `memo(...)` component becomes an inner implementation wrapped in
-`memo` behind an exported function (`ElevChart`, PR10); and after EVERY merge of `origin/main` into the branch,
-grep the tree again for `import … Name … from "…ClimbMatchCore.jsx"` — a consumer can land on main between the
-census and the merge, and CI builds the PR merged with main (`MyPartnerAreas.jsx`, PR9).
+Last session stopped at: **PR13 — `GPXMap`.** Core band 2 is now: constants, seed data, pure helpers, and the LARGE
+stateful panels (`SwipeRow`, `FullProfile`, `Resume`, `ChatComposer`, `OverviewMap`, `ItineraryEditor`, …). Every small
+component and primitive is in `src/components/` (`RiskBadge`, `DiscBadge`, `DiscBadges`, `TrustBadge`, `Lbl`,
+`CountUp`, `Pill`, `ActionIcon`, `ElevChart`, `DiscIcon`, `Av`, `GPXMap`). Next, by the same census (definition span;
+`<Name` uses per file; guards and `scripts/oneoff` probes naming it; any guard that IMPORTS it by path): census
+`SwipeRow` (gesture row; `check:a11y-*`/`check:clickable` may name it), `ChatComposer`, `OverviewMap` (Leaflet again —
+reuse `src/types/leaflet-global.d.ts`), then the profile panels. **Grep for the definition before starting a
+candidate** (`ProvenancePanel`, `RouteGearCheck`, `HelpDot` were all named by hand-offs after they had left core).
+Conventions that held through PR5–PR13: a parent that still uses what it extracted imports the new file back (the
+stitch drops that import; the component reads the parent's exports at render time only); a component another
+extracted component renders is imported from its own folder (`./Pill.tsx`), never through core; a guard that IMPORTS
+a moved symbol from core by path is repointed in the same PR; a guard that matches the component's TEXT still sees it
+through the stitch only if the body keeps the shape (`check:waypoint-placement` anchors on
+`function GPXMap({pts,waypoints` — exact spelling) — and never quote that anchor in the component's JSDoc; an
+injection suite that edits the moved text is repointed at the `.tsx`; explain any measured count that DROPS
+(`check:chunk-reload` was counting JSDoc `import("react")` types); a feature doc that lists the symbol under its old
+file must move it, or `check:feature-docs` fails; the stitch (`movedAsParentText`) requires exactly ONE
+`export default function` per moved file, so a `memo(...)` component becomes an inner implementation wrapped in `memo`
+behind an exported function (`ElevChart`, PR10); a seam TypeScript infers wrongly from JS is typed on the JS side with
+JSDoc (`useFollowMe`'s options, the `POP_*` styles, `EMOJI_ICON`), never cast in the component; a boolean cannot narrow
+its source, so derive the narrowed value (`track`, `pk`) and a type predicate for a JS test (`placed` over
+`wpPlaced()`); ESLint is a build guard since #2487 and a ratchet (`eslint-suppressions.json` records legacy counts per
+file and rule): a new `.tsx` must be CLEAN — no `any` (Leaflet's type is the one declared `LeafletAny` in
+`src/types/leaflet-global.d.ts`), no empty block (say why the error is swallowed), and an effect that keys on a
+signature by design carries a per-line `exhaustive-deps` disable WITH THE REASON — and when a move removes legacy
+findings from core, run `npx eslint . --prune-suppressions` so the baseline goes down (PR13); a 100+ line body is
+moved by a GENERATOR with asserted substitutions, never retyped; a module-level
+helper in a component must not share a name with one in core, or the stitched core will not PARSE (`escHtml`, PR13);
+before adding an export to core, check the export list by BUILDING — a duplicate name fails esbuild, not `tsc`; guard
+infrastructure must know `.tsx` (PR13 taught `check:injection-anchors`' path test and `check:popup-chrome`'s spread
+form); and after EVERY
+merge of `origin/main` into the branch, grep the tree again for `import … Name … from "…ClimbMatchCore.jsx"` — a
+consumer can land on main between the census and the merge, and CI builds the PR merged with main (PR9).

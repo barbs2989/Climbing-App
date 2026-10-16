@@ -64,6 +64,6 @@ export function ConfChip({ level, label, onFlag, compact }) {
 // One line under the route's first section explaining the three levels, shown once per page.
 export function ConfidenceLegend() {
   return <div style={{ fontSize: 11, color: C.textMuted, lineHeight: 1.5, margin: "0 0 10px", padding: "7px 10px", background: C.surface, border: "1px solid " + C.border, borderRadius: 9 }}>
-    {"Every detail on this page carries a confidence level. "}<b style={{ color: C.green }}>High</b>{" is checked and locked — flag it if it has changed. "}<b style={{ color: C.amber }}>Medium</b>{" is on file and open to your edits. "}<b style={{ color: C.textSub }}>Low</b>{" is missing, inferred or flagged — your edit is most welcome there. ClimbMatch checks every edit before it goes on the page."}
+    {"Every detail on this page carries a confidence level. "}<b style={{ color: C.green }}>High</b>{" is checked and locked — flag it if it has changed. "}<b style={{ color: C.amber }}>Medium</b>{" is on file and open to your edits. "}<b style={{ color: C.textSub }}>Low</b>{" is missing, inferred or flagged — your edit is most welcome there. Adding to an empty detail puts it on the page at once; a change goes live when a second climber sends the same, or once ClimbMatch checks it."}
   </div>;
 }
